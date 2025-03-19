@@ -89,26 +89,24 @@ class CreateTodoTaskRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'actionList'         => 'actionList',
-        'bizCategoryId'      => 'bizCategoryId',
-        'contentFieldList'   => 'contentFieldList',
-        'creatorId'          => 'creatorId',
-        'description'        => 'description',
-        'detailUrl'          => 'detailUrl',
-        'dueTime'            => 'dueTime',
-        'executorIds'        => 'executorIds',
+        'actionList' => 'actionList',
+        'bizCategoryId' => 'bizCategoryId',
+        'contentFieldList' => 'contentFieldList',
+        'creatorId' => 'creatorId',
+        'description' => 'description',
+        'detailUrl' => 'detailUrl',
+        'dueTime' => 'dueTime',
+        'executorIds' => 'executorIds',
         'isOnlyShowExecutor' => 'isOnlyShowExecutor',
-        'notifyConfigs'      => 'notifyConfigs',
-        'participantIds'     => 'participantIds',
-        'priority'           => 'priority',
-        'sourceId'           => 'sourceId',
-        'subject'            => 'subject',
-        'operatorId'         => 'operatorId',
+        'notifyConfigs' => 'notifyConfigs',
+        'participantIds' => 'participantIds',
+        'priority' => 'priority',
+        'sourceId' => 'sourceId',
+        'subject' => 'subject',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -185,7 +183,7 @@ class CreateTodoTaskRequest extends Model
         if (isset($map['actionList'])) {
             if (!empty($map['actionList'])) {
                 $model->actionList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['actionList'] as $item) {
                     $model->actionList[$n++] = null !== $item ? actionList::fromMap($item) : $item;
                 }
@@ -197,7 +195,7 @@ class CreateTodoTaskRequest extends Model
         if (isset($map['contentFieldList'])) {
             if (!empty($map['contentFieldList'])) {
                 $model->contentFieldList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['contentFieldList'] as $item) {
                     $model->contentFieldList[$n++] = null !== $item ? contentFieldList::fromMap($item) : $item;
                 }

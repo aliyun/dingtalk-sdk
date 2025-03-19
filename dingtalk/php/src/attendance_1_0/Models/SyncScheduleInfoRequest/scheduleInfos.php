@@ -30,15 +30,13 @@ class scheduleInfos extends Model
      */
     public $wifiKeys;
     protected $_name = [
-        'planId'                => 'planId',
-        'positionKeys'          => 'positionKeys',
+        'planId' => 'planId',
+        'positionKeys' => 'positionKeys',
         'retainAttendanceCheck' => 'retainAttendanceCheck',
-        'wifiKeys'              => 'wifiKeys',
+        'wifiKeys' => 'wifiKeys',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

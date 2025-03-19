@@ -63,22 +63,20 @@ class result extends Model
      */
     public $uuid;
     protected $_name = [
-        'bizExt'            => 'bizExt',
+        'bizExt' => 'bizExt',
         'deviceCallbackUrl' => 'deviceCallbackUrl',
-        'deviceCategory'    => 'deviceCategory',
-        'deviceCode'        => 'deviceCode',
-        'deviceDetailUrl'   => 'deviceDetailUrl',
-        'deviceName'        => 'deviceName',
-        'groupUuid'         => 'groupUuid',
-        'icon'              => 'icon',
-        'introduction'      => 'introduction',
-        'typeUuid'          => 'typeUuid',
-        'uuid'              => 'uuid',
+        'deviceCategory' => 'deviceCategory',
+        'deviceCode' => 'deviceCode',
+        'deviceDetailUrl' => 'deviceDetailUrl',
+        'deviceName' => 'deviceName',
+        'groupUuid' => 'groupUuid',
+        'icon' => 'icon',
+        'introduction' => 'introduction',
+        'typeUuid' => 'typeUuid',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,15 +29,13 @@ class data extends Model
      */
     public $pageSize;
     protected $_name = [
-        'counts'    => 'counts',
-        'list'      => 'list',
+        'counts' => 'counts',
+        'list' => 'list',
         'pageIndex' => 'pageIndex',
-        'pageSize'  => 'pageSize',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -78,7 +76,7 @@ class data extends Model
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['list'] as $item) {
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }

@@ -53,20 +53,18 @@ class QueryOrgTodoByUserRequest extends Model
      */
     public $toDueTime;
     protected $_name = [
-        'fromDueTime'    => 'fromDueTime',
-        'isDone'         => 'isDone',
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
-        'orderBy'        => 'orderBy',
+        'fromDueTime' => 'fromDueTime',
+        'isDone' => 'isDone',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'orderBy' => 'orderBy',
         'orderDirection' => 'orderDirection',
-        'roleTypes'      => 'roleTypes',
-        'subject'        => 'subject',
-        'toDueTime'      => 'toDueTime',
+        'roleTypes' => 'roleTypes',
+        'subject' => 'subject',
+        'toDueTime' => 'toDueTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

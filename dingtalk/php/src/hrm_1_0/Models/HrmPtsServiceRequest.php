@@ -47,16 +47,14 @@ class HrmPtsServiceRequest extends Model
      */
     public $path;
     protected $_name = [
-        'env'     => 'env',
-        'method'  => 'method',
+        'env' => 'env',
+        'method' => 'method',
         'outerId' => 'outerId',
-        'params'  => 'params',
-        'path'    => 'path',
+        'params' => 'params',
+        'path' => 'path',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

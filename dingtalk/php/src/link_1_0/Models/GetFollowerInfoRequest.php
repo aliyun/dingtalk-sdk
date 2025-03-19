@@ -30,13 +30,11 @@ class GetFollowerInfoRequest extends Model
     public $userId;
     protected $_name = [
         'accountId' => 'accountId',
-        'unionId'   => 'unionId',
-        'userId'    => 'userId',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

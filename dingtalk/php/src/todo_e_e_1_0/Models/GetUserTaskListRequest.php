@@ -28,15 +28,13 @@ class GetUserTaskListRequest extends Model
      */
     public $type;
     protected $_name = [
-        'done'       => 'done',
+        'done' => 'done',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'type'       => 'type',
+        'pageSize' => 'pageSize',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

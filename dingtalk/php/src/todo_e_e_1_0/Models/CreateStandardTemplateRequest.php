@@ -35,16 +35,14 @@ class CreateStandardTemplateRequest extends Model
      */
     public $service;
     protected $_name = [
-        'actions'     => 'actions',
+        'actions' => 'actions',
         'description' => 'description',
-        'name'        => 'name',
-        'operatorId'  => 'operatorId',
-        'service'     => 'service',
+        'name' => 'name',
+        'operatorId' => 'operatorId',
+        'service' => 'service',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -85,7 +83,7 @@ class CreateStandardTemplateRequest extends Model
         if (isset($map['actions'])) {
             if (!empty($map['actions'])) {
                 $model->actions = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['actions'] as $item) {
                     $model->actions[$n++] = null !== $item ? actions::fromMap($item) : $item;
                 }

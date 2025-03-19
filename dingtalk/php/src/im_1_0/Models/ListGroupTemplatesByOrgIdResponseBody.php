@@ -24,14 +24,12 @@ class ListGroupTemplatesByOrgIdResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'count'                  => 'count',
+        'count' => 'count',
         'sceneGroupDetailModels' => 'sceneGroupDetailModels',
-        'success'                => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -69,7 +67,7 @@ class ListGroupTemplatesByOrgIdResponseBody extends Model
         if (isset($map['sceneGroupDetailModels'])) {
             if (!empty($map['sceneGroupDetailModels'])) {
                 $model->sceneGroupDetailModels = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['sceneGroupDetailModels'] as $item) {
                     $model->sceneGroupDetailModels[$n++] = null !== $item ? sceneGroupDetailModels::fromMap($item) : $item;
                 }

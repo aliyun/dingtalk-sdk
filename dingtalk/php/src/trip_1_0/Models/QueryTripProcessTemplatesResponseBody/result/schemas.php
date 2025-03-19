@@ -25,12 +25,10 @@ class schemas extends Model
     protected $_name = [
         'processCode' => 'processCode',
         'processName' => 'processName',
-        'type'        => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

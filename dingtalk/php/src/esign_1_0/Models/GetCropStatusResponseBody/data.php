@@ -18,13 +18,11 @@ class data extends Model
      */
     public $installStatus;
     protected $_name = [
-        'authStatus'    => 'authStatus',
+        'authStatus' => 'authStatus',
         'installStatus' => 'installStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,7 +27,7 @@ class ConversationCategoryModel extends Model
     public $categoryName;
 
     /**
-     * @var \AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ConversationCategoryModel[]
+     * @var ConversationCategoryModel[]
      */
     public $children;
 
@@ -49,16 +49,14 @@ class ConversationCategoryModel extends Model
      */
     public $order;
     protected $_name = [
-        'categoryId'   => 'categoryId',
+        'categoryId' => 'categoryId',
         'categoryName' => 'categoryName',
-        'children'     => 'children',
-        'levelNum'     => 'levelNum',
-        'order'        => 'order',
+        'children' => 'children',
+        'levelNum' => 'levelNum',
+        'order' => 'order',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -105,7 +103,7 @@ class ConversationCategoryModel extends Model
         if (isset($map['children'])) {
             if (!empty($map['children'])) {
                 $model->children = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['children'] as $item) {
                     $model->children[$n++] = null !== $item ? self::fromMap($item) : $item;
                 }

@@ -29,14 +29,12 @@ class InsertBlocksRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'blocks'     => 'blocks',
-        'location'   => 'location',
+        'blocks' => 'blocks',
+        'location' => 'location',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -71,7 +69,7 @@ class InsertBlocksRequest extends Model
         if (isset($map['blocks'])) {
             if (!empty($map['blocks'])) {
                 $model->blocks = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['blocks'] as $item) {
                     $model->blocks[$n++] = null !== $item ? blocks::fromMap($item) : $item;
                 }

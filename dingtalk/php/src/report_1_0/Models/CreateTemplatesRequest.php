@@ -100,26 +100,24 @@ class CreateTemplatesRequest extends Model
      */
     public $templateManagers;
     protected $_name = [
-        'allowAddReceivers'           => 'allowAddReceivers',
-        'allowEdit'                   => 'allowEdit',
-        'allowGetLocation'            => 'allowGetLocation',
-        'authDeptIds'                 => 'authDeptIds',
-        'authUserIds'                 => 'authUserIds',
-        'creator'                     => 'creator',
-        'defaultReceivedCids'         => 'defaultReceivedCids',
+        'allowAddReceivers' => 'allowAddReceivers',
+        'allowEdit' => 'allowEdit',
+        'allowGetLocation' => 'allowGetLocation',
+        'authDeptIds' => 'authDeptIds',
+        'authUserIds' => 'authUserIds',
+        'creator' => 'creator',
+        'defaultReceivedCids' => 'defaultReceivedCids',
         'defaultReceivedMasterLevels' => 'defaultReceivedMasterLevels',
-        'defaultReceivers'            => 'defaultReceivers',
-        'fields'                      => 'fields',
-        'logo'                        => 'logo',
-        'maxWordCount'                => 'maxWordCount',
-        'minWordCount'                => 'minWordCount',
-        'name'                        => 'name',
-        'templateManagers'            => 'templateManagers',
+        'defaultReceivers' => 'defaultReceivers',
+        'fields' => 'fields',
+        'logo' => 'logo',
+        'maxWordCount' => 'maxWordCount',
+        'minWordCount' => 'minWordCount',
+        'name' => 'name',
+        'templateManagers' => 'templateManagers',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -227,7 +225,7 @@ class CreateTemplatesRequest extends Model
         if (isset($map['fields'])) {
             if (!empty($map['fields'])) {
                 $model->fields = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['fields'] as $item) {
                     $model->fields[$n++] = null !== $item ? fields::fromMap($item) : $item;
                 }

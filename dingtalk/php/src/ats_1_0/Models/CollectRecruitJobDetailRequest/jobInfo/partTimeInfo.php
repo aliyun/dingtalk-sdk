@@ -78,21 +78,19 @@ class partTimeInfo extends Model
      */
     public $workStartDate;
     protected $_name = [
-        'contactNumber'    => 'contactNumber',
-        'salaryPeriod'     => 'salaryPeriod',
-        'settleType'       => 'settleType',
-        'specifyWorkDate'  => 'specifyWorkDate',
-        'specifyWorkTime'  => 'specifyWorkTime',
+        'contactNumber' => 'contactNumber',
+        'salaryPeriod' => 'salaryPeriod',
+        'settleType' => 'settleType',
+        'specifyWorkDate' => 'specifyWorkDate',
+        'specifyWorkTime' => 'specifyWorkTime',
         'workBeginTimeMin' => 'workBeginTimeMin',
-        'workDateType'     => 'workDateType',
-        'workEndDate'      => 'workEndDate',
-        'workEndTimeMin'   => 'workEndTimeMin',
-        'workStartDate'    => 'workStartDate',
+        'workDateType' => 'workDateType',
+        'workEndDate' => 'workEndDate',
+        'workEndTimeMin' => 'workEndTimeMin',
+        'workStartDate' => 'workStartDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

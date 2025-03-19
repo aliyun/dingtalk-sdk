@@ -132,31 +132,29 @@ class IndustrializeManufactureJobBookRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'corpId'               => 'corpId',
-        'extend'               => 'extend',
-        'instNo'               => 'instNo',
-        'isBatchJob'           => 'isBatchJob',
-        'manufactureDate'      => 'manufactureDate',
-        'mesAppKey'            => 'mesAppKey',
-        'processEnName'        => 'processEnName',
-        'processName'          => 'processName',
-        'productCode'          => 'productCode',
-        'productEnName'        => 'productEnName',
-        'productName'          => 'productName',
+        'corpId' => 'corpId',
+        'extend' => 'extend',
+        'instNo' => 'instNo',
+        'isBatchJob' => 'isBatchJob',
+        'manufactureDate' => 'manufactureDate',
+        'mesAppKey' => 'mesAppKey',
+        'processEnName' => 'processEnName',
+        'processName' => 'processName',
+        'productCode' => 'productCode',
+        'productEnName' => 'productEnName',
+        'productName' => 'productName',
         'productSpecification' => 'productSpecification',
-        'qualifiedQuantity'    => 'qualifiedQuantity',
-        'reworkableQuantity'   => 'reworkableQuantity',
-        'scrappedQuantity'     => 'scrappedQuantity',
-        'unitPrice'            => 'unitPrice',
-        'userIdList'           => 'userIdList',
-        'userName'             => 'userName',
-        'userNameList'         => 'userNameList',
-        'uuid'                 => 'uuid',
+        'qualifiedQuantity' => 'qualifiedQuantity',
+        'reworkableQuantity' => 'reworkableQuantity',
+        'scrappedQuantity' => 'scrappedQuantity',
+        'unitPrice' => 'unitPrice',
+        'userIdList' => 'userIdList',
+        'userName' => 'userName',
+        'userNameList' => 'userNameList',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class outOrgUserList extends Model
      */
     public $watchProgressMs;
     protected $_name = [
-        'name'              => 'name',
-        'watchLiveTime'     => 'watchLiveTime',
+        'name' => 'name',
+        'watchLiveTime' => 'watchLiveTime',
         'watchPlaybackTime' => 'watchPlaybackTime',
-        'watchProgressMs'   => 'watchProgressMs',
+        'watchProgressMs' => 'watchProgressMs',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

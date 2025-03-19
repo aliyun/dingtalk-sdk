@@ -53,20 +53,18 @@ class empList extends Model
      */
     public $userid;
     protected $_name = [
-        'avatar'     => 'avatar',
+        'avatar' => 'avatar',
         'deptIdList' => 'dept_id_list',
-        'dingId'     => 'dingId',
-        'name'       => 'name',
-        'nick'       => 'nick',
-        'orgId'      => 'orgId',
-        'position'   => 'position',
-        'unionid'    => 'unionid',
-        'userid'     => 'userid',
+        'dingId' => 'dingId',
+        'name' => 'name',
+        'nick' => 'nick',
+        'orgId' => 'orgId',
+        'position' => 'position',
+        'unionid' => 'unionid',
+        'userid' => 'userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

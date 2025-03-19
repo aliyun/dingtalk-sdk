@@ -20,9 +20,7 @@ class DataSyncRequest extends Model
         'sql' => 'sql',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

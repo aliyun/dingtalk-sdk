@@ -25,9 +25,7 @@ class blocks extends Model
         'paragraph' => 'paragraph',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

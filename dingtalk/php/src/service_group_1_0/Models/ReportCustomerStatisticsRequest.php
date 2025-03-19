@@ -75,20 +75,18 @@ class ReportCustomerStatisticsRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'groupOwnerUserIds'   => 'groupOwnerUserIds',
-        'groupTags'           => 'groupTags',
-        'maxDt'               => 'maxDt',
-        'minDt'               => 'minDt',
+        'groupOwnerUserIds' => 'groupOwnerUserIds',
+        'groupTags' => 'groupTags',
+        'maxDt' => 'maxDt',
+        'minDt' => 'minDt',
         'openConversationIds' => 'openConversationIds',
-        'openGroupSetId'      => 'openGroupSetId',
-        'openTeamId'          => 'openTeamId',
-        'pageNumber'          => 'pageNumber',
-        'pageSize'            => 'pageSize',
+        'openGroupSetId' => 'openGroupSetId',
+        'openTeamId' => 'openTeamId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

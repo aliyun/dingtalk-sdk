@@ -21,12 +21,10 @@ class openInfo extends Model
     public $openId;
     protected $_name = [
         'attribute' => 'attribute',
-        'openId'    => 'openId',
+        'openId' => 'openId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

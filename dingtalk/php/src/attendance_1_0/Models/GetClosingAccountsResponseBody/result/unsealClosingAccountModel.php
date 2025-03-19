@@ -18,9 +18,7 @@ class unsealClosingAccountModel extends Model
         'invalidTimeStamp' => 'invalidTimeStamp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

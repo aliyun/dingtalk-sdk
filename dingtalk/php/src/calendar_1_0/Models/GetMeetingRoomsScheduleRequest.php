@@ -12,6 +12,7 @@ class GetMeetingRoomsScheduleRequest extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $endTime;
@@ -27,18 +28,17 @@ class GetMeetingRoomsScheduleRequest extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $startTime;
     protected $_name = [
-        'endTime'   => 'endTime',
-        'roomIds'   => 'roomIds',
+        'endTime' => 'endTime',
+        'roomIds' => 'roomIds',
         'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

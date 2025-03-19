@@ -47,16 +47,14 @@ class legalPersonCertInfo extends Model
      */
     public $idCardNo;
     protected $_name = [
-        'certBackImage'  => 'certBackImage',
+        'certBackImage' => 'certBackImage',
         'certFrontImage' => 'certFrontImage',
-        'certName'       => 'certName',
-        'certType'       => 'certType',
-        'idCardNo'       => 'idCardNo',
+        'certName' => 'certName',
+        'certType' => 'certType',
+        'idCardNo' => 'idCardNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

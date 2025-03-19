@@ -27,12 +27,10 @@ class darkWatermarkVOList extends Model
     public $userId;
     protected $_name = [
         'darkWatermark' => 'darkWatermark',
-        'userId'        => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

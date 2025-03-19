@@ -44,15 +44,13 @@ class SaveOpenTerminalInfoRequest extends Model
      */
     public $openExt;
     protected $_name = [
-        'corpId'    => 'corpId',
+        'corpId' => 'corpId',
         'logSource' => 'logSource',
-        'logType'   => 'logType',
-        'openExt'   => 'openExt',
+        'logType' => 'logType',
+        'openExt' => 'openExt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

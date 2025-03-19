@@ -16,9 +16,7 @@ class OpportunitySearchResponseBody extends Model
         'opportunityExist' => 'opportunityExist',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,12 +27,10 @@ class quotaModelList extends Model
     public $usedStorage;
     protected $_name = [
         'statisticTime' => 'statisticTime',
-        'usedStorage'   => 'usedStorage',
+        'usedStorage' => 'usedStorage',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,13 +19,11 @@ class CopyFileResponseBody extends Model
      */
     public $taskId;
     protected $_name = [
-        'file'   => 'file',
+        'file' => 'file',
         'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,12 +22,10 @@ class filter extends Model
     public $conditions;
     protected $_name = [
         'combination' => 'combination',
-        'conditions'  => 'conditions',
+        'conditions' => 'conditions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class filter extends Model
         if (isset($map['conditions'])) {
             if (!empty($map['conditions'])) {
                 $model->conditions = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['conditions'] as $item) {
                     $model->conditions[$n++] = null !== $item ? conditions::fromMap($item) : $item;
                 }

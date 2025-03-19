@@ -49,16 +49,14 @@ class CreateDentryRequest extends Model
      */
     public $parentDentryId;
     protected $_name = [
-        'dentryType'     => 'dentryType',
-        'documentType'   => 'documentType',
-        'name'           => 'name',
-        'operatorId'     => 'operatorId',
+        'dentryType' => 'dentryType',
+        'documentType' => 'documentType',
+        'name' => 'name',
+        'operatorId' => 'operatorId',
         'parentDentryId' => 'parentDentryId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

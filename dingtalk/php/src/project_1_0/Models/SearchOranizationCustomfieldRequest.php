@@ -51,16 +51,14 @@ class SearchOranizationCustomfieldRequest extends Model
     public $query;
     protected $_name = [
         'customFieldIds' => 'customFieldIds',
-        'instanceIds'    => 'instanceIds',
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
-        'projectIds'     => 'projectIds',
-        'query'          => 'query',
+        'instanceIds' => 'instanceIds',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'projectIds' => 'projectIds',
+        'query' => 'query',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

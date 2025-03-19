@@ -45,18 +45,16 @@ class records extends Model
      */
     public $ticketMemo;
     protected $_name = [
-        'openTicketId'         => 'openTicketId',
-        'operateData'          => 'operateData',
-        'operateTime'          => 'operateTime',
-        'operation'            => 'operation',
+        'openTicketId' => 'openTicketId',
+        'operateData' => 'operateData',
+        'operateTime' => 'operateTime',
+        'operation' => 'operation',
         'operationDisplayName' => 'operationDisplayName',
-        'operator'             => 'operator',
-        'ticketMemo'           => 'ticketMemo',
+        'operator' => 'operator',
+        'ticketMemo' => 'ticketMemo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

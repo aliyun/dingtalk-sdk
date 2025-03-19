@@ -29,14 +29,12 @@ class AddToOrgSkillRepositoryRequest extends Model
      */
     public $operatorUnionId;
     protected $_name = [
-        'actionId'        => 'actionId',
-        'actionVersion'   => 'actionVersion',
+        'actionId' => 'actionId',
+        'actionVersion' => 'actionVersion',
         'operatorUnionId' => 'operatorUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

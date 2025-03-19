@@ -20,9 +20,7 @@ class UploadFileResponseBody extends Model
         'mediaId' => 'mediaId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

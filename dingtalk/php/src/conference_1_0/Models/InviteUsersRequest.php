@@ -27,14 +27,12 @@ class InviteUsersRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'inviteeList'      => 'inviteeList',
+        'inviteeList' => 'inviteeList',
         'phoneInviteeList' => 'phoneInviteeList',
-        'unionId'          => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -75,7 +73,7 @@ class InviteUsersRequest extends Model
         if (isset($map['inviteeList'])) {
             if (!empty($map['inviteeList'])) {
                 $model->inviteeList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['inviteeList'] as $item) {
                     $model->inviteeList[$n++] = null !== $item ? inviteeList::fromMap($item) : $item;
                 }
@@ -84,7 +82,7 @@ class InviteUsersRequest extends Model
         if (isset($map['phoneInviteeList'])) {
             if (!empty($map['phoneInviteeList'])) {
                 $model->phoneInviteeList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['phoneInviteeList'] as $item) {
                     $model->phoneInviteeList[$n++] = null !== $item ? phoneInviteeList::fromMap($item) : $item;
                 }

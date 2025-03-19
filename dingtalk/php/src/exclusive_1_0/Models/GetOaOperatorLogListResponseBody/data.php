@@ -52,15 +52,13 @@ class data extends Model
     protected $_name = [
         'category1Name' => 'category1Name',
         'category2Name' => 'category2Name',
-        'content'       => 'content',
-        'opName'        => 'opName',
-        'opTime'        => 'opTime',
-        'opUserId'      => 'opUserId',
+        'content' => 'content',
+        'opName' => 'opName',
+        'opTime' => 'opTime',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

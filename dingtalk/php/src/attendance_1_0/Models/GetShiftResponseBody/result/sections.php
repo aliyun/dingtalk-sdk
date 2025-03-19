@@ -25,14 +25,12 @@ class sections extends Model
      */
     public $sectionId;
     protected $_name = [
-        'punches'   => 'punches',
-        'rests'     => 'rests',
+        'punches' => 'punches',
+        'rests' => 'rests',
         'sectionId' => 'sectionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -73,7 +71,7 @@ class sections extends Model
         if (isset($map['punches'])) {
             if (!empty($map['punches'])) {
                 $model->punches = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['punches'] as $item) {
                     $model->punches[$n++] = null !== $item ? punches::fromMap($item) : $item;
                 }
@@ -82,7 +80,7 @@ class sections extends Model
         if (isset($map['rests'])) {
             if (!empty($map['rests'])) {
                 $model->rests = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['rests'] as $item) {
                     $model->rests[$n++] = null !== $item ? rests::fromMap($item) : $item;
                 }

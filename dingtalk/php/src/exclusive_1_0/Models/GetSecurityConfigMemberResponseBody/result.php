@@ -29,15 +29,13 @@ class result extends Model
      */
     public $userInfos;
     protected $_name = [
-        'hasNext'   => 'hasNext',
+        'hasNext' => 'hasNext',
         'nextToken' => 'nextToken',
         'scopeType' => 'scopeType',
         'userInfos' => 'userInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -84,7 +82,7 @@ class result extends Model
         if (isset($map['userInfos'])) {
             if (!empty($map['userInfos'])) {
                 $model->userInfos = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['userInfos'] as $item) {
                     $model->userInfos[$n++] = null !== $item ? userInfos::fromMap($item) : $item;
                 }

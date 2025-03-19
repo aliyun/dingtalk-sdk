@@ -27,12 +27,10 @@ class groupTrend extends Model
     public $dt;
     protected $_name = [
         'count' => 'count',
-        'dt'    => 'dt',
+        'dt' => 'dt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

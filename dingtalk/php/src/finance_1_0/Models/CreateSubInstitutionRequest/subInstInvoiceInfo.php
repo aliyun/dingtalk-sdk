@@ -98,24 +98,22 @@ class subInstInvoiceInfo extends Model
      */
     public $title;
     protected $_name = [
-        'acceptElectronic'      => 'acceptElectronic',
-        'address'               => 'address',
-        'autoInvoice'           => 'autoInvoice',
-        'bankAccount'           => 'bankAccount',
-        'bankName'              => 'bankName',
-        'mailAddress'           => 'mailAddress',
-        'mailName'              => 'mailName',
-        'mailPhone'             => 'mailPhone',
-        'taxNo'                 => 'taxNo',
+        'acceptElectronic' => 'acceptElectronic',
+        'address' => 'address',
+        'autoInvoice' => 'autoInvoice',
+        'bankAccount' => 'bankAccount',
+        'bankName' => 'bankName',
+        'mailAddress' => 'mailAddress',
+        'mailName' => 'mailName',
+        'mailPhone' => 'mailPhone',
+        'taxNo' => 'taxNo',
         'taxPayerQualification' => 'taxPayerQualification',
-        'taxPayerValidDate'     => 'taxPayerValidDate',
-        'telephone'             => 'telephone',
-        'title'                 => 'title',
+        'taxPayerValidDate' => 'taxPayerValidDate',
+        'telephone' => 'telephone',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

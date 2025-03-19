@@ -19,13 +19,11 @@ class CopyTemplateResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'data'    => 'data',
+        'data' => 'data',
         'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

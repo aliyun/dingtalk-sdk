@@ -37,14 +37,12 @@ class componentList extends Model
     public $type;
     protected $_name = [
         'bindingVal' => 'bindingVal',
-        'code'       => 'code',
-        'name'       => 'name',
-        'type'       => 'type',
+        'code' => 'code',
+        'name' => 'name',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

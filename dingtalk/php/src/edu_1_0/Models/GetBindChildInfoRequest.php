@@ -35,14 +35,12 @@ class GetBindChildInfoRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'schoolCorpId'  => 'schoolCorpId',
+        'schoolCorpId' => 'schoolCorpId',
         'studentUserId' => 'studentUserId',
-        'unionId'       => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

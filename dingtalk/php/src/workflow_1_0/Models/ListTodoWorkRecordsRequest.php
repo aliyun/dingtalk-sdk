@@ -45,14 +45,12 @@ class ListTodoWorkRecordsRequest extends Model
     public $userId;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'status'     => 'status',
-        'userId'     => 'userId',
+        'nextToken' => 'nextToken',
+        'status' => 'status',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

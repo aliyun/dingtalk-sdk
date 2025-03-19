@@ -17,9 +17,7 @@ class QueryCollectionInfoListResponseBody extends Model
         'collectionInfoList' => 'collectionInfoList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class QueryCollectionInfoListResponseBody extends Model
         if (isset($map['collectionInfoList'])) {
             if (!empty($map['collectionInfoList'])) {
                 $model->collectionInfoList = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['collectionInfoList'] as $item) {
                     $model->collectionInfoList[$n++] = null !== $item ? collectionInfoList::fromMap($item) : $item;
                 }

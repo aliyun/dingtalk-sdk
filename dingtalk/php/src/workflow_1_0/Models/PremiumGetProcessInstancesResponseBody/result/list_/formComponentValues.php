@@ -43,14 +43,12 @@ class formComponentValues extends Model
     public $value;
     protected $_name = [
         'extValue' => 'extValue',
-        'id'       => 'id',
-        'name'     => 'name',
-        'value'    => 'value',
+        'id' => 'id',
+        'name' => 'name',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

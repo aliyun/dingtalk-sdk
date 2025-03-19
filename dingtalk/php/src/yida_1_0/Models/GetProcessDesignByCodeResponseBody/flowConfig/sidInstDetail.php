@@ -23,12 +23,10 @@ class sidInstDetail extends Model
     public $fieldId;
     protected $_name = [
         'fieldBehavior' => 'fieldBehavior',
-        'fieldId'       => 'fieldId',
+        'fieldId' => 'fieldId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

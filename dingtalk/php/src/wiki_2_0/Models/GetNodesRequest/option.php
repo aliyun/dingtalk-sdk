@@ -22,13 +22,11 @@ class option extends Model
      */
     public $withStatisticalInfo;
     protected $_name = [
-        'withPermissionRole'  => 'withPermissionRole',
+        'withPermissionRole' => 'withPermissionRole',
         'withStatisticalInfo' => 'withStatisticalInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -24,14 +24,12 @@ class dentryResult extends Model
      */
     public $nextToken;
     protected $_name = [
-        'hasMore'   => 'hasMore',
-        'items'     => 'items',
+        'hasMore' => 'hasMore',
+        'items' => 'items',
         'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -69,7 +67,7 @@ class dentryResult extends Model
         if (isset($map['items'])) {
             if (!empty($map['items'])) {
                 $model->items = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['items'] as $item) {
                     $model->items[$n++] = null !== $item ? items::fromMap($item) : $item;
                 }

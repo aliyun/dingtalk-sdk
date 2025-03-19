@@ -18,9 +18,7 @@ class GetGroupSetRequest extends Model
         'openGroupSetId' => 'openGroupSetId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

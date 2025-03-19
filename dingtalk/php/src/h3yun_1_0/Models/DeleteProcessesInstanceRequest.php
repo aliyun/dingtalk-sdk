@@ -27,12 +27,10 @@ class DeleteProcessesInstanceRequest extends Model
     public $processInstanceId;
     protected $_name = [
         'isAutoUpdateBizObject' => 'isAutoUpdateBizObject',
-        'processInstanceId'     => 'processInstanceId',
+        'processInstanceId' => 'processInstanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

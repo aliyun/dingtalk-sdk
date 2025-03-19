@@ -28,14 +28,12 @@ class GetPublicDevicesResponseBody extends Model
      */
     public $totalCnt;
     protected $_name = [
-        'data'     => 'data',
-        'dataCnt'  => 'dataCnt',
+        'data' => 'data',
+        'dataCnt' => 'dataCnt',
         'totalCnt' => 'totalCnt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class GetPublicDevicesResponseBody extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }

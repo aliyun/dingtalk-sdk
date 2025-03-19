@@ -57,17 +57,15 @@ class setting extends Model
     public $workTimeMinutes;
     protected $_name = [
         'absenteeismLateMinutes' => 'absenteeismLateMinutes',
-        'classSettingId'         => 'classSettingId',
-        'isOffDutyFreeCheck'     => 'isOffDutyFreeCheck',
-        'permitLateMinutes'      => 'permitLateMinutes',
-        'restTimeList'           => 'restTimeList',
-        'seriousLateMinutes'     => 'seriousLateMinutes',
-        'workTimeMinutes'        => 'workTimeMinutes',
+        'classSettingId' => 'classSettingId',
+        'isOffDutyFreeCheck' => 'isOffDutyFreeCheck',
+        'permitLateMinutes' => 'permitLateMinutes',
+        'restTimeList' => 'restTimeList',
+        'seriousLateMinutes' => 'seriousLateMinutes',
+        'workTimeMinutes' => 'workTimeMinutes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -126,7 +124,7 @@ class setting extends Model
         if (isset($map['restTimeList'])) {
             if (!empty($map['restTimeList'])) {
                 $model->restTimeList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['restTimeList'] as $item) {
                     $model->restTimeList[$n++] = null !== $item ? restTimeList::fromMap($item) : $item;
                 }

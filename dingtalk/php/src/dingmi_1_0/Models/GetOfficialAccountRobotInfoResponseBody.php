@@ -62,17 +62,15 @@ class GetOfficialAccountRobotInfoResponseBody extends Model
      */
     public $previewMediaUrl;
     protected $_name = [
-        'appId'           => 'appId',
-        'brief'           => 'brief',
-        'description'     => 'description',
-        'icon'            => 'icon',
-        'name'            => 'name',
+        'appId' => 'appId',
+        'brief' => 'brief',
+        'description' => 'description',
+        'icon' => 'icon',
+        'name' => 'name',
         'previewMediaUrl' => 'previewMediaUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -50,17 +50,15 @@ class result extends Model
      */
     public $userName;
     protected $_name = [
-        'legalPerson'         => 'legalPerson',
-        'mobilePhoneNumber'   => 'mobilePhoneNumber',
-        'orgName'             => 'orgName',
-        'stateCode'           => 'stateCode',
+        'legalPerson' => 'legalPerson',
+        'mobilePhoneNumber' => 'mobilePhoneNumber',
+        'orgName' => 'orgName',
+        'stateCode' => 'stateCode',
         'unifiedSocialCredit' => 'unifiedSocialCredit',
-        'userName'            => 'userName',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

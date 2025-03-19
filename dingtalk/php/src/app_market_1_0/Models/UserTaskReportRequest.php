@@ -44,15 +44,13 @@ class UserTaskReportRequest extends Model
      */
     public $userid;
     protected $_name = [
-        'bizNo'       => 'bizNo',
+        'bizNo' => 'bizNo',
         'operateDate' => 'operateDate',
-        'taskTag'     => 'taskTag',
-        'userid'      => 'userid',
+        'taskTag' => 'taskTag',
+        'userid' => 'userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -33,15 +33,13 @@ class sceneContext extends Model
      */
     public $topicId;
     protected $_name = [
-        'groupMsgs'          => 'groupMsgs',
+        'groupMsgs' => 'groupMsgs',
         'openConversationId' => 'openConversationId',
         'relevantorUnionIds' => 'relevantorUnionIds',
-        'topicId'            => 'topicId',
+        'topicId' => 'topicId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -79,7 +77,7 @@ class sceneContext extends Model
         if (isset($map['groupMsgs'])) {
             if (!empty($map['groupMsgs'])) {
                 $model->groupMsgs = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['groupMsgs'] as $item) {
                     $model->groupMsgs[$n++] = null !== $item ? groupMsgs::fromMap($item) : $item;
                 }

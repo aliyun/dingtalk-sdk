@@ -30,14 +30,12 @@ class successItems extends Model
     public $success;
     protected $_name = [
         'errorCode' => 'errorCode',
-        'errorMsg'  => 'errorMsg',
-        'result'    => 'result',
-        'success'   => 'success',
+        'errorMsg' => 'errorMsg',
+        'result' => 'result',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -116,26 +116,24 @@ class TeamVO extends Model
      */
     public $visitInfo;
     protected $_name = [
-        'cover'           => 'cover',
-        'createdTime'     => 'createdTime',
-        'creator'         => 'creator',
-        'description'     => 'description',
-        'icon'            => 'icon',
-        'id'              => 'id',
-        'name'            => 'name',
+        'cover' => 'cover',
+        'createdTime' => 'createdTime',
+        'creator' => 'creator',
+        'description' => 'description',
+        'icon' => 'icon',
+        'id' => 'id',
+        'name' => 'name',
         'relatedDeptInfo' => 'relatedDeptInfo',
-        'shareScopeInfo'  => 'shareScopeInfo',
-        'status'          => 'status',
-        'type'            => 'type',
-        'updatedTime'     => 'updatedTime',
-        'updater'         => 'updater',
-        'url'             => 'url',
-        'visitInfo'       => 'visitInfo',
+        'shareScopeInfo' => 'shareScopeInfo',
+        'status' => 'status',
+        'type' => 'type',
+        'updatedTime' => 'updatedTime',
+        'updater' => 'updater',
+        'url' => 'url',
+        'visitInfo' => 'visitInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

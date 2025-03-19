@@ -20,12 +20,10 @@ class choices extends Model
     public $message;
     protected $_name = [
         'finishReason' => 'finishReason',
-        'message'      => 'message',
+        'message' => 'message',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

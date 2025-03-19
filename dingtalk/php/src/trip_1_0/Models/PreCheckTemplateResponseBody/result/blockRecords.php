@@ -19,12 +19,10 @@ class blockRecords extends Model
     public $reason;
     protected $_name = [
         'blockType' => 'blockType',
-        'reason'    => 'reason',
+        'reason' => 'reason',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

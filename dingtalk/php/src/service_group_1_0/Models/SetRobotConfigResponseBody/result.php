@@ -18,13 +18,11 @@ class result extends Model
      */
     public $configValue;
     protected $_name = [
-        'configKey'   => 'configKey',
+        'configKey' => 'configKey',
         'configValue' => 'configValue',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

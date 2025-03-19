@@ -23,12 +23,10 @@ class ExtractFacialFeatureRequest extends Model
     public $userid;
     protected $_name = [
         'mediaId' => 'mediaId',
-        'userid'  => 'userid',
+        'userid' => 'userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

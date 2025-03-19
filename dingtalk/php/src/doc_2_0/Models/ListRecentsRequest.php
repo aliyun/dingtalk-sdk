@@ -19,9 +19,7 @@ class ListRecentsRequest extends Model
         'param' => 'param',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

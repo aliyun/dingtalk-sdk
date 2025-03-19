@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddDomainWordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddToOrgSkillRepositoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddToOrgSkillRepositoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddToOrgSkillRepositoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\BatchGetAICreditsRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\BatchGetAICreditsRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\BatchGetAICreditsRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\CreateAssistantHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\CreateAssistantMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\CreateAssistantMessageRequest;
@@ -63,6 +66,9 @@ use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListAssistantResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListAssistantRunHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListAssistantRunRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListAssistantRunResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListVisibleAssistantHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListVisibleAssistantRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListVisibleAssistantResponse;
@@ -108,8 +114,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -144,18 +150,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddDomainWords',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/domainWords',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddDomainWords',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/domainWords',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddDomainWordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -207,18 +213,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddToOrgSkillRepository',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/orgActionRepositories',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddToOrgSkillRepository',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/orgActionRepositories',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddToOrgSkillRepositoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -237,6 +243,78 @@ class Dingtalk extends OpenApiClient
         $headers = new AddToOrgSkillRepositoryHeaders([]);
 
         return $this->addToOrgSkillRepositoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页查询算粒的使用记录
+     *  *
+     * @param BatchGetAICreditsRecordRequest $request BatchGetAICreditsRecordRequest
+     * @param BatchGetAICreditsRecordHeaders $headers BatchGetAICreditsRecordHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchGetAICreditsRecordResponse BatchGetAICreditsRecordResponse
+     */
+    public function batchGetAICreditsRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->assistantId)) {
+            $query['assistantId'] = $request->assistantId;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            $query['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'BatchGetAICreditsRecord',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/aiCredits/list',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return BatchGetAICreditsRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页查询算粒的使用记录
+     *  *
+     * @param BatchGetAICreditsRecordRequest $request BatchGetAICreditsRecordRequest
+     *
+     * @return BatchGetAICreditsRecordResponse BatchGetAICreditsRecordResponse
+     */
+    public function batchGetAICreditsRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchGetAICreditsRecordHeaders([]);
+
+        return $this->batchGetAICreditsRecordWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -282,18 +360,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateAssistant',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/basicInfo',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateAssistant',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/basicInfo',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateAssistantResponse::fromMap($this->execute($params, $req, $runtime));
@@ -349,18 +427,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateAssistantMessage',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/threads/' . $threadId . '/messages',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateAssistantMessage',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/threads/' . $threadId . '/messages',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateAssistantMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -417,18 +495,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateAssistantRun',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/threads/' . $threadId . '/runs',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateAssistantRun',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/threads/' . $threadId . '/runs',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateAssistantRunResponse::fromMap($this->execute($params, $req, $runtime));
@@ -475,18 +553,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateAssistantThread',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/threads',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateAssistantThread',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/threads',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateAssistantThreadResponse::fromMap($this->execute($params, $req, $runtime));
@@ -535,18 +613,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteAssistant',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/basicInfo',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteAssistant',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/basicInfo',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteAssistantResponse::fromMap($this->execute($params, $req, $runtime));
@@ -590,15 +668,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DeleteAssistantMessage',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/threads/' . $threadId . '/messages/' . $messageId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteAssistantMessage',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/threads/' . $threadId . '/messages/' . $messageId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteAssistantMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -642,15 +720,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DeleteAssistantThread',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/threads/' . $threadId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteAssistantThread',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/threads/' . $threadId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteAssistantThreadResponse::fromMap($this->execute($params, $req, $runtime));
@@ -699,18 +777,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteDomainWords',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/domainWords/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteDomainWords',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/domainWords/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteDomainWordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -759,18 +837,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteKnowledge',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/knowledges/items',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteKnowledge',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/knowledges/items',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteKnowledgeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -828,18 +906,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAskDetail',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/askDetails',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAskDetail',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/askDetails',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAskDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -885,18 +963,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAssistantActionInfo',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/actionLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAssistantActionInfo',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/actionLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAssistantActionInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -942,18 +1020,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDomainWords',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/domainWords',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDomainWords',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/domainWords',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDomainWordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -999,18 +1077,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetKnowledgeList',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/knowledges/items',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetKnowledgeList',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/knowledges/items',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetKnowledgeListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1059,18 +1137,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InstallAssistant',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/install',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InstallAssistant',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/install',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InstallAssistantResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1119,18 +1197,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'LearnKnowledge',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/knowledges/items',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'LearnKnowledge',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/knowledges/items',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return LearnKnowledgeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1182,18 +1260,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListAssistant',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/list',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAssistant',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/list',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAssistantResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1246,18 +1324,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListAssistantMessage',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/threads/' . $threadId . '/messages',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAssistantMessage',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/threads/' . $threadId . '/messages',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAssistantMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1308,18 +1386,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListAssistantRun',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/threads/' . $threadId . '/runs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAssistantRun',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/threads/' . $threadId . '/runs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAssistantRunResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1339,6 +1417,63 @@ class Dingtalk extends OpenApiClient
         $headers = new ListAssistantRunHeaders([]);
 
         return $this->listAssistantRunWithOptions($threadId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取指定助理在组织下已安装的实例信息列表
+     *  *
+     * @param ListInstanceRequest $request ListInstanceRequest
+     * @param ListInstanceHeaders $headers ListInstanceHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListInstanceResponse ListInstanceResponse
+     */
+    public function listInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->prototypeAssistantId)) {
+            $query['prototypeAssistantId'] = $request->prototypeAssistantId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ListInstance',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/instances/list',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListInstanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取指定助理在组织下已安装的实例信息列表
+     *  *
+     * @param ListInstanceRequest $request ListInstanceRequest
+     *
+     * @return ListInstanceResponse ListInstanceResponse
+     */
+    public function listInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListInstanceHeaders([]);
+
+        return $this->listInstanceWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1375,18 +1510,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListVisibleAssistant',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/visibleList',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListVisibleAssistant',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/visibleList',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListVisibleAssistantResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1444,18 +1579,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'LogList',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/logs/list',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'LogList',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/logs/list',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return LogListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1501,18 +1636,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RelearnKnowledge',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/knowledges/incrLearning',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RelearnKnowledge',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/knowledges/incrLearning',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RelearnKnowledgeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1561,18 +1696,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RemoveAssistant',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/uninstall',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveAssistant',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/uninstall',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemoveAssistantResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1621,18 +1756,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RemoveFromOrgSkillRepository',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/orgActionRepositories',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveFromOrgSkillRepository',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/orgActionRepositories',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemoveFromOrgSkillRepositoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1681,18 +1816,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RetrieveAssistantBasicInfo',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/basicInfo',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RetrieveAssistantBasicInfo',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/basicInfo',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RetrieveAssistantBasicInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1736,15 +1871,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'RetrieveAssistantMessage',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/threads/' . $threadId . '/messages/' . $messageId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RetrieveAssistantMessage',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/threads/' . $threadId . '/messages/' . $messageId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RetrieveAssistantMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1789,15 +1924,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'RetrieveAssistantRun',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/threads/' . $threadId . '/runs/' . $runId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RetrieveAssistantRun',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/threads/' . $threadId . '/runs/' . $runId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RetrieveAssistantRunResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1844,18 +1979,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RetrieveAssistantScope',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/scope',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RetrieveAssistantScope',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/scope',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RetrieveAssistantScopeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1898,15 +2033,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'RetrieveAssistantThread',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/threads/' . $threadId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RetrieveAssistantThread',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/threads/' . $threadId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RetrieveAssistantThreadResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1976,18 +2111,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateAssistantBasicInfo',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/basicInfo',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateAssistantBasicInfo',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/basicInfo',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateAssistantBasicInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2042,18 +2177,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateAssistantScope',
-            'version'     => 'assistant_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/assistant/scope',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateAssistantScope',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/scope',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'any',
+            'bodyType' => 'any',
         ]);
 
         return UpdateAssistantScopeResponse::fromMap($this->execute($params, $req, $runtime));

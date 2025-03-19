@@ -25,13 +25,11 @@ class BatchCreateTeamRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'param'      => 'param',
+        'param' => 'param',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

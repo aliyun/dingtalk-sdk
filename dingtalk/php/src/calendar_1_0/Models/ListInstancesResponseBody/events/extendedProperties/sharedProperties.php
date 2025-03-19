@@ -18,13 +18,11 @@ class sharedProperties extends Model
      */
     public $sourceOpenCid;
     protected $_name = [
-        'belongCorpId'  => 'belongCorpId',
+        'belongCorpId' => 'belongCorpId',
         'sourceOpenCid' => 'sourceOpenCid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

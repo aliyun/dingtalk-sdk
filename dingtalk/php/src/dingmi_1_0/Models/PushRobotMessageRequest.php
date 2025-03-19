@@ -45,14 +45,12 @@ class PushRobotMessageRequest extends Model
     public $userId;
     protected $_name = [
         'chatbotId' => 'chatbotId',
-        'msgKey'    => 'msgKey',
-        'msgParam'  => 'msgParam',
-        'userId'    => 'userId',
+        'msgKey' => 'msgKey',
+        'msgParam' => 'msgParam',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

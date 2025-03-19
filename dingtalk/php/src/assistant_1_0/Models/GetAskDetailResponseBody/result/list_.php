@@ -49,19 +49,17 @@ class list_ extends Model
      */
     public $time;
     protected $_name = [
-        'answer'         => 'answer',
-        'answerResult'   => 'answerResult',
-        'commentTags'    => 'commentTags',
+        'answer' => 'answer',
+        'answerResult' => 'answerResult',
+        'commentTags' => 'commentTags',
         'isMarkResolved' => 'isMarkResolved',
-        'nick'           => 'nick',
-        'question'       => 'question',
-        'references'     => 'references',
-        'time'           => 'time',
+        'nick' => 'nick',
+        'question' => 'question',
+        'references' => 'references',
+        'time' => 'time',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -131,7 +129,7 @@ class list_ extends Model
         if (isset($map['references'])) {
             if (!empty($map['references'])) {
                 $model->references = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['references'] as $item) {
                     $model->references[$n++] = null !== $item ? references::fromMap($item) : $item;
                 }

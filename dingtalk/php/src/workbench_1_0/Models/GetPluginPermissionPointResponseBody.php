@@ -16,9 +16,7 @@ class GetPluginPermissionPointResponseBody extends Model
         'permissionPointList' => 'permissionPointList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

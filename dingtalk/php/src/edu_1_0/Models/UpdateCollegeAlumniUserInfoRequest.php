@@ -59,20 +59,18 @@ class UpdateCollegeAlumniUserInfoRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'address'       => 'address',
-        'deptIds'       => 'deptIds',
-        'email'         => 'email',
-        'intake'        => 'intake',
-        'name'          => 'name',
-        'operator'      => 'operator',
-        'outtake'       => 'outtake',
+        'address' => 'address',
+        'deptIds' => 'deptIds',
+        'email' => 'email',
+        'intake' => 'intake',
+        'name' => 'name',
+        'operator' => 'operator',
+        'outtake' => 'outtake',
         'studentNumber' => 'studentNumber',
-        'userId'        => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

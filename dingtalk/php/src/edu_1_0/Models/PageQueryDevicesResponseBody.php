@@ -28,14 +28,12 @@ class PageQueryDevicesResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'list'       => 'list',
-        'nextToken'  => 'nextToken',
+        'list' => 'list',
+        'nextToken' => 'nextToken',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class PageQueryDevicesResponseBody extends Model
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['list'] as $item) {
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }

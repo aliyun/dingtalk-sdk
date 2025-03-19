@@ -54,19 +54,17 @@ class RetrieveAssistantMessageResponseBody extends Model
     public $threadId;
     protected $_name = [
         'assisantId' => 'assisantId',
-        'content'    => 'content',
-        'createdAt'  => 'createdAt',
-        'id'         => 'id',
-        'metadata'   => 'metadata',
-        'object'     => 'object',
-        'role'       => 'role',
-        'runId'      => 'runId',
-        'threadId'   => 'threadId',
+        'content' => 'content',
+        'createdAt' => 'createdAt',
+        'id' => 'id',
+        'metadata' => 'metadata',
+        'object' => 'object',
+        'role' => 'role',
+        'runId' => 'runId',
+        'threadId' => 'threadId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

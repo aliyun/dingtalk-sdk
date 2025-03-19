@@ -74,21 +74,19 @@ class result extends Model
      */
     public $type;
     protected $_name = [
-        'deviceCode'       => 'deviceCode',
-        'deviceName'       => 'deviceName',
-        'gmtCreate'        => 'gmtCreate',
-        'handleTime'       => 'handleTime',
+        'deviceCode' => 'deviceCode',
+        'deviceName' => 'deviceName',
+        'gmtCreate' => 'gmtCreate',
+        'handleTime' => 'handleTime',
         'maintenanceStaff' => 'maintenanceStaff',
-        'name'             => 'name',
-        'remark'           => 'remark',
-        'repairStatus'     => 'repairStatus',
-        'status'           => 'status',
-        'type'             => 'type',
+        'name' => 'name',
+        'remark' => 'remark',
+        'repairStatus' => 'repairStatus',
+        'status' => 'status',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

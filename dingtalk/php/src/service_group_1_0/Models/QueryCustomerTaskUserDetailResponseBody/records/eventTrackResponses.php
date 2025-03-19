@@ -36,15 +36,13 @@ class eventTrackResponses extends Model
      */
     public $title;
     protected $_name = [
-        'clickTime'    => 'clickTime',
+        'clickTime' => 'clickTime',
         'eventTrackId' => 'eventTrackId',
-        'onClick'      => 'onClick',
-        'title'        => 'title',
+        'onClick' => 'onClick',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

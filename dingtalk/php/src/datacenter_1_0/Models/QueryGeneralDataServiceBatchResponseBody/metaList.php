@@ -37,14 +37,12 @@ class metaList extends Model
     public $fieldType;
     protected $_name = [
         'fieldDesc' => 'fieldDesc',
-        'fieldId'   => 'fieldId',
+        'fieldId' => 'fieldId',
         'fieldName' => 'fieldName',
         'fieldType' => 'fieldType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

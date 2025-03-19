@@ -22,13 +22,11 @@ class QueryPermissionRoleMemberRequest extends Model
      */
     public $roleCodeList;
     protected $_name = [
-        'companyCode'  => 'companyCode',
+        'companyCode' => 'companyCode',
         'roleCodeList' => 'roleCodeList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

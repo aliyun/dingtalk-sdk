@@ -16,9 +16,7 @@ class BatchRegisterEventTypeResponseBody extends Model
         'eventTypes' => 'eventTypes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

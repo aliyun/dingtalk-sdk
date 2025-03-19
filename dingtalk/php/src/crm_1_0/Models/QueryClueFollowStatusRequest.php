@@ -16,9 +16,7 @@ class QueryClueFollowStatusRequest extends Model
         'clueId' => 'clueId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

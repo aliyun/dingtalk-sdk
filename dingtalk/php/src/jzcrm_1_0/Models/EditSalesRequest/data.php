@@ -113,30 +113,28 @@ class data extends Model
      */
     public $xshType;
     protected $_name = [
-        'dataUserid'    => 'data_userid',
+        'dataUserid' => 'data_userid',
         'xshCustomerid' => 'xsh_customerid',
-        'xshDate'       => 'xsh_date',
-        'xshExpdate'    => 'xsh_expdate',
-        'xshExpmoney'   => 'xsh_expmoney',
-        'xshFrom'       => 'xsh_from',
-        'xshKnx'        => 'xsh_knx',
-        'xshLianxi'     => 'xsh_lianxi',
-        'xshLxrid'      => 'xsh_lxrid',
-        'xshMoneynote'  => 'xsh_moneynote',
-        'xshNumber'     => 'xsh_number',
-        'xshPhase'      => 'xsh_phase',
-        'xshPhasenote'  => 'xsh_phasenote',
-        'xshPreside'    => 'xsh_preside',
-        'xshProvider'   => 'xsh_provider',
-        'xshRequire'    => 'xsh_require',
-        'xshState'      => 'xsh_state',
-        'xshTitle'      => 'xsh_title',
-        'xshType'       => 'xsh_type',
+        'xshDate' => 'xsh_date',
+        'xshExpdate' => 'xsh_expdate',
+        'xshExpmoney' => 'xsh_expmoney',
+        'xshFrom' => 'xsh_from',
+        'xshKnx' => 'xsh_knx',
+        'xshLianxi' => 'xsh_lianxi',
+        'xshLxrid' => 'xsh_lxrid',
+        'xshMoneynote' => 'xsh_moneynote',
+        'xshNumber' => 'xsh_number',
+        'xshPhase' => 'xsh_phase',
+        'xshPhasenote' => 'xsh_phasenote',
+        'xshPreside' => 'xsh_preside',
+        'xshProvider' => 'xsh_provider',
+        'xshRequire' => 'xsh_require',
+        'xshState' => 'xsh_state',
+        'xshTitle' => 'xsh_title',
+        'xshType' => 'xsh_type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

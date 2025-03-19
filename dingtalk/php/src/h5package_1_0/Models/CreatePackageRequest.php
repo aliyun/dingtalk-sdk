@@ -36,15 +36,13 @@ class CreatePackageRequest extends Model
      */
     public $ossObjectKey;
     protected $_name = [
-        'agentId'      => 'agentId',
-        'appId'        => 'appId',
-        'homeUrl'      => 'homeUrl',
+        'agentId' => 'agentId',
+        'appId' => 'appId',
+        'homeUrl' => 'homeUrl',
         'ossObjectKey' => 'ossObjectKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

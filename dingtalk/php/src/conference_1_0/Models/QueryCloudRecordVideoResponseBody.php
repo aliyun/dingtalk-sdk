@@ -17,9 +17,7 @@ class QueryCloudRecordVideoResponseBody extends Model
         'videoList' => 'videoList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class QueryCloudRecordVideoResponseBody extends Model
         if (isset($map['videoList'])) {
             if (!empty($map['videoList'])) {
                 $model->videoList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['videoList'] as $item) {
                     $model->videoList[$n++] = null !== $item ? videoList::fromMap($item) : $item;
                 }

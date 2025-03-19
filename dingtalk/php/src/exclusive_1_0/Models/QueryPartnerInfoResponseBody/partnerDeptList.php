@@ -40,16 +40,14 @@ class partnerDeptList extends Model
      */
     public $value;
     protected $_name = [
-        'memberCount'             => 'memberCount',
+        'memberCount' => 'memberCount',
         'partnerLabelModelLevel1' => 'partnerLabelModelLevel1',
-        'partnerNum'              => 'partnerNum',
-        'title'                   => 'title',
-        'value'                   => 'value',
+        'partnerNum' => 'partnerNum',
+        'title' => 'title',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

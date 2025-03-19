@@ -43,18 +43,16 @@ class param extends Model
      */
     public $parentId;
     protected $_name = [
-        'deptId'            => 'deptId',
+        'deptId' => 'deptId',
         'deptManagerIdList' => 'deptManagerIdList',
-        'dingTalkDeptId'    => 'dingTalkDeptId',
-        'dingTalkParentId'  => 'dingTalkParentId',
-        'isDelete'          => 'isDelete',
-        'name'              => 'name',
-        'parentId'          => 'parentId',
+        'dingTalkDeptId' => 'dingTalkDeptId',
+        'dingTalkParentId' => 'dingTalkParentId',
+        'isDelete' => 'isDelete',
+        'name' => 'name',
+        'parentId' => 'parentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

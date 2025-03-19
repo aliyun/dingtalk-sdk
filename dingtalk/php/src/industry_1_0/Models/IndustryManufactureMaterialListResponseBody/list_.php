@@ -92,23 +92,21 @@ class list_ extends Model
      */
     public $unit;
     protected $_name = [
-        'category'      => 'category',
-        'corpId'        => 'corpId',
-        'ext'           => 'ext',
-        'instanceId'    => 'instanceId',
-        'materialName'  => 'materialName',
-        'materialNo'    => 'materialNo',
-        'processCode'   => 'processCode',
+        'category' => 'category',
+        'corpId' => 'corpId',
+        'ext' => 'ext',
+        'instanceId' => 'instanceId',
+        'materialName' => 'materialName',
+        'materialNo' => 'materialNo',
+        'processCode' => 'processCode',
         'specification' => 'specification',
-        'stockMaxWarn'  => 'stockMaxWarn',
-        'stockMinWarn'  => 'stockMinWarn',
-        'type'          => 'type',
-        'unit'          => 'unit',
+        'stockMaxWarn' => 'stockMaxWarn',
+        'stockMinWarn' => 'stockMinWarn',
+        'type' => 'type',
+        'unit' => 'unit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

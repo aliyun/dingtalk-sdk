@@ -18,9 +18,7 @@ class GetAuthInfoRequest extends Model
         'authCorpId' => 'authCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

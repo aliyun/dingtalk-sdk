@@ -25,14 +25,12 @@ class spaceRequest extends Model
      */
     public $withTeamInfo;
     protected $_name = [
-        'maxResults'   => 'maxResults',
-        'nextToken'    => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'withTeamInfo' => 'withTeamInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

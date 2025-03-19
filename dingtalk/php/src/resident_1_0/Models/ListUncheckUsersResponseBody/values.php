@@ -64,19 +64,17 @@ class values extends Model
      */
     public $unionId;
     protected $_name = [
-        'deptId'          => 'deptId',
-        'extension'       => 'extension',
-        'gmtCreate'       => 'gmtCreate',
-        'gmtModified'     => 'gmtModified',
+        'deptId' => 'deptId',
+        'extension' => 'extension',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
         'isPropertyOwner' => 'isPropertyOwner',
-        'name'            => 'name',
-        'status'          => 'status',
-        'unionId'         => 'unionId',
+        'name' => 'name',
+        'status' => 'status',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

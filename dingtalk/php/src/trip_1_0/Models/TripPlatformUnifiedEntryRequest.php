@@ -25,12 +25,10 @@ class TripPlatformUnifiedEntryRequest extends Model
     public $method;
     protected $_name = [
         'messages' => 'messages',
-        'method'   => 'method',
+        'method' => 'method',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

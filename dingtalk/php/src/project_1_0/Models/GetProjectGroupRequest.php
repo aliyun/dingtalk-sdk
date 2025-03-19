@@ -26,9 +26,7 @@ class GetProjectGroupRequest extends Model
         'viewerId' => 'viewerId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

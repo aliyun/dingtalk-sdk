@@ -22,13 +22,11 @@ class GetImageTempDownloadUrlRequest extends Model
      */
     public $sourceType;
     protected $_name = [
-        'mediaId'    => 'mediaId',
+        'mediaId' => 'mediaId',
         'sourceType' => 'sourceType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,13 +19,11 @@ class result extends Model
      */
     public $wrongQuestions;
     protected $_name = [
-        'saveSuccess'    => 'saveSuccess',
+        'saveSuccess' => 'saveSuccess',
         'wrongQuestions' => 'wrongQuestions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class result extends Model
         if (isset($map['wrongQuestions'])) {
             if (!empty($map['wrongQuestions'])) {
                 $model->wrongQuestions = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['wrongQuestions'] as $item) {
                     $model->wrongQuestions[$n++] = null !== $item ? wrongQuestions::fromMap($item) : $item;
                 }

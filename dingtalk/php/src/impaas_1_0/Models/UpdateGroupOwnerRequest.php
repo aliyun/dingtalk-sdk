@@ -28,13 +28,11 @@ class UpdateGroupOwnerRequest extends Model
     public $ownerUid;
     protected $_name = [
         'conversationId' => 'conversationId',
-        'operatorUid'    => 'operatorUid',
-        'ownerUid'       => 'ownerUid',
+        'operatorUid' => 'operatorUid',
+        'ownerUid' => 'ownerUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

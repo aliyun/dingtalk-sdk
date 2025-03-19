@@ -37,16 +37,14 @@ class QueryJobRanksRequest extends Model
      */
     public $rankName;
     protected $_name = [
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'rankCategoryId' => 'rankCategoryId',
-        'rankCode'       => 'rankCode',
-        'rankName'       => 'rankName',
+        'rankCode' => 'rankCode',
+        'rankName' => 'rankName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

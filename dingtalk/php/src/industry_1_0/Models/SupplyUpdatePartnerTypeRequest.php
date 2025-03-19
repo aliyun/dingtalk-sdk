@@ -32,13 +32,11 @@ class SupplyUpdatePartnerTypeRequest extends Model
     public $superId;
     protected $_name = [
         'labelId' => 'labelId',
-        'name'    => 'name',
+        'name' => 'name',
         'superId' => 'superId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

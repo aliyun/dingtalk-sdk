@@ -80,8 +80,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -125,18 +125,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AppendSpace',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/instances/spaces',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AppendSpace',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/instances/spaces',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AppendSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -194,18 +194,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AppendSpaceWithDelegate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/me/instances/spaces',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AppendSpaceWithDelegate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/me/instances/spaces',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AppendSpaceWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -254,18 +254,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CloseTopCard',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/tops/close',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CloseTopCard',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/tops/close',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CloseTopCardResponse::fromMap($this->execute($params, $req, $runtime));
@@ -311,18 +311,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CopyTemplate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/templates/copy',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CopyTemplate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/templates/copy',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CopyTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -431,18 +431,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateAndDeliver',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/instances/createAndDeliver',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateAndDeliver',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/instances/createAndDeliver',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateAndDeliverResponse::fromMap($this->execute($params, $req, $runtime));
@@ -548,18 +548,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateAndDeliverWithDelegate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/me/instances/createAndDeliver',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateAndDeliverWithDelegate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/me/instances/createAndDeliver',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateAndDeliverWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -647,18 +647,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateCard',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/instances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateCard',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/instances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateCardResponse::fromMap($this->execute($params, $req, $runtime));
@@ -743,18 +743,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateCardWithDelegate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/me/instances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateCardWithDelegate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/me/instances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateCardWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -812,18 +812,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTemplate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/templates',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTemplate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/templates',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -869,18 +869,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteTemplate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/templates/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteTemplate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/templates/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -950,18 +950,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeliverCard',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/instances/deliver',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeliverCard',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/instances/deliver',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeliverCardResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1031,18 +1031,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeliverCardWithDelegate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/me/instances/deliver',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeliverCardWithDelegate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/me/instances/deliver',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeliverCardWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1088,18 +1088,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTemplate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/templates',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTemplate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/templates',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1145,18 +1145,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListTemplate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/templates/lists/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListTemplate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/templates/lists/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1208,18 +1208,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PublishTemplate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/templates/publish',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PublishTemplate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/templates/publish',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PublishTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1274,18 +1274,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RegisterCallback',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/callbacks/register',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RegisterCallback',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/callbacks/register',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RegisterCallbackResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1340,18 +1340,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RegisterCallbackWithDelegate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/me/callbacks/register',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RegisterCallbackWithDelegate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/me/callbacks/register',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RegisterCallbackWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1403,18 +1403,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveTemplate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/templates/save',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveTemplate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/templates/save',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1478,18 +1478,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'StreamingUpdate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/streaming',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StreamingUpdate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/streaming',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StreamingUpdateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1547,18 +1547,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateCard',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/instances',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateCard',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/instances',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateCardResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1616,18 +1616,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateCardWithDelegate',
-            'version'     => 'card_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/card/me/instances',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateCardWithDelegate',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/me/instances',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateCardWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));

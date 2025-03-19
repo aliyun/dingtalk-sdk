@@ -59,21 +59,19 @@ class data extends Model
      */
     public $serialNumber;
     protected $_name = [
-        'atAccount'       => 'atAccount',
-        'attrs'           => 'attrs',
-        'callbackUrl'     => 'callbackUrl',
+        'atAccount' => 'atAccount',
+        'attrs' => 'attrs',
+        'callbackUrl' => 'callbackUrl',
         'cardCallbackUrl' => 'cardCallbackUrl',
-        'content'         => 'content',
-        'isAtAll'         => 'isAtAll',
-        'privateContent'  => 'privateContent',
+        'content' => 'content',
+        'isAtAll' => 'isAtAll',
+        'privateContent' => 'privateContent',
         'receiverAccount' => 'receiverAccount',
-        'receiverType'    => 'receiverType',
-        'serialNumber'    => 'serialNumber',
+        'receiverType' => 'receiverType',
+        'serialNumber' => 'serialNumber',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

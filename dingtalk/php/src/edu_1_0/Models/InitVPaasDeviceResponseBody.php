@@ -18,9 +18,7 @@ class InitVPaasDeviceResponseBody extends Model
         'pspk' => 'pspk',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

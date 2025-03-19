@@ -40,15 +40,13 @@ class ListInstancesRequest extends Model
     public $timeMin;
     protected $_name = [
         'maxAttendees' => 'maxAttendees',
-        'maxResults'   => 'maxResults',
-        'nextToken'    => 'nextToken',
-        'timeMax'      => 'timeMax',
-        'timeMin'      => 'timeMin',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'timeMax' => 'timeMax',
+        'timeMin' => 'timeMin',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

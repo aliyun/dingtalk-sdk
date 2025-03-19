@@ -78,19 +78,17 @@ class extendInfos extends Model
      */
     public $status;
     protected $_name = [
-        'deptCode'              => 'deptCode',
+        'deptCode' => 'deptCode',
         'deptExtendDisplayName' => 'deptExtendDisplayName',
-        'deptExtendKey'         => 'deptExtendKey',
-        'deptExtendValue'       => 'deptExtendValue',
-        'gmtCreateStr'          => 'gmtCreateStr',
-        'gmtModifiedStr'        => 'gmtModifiedStr',
-        'id'                    => 'id',
-        'status'                => 'status',
+        'deptExtendKey' => 'deptExtendKey',
+        'deptExtendValue' => 'deptExtendValue',
+        'gmtCreateStr' => 'gmtCreateStr',
+        'gmtModifiedStr' => 'gmtModifiedStr',
+        'id' => 'id',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

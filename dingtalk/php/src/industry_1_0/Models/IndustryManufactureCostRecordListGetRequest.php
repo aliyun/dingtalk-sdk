@@ -98,29 +98,27 @@ class IndustryManufactureCostRecordListGetRequest extends Model
      */
     public $tokenGrantType;
     protected $_name = [
-        'appId'            => 'appId',
-        'appIds'           => 'appIds',
-        'appName'          => 'appName',
-        'corpId'           => 'corpId',
-        'cursor'           => 'cursor',
-        'endTime'          => 'endTime',
-        'instanceId'       => 'instanceId',
-        'isvOrgId'         => 'isvOrgId',
-        'materialNo'       => 'materialNo',
-        'microappAgentId'  => 'microappAgentId',
-        'orderNo'          => 'orderNo',
-        'orgId'            => 'orgId',
-        'pageNumber'       => 'pageNumber',
-        'pageSize'         => 'pageSize',
+        'appId' => 'appId',
+        'appIds' => 'appIds',
+        'appName' => 'appName',
+        'corpId' => 'corpId',
+        'cursor' => 'cursor',
+        'endTime' => 'endTime',
+        'instanceId' => 'instanceId',
+        'isvOrgId' => 'isvOrgId',
+        'materialNo' => 'materialNo',
+        'microappAgentId' => 'microappAgentId',
+        'orderNo' => 'orderNo',
+        'orgId' => 'orgId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'productionTaskNo' => 'productionTaskNo',
-        'startTime'        => 'startTime',
-        'suiteKey'         => 'suiteKey',
-        'tokenGrantType'   => 'tokenGrantType',
+        'startTime' => 'startTime',
+        'suiteKey' => 'suiteKey',
+        'tokenGrantType' => 'tokenGrantType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

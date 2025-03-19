@@ -26,13 +26,11 @@ class QueryFlashMinutesSummaryRequest extends Model
      */
     public $recorderUnionId;
     protected $_name = [
-        'bizType'         => 'bizType',
+        'bizType' => 'bizType',
         'recorderUnionId' => 'recorderUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

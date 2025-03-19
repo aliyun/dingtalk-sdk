@@ -39,10 +39,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -69,15 +69,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'CreateJsapiTicket',
-            'version'     => 'oauth2_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/oauth2/jsapiTickets',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateJsapiTicket',
+            'version' => 'oauth2_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/oauth2/jsapiTickets',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateJsapiTicketResponse::fromMap($this->execute($params, $req, $runtime));
@@ -117,18 +117,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetAccessToken',
-            'version'     => 'oauth2_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/oauth2/accessToken',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'GetAccessToken',
+            'version' => 'oauth2_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/oauth2/accessToken',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -174,18 +174,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAuthInfo',
-            'version'     => 'oauth2_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/oauth2/apps/authInfo',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAuthInfo',
+            'version' => 'oauth2_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/oauth2/apps/authInfo',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAuthInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -233,18 +233,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetCorpAccessToken',
-            'version'     => 'oauth2_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/oauth2/corpAccessToken',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'GetCorpAccessToken',
+            'version' => 'oauth2_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/oauth2/corpAccessToken',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCorpAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -286,15 +286,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetPersonalAuthRule',
-            'version'     => 'oauth2_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/oauth2/authRules/user',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPersonalAuthRule',
+            'version' => 'oauth2_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/oauth2/authRules/user',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPersonalAuthRuleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -334,18 +334,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetSsoAccessToken',
-            'version'     => 'oauth2_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/oauth2/ssoAccessToken',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'GetSsoAccessToken',
+            'version' => 'oauth2_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/oauth2/ssoAccessToken',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSsoAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -391,18 +391,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSsoUserInfo',
-            'version'     => 'oauth2_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/oauth2/ssoUserInfo',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSsoUserInfo',
+            'version' => 'oauth2_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/oauth2/ssoUserInfo',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSsoUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -447,18 +447,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetSuiteAccessToken',
-            'version'     => 'oauth2_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/oauth2/suiteAccessToken',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'GetSuiteAccessToken',
+            'version' => 'oauth2_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/oauth2/suiteAccessToken',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSuiteAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -504,18 +504,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetToken',
-            'version'     => 'oauth2_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/oauth2/' . $corpId . '/token',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'GetToken',
+            'version' => 'oauth2_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/oauth2/' . $corpId . '/token',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTokenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -567,18 +567,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetUserToken',
-            'version'     => 'oauth2_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/oauth2/userAccessToken',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'GetUserToken',
+            'version' => 'oauth2_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/oauth2/userAccessToken',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserTokenResponse::fromMap($this->execute($params, $req, $runtime));

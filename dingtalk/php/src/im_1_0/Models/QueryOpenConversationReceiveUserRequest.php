@@ -19,12 +19,10 @@ class QueryOpenConversationReceiveUserRequest extends Model
     public $sendUserId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'sendUserId'         => 'sendUserId',
+        'sendUserId' => 'sendUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

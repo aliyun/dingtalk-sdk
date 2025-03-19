@@ -16,9 +16,7 @@ class GetCategorySourceConfigListRequest extends Model
         'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

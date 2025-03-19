@@ -47,18 +47,16 @@ class list_ extends Model
      */
     public $rankName;
     protected $_name = [
-        'maxJobGrade'     => 'maxJobGrade',
-        'minJobGrade'     => 'minJobGrade',
-        'rankCategoryId'  => 'rankCategoryId',
-        'rankCode'        => 'rankCode',
+        'maxJobGrade' => 'maxJobGrade',
+        'minJobGrade' => 'minJobGrade',
+        'rankCategoryId' => 'rankCategoryId',
+        'rankCode' => 'rankCode',
         'rankDescription' => 'rankDescription',
-        'rankId'          => 'rankId',
-        'rankName'        => 'rankName',
+        'rankId' => 'rankId',
+        'rankName' => 'rankName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

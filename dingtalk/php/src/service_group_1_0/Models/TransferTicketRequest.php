@@ -54,17 +54,15 @@ class TransferTicketRequest extends Model
      */
     public $ticketMemo;
     protected $_name = [
-        'notify'            => 'notify',
-        'openTeamId'        => 'openTeamId',
-        'openTicketId'      => 'openTicketId',
-        'processorUnionId'  => 'processorUnionId',
+        'notify' => 'notify',
+        'openTeamId' => 'openTeamId',
+        'openTicketId' => 'openTicketId',
+        'processorUnionId' => 'processorUnionId',
         'processorUnionIds' => 'processorUnionIds',
-        'ticketMemo'        => 'ticketMemo',
+        'ticketMemo' => 'ticketMemo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class DeleteEventRequest extends Model
         'pushNotification' => 'pushNotification',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,14 +23,12 @@ class GetSpaceDirectoriesResponseBody extends Model
      */
     public $nextToken;
     protected $_name = [
-        'children'  => 'children',
-        'hasMore'   => 'hasMore',
+        'children' => 'children',
+        'hasMore' => 'hasMore',
         'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -65,7 +63,7 @@ class GetSpaceDirectoriesResponseBody extends Model
         if (isset($map['children'])) {
             if (!empty($map['children'])) {
                 $model->children = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['children'] as $item) {
                     $model->children[$n++] = null !== $item ? DentryModel::fromMap($item) : $item;
                 }

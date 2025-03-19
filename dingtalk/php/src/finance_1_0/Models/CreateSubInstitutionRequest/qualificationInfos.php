@@ -27,12 +27,10 @@ class qualificationInfos extends Model
     public $qualificationType;
     protected $_name = [
         'qualificationImage' => 'qualificationImage',
-        'qualificationType'  => 'qualificationType',
+        'qualificationType' => 'qualificationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

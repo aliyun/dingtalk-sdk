@@ -60,17 +60,15 @@ class QueryReceiptsByPageRequest extends Model
      */
     public $timeFilterField;
     protected $_name = [
-        'endTime'         => 'endTime',
-        'modelId'         => 'modelId',
-        'pageNumber'      => 'pageNumber',
-        'pageSize'        => 'pageSize',
-        'startTime'       => 'startTime',
+        'endTime' => 'endTime',
+        'modelId' => 'modelId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'startTime' => 'startTime',
         'timeFilterField' => 'timeFilterField',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class categories extends Model
         'displayName' => 'displayName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

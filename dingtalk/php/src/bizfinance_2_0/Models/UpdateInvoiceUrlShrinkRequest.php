@@ -16,9 +16,7 @@ class UpdateInvoiceUrlShrinkRequest extends Model
         'bodyShrink' => 'body',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

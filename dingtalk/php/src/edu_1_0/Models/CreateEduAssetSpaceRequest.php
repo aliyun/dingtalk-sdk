@@ -53,16 +53,14 @@ class CreateEduAssetSpaceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizCode'   => 'bizCode',
+        'bizCode' => 'bizCode',
         'spaceDesc' => 'spaceDesc',
         'spaceIcon' => 'spaceIcon',
         'spaceName' => 'spaceName',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

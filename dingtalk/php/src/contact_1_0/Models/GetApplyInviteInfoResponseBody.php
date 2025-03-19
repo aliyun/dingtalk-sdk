@@ -55,18 +55,16 @@ class GetApplyInviteInfoResponseBody extends Model
      */
     public $searchNameInvite;
     protected $_name = [
-        'auditType'          => 'auditType',
-        'empApplyJoinDept'   => 'empApplyJoinDept',
-        'inviteSwitch'       => 'inviteSwitch',
-        'inviteUrl'          => 'inviteUrl',
-        'linkInvite'         => 'linkInvite',
+        'auditType' => 'auditType',
+        'empApplyJoinDept' => 'empApplyJoinDept',
+        'inviteSwitch' => 'inviteSwitch',
+        'inviteUrl' => 'inviteUrl',
+        'linkInvite' => 'linkInvite',
         'orgApplyCodeInvite' => 'orgApplyCodeInvite',
-        'searchNameInvite'   => 'searchNameInvite',
+        'searchNameInvite' => 'searchNameInvite',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -134,29 +134,27 @@ class CreateTransferRecordRequest extends Model
      */
     public $tarTimeslotNum;
     protected $_name = [
-        'attributes'      => 'attributes',
-        'classId'         => 'classId',
-        'className'       => 'className',
-        'corpId'          => 'corpId',
-        'isvCode'         => 'isvCode',
-        'isvRecordId'     => 'isvRecordId',
-        'srcCourseCode'   => 'srcCourseCode',
-        'srcCourseDate'   => 'srcCourseDate',
-        'srcCourseName'   => 'srcCourseName',
-        'srcIsvCourseId'  => 'srcIsvCourseId',
+        'attributes' => 'attributes',
+        'classId' => 'classId',
+        'className' => 'className',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
+        'isvRecordId' => 'isvRecordId',
+        'srcCourseCode' => 'srcCourseCode',
+        'srcCourseDate' => 'srcCourseDate',
+        'srcCourseName' => 'srcCourseName',
+        'srcIsvCourseId' => 'srcIsvCourseId',
         'srcTimeslotName' => 'srcTimeslotName',
-        'srcTimeslotNum'  => 'srcTimeslotNum',
-        'tarCourseCode'   => 'tarCourseCode',
-        'tarCourseDate'   => 'tarCourseDate',
-        'tarCourseName'   => 'tarCourseName',
-        'tarIsvCourseId'  => 'tarIsvCourseId',
+        'srcTimeslotNum' => 'srcTimeslotNum',
+        'tarCourseCode' => 'tarCourseCode',
+        'tarCourseDate' => 'tarCourseDate',
+        'tarCourseName' => 'tarCourseName',
+        'tarIsvCourseId' => 'tarIsvCourseId',
         'tarTimeslotName' => 'tarTimeslotName',
-        'tarTimeslotNum'  => 'tarTimeslotNum',
+        'tarTimeslotNum' => 'tarTimeslotNum',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

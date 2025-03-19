@@ -35,8 +35,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -89,18 +89,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTicket',
-            'version'     => 'customerService_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/customerService/tickets',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTicket',
+            'version' => 'customerService_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/customerService/tickets',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTicketResponse::fromMap($this->execute($params, $req, $runtime));
@@ -165,18 +165,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExecuteActivity',
-            'version'     => 'customerService_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/customerService/tickets/' . $ticketId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExecuteActivity',
+            'version' => 'customerService_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/customerService/tickets/' . $ticketId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExecuteActivityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -238,18 +238,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUserSourceList',
-            'version'     => 'customerService_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/customerService/customers/sources',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserSourceList',
+            'version' => 'customerService_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/customerService/customers/sources',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserSourceListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -305,18 +305,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PageListAction',
-            'version'     => 'customerService_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/customerService/tickets/' . $ticketId . '/actions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PageListAction',
+            'version' => 'customerService_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/customerService/tickets/' . $ticketId . '/actions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PageListActionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -375,18 +375,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PageListRobot',
-            'version'     => 'customerService_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/customerService/robots',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PageListRobot',
+            'version' => 'customerService_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/customerService/robots',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PageListRobotResponse::fromMap($this->execute($params, $req, $runtime));
@@ -462,18 +462,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PageListTicket',
-            'version'     => 'customerService_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/customerService/tickets',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PageListTicket',
+            'version' => 'customerService_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/customerService/tickets',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PageListTicketResponse::fromMap($this->execute($params, $req, $runtime));

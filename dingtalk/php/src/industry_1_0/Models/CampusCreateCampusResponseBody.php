@@ -22,9 +22,7 @@ class CampusCreateCampusResponseBody extends Model
         'campusDeptId' => 'campusDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

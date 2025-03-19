@@ -39,16 +39,14 @@ class groupMemberList extends Model
     public $userId;
     protected $_name = [
         'avatarMediaId' => 'avatarMediaId',
-        'isUser'        => 'isUser',
-        'nickName'      => 'nickName',
-        'owner'         => 'owner',
-        'unionId'       => 'unionId',
-        'userId'        => 'userId',
+        'isUser' => 'isUser',
+        'nickName' => 'nickName',
+        'owner' => 'owner',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

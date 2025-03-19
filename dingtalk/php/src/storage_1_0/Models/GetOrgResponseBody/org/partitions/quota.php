@@ -36,15 +36,13 @@ class quota extends Model
      */
     public $used;
     protected $_name = [
-        'max'      => 'max',
+        'max' => 'max',
         'reserved' => 'reserved',
-        'type'     => 'type',
-        'used'     => 'used',
+        'type' => 'type',
+        'used' => 'used',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

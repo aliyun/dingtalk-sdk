@@ -27,12 +27,10 @@ class UpdateCustomerBizTypeRequest extends Model
     public $operatorUserId;
     protected $_name = [
         'customerBizType' => 'customerBizType',
-        'operatorUserId'  => 'operatorUserId',
+        'operatorUserId' => 'operatorUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

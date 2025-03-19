@@ -54,17 +54,15 @@ class SendDingMessageRequest extends Model
      */
     public $senderId;
     protected $_name = [
-        'code'               => 'code',
-        'message'            => 'message',
-        'messageType'        => 'messageType',
+        'code' => 'code',
+        'message' => 'message',
+        'messageType' => 'messageType',
         'openConversationId' => 'openConversationId',
-        'receiverId'         => 'receiverId',
-        'senderId'           => 'senderId',
+        'receiverId' => 'receiverId',
+        'senderId' => 'senderId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

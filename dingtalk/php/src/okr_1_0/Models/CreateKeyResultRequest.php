@@ -58,17 +58,15 @@ class CreateKeyResultRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'content'      => 'content',
-        'objectiveId'  => 'objectiveId',
-        'periodId'     => 'periodId',
+        'content' => 'content',
+        'objectiveId' => 'objectiveId',
+        'periodId' => 'periodId',
         'prevPosition' => 'prevPosition',
-        'weight'       => 'weight',
-        'userId'       => 'userId',
+        'weight' => 'weight',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

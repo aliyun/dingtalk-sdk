@@ -45,18 +45,16 @@ class queryGroup extends Model
      */
     public $queryType;
     protected $_name = [
-        'groupTagNames'            => 'groupTagNames',
+        'groupTagNames' => 'groupTagNames',
         'lastActiveDateFilterType' => 'lastActiveDateFilterType',
-        'lastActiveTimeEnd'        => 'lastActiveTimeEnd',
-        'lastActiveTimeStart'      => 'lastActiveTimeStart',
-        'openConversationIds'      => 'openConversationIds',
-        'openGroupSetId'           => 'openGroupSetId',
-        'queryType'                => 'queryType',
+        'lastActiveTimeEnd' => 'lastActiveTimeEnd',
+        'lastActiveTimeStart' => 'lastActiveTimeStart',
+        'openConversationIds' => 'openConversationIds',
+        'openGroupSetId' => 'openGroupSetId',
+        'queryType' => 'queryType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

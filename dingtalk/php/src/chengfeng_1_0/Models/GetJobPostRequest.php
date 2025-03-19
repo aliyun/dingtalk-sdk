@@ -20,9 +20,7 @@ class GetJobPostRequest extends Model
         'jobPostCode' => 'jobPostCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

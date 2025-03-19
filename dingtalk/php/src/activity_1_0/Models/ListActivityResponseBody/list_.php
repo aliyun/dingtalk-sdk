@@ -71,20 +71,18 @@ class list_ extends Model
      */
     public $url;
     protected $_name = [
-        'activityId'    => 'activityId',
+        'activityId' => 'activityId',
         'bannerMediaId' => 'bannerMediaId',
-        'endTime'       => 'endTime',
-        'foreignId'     => 'foreignId',
-        'startTime'     => 'startTime',
-        'status'        => 'status',
-        'title'         => 'title',
-        'type'          => 'type',
-        'url'           => 'url',
+        'endTime' => 'endTime',
+        'foreignId' => 'foreignId',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'title' => 'title',
+        'type' => 'type',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -104,24 +104,22 @@ class IndustryManufactureMesProcessRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'action'          => 'action',
-        'appKey'          => 'appKey',
-        'baseDataName'    => 'baseDataName',
-        'extendData'      => 'extendData',
-        'name'            => 'name',
-        'needDispatch'    => 'needDispatch',
+        'action' => 'action',
+        'appKey' => 'appKey',
+        'baseDataName' => 'baseDataName',
+        'extendData' => 'extendData',
+        'name' => 'name',
+        'needDispatch' => 'needDispatch',
         'needQualityTest' => 'needQualityTest',
-        'no'              => 'no',
-        'price'           => 'price',
-        'prop'            => 'prop',
-        'remark'          => 'remark',
-        'sop'             => 'sop',
-        'uuid'            => 'uuid',
+        'no' => 'no',
+        'price' => 'price',
+        'prop' => 'prop',
+        'remark' => 'remark',
+        'sop' => 'sop',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -195,7 +193,7 @@ class IndustryManufactureMesProcessRequest extends Model
         if (isset($map['extendData'])) {
             if (!empty($map['extendData'])) {
                 $model->extendData = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['extendData'] as $item) {
                     $model->extendData[$n++] = null !== $item ? extendData::fromMap($item) : $item;
                 }

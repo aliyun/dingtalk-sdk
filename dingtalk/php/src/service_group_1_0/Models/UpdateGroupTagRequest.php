@@ -28,13 +28,11 @@ class UpdateGroupTagRequest extends Model
     public $updateType;
     protected $_name = [
         'openConversationIds' => 'openConversationIds',
-        'tagNames'            => 'tagNames',
-        'updateType'          => 'updateType',
+        'tagNames' => 'tagNames',
+        'updateType' => 'updateType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

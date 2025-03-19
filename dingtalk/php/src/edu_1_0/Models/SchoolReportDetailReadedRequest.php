@@ -36,15 +36,13 @@ class SchoolReportDetailReadedRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizCode'        => 'bizCode',
+        'bizCode' => 'bizCode',
         'schoolReportId' => 'schoolReportId',
-        'studentIds'     => 'studentIds',
-        'userId'         => 'userId',
+        'studentIds' => 'studentIds',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

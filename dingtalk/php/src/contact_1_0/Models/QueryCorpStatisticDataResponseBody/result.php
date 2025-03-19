@@ -58,17 +58,15 @@ class result extends Model
     public $wechatTotalShareCnt;
     protected $_name = [
         'cardBeReceivedTotalCnt' => 'cardBeReceivedTotalCnt',
-        'cardReceiveTotalCnt'    => 'cardReceiveTotalCnt',
-        'cardTotalBeVisitedCnt'  => 'cardTotalBeVisitedCnt',
-        'dataDate'               => 'dataDate',
-        'dingTotalShareCnt'      => 'dingTotalShareCnt',
-        'totalSendCnt'           => 'totalSendCnt',
-        'wechatTotalShareCnt'    => 'wechatTotalShareCnt',
+        'cardReceiveTotalCnt' => 'cardReceiveTotalCnt',
+        'cardTotalBeVisitedCnt' => 'cardTotalBeVisitedCnt',
+        'dataDate' => 'dataDate',
+        'dingTotalShareCnt' => 'dingTotalShareCnt',
+        'totalSendCnt' => 'totalSendCnt',
+        'wechatTotalShareCnt' => 'wechatTotalShareCnt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -21,13 +21,11 @@ class GetOrgLiveListRequest extends Model
      */
     public $requestBody;
     protected $_name = [
-        'corpId'      => 'corpId',
+        'corpId' => 'corpId',
         'requestBody' => 'requestBody',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

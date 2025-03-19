@@ -57,18 +57,16 @@ class item extends Model
      */
     public $success;
     protected $_name = [
-        'dingActionId'          => 'dingActionId',
-        'dingConnectorId'       => 'dingConnectorId',
-        'integratorActionId'    => 'integratorActionId',
+        'dingActionId' => 'dingActionId',
+        'dingConnectorId' => 'dingConnectorId',
+        'integratorActionId' => 'integratorActionId',
         'integratorConnectorId' => 'integratorConnectorId',
-        'subErrCode'            => 'subErrCode',
-        'subErrMsg'             => 'subErrMsg',
-        'success'               => 'success',
+        'subErrCode' => 'subErrCode',
+        'subErrMsg' => 'subErrMsg',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

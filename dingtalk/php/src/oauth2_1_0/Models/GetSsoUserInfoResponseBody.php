@@ -57,18 +57,16 @@ class GetSsoUserInfoResponseBody extends Model
      */
     public $userName;
     protected $_name = [
-        'avatar'   => 'avatar',
-        'corpId'   => 'corpId',
+        'avatar' => 'avatar',
+        'corpId' => 'corpId',
         'corpName' => 'corpName',
-        'email'    => 'email',
-        'isAdmin'  => 'isAdmin',
-        'userId'   => 'userId',
+        'email' => 'email',
+        'isAdmin' => 'isAdmin',
+        'userId' => 'userId',
         'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,9 +19,7 @@ class QueryOrgSecretKeyResponseBody extends Model
         'universitySecretKeyInfo' => 'universitySecretKeyInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

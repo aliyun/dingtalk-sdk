@@ -62,21 +62,19 @@ class ConversationCreatedNotifyRequest extends Model
      */
     public $visitorToken;
     protected $_name = [
-        'alipayUserId'      => 'alipayUserId',
-        'conversationId'    => 'conversationId',
-        'nickName'          => 'nickName',
-        'openTeamId'        => 'openTeamId',
-        'serverName'        => 'serverName',
-        'serverTips'        => 'serverTips',
-        'serviceToken'      => 'serviceToken',
+        'alipayUserId' => 'alipayUserId',
+        'conversationId' => 'conversationId',
+        'nickName' => 'nickName',
+        'openTeamId' => 'openTeamId',
+        'serverName' => 'serverName',
+        'serverTips' => 'serverTips',
+        'serviceToken' => 'serviceToken',
         'timeoutRemindTips' => 'timeoutRemindTips',
-        'userId'            => 'userId',
-        'visitorToken'      => 'visitorToken',
+        'userId' => 'userId',
+        'visitorToken' => 'visitorToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

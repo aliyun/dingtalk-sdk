@@ -29,14 +29,12 @@ class searchSupport extends Model
      */
     public $searchTypeName;
     protected $_name = [
-        'searchDesc'     => 'searchDesc',
-        'searchIcon'     => 'searchIcon',
+        'searchDesc' => 'searchDesc',
+        'searchIcon' => 'searchIcon',
         'searchTypeName' => 'searchTypeName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

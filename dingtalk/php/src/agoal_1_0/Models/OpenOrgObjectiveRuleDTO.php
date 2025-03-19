@@ -26,13 +26,11 @@ class OpenOrgObjectiveRuleDTO extends Model
      */
     public $objectiveRuleName;
     protected $_name = [
-        'objectiveRuleId'   => 'objectiveRuleId',
+        'objectiveRuleId' => 'objectiveRuleId',
         'objectiveRuleName' => 'objectiveRuleName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

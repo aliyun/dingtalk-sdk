@@ -50,18 +50,16 @@ class resumeDataVO extends Model
      */
     public $workExperiences;
     protected $_name = [
-        'baseInfo'           => 'baseInfo',
-        'certificates'       => 'certificates',
-        'jobExpects'         => 'jobExpects',
-        'personalHonors'     => 'personalHonors',
+        'baseInfo' => 'baseInfo',
+        'certificates' => 'certificates',
+        'jobExpects' => 'jobExpects',
+        'personalHonors' => 'personalHonors',
         'projectExperiences' => 'projectExperiences',
-        'tags'               => 'tags',
-        'workExperiences'    => 'workExperiences',
+        'tags' => 'tags',
+        'workExperiences' => 'workExperiences',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -141,7 +139,7 @@ class resumeDataVO extends Model
         if (isset($map['certificates'])) {
             if (!empty($map['certificates'])) {
                 $model->certificates = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['certificates'] as $item) {
                     $model->certificates[$n++] = null !== $item ? certificates::fromMap($item) : $item;
                 }
@@ -150,7 +148,7 @@ class resumeDataVO extends Model
         if (isset($map['jobExpects'])) {
             if (!empty($map['jobExpects'])) {
                 $model->jobExpects = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['jobExpects'] as $item) {
                     $model->jobExpects[$n++] = null !== $item ? jobExpects::fromMap($item) : $item;
                 }
@@ -159,7 +157,7 @@ class resumeDataVO extends Model
         if (isset($map['personalHonors'])) {
             if (!empty($map['personalHonors'])) {
                 $model->personalHonors = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['personalHonors'] as $item) {
                     $model->personalHonors[$n++] = null !== $item ? personalHonors::fromMap($item) : $item;
                 }
@@ -168,7 +166,7 @@ class resumeDataVO extends Model
         if (isset($map['projectExperiences'])) {
             if (!empty($map['projectExperiences'])) {
                 $model->projectExperiences = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['projectExperiences'] as $item) {
                     $model->projectExperiences[$n++] = null !== $item ? projectExperiences::fromMap($item) : $item;
                 }
@@ -177,7 +175,7 @@ class resumeDataVO extends Model
         if (isset($map['tags'])) {
             if (!empty($map['tags'])) {
                 $model->tags = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['tags'] as $item) {
                     $model->tags[$n++] = null !== $item ? tags::fromMap($item) : $item;
                 }
@@ -186,7 +184,7 @@ class resumeDataVO extends Model
         if (isset($map['workExperiences'])) {
             if (!empty($map['workExperiences'])) {
                 $model->workExperiences = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['workExperiences'] as $item) {
                     $model->workExperiences[$n++] = null !== $item ? workExperiences::fromMap($item) : $item;
                 }

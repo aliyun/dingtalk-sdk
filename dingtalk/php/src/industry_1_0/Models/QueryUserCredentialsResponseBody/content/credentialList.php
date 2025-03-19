@@ -40,9 +40,7 @@ class credentialList extends Model
         'termOfValidity' => 'termOfValidity',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,12 +23,10 @@ class rollUpSummaryFields extends Model
     public $name;
     protected $_name = [
         'aggregator' => 'aggregator',
-        'name'       => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

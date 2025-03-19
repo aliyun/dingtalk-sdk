@@ -25,12 +25,10 @@ class QueryUserFollowStatusRequest extends Model
     public $unionId;
     protected $_name = [
         'accountId' => 'accountId',
-        'unionId'   => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

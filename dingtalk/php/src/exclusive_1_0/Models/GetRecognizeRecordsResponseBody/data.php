@@ -43,16 +43,14 @@ class data extends Model
      */
     public $userId;
     protected $_name = [
-        'agentId'           => 'agentId',
+        'agentId' => 'agentId',
         'faceCompareResult' => 'faceCompareResult',
-        'invokeTime'        => 'invokeTime',
-        'platform'          => 'platform',
-        'userId'            => 'userId',
+        'invokeTime' => 'invokeTime',
+        'platform' => 'platform',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class roomLabels extends Model
      */
     public $labelName;
     protected $_name = [
-        'labelId'   => 'labelId',
+        'labelId' => 'labelId',
         'labelName' => 'labelName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

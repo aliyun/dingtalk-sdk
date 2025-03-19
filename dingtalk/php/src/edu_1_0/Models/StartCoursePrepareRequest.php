@@ -62,19 +62,17 @@ class StartCoursePrepareRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'courseDate'      => 'courseDate',
+        'courseDate' => 'courseDate',
         'courseGroupCode' => 'courseGroupCode',
-        'deviceId'        => 'deviceId',
-        'ext'             => 'ext',
-        'isvCode'         => 'isvCode',
-        'liveCoverImage'  => 'liveCoverImage',
-        'sectionIndex'    => 'sectionIndex',
-        'opUserId'        => 'opUserId',
+        'deviceId' => 'deviceId',
+        'ext' => 'ext',
+        'isvCode' => 'isvCode',
+        'liveCoverImage' => 'liveCoverImage',
+        'sectionIndex' => 'sectionIndex',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

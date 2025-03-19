@@ -25,9 +25,7 @@ class body extends Model
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class body extends Model
         if (isset($map['labels'])) {
             if (!empty($map['labels'])) {
                 $model->labels = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['labels'] as $item) {
                     $model->labels[$n++] = null !== $item ? labels::fromMap($item) : $item;
                 }

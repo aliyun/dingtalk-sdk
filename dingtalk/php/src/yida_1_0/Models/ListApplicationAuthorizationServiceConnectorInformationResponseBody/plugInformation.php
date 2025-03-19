@@ -49,19 +49,17 @@ class plugInformation extends Model
      */
     public $plugUuid;
     protected $_name = [
-        'applications'    => 'applications',
-        'iconUrl'         => 'iconUrl',
-        'plugName'        => 'plugName',
-        'plugPayType'     => 'plugPayType',
-        'plugStatus'      => 'plugStatus',
+        'applications' => 'applications',
+        'iconUrl' => 'iconUrl',
+        'plugName' => 'plugName',
+        'plugPayType' => 'plugPayType',
+        'plugStatus' => 'plugStatus',
         'plugTotalAmount' => 'plugTotalAmount',
         'plugUsageAmount' => 'plugUsageAmount',
-        'plugUuid'        => 'plugUuid',
+        'plugUuid' => 'plugUuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -111,7 +109,7 @@ class plugInformation extends Model
         if (isset($map['applications'])) {
             if (!empty($map['applications'])) {
                 $model->applications = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['applications'] as $item) {
                     $model->applications[$n++] = null !== $item ? applications::fromMap($item) : $item;
                 }

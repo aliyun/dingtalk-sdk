@@ -35,13 +35,11 @@ class CreateCustomClassRequest extends Model
     public $superId;
     protected $_name = [
         'customClass' => 'customClass',
-        'operator'    => 'operator',
-        'superId'     => 'superId',
+        'operator' => 'operator',
+        'superId' => 'superId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

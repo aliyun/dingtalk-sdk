@@ -20,9 +20,7 @@ class GetTranslateFileJobResultRequest extends Model
         'jobId' => 'jobId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

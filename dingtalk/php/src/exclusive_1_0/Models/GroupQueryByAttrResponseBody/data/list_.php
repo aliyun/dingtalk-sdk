@@ -33,16 +33,14 @@ class list_ extends Model
      */
     public $ownerUserName;
     protected $_name = [
-        'groupMemberCount'   => 'groupMemberCount',
-        'groupName'          => 'groupName',
+        'groupMemberCount' => 'groupMemberCount',
+        'groupName' => 'groupName',
         'openConversationId' => 'openConversationId',
-        'ownerJobNo'         => 'ownerJobNo',
-        'ownerUserName'      => 'ownerUserName',
+        'ownerJobNo' => 'ownerJobNo',
+        'ownerUserName' => 'ownerUserName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

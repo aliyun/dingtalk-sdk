@@ -97,24 +97,22 @@ class applyList extends Model
      */
     public $userName;
     protected $_name = [
-        'approverList'     => 'approverList',
-        'departId'         => 'departId',
-        'departName'       => 'departName',
-        'gmtCreate'        => 'gmtCreate',
-        'gmtModified'      => 'gmtModified',
-        'itineraryList'    => 'itineraryList',
-        'status'           => 'status',
-        'statusDesc'       => 'statusDesc',
+        'approverList' => 'approverList',
+        'departId' => 'departId',
+        'departName' => 'departName',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'itineraryList' => 'itineraryList',
+        'status' => 'status',
+        'statusDesc' => 'statusDesc',
         'thirdPartApplyId' => 'thirdPartApplyId',
-        'tripCause'        => 'tripCause',
-        'tripTitle'        => 'tripTitle',
-        'userId'           => 'userId',
-        'userName'         => 'userName',
+        'tripCause' => 'tripCause',
+        'tripTitle' => 'tripTitle',
+        'userId' => 'userId',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -185,7 +183,7 @@ class applyList extends Model
         if (isset($map['approverList'])) {
             if (!empty($map['approverList'])) {
                 $model->approverList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['approverList'] as $item) {
                     $model->approverList[$n++] = null !== $item ? approverList::fromMap($item) : $item;
                 }
@@ -206,7 +204,7 @@ class applyList extends Model
         if (isset($map['itineraryList'])) {
             if (!empty($map['itineraryList'])) {
                 $model->itineraryList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['itineraryList'] as $item) {
                     $model->itineraryList[$n++] = null !== $item ? itineraryList::fromMap($item) : $item;
                 }

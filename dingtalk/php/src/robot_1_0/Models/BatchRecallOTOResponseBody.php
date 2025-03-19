@@ -20,13 +20,11 @@ class BatchRecallOTOResponseBody extends Model
      */
     public $successResult;
     protected $_name = [
-        'failedResult'  => 'failedResult',
+        'failedResult' => 'failedResult',
         'successResult' => 'successResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

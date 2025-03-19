@@ -17,9 +17,7 @@ class result extends Model
         'page' => 'page',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

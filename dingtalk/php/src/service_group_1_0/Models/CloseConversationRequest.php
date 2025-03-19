@@ -39,16 +39,14 @@ class CloseConversationRequest extends Model
     public $visitorToken;
     protected $_name = [
         'conversationId' => 'conversationId',
-        'openTeamId'     => 'openTeamId',
-        'serverTips'     => 'serverTips',
-        'serviceToken'   => 'serviceToken',
-        'targetChannel'  => 'targetChannel',
-        'visitorToken'   => 'visitorToken',
+        'openTeamId' => 'openTeamId',
+        'serverTips' => 'serverTips',
+        'serviceToken' => 'serviceToken',
+        'targetChannel' => 'targetChannel',
+        'visitorToken' => 'visitorToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

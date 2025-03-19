@@ -132,29 +132,27 @@ class CreateTopboxRequest extends Model
      */
     public $userIdPrivateDataMap;
     protected $_name = [
-        'callbackRouteKey'      => 'callbackRouteKey',
-        'cardData'              => 'cardData',
-        'cardSettings'          => 'cardSettings',
-        'cardTemplateId'        => 'cardTemplateId',
-        'conversationType'      => 'conversationType',
-        'coolAppCode'           => 'coolAppCode',
-        'expiredTime'           => 'expiredTime',
-        'groupTemplateId'       => 'groupTemplateId',
-        'openConversationId'    => 'openConversationId',
-        'outTrackId'            => 'outTrackId',
-        'platforms'             => 'platforms',
-        'receiverUnionIdList'   => 'receiverUnionIdList',
-        'receiverUserIdList'    => 'receiverUserIdList',
-        'robotCode'             => 'robotCode',
-        'unionId'               => 'unionId',
+        'callbackRouteKey' => 'callbackRouteKey',
+        'cardData' => 'cardData',
+        'cardSettings' => 'cardSettings',
+        'cardTemplateId' => 'cardTemplateId',
+        'conversationType' => 'conversationType',
+        'coolAppCode' => 'coolAppCode',
+        'expiredTime' => 'expiredTime',
+        'groupTemplateId' => 'groupTemplateId',
+        'openConversationId' => 'openConversationId',
+        'outTrackId' => 'outTrackId',
+        'platforms' => 'platforms',
+        'receiverUnionIdList' => 'receiverUnionIdList',
+        'receiverUserIdList' => 'receiverUserIdList',
+        'robotCode' => 'robotCode',
+        'unionId' => 'unionId',
         'unionIdPrivateDataMap' => 'unionIdPrivateDataMap',
-        'userId'                => 'userId',
-        'userIdPrivateDataMap'  => 'userIdPrivateDataMap',
+        'userId' => 'userId',
+        'userIdPrivateDataMap' => 'userIdPrivateDataMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

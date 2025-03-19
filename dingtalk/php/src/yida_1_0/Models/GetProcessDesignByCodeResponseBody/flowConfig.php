@@ -17,9 +17,7 @@ class flowConfig extends Model
         'sidInstDetail' => 'sid_instDetail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class flowConfig extends Model
         if (isset($map['sid_instDetail'])) {
             if (!empty($map['sid_instDetail'])) {
                 $model->sidInstDetail = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['sid_instDetail'] as $item) {
                     $model->sidInstDetail[$n++] = null !== $item ? sidInstDetail::fromMap($item) : $item;
                 }

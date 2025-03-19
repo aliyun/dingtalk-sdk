@@ -9,22 +9,24 @@ use AlibabaCloud\Tea\Model;
 class messages extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $role;
     protected $_name = [
         'content' => 'content',
-        'role'    => 'role',
+        'role' => 'role',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

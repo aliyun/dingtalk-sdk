@@ -25,12 +25,10 @@ class CategoryStatisticsResponseBody extends Model
     public $categoryTrend;
     protected $_name = [
         'categoryStatisticsRecords' => 'categoryStatisticsRecords',
-        'categoryTrend'             => 'categoryTrend',
+        'categoryTrend' => 'categoryTrend',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -68,7 +66,7 @@ class CategoryStatisticsResponseBody extends Model
         if (isset($map['categoryStatisticsRecords'])) {
             if (!empty($map['categoryStatisticsRecords'])) {
                 $model->categoryStatisticsRecords = [];
-                $n                                = 0;
+                $n = 0;
                 foreach ($map['categoryStatisticsRecords'] as $item) {
                     $model->categoryStatisticsRecords[$n++] = null !== $item ? categoryStatisticsRecords::fromMap($item) : $item;
                 }
@@ -77,7 +75,7 @@ class CategoryStatisticsResponseBody extends Model
         if (isset($map['categoryTrend'])) {
             if (!empty($map['categoryTrend'])) {
                 $model->categoryTrend = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['categoryTrend'] as $item) {
                     $model->categoryTrend[$n++] = null !== $item ? categoryTrend::fromMap($item) : $item;
                 }

@@ -60,21 +60,19 @@ class connectorInfo extends Model
      */
     public $name;
     protected $_name = [
-        'apiDomain'             => 'apiDomain',
-        'apiSecret'             => 'apiSecret',
-        'appId'                 => 'appId',
-        'authValueEnv'          => 'authValueEnv',
-        'description'           => 'description',
-        'dingConnectorId'       => 'dingConnectorId',
-        'domainEnv'             => 'domainEnv',
-        'iconMediaId'           => 'iconMediaId',
+        'apiDomain' => 'apiDomain',
+        'apiSecret' => 'apiSecret',
+        'appId' => 'appId',
+        'authValueEnv' => 'authValueEnv',
+        'description' => 'description',
+        'dingConnectorId' => 'dingConnectorId',
+        'domainEnv' => 'domainEnv',
+        'iconMediaId' => 'iconMediaId',
         'integratorConnectorId' => 'integratorConnectorId',
-        'name'                  => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

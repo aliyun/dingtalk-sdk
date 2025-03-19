@@ -28,14 +28,12 @@ class QueryCustomerInfoResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'hasMore'    => 'hasMore',
-        'list'       => 'list',
+        'hasMore' => 'hasMore',
+        'list' => 'list',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -73,7 +71,7 @@ class QueryCustomerInfoResponseBody extends Model
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['list'] as $item) {
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }

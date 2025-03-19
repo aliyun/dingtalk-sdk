@@ -30,13 +30,11 @@ class QueryGroupMemberRequest extends Model
     public $targetCorpId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openTeamId'         => 'openTeamId',
-        'targetCorpId'       => 'targetCorpId',
+        'openTeamId' => 'openTeamId',
+        'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

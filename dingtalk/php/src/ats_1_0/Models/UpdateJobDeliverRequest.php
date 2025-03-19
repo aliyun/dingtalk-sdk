@@ -83,20 +83,18 @@ class UpdateJobDeliverRequest extends Model
      */
     public $jobId;
     protected $_name = [
-        'bizCode'        => 'bizCode',
+        'bizCode' => 'bizCode',
         'channelOuterId' => 'channelOuterId',
-        'deliverUserId'  => 'deliverUserId',
-        'errorCode'      => 'errorCode',
-        'errorMsg'       => 'errorMsg',
-        'opTime'         => 'opTime',
-        'opUserId'       => 'opUserId',
-        'status'         => 'status',
-        'jobId'          => 'jobId',
+        'deliverUserId' => 'deliverUserId',
+        'errorCode' => 'errorCode',
+        'errorMsg' => 'errorMsg',
+        'opTime' => 'opTime',
+        'opUserId' => 'opUserId',
+        'status' => 'status',
+        'jobId' => 'jobId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

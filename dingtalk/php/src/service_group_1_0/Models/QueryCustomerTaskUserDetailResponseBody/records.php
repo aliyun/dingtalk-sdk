@@ -84,22 +84,20 @@ class records extends Model
      */
     public $status;
     protected $_name = [
-        'customerNames'       => 'customerNames',
-        'errorCode'           => 'errorCode',
-        'errorDetail'         => 'errorDetail',
+        'customerNames' => 'customerNames',
+        'errorCode' => 'errorCode',
+        'errorDetail' => 'errorDetail',
         'eventTrackResponses' => 'eventTrackResponses',
-        'openBatchTaskId'     => 'openBatchTaskId',
-        'readStatus'          => 'readStatus',
-        'readTime'            => 'readTime',
-        'receiverName'        => 'receiverName',
-        'receiverUnionId'     => 'receiverUnionId',
-        'sendTime'            => 'sendTime',
-        'status'              => 'status',
+        'openBatchTaskId' => 'openBatchTaskId',
+        'readStatus' => 'readStatus',
+        'readTime' => 'readTime',
+        'receiverName' => 'receiverName',
+        'receiverUnionId' => 'receiverUnionId',
+        'sendTime' => 'sendTime',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -167,7 +165,7 @@ class records extends Model
         if (isset($map['eventTrackResponses'])) {
             if (!empty($map['eventTrackResponses'])) {
                 $model->eventTrackResponses = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['eventTrackResponses'] as $item) {
                     $model->eventTrackResponses[$n++] = null !== $item ? eventTrackResponses::fromMap($item) : $item;
                 }

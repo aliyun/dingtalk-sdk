@@ -38,17 +38,15 @@ class ConversationTransferBeginNotifyRequest extends Model
      */
     public $targetSkillGroupId;
     protected $_name = [
-        'conversationId'     => 'conversationId',
-        'memo'               => 'memo',
-        'openTeamId'         => 'openTeamId',
-        'serviceToken'       => 'serviceToken',
+        'conversationId' => 'conversationId',
+        'memo' => 'memo',
+        'openTeamId' => 'openTeamId',
+        'serviceToken' => 'serviceToken',
         'sourceSkillGroupId' => 'sourceSkillGroupId',
         'targetSkillGroupId' => 'targetSkillGroupId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

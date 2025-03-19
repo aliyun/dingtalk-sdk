@@ -32,15 +32,13 @@ class CreateResidentBlackBoardRequest extends Model
      */
     public $title;
     protected $_name = [
-        'context'  => 'context',
-        'mediaId'  => 'mediaId',
+        'context' => 'context',
+        'mediaId' => 'mediaId',
         'sendTime' => 'sendTime',
-        'title'    => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -317,8 +317,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -363,19 +363,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AppLoginCodeGen',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/authorizations/appLoginCodes',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AppLoginCodeGen',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/authorizations/appLoginCodes',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AppLoginCodeGenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -436,18 +436,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchGetFormDataByIdList',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/ids/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchGetFormDataByIdList',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/ids/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchGetFormDataByIdListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -511,18 +511,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchRemovalByFormInstanceIdList',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/batchRemove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchRemovalByFormInstanceIdList',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/batchRemove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return BatchRemovalByFormInstanceIdListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -589,18 +589,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchSaveFormData',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/batchSave',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchSaveFormData',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/batchSave',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchSaveFormDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -673,18 +673,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchUpdateFormDataByInstanceId',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/components',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchUpdateFormDataByInstanceId',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/components',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchUpdateFormDataByInstanceIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -754,18 +754,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchUpdateFormDataByInstanceMap',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/datas',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchUpdateFormDataByInstanceMap',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/datas',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchUpdateFormDataByInstanceMapResponse::fromMap($this->execute($params, $req, $runtime));
@@ -841,18 +841,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BuyAuthorizationOrder',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/appAuthorizations/order',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BuyAuthorizationOrder',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/appAuthorizations/order',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BuyAuthorizationOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -928,18 +928,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BuyFreshOrder',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/freshOrders',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BuyFreshOrder',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/freshOrders',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BuyFreshOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -986,18 +986,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CheckCloudAccountStatus',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/cloudAccountStatus/' . $callerUid . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CheckCloudAccountStatus',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/cloudAccountStatus/' . $callerUid . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CheckCloudAccountStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1062,18 +1062,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateOrUpdateFormData',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/insertOrUpdate',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateOrUpdateFormData',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/insertOrUpdate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateOrUpdateFormDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1131,18 +1131,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteFormData',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteFormData',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return DeleteFormDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1200,18 +1200,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteInstance',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/instances',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteInstance',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/instances',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return DeleteInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1269,18 +1269,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteSequence',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/deleteSequence',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteSequence',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/deleteSequence',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteSequenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1341,18 +1341,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeployFunctionCallback',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/functionComputeConnectors/completeDeployments/notify',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeployFunctionCallback',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/functionComputeConnectors/completeDeployments/notify',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeployFunctionCallbackResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1413,18 +1413,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExecuteBatchTask',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/tasks/batches/execute',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExecuteBatchTask',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/tasks/batches/execute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExecuteBatchTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1485,18 +1485,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ExecuteCustomApi',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/customApi/execute',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExecuteCustomApi',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/customApi/execute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExecuteCustomApiResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1566,18 +1566,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExecutePlatformTask',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/tasks/platformTasks/execute',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExecutePlatformTask',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/tasks/platformTasks/execute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return ExecutePlatformTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1653,18 +1653,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExecuteTask',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/tasks/execute',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExecuteTask',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/tasks/execute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return ExecuteTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1716,18 +1716,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ExpireCommodity',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/appAuth/commodities/expire',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExpireCommodity',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/appAuth/commodities/expire',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExpireCommodityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1774,18 +1774,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetActivationCodeByCallerUnionId',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/applications/activationCodes/' . $callerUid . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetActivationCodeByCallerUnionId',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/applications/activationCodes/' . $callerUid . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetActivationCodeByCallerUnionIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1841,18 +1841,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetActivityButtonList',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processDefinitions/buttons/' . $appType . '/' . $processCode . '/' . $activityId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetActivityButtonList',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processDefinitions/buttons/' . $appType . '/' . $processCode . '/' . $activityId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetActivityButtonListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1913,18 +1913,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetActivityList',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/activities',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetActivityList',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/activities',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetActivityListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1988,18 +1988,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetAllAuthCubes',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/metadata/allAuthCubes/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAllAuthCubes',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/metadata/allAuthCubes/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAllAuthCubesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2051,18 +2051,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetApplicationAuthorizationServicePlatformResource',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/authorization/platformResources',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetApplicationAuthorizationServicePlatformResource',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/authorization/platformResources',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetApplicationAuthorizationServicePlatformResourceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2126,18 +2126,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAutoFlowLogDetail',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/logs/automations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAutoFlowLogDetail',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/logs/automations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAutoFlowLogDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2212,18 +2212,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCorpAccomplishmentTasks',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/tasks/completedTasks/' . $corpId . '/' . $userId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCorpAccomplishmentTasks',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/tasks/completedTasks/' . $corpId . '/' . $userId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCorpAccomplishmentTasksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2271,18 +2271,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCorpLevelByAccountId',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/corpLevel',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCorpLevelByAccountId',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/corpLevel',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCorpLevelByAccountIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2361,18 +2361,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCorpTasks',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/corpTasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCorpTasks',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/corpTasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCorpTasksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2427,18 +2427,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDbConfig',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/metadata/dbConfigs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDbConfig',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/metadata/dbConfigs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDbConfigResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2493,18 +2493,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFieldDefByUuid',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/formFields',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFieldDefByUuid',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/formFields',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFieldDefByUuidResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2561,18 +2561,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFormComponentDefinitionList',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/definitions/' . $appType . '/' . $formUuid . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFormComponentDefinitionList',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/definitions/' . $appType . '/' . $formUuid . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFormComponentDefinitionListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2630,18 +2630,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFormDataByID',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/' . $id . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFormDataByID',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/' . $id . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFormDataByIDResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2703,18 +2703,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFormListInApp',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFormListInApp',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFormListInAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2770,18 +2770,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetInstanceById',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/instancesInfos/' . $id . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetInstanceById',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/instancesInfos/' . $id . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetInstanceByIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2874,19 +2874,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetInstanceIdList',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/instanceIds',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetInstanceIdList',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/instanceIds',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetInstanceIdListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2981,19 +2981,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetInstances',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/instances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetInstances',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/instances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3051,18 +3051,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetInstancesByIdList',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/instances/searchWithIds',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetInstancesByIdList',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/instances/searchWithIds',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetInstancesByIdListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3139,18 +3139,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetMeCorpSubmission',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/tasks/myCorpSubmission/' . $userId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMeCorpSubmission',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/tasks/myCorpSubmission/' . $userId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMeCorpSubmissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3234,18 +3234,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetNotifyMe',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/corpNotifications/' . $userId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetNotifyMe',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/corpNotifications/' . $userId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetNotifyMeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3305,18 +3305,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetOpenUrl',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/temporaryUrls/' . $appType . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOpenUrl',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/temporaryUrls/' . $appType . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOpenUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3375,18 +3375,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetOperationRecords',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/operationRecords',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOperationRecords',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/operationRecords',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOperationRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3438,18 +3438,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPlatformResource',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/platformResources',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPlatformResource',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/platformResources',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPlatformResourceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3498,18 +3498,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPrintAppInfo',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/printTemplates/printAppInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPrintAppInfo',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/printTemplates/printAppInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPrintAppInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3564,18 +3564,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPrintDictionary',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/printTemplates/printDictionaries',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPrintDictionary',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/printTemplates/printDictionaries',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPrintDictionaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3646,18 +3646,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProcessDefinition',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/definitions/' . $processInstanceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProcessDefinition',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/definitions/' . $processInstanceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProcessDefinitionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3711,18 +3711,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProcessDesign',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/' . $processId . 'definitions/designs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProcessDesign',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/' . $processId . 'definitions/designs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProcessDesignResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3781,18 +3781,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProcessDesignByCode',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/designStructures',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProcessDesignByCode',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/designStructures',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProcessDesignByCodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3850,18 +3850,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetRunningTaskList',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/tasks/runningTasks/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRunningTaskList',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/tasks/runningTasks/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRunningTaskListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3919,18 +3919,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRunningTasks',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/tasks/getRunningTasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRunningTasks',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/tasks/getRunningTasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRunningTasksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3982,18 +3982,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSaleUserInfoByUserId',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/saleUserInfo',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSaleUserInfoByUserId',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/saleUserInfo',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSaleUserInfoByUserIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4054,18 +4054,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSimpleCubeModelList',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/metadata/simpleCubeModelLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSimpleCubeModelList',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/metadata/simpleCubeModelLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSimpleCubeModelListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4138,18 +4138,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTaskCopies',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/tasks/taskCopies',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTaskCopies',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/tasks/taskCopies',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTaskCopiesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4216,18 +4216,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListApplication',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/organizations/applications',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListApplication',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/organizations/applications',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListApplicationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4283,18 +4283,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListApplicationAuthorizationServiceApplicationInformation',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/authorizations/applicationInfos/' . $instanceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListApplicationAuthorizationServiceApplicationInformation',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/authorizations/applicationInfos/' . $instanceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListApplicationAuthorizationServiceApplicationInformationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4351,18 +4351,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListApplicationAuthorizationServiceConnectorInformation',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/applicationAuthorizations/plugs/' . $instanceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListApplicationAuthorizationServiceConnectorInformation',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/applicationAuthorizations/plugs/' . $instanceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListApplicationAuthorizationServiceConnectorInformationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4419,18 +4419,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListApplicationInformation',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/infos/' . $instanceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListApplicationInformation',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/infos/' . $instanceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListApplicationInformationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4486,18 +4486,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListCommodity',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/appAuth/commodities',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListCommodity',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/appAuth/commodities',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListCommodityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4553,18 +4553,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListConnectorInformation',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/plugins/infos/' . $instanceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListConnectorInformation',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/plugins/infos/' . $instanceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListConnectorInformationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4623,18 +4623,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListFormRemarks',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/remarks/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListFormRemarks',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/remarks/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListFormRemarksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4692,18 +4692,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListNavigationByFormType',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/navigations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListNavigationByFormType',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/navigations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListNavigationByFormTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4761,18 +4761,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListOperationLogs',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/operationsLogs/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListOperationLogs',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/operationsLogs/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListOperationLogsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4837,18 +4837,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListTableDataByFormInstanceIdTableId',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/innerTables/' . $formInstanceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListTableDataByFormInstanceIdTableId',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/innerTables/' . $formInstanceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListTableDataByFormInstanceIdTableIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4895,18 +4895,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'LoginCodeGen',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/authorizations/loginCodes',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'LoginCodeGen',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/authorizations/loginCodes',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return LoginCodeGenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4982,18 +4982,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'NotifyAuthorizationResult',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/authorizationResults/notify',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'NotifyAuthorizationResult',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/authorizationResults/notify',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return NotifyAuthorizationResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5072,18 +5072,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PageAutoFlowLog',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/logs/automations/paginationQuery',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PageAutoFlowLog',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/logs/automations/paginationQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PageAutoFlowLogResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5147,18 +5147,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PageFormBaseInfos',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/forms/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PageFormBaseInfos',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/forms/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PageFormBaseInfosResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5225,18 +5225,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PreviewPublishedProcess',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/preview',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PreviewPublishedProcess',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/preview',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PreviewPublishedProcessResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5324,18 +5324,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryServiceRecord',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/services/invocationRecords',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryServiceRecord',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/services/invocationRecords',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryServiceRecordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5405,18 +5405,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RedirectTask',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/tasks/redirect',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RedirectTask',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/tasks/redirect',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return RedirectTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5468,18 +5468,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RefundCommodity',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/appAuth/commodities/refund',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RefundCommodity',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/appAuth/commodities/refund',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RefundCommodityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5531,18 +5531,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RegisterAccounts',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/applicationAuthorizations/accounts/register',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RegisterAccounts',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/applicationAuthorizations/accounts/register',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RegisterAccountsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5594,18 +5594,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ReleaseCommodity',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/appAuth/commodities/release',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReleaseCommodity',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/appAuth/commodities/release',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReleaseCommodityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5652,18 +5652,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RemoveTenantResource',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/applications/tenantRelatedResources/' . $callerUid . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveTenantResource',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/applications/tenantRelatedResources/' . $callerUid . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemoveTenantResourceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5743,18 +5743,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RenderBatchCallback',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/printings/callbacks/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RenderBatchCallback',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/printings/callbacks/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RenderBatchCallbackResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5809,18 +5809,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RenewApplicationAuthorizationServiceOrder',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/applicationAuthorizations/orders/renew',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RenewApplicationAuthorizationServiceOrder',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/applicationAuthorizations/orders/renew',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RenewApplicationAuthorizationServiceOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5872,18 +5872,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RenewTenantOrder',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/tenants/reorder',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RenewTenantOrder',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/tenants/reorder',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RenewTenantOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5944,18 +5944,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveFormData',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveFormData',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveFormDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6022,18 +6022,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveFormRemark',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/remarks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveFormRemark',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/remarks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveFormRemarkResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6106,18 +6106,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SavePrintTplDetailInfo',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/printTemplates/printTplDetailInfos',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SavePrintTplDetailInfo',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/printTemplates/printTplDetailInfos',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SavePrintTplDetailInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6166,18 +6166,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchActivationCode',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/activationCode/information',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchActivationCode',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/activationCode/information',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchActivationCodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6256,18 +6256,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SearchEmployeeFieldValues',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/employeeFields',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchEmployeeFieldValues',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/employeeFields',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchEmployeeFieldValuesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6346,19 +6346,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SearchFormDataIdList',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/ids/' . $appType . '/' . $formUuid . '',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchFormDataIdList',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/ids/' . $appType . '/' . $formUuid . '',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchFormDataIdListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6442,18 +6442,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SearchFormDataRemovalTableData',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchFormDataRemovalTableData',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchFormDataRemovalTableDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6535,18 +6535,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SearchFormDataSecondGeneration',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/advances/queryAll',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchFormDataSecondGeneration',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/advances/queryAll',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchFormDataSecondGenerationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6628,18 +6628,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SearchFormDataSecondGenerationNoTableField',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/advances/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchFormDataSecondGenerationNoTableField',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/advances/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchFormDataSecondGenerationNoTableFieldResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6727,18 +6727,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SearchFormDatas',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchFormDatas',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchFormDatasResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6808,18 +6808,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'StartInstance',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/instances/start',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StartInstance',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/instances/start',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StartInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6871,18 +6871,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TerminateCloudAuthorization',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/cloudAuthorizations/terminate',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TerminateCloudAuthorization',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/cloudAuthorizations/terminate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TerminateCloudAuthorizationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6940,18 +6940,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'TerminateInstance',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/instances/terminate',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TerminateInstance',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/instances/terminate',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return TerminateInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7006,18 +7006,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateCloudAccountInformation',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/cloudAccountInfos',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateCloudAccountInformation',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/cloudAccountInfos',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateCloudAccountInformationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7081,18 +7081,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateFormData',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/instances',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateFormData',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/instances',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return UpdateFormDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7153,18 +7153,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInstance',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/processes/instances',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInstance',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/processes/instances',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7228,18 +7228,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateStatus',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/forms/status',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateStatus',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/forms/status',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7294,18 +7294,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpgradeTenantInformation',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/tenantInfos',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpgradeTenantInformation',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/tenantInfos',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpgradeTenantInformationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7355,18 +7355,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ValidateApplicationAuthorizationOrder',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/applicationOrderUpdateAuthorizations/' . $instanceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ValidateApplicationAuthorizationOrder',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/applicationOrderUpdateAuthorizations/' . $instanceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ValidateApplicationAuthorizationOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7414,18 +7414,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ValidateApplicationAuthorizationServiceOrder',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/appsAuthorizations/freshOrderInfoReviews/' . $callerUid . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ValidateApplicationAuthorizationServiceOrder',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/appsAuthorizations/freshOrderInfoReviews/' . $callerUid . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ValidateApplicationAuthorizationServiceOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7473,18 +7473,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ValidateApplicationServiceOrderUpgrade',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/applications/orderValidations/' . $callerUnionid . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ValidateApplicationServiceOrderUpgrade',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/applications/orderValidations/' . $callerUnionid . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ValidateApplicationServiceOrderUpgradeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7534,18 +7534,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ValidateOrderBuy',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/orderBuy/validate',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ValidateOrderBuy',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/orderBuy/validate',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ValidateOrderBuyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7595,18 +7595,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ValidateOrderUpdate',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/orders/renewalReviews/' . $instanceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ValidateOrderUpdate',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/orders/renewalReviews/' . $instanceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ValidateOrderUpdateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7659,18 +7659,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ValidateOrderUpgrade',
-            'version'     => 'yida_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/yida/apps/orderUpgrade/validate',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ValidateOrderUpgrade',
+            'version' => 'yida_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/yida/apps/orderUpgrade/validate',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'formData',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ValidateOrderUpgradeResponse::fromMap($this->execute($params, $req, $runtime));

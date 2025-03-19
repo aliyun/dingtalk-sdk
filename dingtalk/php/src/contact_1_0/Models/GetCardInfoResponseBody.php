@@ -72,22 +72,20 @@ class GetCardInfoResponseBody extends Model
      */
     public $title;
     protected $_name = [
-        'adminRole'    => 'adminRole',
-        'avatarUrl'    => 'avatarUrl',
-        'cardId'       => 'cardId',
-        'extension'    => 'extension',
+        'adminRole' => 'adminRole',
+        'avatarUrl' => 'avatarUrl',
+        'cardId' => 'cardId',
+        'extension' => 'extension',
         'industryName' => 'industryName',
-        'introduce'    => 'introduce',
-        'name'         => 'name',
-        'orgName'      => 'orgName',
-        'settings'     => 'settings',
-        'templateId'   => 'templateId',
-        'title'        => 'title',
+        'introduce' => 'introduce',
+        'name' => 'name',
+        'orgName' => 'orgName',
+        'settings' => 'settings',
+        'templateId' => 'templateId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

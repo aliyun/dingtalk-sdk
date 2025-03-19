@@ -66,19 +66,17 @@ class formulaRules extends Model
     public $triggerMode;
     protected $_name = [
         'activityAction' => 'activityAction',
-        'activityId'     => 'activityId',
-        'block'          => 'block',
-        'message'        => 'message',
-        'name'           => 'name',
-        'nodeType'       => 'nodeType',
-        'rule'           => 'rule',
-        'ruleType'       => 'ruleType',
-        'triggerMode'    => 'triggerMode',
+        'activityId' => 'activityId',
+        'block' => 'block',
+        'message' => 'message',
+        'name' => 'name',
+        'nodeType' => 'nodeType',
+        'rule' => 'rule',
+        'ruleType' => 'ruleType',
+        'triggerMode' => 'triggerMode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,12 +19,10 @@ class ListAppRoleScopesRequest extends Model
     public $size;
     protected $_name = [
         'nextToken' => 'nextToken',
-        'size'      => 'size',
+        'size' => 'size',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

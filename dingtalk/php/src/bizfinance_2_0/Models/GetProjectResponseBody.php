@@ -88,21 +88,19 @@ class GetProjectResponseBody extends Model
     public $userDefineCode;
     protected $_name = [
         'accountantBookIdList' => 'accountantBookIdList',
-        'code'                 => 'code',
-        'createTime'           => 'createTime',
-        'creator'              => 'creator',
-        'description'          => 'description',
-        'name'                 => 'name',
-        'parentCode'           => 'parentCode',
-        'projectCode'          => 'projectCode',
-        'projectName'          => 'projectName',
-        'status'               => 'status',
-        'userDefineCode'       => 'userDefineCode',
+        'code' => 'code',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
+        'description' => 'description',
+        'name' => 'name',
+        'parentCode' => 'parentCode',
+        'projectCode' => 'projectCode',
+        'projectName' => 'projectName',
+        'status' => 'status',
+        'userDefineCode' => 'userDefineCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

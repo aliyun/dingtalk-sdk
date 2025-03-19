@@ -18,13 +18,11 @@ class GetCorpInfoResponseBody extends Model
      */
     public $orgRealName;
     protected $_name = [
-        'isRealName'  => 'isRealName',
+        'isRealName' => 'isRealName',
         'orgRealName' => 'orgRealName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

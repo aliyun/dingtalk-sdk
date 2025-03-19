@@ -38,17 +38,15 @@ class GetUserSourceListRequest extends Model
      */
     public $productionType;
     protected $_name = [
-        'corpId'         => 'corpId',
-        'description'    => 'description',
+        'corpId' => 'corpId',
+        'description' => 'description',
         'openInstanceId' => 'openInstanceId',
-        'orgId'          => 'orgId',
-        'orgName'        => 'orgName',
+        'orgId' => 'orgId',
+        'orgName' => 'orgName',
         'productionType' => 'productionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -24,14 +24,12 @@ class QueryMinutesShareListResponseBody extends Model
      */
     public $nextToken;
     protected $_name = [
-        'hasNext'        => 'hasNext',
+        'hasNext' => 'hasNext',
         'minutesDetails' => 'minutesDetails',
-        'nextToken'      => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -69,7 +67,7 @@ class QueryMinutesShareListResponseBody extends Model
         if (isset($map['minutesDetails'])) {
             if (!empty($map['minutesDetails'])) {
                 $model->minutesDetails = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['minutesDetails'] as $item) {
                     $model->minutesDetails[$n++] = null !== $item ? minutesDetails::fromMap($item) : $item;
                 }

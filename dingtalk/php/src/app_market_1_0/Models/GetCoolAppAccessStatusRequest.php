@@ -35,14 +35,12 @@ class GetCoolAppAccessStatusRequest extends Model
      */
     public $encFieldBizCode;
     protected $_name = [
-        'authCode'        => 'authCode',
-        'coolAppCode'     => 'coolAppCode',
+        'authCode' => 'authCode',
+        'coolAppCode' => 'coolAppCode',
         'encFieldBizCode' => 'encFieldBizCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

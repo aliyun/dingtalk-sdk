@@ -20,9 +20,7 @@ class DeleteInnerAppRequest extends Model
         'opUnionId' => 'opUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

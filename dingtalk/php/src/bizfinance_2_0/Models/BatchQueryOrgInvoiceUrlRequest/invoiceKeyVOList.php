@@ -19,12 +19,10 @@ class invoiceKeyVOList extends Model
     public $invoiceNo;
     protected $_name = [
         'invoiceCode' => 'invoiceCode',
-        'invoiceNo'   => 'invoiceNo',
+        'invoiceNo' => 'invoiceNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

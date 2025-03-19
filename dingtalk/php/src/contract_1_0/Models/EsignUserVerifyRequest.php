@@ -26,13 +26,11 @@ class EsignUserVerifyRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'corpId'  => 'corpId',
+        'corpId' => 'corpId',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

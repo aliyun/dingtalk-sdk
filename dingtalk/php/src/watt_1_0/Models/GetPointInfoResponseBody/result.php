@@ -16,9 +16,7 @@ class result extends Model
         'userPoints' => 'userPoints',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

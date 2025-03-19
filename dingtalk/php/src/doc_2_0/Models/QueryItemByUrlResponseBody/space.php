@@ -43,15 +43,13 @@ class space extends Model
     public $type;
     protected $_name = [
         'description' => 'description',
-        'id'          => 'id',
-        'name'        => 'name',
-        'owner'       => 'owner',
-        'type'        => 'type',
+        'id' => 'id',
+        'name' => 'name',
+        'owner' => 'owner',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

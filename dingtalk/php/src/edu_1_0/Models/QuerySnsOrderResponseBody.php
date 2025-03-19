@@ -162,35 +162,33 @@ class QuerySnsOrderResponseBody extends Model
      */
     public $tradeNo;
     protected $_name = [
-        'actualAmount'         => 'actualAmount',
-        'alipayAppId'          => 'alipayAppId',
-        'closeTime'            => 'closeTime',
-        'closeTimestamp'       => 'closeTimestamp',
-        'createTime'           => 'createTime',
-        'createTimestamp'      => 'createTimestamp',
-        'labelAmount'          => 'labelAmount',
-        'merchantId'           => 'merchantId',
+        'actualAmount' => 'actualAmount',
+        'alipayAppId' => 'alipayAppId',
+        'closeTime' => 'closeTime',
+        'closeTimestamp' => 'closeTimestamp',
+        'createTime' => 'createTime',
+        'createTimestamp' => 'createTimestamp',
+        'labelAmount' => 'labelAmount',
+        'merchantId' => 'merchantId',
         'merchantMergeOrderNo' => 'merchantMergeOrderNo',
-        'merchantOrderNo'      => 'merchantOrderNo',
-        'orderNo'              => 'orderNo',
-        'orderType'            => 'orderType',
-        'outerUserId'          => 'outerUserId',
-        'payLogonId'           => 'payLogonId',
-        'payStatus'            => 'payStatus',
-        'payTime'              => 'payTime',
-        'payTimestamp'         => 'payTimestamp',
-        'payType'              => 'payType',
-        'refundAmount'         => 'refundAmount',
-        'refundStatus'         => 'refundStatus',
-        'refundTime'           => 'refundTime',
-        'refundTimestamp'      => 'refundTimestamp',
-        'subject'              => 'subject',
-        'tradeNo'              => 'tradeNo',
+        'merchantOrderNo' => 'merchantOrderNo',
+        'orderNo' => 'orderNo',
+        'orderType' => 'orderType',
+        'outerUserId' => 'outerUserId',
+        'payLogonId' => 'payLogonId',
+        'payStatus' => 'payStatus',
+        'payTime' => 'payTime',
+        'payTimestamp' => 'payTimestamp',
+        'payType' => 'payType',
+        'refundAmount' => 'refundAmount',
+        'refundStatus' => 'refundStatus',
+        'refundTime' => 'refundTime',
+        'refundTimestamp' => 'refundTimestamp',
+        'subject' => 'subject',
+        'tradeNo' => 'tradeNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

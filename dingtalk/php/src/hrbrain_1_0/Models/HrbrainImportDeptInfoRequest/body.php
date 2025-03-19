@@ -64,21 +64,19 @@ class body extends Model
      */
     public $superName;
     protected $_name = [
-        'createDate'    => 'createDate',
-        'deptName'      => 'deptName',
-        'deptNo'        => 'deptNo',
+        'createDate' => 'createDate',
+        'deptName' => 'deptName',
+        'deptNo' => 'deptNo',
         'effectiveDate' => 'effectiveDate',
-        'extendInfo'    => 'extendInfo',
-        'isEffective'   => 'isEffective',
+        'extendInfo' => 'extendInfo',
+        'isEffective' => 'isEffective',
         'superDeptName' => 'superDeptName',
-        'superDeptNo'   => 'superDeptNo',
-        'superEmpId'    => 'superEmpId',
-        'superName'     => 'superName',
+        'superDeptNo' => 'superDeptNo',
+        'superEmpId' => 'superEmpId',
+        'superName' => 'superName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -48,17 +48,15 @@ class GetFormDataByIDRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
-        'formUuid'    => 'formUuid',
-        'language'    => 'language',
+        'appType' => 'appType',
+        'formUuid' => 'formUuid',
+        'language' => 'language',
         'systemToken' => 'systemToken',
-        'useAlias'    => 'useAlias',
-        'userId'      => 'userId',
+        'useAlias' => 'useAlias',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

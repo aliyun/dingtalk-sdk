@@ -53,20 +53,18 @@ class GetProcessDefinitionRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
-        'corpId'      => 'corpId',
-        'groupId'     => 'groupId',
-        'language'    => 'language',
-        'nameSpace'   => 'nameSpace',
+        'appType' => 'appType',
+        'corpId' => 'corpId',
+        'groupId' => 'groupId',
+        'language' => 'language',
+        'nameSpace' => 'nameSpace',
         'orderNumber' => 'orderNumber',
         'systemToken' => 'systemToken',
-        'systemType'  => 'systemType',
-        'userId'      => 'userId',
+        'systemType' => 'systemType',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

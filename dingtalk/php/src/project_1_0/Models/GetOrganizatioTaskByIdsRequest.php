@@ -20,9 +20,7 @@ class GetOrganizatioTaskByIdsRequest extends Model
         'taskIds' => 'taskIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

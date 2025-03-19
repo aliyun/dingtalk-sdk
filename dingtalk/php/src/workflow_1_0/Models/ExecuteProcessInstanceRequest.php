@@ -57,17 +57,15 @@ class ExecuteProcessInstanceRequest extends Model
      */
     public $taskId;
     protected $_name = [
-        'actionerUserId'    => 'actionerUserId',
-        'file'              => 'file',
+        'actionerUserId' => 'actionerUserId',
+        'file' => 'file',
         'processInstanceId' => 'processInstanceId',
-        'remark'            => 'remark',
-        'result'            => 'result',
-        'taskId'            => 'taskId',
+        'remark' => 'remark',
+        'result' => 'result',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

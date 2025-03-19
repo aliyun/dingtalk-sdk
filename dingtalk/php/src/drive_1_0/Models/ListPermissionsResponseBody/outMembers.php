@@ -32,12 +32,10 @@ class outMembers extends Model
     protected $_name = [
         'extend' => 'extend',
         'member' => 'member',
-        'role'   => 'role',
+        'role' => 'role',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

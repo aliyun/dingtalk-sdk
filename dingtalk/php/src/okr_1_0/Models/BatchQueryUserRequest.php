@@ -19,12 +19,10 @@ class BatchQueryUserRequest extends Model
     public $userIds;
     protected $_name = [
         'okrUserIds' => 'okrUserIds',
-        'userIds'    => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class RobotMessageFileDownloadResponseBody extends Model
         'downloadUrl' => 'downloadUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

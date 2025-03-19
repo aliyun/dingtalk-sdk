@@ -46,18 +46,16 @@ class IndustrializeManufactureJobBookResponseBody extends Model
      */
     public $uuid;
     protected $_name = [
-        'content'    => 'content',
-        'errorCode'  => 'errorCode',
+        'content' => 'content',
+        'errorCode' => 'errorCode',
         'errorLevel' => 'errorLevel',
-        'errorMsg'   => 'errorMsg',
-        'httpCode'   => 'httpCode',
-        'success'    => 'success',
-        'uuid'       => 'uuid',
+        'errorMsg' => 'errorMsg',
+        'httpCode' => 'httpCode',
+        'success' => 'success',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,13 +22,11 @@ class QueryContractReviewResultRequest extends Model
      */
     public $reviewTaskId;
     protected $_name = [
-        'requestId'    => 'requestId',
+        'requestId' => 'requestId',
         'reviewTaskId' => 'reviewTaskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

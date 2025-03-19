@@ -18,9 +18,7 @@ class GetClosingAccountsRequest extends Model
         'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

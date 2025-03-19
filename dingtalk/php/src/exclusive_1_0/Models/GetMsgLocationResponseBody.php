@@ -16,9 +16,7 @@ class GetMsgLocationResponseBody extends Model
         'msgLocationUrl' => 'msgLocationUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

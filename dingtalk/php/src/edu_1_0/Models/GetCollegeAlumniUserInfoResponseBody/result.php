@@ -69,23 +69,21 @@ class result extends Model
      */
     public $userId;
     protected $_name = [
-        'address'       => 'address',
-        'avatar'        => 'avatar',
-        'corpId'        => 'corpId',
-        'depts'         => 'depts',
-        'email'         => 'email',
-        'intake'        => 'intake',
-        'inviteId'      => 'inviteId',
-        'mobile'        => 'mobile',
-        'name'          => 'name',
-        'outtake'       => 'outtake',
+        'address' => 'address',
+        'avatar' => 'avatar',
+        'corpId' => 'corpId',
+        'depts' => 'depts',
+        'email' => 'email',
+        'intake' => 'intake',
+        'inviteId' => 'inviteId',
+        'mobile' => 'mobile',
+        'name' => 'name',
+        'outtake' => 'outtake',
         'studentNumber' => 'studentNumber',
-        'userId'        => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -156,7 +154,7 @@ class result extends Model
         if (isset($map['depts'])) {
             if (!empty($map['depts'])) {
                 $model->depts = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['depts'] as $item) {
                     $model->depts[$n++] = null !== $item ? depts::fromMap($item) : $item;
                 }

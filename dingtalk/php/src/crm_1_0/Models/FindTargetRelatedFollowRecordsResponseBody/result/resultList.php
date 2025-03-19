@@ -65,19 +65,17 @@ class resultList extends Model
      */
     public $recordInstId;
     protected $_name = [
-        'creatorUserId'           => 'creatorUserId',
-        'followContent'           => 'followContent',
-        'followTargetDataId'      => 'followTargetDataId',
-        'followTargetType'        => 'followTargetType',
-        'gmtCreateMilliseconds'   => 'gmtCreateMilliseconds',
+        'creatorUserId' => 'creatorUserId',
+        'followContent' => 'followContent',
+        'followTargetDataId' => 'followTargetDataId',
+        'followTargetType' => 'followTargetType',
+        'gmtCreateMilliseconds' => 'gmtCreateMilliseconds',
         'gmtModifiedMilliseconds' => 'gmtModifiedMilliseconds',
-        'modifierUserId'          => 'modifierUserId',
-        'recordInstId'            => 'recordInstId',
+        'modifierUserId' => 'modifierUserId',
+        'recordInstId' => 'recordInstId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -130,7 +128,7 @@ class resultList extends Model
         if (isset($map['followContent'])) {
             if (!empty($map['followContent'])) {
                 $model->followContent = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['followContent'] as $item) {
                     $model->followContent[$n++] = null !== $item ? followContent::fromMap($item) : $item;
                 }

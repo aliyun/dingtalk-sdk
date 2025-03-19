@@ -60,19 +60,17 @@ class list_ extends Model
      */
     public $version;
     protected $_name = [
-        'avaliable'     => 'avaliable',
-        'creator'       => 'creator',
-        'finished'      => 'finished',
+        'avaliable' => 'avaliable',
+        'creator' => 'creator',
+        'finished' => 'finished',
         'operationTime' => 'operationTime',
-        'packageSize'   => 'packageSize',
-        'status'        => 'status',
-        'taskId'        => 'taskId',
-        'version'       => 'version',
+        'packageSize' => 'packageSize',
+        'status' => 'status',
+        'taskId' => 'taskId',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

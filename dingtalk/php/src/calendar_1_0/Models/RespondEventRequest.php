@@ -18,9 +18,7 @@ class RespondEventRequest extends Model
         'responseStatus' => 'responseStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

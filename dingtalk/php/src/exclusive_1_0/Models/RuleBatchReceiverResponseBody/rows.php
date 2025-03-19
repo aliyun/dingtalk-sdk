@@ -19,12 +19,10 @@ class rows extends Model
     public $msgId;
     protected $_name = [
         'serialNumber' => 'serialNumber',
-        'msgId'        => 'msgId',
+        'msgId' => 'msgId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

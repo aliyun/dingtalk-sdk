@@ -25,12 +25,10 @@ class taskInfoList extends Model
     public $taskId;
     protected $_name = [
         'processInstanceId' => 'processInstanceId',
-        'taskId'            => 'taskId',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

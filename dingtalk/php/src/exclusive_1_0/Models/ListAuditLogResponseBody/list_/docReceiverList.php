@@ -29,14 +29,12 @@ class docReceiverList extends Model
      */
     public $receiverTypeView;
     protected $_name = [
-        'receiverName'     => 'receiverName',
-        'receiverType'     => 'receiverType',
+        'receiverName' => 'receiverName',
+        'receiverType' => 'receiverType',
         'receiverTypeView' => 'receiverTypeView',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

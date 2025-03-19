@@ -57,18 +57,16 @@ class approverList extends Model
      */
     public $userName;
     protected $_name = [
-        'note'        => 'note',
+        'note' => 'note',
         'operateTime' => 'operateTime',
-        'order'       => 'order',
-        'status'      => 'status',
-        'statusDesc'  => 'statusDesc',
-        'userId'      => 'userId',
-        'userName'    => 'userName',
+        'order' => 'order',
+        'status' => 'status',
+        'statusDesc' => 'statusDesc',
+        'userId' => 'userId',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

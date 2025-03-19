@@ -45,16 +45,14 @@ class PrivateChatQueryRequest extends Model
      */
     public $robotCode;
     protected $_name = [
-        'maxResults'         => 'maxResults',
-        'nextToken'          => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'openConversationId' => 'openConversationId',
-        'processQueryKey'    => 'processQueryKey',
-        'robotCode'          => 'robotCode',
+        'processQueryKey' => 'processQueryKey',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

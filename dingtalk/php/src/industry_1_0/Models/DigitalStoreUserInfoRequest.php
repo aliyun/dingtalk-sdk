@@ -26,13 +26,11 @@ class DigitalStoreUserInfoRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'code'   => 'code',
+        'code' => 'code',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

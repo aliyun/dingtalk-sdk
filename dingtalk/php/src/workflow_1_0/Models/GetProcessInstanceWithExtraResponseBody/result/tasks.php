@@ -80,21 +80,19 @@ class tasks extends Model
      */
     public $userId;
     protected $_name = [
-        'activityId'        => 'activityId',
-        'createTime'        => 'createTime',
-        'finishTime'        => 'finishTime',
-        'mobileUrl'         => 'mobileUrl',
-        'pcUrl'             => 'pcUrl',
+        'activityId' => 'activityId',
+        'createTime' => 'createTime',
+        'finishTime' => 'finishTime',
+        'mobileUrl' => 'mobileUrl',
+        'pcUrl' => 'pcUrl',
         'processInstanceId' => 'processInstanceId',
-        'result'            => 'result',
-        'status'            => 'status',
-        'taskId'            => 'taskId',
-        'userId'            => 'userId',
+        'result' => 'result',
+        'status' => 'status',
+        'taskId' => 'taskId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

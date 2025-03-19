@@ -63,18 +63,16 @@ class CreateInstanceRequest extends Model
      */
     public $ownerUnionId;
     protected $_name = [
-        'channel'         => 'channel',
-        'externalBizId'   => 'externalBizId',
-        'formCode'        => 'formCode',
-        'formDataList'    => 'formDataList',
-        'openTeamId'      => 'openTeamId',
+        'channel' => 'channel',
+        'externalBizId' => 'externalBizId',
+        'formCode' => 'formCode',
+        'formDataList' => 'formDataList',
+        'openTeamId' => 'openTeamId',
         'operatorUnionId' => 'operatorUnionId',
-        'ownerUnionId'    => 'ownerUnionId',
+        'ownerUnionId' => 'ownerUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

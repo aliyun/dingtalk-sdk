@@ -63,16 +63,14 @@ class records extends Model
     public $userId;
     protected $_name = [
         'leaveReason' => 'leaveReason',
-        'leaveTime'   => 'leaveTime',
-        'mobile'      => 'mobile',
-        'name'        => 'name',
-        'stateCode'   => 'stateCode',
-        'userId'      => 'userId',
+        'leaveTime' => 'leaveTime',
+        'mobile' => 'mobile',
+        'name' => 'name',
+        'stateCode' => 'stateCode',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

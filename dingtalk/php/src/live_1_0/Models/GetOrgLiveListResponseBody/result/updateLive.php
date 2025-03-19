@@ -34,16 +34,14 @@ class updateLive extends Model
      */
     public $totalCount;
     protected $_name = [
-        'hasMore'    => 'hasMore',
-        'liveList'   => 'liveList',
+        'hasMore' => 'hasMore',
+        'liveList' => 'liveList',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
+        'pageSize' => 'pageSize',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -87,7 +85,7 @@ class updateLive extends Model
         if (isset($map['liveList'])) {
             if (!empty($map['liveList'])) {
                 $model->liveList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['liveList'] as $item) {
                     $model->liveList[$n++] = null !== $item ? liveList::fromMap($item) : $item;
                 }

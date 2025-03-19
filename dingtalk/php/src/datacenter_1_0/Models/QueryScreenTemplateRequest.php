@@ -19,12 +19,10 @@ class QueryScreenTemplateRequest extends Model
     public $sample;
     protected $_name = [
         'operatorId' => 'operatorId',
-        'sample'     => 'sample',
+        'sample' => 'sample',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,14 +29,12 @@ class CreateSheetResponseBody extends Model
      */
     public $visibility;
     protected $_name = [
-        'id'         => 'id',
-        'name'       => 'name',
+        'id' => 'id',
+        'name' => 'name',
         'visibility' => 'visibility',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

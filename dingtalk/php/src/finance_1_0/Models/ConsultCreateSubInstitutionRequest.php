@@ -138,27 +138,25 @@ class ConsultCreateSubInstitutionRequest extends Model
     public $subInstShopInfo;
     protected $_name = [
         'bindingAlipayLogonId' => 'bindingAlipayLogonId',
-        'contactInfo'          => 'contactInfo',
-        'instId'               => 'instId',
-        'legalPersonCertInfo'  => 'legalPersonCertInfo',
-        'outTradeNo'           => 'outTradeNo',
-        'payChannel'           => 'payChannel',
-        'qualificationInfos'   => 'qualificationInfos',
-        'services'             => 'services',
-        'settleInfo'           => 'settleInfo',
-        'solution'             => 'solution',
-        'subInstAddressInfo'   => 'subInstAddressInfo',
-        'subInstAuthInfo'      => 'subInstAuthInfo',
-        'subInstBasicInfo'     => 'subInstBasicInfo',
-        'subInstCertifyInfo'   => 'subInstCertifyInfo',
-        'subInstId'            => 'subInstId',
-        'subInstInvoiceInfo'   => 'subInstInvoiceInfo',
-        'subInstShopInfo'      => 'subInstShopInfo',
+        'contactInfo' => 'contactInfo',
+        'instId' => 'instId',
+        'legalPersonCertInfo' => 'legalPersonCertInfo',
+        'outTradeNo' => 'outTradeNo',
+        'payChannel' => 'payChannel',
+        'qualificationInfos' => 'qualificationInfos',
+        'services' => 'services',
+        'settleInfo' => 'settleInfo',
+        'solution' => 'solution',
+        'subInstAddressInfo' => 'subInstAddressInfo',
+        'subInstAuthInfo' => 'subInstAuthInfo',
+        'subInstBasicInfo' => 'subInstBasicInfo',
+        'subInstCertifyInfo' => 'subInstCertifyInfo',
+        'subInstId' => 'subInstId',
+        'subInstInvoiceInfo' => 'subInstInvoiceInfo',
+        'subInstShopInfo' => 'subInstShopInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -253,7 +251,7 @@ class ConsultCreateSubInstitutionRequest extends Model
         if (isset($map['qualificationInfos'])) {
             if (!empty($map['qualificationInfos'])) {
                 $model->qualificationInfos = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['qualificationInfos'] as $item) {
                     $model->qualificationInfos[$n++] = null !== $item ? qualificationInfos::fromMap($item) : $item;
                 }

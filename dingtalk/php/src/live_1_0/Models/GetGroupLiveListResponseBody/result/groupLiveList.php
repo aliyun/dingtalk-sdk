@@ -39,16 +39,14 @@ class groupLiveList extends Model
     public $title;
     protected $_name = [
         'anchorNickname' => 'anchorNickname',
-        'anchorUnionId'  => 'anchorUnionId',
-        'liveEndTime'    => 'liveEndTime',
-        'liveStartTime'  => 'liveStartTime',
-        'liveUuid'       => 'liveUuid',
-        'title'          => 'title',
+        'anchorUnionId' => 'anchorUnionId',
+        'liveEndTime' => 'liveEndTime',
+        'liveStartTime' => 'liveStartTime',
+        'liveUuid' => 'liveUuid',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

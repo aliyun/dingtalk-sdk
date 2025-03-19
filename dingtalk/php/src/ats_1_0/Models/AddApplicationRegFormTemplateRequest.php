@@ -49,16 +49,14 @@ class AddApplicationRegFormTemplateRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'bizCode'  => 'bizCode',
-        'content'  => 'content',
-        'name'     => 'name',
-        'outerId'  => 'outerId',
+        'bizCode' => 'bizCode',
+        'content' => 'content',
+        'name' => 'name',
+        'outerId' => 'outerId',
         'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

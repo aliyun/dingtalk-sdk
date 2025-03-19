@@ -16,9 +16,7 @@ class GetMediaUrlsResponseBody extends Model
         'urls' => 'urls',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

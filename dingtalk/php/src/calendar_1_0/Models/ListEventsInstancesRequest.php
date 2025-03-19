@@ -36,15 +36,13 @@ class ListEventsInstancesRequest extends Model
      */
     public $startRecurrenceId;
     protected $_name = [
-        'maxAttendees'      => 'maxAttendees',
-        'maxResults'        => 'maxResults',
-        'seriesMasterId'    => 'seriesMasterId',
+        'maxAttendees' => 'maxAttendees',
+        'maxResults' => 'maxResults',
+        'seriesMasterId' => 'seriesMasterId',
         'startRecurrenceId' => 'startRecurrenceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

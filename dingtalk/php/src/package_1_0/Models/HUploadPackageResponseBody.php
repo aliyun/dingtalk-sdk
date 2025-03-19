@@ -16,9 +16,7 @@ class HUploadPackageResponseBody extends Model
         'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

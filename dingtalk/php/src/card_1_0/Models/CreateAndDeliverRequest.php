@@ -143,33 +143,31 @@ class CreateAndDeliverRequest extends Model
      */
     public $userIdType;
     protected $_name = [
-        'callbackRouteKey'         => 'callbackRouteKey',
-        'callbackType'             => 'callbackType',
-        'cardAtUserIds'            => 'cardAtUserIds',
-        'cardData'                 => 'cardData',
-        'cardTemplateId'           => 'cardTemplateId',
-        'coFeedOpenDeliverModel'   => 'coFeedOpenDeliverModel',
-        'coFeedOpenSpaceModel'     => 'coFeedOpenSpaceModel',
-        'docOpenDeliverModel'      => 'docOpenDeliverModel',
-        'imGroupOpenDeliverModel'  => 'imGroupOpenDeliverModel',
-        'imGroupOpenSpaceModel'    => 'imGroupOpenSpaceModel',
-        'imRobotOpenDeliverModel'  => 'imRobotOpenDeliverModel',
-        'imRobotOpenSpaceModel'    => 'imRobotOpenSpaceModel',
+        'callbackRouteKey' => 'callbackRouteKey',
+        'callbackType' => 'callbackType',
+        'cardAtUserIds' => 'cardAtUserIds',
+        'cardData' => 'cardData',
+        'cardTemplateId' => 'cardTemplateId',
+        'coFeedOpenDeliverModel' => 'coFeedOpenDeliverModel',
+        'coFeedOpenSpaceModel' => 'coFeedOpenSpaceModel',
+        'docOpenDeliverModel' => 'docOpenDeliverModel',
+        'imGroupOpenDeliverModel' => 'imGroupOpenDeliverModel',
+        'imGroupOpenSpaceModel' => 'imGroupOpenSpaceModel',
+        'imRobotOpenDeliverModel' => 'imRobotOpenDeliverModel',
+        'imRobotOpenSpaceModel' => 'imRobotOpenSpaceModel',
         'imSingleOpenDeliverModel' => 'imSingleOpenDeliverModel',
-        'imSingleOpenSpaceModel'   => 'imSingleOpenSpaceModel',
-        'openDynamicDataConfig'    => 'openDynamicDataConfig',
-        'openSpaceId'              => 'openSpaceId',
-        'outTrackId'               => 'outTrackId',
-        'privateData'              => 'privateData',
-        'topOpenDeliverModel'      => 'topOpenDeliverModel',
-        'topOpenSpaceModel'        => 'topOpenSpaceModel',
-        'userId'                   => 'userId',
-        'userIdType'               => 'userIdType',
+        'imSingleOpenSpaceModel' => 'imSingleOpenSpaceModel',
+        'openDynamicDataConfig' => 'openDynamicDataConfig',
+        'openSpaceId' => 'openSpaceId',
+        'outTrackId' => 'outTrackId',
+        'privateData' => 'privateData',
+        'topOpenDeliverModel' => 'topOpenDeliverModel',
+        'topOpenSpaceModel' => 'topOpenSpaceModel',
+        'userId' => 'userId',
+        'userIdType' => 'userIdType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

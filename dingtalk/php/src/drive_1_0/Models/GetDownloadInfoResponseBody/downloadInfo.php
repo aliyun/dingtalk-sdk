@@ -34,15 +34,13 @@ class downloadInfo extends Model
      */
     public $resourceUrl;
     protected $_name = [
-        'expirationSeconds'   => 'expirationSeconds',
-        'headers'             => 'headers',
+        'expirationSeconds' => 'expirationSeconds',
+        'headers' => 'headers',
         'internalResourceUrl' => 'internalResourceUrl',
-        'resourceUrl'         => 'resourceUrl',
+        'resourceUrl' => 'resourceUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

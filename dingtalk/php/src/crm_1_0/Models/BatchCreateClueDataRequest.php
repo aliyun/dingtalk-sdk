@@ -28,14 +28,12 @@ class BatchCreateClueDataRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'dataList'    => 'dataList',
+        'dataList' => 'dataList',
         'privateSeas' => 'privateSeas',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class BatchCreateClueDataRequest extends Model
         if (isset($map['dataList'])) {
             if (!empty($map['dataList'])) {
                 $model->dataList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['dataList'] as $item) {
                     $model->dataList[$n++] = null !== $item ? dataList::fromMap($item) : $item;
                 }

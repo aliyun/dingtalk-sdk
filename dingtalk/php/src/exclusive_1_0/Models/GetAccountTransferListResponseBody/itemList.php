@@ -30,13 +30,11 @@ class itemList extends Model
     public $userId;
     protected $_name = [
         'deptName' => 'deptName',
-        'name'     => 'name',
-        'userId'   => 'userId',
+        'name' => 'name',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

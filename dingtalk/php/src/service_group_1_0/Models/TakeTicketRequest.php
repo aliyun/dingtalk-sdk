@@ -35,14 +35,12 @@ class TakeTicketRequest extends Model
      */
     public $takerUnionId;
     protected $_name = [
-        'openTeamId'   => 'openTeamId',
+        'openTeamId' => 'openTeamId',
         'openTicketId' => 'openTicketId',
         'takerUnionId' => 'takerUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

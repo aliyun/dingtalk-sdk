@@ -58,18 +58,16 @@ class formComponentValueList extends Model
      */
     public $value;
     protected $_name = [
-        'bizAlias'      => 'bizAlias',
+        'bizAlias' => 'bizAlias',
         'componentType' => 'componentType',
-        'details'       => 'details',
-        'extValue'      => 'extValue',
-        'id'            => 'id',
-        'name'          => 'name',
-        'value'         => 'value',
+        'details' => 'details',
+        'extValue' => 'extValue',
+        'id' => 'id',
+        'name' => 'name',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -122,7 +120,7 @@ class formComponentValueList extends Model
         if (isset($map['details'])) {
             if (!empty($map['details'])) {
                 $model->details = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['details'] as $item) {
                     $model->details[$n++] = null !== $item ? details::fromMap($item) : $item;
                 }

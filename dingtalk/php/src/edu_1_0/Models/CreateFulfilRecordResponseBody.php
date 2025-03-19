@@ -18,9 +18,7 @@ class CreateFulfilRecordResponseBody extends Model
         'successInfo' => 'successInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

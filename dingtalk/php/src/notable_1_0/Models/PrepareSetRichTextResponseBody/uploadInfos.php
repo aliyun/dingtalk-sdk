@@ -23,14 +23,12 @@ class uploadInfos extends Model
      */
     public $uploadUrl;
     protected $_name = [
-        'resourceId'  => 'resourceId',
+        'resourceId' => 'resourceId',
         'resourceUrl' => 'resourceUrl',
-        'uploadUrl'   => 'uploadUrl',
+        'uploadUrl' => 'uploadUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

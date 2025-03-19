@@ -24,9 +24,7 @@ class SearchActivationCodeRequest extends Model
         'callerUid' => 'callerUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

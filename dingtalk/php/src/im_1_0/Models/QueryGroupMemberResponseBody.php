@@ -25,13 +25,11 @@ class QueryGroupMemberResponseBody extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'groupMembers'       => 'groupMembers',
+        'groupMembers' => 'groupMembers',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class QueryGroupMemberResponseBody extends Model
         if (isset($map['groupMembers'])) {
             if (!empty($map['groupMembers'])) {
                 $model->groupMembers = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['groupMembers'] as $item) {
                     $model->groupMembers[$n++] = null !== $item ? groupMembers::fromMap($item) : $item;
                 }

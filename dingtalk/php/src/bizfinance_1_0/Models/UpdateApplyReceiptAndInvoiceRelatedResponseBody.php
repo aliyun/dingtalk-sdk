@@ -26,13 +26,11 @@ class UpdateApplyReceiptAndInvoiceRelatedResponseBody extends Model
     public $success;
     protected $_name = [
         'batchUpdateInvoiceResponse' => 'batchUpdateInvoiceResponse',
-        'errorInvoiceKeyVOList'      => 'errorInvoiceKeyVOList',
-        'success'                    => 'success',
+        'errorInvoiceKeyVOList' => 'errorInvoiceKeyVOList',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class UpdateApplyReceiptAndInvoiceRelatedResponseBody extends Model
         if (isset($map['errorInvoiceKeyVOList'])) {
             if (!empty($map['errorInvoiceKeyVOList'])) {
                 $model->errorInvoiceKeyVOList = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['errorInvoiceKeyVOList'] as $item) {
                     $model->errorInvoiceKeyVOList[$n++] = null !== $item ? errorInvoiceKeyVOList::fromMap($item) : $item;
                 }

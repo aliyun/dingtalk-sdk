@@ -53,16 +53,14 @@ class QueryUserAgreementRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizCode'   => 'bizCode',
-        'bizScene'  => 'bizScene',
-        'instId'    => 'instId',
+        'bizCode' => 'bizCode',
+        'bizScene' => 'bizScene',
+        'instId' => 'instId',
         'subInstId' => 'subInstId',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

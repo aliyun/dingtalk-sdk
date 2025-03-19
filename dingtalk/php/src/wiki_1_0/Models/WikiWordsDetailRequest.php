@@ -18,9 +18,7 @@ class WikiWordsDetailRequest extends Model
         'wordName' => 'wordName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

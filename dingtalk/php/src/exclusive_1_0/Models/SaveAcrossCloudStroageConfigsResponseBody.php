@@ -34,13 +34,11 @@ class SaveAcrossCloudStroageConfigsResponseBody extends Model
     public $state;
     protected $_name = [
         'accessKeyId' => 'accessKeyId',
-        'endpoint'    => 'endpoint',
-        'state'       => 'state',
+        'endpoint' => 'endpoint',
+        'state' => 'state',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

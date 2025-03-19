@@ -49,19 +49,17 @@ class reviewRiskDetail extends Model
      */
     public $subRisks;
     protected $_name = [
-        'examineBrief'  => 'examineBrief',
+        'examineBrief' => 'examineBrief',
         'examineResult' => 'examineResult',
         'examineStatus' => 'examineStatus',
-        'riskLevel'     => 'riskLevel',
-        'ruleSequence'  => 'ruleSequence',
-        'ruleTag'       => 'ruleTag',
-        'ruleTitle'     => 'ruleTitle',
-        'subRisks'      => 'subRisks',
+        'riskLevel' => 'riskLevel',
+        'ruleSequence' => 'ruleSequence',
+        'ruleTag' => 'ruleTag',
+        'ruleTitle' => 'ruleTitle',
+        'subRisks' => 'subRisks',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -132,7 +130,7 @@ class reviewRiskDetail extends Model
         if (isset($map['subRisks'])) {
             if (!empty($map['subRisks'])) {
                 $model->subRisks = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['subRisks'] as $item) {
                     $model->subRisks[$n++] = null !== $item ? subRisks::fromMap($item) : $item;
                 }

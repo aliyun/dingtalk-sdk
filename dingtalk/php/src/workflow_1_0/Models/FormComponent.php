@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class FormComponent extends Model
 {
     /**
-     * @var \AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormComponent[]
+     * @var FormComponent[]
      */
     public $children;
 
@@ -29,14 +29,12 @@ class FormComponent extends Model
      */
     public $props;
     protected $_name = [
-        'children'      => 'children',
+        'children' => 'children',
         'componentType' => 'componentType',
-        'props'         => 'props',
+        'props' => 'props',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -71,7 +69,7 @@ class FormComponent extends Model
         if (isset($map['children'])) {
             if (!empty($map['children'])) {
                 $model->children = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['children'] as $item) {
                     $model->children[$n++] = null !== $item ? self::fromMap($item) : $item;
                 }

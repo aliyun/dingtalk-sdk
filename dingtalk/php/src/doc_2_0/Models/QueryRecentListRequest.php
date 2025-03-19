@@ -45,16 +45,14 @@ class QueryRecentListRequest extends Model
     public $recentType;
     protected $_name = [
         'creatorType' => 'creatorType',
-        'fileType'    => 'fileType',
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
-        'operatorId'  => 'operatorId',
-        'recentType'  => 'recentType',
+        'fileType' => 'fileType',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'operatorId' => 'operatorId',
+        'recentType' => 'recentType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -34,16 +34,14 @@ class list_ extends Model
      */
     public $operatorRole;
     protected $_name = [
-        'actionCode'    => 'actionCode',
+        'actionCode' => 'actionCode',
         'actionContent' => 'actionContent',
-        'operator'      => 'operator',
-        'operatorId'    => 'operatorId',
-        'operatorRole'  => 'operatorRole',
+        'operator' => 'operator',
+        'operatorId' => 'operatorId',
+        'operatorRole' => 'operatorRole',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -87,7 +85,7 @@ class list_ extends Model
         if (isset($map['actionContent'])) {
             if (!empty($map['actionContent'])) {
                 $model->actionContent = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['actionContent'] as $item) {
                     $model->actionContent[$n++] = null !== $item ? actionContent::fromMap($item) : $item;
                 }

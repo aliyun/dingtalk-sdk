@@ -31,12 +31,10 @@ class fullTimeInfo extends Model
     protected $_name = [
         'maxJobExperience' => 'maxJobExperience',
         'minJobExperience' => 'minJobExperience',
-        'salaryMonth'      => 'salaryMonth',
+        'salaryMonth' => 'salaryMonth',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

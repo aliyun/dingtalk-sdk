@@ -97,24 +97,22 @@ class dentryInfo extends Model
      */
     public $uuid;
     protected $_name = [
-        'createTime'   => 'createTime',
-        'creator'      => 'creator',
-        'extension'    => 'extension',
-        'id'           => 'id',
-        'mobileUrl'    => 'mobileUrl',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
+        'extension' => 'extension',
+        'id' => 'id',
+        'mobileUrl' => 'mobileUrl',
         'modifiedTime' => 'modifiedTime',
-        'modifier'     => 'modifier',
-        'name'         => 'name',
-        'pcUrl'        => 'pcUrl',
-        'spaceId'      => 'spaceId',
-        'status'       => 'status',
-        'type'         => 'type',
-        'uuid'         => 'uuid',
+        'modifier' => 'modifier',
+        'name' => 'name',
+        'pcUrl' => 'pcUrl',
+        'spaceId' => 'spaceId',
+        'status' => 'status',
+        'type' => 'type',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

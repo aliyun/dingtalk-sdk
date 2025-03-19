@@ -21,13 +21,11 @@ class GetUserStayLengthResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'itemList'   => 'itemList',
+        'itemList' => 'itemList',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class GetUserStayLengthResponseBody extends Model
         if (isset($map['itemList'])) {
             if (!empty($map['itemList'])) {
                 $model->itemList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['itemList'] as $item) {
                     $model->itemList[$n++] = null !== $item ? itemList::fromMap($item) : $item;
                 }

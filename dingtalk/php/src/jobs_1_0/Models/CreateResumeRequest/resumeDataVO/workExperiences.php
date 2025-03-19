@@ -124,34 +124,32 @@ class workExperiences extends Model
      */
     public $underlingNumber;
     protected $_name = [
-        'achievement'          => 'achievement',
-        'companyCode'          => 'companyCode',
-        'companyName'          => 'companyName',
-        'description'          => 'description',
-        'endDate'              => 'endDate',
-        'industry'             => 'industry',
-        'industryCode'         => 'industryCode',
-        'internship'           => 'internship',
-        'jobCode'              => 'jobCode',
-        'jobNature'            => 'jobNature',
-        'jobTitle'             => 'jobTitle',
-        'leader'               => 'leader',
-        'location'             => 'location',
-        'locationCode'         => 'locationCode',
-        'parentIndustry'       => 'parentIndustry',
-        'parentIndustryCode'   => 'parentIndustryCode',
-        'reasonOfLeaving'      => 'reasonOfLeaving',
-        'responsibility'       => 'responsibility',
-        'resumePrivacy'        => 'resumePrivacy',
-        'salary'               => 'salary',
+        'achievement' => 'achievement',
+        'companyCode' => 'companyCode',
+        'companyName' => 'companyName',
+        'description' => 'description',
+        'endDate' => 'endDate',
+        'industry' => 'industry',
+        'industryCode' => 'industryCode',
+        'internship' => 'internship',
+        'jobCode' => 'jobCode',
+        'jobNature' => 'jobNature',
+        'jobTitle' => 'jobTitle',
+        'leader' => 'leader',
+        'location' => 'location',
+        'locationCode' => 'locationCode',
+        'parentIndustry' => 'parentIndustry',
+        'parentIndustryCode' => 'parentIndustryCode',
+        'reasonOfLeaving' => 'reasonOfLeaving',
+        'responsibility' => 'responsibility',
+        'resumePrivacy' => 'resumePrivacy',
+        'salary' => 'salary',
         'selectedSkillOptions' => 'selectedSkillOptions',
-        'startDate'            => 'startDate',
-        'underlingNumber'      => 'underlingNumber',
+        'startDate' => 'startDate',
+        'underlingNumber' => 'underlingNumber',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

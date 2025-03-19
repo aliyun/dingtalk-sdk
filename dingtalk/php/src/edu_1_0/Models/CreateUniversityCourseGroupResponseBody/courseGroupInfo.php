@@ -18,9 +18,7 @@ class courseGroupInfo extends Model
         'courseGroupCode' => 'courseGroupCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

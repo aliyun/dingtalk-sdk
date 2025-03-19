@@ -17,9 +17,7 @@ class AddTeamResponseBody extends Model
         'team' => 'team',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

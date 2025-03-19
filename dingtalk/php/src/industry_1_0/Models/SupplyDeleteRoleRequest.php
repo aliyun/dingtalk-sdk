@@ -23,12 +23,10 @@ class SupplyDeleteRoleRequest extends Model
     public $roleId;
     protected $_name = [
         'isRoleGroup' => 'isRoleGroup',
-        'roleId'      => 'roleId',
+        'roleId' => 'roleId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

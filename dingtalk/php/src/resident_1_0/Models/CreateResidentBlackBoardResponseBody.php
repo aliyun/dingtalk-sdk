@@ -16,9 +16,7 @@ class CreateResidentBlackBoardResponseBody extends Model
         'blackBoardId' => 'blackBoardId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

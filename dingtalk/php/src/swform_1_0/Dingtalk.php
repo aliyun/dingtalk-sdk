@@ -26,8 +26,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -60,18 +60,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFormInstance',
-            'version'     => 'swform_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/swform/instances/' . $formInstanceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFormInstance',
+            'version' => 'swform_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/swform/instances/' . $formInstanceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -128,18 +128,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListFormInstances',
-            'version'     => 'swform_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/swform/forms/' . $formCode . '/instances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListFormInstances',
+            'version' => 'swform_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/swform/forms/' . $formCode . '/instances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListFormInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -195,18 +195,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListFormSchemasByCreator',
-            'version'     => 'swform_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/swform/users/forms',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListFormSchemasByCreator',
+            'version' => 'swform_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/swform/users/forms',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListFormSchemasByCreatorResponse::fromMap($this->execute($params, $req, $runtime));

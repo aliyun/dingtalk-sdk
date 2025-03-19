@@ -41,15 +41,13 @@ class AddTicketMemoRequest extends Model
      */
     public $ticketMemo;
     protected $_name = [
-        'openTeamId'       => 'openTeamId',
-        'openTicketId'     => 'openTicketId',
+        'openTeamId' => 'openTeamId',
+        'openTicketId' => 'openTicketId',
         'processorUnionId' => 'processorUnionId',
-        'ticketMemo'       => 'ticketMemo',
+        'ticketMemo' => 'ticketMemo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -47,16 +47,14 @@ class relationInfo extends Model
      */
     public $startId;
     protected $_name = [
-        'endId'            => 'endId',
-        'mediaId'          => 'mediaId',
+        'endId' => 'endId',
+        'mediaId' => 'mediaId',
         'propertiesString' => 'propertiesString',
-        'relationName'     => 'relationName',
-        'startId'          => 'startId',
+        'relationName' => 'relationName',
+        'startId' => 'startId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

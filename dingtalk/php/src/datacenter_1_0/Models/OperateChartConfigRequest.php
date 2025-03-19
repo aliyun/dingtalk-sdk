@@ -51,14 +51,12 @@ class OperateChartConfigRequest extends Model
     protected $_name = [
         'apiKey' => 'apiKey',
         'corpId' => 'corpId',
-        'param'  => 'param',
+        'param' => 'param',
         'ticket' => 'ticket',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

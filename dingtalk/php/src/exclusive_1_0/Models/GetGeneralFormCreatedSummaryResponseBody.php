@@ -22,13 +22,11 @@ class GetGeneralFormCreatedSummaryResponseBody extends Model
      */
     public $useGeneralFormUserCnt1d;
     protected $_name = [
-        'generalFormCreatedCnt'   => 'generalFormCreatedCnt',
+        'generalFormCreatedCnt' => 'generalFormCreatedCnt',
         'useGeneralFormUserCnt1d' => 'useGeneralFormUserCnt1d',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

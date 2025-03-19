@@ -73,20 +73,18 @@ class GetProductResponseBody extends Model
     public $userDefineCode;
     protected $_name = [
         'accountantBookIdList' => 'accountantBookIdList',
-        'code'                 => 'code',
-        'createTime'           => 'createTime',
-        'description'          => 'description',
-        'information'          => 'information',
-        'name'                 => 'name',
-        'specification'        => 'specification',
-        'status'               => 'status',
-        'unit'                 => 'unit',
-        'userDefineCode'       => 'userDefineCode',
+        'code' => 'code',
+        'createTime' => 'createTime',
+        'description' => 'description',
+        'information' => 'information',
+        'name' => 'name',
+        'specification' => 'specification',
+        'status' => 'status',
+        'unit' => 'unit',
+        'userDefineCode' => 'userDefineCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

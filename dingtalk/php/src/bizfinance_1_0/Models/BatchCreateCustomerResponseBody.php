@@ -20,12 +20,10 @@ class BatchCreateCustomerResponseBody extends Model
     public $success;
     protected $_name = [
         'errorResult' => 'errorResult',
-        'success'     => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class BatchCreateCustomerResponseBody extends Model
         if (isset($map['errorResult'])) {
             if (!empty($map['errorResult'])) {
                 $model->errorResult = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['errorResult'] as $item) {
                     $model->errorResult[$n++] = null !== $item ? errorResult::fromMap($item) : $item;
                 }

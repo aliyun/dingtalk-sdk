@@ -20,13 +20,11 @@ class CreateTrustGroupHeaders extends Model
      */
     public $xAcsDingtalkAccessToken;
     protected $_name = [
-        'operationSource'         => 'operationSource',
+        'operationSource' => 'operationSource',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

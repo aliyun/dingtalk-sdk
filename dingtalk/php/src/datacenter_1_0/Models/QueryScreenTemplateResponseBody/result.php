@@ -33,16 +33,14 @@ class result extends Model
      */
     public $thumbUrl;
     protected $_name = [
-        'previewUrl'   => 'previewUrl',
-        'screenSize'   => 'screenSize',
-        'templateId'   => 'templateId',
+        'previewUrl' => 'previewUrl',
+        'screenSize' => 'screenSize',
+        'templateId' => 'templateId',
         'templateName' => 'templateName',
-        'thumbUrl'     => 'thumbUrl',
+        'thumbUrl' => 'thumbUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -42,15 +42,13 @@ class GetPrintDictionaryRequest extends Model
      */
     public $version;
     protected $_name = [
-        'appType'  => 'appType',
+        'appType' => 'appType',
         'formUuid' => 'formUuid',
-        'userId'   => 'userId',
-        'version'  => 'version',
+        'userId' => 'userId',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

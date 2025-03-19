@@ -25,12 +25,10 @@ class GetCandidateByPhoneNumberResponseBody extends Model
     public $name;
     protected $_name = [
         'candidateId' => 'candidateId',
-        'name'        => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class groupMemberList extends Model
      */
     public $userId;
     protected $_name = [
-        'groupNickName'   => 'groupNickName',
-        'orgName'         => 'orgName',
+        'groupNickName' => 'groupNickName',
+        'orgName' => 'orgName',
         'profilePhotoUrl' => 'profilePhotoUrl',
-        'userId'          => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

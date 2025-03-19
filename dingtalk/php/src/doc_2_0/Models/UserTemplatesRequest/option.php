@@ -41,16 +41,14 @@ class option extends Model
      */
     public $version;
     protected $_name = [
-        'maxResults'    => 'maxResults',
-        'nextToken'     => 'nextToken',
-        'platform'      => 'platform',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'platform' => 'platform',
         'templateTypes' => 'templateTypes',
-        'version'       => 'version',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -68,8 +68,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -116,18 +116,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AssignOrgHoldingToEmpHoldingBatch',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/organizations/points/assign',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AssignOrgHoldingToEmpHoldingBatch',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/organizations/points/assign',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AssignOrgHoldingToEmpHoldingBatchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -183,18 +183,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ConsumeUserPoints',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/users/' . $userId . '/points/deduct',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ConsumeUserPoints',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/users/' . $userId . '/points/deduct',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ConsumeUserPointsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -256,18 +256,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateOrgHonor',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/honors/templates',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateOrgHonor',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/honors/templates',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateOrgHonorResponse::fromMap($this->execute($params, $req, $runtime));
@@ -325,18 +325,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeductionPointBatch',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/users/points/deduct',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeductionPointBatch',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/users/points/deduct',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeductionPointBatchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -388,18 +388,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExportPointOpen',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/users/points/export',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExportPointOpen',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/users/points/export',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExportPointOpenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -467,18 +467,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GrantHonor',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/honors/' . $honorId . '/grant',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GrantHonor',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/honors/' . $honorId . '/grant',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GrantHonorResponse::fromMap($this->execute($params, $req, $runtime));
@@ -525,18 +525,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCorpPoints',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/organizations/points',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCorpPoints',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/organizations/points',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCorpPointsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -588,18 +588,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryEmpPointDetails',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/points/empDetails',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryEmpPointDetails',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/points/empDetails',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryEmpPointDetailsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -648,18 +648,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryOrgHonors',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/organizations/honors',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOrgHonors',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/organizations/honors',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOrgHonorsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -714,18 +714,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryOrgPointDetails',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/points/orgDetails',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOrgPointDetails',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/points/orgDetails',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOrgPointDetailsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -767,15 +767,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryPointActionAutoAssignRule',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/users/points/actionRules',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryPointActionAutoAssignRule',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/users/points/actionRules',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryPointActionAutoAssignRuleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -815,15 +815,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryPointAutoIssueSetting',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/users/points',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryPointAutoIssueSetting',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/users/points',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryPointAutoIssueSettingResponse::fromMap($this->execute($params, $req, $runtime));
@@ -871,18 +871,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryUserHonors',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/honors/users/' . $userId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserHonors',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/honors/users/' . $userId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserHonorsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -926,15 +926,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryUserPoints',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/users/' . $userId . '/points',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserPoints',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/users/' . $userId . '/points',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserPointsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -981,18 +981,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RecallHonor',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/honors/' . $honorId . '/recall',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RecallHonor',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/honors/' . $honorId . '/recall',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RecallHonorResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1048,18 +1048,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateAutoIssuePoint',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/users/points/set',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateAutoIssuePoint',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/users/points/set',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateAutoIssuePointResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1108,18 +1108,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdatePointActionAutoAssignRule',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/users/points/actionRules',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdatePointActionAutoAssignRule',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/users/points/actionRules',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdatePointActionAutoAssignRuleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1169,18 +1169,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'WearOrgHonor',
-            'version'     => 'orgCulture_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/orgCulture/honors/' . $honorId . '/wear',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'WearOrgHonor',
+            'version' => 'orgCulture_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/orgCulture/honors/' . $honorId . '/wear',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return WearOrgHonorResponse::fromMap($this->execute($params, $req, $runtime));

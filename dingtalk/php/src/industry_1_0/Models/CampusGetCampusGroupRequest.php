@@ -20,9 +20,7 @@ class CampusGetCampusGroupRequest extends Model
         'groupId' => 'groupId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

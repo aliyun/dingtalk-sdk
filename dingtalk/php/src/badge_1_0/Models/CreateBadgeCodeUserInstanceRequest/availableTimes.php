@@ -26,13 +26,11 @@ class availableTimes extends Model
      */
     public $gmtStart;
     protected $_name = [
-        'gmtEnd'   => 'gmtEnd',
+        'gmtEnd' => 'gmtEnd',
         'gmtStart' => 'gmtStart',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,9 +22,7 @@ class CreateTimerCardResponseBody extends Model
         'sucess' => 'sucess',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

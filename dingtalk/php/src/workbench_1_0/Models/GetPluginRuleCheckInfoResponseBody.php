@@ -18,13 +18,11 @@ class GetPluginRuleCheckInfoResponseBody extends Model
      */
     public $pluginRuleCheckDetail;
     protected $_name = [
-        'packCode'              => 'packCode',
+        'packCode' => 'packCode',
         'pluginRuleCheckDetail' => 'pluginRuleCheckDetail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,12 +20,10 @@ class freeCheckSetting extends Model
     public $freeCheckGap;
     protected $_name = [
         'delimitOffsetMinutesBetweenDays' => 'delimitOffsetMinutesBetweenDays',
-        'freeCheckGap'                    => 'freeCheckGap',
+        'freeCheckGap' => 'freeCheckGap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

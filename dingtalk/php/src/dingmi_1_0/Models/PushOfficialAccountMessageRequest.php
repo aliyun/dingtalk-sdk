@@ -35,14 +35,12 @@ class PushOfficialAccountMessageRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'msgKey'   => 'msgKey',
+        'msgKey' => 'msgKey',
         'msgParam' => 'msgParam',
-        'userId'   => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

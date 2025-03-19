@@ -24,9 +24,7 @@ class leaderInDept extends Model
         'leader' => 'leader',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

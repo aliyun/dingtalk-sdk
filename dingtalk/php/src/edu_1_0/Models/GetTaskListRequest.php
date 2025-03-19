@@ -42,15 +42,13 @@ class GetTaskListRequest extends Model
      */
     public $taskYear;
     protected $_name = [
-        'operator'   => 'operator',
+        'operator' => 'operator',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'taskYear'   => 'taskYear',
+        'pageSize' => 'pageSize',
+        'taskYear' => 'taskYear',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

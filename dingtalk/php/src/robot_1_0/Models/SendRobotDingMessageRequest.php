@@ -49,16 +49,14 @@ class SendRobotDingMessageRequest extends Model
      */
     public $robotCode;
     protected $_name = [
-        'contentParams'      => 'contentParams',
-        'dingTemplateId'     => 'dingTemplateId',
+        'contentParams' => 'contentParams',
+        'dingTemplateId' => 'dingTemplateId',
         'openConversationId' => 'openConversationId',
         'receiverUserIdList' => 'receiverUserIdList',
-        'robotCode'          => 'robotCode',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

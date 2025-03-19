@@ -17,9 +17,7 @@ class payeeAccountInfo extends Model
         'bankOpenDTO' => 'bankOpenDTO',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -38,14 +38,12 @@ class ListResidentSubDeptsResponseBody extends Model
     public $total;
     protected $_name = [
         'departmentList' => 'departmentList',
-        'hasMore'        => 'hasMore',
-        'nextCursor'     => 'nextCursor',
-        'total'          => 'total',
+        'hasMore' => 'hasMore',
+        'nextCursor' => 'nextCursor',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -83,7 +81,7 @@ class ListResidentSubDeptsResponseBody extends Model
         if (isset($map['departmentList'])) {
             if (!empty($map['departmentList'])) {
                 $model->departmentList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['departmentList'] as $item) {
                     $model->departmentList[$n++] = null !== $item ? departmentList::fromMap($item) : $item;
                 }

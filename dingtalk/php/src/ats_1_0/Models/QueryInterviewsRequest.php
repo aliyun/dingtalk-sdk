@@ -56,17 +56,15 @@ class QueryInterviewsRequest extends Model
      */
     public $size;
     protected $_name = [
-        'bizCode'              => 'bizCode',
-        'candidateId'          => 'candidateId',
+        'bizCode' => 'bizCode',
+        'candidateId' => 'candidateId',
         'startTimeBeginMillis' => 'startTimeBeginMillis',
-        'startTimeEndMillis'   => 'startTimeEndMillis',
-        'nextToken'            => 'nextToken',
-        'size'                 => 'size',
+        'startTimeEndMillis' => 'startTimeEndMillis',
+        'nextToken' => 'nextToken',
+        'size' => 'size',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

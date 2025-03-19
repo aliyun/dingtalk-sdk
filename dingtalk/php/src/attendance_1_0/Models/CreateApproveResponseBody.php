@@ -16,9 +16,7 @@ class CreateApproveResponseBody extends Model
         'dingtalkApproveId' => 'dingtalkApproveId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -77,24 +77,22 @@ class GetTicketResponseBody extends Model
      */
     public $updateTime;
     protected $_name = [
-        'createTime'         => 'createTime',
-        'creator'            => 'creator',
-        'customFields'       => 'customFields',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
+        'customFields' => 'customFields',
         'openConversationId' => 'openConversationId',
-        'openTicketId'       => 'openTicketId',
-        'processor'          => 'processor',
-        'scene'              => 'scene',
-        'sceneContext'       => 'sceneContext',
-        'stage'              => 'stage',
-        'takers'             => 'takers',
-        'template'           => 'template',
-        'title'              => 'title',
-        'updateTime'         => 'updateTime',
+        'openTicketId' => 'openTicketId',
+        'processor' => 'processor',
+        'scene' => 'scene',
+        'sceneContext' => 'sceneContext',
+        'stage' => 'stage',
+        'takers' => 'takers',
+        'template' => 'template',
+        'title' => 'title',
+        'updateTime' => 'updateTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -186,7 +184,7 @@ class GetTicketResponseBody extends Model
         if (isset($map['takers'])) {
             if (!empty($map['takers'])) {
                 $model->takers = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['takers'] as $item) {
                     $model->takers[$n++] = null !== $item ? takers::fromMap($item) : $item;
                 }

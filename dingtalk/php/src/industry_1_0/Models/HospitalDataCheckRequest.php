@@ -64,19 +64,17 @@ class HospitalDataCheckRequest extends Model
      */
     public $groupUserCount;
     protected $_name = [
-        'allDeptCount'      => 'allDeptCount',
-        'allDeptUserCount'  => 'allDeptUserCount',
-        'allGroupCount'     => 'allGroupCount',
+        'allDeptCount' => 'allDeptCount',
+        'allDeptUserCount' => 'allDeptUserCount',
+        'allGroupCount' => 'allGroupCount',
         'allGroupUserCount' => 'allGroupUserCount',
-        'deptCount'         => 'deptCount',
-        'deptUserCount'     => 'deptUserCount',
-        'groupCount'        => 'groupCount',
-        'groupUserCount'    => 'groupUserCount',
+        'deptCount' => 'deptCount',
+        'deptUserCount' => 'deptUserCount',
+        'groupCount' => 'groupCount',
+        'groupUserCount' => 'groupUserCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

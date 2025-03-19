@@ -55,17 +55,15 @@ class RedirectWorkflowTaskRequest extends Model
      */
     public $toUserId;
     protected $_name = [
-        'actionName'    => 'actionName',
-        'file'          => 'file',
+        'actionName' => 'actionName',
+        'file' => 'file',
         'operateUserId' => 'operateUserId',
-        'remark'        => 'remark',
-        'taskId'        => 'taskId',
-        'toUserId'      => 'toUserId',
+        'remark' => 'remark',
+        'taskId' => 'taskId',
+        'toUserId' => 'toUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

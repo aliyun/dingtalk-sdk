@@ -96,23 +96,21 @@ class HrmProcessTerminationAndHandoverRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'aflowHandOverUserId'              => 'aflowHandOverUserId',
-        'dingPanHandoverUserId'            => 'dingPanHandoverUserId',
+        'aflowHandOverUserId' => 'aflowHandOverUserId',
+        'dingPanHandoverUserId' => 'dingPanHandoverUserId',
         'directSubordinatesHandoverUserId' => 'directSubordinatesHandoverUserId',
-        'dismissionMemo'                   => 'dismissionMemo',
-        'dismissionReason'                 => 'dismissionReason',
-        'docNoteHandoverUserId'            => 'docNoteHandoverUserId',
-        'lastWorkDate'                     => 'lastWorkDate',
-        'optUserId'                        => 'optUserId',
-        'permissionHandoverUserId'         => 'permissionHandoverUserId',
-        'terminationReasonPassive'         => 'terminationReasonPassive',
-        'terminationReasonVoluntary'       => 'terminationReasonVoluntary',
-        'userId'                           => 'userId',
+        'dismissionMemo' => 'dismissionMemo',
+        'dismissionReason' => 'dismissionReason',
+        'docNoteHandoverUserId' => 'docNoteHandoverUserId',
+        'lastWorkDate' => 'lastWorkDate',
+        'optUserId' => 'optUserId',
+        'permissionHandoverUserId' => 'permissionHandoverUserId',
+        'terminationReasonPassive' => 'terminationReasonPassive',
+        'terminationReasonVoluntary' => 'terminationReasonVoluntary',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

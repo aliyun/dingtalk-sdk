@@ -28,13 +28,11 @@ class tmcProductDetailList extends Model
     public $product;
     protected $_name = [
         'gmtOrgPay' => 'gmtOrgPay',
-        'payType'   => 'payType',
-        'product'   => 'product',
+        'payType' => 'payType',
+        'product' => 'product',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

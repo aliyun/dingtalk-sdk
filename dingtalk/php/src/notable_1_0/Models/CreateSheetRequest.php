@@ -28,14 +28,12 @@ class CreateSheetRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'fields'     => 'fields',
-        'name'       => 'name',
+        'fields' => 'fields',
+        'name' => 'name',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class CreateSheetRequest extends Model
         if (isset($map['fields'])) {
             if (!empty($map['fields'])) {
                 $model->fields = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['fields'] as $item) {
                     $model->fields[$n++] = null !== $item ? fields::fromMap($item) : $item;
                 }

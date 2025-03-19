@@ -37,14 +37,12 @@ class SearchRequest extends Model
     public $spaceRequest;
     protected $_name = [
         'dentryRequest' => 'dentryRequest',
-        'keyword'       => 'keyword',
-        'operatorId'    => 'operatorId',
-        'spaceRequest'  => 'spaceRequest',
+        'keyword' => 'keyword',
+        'operatorId' => 'operatorId',
+        'spaceRequest' => 'spaceRequest',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

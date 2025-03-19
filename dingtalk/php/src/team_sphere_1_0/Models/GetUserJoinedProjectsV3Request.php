@@ -33,16 +33,14 @@ class GetUserJoinedProjectsV3Request extends Model
      */
     public $sortBy;
     protected $_name = [
-        'maxResults'        => 'maxResults',
-        'nextToken'         => 'nextToken',
-        'projectIds'        => 'projectIds',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'projectIds' => 'projectIds',
         'projectRoleLevels' => 'projectRoleLevels',
-        'sortBy'            => 'sortBy',
+        'sortBy' => 'sortBy',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

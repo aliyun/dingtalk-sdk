@@ -33,16 +33,14 @@ class scopes extends Model
      */
     public $userVisibleScopes;
     protected $_name = [
-        'deptVisibleScopes'  => 'deptVisibleScopes',
+        'deptVisibleScopes' => 'deptVisibleScopes',
         'dynamicGroupScopes' => 'dynamicGroupScopes',
-        'isAdmin'            => 'isAdmin',
-        'roleVisibleScopes'  => 'roleVisibleScopes',
-        'userVisibleScopes'  => 'userVisibleScopes',
+        'isAdmin' => 'isAdmin',
+        'roleVisibleScopes' => 'roleVisibleScopes',
+        'userVisibleScopes' => 'userVisibleScopes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

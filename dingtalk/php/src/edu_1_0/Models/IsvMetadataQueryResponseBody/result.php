@@ -26,14 +26,12 @@ class result extends Model
      */
     public $tableExist;
     protected $_name = [
-        'fields'     => 'fields',
-        'tableCode'  => 'tableCode',
+        'fields' => 'fields',
+        'tableCode' => 'tableCode',
         'tableExist' => 'tableExist',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -68,7 +66,7 @@ class result extends Model
         if (isset($map['fields'])) {
             if (!empty($map['fields'])) {
                 $model->fields = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['fields'] as $item) {
                     $model->fields[$n++] = null !== $item ? fields::fromMap($item) : $item;
                 }

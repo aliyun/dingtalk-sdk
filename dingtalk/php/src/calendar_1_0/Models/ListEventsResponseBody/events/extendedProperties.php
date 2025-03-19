@@ -17,9 +17,7 @@ class extendedProperties extends Model
         'sharedProperties' => 'sharedProperties',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

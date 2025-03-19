@@ -18,13 +18,11 @@ class RefreshWebOfficeTokenResponseBody extends Model
      */
     public $webOfficeRefreshToken;
     protected $_name = [
-        'webOfficeAccessToken'  => 'webOfficeAccessToken',
+        'webOfficeAccessToken' => 'webOfficeAccessToken',
         'webOfficeRefreshToken' => 'webOfficeRefreshToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -44,17 +44,15 @@ class TopboxCloseRequest extends Model
      */
     public $robotCode;
     protected $_name = [
-        'conversationType'   => 'conversationType',
-        'coolAppCode'        => 'coolAppCode',
+        'conversationType' => 'conversationType',
+        'coolAppCode' => 'coolAppCode',
         'openConversationId' => 'openConversationId',
-        'outTrackId'         => 'outTrackId',
+        'outTrackId' => 'outTrackId',
         'receiverUserIdList' => 'receiverUserIdList',
-        'robotCode'          => 'robotCode',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

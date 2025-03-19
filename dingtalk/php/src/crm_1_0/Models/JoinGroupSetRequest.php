@@ -39,15 +39,13 @@ class JoinGroupSetRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'bizDataList'    => 'bizDataList',
-        'corpId'         => 'corpId',
+        'bizDataList' => 'bizDataList',
+        'corpId' => 'corpId',
         'openGroupSetId' => 'openGroupSetId',
-        'unionId'        => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -85,7 +83,7 @@ class JoinGroupSetRequest extends Model
         if (isset($map['bizDataList'])) {
             if (!empty($map['bizDataList'])) {
                 $model->bizDataList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['bizDataList'] as $item) {
                     $model->bizDataList[$n++] = null !== $item ? bizDataList::fromMap($item) : $item;
                 }

@@ -18,13 +18,11 @@ class param extends Model
      */
     public $header;
     protected $_name = [
-        'body'   => 'body',
+        'body' => 'body',
         'header' => 'header',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

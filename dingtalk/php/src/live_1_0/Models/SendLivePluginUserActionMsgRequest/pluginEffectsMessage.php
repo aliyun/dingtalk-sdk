@@ -48,17 +48,15 @@ class pluginEffectsMessage extends Model
      */
     public $senderUnionId;
     protected $_name = [
-        'count'         => 'count',
+        'count' => 'count',
         'lottieFileUrl' => 'lottieFileUrl',
-        'msgIconUrl'    => 'msgIconUrl',
-        'msgText'       => 'msgText',
-        'pluginSubId'   => 'pluginSubId',
+        'msgIconUrl' => 'msgIconUrl',
+        'msgText' => 'msgText',
+        'pluginSubId' => 'pluginSubId',
         'senderUnionId' => 'senderUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

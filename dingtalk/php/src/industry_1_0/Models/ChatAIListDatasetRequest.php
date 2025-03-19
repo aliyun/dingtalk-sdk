@@ -20,9 +20,7 @@ class ChatAIListDatasetRequest extends Model
         'appId' => 'appId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

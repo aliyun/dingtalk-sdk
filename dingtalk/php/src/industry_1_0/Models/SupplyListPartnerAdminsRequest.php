@@ -20,9 +20,7 @@ class SupplyListPartnerAdminsRequest extends Model
         'deptId' => 'deptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

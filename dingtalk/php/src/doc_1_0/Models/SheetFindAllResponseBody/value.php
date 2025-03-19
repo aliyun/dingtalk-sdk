@@ -19,12 +19,10 @@ class value extends Model
     public $values;
     protected $_name = [
         'a1Notation' => 'a1Notation',
-        'values'     => 'values',
+        'values' => 'values',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -32,15 +32,13 @@ class data extends Model
      */
     public $unitAttributes;
     protected $_name = [
-        'groupAttributes'    => 'groupAttributes',
-        'msgConfigs'         => 'msgConfigs',
+        'groupAttributes' => 'groupAttributes',
+        'msgConfigs' => 'msgConfigs',
         'receiverAttributes' => 'receiverAttributes',
-        'unitAttributes'     => 'unitAttributes',
+        'unitAttributes' => 'unitAttributes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -90,7 +88,7 @@ class data extends Model
         if (isset($map['groupAttributes'])) {
             if (!empty($map['groupAttributes'])) {
                 $model->groupAttributes = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['groupAttributes'] as $item) {
                     $model->groupAttributes[$n++] = null !== $item ? groupAttributes::fromMap($item) : $item;
                 }
@@ -102,7 +100,7 @@ class data extends Model
         if (isset($map['receiverAttributes'])) {
             if (!empty($map['receiverAttributes'])) {
                 $model->receiverAttributes = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['receiverAttributes'] as $item) {
                     $model->receiverAttributes[$n++] = null !== $item ? receiverAttributes::fromMap($item) : $item;
                 }
@@ -111,7 +109,7 @@ class data extends Model
         if (isset($map['unitAttributes'])) {
             if (!empty($map['unitAttributes'])) {
                 $model->unitAttributes = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['unitAttributes'] as $item) {
                     $model->unitAttributes[$n++] = null !== $item ? unitAttributes::fromMap($item) : $item;
                 }

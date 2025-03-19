@@ -29,14 +29,12 @@ class GetUserByUnionIdRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'language'  => 'language',
+        'language' => 'language',
         'subCorpId' => 'subCorpId',
-        'unionId'   => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

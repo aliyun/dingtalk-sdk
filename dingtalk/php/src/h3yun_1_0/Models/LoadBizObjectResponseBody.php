@@ -33,14 +33,12 @@ class LoadBizObjectResponseBody extends Model
      */
     public $message;
     protected $_name = [
-        'code'    => 'code',
-        'data'    => 'data',
+        'code' => 'code',
+        'data' => 'data',
         'message' => 'message',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

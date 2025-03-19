@@ -219,42 +219,40 @@ class orderDetails extends Model
      */
     public $typeDescription;
     protected $_name = [
-        'arrivalTime'                 => 'arrivalTime',
-        'carColor'                    => 'carColor',
-        'carModel'                    => 'carModel',
-        'carNumber'                   => 'carNumber',
-        'cateringType'                => 'cateringType',
-        'checkInTime'                 => 'checkInTime',
-        'checkOutTime'                => 'checkOutTime',
-        'departTime'                  => 'departTime',
-        'destinationCity'             => 'destinationCity',
-        'destinationCityCode'         => 'destinationCityCode',
-        'destinationStation'          => 'destinationStation',
+        'arrivalTime' => 'arrivalTime',
+        'carColor' => 'carColor',
+        'carModel' => 'carModel',
+        'carNumber' => 'carNumber',
+        'cateringType' => 'cateringType',
+        'checkInTime' => 'checkInTime',
+        'checkOutTime' => 'checkOutTime',
+        'departTime' => 'departTime',
+        'destinationCity' => 'destinationCity',
+        'destinationCityCode' => 'destinationCityCode',
+        'destinationStation' => 'destinationStation',
         'destinationTerminalBuilding' => 'destinationTerminalBuilding',
-        'detailAmount'                => 'detailAmount',
-        'hotelAddress'                => 'hotelAddress',
-        'hotelCity'                   => 'hotelCity',
-        'hotelLocation'               => 'hotelLocation',
-        'hotelName'                   => 'hotelName',
-        'openConsumerInfo'            => 'openConsumerInfo',
-        'originCity'                  => 'originCity',
-        'originCityCode'              => 'originCityCode',
-        'originStation'               => 'originStation',
-        'originTerminalBuilding'      => 'originTerminalBuilding',
-        'roomCount'                   => 'roomCount',
-        'seatInfo'                    => 'seatInfo',
-        'serviceType'                 => 'serviceType',
-        'subSupplyLogo'               => 'subSupplyLogo',
-        'subSupplyName'               => 'subSupplyName',
-        'taxiType'                    => 'taxiType',
-        'telephone'                   => 'telephone',
-        'transportNumber'             => 'transportNumber',
-        'typeDescription'             => 'typeDescription',
+        'detailAmount' => 'detailAmount',
+        'hotelAddress' => 'hotelAddress',
+        'hotelCity' => 'hotelCity',
+        'hotelLocation' => 'hotelLocation',
+        'hotelName' => 'hotelName',
+        'openConsumerInfo' => 'openConsumerInfo',
+        'originCity' => 'originCity',
+        'originCityCode' => 'originCityCode',
+        'originStation' => 'originStation',
+        'originTerminalBuilding' => 'originTerminalBuilding',
+        'roomCount' => 'roomCount',
+        'seatInfo' => 'seatInfo',
+        'serviceType' => 'serviceType',
+        'subSupplyLogo' => 'subSupplyLogo',
+        'subSupplyName' => 'subSupplyName',
+        'taxiType' => 'taxiType',
+        'telephone' => 'telephone',
+        'transportNumber' => 'transportNumber',
+        'typeDescription' => 'typeDescription',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -424,7 +422,7 @@ class orderDetails extends Model
         if (isset($map['openConsumerInfo'])) {
             if (!empty($map['openConsumerInfo'])) {
                 $model->openConsumerInfo = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['openConsumerInfo'] as $item) {
                     $model->openConsumerInfo[$n++] = null !== $item ? openConsumerInfo::fromMap($item) : $item;
                 }

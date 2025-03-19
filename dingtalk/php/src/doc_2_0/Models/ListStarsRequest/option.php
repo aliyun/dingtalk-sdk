@@ -95,24 +95,22 @@ class option extends Model
      */
     public $withTeamDetail;
     protected $_name = [
-        'contentTypeList'          => 'contentTypeList',
-        'filterDocTypes'           => 'filterDocTypes',
-        'listV2'                   => 'listV2',
-        'maxResults'               => 'maxResults',
-        'nextToken'                => 'nextToken',
-        'order'                    => 'order',
-        'orderBy'                  => 'orderBy',
-        'withDentryCreatorInfo'    => 'withDentryCreatorInfo',
-        'withDentryModifierInfo'   => 'withDentryModifierInfo',
+        'contentTypeList' => 'contentTypeList',
+        'filterDocTypes' => 'filterDocTypes',
+        'listV2' => 'listV2',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'order' => 'order',
+        'orderBy' => 'orderBy',
+        'withDentryCreatorInfo' => 'withDentryCreatorInfo',
+        'withDentryModifierInfo' => 'withDentryModifierInfo',
         'withDentryPermissionRole' => 'withDentryPermissionRole',
-        'withSpaceDetail'          => 'withSpaceDetail',
-        'withSpacePermissionRole'  => 'withSpacePermissionRole',
-        'withTeamDetail'           => 'withTeamDetail',
+        'withSpaceDetail' => 'withSpaceDetail',
+        'withSpacePermissionRole' => 'withSpacePermissionRole',
+        'withTeamDetail' => 'withTeamDetail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

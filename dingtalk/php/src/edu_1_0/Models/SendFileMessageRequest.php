@@ -48,17 +48,15 @@ class SendFileMessageRequest extends Model
      */
     public $sendType;
     protected $_name = [
-        'bizId'     => 'bizId',
+        'bizId' => 'bizId',
         'extension' => 'extension',
-        'fileName'  => 'fileName',
-        'fileSize'  => 'fileSize',
-        'fileUrl'   => 'fileUrl',
-        'sendType'  => 'sendType',
+        'fileName' => 'fileName',
+        'fileSize' => 'fileSize',
+        'fileUrl' => 'fileUrl',
+        'sendType' => 'sendType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

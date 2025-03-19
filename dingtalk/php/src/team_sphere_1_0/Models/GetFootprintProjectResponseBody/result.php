@@ -78,21 +78,19 @@ class result extends Model
      */
     public $visibility;
     protected $_name = [
-        'created'        => 'created',
-        'creatorId'      => 'creatorId',
-        'description'    => 'description',
-        'id'             => 'id',
-        'isDeleted'      => 'isDeleted',
-        'logo'           => 'logo',
-        'name'           => 'name',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
+        'description' => 'description',
+        'id' => 'id',
+        'isDeleted' => 'isDeleted',
+        'logo' => 'logo',
+        'name' => 'name',
         'organizationId' => 'organizationId',
-        'updated'        => 'updated',
-        'visibility'     => 'visibility',
+        'updated' => 'updated',
+        'visibility' => 'visibility',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

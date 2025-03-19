@@ -29,14 +29,12 @@ class GetSaleUserInfoByUserIdRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'corpId'    => 'corpId',
+        'corpId' => 'corpId',
         'namespace' => 'namespace',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

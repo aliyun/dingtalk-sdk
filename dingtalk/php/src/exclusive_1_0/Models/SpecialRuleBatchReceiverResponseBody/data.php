@@ -18,13 +18,11 @@ class data extends Model
      */
     public $serialNumber;
     protected $_name = [
-        'msgId'        => 'msgId',
+        'msgId' => 'msgId',
         'serialNumber' => 'serialNumber',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

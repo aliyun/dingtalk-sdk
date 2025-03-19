@@ -42,15 +42,13 @@ class results extends Model
     public $success;
     protected $_name = [
         'duplicatedRelationIds' => 'duplicatedRelationIds',
-        'errorCode'             => 'errorCode',
-        'errorMsg'              => 'errorMsg',
-        'relationId'            => 'relationId',
-        'success'               => 'success',
+        'errorCode' => 'errorCode',
+        'errorMsg' => 'errorMsg',
+        'relationId' => 'relationId',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

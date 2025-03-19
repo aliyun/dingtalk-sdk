@@ -175,40 +175,38 @@ class TaskInfoCreateAndStartTaskRequest extends Model
      */
     public $updateTaskCardId;
     protected $_name = [
-        'attr'                  => 'attr',
-        'backlogDTO'            => 'backlogDTO',
-        'backlogGenerateFlag'   => 'backlogGenerateFlag',
-        'businessCode'          => 'businessCode',
-        'canceldelTaskCardId'   => 'canceldelTaskCardId',
-        'cardDTO'               => 'cardDTO',
-        'customFlag'            => 'customFlag',
-        'detailUrl'             => 'detailUrl',
-        'finishTaskCardId'      => 'finishTaskCardId',
-        'operatorAccount'       => 'operatorAccount',
-        'outTaskId'             => 'outTaskId',
-        'projId'                => 'projId',
-        'robotCode'             => 'robotCode',
-        'secretKey'             => 'secretKey',
-        'sendMsgFlag'           => 'sendMsgFlag',
-        'sort'                  => 'sort',
-        'startTaskCardId'       => 'startTaskCardId',
-        'state'                 => 'state',
-        'taskContent'           => 'taskContent',
-        'taskEndTime'           => 'taskEndTime',
+        'attr' => 'attr',
+        'backlogDTO' => 'backlogDTO',
+        'backlogGenerateFlag' => 'backlogGenerateFlag',
+        'businessCode' => 'businessCode',
+        'canceldelTaskCardId' => 'canceldelTaskCardId',
+        'cardDTO' => 'cardDTO',
+        'customFlag' => 'customFlag',
+        'detailUrl' => 'detailUrl',
+        'finishTaskCardId' => 'finishTaskCardId',
+        'operatorAccount' => 'operatorAccount',
+        'outTaskId' => 'outTaskId',
+        'projId' => 'projId',
+        'robotCode' => 'robotCode',
+        'secretKey' => 'secretKey',
+        'sendMsgFlag' => 'sendMsgFlag',
+        'sort' => 'sort',
+        'startTaskCardId' => 'startTaskCardId',
+        'state' => 'state',
+        'taskContent' => 'taskContent',
+        'taskEndTime' => 'taskEndTime',
         'taskExecutePersonDTOS' => 'taskExecutePersonDTOS',
-        'taskGroupDTOList'      => 'taskGroupDTOList',
-        'taskSystem'            => 'taskSystem',
-        'taskTemplCode'         => 'taskTemplCode',
-        'taskTitle'             => 'taskTitle',
-        'taskType'              => 'taskType',
-        'taskUrlMobile'         => 'taskUrlMobile',
-        'taskUrlPc'             => 'taskUrlPc',
-        'updateTaskCardId'      => 'updateTaskCardId',
+        'taskGroupDTOList' => 'taskGroupDTOList',
+        'taskSystem' => 'taskSystem',
+        'taskTemplCode' => 'taskTemplCode',
+        'taskTitle' => 'taskTitle',
+        'taskType' => 'taskType',
+        'taskUrlMobile' => 'taskUrlMobile',
+        'taskUrlPc' => 'taskUrlPc',
+        'updateTaskCardId' => 'updateTaskCardId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -387,7 +385,7 @@ class TaskInfoCreateAndStartTaskRequest extends Model
         if (isset($map['taskExecutePersonDTOS'])) {
             if (!empty($map['taskExecutePersonDTOS'])) {
                 $model->taskExecutePersonDTOS = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['taskExecutePersonDTOS'] as $item) {
                     $model->taskExecutePersonDTOS[$n++] = null !== $item ? taskExecutePersonDTOS::fromMap($item) : $item;
                 }
@@ -396,7 +394,7 @@ class TaskInfoCreateAndStartTaskRequest extends Model
         if (isset($map['taskGroupDTOList'])) {
             if (!empty($map['taskGroupDTOList'])) {
                 $model->taskGroupDTOList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['taskGroupDTOList'] as $item) {
                     $model->taskGroupDTOList[$n++] = null !== $item ? taskGroupDTOList::fromMap($item) : $item;
                 }

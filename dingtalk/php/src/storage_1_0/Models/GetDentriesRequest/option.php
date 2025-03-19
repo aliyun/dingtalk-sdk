@@ -21,12 +21,10 @@ class option extends Model
     public $withThumbnail;
     protected $_name = [
         'appIdsForAppProperties' => 'appIdsForAppProperties',
-        'withThumbnail'          => 'withThumbnail',
+        'withThumbnail' => 'withThumbnail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,13 +22,11 @@ class UpdateTaskTaskflowstatusRequest extends Model
      */
     public $taskflowStatusUpdateNote;
     protected $_name = [
-        'taskflowStatusId'         => 'taskflowStatusId',
+        'taskflowStatusId' => 'taskflowStatusId',
         'taskflowStatusUpdateNote' => 'taskflowStatusUpdateNote',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

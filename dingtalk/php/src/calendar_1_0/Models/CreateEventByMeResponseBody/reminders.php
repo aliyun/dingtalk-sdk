@@ -18,13 +18,11 @@ class reminders extends Model
      */
     public $minutes;
     protected $_name = [
-        'method'  => 'method',
+        'method' => 'method',
         'minutes' => 'minutes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

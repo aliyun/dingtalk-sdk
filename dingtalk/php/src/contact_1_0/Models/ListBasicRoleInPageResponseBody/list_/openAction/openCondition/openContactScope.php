@@ -28,15 +28,13 @@ class openContactScope extends Model
      */
     public $userIds;
     protected $_name = [
-        'deptIds'                => 'deptIds',
-        'includeMemberDepts'     => 'includeMemberDepts',
+        'deptIds' => 'deptIds',
+        'includeMemberDepts' => 'includeMemberDepts',
         'includeSelfManageDepts' => 'includeSelfManageDepts',
-        'userIds'                => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

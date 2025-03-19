@@ -16,9 +16,7 @@ class extra extends Model
         'param' => 'param',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

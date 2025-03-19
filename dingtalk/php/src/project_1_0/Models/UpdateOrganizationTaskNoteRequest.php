@@ -31,14 +31,12 @@ class UpdateOrganizationTaskNoteRequest extends Model
      */
     public $note;
     protected $_name = [
-        'disableActivity'     => 'disableActivity',
+        'disableActivity' => 'disableActivity',
         'disableNotification' => 'disableNotification',
-        'note'                => 'note',
+        'note' => 'note',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -28,13 +28,11 @@ class list_ extends Model
     public $title;
     protected $_name = [
         'abstractMessage' => 'abstractMessage',
-        'createTime'      => 'createTime',
-        'title'           => 'title',
+        'createTime' => 'createTime',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

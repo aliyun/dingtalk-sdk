@@ -23,13 +23,11 @@ class GetOaOperatorLogListResponseBody extends Model
      */
     public $itemCount;
     protected $_name = [
-        'data'      => 'data',
+        'data' => 'data',
         'itemCount' => 'itemCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -61,7 +59,7 @@ class GetOaOperatorLogListResponseBody extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }

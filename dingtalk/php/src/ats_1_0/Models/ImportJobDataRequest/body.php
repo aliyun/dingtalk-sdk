@@ -85,22 +85,20 @@ class body extends Model
      */
     public $userId;
     protected $_name = [
-        'address'     => 'address',
-        'category'    => 'category',
+        'address' => 'address',
+        'category' => 'category',
         'description' => 'description',
-        'experience'  => 'experience',
+        'experience' => 'experience',
         'fullTimeExt' => 'fullTimeExt',
-        'jobNature'   => 'jobNature',
-        'maxSalary'   => 'maxSalary',
-        'minSalary'   => 'minSalary',
-        'name'        => 'name',
+        'jobNature' => 'jobNature',
+        'maxSalary' => 'maxSalary',
+        'minSalary' => 'minSalary',
+        'name' => 'name',
         'requiredEdu' => 'requiredEdu',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

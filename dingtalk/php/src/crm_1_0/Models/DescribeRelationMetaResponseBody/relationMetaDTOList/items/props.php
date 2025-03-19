@@ -357,54 +357,52 @@ class props extends Model
      */
     public $watermark;
     protected $_name = [
-        'actionName'             => 'actionName',
-        'align'                  => 'align',
-        'availableTemplates'     => 'availableTemplates',
-        'behaviorLinkage'        => 'behaviorLinkage',
-        'bizAlias'               => 'bizAlias',
-        'choice'                 => 'choice',
-        'content'                => 'content',
-        'dataSource'             => 'dataSource',
-        'defaultColor'           => 'defaultColor',
-        'disabled'               => 'disabled',
-        'duration'               => 'duration',
-        'durationLabel'          => 'durationLabel',
-        'fieldId'                => 'fieldId',
-        'fields'                 => 'fields',
-        'format'                 => 'format',
-        'formula'                => 'formula',
-        'invisible'              => 'invisible',
-        'label'                  => 'label',
-        'labelEditableFreeze'    => 'labelEditableFreeze',
-        'limit'                  => 'limit',
-        'link'                   => 'link',
-        'mode'                   => 'mode',
-        'multi'                  => 'multi',
-        'multiple'               => 'multiple',
-        'needDetail'             => 'needDetail',
-        'notPrint'               => 'notPrint',
-        'notUpper'               => 'notUpper',
-        'options'                => 'options',
-        'payEnable'              => 'payEnable',
-        'placeholder'            => 'placeholder',
-        'quote'                  => 'quote',
-        'ratio'                  => 'ratio',
-        'relateSource'           => 'relateSource',
-        'required'               => 'required',
+        'actionName' => 'actionName',
+        'align' => 'align',
+        'availableTemplates' => 'availableTemplates',
+        'behaviorLinkage' => 'behaviorLinkage',
+        'bizAlias' => 'bizAlias',
+        'choice' => 'choice',
+        'content' => 'content',
+        'dataSource' => 'dataSource',
+        'defaultColor' => 'defaultColor',
+        'disabled' => 'disabled',
+        'duration' => 'duration',
+        'durationLabel' => 'durationLabel',
+        'fieldId' => 'fieldId',
+        'fields' => 'fields',
+        'format' => 'format',
+        'formula' => 'formula',
+        'invisible' => 'invisible',
+        'label' => 'label',
+        'labelEditableFreeze' => 'labelEditableFreeze',
+        'limit' => 'limit',
+        'link' => 'link',
+        'mode' => 'mode',
+        'multi' => 'multi',
+        'multiple' => 'multiple',
+        'needDetail' => 'needDetail',
+        'notPrint' => 'notPrint',
+        'notUpper' => 'notUpper',
+        'options' => 'options',
+        'payEnable' => 'payEnable',
+        'placeholder' => 'placeholder',
+        'quote' => 'quote',
+        'ratio' => 'ratio',
+        'relateSource' => 'relateSource',
+        'required' => 'required',
         'requiredEditableFreeze' => 'requiredEditableFreeze',
-        'rule'                   => 'rule',
-        'sortable'               => 'sortable',
-        'spread'                 => 'spread',
-        'statField'              => 'statField',
-        'tableViewMode'          => 'tableViewMode',
-        'unit'                   => 'unit',
-        'verticalPrint'          => 'verticalPrint',
-        'watermark'              => 'watermark',
+        'rule' => 'rule',
+        'sortable' => 'sortable',
+        'spread' => 'spread',
+        'statField' => 'statField',
+        'tableViewMode' => 'tableViewMode',
+        'unit' => 'unit',
+        'verticalPrint' => 'verticalPrint',
+        'watermark' => 'watermark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -601,7 +599,7 @@ class props extends Model
         if (isset($map['availableTemplates'])) {
             if (!empty($map['availableTemplates'])) {
                 $model->availableTemplates = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['availableTemplates'] as $item) {
                     $model->availableTemplates[$n++] = null !== $item ? availableTemplates::fromMap($item) : $item;
                 }
@@ -610,7 +608,7 @@ class props extends Model
         if (isset($map['behaviorLinkage'])) {
             if (!empty($map['behaviorLinkage'])) {
                 $model->behaviorLinkage = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['behaviorLinkage'] as $item) {
                     $model->behaviorLinkage[$n++] = null !== $item ? behaviorLinkage::fromMap($item) : $item;
                 }
@@ -646,7 +644,7 @@ class props extends Model
         if (isset($map['fields'])) {
             if (!empty($map['fields'])) {
                 $model->fields = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['fields'] as $item) {
                     $model->fields[$n++] = null !== $item ? fields::fromMap($item) : $item;
                 }
@@ -694,7 +692,7 @@ class props extends Model
         if (isset($map['options'])) {
             if (!empty($map['options'])) {
                 $model->options = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['options'] as $item) {
                     $model->options[$n++] = null !== $item ? options::fromMap($item) : $item;
                 }
@@ -715,7 +713,7 @@ class props extends Model
         if (isset($map['relateSource'])) {
             if (!empty($map['relateSource'])) {
                 $model->relateSource = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['relateSource'] as $item) {
                     $model->relateSource[$n++] = null !== $item ? relateSource::fromMap($item) : $item;
                 }
@@ -730,7 +728,7 @@ class props extends Model
         if (isset($map['rule'])) {
             if (!empty($map['rule'])) {
                 $model->rule = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['rule'] as $item) {
                     $model->rule[$n++] = null !== $item ? rule::fromMap($item) : $item;
                 }
@@ -745,7 +743,7 @@ class props extends Model
         if (isset($map['statField'])) {
             if (!empty($map['statField'])) {
                 $model->statField = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['statField'] as $item) {
                     $model->statField[$n++] = null !== $item ? statField::fromMap($item) : $item;
                 }

@@ -22,13 +22,11 @@ class userAuthList extends Model
      */
     public $sourceDeptId;
     protected $_name = [
-        'dingDeptId'   => 'dingDeptId',
+        'dingDeptId' => 'dingDeptId',
         'sourceDeptId' => 'sourceDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

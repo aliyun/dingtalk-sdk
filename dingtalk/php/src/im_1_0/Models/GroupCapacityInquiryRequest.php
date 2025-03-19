@@ -41,16 +41,14 @@ class GroupCapacityInquiryRequest extends Model
      */
     public $targetCapacity;
     protected $_name = [
-        'effectiveDuration'  => 'effectiveDuration',
+        'effectiveDuration' => 'effectiveDuration',
         'openConversationId' => 'openConversationId',
-        'operator'           => 'operator',
-        'options'            => 'options',
-        'targetCapacity'     => 'targetCapacity',
+        'operator' => 'operator',
+        'options' => 'options',
+        'targetCapacity' => 'targetCapacity',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

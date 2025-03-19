@@ -18,9 +18,7 @@ class GetDefaultHandOverUserResponseBody extends Model
         'defaultHandoverUserId' => 'defaultHandoverUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -48,17 +48,15 @@ class reservationCloseDetail extends Model
      */
     public $taskStartTime;
     protected $_name = [
-        'closeReason'    => 'closeReason',
-        'contactNick'    => 'contactNick',
+        'closeReason' => 'closeReason',
+        'contactNick' => 'contactNick',
         'contactUnionId' => 'contactUnionId',
-        'sendNotify'     => 'sendNotify',
-        'taskEndTime'    => 'taskEndTime',
-        'taskStartTime'  => 'taskStartTime',
+        'sendNotify' => 'sendNotify',
+        'taskEndTime' => 'taskEndTime',
+        'taskStartTime' => 'taskStartTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

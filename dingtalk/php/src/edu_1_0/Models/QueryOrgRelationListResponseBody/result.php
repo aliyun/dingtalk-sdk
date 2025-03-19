@@ -29,14 +29,12 @@ class result extends Model
      */
     public $name;
     protected $_name = [
-        'corpId'      => 'corpId',
+        'corpId' => 'corpId',
         'deviceCount' => 'deviceCount',
-        'name'        => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class GetPropertyInfoRequest extends Model
         'propertyCorpId' => 'propertyCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

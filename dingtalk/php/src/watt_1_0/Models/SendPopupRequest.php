@@ -28,15 +28,13 @@ class SendPopupRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'content'   => 'content',
-        'endTime'   => 'endTime',
+        'content' => 'content',
+        'endTime' => 'endTime',
         'startTime' => 'startTime',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

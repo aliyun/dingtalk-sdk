@@ -61,18 +61,16 @@ class UpdateLiveRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'coverUrl'     => 'coverUrl',
+        'coverUrl' => 'coverUrl',
         'introduction' => 'introduction',
-        'liveId'       => 'liveId',
-        'preEndTime'   => 'preEndTime',
+        'liveId' => 'liveId',
+        'preEndTime' => 'preEndTime',
         'preStartTime' => 'preStartTime',
-        'title'        => 'title',
-        'unionId'      => 'unionId',
+        'title' => 'title',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

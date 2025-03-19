@@ -16,9 +16,7 @@ class chatSubtitleConfig extends Model
         'active' => 'active',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

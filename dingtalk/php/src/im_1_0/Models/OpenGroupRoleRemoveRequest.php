@@ -30,13 +30,11 @@ class OpenGroupRoleRemoveRequest extends Model
     public $userId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openRoleId'         => 'openRoleId',
-        'userId'             => 'userId',
+        'openRoleId' => 'openRoleId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

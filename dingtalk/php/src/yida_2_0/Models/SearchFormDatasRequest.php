@@ -119,26 +119,24 @@ class SearchFormDatasRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'             => 'appType',
-        'createFromTimeGMT'   => 'createFromTimeGMT',
-        'createToTimeGMT'     => 'createToTimeGMT',
-        'currentPage'         => 'currentPage',
-        'dynamicOrder'        => 'dynamicOrder',
-        'formUuid'            => 'formUuid',
-        'language'            => 'language',
+        'appType' => 'appType',
+        'createFromTimeGMT' => 'createFromTimeGMT',
+        'createToTimeGMT' => 'createToTimeGMT',
+        'currentPage' => 'currentPage',
+        'dynamicOrder' => 'dynamicOrder',
+        'formUuid' => 'formUuid',
+        'language' => 'language',
         'modifiedFromTimeGMT' => 'modifiedFromTimeGMT',
-        'modifiedToTimeGMT'   => 'modifiedToTimeGMT',
-        'originatorId'        => 'originatorId',
-        'pageSize'            => 'pageSize',
-        'searchFieldJson'     => 'searchFieldJson',
-        'systemToken'         => 'systemToken',
-        'useAlias'            => 'useAlias',
-        'userId'              => 'userId',
+        'modifiedToTimeGMT' => 'modifiedToTimeGMT',
+        'originatorId' => 'originatorId',
+        'pageSize' => 'pageSize',
+        'searchFieldJson' => 'searchFieldJson',
+        'systemToken' => 'systemToken',
+        'useAlias' => 'useAlias',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

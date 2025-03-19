@@ -33,16 +33,14 @@ class AppGetUserTaskListRequest extends Model
      */
     public $type;
     protected $_name = [
-        'done'       => 'done',
+        'done' => 'done',
         'operatorId' => 'operatorId',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'type'       => 'type',
+        'pageSize' => 'pageSize',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

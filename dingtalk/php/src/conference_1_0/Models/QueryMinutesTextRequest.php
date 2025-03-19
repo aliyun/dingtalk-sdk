@@ -32,15 +32,13 @@ class QueryMinutesTextRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'direction'  => 'direction',
+        'direction' => 'direction',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'unionId'    => 'unionId',
+        'nextToken' => 'nextToken',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

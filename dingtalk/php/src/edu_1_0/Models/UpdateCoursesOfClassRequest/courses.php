@@ -69,20 +69,18 @@ class courses extends Model
      */
     public $teacherStaffIds;
     protected $_name = [
-        'courseCode'      => 'courseCode',
+        'courseCode' => 'courseCode',
         'courseGroupCode' => 'courseGroupCode',
-        'courseName'      => 'courseName',
-        'creatorName'     => 'creatorName',
-        'dateModel'       => 'dateModel',
-        'deleteTag'       => 'deleteTag',
-        'location'        => 'location',
-        'sectionModel'    => 'sectionModel',
+        'courseName' => 'courseName',
+        'creatorName' => 'creatorName',
+        'dateModel' => 'dateModel',
+        'deleteTag' => 'deleteTag',
+        'location' => 'location',
+        'sectionModel' => 'sectionModel',
         'teacherStaffIds' => 'teacherStaffIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,13 +36,11 @@ class PushCustomerGroupMessageRequest extends Model
     public $msgParam;
     protected $_name = [
         'conversationId' => 'conversationId',
-        'msgKey'         => 'msgKey',
-        'msgParam'       => 'msgParam',
+        'msgKey' => 'msgKey',
+        'msgParam' => 'msgParam',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

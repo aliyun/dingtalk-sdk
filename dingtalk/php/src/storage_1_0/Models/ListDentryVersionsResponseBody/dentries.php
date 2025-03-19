@@ -140,29 +140,27 @@ class dentries extends Model
     public $version;
     protected $_name = [
         'appProperties' => 'appProperties',
-        'createTime'    => 'createTime',
-        'creatorId'     => 'creatorId',
-        'extension'     => 'extension',
-        'id'            => 'id',
-        'modifiedTime'  => 'modifiedTime',
-        'modifierId'    => 'modifierId',
-        'name'          => 'name',
-        'parentId'      => 'parentId',
+        'createTime' => 'createTime',
+        'creatorId' => 'creatorId',
+        'extension' => 'extension',
+        'id' => 'id',
+        'modifiedTime' => 'modifiedTime',
+        'modifierId' => 'modifierId',
+        'name' => 'name',
+        'parentId' => 'parentId',
         'partitionType' => 'partitionType',
-        'path'          => 'path',
-        'properties'    => 'properties',
-        'size'          => 'size',
-        'spaceId'       => 'spaceId',
-        'status'        => 'status',
+        'path' => 'path',
+        'properties' => 'properties',
+        'size' => 'size',
+        'spaceId' => 'spaceId',
+        'status' => 'status',
         'storageDriver' => 'storageDriver',
-        'type'          => 'type',
-        'uuid'          => 'uuid',
-        'version'       => 'version',
+        'type' => 'type',
+        'uuid' => 'uuid',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

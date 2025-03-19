@@ -18,9 +18,7 @@ class GetDeveloperMetadataRequest extends Model
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

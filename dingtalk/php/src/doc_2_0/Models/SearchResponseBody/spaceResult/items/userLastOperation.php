@@ -22,9 +22,7 @@ class userLastOperation extends Model
         'time' => 'time',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

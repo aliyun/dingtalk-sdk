@@ -48,17 +48,15 @@ class ChannelOrderRequest extends Model
      */
     public $quantity;
     protected $_name = [
-        'itemCode'        => 'itemCode',
-        'itemName'        => 'itemName',
+        'itemCode' => 'itemCode',
+        'itemName' => 'itemName',
         'orderCreateTime' => 'orderCreateTime',
-        'orderId'         => 'orderId',
-        'payFee'          => 'payFee',
-        'quantity'        => 'quantity',
+        'orderId' => 'orderId',
+        'payFee' => 'payFee',
+        'quantity' => 'quantity',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

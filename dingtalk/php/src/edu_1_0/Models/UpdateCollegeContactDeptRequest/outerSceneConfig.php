@@ -33,16 +33,14 @@ class outerSceneConfig extends Model
      */
     public $search;
     protected $_name = [
-        'active'          => 'active',
+        'active' => 'active',
         'chatboxSubtitle' => 'chatboxSubtitle',
-        'nodeList'        => 'nodeList',
-        'profile'         => 'profile',
-        'search'          => 'search',
+        'nodeList' => 'nodeList',
+        'profile' => 'profile',
+        'search' => 'search',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

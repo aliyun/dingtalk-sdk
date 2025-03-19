@@ -29,14 +29,12 @@ class appInfo extends Model
     public $corpId;
     protected $_name = [
         'appIcon' => 'appIcon',
-        'appId'   => 'appId',
+        'appId' => 'appId',
         'appName' => 'appName',
-        'corpId'  => 'corpId',
+        'corpId' => 'corpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

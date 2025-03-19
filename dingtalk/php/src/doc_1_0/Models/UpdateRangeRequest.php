@@ -19,6 +19,11 @@ class UpdateRangeRequest extends Model
     public $complexValues;
 
     /**
+     * @var string[][]
+     */
+    public $fontColors;
+
+    /**
      * @var int[][]
      */
     public $fontSizes;
@@ -71,22 +76,21 @@ class UpdateRangeRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'backgroundColors'     => 'backgroundColors',
-        'complexValues'        => 'complexValues',
-        'fontSizes'            => 'fontSizes',
-        'fontWeights'          => 'fontWeights',
+        'backgroundColors' => 'backgroundColors',
+        'complexValues' => 'complexValues',
+        'fontColors' => 'fontColors',
+        'fontSizes' => 'fontSizes',
+        'fontWeights' => 'fontWeights',
         'horizontalAlignments' => 'horizontalAlignments',
-        'hyperlinks'           => 'hyperlinks',
-        'numberFormat'         => 'numberFormat',
-        'values'               => 'values',
-        'verticalAlignments'   => 'verticalAlignments',
-        'wordWrap'             => 'wordWrap',
-        'operatorId'           => 'operatorId',
+        'hyperlinks' => 'hyperlinks',
+        'numberFormat' => 'numberFormat',
+        'values' => 'values',
+        'verticalAlignments' => 'verticalAlignments',
+        'wordWrap' => 'wordWrap',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -96,6 +100,9 @@ class UpdateRangeRequest extends Model
         }
         if (null !== $this->complexValues) {
             $res['complexValues'] = $this->complexValues;
+        }
+        if (null !== $this->fontColors) {
+            $res['fontColors'] = $this->fontColors;
         }
         if (null !== $this->fontSizes) {
             $res['fontSizes'] = $this->fontSizes;
@@ -144,6 +151,11 @@ class UpdateRangeRequest extends Model
         if (isset($map['complexValues'])) {
             if (!empty($map['complexValues'])) {
                 $model->complexValues = $map['complexValues'];
+            }
+        }
+        if (isset($map['fontColors'])) {
+            if (!empty($map['fontColors'])) {
+                $model->fontColors = $map['fontColors'];
             }
         }
         if (isset($map['fontSizes'])) {

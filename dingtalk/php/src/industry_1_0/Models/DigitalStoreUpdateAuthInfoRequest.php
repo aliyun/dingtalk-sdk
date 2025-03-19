@@ -17,9 +17,7 @@ class DigitalStoreUpdateAuthInfoRequest extends Model
         'updateUserList' => 'updateUserList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class DigitalStoreUpdateAuthInfoRequest extends Model
         if (isset($map['updateUserList'])) {
             if (!empty($map['updateUserList'])) {
                 $model->updateUserList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['updateUserList'] as $item) {
                     $model->updateUserList[$n++] = null !== $item ? updateUserList::fromMap($item) : $item;
                 }

@@ -34,14 +34,12 @@ class MachineManagerUpdateRequest extends Model
     public $userId;
     protected $_name = [
         'atmManagerRightMap' => 'atmManagerRightMap',
-        'deviceId'           => 'deviceId',
-        'scopeDeptIds'       => 'scopeDeptIds',
-        'userId'             => 'userId',
+        'deviceId' => 'deviceId',
+        'scopeDeptIds' => 'scopeDeptIds',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

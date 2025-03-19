@@ -65,18 +65,16 @@ class PayOrderRequest extends Model
      */
     public $version;
     protected $_name = [
-        'faceId'    => 'faceId',
-        'orderNo'   => 'orderNo',
+        'faceId' => 'faceId',
+        'orderNo' => 'orderNo',
         'signature' => 'signature',
-        'sn'        => 'sn',
+        'sn' => 'sn',
         'timestamp' => 'timestamp',
-        'userId'    => 'userId',
-        'version'   => 'version',
+        'userId' => 'userId',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

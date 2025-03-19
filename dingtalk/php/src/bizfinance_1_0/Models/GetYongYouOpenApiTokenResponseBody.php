@@ -71,20 +71,18 @@ class GetYongYouOpenApiTokenResponseBody extends Model
      */
     public $yongyouUserId;
     protected $_name = [
-        'accessToken'      => 'accessToken',
-        'appName'          => 'appName',
-        'expiresIn'        => 'expiresIn',
+        'accessToken' => 'accessToken',
+        'appName' => 'appName',
+        'expiresIn' => 'expiresIn',
         'refreshExpiresIn' => 'refreshExpiresIn',
-        'refreshToken'     => 'refreshToken',
-        'scope'            => 'scope',
-        'sid'              => 'sid',
-        'yongyouOrgId'     => 'yongyouOrgId',
-        'yongyouUserId'    => 'yongyouUserId',
+        'refreshToken' => 'refreshToken',
+        'scope' => 'scope',
+        'sid' => 'sid',
+        'yongyouOrgId' => 'yongyouOrgId',
+        'yongyouUserId' => 'yongyouUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

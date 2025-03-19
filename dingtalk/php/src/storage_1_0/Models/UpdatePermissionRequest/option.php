@@ -18,9 +18,7 @@ class option extends Model
         'duration' => 'duration',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -134,35 +134,33 @@ class QueryTemplateInfoResponseBody extends Model
      */
     public $version;
     protected $_name = [
-        'abilitySwitch'          => 'abilitySwitch',
-        'appInfo'                => 'appInfo',
-        'conversationScope'      => 'conversationScope',
-        'createAt'               => 'createAt',
-        'description'            => 'description',
-        'grayConversationIds'    => 'grayConversationIds',
-        'grayInfo'               => 'grayInfo',
-        'grayTemplateId'         => 'grayTemplateId',
-        'groupSettingList'       => 'groupSettingList',
-        'iconMediaId'            => 'iconMediaId',
-        'modifiedAt'             => 'modifiedAt',
-        'modifyOrderId'          => 'modifyOrderId',
-        'modifyStatus'           => 'modifyStatus',
+        'abilitySwitch' => 'abilitySwitch',
+        'appInfo' => 'appInfo',
+        'conversationScope' => 'conversationScope',
+        'createAt' => 'createAt',
+        'description' => 'description',
+        'grayConversationIds' => 'grayConversationIds',
+        'grayInfo' => 'grayInfo',
+        'grayTemplateId' => 'grayTemplateId',
+        'groupSettingList' => 'groupSettingList',
+        'iconMediaId' => 'iconMediaId',
+        'modifiedAt' => 'modifiedAt',
+        'modifyOrderId' => 'modifyOrderId',
+        'modifyStatus' => 'modifyStatus',
         'parentTemplateDetailVO' => 'parentTemplateDetailVO',
-        'publishSubState'        => 'publishSubState',
-        'robotTemplateList'      => 'robotTemplateList',
-        'status'                 => 'status',
-        'templateId'             => 'templateId',
-        'templateIntroduction'   => 'templateIntroduction',
-        'templateName'           => 'templateName',
-        'templateType'           => 'templateType',
-        'templateVisibility'     => 'templateVisibility',
-        'toolbarPluginList'      => 'toolbarPluginList',
-        'version'                => 'version',
+        'publishSubState' => 'publishSubState',
+        'robotTemplateList' => 'robotTemplateList',
+        'status' => 'status',
+        'templateId' => 'templateId',
+        'templateIntroduction' => 'templateIntroduction',
+        'templateName' => 'templateName',
+        'templateType' => 'templateType',
+        'templateVisibility' => 'templateVisibility',
+        'toolbarPluginList' => 'toolbarPluginList',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -288,7 +286,7 @@ class QueryTemplateInfoResponseBody extends Model
         if (isset($map['groupSettingList'])) {
             if (!empty($map['groupSettingList'])) {
                 $model->groupSettingList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['groupSettingList'] as $item) {
                     $model->groupSettingList[$n++] = null !== $item ? groupSettingList::fromMap($item) : $item;
                 }

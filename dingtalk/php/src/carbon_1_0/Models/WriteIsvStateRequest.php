@@ -26,13 +26,11 @@ class WriteIsvStateRequest extends Model
      */
     public $statDate;
     protected $_name = [
-        'isvName'  => 'isvName',
+        'isvName' => 'isvName',
         'statDate' => 'statDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

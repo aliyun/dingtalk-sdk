@@ -35,14 +35,12 @@ class userMuteResult extends Model
      */
     public $userMuteMode;
     protected $_name = [
-        'muteEndTime'   => 'muteEndTime',
+        'muteEndTime' => 'muteEndTime',
         'muteStartTime' => 'muteStartTime',
-        'userMuteMode'  => 'userMuteMode',
+        'userMuteMode' => 'userMuteMode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

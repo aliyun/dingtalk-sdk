@@ -33,14 +33,12 @@ class QueryEduAssetSpacesRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'bizCode'    => 'bizCode',
+        'bizCode' => 'bizCode',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

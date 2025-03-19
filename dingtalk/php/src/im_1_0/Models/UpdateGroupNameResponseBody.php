@@ -16,9 +16,7 @@ class UpdateGroupNameResponseBody extends Model
         'newGroupName' => 'newGroupName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

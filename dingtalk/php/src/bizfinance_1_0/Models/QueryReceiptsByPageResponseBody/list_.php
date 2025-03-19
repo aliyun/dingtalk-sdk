@@ -44,15 +44,13 @@ class list_ extends Model
      */
     public $source;
     protected $_name = [
-        'appId'   => 'appId',
-        'data'    => 'data',
+        'appId' => 'appId',
+        'data' => 'data',
         'modelId' => 'modelId',
-        'source'  => 'source',
+        'source' => 'source',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

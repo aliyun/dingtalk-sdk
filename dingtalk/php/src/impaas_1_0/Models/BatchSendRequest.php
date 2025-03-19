@@ -34,15 +34,13 @@ class BatchSendRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appUids'         => 'appUids',
-        'content'         => 'content',
+        'appUids' => 'appUids',
+        'content' => 'content',
         'conversationIds' => 'conversationIds',
-        'userId'          => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

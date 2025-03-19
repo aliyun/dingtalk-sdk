@@ -18,13 +18,11 @@ class DetailUserIdPrivateDataMapValue extends Model
      */
     public $cardMediaIdParamMap;
     protected $_name = [
-        'cardParamMap'        => 'cardParamMap',
+        'cardParamMap' => 'cardParamMap',
         'cardMediaIdParamMap' => 'cardMediaIdParamMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

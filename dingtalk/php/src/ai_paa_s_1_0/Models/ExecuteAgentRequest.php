@@ -38,16 +38,14 @@ class ExecuteAgentRequest extends Model
      */
     public $skillId;
     protected $_name = [
-        'agentCode'          => 'agentCode',
-        'inputs'             => 'inputs',
-        'scenarioCode'       => 'scenarioCode',
+        'agentCode' => 'agentCode',
+        'inputs' => 'inputs',
+        'scenarioCode' => 'scenarioCode',
         'scenarioInstanceId' => 'scenarioInstanceId',
-        'skillId'            => 'skillId',
+        'skillId' => 'skillId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

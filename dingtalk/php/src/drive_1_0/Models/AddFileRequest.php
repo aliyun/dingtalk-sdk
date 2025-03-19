@@ -45,16 +45,14 @@ class AddFileRequest extends Model
     public $unionId;
     protected $_name = [
         'addConflictPolicy' => 'addConflictPolicy',
-        'fileName'          => 'fileName',
-        'fileType'          => 'fileType',
-        'mediaId'           => 'mediaId',
-        'parentId'          => 'parentId',
-        'unionId'           => 'unionId',
+        'fileName' => 'fileName',
+        'fileType' => 'fileType',
+        'mediaId' => 'mediaId',
+        'parentId' => 'parentId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

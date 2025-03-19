@@ -43,16 +43,14 @@ class EsignSyncEventRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'action'    => 'action',
-        'corpId'    => 'corpId',
+        'action' => 'action',
+        'corpId' => 'corpId',
         'esignData' => 'esignData',
         'extension' => 'extension',
-        'unionId'   => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

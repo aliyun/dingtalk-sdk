@@ -42,16 +42,14 @@ class messageList extends Model
      */
     public $sender;
     protected $_name = [
-        'content'            => 'content',
-        'contentType'        => 'contentType',
-        'createAt'           => 'createAt',
+        'content' => 'content',
+        'contentType' => 'contentType',
+        'createAt' => 'createAt',
         'openConversationId' => 'openConversationId',
-        'sender'             => 'sender',
+        'sender' => 'sender',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

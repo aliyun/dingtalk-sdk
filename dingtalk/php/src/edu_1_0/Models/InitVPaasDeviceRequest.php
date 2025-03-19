@@ -31,14 +31,12 @@ class InitVPaasDeviceRequest extends Model
      */
     public $type;
     protected $_name = [
-        'sn'        => 'sn',
+        'sn' => 'sn',
         'timestamp' => 'timestamp',
-        'type'      => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

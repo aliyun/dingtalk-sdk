@@ -44,18 +44,16 @@ class referenceFields extends Model
      */
     public $unit;
     protected $_name = [
-        'format'        => 'format',
-        'label'         => 'label',
-        'name'          => 'name',
-        'nillable'      => 'nillable',
+        'format' => 'format',
+        'label' => 'label',
+        'name' => 'name',
+        'nillable' => 'nillable',
         'selectOptions' => 'selectOptions',
-        'type'          => 'type',
-        'unit'          => 'unit',
+        'type' => 'type',
+        'unit' => 'unit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -114,7 +112,7 @@ class referenceFields extends Model
         if (isset($map['selectOptions'])) {
             if (!empty($map['selectOptions'])) {
                 $model->selectOptions = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['selectOptions'] as $item) {
                     $model->selectOptions[$n++] = null !== $item ? selectOptions::fromMap($item) : $item;
                 }

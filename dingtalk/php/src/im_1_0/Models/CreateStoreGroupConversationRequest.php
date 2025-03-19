@@ -65,18 +65,16 @@ class CreateStoreGroupConversationRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'appUserId'         => 'appUserId',
+        'appUserId' => 'appUserId',
         'businessUniqueKey' => 'businessUniqueKey',
-        'groupAvatar'       => 'groupAvatar',
-        'groupName'         => 'groupName',
-        'groupTemplateId'   => 'groupTemplateId',
-        'operatorId'        => 'operatorId',
-        'userIds'           => 'userIds',
+        'groupAvatar' => 'groupAvatar',
+        'groupName' => 'groupName',
+        'groupTemplateId' => 'groupTemplateId',
+        'operatorId' => 'operatorId',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

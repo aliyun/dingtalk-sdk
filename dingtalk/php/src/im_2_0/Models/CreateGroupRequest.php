@@ -48,16 +48,14 @@ class CreateGroupRequest extends Model
      */
     public $users;
     protected $_name = [
-        'groupAvatar'     => 'groupAvatar',
-        'groupName'       => 'groupName',
+        'groupAvatar' => 'groupAvatar',
+        'groupName' => 'groupName',
         'groupTemplateId' => 'groupTemplateId',
-        'operatorId'      => 'operatorId',
-        'users'           => 'users',
+        'operatorId' => 'operatorId',
+        'users' => 'users',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -110,7 +108,7 @@ class CreateGroupRequest extends Model
         if (isset($map['users'])) {
             if (!empty($map['users'])) {
                 $model->users = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['users'] as $item) {
                     $model->users[$n++] = null !== $item ? users::fromMap($item) : $item;
                 }

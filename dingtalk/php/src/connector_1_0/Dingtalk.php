@@ -59,8 +59,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -95,18 +95,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateAction',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/actions',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateAction',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/actions',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateActionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -155,18 +155,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateConnector',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/connectors',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateConnector',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/connectors',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateConnectorResponse::fromMap($this->execute($params, $req, $runtime));
@@ -215,18 +215,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateInvocableInstance',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/instances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateInvocableInstance',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/instances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateInvocableInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -275,18 +275,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTrigger',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/triggers',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTrigger',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/triggers',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTriggerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -332,18 +332,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetActionDetail',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/assets/actions/details/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetActionDetail',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/assets/actions/details/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetActionDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -395,18 +395,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InvokeInstance',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/instances/invoke',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InvokeInstance',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/instances/invoke',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InvokeInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -470,18 +470,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PullDataByPage',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/data',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PullDataByPage',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/data',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PullDataByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -531,18 +531,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PullDataByPk',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/data/' . $dataModelId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PullDataByPk',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/data/' . $dataModelId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PullDataByPkResponse::fromMap($this->execute($params, $req, $runtime));
@@ -601,18 +601,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SearchActions',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/assets/actions/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchActions',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/assets/actions/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchActionsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -664,18 +664,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchConnectors',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/assets/connectors',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchConnectors',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/assets/connectors',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchConnectorsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -724,18 +724,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncData',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/triggers/data/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncData',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/triggers/data/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -784,18 +784,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateAction',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/actions',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateAction',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/actions',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateActionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -844,18 +844,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateConnector',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/connectors',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateConnector',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/connectors',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateConnectorResponse::fromMap($this->execute($params, $req, $runtime));
@@ -904,18 +904,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTrigger',
-            'version'     => 'connector_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/connector/triggers',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTrigger',
+            'version' => 'connector_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/connector/triggers',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTriggerResponse::fromMap($this->execute($params, $req, $runtime));

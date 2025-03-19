@@ -17,9 +17,7 @@ class BatchQueryFamilySchoolMessageResponseBody extends Model
         'messages' => 'messages',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class BatchQueryFamilySchoolMessageResponseBody extends Model
         if (isset($map['messages'])) {
             if (!empty($map['messages'])) {
                 $model->messages = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['messages'] as $item) {
                     $model->messages[$n++] = null !== $item ? messages::fromMap($item) : $item;
                 }

@@ -17,9 +17,7 @@ class GetResidentMembersInfoResponseBody extends Model
         'residenceList' => 'residenceList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class GetResidentMembersInfoResponseBody extends Model
         if (isset($map['residenceList'])) {
             if (!empty($map['residenceList'])) {
                 $model->residenceList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['residenceList'] as $item) {
                     $model->residenceList[$n++] = null !== $item ? residenceList::fromMap($item) : $item;
                 }

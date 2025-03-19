@@ -27,12 +27,10 @@ class AddApplicationRegFormTemplateResponseBody extends Model
     public $version;
     protected $_name = [
         'templateId' => 'templateId',
-        'version'    => 'version',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

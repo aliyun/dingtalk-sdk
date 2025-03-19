@@ -22,13 +22,11 @@ class ExportDocResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'jobId'  => 'jobId',
+        'jobId' => 'jobId',
         'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

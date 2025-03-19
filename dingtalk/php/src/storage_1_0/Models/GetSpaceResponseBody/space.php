@@ -125,28 +125,26 @@ class space extends Model
      */
     public $usedQuota;
     protected $_name = [
-        'appId'        => 'appId',
+        'appId' => 'appId',
         'capabilities' => 'capabilities',
-        'corpId'       => 'corpId',
-        'createTime'   => 'createTime',
-        'creatorId'    => 'creatorId',
-        'id'           => 'id',
+        'corpId' => 'corpId',
+        'createTime' => 'createTime',
+        'creatorId' => 'creatorId',
+        'id' => 'id',
         'modifiedTime' => 'modifiedTime',
-        'modifierId'   => 'modifierId',
-        'name'         => 'name',
-        'ownerId'      => 'ownerId',
-        'ownerType'    => 'ownerType',
-        'partitions'   => 'partitions',
-        'quota'        => 'quota',
-        'scene'        => 'scene',
-        'sceneId'      => 'sceneId',
-        'status'       => 'status',
-        'usedQuota'    => 'usedQuota',
+        'modifierId' => 'modifierId',
+        'name' => 'name',
+        'ownerId' => 'ownerId',
+        'ownerType' => 'ownerType',
+        'partitions' => 'partitions',
+        'quota' => 'quota',
+        'scene' => 'scene',
+        'sceneId' => 'sceneId',
+        'status' => 'status',
+        'usedQuota' => 'usedQuota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -256,7 +254,7 @@ class space extends Model
         if (isset($map['partitions'])) {
             if (!empty($map['partitions'])) {
                 $model->partitions = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['partitions'] as $item) {
                     $model->partitions[$n++] = null !== $item ? partitions::fromMap($item) : $item;
                 }

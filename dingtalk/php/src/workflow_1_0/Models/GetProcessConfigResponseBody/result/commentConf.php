@@ -25,14 +25,12 @@ class commentConf extends Model
      */
     public $commentRequired;
     protected $_name = [
-        'commentDescription'       => 'commentDescription',
+        'commentDescription' => 'commentDescription',
         'commentHiddenForProposer' => 'commentHiddenForProposer',
-        'commentRequired'          => 'commentRequired',
+        'commentRequired' => 'commentRequired',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

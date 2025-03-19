@@ -22,13 +22,11 @@ class GetUserInfoByOpenTokenRequest extends Model
      */
     public $openToken;
     protected $_name = [
-        'docKey'    => 'docKey',
+        'docKey' => 'docKey',
         'openToken' => 'openToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

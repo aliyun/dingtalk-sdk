@@ -47,16 +47,14 @@ class CreateMeetingRoomControlPanelRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'extra'      => 'extra',
+        'extra' => 'extra',
         'roomConfig' => 'roomConfig',
-        'roomId'     => 'roomId',
-        'status'     => 'status',
-        'unionId'    => 'unionId',
+        'roomId' => 'roomId',
+        'status' => 'status',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -100,7 +98,7 @@ class CreateMeetingRoomControlPanelRequest extends Model
         if (isset($map['roomConfig'])) {
             if (!empty($map['roomConfig'])) {
                 $model->roomConfig = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['roomConfig'] as $item) {
                     $model->roomConfig[$n++] = null !== $item ? roomConfig::fromMap($item) : $item;
                 }

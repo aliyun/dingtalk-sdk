@@ -50,16 +50,14 @@ class UpdateTicketRequest extends Model
      */
     public $ticketMemo;
     protected $_name = [
-        'customFields'     => 'customFields',
-        'openTeamId'       => 'openTeamId',
-        'openTicketId'     => 'openTicketId',
+        'customFields' => 'customFields',
+        'openTeamId' => 'openTeamId',
+        'openTicketId' => 'openTicketId',
         'processorUnionId' => 'processorUnionId',
-        'ticketMemo'       => 'ticketMemo',
+        'ticketMemo' => 'ticketMemo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

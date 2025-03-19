@@ -20,13 +20,11 @@ class IsvDataWriteRequest extends Model
      */
     public $rowValueList;
     protected $_name = [
-        'objectCode'   => 'objectCode',
+        'objectCode' => 'objectCode',
         'rowValueList' => 'rowValueList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

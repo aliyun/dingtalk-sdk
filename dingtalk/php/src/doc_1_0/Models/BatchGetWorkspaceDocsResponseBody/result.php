@@ -28,13 +28,11 @@ class result extends Model
     public $workspaceBO;
     protected $_name = [
         'hasPermission' => 'hasPermission',
-        'nodeBO'        => 'nodeBO',
-        'workspaceBO'   => 'workspaceBO',
+        'nodeBO' => 'nodeBO',
+        'workspaceBO' => 'workspaceBO',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

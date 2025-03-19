@@ -22,13 +22,11 @@ class groupMsgs extends Model
      */
     public $openMsgId;
     protected $_name = [
-        'anchor'    => 'anchor',
+        'anchor' => 'anchor',
         'openMsgId' => 'openMsgId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

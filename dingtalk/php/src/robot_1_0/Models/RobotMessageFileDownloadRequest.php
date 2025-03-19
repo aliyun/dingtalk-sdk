@@ -27,12 +27,10 @@ class RobotMessageFileDownloadRequest extends Model
     public $robotCode;
     protected $_name = [
         'downloadCode' => 'downloadCode',
-        'robotCode'    => 'robotCode',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

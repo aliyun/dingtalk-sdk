@@ -41,16 +41,14 @@ class data extends Model
      */
     public $tagMap;
     protected $_name = [
-        'bizId'    => 'bizId',
+        'bizId' => 'bizId',
         'fileDesc' => 'fileDesc',
         'fileName' => 'fileName',
-        'mediaId'  => 'mediaId',
-        'tagMap'   => 'tagMap',
+        'mediaId' => 'mediaId',
+        'tagMap' => 'tagMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -43,14 +43,12 @@ class SearchUserRequest extends Model
     public $size;
     protected $_name = [
         'fullMatchField' => 'fullMatchField',
-        'offset'         => 'offset',
-        'queryWord'      => 'queryWord',
-        'size'           => 'size',
+        'offset' => 'offset',
+        'queryWord' => 'queryWord',
+        'size' => 'size',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

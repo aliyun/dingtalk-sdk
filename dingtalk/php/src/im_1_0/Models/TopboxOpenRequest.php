@@ -58,19 +58,17 @@ class TopboxOpenRequest extends Model
      */
     public $robotCode;
     protected $_name = [
-        'conversationType'   => 'conversationType',
-        'coolAppCode'        => 'coolAppCode',
-        'expiredTime'        => 'expiredTime',
+        'conversationType' => 'conversationType',
+        'coolAppCode' => 'coolAppCode',
+        'expiredTime' => 'expiredTime',
         'openConversationId' => 'openConversationId',
-        'outTrackId'         => 'outTrackId',
-        'platforms'          => 'platforms',
+        'outTrackId' => 'outTrackId',
+        'platforms' => 'platforms',
         'receiverUserIdList' => 'receiverUserIdList',
-        'robotCode'          => 'robotCode',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -40,17 +40,15 @@ class GetRecordResponseBody extends Model
      */
     public $lastModifiedTime;
     protected $_name = [
-        'createdBy'        => 'createdBy',
-        'createdTime'      => 'createdTime',
-        'fields'           => 'fields',
-        'id'               => 'id',
-        'lastModifiedBy'   => 'lastModifiedBy',
+        'createdBy' => 'createdBy',
+        'createdTime' => 'createdTime',
+        'fields' => 'fields',
+        'id' => 'id',
+        'lastModifiedBy' => 'lastModifiedBy',
         'lastModifiedTime' => 'lastModifiedTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

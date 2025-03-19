@@ -38,17 +38,15 @@ class formComponentValueList extends Model
      */
     public $value;
     protected $_name = [
-        'bizAlias'      => 'bizAlias',
+        'bizAlias' => 'bizAlias',
         'componentType' => 'componentType',
-        'extValue'      => 'extValue',
-        'id'            => 'id',
-        'name'          => 'name',
-        'value'         => 'value',
+        'extValue' => 'extValue',
+        'id' => 'id',
+        'name' => 'name',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

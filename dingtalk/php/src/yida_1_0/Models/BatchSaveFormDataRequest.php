@@ -74,19 +74,17 @@ class BatchSaveFormDataRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'                   => 'appType',
-        'asynchronousExecution'     => 'asynchronousExecution',
-        'formDataJsonList'          => 'formDataJsonList',
-        'formUuid'                  => 'formUuid',
+        'appType' => 'appType',
+        'asynchronousExecution' => 'asynchronousExecution',
+        'formDataJsonList' => 'formDataJsonList',
+        'formUuid' => 'formUuid',
         'keepRunningAfterException' => 'keepRunningAfterException',
-        'noExecuteExpression'       => 'noExecuteExpression',
-        'systemToken'               => 'systemToken',
-        'userId'                    => 'userId',
+        'noExecuteExpression' => 'noExecuteExpression',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

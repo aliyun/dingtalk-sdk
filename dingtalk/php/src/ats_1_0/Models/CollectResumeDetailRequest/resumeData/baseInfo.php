@@ -157,32 +157,30 @@ class baseInfo extends Model
      */
     public $workingYears;
     protected $_name = [
-        'age'              => 'age',
-        'avatar'           => 'avatar',
-        'beginWorkTime'    => 'beginWorkTime',
-        'birthday'         => 'birthday',
-        'email'            => 'email',
-        'englishName'      => 'englishName',
-        'graduateTime'     => 'graduateTime',
+        'age' => 'age',
+        'avatar' => 'avatar',
+        'beginWorkTime' => 'beginWorkTime',
+        'birthday' => 'birthday',
+        'email' => 'email',
+        'englishName' => 'englishName',
+        'graduateTime' => 'graduateTime',
         'highestEducation' => 'highestEducation',
-        'jobTitle'         => 'jobTitle',
-        'lastSchoolName'   => 'lastSchoolName',
-        'married'          => 'married',
-        'name'             => 'name',
-        'nativePlace'      => 'nativePlace',
-        'nowLocation'      => 'nowLocation',
-        'personalHonor'    => 'personalHonor',
-        'phoneNum'         => 'phoneNum',
-        'politicalStatus'  => 'politicalStatus',
-        'selfEvaluation'   => 'selfEvaluation',
-        'sex'              => 'sex',
-        'virtualPhoneNum'  => 'virtualPhoneNum',
-        'workingYears'     => 'workingYears',
+        'jobTitle' => 'jobTitle',
+        'lastSchoolName' => 'lastSchoolName',
+        'married' => 'married',
+        'name' => 'name',
+        'nativePlace' => 'nativePlace',
+        'nowLocation' => 'nowLocation',
+        'personalHonor' => 'personalHonor',
+        'phoneNum' => 'phoneNum',
+        'politicalStatus' => 'politicalStatus',
+        'selfEvaluation' => 'selfEvaluation',
+        'sex' => 'sex',
+        'virtualPhoneNum' => 'virtualPhoneNum',
+        'workingYears' => 'workingYears',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

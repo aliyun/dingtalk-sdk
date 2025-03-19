@@ -42,16 +42,14 @@ class list_ extends Model
      */
     public $setting;
     protected $_name = [
-        'creator'  => 'creator',
+        'creator' => 'creator',
         'formCode' => 'formCode',
-        'memo'     => 'memo',
-        'name'     => 'name',
-        'setting'  => 'setting',
+        'memo' => 'memo',
+        'name' => 'name',
+        'setting' => 'setting',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

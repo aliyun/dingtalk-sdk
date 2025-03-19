@@ -84,25 +84,23 @@ class eTrainTicketDetailVOList extends Model
     public $trainNo;
     protected $_name = [
         'airConditionType' => 'airConditionType',
-        'carriageNo'       => 'carriageNo',
-        'destination'      => 'destination',
-        'eticketNo'        => 'eticketNo',
-        'getOnTime'        => 'getOnTime',
-        'invoiceId'        => 'invoiceId',
-        'origin'           => 'origin',
-        'passenger'        => 'passenger',
-        'passengerUserId'  => 'passengerUserId',
-        'remark'           => 'remark',
-        'seatClass'        => 'seatClass',
-        'startTime'        => 'startTime',
-        'taxRate'          => 'taxRate',
-        'ticketType'       => 'ticketType',
-        'trainNo'          => 'trainNo',
+        'carriageNo' => 'carriageNo',
+        'destination' => 'destination',
+        'eticketNo' => 'eticketNo',
+        'getOnTime' => 'getOnTime',
+        'invoiceId' => 'invoiceId',
+        'origin' => 'origin',
+        'passenger' => 'passenger',
+        'passengerUserId' => 'passengerUserId',
+        'remark' => 'remark',
+        'seatClass' => 'seatClass',
+        'startTime' => 'startTime',
+        'taxRate' => 'taxRate',
+        'ticketType' => 'ticketType',
+        'trainNo' => 'trainNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -33,16 +33,14 @@ class result extends Model
      */
     public $serverName;
     protected $_name = [
-        'authToken'     => 'authToken',
-        'channel'       => 'channel',
+        'authToken' => 'authToken',
+        'channel' => 'channel',
         'effectiveTime' => 'effectiveTime',
-        'serverId'      => 'serverId',
-        'serverName'    => 'serverName',
+        'serverId' => 'serverId',
+        'serverName' => 'serverName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

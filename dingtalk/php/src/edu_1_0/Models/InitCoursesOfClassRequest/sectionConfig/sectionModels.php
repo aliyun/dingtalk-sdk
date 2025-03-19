@@ -40,15 +40,13 @@ class sectionModels extends Model
      */
     public $start;
     protected $_name = [
-        'end'          => 'end',
+        'end' => 'end',
         'sectionIndex' => 'sectionIndex',
-        'sectionType'  => 'sectionType',
-        'start'        => 'start',
+        'sectionType' => 'sectionType',
+        'start' => 'start',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -26,12 +26,10 @@ class BatchRegisterDeviceRequest extends Model
     public $userId;
     protected $_name = [
         'deviceList' => 'deviceList',
-        'userId'     => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class BatchRegisterDeviceRequest extends Model
         if (isset($map['deviceList'])) {
             if (!empty($map['deviceList'])) {
                 $model->deviceList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['deviceList'] as $item) {
                     $model->deviceList[$n++] = null !== $item ? deviceList::fromMap($item) : $item;
                 }

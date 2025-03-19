@@ -42,15 +42,13 @@ class GetSceneGroupMembersRequest extends Model
      */
     public $size;
     protected $_name = [
-        'coolAppCode'        => 'coolAppCode',
-        'cursor'             => 'cursor',
+        'coolAppCode' => 'coolAppCode',
+        'cursor' => 'cursor',
         'openConversationId' => 'openConversationId',
-        'size'               => 'size',
+        'size' => 'size',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

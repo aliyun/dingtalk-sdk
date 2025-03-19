@@ -31,14 +31,12 @@ class QueryMeetingRoomDeviceRequest extends Model
      */
     public $operatorUnionId;
     protected $_name = [
-        'deviceId'        => 'deviceId',
-        'deviceUnionId'   => 'deviceUnionId',
+        'deviceId' => 'deviceId',
+        'deviceUnionId' => 'deviceUnionId',
         'operatorUnionId' => 'operatorUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class GetOverdraftInfoResponseBody extends Model
         'overdraftList' => 'overdraftList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class GetOverdraftInfoResponseBody extends Model
         if (isset($map['overdraftList'])) {
             if (!empty($map['overdraftList'])) {
                 $model->overdraftList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['overdraftList'] as $item) {
                     $model->overdraftList[$n++] = null !== $item ? overdraftList::fromMap($item) : $item;
                 }

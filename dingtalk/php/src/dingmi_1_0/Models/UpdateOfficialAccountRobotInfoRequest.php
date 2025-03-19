@@ -62,17 +62,15 @@ class UpdateOfficialAccountRobotInfoRequest extends Model
      */
     public $type;
     protected $_name = [
-        'avatar'          => 'avatar',
-        'brief'           => 'brief',
-        'description'     => 'description',
-        'name'            => 'name',
+        'avatar' => 'avatar',
+        'brief' => 'brief',
+        'description' => 'description',
+        'name' => 'name',
         'previewMediaUrl' => 'previewMediaUrl',
-        'type'            => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

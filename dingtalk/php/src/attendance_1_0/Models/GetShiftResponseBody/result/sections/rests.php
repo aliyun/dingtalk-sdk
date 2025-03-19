@@ -30,15 +30,13 @@ class rests extends Model
      */
     public $restId;
     protected $_name = [
-        'across'    => 'across',
+        'across' => 'across',
         'checkTime' => 'checkTime',
         'checkType' => 'checkType',
-        'restId'    => 'restId',
+        'restId' => 'restId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

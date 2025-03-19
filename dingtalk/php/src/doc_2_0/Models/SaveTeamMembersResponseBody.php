@@ -20,12 +20,10 @@ class SaveTeamMembersResponseBody extends Model
     public $saveSuccess;
     protected $_name = [
         'notInOrgMembers' => 'notInOrgMembers',
-        'saveSuccess'     => 'saveSuccess',
+        'saveSuccess' => 'saveSuccess',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class SaveTeamMembersResponseBody extends Model
         if (isset($map['notInOrgMembers'])) {
             if (!empty($map['notInOrgMembers'])) {
                 $model->notInOrgMembers = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['notInOrgMembers'] as $item) {
                     $model->notInOrgMembers[$n++] = null !== $item ? notInOrgMembers::fromMap($item) : $item;
                 }

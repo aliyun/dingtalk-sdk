@@ -30,13 +30,11 @@ class BusinessMatchRequest extends Model
     public $userId;
     protected $_name = [
         'businessInfo' => 'businessInfo',
-        'corpName'     => 'corpName',
-        'userId'       => 'userId',
+        'corpName' => 'corpName',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

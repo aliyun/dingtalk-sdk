@@ -23,14 +23,12 @@ class result extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'chatId'             => 'chatId',
-        'encodedCid'         => 'encodedCid',
+        'chatId' => 'chatId',
+        'encodedCid' => 'encodedCid',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,9 +20,7 @@ class SendServiceGroupMessageResponseBody extends Model
         'openMsgTaskId' => 'openMsgTaskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

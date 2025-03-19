@@ -29,14 +29,12 @@ class times extends Model
      */
     public $checkType;
     protected $_name = [
-        'across'    => 'across',
+        'across' => 'across',
         'checkTime' => 'checkTime',
         'checkType' => 'checkType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

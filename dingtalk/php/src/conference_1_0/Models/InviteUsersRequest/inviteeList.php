@@ -24,13 +24,11 @@ class inviteeList extends Model
      */
     public $unionId;
     protected $_name = [
-        'nick'    => 'nick',
+        'nick' => 'nick',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

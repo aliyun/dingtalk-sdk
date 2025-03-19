@@ -24,14 +24,12 @@ class studentDetailList extends Model
      */
     public $subjectList;
     protected $_name = [
-        'studentId'   => 'studentId',
+        'studentId' => 'studentId',
         'studentName' => 'studentName',
         'subjectList' => 'subjectList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -72,7 +70,7 @@ class studentDetailList extends Model
         if (isset($map['subjectList'])) {
             if (!empty($map['subjectList'])) {
                 $model->subjectList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['subjectList'] as $item) {
                     $model->subjectList[$n++] = null !== $item ? subjectList::fromMap($item) : $item;
                 }

@@ -66,19 +66,17 @@ class UpdateRobotInOrgRequest extends Model
      */
     public $robotCode;
     protected $_name = [
-        'brief'          => 'brief',
-        'description'    => 'description',
-        'icon'           => 'icon',
-        'name'           => 'name',
-        'outgoingToken'  => 'outgoingToken',
-        'outgoingUrl'    => 'outgoingUrl',
+        'brief' => 'brief',
+        'description' => 'description',
+        'icon' => 'icon',
+        'name' => 'name',
+        'outgoingToken' => 'outgoingToken',
+        'outgoingUrl' => 'outgoingUrl',
         'previewMediaId' => 'previewMediaId',
-        'robotCode'      => 'robotCode',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

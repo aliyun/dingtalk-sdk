@@ -23,12 +23,10 @@ class start extends Model
     public $min;
     protected $_name = [
         'hour' => 'hour',
-        'min'  => 'min',
+        'min' => 'min',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

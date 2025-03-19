@@ -56,17 +56,15 @@ class QueryCorpUserStatisticRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'endTime'     => 'endTime',
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
-        'startTime'   => 'startTime',
+        'endTime' => 'endTime',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'startTime' => 'startTime',
         'templateIds' => 'templateIds',
-        'unionId'     => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

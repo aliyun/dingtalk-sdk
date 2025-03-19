@@ -24,14 +24,12 @@ class GetTranscribeBriefResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'data'       => 'data',
+        'data' => 'data',
         'statusCode' => 'statusCode',
-        'success'    => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

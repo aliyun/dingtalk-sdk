@@ -75,24 +75,22 @@ class list_ extends Model
      */
     public $objectTagIds;
     protected $_name = [
-        'active'          => 'active',
-        'description'     => 'description',
-        'excludeDeptIds'  => 'excludeDeptIds',
+        'active' => 'active',
+        'description' => 'description',
+        'excludeDeptIds' => 'excludeDeptIds',
         'excludeStaffIds' => 'excludeStaffIds',
-        'excludeTagIds'   => 'excludeTagIds',
-        'gmtCreate'       => 'gmtCreate',
-        'gmtModified'     => 'gmtModified',
-        'hideFields'      => 'hideFields',
-        'id'              => 'id',
-        'name'            => 'name',
-        'objectDeptIds'   => 'objectDeptIds',
-        'objectStaffIds'  => 'objectStaffIds',
-        'objectTagIds'    => 'objectTagIds',
+        'excludeTagIds' => 'excludeTagIds',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'hideFields' => 'hideFields',
+        'id' => 'id',
+        'name' => 'name',
+        'objectDeptIds' => 'objectDeptIds',
+        'objectStaffIds' => 'objectStaffIds',
+        'objectTagIds' => 'objectTagIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

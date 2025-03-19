@@ -27,12 +27,10 @@ class contactInfo extends Model
     public $mobile;
     protected $_name = [
         'contactName' => 'contactName',
-        'mobile'      => 'mobile',
+        'mobile' => 'mobile',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

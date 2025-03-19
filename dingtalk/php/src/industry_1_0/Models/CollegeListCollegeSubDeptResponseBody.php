@@ -17,9 +17,7 @@ class CollegeListCollegeSubDeptResponseBody extends Model
         'collegeDeptInfoSimpleList' => 'collegeDeptInfoSimpleList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class CollegeListCollegeSubDeptResponseBody extends Model
         if (isset($map['collegeDeptInfoSimpleList'])) {
             if (!empty($map['collegeDeptInfoSimpleList'])) {
                 $model->collegeDeptInfoSimpleList = [];
-                $n                                = 0;
+                $n = 0;
                 foreach ($map['collegeDeptInfoSimpleList'] as $item) {
                     $model->collegeDeptInfoSimpleList[$n++] = null !== $item ? collegeDeptInfoSimpleList::fromMap($item) : $item;
                 }

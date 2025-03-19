@@ -21,13 +21,11 @@ class content extends Model
      */
     public $objectives;
     protected $_name = [
-        'count'      => 'count',
+        'count' => 'count',
         'objectives' => 'objectives',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class content extends Model
         if (isset($map['objectives'])) {
             if (!empty($map['objectives'])) {
                 $model->objectives = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['objectives'] as $item) {
                     $model->objectives[$n++] = null !== $item ? OpenObjectiveDTO::fromMap($item) : $item;
                 }

@@ -81,20 +81,18 @@ class BatchUpdateFormDataByInstanceMapRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'                    => 'appType',
-        'asynchronousExecution'      => 'asynchronousExecution',
-        'formUuid'                   => 'formUuid',
-        'ignoreEmpty'                => 'ignoreEmpty',
-        'noExecuteExpression'        => 'noExecuteExpression',
-        'systemToken'                => 'systemToken',
-        'updateFormDataJsonMap'      => 'updateFormDataJsonMap',
+        'appType' => 'appType',
+        'asynchronousExecution' => 'asynchronousExecution',
+        'formUuid' => 'formUuid',
+        'ignoreEmpty' => 'ignoreEmpty',
+        'noExecuteExpression' => 'noExecuteExpression',
+        'systemToken' => 'systemToken',
+        'updateFormDataJsonMap' => 'updateFormDataJsonMap',
         'useLatestFormSchemaVersion' => 'useLatestFormSchemaVersion',
-        'userId'                     => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

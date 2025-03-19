@@ -96,25 +96,23 @@ class body extends Model
      */
     public $workNo;
     protected $_name = [
-        'deptName'             => 'deptName',
-        'deptNo'               => 'deptNo',
-        'dimissionDate'        => 'dimissionDate',
+        'deptName' => 'deptName',
+        'deptNo' => 'deptNo',
+        'dimissionDate' => 'dimissionDate',
         'dimissionReaasonDesc' => 'dimissionReaasonDesc',
-        'dimissionReason'      => 'dimissionReason',
-        'empType'              => 'empType',
-        'extendInfo'           => 'extendInfo',
-        'jobCodeName'          => 'jobCodeName',
-        'jobLevel'             => 'jobLevel',
-        'name'                 => 'name',
-        'postName'             => 'postName',
-        'superName'            => 'superName',
-        'workLocAddr'          => 'workLocAddr',
-        'workNo'               => 'workNo',
+        'dimissionReason' => 'dimissionReason',
+        'empType' => 'empType',
+        'extendInfo' => 'extendInfo',
+        'jobCodeName' => 'jobCodeName',
+        'jobLevel' => 'jobLevel',
+        'name' => 'name',
+        'postName' => 'postName',
+        'superName' => 'superName',
+        'workLocAddr' => 'workLocAddr',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

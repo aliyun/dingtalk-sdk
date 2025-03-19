@@ -23,14 +23,12 @@ class meetingRooms extends Model
      */
     public $roomId;
     protected $_name = [
-        'displayName'    => 'displayName',
+        'displayName' => 'displayName',
         'responseStatus' => 'responseStatus',
-        'roomId'         => 'roomId',
+        'roomId' => 'roomId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

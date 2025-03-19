@@ -25,13 +25,11 @@ class result extends Model
     public $sharing;
     protected $_name = [
         'assistantId' => 'assistantId',
-        'scopes'      => 'scopes',
-        'sharing'     => 'sharing',
+        'scopes' => 'scopes',
+        'sharing' => 'sharing',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

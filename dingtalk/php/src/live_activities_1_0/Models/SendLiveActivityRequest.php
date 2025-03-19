@@ -27,14 +27,12 @@ class SendLiveActivityRequest extends Model
      */
     public $activityId;
     protected $_name = [
-        'activityEventData'   => 'activityEventData',
+        'activityEventData' => 'activityEventData',
         'activityEventOption' => 'activityEventOption',
-        'activityId'          => 'activityId',
+        'activityId' => 'activityId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

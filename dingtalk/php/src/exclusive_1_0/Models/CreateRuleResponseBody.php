@@ -18,9 +18,7 @@ class CreateRuleResponseBody extends Model
         'id' => 'id',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

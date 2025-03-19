@@ -23,12 +23,10 @@ class UploadInvoiceByAuthRequest extends Model
     public $invoices;
     protected $_name = [
         'extension' => 'extension',
-        'invoices'  => 'invoices',
+        'invoices' => 'invoices',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class UploadInvoiceByAuthRequest extends Model
         if (isset($map['invoices'])) {
             if (!empty($map['invoices'])) {
                 $model->invoices = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['invoices'] as $item) {
                     $model->invoices[$n++] = null !== $item ? invoices::fromMap($item) : $item;
                 }

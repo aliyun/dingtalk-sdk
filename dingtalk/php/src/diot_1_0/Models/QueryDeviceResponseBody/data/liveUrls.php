@@ -29,14 +29,12 @@ class liveUrls extends Model
      */
     public $rtmp;
     protected $_name = [
-        'flv'  => 'flv',
-        'hls'  => 'hls',
+        'flv' => 'flv',
+        'hls' => 'hls',
         'rtmp' => 'rtmp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

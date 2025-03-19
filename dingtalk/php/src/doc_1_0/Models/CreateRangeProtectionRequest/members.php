@@ -33,16 +33,14 @@ class members extends Model
      */
     public $unionId;
     protected $_name = [
-        'deptId'             => 'deptId',
-        'memberType'         => 'memberType',
+        'deptId' => 'deptId',
+        'memberType' => 'memberType',
         'openConversationId' => 'openConversationId',
-        'permission'         => 'permission',
-        'unionId'            => 'unionId',
+        'permission' => 'permission',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

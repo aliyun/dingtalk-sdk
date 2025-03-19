@@ -23,14 +23,12 @@ class extraInfo extends Model
      */
     public $watchProgressMs;
     protected $_name = [
-        'hasSubscribed'     => 'hasSubscribed',
+        'hasSubscribed' => 'hasSubscribed',
         'isForecastExpired' => 'isForecastExpired',
-        'watchProgressMs'   => 'watchProgressMs',
+        'watchProgressMs' => 'watchProgressMs',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

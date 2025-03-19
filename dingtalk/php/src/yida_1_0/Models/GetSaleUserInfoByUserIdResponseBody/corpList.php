@@ -23,14 +23,12 @@ class corpList extends Model
      */
     public $namespace;
     protected $_name = [
-        'corpId'    => 'corpId',
-        'corpName'  => 'corpName',
+        'corpId' => 'corpId',
+        'corpName' => 'corpName',
         'namespace' => 'namespace',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

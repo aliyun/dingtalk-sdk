@@ -24,13 +24,11 @@ class template extends Model
     public $templateName;
     protected $_name = [
         'openTemplateBizId' => 'openTemplateBizId',
-        'openTemplateId'    => 'openTemplateId',
-        'templateName'      => 'templateName',
+        'openTemplateId' => 'openTemplateId',
+        'templateName' => 'templateName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

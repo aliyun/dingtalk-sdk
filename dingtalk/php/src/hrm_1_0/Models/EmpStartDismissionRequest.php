@@ -59,20 +59,18 @@ class EmpStartDismissionRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'lastWorkDate'               => 'lastWorkDate',
-        'partner'                    => 'partner',
-        'remark'                     => 'remark',
-        'terminationReasonPassive'   => 'terminationReasonPassive',
+        'lastWorkDate' => 'lastWorkDate',
+        'partner' => 'partner',
+        'remark' => 'remark',
+        'terminationReasonPassive' => 'terminationReasonPassive',
         'terminationReasonVoluntary' => 'terminationReasonVoluntary',
-        'toHireBlackList'            => 'toHireBlackList',
-        'toHireDismissionTalent'     => 'toHireDismissionTalent',
-        'toHrmBlackList'             => 'toHrmBlackList',
-        'userId'                     => 'userId',
+        'toHireBlackList' => 'toHireBlackList',
+        'toHireDismissionTalent' => 'toHireDismissionTalent',
+        'toHrmBlackList' => 'toHrmBlackList',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

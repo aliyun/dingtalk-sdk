@@ -20,9 +20,7 @@ class data extends Model
         'objectiveScore' => 'objectiveScore',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

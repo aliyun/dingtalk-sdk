@@ -22,12 +22,10 @@ class CollegeListDeptManagerResponseBody extends Model
     public $totalCount;
     protected $_name = [
         'managerInfoSimpleList' => 'managerInfoSimpleList',
-        'totalCount'            => 'totalCount',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class CollegeListDeptManagerResponseBody extends Model
         if (isset($map['managerInfoSimpleList'])) {
             if (!empty($map['managerInfoSimpleList'])) {
                 $model->managerInfoSimpleList = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['managerInfoSimpleList'] as $item) {
                     $model->managerInfoSimpleList[$n++] = null !== $item ? managerInfoSimpleList::fromMap($item) : $item;
                 }

@@ -23,12 +23,10 @@ class payerBank extends Model
     public $name;
     protected $_name = [
         'cardNo' => 'cardNo',
-        'name'   => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

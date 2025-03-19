@@ -17,9 +17,7 @@ class RenameDentryResponseBody extends Model
         'dentry' => 'dentry',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

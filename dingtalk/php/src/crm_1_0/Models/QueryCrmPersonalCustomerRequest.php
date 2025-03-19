@@ -36,15 +36,13 @@ class QueryCrmPersonalCustomerRequest extends Model
     public $relationType;
     protected $_name = [
         'currentOperatorUserId' => 'currentOperatorUserId',
-        'maxResults'            => 'maxResults',
-        'nextToken'             => 'nextToken',
-        'queryDsl'              => 'queryDsl',
-        'relationType'          => 'relationType',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'queryDsl' => 'queryDsl',
+        'relationType' => 'relationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

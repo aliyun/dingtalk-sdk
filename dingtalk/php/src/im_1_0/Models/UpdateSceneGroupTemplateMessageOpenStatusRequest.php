@@ -29,14 +29,12 @@ class UpdateSceneGroupTemplateMessageOpenStatusRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'status'         => 'status',
+        'status' => 'status',
         'templateIdList' => 'templateIdList',
-        'userId'         => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -35,14 +35,12 @@ class ChatMemoGetFileListRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'datasetId'  => 'datasetId',
+        'datasetId' => 'datasetId',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

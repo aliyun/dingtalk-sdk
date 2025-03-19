@@ -53,16 +53,14 @@ class UpdateScheduleConferenceRequest extends Model
      */
     public $title;
     protected $_name = [
-        'creatorUnionId'       => 'creatorUnionId',
-        'endTime'              => 'endTime',
+        'creatorUnionId' => 'creatorUnionId',
+        'endTime' => 'endTime',
         'scheduleConferenceId' => 'scheduleConferenceId',
-        'startTime'            => 'startTime',
-        'title'                => 'title',
+        'startTime' => 'startTime',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

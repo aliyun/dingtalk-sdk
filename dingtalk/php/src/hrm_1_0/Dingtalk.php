@@ -183,10 +183,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -239,19 +239,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddHrmLegalEntity',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/legalEntities/companies',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddHrmLegalEntity',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/legalEntities/companies',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddHrmLegalEntityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -312,18 +312,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddHrmPreentry',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/preentries',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddHrmPreentry',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/preentries',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddHrmPreentryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -399,18 +399,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateRecord',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/signCenters/records',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateRecord',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/signCenters/records',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateRecordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -445,15 +445,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'DeviceMarketManager',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/device/market/manager',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'DeviceMarketManager',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/device/market/manager',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeviceMarketManagerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -486,15 +486,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'DeviceMarketOrderManager',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/device/market/order/manager',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'DeviceMarketOrderManager',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/device/market/order/manager',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeviceMarketOrderManagerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -538,18 +538,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ECertQuery',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/eCerts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ECertQuery',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/eCerts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ECertQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -619,18 +619,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EmpStartDismission',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/pendingDismission/start',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EmpStartDismission',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/pendingDismission/start',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EmpStartDismissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -689,19 +689,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EmployeeAttachmentUpdate',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/employees/attachments',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EmployeeAttachmentUpdate',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/employees/attachments',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EmployeeAttachmentUpdateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -747,18 +747,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'EsignRollback',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/contracts/esign/rollback',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EsignRollback',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/contracts/esign/rollback',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EsignRollbackResponse::fromMap($this->execute($params, $req, $runtime));
@@ -800,15 +800,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetAllDismissionReasons',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/dismission/reasons',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAllDismissionReasons',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/dismission/reasons',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAllDismissionReasonsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -861,18 +861,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetEmployeeRosterByField',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/rosters/lists/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetEmployeeRosterByField',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/rosters/lists/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetEmployeeRosterByFieldResponse::fromMap($this->execute($params, $req, $runtime));
@@ -930,18 +930,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetFileTemplateList',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/fileTemplates/lists/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFileTemplateList',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/fileTemplates/lists/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFileTemplateListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -983,18 +983,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => $request->body,
+            'body' => $request->body,
         ]);
         $params = new Params([
-            'action'      => 'GetSignRecordById',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/signCenters/records/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSignRecordById',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/signCenters/records/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSignRecordByIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1049,18 +1049,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetSignRecordByUserId',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/signCenters/users/records/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSignRecordByUserId',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/signCenters/users/records/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSignRecordByUserIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1109,18 +1109,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrmAuthResourcesQuery',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/authResources/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrmAuthResourcesQuery',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/authResources/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrmAuthResourcesQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1166,18 +1166,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrmBenefitQuery',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/benefits/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrmBenefitQuery',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/benefits/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrmBenefitQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1226,18 +1226,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrmCorpConfigQuery',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/corp/configs/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrmCorpConfigQuery',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/corp/configs/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrmCorpConfigQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1286,18 +1286,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrmMailSend',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/mails/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrmMailSend',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/mails/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrmMailSendResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1346,18 +1346,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrmMokaEvent',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/moka/events/forward',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrmMokaEvent',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/moka/events/forward',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrmMokaEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1406,18 +1406,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrmMokaOapi',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/moka/forward',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrmMokaOapi',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/moka/forward',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrmMokaOapiResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1472,18 +1472,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrmProcessRegular',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/processes/regulars/become',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrmProcessRegular',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/processes/regulars/become',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrmProcessRegularResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1562,18 +1562,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrmProcessTerminationAndHandover',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/processes/terminateAndHandOver',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrmProcessTerminationAndHandover',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/processes/terminateAndHandOver',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrmProcessTerminationAndHandoverResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1643,18 +1643,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrmProcessTransfer',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/processes/transfer',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrmProcessTransfer',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/processes/transfer',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrmProcessTransferResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1706,18 +1706,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrmProcessUpdateTerminationInfo',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/processes/employees/terminations',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrmProcessUpdateTerminationInfo',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/processes/employees/terminations',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrmProcessUpdateTerminationInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1775,18 +1775,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrmPtsService',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/pts/request',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrmPtsService',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/pts/request',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrmPtsServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1838,18 +1838,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InvalidSignRecords',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/signCenters/records/invalid',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InvalidSignRecords',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/signCenters/records/invalid',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InvalidSignRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1895,19 +1895,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'MasterDataDelete',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/datas/batchRemove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MasterDataDelete',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/datas/batchRemove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MasterDataDeleteResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1977,18 +1977,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MasterDataQuery',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/datas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MasterDataQuery',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/datas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MasterDataQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2034,19 +2034,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'MasterDataSave',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/datas/save',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MasterDataSave',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/datas/save',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MasterDataSaveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2095,18 +2095,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'MasterDataTenantQuey',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/tenants',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MasterDataTenantQuey',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/tenants',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MasterDataTenantQueyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2161,18 +2161,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MasterDatasGet',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masterDatas/objects/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MasterDatasGet',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masterDatas/objects/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MasterDatasGetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2239,18 +2239,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MasterDatasQuery',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masterDatas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MasterDatasQuery',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masterDatas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MasterDatasQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2296,18 +2296,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'OpenOemMicroApp',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/oem/microApps/open',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'OpenOemMicroApp',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/oem/microApps/open',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return OpenOemMicroAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2359,18 +2359,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCustomEntryProcesses',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/customEntryProcesses',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCustomEntryProcesses',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/customEntryProcesses',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCustomEntryProcessesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2419,18 +2419,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryDismissionStaffIdList',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/employees/dismissions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDismissionStaffIdList',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/employees/dismissions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDismissionStaffIdListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2481,18 +2481,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryHrmEmployeeDismissionInfo',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/employees/dimissionInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryHrmEmployeeDismissionInfo',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/employees/dimissionInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryHrmEmployeeDismissionInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2550,18 +2550,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryJobRanks',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/jobRanks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryJobRanks',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/jobRanks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryJobRanksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2613,18 +2613,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryJobs',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/jobs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryJobs',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/jobs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryJobsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2670,18 +2670,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryMicroAppStatus',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/microApps/statuses/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMicroAppStatus',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/microApps/statuses/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMicroAppStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2730,18 +2730,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryMicroAppView',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/microApps/visibilities/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMicroAppView',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/microApps/visibilities/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMicroAppViewResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2783,15 +2783,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryPositionVersion',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/positions/versions/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryPositionVersion',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/positions/versions/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryPositionVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2851,19 +2851,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryPositions',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/positions/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryPositions',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/positions/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryPositionsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2915,18 +2915,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RevokeSignRecords',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/signCenters/records/revoke',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RevokeSignRecords',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/signCenters/records/revoke',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RevokeSignRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2972,18 +2972,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RevokeTermination',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/pendingDismission/revoke',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RevokeTermination',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/pendingDismission/revoke',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RevokeTerminationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3029,18 +3029,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RosterMetaAvailableFieldList',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/rosters/meta/authorities/fields',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RosterMetaAvailableFieldList',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/rosters/meta/authorities/fields',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RosterMetaAvailableFieldListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3099,19 +3099,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RosterMetaFieldOptionsUpdate',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/rosters/meta/fields/options',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RosterMetaFieldOptionsUpdate',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/rosters/meta/fields/options',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RosterMetaFieldOptionsUpdateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3179,19 +3179,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendIsvCardMessage',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/cardMessages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendIsvCardMessage',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/cardMessages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendIsvCardMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3262,19 +3262,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SolutionTaskInit',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/solutions/tasks/init',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SolutionTaskInit',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/solutions/tasks/init',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SolutionTaskInitResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3354,19 +3354,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SolutionTaskSave',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/solutions/tasks/save',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SolutionTaskSave',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/solutions/tasks/save',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SolutionTaskSaveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3424,18 +3424,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncSolutionStatus',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/solutions/statuses/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncSolutionStatus',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/solutions/statuses/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncSolutionStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3506,19 +3506,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncTaskTemplate',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/solutions/tasks/templates/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncTaskTemplate',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/solutions/tasks/templates/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncTaskTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3579,18 +3579,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateEmpDismissionInfo',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/pendingDismission/infos',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateEmpDismissionInfo',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/pendingDismission/infos',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateEmpDismissionInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3642,18 +3642,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'UpdateHrmLegalEntityName',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/legalEntities/companyNames',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateHrmLegalEntityName',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/legalEntities/companyNames',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateHrmLegalEntityNameResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3721,19 +3721,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateHrmLegalEntityWithoutName',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/masters/legalEntities/companies',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateHrmLegalEntityWithoutName',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/legalEntities/companies',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateHrmLegalEntityWithoutNameResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3782,18 +3782,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateHrmVersionRollBackStatus',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/versions/rollbackButtons/statuses',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateHrmVersionRollBackStatus',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/versions/rollbackButtons/statuses',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateHrmVersionRollBackStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3855,19 +3855,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateIsvCardMessage',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/cardMessages',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateIsvCardMessage',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/cardMessages',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateIsvCardMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3916,18 +3916,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UploadAttachment',
-            'version'     => 'hrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrm/attachments/upload',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UploadAttachment',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/attachments/upload',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UploadAttachmentResponse::fromMap($this->execute($params, $req, $runtime));

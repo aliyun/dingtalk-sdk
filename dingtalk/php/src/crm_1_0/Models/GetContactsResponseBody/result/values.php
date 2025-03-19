@@ -60,18 +60,16 @@ class values extends Model
     public $permission;
     protected $_name = [
         'creatorUserId' => 'creatorUserId',
-        'data'          => 'data',
-        'extendData'    => 'extendData',
-        'gmtCreate'     => 'gmtCreate',
-        'gmtModified'   => 'gmtModified',
-        'instanceId'    => 'instanceId',
-        'objectType'    => 'objectType',
-        'permission'    => 'permission',
+        'data' => 'data',
+        'extendData' => 'extendData',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'instanceId' => 'instanceId',
+        'objectType' => 'objectType',
+        'permission' => 'permission',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

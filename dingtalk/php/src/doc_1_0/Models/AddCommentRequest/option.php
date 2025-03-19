@@ -21,12 +21,10 @@ class option extends Model
     public $extra;
     protected $_name = [
         'createTime' => 'createTime',
-        'extra'      => 'extra',
+        'extra' => 'extra',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

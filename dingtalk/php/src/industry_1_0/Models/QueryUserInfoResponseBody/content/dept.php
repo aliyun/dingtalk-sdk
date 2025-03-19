@@ -45,16 +45,14 @@ class dept extends Model
      */
     public $relId;
     protected $_name = [
-        'gmtCreateStr'   => 'gmtCreateStr',
+        'gmtCreateStr' => 'gmtCreateStr',
         'gmtModifiedStr' => 'gmtModifiedStr',
-        'id'             => 'id',
-        'name'           => 'name',
-        'relId'          => 'relId',
+        'id' => 'id',
+        'name' => 'name',
+        'relId' => 'relId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

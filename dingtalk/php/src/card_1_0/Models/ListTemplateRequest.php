@@ -18,9 +18,7 @@ class ListTemplateRequest extends Model
         'templateIds' => 'templateIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

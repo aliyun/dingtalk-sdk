@@ -23,12 +23,10 @@ class forms extends Model
     public $title;
     protected $_name = [
         'content' => 'content',
-        'title'   => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

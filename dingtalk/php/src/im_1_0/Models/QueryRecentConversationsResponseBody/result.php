@@ -17,9 +17,7 @@ class result extends Model
         'conversationList' => 'conversationList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class result extends Model
         if (isset($map['conversationList'])) {
             if (!empty($map['conversationList'])) {
                 $model->conversationList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['conversationList'] as $item) {
                     $model->conversationList[$n++] = null !== $item ? conversationList::fromMap($item) : $item;
                 }

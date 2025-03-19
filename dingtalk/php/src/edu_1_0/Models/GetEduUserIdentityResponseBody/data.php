@@ -24,13 +24,11 @@ class data extends Model
     public $unionId;
     protected $_name = [
         'matchGuardianRule' => 'matchGuardianRule',
-        'matchTeacherRule'  => 'matchTeacherRule',
-        'unionId'           => 'unionId',
+        'matchTeacherRule' => 'matchTeacherRule',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

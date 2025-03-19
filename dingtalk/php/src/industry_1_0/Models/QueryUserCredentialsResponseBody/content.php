@@ -26,12 +26,10 @@ class content extends Model
     public $userId;
     protected $_name = [
         'credentialList' => 'credentialList',
-        'userId'         => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class content extends Model
         if (isset($map['credentialList'])) {
             if (!empty($map['credentialList'])) {
                 $model->credentialList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['credentialList'] as $item) {
                     $model->credentialList[$n++] = null !== $item ? credentialList::fromMap($item) : $item;
                 }

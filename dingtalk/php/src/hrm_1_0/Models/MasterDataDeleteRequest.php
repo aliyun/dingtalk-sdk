@@ -25,13 +25,11 @@ class MasterDataDeleteRequest extends Model
      */
     public $tenantId;
     protected $_name = [
-        'body'     => 'body',
+        'body' => 'body',
         'tenantId' => 'tenantId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class MasterDataDeleteRequest extends Model
         if (isset($map['body'])) {
             if (!empty($map['body'])) {
                 $model->body = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['body'] as $item) {
                     $model->body[$n++] = null !== $item ? body::fromMap($item) : $item;
                 }

@@ -34,13 +34,11 @@ class SaveWhiteAppRequest extends Model
     public $operation;
     protected $_name = [
         'agentIdList' => 'agentIdList',
-        'agentIdMap'  => 'agentIdMap',
-        'operation'   => 'operation',
+        'agentIdMap' => 'agentIdMap',
+        'operation' => 'operation',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

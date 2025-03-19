@@ -18,9 +18,7 @@ class GetDingIdByMigrationDingIdRequest extends Model
         'migrationDingId' => 'migrationDingId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

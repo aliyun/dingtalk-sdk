@@ -71,23 +71,21 @@ class fields extends Model
      */
     public $unit;
     protected $_name = [
-        'customized'          => 'customized',
-        'format'              => 'format',
-        'label'               => 'label',
-        'name'                => 'name',
-        'nillable'            => 'nillable',
-        'quote'               => 'quote',
-        'referenceFields'     => 'referenceFields',
-        'referenceTo'         => 'referenceTo',
+        'customized' => 'customized',
+        'format' => 'format',
+        'label' => 'label',
+        'name' => 'name',
+        'nillable' => 'nillable',
+        'quote' => 'quote',
+        'referenceFields' => 'referenceFields',
+        'referenceTo' => 'referenceTo',
         'rollUpSummaryFields' => 'rollUpSummaryFields',
-        'selectOptions'       => 'selectOptions',
-        'type'                => 'type',
-        'unit'                => 'unit',
+        'selectOptions' => 'selectOptions',
+        'type' => 'type',
+        'unit' => 'unit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -179,7 +177,7 @@ class fields extends Model
         if (isset($map['referenceFields'])) {
             if (!empty($map['referenceFields'])) {
                 $model->referenceFields = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['referenceFields'] as $item) {
                     $model->referenceFields[$n++] = null !== $item ? referenceFields::fromMap($item) : $item;
                 }
@@ -191,7 +189,7 @@ class fields extends Model
         if (isset($map['rollUpSummaryFields'])) {
             if (!empty($map['rollUpSummaryFields'])) {
                 $model->rollUpSummaryFields = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['rollUpSummaryFields'] as $item) {
                     $model->rollUpSummaryFields[$n++] = null !== $item ? rollUpSummaryFields::fromMap($item) : $item;
                 }
@@ -200,7 +198,7 @@ class fields extends Model
         if (isset($map['selectOptions'])) {
             if (!empty($map['selectOptions'])) {
                 $model->selectOptions = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['selectOptions'] as $item) {
                     $model->selectOptions[$n++] = null !== $item ? selectOptions::fromMap($item) : $item;
                 }

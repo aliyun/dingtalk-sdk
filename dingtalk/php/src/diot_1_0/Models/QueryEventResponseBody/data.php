@@ -43,18 +43,16 @@ class data extends Model
      */
     public $picUrls;
     protected $_name = [
-        'eventId'        => 'eventId',
-        'eventName'      => 'eventName',
-        'eventStatus'    => 'eventStatus',
-        'eventType'      => 'eventType',
-        'msg'            => 'msg',
+        'eventId' => 'eventId',
+        'eventName' => 'eventName',
+        'eventStatus' => 'eventStatus',
+        'eventType' => 'eventType',
+        'msg' => 'msg',
         'occurrenceTime' => 'occurrenceTime',
-        'picUrls'        => 'picUrls',
+        'picUrls' => 'picUrls',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,9 +19,7 @@ class GetOutGroupsByPageResponseBody extends Model
         'responseBody' => 'responseBody',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

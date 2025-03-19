@@ -26,14 +26,12 @@ class result extends Model
      */
     public $ok;
     protected $_name = [
-        'body'    => 'body',
+        'body' => 'body',
         'message' => 'message',
-        'ok'      => 'ok',
+        'ok' => 'ok',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -68,7 +66,7 @@ class result extends Model
         if (isset($map['body'])) {
             if (!empty($map['body'])) {
                 $model->body = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['body'] as $item) {
                     $model->body[$n++] = null !== $item ? body::fromMap($item) : $item;
                 }

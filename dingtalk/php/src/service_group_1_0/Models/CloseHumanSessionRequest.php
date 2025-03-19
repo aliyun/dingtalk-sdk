@@ -23,12 +23,10 @@ class CloseHumanSessionRequest extends Model
     public $openTeamId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openTeamId'         => 'openTeamId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

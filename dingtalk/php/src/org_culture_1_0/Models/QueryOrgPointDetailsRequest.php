@@ -43,14 +43,12 @@ class QueryOrgPointDetailsRequest extends Model
     public $userId;
     protected $_name = [
         'accountType' => 'accountType',
-        'pageNumber'  => 'pageNumber',
-        'pageSize'    => 'pageSize',
-        'userId'      => 'userId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

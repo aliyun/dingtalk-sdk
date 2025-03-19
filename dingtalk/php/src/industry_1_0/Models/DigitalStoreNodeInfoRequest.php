@@ -22,13 +22,11 @@ class DigitalStoreNodeInfoRequest extends Model
      */
     public $nodeId;
     protected $_name = [
-        'code'   => 'code',
+        'code' => 'code',
         'nodeId' => 'nodeId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

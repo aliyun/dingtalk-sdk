@@ -30,13 +30,11 @@ class GetMsgLocationRequest extends Model
     public $userId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openMsgId'          => 'openMsgId',
-        'userId'             => 'userId',
+        'openMsgId' => 'openMsgId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

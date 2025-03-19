@@ -119,27 +119,25 @@ class result extends Model
      */
     public $visibility;
     protected $_name = [
-        'created'             => 'created',
-        'creatorId'           => 'creatorId',
-        'customFields'        => 'customFields',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
+        'customFields' => 'customFields',
         'defaultCollectionId' => 'defaultCollectionId',
-        'isArchived'          => 'isArchived',
-        'isSuspended'         => 'isSuspended',
-        'isTemplate'          => 'isTemplate',
-        'logo'                => 'logo',
-        'name'                => 'name',
-        'normalType'          => 'normalType',
-        'projectId'           => 'projectId',
-        'rootCollectionId'    => 'rootCollectionId',
-        'sourceId'            => 'sourceId',
-        'uniqueIdPrefix'      => 'uniqueIdPrefix',
-        'updated'             => 'updated',
-        'visibility'          => 'visibility',
+        'isArchived' => 'isArchived',
+        'isSuspended' => 'isSuspended',
+        'isTemplate' => 'isTemplate',
+        'logo' => 'logo',
+        'name' => 'name',
+        'normalType' => 'normalType',
+        'projectId' => 'projectId',
+        'rootCollectionId' => 'rootCollectionId',
+        'sourceId' => 'sourceId',
+        'uniqueIdPrefix' => 'uniqueIdPrefix',
+        'updated' => 'updated',
+        'visibility' => 'visibility',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -219,7 +217,7 @@ class result extends Model
         if (isset($map['customFields'])) {
             if (!empty($map['customFields'])) {
                 $model->customFields = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['customFields'] as $item) {
                     $model->customFields[$n++] = null !== $item ? customFields::fromMap($item) : $item;
                 }

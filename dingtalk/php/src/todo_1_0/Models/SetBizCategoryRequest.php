@@ -35,14 +35,12 @@ class SetBizCategoryRequest extends Model
     public $operatorId;
     protected $_name = [
         'bizCategoryId' => 'bizCategoryId',
-        'description'   => 'description',
-        'name'          => 'name',
-        'operatorId'    => 'operatorId',
+        'description' => 'description',
+        'name' => 'name',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

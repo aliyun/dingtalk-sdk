@@ -20,9 +20,7 @@ class RangeFindNextResponseBody extends Model
         'a1Notation' => 'a1Notation',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

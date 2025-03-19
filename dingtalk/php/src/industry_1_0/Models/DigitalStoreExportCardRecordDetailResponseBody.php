@@ -53,20 +53,18 @@ class DigitalStoreExportCardRecordDetailResponseBody extends Model
      */
     public $totalNum;
     protected $_name = [
-        'fileName'   => 'fileName',
-        'fileType'   => 'fileType',
-        'fileUrl'    => 'fileUrl',
-        'id'         => 'id',
-        'isImport'   => 'isImport',
-        'remark'     => 'remark',
-        'status'     => 'status',
+        'fileName' => 'fileName',
+        'fileType' => 'fileType',
+        'fileUrl' => 'fileUrl',
+        'id' => 'id',
+        'isImport' => 'isImport',
+        'remark' => 'remark',
+        'status' => 'status',
         'successNum' => 'successNum',
-        'totalNum'   => 'totalNum',
+        'totalNum' => 'totalNum',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

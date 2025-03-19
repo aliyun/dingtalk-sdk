@@ -114,25 +114,23 @@ class SearchFormDataSecondGenerationRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'             => 'appType',
-        'createFromTimeGMT'   => 'createFromTimeGMT',
-        'createToTimeGMT'     => 'createToTimeGMT',
-        'formUuid'            => 'formUuid',
+        'appType' => 'appType',
+        'createFromTimeGMT' => 'createFromTimeGMT',
+        'createToTimeGMT' => 'createToTimeGMT',
+        'formUuid' => 'formUuid',
         'modifiedFromTimeGMT' => 'modifiedFromTimeGMT',
-        'modifiedToTimeGMT'   => 'modifiedToTimeGMT',
-        'orderConfigJson'     => 'orderConfigJson',
-        'originatorId'        => 'originatorId',
-        'pageNumber'          => 'pageNumber',
-        'pageSize'            => 'pageSize',
-        'searchCondition'     => 'searchCondition',
-        'systemToken'         => 'systemToken',
-        'useAlias'            => 'useAlias',
-        'userId'              => 'userId',
+        'modifiedToTimeGMT' => 'modifiedToTimeGMT',
+        'orderConfigJson' => 'orderConfigJson',
+        'originatorId' => 'originatorId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'searchCondition' => 'searchCondition',
+        'systemToken' => 'systemToken',
+        'useAlias' => 'useAlias',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -78,21 +78,19 @@ class GetInnerAppResponseBody extends Model
      */
     public $pcHomepageLink;
     protected $_name = [
-        'agentId'        => 'agentId',
-        'appKey'         => 'appKey',
-        'appSecret'      => 'appSecret',
-        'desc'           => 'desc',
-        'homepageLink'   => 'homepageLink',
-        'icon'           => 'icon',
-        'ipWhiteList'    => 'ipWhiteList',
-        'name'           => 'name',
-        'ompLink'        => 'ompLink',
+        'agentId' => 'agentId',
+        'appKey' => 'appKey',
+        'appSecret' => 'appSecret',
+        'desc' => 'desc',
+        'homepageLink' => 'homepageLink',
+        'icon' => 'icon',
+        'ipWhiteList' => 'ipWhiteList',
+        'name' => 'name',
+        'ompLink' => 'ompLink',
         'pcHomepageLink' => 'pcHomepageLink',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

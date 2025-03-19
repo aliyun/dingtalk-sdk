@@ -52,17 +52,15 @@ class ListPunchScheduleByConditionWithPagingRequest extends Model
      */
     public $userIdList;
     protected $_name = [
-        'bizInstanceId'     => 'bizInstanceId',
-        'maxResults'        => 'maxResults',
-        'nextToken'         => 'nextToken',
-        'scheduleDateEnd'   => 'scheduleDateEnd',
+        'bizInstanceId' => 'bizInstanceId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'scheduleDateEnd' => 'scheduleDateEnd',
         'scheduleDateStart' => 'scheduleDateStart',
-        'userIdList'        => 'userIdList',
+        'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

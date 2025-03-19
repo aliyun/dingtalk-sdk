@@ -35,14 +35,12 @@ class intentionTrend extends Model
      */
     public $intention;
     protected $_name = [
-        'count'     => 'count',
-        'dt'        => 'dt',
+        'count' => 'count',
+        'dt' => 'dt',
         'intention' => 'intention',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

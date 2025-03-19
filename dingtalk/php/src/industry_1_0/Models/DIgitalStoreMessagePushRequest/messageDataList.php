@@ -57,18 +57,16 @@ class messageDataList extends Model
      */
     public $sendNow;
     protected $_name = [
-        'callbackKey'   => 'callbackKey',
-        'content'       => 'content',
-        'newCard'       => 'newCard',
-        'outTraceId'    => 'outTraceId',
+        'callbackKey' => 'callbackKey',
+        'content' => 'content',
+        'newCard' => 'newCard',
+        'outTraceId' => 'outTraceId',
         'sceneCardCode' => 'sceneCardCode',
-        'sceneScope'    => 'sceneScope',
-        'sendNow'       => 'sendNow',
+        'sceneScope' => 'sceneScope',
+        'sendNow' => 'sendNow',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

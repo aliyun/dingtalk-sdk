@@ -21,13 +21,11 @@ class ListExpiredResponseBody extends Model
      */
     public $nextToken;
     protected $_name = [
-        'files'     => 'files',
+        'files' => 'files',
         'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class ListExpiredResponseBody extends Model
         if (isset($map['files'])) {
             if (!empty($map['files'])) {
                 $model->files = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['files'] as $item) {
                     $model->files[$n++] = null !== $item ? files::fromMap($item) : $item;
                 }

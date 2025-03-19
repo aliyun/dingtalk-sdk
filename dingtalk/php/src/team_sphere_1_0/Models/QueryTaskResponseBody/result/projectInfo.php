@@ -28,15 +28,13 @@ class projectInfo extends Model
      */
     public $organizationId;
     protected $_name = [
-        'id'             => 'id',
-        'logo'           => 'logo',
-        'name'           => 'name',
+        'id' => 'id',
+        'logo' => 'logo',
+        'name' => 'name',
         'organizationId' => 'organizationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class GetDomainWordsRequest extends Model
         'assistantId' => 'assistantId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

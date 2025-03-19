@@ -24,14 +24,12 @@ class data extends Model
      */
     public $status;
     protected $_name = [
-        'files'  => 'files',
+        'files' => 'files',
         'flowId' => 'flowId',
         'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class data extends Model
         if (isset($map['files'])) {
             if (!empty($map['files'])) {
                 $model->files = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['files'] as $item) {
                     $model->files[$n++] = null !== $item ? files::fromMap($item) : $item;
                 }

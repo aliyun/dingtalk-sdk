@@ -25,12 +25,10 @@ class DeleteDentryAppPropertiesRequest extends Model
     public $unionId;
     protected $_name = [
         'propertyNames' => 'propertyNames',
-        'unionId'       => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -40,17 +40,15 @@ class CreateVideoConferenceResponseBody extends Model
      */
     public $roomCode;
     protected $_name = [
-        'conferenceId'       => 'conferenceId',
+        'conferenceId' => 'conferenceId',
         'conferencePassword' => 'conferencePassword',
-        'externalLinkUrl'    => 'externalLinkUrl',
-        'hostPassword'       => 'hostPassword',
-        'phoneNumbers'       => 'phoneNumbers',
-        'roomCode'           => 'roomCode',
+        'externalLinkUrl' => 'externalLinkUrl',
+        'hostPassword' => 'hostPassword',
+        'phoneNumbers' => 'phoneNumbers',
+        'roomCode' => 'roomCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

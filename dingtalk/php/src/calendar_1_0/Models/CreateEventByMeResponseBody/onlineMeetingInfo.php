@@ -29,14 +29,12 @@ class onlineMeetingInfo extends Model
     public $url;
     protected $_name = [
         'conferenceId' => 'conferenceId',
-        'extraInfo'    => 'extraInfo',
-        'type'         => 'type',
-        'url'          => 'url',
+        'extraInfo' => 'extraInfo',
+        'type' => 'type',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

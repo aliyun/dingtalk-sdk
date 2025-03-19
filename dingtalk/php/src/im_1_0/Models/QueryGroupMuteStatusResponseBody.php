@@ -25,13 +25,11 @@ class QueryGroupMuteStatusResponseBody extends Model
      */
     public $userMuteResult;
     protected $_name = [
-        'groupMuteMode'  => 'groupMuteMode',
+        'groupMuteMode' => 'groupMuteMode',
         'userMuteResult' => 'userMuteResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

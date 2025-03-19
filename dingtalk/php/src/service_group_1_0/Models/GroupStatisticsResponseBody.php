@@ -43,15 +43,13 @@ class GroupStatisticsResponseBody extends Model
      */
     public $increaseRate;
     protected $_name = [
-        'groupCount'         => 'groupCount',
-        'groupTrend'         => 'groupTrend',
+        'groupCount' => 'groupCount',
+        'groupTrend' => 'groupTrend',
         'increaseGroupCount' => 'increaseGroupCount',
-        'increaseRate'       => 'increaseRate',
+        'increaseRate' => 'increaseRate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -92,7 +90,7 @@ class GroupStatisticsResponseBody extends Model
         if (isset($map['groupTrend'])) {
             if (!empty($map['groupTrend'])) {
                 $model->groupTrend = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['groupTrend'] as $item) {
                     $model->groupTrend[$n++] = null !== $item ? groupTrend::fromMap($item) : $item;
                 }

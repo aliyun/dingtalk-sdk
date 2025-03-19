@@ -76,23 +76,21 @@ class SendOTOInteractiveCardRequest extends Model
      */
     public $userIdType;
     protected $_name = [
-        'atOpenIds'          => 'atOpenIds',
-        'callbackRouteKey'   => 'callbackRouteKey',
-        'cardData'           => 'cardData',
-        'cardOptions'        => 'cardOptions',
-        'cardTemplateId'     => 'cardTemplateId',
+        'atOpenIds' => 'atOpenIds',
+        'callbackRouteKey' => 'callbackRouteKey',
+        'cardData' => 'cardData',
+        'cardOptions' => 'cardOptions',
+        'cardTemplateId' => 'cardTemplateId',
         'openConversationId' => 'openConversationId',
-        'outTrackId'         => 'outTrackId',
-        'privateData'        => 'privateData',
-        'pullStrategy'       => 'pullStrategy',
+        'outTrackId' => 'outTrackId',
+        'privateData' => 'privateData',
+        'pullStrategy' => 'pullStrategy',
         'receiverUserIdList' => 'receiverUserIdList',
-        'robotCode'          => 'robotCode',
-        'userIdType'         => 'userIdType',
+        'robotCode' => 'robotCode',
+        'userIdType' => 'userIdType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

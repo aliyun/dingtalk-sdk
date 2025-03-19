@@ -18,9 +18,7 @@ class ListBenefitLicenseRequest extends Model
         'domains' => 'domains',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

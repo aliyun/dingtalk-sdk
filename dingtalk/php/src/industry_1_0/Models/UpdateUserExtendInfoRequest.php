@@ -40,15 +40,13 @@ class UpdateUserExtendInfoRequest extends Model
      */
     public $userProbCode;
     protected $_name = [
-        'comments'      => 'comments',
-        'jobCode'       => 'jobCode',
+        'comments' => 'comments',
+        'jobCode' => 'jobCode',
         'jobStatusCode' => 'jobStatusCode',
-        'userProbCode'  => 'userProbCode',
+        'userProbCode' => 'userProbCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

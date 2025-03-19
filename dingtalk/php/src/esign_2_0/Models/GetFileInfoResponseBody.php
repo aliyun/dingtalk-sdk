@@ -40,17 +40,15 @@ class GetFileInfoResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'downloadUrl'   => 'downloadUrl',
-        'fileId'        => 'fileId',
-        'name'          => 'name',
+        'downloadUrl' => 'downloadUrl',
+        'fileId' => 'fileId',
+        'name' => 'name',
         'pdfTotalPages' => 'pdfTotalPages',
-        'size'          => 'size',
-        'status'        => 'status',
+        'size' => 'size',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

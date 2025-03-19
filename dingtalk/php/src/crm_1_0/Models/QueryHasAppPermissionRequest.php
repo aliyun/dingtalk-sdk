@@ -20,9 +20,7 @@ class QueryHasAppPermissionRequest extends Model
         'operatorUserId' => 'operatorUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -30,13 +30,11 @@ class member extends Model
     public $type;
     protected $_name = [
         'corpId' => 'corpId',
-        'id'     => 'id',
-        'type'   => 'type',
+        'id' => 'id',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

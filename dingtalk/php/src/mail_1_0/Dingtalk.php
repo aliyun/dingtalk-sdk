@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vmail_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\CreateMailFolderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\CreateMailFolderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\CreateMailFolderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\CreateUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\CreateUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\CreateUserResponse;
@@ -23,12 +26,77 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 创建邮件文件夹
+     *  *
+     * @param string                  $email
+     * @param CreateMailFolderRequest $request CreateMailFolderRequest
+     * @param CreateMailFolderHeaders $headers CreateMailFolderHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateMailFolderResponse CreateMailFolderResponse
+     */
+    public function createMailFolderWithOptions($email, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->displayName)) {
+            $body['displayName'] = $request->displayName;
+        }
+        if (!Utils::isUnset($request->extensions)) {
+            $body['extensions'] = $request->extensions;
+        }
+        if (!Utils::isUnset($request->folerId)) {
+            $body['folerId'] = $request->folerId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateMailFolder',
+            'version' => 'mail_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/mail/users/' . $email . '/mailFolders',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateMailFolderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建邮件文件夹
+     *  *
+     * @param string                  $email
+     * @param CreateMailFolderRequest $request CreateMailFolderRequest
+     *
+     * @return CreateMailFolderResponse CreateMailFolderResponse
+     */
+    public function createMailFolder($email, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateMailFolderHeaders([]);
+
+        return $this->createMailFolderWithOptions($email, $request, $headers, $runtime);
     }
 
     /**
@@ -65,18 +133,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateUser',
-            'version'     => 'mail_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/mail/users',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateUser',
+            'version' => 'mail_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/mail/users',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -123,18 +191,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListMailFolders',
-            'version'     => 'mail_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/mail/users/' . $email . '/mailFolders',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListMailFolders',
+            'version' => 'mail_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/mail/users/' . $email . '/mailFolders',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListMailFoldersResponse::fromMap($this->execute($params, $req, $runtime));

@@ -19,12 +19,10 @@ class result extends Model
     public $totalQuota;
     protected $_name = [
         'remainQuota' => 'remainQuota',
-        'totalQuota'  => 'totalQuota',
+        'totalQuota' => 'totalQuota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

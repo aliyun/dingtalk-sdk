@@ -21,12 +21,10 @@ class actorSelectionRange extends Model
     public $labels;
     protected $_name = [
         'approvals' => 'approvals',
-        'labels'    => 'labels',
+        'labels' => 'labels',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class actorSelectionRange extends Model
         if (isset($map['approvals'])) {
             if (!empty($map['approvals'])) {
                 $model->approvals = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['approvals'] as $item) {
                     $model->approvals[$n++] = null !== $item ? approvals::fromMap($item) : $item;
                 }
@@ -73,7 +71,7 @@ class actorSelectionRange extends Model
         if (isset($map['labels'])) {
             if (!empty($map['labels'])) {
                 $model->labels = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['labels'] as $item) {
                     $model->labels[$n++] = null !== $item ? labels::fromMap($item) : $item;
                 }

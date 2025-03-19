@@ -34,14 +34,12 @@ class groupList extends Model
     public $groupName;
     protected $_name = [
         'detailFlag' => 'detailFlag',
-        'fieldList'  => 'fieldList',
-        'groupId'    => 'groupId',
-        'groupName'  => 'groupName',
+        'fieldList' => 'fieldList',
+        'groupId' => 'groupId',
+        'groupName' => 'groupName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

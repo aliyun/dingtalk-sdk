@@ -49,16 +49,14 @@ class GetOpenUrlRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'fileUrl'     => 'fileUrl',
-        'language'    => 'language',
+        'fileUrl' => 'fileUrl',
+        'language' => 'language',
         'systemToken' => 'systemToken',
-        'timeout'     => 'timeout',
-        'userId'      => 'userId',
+        'timeout' => 'timeout',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

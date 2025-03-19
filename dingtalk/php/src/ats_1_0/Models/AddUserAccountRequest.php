@@ -50,17 +50,15 @@ class AddUserAccountRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizCode'             => 'bizCode',
-        'channelAccountName'  => 'channelAccountName',
+        'bizCode' => 'bizCode',
+        'channelAccountName' => 'channelAccountName',
         'channelUserIdentify' => 'channelUserIdentify',
-        'phoneNumber'         => 'phoneNumber',
-        'corpId'              => 'corpId',
-        'userId'              => 'userId',
+        'phoneNumber' => 'phoneNumber',
+        'corpId' => 'corpId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

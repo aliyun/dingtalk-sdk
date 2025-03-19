@@ -20,13 +20,11 @@ class AttendanceBleDevicesAddResponseBody extends Model
      */
     public $successList;
     protected $_name = [
-        'errorList'   => 'errorList',
+        'errorList' => 'errorList',
         'successList' => 'successList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class AttendanceBleDevicesAddResponseBody extends Model
         if (isset($map['errorList'])) {
             if (!empty($map['errorList'])) {
                 $model->errorList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['errorList'] as $item) {
                     $model->errorList[$n++] = null !== $item ? errorList::fromMap($item) : $item;
                 }
@@ -73,7 +71,7 @@ class AttendanceBleDevicesAddResponseBody extends Model
         if (isset($map['successList'])) {
             if (!empty($map['successList'])) {
                 $model->successList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['successList'] as $item) {
                     $model->successList[$n++] = null !== $item ? successList::fromMap($item) : $item;
                 }

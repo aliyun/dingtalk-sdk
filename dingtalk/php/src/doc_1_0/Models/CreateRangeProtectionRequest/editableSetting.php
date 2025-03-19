@@ -48,19 +48,17 @@ class editableSetting extends Model
      */
     public $toggleRowsVisibility;
     protected $_name = [
-        'deleteColumns'           => 'deleteColumns',
-        'deleteRows'              => 'deleteRows',
-        'editCells'               => 'editCells',
-        'formatCells'             => 'formatCells',
-        'insertColumns'           => 'insertColumns',
-        'insertRows'              => 'insertRows',
+        'deleteColumns' => 'deleteColumns',
+        'deleteRows' => 'deleteRows',
+        'editCells' => 'editCells',
+        'formatCells' => 'formatCells',
+        'insertColumns' => 'insertColumns',
+        'insertRows' => 'insertRows',
         'toggleColumnsVisibility' => 'toggleColumnsVisibility',
-        'toggleRowsVisibility'    => 'toggleRowsVisibility',
+        'toggleRowsVisibility' => 'toggleRowsVisibility',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

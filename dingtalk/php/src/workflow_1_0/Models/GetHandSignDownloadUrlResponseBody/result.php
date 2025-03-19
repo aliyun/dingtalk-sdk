@@ -21,12 +21,10 @@ class result extends Model
     public $expireIn;
     protected $_name = [
         'downloadUrl' => 'downloadUrl',
-        'expireIn'    => 'expireIn',
+        'expireIn' => 'expireIn',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

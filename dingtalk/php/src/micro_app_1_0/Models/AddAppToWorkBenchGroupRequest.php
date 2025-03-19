@@ -31,14 +31,12 @@ class AddAppToWorkBenchGroupRequest extends Model
      */
     public $opUnionId;
     protected $_name = [
-        'componentId'      => 'componentId',
+        'componentId' => 'componentId',
         'ecologicalCorpId' => 'ecologicalCorpId',
-        'opUnionId'        => 'opUnionId',
+        'opUnionId' => 'opUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

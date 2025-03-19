@@ -17,9 +17,7 @@ class ListJoinOrgInfoResponseBody extends Model
         'orgInfoList' => 'orgInfoList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListJoinOrgInfoResponseBody extends Model
         if (isset($map['orgInfoList'])) {
             if (!empty($map['orgInfoList'])) {
                 $model->orgInfoList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['orgInfoList'] as $item) {
                     $model->orgInfoList[$n++] = null !== $item ? orgInfoList::fromMap($item) : $item;
                 }

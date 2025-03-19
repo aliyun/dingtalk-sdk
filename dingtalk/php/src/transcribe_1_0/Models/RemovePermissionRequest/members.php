@@ -33,14 +33,12 @@ class members extends Model
      */
     public $policyType;
     protected $_name = [
-        'memberId'   => 'memberId',
+        'memberId' => 'memberId',
         'memberType' => 'memberType',
         'policyType' => 'policyType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

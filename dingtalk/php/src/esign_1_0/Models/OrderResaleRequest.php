@@ -43,16 +43,14 @@ class OrderResaleRequest extends Model
      */
     public $serviceStopTime;
     protected $_name = [
-        'orderCreateTime'  => 'orderCreateTime',
-        'orderId'          => 'orderId',
-        'quantity'         => 'quantity',
+        'orderCreateTime' => 'orderCreateTime',
+        'orderId' => 'orderId',
+        'quantity' => 'quantity',
         'serviceStartTime' => 'serviceStartTime',
-        'serviceStopTime'  => 'serviceStopTime',
+        'serviceStopTime' => 'serviceStopTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

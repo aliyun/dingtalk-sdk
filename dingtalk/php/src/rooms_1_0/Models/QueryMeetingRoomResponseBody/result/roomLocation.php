@@ -22,13 +22,11 @@ class roomLocation extends Model
      */
     public $title;
     protected $_name = [
-        'desc'  => 'desc',
+        'desc' => 'desc',
         'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

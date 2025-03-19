@@ -35,14 +35,12 @@ class CreateAcquireRefundOrderResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'outRefundNo'   => 'outRefundNo',
+        'outRefundNo' => 'outRefundNo',
         'refundOrderNo' => 'refundOrderNo',
-        'status'        => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

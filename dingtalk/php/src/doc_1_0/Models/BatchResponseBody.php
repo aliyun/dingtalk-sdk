@@ -16,9 +16,7 @@ class BatchResponseBody extends Model
         'responses' => 'responses',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

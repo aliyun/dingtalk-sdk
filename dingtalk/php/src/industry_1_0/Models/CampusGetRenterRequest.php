@@ -20,9 +20,7 @@ class CampusGetRenterRequest extends Model
         'renterId' => 'renterId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class ConvertLegacyEventIdRequest extends Model
         'legacyEventIds' => 'legacyEventIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

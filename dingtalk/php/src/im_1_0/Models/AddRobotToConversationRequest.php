@@ -40,15 +40,13 @@ class AddRobotToConversationRequest extends Model
      */
     public $robotCode;
     protected $_name = [
-        'icon'               => 'icon',
-        'name'               => 'name',
+        'icon' => 'icon',
+        'name' => 'name',
         'openConversationId' => 'openConversationId',
-        'robotCode'          => 'robotCode',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

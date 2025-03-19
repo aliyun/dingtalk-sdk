@@ -71,20 +71,18 @@ class HrmProcessTransferRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'deptIdsAfterTransfer'       => 'deptIdsAfterTransfer',
-        'jobIdAfterTransfer'         => 'jobIdAfterTransfer',
-        'mainDeptIdAfterTransfer'    => 'mainDeptIdAfterTransfer',
-        'operateUserId'              => 'operateUserId',
-        'positionIdAfterTransfer'    => 'positionIdAfterTransfer',
+        'deptIdsAfterTransfer' => 'deptIdsAfterTransfer',
+        'jobIdAfterTransfer' => 'jobIdAfterTransfer',
+        'mainDeptIdAfterTransfer' => 'mainDeptIdAfterTransfer',
+        'operateUserId' => 'operateUserId',
+        'positionIdAfterTransfer' => 'positionIdAfterTransfer',
         'positionLevelAfterTransfer' => 'positionLevelAfterTransfer',
-        'positionNameAfterTransfer'  => 'positionNameAfterTransfer',
-        'rankIdAfterTransfer'        => 'rankIdAfterTransfer',
-        'userId'                     => 'userId',
+        'positionNameAfterTransfer' => 'positionNameAfterTransfer',
+        'rankIdAfterTransfer' => 'rankIdAfterTransfer',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

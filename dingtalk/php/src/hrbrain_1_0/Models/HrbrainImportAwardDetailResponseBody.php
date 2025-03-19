@@ -24,13 +24,11 @@ class HrbrainImportAwardDetailResponseBody extends Model
     public $success;
     protected $_name = [
         'requestId' => 'requestId',
-        'result'    => 'result',
-        'success'   => 'success',
+        'result' => 'result',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

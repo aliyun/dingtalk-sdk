@@ -29,14 +29,12 @@ class RollbackMiniAppVersionRequest extends Model
      */
     public $targetVersion;
     protected $_name = [
-        'miniAppId'       => 'miniAppId',
+        'miniAppId' => 'miniAppId',
         'rollbackVersion' => 'rollbackVersion',
-        'targetVersion'   => 'targetVersion',
+        'targetVersion' => 'targetVersion',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

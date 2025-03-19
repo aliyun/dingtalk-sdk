@@ -18,9 +18,7 @@ class option extends Model
         'canSearch' => 'canSearch',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

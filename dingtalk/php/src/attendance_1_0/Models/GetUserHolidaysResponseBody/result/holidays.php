@@ -28,15 +28,13 @@ class holidays extends Model
      */
     public $workDate;
     protected $_name = [
-        'holidayName'  => 'holidayName',
-        'holidayType'  => 'holidayType',
+        'holidayName' => 'holidayName',
+        'holidayType' => 'holidayType',
         'realWorkDate' => 'realWorkDate',
-        'workDate'     => 'workDate',
+        'workDate' => 'workDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,14 +27,12 @@ class GroupManageReduceRequest extends Model
      */
     public $options;
     protected $_name = [
-        'capacityLimit'      => 'capacityLimit',
+        'capacityLimit' => 'capacityLimit',
         'openConversationId' => 'openConversationId',
-        'options'            => 'options',
+        'options' => 'options',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,9 +19,7 @@ class response extends Model
         'calendars' => 'calendars',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class response extends Model
         if (isset($map['calendars'])) {
             if (!empty($map['calendars'])) {
                 $model->calendars = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['calendars'] as $item) {
                     $model->calendars[$n++] = null !== $item ? calendars::fromMap($item) : $item;
                 }

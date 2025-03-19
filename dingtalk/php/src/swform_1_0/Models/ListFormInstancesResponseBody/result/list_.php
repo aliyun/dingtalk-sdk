@@ -95,23 +95,21 @@ class list_ extends Model
      */
     public $title;
     protected $_name = [
-        'createTime'        => 'createTime',
-        'formCode'          => 'formCode',
-        'formInstanceId'    => 'formInstanceId',
-        'forms'             => 'forms',
-        'modifyTime'        => 'modifyTime',
-        'studentClassId'    => 'studentClassId',
-        'studentClassName'  => 'studentClassName',
-        'studentName'       => 'studentName',
-        'studentUserId'     => 'studentUserId',
-        'submitterUserId'   => 'submitterUserId',
+        'createTime' => 'createTime',
+        'formCode' => 'formCode',
+        'formInstanceId' => 'formInstanceId',
+        'forms' => 'forms',
+        'modifyTime' => 'modifyTime',
+        'studentClassId' => 'studentClassId',
+        'studentClassName' => 'studentClassName',
+        'studentName' => 'studentName',
+        'studentUserId' => 'studentUserId',
+        'submitterUserId' => 'submitterUserId',
         'submitterUserName' => 'submitterUserName',
-        'title'             => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -182,7 +180,7 @@ class list_ extends Model
         if (isset($map['forms'])) {
             if (!empty($map['forms'])) {
                 $model->forms = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['forms'] as $item) {
                     $model->forms[$n++] = null !== $item ? forms::fromMap($item) : $item;
                 }

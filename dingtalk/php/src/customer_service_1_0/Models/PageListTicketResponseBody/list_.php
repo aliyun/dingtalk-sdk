@@ -68,23 +68,21 @@ class list_ extends Model
      */
     public $title;
     protected $_name = [
-        'bizDataMap'     => 'bizDataMap',
-        'foreignId'      => 'foreignId',
-        'foreignName'    => 'foreignName',
-        'gmtCreate'      => 'gmtCreate',
-        'gmtModified'    => 'gmtModified',
+        'bizDataMap' => 'bizDataMap',
+        'foreignId' => 'foreignId',
+        'foreignName' => 'foreignName',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
         'openInstanceId' => 'openInstanceId',
         'productionType' => 'productionType',
-        'sourceId'       => 'sourceId',
-        'templateId'     => 'templateId',
-        'ticketId'       => 'ticketId',
-        'ticketStatus'   => 'ticketStatus',
-        'title'          => 'title',
+        'sourceId' => 'sourceId',
+        'templateId' => 'templateId',
+        'ticketId' => 'ticketId',
+        'ticketStatus' => 'ticketStatus',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

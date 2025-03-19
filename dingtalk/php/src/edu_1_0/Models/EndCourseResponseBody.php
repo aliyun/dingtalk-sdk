@@ -19,9 +19,7 @@ class EndCourseResponseBody extends Model
         'universityCourseCommonResponse' => 'universityCourseCommonResponse',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

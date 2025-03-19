@@ -34,14 +34,12 @@ class QuerySchoolUserFaceResponseBody extends Model
      */
     public $userFaceList;
     protected $_name = [
-        'corpId'       => 'corpId',
-        'hasMore'      => 'hasMore',
+        'corpId' => 'corpId',
+        'hasMore' => 'hasMore',
         'userFaceList' => 'userFaceList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -82,7 +80,7 @@ class QuerySchoolUserFaceResponseBody extends Model
         if (isset($map['userFaceList'])) {
             if (!empty($map['userFaceList'])) {
                 $model->userFaceList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['userFaceList'] as $item) {
                     $model->userFaceList[$n++] = null !== $item ? userFaceList::fromMap($item) : $item;
                 }

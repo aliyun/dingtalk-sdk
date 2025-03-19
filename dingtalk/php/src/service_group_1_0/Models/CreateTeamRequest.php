@@ -23,12 +23,10 @@ class CreateTeamRequest extends Model
     public $teamName;
     protected $_name = [
         'creatorDingUnionId' => 'creatorDingUnionId',
-        'teamName'           => 'teamName',
+        'teamName' => 'teamName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

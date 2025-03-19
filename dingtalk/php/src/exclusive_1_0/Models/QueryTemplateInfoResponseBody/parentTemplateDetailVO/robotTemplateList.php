@@ -83,26 +83,24 @@ class robotTemplateList extends Model
      */
     public $status;
     protected $_name = [
-        'brief'           => 'brief',
-        'code'            => 'code',
-        'corpId'          => 'corpId',
-        'createAt'        => 'createAt',
-        'description'     => 'description',
-        'dev'             => 'dev',
+        'brief' => 'brief',
+        'code' => 'code',
+        'corpId' => 'corpId',
+        'createAt' => 'createAt',
+        'description' => 'description',
+        'dev' => 'dev',
         'groupTemplateId' => 'groupTemplateId',
-        'icon'            => 'icon',
-        'modifiedAt'      => 'modifiedAt',
-        'name'            => 'name',
-        'outgoingToken'   => 'outgoingToken',
-        'outgoingUrl'     => 'outgoingUrl',
-        'previewMediaId'  => 'previewMediaId',
-        'sourceUrl'       => 'sourceUrl',
-        'status'          => 'status',
+        'icon' => 'icon',
+        'modifiedAt' => 'modifiedAt',
+        'name' => 'name',
+        'outgoingToken' => 'outgoingToken',
+        'outgoingUrl' => 'outgoingUrl',
+        'previewMediaId' => 'previewMediaId',
+        'sourceUrl' => 'sourceUrl',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

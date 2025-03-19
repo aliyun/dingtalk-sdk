@@ -25,12 +25,10 @@ class GetTbUserIdByDingUserIdRequest extends Model
     public $userId;
     protected $_name = [
         'dingUserIds' => 'dingUserIds',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

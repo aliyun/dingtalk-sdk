@@ -39,16 +39,14 @@ class playInfo extends Model
     public $status;
     protected $_name = [
         'downloadUrl' => 'downloadUrl',
-        'duration'    => 'duration',
-        'mediaType'   => 'mediaType',
-        'playUrl'     => 'playUrl',
-        'size'        => 'size',
-        'status'      => 'status',
+        'duration' => 'duration',
+        'mediaType' => 'mediaType',
+        'playUrl' => 'playUrl',
+        'size' => 'size',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

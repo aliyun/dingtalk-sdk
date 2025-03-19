@@ -25,12 +25,10 @@ class users extends Model
     protected $_name = [
         'checkInTime' => 'checkInTime',
         'displayName' => 'displayName',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

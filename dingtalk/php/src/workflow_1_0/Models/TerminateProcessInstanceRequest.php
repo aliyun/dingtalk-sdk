@@ -36,15 +36,13 @@ class TerminateProcessInstanceRequest extends Model
      */
     public $remark;
     protected $_name = [
-        'isSystem'          => 'isSystem',
-        'operatingUserId'   => 'operatingUserId',
+        'isSystem' => 'isSystem',
+        'operatingUserId' => 'operatingUserId',
         'processInstanceId' => 'processInstanceId',
-        'remark'            => 'remark',
+        'remark' => 'remark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

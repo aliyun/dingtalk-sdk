@@ -30,14 +30,12 @@ class InstallAppRequest extends Model
      */
     public $sourceDirName;
     protected $_name = [
-        'bizGroup'      => 'bizGroup',
+        'bizGroup' => 'bizGroup',
         'installOption' => 'installOption',
         'sourceDirName' => 'sourceDirName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

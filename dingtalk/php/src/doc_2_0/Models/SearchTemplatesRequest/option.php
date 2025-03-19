@@ -52,17 +52,15 @@ class option extends Model
     public $workspaceIds;
     protected $_name = [
         'excludeWorkspaceIds' => 'excludeWorkspaceIds',
-        'maxResults'          => 'maxResults',
-        'nextToken'           => 'nextToken',
-        'platform'            => 'platform',
-        'templateTypes'       => 'templateTypes',
-        'version'             => 'version',
-        'workspaceIds'        => 'workspaceIds',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'platform' => 'platform',
+        'templateTypes' => 'templateTypes',
+        'version' => 'version',
+        'workspaceIds' => 'workspaceIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

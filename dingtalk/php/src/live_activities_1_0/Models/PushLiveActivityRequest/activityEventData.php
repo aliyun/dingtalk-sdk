@@ -21,12 +21,10 @@ class activityEventData extends Model
     public $templateId;
     protected $_name = [
         'i18nContentState' => 'i18nContentState',
-        'templateId'       => 'templateId',
+        'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

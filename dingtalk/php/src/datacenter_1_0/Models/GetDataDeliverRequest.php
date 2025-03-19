@@ -22,13 +22,11 @@ class GetDataDeliverRequest extends Model
      */
     public $dispatchingItemType;
     protected $_name = [
-        'deliverId'           => 'deliverId',
+        'deliverId' => 'deliverId',
         'dispatchingItemType' => 'dispatchingItemType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

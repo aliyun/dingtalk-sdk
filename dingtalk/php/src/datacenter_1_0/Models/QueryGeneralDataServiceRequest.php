@@ -70,19 +70,17 @@ class QueryGeneralDataServiceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'deptId'      => 'deptId',
-        'endDate'     => 'endDate',
-        'pageNumber'  => 'pageNumber',
-        'pageSize'    => 'pageSize',
+        'deptId' => 'deptId',
+        'endDate' => 'endDate',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'returnTotal' => 'returnTotal',
-        'serviceId'   => 'serviceId',
-        'startDate'   => 'startDate',
-        'userId'      => 'userId',
+        'serviceId' => 'serviceId',
+        'startDate' => 'startDate',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

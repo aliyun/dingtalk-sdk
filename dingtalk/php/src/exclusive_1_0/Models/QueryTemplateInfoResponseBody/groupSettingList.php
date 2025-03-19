@@ -23,14 +23,12 @@ class groupSettingList extends Model
      */
     public $state;
     protected $_name = [
-        'desc'  => 'desc',
-        'name'  => 'name',
+        'desc' => 'desc',
+        'name' => 'name',
         'state' => 'state',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

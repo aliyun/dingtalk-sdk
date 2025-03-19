@@ -111,26 +111,24 @@ class IndustrializeManufactureQueryJobsRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'currentPage'          => 'currentPage',
-        'instNo'               => 'instNo',
-        'manufactureDay'       => 'manufactureDay',
-        'mesAppKey'            => 'mesAppKey',
-        'pageSize'             => 'pageSize',
-        'processName'          => 'processName',
-        'productCode'          => 'productCode',
-        'productName'          => 'productName',
+        'currentPage' => 'currentPage',
+        'instNo' => 'instNo',
+        'manufactureDay' => 'manufactureDay',
+        'mesAppKey' => 'mesAppKey',
+        'pageSize' => 'pageSize',
+        'processName' => 'processName',
+        'productCode' => 'productCode',
+        'productName' => 'productName',
         'productSpecification' => 'productSpecification',
-        'qualifiedQuantity'    => 'qualifiedQuantity',
-        'unitPrice'            => 'unitPrice',
-        'userId'               => 'userId',
-        'userIdList'           => 'userIdList',
-        'userName'             => 'userName',
-        'uuid'                 => 'uuid',
+        'qualifiedQuantity' => 'qualifiedQuantity',
+        'unitPrice' => 'unitPrice',
+        'userId' => 'userId',
+        'userIdList' => 'userIdList',
+        'userName' => 'userName',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

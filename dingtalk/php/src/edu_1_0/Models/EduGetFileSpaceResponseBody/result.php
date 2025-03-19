@@ -19,12 +19,10 @@ class result extends Model
     public $spaceId;
     protected $_name = [
         'folderId' => 'folderId',
-        'spaceId'  => 'spaceId',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

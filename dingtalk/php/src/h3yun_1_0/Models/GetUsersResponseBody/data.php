@@ -90,23 +90,21 @@ class data extends Model
      */
     public $sortKey;
     protected $_name = [
-        'code'              => 'code',
-        'departmentId'      => 'departmentId',
-        'departmentName'    => 'departmentName',
-        'description'       => 'description',
-        'domainType'        => 'domainType',
-        'email'             => 'email',
-        'id'                => 'id',
-        'mobile'            => 'mobile',
-        'name'              => 'name',
+        'code' => 'code',
+        'departmentId' => 'departmentId',
+        'departmentName' => 'departmentName',
+        'description' => 'description',
+        'domainType' => 'domainType',
+        'email' => 'email',
+        'id' => 'id',
+        'mobile' => 'mobile',
+        'name' => 'name',
         'partDepartmentIds' => 'partDepartmentIds',
-        'sex'               => 'sex',
-        'sortKey'           => 'sortKey',
+        'sex' => 'sex',
+        'sortKey' => 'sortKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

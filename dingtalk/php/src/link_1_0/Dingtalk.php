@@ -63,8 +63,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -105,18 +105,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ApplyFollowerAuthInfo',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/followers/authInfos/apply',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ApplyFollowerAuthInfo',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/followers/authInfos/apply',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ApplyFollowerAuthInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -171,18 +171,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CallbackRegiester',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/callbacks/regiester',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CallbackRegiester',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/callbacks/regiester',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CallbackRegiesterResponse::fromMap($this->execute($params, $req, $runtime));
@@ -228,18 +228,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CloseTopBoxInteractiveOTOMessage',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/oToMessages/topBoxes/close',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CloseTopBoxInteractiveOTOMessage',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/oToMessages/topBoxes/close',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CloseTopBoxInteractiveOTOMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -288,18 +288,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFollowerAuthInfo',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/followers/authInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFollowerAuthInfo',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/followers/authInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFollowerAuthInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -351,18 +351,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFollowerInfo',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/followers/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFollowerInfo',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/followers/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFollowerInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -411,18 +411,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPictureDownloadUrl',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/oToMessages/pictures/downloadUrls',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPictureDownloadUrl',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/oToMessages/pictures/downloadUrls',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPictureDownloadUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -474,18 +474,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUserFollowStatus',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/followers/statuses',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserFollowStatus',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/followers/statuses',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserFollowStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -527,15 +527,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListAccount',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/accounts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAccount',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/accounts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAccountResponse::fromMap($this->execute($params, $req, $runtime));
@@ -575,15 +575,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListAccountInfo',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/isv/accounts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAccountInfo',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/isv/accounts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAccountInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -633,18 +633,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListFollower',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/followers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListFollower',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/followers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListFollowerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -693,18 +693,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryUserFollowStatus',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/isv/followers/statuses',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserFollowStatus',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/isv/followers/statuses',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserFollowStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -750,18 +750,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendAgentOTOMessage',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/oToMessages/agentMessages',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendAgentOTOMessage',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/oToMessages/agentMessages',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendAgentOTOMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -807,18 +807,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendInteractiveOTOMessage',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/oToMessages/interactiveMessages',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendInteractiveOTOMessage',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/oToMessages/interactiveMessages',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendInteractiveOTOMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -864,18 +864,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendTopBoxInteractiveOTOMessage',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/oToMessages/topBoxes/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendTopBoxInteractiveOTOMessage',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/oToMessages/topBoxes/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendTopBoxInteractiveOTOMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -921,18 +921,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInteractiveOTOMessage',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/oToMessages/interactiveMessages',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInteractiveOTOMessage',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/oToMessages/interactiveMessages',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInteractiveOTOMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -984,18 +984,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateShortcuts',
-            'version'     => 'link_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/link/shortcuts',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateShortcuts',
+            'version' => 'link_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/link/shortcuts',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateShortcutsResponse::fromMap($this->execute($params, $req, $runtime));

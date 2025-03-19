@@ -28,15 +28,13 @@ class data extends Model
      */
     public $content;
     protected $_name = [
-        'commentId'       => 'commentId',
-        'commentTime'     => 'commentTime',
+        'commentId' => 'commentId',
+        'commentTime' => 'commentTime',
         'commentUserName' => 'commentUserName',
-        'content'         => 'content',
+        'content' => 'content',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

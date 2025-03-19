@@ -33,16 +33,14 @@ class values extends Model
      */
     public $value;
     protected $_name = [
-        'deep'  => 'deep',
-        'id'    => 'id',
+        'deep' => 'deep',
+        'id' => 'id',
         'label' => 'label',
-        'name'  => 'name',
+        'name' => 'name',
         'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

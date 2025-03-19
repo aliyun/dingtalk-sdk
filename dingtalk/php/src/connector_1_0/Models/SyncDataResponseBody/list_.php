@@ -44,15 +44,13 @@ class list_ extends Model
     public $triggerId;
     protected $_name = [
         'bizPrimaryKey' => 'bizPrimaryKey',
-        'subErrCode'    => 'subErrCode',
-        'subErrMsg'     => 'subErrMsg',
-        'success'       => 'success',
-        'triggerId'     => 'triggerId',
+        'subErrCode' => 'subErrCode',
+        'subErrMsg' => 'subErrMsg',
+        'success' => 'success',
+        'triggerId' => 'triggerId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

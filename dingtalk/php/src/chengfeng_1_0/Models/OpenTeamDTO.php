@@ -35,14 +35,12 @@ class OpenTeamDTO extends Model
      */
     public $openId;
     protected $_name = [
-        'id'     => 'id',
-        'name'   => 'name',
+        'id' => 'id',
+        'name' => 'name',
         'openId' => 'openId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

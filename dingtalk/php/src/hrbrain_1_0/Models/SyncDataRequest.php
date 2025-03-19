@@ -43,16 +43,14 @@ class SyncDataRequest extends Model
      */
     public $schemaId;
     protected $_name = [
-        'content'   => 'content',
-        'dataId'    => 'dataId',
-        'etlTime'   => 'etlTime',
+        'content' => 'content',
+        'dataId' => 'dataId',
+        'etlTime' => 'etlTime',
         'projectId' => 'projectId',
-        'schemaId'  => 'schemaId',
+        'schemaId' => 'schemaId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

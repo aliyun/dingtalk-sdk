@@ -78,21 +78,19 @@ class GetTaskCopiesRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'           => 'appType',
+        'appType' => 'appType',
         'createFromTimeGMT' => 'createFromTimeGMT',
-        'createToTimeGMT'   => 'createToTimeGMT',
-        'keyword'           => 'keyword',
-        'language'          => 'language',
-        'pageNumber'        => 'pageNumber',
-        'pageSize'          => 'pageSize',
-        'processCodes'      => 'processCodes',
-        'systemToken'       => 'systemToken',
-        'userId'            => 'userId',
+        'createToTimeGMT' => 'createToTimeGMT',
+        'keyword' => 'keyword',
+        'language' => 'language',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'processCodes' => 'processCodes',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -34,13 +34,11 @@ class ReleaseGrayOrgSetRequest extends Model
     public $version;
     protected $_name = [
         'miniAppId' => 'miniAppId',
-        'value'     => 'value',
-        'version'   => 'version',
+        'value' => 'value',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

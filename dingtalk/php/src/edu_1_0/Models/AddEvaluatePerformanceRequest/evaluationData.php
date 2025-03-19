@@ -34,15 +34,13 @@ class evaluationData extends Model
     public $teacherId;
     protected $_name = [
         'evaluationContent' => 'evaluationContent',
-        'eventTime'         => 'eventTime',
-        'id'                => 'id',
-        'studentId'         => 'studentId',
-        'teacherId'         => 'teacherId',
+        'eventTime' => 'eventTime',
+        'id' => 'id',
+        'studentId' => 'studentId',
+        'teacherId' => 'teacherId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

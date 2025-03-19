@@ -63,21 +63,19 @@ class result extends Model
      */
     public $workMinutesPerDay;
     protected $_name = [
-        'default'           => 'default',
-        'durationSettings'  => 'durationSettings',
-        'id'                => 'id',
-        'name'              => 'name',
+        'default' => 'default',
+        'durationSettings' => 'durationSettings',
+        'id' => 'id',
+        'name' => 'name',
         'overtimeDivisions' => 'overtimeDivisions',
-        'settingId'         => 'settingId',
-        'stepType'          => 'stepType',
-        'stepValue'         => 'stepValue',
-        'warningSettings'   => 'warningSettings',
+        'settingId' => 'settingId',
+        'stepType' => 'stepType',
+        'stepValue' => 'stepValue',
+        'warningSettings' => 'warningSettings',
         'workMinutesPerDay' => 'workMinutesPerDay',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -156,7 +154,7 @@ class result extends Model
         if (isset($map['overtimeDivisions'])) {
             if (!empty($map['overtimeDivisions'])) {
                 $model->overtimeDivisions = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['overtimeDivisions'] as $item) {
                     $model->overtimeDivisions[$n++] = null !== $item ? overtimeDivisions::fromMap($item) : $item;
                 }
@@ -174,7 +172,7 @@ class result extends Model
         if (isset($map['warningSettings'])) {
             if (!empty($map['warningSettings'])) {
                 $model->warningSettings = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['warningSettings'] as $item) {
                     $model->warningSettings[$n++] = null !== $item ? warningSettings::fromMap($item) : $item;
                 }

@@ -20,7 +20,18 @@ class value extends Model
 
     /**
      * @example key: id或者name
+     * value: 对应字段值,不同类型的字段传入的value值不同
+     * - text: "TextString"          // 文本字符串
+     * - number: 123                 // 整数/浮点数均可
+     * - singleSelect: "optionIdxxx1" | "optionName1" // 单选选项Id/单选选项名
+     * - date: 1688601600000 ｜ "2023-12-20 03:00"
+     * // 支持传时间戳或ISO 8601字符串
+     * - user: [{
+     * uid: \"1234567\"            // 用户uid
+     * }, {
+     * uid: \"2345678\"
      * }]
+     *
      * @var mixed[]
      */
     public $property;
@@ -30,15 +41,13 @@ class value extends Model
      */
     public $type;
     protected $_name = [
-        'id'       => 'id',
-        'name'     => 'name',
+        'id' => 'id',
+        'name' => 'name',
         'property' => 'property',
-        'type'     => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

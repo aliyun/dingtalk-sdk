@@ -34,13 +34,11 @@ class subInstCertifyInfo extends Model
     public $certType;
     protected $_name = [
         'certImage' => 'certImage',
-        'certNo'    => 'certNo',
-        'certType'  => 'certType',
+        'certNo' => 'certNo',
+        'certType' => 'certType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

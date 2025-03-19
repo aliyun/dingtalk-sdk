@@ -60,17 +60,15 @@ class batchTradeDetails extends Model
      */
     public $serialNo;
     protected $_name = [
-        'amount'           => 'amount',
-        'memo'             => 'memo',
+        'amount' => 'amount',
+        'memo' => 'memo',
         'payeeAccountName' => 'payeeAccountName',
-        'payeeAccountNo'   => 'payeeAccountNo',
+        'payeeAccountNo' => 'payeeAccountNo',
         'payeeAccountType' => 'payeeAccountType',
-        'serialNo'         => 'serialNo',
+        'serialNo' => 'serialNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -39,16 +39,14 @@ class SearchWorkspaceDocsRequest extends Model
      */
     public $workspaceId;
     protected $_name = [
-        'keyword'     => 'keyword',
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
-        'operatorId'  => 'operatorId',
+        'keyword' => 'keyword',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'operatorId' => 'operatorId',
         'workspaceId' => 'workspaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

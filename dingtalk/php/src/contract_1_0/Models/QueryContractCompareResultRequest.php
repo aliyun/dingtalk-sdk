@@ -23,12 +23,10 @@ class QueryContractCompareResultRequest extends Model
     public $requestId;
     protected $_name = [
         'compareTaskId' => 'compareTaskId',
-        'requestId'     => 'requestId',
+        'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

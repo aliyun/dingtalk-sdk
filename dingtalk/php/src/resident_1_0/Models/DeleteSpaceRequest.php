@@ -18,9 +18,7 @@ class DeleteSpaceRequest extends Model
         'deptIds' => 'deptIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

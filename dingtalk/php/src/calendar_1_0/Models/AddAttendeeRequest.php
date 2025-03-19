@@ -26,14 +26,12 @@ class AddAttendeeRequest extends Model
      */
     public $pushNotification;
     protected $_name = [
-        'attendeesToAdd'   => 'attendeesToAdd',
+        'attendeesToAdd' => 'attendeesToAdd',
         'chatNotification' => 'chatNotification',
         'pushNotification' => 'pushNotification',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -68,7 +66,7 @@ class AddAttendeeRequest extends Model
         if (isset($map['attendeesToAdd'])) {
             if (!empty($map['attendeesToAdd'])) {
                 $model->attendeesToAdd = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['attendeesToAdd'] as $item) {
                     $model->attendeesToAdd[$n++] = null !== $item ? attendeesToAdd::fromMap($item) : $item;
                 }

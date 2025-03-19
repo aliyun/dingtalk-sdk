@@ -31,14 +31,12 @@ class DeviceDingRequest extends Model
      */
     public $receiverUserIdList;
     protected $_name = [
-        'deviceKey'          => 'deviceKey',
-        'paramsJson'         => 'paramsJson',
+        'deviceKey' => 'deviceKey',
+        'paramsJson' => 'paramsJson',
         'receiverUserIdList' => 'receiverUserIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

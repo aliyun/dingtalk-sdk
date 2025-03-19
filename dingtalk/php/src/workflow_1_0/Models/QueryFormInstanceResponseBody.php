@@ -97,23 +97,21 @@ class QueryFormInstanceResponseBody extends Model
      */
     public $title;
     protected $_name = [
-        'appUuid'          => 'appUuid',
-        'attributes'       => 'attributes',
-        'createTimestamp'  => 'createTimestamp',
-        'creator'          => 'creator',
-        'formCode'         => 'formCode',
+        'appUuid' => 'appUuid',
+        'attributes' => 'attributes',
+        'createTimestamp' => 'createTimestamp',
+        'creator' => 'creator',
+        'formCode' => 'formCode',
         'formInstDataList' => 'formInstDataList',
-        'formInstanceId'   => 'formInstanceId',
-        'modifier'         => 'modifier',
-        'modifyTimestamp'  => 'modifyTimestamp',
-        'outBizCode'       => 'outBizCode',
-        'outInstanceId'    => 'outInstanceId',
-        'title'            => 'title',
+        'formInstanceId' => 'formInstanceId',
+        'modifier' => 'modifier',
+        'modifyTimestamp' => 'modifyTimestamp',
+        'outBizCode' => 'outBizCode',
+        'outInstanceId' => 'outInstanceId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -190,7 +188,7 @@ class QueryFormInstanceResponseBody extends Model
         if (isset($map['formInstDataList'])) {
             if (!empty($map['formInstDataList'])) {
                 $model->formInstDataList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['formInstDataList'] as $item) {
                     $model->formInstDataList[$n++] = null !== $item ? formInstDataList::fromMap($item) : $item;
                 }

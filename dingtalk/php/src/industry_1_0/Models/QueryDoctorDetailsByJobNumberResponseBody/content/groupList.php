@@ -43,18 +43,16 @@ class groupList extends Model
      */
     public $relationId;
     protected $_name = [
-        'deptId'        => 'deptId',
-        'deptName'      => 'deptName',
-        'groupId'       => 'groupId',
-        'groupName'     => 'groupName',
+        'deptId' => 'deptId',
+        'deptName' => 'deptName',
+        'groupId' => 'groupId',
+        'groupName' => 'groupName',
         'isAssessGroup' => 'isAssessGroup',
-        'isLeader'      => 'isLeader',
-        'relationId'    => 'relationId',
+        'isLeader' => 'isLeader',
+        'relationId' => 'relationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class ValidateUserRoleResponseBody extends Model
      */
     public $matchTeacherIdentity;
     protected $_name = [
-        'matchParentIdentity'  => 'matchParentIdentity',
+        'matchParentIdentity' => 'matchParentIdentity',
         'matchTeacherIdentity' => 'matchTeacherIdentity',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

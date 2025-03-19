@@ -35,12 +35,10 @@ class ExportPointOpenRequest extends Model
     protected $_name = [
         'exportDate' => 'exportDate',
         'exportType' => 'exportType',
-        'userId'     => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

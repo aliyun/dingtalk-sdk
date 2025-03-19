@@ -19,12 +19,10 @@ class CreatePersonalTodoTaskResponseBody extends Model
     public $taskId;
     protected $_name = [
         'createdTime' => 'createdTime',
-        'taskId'      => 'taskId',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -53,20 +53,18 @@ class projectExperiences extends Model
      */
     public $title;
     protected $_name = [
-        'achievement'    => 'achievement',
-        'description'    => 'description',
-        'endDate'        => 'endDate',
-        'name'           => 'name',
-        'projectUrl'     => 'projectUrl',
+        'achievement' => 'achievement',
+        'description' => 'description',
+        'endDate' => 'endDate',
+        'name' => 'name',
+        'projectUrl' => 'projectUrl',
         'responsibility' => 'responsibility',
-        'startDate'      => 'startDate',
-        'technology'     => 'technology',
-        'title'          => 'title',
+        'startDate' => 'startDate',
+        'technology' => 'technology',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

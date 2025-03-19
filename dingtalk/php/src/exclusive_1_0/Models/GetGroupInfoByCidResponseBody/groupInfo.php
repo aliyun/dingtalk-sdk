@@ -38,17 +38,15 @@ class groupInfo extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'allOrgMember'       => 'allOrgMember',
-        'groupName'          => 'groupName',
-        'groupNumber'        => 'groupNumber',
-        'groupOrganization'  => 'groupOrganization',
-        'joinGroupUrl'       => 'joinGroupUrl',
+        'allOrgMember' => 'allOrgMember',
+        'groupName' => 'groupName',
+        'groupNumber' => 'groupNumber',
+        'groupOrganization' => 'groupOrganization',
+        'joinGroupUrl' => 'joinGroupUrl',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

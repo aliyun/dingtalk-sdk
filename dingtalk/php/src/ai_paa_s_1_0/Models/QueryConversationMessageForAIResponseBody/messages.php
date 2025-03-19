@@ -45,18 +45,16 @@ class messages extends Model
      */
     public $summary;
     protected $_name = [
-        'atAll'      => 'atAll',
-        'atUsers'    => 'atUsers',
+        'atAll' => 'atAll',
+        'atUsers' => 'atUsers',
         'msgContent' => 'msgContent',
-        'msgType'    => 'msgType',
-        'sendTime'   => 'sendTime',
-        'sender'     => 'sender',
-        'summary'    => 'summary',
+        'msgType' => 'msgType',
+        'sendTime' => 'sendTime',
+        'sender' => 'sender',
+        'summary' => 'summary',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -106,7 +104,7 @@ class messages extends Model
         if (isset($map['atUsers'])) {
             if (!empty($map['atUsers'])) {
                 $model->atUsers = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['atUsers'] as $item) {
                     $model->atUsers[$n++] = null !== $item ? atUsers::fromMap($item) : $item;
                 }

@@ -49,16 +49,14 @@ class AssignClassRequest extends Model
      */
     public $taskId;
     protected $_name = [
-        'classId'   => 'classId',
-        'isFinish'  => 'isFinish',
-        'operator'  => 'operator',
+        'classId' => 'classId',
+        'isFinish' => 'isFinish',
+        'operator' => 'operator',
         'studentId' => 'studentId',
-        'taskId'    => 'taskId',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

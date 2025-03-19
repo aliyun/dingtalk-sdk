@@ -38,15 +38,13 @@ class AddCallConfigRequest extends Model
      */
     public $scopeType;
     protected $_name = [
-        'corpId'      => 'corpId',
-        'isvToken'    => 'isvToken',
+        'corpId' => 'corpId',
+        'isvToken' => 'isvToken',
         'phoneNumber' => 'phoneNumber',
-        'scopeType'   => 'scopeType',
+        'scopeType' => 'scopeType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,12 +27,10 @@ class UpdateCollegeUserEmpTypeRequest extends Model
     public $userid;
     protected $_name = [
         'empType' => 'empType',
-        'userid'  => 'userid',
+        'userid' => 'userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,12 +27,10 @@ class attendees extends Model
     public $name;
     protected $_name = [
         'address' => 'address',
-        'name'    => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

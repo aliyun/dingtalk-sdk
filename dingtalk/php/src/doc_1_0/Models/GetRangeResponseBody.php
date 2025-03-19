@@ -48,19 +48,17 @@ class GetRangeResponseBody extends Model
      */
     public $verticalAlignments;
     protected $_name = [
-        'backgroundColors'     => 'backgroundColors',
-        'displayValues'        => 'displayValues',
-        'fontSizes'            => 'fontSizes',
-        'fontWeights'          => 'fontWeights',
-        'formulas'             => 'formulas',
+        'backgroundColors' => 'backgroundColors',
+        'displayValues' => 'displayValues',
+        'fontSizes' => 'fontSizes',
+        'fontWeights' => 'fontWeights',
+        'formulas' => 'formulas',
         'horizontalAlignments' => 'horizontalAlignments',
-        'values'               => 'values',
-        'verticalAlignments'   => 'verticalAlignments',
+        'values' => 'values',
+        'verticalAlignments' => 'verticalAlignments',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

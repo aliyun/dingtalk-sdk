@@ -43,16 +43,14 @@ class AddLiveNoticeWidgetRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'iconUrl'    => 'iconUrl',
-        'jumpUrl'    => 'jumpUrl',
-        'liveId'     => 'liveId',
+        'iconUrl' => 'iconUrl',
+        'jumpUrl' => 'jumpUrl',
+        'liveId' => 'liveId',
         'noticeText' => 'noticeText',
-        'unionId'    => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

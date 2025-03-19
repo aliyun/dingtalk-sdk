@@ -20,9 +20,7 @@ class ListIndustryRoleUsersRequest extends Model
         'tagCode' => 'tagCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

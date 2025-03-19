@@ -35,14 +35,12 @@ class content extends Model
      */
     public $userName;
     protected $_name = [
-        'jobNum'   => 'jobNum',
-        'uid'      => 'uid',
+        'jobNum' => 'jobNum',
+        'uid' => 'uid',
         'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

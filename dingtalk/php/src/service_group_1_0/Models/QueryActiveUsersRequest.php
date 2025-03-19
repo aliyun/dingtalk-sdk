@@ -32,13 +32,11 @@ class QueryActiveUsersRequest extends Model
     public $topN;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openTeamId'         => 'openTeamId',
-        'topN'               => 'topN',
+        'openTeamId' => 'openTeamId',
+        'topN' => 'topN',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

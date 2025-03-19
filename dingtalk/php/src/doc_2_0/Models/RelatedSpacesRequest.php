@@ -37,14 +37,12 @@ class RelatedSpacesRequest extends Model
     public $teamId;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
         'operatorId' => 'operatorId',
-        'teamId'     => 'teamId',
+        'teamId' => 'teamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

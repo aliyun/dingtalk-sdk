@@ -25,12 +25,10 @@ class QueryUserHonorsRequest extends Model
     public $nextToken;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

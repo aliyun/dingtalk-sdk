@@ -36,15 +36,13 @@ class AddGroupMemberRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'appUserIds'         => 'appUserIds',
+        'appUserIds' => 'appUserIds',
         'openConversationId' => 'openConversationId',
-        'operatorId'         => 'operatorId',
-        'userIds'            => 'userIds',
+        'operatorId' => 'operatorId',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -31,14 +31,12 @@ class result extends Model
      */
     public $success;
     protected $_name = [
-        'id'      => 'id',
+        'id' => 'id',
         'message' => 'message',
         'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

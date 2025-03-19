@@ -36,15 +36,13 @@ class option extends Model
      */
     public $withThumbnail;
     protected $_name = [
-        'maxResults'    => 'maxResults',
-        'nextToken'     => 'nextToken',
-        'order'         => 'order',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'order' => 'order',
         'withThumbnail' => 'withThumbnail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

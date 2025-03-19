@@ -20,9 +20,7 @@ class CampusDeleteCampusGroupRequest extends Model
         'campusProjectGroupId' => 'campusProjectGroupId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

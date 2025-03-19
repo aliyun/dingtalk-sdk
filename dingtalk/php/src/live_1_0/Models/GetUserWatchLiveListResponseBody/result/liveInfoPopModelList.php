@@ -20,13 +20,11 @@ class liveInfoPopModelList extends Model
      */
     public $liveBasicInfo;
     protected $_name = [
-        'extraInfo'     => 'extraInfo',
+        'extraInfo' => 'extraInfo',
         'liveBasicInfo' => 'liveBasicInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

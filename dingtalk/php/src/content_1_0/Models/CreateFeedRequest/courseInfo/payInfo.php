@@ -31,14 +31,12 @@ class payInfo extends Model
      */
     public $price;
     protected $_name = [
-        'csUserInfo'   => 'csUserInfo',
+        'csUserInfo' => 'csUserInfo',
         'discountInfo' => 'discountInfo',
-        'price'        => 'price',
+        'price' => 'price',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

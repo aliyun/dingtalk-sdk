@@ -33,16 +33,14 @@ class CreateVersionAcrossBundleRequest extends Model
      */
     public $version;
     protected $_name = [
-        'bundleId'       => 'bundleId',
-        'miniAppId'      => 'miniAppId',
+        'bundleId' => 'bundleId',
+        'miniAppId' => 'miniAppId',
         'sourceBundleId' => 'sourceBundleId',
-        'sourceVersion'  => 'sourceVersion',
-        'version'        => 'version',
+        'sourceVersion' => 'sourceVersion',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -34,9 +34,7 @@ class relatedDoc extends Model
         'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

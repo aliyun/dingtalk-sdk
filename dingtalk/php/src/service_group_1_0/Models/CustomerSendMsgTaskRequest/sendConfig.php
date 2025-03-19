@@ -39,15 +39,13 @@ class sendConfig extends Model
      */
     public $urlTrackConfig;
     protected $_name = [
-        'needUrlTrack'   => 'needUrlTrack',
-        'sendTime'       => 'sendTime',
-        'sendType'       => 'sendType',
+        'needUrlTrack' => 'needUrlTrack',
+        'sendTime' => 'sendTime',
+        'sendType' => 'sendType',
         'urlTrackConfig' => 'urlTrackConfig',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -94,7 +92,7 @@ class sendConfig extends Model
         if (isset($map['urlTrackConfig'])) {
             if (!empty($map['urlTrackConfig'])) {
                 $model->urlTrackConfig = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['urlTrackConfig'] as $item) {
                     $model->urlTrackConfig[$n++] = null !== $item ? urlTrackConfig::fromMap($item) : $item;
                 }

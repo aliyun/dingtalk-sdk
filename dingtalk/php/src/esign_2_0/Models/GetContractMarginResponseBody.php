@@ -16,9 +16,7 @@ class GetContractMarginResponseBody extends Model
         'margin' => 'margin',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

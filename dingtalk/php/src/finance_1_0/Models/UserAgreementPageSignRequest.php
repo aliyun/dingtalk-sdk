@@ -112,23 +112,21 @@ class UserAgreementPageSignRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizCode'                => 'bizCode',
-        'bizScene'               => 'bizScene',
-        'instId'                 => 'instId',
-        'payChannel'             => 'payChannel',
-        'remark'                 => 'remark',
-        'returnUrl'              => 'returnUrl',
-        'signScene'              => 'signScene',
-        'subInstId'              => 'subInstId',
-        'subMerchantName'        => 'subMerchantName',
+        'bizCode' => 'bizCode',
+        'bizScene' => 'bizScene',
+        'instId' => 'instId',
+        'payChannel' => 'payChannel',
+        'remark' => 'remark',
+        'returnUrl' => 'returnUrl',
+        'signScene' => 'signScene',
+        'subInstId' => 'subInstId',
+        'subMerchantName' => 'subMerchantName',
         'subMerchantServiceDesc' => 'subMerchantServiceDesc',
         'subMerchantServiceName' => 'subMerchantServiceName',
-        'userId'                 => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

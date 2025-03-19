@@ -55,20 +55,18 @@ class groupAttributes extends Model
      */
     public $subRuleCode;
     protected $_name = [
-        'configGroupId'      => 'configGroupId',
-        'corpId'             => 'corpId',
-        'groupTopic'         => 'groupTopic',
-        'groupType'          => 'groupType',
-        'listDynamicAttr'    => 'listDynamicAttr',
-        'listReceiver'       => 'listReceiver',
+        'configGroupId' => 'configGroupId',
+        'corpId' => 'corpId',
+        'groupTopic' => 'groupTopic',
+        'groupType' => 'groupType',
+        'listDynamicAttr' => 'listDynamicAttr',
+        'listReceiver' => 'listReceiver',
         'openConversationId' => 'openConversationId',
-        'ownerJobNo'         => 'ownerJobNo',
-        'subRuleCode'        => 'subRuleCode',
+        'ownerJobNo' => 'ownerJobNo',
+        'subRuleCode' => 'subRuleCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -139,7 +137,7 @@ class groupAttributes extends Model
         if (isset($map['listDynamicAttr'])) {
             if (!empty($map['listDynamicAttr'])) {
                 $model->listDynamicAttr = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['listDynamicAttr'] as $item) {
                     $model->listDynamicAttr[$n++] = null !== $item ? listDynamicAttr::fromMap($item) : $item;
                 }
@@ -148,7 +146,7 @@ class groupAttributes extends Model
         if (isset($map['listReceiver'])) {
             if (!empty($map['listReceiver'])) {
                 $model->listReceiver = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['listReceiver'] as $item) {
                     $model->listReceiver[$n++] = null !== $item ? listReceiver::fromMap($item) : $item;
                 }

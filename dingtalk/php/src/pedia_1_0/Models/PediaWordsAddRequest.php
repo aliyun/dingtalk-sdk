@@ -69,20 +69,18 @@ class PediaWordsAddRequest extends Model
      */
     public $wordParaphrase;
     protected $_name = [
-        'contactList'        => 'contactList',
+        'contactList' => 'contactList',
         'highLightWordAlias' => 'highLightWordAlias',
-        'picList'            => 'picList',
-        'relatedDoc'         => 'relatedDoc',
-        'relatedLink'        => 'relatedLink',
-        'userId'             => 'userId',
-        'wordAlias'          => 'wordAlias',
-        'wordName'           => 'wordName',
-        'wordParaphrase'     => 'wordParaphrase',
+        'picList' => 'picList',
+        'relatedDoc' => 'relatedDoc',
+        'relatedLink' => 'relatedLink',
+        'userId' => 'userId',
+        'wordAlias' => 'wordAlias',
+        'wordName' => 'wordName',
+        'wordParaphrase' => 'wordParaphrase',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -153,7 +151,7 @@ class PediaWordsAddRequest extends Model
         if (isset($map['contactList'])) {
             if (!empty($map['contactList'])) {
                 $model->contactList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['contactList'] as $item) {
                     $model->contactList[$n++] = null !== $item ? contactList::fromMap($item) : $item;
                 }
@@ -167,7 +165,7 @@ class PediaWordsAddRequest extends Model
         if (isset($map['picList'])) {
             if (!empty($map['picList'])) {
                 $model->picList = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['picList'] as $item) {
                     $model->picList[$n++] = null !== $item ? picList::fromMap($item) : $item;
                 }
@@ -176,7 +174,7 @@ class PediaWordsAddRequest extends Model
         if (isset($map['relatedDoc'])) {
             if (!empty($map['relatedDoc'])) {
                 $model->relatedDoc = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['relatedDoc'] as $item) {
                     $model->relatedDoc[$n++] = null !== $item ? relatedDoc::fromMap($item) : $item;
                 }
@@ -185,7 +183,7 @@ class PediaWordsAddRequest extends Model
         if (isset($map['relatedLink'])) {
             if (!empty($map['relatedLink'])) {
                 $model->relatedLink = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['relatedLink'] as $item) {
                     $model->relatedLink[$n++] = null !== $item ? relatedLink::fromMap($item) : $item;
                 }

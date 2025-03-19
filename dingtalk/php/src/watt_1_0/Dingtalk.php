@@ -42,10 +42,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -72,18 +72,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CheckInCrowdsByMobile',
-            'version'     => 'watt_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/watt/crowdIdentifications/query',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'CheckInCrowdsByMobile',
+            'version' => 'watt_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/watt/crowdIdentifications/query',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CheckInCrowdsByMobileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -134,18 +134,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ConsumePoint',
-            'version'     => 'watt_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/watt/points/consume',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ConsumePoint',
+            'version' => 'watt_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/watt/points/consume',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ConsumePointResponse::fromMap($this->execute($params, $req, $runtime));
@@ -203,18 +203,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateDeliveryPlan',
-            'version'     => 'watt_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/watt/deliveryPlans/publish',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateDeliveryPlan',
+            'version' => 'watt_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/watt/deliveryPlans/publish',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateDeliveryPlanResponse::fromMap($this->execute($params, $req, $runtime));
@@ -260,18 +260,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPointInfo',
-            'version'     => 'watt_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/watt/points',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPointInfo',
+            'version' => 'watt_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/watt/points',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPointInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -322,18 +322,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RevertPoint',
-            'version'     => 'watt_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/watt/points/revert',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RevertPoint',
+            'version' => 'watt_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/watt/points/revert',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RevertPointResponse::fromMap($this->execute($params, $req, $runtime));
@@ -388,18 +388,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendBanner',
-            'version'     => 'watt_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/watt/banners/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendBanner',
+            'version' => 'watt_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/watt/banners/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendBannerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -454,18 +454,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendPopup',
-            'version'     => 'watt_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/watt/popups/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendPopup',
+            'version' => 'watt_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/watt/popups/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendPopupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -520,18 +520,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendSearchShade',
-            'version'     => 'watt_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/watt/searchShades/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendSearchShade',
+            'version' => 'watt_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/watt/searchShades/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendSearchShadeResponse::fromMap($this->execute($params, $req, $runtime));

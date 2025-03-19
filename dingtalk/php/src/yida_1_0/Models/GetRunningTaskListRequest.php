@@ -45,16 +45,14 @@ class GetRunningTaskListRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'               => 'appType',
+        'appType' => 'appType',
         'processInstanceIdList' => 'processInstanceIdList',
-        'systemToken'           => 'systemToken',
-        'userCorpId'            => 'userCorpId',
-        'userId'                => 'userId',
+        'systemToken' => 'systemToken',
+        'userCorpId' => 'userCorpId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

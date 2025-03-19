@@ -38,15 +38,13 @@ class productDetailList extends Model
     public $product;
     protected $_name = [
         'categoryType' => 'categoryType',
-        'gmtOrgPay'    => 'gmtOrgPay',
-        'openStatus'   => 'openStatus',
-        'payType'      => 'payType',
-        'product'      => 'product',
+        'gmtOrgPay' => 'gmtOrgPay',
+        'openStatus' => 'openStatus',
+        'payType' => 'payType',
+        'product' => 'product',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

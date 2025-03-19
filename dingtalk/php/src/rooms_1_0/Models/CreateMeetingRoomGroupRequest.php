@@ -33,14 +33,12 @@ class CreateMeetingRoomGroupRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'groupName'     => 'groupName',
+        'groupName' => 'groupName',
         'parentGroupId' => 'parentGroupId',
-        'unionId'       => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

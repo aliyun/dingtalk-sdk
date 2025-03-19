@@ -65,18 +65,16 @@ class operatorAgentIdList extends Model
     public $userInformation;
     protected $_name = [
         'departmentDescription' => 'departmentDescription',
-        'displayName'           => 'displayName',
-        'displayNameInEnglish'  => 'displayNameInEnglish',
-        'orderNumber'           => 'orderNumber',
-        'personalPhoto'         => 'personalPhoto',
-        'status'                => 'status',
-        'userId'                => 'userId',
-        'userInformation'       => 'userInformation',
+        'displayName' => 'displayName',
+        'displayNameInEnglish' => 'displayNameInEnglish',
+        'orderNumber' => 'orderNumber',
+        'personalPhoto' => 'personalPhoto',
+        'status' => 'status',
+        'userId' => 'userId',
+        'userInformation' => 'userInformation',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

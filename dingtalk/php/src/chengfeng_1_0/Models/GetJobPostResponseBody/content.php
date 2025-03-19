@@ -43,16 +43,14 @@ class content extends Model
      */
     public $stopDate;
     protected $_name = [
-        'code'          => 'code',
+        'code' => 'code',
         'establishDate' => 'establishDate',
-        'name'          => 'name',
-        'startDate'     => 'startDate',
-        'stopDate'      => 'stopDate',
+        'name' => 'name',
+        'startDate' => 'startDate',
+        'stopDate' => 'stopDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

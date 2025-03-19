@@ -17,9 +17,7 @@ class DIgitalStoreMessagePushRequest extends Model
         'messageDataList' => 'messageDataList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class DIgitalStoreMessagePushRequest extends Model
         if (isset($map['messageDataList'])) {
             if (!empty($map['messageDataList'])) {
                 $model->messageDataList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['messageDataList'] as $item) {
                     $model->messageDataList[$n++] = null !== $item ? messageDataList::fromMap($item) : $item;
                 }

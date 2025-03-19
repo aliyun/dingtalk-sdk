@@ -28,13 +28,11 @@ class BankGatewayInvokeRequest extends Model
     public $url;
     protected $_name = [
         'actionType' => 'actionType',
-        'inputData'  => 'inputData',
-        'url'        => 'url',
+        'inputData' => 'inputData',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

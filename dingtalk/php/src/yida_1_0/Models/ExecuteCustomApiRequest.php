@@ -48,17 +48,15 @@ class ExecuteCustomApiRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
-        'data'        => 'data',
-        'language'    => 'language',
-        'serviceId'   => 'serviceId',
+        'appType' => 'appType',
+        'data' => 'data',
+        'language' => 'language',
+        'serviceId' => 'serviceId',
         'systemToken' => 'systemToken',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

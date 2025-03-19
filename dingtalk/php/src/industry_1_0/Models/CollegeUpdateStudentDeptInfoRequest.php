@@ -33,14 +33,12 @@ class CollegeUpdateStudentDeptInfoRequest extends Model
      */
     public $studentNumber;
     protected $_name = [
-        'deptId'        => 'deptId',
-        'studentId'     => 'studentId',
+        'deptId' => 'deptId',
+        'studentId' => 'studentId',
         'studentNumber' => 'studentNumber',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

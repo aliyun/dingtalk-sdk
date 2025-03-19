@@ -22,13 +22,11 @@ class TransferUserObjectiveRequest extends Model
      */
     public $targetUserId;
     protected $_name = [
-        'objectiveId'  => 'objectiveId',
+        'objectiveId' => 'objectiveId',
         'targetUserId' => 'targetUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -53,20 +53,18 @@ class onGoingConfList extends Model
      */
     public $title;
     protected $_name = [
-        'bizType'      => 'bizType',
+        'bizType' => 'bizType',
         'conferenceId' => 'conferenceId',
-        'creatorId'    => 'creatorId',
-        'creatorNick'  => 'creatorNick',
-        'endTime'      => 'endTime',
-        'roomCode'     => 'roomCode',
-        'startTime'    => 'startTime',
-        'status'       => 'status',
-        'title'        => 'title',
+        'creatorId' => 'creatorId',
+        'creatorNick' => 'creatorNick',
+        'endTime' => 'endTime',
+        'roomCode' => 'roomCode',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

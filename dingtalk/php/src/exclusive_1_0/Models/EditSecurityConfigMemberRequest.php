@@ -42,15 +42,13 @@ class EditSecurityConfigMemberRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'configKey'     => 'configKey',
-        'operateType'   => 'operateType',
+        'configKey' => 'configKey',
+        'operateType' => 'operateType',
         'operateUserId' => 'operateUserId',
-        'userIds'       => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

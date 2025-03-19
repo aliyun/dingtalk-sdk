@@ -33,15 +33,13 @@ class result extends Model
      */
     public $userId;
     protected $_name = [
-        'corpId'        => 'corpId',
+        'corpId' => 'corpId',
         'fieldDataList' => 'fieldDataList',
-        'unionId'       => 'unionId',
-        'userId'        => 'userId',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -82,7 +80,7 @@ class result extends Model
         if (isset($map['fieldDataList'])) {
             if (!empty($map['fieldDataList'])) {
                 $model->fieldDataList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['fieldDataList'] as $item) {
                     $model->fieldDataList[$n++] = null !== $item ? fieldDataList::fromMap($item) : $item;
                 }

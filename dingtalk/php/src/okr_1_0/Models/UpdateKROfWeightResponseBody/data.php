@@ -26,12 +26,10 @@ class data extends Model
     public $objectiveScore;
     protected $_name = [
         'objectiveProgress' => 'objectiveProgress',
-        'objectiveScore'    => 'objectiveScore',
+        'objectiveScore' => 'objectiveScore',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

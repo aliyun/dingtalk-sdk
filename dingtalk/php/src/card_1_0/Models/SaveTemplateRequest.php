@@ -23,14 +23,12 @@ class SaveTemplateRequest extends Model
      */
     public $templateSource;
     protected $_name = [
-        'name'           => 'name',
-        'templateId'     => 'templateId',
+        'name' => 'name',
+        'templateId' => 'templateId',
         'templateSource' => 'templateSource',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

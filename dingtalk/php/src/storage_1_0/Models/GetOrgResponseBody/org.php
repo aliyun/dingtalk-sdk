@@ -21,13 +21,11 @@ class org extends Model
      */
     public $partitions;
     protected $_name = [
-        'corpId'     => 'corpId',
+        'corpId' => 'corpId',
         'partitions' => 'partitions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class org extends Model
         if (isset($map['partitions'])) {
             if (!empty($map['partitions'])) {
                 $model->partitions = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['partitions'] as $item) {
                     $model->partitions[$n++] = null !== $item ? partitions::fromMap($item) : $item;
                 }

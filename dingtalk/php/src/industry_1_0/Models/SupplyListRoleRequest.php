@@ -20,9 +20,7 @@ class SupplyListRoleRequest extends Model
         'parentRoleId' => 'parentRoleId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

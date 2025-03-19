@@ -20,13 +20,11 @@ class GetChangeRecordResponseBody extends Model
      */
     public $total;
     protected $_name = [
-        'data'  => 'data',
+        'data' => 'data',
         'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

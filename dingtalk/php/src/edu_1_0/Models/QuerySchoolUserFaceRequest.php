@@ -45,14 +45,12 @@ class QuerySchoolUserFaceRequest extends Model
     public $type;
     protected $_name = [
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'sn'         => 'sn',
-        'type'       => 'type',
+        'pageSize' => 'pageSize',
+        'sn' => 'sn',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

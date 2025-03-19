@@ -19,12 +19,10 @@ class classrooms extends Model
     public $targetId;
     protected $_name = [
         'interactInfo' => 'interactInfo',
-        'targetId'     => 'targetId',
+        'targetId' => 'targetId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

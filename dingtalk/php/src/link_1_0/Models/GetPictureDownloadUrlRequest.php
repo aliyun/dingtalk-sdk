@@ -27,12 +27,10 @@ class GetPictureDownloadUrlRequest extends Model
     public $sessionId;
     protected $_name = [
         'downloadCode' => 'downloadCode',
-        'sessionId'    => 'sessionId',
+        'sessionId' => 'sessionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

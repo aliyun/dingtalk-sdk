@@ -28,13 +28,11 @@ class CustomizeContactCreateRequest extends Model
     public $order;
     protected $_name = [
         'managerIdList' => 'managerIdList',
-        'name'          => 'name',
-        'order'         => 'order',
+        'name' => 'name',
+        'order' => 'order',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

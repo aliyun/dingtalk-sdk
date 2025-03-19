@@ -44,15 +44,13 @@ class GetDingMeBaseDataRequest extends Model
      */
     public $startDay;
     protected $_name = [
-        'appKey'   => 'appKey',
-        'byDay'    => 'byDay',
-        'endDay'   => 'endDay',
+        'appKey' => 'appKey',
+        'byDay' => 'byDay',
+        'endDay' => 'endDay',
         'startDay' => 'startDay',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

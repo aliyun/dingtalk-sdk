@@ -42,15 +42,13 @@ class GetStoragePolicyRequest extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'bizType'    => 'bizType',
-        'fileName'   => 'fileName',
-        'fileSize'   => 'fileSize',
+        'bizType' => 'bizType',
+        'fileName' => 'fileName',
+        'fileSize' => 'fileSize',
         'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

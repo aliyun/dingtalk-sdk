@@ -59,18 +59,16 @@ class GetRecognizeRecordsRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'agentId'           => 'agentId',
+        'agentId' => 'agentId',
         'faceCompareResult' => 'faceCompareResult',
-        'fromTime'          => 'fromTime',
-        'maxResults'        => 'maxResults',
-        'nextToken'         => 'nextToken',
-        'toTime'            => 'toTime',
-        'userIds'           => 'userIds',
+        'fromTime' => 'fromTime',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'toTime' => 'toTime',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

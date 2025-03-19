@@ -24,13 +24,11 @@ class QueryReportDetailRequest extends Model
      */
     public $reportId;
     protected $_name = [
-        'format'   => 'format',
+        'format' => 'format',
         'reportId' => 'reportId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

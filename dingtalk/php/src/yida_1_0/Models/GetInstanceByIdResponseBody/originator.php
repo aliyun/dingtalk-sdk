@@ -30,14 +30,12 @@ class originator extends Model
     public $userId;
     protected $_name = [
         'deptName' => 'deptName',
-        'email'    => 'email',
-        'name'     => 'name',
-        'userId'   => 'userId',
+        'email' => 'email',
+        'name' => 'name',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

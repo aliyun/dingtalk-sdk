@@ -31,14 +31,12 @@ class QuerySubjectTeachersRequest extends Model
      */
     public $subjectCode;
     protected $_name = [
-        'classIds'    => 'classIds',
-        'opUserId'    => 'opUserId',
+        'classIds' => 'classIds',
+        'opUserId' => 'opUserId',
         'subjectCode' => 'subjectCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

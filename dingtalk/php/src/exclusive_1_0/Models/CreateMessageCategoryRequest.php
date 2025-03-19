@@ -19,12 +19,10 @@ class CreateMessageCategoryRequest extends Model
     public $groupIds;
     protected $_name = [
         'categoryName' => 'categoryName',
-        'groupIds'     => 'groupIds',
+        'groupIds' => 'groupIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -25,14 +25,12 @@ class CreateInnerAppResponseBody extends Model
      */
     public $appSecret;
     protected $_name = [
-        'agentId'   => 'agentId',
-        'appKey'    => 'appKey',
+        'agentId' => 'agentId',
+        'appKey' => 'appKey',
         'appSecret' => 'appSecret',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

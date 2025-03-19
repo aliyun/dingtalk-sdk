@@ -35,14 +35,12 @@ class SupplyListDeptMembersRequest extends Model
      */
     public $supplyDeptId;
     protected $_name = [
-        'pageNumber'   => 'pageNumber',
-        'pageSize'     => 'pageSize',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'supplyDeptId' => 'supplyDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

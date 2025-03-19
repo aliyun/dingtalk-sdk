@@ -17,9 +17,7 @@ class CreateRuleRequest extends Model
         'customPlan' => 'customPlan',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

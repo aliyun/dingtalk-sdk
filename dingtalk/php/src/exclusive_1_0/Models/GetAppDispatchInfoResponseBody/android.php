@@ -39,16 +39,14 @@ class android extends Model
     public $version;
     protected $_name = [
         'baseLineVersion' => 'baseLineVersion',
-        'downloadUrl'     => 'downloadUrl',
-        'inGray'          => 'inGray',
-        'packTime'        => 'packTime',
-        'platform'        => 'platform',
-        'version'         => 'version',
+        'downloadUrl' => 'downloadUrl',
+        'inGray' => 'inGray',
+        'packTime' => 'packTime',
+        'platform' => 'platform',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

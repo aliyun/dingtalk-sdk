@@ -20,13 +20,11 @@ class ChatMemoUpdateKnowledgeGraphRelationResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'bizId'   => 'bizId',
+        'bizId' => 'bizId',
         'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

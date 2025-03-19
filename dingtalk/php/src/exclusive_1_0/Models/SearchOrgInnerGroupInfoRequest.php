@@ -107,24 +107,22 @@ class SearchOrgInnerGroupInfoRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'createTimeEnd'          => 'createTimeEnd',
-        'createTimeStart'        => 'createTimeStart',
-        'groupMembersCountEnd'   => 'groupMembersCountEnd',
+        'createTimeEnd' => 'createTimeEnd',
+        'createTimeStart' => 'createTimeStart',
+        'groupMembersCountEnd' => 'groupMembersCountEnd',
         'groupMembersCountStart' => 'groupMembersCountStart',
-        'groupName'              => 'groupName',
-        'groupOwner'             => 'groupOwner',
-        'lastActiveTimeEnd'      => 'lastActiveTimeEnd',
-        'lastActiveTimeStart'    => 'lastActiveTimeStart',
-        'operatorUserId'         => 'operatorUserId',
-        'pageSize'               => 'pageSize',
-        'pageStart'              => 'pageStart',
-        'syncToDingpan'          => 'syncToDingpan',
-        'uuid'                   => 'uuid',
+        'groupName' => 'groupName',
+        'groupOwner' => 'groupOwner',
+        'lastActiveTimeEnd' => 'lastActiveTimeEnd',
+        'lastActiveTimeStart' => 'lastActiveTimeStart',
+        'operatorUserId' => 'operatorUserId',
+        'pageSize' => 'pageSize',
+        'pageStart' => 'pageStart',
+        'syncToDingpan' => 'syncToDingpan',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

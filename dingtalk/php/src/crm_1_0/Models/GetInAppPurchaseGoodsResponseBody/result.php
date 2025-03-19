@@ -21,13 +21,11 @@ class result extends Model
      */
     public $purchaseGoodsList;
     protected $_name = [
-        'orderVersion'      => 'orderVersion',
+        'orderVersion' => 'orderVersion',
         'purchaseGoodsList' => 'purchaseGoodsList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class result extends Model
         if (isset($map['purchaseGoodsList'])) {
             if (!empty($map['purchaseGoodsList'])) {
                 $model->purchaseGoodsList = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['purchaseGoodsList'] as $item) {
                     $model->purchaseGoodsList[$n++] = null !== $item ? purchaseGoodsList::fromMap($item) : $item;
                 }

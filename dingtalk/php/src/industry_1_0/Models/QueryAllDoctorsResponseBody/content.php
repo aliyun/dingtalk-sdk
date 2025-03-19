@@ -116,23 +116,21 @@ class content extends Model
      */
     public $userName;
     protected $_name = [
-        'assessGroupId'   => 'assessGroupId',
+        'assessGroupId' => 'assessGroupId',
         'assessGroupName' => 'assessGroupName',
-        'deptCode'        => 'deptCode',
-        'deptType'        => 'deptType',
-        'gmtCreateStr'    => 'gmtCreateStr',
-        'gmtModifiedStr'  => 'gmtModifiedStr',
-        'id'              => 'id',
-        'jobNum'          => 'jobNum',
-        'status'          => 'status',
-        'uid'             => 'uid',
-        'userCode'        => 'userCode',
-        'userName'        => 'userName',
+        'deptCode' => 'deptCode',
+        'deptType' => 'deptType',
+        'gmtCreateStr' => 'gmtCreateStr',
+        'gmtModifiedStr' => 'gmtModifiedStr',
+        'id' => 'id',
+        'jobNum' => 'jobNum',
+        'status' => 'status',
+        'uid' => 'uid',
+        'userCode' => 'userCode',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

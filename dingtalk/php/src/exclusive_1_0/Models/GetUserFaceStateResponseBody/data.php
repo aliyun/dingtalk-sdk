@@ -22,13 +22,11 @@ class data extends Model
      */
     public $userId;
     protected $_name = [
-        'state'  => 'state',
+        'state' => 'state',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

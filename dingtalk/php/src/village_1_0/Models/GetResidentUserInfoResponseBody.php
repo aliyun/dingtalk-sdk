@@ -45,15 +45,13 @@ class GetResidentUserInfoResponseBody extends Model
     public $userid;
     protected $_name = [
         'feature' => 'feature',
-        'name'    => 'name',
-        'roles'   => 'roles',
+        'name' => 'name',
+        'roles' => 'roles',
         'unionId' => 'unionId',
-        'userid'  => 'userid',
+        'userid' => 'userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -100,7 +98,7 @@ class GetResidentUserInfoResponseBody extends Model
         if (isset($map['roles'])) {
             if (!empty($map['roles'])) {
                 $model->roles = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['roles'] as $item) {
                     $model->roles[$n++] = null !== $item ? roles::fromMap($item) : $item;
                 }

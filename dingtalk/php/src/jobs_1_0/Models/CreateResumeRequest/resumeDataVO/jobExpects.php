@@ -77,24 +77,22 @@ class jobExpects extends Model
      */
     public $salaryYear;
     protected $_name = [
-        'cityList'         => 'cityList',
-        'gmtCreate'        => 'gmtCreate',
-        'gmtModified'      => 'gmtModified',
-        'industryList'     => 'industryList',
-        'jobList'          => 'jobList',
-        'jobNature'        => 'jobNature',
-        'maxSalary'        => 'maxSalary',
-        'minSalary'        => 'minSalary',
-        'otherCityList'    => 'otherCityList',
-        'salaryDesc'       => 'salaryDesc',
+        'cityList' => 'cityList',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'industryList' => 'industryList',
+        'jobList' => 'jobList',
+        'jobNature' => 'jobNature',
+        'maxSalary' => 'maxSalary',
+        'minSalary' => 'minSalary',
+        'otherCityList' => 'otherCityList',
+        'salaryDesc' => 'salaryDesc',
         'salarySettleType' => 'salarySettleType',
-        'salaryType'       => 'salaryType',
-        'salaryYear'       => 'salaryYear',
+        'salaryType' => 'salaryType',
+        'salaryYear' => 'salaryYear',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -177,7 +175,7 @@ class jobExpects extends Model
         if (isset($map['cityList'])) {
             if (!empty($map['cityList'])) {
                 $model->cityList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['cityList'] as $item) {
                     $model->cityList[$n++] = null !== $item ? cityList::fromMap($item) : $item;
                 }
@@ -192,7 +190,7 @@ class jobExpects extends Model
         if (isset($map['industryList'])) {
             if (!empty($map['industryList'])) {
                 $model->industryList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['industryList'] as $item) {
                     $model->industryList[$n++] = null !== $item ? industryList::fromMap($item) : $item;
                 }
@@ -201,7 +199,7 @@ class jobExpects extends Model
         if (isset($map['jobList'])) {
             if (!empty($map['jobList'])) {
                 $model->jobList = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['jobList'] as $item) {
                     $model->jobList[$n++] = null !== $item ? jobList::fromMap($item) : $item;
                 }
@@ -219,7 +217,7 @@ class jobExpects extends Model
         if (isset($map['otherCityList'])) {
             if (!empty($map['otherCityList'])) {
                 $model->otherCityList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['otherCityList'] as $item) {
                     $model->otherCityList[$n++] = null !== $item ? otherCityList::fromMap($item) : $item;
                 }

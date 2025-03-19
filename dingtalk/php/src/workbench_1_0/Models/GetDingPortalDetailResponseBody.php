@@ -28,14 +28,12 @@ class GetDingPortalDetailResponseBody extends Model
      */
     public $pages;
     protected $_name = [
-        'appUuid'        => 'appUuid',
+        'appUuid' => 'appUuid',
         'dingPortalName' => 'dingPortalName',
-        'pages'          => 'pages',
+        'pages' => 'pages',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -76,7 +74,7 @@ class GetDingPortalDetailResponseBody extends Model
         if (isset($map['pages'])) {
             if (!empty($map['pages'])) {
                 $model->pages = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['pages'] as $item) {
                     $model->pages[$n++] = null !== $item ? pages::fromMap($item) : $item;
                 }

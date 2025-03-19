@@ -46,15 +46,13 @@ class result extends Model
     public $value;
     protected $_name = [
         'createTime' => 'createTime',
-        'fieldId'    => 'fieldId',
-        'name'       => 'name',
-        'userId'     => 'userId',
-        'value'      => 'value',
+        'fieldId' => 'fieldId',
+        'name' => 'name',
+        'userId' => 'userId',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

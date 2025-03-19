@@ -27,14 +27,12 @@ class scheduleItems extends Model
      */
     public $status;
     protected $_name = [
-        'end'    => 'end',
-        'start'  => 'start',
+        'end' => 'end',
+        'start' => 'start',
         'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,13 +22,11 @@ class trainList extends Model
      */
     public $trainOrderstatus;
     protected $_name = [
-        'trainOrderId'     => 'trainOrderId',
+        'trainOrderId' => 'trainOrderId',
         'trainOrderstatus' => 'trainOrderstatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

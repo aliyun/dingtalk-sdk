@@ -21,12 +21,10 @@ class QueryUserRoleListResponseBody extends Model
     public $roleVOList;
     protected $_name = [
         'financeEmpDeptOpenList' => 'financeEmpDeptOpenList',
-        'roleVOList'             => 'roleVOList',
+        'roleVOList' => 'roleVOList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class QueryUserRoleListResponseBody extends Model
         if (isset($map['financeEmpDeptOpenList'])) {
             if (!empty($map['financeEmpDeptOpenList'])) {
                 $model->financeEmpDeptOpenList = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['financeEmpDeptOpenList'] as $item) {
                     $model->financeEmpDeptOpenList[$n++] = null !== $item ? financeEmpDeptOpenList::fromMap($item) : $item;
                 }
@@ -73,7 +71,7 @@ class QueryUserRoleListResponseBody extends Model
         if (isset($map['roleVOList'])) {
             if (!empty($map['roleVOList'])) {
                 $model->roleVOList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['roleVOList'] as $item) {
                     $model->roleVOList[$n++] = null !== $item ? roleVOList::fromMap($item) : $item;
                 }

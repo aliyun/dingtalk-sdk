@@ -23,12 +23,10 @@ class GetShiftRequest extends Model
     public $shiftId;
     protected $_name = [
         'opUserId' => 'opUserId',
-        'shiftId'  => 'shiftId',
+        'shiftId' => 'shiftId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -116,8 +116,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -158,18 +158,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddCustomSpace',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/customSpaces',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddCustomSpace',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/customSpaces',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddCustomSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -231,18 +231,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddFile',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddFile',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -297,18 +297,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddPermission',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddPermission',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return AddPermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -359,18 +359,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddSpace',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddSpace',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -419,18 +419,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ClearRecycleFiles',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/recycleItems/clear',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ClearRecycleFiles',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/recycleItems/clear',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return ClearRecycleFilesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -487,18 +487,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CopyFile',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/copy',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CopyFile',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/copy',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CopyFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -551,18 +551,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteFile',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteFile',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -617,18 +617,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteFiles',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/batchDelete',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteFiles',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/batchDelete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteFilesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -683,18 +683,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeletePermission',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions/delete',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeletePermission',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return DeletePermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -748,18 +748,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteRecycleFiles',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/recycleItems/delete',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteRecycleFiles',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/recycleItems/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return DeleteRecycleFilesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -806,18 +806,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteSpace',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteSpace',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return DeleteSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -865,18 +865,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAsyncTaskInfo',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/tasks/' . $taskId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAsyncTaskInfo',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/tasks/' . $taskId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAsyncTaskInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -931,18 +931,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDownloadInfo',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/downloadInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDownloadInfo',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/downloadInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDownloadInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -992,18 +992,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFileInfo',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFileInfo',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFileInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1051,18 +1051,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetMySpaceInfo',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/mySpaces',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMySpaceInfo',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/mySpaces',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMySpaceInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1116,18 +1116,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPreviewInfo',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/previewInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPreviewInfo',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/previewInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPreviewInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1177,18 +1177,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPrivilegeInfo',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/privileges',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPrivilegeInfo',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/privileges',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPrivilegeInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1242,18 +1242,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetQuotaInfos',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/quotaInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetQuotaInfos',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/quotaInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetQuotaInfosResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1325,18 +1325,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUploadInfo',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $parentId . '/uploadInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUploadInfo',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $parentId . '/uploadInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUploadInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1397,18 +1397,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GrantPrivilegeOfCustomSpace',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/customSpacePrivileges',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GrantPrivilegeOfCustomSpace',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/customSpacePrivileges',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return GrantPrivilegeOfCustomSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1456,18 +1456,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'InfoSpace',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InfoSpace',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InfoSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1530,18 +1530,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListFiles',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListFiles',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListFilesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1590,18 +1590,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListPermissions',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListPermissions',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListPermissionsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1661,18 +1661,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListRecycleFiles',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/recycleItems',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListRecycleFiles',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/recycleItems',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListRecycleFilesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1727,18 +1727,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListSpaces',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListSpaces',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListSpacesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1790,18 +1790,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ManagementBuyQuota',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/managements/quotas/buy',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ManagementBuyQuota',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/managements/quotas/buy',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return ManagementBuyQuotaResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1850,18 +1850,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ManagementListSpaces',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/managements/spaces/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ManagementListSpaces',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/managements/spaces/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ManagementListSpacesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1913,18 +1913,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ManagementModifySpace',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/managements/spaces',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ManagementModifySpace',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/managements/spaces',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ManagementModifySpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1978,18 +1978,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ModifyPermission',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ModifyPermission',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/permissions',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return ModifyPermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2048,18 +2048,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MoveFile',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/move',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MoveFile',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/move',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MoveFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2120,18 +2120,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MoveFiles',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/batchMove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MoveFiles',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/batchMove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MoveFilesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2184,18 +2184,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RecoverRecycleFiles',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/recycleItems/recover',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RecoverRecycleFiles',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/recycleItems/recover',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return RecoverRecycleFilesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2246,18 +2246,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RenameFile',
-            'version'     => 'drive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/rename',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RenameFile',
+            'version' => 'drive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/drive/spaces/' . $spaceId . '/files/' . $fileId . '/rename',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RenameFileResponse::fromMap($this->execute($params, $req, $runtime));

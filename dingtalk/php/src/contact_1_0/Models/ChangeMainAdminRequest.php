@@ -40,9 +40,7 @@ class ChangeMainAdminRequest extends Model
         'targetUserId' => 'targetUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

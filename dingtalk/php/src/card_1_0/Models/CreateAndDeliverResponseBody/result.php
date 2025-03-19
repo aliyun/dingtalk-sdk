@@ -22,12 +22,10 @@ class result extends Model
     public $outTrackId;
     protected $_name = [
         'deliverResults' => 'deliverResults',
-        'outTrackId'     => 'outTrackId',
+        'outTrackId' => 'outTrackId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class result extends Model
         if (isset($map['deliverResults'])) {
             if (!empty($map['deliverResults'])) {
                 $model->deliverResults = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['deliverResults'] as $item) {
                     $model->deliverResults[$n++] = null !== $item ? deliverResults::fromMap($item) : $item;
                 }

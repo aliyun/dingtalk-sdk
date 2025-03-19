@@ -21,12 +21,10 @@ class GetRelatedWorkspacesRequest extends Model
     public $operatorId;
     protected $_name = [
         'includeRecent' => 'includeRecent',
-        'operatorId'    => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

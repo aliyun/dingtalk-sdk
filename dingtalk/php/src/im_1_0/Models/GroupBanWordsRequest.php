@@ -27,14 +27,12 @@ class GroupBanWordsRequest extends Model
      */
     public $options;
     protected $_name = [
-        'banWordsMode'       => 'banWordsMode',
+        'banWordsMode' => 'banWordsMode',
         'openConversationId' => 'openConversationId',
-        'options'            => 'options',
+        'options' => 'options',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

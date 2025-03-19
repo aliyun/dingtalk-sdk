@@ -71,18 +71,16 @@ class orgDetailsList extends Model
      */
     public $version;
     protected $_name = [
-        'actionId'     => 'actionId',
-        'actionTime'   => 'actionTime',
-        'actionType'   => 'actionType',
+        'actionId' => 'actionId',
+        'actionTime' => 'actionTime',
+        'actionType' => 'actionType',
         'carbonAmount' => 'carbonAmount',
-        'corpId'       => 'corpId',
-        'deptId'       => 'deptId',
-        'version'      => 'version',
+        'corpId' => 'corpId',
+        'deptId' => 'deptId',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

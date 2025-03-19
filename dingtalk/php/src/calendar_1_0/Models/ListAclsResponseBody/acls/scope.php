@@ -19,12 +19,10 @@ class scope extends Model
     public $userId;
     protected $_name = [
         'scopeType' => 'scopeType',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

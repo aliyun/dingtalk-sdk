@@ -65,8 +65,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -105,19 +105,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddTeam',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/teams',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddTeam',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/teams',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddTeamResponse::fromMap($this->execute($params, $req, $runtime));
@@ -170,19 +170,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddWorkspace',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/workspaces',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddWorkspace',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/workspaces',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddWorkspaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -229,18 +229,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteTeam',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/teams/' . $teamId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteTeam',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/teams/' . $teamId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteTeamResponse::fromMap($this->execute($params, $req, $runtime));
@@ -287,18 +287,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDefaultHandOverUser',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/managementSettings/defaultHandOverUsers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDefaultHandOverUser',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/managementSettings/defaultHandOverUsers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDefaultHandOverUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -344,18 +344,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetMineWorkspace',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/mineWorkspaces',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMineWorkspace',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/mineWorkspaces',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMineWorkspaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -408,18 +408,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetNode',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/nodes/' . $nodeId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetNode',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/nodes/' . $nodeId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetNodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -473,19 +473,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetNodeByUrl',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/nodes/queryByUrl',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetNodeByUrl',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/nodes/queryByUrl',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetNodeByUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -538,19 +538,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetNodes',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/nodes/batchQuery',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetNodes',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/nodes/batchQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetNodesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -597,18 +597,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTeam',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/teams/' . $teamId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTeam',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/teams/' . $teamId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTeamResponse::fromMap($this->execute($params, $req, $runtime));
@@ -659,18 +659,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetWorkspace',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/workspaces/' . $workspaceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetWorkspace',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/workspaces/' . $workspaceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetWorkspaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -724,19 +724,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetWorkspaces',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/workspaces/batchQuery',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetWorkspaces',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/workspaces/batchQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetWorkspacesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -792,19 +792,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HandOverWorkspace',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/managementOperations/workspaces/handOver',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HandOverWorkspace',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/managementOperations/workspaces/handOver',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HandOverWorkspaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -862,18 +862,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListNodes',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/nodes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListNodes',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/nodes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListNodesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -925,18 +925,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListTeams',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/teams',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListTeams',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/teams',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListTeamsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -997,18 +997,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListWorkspaces',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/workspaces',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListWorkspaces',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/workspaces',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListWorkspacesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1058,19 +1058,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetDefaultHandOverUser',
-            'version'     => 'wiki_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/wiki/managementSettings/defaultHandOverUsers/set',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetDefaultHandOverUser',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/managementSettings/defaultHandOverUsers/set',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetDefaultHandOverUserResponse::fromMap($this->execute($params, $req, $runtime));

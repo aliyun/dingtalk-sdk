@@ -73,21 +73,19 @@ class starList extends Model
      */
     public $teamInfo;
     protected $_name = [
-        'createTime'           => 'createTime',
-        'dentryInfo'           => 'dentryInfo',
+        'createTime' => 'createTime',
+        'dentryInfo' => 'dentryInfo',
         'dentryPermissionRole' => 'dentryPermissionRole',
-        'id'                   => 'id',
-        'isDeleted'            => 'isDeleted',
-        'modifiedTime'         => 'modifiedTime',
-        'spaceInfo'            => 'spaceInfo',
-        'spacePermissionRole'  => 'spacePermissionRole',
-        'starType'             => 'starType',
-        'teamInfo'             => 'teamInfo',
+        'id' => 'id',
+        'isDeleted' => 'isDeleted',
+        'modifiedTime' => 'modifiedTime',
+        'spaceInfo' => 'spaceInfo',
+        'spacePermissionRole' => 'spacePermissionRole',
+        'starType' => 'starType',
+        'teamInfo' => 'teamInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

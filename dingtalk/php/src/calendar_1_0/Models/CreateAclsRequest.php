@@ -31,13 +31,11 @@ class CreateAclsRequest extends Model
     public $sendMsg;
     protected $_name = [
         'privilege' => 'privilege',
-        'scope'     => 'scope',
-        'sendMsg'   => 'sendMsg',
+        'scope' => 'scope',
+        'sendMsg' => 'sendMsg',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

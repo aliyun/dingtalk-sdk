@@ -23,14 +23,12 @@ class tips extends Model
      */
     public $sender;
     protected $_name = [
-        'cids'    => 'cids',
+        'cids' => 'cids',
         'content' => 'content',
-        'sender'  => 'sender',
+        'sender' => 'sender',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -54,17 +54,15 @@ class SaveAcrossCloudStroageConfigsRequest extends Model
      */
     public $targetCorpId;
     protected $_name = [
-        'accessKeyId'     => 'accessKeyId',
+        'accessKeyId' => 'accessKeyId',
         'accessKeySecret' => 'accessKeySecret',
-        'bucketName'      => 'bucketName',
-        'cloudType'       => 'cloudType',
-        'endpoint'        => 'endpoint',
-        'targetCorpId'    => 'targetCorpId',
+        'bucketName' => 'bucketName',
+        'cloudType' => 'cloudType',
+        'endpoint' => 'endpoint',
+        'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

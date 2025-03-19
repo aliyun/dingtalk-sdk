@@ -49,18 +49,16 @@ class commodityVOList extends Model
     public $version;
     protected $_name = [
         'accountDistributionNumber' => 'accountDistributionNumber',
-        'accountNumber'             => 'accountNumber',
-        'activationCode'            => 'activationCode',
-        'buyDateGMT'                => 'buyDateGMT',
-        'expireDateGMT'             => 'expireDateGMT',
-        'instanceId'                => 'instanceId',
-        'status'                    => 'status',
-        'version'                   => 'version',
+        'accountNumber' => 'accountNumber',
+        'activationCode' => 'activationCode',
+        'buyDateGMT' => 'buyDateGMT',
+        'expireDateGMT' => 'expireDateGMT',
+        'instanceId' => 'instanceId',
+        'status' => 'status',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

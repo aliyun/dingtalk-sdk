@@ -169,34 +169,32 @@ class result extends Model
      */
     public $type;
     protected $_name = [
-        'attributes'    => 'attributes',
-        'classId'       => 'classId',
-        'className'     => 'className',
-        'classRoomId'   => 'classRoomId',
+        'attributes' => 'attributes',
+        'classId' => 'classId',
+        'className' => 'className',
+        'classRoomId' => 'classRoomId',
         'classRoomName' => 'classRoomName',
-        'classType'     => 'classType',
-        'corpId'        => 'corpId',
-        'courseCode'    => 'courseCode',
-        'courseDate'    => 'courseDate',
-        'courseName'    => 'courseName',
-        'courseWeek'    => 'courseWeek',
-        'endTime'       => 'endTime',
-        'isvCode'       => 'isvCode',
-        'isvCourseId'   => 'isvCourseId',
-        'memo'          => 'memo',
-        'schoolYear'    => 'schoolYear',
-        'semester'      => 'semester',
-        'startTime'     => 'startTime',
-        'status'        => 'status',
-        'teachWeek'     => 'teachWeek',
-        'timeslotName'  => 'timeslotName',
-        'timeslotNum'   => 'timeslotNum',
-        'type'          => 'type',
+        'classType' => 'classType',
+        'corpId' => 'corpId',
+        'courseCode' => 'courseCode',
+        'courseDate' => 'courseDate',
+        'courseName' => 'courseName',
+        'courseWeek' => 'courseWeek',
+        'endTime' => 'endTime',
+        'isvCode' => 'isvCode',
+        'isvCourseId' => 'isvCourseId',
+        'memo' => 'memo',
+        'schoolYear' => 'schoolYear',
+        'semester' => 'semester',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'teachWeek' => 'teachWeek',
+        'timeslotName' => 'timeslotName',
+        'timeslotNum' => 'timeslotNum',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

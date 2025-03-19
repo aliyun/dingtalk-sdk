@@ -16,9 +16,7 @@ class GetCrmGroupChatMultiRequest extends Model
         'openConversationIds' => 'openConversationIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

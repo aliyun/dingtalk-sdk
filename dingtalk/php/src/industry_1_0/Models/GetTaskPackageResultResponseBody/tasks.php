@@ -29,15 +29,13 @@ class tasks extends Model
      */
     public $taskId;
     protected $_name = [
-        'result'     => 'result',
-        'status'     => 'status',
+        'result' => 'result',
+        'status' => 'status',
         'statusInfo' => 'statusInfo',
-        'taskId'     => 'taskId',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -69,23 +69,21 @@ class result extends Model
      */
     public $voluntaryReason;
     protected $_name = [
-        'deptList'        => 'deptList',
-        'handoverUserId'  => 'handoverUserId',
-        'lastWorkDay'     => 'lastWorkDay',
-        'mainDeptId'      => 'mainDeptId',
-        'mainDeptName'    => 'mainDeptName',
-        'name'            => 'name',
-        'passiveReason'   => 'passiveReason',
-        'preStatus'       => 'preStatus',
-        'reasonMemo'      => 'reasonMemo',
-        'status'          => 'status',
-        'userId'          => 'userId',
+        'deptList' => 'deptList',
+        'handoverUserId' => 'handoverUserId',
+        'lastWorkDay' => 'lastWorkDay',
+        'mainDeptId' => 'mainDeptId',
+        'mainDeptName' => 'mainDeptName',
+        'name' => 'name',
+        'passiveReason' => 'passiveReason',
+        'preStatus' => 'preStatus',
+        'reasonMemo' => 'reasonMemo',
+        'status' => 'status',
+        'userId' => 'userId',
         'voluntaryReason' => 'voluntaryReason',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -147,7 +145,7 @@ class result extends Model
         if (isset($map['deptList'])) {
             if (!empty($map['deptList'])) {
                 $model->deptList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['deptList'] as $item) {
                     $model->deptList[$n++] = null !== $item ? deptList::fromMap($item) : $item;
                 }

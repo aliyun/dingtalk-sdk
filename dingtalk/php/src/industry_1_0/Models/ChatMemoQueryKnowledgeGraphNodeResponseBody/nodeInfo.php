@@ -40,15 +40,13 @@ class nodeInfo extends Model
      */
     public $propertiesString;
     protected $_name = [
-        'mediaId'          => 'mediaId',
-        'nodeLabel'        => 'nodeLabel',
-        'nodeName'         => 'nodeName',
+        'mediaId' => 'mediaId',
+        'nodeLabel' => 'nodeLabel',
+        'nodeName' => 'nodeName',
         'propertiesString' => 'propertiesString',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

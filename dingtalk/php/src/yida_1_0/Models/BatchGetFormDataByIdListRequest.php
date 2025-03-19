@@ -60,17 +60,15 @@ class BatchGetFormDataByIdListRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'               => 'appType',
-        'formInstanceIdList'    => 'formInstanceIdList',
-        'formUuid'              => 'formUuid',
+        'appType' => 'appType',
+        'formInstanceIdList' => 'formInstanceIdList',
+        'formUuid' => 'formUuid',
         'needFormInstanceValue' => 'needFormInstanceValue',
-        'systemToken'           => 'systemToken',
-        'userId'                => 'userId',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

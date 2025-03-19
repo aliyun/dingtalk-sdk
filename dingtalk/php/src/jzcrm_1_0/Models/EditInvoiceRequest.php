@@ -39,15 +39,13 @@ class EditInvoiceRequest extends Model
      */
     public $stamp;
     protected $_name = [
-        'data'     => 'data',
+        'data' => 'data',
         'datatype' => 'datatype',
-        'msgid'    => 'msgid',
-        'stamp'    => 'stamp',
+        'msgid' => 'msgid',
+        'stamp' => 'stamp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -44,15 +44,13 @@ class content extends Model
      */
     public $rootDeptId;
     protected $_name = [
-        'code'       => 'code',
-        'name'       => 'name',
-        'order'      => 'order',
+        'code' => 'code',
+        'name' => 'name',
+        'order' => 'order',
         'rootDeptId' => 'rootDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

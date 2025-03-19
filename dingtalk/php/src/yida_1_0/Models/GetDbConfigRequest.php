@@ -44,15 +44,13 @@ class GetDbConfigRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
-        'corpId'      => 'corpId',
+        'appType' => 'appType',
+        'corpId' => 'corpId',
         'systemToken' => 'systemToken',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

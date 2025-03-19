@@ -23,12 +23,10 @@ class MasterDataTenantQueyRequest extends Model
     public $scopeCode;
     protected $_name = [
         'entityCode' => 'entityCode',
-        'scopeCode'  => 'scopeCode',
+        'scopeCode' => 'scopeCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

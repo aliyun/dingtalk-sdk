@@ -57,18 +57,16 @@ class GetPublisherSummaryResponseBody extends Model
      */
     public $publisherCntStd;
     protected $_name = [
-        'data'                     => 'data',
-        'hasMore'                  => 'hasMore',
-        'nextToken'                => 'nextToken',
-        'publisherArticleCntStd'   => 'publisherArticleCntStd',
+        'data' => 'data',
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
+        'publisherArticleCntStd' => 'publisherArticleCntStd',
         'publisherArticlePvCntStd' => 'publisherArticlePvCntStd',
-        'publisherArticlePvTop5'   => 'publisherArticlePvTop5',
-        'publisherCntStd'          => 'publisherCntStd',
+        'publisherArticlePvTop5' => 'publisherArticlePvTop5',
+        'publisherCntStd' => 'publisherCntStd',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -121,7 +119,7 @@ class GetPublisherSummaryResponseBody extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }
@@ -142,7 +140,7 @@ class GetPublisherSummaryResponseBody extends Model
         if (isset($map['publisherArticlePvTop5'])) {
             if (!empty($map['publisherArticlePvTop5'])) {
                 $model->publisherArticlePvTop5 = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['publisherArticlePvTop5'] as $item) {
                     $model->publisherArticlePvTop5[$n++] = null !== $item ? publisherArticlePvTop5::fromMap($item) : $item;
                 }

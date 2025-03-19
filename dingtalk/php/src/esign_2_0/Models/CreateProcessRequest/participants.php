@@ -53,19 +53,17 @@ class participants extends Model
      */
     public $userId;
     protected $_name = [
-        'account'          => 'account',
-        'accountName'      => 'accountName',
-        'accountType'      => 'accountType',
-        'orgName'          => 'orgName',
-        'signOrder'        => 'signOrder',
-        'signPosList'      => 'signPosList',
+        'account' => 'account',
+        'accountName' => 'accountName',
+        'accountType' => 'accountType',
+        'orgName' => 'orgName',
+        'signOrder' => 'signOrder',
+        'signPosList' => 'signPosList',
         'signRequirements' => 'signRequirements',
-        'userId'           => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -130,7 +128,7 @@ class participants extends Model
         if (isset($map['signPosList'])) {
             if (!empty($map['signPosList'])) {
                 $model->signPosList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['signPosList'] as $item) {
                     $model->signPosList[$n++] = null !== $item ? signPosList::fromMap($item) : $item;
                 }

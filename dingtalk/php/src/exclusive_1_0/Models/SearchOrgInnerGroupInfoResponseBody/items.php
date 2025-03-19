@@ -111,26 +111,24 @@ class items extends Model
      */
     public $usedQuota;
     protected $_name = [
-        'extensions'              => 'extensions',
-        'groupAdminsCount'        => 'groupAdminsCount',
-        'groupCreateTime'         => 'groupCreateTime',
-        'groupLastActiveTime'     => 'groupLastActiveTime',
+        'extensions' => 'extensions',
+        'groupAdminsCount' => 'groupAdminsCount',
+        'groupCreateTime' => 'groupCreateTime',
+        'groupLastActiveTime' => 'groupLastActiveTime',
         'groupLastActiveTimeShow' => 'groupLastActiveTimeShow',
-        'groupMembersCount'       => 'groupMembersCount',
-        'groupName'               => 'groupName',
-        'groupOwner'              => 'groupOwner',
-        'groupOwnerUserId'        => 'groupOwnerUserId',
-        'openConversationId'      => 'openConversationId',
-        'status'                  => 'status',
-        'syncToDingpan'           => 'syncToDingpan',
-        'templateId'              => 'templateId',
-        'templateName'            => 'templateName',
-        'usedQuota'               => 'usedQuota',
+        'groupMembersCount' => 'groupMembersCount',
+        'groupName' => 'groupName',
+        'groupOwner' => 'groupOwner',
+        'groupOwnerUserId' => 'groupOwnerUserId',
+        'openConversationId' => 'openConversationId',
+        'status' => 'status',
+        'syncToDingpan' => 'syncToDingpan',
+        'templateId' => 'templateId',
+        'templateName' => 'templateName',
+        'usedQuota' => 'usedQuota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -51,17 +51,15 @@ class TaskInfoAddDelTaskPersonRequest extends Model
      */
     public $taskExecutePersonDTOS;
     protected $_name = [
-        'operateType'           => 'operateType',
-        'operatorAccount'       => 'operatorAccount',
-        'outTaskId'             => 'outTaskId',
-        'projId'                => 'projId',
-        'secretKey'             => 'secretKey',
+        'operateType' => 'operateType',
+        'operatorAccount' => 'operatorAccount',
+        'outTaskId' => 'outTaskId',
+        'projId' => 'projId',
+        'secretKey' => 'secretKey',
         'taskExecutePersonDTOS' => 'taskExecutePersonDTOS',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -120,7 +118,7 @@ class TaskInfoAddDelTaskPersonRequest extends Model
         if (isset($map['taskExecutePersonDTOS'])) {
             if (!empty($map['taskExecutePersonDTOS'])) {
                 $model->taskExecutePersonDTOS = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['taskExecutePersonDTOS'] as $item) {
                     $model->taskExecutePersonDTOS[$n++] = null !== $item ? taskExecutePersonDTOS::fromMap($item) : $item;
                 }

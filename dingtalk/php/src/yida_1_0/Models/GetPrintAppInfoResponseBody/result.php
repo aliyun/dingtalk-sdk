@@ -31,15 +31,13 @@ class result extends Model
      */
     public $iconUrl;
     protected $_name = [
-        'appName'      => 'appName',
-        'appType'      => 'appType',
+        'appName' => 'appName',
+        'appType' => 'appType',
         'formInfoList' => 'formInfoList',
-        'iconUrl'      => 'iconUrl',
+        'iconUrl' => 'iconUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -83,7 +81,7 @@ class result extends Model
         if (isset($map['formInfoList'])) {
             if (!empty($map['formInfoList'])) {
                 $model->formInfoList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['formInfoList'] as $item) {
                     $model->formInfoList[$n++] = null !== $item ? formInfoList::fromMap($item) : $item;
                 }

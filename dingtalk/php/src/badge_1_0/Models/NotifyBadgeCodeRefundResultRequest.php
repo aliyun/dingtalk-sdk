@@ -97,21 +97,19 @@ class NotifyBadgeCodeRefundResultRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'corpId'                => 'corpId',
-        'gmtRefund'             => 'gmtRefund',
-        'payChannelDetailList'  => 'payChannelDetailList',
-        'payCode'               => 'payCode',
-        'refundAmount'          => 'refundAmount',
-        'refundOrderNo'         => 'refundOrderNo',
+        'corpId' => 'corpId',
+        'gmtRefund' => 'gmtRefund',
+        'payChannelDetailList' => 'payChannelDetailList',
+        'payCode' => 'payCode',
+        'refundAmount' => 'refundAmount',
+        'refundOrderNo' => 'refundOrderNo',
         'refundPromotionAmount' => 'refundPromotionAmount',
-        'remark'                => 'remark',
-        'tradeNo'               => 'tradeNo',
-        'userId'                => 'userId',
+        'remark' => 'remark',
+        'tradeNo' => 'tradeNo',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -173,7 +171,7 @@ class NotifyBadgeCodeRefundResultRequest extends Model
         if (isset($map['payChannelDetailList'])) {
             if (!empty($map['payChannelDetailList'])) {
                 $model->payChannelDetailList = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['payChannelDetailList'] as $item) {
                     $model->payChannelDetailList[$n++] = null !== $item ? payChannelDetailList::fromMap($item) : $item;
                 }

@@ -22,9 +22,7 @@ class listReceiver extends Model
         'employeeName' => 'employeeName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

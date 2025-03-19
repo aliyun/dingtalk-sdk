@@ -59,18 +59,16 @@ class body extends Model
     public $workNo;
     protected $_name = [
         'companyName' => 'companyName',
-        'endDate'     => 'endDate',
-        'extendInfo'  => 'extendInfo',
-        'jobDesc'     => 'jobDesc',
-        'name'        => 'name',
-        'postName'    => 'postName',
-        'startDate'   => 'startDate',
-        'workNo'      => 'workNo',
+        'endDate' => 'endDate',
+        'extendInfo' => 'extendInfo',
+        'jobDesc' => 'jobDesc',
+        'name' => 'name',
+        'postName' => 'postName',
+        'startDate' => 'startDate',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

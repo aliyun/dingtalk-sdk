@@ -86,23 +86,21 @@ class result extends Model
      */
     public $tags;
     protected $_name = [
-        'autoAddUser'      => 'autoAddUser',
-        'createDeptGroup'  => 'createDeptGroup',
-        'deptCode'         => 'deptCode',
-        'deptId'           => 'deptId',
-        'deptType'         => 'deptType',
-        'extension'        => 'extension',
-        'fromUnionOrg'     => 'fromUnionOrg',
-        'name'             => 'name',
-        'parentId'         => 'parentId',
+        'autoAddUser' => 'autoAddUser',
+        'createDeptGroup' => 'createDeptGroup',
+        'deptCode' => 'deptCode',
+        'deptId' => 'deptId',
+        'deptType' => 'deptType',
+        'extension' => 'extension',
+        'fromUnionOrg' => 'fromUnionOrg',
+        'name' => 'name',
+        'parentId' => 'parentId',
         'sourceIdentifier' => 'sourceIdentifier',
-        'struId'           => 'struId',
-        'tags'             => 'tags',
+        'struId' => 'struId',
+        'tags' => 'tags',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

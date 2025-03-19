@@ -25,14 +25,12 @@ class groupMsgs extends Model
      */
     public $topicId;
     protected $_name = [
-        'anchor'    => 'anchor',
+        'anchor' => 'anchor',
         'openMsgId' => 'openMsgId',
-        'topicId'   => 'topicId',
+        'topicId' => 'topicId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

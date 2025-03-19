@@ -106,22 +106,20 @@ class GetFlightExceedApplyResponseBody extends Model
      */
     public $userId;
     protected $_name = [
-        'applyId'              => 'applyId',
+        'applyId' => 'applyId',
         'applyIntentionInfoDO' => 'applyIntentionInfoDO',
-        'btripCause'           => 'btripCause',
-        'corpId'               => 'corpId',
-        'exceedReason'         => 'exceedReason',
-        'exceedType'           => 'exceedType',
-        'originStandard'       => 'originStandard',
-        'status'               => 'status',
-        'submitTime'           => 'submitTime',
-        'thirdpartApplyId'     => 'thirdpartApplyId',
-        'userId'               => 'userId',
+        'btripCause' => 'btripCause',
+        'corpId' => 'corpId',
+        'exceedReason' => 'exceedReason',
+        'exceedType' => 'exceedType',
+        'originStandard' => 'originStandard',
+        'status' => 'status',
+        'submitTime' => 'submitTime',
+        'thirdpartApplyId' => 'thirdpartApplyId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

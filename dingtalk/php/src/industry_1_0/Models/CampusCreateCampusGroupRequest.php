@@ -25,12 +25,10 @@ class CampusCreateCampusGroupRequest extends Model
     public $name;
     protected $_name = [
         'extend' => 'extend',
-        'name'   => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

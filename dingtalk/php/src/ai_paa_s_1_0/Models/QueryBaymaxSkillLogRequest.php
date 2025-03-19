@@ -36,15 +36,13 @@ class QueryBaymaxSkillLogRequest extends Model
      */
     public $to;
     protected $_name = [
-        'from'           => 'from',
-        'logLevel'       => 'logLevel',
+        'from' => 'from',
+        'logLevel' => 'logLevel',
         'skillExecuteId' => 'skillExecuteId',
-        'to'             => 'to',
+        'to' => 'to',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

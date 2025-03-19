@@ -77,23 +77,21 @@ class GetContactHideBySceneSettingResponseBody extends Model
      */
     public $searchSceneConfig;
     protected $_name = [
-        'description'         => 'description',
-        'excludeDeptIds'      => 'excludeDeptIds',
-        'excludeTagIds'       => 'excludeTagIds',
-        'excludeUserIds'      => 'excludeUserIds',
-        'id'                  => 'id',
-        'name'                => 'name',
+        'description' => 'description',
+        'excludeDeptIds' => 'excludeDeptIds',
+        'excludeTagIds' => 'excludeTagIds',
+        'excludeUserIds' => 'excludeUserIds',
+        'id' => 'id',
+        'name' => 'name',
         'nodeListSceneConfig' => 'nodeListSceneConfig',
-        'objectDeptIds'       => 'objectDeptIds',
-        'objectTagIds'        => 'objectTagIds',
-        'objectUserIds'       => 'objectUserIds',
-        'profileSceneConfig'  => 'profileSceneConfig',
-        'searchSceneConfig'   => 'searchSceneConfig',
+        'objectDeptIds' => 'objectDeptIds',
+        'objectTagIds' => 'objectTagIds',
+        'objectUserIds' => 'objectUserIds',
+        'profileSceneConfig' => 'profileSceneConfig',
+        'searchSceneConfig' => 'searchSceneConfig',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

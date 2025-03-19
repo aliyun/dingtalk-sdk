@@ -28,14 +28,12 @@ class QueryMedicalEventsResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'content'    => 'content',
-        'success'    => 'success',
+        'content' => 'content',
+        'success' => 'success',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class QueryMedicalEventsResponseBody extends Model
         if (isset($map['content'])) {
             if (!empty($map['content'])) {
                 $model->content = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['content'] as $item) {
                     $model->content[$n++] = null !== $item ? content::fromMap($item) : $item;
                 }

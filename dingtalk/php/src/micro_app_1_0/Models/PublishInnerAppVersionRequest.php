@@ -39,14 +39,12 @@ class PublishInnerAppVersionRequest extends Model
     public $publishType;
     protected $_name = [
         'appVersionId' => 'appVersionId',
-        'miniAppOnPc'  => 'miniAppOnPc',
-        'opUnionId'    => 'opUnionId',
-        'publishType'  => 'publishType',
+        'miniAppOnPc' => 'miniAppOnPc',
+        'opUnionId' => 'opUnionId',
+        'publishType' => 'publishType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

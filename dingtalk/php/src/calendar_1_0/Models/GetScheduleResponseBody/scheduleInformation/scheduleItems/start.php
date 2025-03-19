@@ -23,14 +23,12 @@ class start extends Model
      */
     public $timeZone;
     protected $_name = [
-        'date'     => 'date',
+        'date' => 'date',
         'dateTime' => 'dateTime',
         'timeZone' => 'timeZone',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

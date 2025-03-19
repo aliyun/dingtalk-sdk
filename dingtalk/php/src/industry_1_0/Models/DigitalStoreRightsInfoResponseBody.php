@@ -47,16 +47,14 @@ class DigitalStoreRightsInfoResponseBody extends Model
      */
     public $startTime;
     protected $_name = [
-        'endTime'    => 'endTime',
-        'quantity'   => 'quantity',
+        'endTime' => 'endTime',
+        'quantity' => 'quantity',
         'rightsCode' => 'rightsCode',
         'rightsName' => 'rightsName',
-        'startTime'  => 'startTime',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

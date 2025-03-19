@@ -17,9 +17,7 @@ class QueryRecordMinutesUrlResponseBody extends Model
         'recordMinutesUrls' => 'recordMinutesUrls',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class QueryRecordMinutesUrlResponseBody extends Model
         if (isset($map['recordMinutesUrls'])) {
             if (!empty($map['recordMinutesUrls'])) {
                 $model->recordMinutesUrls = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['recordMinutesUrls'] as $item) {
                     $model->recordMinutesUrls[$n++] = null !== $item ? recordMinutesUrls::fromMap($item) : $item;
                 }

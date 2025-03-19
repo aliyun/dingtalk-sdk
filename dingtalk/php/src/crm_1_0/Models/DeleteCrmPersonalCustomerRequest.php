@@ -21,12 +21,10 @@ class DeleteCrmPersonalCustomerRequest extends Model
     public $relationType;
     protected $_name = [
         'currentOperatorUserId' => 'currentOperatorUserId',
-        'relationType'          => 'relationType',
+        'relationType' => 'relationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -37,14 +37,12 @@ class body extends Model
     public $messageIdType;
     protected $_name = [
         'fileDownloadUrl' => 'fileDownloadUrl',
-        'fileName'        => 'fileName',
-        'messageId'       => 'messageId',
-        'messageIdType'   => 'messageIdType',
+        'fileName' => 'fileName',
+        'messageId' => 'messageId',
+        'messageIdType' => 'messageIdType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -38,17 +38,15 @@ class group extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'bizId'              => 'bizId',
-        'groupName'          => 'groupName',
-        'groupSetName'       => 'groupSetName',
+        'bizId' => 'bizId',
+        'groupName' => 'groupName',
+        'groupSetName' => 'groupSetName',
         'openConversationId' => 'openConversationId',
-        'openGroupSetId'     => 'openGroupSetId',
-        'openTeamId'         => 'openTeamId',
+        'openGroupSetId' => 'openGroupSetId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

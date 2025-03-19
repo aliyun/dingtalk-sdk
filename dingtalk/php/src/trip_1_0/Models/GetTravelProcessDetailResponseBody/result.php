@@ -206,40 +206,38 @@ class result extends Model
      */
     public $tripDays;
     protected $_name = [
-        'archiveTime'                  => 'archiveTime',
-        'bizCategoryId'                => 'bizCategoryId',
-        'businessId'                   => 'businessId',
-        'corpId'                       => 'corpId',
-        'costCenter'                   => 'costCenter',
-        'costCenterId'                 => 'costCenterId',
-        'costCenterThirdPartyId'       => 'costCenterThirdPartyId',
-        'createTime'                   => 'createTime',
-        'extFormComponent'             => 'extFormComponent',
-        'feeType'                      => 'feeType',
-        'invoiceTitle'                 => 'invoiceTitle',
-        'invoiceTitleId'               => 'invoiceTitleId',
-        'invoiceTitleThirdPartyId'     => 'invoiceTitleThirdPartyId',
-        'itineraryProject'             => 'itineraryProject',
+        'archiveTime' => 'archiveTime',
+        'bizCategoryId' => 'bizCategoryId',
+        'businessId' => 'businessId',
+        'corpId' => 'corpId',
+        'costCenter' => 'costCenter',
+        'costCenterId' => 'costCenterId',
+        'costCenterThirdPartyId' => 'costCenterThirdPartyId',
+        'createTime' => 'createTime',
+        'extFormComponent' => 'extFormComponent',
+        'feeType' => 'feeType',
+        'invoiceTitle' => 'invoiceTitle',
+        'invoiceTitleId' => 'invoiceTitleId',
+        'invoiceTitleThirdPartyId' => 'invoiceTitleThirdPartyId',
+        'itineraryProject' => 'itineraryProject',
         'itineraryProjectThirdPartyId' => 'itineraryProjectThirdPartyId',
-        'journeys'                     => 'journeys',
-        'mainProcessInstanceId'        => 'mainProcessInstanceId',
-        'memo'                         => 'memo',
-        'originatorId'                 => 'originatorId',
-        'originatorIdOnBehalf'         => 'originatorIdOnBehalf',
-        'processBizAction'             => 'processBizAction',
-        'processInstanceId'            => 'processInstanceId',
-        'processResult'                => 'processResult',
-        'processStatus'                => 'processStatus',
-        'remark'                       => 'remark',
-        'tasks'                        => 'tasks',
-        'travelCategory'               => 'travelCategory',
-        'travelers'                    => 'travelers',
-        'tripDays'                     => 'tripDays',
+        'journeys' => 'journeys',
+        'mainProcessInstanceId' => 'mainProcessInstanceId',
+        'memo' => 'memo',
+        'originatorId' => 'originatorId',
+        'originatorIdOnBehalf' => 'originatorIdOnBehalf',
+        'processBizAction' => 'processBizAction',
+        'processInstanceId' => 'processInstanceId',
+        'processResult' => 'processResult',
+        'processStatus' => 'processStatus',
+        'remark' => 'remark',
+        'tasks' => 'tasks',
+        'travelCategory' => 'travelCategory',
+        'travelers' => 'travelers',
+        'tripDays' => 'tripDays',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -388,7 +386,7 @@ class result extends Model
         if (isset($map['extFormComponent'])) {
             if (!empty($map['extFormComponent'])) {
                 $model->extFormComponent = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['extFormComponent'] as $item) {
                     $model->extFormComponent[$n++] = null !== $item ? extFormComponent::fromMap($item) : $item;
                 }
@@ -415,7 +413,7 @@ class result extends Model
         if (isset($map['journeys'])) {
             if (!empty($map['journeys'])) {
                 $model->journeys = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['journeys'] as $item) {
                     $model->journeys[$n++] = null !== $item ? journeys::fromMap($item) : $item;
                 }
@@ -451,7 +449,7 @@ class result extends Model
         if (isset($map['tasks'])) {
             if (!empty($map['tasks'])) {
                 $model->tasks = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['tasks'] as $item) {
                     $model->tasks[$n++] = null !== $item ? tasks::fromMap($item) : $item;
                 }

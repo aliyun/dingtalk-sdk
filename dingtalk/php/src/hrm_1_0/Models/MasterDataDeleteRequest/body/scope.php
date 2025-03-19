@@ -25,12 +25,10 @@ class scope extends Model
     public $version;
     protected $_name = [
         'scopeCode' => 'scopeCode',
-        'version'   => 'version',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

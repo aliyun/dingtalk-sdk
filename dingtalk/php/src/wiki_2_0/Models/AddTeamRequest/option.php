@@ -28,14 +28,12 @@ class option extends Model
      */
     public $icon;
     protected $_name = [
-        'cover'       => 'cover',
+        'cover' => 'cover',
         'description' => 'description',
-        'icon'        => 'icon',
+        'icon' => 'icon',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

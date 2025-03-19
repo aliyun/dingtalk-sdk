@@ -25,12 +25,10 @@ class BindCompanyAccountantBookRequest extends Model
     public $companyCode;
     protected $_name = [
         'accountantBookId' => 'accountantBookId',
-        'companyCode'      => 'companyCode',
+        'companyCode' => 'companyCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -33,14 +33,12 @@ class GetActivityButtonListRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'language'    => 'language',
+        'language' => 'language',
         'systemToken' => 'systemToken',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

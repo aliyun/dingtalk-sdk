@@ -21,12 +21,10 @@ class AppendRolePermissionShrinkRequest extends Model
     public $userId;
     protected $_name = [
         'rolePermissionItemListShrink' => 'rolePermissionItemList',
-        'userId'                       => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

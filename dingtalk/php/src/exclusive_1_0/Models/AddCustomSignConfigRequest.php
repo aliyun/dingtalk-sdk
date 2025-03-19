@@ -64,20 +64,18 @@ class AddCustomSignConfigRequest extends Model
      */
     public $unpushStaffIds;
     protected $_name = [
-        'allEffect'      => 'allEffect',
-        'canDownload'    => 'canDownload',
-        'protocolName'   => 'protocolName',
-        'pushDeptIds'    => 'pushDeptIds',
-        'pushStaffIds'   => 'pushStaffIds',
-        'signTermFiles'  => 'signTermFiles',
-        'termMessage'    => 'termMessage',
-        'unpushDeptIds'  => 'unpushDeptIds',
+        'allEffect' => 'allEffect',
+        'canDownload' => 'canDownload',
+        'protocolName' => 'protocolName',
+        'pushDeptIds' => 'pushDeptIds',
+        'pushStaffIds' => 'pushStaffIds',
+        'signTermFiles' => 'signTermFiles',
+        'termMessage' => 'termMessage',
+        'unpushDeptIds' => 'unpushDeptIds',
         'unpushStaffIds' => 'unpushStaffIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -149,7 +147,7 @@ class AddCustomSignConfigRequest extends Model
         if (isset($map['signTermFiles'])) {
             if (!empty($map['signTermFiles'])) {
                 $model->signTermFiles = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['signTermFiles'] as $item) {
                     $model->signTermFiles[$n++] = null !== $item ? signTermFiles::fromMap($item) : $item;
                 }

@@ -53,20 +53,18 @@ class GetApplicationAuthorizationServicePlatformResourceResponseBody extends Mod
      */
     public $pluginUsageAmount;
     protected $_name = [
-        'accountTotalAmount'    => 'accountTotalAmount',
-        'accountUsageAmount'    => 'accountUsageAmount',
-        'appTotalAmount'        => 'appTotalAmount',
+        'accountTotalAmount' => 'accountTotalAmount',
+        'accountUsageAmount' => 'accountUsageAmount',
+        'appTotalAmount' => 'appTotalAmount',
         'attachmentTotalAmount' => 'attachmentTotalAmount',
         'attachmentUsageAmount' => 'attachmentUsageAmount',
-        'instanceId'            => 'instanceId',
-        'instanceTotalAmount'   => 'instanceTotalAmount',
-        'instanceUsageAmount'   => 'instanceUsageAmount',
-        'pluginUsageAmount'     => 'pluginUsageAmount',
+        'instanceId' => 'instanceId',
+        'instanceTotalAmount' => 'instanceTotalAmount',
+        'instanceUsageAmount' => 'instanceUsageAmount',
+        'pluginUsageAmount' => 'pluginUsageAmount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

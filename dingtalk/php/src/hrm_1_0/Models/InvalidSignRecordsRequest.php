@@ -35,12 +35,10 @@ class InvalidSignRecordsRequest extends Model
     protected $_name = [
         'invalidUserId' => 'invalidUserId',
         'signRecordIds' => 'signRecordIds',
-        'statusRemark'  => 'statusRemark',
+        'statusRemark' => 'statusRemark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

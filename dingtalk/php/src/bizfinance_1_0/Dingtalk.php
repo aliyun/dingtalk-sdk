@@ -197,8 +197,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -238,18 +238,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AppendRolePermission',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/roles/permissions',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AppendRolePermission',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/roles/permissions',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AppendRolePermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -307,18 +307,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchAddInvoice',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchAddInvoice',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchAddInvoiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -367,18 +367,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchCreateCustomer',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/auxiliaries/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchCreateCustomer',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/auxiliaries/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchCreateCustomerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -433,18 +433,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'BeginConsume',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/consumedBenefits/prepare',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BeginConsume',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/consumedBenefits/prepare',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BeginConsumeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -493,18 +493,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'BindCompanyAccountantBook',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/companies/accountantBooks/bind',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BindCompanyAccountantBook',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/companies/accountantBooks/bind',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BindCompanyAccountantBookResponse::fromMap($this->execute($params, $req, $runtime));
@@ -559,18 +559,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CancelConsume',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/consumedBenefits/cancel',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CancelConsume',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/consumedBenefits/cancel',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CancelConsumeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -643,18 +643,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CheckVoucherStatus',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/checkVoucherStatus/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CheckVoucherStatus',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/checkVoucherStatus/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CheckVoucherStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -709,18 +709,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CommitConsume',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/consumedBenefits/commit',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CommitConsume',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/consumedBenefits/commit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CommitConsumeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -796,18 +796,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateCustomer',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/auxiliaries/customers',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateCustomer',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/auxiliaries/customers',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateCustomerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -853,18 +853,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateReceipt',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/receipts',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateReceipt',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/receipts',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateReceiptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -910,18 +910,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteReceipt',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/receipts/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteReceipt',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/receipts/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteReceiptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -963,15 +963,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetBookkeepingUserList',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/bookkeeping/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetBookkeepingUserList',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/bookkeeping/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetBookkeepingUserListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1015,18 +1015,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCategory',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/categories/get',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCategory',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/categories/get',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCategoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1072,18 +1072,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCustomer',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/customers/details',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCustomer',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/customers/details',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCustomerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1129,18 +1129,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFinanceAccount',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/financeAccounts/get',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFinanceAccount',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/financeAccounts/get',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFinanceAccountResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1182,15 +1182,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetFormTemplateInfo',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/formTemplates/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFormTemplateInfo',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/formTemplates/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFormTemplateInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1239,18 +1239,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetInvoiceByPage',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetInvoiceByPage',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetInvoiceByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1292,15 +1292,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetIsNewVersion',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/accounts/uses',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetIsNewVersion',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/accounts/uses',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetIsNewVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1341,15 +1341,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetMultiCompanyInfoByCode',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/multiCompanies/' . $companyCode . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMultiCompanyInfoByCode',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/multiCompanies/' . $companyCode . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMultiCompanyInfoByCodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1395,18 +1395,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProduct',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/products',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProduct',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/products',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProductResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1452,18 +1452,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProject',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/projects/get',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProject',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/projects/get',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1512,18 +1512,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetReceipt',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/receipts/details',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetReceipt',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/receipts/details',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetReceiptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1569,18 +1569,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSupplier',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/suppliers/details',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSupplier',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/suppliers/details',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSupplierResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1626,18 +1626,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetYongYouOpenApiToken',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/yongyou/token',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetYongYouOpenApiToken',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/yongyou/token',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetYongYouOpenApiTokenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1679,15 +1679,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetYongYouOrgRelation',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/yongyou/relations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetYongYouOrgRelation',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/yongyou/relations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetYongYouOrgRelationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1737,18 +1737,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ProfessionBenefitConsume',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/professions/benefits/consume',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ProfessionBenefitConsume',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/professions/benefits/consume',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ProfessionBenefitConsumeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1806,18 +1806,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PushHistoricalReceipts',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/budgets/historicalReceipts/push',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PushHistoricalReceipts',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/budgets/historicalReceipts/push',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PushHistoricalReceiptsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1863,18 +1863,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryBenefit',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/benefits',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryBenefit',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/benefits',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryBenefitResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1926,18 +1926,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCategoryByPage',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/categories/list',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCategoryByPage',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/categories/list',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCategoryByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1983,18 +1983,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCompanyInvoiceRelationCount',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/companyRelationReceipts/counts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCompanyInvoiceRelationCount',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/companyRelationReceipts/counts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCompanyInvoiceRelationCountResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2043,18 +2043,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCustomerByPage',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/customers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCustomerByPage',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/customers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCustomerByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2106,18 +2106,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCustomerInfo',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/auxiliaries/customers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCustomerInfo',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/auxiliaries/customers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCustomerInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2166,18 +2166,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryEnterpriseAccountByPage',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/financeAccounts/list',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryEnterpriseAccountByPage',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/financeAccounts/list',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryEnterpriseAccountByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2219,15 +2219,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryFinanceCompanyInfo',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/companies',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryFinanceCompanyInfo',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/companies',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryFinanceCompanyInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2267,15 +2267,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryInvoiceRelationCount',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/relationReceipts/counts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryInvoiceRelationCount',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/relationReceipts/counts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryInvoiceRelationCountResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2315,15 +2315,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryMultiCompanyInfo',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/multiCompanies',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMultiCompanyInfo',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/multiCompanies',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMultiCompanyInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2370,18 +2370,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryPermissionByUserId',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/permissions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryPermissionByUserId',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/permissions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryPermissionByUserIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2430,18 +2430,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryPermissionRoleMember',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/roles/members/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryPermissionRoleMember',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/roles/members/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryPermissionRoleMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2490,18 +2490,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryProductByPage',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/products/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryProductByPage',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/products/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryProductByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2550,18 +2550,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryProjectByPage',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/projects/list',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryProjectByPage',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/projects/list',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryProjectByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2607,18 +2607,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryReceiptDetailForInvoice',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/receipts/details',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryReceiptDetailForInvoice',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/receipts/details',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryReceiptDetailForInvoiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2694,18 +2694,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryReceiptForInvoice',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/receipts/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryReceiptForInvoice',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/receipts/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryReceiptForInvoiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2781,18 +2781,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryReceiptsBaseInfo',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/receipts/dataInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryReceiptsBaseInfo',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/receipts/dataInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryReceiptsBaseInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2853,18 +2853,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryReceiptsByPage',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/receipts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryReceiptsByPage',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/receipts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryReceiptsByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2919,18 +2919,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryRoleMemberByPage',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/roles/members',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryRoleMemberByPage',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/roles/members',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryRoleMemberByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2979,18 +2979,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QuerySupplierByPage',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/suppliers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QuerySupplierByPage',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/suppliers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QuerySupplierByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3036,18 +3036,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryUserRoleList',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/users/roles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserRoleList',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/users/roles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserRoleListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3099,18 +3099,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UnbindApplyReceiptAndInvoiceRelated',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/unbind',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UnbindApplyReceiptAndInvoiceRelated',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/unbind',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UnbindApplyReceiptAndInvoiceRelatedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3162,18 +3162,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateApplyReceiptAndInvoiceRelated',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/applyReceipts/relate',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateApplyReceiptAndInvoiceRelated',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/applyReceipts/relate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateApplyReceiptAndInvoiceRelatedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3228,18 +3228,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateDigitalInvoiceOrgInfo',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/organizationInfos',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateDigitalInvoiceOrgInfo',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/organizationInfos',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateDigitalInvoiceOrgInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3297,18 +3297,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'UpdateFinanceCompanyInfo',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/companies',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateFinanceCompanyInfo',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/companies',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateFinanceCompanyInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3369,18 +3369,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'UpdateFinanceMultiCompanyInfo',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/multiCompanies',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateFinanceMultiCompanyInfo',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/multiCompanies',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateFinanceMultiCompanyInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3456,18 +3456,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInvoiceAbandonStatus',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/abandonStatus',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInvoiceAbandonStatus',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/abandonStatus',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInvoiceAbandonStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3525,18 +3525,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInvoiceAccountPeriod',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/accountPeriods',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInvoiceAccountPeriod',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/accountPeriods',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInvoiceAccountPeriodResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3588,18 +3588,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInvoiceAccountingPeriodDate',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/accounts/periodDates',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInvoiceAccountingPeriodDate',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/accounts/periodDates',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInvoiceAccountingPeriodDateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3651,18 +3651,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInvoiceAccountingStatus',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/accounts/statuses',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInvoiceAccountingStatus',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/accounts/statuses',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInvoiceAccountingStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3720,18 +3720,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInvoiceAndReceiptRelated',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/approvalReceipts',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInvoiceAndReceiptRelated',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/approvalReceipts',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInvoiceAndReceiptRelatedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3783,18 +3783,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInvoiceIgnoreStatus',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/ignoreStatus',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInvoiceIgnoreStatus',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/ignoreStatus',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInvoiceIgnoreStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3855,18 +3855,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInvoiceVerifyStatus',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/verifyStatus',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInvoiceVerifyStatus',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/verifyStatus',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInvoiceVerifyStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3927,18 +3927,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInvoiceVoucherStatus',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/invoices/vouchers/states',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInvoiceVoucherStatus',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/invoices/vouchers/states',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInvoiceVoucherStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3984,18 +3984,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateReceipt',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/receipts',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateReceipt',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/receipts',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateReceiptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4059,18 +4059,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateReceiptVoucherStatus',
-            'version'     => 'bizfinance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/bizfinance/vouchers/recepits',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateReceiptVoucherStatus',
+            'version' => 'bizfinance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/bizfinance/vouchers/recepits',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateReceiptVoucherStatusResponse::fromMap($this->execute($params, $req, $runtime));

@@ -53,16 +53,14 @@ class SendInvitationRequest extends Model
      */
     public $phone;
     protected $_name = [
-        'deptId'         => 'deptId',
-        'orgAlias'       => 'orgAlias',
+        'deptId' => 'deptId',
+        'orgAlias' => 'orgAlias',
         'partnerLabelId' => 'partnerLabelId',
-        'partnerNum'     => 'partnerNum',
-        'phone'          => 'phone',
+        'partnerNum' => 'partnerNum',
+        'phone' => 'phone',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

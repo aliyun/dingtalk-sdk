@@ -24,13 +24,11 @@ class result extends Model
     public $status;
     protected $_name = [
         'clueId' => 'clueId',
-        'scope'  => 'scope',
+        'scope' => 'scope',
         'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

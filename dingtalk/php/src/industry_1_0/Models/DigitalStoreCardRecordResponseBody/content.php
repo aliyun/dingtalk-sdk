@@ -60,20 +60,18 @@ class content extends Model
     public $sendTime;
     protected $_name = [
         'conversationTitle' => 'conversationTitle',
-        'detailList'        => 'detailList',
-        'id'                => 'id',
-        'memberNum'         => 'memberNum',
-        'readNum'           => 'readNum',
-        'readPercent'       => 'readPercent',
-        'receiveNum'        => 'receiveNum',
-        'sceneCardName'     => 'sceneCardName',
-        'sendStatus'        => 'sendStatus',
-        'sendTime'          => 'sendTime',
+        'detailList' => 'detailList',
+        'id' => 'id',
+        'memberNum' => 'memberNum',
+        'readNum' => 'readNum',
+        'readPercent' => 'readPercent',
+        'receiveNum' => 'receiveNum',
+        'sceneCardName' => 'sceneCardName',
+        'sendStatus' => 'sendStatus',
+        'sendTime' => 'sendTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -132,7 +130,7 @@ class content extends Model
         if (isset($map['detailList'])) {
             if (!empty($map['detailList'])) {
                 $model->detailList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['detailList'] as $item) {
                     $model->detailList[$n++] = null !== $item ? detailList::fromMap($item) : $item;
                 }

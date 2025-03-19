@@ -19,13 +19,11 @@ class UpdateUserTaskStatusRequest extends Model
      */
     public $userTaskStatuses;
     protected $_name = [
-        'operatorId'       => 'operatorId',
+        'operatorId' => 'operatorId',
         'userTaskStatuses' => 'userTaskStatuses',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class UpdateUserTaskStatusRequest extends Model
         if (isset($map['userTaskStatuses'])) {
             if (!empty($map['userTaskStatuses'])) {
                 $model->userTaskStatuses = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['userTaskStatuses'] as $item) {
                     $model->userTaskStatuses[$n++] = null !== $item ? userTaskStatuses::fromMap($item) : $item;
                 }

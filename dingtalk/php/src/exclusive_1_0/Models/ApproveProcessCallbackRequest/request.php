@@ -73,20 +73,18 @@ class request extends Model
      */
     public $title;
     protected $_name = [
-        'approveResult'     => 'approveResult',
-        'approveType'       => 'approveType',
-        'approvers'         => 'approvers',
-        'createTime'        => 'createTime',
-        'eventType'         => 'eventType',
-        'finishTime'        => 'finishTime',
-        'params'            => 'params',
+        'approveResult' => 'approveResult',
+        'approveType' => 'approveType',
+        'approvers' => 'approvers',
+        'createTime' => 'createTime',
+        'eventType' => 'eventType',
+        'finishTime' => 'finishTime',
+        'params' => 'params',
         'processInstanceId' => 'processInstanceId',
-        'title'             => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

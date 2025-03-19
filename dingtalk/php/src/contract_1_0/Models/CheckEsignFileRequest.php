@@ -36,15 +36,13 @@ class CheckEsignFileRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'corpId'  => 'corpId',
-        'fileId'  => 'fileId',
+        'corpId' => 'corpId',
+        'fileId' => 'fileId',
         'spaceId' => 'spaceId',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -37,14 +37,12 @@ class userList extends Model
     public $userId;
     protected $_name = [
         'jobNumber' => 'jobNumber',
-        'name'      => 'name',
-        'unionId'   => 'unionId',
-        'userId'    => 'userId',
+        'name' => 'name',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

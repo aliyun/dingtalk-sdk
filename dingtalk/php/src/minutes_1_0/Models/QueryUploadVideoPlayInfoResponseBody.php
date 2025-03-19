@@ -17,9 +17,7 @@ class QueryUploadVideoPlayInfoResponseBody extends Model
         'playInfo' => 'playInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class QueryAllCustomerRequest extends Model
      */
     public $operatorUserId;
     protected $_name = [
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
-        'objectType'     => 'objectType',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'objectType' => 'objectType',
         'operatorUserId' => 'operatorUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

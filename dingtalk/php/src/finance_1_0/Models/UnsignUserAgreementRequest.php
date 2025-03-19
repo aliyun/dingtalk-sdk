@@ -57,16 +57,14 @@ class UnsignUserAgreementRequest extends Model
     public $userId;
     protected $_name = [
         'agreementNo' => 'agreementNo',
-        'bizCode'     => 'bizCode',
-        'bizScene'    => 'bizScene',
-        'instId'      => 'instId',
-        'subInstId'   => 'subInstId',
-        'userId'      => 'userId',
+        'bizCode' => 'bizCode',
+        'bizScene' => 'bizScene',
+        'instId' => 'instId',
+        'subInstId' => 'subInstId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

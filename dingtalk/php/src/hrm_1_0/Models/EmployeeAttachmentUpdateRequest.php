@@ -48,15 +48,13 @@ class EmployeeAttachmentUpdateRequest extends Model
     public $userId;
     protected $_name = [
         'appAgentId' => 'appAgentId',
-        'fieldCode'  => 'fieldCode',
+        'fieldCode' => 'fieldCode',
         'fileSuffix' => 'fileSuffix',
-        'mediaId'    => 'mediaId',
-        'userId'     => 'userId',
+        'mediaId' => 'mediaId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

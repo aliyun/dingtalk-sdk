@@ -35,14 +35,12 @@ class discountInfo extends Model
      */
     public $startTimeMillis;
     protected $_name = [
-        'endTimeMillis'   => 'endTimeMillis',
-        'price'           => 'price',
+        'endTimeMillis' => 'endTimeMillis',
+        'price' => 'price',
         'startTimeMillis' => 'startTimeMillis',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

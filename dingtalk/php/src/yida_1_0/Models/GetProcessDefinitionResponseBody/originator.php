@@ -60,20 +60,18 @@ class originator extends Model
     public $userInfo;
     protected $_name = [
         'departmentDescription' => 'departmentDescription',
-        'displayEnName'         => 'displayEnName',
-        'displayName'           => 'displayName',
+        'displayEnName' => 'displayEnName',
+        'displayName' => 'displayName',
         'masterDataDepartments' => 'masterDataDepartments',
-        'orderNumber'           => 'orderNumber',
-        'personalPhoto'         => 'personalPhoto',
-        'status'                => 'status',
-        'tbWang'                => 'tbWang',
-        'userId'                => 'userId',
-        'userInfo'              => 'userInfo',
+        'orderNumber' => 'orderNumber',
+        'personalPhoto' => 'personalPhoto',
+        'status' => 'status',
+        'tbWang' => 'tbWang',
+        'userId' => 'userId',
+        'userInfo' => 'userInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -138,7 +136,7 @@ class originator extends Model
         if (isset($map['masterDataDepartments'])) {
             if (!empty($map['masterDataDepartments'])) {
                 $model->masterDataDepartments = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['masterDataDepartments'] as $item) {
                     $model->masterDataDepartments[$n++] = null !== $item ? masterDataDepartments::fromMap($item) : $item;
                 }

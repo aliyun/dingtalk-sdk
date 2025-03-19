@@ -77,22 +77,20 @@ class body extends Model
      */
     public $workNo;
     protected $_name = [
-        'comment'         => 'comment',
-        'extendInfo'      => 'extendInfo',
-        'name'            => 'name',
-        'perfCate'        => 'perfCate',
-        'perfPlanName'    => 'perfPlanName',
-        'perfScore'       => 'perfScore',
-        'period'          => 'period',
-        'periodEndDate'   => 'periodEndDate',
+        'comment' => 'comment',
+        'extendInfo' => 'extendInfo',
+        'name' => 'name',
+        'perfCate' => 'perfCate',
+        'perfPlanName' => 'perfPlanName',
+        'perfScore' => 'perfScore',
+        'period' => 'period',
+        'periodEndDate' => 'periodEndDate',
         'periodStartDate' => 'periodStartDate',
-        'score'           => 'score',
-        'workNo'          => 'workNo',
+        'score' => 'score',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

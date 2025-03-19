@@ -30,14 +30,12 @@ class CreateCustomerResponseBody extends Model
      */
     public $objectType;
     protected $_name = [
-        'contacts'           => 'contacts',
+        'contacts' => 'contacts',
         'customerInstanceId' => 'customerInstanceId',
-        'objectType'         => 'objectType',
+        'objectType' => 'objectType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -72,7 +70,7 @@ class CreateCustomerResponseBody extends Model
         if (isset($map['contacts'])) {
             if (!empty($map['contacts'])) {
                 $model->contacts = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['contacts'] as $item) {
                     $model->contacts[$n++] = null !== $item ? contacts::fromMap($item) : $item;
                 }

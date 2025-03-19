@@ -41,15 +41,13 @@ class ApproveProcessCallbackRequest extends Model
      */
     public $targetCorpId;
     protected $_name = [
-        'accessKeyId'     => 'accessKeyId',
+        'accessKeyId' => 'accessKeyId',
         'accessKeySecret' => 'accessKeySecret',
-        'request'         => 'request',
-        'targetCorpId'    => 'targetCorpId',
+        'request' => 'request',
+        'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

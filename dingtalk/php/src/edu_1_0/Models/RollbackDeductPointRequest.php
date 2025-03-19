@@ -26,13 +26,11 @@ class RollbackDeductPointRequest extends Model
      */
     public $pointType;
     protected $_name = [
-        'bizId'     => 'bizId',
+        'bizId' => 'bizId',
         'pointType' => 'pointType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

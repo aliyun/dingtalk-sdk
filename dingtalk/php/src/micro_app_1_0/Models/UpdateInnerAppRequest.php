@@ -64,19 +64,17 @@ class UpdateInnerAppRequest extends Model
      */
     public $pcHomepageLink;
     protected $_name = [
-        'desc'           => 'desc',
-        'homepageLink'   => 'homepageLink',
-        'icon'           => 'icon',
-        'ipWhiteList'    => 'ipWhiteList',
-        'name'           => 'name',
-        'ompLink'        => 'ompLink',
-        'opUnionId'      => 'opUnionId',
+        'desc' => 'desc',
+        'homepageLink' => 'homepageLink',
+        'icon' => 'icon',
+        'ipWhiteList' => 'ipWhiteList',
+        'name' => 'name',
+        'ompLink' => 'ompLink',
+        'opUnionId' => 'opUnionId',
         'pcHomepageLink' => 'pcHomepageLink',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

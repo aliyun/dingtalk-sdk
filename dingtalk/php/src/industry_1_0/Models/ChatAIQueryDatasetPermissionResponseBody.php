@@ -17,9 +17,7 @@ class ChatAIQueryDatasetPermissionResponseBody extends Model
         'permissionInfos' => 'permissionInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ChatAIQueryDatasetPermissionResponseBody extends Model
         if (isset($map['permissionInfos'])) {
             if (!empty($map['permissionInfos'])) {
                 $model->permissionInfos = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['permissionInfos'] as $item) {
                     $model->permissionInfos[$n++] = null !== $item ? permissionInfos::fromMap($item) : $item;
                 }

@@ -20,9 +20,7 @@ class GetStaffInfoByWorkNoRequest extends Model
         'workNumbers' => 'workNumbers',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -47,17 +47,15 @@ class CreateContractExtractTaskRequest extends Model
      */
     public $requestId;
     protected $_name = [
-        'contractFile'            => 'contractFile',
+        'contractFile' => 'contractFile',
         'contractFileDownloadUrl' => 'contractFileDownloadUrl',
-        'contractFileName'        => 'contractFileName',
-        'extractKeys'             => 'extractKeys',
-        'fileSource'              => 'fileSource',
-        'requestId'               => 'requestId',
+        'contractFileName' => 'contractFileName',
+        'extractKeys' => 'extractKeys',
+        'fileSource' => 'fileSource',
+        'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

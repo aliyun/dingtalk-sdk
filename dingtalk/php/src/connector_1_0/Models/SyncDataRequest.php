@@ -21,13 +21,11 @@ class SyncDataRequest extends Model
      */
     public $triggerDataList;
     protected $_name = [
-        'appId'           => 'appId',
+        'appId' => 'appId',
         'triggerDataList' => 'triggerDataList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class SyncDataRequest extends Model
         if (isset($map['triggerDataList'])) {
             if (!empty($map['triggerDataList'])) {
                 $model->triggerDataList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['triggerDataList'] as $item) {
                     $model->triggerDataList[$n++] = null !== $item ? triggerDataList::fromMap($item) : $item;
                 }

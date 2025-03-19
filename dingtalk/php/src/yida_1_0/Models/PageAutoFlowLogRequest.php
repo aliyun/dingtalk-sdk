@@ -98,23 +98,21 @@ class PageAutoFlowLogRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'      => 'appType',
-        'corpId'       => 'corpId',
-        'endTimeGMT'   => 'endTimeGMT',
-        'env'          => 'env',
-        'formUuid'     => 'formUuid',
-        'pageNumber'   => 'pageNumber',
-        'pageSize'     => 'pageSize',
-        'processCode'  => 'processCode',
+        'appType' => 'appType',
+        'corpId' => 'corpId',
+        'endTimeGMT' => 'endTimeGMT',
+        'env' => 'env',
+        'formUuid' => 'formUuid',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'processCode' => 'processCode',
         'startTimeGMT' => 'startTimeGMT',
-        'status'       => 'status',
-        'token'        => 'token',
-        'userId'       => 'userId',
+        'status' => 'status',
+        'token' => 'token',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

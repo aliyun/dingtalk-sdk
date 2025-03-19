@@ -75,20 +75,18 @@ class PushDingMessageRequest extends Model
      */
     public $userIdList;
     protected $_name = [
-        'appId'       => 'appId',
-        'content'     => 'content',
+        'appId' => 'appId',
+        'content' => 'content',
         'messageType' => 'messageType',
-        'messageUrl'  => 'messageUrl',
-        'pictureUrl'  => 'pictureUrl',
+        'messageUrl' => 'messageUrl',
+        'pictureUrl' => 'pictureUrl',
         'singleTitle' => 'singleTitle',
-        'singleUrl'   => 'singleUrl',
-        'title'       => 'title',
-        'userIdList'  => 'userIdList',
+        'singleUrl' => 'singleUrl',
+        'title' => 'title',
+        'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

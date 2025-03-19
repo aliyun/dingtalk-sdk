@@ -46,17 +46,15 @@ class AddOrgRequest extends Model
      */
     public $province;
     protected $_name = [
-        'city'         => 'city',
-        'industry'     => 'industry',
+        'city' => 'city',
+        'industry' => 'industry',
         'industryCode' => 'industryCode',
-        'mobileNum'    => 'mobileNum',
-        'name'         => 'name',
-        'province'     => 'province',
+        'mobileNum' => 'mobileNum',
+        'name' => 'name',
+        'province' => 'province',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

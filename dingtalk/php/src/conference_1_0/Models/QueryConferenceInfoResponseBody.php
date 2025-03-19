@@ -17,9 +17,7 @@ class QueryConferenceInfoResponseBody extends Model
         'confInfo' => 'confInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,9 +20,7 @@ class AgoalOrgObjectiveQueryRequest extends Model
         'objectiveId' => 'objectiveId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

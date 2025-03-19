@@ -47,16 +47,14 @@ class GetStaffPageQueryRequest extends Model
      */
     public $workNo;
     protected $_name = [
-        'deptCode'   => 'deptCode',
-        'name'       => 'name',
+        'deptCode' => 'deptCode',
+        'name' => 'name',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'workNo'     => 'workNo',
+        'pageSize' => 'pageSize',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

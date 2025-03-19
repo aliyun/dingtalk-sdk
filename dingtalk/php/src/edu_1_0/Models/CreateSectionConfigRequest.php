@@ -32,14 +32,12 @@ class CreateSectionConfigRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'ext'            => 'ext',
+        'ext' => 'ext',
         'sectionConfigs' => 'sectionConfigs',
-        'opUserId'       => 'opUserId',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -77,7 +75,7 @@ class CreateSectionConfigRequest extends Model
         if (isset($map['sectionConfigs'])) {
             if (!empty($map['sectionConfigs'])) {
                 $model->sectionConfigs = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['sectionConfigs'] as $item) {
                     $model->sectionConfigs[$n++] = null !== $item ? sectionConfigs::fromMap($item) : $item;
                 }

@@ -43,16 +43,14 @@ class opportunityList extends Model
      */
     public $funnelsourceNameLv1;
     protected $_name = [
-        'activeUserCnt7d'        => 'activeUserCnt7d',
-        'appActiveState'         => 'appActiveState',
-        'corpId'                 => 'corpId',
+        'activeUserCnt7d' => 'activeUserCnt7d',
+        'appActiveState' => 'appActiveState',
+        'corpId' => 'corpId',
         'fstFunnelsourceNameLv1' => 'fstFunnelsourceNameLv1',
-        'funnelsourceNameLv1'    => 'funnelsourceNameLv1',
+        'funnelsourceNameLv1' => 'funnelsourceNameLv1',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

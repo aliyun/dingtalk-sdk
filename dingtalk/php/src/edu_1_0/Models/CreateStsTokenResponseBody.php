@@ -50,17 +50,15 @@ class CreateStsTokenResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'accessKeyId'     => 'accessKeyId',
+        'accessKeyId' => 'accessKeyId',
         'accessKeySecret' => 'accessKeySecret',
-        'expiration'      => 'expiration',
-        'extInfo'         => 'extInfo',
-        'securityToken'   => 'securityToken',
-        'status'          => 'status',
+        'expiration' => 'expiration',
+        'extInfo' => 'extInfo',
+        'securityToken' => 'securityToken',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

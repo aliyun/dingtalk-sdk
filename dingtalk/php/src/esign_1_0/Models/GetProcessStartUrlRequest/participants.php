@@ -38,17 +38,15 @@ class participants extends Model
      */
     public $userId;
     protected $_name = [
-        'account'          => 'account',
-        'accountName'      => 'accountName',
-        'accountType'      => 'accountType',
-        'orgName'          => 'orgName',
+        'account' => 'account',
+        'accountName' => 'accountName',
+        'accountType' => 'accountType',
+        'orgName' => 'orgName',
         'signRequirements' => 'signRequirements',
-        'userId'           => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

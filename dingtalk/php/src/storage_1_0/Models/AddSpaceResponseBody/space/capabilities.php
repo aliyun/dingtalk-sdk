@@ -30,13 +30,11 @@ class capabilities extends Model
     public $canSearch;
     protected $_name = [
         'canRecordRecentFile' => 'canRecordRecentFile',
-        'canRename'           => 'canRename',
-        'canSearch'           => 'canSearch',
+        'canRename' => 'canRename',
+        'canSearch' => 'canSearch',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -21,13 +21,11 @@ class BatchBossCheckRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'models'   => 'models',
+        'models' => 'models',
         'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class BatchBossCheckRequest extends Model
         if (isset($map['models'])) {
             if (!empty($map['models'])) {
                 $model->models = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['models'] as $item) {
                     $model->models[$n++] = null !== $item ? models::fromMap($item) : $item;
                 }

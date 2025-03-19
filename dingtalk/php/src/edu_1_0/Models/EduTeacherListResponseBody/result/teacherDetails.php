@@ -44,15 +44,13 @@ class teacherDetails extends Model
      */
     public $userId;
     protected $_name = [
-        'name'    => 'name',
-        'role'    => 'role',
+        'name' => 'name',
+        'role' => 'role',
         'unionId' => 'unionId',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -63,16 +63,14 @@ class feedList extends Model
     public $url;
     protected $_name = [
         'feedCategory' => 'feedCategory',
-        'feedId'       => 'feedId',
-        'feedType'     => 'feedType',
-        'name'         => 'name',
-        'thumbUrl'     => 'thumbUrl',
-        'url'          => 'url',
+        'feedId' => 'feedId',
+        'feedType' => 'feedType',
+        'name' => 'name',
+        'thumbUrl' => 'thumbUrl',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

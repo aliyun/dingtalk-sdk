@@ -30,14 +30,12 @@ class result extends Model
     public $roomIds;
     protected $_name = [
         'deviceCustomTemplate' => 'deviceCustomTemplate',
-        'deviceUnionIds'       => 'deviceUnionIds',
-        'groupIds'             => 'groupIds',
-        'roomIds'              => 'roomIds',
+        'deviceUnionIds' => 'deviceUnionIds',
+        'groupIds' => 'groupIds',
+        'roomIds' => 'roomIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

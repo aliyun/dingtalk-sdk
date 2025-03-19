@@ -66,17 +66,15 @@ class RegisterDeviceRequest extends Model
     public $userId;
     protected $_name = [
         'collaborators' => 'collaborators',
-        'departmentId'  => 'departmentId',
-        'description'   => 'description',
-        'deviceKey'     => 'deviceKey',
-        'deviceName'    => 'deviceName',
-        'managers'      => 'managers',
-        'userId'        => 'userId',
+        'departmentId' => 'departmentId',
+        'description' => 'description',
+        'deviceKey' => 'deviceKey',
+        'deviceName' => 'deviceName',
+        'managers' => 'managers',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

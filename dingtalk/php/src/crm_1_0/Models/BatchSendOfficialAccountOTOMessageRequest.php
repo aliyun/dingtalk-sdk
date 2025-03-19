@@ -27,13 +27,11 @@ class BatchSendOfficialAccountOTOMessageRequest extends Model
     public $detail;
     protected $_name = [
         'accountId' => 'accountId',
-        'bizId'     => 'bizId',
-        'detail'    => 'detail',
+        'bizId' => 'bizId',
+        'detail' => 'detail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

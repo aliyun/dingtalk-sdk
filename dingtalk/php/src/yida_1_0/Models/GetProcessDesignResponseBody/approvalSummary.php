@@ -17,9 +17,7 @@ class approvalSummary extends Model
         'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

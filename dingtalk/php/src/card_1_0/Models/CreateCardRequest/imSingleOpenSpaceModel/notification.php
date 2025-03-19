@@ -18,13 +18,11 @@ class notification extends Model
      */
     public $notificationOff;
     protected $_name = [
-        'alertContent'    => 'alertContent',
+        'alertContent' => 'alertContent',
         'notificationOff' => 'notificationOff',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

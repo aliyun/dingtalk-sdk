@@ -51,10 +51,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -100,18 +100,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateMiniApp',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/apps',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateMiniApp',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/apps',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateMiniAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -172,18 +172,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateMiniAppPlugin',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/plugins',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateMiniAppPlugin',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/plugins',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateMiniAppPluginResponse::fromMap($this->execute($params, $req, $runtime));
@@ -241,18 +241,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateVersionAcrossBundle',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/versions/createAcrossBundle',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateVersionAcrossBundle',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/versions/createAcrossBundle',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateVersionAcrossBundleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -304,18 +304,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetMaxVersion',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/apps/maxVersions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMaxVersion',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/apps/maxVersions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMaxVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -370,18 +370,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetMiniAppMetaData',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/apps/metadata',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMiniAppMetaData',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/apps/metadata',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMiniAppMetaDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -424,15 +424,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetSettingByMiniAppId',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/apps/settings',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSettingByMiniAppId',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/apps/settings',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSettingByMiniAppIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -484,18 +484,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InvokeHtmlBundleBuild',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/h5Bundles/build',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InvokeHtmlBundleBuild',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/h5Bundles/build',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InvokeHtmlBundleBuildResponse::fromMap($this->execute($params, $req, $runtime));
@@ -553,18 +553,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListAvaiableVersion',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/apps/versions/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAvaiableVersion',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/apps/versions/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAvaiableVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -616,18 +616,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryHtmlBundleBuild',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/h5Bundles/buildResults',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryHtmlBundleBuild',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/h5Bundles/buildResults',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryHtmlBundleBuildResponse::fromMap($this->execute($params, $req, $runtime));
@@ -675,18 +675,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RollBackVersion',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/versions/rollback',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'RollBackVersion',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/versions/rollback',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RollBackVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -735,18 +735,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetExtendSetting',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/apps/settings',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetExtendSetting',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/apps/settings',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetExtendSettingResponse::fromMap($this->execute($params, $req, $runtime));
@@ -801,18 +801,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateVersionStatus',
-            'version'     => 'miniapp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/miniapp/versions/status',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateVersionStatus',
+            'version' => 'miniapp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/miniapp/versions/status',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateVersionStatusResponse::fromMap($this->execute($params, $req, $runtime));

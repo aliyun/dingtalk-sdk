@@ -39,16 +39,14 @@ class attachExtractDecisionInfo extends Model
      */
     public $userId;
     protected $_name = [
-        'blackWords'     => 'blackWords',
+        'blackWords' => 'blackWords',
         'candidateWords' => 'candidateWords',
-        'corpId'         => 'corpId',
-        'deptIds'        => 'deptIds',
-        'userId'         => 'userId',
+        'corpId' => 'corpId',
+        'deptIds' => 'deptIds',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

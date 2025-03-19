@@ -17,9 +17,7 @@ class ListEventsInstancesResponseBody extends Model
         'events' => 'events',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListEventsInstancesResponseBody extends Model
         if (isset($map['events'])) {
             if (!empty($map['events'])) {
                 $model->events = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['events'] as $item) {
                     $model->events[$n++] = null !== $item ? events::fromMap($item) : $item;
                 }

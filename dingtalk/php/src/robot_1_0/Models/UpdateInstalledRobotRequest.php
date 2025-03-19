@@ -54,17 +54,15 @@ class UpdateInstalledRobotRequest extends Model
      */
     public $updateType;
     protected $_name = [
-        'brief'       => 'brief',
+        'brief' => 'brief',
         'description' => 'description',
-        'icon'        => 'icon',
-        'name'        => 'name',
-        'robotCode'   => 'robotCode',
-        'updateType'  => 'updateType',
+        'icon' => 'icon',
+        'name' => 'name',
+        'robotCode' => 'robotCode',
+        'updateType' => 'updateType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

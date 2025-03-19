@@ -22,13 +22,11 @@ class SortUserRequest extends Model
      */
     public $userIdList;
     protected $_name = [
-        'sortType'   => 'sortType',
+        'sortType' => 'sortType',
         'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

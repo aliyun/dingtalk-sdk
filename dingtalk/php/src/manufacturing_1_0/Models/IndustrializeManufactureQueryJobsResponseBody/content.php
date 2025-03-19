@@ -129,28 +129,26 @@ class content extends Model
      */
     public $uuid;
     protected $_name = [
-        'corpId'            => 'corpId',
-        'gmtCreate'         => 'gmtCreate',
-        'gmtModified'       => 'gmtModified',
-        'id'                => 'id',
-        'instNo'            => 'instNo',
-        'isBatchJob'        => 'isBatchJob',
-        'manufactureDate'   => 'manufactureDate',
-        'manufactureDay'    => 'manufactureDay',
-        'mesAppKey'         => 'mesAppKey',
-        'processName'       => 'processName',
+        'corpId' => 'corpId',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'id' => 'id',
+        'instNo' => 'instNo',
+        'isBatchJob' => 'isBatchJob',
+        'manufactureDate' => 'manufactureDate',
+        'manufactureDay' => 'manufactureDay',
+        'mesAppKey' => 'mesAppKey',
+        'processName' => 'processName',
         'qualifiedQuantity' => 'qualifiedQuantity',
-        'scrappedQuantity'  => 'scrappedQuantity',
-        'unitPrice'         => 'unitPrice',
-        'userId'            => 'userId',
-        'userIdList'        => 'userIdList',
-        'userNameList'      => 'userNameList',
-        'uuid'              => 'uuid',
+        'scrappedQuantity' => 'scrappedQuantity',
+        'unitPrice' => 'unitPrice',
+        'userId' => 'userId',
+        'userIdList' => 'userIdList',
+        'userNameList' => 'userNameList',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

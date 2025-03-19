@@ -24,13 +24,11 @@ class QueryDocContentRequest extends Model
      */
     public $targetFormat;
     protected $_name = [
-        'operatorId'   => 'operatorId',
+        'operatorId' => 'operatorId',
         'targetFormat' => 'targetFormat',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

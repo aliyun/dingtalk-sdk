@@ -173,35 +173,33 @@ class domainList extends Model
      */
     public $type;
     protected $_name = [
-        'action'              => 'action',
-        'activeTimeGMT'       => 'activeTimeGMT',
-        'activityId'          => 'activityId',
-        'digitalSignature'    => 'digitalSignature',
-        'files'               => 'files',
-        'formatAction'        => 'formatAction',
-        'operateTimeGMT'      => 'operateTimeGMT',
-        'operateType'         => 'operateType',
-        'operator'            => 'operator',
+        'action' => 'action',
+        'activeTimeGMT' => 'activeTimeGMT',
+        'activityId' => 'activityId',
+        'digitalSignature' => 'digitalSignature',
+        'files' => 'files',
+        'formatAction' => 'formatAction',
+        'operateTimeGMT' => 'operateTimeGMT',
+        'operateType' => 'operateType',
+        'operator' => 'operator',
         'operatorAgentIdList' => 'operatorAgentIdList',
         'operatorDisplayName' => 'operatorDisplayName',
-        'operatorName'        => 'operatorName',
-        'operatorNickName'    => 'operatorNickName',
-        'operatorPhotoUrl'    => 'operatorPhotoUrl',
-        'operatorStatus'      => 'operatorStatus',
-        'processInstanceId'   => 'processInstanceId',
-        'remark'              => 'remark',
-        'showName'            => 'showName',
-        'size'                => 'size',
-        'taskExecuteType'     => 'taskExecuteType',
-        'taskHoldTimeGMT'     => 'taskHoldTimeGMT',
-        'taskId'              => 'taskId',
-        'taskType'            => 'taskType',
-        'type'                => 'type',
+        'operatorName' => 'operatorName',
+        'operatorNickName' => 'operatorNickName',
+        'operatorPhotoUrl' => 'operatorPhotoUrl',
+        'operatorStatus' => 'operatorStatus',
+        'processInstanceId' => 'processInstanceId',
+        'remark' => 'remark',
+        'showName' => 'showName',
+        'size' => 'size',
+        'taskExecuteType' => 'taskExecuteType',
+        'taskHoldTimeGMT' => 'taskHoldTimeGMT',
+        'taskId' => 'taskId',
+        'taskType' => 'taskType',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -326,7 +324,7 @@ class domainList extends Model
         if (isset($map['operatorAgentIdList'])) {
             if (!empty($map['operatorAgentIdList'])) {
                 $model->operatorAgentIdList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['operatorAgentIdList'] as $item) {
                     $model->operatorAgentIdList[$n++] = null !== $item ? operatorAgentIdList::fromMap($item) : $item;
                 }

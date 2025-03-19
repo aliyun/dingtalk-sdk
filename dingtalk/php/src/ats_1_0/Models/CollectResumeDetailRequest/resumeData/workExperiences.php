@@ -64,19 +64,17 @@ class workExperiences extends Model
      */
     public $startDate;
     protected $_name = [
-        'companyName'    => 'companyName',
-        'department'     => 'department',
-        'description'    => 'description',
-        'endDate'        => 'endDate',
-        'jobTitle'       => 'jobTitle',
-        'location'       => 'location',
+        'companyName' => 'companyName',
+        'department' => 'department',
+        'description' => 'description',
+        'endDate' => 'endDate',
+        'jobTitle' => 'jobTitle',
+        'location' => 'location',
         'responsibility' => 'responsibility',
-        'startDate'      => 'startDate',
+        'startDate' => 'startDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

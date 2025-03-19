@@ -20,9 +20,7 @@ class CollegeQueryStudentInfoByStudentIdRequest extends Model
         'studentId' => 'studentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

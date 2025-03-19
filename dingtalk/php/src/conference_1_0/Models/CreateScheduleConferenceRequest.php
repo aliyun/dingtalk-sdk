@@ -50,16 +50,14 @@ class CreateScheduleConferenceRequest extends Model
      */
     public $title;
     protected $_name = [
-        'creatorUnionId'           => 'creatorUnionId',
-        'endTime'                  => 'endTime',
+        'creatorUnionId' => 'creatorUnionId',
+        'endTime' => 'endTime',
         'scheduleConfSettingModel' => 'scheduleConfSettingModel',
-        'startTime'                => 'startTime',
-        'title'                    => 'title',
+        'startTime' => 'startTime',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class unitAttributes extends Model
         'unitId' => 'unitId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

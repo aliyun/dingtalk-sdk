@@ -16,9 +16,7 @@ class CreateTicketResponseBody extends Model
         'openTicketId' => 'openTicketId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,12 +23,10 @@ class QueryOfficialAccountUserBasicInfoRequest extends Model
     public $unionId;
     protected $_name = [
         'bindingToken' => 'bindingToken',
-        'unionId'      => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

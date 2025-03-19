@@ -35,14 +35,12 @@ class CollegeRemoveManagerRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'deptId'  => 'deptId',
+        'deptId' => 'deptId',
         'isForce' => 'isForce',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

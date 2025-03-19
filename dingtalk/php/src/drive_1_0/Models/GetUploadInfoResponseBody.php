@@ -26,13 +26,11 @@ class GetUploadInfoResponseBody extends Model
     public $stsUploadInfo;
     protected $_name = [
         'headerSignatureUploadInfo' => 'headerSignatureUploadInfo',
-        'region'                    => 'region',
-        'stsUploadInfo'             => 'stsUploadInfo',
+        'region' => 'region',
+        'stsUploadInfo' => 'stsUploadInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

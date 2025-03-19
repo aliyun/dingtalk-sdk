@@ -24,13 +24,11 @@ class FinishBeginnerTaskRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'scope'  => 'scope',
+        'scope' => 'scope',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

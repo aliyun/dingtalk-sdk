@@ -23,12 +23,10 @@ class SupplAddRoleRequest extends Model
     public $roleName;
     protected $_name = [
         'parentRoleGroupId' => 'parentRoleGroupId',
-        'roleName'          => 'roleName',
+        'roleName' => 'roleName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

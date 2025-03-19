@@ -42,15 +42,13 @@ class CreateGroupRequest extends Model
      */
     public $relationType;
     protected $_name = [
-        'groupName'     => 'groupName',
+        'groupName' => 'groupName',
         'memberUserIds' => 'memberUserIds',
-        'ownerUserId'   => 'ownerUserId',
-        'relationType'  => 'relationType',
+        'ownerUserId' => 'ownerUserId',
+        'relationType' => 'relationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

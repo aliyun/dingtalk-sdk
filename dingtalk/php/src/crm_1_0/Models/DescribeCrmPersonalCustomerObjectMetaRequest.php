@@ -16,9 +16,7 @@ class DescribeCrmPersonalCustomerObjectMetaRequest extends Model
         'relationType' => 'relationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -24,13 +24,11 @@ class orderType extends Model
     public $value;
     protected $_name = [
         'direction' => 'direction',
-        'name'      => 'name',
-        'value'     => 'value',
+        'name' => 'name',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

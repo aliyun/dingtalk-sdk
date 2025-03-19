@@ -28,9 +28,7 @@ class AttendanceBleDevicesQueryRequest extends Model
         'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,14 +27,12 @@ class SearchDepartmentResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'hasMore'    => 'hasMore',
-        'list'       => 'list',
+        'hasMore' => 'hasMore',
+        'list' => 'list',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

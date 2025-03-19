@@ -77,24 +77,22 @@ class data extends Model
      */
     public $url;
     protected $_name = [
-        'activityId'      => 'activityId',
-        'appType'         => 'appType',
-        'corpId'          => 'corpId',
-        'createTimeGMT'   => 'createTimeGMT',
-        'creatorUserId'   => 'creatorUserId',
-        'formInstanceId'  => 'formInstanceId',
-        'instStatus'      => 'instStatus',
-        'mobileUrl'       => 'mobileUrl',
+        'activityId' => 'activityId',
+        'appType' => 'appType',
+        'corpId' => 'corpId',
+        'createTimeGMT' => 'createTimeGMT',
+        'creatorUserId' => 'creatorUserId',
+        'formInstanceId' => 'formInstanceId',
+        'instStatus' => 'instStatus',
+        'mobileUrl' => 'mobileUrl',
         'modifiedTimeGMT' => 'modifiedTimeGMT',
-        'processCode'     => 'processCode',
-        'title'           => 'title',
-        'titleInEnglish'  => 'titleInEnglish',
-        'url'             => 'url',
+        'processCode' => 'processCode',
+        'title' => 'title',
+        'titleInEnglish' => 'titleInEnglish',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

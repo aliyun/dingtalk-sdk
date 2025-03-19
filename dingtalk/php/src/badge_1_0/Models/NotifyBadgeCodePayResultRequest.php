@@ -154,28 +154,26 @@ class NotifyBadgeCodePayResultRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'amount'               => 'amount',
-        'chargeAmount'         => 'chargeAmount',
-        'corpId'               => 'corpId',
-        'extInfo'              => 'extInfo',
-        'gmtTradeCreate'       => 'gmtTradeCreate',
-        'gmtTradeFinish'       => 'gmtTradeFinish',
-        'merchantName'         => 'merchantName',
+        'amount' => 'amount',
+        'chargeAmount' => 'chargeAmount',
+        'corpId' => 'corpId',
+        'extInfo' => 'extInfo',
+        'gmtTradeCreate' => 'gmtTradeCreate',
+        'gmtTradeFinish' => 'gmtTradeFinish',
+        'merchantName' => 'merchantName',
         'payChannelDetailList' => 'payChannelDetailList',
-        'payCode'              => 'payCode',
-        'promotionAmount'      => 'promotionAmount',
-        'remark'               => 'remark',
-        'title'                => 'title',
-        'tradeErrorCode'       => 'tradeErrorCode',
-        'tradeErrorMsg'        => 'tradeErrorMsg',
-        'tradeNo'              => 'tradeNo',
-        'tradeStatus'          => 'tradeStatus',
-        'userId'               => 'userId',
+        'payCode' => 'payCode',
+        'promotionAmount' => 'promotionAmount',
+        'remark' => 'remark',
+        'title' => 'title',
+        'tradeErrorCode' => 'tradeErrorCode',
+        'tradeErrorMsg' => 'tradeErrorMsg',
+        'tradeNo' => 'tradeNo',
+        'tradeStatus' => 'tradeStatus',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -273,7 +271,7 @@ class NotifyBadgeCodePayResultRequest extends Model
         if (isset($map['payChannelDetailList'])) {
             if (!empty($map['payChannelDetailList'])) {
                 $model->payChannelDetailList = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['payChannelDetailList'] as $item) {
                     $model->payChannelDetailList[$n++] = null !== $item ? payChannelDetailList::fromMap($item) : $item;
                 }

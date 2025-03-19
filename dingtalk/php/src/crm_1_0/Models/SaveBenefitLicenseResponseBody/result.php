@@ -21,13 +21,11 @@ class result extends Model
      */
     public $licenses;
     protected $_name = [
-        'domain'   => 'domain',
+        'domain' => 'domain',
         'licenses' => 'licenses',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class result extends Model
         if (isset($map['licenses'])) {
             if (!empty($map['licenses'])) {
                 $model->licenses = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['licenses'] as $item) {
                     $model->licenses[$n++] = null !== $item ? licenses::fromMap($item) : $item;
                 }

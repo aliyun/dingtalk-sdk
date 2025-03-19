@@ -17,9 +17,7 @@ class GetRecycleItemResponseBody extends Model
         'item' => 'item',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

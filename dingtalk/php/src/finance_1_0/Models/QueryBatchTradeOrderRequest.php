@@ -18,9 +18,7 @@ class QueryBatchTradeOrderRequest extends Model
         'outBatchNos' => 'outBatchNos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

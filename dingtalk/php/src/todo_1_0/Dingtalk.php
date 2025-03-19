@@ -71,8 +71,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -117,18 +117,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CountTodoTasks',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/count',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CountTodoTasks',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/tasks/count',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CountTodoTasksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -193,18 +193,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreatePersonalTodoTask',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/me/personalTasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreatePersonalTodoTask',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/me/personalTasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreatePersonalTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -294,19 +294,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTodoTask',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTodoTask',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/tasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -373,19 +373,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTodoTypeConfig',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/configs/types',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTodoTypeConfig',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/configs/types',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTodoTypeConfigResponse::fromMap($this->execute($params, $req, $runtime));
@@ -434,18 +434,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteTodoTask',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteTodoTask',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -491,15 +491,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetTodoTask',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTodoTask',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -544,15 +544,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetTodoTaskBySourceId',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/sources/' . $sourceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTodoTaskBySourceId',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/tasks/sources/' . $sourceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTodoTaskBySourceIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -597,15 +597,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetTodoTaskDetail',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/exclusive/users/' . $unionId . '/tasks/' . $taskId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTodoTaskDetail',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/exclusive/users/' . $unionId . '/tasks/' . $taskId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTodoTaskDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -650,15 +650,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetTodoTypeConfig',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTodoTypeConfig',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTodoTypeConfigResponse::fromMap($this->execute($params, $req, $runtime));
@@ -701,15 +701,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListAllBizCategory',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/apps/allBizcategories/list',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAllBizCategory',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/apps/allBizcategories/list',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAllBizCategoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -749,15 +749,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryOrgConfig',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/organizations/configs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOrgConfig',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/organizations/configs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOrgConfigResponse::fromMap($this->execute($params, $req, $runtime));
@@ -826,18 +826,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryOrgTodoByUser',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/organizations/tasks/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOrgTodoByUser',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/organizations/tasks/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOrgTodoByUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -891,18 +891,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryOrgTodoTasks',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/org/tasks/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOrgTodoTasks',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/org/tasks/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOrgTodoTasksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -974,18 +974,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryTodoTasks',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/list',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryTodoTasks',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/tasks/list',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryTodoTasksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1035,18 +1035,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RemoveBizCategory',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/apps/bizcategories',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveBizCategory',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/apps/bizcategories',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemoveBizCategoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1101,18 +1101,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SetBizCategory',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/apps/bizcategories/save',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetBizCategory',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/apps/bizcategories/save',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetBizCategoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1167,18 +1167,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetOrgConfig',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/organizations/configs/save',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetOrgConfig',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/organizations/configs/save',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetOrgConfigResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1245,19 +1245,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTodoTask',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTodoTask',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1311,19 +1311,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTodoTaskExecutorStatus',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '/executorStatus',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTodoTaskExecutorStatus',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '/executorStatus',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTodoTaskExecutorStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1392,19 +1392,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTodoTypeConfig',
-            'version'     => 'todo_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTodoTypeConfig',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTodoTypeConfigResponse::fromMap($this->execute($params, $req, $runtime));

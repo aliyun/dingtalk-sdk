@@ -42,15 +42,13 @@ class CollegeListStudentInfoRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'deptId'            => 'deptId',
+        'deptId' => 'deptId',
         'dingStudentStatus' => 'dingStudentStatus',
-        'pageNumber'        => 'pageNumber',
-        'pageSize'          => 'pageSize',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

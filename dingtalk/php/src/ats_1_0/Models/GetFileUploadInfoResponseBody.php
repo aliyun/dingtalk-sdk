@@ -71,18 +71,16 @@ class GetFileUploadInfoResponseBody extends Model
      */
     public $mediaId;
     protected $_name = [
-        'accessKeyId'                 => 'accessKeyId',
-        'accessKeySecret'             => 'accessKeySecret',
-        'accessToken'                 => 'accessToken',
+        'accessKeyId' => 'accessKeyId',
+        'accessKeySecret' => 'accessKeySecret',
+        'accessToken' => 'accessToken',
         'accessTokenExpirationMillis' => 'accessTokenExpirationMillis',
-        'bucket'                      => 'bucket',
-        'endPoint'                    => 'endPoint',
-        'mediaId'                     => 'mediaId',
+        'bucket' => 'bucket',
+        'endPoint' => 'endPoint',
+        'mediaId' => 'mediaId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

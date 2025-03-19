@@ -22,12 +22,10 @@ class rolePermissionItemList extends Model
     public $roleCode;
     protected $_name = [
         'permissionList' => 'permissionList',
-        'roleCode'       => 'roleCode',
+        'roleCode' => 'roleCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class rolePermissionItemList extends Model
         if (isset($map['permissionList'])) {
             if (!empty($map['permissionList'])) {
                 $model->permissionList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['permissionList'] as $item) {
                     $model->permissionList[$n++] = null !== $item ? permissionList::fromMap($item) : $item;
                 }

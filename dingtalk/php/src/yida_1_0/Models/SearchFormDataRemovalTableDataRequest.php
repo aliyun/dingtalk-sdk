@@ -107,24 +107,22 @@ class SearchFormDataRemovalTableDataRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'             => 'appType',
-        'createFromTimeGMT'   => 'createFromTimeGMT',
-        'createToTimeGMT'     => 'createToTimeGMT',
-        'formUuid'            => 'formUuid',
+        'appType' => 'appType',
+        'createFromTimeGMT' => 'createFromTimeGMT',
+        'createToTimeGMT' => 'createToTimeGMT',
+        'formUuid' => 'formUuid',
         'modifiedFromTimeGMT' => 'modifiedFromTimeGMT',
-        'modifiedToTimeGMT'   => 'modifiedToTimeGMT',
-        'orderConfigJson'     => 'orderConfigJson',
-        'originatorId'        => 'originatorId',
-        'pageNumber'          => 'pageNumber',
-        'pageSize'            => 'pageSize',
-        'searchFieldJson'     => 'searchFieldJson',
-        'systemToken'         => 'systemToken',
-        'userId'              => 'userId',
+        'modifiedToTimeGMT' => 'modifiedToTimeGMT',
+        'orderConfigJson' => 'orderConfigJson',
+        'originatorId' => 'originatorId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'searchFieldJson' => 'searchFieldJson',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

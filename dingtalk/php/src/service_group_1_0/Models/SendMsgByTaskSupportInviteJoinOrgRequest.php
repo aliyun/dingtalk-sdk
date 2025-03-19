@@ -60,16 +60,14 @@ class SendMsgByTaskSupportInviteJoinOrgRequest extends Model
     public $taskName;
     protected $_name = [
         'messageContent' => 'messageContent',
-        'mobilePhones'   => 'mobilePhones',
-        'needUrlTrack'   => 'needUrlTrack',
-        'openTeamId'     => 'openTeamId',
-        'sendChannel'    => 'sendChannel',
-        'taskName'       => 'taskName',
+        'mobilePhones' => 'mobilePhones',
+        'needUrlTrack' => 'needUrlTrack',
+        'openTeamId' => 'openTeamId',
+        'sendChannel' => 'sendChannel',
+        'taskName' => 'taskName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

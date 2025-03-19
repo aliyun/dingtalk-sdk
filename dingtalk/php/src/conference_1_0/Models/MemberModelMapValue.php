@@ -92,23 +92,21 @@ class MemberModelMapValue extends Model
      */
     public $deviceType;
     protected $_name = [
-        'unionId'        => 'unionId',
-        'conferenceId'   => 'conferenceId',
-        'userNick'       => 'userNick',
-        'joinTime'       => 'joinTime',
-        'leaveTime'      => 'leaveTime',
-        'duration'       => 'duration',
-        'attendStatus'   => 'attendStatus',
-        'host'           => 'host',
-        'coHost'         => 'coHost',
+        'unionId' => 'unionId',
+        'conferenceId' => 'conferenceId',
+        'userNick' => 'userNick',
+        'joinTime' => 'joinTime',
+        'leaveTime' => 'leaveTime',
+        'duration' => 'duration',
+        'attendStatus' => 'attendStatus',
+        'host' => 'host',
+        'coHost' => 'coHost',
         'outerOrgMember' => 'outerOrgMember',
-        'pstnJoin'       => 'pstnJoin',
-        'deviceType'     => 'deviceType',
+        'pstnJoin' => 'pstnJoin',
+        'deviceType' => 'deviceType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

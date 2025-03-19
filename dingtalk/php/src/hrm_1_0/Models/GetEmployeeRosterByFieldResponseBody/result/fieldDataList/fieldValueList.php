@@ -30,13 +30,11 @@ class fieldValueList extends Model
     public $value;
     protected $_name = [
         'itemIndex' => 'itemIndex',
-        'label'     => 'label',
-        'value'     => 'value',
+        'label' => 'label',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

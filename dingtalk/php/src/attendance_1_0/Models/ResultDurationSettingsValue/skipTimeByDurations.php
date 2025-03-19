@@ -19,12 +19,10 @@ class skipTimeByDurations extends Model
     public $minus;
     protected $_name = [
         'duration' => 'duration',
-        'minus'    => 'minus',
+        'minus' => 'minus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

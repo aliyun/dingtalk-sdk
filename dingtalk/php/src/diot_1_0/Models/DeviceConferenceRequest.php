@@ -38,15 +38,13 @@ class DeviceConferenceRequest extends Model
      */
     public $deviceIds;
     protected $_name = [
-        'confTitle'          => 'confTitle',
-        'conferenceId'       => 'conferenceId',
+        'confTitle' => 'confTitle',
+        'conferenceId' => 'conferenceId',
         'conferencePassword' => 'conferencePassword',
-        'deviceIds'          => 'deviceIds',
+        'deviceIds' => 'deviceIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

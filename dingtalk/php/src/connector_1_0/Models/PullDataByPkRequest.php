@@ -20,13 +20,11 @@ class PullDataByPkRequest extends Model
      */
     public $primaryKey;
     protected $_name = [
-        'appId'      => 'appId',
+        'appId' => 'appId',
         'primaryKey' => 'primaryKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

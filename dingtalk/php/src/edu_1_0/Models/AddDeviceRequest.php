@@ -72,17 +72,15 @@ class AddDeviceRequest extends Model
     public $type;
     protected $_name = [
         'merchantId' => 'merchantId',
-        'model'      => 'model',
-        'name'       => 'name',
-        'scene'      => 'scene',
-        'sn'         => 'sn',
-        'status'     => 'status',
-        'type'       => 'type',
+        'model' => 'model',
+        'name' => 'name',
+        'scene' => 'scene',
+        'sn' => 'sn',
+        'status' => 'status',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

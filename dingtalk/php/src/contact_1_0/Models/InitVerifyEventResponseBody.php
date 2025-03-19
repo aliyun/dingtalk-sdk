@@ -16,9 +16,7 @@ class InitVerifyEventResponseBody extends Model
         'verifyId' => 'verifyId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

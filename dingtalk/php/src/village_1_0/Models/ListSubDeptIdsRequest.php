@@ -18,9 +18,7 @@ class ListSubDeptIdsRequest extends Model
         'subCorpId' => 'subCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

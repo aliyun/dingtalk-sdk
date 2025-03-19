@@ -78,20 +78,18 @@ class relationMetaDTOList extends Model
      */
     public $relationType;
     protected $_name = [
-        'creatorUserId'      => 'creatorUserId',
-        'desc'               => 'desc',
-        'gmtCreate'          => 'gmtCreate',
-        'gmtModified'        => 'gmtModified',
-        'items'              => 'items',
-        'name'               => 'name',
-        'relationMetaCode'   => 'relationMetaCode',
+        'creatorUserId' => 'creatorUserId',
+        'desc' => 'desc',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'items' => 'items',
+        'name' => 'name',
+        'relationMetaCode' => 'relationMetaCode',
         'relationMetaStatus' => 'relationMetaStatus',
-        'relationType'       => 'relationType',
+        'relationType' => 'relationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -156,7 +154,7 @@ class relationMetaDTOList extends Model
         if (isset($map['items'])) {
             if (!empty($map['items'])) {
                 $model->items = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['items'] as $item) {
                     $model->items[$n++] = null !== $item ? items::fromMap($item) : $item;
                 }

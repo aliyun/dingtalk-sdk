@@ -48,18 +48,16 @@ class CreatePersonalTodoTaskRequest extends Model
      */
     public $subject;
     protected $_name = [
-        'description'       => 'description',
-        'dueTime'           => 'dueTime',
-        'executorIds'       => 'executorIds',
-        'notifyConfigs'     => 'notifyConfigs',
-        'participantIds'    => 'participantIds',
+        'description' => 'description',
+        'dueTime' => 'dueTime',
+        'executorIds' => 'executorIds',
+        'notifyConfigs' => 'notifyConfigs',
+        'participantIds' => 'participantIds',
         'reminderTimeStamp' => 'reminderTimeStamp',
-        'subject'           => 'subject',
+        'subject' => 'subject',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

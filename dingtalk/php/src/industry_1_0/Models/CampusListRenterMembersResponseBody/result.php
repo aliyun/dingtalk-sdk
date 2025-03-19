@@ -43,18 +43,16 @@ class result extends Model
      */
     public $userId;
     protected $_name = [
-        'extend'      => 'extend',
+        'extend' => 'extend',
         'inviteState' => 'inviteState',
-        'name'        => 'name',
-        'state'       => 'state',
-        'type'        => 'type',
-        'unionId'     => 'unionId',
-        'userId'      => 'userId',
+        'name' => 'name',
+        'state' => 'state',
+        'type' => 'type',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

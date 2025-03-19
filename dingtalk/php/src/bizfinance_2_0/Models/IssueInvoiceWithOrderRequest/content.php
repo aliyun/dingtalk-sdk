@@ -95,28 +95,26 @@ class content extends Model
      */
     public $taxnum;
     protected $_name = [
-        'additionInfo'     => 'additionInfo',
-        'applyPerson'      => 'applyPerson',
-        'bankAccount'      => 'bankAccount',
-        'bankName'         => 'bankName',
-        'invoiceRemark'    => 'invoiceRemark',
-        'invoiceType'      => 'invoiceType',
-        'naturalPerson'    => 'naturalPerson',
-        'orderId'          => 'orderId',
-        'payee'            => 'payee',
-        'phone'            => 'phone',
-        'products'         => 'products',
-        'purchaser'        => 'purchaser',
+        'additionInfo' => 'additionInfo',
+        'applyPerson' => 'applyPerson',
+        'bankAccount' => 'bankAccount',
+        'bankName' => 'bankName',
+        'invoiceRemark' => 'invoiceRemark',
+        'invoiceType' => 'invoiceType',
+        'naturalPerson' => 'naturalPerson',
+        'orderId' => 'orderId',
+        'payee' => 'payee',
+        'phone' => 'phone',
+        'products' => 'products',
+        'purchaser' => 'purchaser',
         'purchaserAddress' => 'purchaserAddress',
-        'purchaserTel'     => 'purchaserTel',
-        'remark'           => 'remark',
-        'reviewer'         => 'reviewer',
-        'taxnum'           => 'taxnum',
+        'purchaserTel' => 'purchaserTel',
+        'remark' => 'remark',
+        'reviewer' => 'reviewer',
+        'taxnum' => 'taxnum',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -199,7 +197,7 @@ class content extends Model
         if (isset($map['additionInfo'])) {
             if (!empty($map['additionInfo'])) {
                 $model->additionInfo = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['additionInfo'] as $item) {
                     $model->additionInfo[$n++] = null !== $item ? additionInfo::fromMap($item) : $item;
                 }
@@ -235,7 +233,7 @@ class content extends Model
         if (isset($map['products'])) {
             if (!empty($map['products'])) {
                 $model->products = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['products'] as $item) {
                     $model->products[$n++] = null !== $item ? products::fromMap($item) : $item;
                 }

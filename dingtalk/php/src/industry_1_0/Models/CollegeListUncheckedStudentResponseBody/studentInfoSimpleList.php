@@ -49,16 +49,14 @@ class studentInfoSimpleList extends Model
     public $userId;
     protected $_name = [
         'dingMemberStatus' => 'dingMemberStatus',
-        'isActive'         => 'isActive',
-        'studentId'        => 'studentId',
-        'studentName'      => 'studentName',
-        'unionId'          => 'unionId',
-        'userId'           => 'userId',
+        'isActive' => 'isActive',
+        'studentId' => 'studentId',
+        'studentName' => 'studentName',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

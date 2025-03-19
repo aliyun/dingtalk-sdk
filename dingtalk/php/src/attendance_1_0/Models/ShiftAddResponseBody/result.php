@@ -22,13 +22,11 @@ class result extends Model
      */
     public $shiftId;
     protected $_name = [
-        'name'    => 'name',
+        'name' => 'name',
         'shiftId' => 'shiftId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

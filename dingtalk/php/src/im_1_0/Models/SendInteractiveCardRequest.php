@@ -93,26 +93,24 @@ class SendInteractiveCardRequest extends Model
      */
     public $userIdType;
     protected $_name = [
-        'atOpenIds'          => 'atOpenIds',
-        'callbackRouteKey'   => 'callbackRouteKey',
-        'cardData'           => 'cardData',
-        'cardOptions'        => 'cardOptions',
-        'cardTemplateId'     => 'cardTemplateId',
-        'chatBotId'          => 'chatBotId',
-        'conversationType'   => 'conversationType',
-        'digitalWorkerCode'  => 'digitalWorkerCode',
+        'atOpenIds' => 'atOpenIds',
+        'callbackRouteKey' => 'callbackRouteKey',
+        'cardData' => 'cardData',
+        'cardOptions' => 'cardOptions',
+        'cardTemplateId' => 'cardTemplateId',
+        'chatBotId' => 'chatBotId',
+        'conversationType' => 'conversationType',
+        'digitalWorkerCode' => 'digitalWorkerCode',
         'openConversationId' => 'openConversationId',
-        'outTrackId'         => 'outTrackId',
-        'privateData'        => 'privateData',
-        'pullStrategy'       => 'pullStrategy',
+        'outTrackId' => 'outTrackId',
+        'privateData' => 'privateData',
+        'pullStrategy' => 'pullStrategy',
         'receiverUserIdList' => 'receiverUserIdList',
-        'robotCode'          => 'robotCode',
-        'userIdType'         => 'userIdType',
+        'robotCode' => 'robotCode',
+        'userIdType' => 'userIdType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

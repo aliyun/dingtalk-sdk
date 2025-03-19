@@ -18,9 +18,7 @@ class AddHrmPreentryResponseBody extends Model
         'tmpUserId' => 'tmpUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

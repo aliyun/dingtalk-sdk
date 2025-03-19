@@ -22,9 +22,7 @@ class VPaasProxyResponseBody extends Model
         'ticket' => 'ticket',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

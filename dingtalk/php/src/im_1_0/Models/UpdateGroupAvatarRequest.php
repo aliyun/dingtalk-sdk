@@ -24,13 +24,11 @@ class UpdateGroupAvatarRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'groupAvatar'        => 'groupAvatar',
+        'groupAvatar' => 'groupAvatar',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

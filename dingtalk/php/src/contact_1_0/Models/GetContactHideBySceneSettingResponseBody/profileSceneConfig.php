@@ -16,9 +16,7 @@ class profileSceneConfig extends Model
         'active' => 'active',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

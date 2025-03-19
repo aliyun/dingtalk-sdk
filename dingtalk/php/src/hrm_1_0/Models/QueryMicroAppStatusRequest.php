@@ -16,9 +16,7 @@ class QueryMicroAppStatusRequest extends Model
         'tenantIdList' => 'tenantIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

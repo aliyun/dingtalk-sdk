@@ -34,15 +34,13 @@ class CancelConsumeRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'benefitCode'  => 'benefitCode',
+        'benefitCode' => 'benefitCode',
         'bizRequestId' => 'bizRequestId',
-        'quota'        => 'quota',
-        'userId'       => 'userId',
+        'quota' => 'quota',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

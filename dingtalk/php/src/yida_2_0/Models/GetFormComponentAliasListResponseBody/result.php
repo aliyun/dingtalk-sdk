@@ -18,13 +18,11 @@ class result extends Model
      */
     public $fieldId;
     protected $_name = [
-        'alias'   => 'alias',
+        'alias' => 'alias',
         'fieldId' => 'fieldId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

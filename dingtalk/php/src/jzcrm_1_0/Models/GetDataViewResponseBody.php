@@ -30,14 +30,12 @@ class GetDataViewResponseBody extends Model
      */
     public $time;
     protected $_name = [
-        'data'     => 'data',
+        'data' => 'data',
         'dataname' => 'dataname',
-        'time'     => 'time',
+        'time' => 'time',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -26,9 +26,7 @@ class signers extends Model
         'signerName' => 'signerName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

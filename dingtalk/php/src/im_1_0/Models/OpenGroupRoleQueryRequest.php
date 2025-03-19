@@ -23,12 +23,10 @@ class OpenGroupRoleQueryRequest extends Model
     public $userId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'userId'             => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

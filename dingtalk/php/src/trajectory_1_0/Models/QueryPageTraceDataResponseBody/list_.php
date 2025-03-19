@@ -32,12 +32,10 @@ class list_ extends Model
     protected $_name = [
         'coordinates' => 'coordinates',
         'gmtLocation' => 'gmtLocation',
-        'gmtUpload'   => 'gmtUpload',
+        'gmtUpload' => 'gmtUpload',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

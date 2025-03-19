@@ -19,12 +19,10 @@ class ValidateApplicationAuthorizationServiceOrderResponseBody extends Model
     public $status;
     protected $_name = [
         'message' => 'message',
-        'status'  => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

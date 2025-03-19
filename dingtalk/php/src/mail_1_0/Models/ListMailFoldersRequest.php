@@ -16,9 +16,7 @@ class ListMailFoldersRequest extends Model
         'folderId' => 'folderId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

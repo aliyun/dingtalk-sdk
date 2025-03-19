@@ -76,19 +76,17 @@ class CreateRefundFlowRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'faceId'       => 'faceId',
-        'operatorId'   => 'operatorId',
+        'faceId' => 'faceId',
+        'operatorId' => 'operatorId',
         'operatorName' => 'operatorName',
-        'orderNo'      => 'orderNo',
-        'signature'    => 'signature',
-        'sn'           => 'sn',
-        'timestamp'    => 'timestamp',
-        'userId'       => 'userId',
+        'orderNo' => 'orderNo',
+        'signature' => 'signature',
+        'sn' => 'sn',
+        'timestamp' => 'timestamp',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

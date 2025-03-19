@@ -50,17 +50,15 @@ class GetCheckinRecordByUserRequest extends Model
      */
     public $userIdList;
     protected $_name = [
-        'endTime'        => 'endTime',
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
+        'endTime' => 'endTime',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'operatorUserId' => 'operatorUserId',
-        'startTime'      => 'startTime',
-        'userIdList'     => 'userIdList',
+        'startTime' => 'startTime',
+        'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

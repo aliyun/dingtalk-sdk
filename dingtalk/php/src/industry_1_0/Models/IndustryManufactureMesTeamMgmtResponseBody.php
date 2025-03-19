@@ -29,13 +29,11 @@ class IndustryManufactureMesTeamMgmtResponseBody extends Model
     public $result;
     protected $_name = [
         'dingOpenErrcode' => 'dingOpenErrcode',
-        'errorMsg'        => 'errorMsg',
-        'result'          => 'result',
+        'errorMsg' => 'errorMsg',
+        'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

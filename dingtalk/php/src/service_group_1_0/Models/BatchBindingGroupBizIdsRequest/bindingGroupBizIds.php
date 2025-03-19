@@ -26,13 +26,11 @@ class bindingGroupBizIds extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'bizId'              => 'bizId',
+        'bizId' => 'bizId',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

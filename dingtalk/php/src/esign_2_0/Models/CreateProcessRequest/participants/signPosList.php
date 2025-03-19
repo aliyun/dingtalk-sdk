@@ -49,19 +49,17 @@ class signPosList extends Model
      */
     public $y;
     protected $_name = [
-        'fileId'          => 'fileId',
-        'isCrossPage'     => 'isCrossPage',
-        'needSignDate'    => 'needSignDate',
-        'page'            => 'page',
-        'signDate'        => 'signDate',
+        'fileId' => 'fileId',
+        'isCrossPage' => 'isCrossPage',
+        'needSignDate' => 'needSignDate',
+        'page' => 'page',
+        'signDate' => 'signDate',
         'signRequirement' => 'signRequirement',
-        'x'               => 'x',
-        'y'               => 'y',
+        'x' => 'x',
+        'y' => 'y',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

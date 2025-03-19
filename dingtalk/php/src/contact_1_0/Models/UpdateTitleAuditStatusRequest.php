@@ -63,22 +63,20 @@ class UpdateTitleAuditStatusRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'authStatus'     => 'authStatus',
+        'authStatus' => 'authStatus',
         'educationLevel' => 'educationLevel',
-        'extension'      => 'extension',
-        'major'          => 'major',
-        'position'       => 'position',
-        'reasonCode'     => 'reasonCode',
-        'reasonMsg'      => 'reasonMsg',
-        'school'         => 'school',
-        'type'           => 'type',
-        'unionId'        => 'unionId',
-        'uuid'           => 'uuid',
+        'extension' => 'extension',
+        'major' => 'major',
+        'position' => 'position',
+        'reasonCode' => 'reasonCode',
+        'reasonMsg' => 'reasonMsg',
+        'school' => 'school',
+        'type' => 'type',
+        'unionId' => 'unionId',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -40,15 +40,13 @@ class GetInnerGroupMembersRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'maxResults'         => 'maxResults',
-        'nextToken'          => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'openConversationId' => 'openConversationId',
-        'userId'             => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

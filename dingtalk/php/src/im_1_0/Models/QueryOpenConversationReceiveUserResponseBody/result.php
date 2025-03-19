@@ -17,9 +17,7 @@ class result extends Model
         'receiveUser' => 'receiveUser',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

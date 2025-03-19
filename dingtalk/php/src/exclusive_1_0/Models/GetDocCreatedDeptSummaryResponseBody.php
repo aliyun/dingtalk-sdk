@@ -28,14 +28,12 @@ class GetDocCreatedDeptSummaryResponseBody extends Model
      */
     public $nextToken;
     protected $_name = [
-        'data'      => 'data',
-        'hasMore'   => 'hasMore',
+        'data' => 'data',
+        'hasMore' => 'hasMore',
         'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class GetDocCreatedDeptSummaryResponseBody extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }

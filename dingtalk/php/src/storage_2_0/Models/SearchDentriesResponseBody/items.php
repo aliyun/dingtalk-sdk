@@ -45,17 +45,15 @@ class items extends Model
      */
     public $path;
     protected $_name = [
-        'creator'        => 'creator',
-        'dentryUuid'     => 'dentryUuid',
+        'creator' => 'creator',
+        'dentryUuid' => 'dentryUuid',
         'lastModifyTime' => 'lastModifyTime',
-        'modifier'       => 'modifier',
-        'name'           => 'name',
-        'path'           => 'path',
+        'modifier' => 'modifier',
+        'name' => 'name',
+        'path' => 'path',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

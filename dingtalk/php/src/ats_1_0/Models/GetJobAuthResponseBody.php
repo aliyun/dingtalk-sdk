@@ -19,13 +19,11 @@ class GetJobAuthResponseBody extends Model
      */
     public $jobOwners;
     protected $_name = [
-        'jobId'     => 'jobId',
+        'jobId' => 'jobId',
         'jobOwners' => 'jobOwners',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class GetJobAuthResponseBody extends Model
         if (isset($map['jobOwners'])) {
             if (!empty($map['jobOwners'])) {
                 $model->jobOwners = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['jobOwners'] as $item) {
                     $model->jobOwners[$n++] = null !== $item ? jobOwners::fromMap($item) : $item;
                 }

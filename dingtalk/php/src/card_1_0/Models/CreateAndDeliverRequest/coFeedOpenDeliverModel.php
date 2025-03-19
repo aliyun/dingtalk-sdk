@@ -22,13 +22,11 @@ class coFeedOpenDeliverModel extends Model
      */
     public $gmtTimeLine;
     protected $_name = [
-        'bizTag'      => 'bizTag',
+        'bizTag' => 'bizTag',
         'gmtTimeLine' => 'gmtTimeLine',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -37,14 +37,12 @@ class list_ extends Model
     public $userId;
     protected $_name = [
         'candidateId' => 'candidateId',
-        'corpId'      => 'corpId',
-        'entryDate'   => 'entryDate',
-        'userId'      => 'userId',
+        'corpId' => 'corpId',
+        'entryDate' => 'entryDate',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

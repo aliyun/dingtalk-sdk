@@ -53,20 +53,18 @@ class QueryEventRequest extends Model
      */
     public $startTime;
     protected $_name = [
-        'corpId'          => 'corpId',
-        'deviceIdList'    => 'deviceIdList',
-        'endTime'         => 'endTime',
-        'eventId'         => 'eventId',
+        'corpId' => 'corpId',
+        'deviceIdList' => 'deviceIdList',
+        'endTime' => 'endTime',
+        'eventId' => 'eventId',
         'eventStatusList' => 'eventStatusList',
-        'eventTypeList'   => 'eventTypeList',
-        'pageNumber'      => 'pageNumber',
-        'pageSize'        => 'pageSize',
-        'startTime'       => 'startTime',
+        'eventTypeList' => 'eventTypeList',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

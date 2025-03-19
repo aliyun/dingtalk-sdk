@@ -98,21 +98,19 @@ class batchTradeDetailList extends Model
      */
     public $status;
     protected $_name = [
-        'amount'           => 'amount',
-        'detailNo'         => 'detailNo',
-        'gmtCreate'        => 'gmtCreate',
-        'gmtFinish'        => 'gmtFinish',
-        'memo'             => 'memo',
+        'amount' => 'amount',
+        'detailNo' => 'detailNo',
+        'gmtCreate' => 'gmtCreate',
+        'gmtFinish' => 'gmtFinish',
+        'memo' => 'memo',
         'payeeAccountName' => 'payeeAccountName',
-        'payeeAccountNo'   => 'payeeAccountNo',
+        'payeeAccountNo' => 'payeeAccountNo',
         'payeeAccountType' => 'payeeAccountType',
-        'serialNo'         => 'serialNo',
-        'status'           => 'status',
+        'serialNo' => 'serialNo',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

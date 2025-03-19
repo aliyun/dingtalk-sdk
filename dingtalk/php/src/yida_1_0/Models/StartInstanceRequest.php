@@ -81,20 +81,18 @@ class StartInstanceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'      => 'appType',
+        'appType' => 'appType',
         'departmentId' => 'departmentId',
         'formDataJson' => 'formDataJson',
-        'formUuid'     => 'formUuid',
-        'language'     => 'language',
-        'processCode'  => 'processCode',
-        'processData'  => 'processData',
-        'systemToken'  => 'systemToken',
-        'userId'       => 'userId',
+        'formUuid' => 'formUuid',
+        'language' => 'language',
+        'processCode' => 'processCode',
+        'processData' => 'processData',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,12 +22,10 @@ class classSetting extends Model
     public $restTimeList;
     protected $_name = [
         'classSettingId' => 'classSettingId',
-        'restTimeList'   => 'restTimeList',
+        'restTimeList' => 'restTimeList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class classSetting extends Model
         if (isset($map['restTimeList'])) {
             if (!empty($map['restTimeList'])) {
                 $model->restTimeList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['restTimeList'] as $item) {
                     $model->restTimeList[$n++] = null !== $item ? restTimeList::fromMap($item) : $item;
                 }

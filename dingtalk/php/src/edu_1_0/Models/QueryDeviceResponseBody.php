@@ -44,15 +44,13 @@ class QueryDeviceResponseBody extends Model
     public $type;
     protected $_name = [
         'gmtExpiry' => 'gmtExpiry',
-        'model'     => 'model',
-        'name'      => 'name',
-        'sn'        => 'sn',
-        'type'      => 'type',
+        'model' => 'model',
+        'name' => 'name',
+        'sn' => 'sn',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

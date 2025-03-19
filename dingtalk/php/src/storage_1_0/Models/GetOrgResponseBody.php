@@ -17,9 +17,7 @@ class GetOrgResponseBody extends Model
         'org' => 'org',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

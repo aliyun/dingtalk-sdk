@@ -37,8 +37,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -73,18 +73,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateAppGoodsServiceConversation',
-            'version'     => 'appMarket_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/appMarket/orders/serviceGroups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateAppGoodsServiceConversation',
+            'version' => 'appMarket_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/appMarket/orders/serviceGroups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateAppGoodsServiceConversationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -136,18 +136,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetCoolAppAccessStatus',
-            'version'     => 'appMarket_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/appMarket/coolApps/accessions/statuses/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCoolAppAccessStatus',
+            'version' => 'appMarket_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/appMarket/coolApps/accessions/statuses/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCoolAppAccessStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -202,18 +202,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetInAppSkuUrl',
-            'version'     => 'appMarket_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/appMarket/internals/skuPages/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetInAppSkuUrl',
+            'version' => 'appMarket_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/appMarket/internals/skuPages/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetInAppSkuUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -259,18 +259,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPersonalExperienceInfo',
-            'version'     => 'appMarket_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/appMarket/personalExperiences',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPersonalExperienceInfo',
+            'version' => 'appMarket_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/appMarket/personalExperiences',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPersonalExperienceInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -325,18 +325,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'NotifyOnCrmDataChange',
-            'version'     => 'appMarket_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/appMarket/saleAssistants/crmDataChanges/notify',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'NotifyOnCrmDataChange',
+            'version' => 'appMarket_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/appMarket/saleAssistants/crmDataChanges/notify',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return NotifyOnCrmDataChangeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -379,15 +379,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryMarketOrder',
-            'version'     => 'appMarket_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/appMarket/orders/' . $orderId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMarketOrder',
+            'version' => 'appMarket_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/appMarket/orders/' . $orderId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMarketOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -442,18 +442,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UserTaskReport',
-            'version'     => 'appMarket_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/appMarket/tasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UserTaskReport',
+            'version' => 'appMarket_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/appMarket/tasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'boolean',
+            'bodyType' => 'boolean',
         ]);
 
         return UserTaskReportResponse::fromMap($this->execute($params, $req, $runtime));

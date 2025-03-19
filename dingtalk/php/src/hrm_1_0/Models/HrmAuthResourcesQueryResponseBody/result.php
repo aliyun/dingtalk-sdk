@@ -24,9 +24,7 @@ class result extends Model
         'resourceId' => 'resourceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

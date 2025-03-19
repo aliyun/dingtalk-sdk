@@ -16,9 +16,7 @@ class GetSignInLinkResponseBody extends Model
         'signInLink' => 'signInLink',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -37,14 +37,12 @@ class CreateBadgeNotifyRequest extends Model
     public $userId;
     protected $_name = [
         'content' => 'content',
-        'msgId'   => 'msgId',
+        'msgId' => 'msgId',
         'msgType' => 'msgType',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

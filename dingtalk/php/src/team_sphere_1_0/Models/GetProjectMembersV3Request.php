@@ -28,15 +28,13 @@ class GetProjectMembersV3Request extends Model
      */
     public $userIds;
     protected $_name = [
-        'maxResults'    => 'maxResults',
-        'nextToken'     => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'projectRoleId' => 'projectRoleId',
-        'userIds'       => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,9 +19,7 @@ class ListItemUserDataResponseBody extends Model
         'studyInfos' => 'studyInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class ListItemUserDataResponseBody extends Model
         if (isset($map['studyInfos'])) {
             if (!empty($map['studyInfos'])) {
                 $model->studyInfos = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['studyInfos'] as $item) {
                     $model->studyInfos[$n++] = null !== $item ? studyInfos::fromMap($item) : $item;
                 }

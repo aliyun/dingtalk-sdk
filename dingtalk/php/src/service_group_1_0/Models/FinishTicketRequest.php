@@ -49,16 +49,14 @@ class FinishTicketRequest extends Model
      */
     public $ticketMemo;
     protected $_name = [
-        'notify'           => 'notify',
-        'openTeamId'       => 'openTeamId',
-        'openTicketId'     => 'openTicketId',
+        'notify' => 'notify',
+        'openTeamId' => 'openTeamId',
+        'openTicketId' => 'openTicketId',
         'processorUnionId' => 'processorUnionId',
-        'ticketMemo'       => 'ticketMemo',
+        'ticketMemo' => 'ticketMemo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

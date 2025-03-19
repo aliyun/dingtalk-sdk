@@ -18,9 +18,7 @@ class CollegeUpdateCollegeDeptResponseBody extends Model
         'isSuccessful' => 'isSuccessful',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

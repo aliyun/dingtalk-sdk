@@ -20,9 +20,7 @@ class LoadBizFieldsRequest extends Model
         'schemaCode' => 'schemaCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -57,19 +57,17 @@ class dataList extends Model
      */
     public $toGroups;
     protected $_name = [
-        'creatorId'     => 'creatorId',
-        'endDateTime'   => 'endDateTime',
-        'modifierId'    => 'modifierId',
-        'periodType'    => 'periodType',
-        'remindId'      => 'remindId',
+        'creatorId' => 'creatorId',
+        'endDateTime' => 'endDateTime',
+        'modifierId' => 'modifierId',
+        'periodType' => 'periodType',
+        'remindId' => 'remindId',
         'startDateTime' => 'startDateTime',
-        'templateId'    => 'templateId',
-        'toGroups'      => 'toGroups',
+        'templateId' => 'templateId',
+        'toGroups' => 'toGroups',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -144,7 +142,7 @@ class dataList extends Model
         if (isset($map['toGroups'])) {
             if (!empty($map['toGroups'])) {
                 $model->toGroups = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['toGroups'] as $item) {
                     $model->toGroups[$n++] = null !== $item ? toGroups::fromMap($item) : $item;
                 }

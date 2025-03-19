@@ -29,15 +29,13 @@ class IssueInvoiceWithOrderRequest extends Model
      */
     public $signature;
     protected $_name = [
-        'content'       => 'content',
+        'content' => 'content',
         'financeAppKey' => 'financeAppKey',
-        'operator'      => 'operator',
-        'signature'     => 'signature',
+        'operator' => 'operator',
+        'signature' => 'signature',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

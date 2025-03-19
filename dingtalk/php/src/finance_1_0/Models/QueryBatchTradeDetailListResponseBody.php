@@ -51,15 +51,13 @@ class QueryBatchTradeDetailListResponseBody extends Model
     public $totalPageNumber;
     protected $_name = [
         'batchTradeDetailList' => 'batchTradeDetailList',
-        'pageNumber'           => 'pageNumber',
-        'pageSize'             => 'pageSize',
-        'total'                => 'total',
-        'totalPageNumber'      => 'totalPageNumber',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'total' => 'total',
+        'totalPageNumber' => 'totalPageNumber',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -100,7 +98,7 @@ class QueryBatchTradeDetailListResponseBody extends Model
         if (isset($map['batchTradeDetailList'])) {
             if (!empty($map['batchTradeDetailList'])) {
                 $model->batchTradeDetailList = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['batchTradeDetailList'] as $item) {
                     $model->batchTradeDetailList[$n++] = null !== $item ? batchTradeDetailList::fromMap($item) : $item;
                 }

@@ -50,17 +50,15 @@ class result extends Model
      */
     public $projectId;
     protected $_name = [
-        'content'   => 'content',
-        'created'   => 'created',
+        'content' => 'content',
+        'created' => 'created',
         'creatorId' => 'creatorId',
-        'degree'    => 'degree',
-        'name'      => 'name',
+        'degree' => 'degree',
+        'name' => 'name',
         'projectId' => 'projectId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

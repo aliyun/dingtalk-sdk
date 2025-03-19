@@ -41,14 +41,12 @@ class GetColumnvalsRequest extends Model
     public $userIds;
     protected $_name = [
         'columnIdList' => 'columnIdList',
-        'fromDate'     => 'fromDate',
-        'toDate'       => 'toDate',
-        'userIds'      => 'userIds',
+        'fromDate' => 'fromDate',
+        'toDate' => 'toDate',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -42,16 +42,14 @@ class list_ extends Model
      */
     public $url;
     protected $_name = [
-        'forms'      => 'forms',
+        'forms' => 'forms',
         'instanceId' => 'instanceId',
-        'taskId'     => 'taskId',
-        'title'      => 'title',
-        'url'        => 'url',
+        'taskId' => 'taskId',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -92,7 +90,7 @@ class list_ extends Model
         if (isset($map['forms'])) {
             if (!empty($map['forms'])) {
                 $model->forms = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['forms'] as $item) {
                     $model->forms[$n++] = null !== $item ? forms::fromMap($item) : $item;
                 }

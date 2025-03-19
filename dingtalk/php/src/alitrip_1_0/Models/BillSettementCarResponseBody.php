@@ -29,15 +29,13 @@ class BillSettementCarResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'module'     => 'module',
+        'module' => 'module',
         'resultCode' => 'resultCode',
-        'resultMsg'  => 'resultMsg',
-        'success'    => 'success',
+        'resultMsg' => 'resultMsg',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

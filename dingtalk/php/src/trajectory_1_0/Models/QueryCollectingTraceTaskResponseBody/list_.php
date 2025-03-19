@@ -61,18 +61,16 @@ class list_ extends Model
      */
     public $userId;
     protected $_name = [
-        'appTraceId'       => 'appTraceId',
+        'appTraceId' => 'appTraceId',
         'geoCollectPeriod' => 'geoCollectPeriod',
-        'geoReportPeriod'  => 'geoReportPeriod',
-        'geoReportStatus'  => 'geoReportStatus',
-        'reportEndTime'    => 'reportEndTime',
-        'reportStartTime'  => 'reportStartTime',
-        'userId'           => 'userId',
+        'geoReportPeriod' => 'geoReportPeriod',
+        'geoReportStatus' => 'geoReportStatus',
+        'reportEndTime' => 'reportEndTime',
+        'reportStartTime' => 'reportStartTime',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

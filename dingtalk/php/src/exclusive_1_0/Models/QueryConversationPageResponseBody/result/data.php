@@ -82,23 +82,21 @@ class data extends Model
      */
     public $status;
     protected $_name = [
-        'categoryId'         => 'categoryId',
-        'categoryName'       => 'categoryName',
-        'groupCode'          => 'groupCode',
-        'groupMembersCnt'    => 'groupMembersCnt',
-        'groupName'          => 'groupName',
-        'groupOwnerName'     => 'groupOwnerName',
-        'groupOwnerUserId'   => 'groupOwnerUserId',
-        'isKpConversation'   => 'isKpConversation',
-        'manageSign'         => 'manageSign',
+        'categoryId' => 'categoryId',
+        'categoryName' => 'categoryName',
+        'groupCode' => 'groupCode',
+        'groupMembersCnt' => 'groupMembersCnt',
+        'groupName' => 'groupName',
+        'groupOwnerName' => 'groupOwnerName',
+        'groupOwnerUserId' => 'groupOwnerUserId',
+        'isKpConversation' => 'isKpConversation',
+        'manageSign' => 'manageSign',
         'openConversationId' => 'openConversationId',
-        'order'              => 'order',
-        'status'             => 'status',
+        'order' => 'order',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

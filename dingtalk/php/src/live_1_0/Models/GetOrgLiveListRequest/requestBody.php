@@ -37,16 +37,14 @@ class requestBody extends Model
      */
     public $unionId;
     protected $_name = [
-        'endTime'    => 'endTime',
+        'endTime' => 'endTime',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'startTime'  => 'startTime',
-        'unionId'    => 'unionId',
+        'pageSize' => 'pageSize',
+        'startTime' => 'startTime',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

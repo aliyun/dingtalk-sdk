@@ -26,13 +26,11 @@ class UpdateGroupPermissionRequest extends Model
     public $status;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'permissionGroup'    => 'permissionGroup',
-        'status'             => 'status',
+        'permissionGroup' => 'permissionGroup',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

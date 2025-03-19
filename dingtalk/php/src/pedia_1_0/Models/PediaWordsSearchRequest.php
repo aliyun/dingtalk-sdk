@@ -52,15 +52,13 @@ class PediaWordsSearchRequest extends Model
     public $wordName;
     protected $_name = [
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'status'     => 'status',
-        'userId'     => 'userId',
-        'wordName'   => 'wordName',
+        'pageSize' => 'pageSize',
+        'status' => 'status',
+        'userId' => 'userId',
+        'wordName' => 'wordName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -40,14 +40,12 @@ class items extends Model
     public $userId;
     protected $_name = [
         'bizContents' => 'bizContents',
-        'bizDate'     => 'bizDate',
-        'bizId'       => 'bizId',
-        'userId'      => 'userId',
+        'bizDate' => 'bizDate',
+        'bizId' => 'bizId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -85,7 +83,7 @@ class items extends Model
         if (isset($map['bizContents'])) {
             if (!empty($map['bizContents'])) {
                 $model->bizContents = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['bizContents'] as $item) {
                     $model->bizContents[$n++] = null !== $item ? bizContents::fromMap($item) : $item;
                 }

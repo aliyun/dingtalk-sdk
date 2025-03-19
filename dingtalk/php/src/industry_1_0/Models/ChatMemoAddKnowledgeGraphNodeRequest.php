@@ -32,14 +32,12 @@ class ChatMemoAddKnowledgeGraphNodeRequest extends Model
      */
     public $nodeInfo;
     protected $_name = [
-        'bizId'     => 'bizId',
+        'bizId' => 'bizId',
         'datasetId' => 'datasetId',
-        'nodeInfo'  => 'nodeInfo',
+        'nodeInfo' => 'nodeInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

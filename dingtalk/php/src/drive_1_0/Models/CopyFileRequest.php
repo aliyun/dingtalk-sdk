@@ -33,14 +33,12 @@ class CopyFileRequest extends Model
     public $unionId;
     protected $_name = [
         'addConflictPolicy' => 'addConflictPolicy',
-        'targetParentId'    => 'targetParentId',
-        'targetSpaceId'     => 'targetSpaceId',
-        'unionId'           => 'unionId',
+        'targetParentId' => 'targetParentId',
+        'targetSpaceId' => 'targetSpaceId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

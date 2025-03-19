@@ -17,9 +17,7 @@ class GetScheduleResponseBody extends Model
         'scheduleInformation' => 'scheduleInformation',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class GetScheduleResponseBody extends Model
         if (isset($map['scheduleInformation'])) {
             if (!empty($map['scheduleInformation'])) {
                 $model->scheduleInformation = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['scheduleInformation'] as $item) {
                     $model->scheduleInformation[$n++] = null !== $item ? scheduleInformation::fromMap($item) : $item;
                 }

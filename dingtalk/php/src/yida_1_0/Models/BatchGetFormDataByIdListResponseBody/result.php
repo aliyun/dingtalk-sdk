@@ -111,26 +111,24 @@ class result extends Model
      */
     public $version;
     protected $_name = [
-        'createTimeGMT'   => 'createTimeGMT',
-        'creatorUserId'   => 'creatorUserId',
-        'formData'        => 'formData',
-        'formInstanceId'  => 'formInstanceId',
-        'formUuid'        => 'formUuid',
-        'id'              => 'id',
-        'instanceValue'   => 'instanceValue',
+        'createTimeGMT' => 'createTimeGMT',
+        'creatorUserId' => 'creatorUserId',
+        'formData' => 'formData',
+        'formInstanceId' => 'formInstanceId',
+        'formUuid' => 'formUuid',
+        'id' => 'id',
+        'instanceValue' => 'instanceValue',
         'modifiedTimeGMT' => 'modifiedTimeGMT',
-        'modifier'        => 'modifier',
-        'modifyUser'      => 'modifyUser',
-        'originator'      => 'originator',
-        'sequence'        => 'sequence',
-        'serialNumber'    => 'serialNumber',
-        'title'           => 'title',
-        'version'         => 'version',
+        'modifier' => 'modifier',
+        'modifyUser' => 'modifyUser',
+        'originator' => 'originator',
+        'sequence' => 'sequence',
+        'serialNumber' => 'serialNumber',
+        'title' => 'title',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

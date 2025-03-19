@@ -19,12 +19,10 @@ class SendSearchShadeResponseBody extends Model
     public $success;
     protected $_name = [
         'arguments' => 'arguments',
-        'success'   => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

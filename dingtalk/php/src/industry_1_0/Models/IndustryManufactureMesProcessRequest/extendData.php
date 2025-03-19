@@ -36,15 +36,13 @@ class extendData extends Model
      */
     public $valueType;
     protected $_name = [
-        'code'      => 'code',
-        'name'      => 'name',
-        'value'     => 'value',
+        'code' => 'code',
+        'name' => 'name',
+        'value' => 'value',
         'valueType' => 'valueType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

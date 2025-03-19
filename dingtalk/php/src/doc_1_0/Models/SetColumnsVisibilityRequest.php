@@ -44,15 +44,13 @@ class SetColumnsVisibilityRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'column'      => 'column',
+        'column' => 'column',
         'columnCount' => 'columnCount',
-        'visibility'  => 'visibility',
-        'operatorId'  => 'operatorId',
+        'visibility' => 'visibility',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class DeleteResidentBlackBoardRequest extends Model
         'blackboardId' => 'blackboardId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

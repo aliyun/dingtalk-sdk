@@ -28,15 +28,13 @@ class ListApplicationAuthorizationServiceApplicationInformationRequest extends M
      */
     public $pageSize;
     protected $_name = [
-        'accessKey'     => 'accessKey',
+        'accessKey' => 'accessKey',
         'callerUnionId' => 'callerUnionId',
-        'pageNumber'    => 'pageNumber',
-        'pageSize'      => 'pageSize',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

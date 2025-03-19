@@ -16,9 +16,7 @@ class DiotSystemMarkTestResponseBody extends Model
         'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

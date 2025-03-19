@@ -40,15 +40,13 @@ class QuerySendMsgTaskStatisticsRequest extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'maxResults'      => 'maxResults',
-        'nextToken'       => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'openBatchTaskId' => 'openBatchTaskId',
-        'openTeamId'      => 'openTeamId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

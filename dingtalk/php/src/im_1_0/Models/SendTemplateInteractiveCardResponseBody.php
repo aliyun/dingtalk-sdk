@@ -18,9 +18,7 @@ class SendTemplateInteractiveCardResponseBody extends Model
         'processQueryKey' => 'processQueryKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

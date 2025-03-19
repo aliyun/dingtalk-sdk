@@ -35,15 +35,13 @@ class option extends Model
      */
     public $storageDriver;
     protected $_name = [
-        'preCheckParam'  => 'preCheckParam',
+        'preCheckParam' => 'preCheckParam',
         'preferIntranet' => 'preferIntranet',
-        'preferRegion'   => 'preferRegion',
-        'storageDriver'  => 'storageDriver',
+        'preferRegion' => 'preferRegion',
+        'storageDriver' => 'storageDriver',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,12 +22,10 @@ class workspaces extends Model
     public $workspace;
     protected $_name = [
         'hasPermission' => 'hasPermission',
-        'workspace'     => 'workspace',
+        'workspace' => 'workspace',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

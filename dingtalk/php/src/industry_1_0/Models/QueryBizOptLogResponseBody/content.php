@@ -107,28 +107,26 @@ class content extends Model
      */
     public $remark;
     protected $_name = [
-        'bizType'            => 'bizType',
-        'dataType'           => 'dataType',
-        'id'                 => 'id',
-        'optAfterData'       => 'optAfterData',
-        'optBeforeData'      => 'optBeforeData',
-        'optBizType'         => 'optBizType',
-        'optExtend'          => 'optExtend',
-        'optJobNumber'       => 'optJobNumber',
-        'optObjectCode'      => 'optObjectCode',
-        'optObjectName'      => 'optObjectName',
+        'bizType' => 'bizType',
+        'dataType' => 'dataType',
+        'id' => 'id',
+        'optAfterData' => 'optAfterData',
+        'optBeforeData' => 'optBeforeData',
+        'optBizType' => 'optBizType',
+        'optExtend' => 'optExtend',
+        'optJobNumber' => 'optJobNumber',
+        'optObjectCode' => 'optObjectCode',
+        'optObjectName' => 'optObjectName',
         'optObjectUserJobNo' => 'optObjectUserJobNo',
-        'optSuccess'         => 'optSuccess',
-        'optTime'            => 'optTime',
-        'optType'            => 'optType',
-        'optUserCode'        => 'optUserCode',
-        'optUserName'        => 'optUserName',
-        'remark'             => 'remark',
+        'optSuccess' => 'optSuccess',
+        'optTime' => 'optTime',
+        'optType' => 'optType',
+        'optUserCode' => 'optUserCode',
+        'optUserName' => 'optUserName',
+        'remark' => 'remark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

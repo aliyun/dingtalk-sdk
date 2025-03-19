@@ -22,13 +22,11 @@ class ChatMemoGetFileStatusResponseBody extends Model
      */
     public $statusDesc;
     protected $_name = [
-        'status'     => 'status',
+        'status' => 'status',
         'statusDesc' => 'statusDesc',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

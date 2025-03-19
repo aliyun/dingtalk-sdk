@@ -31,14 +31,12 @@ class body extends Model
      */
     public $order;
     protected $_name = [
-        'categoryId'   => 'categoryId',
+        'categoryId' => 'categoryId',
         'categoryName' => 'categoryName',
-        'order'        => 'order',
+        'order' => 'order',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

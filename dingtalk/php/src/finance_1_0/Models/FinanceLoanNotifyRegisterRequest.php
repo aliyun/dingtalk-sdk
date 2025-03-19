@@ -106,25 +106,23 @@ class FinanceLoanNotifyRegisterRequest extends Model
      */
     public $userMobile;
     protected $_name = [
-        'completeTime'     => 'completeTime',
-        'extension'        => 'extension',
-        'idCardNo'         => 'idCardNo',
-        'openChannelName'  => 'openChannelName',
-        'openProductCode'  => 'openProductCode',
-        'openProductName'  => 'openProductName',
-        'openProductType'  => 'openProductType',
+        'completeTime' => 'completeTime',
+        'extension' => 'extension',
+        'idCardNo' => 'idCardNo',
+        'openChannelName' => 'openChannelName',
+        'openProductCode' => 'openProductCode',
+        'openProductName' => 'openProductName',
+        'openProductType' => 'openProductType',
         'processingStatus' => 'processingStatus',
-        'refuseCode'       => 'refuseCode',
-        'refuseReason'     => 'refuseReason',
-        'registerNo'       => 'registerNo',
-        'status'           => 'status',
-        'submitTime'       => 'submitTime',
-        'userMobile'       => 'userMobile',
+        'refuseCode' => 'refuseCode',
+        'refuseReason' => 'refuseReason',
+        'registerNo' => 'registerNo',
+        'status' => 'status',
+        'submitTime' => 'submitTime',
+        'userMobile' => 'userMobile',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

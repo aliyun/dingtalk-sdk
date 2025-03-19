@@ -55,18 +55,16 @@ class CreateAssistantRequest extends Model
      */
     public $welcomeContent;
     protected $_name = [
-        'description'      => 'description',
-        'icon'             => 'icon',
-        'instructions'     => 'instructions',
-        'name'             => 'name',
-        'operatorUnionId'  => 'operatorUnionId',
+        'description' => 'description',
+        'icon' => 'icon',
+        'instructions' => 'instructions',
+        'name' => 'name',
+        'operatorUnionId' => 'operatorUnionId',
         'recommendPrompts' => 'recommendPrompts',
-        'welcomeContent'   => 'welcomeContent',
+        'welcomeContent' => 'welcomeContent',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

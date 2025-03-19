@@ -80,22 +80,20 @@ class values extends Model
      */
     public $processOutResult;
     protected $_name = [
-        'createTime'            => 'createTime',
-        'creatorNick'           => 'creatorNick',
-        'creatorUserId'         => 'creatorUserId',
-        'data'                  => 'data',
-        'extendData'            => 'extendData',
-        'instanceId'            => 'instanceId',
-        'modifyTime'            => 'modifyTime',
-        'objectType'            => 'objectType',
-        'permission'            => 'permission',
+        'createTime' => 'createTime',
+        'creatorNick' => 'creatorNick',
+        'creatorUserId' => 'creatorUserId',
+        'data' => 'data',
+        'extendData' => 'extendData',
+        'instanceId' => 'instanceId',
+        'modifyTime' => 'modifyTime',
+        'objectType' => 'objectType',
+        'permission' => 'permission',
         'processInstanceStatus' => 'processInstanceStatus',
-        'processOutResult'      => 'processOutResult',
+        'processOutResult' => 'processOutResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

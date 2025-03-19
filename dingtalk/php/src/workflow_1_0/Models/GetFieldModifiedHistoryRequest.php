@@ -26,13 +26,11 @@ class GetFieldModifiedHistoryRequest extends Model
      */
     public $processInstanceId;
     protected $_name = [
-        'fieldId'           => 'fieldId',
+        'fieldId' => 'fieldId',
         'processInstanceId' => 'processInstanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

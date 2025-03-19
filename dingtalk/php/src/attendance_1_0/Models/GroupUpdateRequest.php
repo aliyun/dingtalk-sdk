@@ -226,44 +226,42 @@ class GroupUpdateRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'adjustmentSettingId'            => 'adjustmentSettingId',
-        'disableCheckWhenRest'           => 'disableCheckWhenRest',
-        'disableCheckWithoutSchedule'    => 'disableCheckWithoutSchedule',
-        'enableCameraCheck'              => 'enableCameraCheck',
-        'enableEmpSelectClass'           => 'enableEmpSelectClass',
-        'enableFaceCheck'                => 'enableFaceCheck',
-        'enableFaceStrictMode'           => 'enableFaceStrictMode',
+        'adjustmentSettingId' => 'adjustmentSettingId',
+        'disableCheckWhenRest' => 'disableCheckWhenRest',
+        'disableCheckWithoutSchedule' => 'disableCheckWithoutSchedule',
+        'enableCameraCheck' => 'enableCameraCheck',
+        'enableEmpSelectClass' => 'enableEmpSelectClass',
+        'enableFaceCheck' => 'enableFaceCheck',
+        'enableFaceStrictMode' => 'enableFaceStrictMode',
         'enableOutSideUpdateNormalCheck' => 'enableOutSideUpdateNormalCheck',
-        'enableOutsideApply'             => 'enableOutsideApply',
-        'enableOutsideCheck'             => 'enableOutsideCheck',
-        'enableOutsideRemark'            => 'enableOutsideRemark',
-        'enableTrimDistance'             => 'enableTrimDistance',
-        'forbidHideOutSideAddress'       => 'forbidHideOutSideAddress',
-        'freeCheckSetting'               => 'freeCheckSetting',
-        'freeCheckTypeId'                => 'freeCheckTypeId',
-        'freecheckDayStartMinOffset'     => 'freecheckDayStartMinOffset',
-        'groupId'                        => 'groupId',
-        'groupName'                      => 'groupName',
-        'managerList'                    => 'managerList',
-        'offset'                         => 'offset',
-        'onlyMachineCheck'               => 'onlyMachineCheck',
-        'openCameraCheck'                => 'openCameraCheck',
-        'openFaceCheck'                  => 'openFaceCheck',
-        'outsideCheckApproveModeId'      => 'outsideCheckApproveModeId',
-        'overtimeSettingId'              => 'overtimeSettingId',
-        'owner'                          => 'owner',
-        'positions'                      => 'positions',
-        'resourcePermissionMap'          => 'resourcePermissionMap',
-        'shiftVOList'                    => 'shiftVOList',
-        'skipHolidays'                   => 'skipHolidays',
-        'trimDistance'                   => 'trimDistance',
-        'workdayClassList'               => 'workdayClassList',
-        'opUserId'                       => 'opUserId',
+        'enableOutsideApply' => 'enableOutsideApply',
+        'enableOutsideCheck' => 'enableOutsideCheck',
+        'enableOutsideRemark' => 'enableOutsideRemark',
+        'enableTrimDistance' => 'enableTrimDistance',
+        'forbidHideOutSideAddress' => 'forbidHideOutSideAddress',
+        'freeCheckSetting' => 'freeCheckSetting',
+        'freeCheckTypeId' => 'freeCheckTypeId',
+        'freecheckDayStartMinOffset' => 'freecheckDayStartMinOffset',
+        'groupId' => 'groupId',
+        'groupName' => 'groupName',
+        'managerList' => 'managerList',
+        'offset' => 'offset',
+        'onlyMachineCheck' => 'onlyMachineCheck',
+        'openCameraCheck' => 'openCameraCheck',
+        'openFaceCheck' => 'openFaceCheck',
+        'outsideCheckApproveModeId' => 'outsideCheckApproveModeId',
+        'overtimeSettingId' => 'overtimeSettingId',
+        'owner' => 'owner',
+        'positions' => 'positions',
+        'resourcePermissionMap' => 'resourcePermissionMap',
+        'shiftVOList' => 'shiftVOList',
+        'skipHolidays' => 'skipHolidays',
+        'trimDistance' => 'trimDistance',
+        'workdayClassList' => 'workdayClassList',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -474,7 +472,7 @@ class GroupUpdateRequest extends Model
         if (isset($map['positions'])) {
             if (!empty($map['positions'])) {
                 $model->positions = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['positions'] as $item) {
                     $model->positions[$n++] = null !== $item ? positions::fromMap($item) : $item;
                 }
@@ -486,7 +484,7 @@ class GroupUpdateRequest extends Model
         if (isset($map['shiftVOList'])) {
             if (!empty($map['shiftVOList'])) {
                 $model->shiftVOList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['shiftVOList'] as $item) {
                     $model->shiftVOList[$n++] = null !== $item ? shiftVOList::fromMap($item) : $item;
                 }

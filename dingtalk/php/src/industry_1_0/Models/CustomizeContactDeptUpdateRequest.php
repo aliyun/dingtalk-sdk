@@ -44,17 +44,15 @@ class CustomizeContactDeptUpdateRequest extends Model
      */
     public $parentDeptId;
     protected $_name = [
-        'code'          => 'code',
-        'deptId'        => 'deptId',
+        'code' => 'code',
+        'deptId' => 'deptId',
         'managerIdList' => 'managerIdList',
-        'name'          => 'name',
-        'order'         => 'order',
-        'parentDeptId'  => 'parentDeptId',
+        'name' => 'name',
+        'order' => 'order',
+        'parentDeptId' => 'parentDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

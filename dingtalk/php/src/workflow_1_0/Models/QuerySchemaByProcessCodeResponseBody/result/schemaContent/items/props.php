@@ -326,57 +326,55 @@ class props extends Model
      */
     public $verticalPrint;
     protected $_name = [
-        'actionName'             => 'actionName',
-        'align'                  => 'align',
-        'appId'                  => 'appId',
-        'asyncCondition'         => 'asyncCondition',
-        'attendTypeLabel'        => 'attendTypeLabel',
-        'behaviorLinkage'        => 'behaviorLinkage',
-        'bizAlias'               => 'bizAlias',
-        'bizType'                => 'bizType',
-        'childFieldVisible'      => 'childFieldVisible',
-        'choice'                 => 'choice',
-        'commonBizType'          => 'commonBizType',
-        'disabled'               => 'disabled',
-        'duration'               => 'duration',
-        'durationLabel'          => 'durationLabel',
-        'eSign'                  => 'eSign',
-        'extract'                => 'extract',
-        'fieldsInfo'             => 'fieldsInfo',
-        'format'                 => 'format',
-        'formula'                => 'formula',
-        'hidden'                 => 'hidden',
+        'actionName' => 'actionName',
+        'align' => 'align',
+        'appId' => 'appId',
+        'asyncCondition' => 'asyncCondition',
+        'attendTypeLabel' => 'attendTypeLabel',
+        'behaviorLinkage' => 'behaviorLinkage',
+        'bizAlias' => 'bizAlias',
+        'bizType' => 'bizType',
+        'childFieldVisible' => 'childFieldVisible',
+        'choice' => 'choice',
+        'commonBizType' => 'commonBizType',
+        'disabled' => 'disabled',
+        'duration' => 'duration',
+        'durationLabel' => 'durationLabel',
+        'eSign' => 'eSign',
+        'extract' => 'extract',
+        'fieldsInfo' => 'fieldsInfo',
+        'format' => 'format',
+        'formula' => 'formula',
+        'hidden' => 'hidden',
         'hiddenInApprovalDetail' => 'hiddenInApprovalDetail',
-        'hideLabel'              => 'hideLabel',
-        'holidayOptions'         => 'holidayOptions',
-        'id'                     => 'id',
-        'label'                  => 'label',
-        'labelEditableFreeze'    => 'labelEditableFreeze',
-        'link'                   => 'link',
-        'mainTitle'              => 'mainTitle',
-        'notPrint'               => 'notPrint',
-        'notUpper'               => 'notUpper',
-        'objOptions'             => 'objOptions',
-        'options'                => 'options',
-        'payEnable'              => 'payEnable',
-        'placeholder'            => 'placeholder',
-        'push'                   => 'push',
-        'pushToAttendance'       => 'pushToAttendance',
-        'pushToCalendar'         => 'pushToCalendar',
-        'required'               => 'required',
+        'hideLabel' => 'hideLabel',
+        'holidayOptions' => 'holidayOptions',
+        'id' => 'id',
+        'label' => 'label',
+        'labelEditableFreeze' => 'labelEditableFreeze',
+        'link' => 'link',
+        'mainTitle' => 'mainTitle',
+        'notPrint' => 'notPrint',
+        'notUpper' => 'notUpper',
+        'objOptions' => 'objOptions',
+        'options' => 'options',
+        'payEnable' => 'payEnable',
+        'placeholder' => 'placeholder',
+        'push' => 'push',
+        'pushToAttendance' => 'pushToAttendance',
+        'pushToCalendar' => 'pushToCalendar',
+        'required' => 'required',
         'requiredEditableFreeze' => 'requiredEditableFreeze',
-        'showAttendOptions'      => 'showAttendOptions',
-        'staffStatusEnabled'     => 'staffStatusEnabled',
-        'statField'              => 'statField',
-        'tableViewMode'          => 'tableViewMode',
-        'unit'                   => 'unit',
-        'useCalendar'            => 'useCalendar',
-        'verticalPrint'          => 'verticalPrint',
+        'showAttendOptions' => 'showAttendOptions',
+        'staffStatusEnabled' => 'staffStatusEnabled',
+        'statField' => 'statField',
+        'tableViewMode' => 'tableViewMode',
+        'unit' => 'unit',
+        'useCalendar' => 'useCalendar',
+        'verticalPrint' => 'verticalPrint',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -567,7 +565,7 @@ class props extends Model
         if (isset($map['behaviorLinkage'])) {
             if (!empty($map['behaviorLinkage'])) {
                 $model->behaviorLinkage = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['behaviorLinkage'] as $item) {
                     $model->behaviorLinkage[$n++] = null !== $item ? behaviorLinkage::fromMap($item) : $item;
                 }
@@ -650,7 +648,7 @@ class props extends Model
         if (isset($map['objOptions'])) {
             if (!empty($map['objOptions'])) {
                 $model->objOptions = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['objOptions'] as $item) {
                     $model->objOptions[$n++] = null !== $item ? objOptions::fromMap($item) : $item;
                 }
@@ -691,7 +689,7 @@ class props extends Model
         if (isset($map['statField'])) {
             if (!empty($map['statField'])) {
                 $model->statField = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['statField'] as $item) {
                     $model->statField[$n++] = null !== $item ? statField::fromMap($item) : $item;
                 }

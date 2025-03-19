@@ -32,14 +32,12 @@ class schemaContent extends Model
      */
     public $title;
     protected $_name = [
-        'icon'  => 'icon',
+        'icon' => 'icon',
         'items' => 'items',
         'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -77,7 +75,7 @@ class schemaContent extends Model
         if (isset($map['items'])) {
             if (!empty($map['items'])) {
                 $model->items = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['items'] as $item) {
                     $model->items[$n++] = null !== $item ? items::fromMap($item) : $item;
                 }

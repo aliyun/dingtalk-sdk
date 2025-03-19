@@ -22,13 +22,11 @@ class labels extends Model
      */
     public $typeCode;
     protected $_name = [
-        'code'     => 'code',
+        'code' => 'code',
         'typeCode' => 'typeCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

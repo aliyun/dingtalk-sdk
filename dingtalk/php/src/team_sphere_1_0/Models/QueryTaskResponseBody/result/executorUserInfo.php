@@ -34,15 +34,13 @@ class executorUserInfo extends Model
     public $userId;
     protected $_name = [
         'avatarUrl' => 'avatarUrl',
-        'id'        => 'id',
-        'memberId'  => 'memberId',
-        'name'      => 'name',
-        'userId'    => 'userId',
+        'id' => 'id',
+        'memberId' => 'memberId',
+        'name' => 'name',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -118,31 +118,29 @@ class TaskInfoUpdateTaskRequest extends Model
      */
     public $updateTaskCardId;
     protected $_name = [
-        'attr'                   => 'attr',
-        'canceldelTaskCardId'    => 'canceldelTaskCardId',
-        'cardDTO'                => 'cardDTO',
-        'detailUrl'              => 'detailUrl',
-        'finishTaskCardId'       => 'finishTaskCardId',
+        'attr' => 'attr',
+        'canceldelTaskCardId' => 'canceldelTaskCardId',
+        'cardDTO' => 'cardDTO',
+        'detailUrl' => 'detailUrl',
+        'finishTaskCardId' => 'finishTaskCardId',
         'listOpenConversationId' => 'listOpenConversationId',
-        'operateType'            => 'operateType',
-        'operatorAccount'        => 'operatorAccount',
-        'outTaskId'              => 'outTaskId',
-        'projId'                 => 'projId',
-        'secretKey'              => 'secretKey',
-        'sendMsgFlag'            => 'sendMsgFlag',
-        'startTaskCardId'        => 'startTaskCardId',
-        'taskContent'            => 'taskContent',
-        'taskEndTime'            => 'taskEndTime',
-        'taskExecutePersonDTOS'  => 'taskExecutePersonDTOS',
-        'taskTitle'              => 'taskTitle',
-        'taskUrlMobile'          => 'taskUrlMobile',
-        'taskUrlPc'              => 'taskUrlPc',
-        'updateTaskCardId'       => 'updateTaskCardId',
+        'operateType' => 'operateType',
+        'operatorAccount' => 'operatorAccount',
+        'outTaskId' => 'outTaskId',
+        'projId' => 'projId',
+        'secretKey' => 'secretKey',
+        'sendMsgFlag' => 'sendMsgFlag',
+        'startTaskCardId' => 'startTaskCardId',
+        'taskContent' => 'taskContent',
+        'taskEndTime' => 'taskEndTime',
+        'taskExecutePersonDTOS' => 'taskExecutePersonDTOS',
+        'taskTitle' => 'taskTitle',
+        'taskUrlMobile' => 'taskUrlMobile',
+        'taskUrlPc' => 'taskUrlPc',
+        'updateTaskCardId' => 'updateTaskCardId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -275,7 +273,7 @@ class TaskInfoUpdateTaskRequest extends Model
         if (isset($map['taskExecutePersonDTOS'])) {
             if (!empty($map['taskExecutePersonDTOS'])) {
                 $model->taskExecutePersonDTOS = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['taskExecutePersonDTOS'] as $item) {
                     $model->taskExecutePersonDTOS[$n++] = null !== $item ? taskExecutePersonDTOS::fromMap($item) : $item;
                 }

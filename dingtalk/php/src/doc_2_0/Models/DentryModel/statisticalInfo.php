@@ -16,9 +16,7 @@ class statisticalInfo extends Model
         'wordCount' => 'wordCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

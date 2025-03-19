@@ -24,13 +24,11 @@ class GetTravelProcessDetailRequest extends Model
      */
     public $processInstanceId;
     protected $_name = [
-        'processCorpId'     => 'processCorpId',
+        'processCorpId' => 'processCorpId',
         'processInstanceId' => 'processInstanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

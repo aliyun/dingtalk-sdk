@@ -39,16 +39,14 @@ class UpdateCardWithDelegateRequest extends Model
      */
     public $userIdType;
     protected $_name = [
-        'cardData'          => 'cardData',
+        'cardData' => 'cardData',
         'cardUpdateOptions' => 'cardUpdateOptions',
-        'outTrackId'        => 'outTrackId',
-        'privateData'       => 'privateData',
-        'userIdType'        => 'userIdType',
+        'outTrackId' => 'outTrackId',
+        'privateData' => 'privateData',
+        'userIdType' => 'userIdType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

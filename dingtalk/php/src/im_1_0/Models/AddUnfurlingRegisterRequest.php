@@ -83,20 +83,18 @@ class AddUnfurlingRegisterRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'apiSecret'      => 'apiSecret',
-        'appId'          => 'appId',
-        'callbackUrl'    => 'callbackUrl',
+        'apiSecret' => 'apiSecret',
+        'appId' => 'appId',
+        'callbackUrl' => 'callbackUrl',
         'cardTemplateId' => 'cardTemplateId',
-        'domain'         => 'domain',
-        'path'           => 'path',
-        'ruleDesc'       => 'ruleDesc',
-        'ruleMatchType'  => 'ruleMatchType',
-        'userId'         => 'userId',
+        'domain' => 'domain',
+        'path' => 'path',
+        'ruleDesc' => 'ruleDesc',
+        'ruleMatchType' => 'ruleMatchType',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

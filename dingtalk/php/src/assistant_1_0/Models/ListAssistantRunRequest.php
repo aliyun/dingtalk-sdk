@@ -22,9 +22,7 @@ class ListAssistantRunRequest extends Model
         'order' => 'order',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

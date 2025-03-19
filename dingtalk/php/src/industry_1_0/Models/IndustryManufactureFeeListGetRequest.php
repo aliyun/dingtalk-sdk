@@ -93,28 +93,26 @@ class IndustryManufactureFeeListGetRequest extends Model
      */
     public $type;
     protected $_name = [
-        'appId'            => 'appId',
-        'appIds'           => 'appIds',
-        'appName'          => 'appName',
-        'corpId'           => 'corpId',
-        'cursor'           => 'cursor',
-        'endTime'          => 'endTime',
-        'isvOrgId'         => 'isvOrgId',
-        'materialNo'       => 'materialNo',
-        'microappAgentId'  => 'microappAgentId',
-        'orgId'            => 'orgId',
-        'pageNumber'       => 'pageNumber',
-        'pageSize'         => 'pageSize',
+        'appId' => 'appId',
+        'appIds' => 'appIds',
+        'appName' => 'appName',
+        'corpId' => 'corpId',
+        'cursor' => 'cursor',
+        'endTime' => 'endTime',
+        'isvOrgId' => 'isvOrgId',
+        'materialNo' => 'materialNo',
+        'microappAgentId' => 'microappAgentId',
+        'orgId' => 'orgId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'productionTaskNo' => 'productionTaskNo',
-        'startTime'        => 'startTime',
-        'suiteKey'         => 'suiteKey',
-        'tokenGrantType'   => 'tokenGrantType',
-        'type'             => 'type',
+        'startTime' => 'startTime',
+        'suiteKey' => 'suiteKey',
+        'tokenGrantType' => 'tokenGrantType',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

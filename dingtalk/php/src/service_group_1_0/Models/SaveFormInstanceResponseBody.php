@@ -22,13 +22,11 @@ class SaveFormInstanceResponseBody extends Model
      */
     public $openCustomerId;
     protected $_name = [
-        'openContactId'  => 'openContactId',
+        'openContactId' => 'openContactId',
         'openCustomerId' => 'openCustomerId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

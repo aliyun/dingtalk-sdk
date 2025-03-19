@@ -23,12 +23,10 @@ class GetDentryOpenInfoResponseBody extends Model
     public $url;
     protected $_name = [
         'hasWaterMark' => 'hasWaterMark',
-        'url'          => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

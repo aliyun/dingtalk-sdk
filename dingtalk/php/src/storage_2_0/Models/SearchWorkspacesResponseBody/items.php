@@ -29,14 +29,12 @@ class items extends Model
      */
     public $workspaceId;
     protected $_name = [
-        'name'        => 'name',
-        'url'         => 'url',
+        'name' => 'name',
+        'url' => 'url',
         'workspaceId' => 'workspaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

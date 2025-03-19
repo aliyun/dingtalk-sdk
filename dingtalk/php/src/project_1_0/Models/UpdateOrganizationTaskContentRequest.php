@@ -31,14 +31,12 @@ class UpdateOrganizationTaskContentRequest extends Model
      */
     public $disableNotification;
     protected $_name = [
-        'content'             => 'content',
-        'disableActivity'     => 'disableActivity',
+        'content' => 'content',
+        'disableActivity' => 'disableActivity',
         'disableNotification' => 'disableNotification',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

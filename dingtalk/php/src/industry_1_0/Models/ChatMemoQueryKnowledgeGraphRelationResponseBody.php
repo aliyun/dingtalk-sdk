@@ -23,13 +23,11 @@ class ChatMemoQueryKnowledgeGraphRelationResponseBody extends Model
      */
     public $relationInfo;
     protected $_name = [
-        'bizId'        => 'bizId',
+        'bizId' => 'bizId',
         'relationInfo' => 'relationInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

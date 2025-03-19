@@ -39,16 +39,14 @@ class ListTemplateRequest extends Model
      */
     public $workspaceId;
     protected $_name = [
-        'maxResults'   => 'maxResults',
-        'nextToken'    => 'nextToken',
-        'operatorId'   => 'operatorId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'operatorId' => 'operatorId',
         'templateType' => 'templateType',
-        'workspaceId'  => 'workspaceId',
+        'workspaceId' => 'workspaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

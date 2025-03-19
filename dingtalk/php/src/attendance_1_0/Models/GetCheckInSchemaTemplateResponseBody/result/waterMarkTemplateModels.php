@@ -74,21 +74,19 @@ class waterMarkTemplateModels extends Model
      */
     public $waterMarkId;
     protected $_name = [
-        'canModify'      => 'canModify',
-        'formCode'       => 'formCode',
-        'icon'           => 'icon',
-        'layoutDesign'   => 'layoutDesign',
-        'sceneCode'      => 'sceneCode',
-        'schemaContent'  => 'schemaContent',
-        'suiteKey'       => 'suiteKey',
+        'canModify' => 'canModify',
+        'formCode' => 'formCode',
+        'icon' => 'icon',
+        'layoutDesign' => 'layoutDesign',
+        'sceneCode' => 'sceneCode',
+        'schemaContent' => 'schemaContent',
+        'suiteKey' => 'suiteKey',
         'systemTemplate' => 'systemTemplate',
-        'title'          => 'title',
-        'waterMarkId'    => 'waterMarkId',
+        'title' => 'title',
+        'waterMarkId' => 'waterMarkId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class subscribeStatusDTOS extends Model
      */
     public $subscribe;
     protected $_name = [
-        'liveId'    => 'liveId',
+        'liveId' => 'liveId',
         'subscribe' => 'subscribe',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

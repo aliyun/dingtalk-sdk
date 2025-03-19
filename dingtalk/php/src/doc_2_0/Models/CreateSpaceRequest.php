@@ -63,17 +63,15 @@ class CreateSpaceRequest extends Model
     public $teamId;
     protected $_name = [
         'description' => 'description',
-        'icon'        => 'icon',
-        'name'        => 'name',
-        'operatorId'  => 'operatorId',
-        'sectionId'   => 'sectionId',
-        'shareScope'  => 'shareScope',
-        'teamId'      => 'teamId',
+        'icon' => 'icon',
+        'name' => 'name',
+        'operatorId' => 'operatorId',
+        'sectionId' => 'sectionId',
+        'shareScope' => 'shareScope',
+        'teamId' => 'teamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

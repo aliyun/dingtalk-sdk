@@ -64,19 +64,17 @@ class result extends Model
      */
     public $legalPersonName;
     protected $_name = [
-        'corpId'               => 'corpId',
-        'gmtCreate'            => 'gmtCreate',
-        'gmtModified'          => 'gmtModified',
-        'legalEntityId'        => 'legalEntityId',
-        'legalEntityName'      => 'legalEntityName',
+        'corpId' => 'corpId',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'legalEntityId' => 'legalEntityId',
+        'legalEntityName' => 'legalEntityName',
         'legalEntityShortName' => 'legalEntityShortName',
-        'legalEntityStatus'    => 'legalEntityStatus',
-        'legalPersonName'      => 'legalPersonName',
+        'legalEntityStatus' => 'legalEntityStatus',
+        'legalPersonName' => 'legalPersonName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

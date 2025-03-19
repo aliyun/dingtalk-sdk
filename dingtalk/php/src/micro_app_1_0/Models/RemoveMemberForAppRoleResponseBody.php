@@ -18,9 +18,7 @@ class RemoveMemberForAppRoleResponseBody extends Model
         'latestScopeVersion' => 'latestScopeVersion',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

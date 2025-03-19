@@ -40,15 +40,13 @@ class linkedData extends Model
      */
     public $url;
     protected $_name = [
-        'content'      => 'content',
+        'content' => 'content',
         'thumbnailUrl' => 'thumbnailUrl',
-        'title'        => 'title',
-        'url'          => 'url',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

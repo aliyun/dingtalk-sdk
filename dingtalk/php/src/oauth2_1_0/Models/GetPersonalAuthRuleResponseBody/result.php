@@ -25,12 +25,10 @@ class result extends Model
     public $resource;
     protected $_name = [
         'authItems' => 'authItems',
-        'resource'  => 'resource',
+        'resource' => 'resource',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

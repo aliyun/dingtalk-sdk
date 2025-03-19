@@ -45,18 +45,16 @@ class PullDataByPageRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'appId'               => 'appId',
-        'dataModelId'         => 'dataModelId',
+        'appId' => 'appId',
+        'dataModelId' => 'dataModelId',
         'datetimeFilterField' => 'datetimeFilterField',
-        'maxDatetime'         => 'maxDatetime',
-        'maxResults'          => 'maxResults',
-        'minDatetime'         => 'minDatetime',
-        'nextToken'           => 'nextToken',
+        'maxDatetime' => 'maxDatetime',
+        'maxResults' => 'maxResults',
+        'minDatetime' => 'minDatetime',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

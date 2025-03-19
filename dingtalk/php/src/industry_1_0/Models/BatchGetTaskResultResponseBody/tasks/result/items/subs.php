@@ -33,16 +33,14 @@ class subs extends Model
      */
     public $subName;
     protected $_name = [
-        'point'          => 'point',
-        'reference'      => 'reference',
+        'point' => 'point',
+        'reference' => 'reference',
         'referenceFrame' => 'referenceFrame',
-        'subInfo'        => 'subInfo',
-        'subName'        => 'subName',
+        'subInfo' => 'subInfo',
+        'subName' => 'subName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

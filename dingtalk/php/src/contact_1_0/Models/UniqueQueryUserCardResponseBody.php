@@ -74,21 +74,19 @@ class UniqueQueryUserCardResponseBody extends Model
      */
     public $title;
     protected $_name = [
-        'avatarUrl'    => 'avatarUrl',
-        'cardId'       => 'cardId',
-        'extension'    => 'extension',
+        'avatarUrl' => 'avatarUrl',
+        'cardId' => 'cardId',
+        'extension' => 'extension',
         'industryName' => 'industryName',
-        'introduce'    => 'introduce',
-        'name'         => 'name',
-        'orgName'      => 'orgName',
-        'settings'     => 'settings',
-        'templateId'   => 'templateId',
-        'title'        => 'title',
+        'introduce' => 'introduce',
+        'name' => 'name',
+        'orgName' => 'orgName',
+        'settings' => 'settings',
+        'templateId' => 'templateId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

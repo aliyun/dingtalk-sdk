@@ -48,17 +48,15 @@ class AgoalCreateProgressRequest extends Model
      */
     public $progressMergePeriod;
     protected $_name = [
-        'krId'                    => 'krId',
+        'krId' => 'krId',
         'mergeIntoLatestProgress' => 'mergeIntoLatestProgress',
-        'objectiveId'             => 'objectiveId',
-        'plainText'               => 'plainText',
-        'progress'                => 'progress',
-        'progressMergePeriod'     => 'progressMergePeriod',
+        'objectiveId' => 'objectiveId',
+        'plainText' => 'plainText',
+        'progress' => 'progress',
+        'progressMergePeriod' => 'progressMergePeriod',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

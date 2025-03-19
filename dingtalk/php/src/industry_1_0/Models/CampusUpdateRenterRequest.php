@@ -62,17 +62,15 @@ class CampusUpdateRenterRequest extends Model
     public $state;
     protected $_name = [
         'creditCode' => 'creditCode',
-        'endTime'    => 'endTime',
-        'extend'     => 'extend',
-        'name'       => 'name',
-        'renterId'   => 'renterId',
-        'startTime'  => 'startTime',
-        'state'      => 'state',
+        'endTime' => 'endTime',
+        'extend' => 'extend',
+        'name' => 'name',
+        'renterId' => 'renterId',
+        'startTime' => 'startTime',
+        'state' => 'state',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,13 +22,11 @@ class CollegeQueryCollegeDeptGroupInfoResponseBody extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'groupName'          => 'groupName',
+        'groupName' => 'groupName',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

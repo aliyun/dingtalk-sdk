@@ -54,19 +54,17 @@ class ListEventsRequest extends Model
      */
     public $timeMin;
     protected $_name = [
-        'maxAttendees'   => 'maxAttendees',
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
+        'maxAttendees' => 'maxAttendees',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'seriesMasterId' => 'seriesMasterId',
-        'showDeleted'    => 'showDeleted',
-        'syncToken'      => 'syncToken',
-        'timeMax'        => 'timeMax',
-        'timeMin'        => 'timeMin',
+        'showDeleted' => 'showDeleted',
+        'syncToken' => 'syncToken',
+        'timeMax' => 'timeMax',
+        'timeMin' => 'timeMin',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

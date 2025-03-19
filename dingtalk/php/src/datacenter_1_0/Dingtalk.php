@@ -348,8 +348,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -384,18 +384,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CloseDataDeliver',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/dataDeliverServices/close',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CloseDataDeliver',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/dataDeliverServices/close',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CloseDataDeliverResponse::fromMap($this->execute($params, $req, $runtime));
@@ -457,19 +457,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateDataDeliver',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/dataDeliveries',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateDataDeliver',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/dataDeliveries',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateDataDeliverResponse::fromMap($this->execute($params, $req, $runtime));
@@ -518,18 +518,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CreateScreen',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/screens',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateScreen',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/screens',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateScreenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -578,18 +578,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DataMarketService',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/dataMarketServices/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DataMarketService',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/dataMarketServices/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DataMarketServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -641,18 +641,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAbnormalOperation',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/abnormalOperations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAbnormalOperation',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/abnormalOperations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAbnormalOperationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -704,18 +704,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAdministrativeLicensing',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/administrativeLicenses',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAdministrativeLicensing',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/administrativeLicenses',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAdministrativeLicensingResponse::fromMap($this->execute($params, $req, $runtime));
@@ -767,18 +767,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAdministrativePenalties',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/administrativePenalties',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAdministrativePenalties',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/administrativePenalties',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAdministrativePenaltiesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -830,18 +830,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetBasicInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/businessBasicInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetBasicInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/businessBasicInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetBasicInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -893,18 +893,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetBiddingInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/biddingInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetBiddingInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/biddingInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetBiddingInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -956,18 +956,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetBranchInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/branchInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetBranchInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/branchInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetBranchInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1019,18 +1019,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetChangeRecord',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/changeRecords',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetChangeRecord',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/changeRecords',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetChangeRecordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1079,18 +1079,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDataDeliver',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/dataDeliverServices/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDataDeliver',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/dataDeliverServices/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDataDeliverResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1142,18 +1142,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDomainInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/domainInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDomainInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/domainInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDomainInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1205,18 +1205,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDoubleRandom',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/doubleRandomness',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDoubleRandom',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/doubleRandomness',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDoubleRandomResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1268,18 +1268,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetEnvironmentalPenalties',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/environmentalPenalties',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetEnvironmentalPenalties',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/environmentalPenalties',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetEnvironmentalPenaltiesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1331,18 +1331,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetEventData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/eventDatas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetEventData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/eventDatas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetEventDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1394,18 +1394,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetHolderInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/shareholderInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetHolderInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/shareholderInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetHolderInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1457,18 +1457,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetIntellectualProperty',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/intellectualProperties',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetIntellectualProperty',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/intellectualProperties',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetIntellectualPropertyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1520,18 +1520,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetInvestmentAbroad',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/abroadInvestments',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetInvestmentAbroad',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/abroadInvestments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetInvestmentAbroadResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1583,18 +1583,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetJobInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/jobInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetJobInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/jobInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetJobInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1646,18 +1646,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPatentInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/patentInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPatentInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/patentInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPatentInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1709,18 +1709,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPrincipalEmployee',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/principalEmployees',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPrincipalEmployee',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/principalEmployees',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPrincipalEmployeeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1772,18 +1772,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetQeneralTaxpayerInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/generalTaxpayerInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetQeneralTaxpayerInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/generalTaxpayerInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetQeneralTaxpayerInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1835,18 +1835,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetQualificationCert',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/qualificationCerts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetQualificationCert',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/qualificationCerts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetQualificationCertResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1898,18 +1898,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSeriousViolation',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/seriousViolations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSeriousViolation',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/seriousViolations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSeriousViolationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1961,18 +1961,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSoftwareCopyright',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/softwareCopyrights',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSoftwareCopyright',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/softwareCopyrights',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSoftwareCopyrightResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2024,18 +2024,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTrademarkInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/trademarkInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTrademarkInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/trademarkInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTrademarkInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2087,18 +2087,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetWorkCopyright',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/workCopyrights',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetWorkCopyright',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/workCopyrights',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetWorkCopyrightResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2144,18 +2144,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListDataDelivers',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/dataDeliverServices/lists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListDataDelivers',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/dataDeliverServices/lists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListDataDeliversResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2213,18 +2213,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'OperateChartConfig',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/chartConfigs/operate',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'OperateChartConfig',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/chartConfigs/operate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return OperateChartConfigResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2266,15 +2266,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'PostCorpAuthInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/corporations/authorize',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PostCorpAuthInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/corporations/authorize',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PostCorpAuthInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2318,18 +2318,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryActiveUserStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/activeUserData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryActiveUserStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/activeUserData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryActiveUserStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2381,18 +2381,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAnhmdStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/statisticDatas/anHmd',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAnhmdStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/statisticDatas/anHmd',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAnhmdStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2438,18 +2438,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryApprovalStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/approvalData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryApprovalStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/approvalData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryApprovalStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2495,18 +2495,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAttendanceStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/attendanceData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAttendanceStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/attendanceData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAttendanceStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2552,18 +2552,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryBlackboardStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/blackboardData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryBlackboardStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/blackboardData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryBlackboardStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2609,18 +2609,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCalendarStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/calendarData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCalendarStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/calendarData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCalendarStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2669,18 +2669,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryChartData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/chartDatas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryChartData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/chartDatas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryChartDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2726,18 +2726,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCheckinStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/checkinData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCheckinStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/checkinData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCheckinStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2783,18 +2783,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCircleStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/circleData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCircleStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/circleData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCircleStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2846,18 +2846,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCompanyBasicInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/companies/basicInfo',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCompanyBasicInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/companies/basicInfo',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCompanyBasicInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2906,18 +2906,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryDigitalDistrictOrgInfo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/digitalCounty/orgInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDigitalDistrictOrgInfo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/digitalCounty/orgInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDigitalDistrictOrgInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2963,18 +2963,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryDingReciveStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/dingReciveData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDingReciveStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/dingReciveData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDingReciveStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3020,18 +3020,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryDingSendStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/dingSendData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDingSendStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/dingSendData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDingSendStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3077,18 +3077,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryDocumentStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/documentData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDocumentStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/documentData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDocumentStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3130,15 +3130,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryDpaasDataPackage',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/dpaas/dataPackages/purchaseInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDpaasDataPackage',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/dpaas/dataPackages/purchaseInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDpaasDataPackageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3182,18 +3182,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryDriveStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/driveData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDriveStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/driveData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDriveStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3239,18 +3239,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryEmployeeTypeStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/employeeTypeData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryEmployeeTypeStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/employeeTypeData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryEmployeeTypeStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3317,18 +3317,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryGeneralDataService',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/generalDataServices',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryGeneralDataService',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/generalDataServices',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryGeneralDataServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3401,18 +3401,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryGeneralDataServiceBatch',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/dataServices/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryGeneralDataServiceBatch',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/dataServices/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryGeneralDataServiceBatchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3458,18 +3458,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryGeneralDataUpdateDate',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/dataUpdateDates',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryGeneralDataUpdateDate',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/dataUpdateDates',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryGeneralDataUpdateDateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3515,18 +3515,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryGroupLiveStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/groupLiveData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryGroupLiveStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/groupLiveData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryGroupLiveStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3572,18 +3572,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryGroupMessageStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/groupMessageData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryGroupMessageStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/groupMessageData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryGroupMessageStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3629,18 +3629,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryHealthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/healtheUserData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryHealthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/healtheUserData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryHealthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3686,18 +3686,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryMailStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/mailData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMailStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/mailData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMailStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3746,18 +3746,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryOfficialData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/datas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOfficialData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/datas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOfficialDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3806,18 +3806,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryOfficialDatasetFields',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/datasetFields',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOfficialDatasetFields',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/datasetFields',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOfficialDatasetFieldsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3869,18 +3869,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryOfficialDatasetList',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/datasetLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOfficialDatasetList',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/datasetLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOfficialDatasetListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3929,18 +3929,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryOfficialFormData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/datas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOfficialFormData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/datas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOfficialFormDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3989,18 +3989,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryOfficialFormDataDirectHolo',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/oaDatas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOfficialFormDataDirectHolo',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/oaDatas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOfficialFormDataDirectHoloResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4046,18 +4046,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryOnlineUserStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/onlineUserData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOnlineUserStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/onlineUserData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOnlineUserStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4103,18 +4103,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryRedEnvelopeReciveStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/redEnvelopeReciveData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryRedEnvelopeReciveStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/redEnvelopeReciveData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryRedEnvelopeReciveStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4160,18 +4160,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryRedEnvelopeSendStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/redEnvelopeSendData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryRedEnvelopeSendStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/redEnvelopeSendData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryRedEnvelopeSendStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4217,18 +4217,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryReportStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/reportData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryReportStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/reportData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryReportStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4274,18 +4274,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryScreen',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/screens',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryScreen',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/screens',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryScreenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4334,18 +4334,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryScreenTemplate',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/screenTemplates',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryScreenTemplate',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/screenTemplates',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryScreenTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4391,18 +4391,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QuerySingleMessageStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/singleMessagerData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QuerySingleMessageStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/singleMessagerData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QuerySingleMessageStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4448,18 +4448,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryTelMeetingStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/telMeetingData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryTelMeetingStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/telMeetingData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryTelMeetingStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4505,18 +4505,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryTodoStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/todoUserData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryTodoStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/todoUserData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryTodoStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4583,18 +4583,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryTotalDataCountService',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/datas/totalCounts/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryTotalDataCountService',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/datas/totalCounts/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryTotalDataCountServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4640,18 +4640,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryVedioMeetingStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/vedioMeetingData',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryVedioMeetingStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/vedioMeetingData',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryVedioMeetingStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4697,18 +4697,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydActiveDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydActiveDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydActiveDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydActiveDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydActiveDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4754,18 +4754,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydActiveMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydActiveMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydActiveMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydActiveMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydActiveMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4811,18 +4811,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydActiveWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydActiveWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydActiveWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydActiveWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydActiveWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4868,18 +4868,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydAppDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydAppDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydAppDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydAppDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydAppDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4925,18 +4925,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydAppMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydAppMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydAppMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydAppMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydAppMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4982,18 +4982,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydAppStdStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydAppStdDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydAppStdStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydAppStdDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydAppStdStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5039,18 +5039,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydAppWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydAppWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydAppWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydAppWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydAppWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5096,18 +5096,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydCalendarDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydCalendarDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydCalendarDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydCalendarDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydCalendarDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5153,18 +5153,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydCalendarMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydCalendarMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydCalendarMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydCalendarMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydCalendarMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5210,18 +5210,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydCalendarWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydCalendarWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydCalendarWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydCalendarWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydCalendarWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5267,18 +5267,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydDingMsgDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydDingMsgDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydDingMsgDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydDingMsgDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydDingMsgDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5324,18 +5324,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydDingMsgMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydDingMsgMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydDingMsgMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydDingMsgMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydDingMsgMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5381,18 +5381,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydDingMsgWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydDingMsgWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydDingMsgWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydDingMsgWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydDingMsgWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5438,18 +5438,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydGroupMsgDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydGroupMsgDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydGroupMsgDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydGroupMsgDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydGroupMsgDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5495,18 +5495,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydGroupMsgMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydGroupMsgMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydGroupMsgMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydGroupMsgMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydGroupMsgMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5552,18 +5552,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydGroupMsgWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydGroupMsgWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydGroupMsgWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydGroupMsgWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydGroupMsgWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5609,18 +5609,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydLogDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydLogDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydLogDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydLogDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydLogDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5666,18 +5666,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydLogMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydLogMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydLogMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydLogMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydLogMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5723,18 +5723,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydLogWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydLogWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydLogWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydLogWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydLogWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5780,18 +5780,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydMeetingDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydMeetingDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydMeetingDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydMeetingDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydMeetingDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5837,18 +5837,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydMeetingMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydMeetingMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydMeetingMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydMeetingMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydMeetingMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5894,18 +5894,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydMeetingWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydMeetingWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydMeetingWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydMeetingWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydMeetingWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5951,18 +5951,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydNoticeDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydNoticeDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydNoticeDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydNoticeDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydNoticeDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6008,18 +6008,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydNoticeMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydNoticeMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydNoticeMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydNoticeMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydNoticeMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6065,18 +6065,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydNoticeWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydNoticeWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydNoticeWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydNoticeWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydNoticeWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6122,18 +6122,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydSingleMsgDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydSingleMsgDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydSingleMsgDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydSingleMsgDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydSingleMsgDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6179,18 +6179,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydSingleMsgMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydSingleMsgMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydSingleMsgMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydSingleMsgMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydSingleMsgMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6236,18 +6236,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydSingleMsgWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydSingleMsgWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydSingleMsgWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydSingleMsgWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydSingleMsgWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6293,18 +6293,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydToatlMsgDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydToatlMsgDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydToatlMsgDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydToatlMsgDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydToatlMsgDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6350,18 +6350,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydToatlMsgMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydToatlMsgMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydToatlMsgMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydToatlMsgMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydToatlMsgMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6407,18 +6407,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydToatlMsgWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydToatlMsgWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydToatlMsgWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydToatlMsgWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydToatlMsgWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6464,18 +6464,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydTodoDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydTodoDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydTodoDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydTodoDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydTodoDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6521,18 +6521,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydTodoMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydTodoMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydTodoMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydTodoMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydTodoMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6578,18 +6578,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydTodoWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydTodoWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydTodoWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydTodoWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydTodoWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6635,18 +6635,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydTotalDayStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydTotalDayDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydTotalDayStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydTotalDayDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydTotalDayStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6692,18 +6692,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydTotalMonthStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydTotalMonthDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydTotalMonthStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydTotalMonthDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydTotalMonthStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6749,18 +6749,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydTotalStdStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydTotalStdDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydTotalStdStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydTotalStdDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydTotalStdStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6806,18 +6806,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryYydTotalWeekStatisticalData',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/yydTotalWeekDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryYydTotalWeekStatisticalData',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/yydTotalWeekDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryYydTotalWeekStatisticalDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6869,18 +6869,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchCompany',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/keywords/companies',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchCompany',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/keywords/companies',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchCompanyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6929,18 +6929,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncDataScreen',
-            'version'     => 'datacenter_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/dataScreens/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncDataScreen',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/dataScreens/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncDataScreenResponse::fromMap($this->execute($params, $req, $runtime));

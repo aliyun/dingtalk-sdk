@@ -36,13 +36,11 @@ class GetRecycleBinRequest extends Model
     public $unionId;
     protected $_name = [
         'recycleBinScope' => 'recycleBinScope',
-        'scopeId'         => 'scopeId',
-        'unionId'         => 'unionId',
+        'scopeId' => 'scopeId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

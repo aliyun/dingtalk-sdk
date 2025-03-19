@@ -52,17 +52,15 @@ class PremiumSaveIntegratedProcessRequest extends Model
      */
     public $templateConfig;
     protected $_name = [
-        'description'          => 'description',
-        'formComponents'       => 'formComponents',
-        'name'                 => 'name',
-        'processCode'          => 'processCode',
+        'description' => 'description',
+        'formComponents' => 'formComponents',
+        'name' => 'name',
+        'processCode' => 'processCode',
         'processFeatureConfig' => 'processFeatureConfig',
-        'templateConfig'       => 'templateConfig',
+        'templateConfig' => 'templateConfig',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -109,7 +107,7 @@ class PremiumSaveIntegratedProcessRequest extends Model
         if (isset($map['formComponents'])) {
             if (!empty($map['formComponents'])) {
                 $model->formComponents = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['formComponents'] as $item) {
                     $model->formComponents[$n++] = null !== $item ? FormComponent::fromMap($item) : $item;
                 }

@@ -16,9 +16,7 @@ class CloseTopboxResponseBody extends Model
         'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -134,26 +134,24 @@ class AddOpenKnowledgeRequest extends Model
      */
     public $userName;
     protected $_name = [
-        'attachments'     => 'attachments',
-        'categoryId'      => 'categoryId',
-        'content'         => 'content',
-        'effectTimeend'   => 'effectTimeend',
+        'attachments' => 'attachments',
+        'categoryId' => 'categoryId',
+        'content' => 'content',
+        'effectTimeend' => 'effectTimeend',
         'effectTimestart' => 'effectTimestart',
-        'extTitle'        => 'extTitle',
-        'keyword'         => 'keyword',
-        'libraryId'       => 'libraryId',
-        'openTeamId'      => 'openTeamId',
-        'source'          => 'source',
-        'tags'            => 'tags',
-        'title'           => 'title',
-        'type'            => 'type',
-        'userId'          => 'userId',
-        'userName'        => 'userName',
+        'extTitle' => 'extTitle',
+        'keyword' => 'keyword',
+        'libraryId' => 'libraryId',
+        'openTeamId' => 'openTeamId',
+        'source' => 'source',
+        'tags' => 'tags',
+        'title' => 'title',
+        'type' => 'type',
+        'userId' => 'userId',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -224,7 +222,7 @@ class AddOpenKnowledgeRequest extends Model
         if (isset($map['attachments'])) {
             if (!empty($map['attachments'])) {
                 $model->attachments = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['attachments'] as $item) {
                     $model->attachments[$n++] = null !== $item ? attachments::fromMap($item) : $item;
                 }

@@ -19,9 +19,7 @@ class ManagementListSpacesResponseBody extends Model
         'spaces' => 'spaces',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class ManagementListSpacesResponseBody extends Model
         if (isset($map['spaces'])) {
             if (!empty($map['spaces'])) {
                 $model->spaces = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['spaces'] as $item) {
                     $model->spaces[$n++] = null !== $item ? spaces::fromMap($item) : $item;
                 }

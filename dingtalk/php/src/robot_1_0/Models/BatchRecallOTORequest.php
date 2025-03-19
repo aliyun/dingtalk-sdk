@@ -25,12 +25,10 @@ class BatchRecallOTORequest extends Model
     public $robotCode;
     protected $_name = [
         'processQueryKeys' => 'processQueryKeys',
-        'robotCode'        => 'robotCode',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

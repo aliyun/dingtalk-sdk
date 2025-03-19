@@ -22,13 +22,11 @@ class result extends Model
      */
     public $markMap;
     protected $_name = [
-        'docId'   => 'docId',
+        'docId' => 'docId',
         'markMap' => 'markMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

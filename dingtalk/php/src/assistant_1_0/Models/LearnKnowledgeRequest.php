@@ -19,12 +19,10 @@ class LearnKnowledgeRequest extends Model
     public $docUrl;
     protected $_name = [
         'assistantId' => 'assistantId',
-        'docUrl'      => 'docUrl',
+        'docUrl' => 'docUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class QueryRoleTagListResponseBody extends Model
         'roleList' => 'roleList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

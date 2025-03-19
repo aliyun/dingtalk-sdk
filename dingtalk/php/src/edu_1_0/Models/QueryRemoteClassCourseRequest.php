@@ -35,14 +35,12 @@ class QueryRemoteClassCourseRequest extends Model
      */
     public $startTime;
     protected $_name = [
-        'endTime'   => 'endTime',
-        'operator'  => 'operator',
+        'endTime' => 'endTime',
+        'operator' => 'operator',
         'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

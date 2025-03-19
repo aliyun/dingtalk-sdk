@@ -31,14 +31,12 @@ class sourceProcessVOList extends Model
      */
     public $processCode;
     protected $_name = [
-        'bizType'     => 'bizType',
-        'name'        => 'name',
+        'bizType' => 'bizType',
+        'name' => 'name',
         'processCode' => 'processCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

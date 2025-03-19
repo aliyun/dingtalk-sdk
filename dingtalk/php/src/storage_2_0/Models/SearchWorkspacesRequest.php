@@ -32,14 +32,12 @@ class SearchWorkspacesRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'keyword'    => 'keyword',
-        'option'     => 'option',
+        'keyword' => 'keyword',
+        'option' => 'option',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

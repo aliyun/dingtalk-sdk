@@ -37,16 +37,14 @@ class MoveDentryRequest extends Model
      */
     public $toPrevDentryId;
     protected $_name = [
-        'operatorId'       => 'operatorId',
-        'targetSpaceId'    => 'targetSpaceId',
-        'toNextDentryId'   => 'toNextDentryId',
+        'operatorId' => 'operatorId',
+        'targetSpaceId' => 'targetSpaceId',
+        'toNextDentryId' => 'toNextDentryId',
         'toParentDentryId' => 'toParentDentryId',
-        'toPrevDentryId'   => 'toPrevDentryId',
+        'toPrevDentryId' => 'toPrevDentryId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

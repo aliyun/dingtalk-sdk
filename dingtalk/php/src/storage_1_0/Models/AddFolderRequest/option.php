@@ -21,13 +21,11 @@ class option extends Model
      */
     public $conflictStrategy;
     protected $_name = [
-        'appProperties'    => 'appProperties',
+        'appProperties' => 'appProperties',
         'conflictStrategy' => 'conflictStrategy',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class option extends Model
         if (isset($map['appProperties'])) {
             if (!empty($map['appProperties'])) {
                 $model->appProperties = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['appProperties'] as $item) {
                     $model->appProperties[$n++] = null !== $item ? appProperties::fromMap($item) : $item;
                 }

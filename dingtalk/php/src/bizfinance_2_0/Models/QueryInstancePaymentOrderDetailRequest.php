@@ -18,9 +18,7 @@ class QueryInstancePaymentOrderDetailRequest extends Model
         'orderNo' => 'orderNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

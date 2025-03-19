@@ -21,13 +21,11 @@ class GetConfDetailDataResponseBody extends Model
      */
     public $nextToken;
     protected $_name = [
-        'list'      => 'list',
+        'list' => 'list',
         'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class GetConfDetailDataResponseBody extends Model
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['list'] as $item) {
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }

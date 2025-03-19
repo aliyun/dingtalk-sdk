@@ -19,9 +19,7 @@ class sections extends Model
         'times' => 'times',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class sections extends Model
         if (isset($map['times'])) {
             if (!empty($map['times'])) {
                 $model->times = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['times'] as $item) {
                     $model->times[$n++] = null !== $item ? times::fromMap($item) : $item;
                 }

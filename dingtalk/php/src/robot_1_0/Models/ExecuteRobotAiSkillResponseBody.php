@@ -18,13 +18,11 @@ class ExecuteRobotAiSkillResponseBody extends Model
      */
     public $skillExecuteId;
     protected $_name = [
-        'result'         => 'result',
+        'result' => 'result',
         'skillExecuteId' => 'skillExecuteId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

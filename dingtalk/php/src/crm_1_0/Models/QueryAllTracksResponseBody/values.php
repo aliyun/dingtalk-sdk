@@ -59,18 +59,16 @@ class values extends Model
      */
     public $type;
     protected $_name = [
-        'bizId'      => 'bizId',
-        'creator'    => 'creator',
+        'bizId' => 'bizId',
+        'creator' => 'creator',
         'customerId' => 'customerId',
-        'gmtCreate'  => 'gmtCreate',
-        'id'         => 'id',
-        'subType'    => 'subType',
-        'type'       => 'type',
+        'gmtCreate' => 'gmtCreate',
+        'id' => 'id',
+        'subType' => 'subType',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

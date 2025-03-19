@@ -24,13 +24,11 @@ class BatchRemoveFollowRecordsRequest extends Model
      */
     public $operatorUserId;
     protected $_name = [
-        'instanceIds'    => 'instanceIds',
+        'instanceIds' => 'instanceIds',
         'operatorUserId' => 'operatorUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

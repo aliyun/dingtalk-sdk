@@ -33,14 +33,12 @@ class bindStudents extends Model
     public $staffId;
     protected $_name = [
         'classId' => 'classId',
-        'corpId'  => 'corpId',
-        'period'  => 'period',
+        'corpId' => 'corpId',
+        'period' => 'period',
         'staffId' => 'staffId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

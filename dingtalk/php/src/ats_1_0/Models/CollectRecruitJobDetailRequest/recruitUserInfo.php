@@ -36,15 +36,13 @@ class recruitUserInfo extends Model
      */
     public $userName;
     protected $_name = [
-        'extInfo'    => 'extInfo',
-        'outUserId'  => 'outUserId',
+        'extInfo' => 'extInfo',
+        'outUserId' => 'outUserId',
         'userMobile' => 'userMobile',
-        'userName'   => 'userName',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

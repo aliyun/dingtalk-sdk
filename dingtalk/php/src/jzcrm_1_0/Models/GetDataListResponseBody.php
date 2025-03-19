@@ -51,17 +51,15 @@ class GetDataListResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'data'       => 'data',
-        'dataname'   => 'dataname',
-        'page'       => 'page',
-        'pageSize'   => 'pageSize',
-        'time'       => 'time',
+        'data' => 'data',
+        'dataname' => 'dataname',
+        'page' => 'page',
+        'pageSize' => 'pageSize',
+        'time' => 'time',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -105,7 +103,7 @@ class GetDataListResponseBody extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }

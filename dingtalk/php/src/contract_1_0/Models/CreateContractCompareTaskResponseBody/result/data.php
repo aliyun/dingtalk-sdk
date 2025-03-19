@@ -16,9 +16,7 @@ class data extends Model
         'compareTaskId' => 'compareTaskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

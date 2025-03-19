@@ -30,13 +30,11 @@ class QueryCollegeContactUserDetailRequest extends Model
     public $userid;
     protected $_name = [
         'jobNumber' => 'jobNumber',
-        'language'  => 'language',
-        'userid'    => 'userid',
+        'language' => 'language',
+        'userid' => 'userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

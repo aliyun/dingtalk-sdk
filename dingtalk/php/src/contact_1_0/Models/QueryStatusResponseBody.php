@@ -20,9 +20,7 @@ class QueryStatusResponseBody extends Model
         'disable' => 'disable',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

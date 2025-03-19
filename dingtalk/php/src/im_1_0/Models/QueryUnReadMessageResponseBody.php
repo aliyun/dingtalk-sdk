@@ -27,9 +27,7 @@ class QueryUnReadMessageResponseBody extends Model
         'unReadItems' => 'unReadItems',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class QueryUnReadMessageResponseBody extends Model
         if (isset($map['unReadItems'])) {
             if (!empty($map['unReadItems'])) {
                 $model->unReadItems = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['unReadItems'] as $item) {
                     $model->unReadItems[$n++] = null !== $item ? unReadItems::fromMap($item) : $item;
                 }

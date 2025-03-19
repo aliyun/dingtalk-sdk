@@ -53,8 +53,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -131,18 +131,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddCityCarApply',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/cityCarApprovals',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddCityCarApply',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/cityCarApprovals',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddCityCarApplyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -203,18 +203,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ApproveCityCarApply',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/cityCarApprovals',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ApproveCityCarApply',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/cityCarApprovals',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ApproveCityCarApplyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -275,18 +275,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'BillSettementBtripTrain',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/billSettlements/btripTrains',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BillSettementBtripTrain',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/billSettlements/btripTrains',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BillSettementBtripTrainResponse::fromMap($this->execute($params, $req, $runtime));
@@ -347,18 +347,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'BillSettementCar',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/billSettlements/cars',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BillSettementCar',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/billSettlements/cars',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BillSettementCarResponse::fromMap($this->execute($params, $req, $runtime));
@@ -419,18 +419,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'BillSettementFlight',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/billSettlements/flights',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BillSettementFlight',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/billSettlements/flights',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BillSettementFlightResponse::fromMap($this->execute($params, $req, $runtime));
@@ -491,18 +491,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'BillSettementHotel',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/billSettlements/hotels',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BillSettementHotel',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/billSettlements/hotels',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BillSettementHotelResponse::fromMap($this->execute($params, $req, $runtime));
@@ -551,18 +551,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFlightExceedApply',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/exceedapply/getFlight',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFlightExceedApply',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/exceedapply/getFlight',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFlightExceedApplyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -611,18 +611,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetHotelExceedApply',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/exceedapply/getHotel',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetHotelExceedApply',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/exceedapply/getHotel',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetHotelExceedApplyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -671,18 +671,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTrainExceedApply',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/exceedapply/getTrain',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTrainExceedApply',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/exceedapply/getTrain',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTrainExceedApplyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -746,18 +746,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCityCarApply',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/cityCarApprovals',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCityCarApply',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/cityCarApprovals',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCityCarApplyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -809,18 +809,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryUnionOrder',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/unionOrders',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUnionOrder',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/unionOrders',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUnionOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -881,18 +881,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SyncExceedApply',
-            'version'     => 'alitrip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/alitrip/exceedapply/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncExceedApply',
+            'version' => 'alitrip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/alitrip/exceedapply/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncExceedApplyResponse::fromMap($this->execute($params, $req, $runtime));

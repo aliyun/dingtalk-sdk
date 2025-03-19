@@ -43,18 +43,16 @@ class paymentRecallFileList extends Model
      */
     public $spaceId;
     protected $_name = [
-        'detailId'      => 'detailId',
-        'fileId'        => 'fileId',
-        'fileName'      => 'fileName',
-        'fileSize'      => 'fileSize',
-        'fileType'      => 'fileType',
+        'detailId' => 'detailId',
+        'fileId' => 'fileId',
+        'fileName' => 'fileName',
+        'fileSize' => 'fileSize',
+        'fileType' => 'fileType',
         'recallFileUrl' => 'recallFileUrl',
-        'spaceId'       => 'spaceId',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

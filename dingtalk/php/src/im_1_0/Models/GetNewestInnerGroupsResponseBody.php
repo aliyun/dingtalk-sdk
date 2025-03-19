@@ -17,9 +17,7 @@ class GetNewestInnerGroupsResponseBody extends Model
         'groupInfos' => 'groupInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class GetNewestInnerGroupsResponseBody extends Model
         if (isset($map['groupInfos'])) {
             if (!empty($map['groupInfos'])) {
                 $model->groupInfos = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['groupInfos'] as $item) {
                     $model->groupInfos[$n++] = null !== $item ? groupInfos::fromMap($item) : $item;
                 }

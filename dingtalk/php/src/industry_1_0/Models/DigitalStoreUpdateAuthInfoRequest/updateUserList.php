@@ -27,14 +27,12 @@ class updateUserList extends Model
      */
     public $userId;
     protected $_name = [
-        'roleList'     => 'roleList',
+        'roleList' => 'roleList',
         'userAuthList' => 'userAuthList',
-        'userId'       => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -75,7 +73,7 @@ class updateUserList extends Model
         if (isset($map['roleList'])) {
             if (!empty($map['roleList'])) {
                 $model->roleList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['roleList'] as $item) {
                     $model->roleList[$n++] = null !== $item ? roleList::fromMap($item) : $item;
                 }
@@ -84,7 +82,7 @@ class updateUserList extends Model
         if (isset($map['userAuthList'])) {
             if (!empty($map['userAuthList'])) {
                 $model->userAuthList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['userAuthList'] as $item) {
                     $model->userAuthList[$n++] = null !== $item ? userAuthList::fromMap($item) : $item;
                 }

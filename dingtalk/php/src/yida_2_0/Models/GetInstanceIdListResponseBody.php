@@ -27,14 +27,12 @@ class GetInstanceIdListResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'data'       => 'data',
+        'data' => 'data',
         'pageNumber' => 'pageNumber',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

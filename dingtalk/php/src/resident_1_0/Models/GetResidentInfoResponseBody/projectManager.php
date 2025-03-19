@@ -23,14 +23,12 @@ class projectManager extends Model
      */
     public $userName;
     protected $_name = [
-        'avatar'   => 'avatar',
-        'userId'   => 'userId',
+        'avatar' => 'avatar',
+        'userId' => 'userId',
         'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

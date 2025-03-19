@@ -42,15 +42,13 @@ class attachmentList extends Model
     public $title;
     protected $_name = [
         'mimeType' => 'mime_type',
-        'path'     => 'path',
-        'size'     => 'size',
-        'suffix'   => 'suffix',
-        'title'    => 'title',
+        'path' => 'path',
+        'size' => 'size',
+        'suffix' => 'suffix',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

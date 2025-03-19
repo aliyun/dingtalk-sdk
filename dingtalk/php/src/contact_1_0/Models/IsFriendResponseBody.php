@@ -18,9 +18,7 @@ class IsFriendResponseBody extends Model
         'isFriend' => 'isFriend',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

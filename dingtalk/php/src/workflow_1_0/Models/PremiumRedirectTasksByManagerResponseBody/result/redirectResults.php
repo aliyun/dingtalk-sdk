@@ -34,13 +34,11 @@ class redirectResults extends Model
     public $taskId;
     protected $_name = [
         'errorMsg' => 'errorMsg',
-        'success'  => 'success',
-        'taskId'   => 'taskId',
+        'success' => 'success',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

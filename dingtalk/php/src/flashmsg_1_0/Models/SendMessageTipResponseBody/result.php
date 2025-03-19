@@ -18,13 +18,11 @@ class result extends Model
      */
     public $cardInstanceId;
     protected $_name = [
-        'bizId'          => 'bizId',
+        'bizId' => 'bizId',
         'cardInstanceId' => 'cardInstanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

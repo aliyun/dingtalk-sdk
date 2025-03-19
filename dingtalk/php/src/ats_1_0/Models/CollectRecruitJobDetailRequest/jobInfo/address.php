@@ -57,18 +57,16 @@ class address extends Model
      */
     public $provinceCode;
     protected $_name = [
-        'cityCode'     => 'cityCode',
-        'detail'       => 'detail',
+        'cityCode' => 'cityCode',
+        'detail' => 'detail',
         'districtCode' => 'districtCode',
-        'latitude'     => 'latitude',
-        'longitude'    => 'longitude',
-        'name'         => 'name',
+        'latitude' => 'latitude',
+        'longitude' => 'longitude',
+        'name' => 'name',
         'provinceCode' => 'provinceCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,14 +23,12 @@ class subscribeScope extends Model
      */
     public $unionIds;
     protected $_name = [
-        'corpIds'             => 'corpIds',
+        'corpIds' => 'corpIds',
         'openConversationIds' => 'openConversationIds',
-        'unionIds'            => 'unionIds',
+        'unionIds' => 'unionIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

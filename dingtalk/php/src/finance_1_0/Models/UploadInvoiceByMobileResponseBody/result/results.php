@@ -53,16 +53,14 @@ class results extends Model
      */
     public $success;
     protected $_name = [
-        'errCode'     => 'errCode',
+        'errCode' => 'errCode',
         'invoiceCode' => 'invoiceCode',
-        'invoiceNo'   => 'invoiceNo',
-        'reason'      => 'reason',
-        'success'     => 'success',
+        'invoiceNo' => 'invoiceNo',
+        'reason' => 'reason',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -49,17 +49,15 @@ class devices extends Model
      */
     public $location;
     protected $_name = [
-        'deviceId'     => 'deviceId',
-        'deviceName'   => 'deviceName',
+        'deviceId' => 'deviceId',
+        'deviceName' => 'deviceName',
         'deviceStatus' => 'deviceStatus',
-        'extraData'    => 'extraData',
-        'liveUrls'     => 'liveUrls',
-        'location'     => 'location',
+        'extraData' => 'extraData',
+        'liveUrls' => 'liveUrls',
+        'location' => 'location',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

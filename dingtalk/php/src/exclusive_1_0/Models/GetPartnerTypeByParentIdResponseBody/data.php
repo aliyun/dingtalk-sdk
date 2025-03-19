@@ -35,14 +35,12 @@ class data extends Model
      */
     public $typeName;
     protected $_name = [
-        'labelId'  => 'labelId',
-        'typeId'   => 'typeId',
+        'labelId' => 'labelId',
+        'typeId' => 'typeId',
         'typeName' => 'typeName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

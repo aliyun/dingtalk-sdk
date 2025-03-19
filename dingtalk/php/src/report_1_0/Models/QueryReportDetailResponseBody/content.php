@@ -42,15 +42,13 @@ class content extends Model
     public $value;
     protected $_name = [
         'images' => 'images',
-        'key'    => 'key',
-        'sort'   => 'sort',
-        'type'   => 'type',
-        'value'  => 'value',
+        'key' => 'key',
+        'sort' => 'sort',
+        'type' => 'type',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

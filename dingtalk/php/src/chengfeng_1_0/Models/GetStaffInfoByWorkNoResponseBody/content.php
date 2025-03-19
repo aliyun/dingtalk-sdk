@@ -126,25 +126,23 @@ class content extends Model
      */
     public $workNumbers;
     protected $_name = [
-        'deptCode'        => 'deptCode',
-        'deptName'        => 'deptName',
-        'email'           => 'email',
-        'employType'      => 'employType',
-        'employeeStatus'  => 'employeeStatus',
-        'jobLevelName'    => 'jobLevelName',
+        'deptCode' => 'deptCode',
+        'deptName' => 'deptName',
+        'email' => 'email',
+        'employType' => 'employType',
+        'employeeStatus' => 'employeeStatus',
+        'jobLevelName' => 'jobLevelName',
         'jobPositionCode' => 'jobPositionCode',
         'jobPositionName' => 'jobPositionName',
-        'jobPostCode'     => 'jobPostCode',
-        'jobPostName'     => 'jobPostName',
-        'mobile'          => 'mobile',
-        'name'            => 'name',
-        'nickName'        => 'nickName',
-        'workNumbers'     => 'workNumbers',
+        'jobPostCode' => 'jobPostCode',
+        'jobPostName' => 'jobPostName',
+        'mobile' => 'mobile',
+        'name' => 'name',
+        'nickName' => 'nickName',
+        'workNumbers' => 'workNumbers',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

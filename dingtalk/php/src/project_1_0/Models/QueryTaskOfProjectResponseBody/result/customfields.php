@@ -18,9 +18,7 @@ class customfields extends Model
         'customfieldId' => 'customfieldId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

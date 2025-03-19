@@ -50,17 +50,15 @@ class data extends Model
      */
     public $userId;
     protected $_name = [
-        'agentId'              => 'agentId',
-        'invokeTime'           => 'invokeTime',
+        'agentId' => 'agentId',
+        'invokeTime' => 'invokeTime',
         'personIdentification' => 'personIdentification',
-        'platform'             => 'platform',
-        'scene'                => 'scene',
-        'userId'               => 'userId',
+        'platform' => 'platform',
+        'scene' => 'scene',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

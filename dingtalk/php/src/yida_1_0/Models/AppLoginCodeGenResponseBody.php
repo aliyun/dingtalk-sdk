@@ -16,9 +16,7 @@ class AppLoginCodeGenResponseBody extends Model
         'loginCode' => 'loginCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

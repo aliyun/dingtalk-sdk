@@ -18,9 +18,7 @@ class DeviceConferenceResponseBody extends Model
         'conferenceId' => 'conferenceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -32,13 +32,11 @@ class sectionModel extends Model
     public $sectionType;
     protected $_name = [
         'sectionIndex' => 'sectionIndex',
-        'sectionName'  => 'sectionName',
-        'sectionType'  => 'sectionType',
+        'sectionName' => 'sectionName',
+        'sectionType' => 'sectionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

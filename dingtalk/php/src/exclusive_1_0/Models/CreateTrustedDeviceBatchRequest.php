@@ -37,15 +37,13 @@ class CreateTrustedDeviceBatchRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'detailList'     => 'detailList',
+        'detailList' => 'detailList',
         'macAddressList' => 'macAddressList',
-        'platform'       => 'platform',
-        'userId'         => 'userId',
+        'platform' => 'platform',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -83,7 +81,7 @@ class CreateTrustedDeviceBatchRequest extends Model
         if (isset($map['detailList'])) {
             if (!empty($map['detailList'])) {
                 $model->detailList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['detailList'] as $item) {
                     $model->detailList[$n++] = null !== $item ? detailList::fromMap($item) : $item;
                 }

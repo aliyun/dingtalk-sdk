@@ -122,25 +122,23 @@ class feedInfo extends Model
      */
     public $title;
     protected $_name = [
-        'actionType'         => 'actionType',
-        'belongsTo'          => 'belongsTo',
-        'feedCategory'       => 'feedCategory',
-        'feedId'             => 'feedId',
-        'feedTag'            => 'feedTag',
-        'feedType'           => 'feedType',
-        'industryId'         => 'industryId',
-        'introduction'       => 'introduction',
+        'actionType' => 'actionType',
+        'belongsTo' => 'belongsTo',
+        'feedCategory' => 'feedCategory',
+        'feedId' => 'feedId',
+        'feedTag' => 'feedTag',
+        'feedType' => 'feedType',
+        'industryId' => 'industryId',
+        'introduction' => 'introduction',
         'introductionPicUrl' => 'introductionPicUrl',
-        'mcnId'              => 'mcnId',
-        'mediaContents'      => 'mediaContents',
-        'recommends'         => 'recommends',
-        'thumbUrl'           => 'thumbUrl',
-        'title'              => 'title',
+        'mcnId' => 'mcnId',
+        'mediaContents' => 'mediaContents',
+        'recommends' => 'recommends',
+        'thumbUrl' => 'thumbUrl',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -244,7 +242,7 @@ class feedInfo extends Model
         if (isset($map['mediaContents'])) {
             if (!empty($map['mediaContents'])) {
                 $model->mediaContents = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['mediaContents'] as $item) {
                     $model->mediaContents[$n++] = null !== $item ? mediaContents::fromMap($item) : $item;
                 }
@@ -253,7 +251,7 @@ class feedInfo extends Model
         if (isset($map['recommends'])) {
             if (!empty($map['recommends'])) {
                 $model->recommends = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['recommends'] as $item) {
                     $model->recommends[$n++] = null !== $item ? recommends::fromMap($item) : $item;
                 }

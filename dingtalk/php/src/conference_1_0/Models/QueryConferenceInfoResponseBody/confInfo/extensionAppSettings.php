@@ -28,15 +28,13 @@ class extensionAppSettings extends Model
      */
     public $extensionAppBizData;
     protected $_name = [
-        'appCode'             => 'appCode',
-        'appId'               => 'appId',
-        'autoOpenMode'        => 'autoOpenMode',
+        'appCode' => 'appCode',
+        'appId' => 'appId',
+        'autoOpenMode' => 'autoOpenMode',
         'extensionAppBizData' => 'extensionAppBizData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

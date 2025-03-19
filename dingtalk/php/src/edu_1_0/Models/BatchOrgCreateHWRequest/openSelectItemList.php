@@ -24,14 +24,12 @@ class openSelectItemList extends Model
      */
     public $selectedClassesDesc;
     protected $_name = [
-        'classList'           => 'classList',
-        'corpId'              => 'corpId',
+        'classList' => 'classList',
+        'corpId' => 'corpId',
         'selectedClassesDesc' => 'selectedClassesDesc',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class openSelectItemList extends Model
         if (isset($map['classList'])) {
             if (!empty($map['classList'])) {
                 $model->classList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['classList'] as $item) {
                     $model->classList[$n++] = null !== $item ? classList::fromMap($item) : $item;
                 }

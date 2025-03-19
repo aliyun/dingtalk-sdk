@@ -16,9 +16,7 @@ class filter extends Model
         'created' => 'created',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

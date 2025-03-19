@@ -18,9 +18,7 @@ class AddCityCarApplyResponseBody extends Model
         'applyId' => 'applyId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

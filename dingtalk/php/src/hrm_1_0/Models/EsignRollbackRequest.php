@@ -18,9 +18,7 @@ class EsignRollbackRequest extends Model
         'optUserId' => 'optUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class OkrPeriodsRequest extends Model
      */
     public $status;
     protected $_name = [
-        'goodsCode'  => 'goodsCode',
+        'goodsCode' => 'goodsCode',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'status'     => 'status',
+        'pageSize' => 'pageSize',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

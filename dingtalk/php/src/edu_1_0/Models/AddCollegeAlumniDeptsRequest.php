@@ -23,13 +23,11 @@ class AddCollegeAlumniDeptsRequest extends Model
      */
     public $operator;
     protected $_name = [
-        'depts'    => 'depts',
+        'depts' => 'depts',
         'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -61,7 +59,7 @@ class AddCollegeAlumniDeptsRequest extends Model
         if (isset($map['depts'])) {
             if (!empty($map['depts'])) {
                 $model->depts = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['depts'] as $item) {
                     $model->depts[$n++] = null !== $item ? depts::fromMap($item) : $item;
                 }

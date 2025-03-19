@@ -33,14 +33,12 @@ class TranslateFileRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'medias'         => 'medias',
+        'medias' => 'medias',
         'outputFileName' => 'outputFileName',
-        'unionId'        => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

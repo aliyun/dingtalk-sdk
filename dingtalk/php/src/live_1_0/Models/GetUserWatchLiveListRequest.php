@@ -44,13 +44,11 @@ class GetUserWatchLiveListRequest extends Model
     protected $_name = [
         'filterType' => 'filterType',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'unionId'    => 'unionId',
+        'nextToken' => 'nextToken',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

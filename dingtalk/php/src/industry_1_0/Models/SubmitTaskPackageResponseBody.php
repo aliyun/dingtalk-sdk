@@ -18,13 +18,11 @@ class SubmitTaskPackageResponseBody extends Model
      */
     public $taskPackageId;
     protected $_name = [
-        'taskIdList'    => 'taskIdList',
+        'taskIdList' => 'taskIdList',
         'taskPackageId' => 'taskPackageId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -48,18 +48,16 @@ class summary extends Model
      */
     public $questionsAnsweringSummary;
     protected $_name = [
-        'actions'                   => 'actions',
-        'autoChapters'              => 'autoChapters',
-        'conversationalSummary'     => 'conversationalSummary',
-        'keySentences'              => 'keySentences',
-        'keywords'                  => 'keywords',
-        'paragraphSummary'          => 'paragraphSummary',
+        'actions' => 'actions',
+        'autoChapters' => 'autoChapters',
+        'conversationalSummary' => 'conversationalSummary',
+        'keySentences' => 'keySentences',
+        'keywords' => 'keywords',
+        'paragraphSummary' => 'paragraphSummary',
         'questionsAnsweringSummary' => 'questionsAnsweringSummary',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -130,7 +128,7 @@ class summary extends Model
         if (isset($map['actions'])) {
             if (!empty($map['actions'])) {
                 $model->actions = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['actions'] as $item) {
                     $model->actions[$n++] = null !== $item ? actions::fromMap($item) : $item;
                 }
@@ -139,7 +137,7 @@ class summary extends Model
         if (isset($map['autoChapters'])) {
             if (!empty($map['autoChapters'])) {
                 $model->autoChapters = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['autoChapters'] as $item) {
                     $model->autoChapters[$n++] = null !== $item ? autoChapters::fromMap($item) : $item;
                 }
@@ -148,7 +146,7 @@ class summary extends Model
         if (isset($map['conversationalSummary'])) {
             if (!empty($map['conversationalSummary'])) {
                 $model->conversationalSummary = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['conversationalSummary'] as $item) {
                     $model->conversationalSummary[$n++] = null !== $item ? conversationalSummary::fromMap($item) : $item;
                 }
@@ -157,7 +155,7 @@ class summary extends Model
         if (isset($map['keySentences'])) {
             if (!empty($map['keySentences'])) {
                 $model->keySentences = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['keySentences'] as $item) {
                     $model->keySentences[$n++] = null !== $item ? keySentences::fromMap($item) : $item;
                 }
@@ -174,7 +172,7 @@ class summary extends Model
         if (isset($map['questionsAnsweringSummary'])) {
             if (!empty($map['questionsAnsweringSummary'])) {
                 $model->questionsAnsweringSummary = [];
-                $n                                = 0;
+                $n = 0;
                 foreach ($map['questionsAnsweringSummary'] as $item) {
                     $model->questionsAnsweringSummary[$n++] = null !== $item ? questionsAnsweringSummary::fromMap($item) : $item;
                 }

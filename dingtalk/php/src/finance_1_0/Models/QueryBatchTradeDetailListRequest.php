@@ -37,12 +37,10 @@ class QueryBatchTradeDetailListRequest extends Model
     protected $_name = [
         'outBatchNo' => 'outBatchNo',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

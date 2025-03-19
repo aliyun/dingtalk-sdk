@@ -95,21 +95,19 @@ class CreateSnsAppOrderRequest extends Model
      */
     public $timestamp;
     protected $_name = [
-        'actualAmount'    => 'actualAmount',
-        'alipayAppId'     => 'alipayAppId',
-        'bizCode'         => 'bizCode',
-        'detailList'      => 'detailList',
-        'labelAmount'     => 'labelAmount',
-        'merchantId'      => 'merchantId',
+        'actualAmount' => 'actualAmount',
+        'alipayAppId' => 'alipayAppId',
+        'bizCode' => 'bizCode',
+        'detailList' => 'detailList',
+        'labelAmount' => 'labelAmount',
+        'merchantId' => 'merchantId',
         'merchantOrderNo' => 'merchantOrderNo',
-        'signature'       => 'signature',
-        'subject'         => 'subject',
-        'timestamp'       => 'timestamp',
+        'signature' => 'signature',
+        'subject' => 'subject',
+        'timestamp' => 'timestamp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -174,7 +172,7 @@ class CreateSnsAppOrderRequest extends Model
         if (isset($map['detailList'])) {
             if (!empty($map['detailList'])) {
                 $model->detailList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['detailList'] as $item) {
                     $model->detailList[$n++] = null !== $item ? detailList::fromMap($item) : $item;
                 }

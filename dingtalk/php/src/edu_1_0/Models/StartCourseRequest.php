@@ -42,16 +42,14 @@ class StartCourseRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'courseCode'       => 'courseCode',
-        'ext'              => 'ext',
-        'isvCode'          => 'isvCode',
+        'courseCode' => 'courseCode',
+        'ext' => 'ext',
+        'isvCode' => 'isvCode',
         'livePlayInfoList' => 'livePlayInfoList',
-        'opUserId'         => 'opUserId',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -101,7 +99,7 @@ class StartCourseRequest extends Model
         if (isset($map['livePlayInfoList'])) {
             if (!empty($map['livePlayInfoList'])) {
                 $model->livePlayInfoList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['livePlayInfoList'] as $item) {
                     $model->livePlayInfoList[$n++] = null !== $item ? livePlayInfoList::fromMap($item) : $item;
                 }

@@ -19,9 +19,7 @@ class authAppInfo extends Model
         'agentList' => 'agentList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class authAppInfo extends Model
         if (isset($map['agentList'])) {
             if (!empty($map['agentList'])) {
                 $model->agentList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['agentList'] as $item) {
                     $model->agentList[$n++] = null !== $item ? agentList::fromMap($item) : $item;
                 }

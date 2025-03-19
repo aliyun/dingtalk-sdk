@@ -29,15 +29,13 @@ class GetDeptsByOrgIdResponseBody extends Model
      */
     public $nextToken;
     protected $_name = [
-        'deptList'   => 'deptList',
-        'hasMore'    => 'hasMore',
+        'deptList' => 'deptList',
+        'hasMore' => 'hasMore',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -75,7 +73,7 @@ class GetDeptsByOrgIdResponseBody extends Model
         if (isset($map['deptList'])) {
             if (!empty($map['deptList'])) {
                 $model->deptList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['deptList'] as $item) {
                     $model->deptList[$n++] = null !== $item ? deptList::fromMap($item) : $item;
                 }

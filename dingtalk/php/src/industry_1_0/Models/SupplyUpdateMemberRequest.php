@@ -73,20 +73,18 @@ class SupplyUpdateMemberRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'isCopyDept'       => 'isCopyDept',
-        'memberTitle'      => 'memberTitle',
+        'isCopyDept' => 'isCopyDept',
+        'memberTitle' => 'memberTitle',
         'memberWorkNumber' => 'memberWorkNumber',
-        'mobile'           => 'mobile',
-        'newDeptId'        => 'newDeptId',
-        'oldDeptId'        => 'oldDeptId',
-        'roleIdList'       => 'roleIdList',
-        'unionId'          => 'unionId',
-        'userId'           => 'userId',
+        'mobile' => 'mobile',
+        'newDeptId' => 'newDeptId',
+        'oldDeptId' => 'oldDeptId',
+        'roleIdList' => 'roleIdList',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

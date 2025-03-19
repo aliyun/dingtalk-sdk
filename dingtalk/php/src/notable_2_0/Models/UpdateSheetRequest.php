@@ -18,9 +18,7 @@ class UpdateSheetRequest extends Model
         'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

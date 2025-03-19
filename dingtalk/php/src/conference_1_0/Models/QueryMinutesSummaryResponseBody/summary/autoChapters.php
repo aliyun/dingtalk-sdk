@@ -33,16 +33,14 @@ class autoChapters extends Model
      */
     public $summary;
     protected $_name = [
-        'end'      => 'end',
+        'end' => 'end',
         'headline' => 'headline',
-        'id'       => 'id',
-        'start'    => 'start',
-        'summary'  => 'summary',
+        'id' => 'id',
+        'start' => 'start',
+        'summary' => 'summary',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

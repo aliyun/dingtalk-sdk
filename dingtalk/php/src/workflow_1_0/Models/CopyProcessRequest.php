@@ -31,14 +31,12 @@ class CopyProcessRequest extends Model
      */
     public $sourceProcessVOList;
     protected $_name = [
-        'copyOptions'         => 'copyOptions',
-        'sourceCorpId'        => 'sourceCorpId',
+        'copyOptions' => 'copyOptions',
+        'sourceCorpId' => 'sourceCorpId',
         'sourceProcessVOList' => 'sourceProcessVOList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -79,7 +77,7 @@ class CopyProcessRequest extends Model
         if (isset($map['sourceProcessVOList'])) {
             if (!empty($map['sourceProcessVOList'])) {
                 $model->sourceProcessVOList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['sourceProcessVOList'] as $item) {
                     $model->sourceProcessVOList[$n++] = null !== $item ? sourceProcessVOList::fromMap($item) : $item;
                 }

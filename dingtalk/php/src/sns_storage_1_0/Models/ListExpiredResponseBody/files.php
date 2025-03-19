@@ -121,26 +121,24 @@ class files extends Model
     public $version;
     protected $_name = [
         'conversationId' => 'conversationId',
-        'createTime'     => 'createTime',
-        'creatorId'      => 'creatorId',
-        'extension'      => 'extension',
-        'id'             => 'id',
-        'modifiedTime'   => 'modifiedTime',
-        'modifierId'     => 'modifierId',
-        'name'           => 'name',
-        'parentId'       => 'parentId',
-        'path'           => 'path',
-        'size'           => 'size',
-        'spaceId'        => 'spaceId',
-        'status'         => 'status',
-        'type'           => 'type',
-        'uuid'           => 'uuid',
-        'version'        => 'version',
+        'createTime' => 'createTime',
+        'creatorId' => 'creatorId',
+        'extension' => 'extension',
+        'id' => 'id',
+        'modifiedTime' => 'modifiedTime',
+        'modifierId' => 'modifierId',
+        'name' => 'name',
+        'parentId' => 'parentId',
+        'path' => 'path',
+        'size' => 'size',
+        'spaceId' => 'spaceId',
+        'status' => 'status',
+        'type' => 'type',
+        'uuid' => 'uuid',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -33,16 +33,14 @@ class result extends Model
      */
     public $userId;
     protected $_name = [
-        'boundToObjectId'   => 'boundToObjectId',
+        'boundToObjectId' => 'boundToObjectId',
         'boundToObjectType' => 'boundToObjectType',
-        'joined'            => 'joined',
-        'role'              => 'role',
-        'userId'            => 'userId',
+        'joined' => 'joined',
+        'role' => 'role',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

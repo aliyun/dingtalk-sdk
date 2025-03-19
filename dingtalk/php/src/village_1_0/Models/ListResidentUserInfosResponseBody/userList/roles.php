@@ -30,13 +30,11 @@ class roles extends Model
     public $tagName;
     protected $_name = [
         'tagCode' => 'tagCode',
-        'tagId'   => 'tagId',
+        'tagId' => 'tagId',
         'tagName' => 'tagName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

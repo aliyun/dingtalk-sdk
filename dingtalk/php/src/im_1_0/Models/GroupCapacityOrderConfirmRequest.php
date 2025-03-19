@@ -23,12 +23,10 @@ class GroupCapacityOrderConfirmRequest extends Model
     public $orderId;
     protected $_name = [
         'operator' => 'operator',
-        'orderId'  => 'orderId',
+        'orderId' => 'orderId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

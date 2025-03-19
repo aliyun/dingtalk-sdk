@@ -62,17 +62,15 @@ class payAccountVOList extends Model
      */
     public $accountType;
     protected $_name = [
-        'accountClass'  => 'accountClass',
-        'accountId'     => 'accountId',
-        'accountName'   => 'accountName',
-        'accountNo'     => 'accountNo',
+        'accountClass' => 'accountClass',
+        'accountId' => 'accountId',
+        'accountName' => 'accountName',
+        'accountNo' => 'accountNo',
         'accountRemark' => 'accountRemark',
-        'accountType'   => 'accountType',
+        'accountType' => 'accountType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

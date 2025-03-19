@@ -23,12 +23,10 @@ class GetDocCreatedSummaryResponseBody extends Model
     public $docCreatedCnt;
     protected $_name = [
         'docCreateUserCnt1d' => 'docCreateUserCnt1d',
-        'docCreatedCnt'      => 'docCreatedCnt',
+        'docCreatedCnt' => 'docCreatedCnt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

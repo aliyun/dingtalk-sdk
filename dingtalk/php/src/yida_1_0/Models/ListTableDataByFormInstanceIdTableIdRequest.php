@@ -65,18 +65,16 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'      => 'appType',
-        'formUuid'     => 'formUuid',
-        'pageNumber'   => 'pageNumber',
-        'pageSize'     => 'pageSize',
-        'systemToken'  => 'systemToken',
+        'appType' => 'appType',
+        'formUuid' => 'formUuid',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'systemToken' => 'systemToken',
         'tableFieldId' => 'tableFieldId',
-        'userId'       => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

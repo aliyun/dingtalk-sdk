@@ -17,9 +17,7 @@ class GetGroupInfoByCidResponseBody extends Model
         'groupInfo' => 'groupInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

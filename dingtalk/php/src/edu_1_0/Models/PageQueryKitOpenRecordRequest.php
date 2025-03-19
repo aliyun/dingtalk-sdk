@@ -36,15 +36,13 @@ class PageQueryKitOpenRecordRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'isvCode'         => 'isvCode',
+        'isvCode' => 'isvCode',
         'isvProductScene' => 'isvProductScene',
-        'pageNumber'      => 'pageNumber',
-        'pageSize'        => 'pageSize',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

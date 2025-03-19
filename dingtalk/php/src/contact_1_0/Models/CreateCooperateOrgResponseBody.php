@@ -16,9 +16,7 @@ class CreateCooperateOrgResponseBody extends Model
         'cooperateCorpId' => 'cooperateCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

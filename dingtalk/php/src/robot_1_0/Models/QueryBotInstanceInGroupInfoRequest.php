@@ -36,13 +36,11 @@ class QueryBotInstanceInGroupInfoRequest extends Model
     public $robotCode;
     protected $_name = [
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'robotCode'  => 'robotCode',
+        'pageSize' => 'pageSize',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

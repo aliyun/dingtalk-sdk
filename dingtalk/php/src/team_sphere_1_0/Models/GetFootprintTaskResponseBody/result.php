@@ -165,37 +165,35 @@ class result extends Model
      */
     public $visible;
     protected $_name = [
-        'accomplished'   => 'accomplished',
-        'basicPos'       => 'basicPos',
-        'content'        => 'content',
-        'created'        => 'created',
-        'creatorId'      => 'creatorId',
-        'customfields'   => 'customfields',
-        'dueDate'        => 'dueDate',
-        'executorId'     => 'executorId',
-        'id'             => 'id',
+        'accomplished' => 'accomplished',
+        'basicPos' => 'basicPos',
+        'content' => 'content',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
+        'customfields' => 'customfields',
+        'dueDate' => 'dueDate',
+        'executorId' => 'executorId',
+        'id' => 'id',
         'involveMembers' => 'involveMembers',
-        'isArchived'     => 'isArchived',
-        'isDeleted'      => 'isDeleted',
-        'isDone'         => 'isDone',
-        'note'           => 'note',
+        'isArchived' => 'isArchived',
+        'isDeleted' => 'isDeleted',
+        'isDone' => 'isDone',
+        'note' => 'note',
         'organizationId' => 'organizationId',
-        'pos'            => 'pos',
-        'priority'       => 'priority',
-        'projectId'      => 'projectId',
-        'sfcId'          => 'sfcId',
-        'stageId'        => 'stageId',
-        'startDate'      => 'startDate',
-        'tasklistId'     => 'tasklistId',
-        'tfsId'          => 'tfsId',
-        'uniqueId'       => 'uniqueId',
-        'updated'        => 'updated',
-        'visible'        => 'visible',
+        'pos' => 'pos',
+        'priority' => 'priority',
+        'projectId' => 'projectId',
+        'sfcId' => 'sfcId',
+        'stageId' => 'stageId',
+        'startDate' => 'startDate',
+        'tasklistId' => 'tasklistId',
+        'tfsId' => 'tfsId',
+        'uniqueId' => 'uniqueId',
+        'updated' => 'updated',
+        'visible' => 'visible',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -314,7 +312,7 @@ class result extends Model
         if (isset($map['customfields'])) {
             if (!empty($map['customfields'])) {
                 $model->customfields = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['customfields'] as $item) {
                     $model->customfields[$n++] = null !== $item ? customfields::fromMap($item) : $item;
                 }

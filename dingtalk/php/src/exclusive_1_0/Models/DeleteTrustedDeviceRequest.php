@@ -38,15 +38,13 @@ class DeleteTrustedDeviceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'id'         => 'id',
-        'kickOff'    => 'kickOff',
+        'id' => 'id',
+        'kickOff' => 'kickOff',
         'macAddress' => 'macAddress',
-        'userId'     => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

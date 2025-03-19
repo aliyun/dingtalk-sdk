@@ -22,12 +22,10 @@ class children extends Model
     public $text;
     protected $_name = [
         'elementType' => 'elementType',
-        'text'        => 'text',
+        'text' => 'text',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

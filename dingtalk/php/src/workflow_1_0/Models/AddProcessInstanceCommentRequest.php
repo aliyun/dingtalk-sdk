@@ -41,15 +41,13 @@ class AddProcessInstanceCommentRequest extends Model
      */
     public $text;
     protected $_name = [
-        'commentUserId'     => 'commentUserId',
-        'file'              => 'file',
+        'commentUserId' => 'commentUserId',
+        'file' => 'file',
         'processInstanceId' => 'processInstanceId',
-        'text'              => 'text',
+        'text' => 'text',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

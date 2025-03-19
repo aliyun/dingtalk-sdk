@@ -31,14 +31,12 @@ class GetApaasAppResponseBody extends Model
      */
     public $publishStatus;
     protected $_name = [
-        'agentId'       => 'agentId',
-        'bizAppId'      => 'bizAppId',
+        'agentId' => 'agentId',
+        'bizAppId' => 'bizAppId',
         'publishStatus' => 'publishStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

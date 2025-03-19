@@ -26,13 +26,11 @@ class AddRobotInstanceToGroupRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'chatbotId'          => 'chatbotId',
+        'chatbotId' => 'chatbotId',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -92,21 +92,19 @@ class content extends Model
      */
     public $userProb;
     protected $_name = [
-        'comments'      => 'comments',
-        'dept'          => 'dept',
-        'group'         => 'group',
-        'job'           => 'job',
-        'jobNum'        => 'jobNum',
-        'jobStatus'     => 'jobStatus',
+        'comments' => 'comments',
+        'dept' => 'dept',
+        'group' => 'group',
+        'job' => 'job',
+        'jobNum' => 'jobNum',
+        'jobStatus' => 'jobStatus',
         'jobStatusList' => 'jobStatusList',
-        'uid'           => 'uid',
-        'userName'      => 'userName',
-        'userProb'      => 'userProb',
+        'uid' => 'uid',
+        'userName' => 'userName',
+        'userProb' => 'userProb',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -177,7 +175,7 @@ class content extends Model
         if (isset($map['dept'])) {
             if (!empty($map['dept'])) {
                 $model->dept = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['dept'] as $item) {
                     $model->dept[$n++] = null !== $item ? dept::fromMap($item) : $item;
                 }
@@ -186,7 +184,7 @@ class content extends Model
         if (isset($map['group'])) {
             if (!empty($map['group'])) {
                 $model->group = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['group'] as $item) {
                     $model->group[$n++] = null !== $item ? group::fromMap($item) : $item;
                 }
@@ -204,7 +202,7 @@ class content extends Model
         if (isset($map['jobStatusList'])) {
             if (!empty($map['jobStatusList'])) {
                 $model->jobStatusList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['jobStatusList'] as $item) {
                     $model->jobStatusList[$n++] = null !== $item ? jobStatusList::fromMap($item) : $item;
                 }

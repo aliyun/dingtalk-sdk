@@ -32,14 +32,12 @@ class GetFileUploadInfoRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'option'   => 'option',
+        'option' => 'option',
         'protocol' => 'protocol',
-        'unionId'  => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

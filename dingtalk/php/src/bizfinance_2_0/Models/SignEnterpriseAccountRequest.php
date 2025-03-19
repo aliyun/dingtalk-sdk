@@ -43,16 +43,14 @@ class SignEnterpriseAccountRequest extends Model
      */
     public $signOperateType;
     protected $_name = [
-        'bankCardNo'      => 'bankCardNo',
-        'bankOpenId'      => 'bankOpenId',
-        'channelType'     => 'channelType',
-        'operator'        => 'operator',
+        'bankCardNo' => 'bankCardNo',
+        'bankOpenId' => 'bankOpenId',
+        'channelType' => 'channelType',
+        'operator' => 'operator',
         'signOperateType' => 'signOperateType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

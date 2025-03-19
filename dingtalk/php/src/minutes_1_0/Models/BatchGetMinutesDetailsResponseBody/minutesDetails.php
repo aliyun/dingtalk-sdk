@@ -58,21 +58,19 @@ class minutesDetails extends Model
      */
     public $title;
     protected $_name = [
-        'bizType'        => 'bizType',
-        'creatorNick'    => 'creatorNick',
+        'bizType' => 'bizType',
+        'creatorNick' => 'creatorNick',
         'creatorUnionId' => 'creatorUnionId',
         'durationMicros' => 'durationMicros',
-        'isDeleted'      => 'isDeleted',
-        'size'           => 'size',
-        'startTime'      => 'startTime',
-        'status'         => 'status',
-        'taskUuid'       => 'taskUuid',
-        'title'          => 'title',
+        'isDeleted' => 'isDeleted',
+        'size' => 'size',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'taskUuid' => 'taskUuid',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

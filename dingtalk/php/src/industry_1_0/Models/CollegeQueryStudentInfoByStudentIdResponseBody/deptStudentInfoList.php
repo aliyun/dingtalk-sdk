@@ -29,14 +29,12 @@ class deptStudentInfoList extends Model
      */
     public $studentNumber;
     protected $_name = [
-        'deptId'        => 'deptId',
-        'memberType'    => 'memberType',
+        'deptId' => 'deptId',
+        'memberType' => 'memberType',
         'studentNumber' => 'studentNumber',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

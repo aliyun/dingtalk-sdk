@@ -22,13 +22,11 @@ class ChatMemoFaqAddResponseBody extends Model
      */
     public $mediaId;
     protected $_name = [
-        'bizId'   => 'bizId',
+        'bizId' => 'bizId',
         'mediaId' => 'mediaId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

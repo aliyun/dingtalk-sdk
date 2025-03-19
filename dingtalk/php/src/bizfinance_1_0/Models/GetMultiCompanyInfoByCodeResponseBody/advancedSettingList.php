@@ -34,15 +34,13 @@ class advancedSettingList extends Model
      */
     public $value;
     protected $_name = [
-        'advancedSettingKey'  => 'advancedSettingKey',
+        'advancedSettingKey' => 'advancedSettingKey',
         'advancedSettingName' => 'advancedSettingName',
-        'endDate'             => 'endDate',
-        'value'               => 'value',
+        'endDate' => 'endDate',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

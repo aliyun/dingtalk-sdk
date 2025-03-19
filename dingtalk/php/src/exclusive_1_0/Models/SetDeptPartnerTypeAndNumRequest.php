@@ -29,14 +29,12 @@ class SetDeptPartnerTypeAndNumRequest extends Model
      */
     public $partnerNum;
     protected $_name = [
-        'deptId'     => 'deptId',
-        'labelIds'   => 'labelIds',
+        'deptId' => 'deptId',
+        'labelIds' => 'labelIds',
         'partnerNum' => 'partnerNum',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -30,9 +30,7 @@ class ApplyBatchPayResponseBody extends Model
         'payData' => 'payData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

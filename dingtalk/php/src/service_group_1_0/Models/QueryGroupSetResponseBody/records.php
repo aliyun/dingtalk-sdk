@@ -43,16 +43,14 @@ class records extends Model
      */
     public $templateId;
     protected $_name = [
-        'gmtCreate'      => 'gmtCreate',
-        'gmtModified'    => 'gmtModified',
-        'groupSetName'   => 'groupSetName',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'groupSetName' => 'groupSetName',
         'openGroupSetId' => 'openGroupSetId',
-        'templateId'     => 'templateId',
+        'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

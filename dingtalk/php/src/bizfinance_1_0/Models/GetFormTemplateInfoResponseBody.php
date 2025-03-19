@@ -19,9 +19,7 @@ class GetFormTemplateInfoResponseBody extends Model
         'receiptFormTemplateInfoList' => 'receiptFormTemplateInfoList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class GetFormTemplateInfoResponseBody extends Model
         if (isset($map['receiptFormTemplateInfoList'])) {
             if (!empty($map['receiptFormTemplateInfoList'])) {
                 $model->receiptFormTemplateInfoList = [];
-                $n                                  = 0;
+                $n = 0;
                 foreach ($map['receiptFormTemplateInfoList'] as $item) {
                     $model->receiptFormTemplateInfoList[$n++] = null !== $item ? receiptFormTemplateInfoList::fromMap($item) : $item;
                 }

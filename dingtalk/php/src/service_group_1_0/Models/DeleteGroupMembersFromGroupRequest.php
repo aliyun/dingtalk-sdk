@@ -49,16 +49,14 @@ class DeleteGroupMembersFromGroupRequest extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'deleteGroupType'    => 'deleteGroupType',
-        'memberUnionId'      => 'memberUnionId',
+        'deleteGroupType' => 'deleteGroupType',
+        'memberUnionId' => 'memberUnionId',
         'openConversationId' => 'openConversationId',
-        'openGroupSetId'     => 'openGroupSetId',
-        'openTeamId'         => 'openTeamId',
+        'openGroupSetId' => 'openGroupSetId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

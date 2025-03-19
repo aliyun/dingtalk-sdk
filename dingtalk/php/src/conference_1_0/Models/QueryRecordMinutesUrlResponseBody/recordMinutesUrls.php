@@ -16,9 +16,7 @@ class recordMinutesUrls extends Model
         'recordMinutesUrl' => 'recordMinutesUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

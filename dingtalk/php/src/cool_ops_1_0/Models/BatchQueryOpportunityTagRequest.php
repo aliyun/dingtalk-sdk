@@ -16,9 +16,7 @@ class BatchQueryOpportunityTagRequest extends Model
         'corpIdList' => 'corpIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

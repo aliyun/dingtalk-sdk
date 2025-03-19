@@ -43,18 +43,16 @@ class SetMicroAppScopeRequest extends Model
      */
     public $onlyAdminVisible;
     protected $_name = [
-        'addDeptIds'       => 'addDeptIds',
-        'addRoleIds'       => 'addRoleIds',
-        'addUserIds'       => 'addUserIds',
-        'delDeptIds'       => 'delDeptIds',
-        'delRoleIds'       => 'delRoleIds',
-        'delUserIds'       => 'delUserIds',
+        'addDeptIds' => 'addDeptIds',
+        'addRoleIds' => 'addRoleIds',
+        'addUserIds' => 'addUserIds',
+        'delDeptIds' => 'delDeptIds',
+        'delRoleIds' => 'delRoleIds',
+        'delUserIds' => 'delUserIds',
         'onlyAdminVisible' => 'onlyAdminVisible',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

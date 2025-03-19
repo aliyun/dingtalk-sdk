@@ -132,29 +132,27 @@ class cards extends Model
      */
     public $type;
     protected $_name = [
-        'cardBizCode'    => 'cardBizCode',
-        'cardId'         => 'cardId',
-        'cardStatus'     => 'cardStatus',
-        'content'        => 'content',
-        'corpId'         => 'corpId',
-        'effectTime'     => 'effectTime',
-        'finished'       => 'finished',
-        'gmtCreate'      => 'gmtCreate',
-        'optEndTime'     => 'optEndTime',
-        'optEndUserId'   => 'optEndUserId',
+        'cardBizCode' => 'cardBizCode',
+        'cardId' => 'cardId',
+        'cardStatus' => 'cardStatus',
+        'content' => 'content',
+        'corpId' => 'corpId',
+        'effectTime' => 'effectTime',
+        'finished' => 'finished',
+        'gmtCreate' => 'gmtCreate',
+        'optEndTime' => 'optEndTime',
+        'optEndUserId' => 'optEndUserId',
         'optEndUserName' => 'optEndUserName',
-        'sendTime'       => 'sendTime',
-        'startTime'      => 'startTime',
-        'status'         => 'status',
-        'teacherId'      => 'teacherId',
-        'teacherName'    => 'teacherName',
-        'title'          => 'title',
-        'type'           => 'type',
+        'sendTime' => 'sendTime',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'teacherId' => 'teacherId',
+        'teacherName' => 'teacherName',
+        'title' => 'title',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

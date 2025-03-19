@@ -143,29 +143,27 @@ class DentryVO extends Model
      */
     public $visitorInfo;
     protected $_name = [
-        'contentType'    => 'contentType',
-        'createdTime'    => 'createdTime',
-        'creator'        => 'creator',
-        'dentryId'       => 'dentryId',
-        'dentryType'     => 'dentryType',
-        'dentryUuid'     => 'dentryUuid',
-        'docKey'         => 'docKey',
-        'extension'      => 'extension',
-        'hasChildren'    => 'hasChildren',
+        'contentType' => 'contentType',
+        'createdTime' => 'createdTime',
+        'creator' => 'creator',
+        'dentryId' => 'dentryId',
+        'dentryType' => 'dentryType',
+        'dentryUuid' => 'dentryUuid',
+        'docKey' => 'docKey',
+        'extension' => 'extension',
+        'hasChildren' => 'hasChildren',
         'linkSourceInfo' => 'linkSourceInfo',
-        'name'           => 'name',
-        'path'           => 'path',
-        'space'          => 'space',
-        'spaceId'        => 'spaceId',
-        'updatedTime'    => 'updatedTime',
-        'updater'        => 'updater',
-        'url'            => 'url',
-        'visitorInfo'    => 'visitorInfo',
+        'name' => 'name',
+        'path' => 'path',
+        'space' => 'space',
+        'spaceId' => 'spaceId',
+        'updatedTime' => 'updatedTime',
+        'updater' => 'updater',
+        'url' => 'url',
+        'visitorInfo' => 'visitorInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

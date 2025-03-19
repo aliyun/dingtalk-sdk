@@ -122,32 +122,30 @@ class GetResidentInfoResponseBody extends Model
      */
     public $type;
     protected $_name = [
-        'address'                             => 'address',
-        'allUserGroupOpenConversationId'      => 'allUserGroupOpenConversationId',
-        'allUserGroupOwnerUserId'             => 'allUserGroupOwnerUserId',
-        'buildingArea'                        => 'buildingArea',
-        'cityId'                              => 'cityId',
-        'contactMode'                         => 'contactMode',
-        'countyId'                            => 'countyId',
-        'deliveryTime'                        => 'deliveryTime',
-        'location'                            => 'location',
-        'name'                                => 'name',
-        'projectManager'                      => 'projectManager',
+        'address' => 'address',
+        'allUserGroupOpenConversationId' => 'allUserGroupOpenConversationId',
+        'allUserGroupOwnerUserId' => 'allUserGroupOwnerUserId',
+        'buildingArea' => 'buildingArea',
+        'cityId' => 'cityId',
+        'contactMode' => 'contactMode',
+        'countyId' => 'countyId',
+        'deliveryTime' => 'deliveryTime',
+        'location' => 'location',
+        'name' => 'name',
+        'projectManager' => 'projectManager',
         'propertyDeptGroupOpenConversationId' => 'propertyDeptGroupOpenConversationId',
-        'propertyDeptGroupOwnerUserId'        => 'propertyDeptGroupOwnerUserId',
-        'provId'                              => 'provId',
-        'scopeEast'                           => 'scopeEast',
-        'scopeNorth'                          => 'scopeNorth',
-        'scopeSouth'                          => 'scopeSouth',
-        'scopeWest'                           => 'scopeWest',
-        'telephone'                           => 'telephone',
-        'townId'                              => 'townId',
-        'type'                                => 'type',
+        'propertyDeptGroupOwnerUserId' => 'propertyDeptGroupOwnerUserId',
+        'provId' => 'provId',
+        'scopeEast' => 'scopeEast',
+        'scopeNorth' => 'scopeNorth',
+        'scopeSouth' => 'scopeSouth',
+        'scopeWest' => 'scopeWest',
+        'telephone' => 'telephone',
+        'townId' => 'townId',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

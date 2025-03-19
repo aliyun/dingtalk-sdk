@@ -40,15 +40,13 @@ class SendPersonalMessageRequest extends Model
      */
     public $receiverUid;
     protected $_name = [
-        'content'            => 'content',
-        'msgType'            => 'msgType',
+        'content' => 'content',
+        'msgType' => 'msgType',
         'openConversationId' => 'openConversationId',
-        'receiverUid'        => 'receiverUid',
+        'receiverUid' => 'receiverUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class CountOrgMessageOpenSceneGroupsResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'count'   => 'count',
+        'count' => 'count',
         'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,12 +27,10 @@ class RemoveDeviceRequest extends Model
     public $sn;
     protected $_name = [
         'merchantId' => 'merchantId',
-        'sn'         => 'sn',
+        'sn' => 'sn',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

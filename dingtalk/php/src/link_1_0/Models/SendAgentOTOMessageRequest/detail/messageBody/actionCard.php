@@ -49,17 +49,15 @@ class actionCard extends Model
      */
     public $title;
     protected $_name = [
-        'buttonList'        => 'buttonList',
+        'buttonList' => 'buttonList',
         'buttonOrientation' => 'buttonOrientation',
-        'markdown'          => 'markdown',
-        'singleTitle'       => 'singleTitle',
-        'singleUrl'         => 'singleUrl',
-        'title'             => 'title',
+        'markdown' => 'markdown',
+        'singleTitle' => 'singleTitle',
+        'singleUrl' => 'singleUrl',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -103,7 +101,7 @@ class actionCard extends Model
         if (isset($map['buttonList'])) {
             if (!empty($map['buttonList'])) {
                 $model->buttonList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['buttonList'] as $item) {
                     $model->buttonList[$n++] = null !== $item ? buttonList::fromMap($item) : $item;
                 }

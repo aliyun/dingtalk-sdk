@@ -18,9 +18,7 @@ class result extends Model
         'openPushId' => 'openPushId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

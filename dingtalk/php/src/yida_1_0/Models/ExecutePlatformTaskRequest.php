@@ -42,7 +42,11 @@ class ExecutePlatformTaskRequest extends Model
      * @description This parameter is required.
      *
      * @example ●
+     * agree
+     *
+     * ●
      * disagree
+     *
      * @var string
      */
     public $outResult;
@@ -83,20 +87,18 @@ class ExecutePlatformTaskRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'              => 'appType',
-        'formDataJson'         => 'formDataJson',
-        'language'             => 'language',
+        'appType' => 'appType',
+        'formDataJson' => 'formDataJson',
+        'language' => 'language',
         'noExecuteExpressions' => 'noExecuteExpressions',
-        'outResult'            => 'outResult',
-        'processInstanceId'    => 'processInstanceId',
-        'remark'               => 'remark',
-        'systemToken'          => 'systemToken',
-        'userId'               => 'userId',
+        'outResult' => 'outResult',
+        'processInstanceId' => 'processInstanceId',
+        'remark' => 'remark',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

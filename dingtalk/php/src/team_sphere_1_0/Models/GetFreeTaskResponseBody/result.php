@@ -119,32 +119,30 @@ class result extends Model
      */
     public $visible;
     protected $_name = [
-        'accomplished'   => 'accomplished',
-        'ancestorIds'    => 'ancestorIds',
-        'content'        => 'content',
-        'created'        => 'created',
-        'creatorId'      => 'creatorId',
-        'dueDate'        => 'dueDate',
-        'executorId'     => 'executorId',
-        'id'             => 'id',
+        'accomplished' => 'accomplished',
+        'ancestorIds' => 'ancestorIds',
+        'content' => 'content',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
+        'dueDate' => 'dueDate',
+        'executorId' => 'executorId',
+        'id' => 'id',
         'involveMembers' => 'involveMembers',
-        'isArchive'      => 'isArchive',
-        'isDone'         => 'isDone',
-        'note'           => 'note',
+        'isArchive' => 'isArchive',
+        'isDone' => 'isDone',
+        'note' => 'note',
         'organizationId' => 'organizationId',
-        'priority'       => 'priority',
-        'recurrence'     => 'recurrence',
-        'sourceId'       => 'sourceId',
-        'startDate'      => 'startDate',
-        'tagIds'         => 'tagIds',
-        'uniqueId'       => 'uniqueId',
-        'updated'        => 'updated',
-        'visible'        => 'visible',
+        'priority' => 'priority',
+        'recurrence' => 'recurrence',
+        'sourceId' => 'sourceId',
+        'startDate' => 'startDate',
+        'tagIds' => 'tagIds',
+        'uniqueId' => 'uniqueId',
+        'updated' => 'updated',
+        'visible' => 'visible',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

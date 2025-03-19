@@ -19,9 +19,7 @@ class CreateConnectorResponseBody extends Model
         'item' => 'item',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class CreateConnectorResponseBody extends Model
         if (isset($map['item'])) {
             if (!empty($map['item'])) {
                 $model->item = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['item'] as $item) {
                     $model->item[$n++] = null !== $item ? item::fromMap($item) : $item;
                 }

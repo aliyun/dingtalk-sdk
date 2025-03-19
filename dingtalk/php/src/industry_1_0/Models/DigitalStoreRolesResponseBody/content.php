@@ -51,16 +51,14 @@ class content extends Model
      */
     public $source;
     protected $_name = [
-        'level'    => 'level',
+        'level' => 'level',
         'roleCode' => 'roleCode',
-        'roleId'   => 'roleId',
+        'roleId' => 'roleId',
         'roleName' => 'roleName',
-        'source'   => 'source',
+        'source' => 'source',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

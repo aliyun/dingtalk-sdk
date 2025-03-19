@@ -51,16 +51,14 @@ class DeductPointRequest extends Model
      */
     public $pointType;
     protected $_name = [
-        'bizId'           => 'bizId',
-        'deductDesc'      => 'deductDesc',
+        'bizId' => 'bizId',
+        'deductDesc' => 'deductDesc',
         'deductDetailUrl' => 'deductDetailUrl',
-        'deductNum'       => 'deductNum',
-        'pointType'       => 'pointType',
+        'deductNum' => 'deductNum',
+        'pointType' => 'pointType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

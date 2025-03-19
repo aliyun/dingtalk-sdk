@@ -27,12 +27,10 @@ class QueryPersonalMessageReadStatusRequest extends Model
     public $openMessageId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openMessageId'      => 'openMessageId',
+        'openMessageId' => 'openMessageId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

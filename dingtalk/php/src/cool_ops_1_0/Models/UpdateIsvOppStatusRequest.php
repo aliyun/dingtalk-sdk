@@ -17,9 +17,7 @@ class UpdateIsvOppStatusRequest extends Model
         'isvOpportunityStatusList' => 'isvOpportunityStatusList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class UpdateIsvOppStatusRequest extends Model
         if (isset($map['isvOpportunityStatusList'])) {
             if (!empty($map['isvOpportunityStatusList'])) {
                 $model->isvOpportunityStatusList = [];
-                $n                               = 0;
+                $n = 0;
                 foreach ($map['isvOpportunityStatusList'] as $item) {
                     $model->isvOpportunityStatusList[$n++] = null !== $item ? isvOpportunityStatusList::fromMap($item) : $item;
                 }

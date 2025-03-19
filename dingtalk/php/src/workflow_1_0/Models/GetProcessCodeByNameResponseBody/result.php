@@ -12,6 +12,7 @@ class result extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2024-03-22T11:50Z
      *
      * @var string
@@ -31,9 +32,7 @@ class result extends Model
         'processCode' => 'processCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

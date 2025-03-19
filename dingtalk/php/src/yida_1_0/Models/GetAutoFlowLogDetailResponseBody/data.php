@@ -64,21 +64,19 @@ class data extends Model
      */
     public $uuid;
     protected $_name = [
-        'activityKey'    => 'activityKey',
+        'activityKey' => 'activityKey',
         'elapsedTimeGMT' => 'elapsedTimeGMT',
-        'finishTimeGMT'  => 'finishTimeGMT',
-        'flag'           => 'flag',
-        'inputParams'    => 'inputParams',
-        'name'           => 'name',
-        'others'         => 'others',
-        'outputParams'   => 'outputParams',
-        'status'         => 'status',
-        'uuid'           => 'uuid',
+        'finishTimeGMT' => 'finishTimeGMT',
+        'flag' => 'flag',
+        'inputParams' => 'inputParams',
+        'name' => 'name',
+        'others' => 'others',
+        'outputParams' => 'outputParams',
+        'status' => 'status',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

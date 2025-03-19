@@ -29,13 +29,11 @@ class GetOfficialAccountContactsResponseBody extends Model
     public $values;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'values'     => 'values',
+        'nextToken' => 'nextToken',
+        'values' => 'values',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -76,7 +74,7 @@ class GetOfficialAccountContactsResponseBody extends Model
         if (isset($map['values'])) {
             if (!empty($map['values'])) {
                 $model->values = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['values'] as $item) {
                     $model->values[$n++] = null !== $item ? values::fromMap($item) : $item;
                 }

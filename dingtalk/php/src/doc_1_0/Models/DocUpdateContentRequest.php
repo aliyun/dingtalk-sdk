@@ -33,14 +33,12 @@ class DocUpdateContentRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'content'    => 'content',
-        'dataType'   => 'dataType',
+        'content' => 'content',
+        'dataType' => 'dataType',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

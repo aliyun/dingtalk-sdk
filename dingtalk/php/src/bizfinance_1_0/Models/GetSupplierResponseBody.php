@@ -64,17 +64,15 @@ class GetSupplierResponseBody extends Model
     public $userDefineCode;
     protected $_name = [
         'accountantBookIdList' => 'accountantBookIdList',
-        'code'                 => 'code',
-        'createTime'           => 'createTime',
-        'description'          => 'description',
-        'name'                 => 'name',
-        'status'               => 'status',
-        'userDefineCode'       => 'userDefineCode',
+        'code' => 'code',
+        'createTime' => 'createTime',
+        'description' => 'description',
+        'name' => 'name',
+        'status' => 'status',
+        'userDefineCode' => 'userDefineCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class ListUserVilebleAppResponseBody extends Model
         'appList' => 'appList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListUserVilebleAppResponseBody extends Model
         if (isset($map['appList'])) {
             if (!empty($map['appList'])) {
                 $model->appList = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['appList'] as $item) {
                     $model->appList[$n++] = null !== $item ? appList::fromMap($item) : $item;
                 }

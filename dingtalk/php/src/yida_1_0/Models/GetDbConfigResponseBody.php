@@ -71,20 +71,18 @@ class GetDbConfigResponseBody extends Model
      */
     public $type;
     protected $_name = [
-        'config'          => 'config',
-        'corpId'          => 'corpId',
-        'createTimeGMT'   => 'createTimeGMT',
-        'creator'         => 'creator',
-        'exclusive'       => 'exclusive',
-        'id'              => 'id',
+        'config' => 'config',
+        'corpId' => 'corpId',
+        'createTimeGMT' => 'createTimeGMT',
+        'creator' => 'creator',
+        'exclusive' => 'exclusive',
+        'id' => 'id',
         'modifiedTimeGMT' => 'modifiedTimeGMT',
-        'modifier'        => 'modifier',
-        'type'            => 'type',
+        'modifier' => 'modifier',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

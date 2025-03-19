@@ -16,9 +16,7 @@ class result extends Model
         'customShortLink' => 'customShortLink',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,12 +27,10 @@ class BindSystemResponseBody extends Model
     public $corpId;
     protected $_name = [
         'clientId' => 'clientId',
-        'corpId'   => 'corpId',
+        'corpId' => 'corpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

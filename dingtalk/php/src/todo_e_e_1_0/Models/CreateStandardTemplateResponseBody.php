@@ -29,15 +29,13 @@ class CreateStandardTemplateResponseBody extends Model
      */
     public $templateKey;
     protected $_name = [
-        'actions'     => 'actions',
+        'actions' => 'actions',
         'description' => 'description',
-        'name'        => 'name',
+        'name' => 'name',
         'templateKey' => 'templateKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -75,7 +73,7 @@ class CreateStandardTemplateResponseBody extends Model
         if (isset($map['actions'])) {
             if (!empty($map['actions'])) {
                 $model->actions = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['actions'] as $item) {
                     $model->actions[$n++] = null !== $item ? actions::fromMap($item) : $item;
                 }

@@ -45,14 +45,12 @@ class LiandanluExclusiveModelRequest extends Model
     public $userId;
     protected $_name = [
         'modelId' => 'modelId',
-        'module'  => 'module',
-        'prompt'  => 'prompt',
-        'userId'  => 'userId',
+        'module' => 'module',
+        'prompt' => 'prompt',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

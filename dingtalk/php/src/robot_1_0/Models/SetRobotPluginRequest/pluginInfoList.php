@@ -40,15 +40,13 @@ class pluginInfoList extends Model
      */
     public $pcUrl;
     protected $_name = [
-        'icon'      => 'icon',
+        'icon' => 'icon',
         'mobileUrl' => 'mobileUrl',
-        'name'      => 'name',
-        'pcUrl'     => 'pcUrl',
+        'name' => 'name',
+        'pcUrl' => 'pcUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

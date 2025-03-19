@@ -57,18 +57,16 @@ class orgUsesList extends Model
      */
     public $watchProgressMs;
     protected $_name = [
-        'deptName'          => 'deptName',
-        'name'              => 'name',
-        'unionId'           => 'unionId',
-        'userId'            => 'userId',
-        'watchLiveTime'     => 'watchLiveTime',
+        'deptName' => 'deptName',
+        'name' => 'name',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
+        'watchLiveTime' => 'watchLiveTime',
         'watchPlaybackTime' => 'watchPlaybackTime',
-        'watchProgressMs'   => 'watchProgressMs',
+        'watchProgressMs' => 'watchProgressMs',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

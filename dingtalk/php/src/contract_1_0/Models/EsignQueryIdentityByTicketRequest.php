@@ -31,14 +31,12 @@ class EsignQueryIdentityByTicketRequest extends Model
      */
     public $ticket;
     protected $_name = [
-        'corpId'    => 'corpId',
+        'corpId' => 'corpId',
         'extension' => 'extension',
-        'ticket'    => 'ticket',
+        'ticket' => 'ticket',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class records extends Model
         'fields' => 'fields',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

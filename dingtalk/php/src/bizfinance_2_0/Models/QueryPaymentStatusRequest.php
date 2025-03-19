@@ -30,13 +30,11 @@ class QueryPaymentStatusRequest extends Model
     public $userId;
     protected $_name = [
         'instanceId' => 'instanceId',
-        'orderNo'    => 'orderNo',
-        'userId'     => 'userId',
+        'orderNo' => 'orderNo',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

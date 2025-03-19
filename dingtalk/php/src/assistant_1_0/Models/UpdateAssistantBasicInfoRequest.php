@@ -57,20 +57,18 @@ class UpdateAssistantBasicInfoRequest extends Model
      */
     public $welcomeContent;
     protected $_name = [
-        'assistantId'      => 'assistantId',
-        'description'      => 'description',
-        'fallbackContent'  => 'fallbackContent',
-        'icon'             => 'icon',
-        'instructions'     => 'instructions',
-        'name'             => 'name',
-        'operatorUnionId'  => 'operatorUnionId',
+        'assistantId' => 'assistantId',
+        'description' => 'description',
+        'fallbackContent' => 'fallbackContent',
+        'icon' => 'icon',
+        'instructions' => 'instructions',
+        'name' => 'name',
+        'operatorUnionId' => 'operatorUnionId',
         'recommendPrompts' => 'recommendPrompts',
-        'welcomeContent'   => 'welcomeContent',
+        'welcomeContent' => 'welcomeContent',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -62,19 +62,17 @@ class CollectRecruitJobDetailRequest extends Model
      */
     public $updateTime;
     protected $_name = [
-        'bizCode'         => 'bizCode',
-        'channel'         => 'channel',
-        'jobInfo'         => 'jobInfo',
-        'outCorpId'       => 'outCorpId',
-        'outCorpName'     => 'outCorpName',
+        'bizCode' => 'bizCode',
+        'channel' => 'channel',
+        'jobInfo' => 'jobInfo',
+        'outCorpId' => 'outCorpId',
+        'outCorpName' => 'outCorpName',
         'recruitUserInfo' => 'recruitUserInfo',
-        'source'          => 'source',
-        'updateTime'      => 'updateTime',
+        'source' => 'source',
+        'updateTime' => 'updateTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

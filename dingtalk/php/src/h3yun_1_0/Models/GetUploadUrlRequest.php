@@ -45,14 +45,12 @@ class GetUploadUrlRequest extends Model
     public $schemaCode;
     protected $_name = [
         'bizObjectId' => 'bizObjectId',
-        'fieldName'   => 'fieldName',
+        'fieldName' => 'fieldName',
         'isOverwrite' => 'isOverwrite',
-        'schemaCode'  => 'schemaCode',
+        'schemaCode' => 'schemaCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,13 +22,11 @@ class updater extends Model
      */
     public $unionId;
     protected $_name = [
-        'name'    => 'name',
+        'name' => 'name',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

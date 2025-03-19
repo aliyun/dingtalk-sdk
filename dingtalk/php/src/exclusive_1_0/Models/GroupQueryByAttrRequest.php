@@ -48,18 +48,16 @@ class GroupQueryByAttrRequest extends Model
      */
     public $secretKey;
     protected $_name = [
-        'corpId'          => 'corpId',
-        'groupTopic'      => 'groupTopic',
-        'groupType'       => 'groupType',
+        'corpId' => 'corpId',
+        'groupTopic' => 'groupTopic',
+        'groupType' => 'groupType',
         'listDynamicAttr' => 'listDynamicAttr',
-        'pageIndex'       => 'pageIndex',
-        'pageSize'        => 'pageSize',
-        'secretKey'       => 'secretKey',
+        'pageIndex' => 'pageIndex',
+        'pageSize' => 'pageSize',
+        'secretKey' => 'secretKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -115,7 +113,7 @@ class GroupQueryByAttrRequest extends Model
         if (isset($map['listDynamicAttr'])) {
             if (!empty($map['listDynamicAttr'])) {
                 $model->listDynamicAttr = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['listDynamicAttr'] as $item) {
                     $model->listDynamicAttr[$n++] = null !== $item ? listDynamicAttr::fromMap($item) : $item;
                 }

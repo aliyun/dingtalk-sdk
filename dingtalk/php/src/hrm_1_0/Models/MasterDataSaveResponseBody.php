@@ -27,9 +27,7 @@ class MasterDataSaveResponseBody extends Model
         'failResult' => 'failResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class MasterDataSaveResponseBody extends Model
         if (isset($map['failResult'])) {
             if (!empty($map['failResult'])) {
                 $model->failResult = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['failResult'] as $item) {
                     $model->failResult[$n++] = null !== $item ? failResult::fromMap($item) : $item;
                 }

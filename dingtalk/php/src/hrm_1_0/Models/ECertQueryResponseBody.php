@@ -111,26 +111,24 @@ class ECertQueryResponseBody extends Model
      */
     public $terminationReasonVoluntary;
     protected $_name = [
-        'certNO'                     => 'certNO',
-        'employJobId'                => 'employJobId',
-        'employJobIdLabel'           => 'employJobIdLabel',
-        'employPositionId'           => 'employPositionId',
-        'employPositionIdLabel'      => 'employPositionIdLabel',
-        'employPositionRankId'       => 'employPositionRankId',
-        'employPositionRankIdLabel'  => 'employPositionRankIdLabel',
-        'hiredDate'                  => 'hiredDate',
-        'lastWorkDay'                => 'lastWorkDay',
-        'mainDeptId'                 => 'mainDeptId',
-        'mainDeptName'               => 'mainDeptName',
-        'name'                       => 'name',
-        'realName'                   => 'realName',
-        'terminationReasonPassive'   => 'terminationReasonPassive',
+        'certNO' => 'certNO',
+        'employJobId' => 'employJobId',
+        'employJobIdLabel' => 'employJobIdLabel',
+        'employPositionId' => 'employPositionId',
+        'employPositionIdLabel' => 'employPositionIdLabel',
+        'employPositionRankId' => 'employPositionRankId',
+        'employPositionRankIdLabel' => 'employPositionRankIdLabel',
+        'hiredDate' => 'hiredDate',
+        'lastWorkDay' => 'lastWorkDay',
+        'mainDeptId' => 'mainDeptId',
+        'mainDeptName' => 'mainDeptName',
+        'name' => 'name',
+        'realName' => 'realName',
+        'terminationReasonPassive' => 'terminationReasonPassive',
         'terminationReasonVoluntary' => 'terminationReasonVoluntary',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

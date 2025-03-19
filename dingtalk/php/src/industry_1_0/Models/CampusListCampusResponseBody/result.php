@@ -127,28 +127,26 @@ class result extends Model
      */
     public $telephone;
     protected $_name = [
-        'address'              => 'address',
-        'area'                 => 'area',
+        'address' => 'address',
+        'area' => 'area',
         'belongProjectGroupId' => 'belongProjectGroupId',
-        'campusCorpId'         => 'campusCorpId',
-        'campusDeptId'         => 'campusDeptId',
-        'campusName'           => 'campusName',
-        'cityId'               => 'cityId',
-        'country'              => 'country',
-        'countyId'             => 'countyId',
-        'description'          => 'description',
-        'extend'               => 'extend',
-        'location'             => 'location',
-        'orderEndTime'         => 'orderEndTime',
-        'orderInfo'            => 'orderInfo',
-        'orderStartTime'       => 'orderStartTime',
-        'provId'               => 'provId',
-        'telephone'            => 'telephone',
+        'campusCorpId' => 'campusCorpId',
+        'campusDeptId' => 'campusDeptId',
+        'campusName' => 'campusName',
+        'cityId' => 'cityId',
+        'country' => 'country',
+        'countyId' => 'countyId',
+        'description' => 'description',
+        'extend' => 'extend',
+        'location' => 'location',
+        'orderEndTime' => 'orderEndTime',
+        'orderInfo' => 'orderInfo',
+        'orderStartTime' => 'orderStartTime',
+        'provId' => 'provId',
+        'telephone' => 'telephone',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

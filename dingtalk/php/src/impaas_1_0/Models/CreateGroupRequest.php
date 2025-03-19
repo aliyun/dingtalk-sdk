@@ -48,17 +48,15 @@ class CreateGroupRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'channel'     => 'channel',
-        'creatorUid'  => 'creatorUid',
+        'channel' => 'channel',
+        'creatorUid' => 'creatorUid',
         'iconMediaId' => 'iconMediaId',
-        'name'        => 'name',
-        'properties'  => 'properties',
-        'uuid'        => 'uuid',
+        'name' => 'name',
+        'properties' => 'properties',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

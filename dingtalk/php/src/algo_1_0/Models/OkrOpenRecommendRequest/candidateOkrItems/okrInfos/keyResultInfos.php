@@ -23,14 +23,12 @@ class keyResultInfos extends Model
      */
     public $words;
     protected $_name = [
-        'kr'    => 'kr',
-        'krId'  => 'krId',
+        'kr' => 'kr',
+        'krId' => 'krId',
         'words' => 'words',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

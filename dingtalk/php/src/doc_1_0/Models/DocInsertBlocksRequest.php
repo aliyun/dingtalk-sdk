@@ -47,16 +47,14 @@ class DocInsertBlocksRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'blockId'    => 'blockId',
-        'element'    => 'element',
-        'index'      => 'index',
-        'where'      => 'where',
+        'blockId' => 'blockId',
+        'element' => 'element',
+        'index' => 'index',
+        'where' => 'where',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -76,21 +76,19 @@ class UpdateInvoiceAbandonStatusRequest extends Model
     public $targetInvoice;
     protected $_name = [
         'blueGeneralInvoiceVO' => 'blueGeneralInvoiceVO',
-        'blueInvoiceCode'      => 'blueInvoiceCode',
-        'blueInvoiceNo'        => 'blueInvoiceNo',
-        'blueInvoiceStatus'    => 'blueInvoiceStatus',
-        'companyCode'          => 'companyCode',
-        'operator'             => 'operator',
-        'redGeneralInvoiceVO'  => 'redGeneralInvoiceVO',
-        'redInvoiceCode'       => 'redInvoiceCode',
-        'redInvoiceNo'         => 'redInvoiceNo',
-        'redInvoiceStatus'     => 'redInvoiceStatus',
-        'targetInvoice'        => 'targetInvoice',
+        'blueInvoiceCode' => 'blueInvoiceCode',
+        'blueInvoiceNo' => 'blueInvoiceNo',
+        'blueInvoiceStatus' => 'blueInvoiceStatus',
+        'companyCode' => 'companyCode',
+        'operator' => 'operator',
+        'redGeneralInvoiceVO' => 'redGeneralInvoiceVO',
+        'redInvoiceCode' => 'redInvoiceCode',
+        'redInvoiceNo' => 'redInvoiceNo',
+        'redInvoiceStatus' => 'redInvoiceStatus',
+        'targetInvoice' => 'targetInvoice',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

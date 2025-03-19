@@ -20,12 +20,10 @@ class QueryAllTaskResponseBody extends Model
     public $result;
     protected $_name = [
         'requestId' => 'requestId',
-        'result'    => 'result',
+        'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class QueryAllTaskResponseBody extends Model
         if (isset($map['result'])) {
             if (!empty($map['result'])) {
                 $model->result = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['result'] as $item) {
                     $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
                 }

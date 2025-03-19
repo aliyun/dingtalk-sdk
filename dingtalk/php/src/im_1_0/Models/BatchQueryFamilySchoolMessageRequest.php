@@ -34,13 +34,11 @@ class BatchQueryFamilySchoolMessageRequest extends Model
     public $unionId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openMessageIds'     => 'openMessageIds',
-        'unionId'            => 'unionId',
+        'openMessageIds' => 'openMessageIds',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

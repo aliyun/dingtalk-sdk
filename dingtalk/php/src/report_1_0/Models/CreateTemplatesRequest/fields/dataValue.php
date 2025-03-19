@@ -24,14 +24,12 @@ class dataValue extends Model
      */
     public $placeholder;
     protected $_name = [
-        'openInfo'    => 'openInfo',
-        'options'     => 'options',
+        'openInfo' => 'openInfo',
+        'options' => 'options',
         'placeholder' => 'placeholder',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

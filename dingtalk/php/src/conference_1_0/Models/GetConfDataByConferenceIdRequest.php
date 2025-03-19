@@ -18,9 +18,7 @@ class GetConfDataByConferenceIdRequest extends Model
         'realData' => 'realData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

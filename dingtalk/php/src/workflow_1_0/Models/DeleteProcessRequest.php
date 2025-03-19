@@ -23,12 +23,10 @@ class DeleteProcessRequest extends Model
     public $processCode;
     protected $_name = [
         'cleanRunningTask' => 'cleanRunningTask',
-        'processCode'      => 'processCode',
+        'processCode' => 'processCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

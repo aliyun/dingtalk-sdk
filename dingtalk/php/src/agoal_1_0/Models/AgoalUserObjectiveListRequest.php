@@ -33,14 +33,12 @@ class AgoalUserObjectiveListRequest extends Model
      */
     public $periodIds;
     protected $_name = [
-        'dingUserId'      => 'dingUserId',
+        'dingUserId' => 'dingUserId',
         'objectiveRuleId' => 'objectiveRuleId',
-        'periodIds'       => 'periodIds',
+        'periodIds' => 'periodIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

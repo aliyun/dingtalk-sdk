@@ -77,21 +77,19 @@ class team extends Model
      */
     public $teamId;
     protected $_name = [
-        'corpId'       => 'corpId',
-        'cover'        => 'cover',
-        'createTime'   => 'createTime',
-        'creatorId'    => 'creatorId',
-        'description'  => 'description',
-        'icon'         => 'icon',
+        'corpId' => 'corpId',
+        'cover' => 'cover',
+        'createTime' => 'createTime',
+        'creatorId' => 'creatorId',
+        'description' => 'description',
+        'icon' => 'icon',
         'modifiedTime' => 'modifiedTime',
-        'modifierId'   => 'modifierId',
-        'name'         => 'name',
-        'teamId'       => 'teamId',
+        'modifierId' => 'modifierId',
+        'name' => 'name',
+        'teamId' => 'teamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

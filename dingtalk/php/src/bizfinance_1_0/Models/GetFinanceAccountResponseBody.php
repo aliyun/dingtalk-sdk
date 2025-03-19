@@ -87,22 +87,20 @@ class GetFinanceAccountResponseBody extends Model
      */
     public $creator;
     protected $_name = [
-        'accountCode'          => 'accountCode',
-        'accountId'            => 'accountId',
-        'accountName'          => 'accountName',
-        'accountRemark'        => 'accountRemark',
-        'accountType'          => 'accountType',
+        'accountCode' => 'accountCode',
+        'accountId' => 'accountId',
+        'accountName' => 'accountName',
+        'accountRemark' => 'accountRemark',
+        'accountType' => 'accountType',
         'accountantBookIdList' => 'accountantBookIdList',
-        'amount'               => 'amount',
-        'bankCode'             => 'bankCode',
-        'bankName'             => 'bankName',
-        'createTime'           => 'createTime',
-        'creator'              => 'creator',
+        'amount' => 'amount',
+        'bankCode' => 'bankCode',
+        'bankName' => 'bankName',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

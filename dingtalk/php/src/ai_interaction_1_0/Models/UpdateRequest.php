@@ -29,14 +29,12 @@ class UpdateRequest extends Model
      */
     public $conversationToken;
     protected $_name = [
-        'content'           => 'content',
-        'contentType'       => 'contentType',
+        'content' => 'content',
+        'contentType' => 'contentType',
         'conversationToken' => 'conversationToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

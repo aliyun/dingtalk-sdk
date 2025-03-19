@@ -48,19 +48,17 @@ class QueryRegisterOrderResponseBody extends Model
      */
     public $subInstName;
     protected $_name = [
-        'failReason'  => 'failReason',
-        'gmtAudit'    => 'gmtAudit',
-        'instId'      => 'instId',
-        'orderId'     => 'orderId',
-        'outTradeNo'  => 'outTradeNo',
-        'status'      => 'status',
-        'subInstId'   => 'subInstId',
+        'failReason' => 'failReason',
+        'gmtAudit' => 'gmtAudit',
+        'instId' => 'instId',
+        'orderId' => 'orderId',
+        'outTradeNo' => 'outTradeNo',
+        'status' => 'status',
+        'subInstId' => 'subInstId',
         'subInstName' => 'subInstName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

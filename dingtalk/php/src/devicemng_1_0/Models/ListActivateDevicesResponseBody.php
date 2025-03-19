@@ -24,14 +24,12 @@ class ListActivateDevicesResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'result'     => 'result',
-        'success'    => 'success',
+        'result' => 'result',
+        'success' => 'success',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class ListActivateDevicesResponseBody extends Model
         if (isset($map['result'])) {
             if (!empty($map['result'])) {
                 $model->result = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['result'] as $item) {
                     $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
                 }

@@ -37,14 +37,12 @@ class QueryMeetingRoomControlPanelListRequest extends Model
     public $unionId;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'roomId'     => 'roomId',
-        'unionId'    => 'unionId',
+        'nextToken' => 'nextToken',
+        'roomId' => 'roomId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

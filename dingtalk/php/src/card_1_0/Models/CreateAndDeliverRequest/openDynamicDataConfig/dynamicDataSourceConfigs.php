@@ -24,14 +24,12 @@ class dynamicDataSourceConfigs extends Model
      */
     public $pullConfig;
     protected $_name = [
-        'constParams'         => 'constParams',
+        'constParams' => 'constParams',
         'dynamicDataSourceId' => 'dynamicDataSourceId',
-        'pullConfig'          => 'pullConfig',
+        'pullConfig' => 'pullConfig',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

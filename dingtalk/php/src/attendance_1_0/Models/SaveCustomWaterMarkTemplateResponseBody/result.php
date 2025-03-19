@@ -22,13 +22,11 @@ class result extends Model
      */
     public $waterMarkId;
     protected $_name = [
-        'formCode'    => 'formCode',
+        'formCode' => 'formCode',
         'waterMarkId' => 'waterMarkId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

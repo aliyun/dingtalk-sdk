@@ -23,12 +23,10 @@ class RetrieveAssistantBasicInfoRequest extends Model
     public $unionId;
     protected $_name = [
         'assistantId' => 'assistantId',
-        'unionId'     => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

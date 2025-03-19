@@ -23,12 +23,10 @@ class GetResidentMembersInfoRequest extends Model
     public $userIdList;
     protected $_name = [
         'residentCropId' => 'residentCropId',
-        'userIdList'     => 'userIdList',
+        'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

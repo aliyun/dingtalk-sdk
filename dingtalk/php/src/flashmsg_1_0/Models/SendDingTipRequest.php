@@ -51,17 +51,15 @@ class SendDingTipRequest extends Model
      */
     public $textContent;
     protected $_name = [
-        'extension'      => 'extension',
-        'link'           => 'link',
-        'messageId'      => 'messageId',
+        'extension' => 'extension',
+        'link' => 'link',
+        'messageId' => 'messageId',
         'receiverUserId' => 'receiverUserId',
-        'senderUserId'   => 'senderUserId',
-        'textContent'    => 'textContent',
+        'senderUserId' => 'senderUserId',
+        'textContent' => 'textContent',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -26,14 +26,12 @@ class result extends Model
      */
     public $success;
     protected $_name = [
-        'failCount'    => 'failCount',
+        'failCount' => 'failCount',
         'failInvoices' => 'failInvoices',
-        'success'      => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -71,7 +69,7 @@ class result extends Model
         if (isset($map['failInvoices'])) {
             if (!empty($map['failInvoices'])) {
                 $model->failInvoices = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['failInvoices'] as $item) {
                     $model->failInvoices[$n++] = null !== $item ? failInvoices::fromMap($item) : $item;
                 }

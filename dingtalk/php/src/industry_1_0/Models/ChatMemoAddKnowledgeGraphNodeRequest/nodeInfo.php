@@ -33,14 +33,12 @@ class nodeInfo extends Model
      */
     public $propertiesString;
     protected $_name = [
-        'nodeLabel'        => 'nodeLabel',
-        'nodeName'         => 'nodeName',
+        'nodeLabel' => 'nodeLabel',
+        'nodeName' => 'nodeName',
         'propertiesString' => 'propertiesString',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

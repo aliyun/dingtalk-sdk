@@ -29,12 +29,10 @@ class CreateFlashMeetingRequest extends Model
     protected $_name = [
         'creator' => 'creator',
         'eventId' => 'eventId',
-        'title'   => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

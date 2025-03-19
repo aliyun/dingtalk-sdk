@@ -30,13 +30,11 @@ class UpdateTheGroupRolesOfGroupMemberRequest extends Model
     public $userId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openRoleIds'        => 'openRoleIds',
-        'userId'             => 'userId',
+        'openRoleIds' => 'openRoleIds',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

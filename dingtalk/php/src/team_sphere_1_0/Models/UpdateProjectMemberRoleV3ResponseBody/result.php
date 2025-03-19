@@ -28,15 +28,13 @@ class result extends Model
      */
     public $userId;
     protected $_name = [
-        'id'      => 'id',
-        'role'    => 'role',
+        'id' => 'id',
+        'role' => 'role',
         'roleIds' => 'roleIds',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

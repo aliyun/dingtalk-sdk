@@ -33,16 +33,14 @@ class DeleteSequenceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
-        'language'    => 'language',
-        'sequence'    => 'sequence',
+        'appType' => 'appType',
+        'language' => 'language',
+        'sequence' => 'sequence',
         'systemToken' => 'systemToken',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

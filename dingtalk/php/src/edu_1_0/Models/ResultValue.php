@@ -34,15 +34,13 @@ class ResultValue extends Model
     public $url;
     protected $_name = [
         'thumbnail' => 'thumbnail',
-        'fileSize'  => 'fileSize',
+        'fileSize' => 'fileSize',
         'extension' => 'extension',
-        'fileName'  => 'fileName',
-        'url'       => 'url',
+        'fileName' => 'fileName',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

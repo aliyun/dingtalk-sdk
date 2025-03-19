@@ -106,25 +106,23 @@ class result extends Model
      */
     public $signWay;
     protected $_name = [
-        'corpId'              => 'corpId',
-        'remark'              => 'remark',
-        'signExpireTime'      => 'signExpireTime',
-        'signFileName'        => 'signFileName',
-        'signFinishTime'      => 'signFinishTime',
+        'corpId' => 'corpId',
+        'remark' => 'remark',
+        'signExpireTime' => 'signExpireTime',
+        'signFileName' => 'signFileName',
+        'signFinishTime' => 'signFinishTime',
         'signLegalEntityName' => 'signLegalEntityName',
-        'signRecordId'        => 'signRecordId',
-        'signStartTime'       => 'signStartTime',
-        'signStatus'          => 'signStatus',
-        'signStatusRemarks'   => 'signStatusRemarks',
-        'signTemplateType'    => 'signTemplateType',
-        'signUserId'          => 'signUserId',
-        'signUserName'        => 'signUserName',
-        'signWay'             => 'signWay',
+        'signRecordId' => 'signRecordId',
+        'signStartTime' => 'signStartTime',
+        'signStatus' => 'signStatus',
+        'signStatusRemarks' => 'signStatusRemarks',
+        'signTemplateType' => 'signTemplateType',
+        'signUserId' => 'signUserId',
+        'signUserName' => 'signUserName',
+        'signWay' => 'signWay',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

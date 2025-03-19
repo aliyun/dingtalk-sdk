@@ -18,9 +18,7 @@ class data extends Model
         'attachmentUrl' => 'attachmentUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

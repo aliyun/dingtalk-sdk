@@ -24,13 +24,11 @@ class BatchSendOTOResponseBody extends Model
     public $processQueryKey;
     protected $_name = [
         'flowControlledStaffIdList' => 'flowControlledStaffIdList',
-        'invalidStaffIdList'        => 'invalidStaffIdList',
-        'processQueryKey'           => 'processQueryKey',
+        'invalidStaffIdList' => 'invalidStaffIdList',
+        'processQueryKey' => 'processQueryKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

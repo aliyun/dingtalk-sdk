@@ -19,9 +19,7 @@ class WriteUserCarbonRequest extends Model
         'userDetailsList' => 'userDetailsList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class WriteUserCarbonRequest extends Model
         if (isset($map['userDetailsList'])) {
             if (!empty($map['userDetailsList'])) {
                 $model->userDetailsList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['userDetailsList'] as $item) {
                     $model->userDetailsList[$n++] = null !== $item ? userDetailsList::fromMap($item) : $item;
                 }

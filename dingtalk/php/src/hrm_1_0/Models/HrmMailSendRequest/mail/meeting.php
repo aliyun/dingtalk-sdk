@@ -92,22 +92,20 @@ class meeting extends Model
      */
     public $uuid;
     protected $_name = [
-        'alarm'       => 'alarm',
-        'attendees'   => 'attendees',
+        'alarm' => 'alarm',
+        'attendees' => 'attendees',
         'description' => 'description',
-        'endTime'     => 'endTime',
-        'location'    => 'location',
-        'method'      => 'method',
-        'organizer'   => 'organizer',
-        'sequence'    => 'sequence',
-        'startTime'   => 'startTime',
-        'summary'     => 'summary',
-        'uuid'        => 'uuid',
+        'endTime' => 'endTime',
+        'location' => 'location',
+        'method' => 'method',
+        'organizer' => 'organizer',
+        'sequence' => 'sequence',
+        'startTime' => 'startTime',
+        'summary' => 'summary',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -169,7 +167,7 @@ class meeting extends Model
         if (isset($map['attendees'])) {
             if (!empty($map['attendees'])) {
                 $model->attendees = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['attendees'] as $item) {
                     $model->attendees[$n++] = null !== $item ? attendees::fromMap($item) : $item;
                 }

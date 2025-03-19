@@ -38,16 +38,14 @@ class scheduleItems extends Model
      */
     public $status;
     protected $_name = [
-        'end'       => 'end',
-        'eventId'   => 'eventId',
+        'end' => 'end',
+        'eventId' => 'eventId',
         'organizer' => 'organizer',
-        'start'     => 'start',
-        'status'    => 'status',
+        'start' => 'start',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

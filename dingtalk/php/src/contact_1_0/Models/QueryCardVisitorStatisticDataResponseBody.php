@@ -71,20 +71,18 @@ class QueryCardVisitorStatisticDataResponseBody extends Model
      */
     public $wechatTotalVisitCnt;
     protected $_name = [
-        'cardSendCnt'            => 'cardSendCnt',
-        'todayVisitAddCnt'       => 'todayVisitAddCnt',
-        'todayVisitCnt'          => 'todayVisitCnt',
-        'totalVisitAddCnt'       => 'totalVisitAddCnt',
-        'totalVisitCnt'          => 'totalVisitCnt',
+        'cardSendCnt' => 'cardSendCnt',
+        'todayVisitAddCnt' => 'todayVisitAddCnt',
+        'todayVisitCnt' => 'todayVisitCnt',
+        'totalVisitAddCnt' => 'totalVisitAddCnt',
+        'totalVisitCnt' => 'totalVisitCnt',
         'wechatTodayVisitAddCnt' => 'wechatTodayVisitAddCnt',
-        'wechatTodayVisitCnt'    => 'wechatTodayVisitCnt',
+        'wechatTodayVisitCnt' => 'wechatTodayVisitCnt',
         'wechatTotalVisitAddCnt' => 'wechatTotalVisitAddCnt',
-        'wechatTotalVisitCnt'    => 'wechatTotalVisitCnt',
+        'wechatTotalVisitCnt' => 'wechatTotalVisitCnt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

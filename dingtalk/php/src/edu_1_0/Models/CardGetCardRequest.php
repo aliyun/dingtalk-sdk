@@ -26,13 +26,11 @@ class CardGetCardRequest extends Model
      */
     public $sourceType;
     protected $_name = [
-        'cardId'     => 'cardId',
+        'cardId' => 'cardId',
         'sourceType' => 'sourceType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

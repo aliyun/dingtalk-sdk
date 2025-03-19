@@ -28,15 +28,13 @@ class questionsAnsweringSummary extends Model
      */
     public $sentenceIdsOfQuestion;
     protected $_name = [
-        'answer'                => 'answer',
-        'question'              => 'question',
-        'sentenceIdsOfAnswer'   => 'sentenceIdsOfAnswer',
+        'answer' => 'answer',
+        'question' => 'question',
+        'sentenceIdsOfAnswer' => 'sentenceIdsOfAnswer',
         'sentenceIdsOfQuestion' => 'sentenceIdsOfQuestion',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

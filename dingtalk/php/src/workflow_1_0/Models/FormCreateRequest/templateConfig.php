@@ -64,19 +64,17 @@ class templateConfig extends Model
      */
     public $originDirId;
     protected $_name = [
-        'dirId'                    => 'dirId',
-        'disableDeleteProcess'     => 'disableDeleteProcess',
-        'disableFormEdit'          => 'disableFormEdit',
-        'disableHomepage'          => 'disableHomepage',
-        'disableResubmit'          => 'disableResubmit',
+        'dirId' => 'dirId',
+        'disableDeleteProcess' => 'disableDeleteProcess',
+        'disableFormEdit' => 'disableFormEdit',
+        'disableHomepage' => 'disableHomepage',
+        'disableResubmit' => 'disableResubmit',
         'disableStopProcessButton' => 'disableStopProcessButton',
-        'hidden'                   => 'hidden',
-        'originDirId'              => 'originDirId',
+        'hidden' => 'hidden',
+        'originDirId' => 'originDirId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

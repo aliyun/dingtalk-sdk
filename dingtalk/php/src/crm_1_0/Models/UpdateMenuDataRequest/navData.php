@@ -136,28 +136,26 @@ class navData extends Model
      */
     public $url;
     protected $_name = [
-        'displayStatus'       => 'displayStatus',
-        'icon'                => 'icon',
-        'iconBgColor'         => 'iconBgColor',
-        'iconColor'           => 'iconColor',
+        'displayStatus' => 'displayStatus',
+        'icon' => 'icon',
+        'iconBgColor' => 'iconBgColor',
+        'iconColor' => 'iconColor',
         'integrationProtocol' => 'integrationProtocol',
-        'mobileNavName'       => 'mobileNavName',
-        'mobileUrl'           => 'mobileUrl',
-        'navCode'             => 'navCode',
-        'navExtInfo'          => 'navExtInfo',
-        'navId'               => 'navId',
-        'navName'             => 'navName',
-        'navStatus'           => 'navStatus',
-        'navType'             => 'navType',
-        'parentNavId'         => 'parentNavId',
-        'provider'            => 'provider',
-        'sortNum'             => 'sortNum',
-        'url'                 => 'url',
+        'mobileNavName' => 'mobileNavName',
+        'mobileUrl' => 'mobileUrl',
+        'navCode' => 'navCode',
+        'navExtInfo' => 'navExtInfo',
+        'navId' => 'navId',
+        'navName' => 'navName',
+        'navStatus' => 'navStatus',
+        'navType' => 'navType',
+        'parentNavId' => 'parentNavId',
+        'provider' => 'provider',
+        'sortNum' => 'sortNum',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

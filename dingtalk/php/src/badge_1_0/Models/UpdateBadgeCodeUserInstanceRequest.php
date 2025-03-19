@@ -87,21 +87,19 @@ class UpdateBadgeCodeUserInstanceRequest extends Model
      */
     public $userIdentity;
     protected $_name = [
-        'availableTimes'       => 'availableTimes',
-        'codeId'               => 'codeId',
-        'codeIdentity'         => 'codeIdentity',
-        'codeValue'            => 'codeValue',
-        'corpId'               => 'corpId',
-        'extInfo'              => 'extInfo',
-        'gmtExpired'           => 'gmtExpired',
-        'status'               => 'status',
+        'availableTimes' => 'availableTimes',
+        'codeId' => 'codeId',
+        'codeIdentity' => 'codeIdentity',
+        'codeValue' => 'codeValue',
+        'corpId' => 'corpId',
+        'extInfo' => 'extInfo',
+        'gmtExpired' => 'gmtExpired',
+        'status' => 'status',
         'userCorpRelationType' => 'userCorpRelationType',
-        'userIdentity'         => 'userIdentity',
+        'userIdentity' => 'userIdentity',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -157,7 +155,7 @@ class UpdateBadgeCodeUserInstanceRequest extends Model
         if (isset($map['availableTimes'])) {
             if (!empty($map['availableTimes'])) {
                 $model->availableTimes = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['availableTimes'] as $item) {
                     $model->availableTimes[$n++] = null !== $item ? availableTimes::fromMap($item) : $item;
                 }

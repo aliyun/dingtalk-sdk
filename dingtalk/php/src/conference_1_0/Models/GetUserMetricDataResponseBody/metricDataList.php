@@ -155,32 +155,30 @@ class metricDataList extends Model
      */
     public $timestamp;
     protected $_name = [
-        'audioPlayLevel'             => 'audioPlayLevel',
-        'audioRecLevel'              => 'audioRecLevel',
-        'audioRecvBitRate'           => 'audioRecvBitRate',
-        'audioSendBitRate'           => 'audioSendBitRate',
-        'cameraRecvBitRate'          => 'cameraRecvBitRate',
-        'cameraRecvFrame'            => 'cameraRecvFrame',
+        'audioPlayLevel' => 'audioPlayLevel',
+        'audioRecLevel' => 'audioRecLevel',
+        'audioRecvBitRate' => 'audioRecvBitRate',
+        'audioSendBitRate' => 'audioSendBitRate',
+        'cameraRecvBitRate' => 'cameraRecvBitRate',
+        'cameraRecvFrame' => 'cameraRecvFrame',
         'cameraRecvResolutionActual' => 'cameraRecvResolutionActual',
-        'cameraSendBitRate'          => 'cameraSendBitRate',
-        'cameraSendFrame'            => 'cameraSendFrame',
+        'cameraSendBitRate' => 'cameraSendBitRate',
+        'cameraSendFrame' => 'cameraSendFrame',
         'cameraSendResolutionActual' => 'cameraSendResolutionActual',
-        'lostRate'                   => 'lostRate',
-        'recvBitRate'                => 'recvBitRate',
-        'roundTripTime'              => 'roundTripTime',
-        'screenRecvBitRate'          => 'screenRecvBitRate',
-        'screenRecvFrame'            => 'screenRecvFrame',
+        'lostRate' => 'lostRate',
+        'recvBitRate' => 'recvBitRate',
+        'roundTripTime' => 'roundTripTime',
+        'screenRecvBitRate' => 'screenRecvBitRate',
+        'screenRecvFrame' => 'screenRecvFrame',
         'screenRecvResolutionActual' => 'screenRecvResolutionActual',
-        'screenSendBitRate'          => 'screenSendBitRate',
-        'screenSendFrame'            => 'screenSendFrame',
+        'screenSendBitRate' => 'screenSendBitRate',
+        'screenSendFrame' => 'screenSendFrame',
         'screenSendResolutionActual' => 'screenSendResolutionActual',
-        'sendBitRate'                => 'sendBitRate',
-        'timestamp'                  => 'timestamp',
+        'sendBitRate' => 'sendBitRate',
+        'timestamp' => 'timestamp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

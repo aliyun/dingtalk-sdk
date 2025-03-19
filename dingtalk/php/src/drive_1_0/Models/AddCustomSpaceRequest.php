@@ -36,15 +36,13 @@ class AddCustomSpaceRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'bizType'        => 'bizType',
-        'identifier'     => 'identifier',
+        'bizType' => 'bizType',
+        'identifier' => 'identifier',
         'permissionMode' => 'permissionMode',
-        'unionId'        => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

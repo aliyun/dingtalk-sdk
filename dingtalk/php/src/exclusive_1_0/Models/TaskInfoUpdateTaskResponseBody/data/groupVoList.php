@@ -18,13 +18,11 @@ class groupVoList extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'corpId'             => 'corpId',
+        'corpId' => 'corpId',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,14 +29,12 @@ class QueryConversationMessageForAIShrinkRequest extends Model
     public $recentN;
     protected $_name = [
         'openMsgIdsShrink' => 'openMsgIds',
-        'recentDays'       => 'recentDays',
-        'recentHours'      => 'recentHours',
-        'recentN'          => 'recentN',
+        'recentDays' => 'recentDays',
+        'recentHours' => 'recentHours',
+        'recentN' => 'recentN',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

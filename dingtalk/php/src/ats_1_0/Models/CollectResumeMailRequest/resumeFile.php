@@ -36,13 +36,11 @@ class resumeFile extends Model
     public $fileType;
     protected $_name = [
         'downloadUrl' => 'downloadUrl',
-        'fileName'    => 'fileName',
-        'fileType'    => 'fileType',
+        'fileName' => 'fileName',
+        'fileType' => 'fileType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

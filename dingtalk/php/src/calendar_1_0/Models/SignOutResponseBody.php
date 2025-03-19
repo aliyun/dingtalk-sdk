@@ -16,9 +16,7 @@ class SignOutResponseBody extends Model
         'checkOutTime' => 'checkOutTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -47,18 +47,16 @@ class GetProcessStartUrlRequest extends Model
      */
     public $taskName;
     protected $_name = [
-        'ccs'             => 'ccs',
-        'files'           => 'files',
+        'ccs' => 'ccs',
+        'files' => 'files',
         'initiatorUserId' => 'initiatorUserId',
-        'participants'    => 'participants',
-        'redirectUrl'     => 'redirectUrl',
-        'sourceInfo'      => 'sourceInfo',
-        'taskName'        => 'taskName',
+        'participants' => 'participants',
+        'redirectUrl' => 'redirectUrl',
+        'sourceInfo' => 'sourceInfo',
+        'taskName' => 'taskName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -117,7 +115,7 @@ class GetProcessStartUrlRequest extends Model
         if (isset($map['ccs'])) {
             if (!empty($map['ccs'])) {
                 $model->ccs = [];
-                $n          = 0;
+                $n = 0;
                 foreach ($map['ccs'] as $item) {
                     $model->ccs[$n++] = null !== $item ? ccs::fromMap($item) : $item;
                 }
@@ -126,7 +124,7 @@ class GetProcessStartUrlRequest extends Model
         if (isset($map['files'])) {
             if (!empty($map['files'])) {
                 $model->files = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['files'] as $item) {
                     $model->files[$n++] = null !== $item ? files::fromMap($item) : $item;
                 }
@@ -138,7 +136,7 @@ class GetProcessStartUrlRequest extends Model
         if (isset($map['participants'])) {
             if (!empty($map['participants'])) {
                 $model->participants = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['participants'] as $item) {
                     $model->participants[$n++] = null !== $item ? participants::fromMap($item) : $item;
                 }

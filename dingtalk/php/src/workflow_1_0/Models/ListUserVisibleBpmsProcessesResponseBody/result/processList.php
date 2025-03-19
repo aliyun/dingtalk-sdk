@@ -50,17 +50,15 @@ class processList extends Model
      */
     public $url;
     protected $_name = [
-        'dirId'       => 'dirId',
-        'dirName'     => 'dirName',
-        'iconUrl'     => 'iconUrl',
-        'name'        => 'name',
+        'dirId' => 'dirId',
+        'dirName' => 'dirName',
+        'iconUrl' => 'iconUrl',
+        'name' => 'name',
         'processCode' => 'processCode',
-        'url'         => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

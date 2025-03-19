@@ -22,13 +22,11 @@ class QuerySchemaByProcessCodeRequest extends Model
      */
     public $processCode;
     protected $_name = [
-        'appUuid'     => 'appUuid',
+        'appUuid' => 'appUuid',
         'processCode' => 'processCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class GetPrivilegeInfoResponseBody extends Model
         'types' => 'types',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

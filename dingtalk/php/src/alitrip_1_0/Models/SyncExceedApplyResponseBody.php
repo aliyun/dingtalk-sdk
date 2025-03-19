@@ -20,9 +20,7 @@ class SyncExceedApplyResponseBody extends Model
         'module' => 'module',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

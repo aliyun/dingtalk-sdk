@@ -30,13 +30,11 @@ class GetAuthUrlResponseBody extends Model
     public $taskId;
     protected $_name = [
         'mobileUrl' => 'mobileUrl',
-        'pcUrl'     => 'pcUrl',
-        'taskId'    => 'taskId',
+        'pcUrl' => 'pcUrl',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

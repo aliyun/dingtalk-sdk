@@ -44,15 +44,13 @@ class ReportDeviceUseLogRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'action'  => 'action',
+        'action' => 'action',
         'orderNo' => 'orderNo',
-        'sn'      => 'sn',
-        'userId'  => 'userId',
+        'sn' => 'sn',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

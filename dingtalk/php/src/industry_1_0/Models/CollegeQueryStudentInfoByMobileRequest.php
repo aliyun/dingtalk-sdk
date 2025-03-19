@@ -20,9 +20,7 @@ class CollegeQueryStudentInfoByMobileRequest extends Model
         'mobile' => 'mobile',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

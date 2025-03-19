@@ -44,15 +44,13 @@ class CfJobLevelResp extends Model
      */
     public $stopDate;
     protected $_name = [
-        'level'     => 'level',
-        'name'      => 'name',
+        'level' => 'level',
+        'name' => 'name',
         'startDate' => 'startDate',
-        'stopDate'  => 'stopDate',
+        'stopDate' => 'stopDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

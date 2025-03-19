@@ -36,15 +36,13 @@ class CancelKitTaskRequest extends Model
      */
     public $isvCode;
     protected $_name = [
-        'bizType'    => 'bizType',
-        'corpId'     => 'corpId',
+        'bizType' => 'bizType',
+        'corpId' => 'corpId',
         'identifier' => 'identifier',
-        'isvCode'    => 'isvCode',
+        'isvCode' => 'isvCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

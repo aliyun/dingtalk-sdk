@@ -76,19 +76,17 @@ class ReportCustomerDetailRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'hasLogin'           => 'hasLogin',
-        'hasOpenConv'        => 'hasOpenConv',
-        'maxDt'              => 'maxDt',
-        'minDt'              => 'minDt',
+        'hasLogin' => 'hasLogin',
+        'hasOpenConv' => 'hasOpenConv',
+        'maxDt' => 'maxDt',
+        'minDt' => 'minDt',
         'openConversationId' => 'openConversationId',
-        'openTeamId'         => 'openTeamId',
-        'pageNumber'         => 'pageNumber',
-        'pageSize'           => 'pageSize',
+        'openTeamId' => 'openTeamId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

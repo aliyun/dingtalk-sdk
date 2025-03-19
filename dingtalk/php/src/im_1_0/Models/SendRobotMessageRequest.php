@@ -59,18 +59,16 @@ class SendRobotMessageRequest extends Model
      */
     public $robotCode;
     protected $_name = [
-        'atAll'               => 'atAll',
-        'atAppUserId'         => 'atAppUserId',
-        'atDingUserId'        => 'atDingUserId',
-        'msgContent'          => 'msgContent',
-        'msgType'             => 'msgType',
+        'atAll' => 'atAll',
+        'atAppUserId' => 'atAppUserId',
+        'atDingUserId' => 'atDingUserId',
+        'msgContent' => 'msgContent',
+        'msgType' => 'msgType',
         'openConversationIds' => 'openConversationIds',
-        'robotCode'           => 'robotCode',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

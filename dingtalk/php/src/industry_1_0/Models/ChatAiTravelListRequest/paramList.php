@@ -23,12 +23,10 @@ class paramList extends Model
     public $value;
     protected $_name = [
         'itineraryId' => 'itineraryId',
-        'value'       => 'value',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

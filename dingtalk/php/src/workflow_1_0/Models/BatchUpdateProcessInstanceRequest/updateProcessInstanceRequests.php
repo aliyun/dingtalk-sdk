@@ -39,15 +39,13 @@ class updateProcessInstanceRequests extends Model
      */
     public $status;
     protected $_name = [
-        'notifiers'         => 'notifiers',
+        'notifiers' => 'notifiers',
         'processInstanceId' => 'processInstanceId',
-        'result'            => 'result',
-        'status'            => 'status',
+        'result' => 'result',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -85,7 +83,7 @@ class updateProcessInstanceRequests extends Model
         if (isset($map['notifiers'])) {
             if (!empty($map['notifiers'])) {
                 $model->notifiers = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['notifiers'] as $item) {
                     $model->notifiers[$n++] = null !== $item ? notifiers::fromMap($item) : $item;
                 }

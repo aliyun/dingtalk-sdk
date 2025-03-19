@@ -119,33 +119,31 @@ class GetTodoTaskBySourceIdResponseBody extends Model
      */
     public $tenantType;
     protected $_name = [
-        'bizTag'             => 'bizTag',
-        'createdTime'        => 'createdTime',
-        'creatorId'          => 'creatorId',
-        'description'        => 'description',
-        'detailUrl'          => 'detailUrl',
-        'done'               => 'done',
-        'dueTime'            => 'dueTime',
-        'executorIds'        => 'executorIds',
-        'finishTime'         => 'finishTime',
-        'id'                 => 'id',
+        'bizTag' => 'bizTag',
+        'createdTime' => 'createdTime',
+        'creatorId' => 'creatorId',
+        'description' => 'description',
+        'detailUrl' => 'detailUrl',
+        'done' => 'done',
+        'dueTime' => 'dueTime',
+        'executorIds' => 'executorIds',
+        'finishTime' => 'finishTime',
+        'id' => 'id',
         'isOnlyShowExecutor' => 'isOnlyShowExecutor',
-        'modifiedTime'       => 'modifiedTime',
-        'modifierId'         => 'modifierId',
-        'participantIds'     => 'participantIds',
-        'priority'           => 'priority',
-        'requestId'          => 'requestId',
-        'source'             => 'source',
-        'sourceId'           => 'sourceId',
-        'startTime'          => 'startTime',
-        'subject'            => 'subject',
-        'tenantId'           => 'tenantId',
-        'tenantType'         => 'tenantType',
+        'modifiedTime' => 'modifiedTime',
+        'modifierId' => 'modifierId',
+        'participantIds' => 'participantIds',
+        'priority' => 'priority',
+        'requestId' => 'requestId',
+        'source' => 'source',
+        'sourceId' => 'sourceId',
+        'startTime' => 'startTime',
+        'subject' => 'subject',
+        'tenantId' => 'tenantId',
+        'tenantType' => 'tenantType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

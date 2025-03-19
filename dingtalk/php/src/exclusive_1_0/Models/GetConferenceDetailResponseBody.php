@@ -59,21 +59,19 @@ class GetConferenceDetailResponseBody extends Model
      */
     public $totalNum;
     protected $_name = [
-        'attendeeNum'        => 'attendeeNum',
+        'attendeeNum' => 'attendeeNum',
         'attendeePercentage' => 'attendeePercentage',
-        'callerId'           => 'callerId',
-        'callerName'         => 'callerName',
-        'confStartTime'      => 'confStartTime',
-        'conferenceId'       => 'conferenceId',
-        'duration'           => 'duration',
-        'memberList'         => 'memberList',
-        'title'              => 'title',
-        'totalNum'           => 'totalNum',
+        'callerId' => 'callerId',
+        'callerName' => 'callerName',
+        'confStartTime' => 'confStartTime',
+        'conferenceId' => 'conferenceId',
+        'duration' => 'duration',
+        'memberList' => 'memberList',
+        'title' => 'title',
+        'totalNum' => 'totalNum',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -150,7 +148,7 @@ class GetConferenceDetailResponseBody extends Model
         if (isset($map['memberList'])) {
             if (!empty($map['memberList'])) {
                 $model->memberList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['memberList'] as $item) {
                     $model->memberList[$n++] = null !== $item ? memberList::fromMap($item) : $item;
                 }

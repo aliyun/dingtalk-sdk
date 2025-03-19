@@ -47,16 +47,14 @@ class PageListRobotRequest extends Model
      */
     public $productionType;
     protected $_name = [
-        'corpId'         => 'corpId',
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
+        'corpId' => 'corpId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'openInstanceId' => 'openInstanceId',
         'productionType' => 'productionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

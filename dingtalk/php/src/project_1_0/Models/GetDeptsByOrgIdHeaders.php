@@ -25,14 +25,12 @@ class GetDeptsByOrgIdHeaders extends Model
      */
     public $xAcsDingtalkAccessToken;
     protected $_name = [
-        'dingAccessTokenType'     => 'dingAccessTokenType',
-        'dingOrgId'               => 'dingOrgId',
+        'dingAccessTokenType' => 'dingAccessTokenType',
+        'dingOrgId' => 'dingOrgId',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

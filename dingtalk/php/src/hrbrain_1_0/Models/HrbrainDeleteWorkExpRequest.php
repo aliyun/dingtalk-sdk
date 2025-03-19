@@ -17,9 +17,7 @@ class HrbrainDeleteWorkExpRequest extends Model
         'params' => 'params',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class HrbrainDeleteWorkExpRequest extends Model
         if (isset($map['params'])) {
             if (!empty($map['params'])) {
                 $model->params = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['params'] as $item) {
                     $model->params[$n++] = null !== $item ? params::fromMap($item) : $item;
                 }

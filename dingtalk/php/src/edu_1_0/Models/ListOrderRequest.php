@@ -84,21 +84,19 @@ class ListOrderRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'createTimeEnd'   => 'createTimeEnd',
+        'createTimeEnd' => 'createTimeEnd',
         'createTimeStart' => 'createTimeStart',
-        'merchantId'      => 'merchantId',
-        'orderNo'         => 'orderNo',
-        'pageNumber'      => 'pageNumber',
-        'pageSize'        => 'pageSize',
-        'scene'           => 'scene',
-        'status'          => 'status',
-        'tradeNo'         => 'tradeNo',
-        'userId'          => 'userId',
+        'merchantId' => 'merchantId',
+        'orderNo' => 'orderNo',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'scene' => 'scene',
+        'status' => 'status',
+        'tradeNo' => 'tradeNo',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

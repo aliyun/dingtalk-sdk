@@ -47,15 +47,13 @@ class SyncCostCenterEntityRequest extends Model
     public $userId;
     protected $_name = [
         'channelCorpId' => 'channelCorpId',
-        'costCenterId'  => 'costCenterId',
-        'delAll'        => 'delAll',
-        'entityList'    => 'entityList',
-        'userId'        => 'userId',
+        'costCenterId' => 'costCenterId',
+        'delAll' => 'delAll',
+        'entityList' => 'entityList',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -105,7 +103,7 @@ class SyncCostCenterEntityRequest extends Model
         if (isset($map['entityList'])) {
             if (!empty($map['entityList'])) {
                 $model->entityList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['entityList'] as $item) {
                     $model->entityList[$n++] = null !== $item ? entityList::fromMap($item) : $item;
                 }

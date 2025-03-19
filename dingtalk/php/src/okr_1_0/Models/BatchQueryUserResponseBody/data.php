@@ -54,16 +54,14 @@ class data extends Model
     public $userId;
     protected $_name = [
         'avatarMediaId' => 'avatarMediaId',
-        'avatarUrl'     => 'avatarUrl',
-        'corpId'        => 'corpId',
-        'id'            => 'id',
-        'nickname'      => 'nickname',
-        'userId'        => 'userId',
+        'avatarUrl' => 'avatarUrl',
+        'corpId' => 'corpId',
+        'id' => 'id',
+        'nickname' => 'nickname',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

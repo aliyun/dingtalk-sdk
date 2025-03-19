@@ -23,12 +23,10 @@ class deptTitleList extends Model
     public $title;
     protected $_name = [
         'deptId' => 'deptId',
-        'title'  => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

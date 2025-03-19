@@ -27,14 +27,12 @@ class conditions extends Model
      */
     public $value;
     protected $_name = [
-        'field'    => 'field',
+        'field' => 'field',
         'operator' => 'operator',
-        'value'    => 'value',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

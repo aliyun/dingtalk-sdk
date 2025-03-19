@@ -19,12 +19,10 @@ class QuerySubscribeStatusShrinkRequest extends Model
     public $unionId;
     protected $_name = [
         'bodyShrink' => 'body',
-        'unionId'    => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -41,16 +41,14 @@ class AddCompetitionRecordRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'competitionCode'   => 'competitionCode',
+        'competitionCode' => 'competitionCode',
         'groupTemplateCode' => 'groupTemplateCode',
-        'joinGroup'         => 'joinGroup',
-        'participantName'   => 'participantName',
-        'unionId'           => 'unionId',
+        'joinGroup' => 'joinGroup',
+        'participantName' => 'participantName',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

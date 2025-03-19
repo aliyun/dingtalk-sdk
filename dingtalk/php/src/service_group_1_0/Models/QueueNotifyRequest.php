@@ -58,17 +58,15 @@ class QueueNotifyRequest extends Model
     public $visitorToken;
     protected $_name = [
         'estimateWaitMin' => 'estimateWaitMin',
-        'openTeamId'      => 'openTeamId',
-        'queuePlace'      => 'queuePlace',
-        'serviceToken'    => 'serviceToken',
-        'targetChannel'   => 'targetChannel',
-        'tips'            => 'tips',
-        'visitorToken'    => 'visitorToken',
+        'openTeamId' => 'openTeamId',
+        'queuePlace' => 'queuePlace',
+        'serviceToken' => 'serviceToken',
+        'targetChannel' => 'targetChannel',
+        'tips' => 'tips',
+        'visitorToken' => 'visitorToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

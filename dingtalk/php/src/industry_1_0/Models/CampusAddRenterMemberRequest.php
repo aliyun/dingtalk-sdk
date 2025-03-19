@@ -49,16 +49,14 @@ class CampusAddRenterMemberRequest extends Model
      */
     public $type;
     protected $_name = [
-        'extend'   => 'extend',
-        'mobile'   => 'mobile',
-        'name'     => 'name',
+        'extend' => 'extend',
+        'mobile' => 'mobile',
+        'name' => 'name',
         'renterId' => 'renterId',
-        'type'     => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

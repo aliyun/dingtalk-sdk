@@ -42,15 +42,13 @@ class PublishFileChangeNoticeRequest extends Model
      */
     public $spaceId;
     protected $_name = [
-        'fileId'          => 'fileId',
-        'operateType'     => 'operateType',
+        'fileId' => 'fileId',
+        'operateType' => 'operateType',
         'operatorUnionId' => 'operatorUnionId',
-        'spaceId'         => 'spaceId',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

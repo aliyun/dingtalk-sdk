@@ -44,15 +44,13 @@ class SearchTaskflowStatusRequest extends Model
     public $tfsIds;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'query'      => 'query',
-        'tfIds'      => 'tfIds',
-        'tfsIds'     => 'tfsIds',
+        'nextToken' => 'nextToken',
+        'query' => 'query',
+        'tfIds' => 'tfIds',
+        'tfsIds' => 'tfsIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

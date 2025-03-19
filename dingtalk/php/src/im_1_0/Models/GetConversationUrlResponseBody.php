@@ -18,9 +18,7 @@ class GetConversationUrlResponseBody extends Model
         'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,13 +23,11 @@ class ListPermissionsRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'option'  => 'option',
+        'option' => 'option',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

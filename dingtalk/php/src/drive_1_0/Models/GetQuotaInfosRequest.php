@@ -30,13 +30,11 @@ class GetQuotaInfosRequest extends Model
     public $unionId;
     protected $_name = [
         'identifiers' => 'identifiers',
-        'type'        => 'type',
-        'unionId'     => 'unionId',
+        'type' => 'type',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

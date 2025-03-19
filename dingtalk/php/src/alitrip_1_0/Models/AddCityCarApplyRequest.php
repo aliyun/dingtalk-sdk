@@ -146,27 +146,25 @@ class AddCityCarApplyRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'cause'                 => 'cause',
-        'city'                  => 'city',
-        'corpId'                => 'corpId',
-        'date'                  => 'date',
-        'finishedDate'          => 'finishedDate',
-        'projectCode'           => 'projectCode',
-        'projectName'           => 'projectName',
-        'status'                => 'status',
-        'thirdPartApplyId'      => 'thirdPartApplyId',
+        'cause' => 'cause',
+        'city' => 'city',
+        'corpId' => 'corpId',
+        'date' => 'date',
+        'finishedDate' => 'finishedDate',
+        'projectCode' => 'projectCode',
+        'projectName' => 'projectName',
+        'status' => 'status',
+        'thirdPartApplyId' => 'thirdPartApplyId',
         'thirdPartCostCenterId' => 'thirdPartCostCenterId',
-        'thirdPartInvoiceId'    => 'thirdPartInvoiceId',
-        'timesTotal'            => 'timesTotal',
-        'timesType'             => 'timesType',
-        'timesUsed'             => 'timesUsed',
-        'title'                 => 'title',
-        'userId'                => 'userId',
+        'thirdPartInvoiceId' => 'thirdPartInvoiceId',
+        'timesTotal' => 'timesTotal',
+        'timesType' => 'timesType',
+        'timesUsed' => 'timesUsed',
+        'title' => 'title',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

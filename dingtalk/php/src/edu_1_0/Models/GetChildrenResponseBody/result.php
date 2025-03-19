@@ -66,18 +66,16 @@ class result extends Model
     public $regionId;
     protected $_name = [
         'bindStudents' => 'bindStudents',
-        'city'         => 'city',
-        'district'     => 'district',
-        'gradeLevel'   => 'gradeLevel',
-        'name'         => 'name',
-        'periodCode'   => 'periodCode',
-        'province'     => 'province',
-        'regionId'     => 'regionId',
+        'city' => 'city',
+        'district' => 'district',
+        'gradeLevel' => 'gradeLevel',
+        'name' => 'name',
+        'periodCode' => 'periodCode',
+        'province' => 'province',
+        'regionId' => 'regionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -127,7 +125,7 @@ class result extends Model
         if (isset($map['bindStudents'])) {
             if (!empty($map['bindStudents'])) {
                 $model->bindStudents = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['bindStudents'] as $item) {
                     $model->bindStudents[$n++] = null !== $item ? bindStudents::fromMap($item) : $item;
                 }

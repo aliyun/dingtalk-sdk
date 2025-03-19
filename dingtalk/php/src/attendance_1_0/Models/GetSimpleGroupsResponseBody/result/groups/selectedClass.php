@@ -34,15 +34,13 @@ class selectedClass extends Model
      */
     public $setting;
     protected $_name = [
-        'classId'   => 'classId',
+        'classId' => 'classId',
         'className' => 'className',
-        'sections'  => 'sections',
-        'setting'   => 'setting',
+        'sections' => 'sections',
+        'setting' => 'setting',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -86,7 +84,7 @@ class selectedClass extends Model
         if (isset($map['sections'])) {
             if (!empty($map['sections'])) {
                 $model->sections = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['sections'] as $item) {
                     $model->sections[$n++] = null !== $item ? sections::fromMap($item) : $item;
                 }

@@ -116,29 +116,27 @@ class CreateDeviceCustomTemplateRequest extends Model
      */
     public $templateName;
     protected $_name = [
-        'bgImgList'                    => 'bgImgList',
-        'bgType'                       => 'bgType',
-        'bgUrl'                        => 'bgUrl',
-        'customDoc'                    => 'customDoc',
-        'desensitizeUserName'          => 'desensitizeUserName',
-        'deviceUnionIds'               => 'deviceUnionIds',
-        'groupIds'                     => 'groupIds',
+        'bgImgList' => 'bgImgList',
+        'bgType' => 'bgType',
+        'bgUrl' => 'bgUrl',
+        'customDoc' => 'customDoc',
+        'desensitizeUserName' => 'desensitizeUserName',
+        'deviceUnionIds' => 'deviceUnionIds',
+        'groupIds' => 'groupIds',
         'hideServerCodeWhenProjecting' => 'hideServerCodeWhenProjecting',
-        'instruction'                  => 'instruction',
-        'isPicTop'                     => 'isPicTop',
-        'logo'                         => 'logo',
-        'orgName'                      => 'orgName',
-        'picturePlayInterval'          => 'picturePlayInterval',
-        'roomIds'                      => 'roomIds',
-        'showCalendarCard'             => 'showCalendarCard',
-        'showCalendarTitle'            => 'showCalendarTitle',
-        'showFunctionCard'             => 'showFunctionCard',
-        'templateName'                 => 'templateName',
+        'instruction' => 'instruction',
+        'isPicTop' => 'isPicTop',
+        'logo' => 'logo',
+        'orgName' => 'orgName',
+        'picturePlayInterval' => 'picturePlayInterval',
+        'roomIds' => 'roomIds',
+        'showCalendarCard' => 'showCalendarCard',
+        'showCalendarTitle' => 'showCalendarTitle',
+        'showFunctionCard' => 'showFunctionCard',
+        'templateName' => 'templateName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

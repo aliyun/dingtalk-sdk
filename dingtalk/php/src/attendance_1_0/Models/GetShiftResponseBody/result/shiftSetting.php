@@ -68,19 +68,17 @@ class shiftSetting extends Model
      */
     public $workTimeMinutes;
     protected $_name = [
-        'attendDays'      => 'attendDays',
-        'corpId'          => 'corpId',
-        'gmtCreate'       => 'gmtCreate',
-        'gmtModified'     => 'gmtModified',
-        'shiftId'         => 'shiftId',
-        'shiftSettingId'  => 'shiftSettingId',
-        'shiftType'       => 'shiftType',
+        'attendDays' => 'attendDays',
+        'corpId' => 'corpId',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'shiftId' => 'shiftId',
+        'shiftSettingId' => 'shiftSettingId',
+        'shiftType' => 'shiftType',
         'workTimeMinutes' => 'workTimeMinutes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

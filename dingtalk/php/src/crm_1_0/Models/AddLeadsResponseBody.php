@@ -16,9 +16,7 @@ class AddLeadsResponseBody extends Model
         'outTaskId' => 'outTaskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

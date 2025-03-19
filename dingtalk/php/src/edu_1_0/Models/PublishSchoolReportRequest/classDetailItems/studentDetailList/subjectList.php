@@ -28,15 +28,13 @@ class subjectList extends Model
      */
     public $score;
     protected $_name = [
-        'gradeRank'  => 'gradeRank',
+        'gradeRank' => 'gradeRank',
         'levelScore' => 'levelScore',
-        'name'       => 'name',
-        'score'      => 'score',
+        'name' => 'name',
+        'score' => 'score',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

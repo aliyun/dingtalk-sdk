@@ -58,21 +58,19 @@ class pluginInfoList extends Model
      */
     public $url;
     protected $_name = [
-        'appId'      => 'appId',
-        'createAt'   => 'createAt',
-        'desc'       => 'desc',
-        'icons'      => 'icons',
+        'appId' => 'appId',
+        'createAt' => 'createAt',
+        'desc' => 'desc',
+        'icons' => 'icons',
         'modifiedAt' => 'modifiedAt',
-        'name'       => 'name',
-        'pcUrl'      => 'pcUrl',
-        'pluginId'   => 'pluginId',
-        'status'     => 'status',
-        'url'        => 'url',
+        'name' => 'name',
+        'pcUrl' => 'pcUrl',
+        'pluginId' => 'pluginId',
+        'status' => 'status',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

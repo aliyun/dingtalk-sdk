@@ -104,23 +104,21 @@ class SolutionTaskSaveRequest extends Model
      */
     public $solutionType;
     protected $_name = [
-        'claimTime'          => 'claimTime',
-        'description'        => 'description',
-        'finishTime'         => 'finishTime',
-        'outerId'            => 'outerId',
+        'claimTime' => 'claimTime',
+        'description' => 'description',
+        'finishTime' => 'finishTime',
+        'outerId' => 'outerId',
         'solutionInstanceId' => 'solutionInstanceId',
-        'startTime'          => 'startTime',
-        'status'             => 'status',
-        'taskType'           => 'taskType',
-        'templateOuterId'    => 'templateOuterId',
-        'title'              => 'title',
-        'userId'             => 'userId',
-        'solutionType'       => 'solutionType',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'taskType' => 'taskType',
+        'templateOuterId' => 'templateOuterId',
+        'title' => 'title',
+        'userId' => 'userId',
+        'solutionType' => 'solutionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

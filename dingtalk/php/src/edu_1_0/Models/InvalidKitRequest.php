@@ -36,15 +36,13 @@ class InvalidKitRequest extends Model
      */
     public $openUserId;
     protected $_name = [
-        'corpId'          => 'corpId',
-        'isvCode'         => 'isvCode',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
         'isvProductScene' => 'isvProductScene',
-        'openUserId'      => 'openUserId',
+        'openUserId' => 'openUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -30,13 +30,11 @@ class ListSubCorpsRequest extends Model
     public $types;
     protected $_name = [
         'isOnlyDirect' => 'isOnlyDirect',
-        'subCorpId'    => 'subCorpId',
-        'types'        => 'types',
+        'subCorpId' => 'subCorpId',
+        'types' => 'types',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

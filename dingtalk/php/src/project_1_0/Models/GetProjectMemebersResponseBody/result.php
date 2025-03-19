@@ -37,14 +37,12 @@ class result extends Model
     public $userId;
     protected $_name = [
         'memberId' => 'memberId',
-        'role'     => 'role',
-        'roleIds'  => 'roleIds',
-        'userId'   => 'userId',
+        'role' => 'role',
+        'roleIds' => 'roleIds',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -40,15 +40,13 @@ class QueryCorpStatisticDataRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'endTime'     => 'endTime',
-        'startTime'   => 'startTime',
+        'endTime' => 'endTime',
+        'startTime' => 'startTime',
         'templateIds' => 'templateIds',
-        'unionId'     => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

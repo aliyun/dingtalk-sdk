@@ -20,9 +20,7 @@ class ConsultCreateSubInstitutionResponseBody extends Model
         'orderId' => 'orderId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

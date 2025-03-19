@@ -17,9 +17,7 @@ class QueryGroupMemberByMemberAuthResponseBody extends Model
         'groupMemberList' => 'groupMemberList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class QueryGroupMemberByMemberAuthResponseBody extends Model
         if (isset($map['groupMemberList'])) {
             if (!empty($map['groupMemberList'])) {
                 $model->groupMemberList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['groupMemberList'] as $item) {
                     $model->groupMemberList[$n++] = null !== $item ? groupMemberList::fromMap($item) : $item;
                 }

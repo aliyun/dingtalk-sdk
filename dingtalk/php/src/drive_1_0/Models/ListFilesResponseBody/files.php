@@ -17,6 +17,7 @@ class files extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $createTime;
@@ -78,6 +79,7 @@ class files extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $modifyTime;
@@ -99,26 +101,24 @@ class files extends Model
      */
     public $thumbnail;
     protected $_name = [
-        'contentType'   => 'contentType',
-        'createTime'    => 'createTime',
-        'creator'       => 'creator',
+        'contentType' => 'contentType',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
         'fileExtension' => 'fileExtension',
-        'fileId'        => 'fileId',
-        'fileName'      => 'fileName',
-        'filePath'      => 'filePath',
-        'fileSize'      => 'fileSize',
-        'fileType'      => 'fileType',
-        'icon'          => 'icon',
-        'modifier'      => 'modifier',
-        'modifyTime'    => 'modifyTime',
-        'parentId'      => 'parentId',
-        'spaceId'       => 'spaceId',
-        'thumbnail'     => 'thumbnail',
+        'fileId' => 'fileId',
+        'fileName' => 'fileName',
+        'filePath' => 'filePath',
+        'fileSize' => 'fileSize',
+        'fileType' => 'fileType',
+        'icon' => 'icon',
+        'modifier' => 'modifier',
+        'modifyTime' => 'modifyTime',
+        'parentId' => 'parentId',
+        'spaceId' => 'spaceId',
+        'thumbnail' => 'thumbnail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

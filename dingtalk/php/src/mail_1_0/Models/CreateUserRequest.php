@@ -40,15 +40,13 @@ class CreateUserRequest extends Model
      */
     public $password;
     protected $_name = [
-        'email'        => 'email',
+        'email' => 'email',
         'employeeType' => 'employeeType',
-        'name'         => 'name',
-        'password'     => 'password',
+        'name' => 'name',
+        'password' => 'password',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

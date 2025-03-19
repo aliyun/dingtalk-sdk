@@ -46,18 +46,16 @@ class items extends Model
      */
     public $userLastOperation;
     protected $_name = [
-        'iconVO'            => 'iconVO',
-        'name'              => 'name',
-        'originName'        => 'originName',
-        'spaceId'           => 'spaceId',
-        'teamVO'            => 'teamVO',
-        'url'               => 'url',
+        'iconVO' => 'iconVO',
+        'name' => 'name',
+        'originName' => 'originName',
+        'spaceId' => 'spaceId',
+        'teamVO' => 'teamVO',
+        'url' => 'url',
         'userLastOperation' => 'userLastOperation',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

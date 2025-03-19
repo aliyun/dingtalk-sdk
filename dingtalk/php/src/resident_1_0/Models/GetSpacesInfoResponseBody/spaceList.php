@@ -58,21 +58,19 @@ class spaceList extends Model
      */
     public $type;
     protected $_name = [
-        'billingArea'   => 'billingArea',
-        'buildingArea'  => 'buildingArea',
-        'floor'         => 'floor',
-        'houseState'    => 'houseState',
-        'isVirtual'     => 'isVirtual',
+        'billingArea' => 'billingArea',
+        'buildingArea' => 'buildingArea',
+        'floor' => 'floor',
+        'houseState' => 'houseState',
+        'isVirtual' => 'isVirtual',
         'parentReferId' => 'parentReferId',
-        'referId'       => 'referId',
-        'spaceName'     => 'spaceName',
-        'tagCode'       => 'tagCode',
-        'type'          => 'type',
+        'referId' => 'referId',
+        'spaceName' => 'spaceName',
+        'tagCode' => 'tagCode',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

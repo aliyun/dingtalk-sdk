@@ -26,13 +26,11 @@ class CreateProjectByTemplateRequest extends Model
      */
     public $templateId;
     protected $_name = [
-        'name'       => 'name',
+        'name' => 'name',
         'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

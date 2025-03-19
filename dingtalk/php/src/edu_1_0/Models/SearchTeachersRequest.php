@@ -20,9 +20,7 @@ class SearchTeachersRequest extends Model
         'nameKeyword' => 'nameKeyword',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

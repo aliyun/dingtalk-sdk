@@ -29,14 +29,12 @@ class receivers extends Model
      */
     public $userType;
     protected $_name = [
-        'corpId'   => 'corpId',
-        'userId'   => 'userId',
+        'corpId' => 'corpId',
+        'userId' => 'userId',
         'userType' => 'userType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

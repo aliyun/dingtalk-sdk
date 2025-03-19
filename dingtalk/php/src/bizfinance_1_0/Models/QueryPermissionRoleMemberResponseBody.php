@@ -16,9 +16,7 @@ class QueryPermissionRoleMemberResponseBody extends Model
         'roleMemberMap' => 'roleMemberMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -24,14 +24,12 @@ class PageListActionResponseBody extends Model
      */
     public $total;
     protected $_name = [
-        'list'       => 'list',
+        'list' => 'list',
         'nextCursor' => 'nextCursor',
-        'total'      => 'total',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class PageListActionResponseBody extends Model
         if (isset($map['list'])) {
             if (!empty($map['list'])) {
                 $model->list = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['list'] as $item) {
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }

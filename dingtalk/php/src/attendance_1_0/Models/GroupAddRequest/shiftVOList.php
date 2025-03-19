@@ -18,9 +18,7 @@ class shiftVOList extends Model
         'shiftId' => 'shiftId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

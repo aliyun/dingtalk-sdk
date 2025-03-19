@@ -42,15 +42,13 @@ class content extends Model
      */
     public $name;
     protected $_name = [
-        'deptAndExt'      => 'deptAndExt',
+        'deptAndExt' => 'deptAndExt',
         'groupAndExtList' => 'groupAndExtList',
-        'id'              => 'id',
-        'name'            => 'name',
+        'id' => 'id',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -91,7 +89,7 @@ class content extends Model
         if (isset($map['groupAndExtList'])) {
             if (!empty($map['groupAndExtList'])) {
                 $model->groupAndExtList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['groupAndExtList'] as $item) {
                     $model->groupAndExtList[$n++] = null !== $item ? groupAndExtList::fromMap($item) : $item;
                 }

@@ -20,13 +20,11 @@ class RemoveAttendeeHeaders extends Model
      */
     public $xAcsDingtalkAccessToken;
     protected $_name = [
-        'xClientToken'            => 'x-client-token',
+        'xClientToken' => 'x-client-token',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

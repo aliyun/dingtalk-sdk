@@ -22,13 +22,11 @@ class GetCrmRolePermissionRequest extends Model
      */
     public $resourceId;
     protected $_name = [
-        'bizType'    => 'bizType',
+        'bizType' => 'bizType',
         'resourceId' => 'resourceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

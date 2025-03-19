@@ -22,13 +22,11 @@ class scope extends Model
      */
     public $scopeType;
     protected $_name = [
-        'deptIds'   => 'deptIds',
+        'deptIds' => 'deptIds',
         'scopeType' => 'scopeType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

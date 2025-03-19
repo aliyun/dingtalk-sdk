@@ -19,9 +19,7 @@ class ListSearchTabsByOrgIdResponseBody extends Model
         'searchTabResult' => 'searchTabResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class ListSearchTabsByOrgIdResponseBody extends Model
         if (isset($map['searchTabResult'])) {
             if (!empty($map['searchTabResult'])) {
                 $model->searchTabResult = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['searchTabResult'] as $item) {
                     $model->searchTabResult[$n++] = null !== $item ? searchTabResult::fromMap($item) : $item;
                 }

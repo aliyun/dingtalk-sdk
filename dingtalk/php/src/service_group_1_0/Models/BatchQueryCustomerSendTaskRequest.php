@@ -64,19 +64,17 @@ class BatchQueryCustomerSendTaskRequest extends Model
      */
     public $taskName;
     protected $_name = [
-        'gmtCreateEnd'       => 'gmtCreateEnd',
-        'gmtCreateStart'     => 'gmtCreateStart',
-        'maxResults'         => 'maxResults',
+        'gmtCreateEnd' => 'gmtCreateEnd',
+        'gmtCreateStart' => 'gmtCreateStart',
+        'maxResults' => 'maxResults',
         'needRichStatistics' => 'needRichStatistics',
-        'nextToken'          => 'nextToken',
-        'openBatchTaskIds'   => 'openBatchTaskIds',
-        'openTeamId'         => 'openTeamId',
-        'taskName'           => 'taskName',
+        'nextToken' => 'nextToken',
+        'openBatchTaskIds' => 'openBatchTaskIds',
+        'openTeamId' => 'openTeamId',
+        'taskName' => 'taskName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

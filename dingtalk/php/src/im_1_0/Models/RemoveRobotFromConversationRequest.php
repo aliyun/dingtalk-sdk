@@ -26,13 +26,11 @@ class RemoveRobotFromConversationRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'chatBotUserId'      => 'chatBotUserId',
+        'chatBotUserId' => 'chatBotUserId',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

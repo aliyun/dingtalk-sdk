@@ -47,16 +47,14 @@ class groupMembers extends Model
      */
     public $groupMemberType;
     protected $_name = [
-        'groupMemberAvatar'   => 'groupMemberAvatar',
+        'groupMemberAvatar' => 'groupMemberAvatar',
         'groupMemberDynamics' => 'groupMemberDynamics',
-        'groupMemberId'       => 'groupMemberId',
-        'groupMemberName'     => 'groupMemberName',
-        'groupMemberType'     => 'groupMemberType',
+        'groupMemberId' => 'groupMemberId',
+        'groupMemberName' => 'groupMemberName',
+        'groupMemberType' => 'groupMemberType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -43,14 +43,12 @@ class PremiumGetTodoTasksRequest extends Model
     public $userId;
     protected $_name = [
         'createBefore' => 'createBefore',
-        'pageNumber'   => 'pageNumber',
-        'pageSize'     => 'pageSize',
-        'userId'       => 'userId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

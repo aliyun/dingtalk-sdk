@@ -44,15 +44,13 @@ class FileStorageCheckConnectionRequest extends Model
      */
     public $targetCorpId;
     protected $_name = [
-        'accessKeyId'     => 'accessKeyId',
+        'accessKeyId' => 'accessKeyId',
         'accessKeySecret' => 'accessKeySecret',
-        'oss'             => 'oss',
-        'targetCorpId'    => 'targetCorpId',
+        'oss' => 'oss',
+        'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

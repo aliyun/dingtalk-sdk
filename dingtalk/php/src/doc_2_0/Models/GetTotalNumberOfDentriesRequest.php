@@ -28,13 +28,11 @@ class GetTotalNumberOfDentriesRequest extends Model
     public $spaceTypes;
     protected $_name = [
         'includeFolder' => 'includeFolder',
-        'operatorId'    => 'operatorId',
-        'spaceTypes'    => 'spaceTypes',
+        'operatorId' => 'operatorId',
+        'spaceTypes' => 'spaceTypes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

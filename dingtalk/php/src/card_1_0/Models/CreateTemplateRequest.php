@@ -39,16 +39,14 @@ class CreateTemplateRequest extends Model
      */
     public $type;
     protected $_name = [
-        'appId'      => 'appId',
-        'creatorId'  => 'creatorId',
+        'appId' => 'appId',
+        'creatorId' => 'creatorId',
         'extendType' => 'extendType',
-        'name'       => 'name',
-        'type'       => 'type',
+        'name' => 'name',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

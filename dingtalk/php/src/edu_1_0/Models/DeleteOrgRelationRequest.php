@@ -22,13 +22,11 @@ class DeleteOrgRelationRequest extends Model
      */
     public $targetCorpId;
     protected $_name = [
-        'authCode'     => 'authCode',
+        'authCode' => 'authCode',
         'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

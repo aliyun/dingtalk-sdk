@@ -23,13 +23,11 @@ class result extends Model
      */
     public $hasMore;
     protected $_name = [
-        'groups'  => 'groups',
+        'groups' => 'groups',
         'hasMore' => 'hasMore',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -61,7 +59,7 @@ class result extends Model
         if (isset($map['groups'])) {
             if (!empty($map['groups'])) {
                 $model->groups = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['groups'] as $item) {
                     $model->groups[$n++] = null !== $item ? groups::fromMap($item) : $item;
                 }

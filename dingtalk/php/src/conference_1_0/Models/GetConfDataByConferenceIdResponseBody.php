@@ -86,21 +86,19 @@ class GetConfDataByConferenceIdResponseBody extends Model
     public $userCount;
     protected $_name = [
         'conferenceId' => 'conferenceId',
-        'creatorId'    => 'creatorId',
-        'creatorNick'  => 'creatorNick',
-        'deptName'     => 'deptName',
-        'endTime'      => 'endTime',
-        'freeType'     => 'freeType',
-        'scene'        => 'scene',
-        'startTime'    => 'startTime',
-        'timeLength'   => 'timeLength',
-        'title'        => 'title',
-        'userCount'    => 'userCount',
+        'creatorId' => 'creatorId',
+        'creatorNick' => 'creatorNick',
+        'deptName' => 'deptName',
+        'endTime' => 'endTime',
+        'freeType' => 'freeType',
+        'scene' => 'scene',
+        'startTime' => 'startTime',
+        'timeLength' => 'timeLength',
+        'title' => 'title',
+        'userCount' => 'userCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

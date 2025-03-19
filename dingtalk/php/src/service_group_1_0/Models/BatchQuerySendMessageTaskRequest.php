@@ -66,19 +66,17 @@ class BatchQuerySendMessageTaskRequest extends Model
      */
     public $taskName;
     protected $_name = [
-        'getReadCount'   => 'getReadCount',
-        'gmtCreateEnd'   => 'gmtCreateEnd',
+        'getReadCount' => 'getReadCount',
+        'gmtCreateEnd' => 'gmtCreateEnd',
         'gmtCreateStart' => 'gmtCreateStart',
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'openGroupSetId' => 'openGroupSetId',
-        'openTeamId'     => 'openTeamId',
-        'taskName'       => 'taskName',
+        'openTeamId' => 'openTeamId',
+        'taskName' => 'taskName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

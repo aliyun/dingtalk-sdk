@@ -16,9 +16,7 @@ class PrivateDataValue extends Model
         'cardParamMap' => 'cardParamMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

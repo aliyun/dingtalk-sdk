@@ -31,14 +31,12 @@ class SupplyAddPartnerManagersRequest extends Model
      */
     public $interfaceType;
     protected $_name = [
-        'deptId'        => 'deptId',
-        'interfaceId'   => 'interfaceId',
+        'deptId' => 'deptId',
+        'interfaceId' => 'interfaceId',
         'interfaceType' => 'interfaceType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

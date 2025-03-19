@@ -35,14 +35,12 @@ class OpenUserDTO extends Model
      */
     public $userId;
     protected $_name = [
-        'id'     => 'id',
-        'name'   => 'name',
+        'id' => 'id',
+        'name' => 'name',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class result extends Model
         'openPointInvokeResultDTOS' => 'openPointInvokeResultDTOS',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class result extends Model
         if (isset($map['openPointInvokeResultDTOS'])) {
             if (!empty($map['openPointInvokeResultDTOS'])) {
                 $model->openPointInvokeResultDTOS = [];
-                $n                                = 0;
+                $n = 0;
                 foreach ($map['openPointInvokeResultDTOS'] as $item) {
                     $model->openPointInvokeResultDTOS[$n++] = null !== $item ? openPointInvokeResultDTOS::fromMap($item) : $item;
                 }

@@ -29,14 +29,12 @@ class EsignQueryApprovalInfoRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'corpId'      => 'corpId',
+        'corpId' => 'corpId',
         'esignFlowId' => 'esignFlowId',
-        'unionId'     => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

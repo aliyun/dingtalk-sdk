@@ -20,9 +20,7 @@ class SeparateBranchOrgRequest extends Model
         'attachDeptId' => 'attachDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

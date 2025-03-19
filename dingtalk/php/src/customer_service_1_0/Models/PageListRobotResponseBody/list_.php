@@ -44,15 +44,13 @@ class list_ extends Model
     public $status;
     protected $_name = [
         'accountId' => 'accountId',
-        'appKey'    => 'appKey',
-        'id'        => 'id',
-        'name'      => 'name',
-        'status'    => 'status',
+        'appKey' => 'appKey',
+        'id' => 'id',
+        'name' => 'name',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

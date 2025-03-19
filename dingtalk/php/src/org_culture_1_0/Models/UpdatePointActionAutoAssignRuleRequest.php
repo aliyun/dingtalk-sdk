@@ -26,12 +26,10 @@ class UpdatePointActionAutoAssignRuleRequest extends Model
     public $userId;
     protected $_name = [
         'updatePointRuleRequestDTOList' => 'updatePointRuleRequestDTOList',
-        'userId'                        => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class UpdatePointActionAutoAssignRuleRequest extends Model
         if (isset($map['updatePointRuleRequestDTOList'])) {
             if (!empty($map['updatePointRuleRequestDTOList'])) {
                 $model->updatePointRuleRequestDTOList = [];
-                $n                                    = 0;
+                $n = 0;
                 foreach ($map['updatePointRuleRequestDTOList'] as $item) {
                     $model->updatePointRuleRequestDTOList[$n++] = null !== $item ? updatePointRuleRequestDTOList::fromMap($item) : $item;
                 }

@@ -41,14 +41,12 @@ class ListFormInstancesRequest extends Model
     public $nextToken;
     protected $_name = [
         'actionDate' => 'actionDate',
-        'bizType'    => 'bizType',
+        'bizType' => 'bizType',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

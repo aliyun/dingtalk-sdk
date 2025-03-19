@@ -16,9 +16,7 @@ class DeleteProjectMembersV3Request extends Model
         'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

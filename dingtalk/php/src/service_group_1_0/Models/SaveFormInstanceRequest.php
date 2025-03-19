@@ -40,15 +40,13 @@ class SaveFormInstanceRequest extends Model
      */
     public $ownerUnionId;
     protected $_name = [
-        'formDataList'    => 'formDataList',
-        'openTeamId'      => 'openTeamId',
+        'formDataList' => 'formDataList',
+        'openTeamId' => 'openTeamId',
         'operatorUnionId' => 'operatorUnionId',
-        'ownerUnionId'    => 'ownerUnionId',
+        'ownerUnionId' => 'ownerUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

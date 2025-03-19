@@ -23,14 +23,12 @@ class professionalTitle extends Model
      */
     public $professionalTitleDetail;
     protected $_name = [
-        'code'                      => 'code',
+        'code' => 'code',
         'professionalTitleCategory' => 'professionalTitleCategory',
-        'professionalTitleDetail'   => 'professionalTitleDetail',
+        'professionalTitleDetail' => 'professionalTitleDetail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

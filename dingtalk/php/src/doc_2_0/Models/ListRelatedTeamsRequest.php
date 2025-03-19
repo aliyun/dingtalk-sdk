@@ -41,14 +41,12 @@ class ListRelatedTeamsRequest extends Model
     public $type;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
         'operatorId' => 'operatorId',
-        'type'       => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

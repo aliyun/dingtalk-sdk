@@ -18,9 +18,7 @@ class CheckOpportunityResultResponseBody extends Model
         'bizSuccess' => 'bizSuccess',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

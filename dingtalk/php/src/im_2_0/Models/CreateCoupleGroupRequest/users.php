@@ -29,14 +29,12 @@ class users extends Model
      */
     public $userId;
     protected $_name = [
-        'appUserId'  => 'appUserId',
+        'appUserId' => 'appUserId',
         'groupOwner' => 'groupOwner',
-        'userId'     => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

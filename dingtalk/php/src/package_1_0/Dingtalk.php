@@ -59,8 +59,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -92,18 +92,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CloseHPackage',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/h5/microApps/close',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CloseHPackage',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/h5/microApps/close',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CloseHPackageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -149,18 +149,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUploadToken',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/uploadTokens',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUploadToken',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/uploadTokens',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUploadTokenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -212,18 +212,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'HPackageListGet',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/h5/versions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HPackageListGet',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/h5/versions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HPackageListGetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -272,18 +272,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HPublishPackage',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/h5/publish',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HPublishPackage',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/h5/publish',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HPublishPackageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -332,18 +332,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HUploadPackage',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/h5/asyncUpload',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HUploadPackage',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/h5/asyncUpload',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HUploadPackageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -392,18 +392,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'HUploadPackageStatus',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/h5/uploadStatus',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HUploadPackageStatus',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/h5/uploadStatus',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HUploadPackageStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -449,18 +449,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'OpenMicroAppPackage',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/h5/microApps/open',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'OpenMicroAppPackage',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/h5/microApps/open',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return OpenMicroAppPackageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -509,18 +509,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ReleaseGrayDeploy',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/greys/deploy',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReleaseGrayDeploy',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/greys/deploy',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReleaseGrayDeployResponse::fromMap($this->execute($params, $req, $runtime));
@@ -569,18 +569,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ReleaseGrayExit',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/greys/exit',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReleaseGrayExit',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/greys/exit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReleaseGrayExitResponse::fromMap($this->execute($params, $req, $runtime));
@@ -629,18 +629,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ReleaseGrayOrgGet',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/greys/organizations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReleaseGrayOrgGet',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/greys/organizations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReleaseGrayOrgGetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -692,18 +692,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ReleaseGrayOrgSet',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/greys/organizations/release',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReleaseGrayOrgSet',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/greys/organizations/release',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReleaseGrayOrgSetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -752,18 +752,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ReleaseGrayPercentGet',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/greys/users/percents',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReleaseGrayPercentGet',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/greys/users/percents',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReleaseGrayPercentGetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -815,18 +815,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ReleaseGrayPercentSet',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/greys/users/percents/release',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReleaseGrayPercentSet',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/greys/users/percents/release',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReleaseGrayPercentSetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -875,18 +875,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ReleaseGrayUserIdGet',
-            'version'     => 'package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/package/greys/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReleaseGrayUserIdGet',
+            'version' => 'package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/package/greys/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReleaseGrayUserIdGetResponse::fromMap($this->execute($params, $req, $runtime));

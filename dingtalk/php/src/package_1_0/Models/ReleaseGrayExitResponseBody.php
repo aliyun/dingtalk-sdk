@@ -16,9 +16,7 @@ class ReleaseGrayExitResponseBody extends Model
         'reuslt' => 'reuslt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

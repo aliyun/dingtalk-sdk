@@ -18,9 +18,7 @@ class ListProgressByIdsRequest extends Model
         'progressIds' => 'progressIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

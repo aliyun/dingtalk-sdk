@@ -34,14 +34,12 @@ class result extends Model
      */
     public $totalCount;
     protected $_name = [
-        'failCount'       => 'failCount',
+        'failCount' => 'failCount',
         'redirectResults' => 'redirectResults',
-        'totalCount'      => 'totalCount',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -79,7 +77,7 @@ class result extends Model
         if (isset($map['redirectResults'])) {
             if (!empty($map['redirectResults'])) {
                 $model->redirectResults = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['redirectResults'] as $item) {
                     $model->redirectResults[$n++] = null !== $item ? redirectResults::fromMap($item) : $item;
                 }

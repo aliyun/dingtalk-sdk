@@ -124,29 +124,27 @@ class list_ extends Model
      */
     public $userDefineCode;
     protected $_name = [
-        'code'                    => 'code',
-        'contactAddress'          => 'contactAddress',
+        'code' => 'code',
+        'contactAddress' => 'contactAddress',
         'contactCompanyTelephone' => 'contactCompanyTelephone',
-        'contactEmail'            => 'contactEmail',
-        'contactName'             => 'contactName',
-        'contactTelephone'        => 'contactTelephone',
-        'description'             => 'description',
-        'drawerEmail'             => 'drawerEmail',
-        'drawerTelephone'         => 'drawerTelephone',
-        'name'                    => 'name',
-        'purchaserAccount'        => 'purchaserAccount',
-        'purchaserAddress'        => 'purchaserAddress',
-        'purchaserName'           => 'purchaserName',
-        'purchaserTaxNo'          => 'purchaserTaxNo',
-        'purchaserTel'            => 'purchaserTel',
-        'purchaserrBankName'      => 'purchaserrBankName',
-        'status'                  => 'status',
-        'userDefineCode'          => 'userDefineCode',
+        'contactEmail' => 'contactEmail',
+        'contactName' => 'contactName',
+        'contactTelephone' => 'contactTelephone',
+        'description' => 'description',
+        'drawerEmail' => 'drawerEmail',
+        'drawerTelephone' => 'drawerTelephone',
+        'name' => 'name',
+        'purchaserAccount' => 'purchaserAccount',
+        'purchaserAddress' => 'purchaserAddress',
+        'purchaserName' => 'purchaserName',
+        'purchaserTaxNo' => 'purchaserTaxNo',
+        'purchaserTel' => 'purchaserTel',
+        'purchaserrBankName' => 'purchaserrBankName',
+        'status' => 'status',
+        'userDefineCode' => 'userDefineCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

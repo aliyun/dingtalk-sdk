@@ -21,12 +21,10 @@ class DeleteFilesResponseBody extends Model
     public $taskId;
     protected $_name = [
         'success' => 'success',
-        'taskId'  => 'taskId',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

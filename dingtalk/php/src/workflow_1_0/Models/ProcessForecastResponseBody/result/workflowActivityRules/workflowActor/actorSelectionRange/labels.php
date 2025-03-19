@@ -19,12 +19,10 @@ class labels extends Model
     public $labels;
     protected $_name = [
         'labelNames' => 'labelNames',
-        'labels'     => 'labels',
+        'labels' => 'labels',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

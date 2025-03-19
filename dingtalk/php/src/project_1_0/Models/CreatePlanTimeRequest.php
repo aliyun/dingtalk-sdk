@@ -94,21 +94,19 @@ class CreatePlanTimeRequest extends Model
      */
     public $tenantType;
     protected $_name = [
-        'endDate'          => 'endDate',
-        'executorId'       => 'executorId',
+        'endDate' => 'endDate',
+        'executorId' => 'executorId',
         'includesHolidays' => 'includesHolidays',
-        'isDuration'       => 'isDuration',
-        'objectId'         => 'objectId',
-        'objectType'       => 'objectType',
-        'planTime'         => 'planTime',
-        'startDate'        => 'startDate',
-        'submitterId'      => 'submitterId',
-        'tenantType'       => 'tenantType',
+        'isDuration' => 'isDuration',
+        'objectId' => 'objectId',
+        'objectType' => 'objectType',
+        'planTime' => 'planTime',
+        'startDate' => 'startDate',
+        'submitterId' => 'submitterId',
+        'tenantType' => 'tenantType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

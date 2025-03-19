@@ -30,14 +30,12 @@ class RestoreRecycleItemsRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'option'         => 'option',
+        'option' => 'option',
         'recycleItemIds' => 'recycleItemIds',
-        'unionId'        => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

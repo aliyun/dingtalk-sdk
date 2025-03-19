@@ -44,15 +44,13 @@ class MasterDatasGetRequest extends Model
      */
     public $viewEntityCode;
     protected $_name = [
-        'objId'          => 'objId',
-        'scopeCode'      => 'scopeCode',
-        'tenantId'       => 'tenantId',
+        'objId' => 'objId',
+        'scopeCode' => 'scopeCode',
+        'tenantId' => 'tenantId',
         'viewEntityCode' => 'viewEntityCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

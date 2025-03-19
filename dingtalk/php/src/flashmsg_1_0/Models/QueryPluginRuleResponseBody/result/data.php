@@ -43,18 +43,16 @@ class data extends Model
      */
     public $itemType;
     protected $_name = [
-        'bizId'     => 'bizId',
-        'chatType'  => 'chatType',
-        'code'      => 'code',
+        'bizId' => 'bizId',
+        'chatType' => 'chatType',
+        'code' => 'code',
         'gmtCreate' => 'gmtCreate',
-        'itemId'    => 'itemId',
-        'itemName'  => 'itemName',
-        'itemType'  => 'itemType',
+        'itemId' => 'itemId',
+        'itemName' => 'itemName',
+        'itemType' => 'itemType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

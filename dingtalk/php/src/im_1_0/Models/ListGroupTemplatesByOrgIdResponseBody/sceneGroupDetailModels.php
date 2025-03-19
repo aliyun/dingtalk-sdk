@@ -38,17 +38,15 @@ class sceneGroupDetailModels extends Model
      */
     public $templateName;
     protected $_name = [
-        'description'  => 'description',
-        'gmtCreate'    => 'gmtCreate',
-        'icon'         => 'icon',
-        'msgOpen'      => 'msgOpen',
-        'templateId'   => 'templateId',
+        'description' => 'description',
+        'gmtCreate' => 'gmtCreate',
+        'icon' => 'icon',
+        'msgOpen' => 'msgOpen',
+        'templateId' => 'templateId',
         'templateName' => 'templateName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

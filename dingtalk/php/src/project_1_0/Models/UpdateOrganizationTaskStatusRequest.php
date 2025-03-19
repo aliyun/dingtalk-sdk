@@ -31,14 +31,12 @@ class UpdateOrganizationTaskStatusRequest extends Model
      */
     public $isDone;
     protected $_name = [
-        'disableActivity'     => 'disableActivity',
+        'disableActivity' => 'disableActivity',
         'disableNotification' => 'disableNotification',
-        'isDone'              => 'isDone',
+        'isDone' => 'isDone',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

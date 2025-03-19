@@ -60,19 +60,17 @@ class InstallCoolAppShrinkRequest extends Model
      */
     public $suiteId;
     protected $_name = [
-        'appId'              => 'appId',
-        'coolAppCode'        => 'coolAppCode',
-        'corpId'             => 'corpId',
-        'featureShrink'      => 'feature',
-        'installUid'         => 'installUid',
+        'appId' => 'appId',
+        'coolAppCode' => 'coolAppCode',
+        'corpId' => 'corpId',
+        'featureShrink' => 'feature',
+        'installUid' => 'installUid',
         'openConversationId' => 'openConversationId',
-        'optionsShrink'      => 'options',
-        'suiteId'            => 'suiteId',
+        'optionsShrink' => 'options',
+        'suiteId' => 'suiteId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

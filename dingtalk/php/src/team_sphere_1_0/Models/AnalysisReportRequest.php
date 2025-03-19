@@ -19,13 +19,11 @@ class AnalysisReportRequest extends Model
      */
     public $reportId;
     protected $_name = [
-        'filter'   => 'filter',
+        'filter' => 'filter',
         'reportId' => 'reportId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

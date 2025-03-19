@@ -90,23 +90,21 @@ class productInfoList extends Model
      */
     public $withTax;
     protected $_name = [
-        'amountWithTax'         => 'amountWithTax',
-        'amountWithoutTax'      => 'amountWithoutTax',
-        'discountAmount'        => 'discountAmount',
-        'name'                  => 'name',
-        'quantity'              => 'quantity',
-        'specification'         => 'specification',
+        'amountWithTax' => 'amountWithTax',
+        'amountWithoutTax' => 'amountWithoutTax',
+        'discountAmount' => 'discountAmount',
+        'name' => 'name',
+        'quantity' => 'quantity',
+        'specification' => 'specification',
         'taxClassificationCode' => 'taxClassificationCode',
-        'taxRate'               => 'taxRate',
-        'unit'                  => 'unit',
-        'unitPriceWithTax'      => 'unitPriceWithTax',
-        'unitPriceWithoutTax'   => 'unitPriceWithoutTax',
-        'withTax'               => 'withTax',
+        'taxRate' => 'taxRate',
+        'unit' => 'unit',
+        'unitPriceWithTax' => 'unitPriceWithTax',
+        'unitPriceWithoutTax' => 'unitPriceWithoutTax',
+        'withTax' => 'withTax',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

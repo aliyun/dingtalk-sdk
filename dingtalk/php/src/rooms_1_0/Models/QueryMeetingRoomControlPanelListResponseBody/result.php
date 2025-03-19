@@ -21,13 +21,11 @@ class result extends Model
      */
     public $roomIotConfig;
     protected $_name = [
-        'roomId'        => 'roomId',
+        'roomId' => 'roomId',
         'roomIotConfig' => 'roomIotConfig',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class result extends Model
         if (isset($map['roomIotConfig'])) {
             if (!empty($map['roomIotConfig'])) {
                 $model->roomIotConfig = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['roomIotConfig'] as $item) {
                     $model->roomIotConfig[$n++] = null !== $item ? roomIotConfig::fromMap($item) : $item;
                 }

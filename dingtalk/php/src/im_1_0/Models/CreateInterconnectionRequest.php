@@ -19,9 +19,7 @@ class CreateInterconnectionRequest extends Model
         'interconnections' => 'interconnections',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class CreateInterconnectionRequest extends Model
         if (isset($map['interconnections'])) {
             if (!empty($map['interconnections'])) {
                 $model->interconnections = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['interconnections'] as $item) {
                     $model->interconnections[$n++] = null !== $item ? interconnections::fromMap($item) : $item;
                 }

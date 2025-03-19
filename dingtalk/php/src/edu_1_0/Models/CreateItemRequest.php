@@ -89,22 +89,20 @@ class CreateItemRequest extends Model
     public $type;
     protected $_name = [
         'description' => 'description',
-        'effectType'  => 'effectType',
-        'endTime'     => 'endTime',
-        'merchantId'  => 'merchantId',
-        'name'        => 'name',
-        'optUser'     => 'optUser',
-        'periodType'  => 'periodType',
-        'price'       => 'price',
-        'scene'       => 'scene',
-        'startTime'   => 'startTime',
-        'status'      => 'status',
-        'type'        => 'type',
+        'effectType' => 'effectType',
+        'endTime' => 'endTime',
+        'merchantId' => 'merchantId',
+        'name' => 'name',
+        'optUser' => 'optUser',
+        'periodType' => 'periodType',
+        'price' => 'price',
+        'scene' => 'scene',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,12 +20,10 @@ class orgClassStudentGroupList extends Model
     public $corpId;
     protected $_name = [
         'classList' => 'classList',
-        'corpId'    => 'corpId',
+        'corpId' => 'corpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class orgClassStudentGroupList extends Model
         if (isset($map['classList'])) {
             if (!empty($map['classList'])) {
                 $model->classList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['classList'] as $item) {
                     $model->classList[$n++] = null !== $item ? classList::fromMap($item) : $item;
                 }

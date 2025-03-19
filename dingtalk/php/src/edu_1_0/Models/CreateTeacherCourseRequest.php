@@ -50,17 +50,15 @@ class CreateTeacherCourseRequest extends Model
      */
     public $teacherUserId;
     protected $_name = [
-        'attributes'    => 'attributes',
-        'corpId'        => 'corpId',
-        'isvCode'       => 'isvCode',
-        'isvCourseId'   => 'isvCourseId',
-        'teacherName'   => 'teacherName',
+        'attributes' => 'attributes',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
+        'isvCourseId' => 'isvCourseId',
+        'teacherName' => 'teacherName',
         'teacherUserId' => 'teacherUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

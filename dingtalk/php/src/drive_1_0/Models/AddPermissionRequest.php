@@ -31,13 +31,11 @@ class AddPermissionRequest extends Model
     public $unionId;
     protected $_name = [
         'members' => 'members',
-        'role'    => 'role',
+        'role' => 'role',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -72,7 +70,7 @@ class AddPermissionRequest extends Model
         if (isset($map['members'])) {
             if (!empty($map['members'])) {
                 $model->members = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['members'] as $item) {
                     $model->members[$n++] = null !== $item ? members::fromMap($item) : $item;
                 }

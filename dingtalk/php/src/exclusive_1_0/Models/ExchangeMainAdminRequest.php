@@ -37,12 +37,10 @@ class ExchangeMainAdminRequest extends Model
     protected $_name = [
         'newAdminUserId' => 'newAdminUserId',
         'oldAdminUserId' => 'oldAdminUserId',
-        'targetCorpId'   => 'targetCorpId',
+        'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

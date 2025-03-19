@@ -23,12 +23,10 @@ class IsFriendRequest extends Model
     public $userId;
     protected $_name = [
         'mobileNo' => 'mobileNo',
-        'userId'   => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

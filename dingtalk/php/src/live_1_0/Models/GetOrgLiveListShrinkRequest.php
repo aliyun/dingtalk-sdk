@@ -20,13 +20,11 @@ class GetOrgLiveListShrinkRequest extends Model
      */
     public $requestBodyShrink;
     protected $_name = [
-        'corpId'            => 'corpId',
+        'corpId' => 'corpId',
         'requestBodyShrink' => 'requestBody',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

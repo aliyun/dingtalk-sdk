@@ -23,12 +23,10 @@ class DigitalStoreSceneScopeRequest extends Model
     public $sceneCode;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'sceneCode'          => 'sceneCode',
+        'sceneCode' => 'sceneCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

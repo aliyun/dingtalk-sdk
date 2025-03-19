@@ -24,13 +24,11 @@ class deptAndExt extends Model
      */
     public $extendInfos;
     protected $_name = [
-        'department'  => 'department',
+        'department' => 'department',
         'extendInfos' => 'extendInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -65,7 +63,7 @@ class deptAndExt extends Model
         if (isset($map['extendInfos'])) {
             if (!empty($map['extendInfos'])) {
                 $model->extendInfos = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['extendInfos'] as $item) {
                     $model->extendInfos[$n++] = null !== $item ? extendInfos::fromMap($item) : $item;
                 }

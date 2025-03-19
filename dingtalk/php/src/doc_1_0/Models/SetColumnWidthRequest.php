@@ -31,14 +31,12 @@ class SetColumnWidthRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'column'     => 'column',
-        'width'      => 'width',
+        'column' => 'column',
+        'width' => 'width',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

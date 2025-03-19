@@ -56,17 +56,15 @@ class result extends Model
      */
     public $type;
     protected $_name = [
-        'hasData'           => 'hasData',
+        'hasData' => 'hasData',
         'integrateDataAuth' => 'integrateDataAuth',
-        'name'              => 'name',
-        'readAuth'          => 'readAuth',
-        'tenantId'          => 'tenantId',
-        'type'              => 'type',
+        'name' => 'name',
+        'readAuth' => 'readAuth',
+        'tenantId' => 'tenantId',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

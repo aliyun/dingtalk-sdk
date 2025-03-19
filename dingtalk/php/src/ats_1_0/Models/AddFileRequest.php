@@ -40,15 +40,13 @@ class AddFileRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'bizCode'  => 'bizCode',
+        'bizCode' => 'bizCode',
         'fileName' => 'fileName',
-        'mediaId'  => 'mediaId',
+        'mediaId' => 'mediaId',
         'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

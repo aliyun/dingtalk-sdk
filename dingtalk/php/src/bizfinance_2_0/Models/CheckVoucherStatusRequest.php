@@ -78,21 +78,19 @@ class CheckVoucherStatusRequest extends Model
      */
     public $verifyStatus;
     protected $_name = [
-        'companyCode'  => 'companyCode',
-        'endTime'      => 'endTime',
-        'financeType'  => 'financeType',
-        'invoiceCode'  => 'invoiceCode',
-        'invoiceNo'    => 'invoiceNo',
-        'pageNumber'   => 'pageNumber',
-        'pageSize'     => 'pageSize',
-        'startTime'    => 'startTime',
-        'taxNo'        => 'taxNo',
+        'companyCode' => 'companyCode',
+        'endTime' => 'endTime',
+        'financeType' => 'financeType',
+        'invoiceCode' => 'invoiceCode',
+        'invoiceNo' => 'invoiceNo',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'startTime' => 'startTime',
+        'taxNo' => 'taxNo',
         'verifyStatus' => 'verifyStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

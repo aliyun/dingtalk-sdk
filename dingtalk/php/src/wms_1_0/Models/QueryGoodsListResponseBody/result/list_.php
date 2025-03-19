@@ -53,16 +53,14 @@ class list_ extends Model
      */
     public $unit;
     protected $_name = [
-        'goodsName'    => 'goodsName',
-        'goodsNo'      => 'goodsNo',
-        'instanceId'   => 'instanceId',
+        'goodsName' => 'goodsName',
+        'goodsNo' => 'goodsNo',
+        'instanceId' => 'instanceId',
         'productSpecs' => 'productSpecs',
-        'unit'         => 'unit',
+        'unit' => 'unit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -105,22 +105,20 @@ class GetSearchItemResponseBody extends Model
      */
     public $url;
     protected $_name = [
-        'footer'      => 'footer',
-        'gmtCreate'   => 'gmtCreate',
+        'footer' => 'footer',
+        'gmtCreate' => 'gmtCreate',
         'gmtModified' => 'gmtModified',
-        'icon'        => 'icon',
-        'itemId'      => 'itemId',
-        'mobileUrl'   => 'mobileUrl',
-        'pcUrl'       => 'pcUrl',
-        'summary'     => 'summary',
-        'tabId'       => 'tabId',
-        'title'       => 'title',
-        'url'         => 'url',
+        'icon' => 'icon',
+        'itemId' => 'itemId',
+        'mobileUrl' => 'mobileUrl',
+        'pcUrl' => 'pcUrl',
+        'summary' => 'summary',
+        'tabId' => 'tabId',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

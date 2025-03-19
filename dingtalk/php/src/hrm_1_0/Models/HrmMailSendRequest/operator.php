@@ -35,14 +35,12 @@ class operator extends Model
      */
     public $token;
     protected $_name = [
-        'bizId'           => 'bizId',
+        'bizId' => 'bizId',
         'mailAccountType' => 'mailAccountType',
-        'token'           => 'token',
+        'token' => 'token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -63,20 +63,18 @@ class result extends Model
     public $type;
     protected $_name = [
         'advancedCustomfield' => 'advancedCustomfield',
-        'boundToObjectId'     => 'boundToObjectId',
-        'boundToObjectType'   => 'boundToObjectType',
-        'choices'             => 'choices',
-        'created'             => 'created',
-        'creatorId'           => 'creatorId',
-        'id'                  => 'id',
-        'name'                => 'name',
-        'originalId'          => 'originalId',
-        'type'                => 'type',
+        'boundToObjectId' => 'boundToObjectId',
+        'boundToObjectType' => 'boundToObjectType',
+        'choices' => 'choices',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
+        'id' => 'id',
+        'name' => 'name',
+        'originalId' => 'originalId',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -141,7 +139,7 @@ class result extends Model
         if (isset($map['choices'])) {
             if (!empty($map['choices'])) {
                 $model->choices = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['choices'] as $item) {
                     $model->choices[$n++] = null !== $item ? choices::fromMap($item) : $item;
                 }

@@ -17,9 +17,7 @@ class RemoveMeetingRoomsRequest extends Model
         'meetingRoomsToRemove' => 'meetingRoomsToRemove',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class RemoveMeetingRoomsRequest extends Model
         if (isset($map['meetingRoomsToRemove'])) {
             if (!empty($map['meetingRoomsToRemove'])) {
                 $model->meetingRoomsToRemove = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['meetingRoomsToRemove'] as $item) {
                     $model->meetingRoomsToRemove[$n++] = null !== $item ? meetingRoomsToRemove::fromMap($item) : $item;
                 }

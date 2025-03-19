@@ -24,13 +24,11 @@ class result extends Model
     public $provideSuccess;
     protected $_name = [
         'availableQuota' => 'availableQuota',
-        'provideNum'     => 'provideNum',
+        'provideNum' => 'provideNum',
         'provideSuccess' => 'provideSuccess',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -28,13 +28,11 @@ class integrationConfig extends Model
     public $props;
     protected $_name = [
         'categoryNames' => 'categoryNames',
-        'entityName'    => 'entityName',
-        'props'         => 'props',
+        'entityName' => 'entityName',
+        'props' => 'props',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -75,7 +73,7 @@ class integrationConfig extends Model
         if (isset($map['categoryNames'])) {
             if (!empty($map['categoryNames'])) {
                 $model->categoryNames = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['categoryNames'] as $item) {
                     $model->categoryNames[$n++] = null !== $item ? categoryNames::fromMap($item) : $item;
                 }
@@ -87,7 +85,7 @@ class integrationConfig extends Model
         if (isset($map['props'])) {
             if (!empty($map['props'])) {
                 $model->props = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['props'] as $item) {
                     $model->props[$n++] = null !== $item ? props::fromMap($item) : $item;
                 }

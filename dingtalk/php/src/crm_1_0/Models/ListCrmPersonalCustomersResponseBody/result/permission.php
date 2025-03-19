@@ -22,13 +22,11 @@ class permission extends Model
      */
     public $participantStaffIds;
     protected $_name = [
-        'ownerStaffIds'       => 'ownerStaffIds',
+        'ownerStaffIds' => 'ownerStaffIds',
         'participantStaffIds' => 'participantStaffIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class CreateInterconnectionResponseBody extends Model
         'results' => 'results',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class CreateInterconnectionResponseBody extends Model
         if (isset($map['results'])) {
             if (!empty($map['results'])) {
                 $model->results = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['results'] as $item) {
                     $model->results[$n++] = null !== $item ? results::fromMap($item) : $item;
                 }

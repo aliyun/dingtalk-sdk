@@ -78,23 +78,21 @@ class GetCardInUserHolderResponseBody extends Model
      */
     public $title;
     protected $_name = [
-        'avatarUrl'          => 'avatarUrl',
-        'cardAcceptStatus'   => 'cardAcceptStatus',
+        'avatarUrl' => 'avatarUrl',
+        'cardAcceptStatus' => 'cardAcceptStatus',
         'cardAcceptTimeLong' => 'cardAcceptTimeLong',
-        'cardId'             => 'cardId',
-        'cardSource'         => 'cardSource',
-        'extension'          => 'extension',
-        'industryName'       => 'industryName',
-        'introduce'          => 'introduce',
-        'name'               => 'name',
-        'orgName'            => 'orgName',
-        'templateId'         => 'templateId',
-        'title'              => 'title',
+        'cardId' => 'cardId',
+        'cardSource' => 'cardSource',
+        'extension' => 'extension',
+        'industryName' => 'industryName',
+        'introduce' => 'introduce',
+        'name' => 'name',
+        'orgName' => 'orgName',
+        'templateId' => 'templateId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

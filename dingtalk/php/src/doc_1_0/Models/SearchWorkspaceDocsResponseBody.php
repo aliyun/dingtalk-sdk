@@ -26,14 +26,12 @@ class SearchWorkspaceDocsResponseBody extends Model
      */
     public $nextToken;
     protected $_name = [
-        'docs'      => 'docs',
-        'hasMore'   => 'hasMore',
+        'docs' => 'docs',
+        'hasMore' => 'hasMore',
         'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -68,7 +66,7 @@ class SearchWorkspaceDocsResponseBody extends Model
         if (isset($map['docs'])) {
             if (!empty($map['docs'])) {
                 $model->docs = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['docs'] as $item) {
                     $model->docs[$n++] = null !== $item ? docs::fromMap($item) : $item;
                 }

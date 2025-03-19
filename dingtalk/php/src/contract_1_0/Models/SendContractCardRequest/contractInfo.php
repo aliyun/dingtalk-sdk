@@ -38,13 +38,11 @@ class contractInfo extends Model
     protected $_name = [
         'contractCode' => 'contractCode',
         'contractName' => 'contractName',
-        'createTime'   => 'createTime',
+        'createTime' => 'createTime',
         'signUserName' => 'signUserName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

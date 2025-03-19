@@ -76,23 +76,21 @@ class UpdateContactHideSettingRequest extends Model
      */
     public $objectTagIds;
     protected $_name = [
-        'active'            => 'active',
-        'description'       => 'description',
-        'excludeDeptIds'    => 'excludeDeptIds',
-        'excludeStaffIds'   => 'excludeStaffIds',
-        'excludeTagIds'     => 'excludeTagIds',
-        'hideInSearch'      => 'hideInSearch',
+        'active' => 'active',
+        'description' => 'description',
+        'excludeDeptIds' => 'excludeDeptIds',
+        'excludeStaffIds' => 'excludeStaffIds',
+        'excludeTagIds' => 'excludeTagIds',
+        'hideInSearch' => 'hideInSearch',
         'hideInUserProfile' => 'hideInUserProfile',
-        'id'                => 'id',
-        'name'              => 'name',
-        'objectDeptIds'     => 'objectDeptIds',
-        'objectStaffIds'    => 'objectStaffIds',
-        'objectTagIds'      => 'objectTagIds',
+        'id' => 'id',
+        'name' => 'name',
+        'objectDeptIds' => 'objectDeptIds',
+        'objectStaffIds' => 'objectStaffIds',
+        'objectTagIds' => 'objectTagIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -30,13 +30,11 @@ class CreateDlpTaskRequest extends Model
     public $userId;
     protected $_name = [
         'dentryId' => 'dentryId',
-        'spaceId'  => 'spaceId',
-        'userId'   => 'userId',
+        'spaceId' => 'spaceId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

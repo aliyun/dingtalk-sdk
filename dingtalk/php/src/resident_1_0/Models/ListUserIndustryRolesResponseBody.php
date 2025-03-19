@@ -17,9 +17,7 @@ class ListUserIndustryRolesResponseBody extends Model
         'roleList' => 'roleList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListUserIndustryRolesResponseBody extends Model
         if (isset($map['roleList'])) {
             if (!empty($map['roleList'])) {
                 $model->roleList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['roleList'] as $item) {
                     $model->roleList[$n++] = null !== $item ? roleList::fromMap($item) : $item;
                 }

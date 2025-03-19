@@ -17,9 +17,7 @@ class GetMultipartFileUploadInfosResponseBody extends Model
         'multipartHeaderSignatureInfos' => 'multipartHeaderSignatureInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class GetMultipartFileUploadInfosResponseBody extends Model
         if (isset($map['multipartHeaderSignatureInfos'])) {
             if (!empty($map['multipartHeaderSignatureInfos'])) {
                 $model->multipartHeaderSignatureInfos = [];
-                $n                                    = 0;
+                $n = 0;
                 foreach ($map['multipartHeaderSignatureInfos'] as $item) {
                     $model->multipartHeaderSignatureInfos[$n++] = null !== $item ? multipartHeaderSignatureInfos::fromMap($item) : $item;
                 }

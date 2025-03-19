@@ -18,9 +18,7 @@ class GetFileDownloadInfoByPackageIdRequest extends Model
         'packageId' => 'packageId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

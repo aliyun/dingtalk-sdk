@@ -22,9 +22,7 @@ class QueryComponentScopesResponseBody extends Model
         'userVisibleScopes' => 'userVisibleScopes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

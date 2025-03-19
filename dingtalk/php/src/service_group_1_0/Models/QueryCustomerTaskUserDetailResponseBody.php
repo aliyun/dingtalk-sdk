@@ -34,14 +34,12 @@ class QueryCustomerTaskUserDetailResponseBody extends Model
     public $totalCount;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'records'    => 'records',
+        'nextToken' => 'nextToken',
+        'records' => 'records',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -85,7 +83,7 @@ class QueryCustomerTaskUserDetailResponseBody extends Model
         if (isset($map['records'])) {
             if (!empty($map['records'])) {
                 $model->records = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['records'] as $item) {
                     $model->records[$n++] = null !== $item ? records::fromMap($item) : $item;
                 }

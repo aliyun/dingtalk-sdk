@@ -38,15 +38,13 @@ class QueryLiveWatchUserListRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'liveId'     => 'liveId',
+        'liveId' => 'liveId',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'unionId'    => 'unionId',
+        'pageSize' => 'pageSize',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

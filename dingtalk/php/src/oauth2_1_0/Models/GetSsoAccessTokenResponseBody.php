@@ -23,12 +23,10 @@ class GetSsoAccessTokenResponseBody extends Model
     public $expireIn;
     protected $_name = [
         'accessToken' => 'accessToken',
-        'expireIn'    => 'expireIn',
+        'expireIn' => 'expireIn',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

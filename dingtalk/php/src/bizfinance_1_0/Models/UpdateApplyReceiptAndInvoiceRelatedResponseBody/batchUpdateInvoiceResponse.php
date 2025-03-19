@@ -17,9 +17,7 @@ class batchUpdateInvoiceResponse extends Model
         'invoiceKeyVOList' => 'invoiceKeyVOList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class batchUpdateInvoiceResponse extends Model
         if (isset($map['invoiceKeyVOList'])) {
             if (!empty($map['invoiceKeyVOList'])) {
                 $model->invoiceKeyVOList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['invoiceKeyVOList'] as $item) {
                     $model->invoiceKeyVOList[$n++] = null !== $item ? invoiceKeyVOList::fromMap($item) : $item;
                 }

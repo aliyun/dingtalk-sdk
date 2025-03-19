@@ -35,14 +35,12 @@ class DeleteGroupBlackboardRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'dataId'             => 'dataId',
+        'dataId' => 'dataId',
         'openConversationId' => 'openConversationId',
-        'userId'             => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

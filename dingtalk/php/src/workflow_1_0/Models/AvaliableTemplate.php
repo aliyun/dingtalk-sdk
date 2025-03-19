@@ -26,13 +26,11 @@ class AvaliableTemplate extends Model
      */
     public $processCode;
     protected $_name = [
-        'name'        => 'name',
+        'name' => 'name',
         'processCode' => 'processCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

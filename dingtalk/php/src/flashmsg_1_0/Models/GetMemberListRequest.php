@@ -41,14 +41,12 @@ class GetMemberListRequest extends Model
     public $userId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'pageNumber'         => 'pageNumber',
-        'pageSize'           => 'pageSize',
-        'userId'             => 'userId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

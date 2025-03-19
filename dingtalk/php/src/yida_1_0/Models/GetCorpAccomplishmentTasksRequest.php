@@ -80,21 +80,19 @@ class GetCorpAccomplishmentTasksRequest extends Model
      */
     public $token;
     protected $_name = [
-        'appTypes'          => 'appTypes',
+        'appTypes' => 'appTypes',
         'createFromTimeGMT' => 'createFromTimeGMT',
-        'createToTimeGMT'   => 'createToTimeGMT',
-        'env'               => 'env',
-        'keyword'           => 'keyword',
-        'language'          => 'language',
-        'pageNumber'        => 'pageNumber',
-        'pageSize'          => 'pageSize',
-        'processCodes'      => 'processCodes',
-        'token'             => 'token',
+        'createToTimeGMT' => 'createToTimeGMT',
+        'env' => 'env',
+        'keyword' => 'keyword',
+        'language' => 'language',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'processCodes' => 'processCodes',
+        'token' => 'token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

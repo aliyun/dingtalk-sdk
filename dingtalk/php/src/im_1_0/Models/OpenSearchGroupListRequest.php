@@ -21,12 +21,10 @@ class OpenSearchGroupListRequest extends Model
     public $userId;
     protected $_name = [
         'keyword' => 'keyword',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

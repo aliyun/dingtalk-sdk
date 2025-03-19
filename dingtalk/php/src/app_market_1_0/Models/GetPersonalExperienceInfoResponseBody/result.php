@@ -18,9 +18,7 @@ class result extends Model
         'mainCorpId' => 'mainCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

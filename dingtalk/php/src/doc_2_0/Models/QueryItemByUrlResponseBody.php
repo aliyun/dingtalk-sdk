@@ -33,15 +33,13 @@ class QueryItemByUrlResponseBody extends Model
      */
     public $space;
     protected $_name = [
-        'bizType'      => 'bizType',
-        'dentry'       => 'dentry',
+        'bizType' => 'bizType',
+        'dentry' => 'dentry',
         'resourceType' => 'resourceType',
-        'space'        => 'space',
+        'space' => 'space',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

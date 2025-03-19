@@ -23,14 +23,12 @@ class files extends Model
      */
     public $signFinishFileUrl;
     protected $_name = [
-        'fileName'          => 'fileName',
-        'originalFileUrl'   => 'originalFileUrl',
+        'fileName' => 'fileName',
+        'originalFileUrl' => 'originalFileUrl',
         'signFinishFileUrl' => 'signFinishFileUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

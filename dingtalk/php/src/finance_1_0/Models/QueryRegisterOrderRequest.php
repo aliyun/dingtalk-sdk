@@ -40,15 +40,13 @@ class QueryRegisterOrderRequest extends Model
      */
     public $subInstId;
     protected $_name = [
-        'instId'     => 'instId',
-        'orderId'    => 'orderId',
+        'instId' => 'instId',
+        'orderId' => 'orderId',
         'outTradeNo' => 'outTradeNo',
-        'subInstId'  => 'subInstId',
+        'subInstId' => 'subInstId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

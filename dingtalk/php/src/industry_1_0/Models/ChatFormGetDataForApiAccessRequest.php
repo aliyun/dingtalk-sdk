@@ -18,9 +18,7 @@ class ChatFormGetDataForApiAccessRequest extends Model
         'dingTalkTraceId' => 'dingTalkTraceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

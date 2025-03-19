@@ -23,12 +23,10 @@ class detailList extends Model
     public $userId;
     protected $_name = [
         'licenseType' => 'licenseType',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

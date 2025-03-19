@@ -44,15 +44,13 @@ class UpdateAutoIssuePointRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'pointAutoNum'   => 'pointAutoNum',
+        'pointAutoNum' => 'pointAutoNum',
         'pointAutoState' => 'pointAutoState',
-        'pointAutoTime'  => 'pointAutoTime',
-        'userId'         => 'userId',
+        'pointAutoTime' => 'pointAutoTime',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

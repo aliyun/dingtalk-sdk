@@ -99,24 +99,22 @@ class list_ extends Model
      */
     public $version;
     protected $_name = [
-        'belongOrg'      => 'belongOrg',
-        'conferenceId'   => 'conferenceId',
-        'deviceType'     => 'deviceType',
-        'duration'       => 'duration',
-        'joinTime'       => 'joinTime',
-        'leaveTime'      => 'leaveTime',
+        'belongOrg' => 'belongOrg',
+        'conferenceId' => 'conferenceId',
+        'deviceType' => 'deviceType',
+        'duration' => 'duration',
+        'joinTime' => 'joinTime',
+        'leaveTime' => 'leaveTime',
         'networkQuality' => 'networkQuality',
-        'nick'           => 'nick',
-        'role'           => 'role',
-        'sessionId'      => 'sessionId',
-        'status'         => 'status',
-        'unionId'        => 'unionId',
-        'version'        => 'version',
+        'nick' => 'nick',
+        'role' => 'role',
+        'sessionId' => 'sessionId',
+        'status' => 'status',
+        'unionId' => 'unionId',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

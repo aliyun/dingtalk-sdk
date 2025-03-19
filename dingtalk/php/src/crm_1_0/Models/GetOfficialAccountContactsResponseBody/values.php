@@ -22,12 +22,10 @@ class values extends Model
     public $userId;
     protected $_name = [
         'contacts' => 'contacts',
-        'userId'   => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class values extends Model
         if (isset($map['contacts'])) {
             if (!empty($map['contacts'])) {
                 $model->contacts = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['contacts'] as $item) {
                     $model->contacts[$n++] = null !== $item ? contacts::fromMap($item) : $item;
                 }

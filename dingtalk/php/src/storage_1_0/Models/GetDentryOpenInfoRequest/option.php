@@ -37,14 +37,12 @@ class option extends Model
     public $waterMark;
     protected $_name = [
         'checkLogin' => 'checkLogin',
-        'type'       => 'type',
-        'version'    => 'version',
-        'waterMark'  => 'waterMark',
+        'type' => 'type',
+        'version' => 'version',
+        'waterMark' => 'waterMark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

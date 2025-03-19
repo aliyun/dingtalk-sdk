@@ -68,20 +68,18 @@ class list_ extends Model
      */
     public $taxNo;
     protected $_name = [
-        'accountantBookId'    => 'accountantBookId',
+        'accountantBookId' => 'accountantBookId',
         'advancedSettingList' => 'advancedSettingList',
-        'companyCode'         => 'companyCode',
-        'companyName'         => 'companyName',
-        'createTime'          => 'createTime',
-        'remark'              => 'remark',
-        'status'              => 'status',
-        'taxNature'           => 'taxNature',
-        'taxNo'               => 'taxNo',
+        'companyCode' => 'companyCode',
+        'companyName' => 'companyName',
+        'createTime' => 'createTime',
+        'remark' => 'remark',
+        'status' => 'status',
+        'taxNature' => 'taxNature',
+        'taxNo' => 'taxNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -137,7 +135,7 @@ class list_ extends Model
         if (isset($map['advancedSettingList'])) {
             if (!empty($map['advancedSettingList'])) {
                 $model->advancedSettingList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['advancedSettingList'] as $item) {
                     $model->advancedSettingList[$n++] = null !== $item ? advancedSettingList::fromMap($item) : $item;
                 }

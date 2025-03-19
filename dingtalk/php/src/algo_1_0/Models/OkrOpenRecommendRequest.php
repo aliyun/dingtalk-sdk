@@ -50,16 +50,14 @@ class OkrOpenRecommendRequest extends Model
     public $words;
     protected $_name = [
         'candidateOkrItems' => 'candidateOkrItems',
-        'corpId'            => 'corpId',
-        'deptIds'           => 'deptIds',
-        'isvAppId'          => 'isvAppId',
-        'userId'            => 'userId',
-        'words'             => 'words',
+        'corpId' => 'corpId',
+        'deptIds' => 'deptIds',
+        'isvAppId' => 'isvAppId',
+        'userId' => 'userId',
+        'words' => 'words',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -103,7 +101,7 @@ class OkrOpenRecommendRequest extends Model
         if (isset($map['candidateOkrItems'])) {
             if (!empty($map['candidateOkrItems'])) {
                 $model->candidateOkrItems = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['candidateOkrItems'] as $item) {
                     $model->candidateOkrItems[$n++] = null !== $item ? candidateOkrItems::fromMap($item) : $item;
                 }

@@ -27,12 +27,10 @@ class DeleteGuardianRequest extends Model
     public $stuId;
     protected $_name = [
         'operator' => 'operator',
-        'stuId'    => 'stuId',
+        'stuId' => 'stuId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

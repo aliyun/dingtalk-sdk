@@ -60,17 +60,15 @@ class CreateRemoteClassCourseRequest extends Model
      */
     public $teachingParticipant;
     protected $_name = [
-        'attendParticipants'  => 'attendParticipants',
-        'authCode'            => 'authCode',
-        'courseName'          => 'courseName',
-        'endTime'             => 'endTime',
-        'startTime'           => 'startTime',
+        'attendParticipants' => 'attendParticipants',
+        'authCode' => 'authCode',
+        'courseName' => 'courseName',
+        'endTime' => 'endTime',
+        'startTime' => 'startTime',
         'teachingParticipant' => 'teachingParticipant',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -114,7 +112,7 @@ class CreateRemoteClassCourseRequest extends Model
         if (isset($map['attendParticipants'])) {
             if (!empty($map['attendParticipants'])) {
                 $model->attendParticipants = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['attendParticipants'] as $item) {
                     $model->attendParticipants[$n++] = null !== $item ? attendParticipants::fromMap($item) : $item;
                 }

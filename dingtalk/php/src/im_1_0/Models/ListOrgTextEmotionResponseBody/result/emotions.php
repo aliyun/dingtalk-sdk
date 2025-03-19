@@ -50,17 +50,15 @@ class emotions extends Model
      */
     public $status;
     protected $_name = [
-        'backgroundMediaId'         => 'backgroundMediaId',
+        'backgroundMediaId' => 'backgroundMediaId',
         'backgroundMediaIdForPanel' => 'backgroundMediaIdForPanel',
-        'deptId'                    => 'deptId',
-        'emotionId'                 => 'emotionId',
-        'emotionName'               => 'emotionName',
-        'status'                    => 'status',
+        'deptId' => 'deptId',
+        'emotionId' => 'emotionId',
+        'emotionName' => 'emotionName',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

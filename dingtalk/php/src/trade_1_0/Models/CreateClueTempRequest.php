@@ -66,21 +66,19 @@ class CreateClueTempRequest extends Model
      */
     public $source;
     protected $_name = [
-        'address'     => 'address',
+        'address' => 'address',
         'contactName' => 'contactName',
-        'deptId'      => 'deptId',
-        'ext'         => 'ext',
-        'name'        => 'name',
-        'phoneNum'    => 'phoneNum',
-        'position'    => 'position',
+        'deptId' => 'deptId',
+        'ext' => 'ext',
+        'name' => 'name',
+        'phoneNum' => 'phoneNum',
+        'position' => 'position',
         'productCode' => 'productCode',
-        'salesId'     => 'salesId',
-        'source'      => 'source',
+        'salesId' => 'salesId',
+        'source' => 'source',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

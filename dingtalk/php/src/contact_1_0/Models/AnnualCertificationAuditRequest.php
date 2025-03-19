@@ -92,27 +92,25 @@ class AnnualCertificationAuditRequest extends Model
      */
     public $tag;
     protected $_name = [
-        'applicantMobile'   => 'applicantMobile',
-        'applicantName'     => 'applicantName',
+        'applicantMobile' => 'applicantMobile',
+        'applicantName' => 'applicantName',
         'applicationLetter' => 'applicationLetter',
-        'authStatus'        => 'authStatus',
-        'certificateType'   => 'certificateType',
-        'corpName'          => 'corpName',
-        'depositaryBank'    => 'depositaryBank',
-        'extension'         => 'extension',
-        'legalPerson'       => 'legalPerson',
-        'licenseNumber'     => 'licenseNumber',
-        'licenseUrl'        => 'licenseUrl',
-        'orderId'           => 'orderId',
-        'publicAccount'     => 'publicAccount',
-        'reasonCode'        => 'reasonCode',
-        'reasonMsg'         => 'reasonMsg',
-        'tag'               => 'tag',
+        'authStatus' => 'authStatus',
+        'certificateType' => 'certificateType',
+        'corpName' => 'corpName',
+        'depositaryBank' => 'depositaryBank',
+        'extension' => 'extension',
+        'legalPerson' => 'legalPerson',
+        'licenseNumber' => 'licenseNumber',
+        'licenseUrl' => 'licenseUrl',
+        'orderId' => 'orderId',
+        'publicAccount' => 'publicAccount',
+        'reasonCode' => 'reasonCode',
+        'reasonMsg' => 'reasonMsg',
+        'tag' => 'tag',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

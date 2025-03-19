@@ -24,13 +24,11 @@ class overdraftList extends Model
     public $userId;
     protected $_name = [
         'overdraft' => 'overdraft',
-        'unit'      => 'unit',
-        'userId'    => 'userId',
+        'unit' => 'unit',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

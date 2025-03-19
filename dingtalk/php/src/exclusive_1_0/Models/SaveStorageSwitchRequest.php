@@ -26,13 +26,11 @@ class SaveStorageSwitchRequest extends Model
      */
     public $targetCorpId;
     protected $_name = [
-        'openStorage'  => 'openStorage',
+        'openStorage' => 'openStorage',
         'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

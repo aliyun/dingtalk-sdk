@@ -43,16 +43,14 @@ class result extends Model
      */
     public $tripCorpId;
     protected $_name = [
-        'secretString'    => 'secretString',
-        'targetCorpId'    => 'targetCorpId',
-        'tripAppKey'      => 'tripAppKey',
+        'secretString' => 'secretString',
+        'targetCorpId' => 'targetCorpId',
+        'tripAppKey' => 'tripAppKey',
         'tripAppSecurity' => 'tripAppSecurity',
-        'tripCorpId'      => 'tripCorpId',
+        'tripCorpId' => 'tripCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

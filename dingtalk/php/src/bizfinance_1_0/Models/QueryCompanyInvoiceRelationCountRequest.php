@@ -18,9 +18,7 @@ class QueryCompanyInvoiceRelationCountRequest extends Model
         'companyCode' => 'companyCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

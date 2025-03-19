@@ -16,9 +16,7 @@ class data extends Model
         'failNameList' => 'failNameList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

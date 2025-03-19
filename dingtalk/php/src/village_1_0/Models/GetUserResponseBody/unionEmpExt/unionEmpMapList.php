@@ -18,13 +18,11 @@ class unionEmpMapList extends Model
      */
     public $staffId;
     protected $_name = [
-        'corpId'  => 'corpId',
+        'corpId' => 'corpId',
         'staffId' => 'staffId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -58,16 +58,14 @@ class BatchCreateRequest extends Model
     public $userid;
     protected $_name = [
         'cardBizCode' => 'cardBizCode',
-        'data'        => 'data',
-        'identifier'  => 'identifier',
-        'jsVersion'   => 'jsVersion',
-        'sourceType'  => 'sourceType',
-        'userid'      => 'userid',
+        'data' => 'data',
+        'identifier' => 'identifier',
+        'jsVersion' => 'jsVersion',
+        'sourceType' => 'sourceType',
+        'userid' => 'userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

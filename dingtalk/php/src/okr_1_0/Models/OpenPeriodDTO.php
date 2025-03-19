@@ -40,17 +40,15 @@ class OpenPeriodDTO extends Model
      */
     public $status;
     protected $_name = [
-        'endDate'   => 'endDate',
-        'nameCn'    => 'nameCn',
-        'nameEn'    => 'nameEn',
-        'periodId'  => 'periodId',
+        'endDate' => 'endDate',
+        'nameCn' => 'nameCn',
+        'nameEn' => 'nameEn',
+        'periodId' => 'periodId',
         'startDate' => 'startDate',
-        'status'    => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

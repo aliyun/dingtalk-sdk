@@ -31,12 +31,10 @@ class result extends Model
     protected $_name = [
         'componentType' => 'componentType',
         'fieldBehavior' => 'fieldBehavior',
-        'fieldId'       => 'fieldId',
+        'fieldId' => 'fieldId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

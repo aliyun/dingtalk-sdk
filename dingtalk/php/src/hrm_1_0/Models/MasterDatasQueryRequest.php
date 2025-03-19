@@ -73,19 +73,17 @@ class MasterDatasQueryRequest extends Model
      */
     public $viewEntityCode;
     protected $_name = [
-        'bizUK'          => 'bizUK',
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
-        'queryParams'    => 'queryParams',
-        'relationIds'    => 'relationIds',
-        'scopeCode'      => 'scopeCode',
-        'tenantId'       => 'tenantId',
+        'bizUK' => 'bizUK',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'queryParams' => 'queryParams',
+        'relationIds' => 'relationIds',
+        'scopeCode' => 'scopeCode',
+        'tenantId' => 'tenantId',
         'viewEntityCode' => 'viewEntityCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -144,7 +142,7 @@ class MasterDatasQueryRequest extends Model
         if (isset($map['queryParams'])) {
             if (!empty($map['queryParams'])) {
                 $model->queryParams = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['queryParams'] as $item) {
                     $model->queryParams[$n++] = null !== $item ? queryParams::fromMap($item) : $item;
                 }

@@ -42,15 +42,13 @@ class CheckWritePermissionRequest extends Model
      */
     public $resourceKey;
     protected $_name = [
-        'category'    => 'category',
-        'entityIds'   => 'entityIds',
-        'opUserId'    => 'opUserId',
+        'category' => 'category',
+        'entityIds' => 'entityIds',
+        'opUserId' => 'opUserId',
         'resourceKey' => 'resourceKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

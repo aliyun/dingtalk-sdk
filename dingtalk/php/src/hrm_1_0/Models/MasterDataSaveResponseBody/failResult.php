@@ -36,15 +36,13 @@ class failResult extends Model
      */
     public $success;
     protected $_name = [
-        'bizUk'     => 'bizUk',
+        'bizUk' => 'bizUk',
         'errorCode' => 'errorCode',
-        'errorMsg'  => 'errorMsg',
-        'success'   => 'success',
+        'errorMsg' => 'errorMsg',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

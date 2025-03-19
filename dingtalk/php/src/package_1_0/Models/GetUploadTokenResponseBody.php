@@ -64,19 +64,17 @@ class GetUploadTokenResponseBody extends Model
      */
     public $stsToken;
     protected $_name = [
-        'accessKeyId'     => 'accessKeyId',
+        'accessKeyId' => 'accessKeyId',
         'accessKeySecret' => 'accessKeySecret',
-        'bucket'          => 'bucket',
-        'endpoint'        => 'endpoint',
-        'expiration'      => 'expiration',
-        'name'            => 'name',
-        'region'          => 'region',
-        'stsToken'        => 'stsToken',
+        'bucket' => 'bucket',
+        'endpoint' => 'endpoint',
+        'expiration' => 'expiration',
+        'name' => 'name',
+        'region' => 'region',
+        'stsToken' => 'stsToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

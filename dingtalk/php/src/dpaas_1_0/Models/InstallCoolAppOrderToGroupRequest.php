@@ -32,15 +32,13 @@ class InstallCoolAppOrderToGroupRequest extends Model
      */
     public $unsortedPluginIdList;
     protected $_name = [
-        'conversationId'       => 'conversationId',
-        'sortedPluginIdList'   => 'sortedPluginIdList',
-        'templateId'           => 'templateId',
+        'conversationId' => 'conversationId',
+        'sortedPluginIdList' => 'sortedPluginIdList',
+        'templateId' => 'templateId',
         'unsortedPluginIdList' => 'unsortedPluginIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

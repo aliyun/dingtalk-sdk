@@ -31,14 +31,12 @@ class UpdateOrganizationTaskPriorityRequest extends Model
      */
     public $priority;
     protected $_name = [
-        'disableActivity'     => 'disableActivity',
+        'disableActivity' => 'disableActivity',
         'disableNotification' => 'disableNotification',
-        'priority'            => 'priority',
+        'priority' => 'priority',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -47,16 +47,14 @@ class PrivateChatSendRequest extends Model
      */
     public $robotCode;
     protected $_name = [
-        'coolAppCode'        => 'coolAppCode',
-        'msgKey'             => 'msgKey',
-        'msgParam'           => 'msgParam',
+        'coolAppCode' => 'coolAppCode',
+        'msgKey' => 'msgKey',
+        'msgParam' => 'msgParam',
         'openConversationId' => 'openConversationId',
-        'robotCode'          => 'robotCode',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class ListMailFoldersResponseBody extends Model
         'folders' => 'folders',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListMailFoldersResponseBody extends Model
         if (isset($map['folders'])) {
             if (!empty($map['folders'])) {
                 $model->folders = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['folders'] as $item) {
                     $model->folders[$n++] = null !== $item ? folders::fromMap($item) : $item;
                 }

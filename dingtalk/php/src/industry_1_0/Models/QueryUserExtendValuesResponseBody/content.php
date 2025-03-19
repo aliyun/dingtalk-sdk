@@ -34,15 +34,13 @@ class content extends Model
      */
     public $userExtendValue;
     protected $_name = [
-        'userCode'              => 'userCode',
+        'userCode' => 'userCode',
         'userExtendDisplayName' => 'userExtendDisplayName',
-        'userExtendKey'         => 'userExtendKey',
-        'userExtendValue'       => 'userExtendValue',
+        'userExtendKey' => 'userExtendKey',
+        'userExtendValue' => 'userExtendValue',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

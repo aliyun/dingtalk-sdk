@@ -128,30 +128,28 @@ class groups extends Model
      */
     public $workDayList;
     protected $_name = [
-        'classesList'                 => 'classesList',
-        'defaultClassId'              => 'defaultClassId',
-        'deptIds'                     => 'deptIds',
-        'deptNameList'                => 'deptNameList',
-        'disableCheckWhenRest'        => 'disableCheckWhenRest',
+        'classesList' => 'classesList',
+        'defaultClassId' => 'defaultClassId',
+        'deptIds' => 'deptIds',
+        'deptNameList' => 'deptNameList',
+        'disableCheckWhenRest' => 'disableCheckWhenRest',
         'disableCheckWithoutSchedule' => 'disableCheckWithoutSchedule',
-        'enableEmpSelectClass'        => 'enableEmpSelectClass',
-        'freeCheckDayStartMinOffset'  => 'freeCheckDayStartMinOffset',
-        'freecheckWorkDays'           => 'freecheckWorkDays',
-        'groupId'                     => 'groupId',
-        'groupName'                   => 'groupName',
-        'isDefault'                   => 'isDefault',
-        'managerList'                 => 'managerList',
-        'memberCount'                 => 'memberCount',
-        'ownerUserId'                 => 'ownerUserId',
-        'selectedClass'               => 'selectedClass',
-        'type'                        => 'type',
-        'userIds'                     => 'userIds',
-        'workDayList'                 => 'workDayList',
+        'enableEmpSelectClass' => 'enableEmpSelectClass',
+        'freeCheckDayStartMinOffset' => 'freeCheckDayStartMinOffset',
+        'freecheckWorkDays' => 'freecheckWorkDays',
+        'groupId' => 'groupId',
+        'groupName' => 'groupName',
+        'isDefault' => 'isDefault',
+        'managerList' => 'managerList',
+        'memberCount' => 'memberCount',
+        'ownerUserId' => 'ownerUserId',
+        'selectedClass' => 'selectedClass',
+        'type' => 'type',
+        'userIds' => 'userIds',
+        'workDayList' => 'workDayList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -289,7 +287,7 @@ class groups extends Model
         if (isset($map['selectedClass'])) {
             if (!empty($map['selectedClass'])) {
                 $model->selectedClass = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['selectedClass'] as $item) {
                     $model->selectedClass[$n++] = null !== $item ? selectedClass::fromMap($item) : $item;
                 }

@@ -189,39 +189,37 @@ class result extends Model
      */
     public $visible;
     protected $_name = [
-        'accomplishTime'        => 'accomplishTime',
-        'ancestorIds'           => 'ancestorIds',
-        'content'               => 'content',
-        'created'               => 'created',
-        'creatorId'             => 'creatorId',
-        'customFields'          => 'customFields',
-        'dueDate'               => 'dueDate',
-        'executorId'            => 'executorId',
-        'involveMembers'        => 'involveMembers',
-        'isArchived'            => 'isArchived',
-        'isDone'                => 'isDone',
-        'note'                  => 'note',
-        'parentTaskId'          => 'parentTaskId',
-        'priority'              => 'priority',
-        'projectId'             => 'projectId',
-        'recurrence'            => 'recurrence',
+        'accomplishTime' => 'accomplishTime',
+        'ancestorIds' => 'ancestorIds',
+        'content' => 'content',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
+        'customFields' => 'customFields',
+        'dueDate' => 'dueDate',
+        'executorId' => 'executorId',
+        'involveMembers' => 'involveMembers',
+        'isArchived' => 'isArchived',
+        'isDone' => 'isDone',
+        'note' => 'note',
+        'parentTaskId' => 'parentTaskId',
+        'priority' => 'priority',
+        'projectId' => 'projectId',
+        'recurrence' => 'recurrence',
         'scenarioFieldConfigId' => 'scenarioFieldConfigId',
-        'sprintId'              => 'sprintId',
-        'startDate'             => 'startDate',
-        'storyPoint'            => 'storyPoint',
-        'tagIds'                => 'tagIds',
-        'taskId'                => 'taskId',
-        'taskListId'            => 'taskListId',
-        'taskStageId'           => 'taskStageId',
-        'taskflowStatusId'      => 'taskflowStatusId',
-        'uniqueId'              => 'uniqueId',
-        'updated'               => 'updated',
-        'visible'               => 'visible',
+        'sprintId' => 'sprintId',
+        'startDate' => 'startDate',
+        'storyPoint' => 'storyPoint',
+        'tagIds' => 'tagIds',
+        'taskId' => 'taskId',
+        'taskListId' => 'taskListId',
+        'taskStageId' => 'taskStageId',
+        'taskflowStatusId' => 'taskflowStatusId',
+        'uniqueId' => 'uniqueId',
+        'updated' => 'updated',
+        'visible' => 'visible',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -348,7 +346,7 @@ class result extends Model
         if (isset($map['customFields'])) {
             if (!empty($map['customFields'])) {
                 $model->customFields = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['customFields'] as $item) {
                     $model->customFields[$n++] = null !== $item ? customFields::fromMap($item) : $item;
                 }

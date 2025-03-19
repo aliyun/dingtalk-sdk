@@ -80,21 +80,19 @@ class CreateInnerAppRequest extends Model
      */
     public $scopeType;
     protected $_name = [
-        'desc'           => 'desc',
-        'developType'    => 'developType',
-        'homepageLink'   => 'homepageLink',
-        'icon'           => 'icon',
-        'ipWhiteList'    => 'ipWhiteList',
-        'name'           => 'name',
-        'ompLink'        => 'ompLink',
-        'opUnionId'      => 'opUnionId',
+        'desc' => 'desc',
+        'developType' => 'developType',
+        'homepageLink' => 'homepageLink',
+        'icon' => 'icon',
+        'ipWhiteList' => 'ipWhiteList',
+        'name' => 'name',
+        'ompLink' => 'ompLink',
+        'opUnionId' => 'opUnionId',
         'pcHomepageLink' => 'pcHomepageLink',
-        'scopeType'      => 'scopeType',
+        'scopeType' => 'scopeType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

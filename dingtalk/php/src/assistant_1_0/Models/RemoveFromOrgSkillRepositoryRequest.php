@@ -22,13 +22,11 @@ class RemoveFromOrgSkillRepositoryRequest extends Model
      */
     public $operatorUnionId;
     protected $_name = [
-        'actionId'        => 'actionId',
+        'actionId' => 'actionId',
         'operatorUnionId' => 'operatorUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

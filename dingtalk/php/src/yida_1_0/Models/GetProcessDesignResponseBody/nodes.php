@@ -57,19 +57,17 @@ class nodes extends Model
      */
     public $type;
     protected $_name = [
-        'childNodes'  => 'childNodes',
+        'childNodes' => 'childNodes',
         'description' => 'description',
-        'name'        => 'name',
-        'nextId'      => 'nextId',
-        'nodeId'      => 'nodeId',
-        'prevId'      => 'prevId',
-        'props'       => 'props',
-        'type'        => 'type',
+        'name' => 'name',
+        'nextId' => 'nextId',
+        'nodeId' => 'nodeId',
+        'prevId' => 'prevId',
+        'props' => 'props',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

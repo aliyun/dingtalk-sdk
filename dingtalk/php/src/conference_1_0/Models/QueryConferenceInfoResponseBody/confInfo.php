@@ -133,31 +133,29 @@ class confInfo extends Model
      */
     public $title;
     protected $_name = [
-        'activeNum'               => 'activeNum',
-        'attendNum'               => 'attendNum',
-        'bizType'                 => 'bizType',
+        'activeNum' => 'activeNum',
+        'attendNum' => 'attendNum',
+        'bizType' => 'bizType',
         'cloudRecordOwnerUnionId' => 'cloudRecordOwnerUnionId',
-        'cloudRecordStatus'       => 'cloudRecordStatus',
-        'confDuration'            => 'confDuration',
-        'conferenceId'            => 'conferenceId',
-        'creatorId'               => 'creatorId',
-        'creatorNick'             => 'creatorNick',
-        'endTime'                 => 'endTime',
-        'extensionAppSettings'    => 'extensionAppSettings',
-        'externalLinkUrl'         => 'externalLinkUrl',
-        'invitedNum'              => 'invitedNum',
-        'minutesOwnerUnionId'     => 'minutesOwnerUnionId',
-        'minutesStatus'           => 'minutesStatus',
-        'roomCode'                => 'roomCode',
-        'scheduleConferenceId'    => 'scheduleConferenceId',
-        'startTime'               => 'startTime',
-        'status'                  => 'status',
-        'title'                   => 'title',
+        'cloudRecordStatus' => 'cloudRecordStatus',
+        'confDuration' => 'confDuration',
+        'conferenceId' => 'conferenceId',
+        'creatorId' => 'creatorId',
+        'creatorNick' => 'creatorNick',
+        'endTime' => 'endTime',
+        'extensionAppSettings' => 'extensionAppSettings',
+        'externalLinkUrl' => 'externalLinkUrl',
+        'invitedNum' => 'invitedNum',
+        'minutesOwnerUnionId' => 'minutesOwnerUnionId',
+        'minutesStatus' => 'minutesStatus',
+        'roomCode' => 'roomCode',
+        'scheduleConferenceId' => 'scheduleConferenceId',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -273,7 +271,7 @@ class confInfo extends Model
         if (isset($map['extensionAppSettings'])) {
             if (!empty($map['extensionAppSettings'])) {
                 $model->extensionAppSettings = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['extensionAppSettings'] as $item) {
                     $model->extensionAppSettings[$n++] = null !== $item ? extensionAppSettings::fromMap($item) : $item;
                 }

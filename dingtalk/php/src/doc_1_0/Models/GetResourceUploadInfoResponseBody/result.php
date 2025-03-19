@@ -19,12 +19,10 @@ class result extends Model
     public $uploadUrl;
     protected $_name = [
         'resourceId' => 'resourceId',
-        'uploadUrl'  => 'uploadUrl',
+        'uploadUrl' => 'uploadUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

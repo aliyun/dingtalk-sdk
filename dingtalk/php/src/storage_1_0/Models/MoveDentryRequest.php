@@ -41,15 +41,13 @@ class MoveDentryRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'option'         => 'option',
+        'option' => 'option',
         'targetFolderId' => 'targetFolderId',
-        'targetSpaceId'  => 'targetSpaceId',
-        'unionId'        => 'unionId',
+        'targetSpaceId' => 'targetSpaceId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

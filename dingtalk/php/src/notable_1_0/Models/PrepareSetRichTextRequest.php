@@ -22,13 +22,11 @@ class PrepareSetRichTextRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'markdown'   => 'markdown',
+        'markdown' => 'markdown',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

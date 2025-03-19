@@ -23,12 +23,10 @@ class createResultList extends Model
     public $value;
     protected $_name = [
         'templateKey' => 'templateKey',
-        'value'       => 'value',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

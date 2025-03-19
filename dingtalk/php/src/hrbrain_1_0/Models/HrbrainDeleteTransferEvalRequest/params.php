@@ -27,12 +27,10 @@ class params extends Model
     protected $_name = [
         'transferDate' => 'transferDate',
         'transferType' => 'transferType',
-        'workNo'       => 'workNo',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class BatchUpdateProcessInstanceRequest extends Model
         'updateProcessInstanceRequests' => 'updateProcessInstanceRequests',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class BatchUpdateProcessInstanceRequest extends Model
         if (isset($map['updateProcessInstanceRequests'])) {
             if (!empty($map['updateProcessInstanceRequests'])) {
                 $model->updateProcessInstanceRequests = [];
-                $n                                    = 0;
+                $n = 0;
                 foreach ($map['updateProcessInstanceRequests'] as $item) {
                     $model->updateProcessInstanceRequests[$n++] = null !== $item ? updateProcessInstanceRequests::fromMap($item) : $item;
                 }

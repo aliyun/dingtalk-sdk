@@ -50,17 +50,15 @@ class SearchProjectCustomfieldRequest extends Model
      */
     public $scenarioFieldConfigId;
     protected $_name = [
-        'customFieldIds'        => 'customFieldIds',
-        'instanceIds'           => 'instanceIds',
-        'maxResults'            => 'maxResults',
-        'nextToken'             => 'nextToken',
-        'query'                 => 'query',
+        'customFieldIds' => 'customFieldIds',
+        'instanceIds' => 'instanceIds',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'query' => 'query',
         'scenarioFieldConfigId' => 'scenarioFieldConfigId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

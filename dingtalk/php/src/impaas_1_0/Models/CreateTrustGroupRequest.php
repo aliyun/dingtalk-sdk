@@ -60,18 +60,16 @@ class CreateTrustGroupRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'channel'     => 'channel',
+        'channel' => 'channel',
         'iconMediaId' => 'iconMediaId',
-        'members'     => 'members',
-        'name'        => 'name',
-        'properties'  => 'properties',
-        'systemMsg'   => 'systemMsg',
-        'uuid'        => 'uuid',
+        'members' => 'members',
+        'name' => 'name',
+        'properties' => 'properties',
+        'systemMsg' => 'systemMsg',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -124,7 +122,7 @@ class CreateTrustGroupRequest extends Model
         if (isset($map['members'])) {
             if (!empty($map['members'])) {
                 $model->members = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['members'] as $item) {
                     $model->members[$n++] = null !== $item ? members::fromMap($item) : $item;
                 }

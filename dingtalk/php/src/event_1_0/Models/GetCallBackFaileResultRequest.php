@@ -23,12 +23,10 @@ class GetCallBackFaileResultRequest extends Model
     public $endTime;
     protected $_name = [
         'beginTime' => 'beginTime',
-        'endTime'   => 'endTime',
+        'endTime' => 'endTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

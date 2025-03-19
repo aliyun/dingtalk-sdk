@@ -25,14 +25,12 @@ class GetPreviewInfoRequest extends Model
      */
     public $watermark;
     protected $_name = [
-        'unionId'   => 'unionId',
-        'version'   => 'version',
+        'unionId' => 'unionId',
+        'version' => 'version',
         'watermark' => 'watermark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

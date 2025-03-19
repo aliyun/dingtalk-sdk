@@ -19,9 +19,7 @@ class GenerateDarkWaterMarkResponseBody extends Model
         'darkWatermarkVOList' => 'darkWatermarkVOList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class GenerateDarkWaterMarkResponseBody extends Model
         if (isset($map['darkWatermarkVOList'])) {
             if (!empty($map['darkWatermarkVOList'])) {
                 $model->darkWatermarkVOList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['darkWatermarkVOList'] as $item) {
                     $model->darkWatermarkVOList[$n++] = null !== $item ? darkWatermarkVOList::fromMap($item) : $item;
                 }

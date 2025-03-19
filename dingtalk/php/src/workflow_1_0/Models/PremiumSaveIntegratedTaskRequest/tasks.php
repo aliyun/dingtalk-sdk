@@ -30,13 +30,11 @@ class tasks extends Model
     public $userId;
     protected $_name = [
         'customData' => 'customData',
-        'url'        => 'url',
-        'userId'     => 'userId',
+        'url' => 'url',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

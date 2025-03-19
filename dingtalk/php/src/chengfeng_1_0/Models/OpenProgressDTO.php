@@ -58,17 +58,15 @@ class OpenProgressDTO extends Model
      */
     public $updated;
     protected $_name = [
-        'created'     => 'created',
-        'creator'     => 'creator',
+        'created' => 'created',
+        'creator' => 'creator',
         'htmlContent' => 'htmlContent',
-        'id'          => 'id',
-        'modifier'    => 'modifier',
-        'updated'     => 'updated',
+        'id' => 'id',
+        'modifier' => 'modifier',
+        'updated' => 'updated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

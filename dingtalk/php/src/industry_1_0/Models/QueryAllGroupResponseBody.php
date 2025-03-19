@@ -29,15 +29,13 @@ class QueryAllGroupResponseBody extends Model
      */
     public $totalPages;
     protected $_name = [
-        'content'     => 'content',
+        'content' => 'content',
         'currentPage' => 'currentPage',
-        'totalCount'  => 'totalCount',
-        'totalPages'  => 'totalPages',
+        'totalCount' => 'totalCount',
+        'totalPages' => 'totalPages',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -75,7 +73,7 @@ class QueryAllGroupResponseBody extends Model
         if (isset($map['content'])) {
             if (!empty($map['content'])) {
                 $model->content = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['content'] as $item) {
                     $model->content[$n++] = null !== $item ? content::fromMap($item) : $item;
                 }

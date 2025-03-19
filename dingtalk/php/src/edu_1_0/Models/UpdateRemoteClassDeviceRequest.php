@@ -29,14 +29,12 @@ class UpdateRemoteClassDeviceRequest extends Model
      */
     public $deviceName;
     protected $_name = [
-        'authCode'   => 'authCode',
+        'authCode' => 'authCode',
         'deviceCode' => 'deviceCode',
         'deviceName' => 'deviceName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

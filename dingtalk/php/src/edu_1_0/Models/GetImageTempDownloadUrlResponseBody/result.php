@@ -29,14 +29,12 @@ class result extends Model
     public $url;
     protected $_name = [
         'extension' => 'extension',
-        'fileName'  => 'fileName',
-        'fileSize'  => 'fileSize',
-        'url'       => 'url',
+        'fileName' => 'fileName',
+        'fileSize' => 'fileSize',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

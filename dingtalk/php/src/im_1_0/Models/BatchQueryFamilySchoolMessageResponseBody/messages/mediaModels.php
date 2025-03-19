@@ -50,17 +50,15 @@ class mediaModels extends Model
      */
     public $videoPicMediaId;
     protected $_name = [
-        'fileName'        => 'fileName',
-        'fileType'        => 'fileType',
-        'mediaId'         => 'mediaId',
-        'size'            => 'size',
-        'url'             => 'url',
+        'fileName' => 'fileName',
+        'fileType' => 'fileType',
+        'mediaId' => 'mediaId',
+        'size' => 'size',
+        'url' => 'url',
         'videoPicMediaId' => 'videoPicMediaId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

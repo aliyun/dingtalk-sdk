@@ -29,14 +29,12 @@ class GetUserHolidaysRequest extends Model
      */
     public $workDateTo;
     protected $_name = [
-        'userIds'      => 'userIds',
+        'userIds' => 'userIds',
         'workDateFrom' => 'workDateFrom',
-        'workDateTo'   => 'workDateTo',
+        'workDateTo' => 'workDateTo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

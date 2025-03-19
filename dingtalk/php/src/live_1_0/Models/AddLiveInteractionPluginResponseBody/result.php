@@ -16,9 +16,7 @@ class result extends Model
         'pluginId' => 'pluginId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class QueryGeneralDataUpdateDateRequest extends Model
         'serviceId' => 'serviceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

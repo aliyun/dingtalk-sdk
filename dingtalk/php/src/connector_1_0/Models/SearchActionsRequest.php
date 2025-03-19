@@ -45,16 +45,14 @@ class SearchActionsRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'connectorId'             => 'connectorId',
+        'connectorId' => 'connectorId',
         'connectorProviderCorpId' => 'connectorProviderCorpId',
-        'integrationTypes'        => 'integrationTypes',
-        'maxResults'              => 'maxResults',
-        'nextToken'               => 'nextToken',
+        'integrationTypes' => 'integrationTypes',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -224,45 +224,43 @@ class list_ extends Model
      */
     public $workSpacePcUrl;
     protected $_name = [
-        'action'                 => 'action',
-        'actionView'             => 'actionView',
-        'bizId'                  => 'bizId',
-        'docMemberList'          => 'docMemberList',
-        'docMobileUrl'           => 'docMobileUrl',
-        'docPcUrl'               => 'docPcUrl',
-        'docReceiverList'        => 'docReceiverList',
-        'gmtCreate'              => 'gmtCreate',
-        'gmtModified'            => 'gmtModified',
-        'ipAddress'              => 'ipAddress',
-        'operateModule'          => 'operateModule',
-        'operateModuleView'      => 'operateModuleView',
-        'operatorName'           => 'operatorName',
-        'orgName'                => 'orgName',
-        'platform'               => 'platform',
-        'platformView'           => 'platformView',
-        'prevWorkSpaceId'        => 'prevWorkSpaceId',
+        'action' => 'action',
+        'actionView' => 'actionView',
+        'bizId' => 'bizId',
+        'docMemberList' => 'docMemberList',
+        'docMobileUrl' => 'docMobileUrl',
+        'docPcUrl' => 'docPcUrl',
+        'docReceiverList' => 'docReceiverList',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'ipAddress' => 'ipAddress',
+        'operateModule' => 'operateModule',
+        'operateModuleView' => 'operateModuleView',
+        'operatorName' => 'operatorName',
+        'orgName' => 'orgName',
+        'platform' => 'platform',
+        'platformView' => 'platformView',
+        'prevWorkSpaceId' => 'prevWorkSpaceId',
         'prevWorkSpaceMobileUrl' => 'prevWorkSpaceMobileUrl',
-        'prevWorkSpaceName'      => 'prevWorkSpaceName',
-        'prevWorkSpacePcUrl'     => 'prevWorkSpacePcUrl',
-        'realName'               => 'realName',
-        'receiverName'           => 'receiverName',
-        'receiverType'           => 'receiverType',
-        'receiverTypeView'       => 'receiverTypeView',
-        'resource'               => 'resource',
-        'resourceExtension'      => 'resourceExtension',
-        'resourceSize'           => 'resourceSize',
-        'status'                 => 'status',
-        'targetSpaceId'          => 'targetSpaceId',
-        'userId'                 => 'userId',
-        'workSpaceId'            => 'workSpaceId',
-        'workSpaceMobileUrl'     => 'workSpaceMobileUrl',
-        'workSpaceName'          => 'workSpaceName',
-        'workSpacePcUrl'         => 'workSpacePcUrl',
+        'prevWorkSpaceName' => 'prevWorkSpaceName',
+        'prevWorkSpacePcUrl' => 'prevWorkSpacePcUrl',
+        'realName' => 'realName',
+        'receiverName' => 'receiverName',
+        'receiverType' => 'receiverType',
+        'receiverTypeView' => 'receiverTypeView',
+        'resource' => 'resource',
+        'resourceExtension' => 'resourceExtension',
+        'resourceSize' => 'resourceSize',
+        'status' => 'status',
+        'targetSpaceId' => 'targetSpaceId',
+        'userId' => 'userId',
+        'workSpaceId' => 'workSpaceId',
+        'workSpaceMobileUrl' => 'workSpaceMobileUrl',
+        'workSpaceName' => 'workSpaceName',
+        'workSpacePcUrl' => 'workSpacePcUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -405,7 +403,7 @@ class list_ extends Model
         if (isset($map['docMemberList'])) {
             if (!empty($map['docMemberList'])) {
                 $model->docMemberList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['docMemberList'] as $item) {
                     $model->docMemberList[$n++] = null !== $item ? docMemberList::fromMap($item) : $item;
                 }
@@ -420,7 +418,7 @@ class list_ extends Model
         if (isset($map['docReceiverList'])) {
             if (!empty($map['docReceiverList'])) {
                 $model->docReceiverList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['docReceiverList'] as $item) {
                     $model->docReceiverList[$n++] = null !== $item ? docReceiverList::fromMap($item) : $item;
                 }

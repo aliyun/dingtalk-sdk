@@ -19,12 +19,10 @@ class cardInstances extends Model
     public $scenario;
     protected $_name = [
         'outTrackId' => 'outTrackId',
-        'scenario'   => 'scenario',
+        'scenario' => 'scenario',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -28,15 +28,13 @@ class InstallAppRequest extends Model
      */
     public $suiteId;
     protected $_name = [
-        'appId'      => 'appId',
-        'corpId'     => 'corpId',
+        'appId' => 'appId',
+        'corpId' => 'corpId',
         'dingUserId' => 'dingUserId',
-        'suiteId'    => 'suiteId',
+        'suiteId' => 'suiteId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

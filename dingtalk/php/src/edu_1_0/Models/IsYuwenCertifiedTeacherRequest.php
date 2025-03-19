@@ -23,12 +23,10 @@ class IsYuwenCertifiedTeacherRequest extends Model
     public $userId;
     protected $_name = [
         'bizCode' => 'bizCode',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

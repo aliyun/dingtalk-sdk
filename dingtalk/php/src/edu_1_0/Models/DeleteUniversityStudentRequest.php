@@ -35,14 +35,12 @@ class DeleteUniversityStudentRequest extends Model
      */
     public $studentUserId;
     protected $_name = [
-        'classId'       => 'classId',
-        'opUserId'      => 'opUserId',
+        'classId' => 'classId',
+        'opUserId' => 'opUserId',
         'studentUserId' => 'studentUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

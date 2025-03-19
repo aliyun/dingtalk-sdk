@@ -48,16 +48,14 @@ class option extends Model
     public $sceneId;
     protected $_name = [
         'capabilities' => 'capabilities',
-        'name'         => 'name',
-        'ownerType'    => 'ownerType',
-        'quota'        => 'quota',
-        'scene'        => 'scene',
-        'sceneId'      => 'sceneId',
+        'name' => 'name',
+        'ownerType' => 'ownerType',
+        'quota' => 'quota',
+        'scene' => 'scene',
+        'sceneId' => 'sceneId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -21,13 +21,11 @@ class ListDentryVersionsResponseBody extends Model
      */
     public $nextToken;
     protected $_name = [
-        'dentries'  => 'dentries',
+        'dentries' => 'dentries',
         'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class ListDentryVersionsResponseBody extends Model
         if (isset($map['dentries'])) {
             if (!empty($map['dentries'])) {
                 $model->dentries = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['dentries'] as $item) {
                     $model->dentries[$n++] = null !== $item ? dentries::fromMap($item) : $item;
                 }

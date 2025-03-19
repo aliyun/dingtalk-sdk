@@ -39,16 +39,14 @@ class conferenceList extends Model
     public $title;
     protected $_name = [
         'conferenceId' => 'conferenceId',
-        'endTime'      => 'endTime',
-        'roomCode'     => 'roomCode',
-        'startTime'    => 'startTime',
-        'status'       => 'status',
-        'title'        => 'title',
+        'endTime' => 'endTime',
+        'roomCode' => 'roomCode',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -24,13 +24,11 @@ class numberCondition extends Model
     public $value2;
     protected $_name = [
         'operator' => 'operator',
-        'value1'   => 'value1',
-        'value2'   => 'value2',
+        'value1' => 'value1',
+        'value2' => 'value2',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

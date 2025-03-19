@@ -20,12 +20,10 @@ class multipartHeaderSignatureInfos extends Model
     public $partNumber;
     protected $_name = [
         'headerSignatureInfo' => 'headerSignatureInfo',
-        'partNumber'          => 'partNumber',
+        'partNumber' => 'partNumber',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

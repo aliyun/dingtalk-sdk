@@ -103,24 +103,22 @@ class GetNotifyMeRequest extends Model
      */
     public $token;
     protected $_name = [
-        'appTypes'                  => 'appTypes',
-        'corpId'                    => 'corpId',
-        'createFromTimeGMT'         => 'createFromTimeGMT',
-        'createToTimeGMT'           => 'createToTimeGMT',
-        'env'                       => 'env',
+        'appTypes' => 'appTypes',
+        'corpId' => 'corpId',
+        'createFromTimeGMT' => 'createFromTimeGMT',
+        'createToTimeGMT' => 'createToTimeGMT',
+        'env' => 'env',
         'instanceCreateFromTimeGMT' => 'instanceCreateFromTimeGMT',
-        'instanceCreateToTimeGMT'   => 'instanceCreateToTimeGMT',
-        'keyword'                   => 'keyword',
-        'language'                  => 'language',
-        'pageNumber'                => 'pageNumber',
-        'pageSize'                  => 'pageSize',
-        'processCodes'              => 'processCodes',
-        'token'                     => 'token',
+        'instanceCreateToTimeGMT' => 'instanceCreateToTimeGMT',
+        'keyword' => 'keyword',
+        'language' => 'language',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'processCodes' => 'processCodes',
+        'token' => 'token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

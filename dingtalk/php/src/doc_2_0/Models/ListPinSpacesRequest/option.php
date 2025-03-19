@@ -50,17 +50,15 @@ class option extends Model
      */
     public $withTeamDetail;
     protected $_name = [
-        'maxResults'              => 'maxResults',
-        'nextToken'               => 'nextToken',
-        'withSpaceCreatorInfo'    => 'withSpaceCreatorInfo',
-        'withSpaceModifierInfo'   => 'withSpaceModifierInfo',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'withSpaceCreatorInfo' => 'withSpaceCreatorInfo',
+        'withSpaceModifierInfo' => 'withSpaceModifierInfo',
         'withSpacePermissionRole' => 'withSpacePermissionRole',
-        'withTeamDetail'          => 'withTeamDetail',
+        'withTeamDetail' => 'withTeamDetail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

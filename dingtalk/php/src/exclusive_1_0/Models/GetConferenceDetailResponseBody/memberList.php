@@ -37,14 +37,12 @@ class memberList extends Model
     public $unionId;
     protected $_name = [
         'attendDuration' => 'attendDuration',
-        'name'           => 'name',
-        'staffId'        => 'staffId',
-        'unionId'        => 'unionId',
+        'name' => 'name',
+        'staffId' => 'staffId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -35,14 +35,12 @@ class EditFeedReplayRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'editEndTime'   => 'editEndTime',
+        'editEndTime' => 'editEndTime',
         'editStartTime' => 'editStartTime',
-        'userId'        => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

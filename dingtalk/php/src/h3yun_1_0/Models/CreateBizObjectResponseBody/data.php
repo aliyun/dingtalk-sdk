@@ -36,15 +36,13 @@ class data extends Model
      */
     public $schemaCode;
     protected $_name = [
-        'bizObjectId'       => 'bizObjectId',
-        'formUsageType'     => 'formUsageType',
+        'bizObjectId' => 'bizObjectId',
+        'formUsageType' => 'formUsageType',
         'processInstanceId' => 'processInstanceId',
-        'schemaCode'        => 'schemaCode',
+        'schemaCode' => 'schemaCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

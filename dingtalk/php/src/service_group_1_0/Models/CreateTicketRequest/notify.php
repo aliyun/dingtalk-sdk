@@ -26,13 +26,11 @@ class notify extends Model
     public $workNoticeReceiverUnionIds;
     protected $_name = [
         'groupNoticeReceiverUnionIds' => 'groupNoticeReceiverUnionIds',
-        'noticeAllGroupMember'        => 'noticeAllGroupMember',
-        'workNoticeReceiverUnionIds'  => 'workNoticeReceiverUnionIds',
+        'noticeAllGroupMember' => 'noticeAllGroupMember',
+        'workNoticeReceiverUnionIds' => 'workNoticeReceiverUnionIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,12 +19,10 @@ class result extends Model
     public $status;
     protected $_name = [
         'response' => 'response',
-        'status'   => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

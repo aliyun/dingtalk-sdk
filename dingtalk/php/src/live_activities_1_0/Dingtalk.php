@@ -23,8 +23,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -62,18 +62,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PushLiveActivity',
-            'version'     => 'liveActivities_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/liveActivities/push',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PushLiveActivity',
+            'version' => 'liveActivities_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/liveActivities/push',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PushLiveActivityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -125,18 +125,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendLiveActivity',
-            'version'     => 'liveActivities_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/liveActivities/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendLiveActivity',
+            'version' => 'liveActivities_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/liveActivities/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendLiveActivityResponse::fromMap($this->execute($params, $req, $runtime));

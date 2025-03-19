@@ -26,13 +26,11 @@ class rules extends Model
      */
     public $itemName;
     protected $_name = [
-        'itemId'   => 'itemId',
+        'itemId' => 'itemId',
         'itemName' => 'itemName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

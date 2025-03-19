@@ -27,14 +27,12 @@ class EduListUserByFromUserIdsRequest extends Model
      */
     public $guardianUserId;
     protected $_name = [
-        'classId'        => 'classId',
-        'corpId'         => 'corpId',
+        'classId' => 'classId',
+        'corpId' => 'corpId',
         'guardianUserId' => 'guardianUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

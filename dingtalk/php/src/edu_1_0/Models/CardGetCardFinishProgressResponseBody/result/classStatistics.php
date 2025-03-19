@@ -42,16 +42,14 @@ class classStatistics extends Model
      */
     public $process;
     protected $_name = [
-        'cardBizId'   => 'cardBizId',
+        'cardBizId' => 'cardBizId',
         'cardBizName' => 'cardBizName',
-        'classId'     => 'classId',
-        'className'   => 'className',
-        'process'     => 'process',
+        'classId' => 'classId',
+        'className' => 'className',
+        'process' => 'process',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -104,7 +102,7 @@ class classStatistics extends Model
         if (isset($map['process'])) {
             if (!empty($map['process'])) {
                 $model->process = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['process'] as $item) {
                     $model->process[$n++] = null !== $item ? process::fromMap($item) : $item;
                 }

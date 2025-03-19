@@ -37,15 +37,13 @@ class AddAppRolesToMemberRequest extends Model
      */
     public $roleList;
     protected $_name = [
-        'memberId'   => 'memberId',
+        'memberId' => 'memberId',
         'memberType' => 'memberType',
-        'opUserId'   => 'opUserId',
-        'roleList'   => 'roleList',
+        'opUserId' => 'opUserId',
+        'roleList' => 'roleList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -92,7 +90,7 @@ class AddAppRolesToMemberRequest extends Model
         if (isset($map['roleList'])) {
             if (!empty($map['roleList'])) {
                 $model->roleList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['roleList'] as $item) {
                     $model->roleList[$n++] = null !== $item ? roleList::fromMap($item) : $item;
                 }

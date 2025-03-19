@@ -99,24 +99,22 @@ class values extends Model
      */
     public $sourceUuid;
     protected $_name = [
-        'formInstanceId'   => 'formInstanceId',
-        'formUuid'         => 'formUuid',
-        'hookType'         => 'hookType',
-        'hookUuid'         => 'hookUuid',
-        'invokeParameter'  => 'invokeParameter',
-        'invokeResult'     => 'invokeResult',
-        'invokeStatus'     => 'invokeStatus',
-        'invokeSuccess'    => 'invokeSuccess',
-        'invokeUrl'        => 'invokeUrl',
-        'serviceContent'   => 'serviceContent',
-        'serviceName'      => 'serviceName',
+        'formInstanceId' => 'formInstanceId',
+        'formUuid' => 'formUuid',
+        'hookType' => 'hookType',
+        'hookUuid' => 'hookUuid',
+        'invokeParameter' => 'invokeParameter',
+        'invokeResult' => 'invokeResult',
+        'invokeStatus' => 'invokeStatus',
+        'invokeSuccess' => 'invokeSuccess',
+        'invokeUrl' => 'invokeUrl',
+        'serviceContent' => 'serviceContent',
+        'serviceName' => 'serviceName',
         'serviceParameter' => 'serviceParameter',
-        'sourceUuid'       => 'sourceUuid',
+        'sourceUuid' => 'sourceUuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

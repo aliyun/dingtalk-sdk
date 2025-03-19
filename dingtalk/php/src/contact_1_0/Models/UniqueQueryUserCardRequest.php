@@ -25,12 +25,10 @@ class UniqueQueryUserCardRequest extends Model
     public $unionId;
     protected $_name = [
         'templateId' => 'templateId',
-        'unionId'    => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

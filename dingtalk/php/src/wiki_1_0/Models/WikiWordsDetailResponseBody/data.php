@@ -151,31 +151,29 @@ class data extends Model
      */
     public $wordParaphrase;
     protected $_name = [
-        'appLink'              => 'appLink',
-        'approveName'          => 'approveName',
-        'contacts'             => 'contacts',
-        'creatorName'          => 'creatorName',
-        'gmtCreate'            => 'gmtCreate',
-        'gmtModify'            => 'gmtModify',
-        'highLightWordAlias'   => 'highLightWordAlias',
-        'imHighLight'          => 'imHighLight',
-        'orgName'              => 'orgName',
-        'relatedDoc'           => 'relatedDoc',
-        'relatedLink'          => 'relatedLink',
-        'simHighLight'         => 'simHighLight',
+        'appLink' => 'appLink',
+        'approveName' => 'approveName',
+        'contacts' => 'contacts',
+        'creatorName' => 'creatorName',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModify' => 'gmtModify',
+        'highLightWordAlias' => 'highLightWordAlias',
+        'imHighLight' => 'imHighLight',
+        'orgName' => 'orgName',
+        'relatedDoc' => 'relatedDoc',
+        'relatedLink' => 'relatedLink',
+        'simHighLight' => 'simHighLight',
         'simpleWordParaphrase' => 'simpleWordParaphrase',
-        'tagsList'             => 'tagsList',
-        'updaterName'          => 'updaterName',
-        'uuid'                 => 'uuid',
-        'wordAlias'            => 'wordAlias',
-        'wordFullName'         => 'wordFullName',
-        'wordName'             => 'wordName',
-        'wordParaphrase'       => 'wordParaphrase',
+        'tagsList' => 'tagsList',
+        'updaterName' => 'updaterName',
+        'uuid' => 'uuid',
+        'wordAlias' => 'wordAlias',
+        'wordFullName' => 'wordFullName',
+        'wordName' => 'wordName',
+        'wordParaphrase' => 'wordParaphrase',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -273,7 +271,7 @@ class data extends Model
         if (isset($map['appLink'])) {
             if (!empty($map['appLink'])) {
                 $model->appLink = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['appLink'] as $item) {
                     $model->appLink[$n++] = null !== $item ? appLink::fromMap($item) : $item;
                 }
@@ -310,7 +308,7 @@ class data extends Model
         if (isset($map['relatedDoc'])) {
             if (!empty($map['relatedDoc'])) {
                 $model->relatedDoc = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['relatedDoc'] as $item) {
                     $model->relatedDoc[$n++] = null !== $item ? relatedDoc::fromMap($item) : $item;
                 }
@@ -319,7 +317,7 @@ class data extends Model
         if (isset($map['relatedLink'])) {
             if (!empty($map['relatedLink'])) {
                 $model->relatedLink = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['relatedLink'] as $item) {
                     $model->relatedLink[$n++] = null !== $item ? relatedLink::fromMap($item) : $item;
                 }

@@ -38,15 +38,13 @@ class CustomizeContactUpdateRequest extends Model
      */
     public $order;
     protected $_name = [
-        'code'          => 'code',
+        'code' => 'code',
         'managerIdList' => 'managerIdList',
-        'name'          => 'name',
-        'order'         => 'order',
+        'name' => 'name',
+        'order' => 'order',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

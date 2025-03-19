@@ -18,13 +18,11 @@ class GetUserInfoResponseBody extends Model
      */
     public $userRealName;
     protected $_name = [
-        'isRealName'   => 'isRealName',
+        'isRealName' => 'isRealName',
         'userRealName' => 'userRealName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -21,13 +21,11 @@ class IndustrializeManufactureQueryJobsResponseBody extends Model
      */
     public $httpCode;
     protected $_name = [
-        'content'  => 'content',
+        'content' => 'content',
         'httpCode' => 'httpCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

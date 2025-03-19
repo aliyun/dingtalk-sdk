@@ -20,12 +20,10 @@ class data extends Model
     public $taskId;
     protected $_name = [
         'groupVoList' => 'groupVoList',
-        'taskId'      => 'taskId',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class data extends Model
         if (isset($map['groupVoList'])) {
             if (!empty($map['groupVoList'])) {
                 $model->groupVoList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['groupVoList'] as $item) {
                     $model->groupVoList[$n++] = null !== $item ? groupVoList::fromMap($item) : $item;
                 }

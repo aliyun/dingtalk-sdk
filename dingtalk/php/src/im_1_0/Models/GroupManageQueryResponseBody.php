@@ -29,13 +29,11 @@ class GroupManageQueryResponseBody extends Model
     public $nextToken;
     protected $_name = [
         'groupInfoList' => 'groupInfoList',
-        'hasMore'       => 'hasMore',
-        'nextToken'     => 'nextToken',
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class GroupManageQueryResponseBody extends Model
         if (isset($map['groupInfoList'])) {
             if (!empty($map['groupInfoList'])) {
                 $model->groupInfoList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['groupInfoList'] as $item) {
                     $model->groupInfoList[$n++] = null !== $item ? groupInfoList::fromMap($item) : $item;
                 }

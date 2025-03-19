@@ -26,13 +26,11 @@ class topOpenDeliverModel extends Model
     public $userIds;
     protected $_name = [
         'expiredTimeMillis' => 'expiredTimeMillis',
-        'platforms'         => 'platforms',
-        'userIds'           => 'userIds',
+        'platforms' => 'platforms',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

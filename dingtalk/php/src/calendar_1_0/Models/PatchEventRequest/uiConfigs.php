@@ -22,13 +22,11 @@ class uiConfigs extends Model
      */
     public $uiStatus;
     protected $_name = [
-        'uiName'   => 'uiName',
+        'uiName' => 'uiName',
         'uiStatus' => 'uiStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

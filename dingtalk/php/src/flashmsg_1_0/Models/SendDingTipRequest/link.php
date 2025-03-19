@@ -38,15 +38,13 @@ class link extends Model
      */
     public $text;
     protected $_name = [
-        'extension'  => 'extension',
-        'linkUrl'    => 'linkUrl',
+        'extension' => 'extension',
+        'linkUrl' => 'linkUrl',
         'picMediaId' => 'picMediaId',
-        'text'       => 'text',
+        'text' => 'text',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

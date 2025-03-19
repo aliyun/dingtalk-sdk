@@ -35,15 +35,13 @@ class ListConnectorInformationResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'pageNumber'  => 'pageNumber',
-        'pageSize'    => 'pageSize',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'pluginInfos' => 'pluginInfos',
-        'totalCount'  => 'totalCount',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -87,7 +85,7 @@ class ListConnectorInformationResponseBody extends Model
         if (isset($map['pluginInfos'])) {
             if (!empty($map['pluginInfos'])) {
                 $model->pluginInfos = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['pluginInfos'] as $item) {
                     $model->pluginInfos[$n++] = null !== $item ? pluginInfos::fromMap($item) : $item;
                 }

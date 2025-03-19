@@ -18,9 +18,7 @@ class data extends Model
         'uploadUrl' => 'uploadUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

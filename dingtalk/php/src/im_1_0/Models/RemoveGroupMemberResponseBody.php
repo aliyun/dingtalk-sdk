@@ -20,9 +20,7 @@ class RemoveGroupMemberResponseBody extends Model
         'message' => 'message',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

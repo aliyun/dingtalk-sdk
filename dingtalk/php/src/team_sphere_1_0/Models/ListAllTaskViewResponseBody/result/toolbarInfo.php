@@ -28,12 +28,10 @@ class toolbarInfo extends Model
     protected $_name = [
         'groupTypes' => 'groupTypes',
         'orderTypes' => 'orderTypes',
-        'showTypes'  => 'showTypes',
+        'showTypes' => 'showTypes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -80,7 +78,7 @@ class toolbarInfo extends Model
         if (isset($map['groupTypes'])) {
             if (!empty($map['groupTypes'])) {
                 $model->groupTypes = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['groupTypes'] as $item) {
                     $model->groupTypes[$n++] = null !== $item ? groupTypes::fromMap($item) : $item;
                 }
@@ -89,7 +87,7 @@ class toolbarInfo extends Model
         if (isset($map['orderTypes'])) {
             if (!empty($map['orderTypes'])) {
                 $model->orderTypes = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['orderTypes'] as $item) {
                     $model->orderTypes[$n++] = null !== $item ? orderTypes::fromMap($item) : $item;
                 }
@@ -98,7 +96,7 @@ class toolbarInfo extends Model
         if (isset($map['showTypes'])) {
             if (!empty($map['showTypes'])) {
                 $model->showTypes = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['showTypes'] as $item) {
                     $model->showTypes[$n++] = null !== $item ? showTypes::fromMap($item) : $item;
                 }

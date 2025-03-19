@@ -19,12 +19,10 @@ class groupRoles extends Model
     public $roleName;
     protected $_name = [
         'openRoleId' => 'openRoleId',
-        'roleName'   => 'roleName',
+        'roleName' => 'roleName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

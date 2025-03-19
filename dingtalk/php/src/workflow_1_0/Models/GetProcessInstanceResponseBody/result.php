@@ -129,29 +129,27 @@ class result extends Model
      */
     public $title;
     protected $_name = [
-        'approverUserIds'            => 'approverUserIds',
+        'approverUserIds' => 'approverUserIds',
         'attachedProcessInstanceIds' => 'attachedProcessInstanceIds',
-        'bizAction'                  => 'bizAction',
-        'bizData'                    => 'bizData',
-        'businessId'                 => 'businessId',
-        'ccUserIds'                  => 'ccUserIds',
-        'createTime'                 => 'createTime',
-        'finishTime'                 => 'finishTime',
-        'formComponentValues'        => 'formComponentValues',
-        'mainProcessInstanceId'      => 'mainProcessInstanceId',
-        'operationRecords'           => 'operationRecords',
-        'originatorDeptId'           => 'originatorDeptId',
-        'originatorDeptName'         => 'originatorDeptName',
-        'originatorUserId'           => 'originatorUserId',
-        'result'                     => 'result',
-        'status'                     => 'status',
-        'tasks'                      => 'tasks',
-        'title'                      => 'title',
+        'bizAction' => 'bizAction',
+        'bizData' => 'bizData',
+        'businessId' => 'businessId',
+        'ccUserIds' => 'ccUserIds',
+        'createTime' => 'createTime',
+        'finishTime' => 'finishTime',
+        'formComponentValues' => 'formComponentValues',
+        'mainProcessInstanceId' => 'mainProcessInstanceId',
+        'operationRecords' => 'operationRecords',
+        'originatorDeptId' => 'originatorDeptId',
+        'originatorDeptName' => 'originatorDeptName',
+        'originatorUserId' => 'originatorUserId',
+        'result' => 'result',
+        'status' => 'status',
+        'tasks' => 'tasks',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -273,7 +271,7 @@ class result extends Model
         if (isset($map['formComponentValues'])) {
             if (!empty($map['formComponentValues'])) {
                 $model->formComponentValues = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['formComponentValues'] as $item) {
                     $model->formComponentValues[$n++] = null !== $item ? formComponentValues::fromMap($item) : $item;
                 }
@@ -285,7 +283,7 @@ class result extends Model
         if (isset($map['operationRecords'])) {
             if (!empty($map['operationRecords'])) {
                 $model->operationRecords = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['operationRecords'] as $item) {
                     $model->operationRecords[$n++] = null !== $item ? operationRecords::fromMap($item) : $item;
                 }
@@ -309,7 +307,7 @@ class result extends Model
         if (isset($map['tasks'])) {
             if (!empty($map['tasks'])) {
                 $model->tasks = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['tasks'] as $item) {
                     $model->tasks[$n++] = null !== $item ? tasks::fromMap($item) : $item;
                 }

@@ -56,20 +56,18 @@ class SubmitTaskPackageRequest extends Model
      */
     public $version;
     protected $_name = [
-        'appId'           => 'appId',
-        'appSecret'       => 'appSecret',
-        'bizCode'         => 'bizCode',
-        'data'            => 'data',
-        'desc'            => 'desc',
-        'fileType'        => 'fileType',
+        'appId' => 'appId',
+        'appSecret' => 'appSecret',
+        'bizCode' => 'bizCode',
+        'data' => 'data',
+        'desc' => 'desc',
+        'fileType' => 'fileType',
         'taskPackageName' => 'taskPackageName',
-        'unionId'         => 'unionId',
-        'version'         => 'version',
+        'unionId' => 'unionId',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -131,7 +129,7 @@ class SubmitTaskPackageRequest extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }

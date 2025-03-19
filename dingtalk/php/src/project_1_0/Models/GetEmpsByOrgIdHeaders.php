@@ -30,15 +30,13 @@ class GetEmpsByOrgIdHeaders extends Model
      */
     public $xAcsDingtalkAccessToken;
     protected $_name = [
-        'dingAccessTokenType'     => 'dingAccessTokenType',
-        'dingIsvOrgId'            => 'dingIsvOrgId',
-        'dingOrgId'               => 'dingOrgId',
+        'dingAccessTokenType' => 'dingAccessTokenType',
+        'dingIsvOrgId' => 'dingIsvOrgId',
+        'dingOrgId' => 'dingOrgId',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

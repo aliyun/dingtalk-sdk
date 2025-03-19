@@ -110,24 +110,22 @@ class CollectResumeMailRequest extends Model
      */
     public $resumeFile;
     protected $_name = [
-        'bizCode'            => 'bizCode',
-        'channelCode'        => 'channelCode',
-        'deliverJobId'       => 'deliverJobId',
-        'fromMailAddress'    => 'fromMailAddress',
-        'historyMailImport'  => 'historyMailImport',
-        'mailId'             => 'mailId',
-        'mailTitle'          => 'mailTitle',
-        'optUserId'          => 'optUserId',
+        'bizCode' => 'bizCode',
+        'channelCode' => 'channelCode',
+        'deliverJobId' => 'deliverJobId',
+        'fromMailAddress' => 'fromMailAddress',
+        'historyMailImport' => 'historyMailImport',
+        'mailId' => 'mailId',
+        'mailTitle' => 'mailTitle',
+        'optUserId' => 'optUserId',
         'receiveMailAddress' => 'receiveMailAddress',
-        'receiveMailType'    => 'receiveMailType',
-        'receivedTime'       => 'receivedTime',
-        'resumeChannelUrl'   => 'resumeChannelUrl',
-        'resumeFile'         => 'resumeFile',
+        'receiveMailType' => 'receiveMailType',
+        'receivedTime' => 'receivedTime',
+        'resumeChannelUrl' => 'resumeChannelUrl',
+        'resumeFile' => 'resumeFile',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

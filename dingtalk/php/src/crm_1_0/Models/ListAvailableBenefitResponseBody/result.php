@@ -60,17 +60,15 @@ class result extends Model
     public $versionName;
     protected $_name = [
         'benefitCode' => 'benefitCode',
-        'endTime'     => 'endTime',
-        'quota'       => 'quota',
-        'startTime'   => 'startTime',
-        'usedQuota'   => 'usedQuota',
-        'version'     => 'version',
+        'endTime' => 'endTime',
+        'quota' => 'quota',
+        'startTime' => 'startTime',
+        'usedQuota' => 'usedQuota',
+        'version' => 'version',
         'versionName' => 'versionName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class searchSceneConfig extends Model
      */
     public $deptObjectIncludeEmp;
     protected $_name = [
-        'active'               => 'active',
+        'active' => 'active',
         'deptObjectIncludeEmp' => 'deptObjectIncludeEmp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -108,31 +108,29 @@ class data extends Model
      */
     public $titleInEnglish;
     protected $_name = [
-        'activeTimeGMT'           => 'activeTimeGMT',
-        'actualActionerId'        => 'actualActionerId',
-        'appType'                 => 'appType',
-        'createTimeGMT'           => 'createTimeGMT',
-        'finishTimeGMT'           => 'finishTimeGMT',
-        'originatorEmail'         => 'originatorEmail',
-        'originatorId'            => 'originatorId',
-        'originatorName'          => 'originatorName',
+        'activeTimeGMT' => 'activeTimeGMT',
+        'actualActionerId' => 'actualActionerId',
+        'appType' => 'appType',
+        'createTimeGMT' => 'createTimeGMT',
+        'finishTimeGMT' => 'finishTimeGMT',
+        'originatorEmail' => 'originatorEmail',
+        'originatorId' => 'originatorId',
+        'originatorName' => 'originatorName',
         'originatorNameInEnglish' => 'originatorNameInEnglish',
-        'originatorNickName'      => 'originatorNickName',
-        'originatorNickNameEn'    => 'originatorNickNameEn',
-        'originatorPhoto'         => 'originatorPhoto',
-        'outResult'               => 'outResult',
-        'outResultName'           => 'outResultName',
-        'processInstanceId'       => 'processInstanceId',
-        'status'                  => 'status',
-        'taskId'                  => 'taskId',
-        'taskType'                => 'taskType',
-        'title'                   => 'title',
-        'titleInEnglish'          => 'titleInEnglish',
+        'originatorNickName' => 'originatorNickName',
+        'originatorNickNameEn' => 'originatorNickNameEn',
+        'originatorPhoto' => 'originatorPhoto',
+        'outResult' => 'outResult',
+        'outResultName' => 'outResultName',
+        'processInstanceId' => 'processInstanceId',
+        'status' => 'status',
+        'taskId' => 'taskId',
+        'taskType' => 'taskType',
+        'title' => 'title',
+        'titleInEnglish' => 'titleInEnglish',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class properties extends Model
         'readOnly' => 'readOnly',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

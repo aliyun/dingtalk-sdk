@@ -22,12 +22,10 @@ class OkrOpenRecommendResponseBody extends Model
     public $requestId;
     protected $_name = [
         'okrRecommendItems' => 'okrRecommendItems',
-        'requestId'         => 'requestId',
+        'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class OkrOpenRecommendResponseBody extends Model
         if (isset($map['okrRecommendItems'])) {
             if (!empty($map['okrRecommendItems'])) {
                 $model->okrRecommendItems = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['okrRecommendItems'] as $item) {
                     $model->okrRecommendItems[$n++] = null !== $item ? okrRecommendItems::fromMap($item) : $item;
                 }

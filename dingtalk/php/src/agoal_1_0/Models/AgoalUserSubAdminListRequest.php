@@ -18,9 +18,7 @@ class AgoalUserSubAdminListRequest extends Model
         'funcPermissionGroup' => 'funcPermissionGroup',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

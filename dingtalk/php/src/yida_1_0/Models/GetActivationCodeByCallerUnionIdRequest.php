@@ -16,9 +16,7 @@ class GetActivationCodeByCallerUnionIdRequest extends Model
         'accessKey' => 'accessKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -25,12 +25,10 @@ class HrmAuthResourcesQueryRequest extends Model
     public $userId;
     protected $_name = [
         'authResourceIds' => 'authResourceIds',
-        'userId'          => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -25,12 +25,10 @@ class GetRangeRequest extends Model
     public $select;
     protected $_name = [
         'operatorId' => 'operatorId',
-        'select'     => 'select',
+        'select' => 'select',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

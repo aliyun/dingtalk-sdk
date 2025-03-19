@@ -21,12 +21,10 @@ class WearOrgHonorRequest extends Model
     public $wear;
     protected $_name = [
         'userId' => 'userId',
-        'wear'   => 'wear',
+        'wear' => 'wear',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

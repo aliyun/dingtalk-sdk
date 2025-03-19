@@ -18,9 +18,7 @@ class ModifySubInstitutionResponseBody extends Model
         'orderId' => 'orderId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

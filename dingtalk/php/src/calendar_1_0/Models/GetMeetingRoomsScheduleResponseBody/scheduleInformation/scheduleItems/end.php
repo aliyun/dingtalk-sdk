@@ -22,9 +22,7 @@ class end extends Model
         'timeZone' => 'timeZone',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

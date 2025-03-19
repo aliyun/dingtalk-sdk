@@ -29,14 +29,12 @@ class list_ extends Model
      */
     public $deviceName;
     protected $_name = [
-        'appStatus'  => 'appStatus',
+        'appStatus' => 'appStatus',
         'deviceCode' => 'deviceCode',
         'deviceName' => 'deviceName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

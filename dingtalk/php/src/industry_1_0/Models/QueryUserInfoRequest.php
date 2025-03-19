@@ -16,9 +16,7 @@ class QueryUserInfoRequest extends Model
         'monthMark' => 'monthMark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -26,13 +26,11 @@ class targetUserList extends Model
      */
     public $targetUserId;
     protected $_name = [
-        'outId'        => 'outId',
+        'outId' => 'outId',
         'targetUserId' => 'targetUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

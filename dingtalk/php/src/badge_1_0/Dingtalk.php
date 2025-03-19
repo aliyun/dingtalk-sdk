@@ -41,8 +41,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -104,18 +104,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateBadgeCodeUserInstance',
-            'version'     => 'badge_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/badge/codes/userInstances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateBadgeCodeUserInstance',
+            'version' => 'badge_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/badge/codes/userInstances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateBadgeCodeUserInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -170,18 +170,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateBadgeNotify',
-            'version'     => 'badge_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/badge/notices',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateBadgeNotify',
+            'version' => 'badge_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/badge/notices',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateBadgeNotifyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -230,18 +230,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DecodeBadgeCode',
-            'version'     => 'badge_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/badge/codes/decode',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DecodeBadgeCode',
+            'version' => 'badge_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/badge/codes/decode',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DecodeBadgeCodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -335,18 +335,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'NotifyBadgeCodePayResult',
-            'version'     => 'badge_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/badge/codes/payResults',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'NotifyBadgeCodePayResult',
+            'version' => 'badge_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/badge/codes/payResults',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return NotifyBadgeCodePayResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -419,18 +419,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'NotifyBadgeCodeRefundResult',
-            'version'     => 'badge_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/badge/codes/refundResults',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'NotifyBadgeCodeRefundResult',
+            'version' => 'badge_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/badge/codes/refundResults',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return NotifyBadgeCodeRefundResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -503,18 +503,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'NotifyBadgeCodeVerifyResult',
-            'version'     => 'badge_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/badge/codes/verifyResults',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'NotifyBadgeCodeVerifyResult',
+            'version' => 'badge_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/badge/codes/verifyResults',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return NotifyBadgeCodeVerifyResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -569,18 +569,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveBadgeCodeCorpInstance',
-            'version'     => 'badge_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/badge/codes/corpInstances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveBadgeCodeCorpInstance',
+            'version' => 'badge_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/badge/codes/corpInstances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveBadgeCodeCorpInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -653,18 +653,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateBadgeCodeUserInstance',
-            'version'     => 'badge_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/badge/codes/userInstances',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateBadgeCodeUserInstance',
+            'version' => 'badge_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/badge/codes/userInstances',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateBadgeCodeUserInstanceResponse::fromMap($this->execute($params, $req, $runtime));

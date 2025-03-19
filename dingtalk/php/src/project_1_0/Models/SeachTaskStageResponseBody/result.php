@@ -64,19 +64,17 @@ class result extends Model
      */
     public $updated;
     protected $_name = [
-        'created'     => 'created',
-        'creatorId'   => 'creatorId',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
         'description' => 'description',
-        'name'        => 'name',
-        'projectId'   => 'projectId',
-        'taskListId'  => 'taskListId',
+        'name' => 'name',
+        'projectId' => 'projectId',
+        'taskListId' => 'taskListId',
         'taskStageId' => 'taskStageId',
-        'updated'     => 'updated',
+        'updated' => 'updated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

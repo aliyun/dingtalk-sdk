@@ -19,12 +19,10 @@ class buttonList extends Model
     public $title;
     protected $_name = [
         'actionUrl' => 'actionUrl',
-        'title'     => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

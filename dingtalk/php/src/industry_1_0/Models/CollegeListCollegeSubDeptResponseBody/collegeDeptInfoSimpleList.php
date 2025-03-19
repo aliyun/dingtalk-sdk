@@ -29,14 +29,12 @@ class collegeDeptInfoSimpleList extends Model
      */
     public $deptType;
     protected $_name = [
-        'deptId'   => 'deptId',
+        'deptId' => 'deptId',
         'deptName' => 'deptName',
         'deptType' => 'deptType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

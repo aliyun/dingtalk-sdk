@@ -86,21 +86,19 @@ class appList extends Model
      */
     public $pcHomepageLink;
     protected $_name = [
-        'agentId'        => 'agentId',
-        'appId'          => 'appId',
-        'appStatus'      => 'appStatus',
-        'desc'           => 'desc',
-        'developType'    => 'developType',
-        'homepageLink'   => 'homepageLink',
-        'icon'           => 'icon',
-        'name'           => 'name',
-        'ompLink'        => 'ompLink',
+        'agentId' => 'agentId',
+        'appId' => 'appId',
+        'appStatus' => 'appStatus',
+        'desc' => 'desc',
+        'developType' => 'developType',
+        'homepageLink' => 'homepageLink',
+        'icon' => 'icon',
+        'name' => 'name',
+        'ompLink' => 'ompLink',
         'pcHomepageLink' => 'pcHomepageLink',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

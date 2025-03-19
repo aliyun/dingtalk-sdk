@@ -28,15 +28,13 @@ class organizer extends Model
      */
     public $self;
     protected $_name = [
-        'displayName'    => 'displayName',
-        'id'             => 'id',
+        'displayName' => 'displayName',
+        'id' => 'id',
         'responseStatus' => 'responseStatus',
-        'self'           => 'self',
+        'self' => 'self',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

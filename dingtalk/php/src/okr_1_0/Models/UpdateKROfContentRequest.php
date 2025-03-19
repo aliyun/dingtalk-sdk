@@ -40,15 +40,13 @@ class UpdateKROfContentRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'content'         => 'content',
+        'content' => 'content',
         'updateQuoteList' => 'updateQuoteList',
-        'krId'            => 'krId',
-        'userId'          => 'userId',
+        'krId' => 'krId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

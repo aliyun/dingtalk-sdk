@@ -25,14 +25,12 @@ class GetInnerGroupMembersResponseBody extends Model
      */
     public $userIds;
     protected $_name = [
-        'hasMore'   => 'hasMore',
+        'hasMore' => 'hasMore',
         'nextToken' => 'nextToken',
-        'userIds'   => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

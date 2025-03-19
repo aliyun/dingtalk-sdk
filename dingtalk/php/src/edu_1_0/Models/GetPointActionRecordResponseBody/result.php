@@ -24,13 +24,11 @@ class result extends Model
     public $status;
     protected $_name = [
         'actionTime' => 'actionTime',
-        'quantity'   => 'quantity',
-        'status'     => 'status',
+        'quantity' => 'quantity',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

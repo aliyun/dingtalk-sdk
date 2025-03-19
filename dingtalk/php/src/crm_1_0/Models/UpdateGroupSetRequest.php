@@ -56,19 +56,17 @@ class UpdateGroupSetRequest extends Model
     public $welcome;
     protected $_name = [
         'managerUserIds' => 'managerUserIds',
-        'memberQuota'    => 'memberQuota',
-        'name'           => 'name',
-        'notice'         => 'notice',
-        'noticeToped'    => 'noticeToped',
+        'memberQuota' => 'memberQuota',
+        'name' => 'name',
+        'notice' => 'notice',
+        'noticeToped' => 'noticeToped',
         'openGroupSetId' => 'openGroupSetId',
-        'ownerUserId'    => 'ownerUserId',
-        'templateId'     => 'templateId',
-        'welcome'        => 'welcome',
+        'ownerUserId' => 'ownerUserId',
+        'templateId' => 'templateId',
+        'welcome' => 'welcome',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,13 +22,11 @@ class FocusRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'action'  => 'action',
+        'action' => 'action',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

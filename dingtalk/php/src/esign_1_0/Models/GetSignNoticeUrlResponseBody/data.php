@@ -19,12 +19,10 @@ class data extends Model
     public $pcUrl;
     protected $_name = [
         'mobileUrl' => 'mobileUrl',
-        'pcUrl'     => 'pcUrl',
+        'pcUrl' => 'pcUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

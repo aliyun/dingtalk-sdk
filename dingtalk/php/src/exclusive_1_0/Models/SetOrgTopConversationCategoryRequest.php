@@ -17,9 +17,7 @@ class SetOrgTopConversationCategoryRequest extends Model
         'body' => 'body',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class SetOrgTopConversationCategoryRequest extends Model
         if (isset($map['body'])) {
             if (!empty($map['body'])) {
                 $model->body = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['body'] as $item) {
                     $model->body[$n++] = null !== $item ? body::fromMap($item) : $item;
                 }

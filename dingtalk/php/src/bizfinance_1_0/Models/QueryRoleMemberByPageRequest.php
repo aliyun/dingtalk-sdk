@@ -37,14 +37,12 @@ class QueryRoleMemberByPageRequest extends Model
     public $roleCode;
     protected $_name = [
         'companyCode' => 'companyCode',
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
-        'roleCode'    => 'roleCode',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'roleCode' => 'roleCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

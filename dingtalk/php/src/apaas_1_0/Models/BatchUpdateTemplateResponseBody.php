@@ -19,9 +19,7 @@ class BatchUpdateTemplateResponseBody extends Model
         'updateResultList' => 'updateResultList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class BatchUpdateTemplateResponseBody extends Model
         if (isset($map['updateResultList'])) {
             if (!empty($map['updateResultList'])) {
                 $model->updateResultList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['updateResultList'] as $item) {
                     $model->updateResultList[$n++] = null !== $item ? updateResultList::fromMap($item) : $item;
                 }

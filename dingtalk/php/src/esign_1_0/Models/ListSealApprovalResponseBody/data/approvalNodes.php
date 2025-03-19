@@ -30,13 +30,11 @@ class approvalNodes extends Model
     protected $_name = [
         'approvalTime' => 'approvalTime',
         'approverName' => 'approverName',
-        'startTime'    => 'startTime',
-        'status'       => 'status',
+        'startTime' => 'startTime',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

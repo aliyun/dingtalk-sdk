@@ -45,15 +45,13 @@ class owner extends Model
     public $userId;
     protected $_name = [
         'avatarMediaId' => 'avatarMediaId',
-        'corpId'        => 'corpId',
-        'id'            => 'id',
-        'nickname'      => 'nickname',
-        'userId'        => 'userId',
+        'corpId' => 'corpId',
+        'id' => 'id',
+        'nickname' => 'nickname',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

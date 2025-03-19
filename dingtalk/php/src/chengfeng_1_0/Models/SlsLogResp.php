@@ -89,20 +89,18 @@ class SlsLogResp extends Model
      */
     public $time;
     protected $_name = [
-        'action'   => 'action',
-        'entity'   => 'entity',
-        'header'   => 'header',
-        'id'       => 'id',
-        'info'     => 'info',
+        'action' => 'action',
+        'entity' => 'entity',
+        'header' => 'header',
+        'id' => 'id',
+        'info' => 'info',
         'operator' => 'operator',
-        'tenant'   => 'tenant',
+        'tenant' => 'tenant',
         'tenantId' => 'tenantId',
-        'time'     => 'time',
+        'time' => 'time',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

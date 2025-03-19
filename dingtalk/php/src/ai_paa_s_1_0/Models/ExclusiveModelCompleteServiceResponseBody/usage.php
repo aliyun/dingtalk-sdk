@@ -11,35 +11,33 @@ class usage extends Model
     /**
      * @var int
      */
-    public $inputTokens;
+    public $completionTokens;
 
     /**
      * @var int
      */
-    public $outputTokens;
+    public $promptTokens;
 
     /**
      * @var int
      */
     public $totalTokens;
     protected $_name = [
-        'inputTokens'  => 'input_tokens',
-        'outputTokens' => 'output_tokens',
-        'totalTokens'  => 'total_tokens',
+        'completionTokens' => 'completion_tokens',
+        'promptTokens' => 'prompt_tokens',
+        'totalTokens' => 'total_tokens',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
         $res = [];
-        if (null !== $this->inputTokens) {
-            $res['input_tokens'] = $this->inputTokens;
+        if (null !== $this->completionTokens) {
+            $res['completion_tokens'] = $this->completionTokens;
         }
-        if (null !== $this->outputTokens) {
-            $res['output_tokens'] = $this->outputTokens;
+        if (null !== $this->promptTokens) {
+            $res['prompt_tokens'] = $this->promptTokens;
         }
         if (null !== $this->totalTokens) {
             $res['total_tokens'] = $this->totalTokens;
@@ -56,11 +54,11 @@ class usage extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['input_tokens'])) {
-            $model->inputTokens = $map['input_tokens'];
+        if (isset($map['completion_tokens'])) {
+            $model->completionTokens = $map['completion_tokens'];
         }
-        if (isset($map['output_tokens'])) {
-            $model->outputTokens = $map['output_tokens'];
+        if (isset($map['prompt_tokens'])) {
+            $model->promptTokens = $map['prompt_tokens'];
         }
         if (isset($map['total_tokens'])) {
             $model->totalTokens = $map['total_tokens'];

@@ -23,14 +23,12 @@ class attendees extends Model
      */
     public $isOptional;
     protected $_name = [
-        'email'      => 'email',
-        'id'         => 'id',
+        'email' => 'email',
+        'id' => 'id',
         'isOptional' => 'isOptional',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

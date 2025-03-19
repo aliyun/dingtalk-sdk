@@ -118,25 +118,23 @@ class invoices extends Model
      */
     public $withoutTaxAmount;
     protected $_name = [
-        'invoiceAmount'    => 'invoiceAmount',
-        'invoiceCode'      => 'invoiceCode',
-        'invoiceDate'      => 'invoiceDate',
-        'invoiceNo'        => 'invoiceNo',
-        'invoiceType'      => 'invoiceType',
-        'logoUrl'          => 'logoUrl',
-        'payeeName'        => 'payeeName',
-        'payeeTaxNo'       => 'payeeTaxNo',
-        'payerName'        => 'payerName',
-        'payerTaxNo'       => 'payerTaxNo',
-        'pdfUrl'           => 'pdfUrl',
-        'taxAmount'        => 'taxAmount',
-        'verifyCode'       => 'verifyCode',
+        'invoiceAmount' => 'invoiceAmount',
+        'invoiceCode' => 'invoiceCode',
+        'invoiceDate' => 'invoiceDate',
+        'invoiceNo' => 'invoiceNo',
+        'invoiceType' => 'invoiceType',
+        'logoUrl' => 'logoUrl',
+        'payeeName' => 'payeeName',
+        'payeeTaxNo' => 'payeeTaxNo',
+        'payerName' => 'payerName',
+        'payerTaxNo' => 'payerTaxNo',
+        'pdfUrl' => 'pdfUrl',
+        'taxAmount' => 'taxAmount',
+        'verifyCode' => 'verifyCode',
         'withoutTaxAmount' => 'withoutTaxAmount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

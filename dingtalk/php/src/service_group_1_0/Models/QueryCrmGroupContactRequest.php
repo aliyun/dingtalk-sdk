@@ -49,16 +49,14 @@ class QueryCrmGroupContactRequest extends Model
      */
     public $searchFields;
     protected $_name = [
-        'minResult'          => 'minResult',
-        'nextToken'          => 'nextToken',
+        'minResult' => 'minResult',
+        'nextToken' => 'nextToken',
         'openConversationId' => 'openConversationId',
-        'openTeamId'         => 'openTeamId',
-        'searchFields'       => 'searchFields',
+        'openTeamId' => 'openTeamId',
+        'searchFields' => 'searchFields',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -57,18 +57,16 @@ class SendMessageTipRequest extends Model
      */
     public $senderUserId;
     protected $_name = [
-        'defaultView'        => 'defaultView',
-        'messageId'          => 'messageId',
+        'defaultView' => 'defaultView',
+        'messageId' => 'messageId',
         'openConversationId' => 'openConversationId',
-        'privateFieldMap'    => 'privateFieldMap',
-        'publicField'        => 'publicField',
-        'receiverUserId'     => 'receiverUserId',
-        'senderUserId'       => 'senderUserId',
+        'privateFieldMap' => 'privateFieldMap',
+        'publicField' => 'publicField',
+        'receiverUserId' => 'receiverUserId',
+        'senderUserId' => 'senderUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -40,15 +40,13 @@ class param extends Model
      */
     public $operateTypes;
     protected $_name = [
-        'fileTypes'    => 'fileTypes',
-        'maxResults'   => 'maxResults',
-        'nextToken'    => 'nextToken',
+        'fileTypes' => 'fileTypes',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'operateTypes' => 'operateTypes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -37,14 +37,12 @@ class failedList extends Model
     public $eventTime;
     protected $_name = [
         'callBackData' => 'callBackData',
-        'callBackTag'  => 'callBackTag',
-        'corpId'       => 'corpId',
-        'eventTime'    => 'eventTime',
+        'callBackTag' => 'callBackTag',
+        'corpId' => 'corpId',
+        'eventTime' => 'eventTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

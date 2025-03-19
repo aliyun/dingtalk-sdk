@@ -31,14 +31,12 @@ class objectiveRelatedResults extends Model
      */
     public $words;
     protected $_name = [
-        'objectiveId'   => 'objectiveId',
+        'objectiveId' => 'objectiveId',
         'semanticLevel' => 'semanticLevel',
-        'words'         => 'words',
+        'words' => 'words',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -34,14 +34,12 @@ class groupList extends Model
     public $groupName;
     protected $_name = [
         'detailFlag' => 'detailFlag',
-        'fieldList'  => 'fieldList',
-        'groupId'    => 'groupId',
-        'groupName'  => 'groupName',
+        'fieldList' => 'fieldList',
+        'groupId' => 'groupId',
+        'groupName' => 'groupName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -82,7 +80,7 @@ class groupList extends Model
         if (isset($map['fieldList'])) {
             if (!empty($map['fieldList'])) {
                 $model->fieldList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['fieldList'] as $item) {
                     $model->fieldList[$n++] = null !== $item ? fieldList::fromMap($item) : $item;
                 }

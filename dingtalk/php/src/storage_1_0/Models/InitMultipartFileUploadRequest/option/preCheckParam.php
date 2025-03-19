@@ -36,15 +36,13 @@ class preCheckParam extends Model
      */
     public $size;
     protected $_name = [
-        'md5'      => 'md5',
-        'name'     => 'name',
+        'md5' => 'md5',
+        'name' => 'name',
         'parentId' => 'parentId',
-        'size'     => 'size',
+        'size' => 'size',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

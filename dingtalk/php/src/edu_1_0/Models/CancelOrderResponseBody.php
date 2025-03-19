@@ -26,13 +26,11 @@ class CancelOrderResponseBody extends Model
      */
     public $tradeAction;
     protected $_name = [
-        'needRetry'   => 'needRetry',
+        'needRetry' => 'needRetry',
         'tradeAction' => 'tradeAction',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

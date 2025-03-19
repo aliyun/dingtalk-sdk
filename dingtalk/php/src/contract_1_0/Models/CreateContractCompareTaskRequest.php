@@ -58,19 +58,17 @@ class CreateContractCompareTaskRequest extends Model
      */
     public $standardFileName;
     protected $_name = [
-        'comparativeFile'            => 'comparativeFile',
+        'comparativeFile' => 'comparativeFile',
         'comparativeFileDownloadUrl' => 'comparativeFileDownloadUrl',
-        'comparativeFileName'        => 'comparativeFileName',
-        'fileSource'                 => 'fileSource',
-        'requestId'                  => 'requestId',
-        'standardFile'               => 'standardFile',
-        'standardFileDownloadUrl'    => 'standardFileDownloadUrl',
-        'standardFileName'           => 'standardFileName',
+        'comparativeFileName' => 'comparativeFileName',
+        'fileSource' => 'fileSource',
+        'requestId' => 'requestId',
+        'standardFile' => 'standardFile',
+        'standardFileDownloadUrl' => 'standardFileDownloadUrl',
+        'standardFileName' => 'standardFileName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

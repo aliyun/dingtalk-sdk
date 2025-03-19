@@ -36,15 +36,13 @@ class GetProjectMemebersRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'maxResults'    => 'maxResults',
+        'maxResults' => 'maxResults',
         'projectRoleId' => 'projectRoleId',
-        'skip'          => 'skip',
-        'userIds'       => 'userIds',
+        'skip' => 'skip',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -83,26 +83,24 @@ class vehicleSaleDetailVOList extends Model
      */
     public $vehicleType;
     protected $_name = [
-        'brand'               => 'brand',
-        'certificateNo'       => 'certificateNo',
-        'engineNo'            => 'engineNo',
-        'idCardNo'            => 'idCardNo',
+        'brand' => 'brand',
+        'certificateNo' => 'certificateNo',
+        'engineNo' => 'engineNo',
+        'idCardNo' => 'idCardNo',
         'importCertificateNo' => 'importCertificateNo',
-        'inspectionListNo'    => 'inspectionListNo',
-        'maxPassengers'       => 'maxPassengers',
-        'originPlace'         => 'originPlace',
-        'paymentVoucherNo'    => 'paymentVoucherNo',
-        'taxAuthorityName'    => 'taxAuthorityName',
-        'taxAuthorityNo'      => 'taxAuthorityNo',
-        'taxRate'             => 'taxRate',
-        'tonnage'             => 'tonnage',
-        'vehicleNo'           => 'vehicleNo',
-        'vehicleType'         => 'vehicleType',
+        'inspectionListNo' => 'inspectionListNo',
+        'maxPassengers' => 'maxPassengers',
+        'originPlace' => 'originPlace',
+        'paymentVoucherNo' => 'paymentVoucherNo',
+        'taxAuthorityName' => 'taxAuthorityName',
+        'taxAuthorityNo' => 'taxAuthorityNo',
+        'taxRate' => 'taxRate',
+        'tonnage' => 'tonnage',
+        'vehicleNo' => 'vehicleNo',
+        'vehicleType' => 'vehicleType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

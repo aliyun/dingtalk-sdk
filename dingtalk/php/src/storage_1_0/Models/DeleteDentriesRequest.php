@@ -31,13 +31,11 @@ class DeleteDentriesRequest extends Model
     public $unionId;
     protected $_name = [
         'dentryIds' => 'dentryIds',
-        'option'    => 'option',
-        'unionId'   => 'unionId',
+        'option' => 'option',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

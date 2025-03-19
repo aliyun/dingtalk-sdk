@@ -33,16 +33,14 @@ class GetPropertyInfoResponseBody extends Model
      */
     public $unifiedSocialCredit;
     protected $_name = [
-        'adminName'           => 'adminName',
-        'adminUserId'         => 'adminUserId',
-        'name'                => 'name',
-        'orgId'               => 'orgId',
+        'adminName' => 'adminName',
+        'adminUserId' => 'adminUserId',
+        'name' => 'name',
+        'orgId' => 'orgId',
         'unifiedSocialCredit' => 'unifiedSocialCredit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,14 +29,12 @@ class QueryKitOpenRecordRequest extends Model
      */
     public $isvProductScene;
     protected $_name = [
-        'corpId'          => 'corpId',
-        'isvCode'         => 'isvCode',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
         'isvProductScene' => 'isvProductScene',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

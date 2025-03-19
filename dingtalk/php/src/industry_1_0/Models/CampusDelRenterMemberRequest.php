@@ -23,12 +23,10 @@ class CampusDelRenterMemberRequest extends Model
     public $unionId;
     protected $_name = [
         'renterId' => 'renterId',
-        'unionId'  => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

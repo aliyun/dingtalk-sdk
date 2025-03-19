@@ -36,15 +36,13 @@ class InvalidCourseRequest extends Model
      */
     public $isvCourseId;
     protected $_name = [
-        'classId'     => 'classId',
-        'corpId'      => 'corpId',
-        'isvCode'     => 'isvCode',
+        'classId' => 'classId',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
         'isvCourseId' => 'isvCourseId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

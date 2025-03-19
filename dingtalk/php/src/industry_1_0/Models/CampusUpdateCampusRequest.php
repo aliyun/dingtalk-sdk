@@ -122,27 +122,25 @@ class CampusUpdateCampusRequest extends Model
      */
     public $telephone;
     protected $_name = [
-        'address'              => 'address',
-        'area'                 => 'area',
+        'address' => 'address',
+        'area' => 'area',
         'belongProjectGroupId' => 'belongProjectGroupId',
-        'campusDeptId'         => 'campusDeptId',
-        'campusName'           => 'campusName',
-        'capacity'             => 'capacity',
-        'cityId'               => 'cityId',
-        'country'              => 'country',
-        'countyId'             => 'countyId',
-        'description'          => 'description',
-        'extend'               => 'extend',
-        'orderEndTime'         => 'orderEndTime',
-        'orderInfo'            => 'orderInfo',
-        'orderStartTime'       => 'orderStartTime',
-        'provId'               => 'provId',
-        'telephone'            => 'telephone',
+        'campusDeptId' => 'campusDeptId',
+        'campusName' => 'campusName',
+        'capacity' => 'capacity',
+        'cityId' => 'cityId',
+        'country' => 'country',
+        'countyId' => 'countyId',
+        'description' => 'description',
+        'extend' => 'extend',
+        'orderEndTime' => 'orderEndTime',
+        'orderInfo' => 'orderInfo',
+        'orderStartTime' => 'orderStartTime',
+        'provId' => 'provId',
+        'telephone' => 'telephone',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

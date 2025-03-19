@@ -20,9 +20,7 @@ class GetIndustryTypeResponseBody extends Model
         'industryType' => 'industryType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

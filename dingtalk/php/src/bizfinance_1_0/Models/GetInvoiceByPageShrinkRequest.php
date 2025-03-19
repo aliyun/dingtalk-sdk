@@ -16,9 +16,7 @@ class GetInvoiceByPageShrinkRequest extends Model
         'requestShrink' => 'request',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class hotelLocation extends Model
      */
     public $url;
     protected $_name = [
-        'lat'    => 'lat',
-        'lon'    => 'lon',
+        'lat' => 'lat',
+        'lon' => 'lon',
         'source' => 'source',
-        'url'    => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

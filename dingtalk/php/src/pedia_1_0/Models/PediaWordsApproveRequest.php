@@ -58,15 +58,13 @@ class PediaWordsApproveRequest extends Model
     protected $_name = [
         'approveReason' => 'approveReason',
         'approveStatus' => 'approveStatus',
-        'imHighLight'   => 'imHighLight',
-        'simHighLight'  => 'simHighLight',
-        'userId'        => 'userId',
-        'uuid'          => 'uuid',
+        'imHighLight' => 'imHighLight',
+        'simHighLight' => 'simHighLight',
+        'userId' => 'userId',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

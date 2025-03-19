@@ -36,15 +36,13 @@ class backgroundColors extends Model
      */
     public $hexString;
     protected $_name = [
-        'red'       => 'red',
-        'green'     => 'green',
-        'blue'      => 'blue',
+        'red' => 'red',
+        'green' => 'green',
+        'blue' => 'blue',
         'hexString' => 'hexString',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

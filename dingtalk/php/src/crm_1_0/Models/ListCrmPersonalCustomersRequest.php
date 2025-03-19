@@ -25,14 +25,12 @@ class ListCrmPersonalCustomersRequest extends Model
      */
     public $relationType;
     protected $_name = [
-        'body'                  => 'body',
+        'body' => 'body',
         'currentOperatorUserId' => 'currentOperatorUserId',
-        'relationType'          => 'relationType',
+        'relationType' => 'relationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

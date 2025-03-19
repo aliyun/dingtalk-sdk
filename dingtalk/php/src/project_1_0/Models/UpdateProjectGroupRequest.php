@@ -22,9 +22,7 @@ class UpdateProjectGroupRequest extends Model
         'delProjectGroupIds' => 'delProjectGroupIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

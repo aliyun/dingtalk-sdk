@@ -46,17 +46,15 @@ class publicField extends Model
      */
     public $readProgressDesc;
     protected $_name = [
-        'detailUrl'        => 'detailUrl',
-        'durationDesc'     => 'durationDesc',
-        'extension'        => 'extension',
-        'isExpired'        => 'isExpired',
-        'readActionUrl'    => 'readActionUrl',
+        'detailUrl' => 'detailUrl',
+        'durationDesc' => 'durationDesc',
+        'extension' => 'extension',
+        'isExpired' => 'isExpired',
+        'readActionUrl' => 'readActionUrl',
         'readProgressDesc' => 'readProgressDesc',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

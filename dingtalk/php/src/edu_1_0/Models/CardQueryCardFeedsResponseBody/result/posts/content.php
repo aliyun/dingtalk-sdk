@@ -23,12 +23,10 @@ class content extends Model
     public $text;
     protected $_name = [
         'contentType' => 'contentType',
-        'text'        => 'text',
+        'text' => 'text',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class result extends Model
         'schemas' => 'schemas',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class result extends Model
         if (isset($map['schemas'])) {
             if (!empty($map['schemas'])) {
                 $model->schemas = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['schemas'] as $item) {
                     $model->schemas[$n++] = null !== $item ? schemas::fromMap($item) : $item;
                 }

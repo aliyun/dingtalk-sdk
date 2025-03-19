@@ -43,16 +43,14 @@ class result extends Model
      */
     public $userName;
     protected $_name = [
-        'deptId'        => 'deptId',
-        'deptName'      => 'deptName',
+        'deptId' => 'deptId',
+        'deptName' => 'deptName',
         'interfaceType' => 'interfaceType',
-        'userId'        => 'userId',
-        'userName'      => 'userName',
+        'userId' => 'userId',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

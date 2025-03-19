@@ -80,19 +80,17 @@ class courseList extends Model
      */
     public $title;
     protected $_name = [
-        'courseId'    => 'courseId',
-        'coverUrl'    => 'coverUrl',
-        'feedType'    => 'feedType',
-        'jumpUrl'     => 'jumpUrl',
-        'startTime'   => 'startTime',
-        'teacherId'   => 'teacherId',
+        'courseId' => 'courseId',
+        'coverUrl' => 'coverUrl',
+        'feedType' => 'feedType',
+        'jumpUrl' => 'jumpUrl',
+        'startTime' => 'startTime',
+        'teacherId' => 'teacherId',
         'teacherName' => 'teacherName',
-        'title'       => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

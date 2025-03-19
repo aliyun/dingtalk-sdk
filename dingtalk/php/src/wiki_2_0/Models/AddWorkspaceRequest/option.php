@@ -23,12 +23,10 @@ class option extends Model
     public $teamId;
     protected $_name = [
         'description' => 'description',
-        'teamId'      => 'teamId',
+        'teamId' => 'teamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

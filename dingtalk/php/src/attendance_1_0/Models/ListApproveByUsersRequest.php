@@ -34,15 +34,13 @@ class ListApproveByUsersRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'bizTypes'     => 'bizTypes',
+        'bizTypes' => 'bizTypes',
         'fromDateTime' => 'fromDateTime',
-        'toDateTime'   => 'toDateTime',
-        'userIds'      => 'userIds',
+        'toDateTime' => 'toDateTime',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

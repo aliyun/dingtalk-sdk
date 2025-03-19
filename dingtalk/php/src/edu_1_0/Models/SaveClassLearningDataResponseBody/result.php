@@ -18,13 +18,11 @@ class result extends Model
      */
     public $standardAnswerUploadUrlList;
     protected $_name = [
-        'questionUploadUrlList'       => 'questionUploadUrlList',
+        'questionUploadUrlList' => 'questionUploadUrlList',
         'standardAnswerUploadUrlList' => 'standardAnswerUploadUrlList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

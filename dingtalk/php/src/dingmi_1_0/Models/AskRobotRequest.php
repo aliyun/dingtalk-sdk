@@ -38,15 +38,13 @@ class AskRobotRequest extends Model
      */
     public $sessionUuid;
     protected $_name = [
-        'dingUserId'  => 'dingUserId',
-        'question'    => 'question',
+        'dingUserId' => 'dingUserId',
+        'question' => 'question',
         'robotAppKey' => 'robotAppKey',
         'sessionUuid' => 'sessionUuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

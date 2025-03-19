@@ -66,22 +66,20 @@ class GetMsgConfigRequest extends Model
      */
     public $sysCode;
     protected $_name = [
-        'groupTopic'       => 'groupTopic',
-        'groupType'        => 'groupType',
-        'listDynamicAttr'  => 'listDynamicAttr',
+        'groupTopic' => 'groupTopic',
+        'groupType' => 'groupType',
+        'listDynamicAttr' => 'listDynamicAttr',
         'listEmployeeCode' => 'listEmployeeCode',
-        'listUnitId'       => 'listUnitId',
-        'ownerJobNo'       => 'ownerJobNo',
+        'listUnitId' => 'listUnitId',
+        'ownerJobNo' => 'ownerJobNo',
         'ruleBusinessCode' => 'ruleBusinessCode',
-        'ruleCategory'     => 'ruleCategory',
-        'ruleCode'         => 'ruleCode',
-        'secretKey'        => 'secretKey',
-        'sysCode'          => 'sysCode',
+        'ruleCategory' => 'ruleCategory',
+        'ruleCode' => 'ruleCode',
+        'secretKey' => 'secretKey',
+        'sysCode' => 'sysCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -146,7 +144,7 @@ class GetMsgConfigRequest extends Model
         if (isset($map['listDynamicAttr'])) {
             if (!empty($map['listDynamicAttr'])) {
                 $model->listDynamicAttr = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['listDynamicAttr'] as $item) {
                     $model->listDynamicAttr[$n++] = null !== $item ? listDynamicAttr::fromMap($item) : $item;
                 }

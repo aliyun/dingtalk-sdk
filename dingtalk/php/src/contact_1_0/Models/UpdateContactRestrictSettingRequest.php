@@ -83,24 +83,22 @@ class UpdateContactRestrictSettingRequest extends Model
      */
     public $type;
     protected $_name = [
-        'active'                => 'active',
-        'description'           => 'description',
-        'excludeDeptIds'        => 'excludeDeptIds',
-        'excludeTagIds'         => 'excludeTagIds',
-        'excludeUserIds'        => 'excludeUserIds',
-        'id'                    => 'id',
-        'name'                  => 'name',
-        'restrictInSearch'      => 'restrictInSearch',
+        'active' => 'active',
+        'description' => 'description',
+        'excludeDeptIds' => 'excludeDeptIds',
+        'excludeTagIds' => 'excludeTagIds',
+        'excludeUserIds' => 'excludeUserIds',
+        'id' => 'id',
+        'name' => 'name',
+        'restrictInSearch' => 'restrictInSearch',
         'restrictInUserProfile' => 'restrictInUserProfile',
-        'subjectDeptIds'        => 'subjectDeptIds',
-        'subjectTagIds'         => 'subjectTagIds',
-        'subjectUserIds'        => 'subjectUserIds',
-        'type'                  => 'type',
+        'subjectDeptIds' => 'subjectDeptIds',
+        'subjectTagIds' => 'subjectTagIds',
+        'subjectUserIds' => 'subjectUserIds',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,13 +22,11 @@ class QueryDigitalDistrictOrgInfoRequest extends Model
      */
     public $statDates;
     protected $_name = [
-        'corpIds'   => 'corpIds',
+        'corpIds' => 'corpIds',
         'statDates' => 'statDates',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

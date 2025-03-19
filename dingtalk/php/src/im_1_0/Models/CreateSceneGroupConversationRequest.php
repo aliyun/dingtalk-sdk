@@ -65,19 +65,17 @@ class CreateSceneGroupConversationRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'features'          => 'features',
-        'groupName'         => 'groupName',
-        'groupOwnerId'      => 'groupOwnerId',
-        'icon'              => 'icon',
+        'features' => 'features',
+        'groupName' => 'groupName',
+        'groupOwnerId' => 'groupOwnerId',
+        'icon' => 'icon',
         'managementOptions' => 'managementOptions',
-        'templateId'        => 'templateId',
-        'userIdList'        => 'userIdList',
-        'uuid'              => 'uuid',
+        'templateId' => 'templateId',
+        'userIdList' => 'userIdList',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

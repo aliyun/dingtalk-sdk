@@ -19,13 +19,11 @@ class lateBackSetting extends Model
      */
     public $sections;
     protected $_name = [
-        'enable'   => 'enable',
+        'enable' => 'enable',
         'sections' => 'sections',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class lateBackSetting extends Model
         if (isset($map['sections'])) {
             if (!empty($map['sections'])) {
                 $model->sections = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['sections'] as $item) {
                     $model->sections[$n++] = null !== $item ? sections::fromMap($item) : $item;
                 }

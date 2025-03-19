@@ -38,15 +38,13 @@ class ListMiniAppAvailableVersionRequest extends Model
      */
     public $versionTypeSet;
     protected $_name = [
-        'miniAppId'      => 'miniAppId',
-        'pageNumber'     => 'pageNumber',
-        'pageSize'       => 'pageSize',
+        'miniAppId' => 'miniAppId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'versionTypeSet' => 'versionTypeSet',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

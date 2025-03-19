@@ -48,19 +48,17 @@ class GetPlatformResourceResponseBody extends Model
      */
     public $pluginUsageAmount;
     protected $_name = [
-        'accountTotalAmount'    => 'accountTotalAmount',
-        'accountUsageAmount'    => 'accountUsageAmount',
-        'appTotalAmount'        => 'appTotalAmount',
+        'accountTotalAmount' => 'accountTotalAmount',
+        'accountUsageAmount' => 'accountUsageAmount',
+        'appTotalAmount' => 'appTotalAmount',
         'attachmentTotalAmount' => 'attachmentTotalAmount',
         'attachmentUsageAmount' => 'attachmentUsageAmount',
-        'instanceTotalAmount'   => 'instanceTotalAmount',
-        'instanceUsageAmount'   => 'instanceUsageAmount',
-        'pluginUsageAmount'     => 'pluginUsageAmount',
+        'instanceTotalAmount' => 'instanceTotalAmount',
+        'instanceUsageAmount' => 'instanceUsageAmount',
+        'pluginUsageAmount' => 'pluginUsageAmount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -45,16 +45,14 @@ class UpdateLiveFeedRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'coverUrl'     => 'coverUrl',
+        'coverUrl' => 'coverUrl',
         'introduction' => 'introduction',
-        'startTime'    => 'startTime',
-        'title'        => 'title',
-        'userId'       => 'userId',
+        'startTime' => 'startTime',
+        'title' => 'title',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

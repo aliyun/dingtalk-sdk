@@ -24,14 +24,12 @@ class QueryTodoTasksResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'nextToken'  => 'nextToken',
-        'todoCards'  => 'todoCards',
+        'nextToken' => 'nextToken',
+        'todoCards' => 'todoCards',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -69,7 +67,7 @@ class QueryTodoTasksResponseBody extends Model
         if (isset($map['todoCards'])) {
             if (!empty($map['todoCards'])) {
                 $model->todoCards = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['todoCards'] as $item) {
                     $model->todoCards[$n++] = null !== $item ? todoCards::fromMap($item) : $item;
                 }

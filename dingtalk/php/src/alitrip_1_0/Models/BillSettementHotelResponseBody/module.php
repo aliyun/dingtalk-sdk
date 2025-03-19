@@ -39,17 +39,15 @@ class module extends Model
      */
     public $totalNum;
     protected $_name = [
-        'category'    => 'category',
-        'corpId'      => 'corpId',
-        'dataList'    => 'dataList',
-        'periodEnd'   => 'periodEnd',
+        'category' => 'category',
+        'corpId' => 'corpId',
+        'dataList' => 'dataList',
+        'periodEnd' => 'periodEnd',
         'periodStart' => 'periodStart',
-        'totalNum'    => 'totalNum',
+        'totalNum' => 'totalNum',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -99,7 +97,7 @@ class module extends Model
         if (isset($map['dataList'])) {
             if (!empty($map['dataList'])) {
                 $model->dataList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['dataList'] as $item) {
                     $model->dataList[$n++] = null !== $item ? dataList::fromMap($item) : $item;
                 }

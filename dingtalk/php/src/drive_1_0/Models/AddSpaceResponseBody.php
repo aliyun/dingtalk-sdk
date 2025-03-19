@@ -58,19 +58,17 @@ class AddSpaceResponseBody extends Model
      */
     public $usedQuota;
     protected $_name = [
-        'createTime'     => 'createTime',
-        'modifyTime'     => 'modifyTime',
+        'createTime' => 'createTime',
+        'modifyTime' => 'modifyTime',
         'permissionMode' => 'permissionMode',
-        'quota'          => 'quota',
-        'spaceId'        => 'spaceId',
-        'spaceName'      => 'spaceName',
-        'spaceType'      => 'spaceType',
-        'usedQuota'      => 'usedQuota',
+        'quota' => 'quota',
+        'spaceId' => 'spaceId',
+        'spaceName' => 'spaceName',
+        'spaceType' => 'spaceType',
+        'usedQuota' => 'usedQuota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,9 +20,7 @@ class GetAttachmentTemporaryUrlRequest extends Model
         'attachmentId' => 'attachmentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

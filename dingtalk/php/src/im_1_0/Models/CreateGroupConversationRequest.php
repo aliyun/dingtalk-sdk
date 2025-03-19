@@ -68,19 +68,17 @@ class CreateGroupConversationRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'appUserIds'      => 'appUserIds',
-        'groupAvatar'     => 'groupAvatar',
-        'groupName'       => 'groupName',
-        'groupOwnerId'    => 'groupOwnerId',
-        'groupOwnerType'  => 'groupOwnerType',
+        'appUserIds' => 'appUserIds',
+        'groupAvatar' => 'groupAvatar',
+        'groupName' => 'groupName',
+        'groupOwnerId' => 'groupOwnerId',
+        'groupOwnerType' => 'groupOwnerType',
         'groupTemplateId' => 'groupTemplateId',
-        'operatorId'      => 'operatorId',
-        'userIds'         => 'userIds',
+        'operatorId' => 'operatorId',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

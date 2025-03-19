@@ -18,9 +18,7 @@ class UpdateDeptSettngTailFirstRequest extends Model
         'enable' => 'enable',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

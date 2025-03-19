@@ -20,9 +20,7 @@ class GetProcessInstanceRequest extends Model
         'processInstanceId' => 'processInstanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

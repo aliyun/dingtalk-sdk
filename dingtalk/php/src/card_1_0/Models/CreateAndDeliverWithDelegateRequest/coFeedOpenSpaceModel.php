@@ -23,12 +23,10 @@ class coFeedOpenSpaceModel extends Model
     public $title;
     protected $_name = [
         'coolAppCode' => 'coolAppCode',
-        'title'       => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

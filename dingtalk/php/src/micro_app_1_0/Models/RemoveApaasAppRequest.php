@@ -26,9 +26,7 @@ class RemoveApaasAppRequest extends Model
         'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

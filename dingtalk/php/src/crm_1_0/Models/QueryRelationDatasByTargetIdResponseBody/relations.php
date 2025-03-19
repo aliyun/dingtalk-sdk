@@ -41,15 +41,13 @@ class relations extends Model
      */
     public $relationType;
     protected $_name = [
-        'bizDataList'         => 'bizDataList',
+        'bizDataList' => 'bizDataList',
         'openConversationIds' => 'openConversationIds',
-        'relationId'          => 'relationId',
-        'relationType'        => 'relationType',
+        'relationId' => 'relationId',
+        'relationType' => 'relationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -87,7 +85,7 @@ class relations extends Model
         if (isset($map['bizDataList'])) {
             if (!empty($map['bizDataList'])) {
                 $model->bizDataList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['bizDataList'] as $item) {
                     $model->bizDataList[$n++] = null !== $item ? bizDataList::fromMap($item) : $item;
                 }

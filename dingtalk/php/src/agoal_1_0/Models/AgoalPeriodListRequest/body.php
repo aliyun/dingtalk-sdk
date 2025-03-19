@@ -16,9 +16,7 @@ class body extends Model
         'periodTypes' => 'periodTypes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

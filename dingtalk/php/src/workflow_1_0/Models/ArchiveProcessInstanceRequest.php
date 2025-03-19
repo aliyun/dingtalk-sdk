@@ -26,13 +26,11 @@ class ArchiveProcessInstanceRequest extends Model
      */
     public $processInstanceId;
     protected $_name = [
-        'opUserId'          => 'opUserId',
+        'opUserId' => 'opUserId',
         'processInstanceId' => 'processInstanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

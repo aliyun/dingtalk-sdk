@@ -38,15 +38,13 @@ class CreateVideoConferenceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'confTitle'     => 'confTitle',
-        'inviteCaller'  => 'inviteCaller',
+        'confTitle' => 'confTitle',
+        'inviteCaller' => 'inviteCaller',
         'inviteUserIds' => 'inviteUserIds',
-        'userId'        => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

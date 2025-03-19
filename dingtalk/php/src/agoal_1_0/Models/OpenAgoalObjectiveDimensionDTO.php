@@ -11,7 +11,7 @@ class OpenAgoalObjectiveDimensionDTO extends Model
     /**
      * @description This parameter is required.
      *
-     * @var \AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\OpenAgoalObjectiveDimensionDTO[]
+     * @var OpenAgoalObjectiveDimensionDTO[]
      */
     public $children;
 
@@ -47,16 +47,14 @@ class OpenAgoalObjectiveDimensionDTO extends Model
      */
     public $title;
     protected $_name = [
-        'children'      => 'children',
-        'dimensionId'   => 'dimensionId',
-        'fieldConfig'   => 'fieldConfig',
+        'children' => 'children',
+        'dimensionId' => 'dimensionId',
+        'fieldConfig' => 'fieldConfig',
         'fieldValueMap' => 'fieldValueMap',
-        'title'         => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -103,7 +101,7 @@ class OpenAgoalObjectiveDimensionDTO extends Model
         if (isset($map['children'])) {
             if (!empty($map['children'])) {
                 $model->children = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['children'] as $item) {
                     $model->children[$n++] = null !== $item ? self::fromMap($item) : $item;
                 }
@@ -115,7 +113,7 @@ class OpenAgoalObjectiveDimensionDTO extends Model
         if (isset($map['fieldConfig'])) {
             if (!empty($map['fieldConfig'])) {
                 $model->fieldConfig = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['fieldConfig'] as $item) {
                     $model->fieldConfig[$n++] = null !== $item ? OpenAgoalFieldMetaDTO::fromMap($item) : $item;
                 }

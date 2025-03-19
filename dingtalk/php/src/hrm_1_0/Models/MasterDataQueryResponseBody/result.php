@@ -48,16 +48,14 @@ class result extends Model
      */
     public $viewEntityFieldVOList;
     protected $_name = [
-        'outerId'               => 'outerId',
-        'relationId'            => 'relationId',
-        'scopeCode'             => 'scopeCode',
-        'viewEntityCode'        => 'viewEntityCode',
+        'outerId' => 'outerId',
+        'relationId' => 'relationId',
+        'scopeCode' => 'scopeCode',
+        'viewEntityCode' => 'viewEntityCode',
         'viewEntityFieldVOList' => 'viewEntityFieldVOList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -110,7 +108,7 @@ class result extends Model
         if (isset($map['viewEntityFieldVOList'])) {
             if (!empty($map['viewEntityFieldVOList'])) {
                 $model->viewEntityFieldVOList = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['viewEntityFieldVOList'] as $item) {
                     $model->viewEntityFieldVOList[$n++] = null !== $item ? viewEntityFieldVOList::fromMap($item) : $item;
                 }

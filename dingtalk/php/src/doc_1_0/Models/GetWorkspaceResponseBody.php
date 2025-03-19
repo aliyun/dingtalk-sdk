@@ -34,15 +34,13 @@ class GetWorkspaceResponseBody extends Model
      */
     public $url;
     protected $_name = [
-        'isDeleted'      => 'isDeleted',
-        'owner'          => 'owner',
+        'isDeleted' => 'isDeleted',
+        'owner' => 'owner',
         'rootDentryUuid' => 'rootDentryUuid',
-        'url'            => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

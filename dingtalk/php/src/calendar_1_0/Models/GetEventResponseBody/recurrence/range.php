@@ -25,14 +25,12 @@ class range extends Model
      */
     public $type;
     protected $_name = [
-        'endDate'             => 'endDate',
+        'endDate' => 'endDate',
         'numberOfOccurrences' => 'numberOfOccurrences',
-        'type'                => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

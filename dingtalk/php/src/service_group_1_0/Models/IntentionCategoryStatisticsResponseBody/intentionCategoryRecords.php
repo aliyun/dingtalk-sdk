@@ -62,17 +62,15 @@ class intentionCategoryRecords extends Model
      */
     public $suggestCount;
     protected $_name = [
-        'askCount'          => 'askCount',
-        'categoryName'      => 'categoryName',
+        'askCount' => 'askCount',
+        'categoryName' => 'categoryName',
         'dissatisfiedCount' => 'dissatisfiedCount',
-        'errorCount'        => 'errorCount',
-        'praiseCount'       => 'praiseCount',
-        'suggestCount'      => 'suggestCount',
+        'errorCount' => 'errorCount',
+        'praiseCount' => 'praiseCount',
+        'suggestCount' => 'suggestCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

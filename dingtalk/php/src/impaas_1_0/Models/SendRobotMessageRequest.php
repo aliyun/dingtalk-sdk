@@ -97,26 +97,24 @@ class SendRobotMessageRequest extends Model
      */
     public $targetOpenConversationId;
     protected $_name = [
-        'atAll'                    => 'atAll',
-        'atAppUids'                => 'atAppUids',
-        'atMobiles'                => 'atMobiles',
-        'atUnionIds'               => 'atUnionIds',
-        'atUsers'                  => 'atUsers',
-        'channel'                  => 'channel',
-        'msgMediaIdParamMap'       => 'msgMediaIdParamMap',
-        'msgParamMap'              => 'msgParamMap',
-        'msgTemplateId'            => 'msgTemplateId',
-        'receiverAppUids'          => 'receiverAppUids',
-        'receiverMobiles'          => 'receiverMobiles',
-        'receiverUnionIds'         => 'receiverUnionIds',
-        'receiverUserIds'          => 'receiverUserIds',
-        'robotCode'                => 'robotCode',
+        'atAll' => 'atAll',
+        'atAppUids' => 'atAppUids',
+        'atMobiles' => 'atMobiles',
+        'atUnionIds' => 'atUnionIds',
+        'atUsers' => 'atUsers',
+        'channel' => 'channel',
+        'msgMediaIdParamMap' => 'msgMediaIdParamMap',
+        'msgParamMap' => 'msgParamMap',
+        'msgTemplateId' => 'msgTemplateId',
+        'receiverAppUids' => 'receiverAppUids',
+        'receiverMobiles' => 'receiverMobiles',
+        'receiverUnionIds' => 'receiverUnionIds',
+        'receiverUserIds' => 'receiverUserIds',
+        'robotCode' => 'robotCode',
         'targetOpenConversationId' => 'targetOpenConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

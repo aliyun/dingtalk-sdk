@@ -40,15 +40,13 @@ class DigitalStoreContactInfoResponseBody extends Model
      */
     public $rootDeptId;
     protected $_name = [
-        'code'       => 'code',
+        'code' => 'code',
         'dingDeptId' => 'dingDeptId',
-        'name'       => 'name',
+        'name' => 'name',
         'rootDeptId' => 'rootDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

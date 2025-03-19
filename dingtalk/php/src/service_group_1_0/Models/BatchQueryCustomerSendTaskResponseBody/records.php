@@ -85,22 +85,20 @@ class records extends Model
      */
     public $taskName;
     protected $_name = [
-        'createName'        => 'createName',
-        'createTimeStr'     => 'createTimeStr',
-        'createUnionId'     => 'createUnionId',
-        'openBatchTaskId'   => 'openBatchTaskId',
-        'readCustomerInc'   => 'readCustomerInc',
-        'readUserInc'       => 'readUserInc',
-        'sendCustomerInc'   => 'sendCustomerInc',
+        'createName' => 'createName',
+        'createTimeStr' => 'createTimeStr',
+        'createUnionId' => 'createUnionId',
+        'openBatchTaskId' => 'openBatchTaskId',
+        'readCustomerInc' => 'readCustomerInc',
+        'readUserInc' => 'readUserInc',
+        'sendCustomerInc' => 'sendCustomerInc',
         'sendMessageStatus' => 'sendMessageStatus',
-        'sendTaskTimeStr'   => 'sendTaskTimeStr',
-        'sendUserInc'       => 'sendUserInc',
-        'taskName'          => 'taskName',
+        'sendTaskTimeStr' => 'sendTaskTimeStr',
+        'sendUserInc' => 'sendUserInc',
+        'taskName' => 'taskName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

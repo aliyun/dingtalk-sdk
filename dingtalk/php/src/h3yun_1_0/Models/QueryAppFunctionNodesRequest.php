@@ -20,9 +20,7 @@ class QueryAppFunctionNodesRequest extends Model
         'appCode' => 'appCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

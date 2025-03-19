@@ -43,16 +43,14 @@ class GetUploadUrlRequest extends Model
      */
     public $fileSize;
     protected $_name = [
-        'contentMd5'  => 'contentMd5',
+        'contentMd5' => 'contentMd5',
         'contentType' => 'contentType',
         'convert2Pdf' => 'convert2Pdf',
-        'fileName'    => 'fileName',
-        'fileSize'    => 'fileSize',
+        'fileName' => 'fileName',
+        'fileSize' => 'fileSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

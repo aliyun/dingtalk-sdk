@@ -19,9 +19,7 @@ class DescribeRelationMetaResponseBody extends Model
         'relationMetaDTOList' => 'relationMetaDTOList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class DescribeRelationMetaResponseBody extends Model
         if (isset($map['relationMetaDTOList'])) {
             if (!empty($map['relationMetaDTOList'])) {
                 $model->relationMetaDTOList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['relationMetaDTOList'] as $item) {
                     $model->relationMetaDTOList[$n++] = null !== $item ? relationMetaDTOList::fromMap($item) : $item;
                 }

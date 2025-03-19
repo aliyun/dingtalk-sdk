@@ -33,14 +33,12 @@ class ChatMemoDeleteKnowledgeGraphNodeRequest extends Model
      */
     public $mediaId;
     protected $_name = [
-        'bizId'     => 'bizId',
+        'bizId' => 'bizId',
         'datasetId' => 'datasetId',
-        'mediaId'   => 'mediaId',
+        'mediaId' => 'mediaId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

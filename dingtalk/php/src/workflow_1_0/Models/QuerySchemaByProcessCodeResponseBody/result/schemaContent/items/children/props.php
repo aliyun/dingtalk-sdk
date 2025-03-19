@@ -36,15 +36,13 @@ class props extends Model
     public $required;
     protected $_name = [
         'bizAlias' => 'bizAlias',
-        'id'       => 'id',
-        'label'    => 'label',
-        'options'  => 'options',
+        'id' => 'id',
+        'label' => 'label',
+        'options' => 'options',
         'required' => 'required',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

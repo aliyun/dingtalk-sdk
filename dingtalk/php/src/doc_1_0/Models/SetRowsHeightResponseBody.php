@@ -18,13 +18,11 @@ class SetRowsHeightResponseBody extends Model
      */
     public $sheetName;
     protected $_name = [
-        'sheetId'   => 'sheetId',
+        'sheetId' => 'sheetId',
         'sheetName' => 'sheetName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

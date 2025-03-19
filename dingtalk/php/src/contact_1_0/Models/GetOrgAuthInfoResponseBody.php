@@ -70,19 +70,17 @@ class GetOrgAuthInfoResponseBody extends Model
      */
     public $unifiedSocialCredit;
     protected $_name = [
-        'authLevel'           => 'authLevel',
-        'legalPerson'         => 'legalPerson',
-        'licenseOrgName'      => 'licenseOrgName',
-        'licenseUrl'          => 'licenseUrl',
-        'orgName'             => 'orgName',
-        'organizationCode'    => 'organizationCode',
-        'registrationNum'     => 'registrationNum',
+        'authLevel' => 'authLevel',
+        'legalPerson' => 'legalPerson',
+        'licenseOrgName' => 'licenseOrgName',
+        'licenseUrl' => 'licenseUrl',
+        'orgName' => 'orgName',
+        'organizationCode' => 'organizationCode',
+        'registrationNum' => 'registrationNum',
         'unifiedSocialCredit' => 'unifiedSocialCredit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

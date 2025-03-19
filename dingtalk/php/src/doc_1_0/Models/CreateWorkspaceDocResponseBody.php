@@ -41,16 +41,14 @@ class CreateWorkspaceDocResponseBody extends Model
      */
     public $workspaceId;
     protected $_name = [
-        'dentryUuid'  => 'dentryUuid',
-        'docKey'      => 'docKey',
-        'nodeId'      => 'nodeId',
-        'url'         => 'url',
+        'dentryUuid' => 'dentryUuid',
+        'docKey' => 'docKey',
+        'nodeId' => 'nodeId',
+        'url' => 'url',
         'workspaceId' => 'workspaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

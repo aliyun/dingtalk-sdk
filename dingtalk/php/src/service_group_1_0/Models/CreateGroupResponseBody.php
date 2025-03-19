@@ -26,13 +26,11 @@ class CreateGroupResponseBody extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'groupUrl'           => 'groupUrl',
+        'groupUrl' => 'groupUrl',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

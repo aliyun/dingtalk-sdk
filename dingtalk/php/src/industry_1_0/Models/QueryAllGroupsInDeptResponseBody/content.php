@@ -30,13 +30,11 @@ class content extends Model
     public $name;
     protected $_name = [
         'deptId' => 'deptId',
-        'id'     => 'id',
-        'name'   => 'name',
+        'id' => 'id',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

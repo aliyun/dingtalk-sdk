@@ -34,15 +34,13 @@ class result extends Model
      */
     public $updated;
     protected $_name = [
-        'executor'   => 'executor',
+        'executor' => 'executor',
         'executorId' => 'executorId',
-        'involvers'  => 'involvers',
-        'updated'    => 'updated',
+        'involvers' => 'involvers',
+        'updated' => 'updated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -86,7 +84,7 @@ class result extends Model
         if (isset($map['involvers'])) {
             if (!empty($map['involvers'])) {
                 $model->involvers = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['involvers'] as $item) {
                     $model->involvers[$n++] = null !== $item ? involvers::fromMap($item) : $item;
                 }

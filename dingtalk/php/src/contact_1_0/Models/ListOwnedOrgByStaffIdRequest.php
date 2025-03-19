@@ -20,9 +20,7 @@ class ListOwnedOrgByStaffIdRequest extends Model
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

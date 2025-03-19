@@ -35,14 +35,12 @@ class ExecuteBatchTaskResponseBody extends Model
      */
     public $total;
     protected $_name = [
-        'failNumber'    => 'failNumber',
+        'failNumber' => 'failNumber',
         'successNumber' => 'successNumber',
-        'total'         => 'total',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

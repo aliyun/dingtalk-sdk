@@ -36,13 +36,11 @@ class CreateProcessesInstanceRequest extends Model
     public $schemaCode;
     protected $_name = [
         'bizObjectId' => 'bizObjectId',
-        'opUserId'    => 'opUserId',
-        'schemaCode'  => 'schemaCode',
+        'opUserId' => 'opUserId',
+        'schemaCode' => 'schemaCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

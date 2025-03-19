@@ -27,12 +27,10 @@ class LogoutRequest extends Model
     public $userId;
     protected $_name = [
         'deviceType' => 'deviceType',
-        'userId'     => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class wordEntities extends Model
         'word' => 'word',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

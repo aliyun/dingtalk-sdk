@@ -67,18 +67,16 @@ class GetAllAuthCubesRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
-        'corpId'      => 'corpId',
-        'keywords'    => 'keywords',
-        'pageNumber'  => 'pageNumber',
-        'pageSize'    => 'pageSize',
+        'appType' => 'appType',
+        'corpId' => 'corpId',
+        'keywords' => 'keywords',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'systemToken' => 'systemToken',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

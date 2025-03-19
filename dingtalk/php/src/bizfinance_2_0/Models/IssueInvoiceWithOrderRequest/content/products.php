@@ -44,17 +44,15 @@ class products extends Model
     public $unit;
     protected $_name = [
         'amountIncludeTax' => 'amountIncludeTax',
-        'productName'      => 'productName',
-        'quantity'         => 'quantity',
-        'revenueCode'      => 'revenueCode',
-        'specs'            => 'specs',
-        'taxSign'          => 'taxSign',
-        'unit'             => 'unit',
+        'productName' => 'productName',
+        'quantity' => 'quantity',
+        'revenueCode' => 'revenueCode',
+        'specs' => 'specs',
+        'taxSign' => 'taxSign',
+        'unit' => 'unit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,13 +36,11 @@ class PageQueryDevicesRequest extends Model
     public $type;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'type'       => 'type',
+        'nextToken' => 'nextToken',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

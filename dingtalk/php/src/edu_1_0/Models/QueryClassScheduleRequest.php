@@ -53,16 +53,14 @@ class QueryClassScheduleRequest extends Model
     public $subscriberType;
     protected $_name = [
         'sectionIndexList' => 'sectionIndexList',
-        'subscriberIds'    => 'subscriberIds',
-        'endTime'          => 'endTime',
-        'opUserId'         => 'opUserId',
-        'startTime'        => 'startTime',
-        'subscriberType'   => 'subscriberType',
+        'subscriberIds' => 'subscriberIds',
+        'endTime' => 'endTime',
+        'opUserId' => 'opUserId',
+        'startTime' => 'startTime',
+        'subscriberType' => 'subscriberType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

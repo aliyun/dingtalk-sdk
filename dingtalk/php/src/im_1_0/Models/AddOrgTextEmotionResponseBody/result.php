@@ -18,9 +18,7 @@ class result extends Model
         'emotionId' => 'emotionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

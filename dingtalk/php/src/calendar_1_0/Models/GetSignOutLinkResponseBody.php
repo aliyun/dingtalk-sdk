@@ -16,9 +16,7 @@ class GetSignOutLinkResponseBody extends Model
         'signOutLink' => 'signOutLink',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

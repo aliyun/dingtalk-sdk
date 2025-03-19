@@ -42,15 +42,13 @@ class UpdateUnfurlingRegisterStatusRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appId'  => 'appId',
-        'id'     => 'id',
+        'appId' => 'appId',
+        'id' => 'id',
         'status' => 'status',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

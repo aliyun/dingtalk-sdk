@@ -50,15 +50,13 @@ class UpdateUserOwnnessRequest extends Model
     public $startTime;
     protected $_name = [
         'deletedFlag' => 'deletedFlag',
-        'endTime'     => 'endTime',
-        'id'          => 'id',
+        'endTime' => 'endTime',
+        'id' => 'id',
         'ownenssType' => 'ownenssType',
-        'startTime'   => 'startTime',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

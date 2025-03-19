@@ -78,21 +78,19 @@ class content extends Model
      */
     public $stopDate;
     protected $_name = [
-        'deptCode'             => 'deptCode',
-        'deptName'             => 'deptName',
-        'deptNum'              => 'deptNum',
-        'level'                => 'level',
+        'deptCode' => 'deptCode',
+        'deptName' => 'deptName',
+        'deptNum' => 'deptNum',
+        'level' => 'level',
         'organizationCodePath' => 'organizationCodePath',
-        'organizationPath'     => 'organizationPath',
-        'parentDeptCode'       => 'parentDeptCode',
-        'shortName'            => 'shortName',
-        'startDate'            => 'startDate',
-        'stopDate'             => 'stopDate',
+        'organizationPath' => 'organizationPath',
+        'parentDeptCode' => 'parentDeptCode',
+        'shortName' => 'shortName',
+        'startDate' => 'startDate',
+        'stopDate' => 'stopDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

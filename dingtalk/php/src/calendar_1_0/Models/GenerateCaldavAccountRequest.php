@@ -18,9 +18,7 @@ class GenerateCaldavAccountRequest extends Model
         'device' => 'device',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

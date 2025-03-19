@@ -31,14 +31,12 @@ class CrossOrgMigrateRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'option'     => 'option',
-        'param'      => 'param',
+        'option' => 'option',
+        'param' => 'param',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

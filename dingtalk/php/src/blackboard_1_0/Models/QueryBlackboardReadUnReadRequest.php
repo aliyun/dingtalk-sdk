@@ -42,15 +42,13 @@ class QueryBlackboardReadUnReadRequest extends Model
      */
     public $operationUserId;
     protected $_name = [
-        'blackboardId'    => 'blackboardId',
-        'maxResults'      => 'maxResults',
-        'nextToken'       => 'nextToken',
+        'blackboardId' => 'blackboardId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'operationUserId' => 'operationUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,13 +20,11 @@ class result extends Model
      */
     public $outOrgUserList;
     protected $_name = [
-        'orgUsesList'    => 'orgUsesList',
+        'orgUsesList' => 'orgUsesList',
         'outOrgUserList' => 'outOrgUserList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class result extends Model
         if (isset($map['orgUsesList'])) {
             if (!empty($map['orgUsesList'])) {
                 $model->orgUsesList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['orgUsesList'] as $item) {
                     $model->orgUsesList[$n++] = null !== $item ? orgUsesList::fromMap($item) : $item;
                 }
@@ -73,7 +71,7 @@ class result extends Model
         if (isset($map['outOrgUserList'])) {
             if (!empty($map['outOrgUserList'])) {
                 $model->outOrgUserList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['outOrgUserList'] as $item) {
                     $model->outOrgUserList[$n++] = null !== $item ? outOrgUserList::fromMap($item) : $item;
                 }

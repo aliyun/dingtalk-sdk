@@ -60,19 +60,17 @@ class result extends Model
      */
     public $shiftSetting;
     protected $_name = [
-        'corpId'         => 'corpId',
-        'id'             => 'id',
-        'name'           => 'name',
-        'owner'          => 'owner',
-        'sections'       => 'sections',
-        'shiftGroupId'   => 'shiftGroupId',
+        'corpId' => 'corpId',
+        'id' => 'id',
+        'name' => 'name',
+        'owner' => 'owner',
+        'sections' => 'sections',
+        'shiftGroupId' => 'shiftGroupId',
         'shiftGroupName' => 'shiftGroupName',
-        'shiftSetting'   => 'shiftSetting',
+        'shiftSetting' => 'shiftSetting',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -134,7 +132,7 @@ class result extends Model
         if (isset($map['sections'])) {
             if (!empty($map['sections'])) {
                 $model->sections = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['sections'] as $item) {
                     $model->sections[$n++] = null !== $item ? sections::fromMap($item) : $item;
                 }

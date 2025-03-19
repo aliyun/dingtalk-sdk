@@ -23,14 +23,12 @@ class QueryOrgTodoTasksRequest extends Model
      */
     public $roleTypes;
     protected $_name = [
-        'isDone'    => 'isDone',
+        'isDone' => 'isDone',
         'nextToken' => 'nextToken',
         'roleTypes' => 'roleTypes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

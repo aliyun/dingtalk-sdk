@@ -124,27 +124,25 @@ class templateList extends Model
      */
     public $useCasesMediaList;
     protected $_name = [
-        'adaptEnv'               => 'adaptEnv',
-        'appDesc'                => 'appDesc',
-        'appIcon'                => 'appIcon',
-        'caseVideoList'          => 'caseVideoList',
-        'categoryCode'           => 'categoryCode',
-        'coverImgList'           => 'coverImgList',
-        'expUrl'                 => 'expUrl',
-        'industryLabelList'      => 'industryLabelList',
+        'adaptEnv' => 'adaptEnv',
+        'appDesc' => 'appDesc',
+        'appIcon' => 'appIcon',
+        'caseVideoList' => 'caseVideoList',
+        'categoryCode' => 'categoryCode',
+        'coverImgList' => 'coverImgList',
+        'expUrl' => 'expUrl',
+        'industryLabelList' => 'industryLabelList',
         'mobilePreviewMediaList' => 'mobilePreviewMediaList',
-        'name'                   => 'name',
-        'previewMediaList'       => 'previewMediaList',
-        'providerName'           => 'providerName',
-        'roleLabelList'          => 'roleLabelList',
-        'simpleDesc'             => 'simpleDesc',
-        'templateKey'            => 'templateKey',
-        'useCasesMediaList'      => 'useCasesMediaList',
+        'name' => 'name',
+        'previewMediaList' => 'previewMediaList',
+        'providerName' => 'providerName',
+        'roleLabelList' => 'roleLabelList',
+        'simpleDesc' => 'simpleDesc',
+        'templateKey' => 'templateKey',
+        'useCasesMediaList' => 'useCasesMediaList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

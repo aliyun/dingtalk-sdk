@@ -33,16 +33,14 @@ class QueryOrgConfigResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'appDisplayStyle'  => 'appDisplayStyle',
-        'createdTime'      => 'createdTime',
+        'appDisplayStyle' => 'appDisplayStyle',
+        'createdTime' => 'createdTime',
         'homepageCatalogs' => 'homepageCatalogs',
-        'modifiedTime'     => 'modifiedTime',
-        'status'           => 'status',
+        'modifiedTime' => 'modifiedTime',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

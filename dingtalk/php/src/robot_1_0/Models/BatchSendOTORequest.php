@@ -42,15 +42,13 @@ class BatchSendOTORequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'msgKey'    => 'msgKey',
-        'msgParam'  => 'msgParam',
+        'msgKey' => 'msgKey',
+        'msgParam' => 'msgParam',
         'robotCode' => 'robotCode',
-        'userIds'   => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

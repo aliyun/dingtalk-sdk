@@ -28,15 +28,13 @@ class NotifyOnCrmDataChangeRequest extends Model
      */
     public $type;
     protected $_name = [
-        'dataId'    => 'dataId',
+        'dataId' => 'dataId',
         'extension' => 'extension',
-        'operate'   => 'operate',
-        'type'      => 'type',
+        'operate' => 'operate',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

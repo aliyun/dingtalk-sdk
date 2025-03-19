@@ -24,13 +24,11 @@ class DeleteOrgTextEmotionRequest extends Model
      */
     public $emotionIds;
     protected $_name = [
-        'deptId'     => 'deptId',
+        'deptId' => 'deptId',
         'emotionIds' => 'emotionIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

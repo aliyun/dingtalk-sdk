@@ -28,15 +28,13 @@ class QueryCollectionOrderResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'amount'     => 'amount',
+        'amount' => 'amount',
         'instanceId' => 'instanceId',
-        'remark'     => 'remark',
-        'status'     => 'status',
+        'remark' => 'remark',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

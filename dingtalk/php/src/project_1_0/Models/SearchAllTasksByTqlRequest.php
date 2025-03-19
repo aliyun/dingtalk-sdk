@@ -30,13 +30,11 @@ class SearchAllTasksByTqlRequest extends Model
     public $tql;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'tql'        => 'tql',
+        'nextToken' => 'nextToken',
+        'tql' => 'tql',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

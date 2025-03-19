@@ -78,20 +78,18 @@ class SyncTaskTemplateRequest extends Model
      */
     public $solutionType;
     protected $_name = [
-        'delete'       => 'delete',
-        'des'          => 'des',
-        'ext'          => 'ext',
-        'name'         => 'name',
-        'optUserId'    => 'optUserId',
-        'outerId'      => 'outerId',
-        'taskScopeVO'  => 'taskScopeVO',
-        'taskType'     => 'taskType',
+        'delete' => 'delete',
+        'des' => 'des',
+        'ext' => 'ext',
+        'name' => 'name',
+        'optUserId' => 'optUserId',
+        'outerId' => 'outerId',
+        'taskScopeVO' => 'taskScopeVO',
+        'taskType' => 'taskType',
         'solutionType' => 'solutionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -26,13 +26,11 @@ class orgList extends Model
      */
     public $corpName;
     protected $_name = [
-        'corpId'   => 'corpId',
+        'corpId' => 'corpId',
         'corpName' => 'corpName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

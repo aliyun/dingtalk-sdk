@@ -30,13 +30,11 @@ class GetBiddingInfoRequest extends Model
     public $searchKey;
     protected $_name = [
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'searchKey'  => 'searchKey',
+        'pageSize' => 'pageSize',
+        'searchKey' => 'searchKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

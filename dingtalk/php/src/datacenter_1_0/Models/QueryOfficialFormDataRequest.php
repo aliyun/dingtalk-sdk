@@ -18,13 +18,11 @@ class QueryOfficialFormDataRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'param'  => 'param',
+        'param' => 'param',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

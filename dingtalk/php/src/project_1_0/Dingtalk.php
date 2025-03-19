@@ -188,8 +188,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -223,18 +223,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddProjectMember',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/members',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddProjectMember',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddProjectMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -280,15 +280,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ArchiveProject',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/archive',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ArchiveProject',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/archive',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ArchiveProjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -333,15 +333,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ArchiveTask',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/archive',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ArchiveTask',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/archive',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ArchiveTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -416,18 +416,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateOrganizationTask',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/tasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateOrganizationTask',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/tasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateOrganizationTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -503,19 +503,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreatePlanTime',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/planTimes',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreatePlanTime',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/planTimes',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreatePlanTimeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -563,18 +563,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateProject',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateProject',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateProjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -625,18 +625,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateProjectByTemplate',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/templates/projects',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateProjectByTemplate',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/templates/projects',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateProjectByTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -694,18 +694,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateProjectCustomfieldStatus',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/customfields',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateProjectCustomfieldStatus',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/customfields',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateProjectCustomfieldStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -787,18 +787,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTask',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTask',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -847,18 +847,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTaskObjectLink',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/objectLinks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTaskObjectLink',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/objectLinks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTaskObjectLinkResponse::fromMap($this->execute($params, $req, $runtime));
@@ -938,19 +938,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateWorkTime',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/workTimes',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateWorkTime',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/workTimes',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateWorkTimeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -998,18 +998,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateWorkTimeApprove',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/workTimes/approvals',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateWorkTimeApprove',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/workTimes/approvals',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateWorkTimeApproveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1058,18 +1058,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteProjectMember',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/members/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteProjectMember',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/members/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteProjectMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1115,15 +1115,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DeleteTask',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteTask',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1179,18 +1179,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDeptsByOrgId',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/orgs/depts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDeptsByOrgId',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/orgs/depts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDeptsByOrgIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1251,18 +1251,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetEmpsByOrgId',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/orgs/employees',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetEmpsByOrgId',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/orgs/employees',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetEmpsByOrgIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1309,18 +1309,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetOrganizatioTaskByIds',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/tasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOrganizatioTaskByIds',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/tasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOrganizatioTaskByIdsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1364,15 +1364,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetOrganizationPriorityList',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/priorities',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOrganizationPriorityList',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/priorities',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOrganizationPriorityListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1416,15 +1416,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetOrganizationTask',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOrganizationTask',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOrganizationTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1475,18 +1475,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProjectGroup',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/groups',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProjectGroup',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/groups',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProjectGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1544,18 +1544,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProjectMemebers',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/members',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProjectMemebers',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/members',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProjectMemebersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1601,15 +1601,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetProjectStatusList',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/statuses',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProjectStatusList',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/statuses',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProjectStatusListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1660,18 +1660,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTaskByIds',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTaskByIds',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTaskByIdsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1718,18 +1718,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTbOrgIdByDingOrgId',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/teambition/organizations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTbOrgIdByDingOrgId',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/teambition/organizations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTbOrgIdByDingOrgIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1790,18 +1790,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetTbProjectGray',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/projects/gray',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTbProjectGray',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/projects/gray',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTbProjectGrayResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1858,15 +1858,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetTbProjectSource',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/projects/source',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTbProjectSource',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/projects/source',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTbProjectSourceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1913,18 +1913,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTbUserIdByStaffId',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/teambition/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTbUserIdByStaffId',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/teambition/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTbUserIdByStaffIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1974,18 +1974,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUserJoinedProject',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/joinProjects',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserJoinedProject',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/joinProjects',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserJoinedProjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2045,18 +2045,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryProject',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryProject',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryProjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2111,18 +2111,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryTaskOfProject',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projectIds/' . $projectId . '/tasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryTaskOfProject',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projectIds/' . $projectId . '/tasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryTaskOfProjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2184,18 +2184,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SeachTaskStage',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/taskStages/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SeachTaskStage',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/taskStages/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SeachTaskStageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2250,18 +2250,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchAllTasksByTql',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tql/tasks/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchAllTasksByTql',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tql/tasks/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchAllTasksByTqlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2324,18 +2324,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchOranizationCustomfield',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/customfields/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchOranizationCustomfield',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/customfields/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchOranizationCustomfieldResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2399,18 +2399,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchProjectCustomfield',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/customfields/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchProjectCustomfield',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/customfields/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchProjectCustomfieldResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2459,18 +2459,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchProjectTemplate',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/templates',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchProjectTemplate',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/templates',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchProjectTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2528,18 +2528,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchTaskFlow',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/taskflows/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchTaskFlow',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/taskflows/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchTaskFlowResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2598,18 +2598,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchTaskList',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/taskLists/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchTaskList',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/taskLists/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchTaskListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2671,18 +2671,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchTaskflowStatus',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/taskflowStatuses/search',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchTaskflowStatus',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/taskflowStatuses/search',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchTaskflowStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2740,18 +2740,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchUserTask',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchUserTask',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchUserTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2796,15 +2796,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'SuspendProject',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/suspend',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SuspendProject',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/suspend',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SuspendProjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2849,15 +2849,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'UnSuspendProject',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/unsuspend',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UnSuspendProject',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/unsuspend',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UnSuspendProjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2912,18 +2912,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateCustomfieldValue',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/customFields',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateCustomfieldValue',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/customFields',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateCustomfieldValueResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2979,18 +2979,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateOrganizationTaskContent',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/contents',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateOrganizationTaskContent',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/contents',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateOrganizationTaskContentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3046,18 +3046,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateOrganizationTaskDueDate',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/dueDates',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateOrganizationTaskDueDate',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/dueDates',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateOrganizationTaskDueDateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3113,18 +3113,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateOrganizationTaskExecutor',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/executors',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateOrganizationTaskExecutor',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/executors',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateOrganizationTaskExecutorResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3186,18 +3186,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateOrganizationTaskInvolveMembers',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/involveMembers',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateOrganizationTaskInvolveMembers',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/involveMembers',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateOrganizationTaskInvolveMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3253,18 +3253,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateOrganizationTaskNote',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/notes',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateOrganizationTaskNote',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/notes',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateOrganizationTaskNoteResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3320,18 +3320,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateOrganizationTaskPriority',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/priorities',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateOrganizationTaskPriority',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/priorities',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateOrganizationTaskPriorityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3387,18 +3387,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateOrganizationTaskStatus',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/states',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateOrganizationTaskStatus',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/organizations/users/' . $userId . '/tasks/' . $taskId . '/states',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateOrganizationTaskStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3451,18 +3451,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateProjectGroup',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/groups',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateProjectGroup',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/groups',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateProjectGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3512,18 +3512,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTaskContent',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/contents',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTaskContent',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/contents',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTaskContentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3573,18 +3573,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTaskDueDate',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/dueDates',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTaskDueDate',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/dueDates',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTaskDueDateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3634,18 +3634,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTaskExecutor',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/executors',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTaskExecutor',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/executors',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTaskExecutorResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3701,18 +3701,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTaskInvolvemembers',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/involveMembers',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTaskInvolvemembers',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/involveMembers',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTaskInvolvemembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3762,18 +3762,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTaskNote',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/notes',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTaskNote',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/notes',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTaskNoteResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3823,18 +3823,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTaskPriority',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/priorities',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTaskPriority',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/priorities',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTaskPriorityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3884,18 +3884,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTaskStage',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/stages',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTaskStage',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/stages',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTaskStageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3945,18 +3945,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTaskStartdate',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/startDates',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTaskStartdate',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/startDates',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTaskStartdateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4009,18 +4009,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateTaskTaskflowstatus',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/taskflowStatuses',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateTaskTaskflowstatus',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/taskflowStatuses',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateTaskTaskflowstatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4085,18 +4085,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateWorkTimeApprove',
-            'version'     => 'project_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/project/users/' . $userId . '/workTimes/approvals/' . $approveOpenId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateWorkTimeApprove',
+            'version' => 'project_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/project/users/' . $userId . '/workTimes/approvals/' . $approveOpenId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateWorkTimeApproveResponse::fromMap($this->execute($params, $req, $runtime));

@@ -17,9 +17,7 @@ class AmdpOrganizationDataPushRequest extends Model
         'param' => 'param',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class AmdpOrganizationDataPushRequest extends Model
         if (isset($map['param'])) {
             if (!empty($map['param'])) {
                 $model->param = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['param'] as $item) {
                     $model->param[$n++] = null !== $item ? param::fromMap($item) : $item;
                 }

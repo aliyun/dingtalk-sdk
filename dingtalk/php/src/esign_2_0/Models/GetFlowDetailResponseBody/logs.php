@@ -28,15 +28,13 @@ class logs extends Model
      */
     public $operatorAccountName;
     protected $_name = [
-        'logType'             => 'logType',
-        'operateDescription'  => 'operateDescription',
-        'operateTime'         => 'operateTime',
+        'logType' => 'logType',
+        'operateDescription' => 'operateDescription',
+        'operateTime' => 'operateTime',
         'operatorAccountName' => 'operatorAccountName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

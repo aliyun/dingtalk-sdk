@@ -35,14 +35,12 @@ class UpdateBizObjectRequest extends Model
      */
     public $schemaCode;
     protected $_name = [
-        'bizObjectId'   => 'bizObjectId',
+        'bizObjectId' => 'bizObjectId',
         'bizObjectJson' => 'bizObjectJson',
-        'schemaCode'    => 'schemaCode',
+        'schemaCode' => 'schemaCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -62,19 +62,17 @@ class SendLiveInteractionPluginEffectsMsgRequest extends Model
      */
     public $pluginId;
     protected $_name = [
-        'count'         => 'count',
+        'count' => 'count',
         'lottieFileUrl' => 'lottieFileUrl',
-        'msgIconUrl'    => 'msgIconUrl',
-        'msgText'       => 'msgText',
-        'pluginSubId'   => 'pluginSubId',
+        'msgIconUrl' => 'msgIconUrl',
+        'msgText' => 'msgText',
+        'pluginSubId' => 'pluginSubId',
         'senderUnionId' => 'senderUnionId',
-        'liveId'        => 'liveId',
-        'pluginId'      => 'pluginId',
+        'liveId' => 'liveId',
+        'pluginId' => 'pluginId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

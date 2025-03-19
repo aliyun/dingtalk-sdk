@@ -24,13 +24,11 @@ class result extends Model
     public $userid;
     protected $_name = [
         'createResult' => 'createResult',
-        'unionId'      => 'unionId',
-        'userid'       => 'userid',
+        'unionId' => 'unionId',
+        'userid' => 'userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

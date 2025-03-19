@@ -50,17 +50,15 @@ class topCalculateApproveDurationParam extends Model
      */
     public $toTime;
     protected $_name = [
-        'bizType'        => 'bizType',
+        'bizType' => 'bizType',
         'calculateModel' => 'calculateModel',
-        'durationUnit'   => 'durationUnit',
-        'fromTime'       => 'fromTime',
-        'leaveCode'      => 'leaveCode',
-        'toTime'         => 'toTime',
+        'durationUnit' => 'durationUnit',
+        'fromTime' => 'fromTime',
+        'leaveCode' => 'leaveCode',
+        'toTime' => 'toTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,12 +27,10 @@ class RollbackInnerAppVersionRequest extends Model
     public $opUnionId;
     protected $_name = [
         'appVersionId' => 'appVersionId',
-        'opUnionId'    => 'opUnionId',
+        'opUnionId' => 'opUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

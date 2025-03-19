@@ -30,9 +30,7 @@ class QueryDepartmentExtendInfoRequest extends Model
         'propCode' => 'propCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

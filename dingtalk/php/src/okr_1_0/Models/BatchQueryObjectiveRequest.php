@@ -57,16 +57,14 @@ class BatchQueryObjectiveRequest extends Model
     public $userId;
     protected $_name = [
         'objectiveIds' => 'objectiveIds',
-        'periodId'     => 'periodId',
-        'withAlign'    => 'withAlign',
-        'withKr'       => 'withKr',
+        'periodId' => 'periodId',
+        'withAlign' => 'withAlign',
+        'withKr' => 'withKr',
         'withProgress' => 'withProgress',
-        'userId'       => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

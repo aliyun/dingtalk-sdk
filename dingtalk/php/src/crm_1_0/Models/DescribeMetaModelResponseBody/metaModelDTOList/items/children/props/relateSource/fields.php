@@ -24,12 +24,10 @@ class fields extends Model
     public $relateProps;
     protected $_name = [
         'componentName' => 'componentName',
-        'relateProps'   => 'relateProps',
+        'relateProps' => 'relateProps',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

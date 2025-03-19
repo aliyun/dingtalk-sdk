@@ -40,15 +40,13 @@ class GetTaskFromShanhuiDocRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'docKey'     => 'docKey',
+        'docKey' => 'docKey',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'unionId'    => 'unionId',
+        'nextToken' => 'nextToken',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

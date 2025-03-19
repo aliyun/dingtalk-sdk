@@ -42,15 +42,13 @@ class CreateCollectionOrderRequest extends Model
      */
     public $remark;
     protected $_name = [
-        'amount'           => 'amount',
+        'amount' => 'amount',
         'collectionInfoId' => 'collectionInfoId',
-        'instanceId'       => 'instanceId',
-        'remark'           => 'remark',
+        'instanceId' => 'instanceId',
+        'remark' => 'remark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -39,16 +39,14 @@ class ListRecycleFilesRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
-        'orderType'   => 'orderType',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'orderType' => 'orderType',
         'recycleType' => 'recycleType',
-        'unionId'     => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

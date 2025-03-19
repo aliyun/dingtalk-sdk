@@ -153,33 +153,31 @@ class UpdateCollegeContactUserRequest extends Model
      */
     public $workPlace;
     protected $_name = [
-        'deptIdList'        => 'deptIdList',
-        'deptOrderList'     => 'deptOrderList',
-        'deptPositionSet'   => 'deptPositionSet',
-        'deptTitleList'     => 'deptTitleList',
-        'email'             => 'email',
-        'empType'           => 'empType',
-        'extension'         => 'extension',
+        'deptIdList' => 'deptIdList',
+        'deptOrderList' => 'deptOrderList',
+        'deptPositionSet' => 'deptPositionSet',
+        'deptTitleList' => 'deptTitleList',
+        'email' => 'email',
+        'empType' => 'empType',
+        'extension' => 'extension',
         'forceUpdateFields' => 'forceUpdateFields',
-        'hideMobile'        => 'hideMobile',
-        'hiredDate'         => 'hiredDate',
-        'jobNumber'         => 'jobNumber',
-        'language'          => 'language',
-        'mainDeptId'        => 'mainDeptId',
-        'managerUserid'     => 'managerUserid',
-        'name'              => 'name',
-        'orgEmail'          => 'orgEmail',
-        'remark'            => 'remark',
-        'seniorMode'        => 'seniorMode',
-        'telephone'         => 'telephone',
-        'title'             => 'title',
-        'userid'            => 'userid',
-        'workPlace'         => 'workPlace',
+        'hideMobile' => 'hideMobile',
+        'hiredDate' => 'hiredDate',
+        'jobNumber' => 'jobNumber',
+        'language' => 'language',
+        'mainDeptId' => 'mainDeptId',
+        'managerUserid' => 'managerUserid',
+        'name' => 'name',
+        'orgEmail' => 'orgEmail',
+        'remark' => 'remark',
+        'seniorMode' => 'seniorMode',
+        'telephone' => 'telephone',
+        'title' => 'title',
+        'userid' => 'userid',
+        'workPlace' => 'workPlace',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -288,7 +286,7 @@ class UpdateCollegeContactUserRequest extends Model
         if (isset($map['deptOrderList'])) {
             if (!empty($map['deptOrderList'])) {
                 $model->deptOrderList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['deptOrderList'] as $item) {
                     $model->deptOrderList[$n++] = null !== $item ? deptOrderList::fromMap($item) : $item;
                 }
@@ -297,7 +295,7 @@ class UpdateCollegeContactUserRequest extends Model
         if (isset($map['deptPositionSet'])) {
             if (!empty($map['deptPositionSet'])) {
                 $model->deptPositionSet = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['deptPositionSet'] as $item) {
                     $model->deptPositionSet[$n++] = null !== $item ? deptPositionSet::fromMap($item) : $item;
                 }
@@ -306,7 +304,7 @@ class UpdateCollegeContactUserRequest extends Model
         if (isset($map['deptTitleList'])) {
             if (!empty($map['deptTitleList'])) {
                 $model->deptTitleList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['deptTitleList'] as $item) {
                     $model->deptTitleList[$n++] = null !== $item ? deptTitleList::fromMap($item) : $item;
                 }

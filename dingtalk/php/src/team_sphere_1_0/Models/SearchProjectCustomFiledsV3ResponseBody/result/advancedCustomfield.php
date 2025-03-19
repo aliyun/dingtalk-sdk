@@ -23,14 +23,12 @@ class advancedCustomfield extends Model
      */
     public $objectType;
     protected $_name = [
-        'id'         => 'id',
-        'name'       => 'name',
+        'id' => 'id',
+        'name' => 'name',
         'objectType' => 'objectType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

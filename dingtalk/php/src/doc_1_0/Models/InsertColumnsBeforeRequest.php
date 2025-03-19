@@ -35,14 +35,12 @@ class InsertColumnsBeforeRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'column'      => 'column',
+        'column' => 'column',
         'columnCount' => 'columnCount',
-        'operatorId'  => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

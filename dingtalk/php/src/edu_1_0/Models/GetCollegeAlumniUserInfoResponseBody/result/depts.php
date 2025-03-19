@@ -33,16 +33,14 @@ class depts extends Model
      */
     public $name;
     protected $_name = [
-        'corpId'         => 'corpId',
-        'deptId'         => 'deptId',
-        'hasSubDept'     => 'hasSubDept',
+        'corpId' => 'corpId',
+        'deptId' => 'deptId',
+        'hasSubDept' => 'hasSubDept',
         'isIndustryDept' => 'isIndustryDept',
-        'name'           => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,13 +29,11 @@ class QueryConferenceMembersResponseBody extends Model
     public $totalCount;
     protected $_name = [
         'memberModels' => 'memberModels',
-        'nextToken'    => 'nextToken',
-        'totalCount'   => 'totalCount',
+        'nextToken' => 'nextToken',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class QueryConferenceMembersResponseBody extends Model
         if (isset($map['memberModels'])) {
             if (!empty($map['memberModels'])) {
                 $model->memberModels = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['memberModels'] as $item) {
                     $model->memberModels[$n++] = null !== $item ? memberModels::fromMap($item) : $item;
                 }

@@ -16,9 +16,7 @@ class GetGroupOrgByCidRequest extends Model
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

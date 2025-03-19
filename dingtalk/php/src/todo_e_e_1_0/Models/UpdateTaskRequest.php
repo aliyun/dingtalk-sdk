@@ -39,16 +39,14 @@ class UpdateTaskRequest extends Model
     public $taskId;
     protected $_name = [
         'description' => 'description',
-        'done'        => 'done',
-        'dueTime'     => 'dueTime',
+        'done' => 'done',
+        'dueTime' => 'dueTime',
         'executorIds' => 'executorIds',
-        'subject'     => 'subject',
-        'taskId'      => 'taskId',
+        'subject' => 'subject',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

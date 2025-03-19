@@ -41,16 +41,14 @@ class deptPositionSet extends Model
      */
     public $workPlace;
     protected $_name = [
-        'deptId'        => 'deptId',
-        'isMain'        => 'isMain',
+        'deptId' => 'deptId',
+        'isMain' => 'isMain',
         'managerUserId' => 'managerUserId',
-        'title'         => 'title',
-        'workPlace'     => 'workPlace',
+        'title' => 'title',
+        'workPlace' => 'workPlace',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

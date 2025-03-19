@@ -193,44 +193,42 @@ class result extends Model
      */
     public $userInformation;
     protected $_name = [
-        'apappliedCount'             => 'apappliedCount',
-        'appCode'                    => 'appCode',
-        'appInstanceCode'            => 'appInstanceCode',
-        'appStoreCode'               => 'appStoreCode',
-        'authMode'                   => 'authMode',
-        'authorizationType'          => 'authorizationType',
-        'businessProcessCode'        => 'businessProcessCode',
-        'categoriesFirst'            => 'categoriesFirst',
-        'categoriesSecond'           => 'categoriesSecond',
-        'createTimeGMT'              => 'createTimeGMT',
-        'creatorUserId'              => 'creatorUserId',
-        'cubeAuthType'               => 'cubeAuthType',
-        'cubeCode'                   => 'cubeCode',
-        'cubeDataRange'              => 'cubeDataRange',
-        'cubeDataRanges'             => 'cubeDataRanges',
-        'cubeSource'                 => 'cubeSource',
+        'apappliedCount' => 'apappliedCount',
+        'appCode' => 'appCode',
+        'appInstanceCode' => 'appInstanceCode',
+        'appStoreCode' => 'appStoreCode',
+        'authMode' => 'authMode',
+        'authorizationType' => 'authorizationType',
+        'businessProcessCode' => 'businessProcessCode',
+        'categoriesFirst' => 'categoriesFirst',
+        'categoriesSecond' => 'categoriesSecond',
+        'createTimeGMT' => 'createTimeGMT',
+        'creatorUserId' => 'creatorUserId',
+        'cubeAuthType' => 'cubeAuthType',
+        'cubeCode' => 'cubeCode',
+        'cubeDataRange' => 'cubeDataRange',
+        'cubeDataRanges' => 'cubeDataRanges',
+        'cubeSource' => 'cubeSource',
         'dataCacheTimeConfiguration' => 'dataCacheTimeConfiguration',
-        'dataflowCode'               => 'dataflowCode',
-        'description'                => 'description',
-        'domainCode'                 => 'domainCode',
-        'enableCache'                => 'enableCache',
-        'id'                         => 'id',
-        'isNeedApplication'          => 'isNeedApplication',
-        'isTrend'                    => 'isTrend',
-        'modifiedTimeGMT'            => 'modifiedTimeGMT',
-        'modifier'                   => 'modifier',
-        'name'                       => 'name',
-        'namespaceCode'              => 'namespaceCode',
-        'owner'                      => 'owner',
-        'sharedDataSet'              => 'sharedDataSet',
-        'tenantCorpId'               => 'tenantCorpId',
-        'type'                       => 'type',
-        'userInformation'            => 'userInformation',
+        'dataflowCode' => 'dataflowCode',
+        'description' => 'description',
+        'domainCode' => 'domainCode',
+        'enableCache' => 'enableCache',
+        'id' => 'id',
+        'isNeedApplication' => 'isNeedApplication',
+        'isTrend' => 'isTrend',
+        'modifiedTimeGMT' => 'modifiedTimeGMT',
+        'modifier' => 'modifier',
+        'name' => 'name',
+        'namespaceCode' => 'namespaceCode',
+        'owner' => 'owner',
+        'sharedDataSet' => 'sharedDataSet',
+        'tenantCorpId' => 'tenantCorpId',
+        'type' => 'type',
+        'userInformation' => 'userInformation',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -397,7 +395,7 @@ class result extends Model
         if (isset($map['cubeDataRanges'])) {
             if (!empty($map['cubeDataRanges'])) {
                 $model->cubeDataRanges = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['cubeDataRanges'] as $item) {
                     $model->cubeDataRanges[$n++] = null !== $item ? cubeDataRanges::fromMap($item) : $item;
                 }

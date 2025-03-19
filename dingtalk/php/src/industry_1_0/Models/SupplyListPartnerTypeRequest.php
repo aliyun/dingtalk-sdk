@@ -20,9 +20,7 @@ class SupplyListPartnerTypeRequest extends Model
         'labelId' => 'labelId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

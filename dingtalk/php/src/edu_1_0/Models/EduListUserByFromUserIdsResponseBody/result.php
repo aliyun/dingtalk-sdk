@@ -56,17 +56,15 @@ class result extends Model
     public $userId;
     protected $_name = [
         'campusId' => 'campusId',
-        'classId'  => 'classId',
-        'gradeId'  => 'gradeId',
-        'name'     => 'name',
+        'classId' => 'classId',
+        'gradeId' => 'gradeId',
+        'name' => 'name',
         'periodId' => 'periodId',
-        'role'     => 'role',
-        'userId'   => 'userId',
+        'role' => 'role',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -24,13 +24,11 @@ class fields extends Model
     public $fieldType;
     protected $_name = [
         'displayName' => 'displayName',
-        'fieldId'     => 'fieldId',
-        'fieldType'   => 'fieldType',
+        'fieldId' => 'fieldId',
+        'fieldType' => 'fieldType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

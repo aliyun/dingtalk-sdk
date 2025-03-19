@@ -23,12 +23,10 @@ class GetAnalyzeDataRequest extends Model
     public $deptId;
     protected $_name = [
         'periodIds' => 'periodIds',
-        'deptId'    => 'deptId',
+        'deptId' => 'deptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

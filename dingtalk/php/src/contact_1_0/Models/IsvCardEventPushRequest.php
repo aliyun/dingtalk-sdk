@@ -44,15 +44,13 @@ class IsvCardEventPushRequest extends Model
     public $isvUid;
     protected $_name = [
         'eventParams' => 'eventParams',
-        'eventType'   => 'eventType',
-        'isvCardId'   => 'isvCardId',
-        'isvToken'    => 'isvToken',
-        'isvUid'      => 'isvUid',
+        'eventType' => 'eventType',
+        'isvCardId' => 'isvCardId',
+        'isvToken' => 'isvToken',
+        'isvUid' => 'isvUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

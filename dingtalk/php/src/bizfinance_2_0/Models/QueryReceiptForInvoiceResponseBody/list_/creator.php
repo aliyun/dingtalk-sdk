@@ -30,13 +30,11 @@ class creator extends Model
     public $userId;
     protected $_name = [
         'avatarUrl' => 'avatarUrl',
-        'nick'      => 'nick',
-        'userId'    => 'userId',
+        'nick' => 'nick',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

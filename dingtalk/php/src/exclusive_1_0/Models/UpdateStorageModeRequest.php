@@ -25,12 +25,10 @@ class UpdateStorageModeRequest extends Model
     public $targetCorpId;
     protected $_name = [
         'fileStorageMode' => 'fileStorageMode',
-        'targetCorpId'    => 'targetCorpId',
+        'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

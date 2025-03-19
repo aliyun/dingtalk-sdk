@@ -19,12 +19,10 @@ class result extends Model
     public $success;
     protected $_name = [
         'needRetry' => 'needRetry',
-        'success'   => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

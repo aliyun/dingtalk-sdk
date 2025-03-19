@@ -22,13 +22,11 @@ class DeleteDeviceOrgRequest extends Model
      */
     public $deviceCode;
     protected $_name = [
-        'authCode'   => 'authCode',
+        'authCode' => 'authCode',
         'deviceCode' => 'deviceCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -35,14 +35,12 @@ class pattern extends Model
     protected $_name = [
         'dayOfMonth' => 'dayOfMonth',
         'daysOfWeek' => 'daysOfWeek',
-        'index'      => 'index',
-        'interval'   => 'interval',
-        'type'       => 'type',
+        'index' => 'index',
+        'interval' => 'interval',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

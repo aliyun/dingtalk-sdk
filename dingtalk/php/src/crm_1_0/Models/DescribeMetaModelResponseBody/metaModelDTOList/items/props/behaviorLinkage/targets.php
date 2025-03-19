@@ -23,12 +23,10 @@ class targets extends Model
     public $fieldId;
     protected $_name = [
         'behavior' => 'behavior',
-        'fieldId'  => 'fieldId',
+        'fieldId' => 'fieldId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

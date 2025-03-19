@@ -29,14 +29,12 @@ class list_ extends Model
     public $shortUrl;
     protected $_name = [
         'formDesc' => 'formDesc',
-        'formId'   => 'formId',
+        'formId' => 'formId',
         'formName' => 'formName',
         'shortUrl' => 'shortUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

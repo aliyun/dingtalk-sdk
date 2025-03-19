@@ -23,14 +23,12 @@ class message extends Model
      */
     public $role;
     protected $_name = [
-        'content'          => 'content',
+        'content' => 'content',
         'reasoningContent' => 'reasoning_content',
-        'role'             => 'role',
+        'role' => 'role',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

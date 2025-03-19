@@ -72,8 +72,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -101,15 +101,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetAllJobLevel',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/jobLevels',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAllJobLevel',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/jobLevels',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAllJobLevelResponse::fromMap($this->execute($params, $req, $runtime));
@@ -149,15 +149,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetAllJobPosition',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/jobPositions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAllJobPosition',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/jobPositions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAllJobPositionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -197,15 +197,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetAllJobPost',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/jobPosts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAllJobPost',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/jobPosts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAllJobPostResponse::fromMap($this->execute($params, $req, $runtime));
@@ -253,19 +253,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetAnalyzeData',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/okr/analyses/datas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAnalyzeData',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/okr/analyses/datas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAnalyzeDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -311,18 +311,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetChildOrgList',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/organizations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetChildOrgList',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/organizations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetChildOrgListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -368,18 +368,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetEmployeeInfoByWorkNo',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/workNumbers/employees',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetEmployeeInfoByWorkNo',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/workNumbers/employees',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetEmployeeInfoByWorkNoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -422,15 +422,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetEmploymentRecordByWorkNo',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/users/workNumber/' . $workNumbers . 'employmentRecords',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetEmploymentRecordByWorkNo',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/users/workNumber/' . $workNumbers . 'employmentRecords',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetEmploymentRecordByWorkNoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -476,18 +476,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetJobPosition',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/jobPositions/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetJobPosition',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/jobPositions/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetJobPositionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -533,18 +533,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetJobPost',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/jobPosts/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetJobPost',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/jobPosts/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetJobPostResponse::fromMap($this->execute($params, $req, $runtime));
@@ -590,18 +590,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetOrgInfo',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/organizations/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOrgInfo',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/organizations/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOrgInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -647,18 +647,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetStaffInfoByWorkNo',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetStaffInfoByWorkNo',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetStaffInfoByWorkNoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -716,18 +716,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetStaffPageQuery',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/users/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetStaffPageQuery',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/users/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetStaffPageQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -776,18 +776,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUser',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/okr/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUser',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/okr/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -829,15 +829,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListAnalyzePeriods',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/okr/analyses/periods',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAnalyzePeriods',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/okr/analyses/periods',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAnalyzePeriodsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -881,18 +881,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListObjectiveByIds',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/okr/objectives/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListObjectiveByIds',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/okr/objectives/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListObjectiveByIdsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -944,18 +944,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListObjectiveByUser',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/okr/users/objectives',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListObjectiveByUser',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/okr/users/objectives',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListObjectiveByUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1001,18 +1001,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListProgressByIds',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/okr/objectives/progresses/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListProgressByIds',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/okr/objectives/progresses/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListProgressByIdsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1070,18 +1070,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListSlsLog',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/organizations/slsLogDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListSlsLog',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/organizations/slsLogDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListSlsLogResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1133,18 +1133,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PageListObjectiveProgress',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/okr/objectives/progresses/records',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PageListObjectiveProgress',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/okr/objectives/progresses/records',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PageListObjectiveProgressResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1193,18 +1193,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'TransferUserObjective',
-            'version'     => 'chengfeng_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/chengfeng/okr/objectives/transfer',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TransferUserObjective',
+            'version' => 'chengfeng_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/chengfeng/okr/objectives/transfer',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TransferUserObjectiveResponse::fromMap($this->execute($params, $req, $runtime));

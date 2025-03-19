@@ -18,9 +18,7 @@ class CreateRelationMetaResponseBody extends Model
         'relationType' => 'relationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

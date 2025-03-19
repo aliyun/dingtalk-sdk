@@ -68,23 +68,21 @@ class conferenceList extends Model
      */
     public $title;
     protected $_name = [
-        'bizType'              => 'bizType',
-        'confDuration'         => 'confDuration',
-        'conferenceId'         => 'conferenceId',
-        'creatorId'            => 'creatorId',
-        'creatorNick'          => 'creatorNick',
-        'endTime'              => 'endTime',
-        'externalLinkUrl'      => 'externalLinkUrl',
-        'roomCode'             => 'roomCode',
+        'bizType' => 'bizType',
+        'confDuration' => 'confDuration',
+        'conferenceId' => 'conferenceId',
+        'creatorId' => 'creatorId',
+        'creatorNick' => 'creatorNick',
+        'endTime' => 'endTime',
+        'externalLinkUrl' => 'externalLinkUrl',
+        'roomCode' => 'roomCode',
         'scheduleConferenceId' => 'scheduleConferenceId',
-        'startTime'            => 'startTime',
-        'status'               => 'status',
-        'title'                => 'title',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

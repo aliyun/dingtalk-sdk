@@ -24,13 +24,11 @@ class functionList extends Model
      */
     public $functionValue;
     protected $_name = [
-        'functionKey'   => 'functionKey',
+        'functionKey' => 'functionKey',
         'functionValue' => 'functionValue',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

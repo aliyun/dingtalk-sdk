@@ -19,12 +19,10 @@ class content extends Model
     public $type;
     protected $_name = [
         'knowledgeBaseUrl' => 'knowledgeBaseUrl',
-        'type'             => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

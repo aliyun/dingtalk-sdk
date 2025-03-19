@@ -37,14 +37,12 @@ class GetDingMeBaseDataResponseBody extends Model
     public $tips;
     protected $_name = [
         'fromCache' => 'fromCache',
-        'rawset'    => 'rawset',
-        'runtime'   => 'runtime',
-        'tips'      => 'tips',
+        'rawset' => 'rawset',
+        'runtime' => 'runtime',
+        'tips' => 'tips',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

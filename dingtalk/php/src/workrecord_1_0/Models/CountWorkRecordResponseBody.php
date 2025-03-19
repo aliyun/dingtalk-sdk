@@ -20,9 +20,7 @@ class CountWorkRecordResponseBody extends Model
         'undoCount' => 'undoCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

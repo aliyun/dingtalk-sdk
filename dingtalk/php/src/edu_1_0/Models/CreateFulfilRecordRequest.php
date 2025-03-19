@@ -64,15 +64,13 @@ class CreateFulfilRecordRequest extends Model
     protected $_name = [
         'bizTime' => 'bizTime',
         'extInfo' => 'extInfo',
-        'faceId'  => 'faceId',
-        'scene'   => 'scene',
-        'sn'      => 'sn',
-        'userId'  => 'userId',
+        'faceId' => 'faceId',
+        'scene' => 'scene',
+        'sn' => 'sn',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

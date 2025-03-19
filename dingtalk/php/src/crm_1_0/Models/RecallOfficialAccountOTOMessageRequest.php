@@ -24,13 +24,11 @@ class RecallOfficialAccountOTOMessageRequest extends Model
      */
     public $openPushId;
     protected $_name = [
-        'accountId'  => 'accountId',
+        'accountId' => 'accountId',
         'openPushId' => 'openPushId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

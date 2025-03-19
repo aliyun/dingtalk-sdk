@@ -36,15 +36,13 @@ class sendOptions extends Model
      */
     public $receiverListJson;
     protected $_name = [
-        'atAll'            => 'atAll',
-        'atUserListJson'   => 'atUserListJson',
+        'atAll' => 'atAll',
+        'atUserListJson' => 'atUserListJson',
         'cardPropertyJson' => 'cardPropertyJson',
         'receiverListJson' => 'receiverListJson',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -24,13 +24,11 @@ class result extends Model
     public $type;
     protected $_name = [
         'details' => 'details',
-        'itemId'  => 'itemId',
-        'type'    => 'type',
+        'itemId' => 'itemId',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

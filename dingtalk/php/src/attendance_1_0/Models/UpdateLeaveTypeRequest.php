@@ -95,23 +95,21 @@ class UpdateLeaveTypeRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'bizType'          => 'bizType',
-        'extras'           => 'extras',
-        'freedomLeave'     => 'freedomLeave',
-        'hoursInPerDay'    => 'hoursInPerDay',
+        'bizType' => 'bizType',
+        'extras' => 'extras',
+        'freedomLeave' => 'freedomLeave',
+        'hoursInPerDay' => 'hoursInPerDay',
         'leaveCertificate' => 'leaveCertificate',
-        'leaveCode'        => 'leaveCode',
-        'leaveName'        => 'leaveName',
-        'leaveViewUnit'    => 'leaveViewUnit',
-        'naturalDayLeave'  => 'naturalDayLeave',
-        'submitTimeRule'   => 'submitTimeRule',
-        'visibilityRules'  => 'visibilityRules',
-        'opUserId'         => 'opUserId',
+        'leaveCode' => 'leaveCode',
+        'leaveName' => 'leaveName',
+        'leaveViewUnit' => 'leaveViewUnit',
+        'naturalDayLeave' => 'naturalDayLeave',
+        'submitTimeRule' => 'submitTimeRule',
+        'visibilityRules' => 'visibilityRules',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -203,7 +201,7 @@ class UpdateLeaveTypeRequest extends Model
         if (isset($map['visibilityRules'])) {
             if (!empty($map['visibilityRules'])) {
                 $model->visibilityRules = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['visibilityRules'] as $item) {
                     $model->visibilityRules[$n++] = null !== $item ? visibilityRules::fromMap($item) : $item;
                 }

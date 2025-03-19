@@ -18,13 +18,11 @@ class showTypes extends Model
      */
     public $value;
     protected $_name = [
-        'name'  => 'name',
+        'name' => 'name',
         'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

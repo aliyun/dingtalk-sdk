@@ -17,9 +17,7 @@ class BatchGetGroupSetConfigResponseBody extends Model
         'groupSetConfigs' => 'groupSetConfigs',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class BatchGetGroupSetConfigResponseBody extends Model
         if (isset($map['groupSetConfigs'])) {
             if (!empty($map['groupSetConfigs'])) {
                 $model->groupSetConfigs = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['groupSetConfigs'] as $item) {
                     $model->groupSetConfigs[$n++] = null !== $item ? groupSetConfigs::fromMap($item) : $item;
                 }

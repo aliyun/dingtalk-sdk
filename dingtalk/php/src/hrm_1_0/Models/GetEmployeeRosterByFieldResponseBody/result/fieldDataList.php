@@ -35,15 +35,13 @@ class fieldDataList extends Model
      */
     public $groupId;
     protected $_name = [
-        'fieldCode'      => 'fieldCode',
-        'fieldName'      => 'fieldName',
+        'fieldCode' => 'fieldCode',
+        'fieldName' => 'fieldName',
         'fieldValueList' => 'fieldValueList',
-        'groupId'        => 'groupId',
+        'groupId' => 'groupId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -87,7 +85,7 @@ class fieldDataList extends Model
         if (isset($map['fieldValueList'])) {
             if (!empty($map['fieldValueList'])) {
                 $model->fieldValueList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['fieldValueList'] as $item) {
                     $model->fieldValueList[$n++] = null !== $item ? fieldValueList::fromMap($item) : $item;
                 }

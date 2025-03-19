@@ -23,12 +23,10 @@ class UpdateCategoryNameRequest extends Model
     public $targetCategoryName;
     protected $_name = [
         'currentCategoryName' => 'currentCategoryName',
-        'targetCategoryName'  => 'targetCategoryName',
+        'targetCategoryName' => 'targetCategoryName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

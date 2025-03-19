@@ -73,24 +73,22 @@ class list_ extends Model
      */
     public $workspaceName;
     protected $_name = [
-        'authorName'         => 'authorName',
-        'belong'             => 'belong',
+        'authorName' => 'authorName',
+        'belong' => 'belong',
         'contentDownloadUrl' => 'contentDownloadUrl',
-        'coverDownloadUrl'   => 'coverDownloadUrl',
-        'createTime'         => 'createTime',
-        'description'        => 'description',
-        'modifiedTime'       => 'modifiedTime',
-        'templateId'         => 'templateId',
-        'title'              => 'title',
-        'type'               => 'type',
-        'usedCount'          => 'usedCount',
-        'workspaceId'        => 'workspaceId',
-        'workspaceName'      => 'workspaceName',
+        'coverDownloadUrl' => 'coverDownloadUrl',
+        'createTime' => 'createTime',
+        'description' => 'description',
+        'modifiedTime' => 'modifiedTime',
+        'templateId' => 'templateId',
+        'title' => 'title',
+        'type' => 'type',
+        'usedCount' => 'usedCount',
+        'workspaceId' => 'workspaceId',
+        'workspaceName' => 'workspaceName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -105,26 +105,24 @@ class QueryTradeOrderResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'articleCode'     => 'articleCode',
+        'articleCode' => 'articleCode',
         'articleItemCode' => 'articleItemCode',
         'articleItemName' => 'articleItemName',
-        'articleName'     => 'articleName',
-        'closeTime'       => 'closeTime',
-        'createTime'      => 'createTime',
-        'fee'             => 'fee',
-        'isvCropId'       => 'isvCropId',
-        'orderId'         => 'orderId',
-        'outerOrderId'    => 'outerOrderId',
-        'payFee'          => 'payFee',
-        'payTime'         => 'payTime',
-        'quantity'        => 'quantity',
-        'refundTime'      => 'refundTime',
-        'status'          => 'status',
+        'articleName' => 'articleName',
+        'closeTime' => 'closeTime',
+        'createTime' => 'createTime',
+        'fee' => 'fee',
+        'isvCropId' => 'isvCropId',
+        'orderId' => 'orderId',
+        'outerOrderId' => 'outerOrderId',
+        'payFee' => 'payFee',
+        'payTime' => 'payTime',
+        'quantity' => 'quantity',
+        'refundTime' => 'refundTime',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

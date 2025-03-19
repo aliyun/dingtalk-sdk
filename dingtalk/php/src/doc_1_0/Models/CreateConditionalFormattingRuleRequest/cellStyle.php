@@ -19,12 +19,10 @@ class cellStyle extends Model
     public $fontColor;
     protected $_name = [
         'backgroundColor' => 'backgroundColor',
-        'fontColor'       => 'fontColor',
+        'fontColor' => 'fontColor',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

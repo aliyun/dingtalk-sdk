@@ -68,20 +68,18 @@ class result extends Model
      */
     public $visibilityRules;
     protected $_name = [
-        'bizType'          => 'bizType',
-        'hoursInPerDay'    => 'hoursInPerDay',
+        'bizType' => 'bizType',
+        'hoursInPerDay' => 'hoursInPerDay',
         'leaveCertificate' => 'leaveCertificate',
-        'leaveCode'        => 'leaveCode',
-        'leaveName'        => 'leaveName',
-        'leaveViewUnit'    => 'leaveViewUnit',
-        'naturalDayLeave'  => 'naturalDayLeave',
-        'submitTimeRule'   => 'submitTimeRule',
-        'visibilityRules'  => 'visibilityRules',
+        'leaveCode' => 'leaveCode',
+        'leaveName' => 'leaveName',
+        'leaveViewUnit' => 'leaveViewUnit',
+        'naturalDayLeave' => 'naturalDayLeave',
+        'submitTimeRule' => 'submitTimeRule',
+        'visibilityRules' => 'visibilityRules',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -158,7 +156,7 @@ class result extends Model
         if (isset($map['visibilityRules'])) {
             if (!empty($map['visibilityRules'])) {
                 $model->visibilityRules = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['visibilityRules'] as $item) {
                     $model->visibilityRules[$n++] = null !== $item ? visibilityRules::fromMap($item) : $item;
                 }

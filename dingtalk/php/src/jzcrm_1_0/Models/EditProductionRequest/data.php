@@ -85,24 +85,22 @@ class data extends Model
      */
     public $schTitle;
     protected $_name = [
-        'dataUserid'     => 'data_userid',
-        'schCustomerid'  => 'sch_customerid',
-        'schEndtime'     => 'sch_endtime',
-        'schFinished'    => 'sch_finished',
-        'schHtid'        => 'sch_htid',
-        'schMakeemp'     => 'sch_makeemp',
-        'schNumber'      => 'sch_number',
+        'dataUserid' => 'data_userid',
+        'schCustomerid' => 'sch_customerid',
+        'schEndtime' => 'sch_endtime',
+        'schFinished' => 'sch_finished',
+        'schHtid' => 'sch_htid',
+        'schMakeemp' => 'sch_makeemp',
+        'schNumber' => 'sch_number',
         'schPlanendtime' => 'sch_planendtime',
-        'schPrincipal'   => 'sch_principal',
-        'schRemark'      => 'sch_remark',
-        'schStarttime'   => 'sch_starttime',
-        'schStatesstr'   => 'sch_statesstr',
-        'schTitle'       => 'sch_title',
+        'schPrincipal' => 'sch_principal',
+        'schRemark' => 'sch_remark',
+        'schStarttime' => 'sch_starttime',
+        'schStatesstr' => 'sch_statesstr',
+        'schTitle' => 'sch_title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

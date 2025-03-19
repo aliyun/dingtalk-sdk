@@ -16,9 +16,7 @@ class EduGetFileSpaceRequest extends Model
         'channelCode' => 'channelCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

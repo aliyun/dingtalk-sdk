@@ -26,14 +26,12 @@ class RoleMemberMapValue extends Model
      */
     public $companyCode;
     protected $_name = [
-        'roleCode'    => 'roleCode',
-        'memberList'  => 'memberList',
+        'roleCode' => 'roleCode',
+        'memberList' => 'memberList',
         'companyCode' => 'companyCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -71,7 +69,7 @@ class RoleMemberMapValue extends Model
         if (isset($map['memberList'])) {
             if (!empty($map['memberList'])) {
                 $model->memberList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['memberList'] as $item) {
                     $model->memberList[$n++] = null !== $item ? memberList::fromMap($item) : $item;
                 }

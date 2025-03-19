@@ -42,15 +42,13 @@ class ConsumePointRequest extends Model
      */
     public $productCode;
     protected $_name = [
-        'amount'      => 'amount',
-        'bizId'       => 'bizId',
+        'amount' => 'amount',
+        'bizId' => 'bizId',
         'description' => 'description',
         'productCode' => 'productCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

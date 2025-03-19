@@ -43,16 +43,14 @@ class CreateFlashMeetingResponseBody extends Model
      */
     public $url;
     protected $_name = [
-        'endTime'         => 'endTime',
+        'endTime' => 'endTime',
         'flashMeetingKey' => 'flashMeetingKey',
-        'startTime'       => 'startTime',
-        'title'           => 'title',
-        'url'             => 'url',
+        'startTime' => 'startTime',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

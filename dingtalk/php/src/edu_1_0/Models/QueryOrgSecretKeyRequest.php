@@ -24,13 +24,11 @@ class QueryOrgSecretKeyRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'isvCode'  => 'isvCode',
+        'isvCode' => 'isvCode',
         'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -53,16 +53,14 @@ class OpenObjectiveRulePeriodDTO extends Model
      */
     public $startDate;
     protected $_name = [
-        'endDate'    => 'endDate',
-        'name'       => 'name',
-        'periodId'   => 'periodId',
+        'endDate' => 'endDate',
+        'name' => 'name',
+        'periodId' => 'periodId',
         'periodType' => 'periodType',
-        'startDate'  => 'startDate',
+        'startDate' => 'startDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,13 +22,11 @@ class GetMediaUrlsRequest extends Model
      */
     public $urlExpireTime;
     protected $_name = [
-        'mediaIds'      => 'mediaIds',
+        'mediaIds' => 'mediaIds',
         'urlExpireTime' => 'urlExpireTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

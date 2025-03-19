@@ -16,9 +16,7 @@ class GetPrivateStoreFilePathResponseBody extends Model
         'filePath' => 'filePath',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

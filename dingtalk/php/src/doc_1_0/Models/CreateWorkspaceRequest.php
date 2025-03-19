@@ -28,13 +28,11 @@ class CreateWorkspaceRequest extends Model
     public $operatorId;
     protected $_name = [
         'description' => 'description',
-        'name'        => 'name',
-        'operatorId'  => 'operatorId',
+        'name' => 'name',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

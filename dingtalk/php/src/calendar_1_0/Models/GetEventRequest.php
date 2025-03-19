@@ -16,9 +16,7 @@ class GetEventRequest extends Model
         'maxAttendees' => 'maxAttendees',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

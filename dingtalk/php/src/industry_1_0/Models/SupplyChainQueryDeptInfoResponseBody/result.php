@@ -54,18 +54,16 @@ class result extends Model
      */
     public $superId;
     protected $_name = [
-        'deptId'              => 'deptId',
-        'deptType'            => 'deptType',
-        'hasSubDept'          => 'hasSubDept',
-        'name'                => 'name',
-        'partnerNumber'       => 'partnerNumber',
+        'deptId' => 'deptId',
+        'deptType' => 'deptType',
+        'hasSubDept' => 'hasSubDept',
+        'name' => 'name',
+        'partnerNumber' => 'partnerNumber',
         'partnerTypeInfoList' => 'partnerTypeInfoList',
-        'superId'             => 'superId',
+        'superId' => 'superId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -127,7 +125,7 @@ class result extends Model
         if (isset($map['partnerTypeInfoList'])) {
             if (!empty($map['partnerTypeInfoList'])) {
                 $model->partnerTypeInfoList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['partnerTypeInfoList'] as $item) {
                     $model->partnerTypeInfoList[$n++] = null !== $item ? partnerTypeInfoList::fromMap($item) : $item;
                 }

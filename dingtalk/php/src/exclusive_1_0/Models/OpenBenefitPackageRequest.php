@@ -41,14 +41,12 @@ class OpenBenefitPackageRequest extends Model
     public $targetCorpId;
     protected $_name = [
         'benefitPackage' => 'benefitPackage',
-        'endDate'        => 'endDate',
-        'startDate'      => 'startDate',
-        'targetCorpId'   => 'targetCorpId',
+        'endDate' => 'endDate',
+        'startDate' => 'startDate',
+        'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

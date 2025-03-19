@@ -408,78 +408,76 @@ class generalInvoiceVO extends Model
      */
     public $voucherStatus;
     protected $_name = [
-        'accountPeriod'                  => 'accountPeriod',
-        'agentCode'                      => 'agentCode',
-        'amount'                         => 'amount',
-        'amountWithTax'                  => 'amountWithTax',
-        'caacDevelopmentFund'            => 'caacDevelopmentFund',
-        'checkCode'                      => 'checkCode',
-        'checkTime'                      => 'checkTime',
-        'city'                           => 'city',
-        'destination'                    => 'destination',
-        'distance'                       => 'distance',
-        'drawerName'                     => 'drawerName',
-        'drewDate'                       => 'drewDate',
-        'electronicUrl'                  => 'electronicUrl',
-        'entrance'                       => 'entrance',
-        'exit'                           => 'exit',
-        'financeType'                    => 'financeType',
-        'flightItineraryDetails'         => 'flightItineraryDetails',
-        'fuelSurcharge'                  => 'fuelSurcharge',
-        'fundType'                       => 'fundType',
-        'generalInvoiceDetailVOList'     => 'generalInvoiceDetailVOList',
-        'getOffTime'                     => 'getOffTime',
-        'getOnTime'                      => 'getOnTime',
-        'imageUrl'                       => 'imageUrl',
-        'invoiceCode'                    => 'invoiceCode',
-        'invoiceNo'                      => 'invoiceNo',
-        'invoiceStatus'                  => 'invoiceStatus',
-        'invoiceType'                    => 'invoiceType',
-        'issueBy'                        => 'issueBy',
-        'machineCode'                    => 'machineCode',
-        'oilFlag'                        => 'oilFlag',
-        'origin'                         => 'origin',
-        'passenger'                      => 'passenger',
-        'passengerUserId'                => 'passengerUserId',
-        'payee'                          => 'payee',
-        'printSerialNumber'              => 'printSerialNumber',
-        'processInstCode'                => 'processInstCode',
-        'processInstType'                => 'processInstType',
-        'purchaserAddress'               => 'purchaserAddress',
-        'purchaserBankAccount'           => 'purchaserBankAccount',
-        'purchaserBankNameAccount'       => 'purchaserBankNameAccount',
-        'purchaserName'                  => 'purchaserName',
-        'purchaserTaxNo'                 => 'purchaserTaxNo',
-        'purchaserTel'                   => 'purchaserTel',
-        'receiverEmail'                  => 'receiverEmail',
-        'receiverName'                   => 'receiverName',
-        'receiverTel'                    => 'receiverTel',
-        'remark'                         => 'remark',
-        'seatClass'                      => 'seatClass',
+        'accountPeriod' => 'accountPeriod',
+        'agentCode' => 'agentCode',
+        'amount' => 'amount',
+        'amountWithTax' => 'amountWithTax',
+        'caacDevelopmentFund' => 'caacDevelopmentFund',
+        'checkCode' => 'checkCode',
+        'checkTime' => 'checkTime',
+        'city' => 'city',
+        'destination' => 'destination',
+        'distance' => 'distance',
+        'drawerName' => 'drawerName',
+        'drewDate' => 'drewDate',
+        'electronicUrl' => 'electronicUrl',
+        'entrance' => 'entrance',
+        'exit' => 'exit',
+        'financeType' => 'financeType',
+        'flightItineraryDetails' => 'flightItineraryDetails',
+        'fuelSurcharge' => 'fuelSurcharge',
+        'fundType' => 'fundType',
+        'generalInvoiceDetailVOList' => 'generalInvoiceDetailVOList',
+        'getOffTime' => 'getOffTime',
+        'getOnTime' => 'getOnTime',
+        'imageUrl' => 'imageUrl',
+        'invoiceCode' => 'invoiceCode',
+        'invoiceNo' => 'invoiceNo',
+        'invoiceStatus' => 'invoiceStatus',
+        'invoiceType' => 'invoiceType',
+        'issueBy' => 'issueBy',
+        'machineCode' => 'machineCode',
+        'oilFlag' => 'oilFlag',
+        'origin' => 'origin',
+        'passenger' => 'passenger',
+        'passengerUserId' => 'passengerUserId',
+        'payee' => 'payee',
+        'printSerialNumber' => 'printSerialNumber',
+        'processInstCode' => 'processInstCode',
+        'processInstType' => 'processInstType',
+        'purchaserAddress' => 'purchaserAddress',
+        'purchaserBankAccount' => 'purchaserBankAccount',
+        'purchaserBankNameAccount' => 'purchaserBankNameAccount',
+        'purchaserName' => 'purchaserName',
+        'purchaserTaxNo' => 'purchaserTaxNo',
+        'purchaserTel' => 'purchaserTel',
+        'receiverEmail' => 'receiverEmail',
+        'receiverName' => 'receiverName',
+        'receiverTel' => 'receiverTel',
+        'remark' => 'remark',
+        'seatClass' => 'seatClass',
         'secondHandCarInvoiceDetailList' => 'secondHandCarInvoiceDetailList',
-        'sellerAddress'                  => 'sellerAddress',
-        'sellerBankAccount'              => 'sellerBankAccount',
-        'sellerBankNameAccount'          => 'sellerBankNameAccount',
-        'sellerName'                     => 'sellerName',
-        'sellerTaxNo'                    => 'sellerTaxNo',
-        'sellerTel'                      => 'sellerTel',
-        'serialNo'                       => 'serialNo',
-        'startTime'                      => 'startTime',
-        'supplySign'                     => 'supplySign',
-        'surcharge'                      => 'surcharge',
-        'taxAmount'                      => 'taxAmount',
-        'trainNo'                        => 'trainNo',
-        'travelDate'                     => 'travelDate',
-        'usedVehicleSaleDetailVOList'    => 'usedVehicleSaleDetailVOList',
-        'vehicleSaleDetailVOList'        => 'vehicleSaleDetailVOList',
-        'verifyStatus'                   => 'verifyStatus',
-        'voucherCode'                    => 'voucherCode',
-        'voucherStatus'                  => 'voucherStatus',
+        'sellerAddress' => 'sellerAddress',
+        'sellerBankAccount' => 'sellerBankAccount',
+        'sellerBankNameAccount' => 'sellerBankNameAccount',
+        'sellerName' => 'sellerName',
+        'sellerTaxNo' => 'sellerTaxNo',
+        'sellerTel' => 'sellerTel',
+        'serialNo' => 'serialNo',
+        'startTime' => 'startTime',
+        'supplySign' => 'supplySign',
+        'surcharge' => 'surcharge',
+        'taxAmount' => 'taxAmount',
+        'trainNo' => 'trainNo',
+        'travelDate' => 'travelDate',
+        'usedVehicleSaleDetailVOList' => 'usedVehicleSaleDetailVOList',
+        'vehicleSaleDetailVOList' => 'vehicleSaleDetailVOList',
+        'verifyStatus' => 'verifyStatus',
+        'voucherCode' => 'voucherCode',
+        'voucherStatus' => 'voucherStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -778,7 +776,7 @@ class generalInvoiceVO extends Model
         if (isset($map['flightItineraryDetails'])) {
             if (!empty($map['flightItineraryDetails'])) {
                 $model->flightItineraryDetails = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['flightItineraryDetails'] as $item) {
                     $model->flightItineraryDetails[$n++] = null !== $item ? flightItineraryDetails::fromMap($item) : $item;
                 }
@@ -793,7 +791,7 @@ class generalInvoiceVO extends Model
         if (isset($map['generalInvoiceDetailVOList'])) {
             if (!empty($map['generalInvoiceDetailVOList'])) {
                 $model->generalInvoiceDetailVOList = [];
-                $n                                 = 0;
+                $n = 0;
                 foreach ($map['generalInvoiceDetailVOList'] as $item) {
                     $model->generalInvoiceDetailVOList[$n++] = null !== $item ? generalInvoiceDetailVOList::fromMap($item) : $item;
                 }
@@ -886,7 +884,7 @@ class generalInvoiceVO extends Model
         if (isset($map['secondHandCarInvoiceDetailList'])) {
             if (!empty($map['secondHandCarInvoiceDetailList'])) {
                 $model->secondHandCarInvoiceDetailList = [];
-                $n                                     = 0;
+                $n = 0;
                 foreach ($map['secondHandCarInvoiceDetailList'] as $item) {
                     $model->secondHandCarInvoiceDetailList[$n++] = null !== $item ? secondHandCarInvoiceDetailList::fromMap($item) : $item;
                 }
@@ -934,7 +932,7 @@ class generalInvoiceVO extends Model
         if (isset($map['usedVehicleSaleDetailVOList'])) {
             if (!empty($map['usedVehicleSaleDetailVOList'])) {
                 $model->usedVehicleSaleDetailVOList = [];
-                $n                                  = 0;
+                $n = 0;
                 foreach ($map['usedVehicleSaleDetailVOList'] as $item) {
                     $model->usedVehicleSaleDetailVOList[$n++] = null !== $item ? usedVehicleSaleDetailVOList::fromMap($item) : $item;
                 }
@@ -943,7 +941,7 @@ class generalInvoiceVO extends Model
         if (isset($map['vehicleSaleDetailVOList'])) {
             if (!empty($map['vehicleSaleDetailVOList'])) {
                 $model->vehicleSaleDetailVOList = [];
-                $n                              = 0;
+                $n = 0;
                 foreach ($map['vehicleSaleDetailVOList'] as $item) {
                     $model->vehicleSaleDetailVOList[$n++] = null !== $item ? vehicleSaleDetailVOList::fromMap($item) : $item;
                 }

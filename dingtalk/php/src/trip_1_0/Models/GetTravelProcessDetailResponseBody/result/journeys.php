@@ -139,30 +139,28 @@ class journeys extends Model
      */
     public $tripWay;
     protected $_name = [
-        'arrival'                      => 'arrival',
-        'costCenter'                   => 'costCenter',
-        'costCenterId'                 => 'costCenterId',
-        'costCenterThirdPartyId'       => 'costCenterThirdPartyId',
-        'departure'                    => 'departure',
-        'endTime'                      => 'endTime',
-        'endTimeAcc'                   => 'endTimeAcc',
-        'invoiceTitle'                 => 'invoiceTitle',
-        'invoiceTitleId'               => 'invoiceTitleId',
-        'invoiceTitleThirdPartyId'     => 'invoiceTitleThirdPartyId',
-        'itineraryProject'             => 'itineraryProject',
-        'itineraryProjectId'           => 'itineraryProjectId',
+        'arrival' => 'arrival',
+        'costCenter' => 'costCenter',
+        'costCenterId' => 'costCenterId',
+        'costCenterThirdPartyId' => 'costCenterThirdPartyId',
+        'departure' => 'departure',
+        'endTime' => 'endTime',
+        'endTimeAcc' => 'endTimeAcc',
+        'invoiceTitle' => 'invoiceTitle',
+        'invoiceTitleId' => 'invoiceTitleId',
+        'invoiceTitleThirdPartyId' => 'invoiceTitleThirdPartyId',
+        'itineraryProject' => 'itineraryProject',
+        'itineraryProjectId' => 'itineraryProjectId',
         'itineraryProjectThirdPartyId' => 'itineraryProjectThirdPartyId',
-        'journeyBizNo'                 => 'journeyBizNo',
-        'startTime'                    => 'startTime',
-        'startTimeAcc'                 => 'startTimeAcc',
-        'timeUnit'                     => 'timeUnit',
-        'travelType'                   => 'travelType',
-        'tripWay'                      => 'tripWay',
+        'journeyBizNo' => 'journeyBizNo',
+        'startTime' => 'startTime',
+        'startTimeAcc' => 'startTimeAcc',
+        'timeUnit' => 'timeUnit',
+        'travelType' => 'travelType',
+        'tripWay' => 'tripWay',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

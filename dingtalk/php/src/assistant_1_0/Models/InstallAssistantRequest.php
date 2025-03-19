@@ -18,13 +18,11 @@ class InstallAssistantRequest extends Model
      */
     public $isAllOrgMemberVisible;
     protected $_name = [
-        'assistantId'           => 'assistantId',
+        'assistantId' => 'assistantId',
         'isAllOrgMemberVisible' => 'isAllOrgMemberVisible',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

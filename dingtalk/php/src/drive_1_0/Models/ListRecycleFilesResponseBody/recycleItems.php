@@ -24,6 +24,7 @@ class recycleItems extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $deleteTime;
@@ -63,19 +64,17 @@ class recycleItems extends Model
      */
     public $recycleItemId;
     protected $_name = [
-        'contentType'   => 'contentType',
+        'contentType' => 'contentType',
         'deleteStaffId' => 'deleteStaffId',
-        'deleteTime'    => 'deleteTime',
-        'fileName'      => 'fileName',
-        'filePath'      => 'filePath',
-        'fileSize'      => 'fileSize',
-        'fileType'      => 'fileType',
+        'deleteTime' => 'deleteTime',
+        'fileName' => 'fileName',
+        'filePath' => 'filePath',
+        'fileSize' => 'fileSize',
+        'fileType' => 'fileType',
         'recycleItemId' => 'recycleItemId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

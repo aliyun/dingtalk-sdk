@@ -54,17 +54,15 @@ class SendMessageRequest extends Model
      */
     public $sourceInfos;
     protected $_name = [
-        'message'            => 'message',
-        'messageType'        => 'messageType',
+        'message' => 'message',
+        'messageType' => 'messageType',
         'openConversationId' => 'openConversationId',
-        'receiverId'         => 'receiverId',
-        'senderId'           => 'senderId',
-        'sourceInfos'        => 'sourceInfos',
+        'receiverId' => 'receiverId',
+        'senderId' => 'senderId',
+        'sourceInfos' => 'sourceInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

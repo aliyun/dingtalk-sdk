@@ -21,13 +21,11 @@ class SearchTemplatesResponseBody extends Model
      */
     public $templateList;
     protected $_name = [
-        'nextToken'    => 'nextToken',
+        'nextToken' => 'nextToken',
         'templateList' => 'templateList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class SearchTemplatesResponseBody extends Model
         if (isset($map['templateList'])) {
             if (!empty($map['templateList'])) {
                 $model->templateList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['templateList'] as $item) {
                     $model->templateList[$n++] = null !== $item ? templateList::fromMap($item) : $item;
                 }

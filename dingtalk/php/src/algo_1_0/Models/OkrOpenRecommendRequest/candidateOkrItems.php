@@ -30,12 +30,10 @@ class candidateOkrItems extends Model
     protected $_name = [
         'okrInfos' => 'okrInfos',
         'relation' => 'relation',
-        'userId'   => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class candidateOkrItems extends Model
         if (isset($map['okrInfos'])) {
             if (!empty($map['okrInfos'])) {
                 $model->okrInfos = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['okrInfos'] as $item) {
                     $model->okrInfos[$n++] = null !== $item ? okrInfos::fromMap($item) : $item;
                 }

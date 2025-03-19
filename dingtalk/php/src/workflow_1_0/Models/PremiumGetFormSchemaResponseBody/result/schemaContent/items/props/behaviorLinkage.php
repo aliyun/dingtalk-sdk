@@ -22,12 +22,10 @@ class behaviorLinkage extends Model
     public $value;
     protected $_name = [
         'targets' => 'targets',
-        'value'   => 'value',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class behaviorLinkage extends Model
         if (isset($map['targets'])) {
             if (!empty($map['targets'])) {
                 $model->targets = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['targets'] as $item) {
                     $model->targets[$n++] = null !== $item ? targets::fromMap($item) : $item;
                 }

@@ -27,14 +27,12 @@ class items extends Model
      */
     public $settingId;
     protected $_name = [
-        'id'        => 'id',
-        'name'      => 'name',
+        'id' => 'id',
+        'name' => 'name',
         'settingId' => 'settingId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class GetEmploymentRecordByWorkNoResponseBody extends Model
      */
     public $requestId;
     protected $_name = [
-        'content'   => 'content',
+        'content' => 'content',
         'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -56,7 +54,7 @@ class GetEmploymentRecordByWorkNoResponseBody extends Model
         if (isset($map['content'])) {
             if (!empty($map['content'])) {
                 $model->content = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['content'] as $item) {
                     $model->content[$n++] = null !== $item ? CfEmploymentRecordResp::fromMap($item) : $item;
                 }

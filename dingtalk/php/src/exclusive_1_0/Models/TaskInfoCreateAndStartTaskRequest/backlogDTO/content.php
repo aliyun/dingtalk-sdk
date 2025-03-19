@@ -19,12 +19,10 @@ class content extends Model
     public $priority;
     protected $_name = [
         'isOnlyShowExecutor' => 'isOnlyShowExecutor',
-        'priority'           => 'priority',
+        'priority' => 'priority',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -62,19 +62,17 @@ class QueryScheduleConferenceResponseBody extends Model
      */
     public $url;
     protected $_name = [
-        'endTime'              => 'endTime',
-        'phones'               => 'phones',
-        'requestId'            => 'requestId',
-        'roomCode'             => 'roomCode',
+        'endTime' => 'endTime',
+        'phones' => 'phones',
+        'requestId' => 'requestId',
+        'roomCode' => 'roomCode',
         'scheduleConferenceId' => 'scheduleConferenceId',
-        'startTime'            => 'startTime',
-        'title'                => 'title',
-        'url'                  => 'url',
+        'startTime' => 'startTime',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

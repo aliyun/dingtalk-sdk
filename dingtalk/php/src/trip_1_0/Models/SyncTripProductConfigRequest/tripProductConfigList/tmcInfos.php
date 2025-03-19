@@ -29,14 +29,12 @@ class tmcInfos extends Model
     public $tmcCorpId;
     protected $_name = [
         'categoryType' => 'categoryType',
-        'gmtOrgPay'    => 'gmtOrgPay',
-        'payType'      => 'payType',
-        'tmcCorpId'    => 'tmcCorpId',
+        'gmtOrgPay' => 'gmtOrgPay',
+        'payType' => 'payType',
+        'tmcCorpId' => 'tmcCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

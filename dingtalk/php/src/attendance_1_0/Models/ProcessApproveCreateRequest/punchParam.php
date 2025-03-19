@@ -38,15 +38,13 @@ class punchParam extends Model
      */
     public $punchTime;
     protected $_name = [
-        'positionId'   => 'positionId',
+        'positionId' => 'positionId',
         'positionName' => 'positionName',
         'positionType' => 'positionType',
-        'punchTime'    => 'punchTime',
+        'punchTime' => 'punchTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

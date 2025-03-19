@@ -33,16 +33,14 @@ class actionContent extends Model
      */
     public $valueType;
     protected $_name = [
-        'displayName'  => 'displayName',
+        'displayName' => 'displayName',
         'displayValue' => 'displayValue',
-        'name'         => 'name',
-        'value'        => 'value',
-        'valueType'    => 'valueType',
+        'name' => 'name',
+        'value' => 'value',
+        'valueType' => 'valueType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

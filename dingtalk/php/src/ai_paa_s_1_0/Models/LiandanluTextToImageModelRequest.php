@@ -47,16 +47,14 @@ class LiandanluTextToImageModelRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'module'     => 'module',
-        'number'     => 'number',
+        'module' => 'module',
+        'number' => 'number',
         'parameters' => 'parameters',
-        'prompt'     => 'prompt',
-        'userId'     => 'userId',
+        'prompt' => 'prompt',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

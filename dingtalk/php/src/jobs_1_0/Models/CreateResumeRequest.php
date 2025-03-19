@@ -39,17 +39,15 @@ class CreateResumeRequest extends Model
      */
     public $userIdentify;
     protected $_name = [
-        'bizCode'      => 'bizCode',
-        'ext'          => 'ext',
+        'bizCode' => 'bizCode',
+        'ext' => 'ext',
         'resumeDataVO' => 'resumeDataVO',
-        'scene'        => 'scene',
-        'types'        => 'types',
+        'scene' => 'scene',
+        'types' => 'types',
         'userIdentify' => 'userIdentify',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

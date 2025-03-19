@@ -19,12 +19,10 @@ class orgInfo extends Model
     public $name;
     protected $_name = [
         'corpId' => 'corpId',
-        'name'   => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

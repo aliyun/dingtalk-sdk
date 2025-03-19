@@ -32,15 +32,13 @@ class ExecuteRobotAiSkillRequest extends Model
      */
     public $skillId;
     protected $_name = [
-        'context'   => 'context',
-        'input'     => 'input',
+        'context' => 'context',
+        'input' => 'input',
         'robotCode' => 'robotCode',
-        'skillId'   => 'skillId',
+        'skillId' => 'skillId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

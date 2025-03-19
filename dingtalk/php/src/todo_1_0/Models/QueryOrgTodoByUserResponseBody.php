@@ -27,13 +27,11 @@ class QueryOrgTodoByUserResponseBody extends Model
     public $todoCards;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'todoCards'  => 'todoCards',
+        'nextToken' => 'nextToken',
+        'todoCards' => 'todoCards',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -74,7 +72,7 @@ class QueryOrgTodoByUserResponseBody extends Model
         if (isset($map['todoCards'])) {
             if (!empty($map['todoCards'])) {
                 $model->todoCards = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['todoCards'] as $item) {
                     $model->todoCards[$n++] = null !== $item ? todoCards::fromMap($item) : $item;
                 }

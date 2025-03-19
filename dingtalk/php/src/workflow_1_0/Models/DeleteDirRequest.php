@@ -24,13 +24,11 @@ class DeleteDirRequest extends Model
      */
     public $operateUserId;
     protected $_name = [
-        'dirId'         => 'dirId',
+        'dirId' => 'dirId',
         'operateUserId' => 'operateUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

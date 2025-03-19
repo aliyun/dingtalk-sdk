@@ -67,18 +67,16 @@ class miniAppVersionList extends Model
      */
     public $modifyTime;
     protected $_name = [
-        'appVersion'     => 'appVersion',
-        'appVersionId'   => 'appVersionId',
+        'appVersion' => 'appVersion',
+        'appVersionId' => 'appVersionId',
         'appVersionType' => 'appVersionType',
-        'createTime'     => 'createTime',
-        'miniAppId'      => 'miniAppId',
-        'miniAppOnPc'    => 'miniAppOnPc',
-        'modifyTime'     => 'modifyTime',
+        'createTime' => 'createTime',
+        'miniAppId' => 'miniAppId',
+        'miniAppOnPc' => 'miniAppOnPc',
+        'modifyTime' => 'modifyTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

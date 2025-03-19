@@ -18,9 +18,7 @@ class GetAgentIdByRelatedAppIdResponseBody extends Model
         'agentId' => 'agentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

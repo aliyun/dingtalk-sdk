@@ -30,15 +30,13 @@ class imGroupOpenDeliverModel extends Model
      */
     public $robotCode;
     protected $_name = [
-        'atUserIds'  => 'atUserIds',
-        'extension'  => 'extension',
+        'atUserIds' => 'atUserIds',
+        'extension' => 'extension',
         'recipients' => 'recipients',
-        'robotCode'  => 'robotCode',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -26,12 +26,10 @@ class children extends Model
     public $props;
     protected $_name = [
         'componentName' => 'componentName',
-        'props'         => 'props',
+        'props' => 'props',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

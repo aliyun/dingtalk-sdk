@@ -43,16 +43,14 @@ class GetDeptResponseBody extends Model
      */
     public $parentDepartmentId;
     protected $_name = [
-        'departmentId'       => 'departmentId',
-        'departmentName'     => 'departmentName',
-        'fromUnionOrg'       => 'fromUnionOrg',
-        'order'              => 'order',
+        'departmentId' => 'departmentId',
+        'departmentName' => 'departmentName',
+        'fromUnionOrg' => 'fromUnionOrg',
+        'order' => 'order',
         'parentDepartmentId' => 'parentDepartmentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

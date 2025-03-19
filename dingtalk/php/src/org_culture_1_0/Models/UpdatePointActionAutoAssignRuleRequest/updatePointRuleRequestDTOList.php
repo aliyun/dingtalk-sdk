@@ -44,15 +44,13 @@ class updatePointRuleRequestDTOList extends Model
      */
     public $status;
     protected $_name = [
-        'awardScore'    => 'awardScore',
-        'code'          => 'code',
+        'awardScore' => 'awardScore',
+        'code' => 'code',
         'dayLimitTimes' => 'dayLimitTimes',
-        'status'        => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

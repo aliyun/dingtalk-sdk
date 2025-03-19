@@ -16,9 +16,7 @@ class GetPointInfoRequest extends Model
         'pointPoolCode' => 'pointPoolCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

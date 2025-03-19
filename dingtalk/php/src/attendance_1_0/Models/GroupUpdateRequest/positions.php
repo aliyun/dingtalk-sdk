@@ -43,16 +43,14 @@ class positions extends Model
      */
     public $title;
     protected $_name = [
-        'address'   => 'address',
-        'latitude'  => 'latitude',
+        'address' => 'address',
+        'latitude' => 'latitude',
         'longitude' => 'longitude',
-        'offset'    => 'offset',
-        'title'     => 'title',
+        'offset' => 'offset',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

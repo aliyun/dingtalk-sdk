@@ -27,12 +27,10 @@ class SetPermissionInheritanceRequest extends Model
     public $unionId;
     protected $_name = [
         'inheritance' => 'inheritance',
-        'unionId'     => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

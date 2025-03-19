@@ -23,12 +23,10 @@ class RobotRecallDingRequest extends Model
     public $robotCode;
     protected $_name = [
         'openDingId' => 'openDingId',
-        'robotCode'  => 'robotCode',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

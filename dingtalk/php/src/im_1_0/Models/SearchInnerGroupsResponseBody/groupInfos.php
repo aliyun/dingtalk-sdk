@@ -36,15 +36,13 @@ class groupInfos extends Model
      */
     public $title;
     protected $_name = [
-        'icon'               => 'icon',
-        'memberAmount'       => 'memberAmount',
+        'icon' => 'icon',
+        'memberAmount' => 'memberAmount',
         'openConversationId' => 'openConversationId',
-        'title'              => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

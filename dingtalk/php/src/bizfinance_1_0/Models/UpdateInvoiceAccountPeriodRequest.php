@@ -41,16 +41,14 @@ class UpdateInvoiceAccountPeriodRequest extends Model
      */
     public $operator;
     protected $_name = [
-        'accountPeriod'        => 'accountPeriod',
-        'companyCode'          => 'companyCode',
+        'accountPeriod' => 'accountPeriod',
+        'companyCode' => 'companyCode',
         'generalInvoiceVOList' => 'generalInvoiceVOList',
-        'invoiceKeyVOList'     => 'invoiceKeyVOList',
-        'operator'             => 'operator',
+        'invoiceKeyVOList' => 'invoiceKeyVOList',
+        'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -103,7 +101,7 @@ class UpdateInvoiceAccountPeriodRequest extends Model
         if (isset($map['generalInvoiceVOList'])) {
             if (!empty($map['generalInvoiceVOList'])) {
                 $model->generalInvoiceVOList = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['generalInvoiceVOList'] as $item) {
                     $model->generalInvoiceVOList[$n++] = null !== $item ? generalInvoiceVOList::fromMap($item) : $item;
                 }
@@ -112,7 +110,7 @@ class UpdateInvoiceAccountPeriodRequest extends Model
         if (isset($map['invoiceKeyVOList'])) {
             if (!empty($map['invoiceKeyVOList'])) {
                 $model->invoiceKeyVOList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['invoiceKeyVOList'] as $item) {
                     $model->invoiceKeyVOList[$n++] = null !== $item ? invoiceKeyVOList::fromMap($item) : $item;
                 }

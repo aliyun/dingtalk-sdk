@@ -61,19 +61,17 @@ class CreateTicketRequest extends Model
      */
     public $title;
     protected $_name = [
-        'foreignId'      => 'foreignId',
-        'foreignName'    => 'foreignName',
+        'foreignId' => 'foreignId',
+        'foreignName' => 'foreignName',
         'openInstanceId' => 'openInstanceId',
         'productionType' => 'productionType',
-        'properties'     => 'properties',
-        'sourceId'       => 'sourceId',
-        'templateId'     => 'templateId',
-        'title'          => 'title',
+        'properties' => 'properties',
+        'sourceId' => 'sourceId',
+        'templateId' => 'templateId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -135,7 +133,7 @@ class CreateTicketRequest extends Model
         if (isset($map['properties'])) {
             if (!empty($map['properties'])) {
                 $model->properties = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['properties'] as $item) {
                     $model->properties[$n++] = null !== $item ? properties::fromMap($item) : $item;
                 }

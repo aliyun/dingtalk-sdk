@@ -18,13 +18,11 @@ class CreateProjectV3Request extends Model
      */
     public $organizationId;
     protected $_name = [
-        'name'           => 'name',
+        'name' => 'name',
         'organizationId' => 'organizationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

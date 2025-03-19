@@ -34,16 +34,14 @@ class result extends Model
      */
     public $users;
     protected $_name = [
-        'devices'       => 'devices',
-        'ownerUser'     => 'ownerUser',
+        'devices' => 'devices',
+        'ownerUser' => 'ownerUser',
         'subAdminUsers' => 'subAdminUsers',
-        'title'         => 'title',
-        'users'         => 'users',
+        'title' => 'title',
+        'users' => 'users',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -84,7 +82,7 @@ class result extends Model
         if (isset($map['devices'])) {
             if (!empty($map['devices'])) {
                 $model->devices = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['devices'] as $item) {
                     $model->devices[$n++] = null !== $item ? devices::fromMap($item) : $item;
                 }

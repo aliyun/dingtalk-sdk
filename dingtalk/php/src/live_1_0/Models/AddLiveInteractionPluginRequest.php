@@ -57,16 +57,14 @@ class AddLiveInteractionPluginRequest extends Model
     protected $_name = [
         'anchorJumpUrl' => 'anchorJumpUrl',
         'pluginIconUrl' => 'pluginIconUrl',
-        'pluginName'    => 'pluginName',
-        'pluginNameEn'  => 'pluginNameEn',
+        'pluginName' => 'pluginName',
+        'pluginNameEn' => 'pluginNameEn',
         'viewerJumpUrl' => 'viewerJumpUrl',
-        'liveId'        => 'liveId',
-        'unionId'       => 'unionId',
+        'liveId' => 'liveId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

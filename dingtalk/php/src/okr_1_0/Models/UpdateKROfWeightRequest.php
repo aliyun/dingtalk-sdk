@@ -36,13 +36,11 @@ class UpdateKROfWeightRequest extends Model
     public $userId;
     protected $_name = [
         'weight' => 'weight',
-        'krId'   => 'krId',
+        'krId' => 'krId',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

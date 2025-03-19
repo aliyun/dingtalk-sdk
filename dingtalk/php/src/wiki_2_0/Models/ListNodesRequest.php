@@ -47,16 +47,14 @@ class ListNodesRequest extends Model
      */
     public $withPermissionRole;
     protected $_name = [
-        'maxResults'         => 'maxResults',
-        'nextToken'          => 'nextToken',
-        'operatorId'         => 'operatorId',
-        'parentNodeId'       => 'parentNodeId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'operatorId' => 'operatorId',
+        'parentNodeId' => 'parentNodeId',
         'withPermissionRole' => 'withPermissionRole',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

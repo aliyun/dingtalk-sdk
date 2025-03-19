@@ -68,20 +68,18 @@ class data extends Model
      */
     public $title;
     protected $_name = [
-        'deviceDepts'     => 'deviceDepts',
-        'deviceRoles'     => 'deviceRoles',
+        'deviceDepts' => 'deviceDepts',
+        'deviceRoles' => 'deviceRoles',
         'deviceScopeType' => 'deviceScopeType',
-        'deviceStaffs'    => 'deviceStaffs',
-        'gmtCreate'       => 'gmtCreate',
-        'gmtModified'     => 'gmtModified',
-        'macAddress'      => 'macAddress',
-        'platform'        => 'platform',
-        'title'           => 'title',
+        'deviceStaffs' => 'deviceStaffs',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'macAddress' => 'macAddress',
+        'platform' => 'platform',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -146,7 +144,7 @@ class data extends Model
         if (isset($map['deviceDepts'])) {
             if (!empty($map['deviceDepts'])) {
                 $model->deviceDepts = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['deviceDepts'] as $item) {
                     $model->deviceDepts[$n++] = null !== $item ? deviceDepts::fromMap($item) : $item;
                 }
@@ -155,7 +153,7 @@ class data extends Model
         if (isset($map['deviceRoles'])) {
             if (!empty($map['deviceRoles'])) {
                 $model->deviceRoles = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['deviceRoles'] as $item) {
                     $model->deviceRoles[$n++] = null !== $item ? deviceRoles::fromMap($item) : $item;
                 }
@@ -167,7 +165,7 @@ class data extends Model
         if (isset($map['deviceStaffs'])) {
             if (!empty($map['deviceStaffs'])) {
                 $model->deviceStaffs = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['deviceStaffs'] as $item) {
                     $model->deviceStaffs[$n++] = null !== $item ? deviceStaffs::fromMap($item) : $item;
                 }

@@ -22,13 +22,11 @@ class listDynamicAttr extends Model
      */
     public $listAttrOptionsCode;
     protected $_name = [
-        'attrCode'            => 'attrCode',
+        'attrCode' => 'attrCode',
         'listAttrOptionsCode' => 'listAttrOptionsCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

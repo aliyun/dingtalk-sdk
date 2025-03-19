@@ -22,13 +22,11 @@ class GetTemplateByIdRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'belong'     => 'belong',
+        'belong' => 'belong',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

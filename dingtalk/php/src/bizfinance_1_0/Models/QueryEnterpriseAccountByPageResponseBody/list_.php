@@ -84,21 +84,19 @@ class list_ extends Model
      */
     public $creator;
     protected $_name = [
-        'accountCode'   => 'accountCode',
-        'accountId'     => 'accountId',
-        'accountName'   => 'accountName',
+        'accountCode' => 'accountCode',
+        'accountId' => 'accountId',
+        'accountName' => 'accountName',
         'accountRemark' => 'accountRemark',
-        'accountType'   => 'accountType',
-        'amount'        => 'amount',
-        'bankCode'      => 'bankCode',
-        'bankName'      => 'bankName',
-        'createTime'    => 'createTime',
-        'creator'       => 'creator',
+        'accountType' => 'accountType',
+        'amount' => 'amount',
+        'bankCode' => 'bankCode',
+        'bankName' => 'bankName',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

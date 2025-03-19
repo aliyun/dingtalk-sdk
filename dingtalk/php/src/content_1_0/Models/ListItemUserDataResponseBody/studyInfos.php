@@ -27,12 +27,10 @@ class studyInfos extends Model
     public $uid;
     protected $_name = [
         'durationMillis' => 'durationMillis',
-        'uid'            => 'uid',
+        'uid' => 'uid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

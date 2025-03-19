@@ -40,15 +40,13 @@ class GetAskDetailRequest extends Model
     public $startTime;
     protected $_name = [
         'assistantId' => 'assistantId',
-        'endTime'     => 'endTime',
-        'offset'      => 'offset',
-        'pageSize'    => 'pageSize',
-        'startTime'   => 'startTime',
+        'endTime' => 'endTime',
+        'offset' => 'offset',
+        'pageSize' => 'pageSize',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

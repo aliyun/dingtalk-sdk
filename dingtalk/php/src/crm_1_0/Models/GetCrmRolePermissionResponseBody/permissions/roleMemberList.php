@@ -43,14 +43,12 @@ class roleMemberList extends Model
     public $userId;
     protected $_name = [
         'memberId' => 'memberId',
-        'name'     => 'name',
-        'type'     => 'type',
-        'userId'   => 'userId',
+        'name' => 'name',
+        'type' => 'type',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

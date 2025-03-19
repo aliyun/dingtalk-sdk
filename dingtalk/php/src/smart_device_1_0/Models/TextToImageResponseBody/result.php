@@ -23,14 +23,12 @@ class result extends Model
      */
     public $taskStatus;
     protected $_name = [
-        'requestId'  => 'requestId',
-        'taskId'     => 'taskId',
+        'requestId' => 'requestId',
+        'taskId' => 'taskId',
         'taskStatus' => 'taskStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

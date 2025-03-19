@@ -79,18 +79,16 @@ class pointRuleList extends Model
     public $status;
     protected $_name = [
         'dayLimitTimes' => 'dayLimitTimes',
-        'extension'     => 'extension',
-        'groupId'       => 'groupId',
-        'orderId'       => 'orderId',
-        'ruleCode'      => 'ruleCode',
-        'ruleName'      => 'ruleName',
-        'score'         => 'score',
-        'status'        => 'status',
+        'extension' => 'extension',
+        'groupId' => 'groupId',
+        'orderId' => 'orderId',
+        'ruleCode' => 'ruleCode',
+        'ruleName' => 'ruleName',
+        'score' => 'score',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

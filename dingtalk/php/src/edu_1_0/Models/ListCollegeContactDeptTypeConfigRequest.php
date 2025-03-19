@@ -18,9 +18,7 @@ class ListCollegeContactDeptTypeConfigRequest extends Model
         'language' => 'language',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -25,12 +25,10 @@ class ManagerSetDefaultHandOverUserRequest extends Model
     public $operatorId;
     protected $_name = [
         'defaultHandoverUserId' => 'defaultHandoverUserId',
-        'operatorId'            => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

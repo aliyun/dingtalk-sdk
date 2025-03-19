@@ -31,14 +31,12 @@ class GetBranchAuthDataRequest extends Model
      */
     public $code;
     protected $_name = [
-        'body'         => 'body',
+        'body' => 'body',
         'branchCorpId' => 'branchCorpId',
-        'code'         => 'code',
+        'code' => 'code',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

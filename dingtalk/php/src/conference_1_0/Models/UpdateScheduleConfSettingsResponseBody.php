@@ -16,9 +16,7 @@ class UpdateScheduleConfSettingsResponseBody extends Model
         'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -37,14 +37,12 @@ class submitTimeRule extends Model
     public $timeValue;
     protected $_name = [
         'enableTimeLimit' => 'enableTimeLimit',
-        'timeType'        => 'timeType',
-        'timeUnit'        => 'timeUnit',
-        'timeValue'       => 'timeValue',
+        'timeType' => 'timeType',
+        'timeUnit' => 'timeUnit',
+        'timeValue' => 'timeValue',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -63,18 +63,16 @@ class residentUpdateInfo extends Model
      */
     public $userId;
     protected $_name = [
-        'deptId'              => 'deptId',
-        'isPropertyOwner'     => 'isPropertyOwner',
+        'deptId' => 'deptId',
+        'isPropertyOwner' => 'isPropertyOwner',
         'memberDeptExtension' => 'memberDeptExtension',
-        'name'                => 'name',
-        'oldDeptId'           => 'oldDeptId',
-        'relateType'          => 'relateType',
-        'userId'              => 'userId',
+        'name' => 'name',
+        'oldDeptId' => 'oldDeptId',
+        'relateType' => 'relateType',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

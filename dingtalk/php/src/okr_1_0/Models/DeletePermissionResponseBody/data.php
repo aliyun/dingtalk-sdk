@@ -41,15 +41,13 @@ class data extends Model
      */
     public $type;
     protected $_name = [
-        'id'         => 'id',
+        'id' => 'id',
         'policyList' => 'policyList',
-        'privacy'    => 'privacy',
-        'type'       => 'type',
+        'privacy' => 'privacy',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -90,7 +88,7 @@ class data extends Model
         if (isset($map['policyList'])) {
             if (!empty($map['policyList'])) {
                 $model->policyList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['policyList'] as $item) {
                     $model->policyList[$n++] = null !== $item ? policyList::fromMap($item) : $item;
                 }

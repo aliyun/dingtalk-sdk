@@ -18,9 +18,7 @@ class GetUnionIdByMigrationUnionIdRequest extends Model
         'migrationUnionId' => 'migrationUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

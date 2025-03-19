@@ -53,20 +53,18 @@ class GetUserResponseBody extends Model
      */
     public $visitor;
     protected $_name = [
-        'avatarUrl'  => 'avatarUrl',
-        'email'      => 'email',
+        'avatarUrl' => 'avatarUrl',
+        'email' => 'email',
         'loginEmail' => 'loginEmail',
-        'mobile'     => 'mobile',
-        'nick'       => 'nick',
-        'openId'     => 'openId',
-        'stateCode'  => 'stateCode',
-        'unionId'    => 'unionId',
-        'visitor'    => 'visitor',
+        'mobile' => 'mobile',
+        'nick' => 'nick',
+        'openId' => 'openId',
+        'stateCode' => 'stateCode',
+        'unionId' => 'unionId',
+        'visitor' => 'visitor',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

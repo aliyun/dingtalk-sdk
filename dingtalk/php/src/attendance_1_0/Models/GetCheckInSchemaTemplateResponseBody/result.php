@@ -53,19 +53,17 @@ class result extends Model
      */
     public $waterMarkTemplateModels;
     protected $_name = [
-        'bizCode'                 => 'bizCode',
+        'bizCode' => 'bizCode',
         'canModifyAndAddTemplate' => 'canModifyAndAddTemplate',
-        'conversationAdmin'       => 'conversationAdmin',
-        'customTemplateMaxSize'   => 'customTemplateMaxSize',
-        'openConversationId'      => 'openConversationId',
-        'showStat'                => 'showStat',
-        'templateDegrade'         => 'templateDegrade',
+        'conversationAdmin' => 'conversationAdmin',
+        'customTemplateMaxSize' => 'customTemplateMaxSize',
+        'openConversationId' => 'openConversationId',
+        'showStat' => 'showStat',
+        'templateDegrade' => 'templateDegrade',
         'waterMarkTemplateModels' => 'waterMarkTemplateModels',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -136,7 +134,7 @@ class result extends Model
         if (isset($map['waterMarkTemplateModels'])) {
             if (!empty($map['waterMarkTemplateModels'])) {
                 $model->waterMarkTemplateModels = [];
-                $n                              = 0;
+                $n = 0;
                 foreach ($map['waterMarkTemplateModels'] as $item) {
                     $model->waterMarkTemplateModels[$n++] = null !== $item ? waterMarkTemplateModels::fromMap($item) : $item;
                 }

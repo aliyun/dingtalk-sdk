@@ -33,14 +33,12 @@ class UpdateDigitalInvoiceOrgInfoRequest extends Model
     public $operator;
     protected $_name = [
         'digitalInvoiceType' => 'digitalInvoiceType',
-        'isDigitalOrg'       => 'isDigitalOrg',
-        'location'           => 'location',
-        'operator'           => 'operator',
+        'isDigitalOrg' => 'isDigitalOrg',
+        'location' => 'location',
+        'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

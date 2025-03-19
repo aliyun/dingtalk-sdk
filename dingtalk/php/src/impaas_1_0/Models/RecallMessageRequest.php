@@ -27,14 +27,12 @@ class RecallMessageRequest extends Model
      */
     public $type;
     protected $_name = [
-        'messageId'   => 'messageId',
+        'messageId' => 'messageId',
         'operatorUid' => 'operatorUid',
-        'type'        => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

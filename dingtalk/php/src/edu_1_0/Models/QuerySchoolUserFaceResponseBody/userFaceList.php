@@ -45,14 +45,12 @@ class userFaceList extends Model
     public $userId;
     protected $_name = [
         'faceId' => 'faceId',
-        'name'   => 'name',
+        'name' => 'name',
         'status' => 'status',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -117,24 +117,22 @@ class SaveClassLearningDataRequest extends Model
      */
     public $teacherUserId;
     protected $_name = [
-        'assignNum'                => 'assignNum',
-        'assignStudentUserIds'     => 'assignStudentUserIds',
-        'bizId'                    => 'bizId',
-        'bizType'                  => 'bizType',
-        'corpId'                   => 'corpId',
-        'deptId'                   => 'deptId',
-        'fileSuffix'               => 'fileSuffix',
-        'generatedTime'            => 'generatedTime',
-        'questionNum'              => 'questionNum',
-        'questionPictureNum'       => 'questionPictureNum',
+        'assignNum' => 'assignNum',
+        'assignStudentUserIds' => 'assignStudentUserIds',
+        'bizId' => 'bizId',
+        'bizType' => 'bizType',
+        'corpId' => 'corpId',
+        'deptId' => 'deptId',
+        'fileSuffix' => 'fileSuffix',
+        'generatedTime' => 'generatedTime',
+        'questionNum' => 'questionNum',
+        'questionPictureNum' => 'questionPictureNum',
         'standardAnswerPictureNum' => 'standardAnswerPictureNum',
-        'subjectCode'              => 'subjectCode',
-        'teacherUserId'            => 'teacherUserId',
+        'subjectCode' => 'subjectCode',
+        'teacherUserId' => 'teacherUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

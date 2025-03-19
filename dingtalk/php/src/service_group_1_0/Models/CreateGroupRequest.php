@@ -61,18 +61,16 @@ class CreateGroupRequest extends Model
      */
     public $ownerStaffId;
     protected $_name = [
-        'groupBizId'     => 'groupBizId',
-        'groupName'      => 'groupName',
-        'groupTagNames'  => 'groupTagNames',
+        'groupBizId' => 'groupBizId',
+        'groupName' => 'groupName',
+        'groupTagNames' => 'groupTagNames',
         'memberStaffIds' => 'memberStaffIds',
         'openGroupSetId' => 'openGroupSetId',
-        'openTeamId'     => 'openTeamId',
-        'ownerStaffId'   => 'ownerStaffId',
+        'openTeamId' => 'openTeamId',
+        'ownerStaffId' => 'ownerStaffId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

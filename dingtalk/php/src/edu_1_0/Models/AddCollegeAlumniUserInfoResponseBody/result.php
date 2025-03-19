@@ -19,12 +19,10 @@ class result extends Model
     public $type;
     protected $_name = [
         'success' => 'success',
-        'type'    => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

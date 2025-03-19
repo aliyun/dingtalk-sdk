@@ -29,14 +29,12 @@ class RegisterAccountsRequest extends Model
      */
     public $corpId;
     protected $_name = [
-        'accessKey'  => 'accessKey',
+        'accessKey' => 'accessKey',
         'activeCode' => 'activeCode',
-        'corpId'     => 'corpId',
+        'corpId' => 'corpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

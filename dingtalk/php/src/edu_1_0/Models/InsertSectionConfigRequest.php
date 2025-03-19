@@ -40,16 +40,14 @@ class InsertSectionConfigRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'end'           => 'end',
-        'scheduleName'  => 'scheduleName',
+        'end' => 'end',
+        'scheduleName' => 'scheduleName',
         'sectionModels' => 'sectionModels',
-        'start'         => 'start',
-        'opUserId'      => 'opUserId',
+        'start' => 'start',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -96,7 +94,7 @@ class InsertSectionConfigRequest extends Model
         if (isset($map['sectionModels'])) {
             if (!empty($map['sectionModels'])) {
                 $model->sectionModels = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['sectionModels'] as $item) {
                     $model->sectionModels[$n++] = null !== $item ? sectionModels::fromMap($item) : $item;
                 }

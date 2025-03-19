@@ -18,13 +18,11 @@ class executorStatusList extends Model
      */
     public $isDone;
     protected $_name = [
-        'id'     => 'id',
+        'id' => 'id',
         'isDone' => 'isDone',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

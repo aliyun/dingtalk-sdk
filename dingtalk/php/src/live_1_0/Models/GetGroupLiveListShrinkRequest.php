@@ -19,12 +19,10 @@ class GetGroupLiveListShrinkRequest extends Model
     public $unionId;
     protected $_name = [
         'requestBodyShrink' => 'requestBody',
-        'unionId'           => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

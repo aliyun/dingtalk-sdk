@@ -65,8 +65,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -110,19 +110,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateField',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/fields',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateField',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/fields',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateFieldResponse::fromMap($this->execute($params, $req, $runtime));
@@ -178,19 +178,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateSheet',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateSheet',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateSheetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -240,18 +240,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteField',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/fields/' . $fieldIdOrName . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteField',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/fields/' . $fieldIdOrName . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteFieldResponse::fromMap($this->execute($params, $req, $runtime));
@@ -306,19 +306,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteRecords',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records/delete',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteRecords',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -368,18 +368,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteSheet',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteSheet',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteSheetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -429,18 +429,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAllFields',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/fields',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAllFields',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/fields',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAllFieldsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -489,18 +489,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAllSheets',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAllSheets',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAllSheetsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -550,18 +550,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRecord',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records/' . $recordId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRecord',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records/' . $recordId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRecordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -618,18 +618,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRecords',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRecords',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -679,18 +679,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSheet',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSheet',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSheetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -744,19 +744,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InsertRecords',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InsertRecords',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InsertRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -816,19 +816,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListRecords',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records/list',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListRecords',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records/list',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -881,19 +881,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PrepareSetRichText',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/prepareSetRichText',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PrepareSetRichText',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/prepareSetRichText',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PrepareSetRichTextResponse::fromMap($this->execute($params, $req, $runtime));
@@ -950,19 +950,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateField',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/fields/' . $fieldIdOrName . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateField',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/fields/' . $fieldIdOrName . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateFieldResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1017,19 +1017,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateRecords',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateRecords',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1083,19 +1083,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateSheet',
-            'version'     => 'notable_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateSheet',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateSheetResponse::fromMap($this->execute($params, $req, $runtime));

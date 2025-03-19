@@ -42,16 +42,14 @@ class CreateConditionalFormattingRuleRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'cellStyle'          => 'cellStyle',
+        'cellStyle' => 'cellStyle',
         'duplicateCondition' => 'duplicateCondition',
-        'numberCondition'    => 'numberCondition',
-        'ranges'             => 'ranges',
-        'operatorId'         => 'operatorId',
+        'numberCondition' => 'numberCondition',
+        'ranges' => 'ranges',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

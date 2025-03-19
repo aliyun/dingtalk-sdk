@@ -20,12 +20,10 @@ class GetGroupLiveListRequest extends Model
     public $unionId;
     protected $_name = [
         'requestBody' => 'requestBody',
-        'unionId'     => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

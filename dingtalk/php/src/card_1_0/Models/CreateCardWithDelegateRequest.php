@@ -101,25 +101,23 @@ class CreateCardWithDelegateRequest extends Model
      */
     public $userIdType;
     protected $_name = [
-        'callbackRouteKey'       => 'callbackRouteKey',
-        'callbackType'           => 'callbackType',
-        'cardData'               => 'cardData',
-        'cardTemplateId'         => 'cardTemplateId',
-        'coFeedOpenSpaceModel'   => 'coFeedOpenSpaceModel',
-        'imGroupOpenSpaceModel'  => 'imGroupOpenSpaceModel',
-        'imRobotOpenSpaceModel'  => 'imRobotOpenSpaceModel',
+        'callbackRouteKey' => 'callbackRouteKey',
+        'callbackType' => 'callbackType',
+        'cardData' => 'cardData',
+        'cardTemplateId' => 'cardTemplateId',
+        'coFeedOpenSpaceModel' => 'coFeedOpenSpaceModel',
+        'imGroupOpenSpaceModel' => 'imGroupOpenSpaceModel',
+        'imRobotOpenSpaceModel' => 'imRobotOpenSpaceModel',
         'imSingleOpenSpaceModel' => 'imSingleOpenSpaceModel',
-        'openDynamicDataConfig'  => 'openDynamicDataConfig',
-        'outTrackId'             => 'outTrackId',
-        'privateData'            => 'privateData',
-        'topOpenSpaceModel'      => 'topOpenSpaceModel',
-        'userId'                 => 'userId',
-        'userIdType'             => 'userIdType',
+        'openDynamicDataConfig' => 'openDynamicDataConfig',
+        'outTrackId' => 'outTrackId',
+        'privateData' => 'privateData',
+        'topOpenSpaceModel' => 'topOpenSpaceModel',
+        'userId' => 'userId',
+        'userIdType' => 'userIdType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

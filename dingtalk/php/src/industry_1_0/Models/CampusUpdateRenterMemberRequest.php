@@ -47,16 +47,14 @@ class CampusUpdateRenterMemberRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'extend'   => 'extend',
-        'name'     => 'name',
+        'extend' => 'extend',
+        'name' => 'name',
         'renterId' => 'renterId',
-        'type'     => 'type',
-        'unionId'  => 'unionId',
+        'type' => 'type',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -98,29 +98,27 @@ class actioner extends Model
      */
     public $userId;
     protected $_name = [
-        'buName'                       => 'buName',
-        'email'                        => 'email',
-        'employeeType'                 => 'employeeType',
-        'employeeTypeInformation'      => 'employeeTypeInformation',
+        'buName' => 'buName',
+        'email' => 'email',
+        'employeeType' => 'employeeType',
+        'employeeTypeInformation' => 'employeeTypeInformation',
         'humanResourceGroupWorkNumber' => 'humanResourceGroupWorkNumber',
-        'isSystemAdmin'                => 'isSystemAdmin',
-        'level'                        => 'level',
-        'name'                         => 'name',
-        'nickName'                     => 'nickName',
-        'orderNumber'                  => 'orderNumber',
-        'personalPhoto'                => 'personalPhoto',
-        'personalPhotoUrl'             => 'personalPhotoUrl',
-        'pinyinNameAll'                => 'pinyinNameAll',
-        'pinyinNickName'               => 'pinyinNickName',
-        'state'                        => 'state',
-        'superUserId'                  => 'superUserId',
-        'tbWang'                       => 'tbWang',
-        'userId'                       => 'userId',
+        'isSystemAdmin' => 'isSystemAdmin',
+        'level' => 'level',
+        'name' => 'name',
+        'nickName' => 'nickName',
+        'orderNumber' => 'orderNumber',
+        'personalPhoto' => 'personalPhoto',
+        'personalPhotoUrl' => 'personalPhotoUrl',
+        'pinyinNameAll' => 'pinyinNameAll',
+        'pinyinNickName' => 'pinyinNickName',
+        'state' => 'state',
+        'superUserId' => 'superUserId',
+        'tbWang' => 'tbWang',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

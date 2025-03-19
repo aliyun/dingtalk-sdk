@@ -20,9 +20,7 @@ class PushCustomerGroupMessageResponseBody extends Model
         'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

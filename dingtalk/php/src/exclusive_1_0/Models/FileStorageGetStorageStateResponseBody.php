@@ -38,17 +38,15 @@ class FileStorageGetStorageStateResponseBody extends Model
      */
     public $usedQuota;
     protected $_name = [
-        'accessKeyId'           => 'accessKeyId',
-        'createDate'            => 'createDate',
+        'accessKeyId' => 'accessKeyId',
+        'createDate' => 'createDate',
         'fileStorageOpenStatus' => 'fileStorageOpenStatus',
-        'oss'                   => 'oss',
-        'storageStatus'         => 'storageStatus',
-        'usedQuota'             => 'usedQuota',
+        'oss' => 'oss',
+        'storageStatus' => 'storageStatus',
+        'usedQuota' => 'usedQuota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

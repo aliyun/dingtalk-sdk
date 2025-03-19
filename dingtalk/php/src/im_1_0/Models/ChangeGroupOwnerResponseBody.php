@@ -18,13 +18,11 @@ class ChangeGroupOwnerResponseBody extends Model
      */
     public $newGroupOwnerType;
     protected $_name = [
-        'newGroupOwnerId'   => 'newGroupOwnerId',
+        'newGroupOwnerId' => 'newGroupOwnerId',
         'newGroupOwnerType' => 'newGroupOwnerType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

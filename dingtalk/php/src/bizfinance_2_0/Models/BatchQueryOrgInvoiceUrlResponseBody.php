@@ -20,13 +20,11 @@ class BatchQueryOrgInvoiceUrlResponseBody extends Model
      */
     public $orgInvoiceUrlList;
     protected $_name = [
-        'failInvoiceList'   => 'failInvoiceList',
+        'failInvoiceList' => 'failInvoiceList',
         'orgInvoiceUrlList' => 'orgInvoiceUrlList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class BatchQueryOrgInvoiceUrlResponseBody extends Model
         if (isset($map['failInvoiceList'])) {
             if (!empty($map['failInvoiceList'])) {
                 $model->failInvoiceList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['failInvoiceList'] as $item) {
                     $model->failInvoiceList[$n++] = null !== $item ? failInvoiceList::fromMap($item) : $item;
                 }
@@ -73,7 +71,7 @@ class BatchQueryOrgInvoiceUrlResponseBody extends Model
         if (isset($map['orgInvoiceUrlList'])) {
             if (!empty($map['orgInvoiceUrlList'])) {
                 $model->orgInvoiceUrlList = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['orgInvoiceUrlList'] as $item) {
                     $model->orgInvoiceUrlList[$n++] = null !== $item ? orgInvoiceUrlList::fromMap($item) : $item;
                 }

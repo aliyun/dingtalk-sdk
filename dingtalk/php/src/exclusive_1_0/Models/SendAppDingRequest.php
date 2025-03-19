@@ -28,9 +28,7 @@ class SendAppDingRequest extends Model
         'userids' => 'userids',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

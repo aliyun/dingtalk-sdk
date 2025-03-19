@@ -23,12 +23,10 @@ class ManagementListSpacesRequest extends Model
     public $unionId;
     protected $_name = [
         'spaceIds' => 'spaceIds',
-        'unionId'  => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

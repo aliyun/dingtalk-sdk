@@ -43,16 +43,14 @@ class itemList extends Model
      */
     public $userId;
     protected $_name = [
-        'name'             => 'name',
-        'statDate'         => 'statDate',
+        'name' => 'name',
+        'statDate' => 'statDate',
         'stayTimeLenApp1d' => 'stayTimeLenApp1d',
-        'stayTimeLenPc1d'  => 'stayTimeLenPc1d',
-        'userId'           => 'userId',
+        'stayTimeLenPc1d' => 'stayTimeLenPc1d',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

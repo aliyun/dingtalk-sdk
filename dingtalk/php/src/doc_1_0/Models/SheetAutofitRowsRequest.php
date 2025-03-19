@@ -40,15 +40,13 @@ class SheetAutofitRowsRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'fontWidth'  => 'fontWidth',
-        'row'        => 'row',
-        'rowCount'   => 'rowCount',
+        'fontWidth' => 'fontWidth',
+        'row' => 'row',
+        'rowCount' => 'rowCount',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

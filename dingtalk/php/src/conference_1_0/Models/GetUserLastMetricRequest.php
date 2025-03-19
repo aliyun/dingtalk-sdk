@@ -18,9 +18,7 @@ class GetUserLastMetricRequest extends Model
         'unionIdList' => 'unionIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

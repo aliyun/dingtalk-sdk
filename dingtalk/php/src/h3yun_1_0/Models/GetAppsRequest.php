@@ -23,12 +23,10 @@ class GetAppsRequest extends Model
     public $values;
     protected $_name = [
         'queryType' => 'queryType',
-        'values'    => 'values',
+        'values' => 'values',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

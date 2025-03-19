@@ -23,12 +23,10 @@ class SearchResidentRequest extends Model
     public $searchWord;
     protected $_name = [
         'residentCropId' => 'residentCropId',
-        'searchWord'     => 'searchWord',
+        'searchWord' => 'searchWord',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

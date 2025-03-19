@@ -35,14 +35,12 @@ class data extends Model
     public $schemaCode;
     protected $_name = [
         'childForms' => 'childForms',
-        'fields'     => 'fields',
-        'formName'   => 'formName',
+        'fields' => 'fields',
+        'formName' => 'formName',
         'schemaCode' => 'schemaCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -86,7 +84,7 @@ class data extends Model
         if (isset($map['childForms'])) {
             if (!empty($map['childForms'])) {
                 $model->childForms = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['childForms'] as $item) {
                     $model->childForms[$n++] = null !== $item ? childForms::fromMap($item) : $item;
                 }
@@ -95,7 +93,7 @@ class data extends Model
         if (isset($map['fields'])) {
             if (!empty($map['fields'])) {
                 $model->fields = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['fields'] as $item) {
                     $model->fields[$n++] = null !== $item ? fields::fromMap($item) : $item;
                 }

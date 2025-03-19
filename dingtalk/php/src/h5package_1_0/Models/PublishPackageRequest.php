@@ -32,13 +32,11 @@ class PublishPackageRequest extends Model
     public $version;
     protected $_name = [
         'agentId' => 'agentId',
-        'appId'   => 'appId',
+        'appId' => 'appId',
         'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

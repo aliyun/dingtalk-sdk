@@ -18,9 +18,7 @@ class subInstAuthInfo extends Model
         'authorizationLetterUrl' => 'authorizationLetterUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

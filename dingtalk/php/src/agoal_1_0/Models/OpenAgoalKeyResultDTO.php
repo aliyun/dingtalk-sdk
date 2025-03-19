@@ -76,19 +76,17 @@ class OpenAgoalKeyResultDTO extends Model
      */
     public $weight;
     protected $_name = [
-        'keyActions'    => 'keyActions',
-        'keyResultId'   => 'keyResultId',
-        'progress'      => 'progress',
-        'status'        => 'status',
-        'title'         => 'title',
+        'keyActions' => 'keyActions',
+        'keyResultId' => 'keyResultId',
+        'progress' => 'progress',
+        'status' => 'status',
+        'title' => 'title',
         'titleMentions' => 'titleMentions',
-        'type'          => 'type',
-        'weight'        => 'weight',
+        'type' => 'type',
+        'weight' => 'weight',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -144,7 +142,7 @@ class OpenAgoalKeyResultDTO extends Model
         if (isset($map['keyActions'])) {
             if (!empty($map['keyActions'])) {
                 $model->keyActions = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['keyActions'] as $item) {
                     $model->keyActions[$n++] = null !== $item ? OpenAgoalKeyActionDTO::fromMap($item) : $item;
                 }
@@ -165,7 +163,7 @@ class OpenAgoalKeyResultDTO extends Model
         if (isset($map['titleMentions'])) {
             if (!empty($map['titleMentions'])) {
                 $model->titleMentions = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['titleMentions'] as $item) {
                     $model->titleMentions[$n++] = null !== $item ? TitleMention::fromMap($item) : $item;
                 }

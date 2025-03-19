@@ -18,9 +18,7 @@ class UpdateTaskStartdateRequest extends Model
         'startDate' => 'startDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -35,14 +35,12 @@ class AddSchoolConfigRequest extends Model
      */
     public $temperatureUpLimit;
     protected $_name = [
-        'operatorId'         => 'operatorId',
-        'operatorName'       => 'operatorName',
+        'operatorId' => 'operatorId',
+        'operatorName' => 'operatorName',
         'temperatureUpLimit' => 'temperatureUpLimit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

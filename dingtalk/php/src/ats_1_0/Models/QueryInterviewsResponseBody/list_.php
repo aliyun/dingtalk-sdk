@@ -56,18 +56,16 @@ class list_ extends Model
      */
     public $startTimeMillis;
     protected $_name = [
-        'cancelled'       => 'cancelled',
-        'creatorUserId'   => 'creatorUserId',
-        'endTimeMillis'   => 'endTimeMillis',
-        'interviewId'     => 'interviewId',
-        'interviewers'    => 'interviewers',
-        'jobId'           => 'jobId',
+        'cancelled' => 'cancelled',
+        'creatorUserId' => 'creatorUserId',
+        'endTimeMillis' => 'endTimeMillis',
+        'interviewId' => 'interviewId',
+        'interviewers' => 'interviewers',
+        'jobId' => 'jobId',
         'startTimeMillis' => 'startTimeMillis',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -126,7 +124,7 @@ class list_ extends Model
         if (isset($map['interviewers'])) {
             if (!empty($map['interviewers'])) {
                 $model->interviewers = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['interviewers'] as $item) {
                     $model->interviewers[$n++] = null !== $item ? interviewers::fromMap($item) : $item;
                 }

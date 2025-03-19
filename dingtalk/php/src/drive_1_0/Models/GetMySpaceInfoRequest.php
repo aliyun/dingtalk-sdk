@@ -18,9 +18,7 @@ class GetMySpaceInfoRequest extends Model
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

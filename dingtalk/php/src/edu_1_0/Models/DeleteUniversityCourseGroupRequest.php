@@ -27,12 +27,10 @@ class DeleteUniversityCourseGroupRequest extends Model
     public $opUserId;
     protected $_name = [
         'courseGroupCode' => 'courseGroupCode',
-        'opUserId'        => 'opUserId',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -62,19 +62,17 @@ class stsUploadInfo extends Model
      */
     public $mediaId;
     protected $_name = [
-        'accessKeyId'                 => 'accessKeyId',
-        'accessKeySecret'             => 'accessKeySecret',
-        'accessToken'                 => 'accessToken',
+        'accessKeyId' => 'accessKeyId',
+        'accessKeySecret' => 'accessKeySecret',
+        'accessToken' => 'accessToken',
         'accessTokenExpirationMillis' => 'accessTokenExpirationMillis',
-        'bucket'                      => 'bucket',
-        'endPoint'                    => 'endPoint',
-        'internalEndPoint'            => 'internalEndPoint',
-        'mediaId'                     => 'mediaId',
+        'bucket' => 'bucket',
+        'endPoint' => 'endPoint',
+        'internalEndPoint' => 'internalEndPoint',
+        'mediaId' => 'mediaId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

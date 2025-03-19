@@ -20,13 +20,11 @@ class GenerateCaldavAccountHeaders extends Model
      */
     public $xAcsDingtalkAccessToken;
     protected $_name = [
-        'dingUid'                 => 'dingUid',
+        'dingUid' => 'dingUid',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

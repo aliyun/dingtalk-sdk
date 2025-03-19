@@ -35,14 +35,12 @@ class categoryStatisticsRecords extends Model
      */
     public $name;
     protected $_name = [
-        'count'     => 'count',
+        'count' => 'count',
         'lastCount' => 'lastCount',
-        'name'      => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

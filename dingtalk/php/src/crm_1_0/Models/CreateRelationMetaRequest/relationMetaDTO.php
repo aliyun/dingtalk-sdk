@@ -37,15 +37,13 @@ class relationMetaDTO extends Model
      */
     public $relationType;
     protected $_name = [
-        'desc'         => 'desc',
-        'items'        => 'items',
-        'name'         => 'name',
+        'desc' => 'desc',
+        'items' => 'items',
+        'name' => 'name',
         'relationType' => 'relationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -86,7 +84,7 @@ class relationMetaDTO extends Model
         if (isset($map['items'])) {
             if (!empty($map['items'])) {
                 $model->items = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['items'] as $item) {
                     $model->items[$n++] = null !== $item ? items::fromMap($item) : $item;
                 }

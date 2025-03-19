@@ -18,13 +18,11 @@ class DecodePayCodeRequest extends Model
      */
     public $requestId;
     protected $_name = [
-        'payCode'   => 'payCode',
+        'payCode' => 'payCode',
         'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

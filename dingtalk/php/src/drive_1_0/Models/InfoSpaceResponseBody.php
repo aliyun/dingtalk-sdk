@@ -12,6 +12,7 @@ class InfoSpaceResponseBody extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $createTime;
@@ -20,6 +21,7 @@ class InfoSpaceResponseBody extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $modifyTime;
@@ -64,19 +66,17 @@ class InfoSpaceResponseBody extends Model
      */
     public $usedQuota;
     protected $_name = [
-        'createTime'     => 'createTime',
-        'modifyTime'     => 'modifyTime',
+        'createTime' => 'createTime',
+        'modifyTime' => 'modifyTime',
         'permissionMode' => 'permissionMode',
-        'quota'          => 'quota',
-        'spaceId'        => 'spaceId',
-        'spaceName'      => 'spaceName',
-        'spaceType'      => 'spaceType',
-        'usedQuota'      => 'usedQuota',
+        'quota' => 'quota',
+        'spaceId' => 'spaceId',
+        'spaceName' => 'spaceName',
+        'spaceType' => 'spaceType',
+        'usedQuota' => 'usedQuota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

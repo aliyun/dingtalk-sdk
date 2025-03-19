@@ -25,14 +25,12 @@ class GetDownloadInfoRequest extends Model
      */
     public $withRegion;
     protected $_name = [
-        'unionId'                 => 'unionId',
+        'unionId' => 'unionId',
         'withInternalResourceUrl' => 'withInternalResourceUrl',
-        'withRegion'              => 'withRegion',
+        'withRegion' => 'withRegion',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -59,20 +59,18 @@ class data extends Model
      */
     public $status;
     protected $_name = [
-        'appType'                      => 'appType',
-        'elapsedTimeGMT'               => 'elapsedTimeGMT',
-        'finishTimeGMT'                => 'finishTimeGMT',
-        'flag'                         => 'flag',
-        'procInstanceId'               => 'procInstanceId',
-        'processCode'                  => 'processCode',
+        'appType' => 'appType',
+        'elapsedTimeGMT' => 'elapsedTimeGMT',
+        'finishTimeGMT' => 'finishTimeGMT',
+        'flag' => 'flag',
+        'procInstanceId' => 'procInstanceId',
+        'processCode' => 'processCode',
         'srcProcInstanceFinishTimeGMT' => 'srcProcInstanceFinishTimeGMT',
-        'srcProcInstanceId'            => 'srcProcInstanceId',
-        'status'                       => 'status',
+        'srcProcInstanceId' => 'srcProcInstanceId',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

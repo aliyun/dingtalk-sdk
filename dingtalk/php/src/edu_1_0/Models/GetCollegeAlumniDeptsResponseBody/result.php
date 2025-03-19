@@ -38,17 +38,15 @@ class result extends Model
      */
     public $superId;
     protected $_name = [
-        'corpId'     => 'corpId',
-        'deptId'     => 'deptId',
-        'deptType'   => 'deptType',
+        'corpId' => 'corpId',
+        'deptId' => 'deptId',
+        'deptType' => 'deptType',
         'hasSubDept' => 'hasSubDept',
-        'name'       => 'name',
-        'superId'    => 'superId',
+        'name' => 'name',
+        'superId' => 'superId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

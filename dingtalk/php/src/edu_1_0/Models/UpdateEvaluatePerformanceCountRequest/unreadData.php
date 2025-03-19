@@ -18,13 +18,11 @@ class unreadData extends Model
      */
     public $studentId;
     protected $_name = [
-        'number'    => 'number',
+        'number' => 'number',
         'studentId' => 'studentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

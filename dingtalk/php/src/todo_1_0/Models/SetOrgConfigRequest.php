@@ -32,15 +32,13 @@ class SetOrgConfigRequest extends Model
      */
     public $status;
     protected $_name = [
-        'appDisplayStyle'  => 'appDisplayStyle',
+        'appDisplayStyle' => 'appDisplayStyle',
         'homepageCatalogs' => 'homepageCatalogs',
-        'operatorId'       => 'operatorId',
-        'status'           => 'status',
+        'operatorId' => 'operatorId',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

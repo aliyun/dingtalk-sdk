@@ -58,19 +58,17 @@ class triggerDataList extends Model
      */
     public $triggerId;
     protected $_name = [
-        'action'            => 'action',
-        'customTriggerId'   => 'customTriggerId',
-        'dataGmtCreate'     => 'dataGmtCreate',
-        'dataGmtModified'   => 'dataGmtModified',
+        'action' => 'action',
+        'customTriggerId' => 'customTriggerId',
+        'dataGmtCreate' => 'dataGmtCreate',
+        'dataGmtModified' => 'dataGmtModified',
         'integrationObject' => 'integrationObject',
-        'jsonData'          => 'jsonData',
-        'triggerCondition'  => 'triggerCondition',
-        'triggerId'         => 'triggerId',
+        'jsonData' => 'jsonData',
+        'triggerCondition' => 'triggerCondition',
+        'triggerId' => 'triggerId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

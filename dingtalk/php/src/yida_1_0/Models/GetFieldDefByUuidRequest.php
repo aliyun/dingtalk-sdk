@@ -44,15 +44,13 @@ class GetFieldDefByUuidRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
-        'formUuid'    => 'formUuid',
+        'appType' => 'appType',
+        'formUuid' => 'formUuid',
         'systemToken' => 'systemToken',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -37,12 +37,10 @@ class QueryConversationPageRequest extends Model
     protected $_name = [
         'categoryId' => 'categoryId',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

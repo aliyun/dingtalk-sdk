@@ -17,9 +17,7 @@ class QueryMinutesAudioResponseBody extends Model
         'audioList' => 'audioList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class QueryMinutesAudioResponseBody extends Model
         if (isset($map['audioList'])) {
             if (!empty($map['audioList'])) {
                 $model->audioList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['audioList'] as $item) {
                     $model->audioList[$n++] = null !== $item ? audioList::fromMap($item) : $item;
                 }

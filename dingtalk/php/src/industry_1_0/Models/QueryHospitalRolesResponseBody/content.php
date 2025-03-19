@@ -77,18 +77,16 @@ class content extends Model
     public $sort;
     protected $_name = [
         'gmtCreate' => 'gmtCreate',
-        'id'        => 'id',
+        'id' => 'id',
         'isDeleted' => 'isDeleted',
-        'readOnly'  => 'readOnly',
-        'remark'    => 'remark',
-        'roleCode'  => 'roleCode',
-        'roleName'  => 'roleName',
-        'sort'      => 'sort',
+        'readOnly' => 'readOnly',
+        'remark' => 'remark',
+        'roleCode' => 'roleCode',
+        'roleName' => 'roleName',
+        'sort' => 'sort',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

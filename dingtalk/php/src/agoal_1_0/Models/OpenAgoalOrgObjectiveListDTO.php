@@ -25,12 +25,10 @@ class OpenAgoalOrgObjectiveListDTO extends Model
     public $totalCount;
     protected $_name = [
         'objectiveList' => 'objectiveList',
-        'totalCount'    => 'totalCount',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class OpenAgoalOrgObjectiveListDTO extends Model
         if (isset($map['objectiveList'])) {
             if (!empty($map['objectiveList'])) {
                 $model->objectiveList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['objectiveList'] as $item) {
                     $model->objectiveList[$n++] = null !== $item ? OpenAgoalOrgObjectiveDTO::fromMap($item) : $item;
                 }

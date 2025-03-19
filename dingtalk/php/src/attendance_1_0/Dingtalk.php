@@ -147,8 +147,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -232,19 +232,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddLeaveType',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/leaves/types',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddLeaveType',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/leaves/types',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddLeaveTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -296,18 +296,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AttendanceBleDevicesAdd',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/group/bledevices',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AttendanceBleDevicesAdd',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/group/bledevices',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AttendanceBleDevicesAddResponse::fromMap($this->execute($params, $req, $runtime));
@@ -356,18 +356,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AttendanceBleDevicesQuery',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/group/bledevices/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AttendanceBleDevicesQuery',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/group/bledevices/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AttendanceBleDevicesQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -419,18 +419,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AttendanceBleDevicesRemove',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/group/bledevices/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AttendanceBleDevicesRemove',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/group/bledevices/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AttendanceBleDevicesRemoveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -480,19 +480,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchBossCheck',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/results/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchBossCheck',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/results/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchBossCheckResponse::fromMap($this->execute($params, $req, $runtime));
@@ -557,19 +557,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CalculateDuration',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/approvals/durations/calculate',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CalculateDuration',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/approvals/durations/calculate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CalculateDurationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -621,18 +621,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CheckClosingAccount',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/closingAccounts/status/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CheckClosingAccount',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/closingAccounts/status/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CheckClosingAccountResponse::fromMap($this->execute($params, $req, $runtime));
@@ -687,18 +687,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CheckWritePermission',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/writePermissions/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CheckWritePermission',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/writePermissions/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CheckWritePermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -759,18 +759,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateApprove',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/approves',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateApprove',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/approves',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateApproveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -817,18 +817,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteLeaveRequest',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/users/' . $unionId . '/vacations/records/revoke',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteLeaveRequest',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/users/' . $unionId . '/vacations/records/revoke',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteLeaveRequestResponse::fromMap($this->execute($params, $req, $runtime));
@@ -887,18 +887,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteWaterMarkTemplate',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/watermarks/templates',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteWaterMarkTemplate',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/watermarks/templates',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteWaterMarkTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -956,18 +956,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DingTalkSecurityCheck',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/securities/check',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DingTalkSecurityCheck',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/securities/check',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DingTalkSecurityCheckResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1019,18 +1019,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetATManageScope',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/manageScopes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetATManageScope',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/manageScopes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetATManageScopeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1079,18 +1079,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAdjustments',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/adjustments',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAdjustments',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/adjustments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAdjustmentsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1145,18 +1145,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCheckInSchemaTemplate',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/watermarks/templates',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCheckInSchemaTemplate',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/watermarks/templates',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCheckInSchemaTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1217,18 +1217,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetCheckinRecordByUser',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/checkin/records/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCheckinRecordByUser',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/checkin/records/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCheckinRecordByUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1271,15 +1271,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetClassWithDeleted',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/classWithDeleted/' . $classId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetClassWithDeleted',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/classWithDeleted/' . $classId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetClassWithDeletedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1325,18 +1325,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetClosingAccounts',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/closingAccounts/rules/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetClosingAccounts',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/closingAccounts/rules/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetClosingAccountsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1391,18 +1391,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetColumnvals',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/columnValues/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetColumnvals',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/columnValues/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetColumnvalsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1460,18 +1460,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetLeaveRecords',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/vacations/records/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetLeaveRecords',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/vacations/records/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetLeaveRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1520,18 +1520,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetLeaveType',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/leaves/types',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetLeaveType',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/leaves/types',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetLeaveTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1574,15 +1574,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetMachine',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/machines/' . $devId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMachine',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/machines/' . $devId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMachineResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1632,18 +1632,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetMachineUser',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/machines/getUser/' . $devId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMachineUser',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/machines/getUser/' . $devId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMachineUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1693,18 +1693,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetOverdraftInfo',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/vacations/overdraft/get',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOverdraftInfo',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/vacations/overdraft/get',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOverdraftInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1750,18 +1750,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetOvertimeSetting',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/overtimeSettings/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOvertimeSetting',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/overtimeSettings/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOvertimeSettingResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1810,18 +1810,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetShift',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/shifts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetShift',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/shifts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetShiftResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1870,18 +1870,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSimpleGroups',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/groupDetails',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSimpleGroups',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/groupDetails',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSimpleGroupsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1930,18 +1930,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSimpleOvertimeSetting',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/overtimeSettings',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSimpleOvertimeSetting',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/overtimeSettings',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSimpleOvertimeSettingResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1993,18 +1993,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetUserHolidays',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/holidays',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserHolidays',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/holidays',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserHolidaysResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2183,19 +2183,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GroupAdd',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/groups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GroupAdd',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/groups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GroupAddResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2338,19 +2338,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GroupUpdate',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/groups',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GroupUpdate',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/groups',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GroupUpdateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2402,18 +2402,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'InitAndGetLeaveALlocationQuotas',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/leaves/initializations/balances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InitAndGetLeaveALlocationQuotas',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/leaves/initializations/balances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InitAndGetLeaveALlocationQuotasResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2468,18 +2468,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListApproveByUsers',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/approvals/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListApproveByUsers',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/approvals/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListApproveByUsersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2547,19 +2547,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ModifyWaterMarkTemplate',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/watermarks/templates',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ModifyWaterMarkTemplate',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/watermarks/templates',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ModifyWaterMarkTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2620,18 +2620,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ProcessApproveCreate',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/workflows/checkInForms',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ProcessApproveCreate',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/workflows/checkInForms',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ProcessApproveCreateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2699,19 +2699,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ProcessApproveFinish',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/approvals/finish',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ProcessApproveFinish',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/approvals/finish',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ProcessApproveFinishResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2773,18 +2773,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ReduceQuotaWithLeaveRecord',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/users/' . $unionId . '/vacations/records/modify',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReduceQuotaWithLeaveRecord',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/users/' . $unionId . '/vacations/records/modify',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReduceQuotaWithLeaveRecordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2837,18 +2837,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RetainLeaveTypes',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/vacations/types/change',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RetainLeaveTypes',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/vacations/types/change',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RetainLeaveTypesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2897,18 +2897,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ReverseTrialAdvancedLeave',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/leaves/reverse',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReverseTrialAdvancedLeave',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/leaves/reverse',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReverseTrialAdvancedLeaveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2957,18 +2957,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SalaryThirdDataIntegration',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/salaries/tripartiteDatas/write',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SalaryThirdDataIntegration',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/salaries/tripartiteDatas/write',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SalaryThirdDataIntegrationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3036,19 +3036,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveCustomWaterMarkTemplate',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/watermarks/templates',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveCustomWaterMarkTemplate',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/watermarks/templates',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveCustomWaterMarkTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3113,19 +3113,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ShiftAdd',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/shifts',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ShiftAdd',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/shifts',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ShiftAddResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3174,18 +3174,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncScheduleInfo',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/schedules/additionalInfo',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncScheduleInfo',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/schedules/additionalInfo',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return SyncScheduleInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3265,19 +3265,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateLeaveType',
-            'version'     => 'attendance_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/attendance/leaves/types',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateLeaveType',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/leaves/types',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateLeaveTypeResponse::fromMap($this->execute($params, $req, $runtime));

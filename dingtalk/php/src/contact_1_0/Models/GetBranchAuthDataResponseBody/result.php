@@ -29,14 +29,12 @@ class result extends Model
      */
     public $fieldValue;
     protected $_name = [
-        'fieldCode'  => 'fieldCode',
-        'fieldName'  => 'fieldName',
+        'fieldCode' => 'fieldCode',
+        'fieldName' => 'fieldName',
         'fieldValue' => 'fieldValue',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -31,14 +31,12 @@ class krResultRelatedResults extends Model
      */
     public $words;
     protected $_name = [
-        'krId'          => 'krId',
+        'krId' => 'krId',
         'semanticLevel' => 'semanticLevel',
-        'words'         => 'words',
+        'words' => 'words',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

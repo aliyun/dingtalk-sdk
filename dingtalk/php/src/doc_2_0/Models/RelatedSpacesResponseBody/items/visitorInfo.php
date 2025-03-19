@@ -31,14 +31,12 @@ class visitorInfo extends Model
     public $spaceActions;
     protected $_name = [
         'dentryActions' => 'dentryActions',
-        'pinned'        => 'pinned',
-        'roleCode'      => 'roleCode',
-        'spaceActions'  => 'spaceActions',
+        'pinned' => 'pinned',
+        'roleCode' => 'roleCode',
+        'spaceActions' => 'spaceActions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

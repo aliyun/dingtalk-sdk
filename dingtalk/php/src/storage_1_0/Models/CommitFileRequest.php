@@ -57,17 +57,15 @@ class CommitFileRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'name'              => 'name',
-        'option'            => 'option',
+        'name' => 'name',
+        'option' => 'option',
         'overwriteDentryId' => 'overwriteDentryId',
-        'parentId'          => 'parentId',
-        'uploadKey'         => 'uploadKey',
-        'unionId'           => 'unionId',
+        'parentId' => 'parentId',
+        'uploadKey' => 'uploadKey',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

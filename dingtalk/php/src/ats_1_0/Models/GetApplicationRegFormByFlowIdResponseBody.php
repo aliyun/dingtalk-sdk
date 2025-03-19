@@ -98,21 +98,19 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
      */
     public $templateVersion;
     protected $_name = [
-        'candidateId'       => 'candidateId',
-        'creatorUserId'     => 'creatorUserId',
-        'flowId'            => 'flowId',
-        'formId'            => 'formId',
-        'gmtCreateMillis'   => 'gmtCreateMillis',
+        'candidateId' => 'candidateId',
+        'creatorUserId' => 'creatorUserId',
+        'flowId' => 'flowId',
+        'formId' => 'formId',
+        'gmtCreateMillis' => 'gmtCreateMillis',
         'gmtModifiedMillis' => 'gmtModifiedMillis',
-        'jobId'             => 'jobId',
-        'status'            => 'status',
-        'templateId'        => 'templateId',
-        'templateVersion'   => 'templateVersion',
+        'jobId' => 'jobId',
+        'status' => 'status',
+        'templateId' => 'templateId',
+        'templateVersion' => 'templateVersion',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

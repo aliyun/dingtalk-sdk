@@ -36,15 +36,13 @@ class AddProfileRequest extends Model
      */
     public $nick;
     protected $_name = [
-        'appUid'        => 'appUid',
+        'appUid' => 'appUid',
         'avatarMediaId' => 'avatarMediaId',
-        'mobileNumber'  => 'mobileNumber',
-        'nick'          => 'nick',
+        'mobileNumber' => 'mobileNumber',
+        'nick' => 'nick',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

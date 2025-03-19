@@ -16,9 +16,7 @@ class originStart extends Model
         'dateTime' => 'dateTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

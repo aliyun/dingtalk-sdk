@@ -20,9 +20,7 @@ class QueryGroupIdRequest extends Model
         'sn' => 'sn',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class SearchTaskListRequest extends Model
      */
     public $taskListIds;
     protected $_name = [
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
-        'query'       => 'query',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'query' => 'query',
         'taskListIds' => 'taskListIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

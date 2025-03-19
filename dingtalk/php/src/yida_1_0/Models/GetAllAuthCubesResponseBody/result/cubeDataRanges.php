@@ -41,16 +41,14 @@ class cubeDataRanges extends Model
     public $operator;
     protected $_name = [
         'classifiedCode' => 'classifiedCode',
-        'conditionKey'   => 'conditionKey',
+        'conditionKey' => 'conditionKey',
         'conditionValue' => 'conditionValue',
-        'elementCode'    => 'elementCode',
-        'elementType'    => 'elementType',
-        'operator'       => 'operator',
+        'elementCode' => 'elementCode',
+        'elementType' => 'elementType',
+        'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

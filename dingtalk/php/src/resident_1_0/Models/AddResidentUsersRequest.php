@@ -60,18 +60,16 @@ class AddResidentUsersRequest extends Model
      */
     public $userName;
     protected $_name = [
-        'address'       => 'address',
-        'departmentId'  => 'departmentId',
-        'extField'      => 'extField',
+        'address' => 'address',
+        'departmentId' => 'departmentId',
+        'extField' => 'extField',
         'isLeaseholder' => 'isLeaseholder',
-        'mobile'        => 'mobile',
-        'relateType'    => 'relateType',
-        'userName'      => 'userName',
+        'mobile' => 'mobile',
+        'relateType' => 'relateType',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -124,7 +122,7 @@ class AddResidentUsersRequest extends Model
         if (isset($map['extField'])) {
             if (!empty($map['extField'])) {
                 $model->extField = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['extField'] as $item) {
                     $model->extField[$n++] = null !== $item ? extField::fromMap($item) : $item;
                 }

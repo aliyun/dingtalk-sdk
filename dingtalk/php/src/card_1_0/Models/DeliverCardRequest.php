@@ -69,20 +69,18 @@ class DeliverCardRequest extends Model
      */
     public $userIdType;
     protected $_name = [
-        'coFeedOpenDeliverModel'   => 'coFeedOpenDeliverModel',
-        'docOpenDeliverModel'      => 'docOpenDeliverModel',
-        'imGroupOpenDeliverModel'  => 'imGroupOpenDeliverModel',
-        'imRobotOpenDeliverModel'  => 'imRobotOpenDeliverModel',
+        'coFeedOpenDeliverModel' => 'coFeedOpenDeliverModel',
+        'docOpenDeliverModel' => 'docOpenDeliverModel',
+        'imGroupOpenDeliverModel' => 'imGroupOpenDeliverModel',
+        'imRobotOpenDeliverModel' => 'imRobotOpenDeliverModel',
         'imSingleOpenDeliverModel' => 'imSingleOpenDeliverModel',
-        'openSpaceId'              => 'openSpaceId',
-        'outTrackId'               => 'outTrackId',
-        'topOpenDeliverModel'      => 'topOpenDeliverModel',
-        'userIdType'               => 'userIdType',
+        'openSpaceId' => 'openSpaceId',
+        'outTrackId' => 'outTrackId',
+        'topOpenDeliverModel' => 'topOpenDeliverModel',
+        'userIdType' => 'userIdType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

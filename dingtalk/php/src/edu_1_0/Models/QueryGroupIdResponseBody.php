@@ -62,17 +62,15 @@ class QueryGroupIdResponseBody extends Model
      */
     public $pid;
     protected $_name = [
-        'corpId'       => 'corpId',
-        'groupId'      => 'groupId',
-        'merchantId'   => 'merchantId',
+        'corpId' => 'corpId',
+        'groupId' => 'groupId',
+        'merchantId' => 'merchantId',
         'merchantName' => 'merchantName',
-        'name'         => 'name',
-        'pid'          => 'pid',
+        'name' => 'name',
+        'pid' => 'pid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

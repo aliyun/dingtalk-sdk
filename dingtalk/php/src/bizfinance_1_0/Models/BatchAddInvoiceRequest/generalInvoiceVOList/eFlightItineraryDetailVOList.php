@@ -58,21 +58,19 @@ class eFlightItineraryDetailVOList extends Model
      */
     public $seat;
     protected $_name = [
-        'carrier'             => 'carrier',
-        'className'           => 'className',
-        'flightNumber'        => 'flightNumber',
-        'flyDate'             => 'flyDate',
-        'flyFrom'             => 'flyFrom',
-        'flyTime'             => 'flyTime',
-        'flyTo'               => 'flyTo',
+        'carrier' => 'carrier',
+        'className' => 'className',
+        'flightNumber' => 'flightNumber',
+        'flyDate' => 'flyDate',
+        'flyFrom' => 'flyFrom',
+        'flyTime' => 'flyTime',
+        'flyTo' => 'flyTo',
         'invoiceDetailNumber' => 'invoiceDetailNumber',
-        'invoiceId'           => 'invoiceId',
-        'seat'                => 'seat',
+        'invoiceId' => 'invoiceId',
+        'seat' => 'seat',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

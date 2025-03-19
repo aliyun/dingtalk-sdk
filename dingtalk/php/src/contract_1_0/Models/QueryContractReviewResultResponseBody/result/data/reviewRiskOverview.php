@@ -28,15 +28,13 @@ class reviewRiskOverview extends Model
      */
     public $mediumRisk;
     protected $_name = [
-        'hasRisk'    => 'hasRisk',
-        'highRisk'   => 'highRisk',
-        'lowRisk'    => 'lowRisk',
+        'hasRisk' => 'hasRisk',
+        'highRisk' => 'highRisk',
+        'lowRisk' => 'lowRisk',
         'mediumRisk' => 'mediumRisk',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

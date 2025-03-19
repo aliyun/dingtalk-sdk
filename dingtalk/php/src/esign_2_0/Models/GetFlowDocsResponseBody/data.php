@@ -23,14 +23,12 @@ class data extends Model
      */
     public $fileUrl;
     protected $_name = [
-        'fileId'   => 'fileId',
+        'fileId' => 'fileId',
         'fileName' => 'fileName',
-        'fileUrl'  => 'fileUrl',
+        'fileUrl' => 'fileUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class result extends Model
         'openTaskId' => 'openTaskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

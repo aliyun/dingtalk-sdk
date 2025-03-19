@@ -40,15 +40,13 @@ class GetFormComponentAliasListRequest extends Model
      */
     public $version;
     protected $_name = [
-        'language'    => 'language',
+        'language' => 'language',
         'systemToken' => 'systemToken',
-        'userId'      => 'userId',
-        'version'     => 'version',
+        'userId' => 'userId',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

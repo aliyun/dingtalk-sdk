@@ -34,13 +34,11 @@ class csUserInfo extends Model
     public $userId;
     protected $_name = [
         'avatar' => 'avatar',
-        'name'   => 'name',
+        'name' => 'name',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

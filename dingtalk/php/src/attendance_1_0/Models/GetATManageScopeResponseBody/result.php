@@ -31,14 +31,12 @@ class result extends Model
      */
     public $userIds;
     protected $_name = [
-        'hasMore'     => 'hasMore',
+        'hasMore' => 'hasMore',
         'manageScope' => 'manageScope',
-        'userIds'     => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

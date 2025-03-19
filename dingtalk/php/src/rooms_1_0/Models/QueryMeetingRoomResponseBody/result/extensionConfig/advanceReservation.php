@@ -29,14 +29,12 @@ class advanceReservation extends Model
      */
     public $advanceReservationTimeUnit;
     protected $_name = [
-        'advanceBookTimeFormat'      => 'advanceBookTimeFormat',
-        'advanceReservationTime'     => 'advanceReservationTime',
+        'advanceBookTimeFormat' => 'advanceBookTimeFormat',
+        'advanceReservationTime' => 'advanceReservationTime',
         'advanceReservationTimeUnit' => 'advanceReservationTimeUnit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

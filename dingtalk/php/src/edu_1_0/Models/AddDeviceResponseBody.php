@@ -53,16 +53,14 @@ class AddDeviceResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'corpId'     => 'corpId',
-        'id'         => 'id',
+        'corpId' => 'corpId',
+        'id' => 'id',
         'merchantId' => 'merchantId',
-        'sn'         => 'sn',
-        'status'     => 'status',
+        'sn' => 'sn',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

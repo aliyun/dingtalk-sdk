@@ -59,18 +59,16 @@ class times extends Model
      */
     public $freeCheck;
     protected $_name = [
-        'across'      => 'across',
-        'beginMin'    => 'beginMin',
-        'checkTime'   => 'checkTime',
-        'checkType'   => 'checkType',
-        'endMin'      => 'endMin',
+        'across' => 'across',
+        'beginMin' => 'beginMin',
+        'checkTime' => 'checkTime',
+        'checkType' => 'checkType',
+        'endMin' => 'endMin',
         'flexMinutes' => 'flexMinutes',
-        'freeCheck'   => 'freeCheck',
+        'freeCheck' => 'freeCheck',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

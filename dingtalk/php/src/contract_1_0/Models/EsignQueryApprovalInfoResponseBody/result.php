@@ -29,14 +29,12 @@ class result extends Model
      */
     public $bpmsProcessInstanceUrl;
     protected $_name = [
-        'bpmsProcessBusinessId'  => 'bpmsProcessBusinessId',
-        'bpmsProcessInstanceId'  => 'bpmsProcessInstanceId',
+        'bpmsProcessBusinessId' => 'bpmsProcessBusinessId',
+        'bpmsProcessInstanceId' => 'bpmsProcessInstanceId',
         'bpmsProcessInstanceUrl' => 'bpmsProcessInstanceUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

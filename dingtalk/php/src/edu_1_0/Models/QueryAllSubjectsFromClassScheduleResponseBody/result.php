@@ -43,15 +43,13 @@ class result extends Model
     public $subjectName;
     protected $_name = [
         'creatorOrgId' => 'creatorOrgId',
-        'ext'          => 'ext',
-        'periodCode'   => 'periodCode',
-        'subjectCode'  => 'subjectCode',
-        'subjectName'  => 'subjectName',
+        'ext' => 'ext',
+        'periodCode' => 'periodCode',
+        'subjectCode' => 'subjectCode',
+        'subjectName' => 'subjectName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

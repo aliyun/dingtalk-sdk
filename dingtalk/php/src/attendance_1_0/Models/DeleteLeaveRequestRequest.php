@@ -20,9 +20,7 @@ class DeleteLeaveRequestRequest extends Model
         'outerId' => 'outerId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

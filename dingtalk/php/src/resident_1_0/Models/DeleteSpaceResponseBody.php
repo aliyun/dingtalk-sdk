@@ -25,13 +25,11 @@ class DeleteSpaceResponseBody extends Model
      */
     public $delSuccessCount;
     protected $_name = [
-        'delFailedDept'   => 'delFailedDept',
+        'delFailedDept' => 'delFailedDept',
         'delSuccessCount' => 'delSuccessCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class DeleteSpaceResponseBody extends Model
         if (isset($map['delFailedDept'])) {
             if (!empty($map['delFailedDept'])) {
                 $model->delFailedDept = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['delFailedDept'] as $item) {
                     $model->delFailedDept[$n++] = null !== $item ? delFailedDept::fromMap($item) : $item;
                 }

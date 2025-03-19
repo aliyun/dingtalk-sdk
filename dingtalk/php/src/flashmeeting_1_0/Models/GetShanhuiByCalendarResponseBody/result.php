@@ -58,18 +58,16 @@ class result extends Model
      */
     public $topics;
     protected $_name = [
-        'endTime'         => 'endTime',
+        'endTime' => 'endTime',
         'flashmeetingKey' => 'flashmeetingKey',
-        'hasSummary'      => 'hasSummary',
-        'startTime'       => 'startTime',
-        'summaryDocKey'   => 'summaryDocKey',
-        'title'           => 'title',
-        'topics'          => 'topics',
+        'hasSummary' => 'hasSummary',
+        'startTime' => 'startTime',
+        'summaryDocKey' => 'summaryDocKey',
+        'title' => 'title',
+        'topics' => 'topics',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -134,7 +132,7 @@ class result extends Model
         if (isset($map['topics'])) {
             if (!empty($map['topics'])) {
                 $model->topics = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['topics'] as $item) {
                     $model->topics[$n++] = null !== $item ? topics::fromMap($item) : $item;
                 }

@@ -18,9 +18,7 @@ class QueryHrmEmployeeDismissionInfoShrinkRequest extends Model
         'userIdListShrink' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

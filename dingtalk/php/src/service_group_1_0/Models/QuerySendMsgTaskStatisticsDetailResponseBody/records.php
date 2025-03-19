@@ -38,17 +38,15 @@ class records extends Model
      */
     public $receiverUnionId;
     protected $_name = [
-        'openBatchTaskId'    => 'openBatchTaskId',
+        'openBatchTaskId' => 'openBatchTaskId',
         'openConversationId' => 'openConversationId',
-        'readStatus'         => 'readStatus',
-        'readTimeStr'        => 'readTimeStr',
-        'receiverName'       => 'receiverName',
-        'receiverUnionId'    => 'receiverUnionId',
+        'readStatus' => 'readStatus',
+        'readTimeStr' => 'readTimeStr',
+        'receiverName' => 'receiverName',
+        'receiverUnionId' => 'receiverUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

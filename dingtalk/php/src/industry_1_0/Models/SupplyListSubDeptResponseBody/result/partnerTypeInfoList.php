@@ -36,15 +36,13 @@ class partnerTypeInfoList extends Model
      */
     public $superName;
     protected $_name = [
-        'id'        => 'id',
-        'name'      => 'name',
-        'superId'   => 'superId',
+        'id' => 'id',
+        'name' => 'name',
+        'superId' => 'superId',
         'superName' => 'superName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

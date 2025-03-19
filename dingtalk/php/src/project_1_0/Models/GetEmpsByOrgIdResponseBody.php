@@ -24,14 +24,12 @@ class GetEmpsByOrgIdResponseBody extends Model
      */
     public $nextToken;
     protected $_name = [
-        'empList'   => 'empList',
-        'hasMore'   => 'hasMore',
+        'empList' => 'empList',
+        'hasMore' => 'hasMore',
         'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class GetEmpsByOrgIdResponseBody extends Model
         if (isset($map['empList'])) {
             if (!empty($map['empList'])) {
                 $model->empList = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['empList'] as $item) {
                     $model->empList[$n++] = null !== $item ? empList::fromMap($item) : $item;
                 }

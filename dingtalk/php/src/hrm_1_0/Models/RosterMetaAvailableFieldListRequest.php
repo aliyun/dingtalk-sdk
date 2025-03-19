@@ -20,9 +20,7 @@ class RosterMetaAvailableFieldListRequest extends Model
         'appAgentId' => 'appAgentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

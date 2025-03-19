@@ -16,9 +16,7 @@ class UpdatePermissionForUsersResponseBody extends Model
         'isSuccess' => 'isSuccess',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

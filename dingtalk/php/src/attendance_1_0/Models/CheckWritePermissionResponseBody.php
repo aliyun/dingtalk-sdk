@@ -18,9 +18,7 @@ class CheckWritePermissionResponseBody extends Model
         'entityPermissionMap' => 'entityPermissionMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

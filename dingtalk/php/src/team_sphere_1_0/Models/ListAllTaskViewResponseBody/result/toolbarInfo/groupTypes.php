@@ -35,15 +35,13 @@ class groupTypes extends Model
     public $value;
     protected $_name = [
         'canCreateGroup' => 'canCreateGroup',
-        'name'           => 'name',
-        'serviceName'    => 'serviceName',
-        'setting'        => 'setting',
-        'value'          => 'value',
+        'name' => 'name',
+        'serviceName' => 'serviceName',
+        'setting' => 'setting',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

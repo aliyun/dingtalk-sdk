@@ -19,9 +19,7 @@ class SendInteractiveOTOMessageRequest extends Model
         'detail' => 'detail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -38,15 +38,13 @@ class GetResourceUploadInfoRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'mediaType'    => 'mediaType',
+        'mediaType' => 'mediaType',
         'resourceName' => 'resourceName',
-        'size'         => 'size',
-        'operatorId'   => 'operatorId',
+        'size' => 'size',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

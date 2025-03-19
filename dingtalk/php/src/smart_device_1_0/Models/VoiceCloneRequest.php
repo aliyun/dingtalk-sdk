@@ -33,14 +33,12 @@ class VoiceCloneRequest extends Model
      */
     public $voiceId;
     protected $_name = [
-        'text'    => 'text',
-        'userId'  => 'userId',
+        'text' => 'text',
+        'userId' => 'userId',
         'voiceId' => 'voiceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

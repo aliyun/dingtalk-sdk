@@ -78,21 +78,19 @@ class manageAddress extends Model
      */
     public $provinceName;
     protected $_name = [
-        'areaCode'       => 'areaCode',
-        'areaName'       => 'areaName',
-        'cityCode'       => 'cityCode',
-        'cityName'       => 'cityName',
-        'countryCode'    => 'countryCode',
-        'countryName'    => 'countryName',
-        'detailAddress'  => 'detailAddress',
+        'areaCode' => 'areaCode',
+        'areaName' => 'areaName',
+        'cityCode' => 'cityCode',
+        'cityName' => 'cityName',
+        'countryCode' => 'countryCode',
+        'countryName' => 'countryName',
+        'detailAddress' => 'detailAddress',
         'globalAreaType' => 'globalAreaType',
-        'provinceCode'   => 'provinceCode',
-        'provinceName'   => 'provinceName',
+        'provinceCode' => 'provinceCode',
+        'provinceName' => 'provinceName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

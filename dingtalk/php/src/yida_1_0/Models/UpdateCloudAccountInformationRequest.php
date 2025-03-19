@@ -36,15 +36,13 @@ class UpdateCloudAccountInformationRequest extends Model
      */
     public $commodityType;
     protected $_name = [
-        'accessKey'     => 'accessKey',
+        'accessKey' => 'accessKey',
         'accountNumber' => 'accountNumber',
         'callerUnionId' => 'callerUnionId',
         'commodityType' => 'commodityType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

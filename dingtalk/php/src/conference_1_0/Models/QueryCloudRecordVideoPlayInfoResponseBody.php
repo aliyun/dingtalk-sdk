@@ -41,16 +41,14 @@ class QueryCloudRecordVideoPlayInfoResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'duration'   => 'duration',
-        'fileSize'   => 'fileSize',
+        'duration' => 'duration',
+        'fileSize' => 'fileSize',
         'mp4FileUrl' => 'mp4FileUrl',
-        'playUrl'    => 'playUrl',
-        'status'     => 'status',
+        'playUrl' => 'playUrl',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

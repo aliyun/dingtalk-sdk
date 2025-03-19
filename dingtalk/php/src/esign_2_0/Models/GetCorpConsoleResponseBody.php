@@ -16,9 +16,7 @@ class GetCorpConsoleResponseBody extends Model
         'orgConsoleUrl' => 'orgConsoleUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -58,17 +58,15 @@ class body extends Model
      */
     public $userId;
     protected $_name = [
-        'bizTime'    => 'bizTime',
-        'bizUk'      => 'bizUk',
+        'bizTime' => 'bizTime',
+        'bizUk' => 'bizUk',
         'entityCode' => 'entityCode',
-        'fieldList'  => 'fieldList',
-        'scope'      => 'scope',
-        'userId'     => 'userId',
+        'fieldList' => 'fieldList',
+        'scope' => 'scope',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -121,7 +119,7 @@ class body extends Model
         if (isset($map['fieldList'])) {
             if (!empty($map['fieldList'])) {
                 $model->fieldList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['fieldList'] as $item) {
                     $model->fieldList[$n++] = null !== $item ? fieldList::fromMap($item) : $item;
                 }

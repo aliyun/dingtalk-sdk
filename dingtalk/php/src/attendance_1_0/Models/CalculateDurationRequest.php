@@ -57,18 +57,16 @@ class CalculateDurationRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizType'        => 'bizType',
+        'bizType' => 'bizType',
         'calculateModel' => 'calculateModel',
-        'durationUnit'   => 'durationUnit',
-        'fromTime'       => 'fromTime',
-        'leaveCode'      => 'leaveCode',
-        'toTime'         => 'toTime',
-        'userId'         => 'userId',
+        'durationUnit' => 'durationUnit',
+        'fromTime' => 'fromTime',
+        'leaveCode' => 'leaveCode',
+        'toTime' => 'toTime',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

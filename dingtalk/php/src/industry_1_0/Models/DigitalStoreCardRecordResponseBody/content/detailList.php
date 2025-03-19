@@ -33,16 +33,14 @@ class detailList extends Model
      */
     public $userName;
     protected $_name = [
-        'deptName'      => 'deptName',
+        'deptName' => 'deptName',
         'readStatusStr' => 'readStatusStr',
-        'readTime'      => 'readTime',
-        'roleName'      => 'roleName',
-        'userName'      => 'userName',
+        'readTime' => 'readTime',
+        'roleName' => 'roleName',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

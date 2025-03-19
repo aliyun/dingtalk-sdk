@@ -31,13 +31,11 @@ class SetConversationTopCategoryRequest extends Model
     public $sign;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'setCategoryList'    => 'setCategoryList',
-        'sign'               => 'sign',
+        'setCategoryList' => 'setCategoryList',
+        'sign' => 'sign',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -75,7 +73,7 @@ class SetConversationTopCategoryRequest extends Model
         if (isset($map['setCategoryList'])) {
             if (!empty($map['setCategoryList'])) {
                 $model->setCategoryList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['setCategoryList'] as $item) {
                     $model->setCategoryList[$n++] = null !== $item ? setCategoryList::fromMap($item) : $item;
                 }

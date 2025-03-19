@@ -30,13 +30,11 @@ class QueryTaskOfProjectRequest extends Model
     public $query;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'query'      => 'query',
+        'nextToken' => 'nextToken',
+        'query' => 'query',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

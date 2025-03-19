@@ -25,12 +25,10 @@ class itemList extends Model
     public $itemNum;
     protected $_name = [
         'itemName' => 'itemName',
-        'itemNum'  => 'itemNum',
+        'itemNum' => 'itemNum',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

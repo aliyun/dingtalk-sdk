@@ -65,18 +65,16 @@ class list_ extends Model
      */
     public $type;
     protected $_name = [
-        'code'       => 'code',
-        'isDir'      => 'isDir',
-        'name'       => 'name',
+        'code' => 'code',
+        'isDir' => 'isDir',
+        'name' => 'name',
         'parentCode' => 'parentCode',
-        'remark'     => 'remark',
-        'status'     => 'status',
-        'type'       => 'type',
+        'remark' => 'remark',
+        'status' => 'status',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

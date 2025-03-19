@@ -18,9 +18,7 @@ class CampusListCampusRequest extends Model
         'groupDeptId' => 'groupDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

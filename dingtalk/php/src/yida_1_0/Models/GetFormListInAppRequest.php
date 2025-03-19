@@ -52,17 +52,15 @@ class GetFormListInAppRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
-        'formTypes'   => 'formTypes',
-        'pageNumber'  => 'pageNumber',
-        'pageSize'    => 'pageSize',
+        'appType' => 'appType',
+        'formTypes' => 'formTypes',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'systemToken' => 'systemToken',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

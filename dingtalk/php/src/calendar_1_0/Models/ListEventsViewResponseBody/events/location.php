@@ -18,13 +18,11 @@ class location extends Model
      */
     public $meetingRooms;
     protected $_name = [
-        'displayName'  => 'displayName',
+        'displayName' => 'displayName',
         'meetingRooms' => 'meetingRooms',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

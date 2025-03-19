@@ -30,13 +30,11 @@ class items extends Model
     public $type;
     protected $_name = [
         'content' => 'content',
-        'time'    => 'time',
-        'type'    => 'type',
+        'time' => 'time',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

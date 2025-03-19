@@ -16,9 +16,7 @@ class result extends Model
         'corpIdCardIdMap' => 'corpIdCardIdMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

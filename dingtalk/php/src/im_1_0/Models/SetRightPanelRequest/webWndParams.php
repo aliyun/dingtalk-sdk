@@ -20,9 +20,7 @@ class webWndParams extends Model
         'targetURL' => 'targetURL',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

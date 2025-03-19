@@ -16,9 +16,7 @@ class duplicateCondition extends Model
         'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

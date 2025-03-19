@@ -34,15 +34,13 @@ class CountTodoTasksRequest extends Model
     public $toDueTime;
     protected $_name = [
         'fromDueTime' => 'fromDueTime',
-        'isDone'      => 'isDone',
-        'isRecycled'  => 'isRecycled',
-        'roleTypes'   => 'roleTypes',
-        'toDueTime'   => 'toDueTime',
+        'isDone' => 'isDone',
+        'isRecycled' => 'isRecycled',
+        'roleTypes' => 'roleTypes',
+        'toDueTime' => 'toDueTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

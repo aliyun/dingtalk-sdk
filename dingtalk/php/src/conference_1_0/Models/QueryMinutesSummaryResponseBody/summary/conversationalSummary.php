@@ -23,14 +23,12 @@ class conversationalSummary extends Model
      */
     public $summary;
     protected $_name = [
-        'speakerId'   => 'speakerId',
+        'speakerId' => 'speakerId',
         'speakerName' => 'speakerName',
-        'summary'     => 'summary',
+        'summary' => 'summary',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

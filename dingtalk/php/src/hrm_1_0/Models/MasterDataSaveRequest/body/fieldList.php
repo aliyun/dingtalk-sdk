@@ -26,13 +26,11 @@ class fieldList extends Model
      */
     public $valueStr;
     protected $_name = [
-        'name'     => 'name',
+        'name' => 'name',
         'valueStr' => 'valueStr',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

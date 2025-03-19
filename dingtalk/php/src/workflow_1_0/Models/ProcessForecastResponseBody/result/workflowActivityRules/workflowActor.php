@@ -70,20 +70,18 @@ class workflowActor extends Model
      */
     public $required;
     protected $_name = [
-        'actorActivateType'   => 'actorActivateType',
-        'actorKey'            => 'actorKey',
+        'actorActivateType' => 'actorActivateType',
+        'actorKey' => 'actorKey',
         'actorSelectionRange' => 'actorSelectionRange',
-        'actorSelectionType'  => 'actorSelectionType',
-        'actorType'           => 'actorType',
-        'allowedMulti'        => 'allowedMulti',
-        'approvalMethod'      => 'approvalMethod',
-        'approvalType'        => 'approvalType',
-        'required'            => 'required',
+        'actorSelectionType' => 'actorSelectionType',
+        'actorType' => 'actorType',
+        'allowedMulti' => 'allowedMulti',
+        'approvalMethod' => 'approvalMethod',
+        'approvalType' => 'approvalType',
+        'required' => 'required',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

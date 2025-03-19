@@ -36,14 +36,12 @@ class GetSignedDetailByPageResponseBody extends Model
     public $total;
     protected $_name = [
         'auditSignedDetailDTOList' => 'auditSignedDetailDTOList',
-        'currentPage'              => 'currentPage',
-        'pageSize'                 => 'pageSize',
-        'total'                    => 'total',
+        'currentPage' => 'currentPage',
+        'pageSize' => 'pageSize',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -81,7 +79,7 @@ class GetSignedDetailByPageResponseBody extends Model
         if (isset($map['auditSignedDetailDTOList'])) {
             if (!empty($map['auditSignedDetailDTOList'])) {
                 $model->auditSignedDetailDTOList = [];
-                $n                               = 0;
+                $n = 0;
                 foreach ($map['auditSignedDetailDTOList'] as $item) {
                     $model->auditSignedDetailDTOList[$n++] = null !== $item ? auditSignedDetailDTOList::fromMap($item) : $item;
                 }

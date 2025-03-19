@@ -28,13 +28,11 @@ class UpdateGroupNameRequest extends Model
     public $operatorUid;
     protected $_name = [
         'conversationId' => 'conversationId',
-        'name'           => 'name',
-        'operatorUid'    => 'operatorUid',
+        'name' => 'name',
+        'operatorUid' => 'operatorUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

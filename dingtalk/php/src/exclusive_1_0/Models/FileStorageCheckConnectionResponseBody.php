@@ -32,13 +32,11 @@ class FileStorageCheckConnectionResponseBody extends Model
     public $oss;
     protected $_name = [
         'accessKeyId' => 'accessKeyId',
-        'checkState'  => 'checkState',
-        'oss'         => 'oss',
+        'checkState' => 'checkState',
+        'oss' => 'oss',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

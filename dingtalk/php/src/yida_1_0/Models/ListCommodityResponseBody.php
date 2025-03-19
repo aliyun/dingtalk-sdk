@@ -36,14 +36,12 @@ class ListCommodityResponseBody extends Model
     public $totalCount;
     protected $_name = [
         'commodityVOList' => 'commodityVOList',
-        'pageNumber'      => 'pageNumber',
-        'pageSize'        => 'pageSize',
-        'totalCount'      => 'totalCount',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -81,7 +79,7 @@ class ListCommodityResponseBody extends Model
         if (isset($map['commodityVOList'])) {
             if (!empty($map['commodityVOList'])) {
                 $model->commodityVOList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['commodityVOList'] as $item) {
                     $model->commodityVOList[$n++] = null !== $item ? commodityVOList::fromMap($item) : $item;
                 }

@@ -56,18 +56,16 @@ class QueryAccountTradeByPageRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'accountId'  => 'accountId',
-        'endDate'    => 'endDate',
-        'filter'     => 'filter',
+        'accountId' => 'accountId',
+        'endDate' => 'endDate',
+        'filter' => 'filter',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'startDate'  => 'startDate',
-        'userId'     => 'userId',
+        'pageSize' => 'pageSize',
+        'startDate' => 'startDate',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

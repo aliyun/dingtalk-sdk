@@ -19,12 +19,10 @@ class BatchQueryPaymentRecallFileRequest extends Model
     public $operator;
     protected $_name = [
         'detailIdList' => 'detailIdList',
-        'operator'     => 'operator',
+        'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

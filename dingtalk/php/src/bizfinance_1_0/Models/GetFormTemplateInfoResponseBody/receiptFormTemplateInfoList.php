@@ -41,15 +41,13 @@ class receiptFormTemplateInfoList extends Model
     public $suiteId;
     protected $_name = [
         'componentList' => 'componentList',
-        'name'          => 'name',
-        'processCode'   => 'processCode',
-        'status'        => 'status',
-        'suiteId'       => 'suiteId',
+        'name' => 'name',
+        'processCode' => 'processCode',
+        'status' => 'status',
+        'suiteId' => 'suiteId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -90,7 +88,7 @@ class receiptFormTemplateInfoList extends Model
         if (isset($map['componentList'])) {
             if (!empty($map['componentList'])) {
                 $model->componentList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['componentList'] as $item) {
                     $model->componentList[$n++] = null !== $item ? componentList::fromMap($item) : $item;
                 }

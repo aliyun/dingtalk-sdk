@@ -30,13 +30,11 @@ class ConnectorEventPushRequest extends Model
     public $input;
     protected $_name = [
         'deviceTypeUuid' => 'deviceTypeUuid',
-        'eventName'      => 'eventName',
-        'input'          => 'input',
+        'eventName' => 'eventName',
+        'input' => 'input',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

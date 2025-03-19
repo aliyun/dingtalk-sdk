@@ -35,16 +35,14 @@ class UpdateInteractiveCardRequest extends Model
      */
     public $userIdType;
     protected $_name = [
-        'cardData'    => 'cardData',
+        'cardData' => 'cardData',
         'cardOptions' => 'cardOptions',
-        'outTrackId'  => 'outTrackId',
+        'outTrackId' => 'outTrackId',
         'privateData' => 'privateData',
-        'userIdType'  => 'userIdType',
+        'userIdType' => 'userIdType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

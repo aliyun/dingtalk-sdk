@@ -28,13 +28,11 @@ class RemoveGroupMembersRequest extends Model
     public $operatorUid;
     protected $_name = [
         'conversationId' => 'conversationId',
-        'memberUids'     => 'memberUids',
-        'operatorUid'    => 'operatorUid',
+        'memberUids' => 'memberUids',
+        'operatorUid' => 'operatorUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

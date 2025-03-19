@@ -20,13 +20,11 @@ class QueryClassScheduleResponseBody extends Model
      */
     public $courseDTOS;
     protected $_name = [
-        'config'     => 'config',
+        'config' => 'config',
         'courseDTOS' => 'courseDTOS',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -61,7 +59,7 @@ class QueryClassScheduleResponseBody extends Model
         if (isset($map['courseDTOS'])) {
             if (!empty($map['courseDTOS'])) {
                 $model->courseDTOS = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['courseDTOS'] as $item) {
                     $model->courseDTOS[$n++] = null !== $item ? courseDTOS::fromMap($item) : $item;
                 }

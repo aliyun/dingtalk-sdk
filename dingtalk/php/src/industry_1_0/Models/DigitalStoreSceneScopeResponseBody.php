@@ -23,12 +23,10 @@ class DigitalStoreSceneScopeResponseBody extends Model
     public $scopeId;
     protected $_name = [
         'groupConversationType' => 'groupConversationType',
-        'scopeId'               => 'scopeId',
+        'scopeId' => 'scopeId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

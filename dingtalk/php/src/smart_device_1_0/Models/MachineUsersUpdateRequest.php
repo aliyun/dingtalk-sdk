@@ -42,13 +42,11 @@ class MachineUsersUpdateRequest extends Model
         'addUserIds' => 'addUserIds',
         'delDeptIds' => 'delDeptIds',
         'delUserIds' => 'delUserIds',
-        'devIds'     => 'devIds',
-        'deviceIds'  => 'deviceIds',
+        'devIds' => 'devIds',
+        'deviceIds' => 'deviceIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

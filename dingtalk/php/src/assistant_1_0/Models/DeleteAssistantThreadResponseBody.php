@@ -24,13 +24,11 @@ class DeleteAssistantThreadResponseBody extends Model
     public $object;
     protected $_name = [
         'deleted' => 'deleted',
-        'id'      => 'id',
-        'object'  => 'object',
+        'id' => 'id',
+        'object' => 'object',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -46,13 +46,11 @@ class QueryUserFaceResponseBody extends Model
     protected $_name = [
         'corpId' => 'corpId',
         'faceId' => 'faceId',
-        'name'   => 'name',
+        'name' => 'name',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -122,33 +122,31 @@ class GetUserResponseBody extends Model
      */
     public $workPlace;
     protected $_name = [
-        'active'               => 'active',
-        'admin'                => 'admin',
-        'boss'                 => 'boss',
-        'departmentIdList'     => 'departmentIdList',
-        'departmentOrderSet'   => 'departmentOrderSet',
-        'exclusiveAccount'     => 'exclusiveAccount',
+        'active' => 'active',
+        'admin' => 'admin',
+        'boss' => 'boss',
+        'departmentIdList' => 'departmentIdList',
+        'departmentOrderSet' => 'departmentOrderSet',
+        'exclusiveAccount' => 'exclusiveAccount',
         'exclusiveAccountType' => 'exclusiveAccountType',
-        'extension'            => 'extension',
-        'hiredDate'            => 'hiredDate',
-        'jobNumber'            => 'jobNumber',
-        'leaderInDepartment'   => 'leaderInDepartment',
-        'managerUserId'        => 'managerUserId',
-        'name'                 => 'name',
-        'realAuthed'           => 'realAuthed',
-        'remark'               => 'remark',
-        'roleList'             => 'roleList',
-        'senior'               => 'senior',
-        'title'                => 'title',
-        'unionEmpExt'          => 'unionEmpExt',
-        'unionId'              => 'unionId',
-        'userId'               => 'userId',
-        'workPlace'            => 'workPlace',
+        'extension' => 'extension',
+        'hiredDate' => 'hiredDate',
+        'jobNumber' => 'jobNumber',
+        'leaderInDepartment' => 'leaderInDepartment',
+        'managerUserId' => 'managerUserId',
+        'name' => 'name',
+        'realAuthed' => 'realAuthed',
+        'remark' => 'remark',
+        'roleList' => 'roleList',
+        'senior' => 'senior',
+        'title' => 'title',
+        'unionEmpExt' => 'unionEmpExt',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
+        'workPlace' => 'workPlace',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -266,7 +264,7 @@ class GetUserResponseBody extends Model
         if (isset($map['departmentOrderSet'])) {
             if (!empty($map['departmentOrderSet'])) {
                 $model->departmentOrderSet = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['departmentOrderSet'] as $item) {
                     $model->departmentOrderSet[$n++] = null !== $item ? departmentOrderSet::fromMap($item) : $item;
                 }
@@ -290,7 +288,7 @@ class GetUserResponseBody extends Model
         if (isset($map['leaderInDepartment'])) {
             if (!empty($map['leaderInDepartment'])) {
                 $model->leaderInDepartment = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['leaderInDepartment'] as $item) {
                     $model->leaderInDepartment[$n++] = null !== $item ? leaderInDepartment::fromMap($item) : $item;
                 }
@@ -311,7 +309,7 @@ class GetUserResponseBody extends Model
         if (isset($map['roleList'])) {
             if (!empty($map['roleList'])) {
                 $model->roleList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['roleList'] as $item) {
                     $model->roleList[$n++] = null !== $item ? roleList::fromMap($item) : $item;
                 }

@@ -20,12 +20,10 @@ class GetCallBackFaileResultResponseBody extends Model
     public $hasMore;
     protected $_name = [
         'failedList' => 'failedList',
-        'hasMore'    => 'hasMore',
+        'hasMore' => 'hasMore',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class GetCallBackFaileResultResponseBody extends Model
         if (isset($map['failedList'])) {
             if (!empty($map['failedList'])) {
                 $model->failedList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['failedList'] as $item) {
                     $model->failedList[$n++] = null !== $item ? failedList::fromMap($item) : $item;
                 }

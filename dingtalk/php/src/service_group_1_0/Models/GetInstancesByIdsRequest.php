@@ -33,14 +33,12 @@ class GetInstancesByIdsRequest extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'formCode'               => 'formCode',
+        'formCode' => 'formCode',
         'openDataInstanceIdList' => 'openDataInstanceIdList',
-        'openTeamId'             => 'openTeamId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

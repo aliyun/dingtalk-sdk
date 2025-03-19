@@ -31,12 +31,10 @@ class name extends Model
     protected $_name = [
         'nameInChinese' => 'nameInChinese',
         'nameInEnglish' => 'nameInEnglish',
-        'type'          => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

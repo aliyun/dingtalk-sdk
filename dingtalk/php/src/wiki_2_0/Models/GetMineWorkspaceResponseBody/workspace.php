@@ -112,26 +112,24 @@ class workspace extends Model
      */
     public $workspaceId;
     protected $_name = [
-        'corpId'         => 'corpId',
-        'cover'          => 'cover',
-        'createTime'     => 'createTime',
-        'creatorId'      => 'creatorId',
-        'description'    => 'description',
-        'icon'           => 'icon',
-        'modifiedTime'   => 'modifiedTime',
-        'modifierId'     => 'modifierId',
-        'name'           => 'name',
+        'corpId' => 'corpId',
+        'cover' => 'cover',
+        'createTime' => 'createTime',
+        'creatorId' => 'creatorId',
+        'description' => 'description',
+        'icon' => 'icon',
+        'modifiedTime' => 'modifiedTime',
+        'modifierId' => 'modifierId',
+        'name' => 'name',
         'permissionRole' => 'permissionRole',
-        'rootNodeId'     => 'rootNodeId',
-        'teamId'         => 'teamId',
-        'type'           => 'type',
-        'url'            => 'url',
-        'workspaceId'    => 'workspaceId',
+        'rootNodeId' => 'rootNodeId',
+        'teamId' => 'teamId',
+        'type' => 'type',
+        'url' => 'url',
+        'workspaceId' => 'workspaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

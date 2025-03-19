@@ -29,14 +29,12 @@ class sender extends Model
      */
     public $type;
     protected $_name = [
-        'id'     => 'id',
+        'id' => 'id',
         'idType' => 'idType',
-        'type'   => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class SearchTaskFlowRequest extends Model
      */
     public $taskflowIds;
     protected $_name = [
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
-        'query'       => 'query',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'query' => 'query',
         'taskflowIds' => 'taskflowIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

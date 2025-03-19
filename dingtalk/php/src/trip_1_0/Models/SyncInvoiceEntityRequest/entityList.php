@@ -22,13 +22,11 @@ class entityList extends Model
      */
     public $entityType;
     protected $_name = [
-        'entityId'   => 'entityId',
+        'entityId' => 'entityId',
         'entityType' => 'entityType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,14 +27,12 @@ class workspaceBO extends Model
      */
     public $workspaceName;
     protected $_name = [
-        'url'           => 'url',
-        'workspaceId'   => 'workspaceId',
+        'url' => 'url',
+        'workspaceId' => 'workspaceId',
         'workspaceName' => 'workspaceName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

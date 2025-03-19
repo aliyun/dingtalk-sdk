@@ -40,16 +40,14 @@ class content extends Model
     public $totalCount;
     protected $_name = [
         'currentPageSize' => 'currentPageSize',
-        'data'            => 'data',
-        'pageNumber'      => 'pageNumber',
-        'pageSize'        => 'pageSize',
-        'pages'           => 'pages',
-        'totalCount'      => 'totalCount',
+        'data' => 'data',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'pages' => 'pages',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -96,7 +94,7 @@ class content extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? SlsLogResp::fromMap($item) : $item;
                 }

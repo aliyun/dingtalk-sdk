@@ -16,9 +16,7 @@ class GetSchemaAndProcessconfigBatchllyRequest extends Model
         'processCodes' => 'processCodes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -42,16 +42,14 @@ class option extends Model
      */
     public $size;
     protected $_name = [
-        'appProperties'                        => 'appProperties',
-        'conflictStrategy'                     => 'conflictStrategy',
-        'convertToOnlineDoc'                   => 'convertToOnlineDoc',
+        'appProperties' => 'appProperties',
+        'conflictStrategy' => 'conflictStrategy',
+        'convertToOnlineDoc' => 'convertToOnlineDoc',
         'convertToOnlineDocTargetDocumentType' => 'convertToOnlineDocTargetDocumentType',
-        'size'                                 => 'size',
+        'size' => 'size',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -92,7 +90,7 @@ class option extends Model
         if (isset($map['appProperties'])) {
             if (!empty($map['appProperties'])) {
                 $model->appProperties = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['appProperties'] as $item) {
                     $model->appProperties[$n++] = null !== $item ? appProperties::fromMap($item) : $item;
                 }

@@ -38,17 +38,15 @@ class list_ extends Model
      */
     public $name;
     protected $_name = [
-        'assistantId'    => 'assistantId',
-        'createdAt'      => 'createdAt',
+        'assistantId' => 'assistantId',
+        'createdAt' => 'createdAt',
         'creatorUnionId' => 'creatorUnionId',
-        'description'    => 'description',
-        'icon'           => 'icon',
-        'name'           => 'name',
+        'description' => 'description',
+        'icon' => 'icon',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

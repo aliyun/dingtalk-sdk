@@ -36,13 +36,11 @@ class ListInspectInfoRequest extends Model
     protected $_name = [
         'deviceUuid' => 'deviceUuid',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'type'       => 'type',
+        'pageSize' => 'pageSize',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

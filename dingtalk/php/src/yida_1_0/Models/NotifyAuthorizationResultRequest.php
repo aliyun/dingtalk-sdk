@@ -63,22 +63,20 @@ class NotifyAuthorizationResultRequest extends Model
      */
     public $produceCode;
     protected $_name = [
-        'accessKey'     => 'accessKey',
+        'accessKey' => 'accessKey',
         'accountNumber' => 'accountNumber',
-        'beginTimeGMT'  => 'beginTimeGMT',
-        'callerUid'     => 'callerUid',
-        'chargeType'    => 'chargeType',
-        'commerceType'  => 'commerceType',
+        'beginTimeGMT' => 'beginTimeGMT',
+        'callerUid' => 'callerUid',
+        'chargeType' => 'chargeType',
+        'commerceType' => 'commerceType',
         'commodityType' => 'commodityType',
-        'endTimeGMT'    => 'endTimeGMT',
-        'instanceId'    => 'instanceId',
-        'instanceName'  => 'instanceName',
-        'produceCode'   => 'produceCode',
+        'endTimeGMT' => 'endTimeGMT',
+        'instanceId' => 'instanceId',
+        'instanceName' => 'instanceName',
+        'produceCode' => 'produceCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

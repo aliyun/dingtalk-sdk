@@ -22,13 +22,11 @@ class GetOverdraftInfoRequest extends Model
      */
     public $userIdList;
     protected $_name = [
-        'leaveCode'  => 'leaveCode',
+        'leaveCode' => 'leaveCode',
         'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

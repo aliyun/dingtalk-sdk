@@ -22,13 +22,11 @@ class QueryMemoryLearningTaskRequest extends Model
      */
     public $learningCode;
     protected $_name = [
-        'agentCode'    => 'agentCode',
+        'agentCode' => 'agentCode',
         'learningCode' => 'learningCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

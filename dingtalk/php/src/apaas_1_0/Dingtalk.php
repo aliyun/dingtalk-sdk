@@ -35,8 +35,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -68,18 +68,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchCreateTemplate',
-            'version'     => 'apaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/apaas/templates',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchCreateTemplate',
+            'version' => 'apaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/apaas/templates',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchCreateTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -125,18 +125,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchQueryByTemplateKey',
-            'version'     => 'apaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/apaas/templates/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchQueryByTemplateKey',
+            'version' => 'apaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/apaas/templates/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchQueryByTemplateKeyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -182,18 +182,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchUpdateTemplate',
-            'version'     => 'apaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/apaas/templates',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchUpdateTemplate',
+            'version' => 'apaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/apaas/templates',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchUpdateTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -235,15 +235,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryIndustryTagList',
-            'version'     => 'apaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/apaas/templates/industries',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryIndustryTagList',
+            'version' => 'apaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/apaas/templates/industries',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryIndustryTagListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -283,15 +283,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryRoleTagList',
-            'version'     => 'apaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/apaas/templates/roles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryRoleTagList',
+            'version' => 'apaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/apaas/templates/roles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryRoleTagListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -331,15 +331,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryTemplateCategorys',
-            'version'     => 'apaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/apaas/templates/categories',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryTemplateCategorys',
+            'version' => 'apaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/apaas/templates/categories',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryTemplateCategorysResponse::fromMap($this->execute($params, $req, $runtime));
@@ -383,18 +383,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RecallAuditTemplate',
-            'version'     => 'apaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/apaas/templates/audits/recall',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RecallAuditTemplate',
+            'version' => 'apaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/apaas/templates/audits/recall',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RecallAuditTemplateResponse::fromMap($this->execute($params, $req, $runtime));

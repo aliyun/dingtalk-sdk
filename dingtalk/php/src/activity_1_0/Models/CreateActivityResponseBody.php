@@ -16,9 +16,7 @@ class CreateActivityResponseBody extends Model
         'activityId' => 'activityId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

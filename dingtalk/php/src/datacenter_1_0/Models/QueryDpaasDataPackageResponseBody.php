@@ -43,18 +43,16 @@ class QueryDpaasDataPackageResponseBody extends Model
      */
     public $whiteCustomer;
     protected $_name = [
-        'buy'           => 'buy',
-        'endDate'       => 'endDate',
-        'quota'         => 'quota',
-        'startDate'     => 'startDate',
-        'success'       => 'success',
-        'usedNum'       => 'usedNum',
+        'buy' => 'buy',
+        'endDate' => 'endDate',
+        'quota' => 'quota',
+        'startDate' => 'startDate',
+        'success' => 'success',
+        'usedNum' => 'usedNum',
         'whiteCustomer' => 'whiteCustomer',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

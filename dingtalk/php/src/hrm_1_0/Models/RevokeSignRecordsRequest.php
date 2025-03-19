@@ -33,14 +33,12 @@ class RevokeSignRecordsRequest extends Model
      */
     public $statusRemark;
     protected $_name = [
-        'revokeUserId'  => 'revokeUserId',
+        'revokeUserId' => 'revokeUserId',
         'signRecordIds' => 'signRecordIds',
-        'statusRemark'  => 'statusRemark',
+        'statusRemark' => 'statusRemark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

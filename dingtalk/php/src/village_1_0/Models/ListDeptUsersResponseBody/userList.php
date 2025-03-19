@@ -50,17 +50,15 @@ class userList extends Model
      */
     public $userId;
     protected $_name = [
-        'active'         => 'active',
+        'active' => 'active',
         'departmentList' => 'departmentList',
-        'jobNumber'      => 'jobNumber',
-        'name'           => 'name',
-        'unionId'        => 'unionId',
-        'userId'         => 'userId',
+        'jobNumber' => 'jobNumber',
+        'name' => 'name',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

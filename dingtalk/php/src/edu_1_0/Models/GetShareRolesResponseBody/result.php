@@ -26,9 +26,7 @@ class result extends Model
         'shareRoleName' => 'shareRoleName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

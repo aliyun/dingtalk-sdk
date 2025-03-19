@@ -134,36 +134,34 @@ class result extends Model
      */
     public $type;
     protected $_name = [
-        'action'              => 'action',
-        'actionExit'          => 'actionExit',
-        'activeTimeGMT'       => 'activeTimeGMT',
-        'activityId'          => 'activityId',
-        'dataId'              => 'dataId',
-        'digitalSign'         => 'digitalSign',
-        'domainList'          => 'domainList',
-        'files'               => 'files',
-        'operateTimeGMT'      => 'operateTimeGMT',
-        'operateType'         => 'operateType',
+        'action' => 'action',
+        'actionExit' => 'actionExit',
+        'activeTimeGMT' => 'activeTimeGMT',
+        'activityId' => 'activityId',
+        'dataId' => 'dataId',
+        'digitalSign' => 'digitalSign',
+        'domainList' => 'domainList',
+        'files' => 'files',
+        'operateTimeGMT' => 'operateTimeGMT',
+        'operateType' => 'operateType',
         'operatorDisplayName' => 'operatorDisplayName',
-        'operatorName'        => 'operatorName',
-        'operatorNickName'    => 'operatorNickName',
-        'operatorPhotoUrl'    => 'operatorPhotoUrl',
-        'operatorStatus'      => 'operatorStatus',
-        'operatorUserId'      => 'operatorUserId',
-        'processInstanceId'   => 'processInstanceId',
-        'remark'              => 'remark',
-        'showName'            => 'showName',
-        'size'                => 'size',
-        'taskExecuteType'     => 'taskExecuteType',
-        'taskHoldTimeGMT'     => 'taskHoldTimeGMT',
-        'taskId'              => 'taskId',
-        'taskType'            => 'taskType',
-        'type'                => 'type',
+        'operatorName' => 'operatorName',
+        'operatorNickName' => 'operatorNickName',
+        'operatorPhotoUrl' => 'operatorPhotoUrl',
+        'operatorStatus' => 'operatorStatus',
+        'operatorUserId' => 'operatorUserId',
+        'processInstanceId' => 'processInstanceId',
+        'remark' => 'remark',
+        'showName' => 'showName',
+        'size' => 'size',
+        'taskExecuteType' => 'taskExecuteType',
+        'taskHoldTimeGMT' => 'taskHoldTimeGMT',
+        'taskId' => 'taskId',
+        'taskType' => 'taskType',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -282,7 +280,7 @@ class result extends Model
         if (isset($map['domainList'])) {
             if (!empty($map['domainList'])) {
                 $model->domainList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['domainList'] as $item) {
                     $model->domainList[$n++] = null !== $item ? domainList::fromMap($item) : $item;
                 }

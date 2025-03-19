@@ -23,12 +23,10 @@ class GetSchemaResponseBody extends Model
     public $value;
     protected $_name = [
         'revision' => 'revision',
-        'value'    => 'value',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

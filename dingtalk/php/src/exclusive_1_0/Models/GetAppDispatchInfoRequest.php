@@ -22,13 +22,11 @@ class GetAppDispatchInfoRequest extends Model
      */
     public $startTime;
     protected $_name = [
-        'endTime'   => 'endTime',
+        'endTime' => 'endTime',
         'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

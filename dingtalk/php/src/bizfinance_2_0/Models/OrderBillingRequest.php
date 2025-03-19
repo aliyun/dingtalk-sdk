@@ -125,32 +125,30 @@ class OrderBillingRequest extends Model
      */
     public $taxSign;
     protected $_name = [
-        'additionInfos'        => 'additionInfos',
-        'appKey'               => 'appKey',
-        'applyPerson'          => 'applyPerson',
-        'invoiceRemark'        => 'invoiceRemark',
-        'invoiceType'          => 'invoiceType',
-        'isNaturalPerson'      => 'isNaturalPerson',
-        'operator'             => 'operator',
-        'orderId'              => 'orderId',
-        'payee'                => 'payee',
-        'phone'                => 'phone',
-        'products'             => 'products',
-        'purchaserAddress'     => 'purchaserAddress',
+        'additionInfos' => 'additionInfos',
+        'appKey' => 'appKey',
+        'applyPerson' => 'applyPerson',
+        'invoiceRemark' => 'invoiceRemark',
+        'invoiceType' => 'invoiceType',
+        'isNaturalPerson' => 'isNaturalPerson',
+        'operator' => 'operator',
+        'orderId' => 'orderId',
+        'payee' => 'payee',
+        'phone' => 'phone',
+        'products' => 'products',
+        'purchaserAddress' => 'purchaserAddress',
         'purchaserBankAccount' => 'purchaserBankAccount',
-        'purchaserBankName'    => 'purchaserBankName',
-        'purchaserName'        => 'purchaserName',
-        'purchaserTaxNo'       => 'purchaserTaxNo',
-        'purchaserTel'         => 'purchaserTel',
-        'remark'               => 'remark',
-        'reviewer'             => 'reviewer',
-        'signature'            => 'signature',
-        'taxSign'              => 'taxSign',
+        'purchaserBankName' => 'purchaserBankName',
+        'purchaserName' => 'purchaserName',
+        'purchaserTaxNo' => 'purchaserTaxNo',
+        'purchaserTel' => 'purchaserTel',
+        'remark' => 'remark',
+        'reviewer' => 'reviewer',
+        'signature' => 'signature',
+        'taxSign' => 'taxSign',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -245,7 +243,7 @@ class OrderBillingRequest extends Model
         if (isset($map['additionInfos'])) {
             if (!empty($map['additionInfos'])) {
                 $model->additionInfos = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['additionInfos'] as $item) {
                     $model->additionInfos[$n++] = null !== $item ? additionInfos::fromMap($item) : $item;
                 }
@@ -281,7 +279,7 @@ class OrderBillingRequest extends Model
         if (isset($map['products'])) {
             if (!empty($map['products'])) {
                 $model->products = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['products'] as $item) {
                     $model->products[$n++] = null !== $item ? products::fromMap($item) : $item;
                 }

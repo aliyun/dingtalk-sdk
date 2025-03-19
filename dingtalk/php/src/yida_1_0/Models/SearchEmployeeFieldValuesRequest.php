@@ -68,23 +68,21 @@ class SearchEmployeeFieldValuesRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'             => 'appType',
-        'createFromTimeGMT'   => 'createFromTimeGMT',
-        'createToTimeGMT'     => 'createToTimeGMT',
-        'formUuid'            => 'formUuid',
-        'language'            => 'language',
+        'appType' => 'appType',
+        'createFromTimeGMT' => 'createFromTimeGMT',
+        'createToTimeGMT' => 'createToTimeGMT',
+        'formUuid' => 'formUuid',
+        'language' => 'language',
         'modifiedFromTimeGMT' => 'modifiedFromTimeGMT',
-        'modifiedToTimeGMT'   => 'modifiedToTimeGMT',
-        'originatorId'        => 'originatorId',
-        'searchFieldJson'     => 'searchFieldJson',
-        'systemToken'         => 'systemToken',
-        'targetFieldJson'     => 'targetFieldJson',
-        'userId'              => 'userId',
+        'modifiedToTimeGMT' => 'modifiedToTimeGMT',
+        'originatorId' => 'originatorId',
+        'searchFieldJson' => 'searchFieldJson',
+        'systemToken' => 'systemToken',
+        'targetFieldJson' => 'targetFieldJson',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class QueryInvoiceTransferDataRequest extends Model
         'body' => 'body',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

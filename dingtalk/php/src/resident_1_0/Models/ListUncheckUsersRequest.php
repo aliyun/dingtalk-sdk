@@ -37,14 +37,12 @@ class ListUncheckUsersRequest extends Model
     public $status;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'startTime'  => 'startTime',
-        'status'     => 'status',
+        'nextToken' => 'nextToken',
+        'startTime' => 'startTime',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -35,13 +35,11 @@ class RegisterOpenInfoRequest extends Model
     public $unionId;
     protected $_name = [
         'openInfos' => 'openInfos',
-        'provider'  => 'provider',
-        'unionId'   => 'unionId',
+        'provider' => 'provider',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -76,7 +74,7 @@ class RegisterOpenInfoRequest extends Model
         if (isset($map['openInfos'])) {
             if (!empty($map['openInfos'])) {
                 $model->openInfos = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['openInfos'] as $item) {
                     $model->openInfos[$n++] = null !== $item ? openInfos::fromMap($item) : $item;
                 }

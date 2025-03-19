@@ -62,19 +62,17 @@ class CreateSpaceRequest extends Model
      */
     public $type;
     protected $_name = [
-        'billingArea'  => 'billingArea',
+        'billingArea' => 'billingArea',
         'buildingArea' => 'buildingArea',
-        'floor'        => 'floor',
-        'houseState'   => 'houseState',
-        'name'         => 'name',
+        'floor' => 'floor',
+        'houseState' => 'houseState',
+        'name' => 'name',
         'parentDeptId' => 'parentDeptId',
-        'tagCode'      => 'tagCode',
-        'type'         => 'type',
+        'tagCode' => 'tagCode',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

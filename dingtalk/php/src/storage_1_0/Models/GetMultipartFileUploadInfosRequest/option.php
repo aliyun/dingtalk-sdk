@@ -18,9 +18,7 @@ class option extends Model
         'preferIntranet' => 'preferIntranet',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -24,13 +24,11 @@ class GetCollegeContactDeptDetailRequest extends Model
      */
     public $language;
     protected $_name = [
-        'deptId'   => 'deptId',
+        'deptId' => 'deptId',
         'language' => 'language',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

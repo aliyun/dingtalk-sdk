@@ -31,14 +31,12 @@ class UpdateCategorySourceConfigRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'bizCategoryId'   => 'bizCategoryId',
+        'bizCategoryId' => 'bizCategoryId',
         'bizCategoryName' => 'bizCategoryName',
-        'operatorId'      => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

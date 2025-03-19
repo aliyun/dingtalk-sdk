@@ -16,9 +16,7 @@ class CollectResumeDetailResponseBody extends Model
         'resumeId' => 'resumeId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

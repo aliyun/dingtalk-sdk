@@ -30,15 +30,13 @@ class textStyle extends Model
      */
     public $sizeUnit;
     protected $_name = [
-        'bold'     => 'bold',
+        'bold' => 'bold',
         'dataType' => 'dataType',
         'fontSize' => 'fontSize',
         'sizeUnit' => 'sizeUnit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

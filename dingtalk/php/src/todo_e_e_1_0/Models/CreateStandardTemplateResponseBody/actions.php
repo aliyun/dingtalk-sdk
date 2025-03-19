@@ -38,17 +38,15 @@ class actions extends Model
      */
     public $styleType;
     protected $_name = [
-        'actionKey'          => 'actionKey',
-        'name'               => 'name',
-        'needReason'         => 'needReason',
+        'actionKey' => 'actionKey',
+        'name' => 'name',
+        'needReason' => 'needReason',
         'needReasonRequired' => 'needReasonRequired',
-        'order'              => 'order',
-        'styleType'          => 'styleType',
+        'order' => 'order',
+        'styleType' => 'styleType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -68,19 +68,17 @@ class SendIsvCardMessageRequest extends Model
      */
     public $valueMap;
     protected $_name = [
-        'agentId'         => 'agentId',
-        'bizId'           => 'bizId',
-        'messageType'     => 'messageType',
+        'agentId' => 'agentId',
+        'bizId' => 'bizId',
+        'messageType' => 'messageType',
         'receiverUserIds' => 'receiverUserIds',
-        'sceneType'       => 'sceneType',
-        'scope'           => 'scope',
-        'senderUserId'    => 'senderUserId',
-        'valueMap'        => 'valueMap',
+        'sceneType' => 'sceneType',
+        'scope' => 'scope',
+        'senderUserId' => 'senderUserId',
+        'valueMap' => 'valueMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

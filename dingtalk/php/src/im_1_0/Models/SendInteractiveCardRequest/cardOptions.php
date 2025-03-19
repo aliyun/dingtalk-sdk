@@ -16,9 +16,7 @@ class cardOptions extends Model
         'supportForward' => 'supportForward',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

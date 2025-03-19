@@ -40,16 +40,14 @@ class GetFamilySchoolConversationMsgResponseBody extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'corpId'             => 'corpId',
-        'hasMore'            => 'hasMore',
-        'messages'           => 'messages',
-        'nextToken'          => 'nextToken',
+        'corpId' => 'corpId',
+        'hasMore' => 'hasMore',
+        'messages' => 'messages',
+        'nextToken' => 'nextToken',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -96,7 +94,7 @@ class GetFamilySchoolConversationMsgResponseBody extends Model
         if (isset($map['messages'])) {
             if (!empty($map['messages'])) {
                 $model->messages = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['messages'] as $item) {
                     $model->messages[$n++] = null !== $item ? messages::fromMap($item) : $item;
                 }

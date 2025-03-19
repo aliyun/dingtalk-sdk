@@ -21,12 +21,10 @@ class ChatAITextSentimentAnalysisRequest extends Model
     public $text;
     protected $_name = [
         'history' => 'history',
-        'text'    => 'text',
+        'text' => 'text',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

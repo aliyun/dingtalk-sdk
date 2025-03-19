@@ -19,9 +19,7 @@ class TopicStatisticsResponseBody extends Model
         'topicStatisticsRecords' => 'topicStatisticsRecords',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class TopicStatisticsResponseBody extends Model
         if (isset($map['topicStatisticsRecords'])) {
             if (!empty($map['topicStatisticsRecords'])) {
                 $model->topicStatisticsRecords = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['topicStatisticsRecords'] as $item) {
                     $model->topicStatisticsRecords[$n++] = null !== $item ? topicStatisticsRecords::fromMap($item) : $item;
                 }

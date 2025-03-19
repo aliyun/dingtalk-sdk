@@ -50,17 +50,15 @@ class closingAccountModel extends Model
      */
     public $startMonth;
     protected $_name = [
-        'closingDay'         => 'closingDay',
+        'closingDay' => 'closingDay',
         'closingHourMinutes' => 'closingHourMinutes',
-        'endDay'             => 'endDay',
-        'endMonth'           => 'endMonth',
-        'startDay'           => 'startDay',
-        'startMonth'         => 'startMonth',
+        'endDay' => 'endDay',
+        'endMonth' => 'endMonth',
+        'startDay' => 'startDay',
+        'startMonth' => 'startMonth',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

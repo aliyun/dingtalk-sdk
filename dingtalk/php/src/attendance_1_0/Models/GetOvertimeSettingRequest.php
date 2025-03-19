@@ -16,9 +16,7 @@ class GetOvertimeSettingRequest extends Model
         'overtimeSettingIds' => 'overtimeSettingIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

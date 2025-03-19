@@ -26,14 +26,12 @@ class QueryEduAssetSpacesResponseBody extends Model
      */
     public $spaces;
     protected $_name = [
-        'hasMore'   => 'hasMore',
+        'hasMore' => 'hasMore',
         'nextToken' => 'nextToken',
-        'spaces'    => 'spaces',
+        'spaces' => 'spaces',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -74,7 +72,7 @@ class QueryEduAssetSpacesResponseBody extends Model
         if (isset($map['spaces'])) {
             if (!empty($map['spaces'])) {
                 $model->spaces = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['spaces'] as $item) {
                     $model->spaces[$n++] = null !== $item ? spaces::fromMap($item) : $item;
                 }

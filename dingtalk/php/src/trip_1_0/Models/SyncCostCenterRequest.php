@@ -88,21 +88,19 @@ class SyncCostCenterRequest extends Model
     public $userId;
     protected $_name = [
         'channelCorpId' => 'channelCorpId',
-        'costCenterId'  => 'costCenterId',
-        'deleteFlag'    => 'deleteFlag',
-        'extension'     => 'extension',
-        'gmtAction'     => 'gmtAction',
-        'number'        => 'number',
-        'scope'         => 'scope',
-        'source'        => 'source',
-        'thirdPartId'   => 'thirdPartId',
-        'title'         => 'title',
-        'userId'        => 'userId',
+        'costCenterId' => 'costCenterId',
+        'deleteFlag' => 'deleteFlag',
+        'extension' => 'extension',
+        'gmtAction' => 'gmtAction',
+        'number' => 'number',
+        'scope' => 'scope',
+        'source' => 'source',
+        'thirdPartId' => 'thirdPartId',
+        'title' => 'title',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

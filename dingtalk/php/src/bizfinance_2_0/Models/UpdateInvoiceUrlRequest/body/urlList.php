@@ -34,15 +34,13 @@ class urlList extends Model
     public $xmlUrl;
     protected $_name = [
         'invoiceCode' => 'invoiceCode',
-        'invoiceNo'   => 'invoiceNo',
-        'ofdUrl'      => 'ofdUrl',
-        'pdfUrl'      => 'pdfUrl',
-        'xmlUrl'      => 'xmlUrl',
+        'invoiceNo' => 'invoiceNo',
+        'ofdUrl' => 'ofdUrl',
+        'pdfUrl' => 'pdfUrl',
+        'xmlUrl' => 'xmlUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

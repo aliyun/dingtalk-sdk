@@ -27,12 +27,10 @@ class RemoveResidentUserRequest extends Model
     public $userId;
     protected $_name = [
         'departmentId' => 'departmentId',
-        'userId'       => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

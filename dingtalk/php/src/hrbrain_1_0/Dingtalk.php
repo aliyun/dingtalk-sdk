@@ -113,8 +113,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -146,18 +146,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeleteAwardRecords',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/awardRecords/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeleteAwardRecords',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/awardRecords/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeleteAwardRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -203,18 +203,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeleteDimission',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/dimissionInfos/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeleteDimission',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/dimissionInfos/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeleteDimissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -260,18 +260,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeleteEduExp',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/eduExperiences/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeleteEduExp',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/eduExperiences/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeleteEduExpResponse::fromMap($this->execute($params, $req, $runtime));
@@ -317,18 +317,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeleteEmpInfo',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/empInfos/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeleteEmpInfo',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/empInfos/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeleteEmpInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -374,18 +374,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeleteLabelIndustry',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/industries/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeleteLabelIndustry',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/industries/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeleteLabelIndustryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -431,18 +431,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeleteLabelInventory',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/inventories/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeleteLabelInventory',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/inventories/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeleteLabelInventoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -488,18 +488,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeleteLabelProfSkill',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/profSkills/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeleteLabelProfSkill',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/profSkills/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeleteLabelProfSkillResponse::fromMap($this->execute($params, $req, $runtime));
@@ -545,18 +545,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeletePerfEval',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/perfRecords/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeletePerfEval',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/perfRecords/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeletePerfEvalResponse::fromMap($this->execute($params, $req, $runtime));
@@ -602,18 +602,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeletePromRecords',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/promEvals/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeletePromRecords',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/promEvals/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeletePromRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -659,18 +659,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeletePunDetail',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/punDetails/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeletePunDetail',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/punDetails/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeletePunDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -716,18 +716,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeleteRegist',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/registerInfos/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeleteRegist',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/registerInfos/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeleteRegistResponse::fromMap($this->execute($params, $req, $runtime));
@@ -773,18 +773,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeleteTransferEval',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/changeRecords/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeleteTransferEval',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/changeRecords/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeleteTransferEvalResponse::fromMap($this->execute($params, $req, $runtime));
@@ -830,18 +830,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeleteWorkExp',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/workExperiences/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeleteWorkExp',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/workExperiences/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeleteWorkExpResponse::fromMap($this->execute($params, $req, $runtime));
@@ -887,18 +887,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainDeletetLabelBase',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/baseLabels/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainDeletetLabelBase',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/baseLabels/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainDeletetLabelBaseResponse::fromMap($this->execute($params, $req, $runtime));
@@ -944,19 +944,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportAwardDetail',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/awardDetails/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportAwardDetail',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/awardDetails/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportAwardDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1002,19 +1002,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportDeptInfo',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/deptInfos/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportDeptInfo',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/deptInfos/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportDeptInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1060,19 +1060,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportDimission',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/dimissionInfos/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportDimission',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/dimissionInfos/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportDimissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1118,19 +1118,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportEduExp',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/eduExperiences/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportEduExp',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/eduExperiences/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportEduExpResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1176,19 +1176,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportEmpInfo',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/empInfos/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportEmpInfo',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/empInfos/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportEmpInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1234,19 +1234,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportLabelBase',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/baseLabels/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportLabelBase',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/baseLabels/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportLabelBaseResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1292,19 +1292,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportLabelCustom',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/customLabels/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportLabelCustom',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/customLabels/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportLabelCustomResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1350,19 +1350,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportLabelIndustry',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/industries/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportLabelIndustry',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/industries/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportLabelIndustryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1408,19 +1408,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportLabelInventory',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/inventories/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportLabelInventory',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/inventories/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportLabelInventoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1466,19 +1466,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportLabelProfSkill',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/profSkills/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportLabelProfSkill',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/profSkills/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportLabelProfSkillResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1524,19 +1524,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportPerfEval',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/perfRecords/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportPerfEval',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/perfRecords/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportPerfEvalResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1582,19 +1582,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportPromEval',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/promRecords/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportPromEval',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/promRecords/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportPromEvalResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1640,19 +1640,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportPunDetail',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/punDetails/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportPunDetail',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/punDetails/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportPunDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1698,19 +1698,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportRegist',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/registerInfos/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportRegist',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/registerInfos/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportRegistResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1756,19 +1756,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportTransferEval',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/changeRecords/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportTransferEval',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/changeRecords/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportTransferEvalResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1814,19 +1814,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'HrbrainImportWorkExp',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/workExperiences/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HrbrainImportWorkExp',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/workExperiences/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HrbrainImportWorkExpResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1878,19 +1878,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => Utils::toArray($request->body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'StaffLabelRecordsQuery',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas/labelRecords/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StaffLabelRecordsQuery',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/labelRecords/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StaffLabelRecordsQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1948,18 +1948,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncData',
-            'version'     => 'hrbrain_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/hrbrain/datas',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncData',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncDataResponse::fromMap($this->execute($params, $req, $runtime));

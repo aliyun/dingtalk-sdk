@@ -92,27 +92,25 @@ class IndustryManufactureLabourCostRequest extends Model
      */
     public $tokenGrantType;
     protected $_name = [
-        'appId'           => 'appId',
-        'appIds'          => 'appIds',
-        'appName'         => 'appName',
-        'corpId'          => 'corpId',
-        'cursor'          => 'cursor',
-        'endTime'         => 'endTime',
-        'isvOrgId'        => 'isvOrgId',
-        'materialNo'      => 'materialNo',
+        'appId' => 'appId',
+        'appIds' => 'appIds',
+        'appName' => 'appName',
+        'corpId' => 'corpId',
+        'cursor' => 'cursor',
+        'endTime' => 'endTime',
+        'isvOrgId' => 'isvOrgId',
+        'materialNo' => 'materialNo',
         'microappAgentId' => 'microappAgentId',
-        'orgId'           => 'orgId',
-        'pageNumber'      => 'pageNumber',
-        'pageSize'        => 'pageSize',
-        'processNo'       => 'processNo',
-        'startTime'       => 'startTime',
-        'suiteKey'        => 'suiteKey',
-        'tokenGrantType'  => 'tokenGrantType',
+        'orgId' => 'orgId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'processNo' => 'processNo',
+        'startTime' => 'startTime',
+        'suiteKey' => 'suiteKey',
+        'tokenGrantType' => 'tokenGrantType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

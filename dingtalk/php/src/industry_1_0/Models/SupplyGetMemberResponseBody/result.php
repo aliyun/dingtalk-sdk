@@ -59,19 +59,17 @@ class result extends Model
      */
     public $supplyNodeList;
     protected $_name = [
-        'deptIdList'       => 'deptIdList',
+        'deptIdList' => 'deptIdList',
         'dingMemberStatus' => 'dingMemberStatus',
-        'isActive'         => 'isActive',
-        'memberName'       => 'memberName',
-        'memberTitle'      => 'memberTitle',
+        'isActive' => 'isActive',
+        'memberName' => 'memberName',
+        'memberTitle' => 'memberTitle',
         'memberWorkNumber' => 'memberWorkNumber',
-        'roleInfoList'     => 'roleInfoList',
-        'supplyNodeList'   => 'supplyNodeList',
+        'roleInfoList' => 'roleInfoList',
+        'supplyNodeList' => 'supplyNodeList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -141,7 +139,7 @@ class result extends Model
         if (isset($map['roleInfoList'])) {
             if (!empty($map['roleInfoList'])) {
                 $model->roleInfoList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['roleInfoList'] as $item) {
                     $model->roleInfoList[$n++] = null !== $item ? roleInfoList::fromMap($item) : $item;
                 }

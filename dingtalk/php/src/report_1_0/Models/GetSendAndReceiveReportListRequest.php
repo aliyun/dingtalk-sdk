@@ -53,16 +53,14 @@ class GetSendAndReceiveReportListRequest extends Model
      */
     public $startTime;
     protected $_name = [
-        'endTime'         => 'endTime',
-        'maxResults'      => 'maxResults',
-        'nextToken'       => 'nextToken',
+        'endTime' => 'endTime',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'operationUserId' => 'operationUserId',
-        'startTime'       => 'startTime',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

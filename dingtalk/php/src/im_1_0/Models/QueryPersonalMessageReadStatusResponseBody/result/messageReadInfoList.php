@@ -19,12 +19,10 @@ class messageReadInfoList extends Model
     public $userId;
     protected $_name = [
         'readStatus' => 'readStatus',
-        'userId'     => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

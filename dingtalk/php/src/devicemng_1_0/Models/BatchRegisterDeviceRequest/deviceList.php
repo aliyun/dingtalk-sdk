@@ -63,16 +63,14 @@ class deviceList extends Model
     public $managers;
     protected $_name = [
         'collaborators' => 'collaborators',
-        'departmentId'  => 'departmentId',
-        'description'   => 'description',
-        'deviceKey'     => 'deviceKey',
-        'deviceName'    => 'deviceName',
-        'managers'      => 'managers',
+        'departmentId' => 'departmentId',
+        'description' => 'description',
+        'deviceKey' => 'deviceKey',
+        'deviceName' => 'deviceName',
+        'managers' => 'managers',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

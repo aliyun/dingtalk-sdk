@@ -22,9 +22,7 @@ class imSingleOpenDeliverModel extends Model
         'extension' => 'extension',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

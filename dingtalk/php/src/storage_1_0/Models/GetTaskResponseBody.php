@@ -17,9 +17,7 @@ class GetTaskResponseBody extends Model
         'task' => 'task',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

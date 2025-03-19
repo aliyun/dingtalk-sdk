@@ -99,24 +99,22 @@ class list_ extends Model
      */
     public $supportTradeDetail;
     protected $_name = [
-        'accountCode'        => 'accountCode',
-        'accountId'          => 'accountId',
-        'accountName'        => 'accountName',
-        'accountRemark'      => 'accountRemark',
-        'accountType'        => 'accountType',
-        'amount'             => 'amount',
-        'bankCode'           => 'bankCode',
-        'bankName'           => 'bankName',
-        'createTime'         => 'createTime',
-        'creator'            => 'creator',
-        'signStatus'         => 'signStatus',
-        'supportReceipt'     => 'supportReceipt',
+        'accountCode' => 'accountCode',
+        'accountId' => 'accountId',
+        'accountName' => 'accountName',
+        'accountRemark' => 'accountRemark',
+        'accountType' => 'accountType',
+        'amount' => 'amount',
+        'bankCode' => 'bankCode',
+        'bankName' => 'bankName',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
+        'signStatus' => 'signStatus',
+        'supportReceipt' => 'supportReceipt',
         'supportTradeDetail' => 'supportTradeDetail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

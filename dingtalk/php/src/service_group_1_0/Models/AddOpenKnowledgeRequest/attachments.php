@@ -44,15 +44,13 @@ class attachments extends Model
     public $title;
     protected $_name = [
         'mimeType' => 'mimeType',
-        'path'     => 'path',
-        'size'     => 'size',
-        'suffix'   => 'suffix',
-        'title'    => 'title',
+        'path' => 'path',
+        'size' => 'size',
+        'suffix' => 'suffix',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

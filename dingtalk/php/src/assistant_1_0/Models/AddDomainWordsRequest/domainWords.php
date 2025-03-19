@@ -24,13 +24,11 @@ class domainWords extends Model
     public $formalWords;
     protected $_name = [
         'description' => 'description',
-        'domainWord'  => 'domainWord',
+        'domainWord' => 'domainWord',
         'formalWords' => 'formalWords',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

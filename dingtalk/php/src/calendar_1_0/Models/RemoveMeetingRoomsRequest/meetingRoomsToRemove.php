@@ -16,9 +16,7 @@ class meetingRoomsToRemove extends Model
         'roomId' => 'roomId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

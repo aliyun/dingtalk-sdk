@@ -18,9 +18,7 @@ class FinishRequest extends Model
         'conversationToken' => 'conversationToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

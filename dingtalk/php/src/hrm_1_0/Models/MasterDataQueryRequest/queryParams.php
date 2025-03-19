@@ -29,13 +29,11 @@ class queryParams extends Model
     public $joinType;
     protected $_name = [
         'conditionList' => 'conditionList',
-        'fieldCode'     => 'fieldCode',
-        'joinType'      => 'joinType',
+        'fieldCode' => 'fieldCode',
+        'joinType' => 'joinType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class queryParams extends Model
         if (isset($map['conditionList'])) {
             if (!empty($map['conditionList'])) {
                 $model->conditionList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['conditionList'] as $item) {
                     $model->conditionList[$n++] = null !== $item ? conditionList::fromMap($item) : $item;
                 }

@@ -36,15 +36,13 @@ class RestoreRecycleItemResponseBody extends Model
      */
     public $taskId;
     protected $_name = [
-        'async'    => 'async',
+        'async' => 'async',
         'dentryId' => 'dentryId',
-        'spaceId'  => 'spaceId',
-        'taskId'   => 'taskId',
+        'spaceId' => 'spaceId',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

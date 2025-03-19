@@ -49,17 +49,15 @@ class app extends Model
      */
     public $partitions;
     protected $_name = [
-        'appId'        => 'appId',
-        'corpId'       => 'corpId',
-        'createTime'   => 'createTime',
+        'appId' => 'appId',
+        'corpId' => 'corpId',
+        'createTime' => 'createTime',
         'modifiedTime' => 'modifiedTime',
-        'name'         => 'name',
-        'partitions'   => 'partitions',
+        'name' => 'name',
+        'partitions' => 'partitions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -118,7 +116,7 @@ class app extends Model
         if (isset($map['partitions'])) {
             if (!empty($map['partitions'])) {
                 $model->partitions = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['partitions'] as $item) {
                     $model->partitions[$n++] = null !== $item ? partitions::fromMap($item) : $item;
                 }

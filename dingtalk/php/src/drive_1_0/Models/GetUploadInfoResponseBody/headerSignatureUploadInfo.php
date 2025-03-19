@@ -41,16 +41,14 @@ class headerSignatureUploadInfo extends Model
      */
     public $resourceUrl;
     protected $_name = [
-        'expirationSeconds'   => 'expirationSeconds',
-        'headers'             => 'headers',
+        'expirationSeconds' => 'expirationSeconds',
+        'headers' => 'headers',
         'internalResourceUrl' => 'internalResourceUrl',
-        'mediaId'             => 'mediaId',
-        'resourceUrl'         => 'resourceUrl',
+        'mediaId' => 'mediaId',
+        'resourceUrl' => 'resourceUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

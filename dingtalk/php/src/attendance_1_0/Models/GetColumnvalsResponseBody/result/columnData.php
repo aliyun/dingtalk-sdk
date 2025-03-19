@@ -29,13 +29,11 @@ class columnData extends Model
     public $id;
     protected $_name = [
         'columnValues' => 'columnValues',
-        'fixedValue'   => 'fixedValue',
-        'id'           => 'id',
+        'fixedValue' => 'fixedValue',
+        'id' => 'id',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class columnData extends Model
         if (isset($map['columnValues'])) {
             if (!empty($map['columnValues'])) {
                 $model->columnValues = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['columnValues'] as $item) {
                     $model->columnValues[$n++] = null !== $item ? columnValues::fromMap($item) : $item;
                 }

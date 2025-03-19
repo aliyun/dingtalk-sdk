@@ -30,15 +30,13 @@ class wrongQuestions extends Model
      */
     public $userAnswerUploadUrlList;
     protected $_name = [
-        'questionNo'                  => 'questionNo',
-        'questionUploadUrlList'       => 'questionUploadUrlList',
+        'questionNo' => 'questionNo',
+        'questionUploadUrlList' => 'questionUploadUrlList',
         'standardAnswerUploadUrlList' => 'standardAnswerUploadUrlList',
-        'userAnswerUploadUrlList'     => 'userAnswerUploadUrlList',
+        'userAnswerUploadUrlList' => 'userAnswerUploadUrlList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

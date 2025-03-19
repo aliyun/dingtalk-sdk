@@ -17,9 +17,7 @@ class result extends Model
         'opportunityList' => 'opportunityList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class result extends Model
         if (isset($map['opportunityList'])) {
             if (!empty($map['opportunityList'])) {
                 $model->opportunityList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['opportunityList'] as $item) {
                     $model->opportunityList[$n++] = null !== $item ? opportunityList::fromMap($item) : $item;
                 }

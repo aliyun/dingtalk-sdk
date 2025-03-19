@@ -16,9 +16,7 @@ class ConvertLegacyEventIdResponseBody extends Model
         'legacyEventIdMap' => 'legacyEventIdMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

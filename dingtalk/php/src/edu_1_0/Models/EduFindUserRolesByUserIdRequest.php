@@ -34,15 +34,13 @@ class EduFindUserRolesByUserIdRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'classId'    => 'classId',
-        'corpId'     => 'corpId',
+        'classId' => 'classId',
+        'corpId' => 'corpId',
         'hasOrgRole' => 'hasOrgRole',
-        'userId'     => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

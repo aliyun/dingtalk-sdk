@@ -39,15 +39,13 @@ class GetProcessDesignResponseBody extends Model
     public $props;
     protected $_name = [
         'approvalSummary' => 'approvalSummary',
-        'flowConfig'      => 'flowConfig',
-        'formulaRules'    => 'formulaRules',
-        'nodes'           => 'nodes',
-        'props'           => 'props',
+        'flowConfig' => 'flowConfig',
+        'formulaRules' => 'formulaRules',
+        'nodes' => 'nodes',
+        'props' => 'props',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -100,7 +98,7 @@ class GetProcessDesignResponseBody extends Model
         if (isset($map['approvalSummary'])) {
             if (!empty($map['approvalSummary'])) {
                 $model->approvalSummary = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['approvalSummary'] as $item) {
                     $model->approvalSummary[$n++] = null !== $item ? approvalSummary::fromMap($item) : $item;
                 }
@@ -112,7 +110,7 @@ class GetProcessDesignResponseBody extends Model
         if (isset($map['formulaRules'])) {
             if (!empty($map['formulaRules'])) {
                 $model->formulaRules = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['formulaRules'] as $item) {
                     $model->formulaRules[$n++] = null !== $item ? formulaRules::fromMap($item) : $item;
                 }
@@ -121,7 +119,7 @@ class GetProcessDesignResponseBody extends Model
         if (isset($map['nodes'])) {
             if (!empty($map['nodes'])) {
                 $model->nodes = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['nodes'] as $item) {
                     $model->nodes[$n++] = null !== $item ? nodes::fromMap($item) : $item;
                 }

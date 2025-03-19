@@ -102,26 +102,24 @@ class AddKnowledgeRequest extends Model
      */
     public $version;
     protected $_name = [
-        'attachmentList'   => 'attachmentList',
-        'content'          => 'content',
-        'effectTimeend'    => 'effectTimeend',
-        'effectTimestart'  => 'effectTimestart',
-        'extTitle'         => 'extTitle',
-        'keyword'          => 'keyword',
-        'libraryKey'       => 'libraryKey',
-        'linkUrl'          => 'linkUrl',
-        'openTeamId'       => 'openTeamId',
-        'questionIds'      => 'questionIds',
-        'source'           => 'source',
+        'attachmentList' => 'attachmentList',
+        'content' => 'content',
+        'effectTimeend' => 'effectTimeend',
+        'effectTimestart' => 'effectTimestart',
+        'extTitle' => 'extTitle',
+        'keyword' => 'keyword',
+        'libraryKey' => 'libraryKey',
+        'linkUrl' => 'linkUrl',
+        'openTeamId' => 'openTeamId',
+        'questionIds' => 'questionIds',
+        'source' => 'source',
         'sourcePrimaryKey' => 'sourcePrimaryKey',
-        'title'            => 'title',
-        'type'             => 'type',
-        'version'          => 'version',
+        'title' => 'title',
+        'type' => 'type',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -192,7 +190,7 @@ class AddKnowledgeRequest extends Model
         if (isset($map['attachmentList'])) {
             if (!empty($map['attachmentList'])) {
                 $model->attachmentList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['attachmentList'] as $item) {
                     $model->attachmentList[$n++] = null !== $item ? attachmentList::fromMap($item) : $item;
                 }

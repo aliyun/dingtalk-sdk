@@ -51,16 +51,14 @@ class CreateSearchTabRequest extends Model
     public $status;
     protected $_name = [
         'darkIcon' => 'darkIcon',
-        'icon'     => 'icon',
-        'name'     => 'name',
+        'icon' => 'icon',
+        'name' => 'name',
         'priority' => 'priority',
-        'source'   => 'source',
-        'status'   => 'status',
+        'source' => 'source',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

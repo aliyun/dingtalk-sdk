@@ -22,13 +22,11 @@ class result extends Model
      */
     public $updateTime;
     protected $_name = [
-        'dueDate'    => 'dueDate',
+        'dueDate' => 'dueDate',
         'updateTime' => 'updateTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

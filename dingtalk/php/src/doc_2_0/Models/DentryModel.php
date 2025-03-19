@@ -149,30 +149,28 @@ class DentryModel extends Model
      */
     public $visitorInfo;
     protected $_name = [
-        'contentType'     => 'contentType',
-        'createdTime'     => 'createdTime',
-        'creator'         => 'creator',
-        'dentryId'        => 'dentryId',
-        'dentryType'      => 'dentryType',
-        'dentryUuid'      => 'dentryUuid',
-        'docKey'          => 'docKey',
-        'extension'       => 'extension',
-        'hasChildren'     => 'hasChildren',
-        'linkSourceInfo'  => 'linkSourceInfo',
-        'name'            => 'name',
-        'path'            => 'path',
-        'space'           => 'space',
-        'spaceId'         => 'spaceId',
+        'contentType' => 'contentType',
+        'createdTime' => 'createdTime',
+        'creator' => 'creator',
+        'dentryId' => 'dentryId',
+        'dentryType' => 'dentryType',
+        'dentryUuid' => 'dentryUuid',
+        'docKey' => 'docKey',
+        'extension' => 'extension',
+        'hasChildren' => 'hasChildren',
+        'linkSourceInfo' => 'linkSourceInfo',
+        'name' => 'name',
+        'path' => 'path',
+        'space' => 'space',
+        'spaceId' => 'spaceId',
         'statisticalInfo' => 'statisticalInfo',
-        'updatedTime'     => 'updatedTime',
-        'updater'         => 'updater',
-        'url'             => 'url',
-        'visitorInfo'     => 'visitorInfo',
+        'updatedTime' => 'updatedTime',
+        'updater' => 'updater',
+        'url' => 'url',
+        'visitorInfo' => 'visitorInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

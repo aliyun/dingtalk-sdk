@@ -153,8 +153,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -193,18 +193,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddRecordPermission',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/recordPermissions',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddRecordPermission',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/recordPermissions',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddRecordPermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -254,18 +254,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CancelScheduleConference',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/scheduleConferences/cancel',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CancelScheduleConference',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/scheduleConferences/cancel',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CancelScheduleConferenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -312,18 +312,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CloseVideoConference',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CloseVideoConference',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CloseVideoConferenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -374,18 +374,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'Cohosts',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/coHosts/set',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'Cohosts',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/coHosts/set',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CohostsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -444,18 +444,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateCustomShortLink',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/customShortLinks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateCustomShortLink',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/customShortLinks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateCustomShortLinkResponse::fromMap($this->execute($params, $req, $runtime));
@@ -513,18 +513,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateScheduleConference',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/scheduleConferences',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateScheduleConference',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/scheduleConferences',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateScheduleConferenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -579,18 +579,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateVideoConference',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateVideoConference',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateVideoConferenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -640,18 +640,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'Focus',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/focus',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'Focus',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/focus',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return FocusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -705,18 +705,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GenerateFlashMinutesDocumentUrl',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/document/generate',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GenerateFlashMinutesDocumentUrl',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/document/generate',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GenerateFlashMinutesDocumentUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -764,18 +764,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetConfDataByConferenceId',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetConfDataByConferenceId',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetConfDataByConferenceIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -829,18 +829,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetConfDetailData',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/details',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetConfDetailData',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/details',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetConfDetailDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -911,18 +911,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetHistoryConfDataList',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/histories/dataLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetHistoryConfDataList',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/histories/dataLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetHistoryConfDataListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -969,18 +969,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetUserLastMetric',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/lastMetricDatas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserLastMetric',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/lastMetricDatas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserLastMetricResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1034,18 +1034,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUserMetricData',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/metricDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserMetricData',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/metricDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserMetricDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1099,18 +1099,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InviteUsers',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/users/invite',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InviteUsers',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/users/invite',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InviteUsersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1161,18 +1161,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'KickMembers',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/members/kick',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'KickMembers',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/members/kick',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return KickMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1220,18 +1220,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'LockConference',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/lock',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'LockConference',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/lock',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return LockConferenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1282,18 +1282,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MuteAll',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/allMembers/mute',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MuteAll',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/allMembers/mute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MuteAllResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1344,18 +1344,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MuteMembers',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/members/mute',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MuteMembers',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/members/mute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MuteMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1415,18 +1415,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCloudRecordText',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/getTexts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCloudRecordText',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/getTexts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCloudRecordTextResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1474,18 +1474,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCloudRecordVideo',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/getVideos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCloudRecordVideo',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/getVideos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCloudRecordVideoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1539,18 +1539,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCloudRecordVideoPlayInfo',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/videos/getPlayInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCloudRecordVideoPlayInfo',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/videos/getPlayInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCloudRecordVideoPlayInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1594,15 +1594,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryConferenceInfo',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryConferenceInfo',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryConferenceInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1648,18 +1648,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryConferenceInfoBatch',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryConferenceInfoBatch',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryConferenceInfoBatchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1709,18 +1709,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryConferenceInfoByRoomCode',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/roomCodes/' . $roomCode . '/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryConferenceInfoByRoomCode',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/roomCodes/' . $roomCode . '/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryConferenceInfoByRoomCodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1771,18 +1771,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryConferenceMembers',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/members',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryConferenceMembers',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/members',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryConferenceMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1833,18 +1833,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryFlashMinutesSummary',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/summaries',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryFlashMinutesSummary',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/summaries',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryFlashMinutesSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1892,18 +1892,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryMinutesAudio',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/audioInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMinutesAudio',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/audioInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMinutesAudioResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1954,18 +1954,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryMinutesSummary',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/summaries/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMinutesSummary',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/summaries/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMinutesSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2022,18 +2022,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryMinutesText',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/textInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMinutesText',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/textInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMinutesTextResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2083,18 +2083,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryOrgConferenceList',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/orgConferences',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOrgConferenceList',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/orgConferences',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOrgConferenceListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2144,18 +2144,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryRecordMinutesUrl',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/recordUrls',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryRecordMinutesUrl',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/recordUrls',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryRecordMinutesUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2202,18 +2202,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryScheduleConfSettings',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/scheduleConferences/settings',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryScheduleConfSettings',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/scheduleConferences/settings',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryScheduleConfSettingsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2260,18 +2260,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryScheduleConference',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/scheduleConferences/' . $scheduleConferenceId . '/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryScheduleConference',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/scheduleConferences/' . $scheduleConferenceId . '/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryScheduleConferenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2322,18 +2322,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryScheduleConferenceInfo',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/scheduleConferences/' . $scheduleConferenceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryScheduleConferenceInfo',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/scheduleConferences/' . $scheduleConferenceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryScheduleConferenceInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2380,18 +2380,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryUserOnGoingConference',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/users/lists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserOnGoingConference',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/users/lists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserOnGoingConferenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2444,18 +2444,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'StartCloudRecord',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/start',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StartCloudRecord',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/start',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StartCloudRecordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2509,18 +2509,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'StartMinutes',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/start',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StartMinutes',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/start',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StartMinutesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2583,18 +2583,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'StartStreamOut',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/streamOuts/start',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StartStreamOut',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/streamOuts/start',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StartStreamOutResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2642,18 +2642,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'StopCloudRecord',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/stop',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StopCloudRecord',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/cloudRecords/stop',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StopCloudRecordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2701,18 +2701,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'StopMinutes',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/pause',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StopMinutes',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/pause',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StopMinutesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2766,18 +2766,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'StopStreamOut',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/streamOuts/stop',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StopStreamOut',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/streamOuts/stop',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StopStreamOutResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2830,18 +2830,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateScheduleConfSettings',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/scheduleConferences/settings',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateScheduleConfSettings',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/scheduleConferences/settings',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateScheduleConfSettingsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2899,18 +2899,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateScheduleConference',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/scheduleConferences',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateScheduleConference',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/scheduleConferences',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateScheduleConferenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2953,15 +2953,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'UpdateVideoConferenceExtInfo',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/extInfo',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateVideoConferenceExtInfo',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/extInfo',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateVideoConferenceExtInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3023,18 +3023,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateVideoConferenceSetting',
-            'version'     => 'conference_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateVideoConferenceSetting',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateVideoConferenceSettingResponse::fromMap($this->execute($params, $req, $runtime));

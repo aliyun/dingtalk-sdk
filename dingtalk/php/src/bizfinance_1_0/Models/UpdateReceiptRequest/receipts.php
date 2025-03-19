@@ -114,25 +114,23 @@ class receipts extends Model
      */
     public $updateUserId;
     protected $_name = [
-        'amount'               => 'amount',
-        'categoryCode'         => 'categoryCode',
-        'code'                 => 'code',
-        'customerCode'         => 'customerCode',
+        'amount' => 'amount',
+        'categoryCode' => 'categoryCode',
+        'code' => 'code',
+        'customerCode' => 'customerCode',
         'enterpriseAcountCode' => 'enterpriseAcountCode',
-        'occurDate'            => 'occurDate',
-        'principalId'          => 'principalId',
-        'projectCode'          => 'projectCode',
-        'receiptType'          => 'receiptType',
-        'remark'               => 'remark',
-        'supplierCode'         => 'supplierCode',
-        'title'                => 'title',
-        'updateTime'           => 'updateTime',
-        'updateUserId'         => 'updateUserId',
+        'occurDate' => 'occurDate',
+        'principalId' => 'principalId',
+        'projectCode' => 'projectCode',
+        'receiptType' => 'receiptType',
+        'remark' => 'remark',
+        'supplierCode' => 'supplierCode',
+        'title' => 'title',
+        'updateTime' => 'updateTime',
+        'updateUserId' => 'updateUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

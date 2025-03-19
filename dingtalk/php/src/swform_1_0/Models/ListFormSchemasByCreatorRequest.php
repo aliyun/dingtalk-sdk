@@ -40,15 +40,13 @@ class ListFormSchemasByCreatorRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'bizType'    => 'bizType',
-        'creator'    => 'creator',
+        'bizType' => 'bizType',
+        'creator' => 'creator',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

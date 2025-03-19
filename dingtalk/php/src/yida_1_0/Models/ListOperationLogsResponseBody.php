@@ -20,9 +20,7 @@ class ListOperationLogsResponseBody extends Model
         'operationLogMap' => 'operationLogMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

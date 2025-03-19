@@ -43,14 +43,12 @@ class CardBatchQueryCardsRequest extends Model
     public $userId;
     protected $_name = [
         'cardBizCode' => 'cardBizCode',
-        'cardIds'     => 'cardIds',
-        'sourceType'  => 'sourceType',
-        'userId'      => 'userId',
+        'cardIds' => 'cardIds',
+        'sourceType' => 'sourceType',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

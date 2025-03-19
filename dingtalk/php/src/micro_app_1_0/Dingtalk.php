@@ -111,10 +111,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -155,18 +155,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddAppRolesToMember',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/members/roles',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddAppRolesToMember',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/members/roles',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddAppRolesToMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -220,18 +220,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddAppToWorkBenchGroup',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/addToWorkBenchGroup',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddAppToWorkBenchGroup',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/addToWorkBenchGroup',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddAppToWorkBenchGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -289,18 +289,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddMemberToAppRole',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/members',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddMemberToAppRole',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddMemberToAppRoleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -337,15 +337,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'AnheiP',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/anheiP',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'AnheiP',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/anheiP',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AnheiPResponse::fromMap($this->execute($params, $req, $runtime));
@@ -378,15 +378,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'AnheiTest888',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/anheiTest888',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'AnheiTest888',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/anheiTest888',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AnheiTest888Response::fromMap($this->execute($params, $req, $runtime));
@@ -419,15 +419,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'AnheiTestB',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/anheiTestB',
-            'method'      => 'PUT',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'AnheiTestB',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/anheiTestB',
+            'method' => 'PUT',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AnheiTestBResponse::fromMap($this->execute($params, $req, $runtime));
@@ -460,15 +460,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'AnheiTestNine',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/anheiTestNine',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'AnheiTestNine',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/anheiTestNine',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AnheiTestNineResponse::fromMap($this->execute($params, $req, $runtime));
@@ -505,18 +505,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AppStatusManagerTest',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/manager/test',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'AppStatusManagerTest',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/manager/test',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AppStatusManagerTestResponse::fromMap($this->execute($params, $req, $runtime));
@@ -551,15 +551,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'AyunTest',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/ayun/test',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'AyunTest',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/ayun/test',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AyunTestResponse::fromMap($this->execute($params, $req, $runtime));
@@ -592,15 +592,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'AyunTestOnline',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/ayunTest',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'AyunTestOnline',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/ayunTest',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AyunTestOnlineResponse::fromMap($this->execute($params, $req, $runtime));
@@ -677,18 +677,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateApaasApp',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apaasApps',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateApaasApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apaasApps',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateApaasAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -761,18 +761,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateInnerApp',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateInnerApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateInnerAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -820,18 +820,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteAppRole',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteAppRole',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteAppRoleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -880,18 +880,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteInnerApp',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteInnerApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteInnerAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -935,15 +935,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetApaasApp',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apaasApps/' . $bizAppId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetApaasApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apaasApps/' . $bizAppId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetApaasAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -998,18 +998,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAppResourceUseInfo',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/resources/useInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAppResourceUseInfo',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/resources/useInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'array',
+            'bodyType' => 'array',
         ]);
 
         return GetAppResourceUseInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1053,15 +1053,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetAppRoleScopeByRoleId',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/scopes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAppRoleScopeByRoleId',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/scopes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAppRoleScopeByRoleIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1112,18 +1112,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetInnerApp',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetInnerApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetInnerAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1167,15 +1167,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetMicroAppScope',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/scopes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMicroAppScope',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/scopes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMicroAppScopeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1219,15 +1219,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetMicroAppUserAccess',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/users/' . $userId . '/adminAccess',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMicroAppUserAccess',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/users/' . $userId . '/adminAccess',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMicroAppUserAccessResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1271,15 +1271,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetUserAppDevAccess',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/users/' . $userId . '/devAccesses',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserAppDevAccess',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/users/' . $userId . '/devAccesses',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserAppDevAccessResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1321,15 +1321,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListAllApp',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/allApps',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAllApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/allApps',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAllAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1369,15 +1369,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListAllInnerApps',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/allInnerApps',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAllInnerApps',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/allInnerApps',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAllInnerAppsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1425,18 +1425,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListAppRoleScopes',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAppRoleScopes',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/roles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAppRoleScopesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1483,18 +1483,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListInnerApp',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListInnerApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListInnerAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1537,15 +1537,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListInnerAppVersion',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListInnerAppVersion',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListInnerAppVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1589,15 +1589,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListRoleInfoByUser',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/users/' . $userId . '/roles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListRoleInfoByUser',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/users/' . $userId . '/roles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListRoleInfoByUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1641,15 +1641,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListUserVilebleApp',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/users/' . $userId . '/apps',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListUserVilebleApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/users/' . $userId . '/apps',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListUserVilebleAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1699,18 +1699,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PageInnerAppHistoryVersion',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/innerMiniApps/' . $agentId . '/historyVersions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PageInnerAppHistoryVersion',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/innerMiniApps/' . $agentId . '/historyVersions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PageInnerAppHistoryVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1767,18 +1767,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PublishInnerAppVersion',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions/publish',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PublishInnerAppVersion',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions/publish',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PublishInnerAppVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1839,18 +1839,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RebuildRoleScopeForAppRole',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/scopes/rebuild',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RebuildRoleScopeForAppRole',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/scopes/rebuild',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RebuildRoleScopeForAppRoleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1905,18 +1905,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RegisterCustomAppRole',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RegisterCustomAppRole',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/roles',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RegisterCustomAppRoleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1966,18 +1966,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RemoveApaasApp',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apaasApps/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveApaasApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apaasApps/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemoveApaasAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2034,18 +2034,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RemoveMemberForAppRole',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/members/batchRemove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveMemberForAppRole',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/members/batchRemove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemoveMemberForAppRoleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2097,18 +2097,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RollbackInnerAppVersion',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions/rollback',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RollbackInnerAppVersion',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions/rollback',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RollbackInnerAppVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2174,18 +2174,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetMicroAppScope',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/scopes',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetMicroAppScope',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/scopes',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetMicroAppScopeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2244,18 +2244,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateApaasApp',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apaasApps',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateApaasApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apaasApps',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateApaasAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2309,18 +2309,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateAppRoleInfo',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateAppRoleInfo',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateAppRoleInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2390,18 +2390,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInnerApp',
-            'version'     => 'microApp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInnerApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/' . $agentId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInnerAppResponse::fromMap($this->execute($params, $req, $runtime));

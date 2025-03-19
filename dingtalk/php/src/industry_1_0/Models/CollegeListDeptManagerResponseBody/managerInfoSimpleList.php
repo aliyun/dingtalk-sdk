@@ -28,13 +28,11 @@ class managerInfoSimpleList extends Model
     public $userId;
     protected $_name = [
         'isActive' => 'isActive',
-        'name'     => 'name',
-        'userId'   => 'userId',
+        'name' => 'name',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -24,13 +24,11 @@ class CardTemplateBuildActionRequest extends Model
      */
     public $cardTemplateJson;
     protected $_name = [
-        'action'           => 'action',
+        'action' => 'action',
         'cardTemplateJson' => 'cardTemplateJson',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

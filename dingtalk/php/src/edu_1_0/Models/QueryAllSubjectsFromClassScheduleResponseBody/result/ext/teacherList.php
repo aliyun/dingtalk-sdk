@@ -45,14 +45,12 @@ class teacherList extends Model
     public $userId;
     protected $_name = [
         'avator' => 'avator',
-        'name'   => 'name',
-        'uid'    => 'uid',
+        'name' => 'name',
+        'uid' => 'uid',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

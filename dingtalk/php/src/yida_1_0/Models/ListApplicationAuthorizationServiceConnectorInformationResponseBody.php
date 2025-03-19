@@ -35,15 +35,13 @@ class ListApplicationAuthorizationServiceConnectorInformationResponseBody extend
      */
     public $totalCount;
     protected $_name = [
-        'pageNumber'      => 'pageNumber',
-        'pageSize'        => 'pageSize',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'plugInformation' => 'plugInformation',
-        'totalCount'      => 'totalCount',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -87,7 +85,7 @@ class ListApplicationAuthorizationServiceConnectorInformationResponseBody extend
         if (isset($map['plugInformation'])) {
             if (!empty($map['plugInformation'])) {
                 $model->plugInformation = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['plugInformation'] as $item) {
                     $model->plugInformation[$n++] = null !== $item ? plugInformation::fromMap($item) : $item;
                 }

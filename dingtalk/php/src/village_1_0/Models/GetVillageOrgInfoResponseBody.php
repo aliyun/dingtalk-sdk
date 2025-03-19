@@ -31,14 +31,12 @@ class GetVillageOrgInfoResponseBody extends Model
      */
     public $regionType;
     protected $_name = [
-        'regionId'       => 'regionId',
+        'regionId' => 'regionId',
         'regionLocation' => 'regionLocation',
-        'regionType'     => 'regionType',
+        'regionType' => 'regionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class items extends Model
      */
     public $url;
     protected $_name = [
-        'name'    => 'name',
-        'path'    => 'path',
+        'name' => 'name',
+        'path' => 'path',
         'summary' => 'summary',
-        'url'     => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

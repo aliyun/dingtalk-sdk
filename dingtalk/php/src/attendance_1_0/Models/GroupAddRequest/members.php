@@ -35,14 +35,12 @@ class members extends Model
      */
     public $userId;
     protected $_name = [
-        'role'   => 'role',
-        'type'   => 'type',
+        'role' => 'role',
+        'type' => 'type',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -64,22 +64,20 @@ class todoCards extends Model
      */
     public $taskId;
     protected $_name = [
-        'bizTag'       => 'bizTag',
-        'createdTime'  => 'createdTime',
-        'creatorId'    => 'creatorId',
-        'detailUrl'    => 'detailUrl',
-        'dueTime'      => 'dueTime',
-        'isDone'       => 'isDone',
+        'bizTag' => 'bizTag',
+        'createdTime' => 'createdTime',
+        'creatorId' => 'creatorId',
+        'detailUrl' => 'detailUrl',
+        'dueTime' => 'dueTime',
+        'isDone' => 'isDone',
         'modifiedTime' => 'modifiedTime',
-        'priority'     => 'priority',
-        'sourceId'     => 'sourceId',
-        'subject'      => 'subject',
-        'taskId'       => 'taskId',
+        'priority' => 'priority',
+        'sourceId' => 'sourceId',
+        'subject' => 'subject',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

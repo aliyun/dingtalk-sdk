@@ -22,9 +22,7 @@ class link extends Model
         'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

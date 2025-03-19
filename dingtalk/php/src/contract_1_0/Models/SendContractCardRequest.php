@@ -74,20 +74,18 @@ class SendContractCardRequest extends Model
      */
     public $syncSingleChat;
     protected $_name = [
-        'cardType'          => 'cardType',
-        'contractInfo'      => 'contractInfo',
-        'corpId'            => 'corpId',
-        'extension'         => 'extension',
+        'cardType' => 'cardType',
+        'contractInfo' => 'contractInfo',
+        'corpId' => 'corpId',
+        'extension' => 'extension',
         'processInstanceId' => 'processInstanceId',
-        'receiveGroups'     => 'receiveGroups',
-        'receivers'         => 'receivers',
-        'sender'            => 'sender',
-        'syncSingleChat'    => 'syncSingleChat',
+        'receiveGroups' => 'receiveGroups',
+        'receivers' => 'receivers',
+        'sender' => 'sender',
+        'syncSingleChat' => 'syncSingleChat',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -160,7 +158,7 @@ class SendContractCardRequest extends Model
         if (isset($map['receivers'])) {
             if (!empty($map['receivers'])) {
                 $model->receivers = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['receivers'] as $item) {
                     $model->receivers[$n++] = null !== $item ? receivers::fromMap($item) : $item;
                 }

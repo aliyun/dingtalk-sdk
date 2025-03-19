@@ -91,23 +91,21 @@ class data extends Model
      */
     public $state;
     protected $_name = [
-        'appCode'            => 'appCode',
-        'bizObjectId'        => 'bizObjectId',
-        'createdTimeGMT'     => 'createdTimeGMT',
-        'dingTalkProcessId'  => 'dingTalkProcessId',
-        'finishTimeGMT'      => 'finishTimeGMT',
-        'originator'         => 'originator',
+        'appCode' => 'appCode',
+        'bizObjectId' => 'bizObjectId',
+        'createdTimeGMT' => 'createdTimeGMT',
+        'dingTalkProcessId' => 'dingTalkProcessId',
+        'finishTimeGMT' => 'finishTimeGMT',
+        'originator' => 'originator',
         'processDisplayName' => 'processDisplayName',
-        'processInstanceId'  => 'processInstanceId',
-        'processVersion'     => 'processVersion',
-        'schemaCode'         => 'schemaCode',
-        'startTimeGMT'       => 'startTimeGMT',
-        'state'              => 'state',
+        'processInstanceId' => 'processInstanceId',
+        'processVersion' => 'processVersion',
+        'schemaCode' => 'schemaCode',
+        'startTimeGMT' => 'startTimeGMT',
+        'state' => 'state',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

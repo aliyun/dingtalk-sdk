@@ -74,24 +74,22 @@ class result extends Model
      */
     public $tradeType;
     protected $_name = [
-        'balance'          => 'balance',
-        'detailId'         => 'detailId',
-        'instanceId'       => 'instanceId',
-        'instanceTitle'    => 'instanceTitle',
-        'instanceUrl'      => 'instanceUrl',
+        'balance' => 'balance',
+        'detailId' => 'detailId',
+        'instanceId' => 'instanceId',
+        'instanceTitle' => 'instanceTitle',
+        'instanceUrl' => 'instanceUrl',
         'otherAccountName' => 'otherAccountName',
-        'otherAccountNo'   => 'otherAccountNo',
-        'receiptFile'      => 'receiptFile',
-        'remark'           => 'remark',
-        'tradeAmount'      => 'tradeAmount',
-        'tradeNo'          => 'tradeNo',
-        'tradeTime'        => 'tradeTime',
-        'tradeType'        => 'tradeType',
+        'otherAccountNo' => 'otherAccountNo',
+        'receiptFile' => 'receiptFile',
+        'remark' => 'remark',
+        'tradeAmount' => 'tradeAmount',
+        'tradeNo' => 'tradeNo',
+        'tradeTime' => 'tradeTime',
+        'tradeType' => 'tradeType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

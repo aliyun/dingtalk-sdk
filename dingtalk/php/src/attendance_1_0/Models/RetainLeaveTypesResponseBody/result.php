@@ -125,29 +125,27 @@ class result extends Model
      */
     public $whenCanLeave;
     protected $_name = [
-        'bizType'              => 'bizType',
-        'hoursInPerDay'        => 'hoursInPerDay',
-        'leaveCertificate'     => 'leaveCertificate',
-        'leaveCode'            => 'leaveCode',
-        'leaveHourCeil'        => 'leaveHourCeil',
-        'leaveName'            => 'leaveName',
-        'leaveTimeCeil'        => 'leaveTimeCeil',
+        'bizType' => 'bizType',
+        'hoursInPerDay' => 'hoursInPerDay',
+        'leaveCertificate' => 'leaveCertificate',
+        'leaveCode' => 'leaveCode',
+        'leaveHourCeil' => 'leaveHourCeil',
+        'leaveName' => 'leaveName',
+        'leaveTimeCeil' => 'leaveTimeCeil',
         'leaveTimeCeilMinUnit' => 'leaveTimeCeilMinUnit',
-        'leaveViewUnit'        => 'leaveViewUnit',
-        'lieuDelayNum'         => 'lieuDelayNum',
-        'lieuDelayUnit'        => 'lieuDelayUnit',
-        'maxLeaveTime'         => 'maxLeaveTime',
-        'minLeaveHour'         => 'minLeaveHour',
-        'naturalDayLeave'      => 'naturalDayLeave',
-        'paidLeave'            => 'paidLeave',
-        'submitTimeRule'       => 'submitTimeRule',
-        'visibilityRules'      => 'visibilityRules',
-        'whenCanLeave'         => 'whenCanLeave',
+        'leaveViewUnit' => 'leaveViewUnit',
+        'lieuDelayNum' => 'lieuDelayNum',
+        'lieuDelayUnit' => 'lieuDelayUnit',
+        'maxLeaveTime' => 'maxLeaveTime',
+        'minLeaveHour' => 'minLeaveHour',
+        'naturalDayLeave' => 'naturalDayLeave',
+        'paidLeave' => 'paidLeave',
+        'submitTimeRule' => 'submitTimeRule',
+        'visibilityRules' => 'visibilityRules',
+        'whenCanLeave' => 'whenCanLeave',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -275,7 +273,7 @@ class result extends Model
         if (isset($map['visibilityRules'])) {
             if (!empty($map['visibilityRules'])) {
                 $model->visibilityRules = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['visibilityRules'] as $item) {
                     $model->visibilityRules[$n++] = null !== $item ? visibilityRules::fromMap($item) : $item;
                 }

@@ -22,12 +22,10 @@ class QueryCityCarApplyResponseBody extends Model
     public $total;
     protected $_name = [
         'applyList' => 'applyList',
-        'total'     => 'total',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class QueryCityCarApplyResponseBody extends Model
         if (isset($map['applyList'])) {
             if (!empty($map['applyList'])) {
                 $model->applyList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['applyList'] as $item) {
                     $model->applyList[$n++] = null !== $item ? applyList::fromMap($item) : $item;
                 }

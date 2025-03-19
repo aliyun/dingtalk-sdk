@@ -18,9 +18,7 @@ class CreateTemplatesResponseBody extends Model
         'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

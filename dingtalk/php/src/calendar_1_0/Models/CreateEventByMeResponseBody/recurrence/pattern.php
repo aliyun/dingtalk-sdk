@@ -38,17 +38,15 @@ class pattern extends Model
      */
     public $type;
     protected $_name = [
-        'dayOfMonth'     => 'dayOfMonth',
-        'daysOfWeek'     => 'daysOfWeek',
+        'dayOfMonth' => 'dayOfMonth',
+        'daysOfWeek' => 'daysOfWeek',
         'firstDayOfWeek' => 'firstDayOfWeek',
-        'index'          => 'index',
-        'interval'       => 'interval',
-        'type'           => 'type',
+        'index' => 'index',
+        'interval' => 'interval',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

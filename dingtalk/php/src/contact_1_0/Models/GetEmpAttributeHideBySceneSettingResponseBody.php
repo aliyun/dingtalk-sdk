@@ -83,23 +83,21 @@ class GetEmpAttributeHideBySceneSettingResponseBody extends Model
     public $searchSceneConfig;
     protected $_name = [
         'chatSubtitleConfig' => 'chatSubtitleConfig',
-        'description'        => 'description',
-        'excludeDeptIds'     => 'excludeDeptIds',
-        'excludeTagIds'      => 'excludeTagIds',
-        'excludeUserIds'     => 'excludeUserIds',
-        'hideFields'         => 'hideFields',
-        'id'                 => 'id',
-        'name'               => 'name',
-        'objectDeptIds'      => 'objectDeptIds',
-        'objectTagIds'       => 'objectTagIds',
-        'objectUserIds'      => 'objectUserIds',
+        'description' => 'description',
+        'excludeDeptIds' => 'excludeDeptIds',
+        'excludeTagIds' => 'excludeTagIds',
+        'excludeUserIds' => 'excludeUserIds',
+        'hideFields' => 'hideFields',
+        'id' => 'id',
+        'name' => 'name',
+        'objectDeptIds' => 'objectDeptIds',
+        'objectTagIds' => 'objectTagIds',
+        'objectUserIds' => 'objectUserIds',
         'profileSceneConfig' => 'profileSceneConfig',
-        'searchSceneConfig'  => 'searchSceneConfig',
+        'searchSceneConfig' => 'searchSceneConfig',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class GetOrganizationsRequest extends Model
         'departmentId' => 'departmentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

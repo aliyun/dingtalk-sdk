@@ -43,16 +43,14 @@ class GetFileTemplateListRequest extends Model
      */
     public $templateTypeList;
     protected $_name = [
-        'maxResults'       => 'maxResults',
-        'nextToken'        => 'nextToken',
-        'signSource'       => 'signSource',
-        'templateStatus'   => 'templateStatus',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'signSource' => 'signSource',
+        'templateStatus' => 'templateStatus',
         'templateTypeList' => 'templateTypeList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

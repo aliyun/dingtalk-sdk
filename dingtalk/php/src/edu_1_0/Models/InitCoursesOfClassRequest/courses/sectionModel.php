@@ -27,12 +27,10 @@ class sectionModel extends Model
     public $sectionName;
     protected $_name = [
         'sectionIndex' => 'sectionIndex',
-        'sectionName'  => 'sectionName',
+        'sectionName' => 'sectionName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

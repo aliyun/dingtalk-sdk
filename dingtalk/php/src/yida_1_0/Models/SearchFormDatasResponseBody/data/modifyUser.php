@@ -19,13 +19,11 @@ class modifyUser extends Model
      */
     public $userName;
     protected $_name = [
-        'userId'   => 'userId',
+        'userId' => 'userId',
         'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

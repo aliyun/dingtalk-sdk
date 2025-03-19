@@ -43,8 +43,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -78,18 +78,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddDeviceVideoConferenceMembers',
-            'version'     => 'smartDevice_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/smartDevice/devices/' . $deviceId . '/videoConferences/' . $conferenceId . '/members',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddDeviceVideoConferenceMembers',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/devices/' . $deviceId . '/videoConferences/' . $conferenceId . '/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return AddDeviceVideoConferenceMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -138,18 +138,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateDeviceVideoConference',
-            'version'     => 'smartDevice_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/smartDevice/devices/' . $deviceId . '/videoConferences',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateDeviceVideoConference',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/devices/' . $deviceId . '/videoConferences',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateDeviceVideoConferenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -199,18 +199,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExtractFacialFeature',
-            'version'     => 'smartDevice_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/smartDevice/faceRecognitions/features/extract',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExtractFacialFeature',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/faceRecognitions/features/extract',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExtractFacialFeatureResponse::fromMap($this->execute($params, $req, $runtime));
@@ -258,18 +258,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'KickDeviceVideoConferenceMembers',
-            'version'     => 'smartDevice_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/smartDevice/devices/' . $deviceId . '/videoConferences/' . $conferenceId . '/members/batchDelete',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'KickDeviceVideoConferenceMembers',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/devices/' . $deviceId . '/videoConferences/' . $conferenceId . '/members/batchDelete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return KickDeviceVideoConferenceMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -326,18 +326,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MachineManagerUpdate',
-            'version'     => 'smartDevice_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/smartDevice/atmachines/managers',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MachineManagerUpdate',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/atmachines/managers',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return MachineManagerUpdateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -398,18 +398,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MachineUsersUpdate',
-            'version'     => 'smartDevice_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/smartDevice/atmachines/users',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MachineUsersUpdate',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/atmachines/users',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return MachineUsersUpdateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -453,15 +453,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryDeviceVideoConferenceBook',
-            'version'     => 'smartDevice_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/smartDevice/devices/' . $deviceId . '/books/' . $bookId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDeviceVideoConferenceBook',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/devices/' . $deviceId . '/books/' . $bookId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDeviceVideoConferenceBookResponse::fromMap($this->execute($params, $req, $runtime));
@@ -517,18 +517,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TextToImage',
-            'version'     => 'smartDevice_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/smartDevice/textToImages/generate',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TextToImage',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/textToImages/generate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TextToImageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -580,18 +580,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'VoiceClone',
-            'version'     => 'smartDevice_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/smartDevice/voices/clone',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'VoiceClone',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/voices/clone',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return VoiceCloneResponse::fromMap($this->execute($params, $req, $runtime));

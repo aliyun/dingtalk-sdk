@@ -17,9 +17,7 @@ class GetCurrentAppResponseBody extends Model
         'app' => 'app',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

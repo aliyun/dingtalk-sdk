@@ -80,19 +80,17 @@ class QueryGroupResponseBody extends Model
      */
     public $robotName;
     protected $_name = [
-        'bizId'              => 'bizId',
-        'groupName'          => 'groupName',
-        'groupUrl'           => 'groupUrl',
+        'bizId' => 'bizId',
+        'groupName' => 'groupName',
+        'groupUrl' => 'groupUrl',
         'openConversationId' => 'openConversationId',
-        'openGroupSetId'     => 'openGroupSetId',
-        'openTeamId'         => 'openTeamId',
-        'robotCode'          => 'robotCode',
-        'robotName'          => 'robotName',
+        'openGroupSetId' => 'openGroupSetId',
+        'openTeamId' => 'openTeamId',
+        'robotCode' => 'robotCode',
+        'robotName' => 'robotName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

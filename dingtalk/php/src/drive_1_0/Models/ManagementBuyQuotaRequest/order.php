@@ -50,17 +50,15 @@ class order extends Model
      */
     public $orderId;
     protected $_name = [
-        'bizType'      => 'bizType',
-        'capacity'     => 'capacity',
+        'bizType' => 'bizType',
+        'capacity' => 'capacity',
         'capacityType' => 'capacityType',
-        'day'          => 'day',
-        'money'        => 'money',
-        'orderId'      => 'orderId',
+        'day' => 'day',
+        'money' => 'money',
+        'orderId' => 'orderId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

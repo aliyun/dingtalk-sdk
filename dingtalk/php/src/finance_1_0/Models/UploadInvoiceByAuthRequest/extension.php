@@ -31,14 +31,12 @@ class extension extends Model
      */
     public $orderType;
     protected $_name = [
-        'bizCode'   => 'bizCode',
-        'orderNo'   => 'orderNo',
+        'bizCode' => 'bizCode',
+        'orderNo' => 'orderNo',
         'orderType' => 'orderType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

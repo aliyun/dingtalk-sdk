@@ -49,14 +49,12 @@ class InitDocumentRequest extends Model
     protected $_name = [
         'attachmentsKey' => 'attachmentsKey',
         'attachmentsMap' => 'attachmentsMap',
-        'importType'     => 'importType',
-        'linksKey'       => 'linksKey',
-        'operatorId'     => 'operatorId',
+        'importType' => 'importType',
+        'linksKey' => 'linksKey',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

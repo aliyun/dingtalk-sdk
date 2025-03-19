@@ -43,16 +43,14 @@ class data extends Model
      */
     public $solution;
     protected $_name = [
-        'appCode'     => 'appCode',
-        'appSource'   => 'appSource',
-        'appState'    => 'appState',
+        'appCode' => 'appCode',
+        'appSource' => 'appSource',
+        'appState' => 'appState',
         'displayName' => 'displayName',
-        'solution'    => 'solution',
+        'solution' => 'solution',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

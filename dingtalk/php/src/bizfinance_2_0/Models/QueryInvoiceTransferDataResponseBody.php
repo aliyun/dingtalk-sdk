@@ -16,9 +16,7 @@ class QueryInvoiceTransferDataResponseBody extends Model
         'keyToData' => 'keyToData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

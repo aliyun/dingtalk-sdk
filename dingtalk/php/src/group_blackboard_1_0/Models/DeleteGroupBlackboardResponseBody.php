@@ -25,12 +25,10 @@ class DeleteGroupBlackboardResponseBody extends Model
     public $success;
     protected $_name = [
         'isDeleted' => 'isDeleted',
-        'success'   => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

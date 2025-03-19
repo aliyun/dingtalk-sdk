@@ -25,12 +25,10 @@ class CheckInCrowdsByMobileRequest extends Model
     public $mobile;
     protected $_name = [
         'crowdIds' => 'crowdIds',
-        'mobile'   => 'mobile',
+        'mobile' => 'mobile',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

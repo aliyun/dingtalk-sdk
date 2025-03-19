@@ -82,21 +82,19 @@ class PushEventRequest extends Model
      */
     public $picUrls;
     protected $_name = [
-        'corpId'         => 'corpId',
-        'deviceId'       => 'deviceId',
-        'eventId'        => 'eventId',
-        'eventName'      => 'eventName',
-        'eventType'      => 'eventType',
-        'extraData'      => 'extraData',
-        'location'       => 'location',
-        'msg'            => 'msg',
+        'corpId' => 'corpId',
+        'deviceId' => 'deviceId',
+        'eventId' => 'eventId',
+        'eventName' => 'eventName',
+        'eventType' => 'eventType',
+        'extraData' => 'extraData',
+        'location' => 'location',
+        'msg' => 'msg',
         'occurrenceTime' => 'occurrenceTime',
-        'picUrls'        => 'picUrls',
+        'picUrls' => 'picUrls',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

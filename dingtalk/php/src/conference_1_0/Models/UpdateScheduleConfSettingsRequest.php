@@ -32,14 +32,12 @@ class UpdateScheduleConfSettingsRequest extends Model
      */
     public $scheduleConferenceId;
     protected $_name = [
-        'creatorUnionId'           => 'creatorUnionId',
+        'creatorUnionId' => 'creatorUnionId',
         'scheduleConfSettingModel' => 'scheduleConfSettingModel',
-        'scheduleConferenceId'     => 'scheduleConferenceId',
+        'scheduleConferenceId' => 'scheduleConferenceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

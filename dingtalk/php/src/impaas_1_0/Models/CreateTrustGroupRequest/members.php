@@ -19,12 +19,10 @@ class members extends Model
     public $uid;
     protected $_name = [
         'nick' => 'nick',
-        'uid'  => 'uid',
+        'uid' => 'uid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,9 +19,7 @@ class QueryPayAccountListResponseBody extends Model
         'payAccountVOList' => 'payAccountVOList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class QueryPayAccountListResponseBody extends Model
         if (isset($map['payAccountVOList'])) {
             if (!empty($map['payAccountVOList'])) {
                 $model->payAccountVOList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['payAccountVOList'] as $item) {
                     $model->payAccountVOList[$n++] = null !== $item ? payAccountVOList::fromMap($item) : $item;
                 }

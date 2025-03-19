@@ -62,8 +62,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -98,18 +98,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTravelProcessDetail',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/processes/details',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTravelProcessDetail',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/processes/details',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTravelProcessDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -155,18 +155,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PreCheckTemplate',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/processes/templateUpgrades/preCheck',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PreCheckTemplate',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/processes/templateUpgrades/preCheck',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PreCheckTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -212,18 +212,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryTripProcessTemplates',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/processes/templatesDetails',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryTripProcessTemplates',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/processes/templatesDetails',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryTripProcessTemplatesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -290,18 +290,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncBusinessSignInfo',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/businessSignInfos/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncBusinessSignInfo',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/businessSignInfos/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncBusinessSignInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -377,18 +377,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncCostCenter',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/processes/costCenters/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncCostCenter',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/processes/costCenters/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncCostCenterResponse::fromMap($this->execute($params, $req, $runtime));
@@ -446,18 +446,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncCostCenterEntity',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/processes/costCenters/applicableScopes/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncCostCenterEntity',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/processes/costCenters/applicableScopes/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncCostCenterEntityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -551,18 +551,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncInvoice',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/processes/invoiceTitles/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncInvoice',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/processes/invoiceTitles/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncInvoiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -620,18 +620,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncInvoiceEntity',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/processes/invoiceTitles/applicableScopes/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncInvoiceEntity',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/processes/invoiceTitles/applicableScopes/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncInvoiceEntityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -716,18 +716,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncProject',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/processes/projects/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncProject',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/processes/projects/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncProjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -785,18 +785,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncProjectEntity',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/processes/projects/applicableScopes/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncProjectEntity',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/processes/projects/applicableScopes/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncProjectEntityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -857,18 +857,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncSecretKey',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/secretKeys/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncSecretKey',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/secretKeys/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncSecretKeyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -989,18 +989,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncTripOrder',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/tripOrders/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncTripOrder',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/tripOrders/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncTripOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1049,18 +1049,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncTripProductConfig',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/productConfigs/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncTripProductConfig',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/productConfigs/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncTripProductConfigResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1109,18 +1109,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TripPlatformUnifiedEntry',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/platforms/entrances/unify',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TripPlatformUnifiedEntry',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/platforms/entrances/unify',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TripPlatformUnifiedEntryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1172,18 +1172,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpgradeTemplate',
-            'version'     => 'trip_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trip/process/templates/upgrade',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpgradeTemplate',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/process/templates/upgrade',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpgradeTemplateResponse::fromMap($this->execute($params, $req, $runtime));

@@ -37,14 +37,12 @@ class option extends Model
     public $templateStatus;
     protected $_name = [
         'categoryStatus' => 'categoryStatus',
-        'queryPlatform'  => 'queryPlatform',
-        'size'           => 'size',
+        'queryPlatform' => 'queryPlatform',
+        'size' => 'size',
         'templateStatus' => 'templateStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

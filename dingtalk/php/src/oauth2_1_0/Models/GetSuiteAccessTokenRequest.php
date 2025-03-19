@@ -29,14 +29,12 @@ class GetSuiteAccessTokenRequest extends Model
      */
     public $suiteTicket;
     protected $_name = [
-        'suiteKey'    => 'suiteKey',
+        'suiteKey' => 'suiteKey',
         'suiteSecret' => 'suiteSecret',
         'suiteTicket' => 'suiteTicket',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

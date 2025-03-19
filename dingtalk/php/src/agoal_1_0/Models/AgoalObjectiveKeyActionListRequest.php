@@ -33,14 +33,12 @@ class AgoalObjectiveKeyActionListRequest extends Model
      */
     public $objectiveId;
     protected $_name = [
-        'dingUserId'  => 'dingUserId',
+        'dingUserId' => 'dingUserId',
         'keyResultId' => 'keyResultId',
         'objectiveId' => 'objectiveId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

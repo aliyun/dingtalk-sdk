@@ -33,16 +33,14 @@ class openHonors extends Model
      */
     public $honorPendantImgUrl;
     protected $_name = [
-        'honorDesc'          => 'honorDesc',
-        'honorId'            => 'honorId',
-        'honorImgUrl'        => 'honorImgUrl',
-        'honorName'          => 'honorName',
+        'honorDesc' => 'honorDesc',
+        'honorId' => 'honorId',
+        'honorImgUrl' => 'honorImgUrl',
+        'honorName' => 'honorName',
         'honorPendantImgUrl' => 'honorPendantImgUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

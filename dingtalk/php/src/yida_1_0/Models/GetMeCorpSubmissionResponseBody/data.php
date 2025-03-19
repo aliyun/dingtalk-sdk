@@ -140,37 +140,35 @@ class data extends Model
      */
     public $version;
     protected $_name = [
-        'actioner'                  => 'actioner',
-        'actionerId'                => 'actionerId',
-        'actionerName'              => 'actionerName',
-        'appType'                   => 'appType',
-        'createTimeGMT'             => 'createTimeGMT',
-        'currentActivityInstances'  => 'currentActivityInstances',
-        'dataMap'                   => 'dataMap',
-        'dataType'                  => 'dataType',
-        'finishTimeGMT'             => 'finishTimeGMT',
-        'formInstanceId'            => 'formInstanceId',
-        'formUuid'                  => 'formUuid',
-        'instanceValue'             => 'instanceValue',
-        'modifiedTimeGMT'           => 'modifiedTimeGMT',
-        'originatorAvatar'          => 'originatorAvatar',
-        'originatorDisplayName'     => 'originatorDisplayName',
-        'originatorId'              => 'originatorId',
-        'processApprovedResult'     => 'processApprovedResult',
+        'actioner' => 'actioner',
+        'actionerId' => 'actionerId',
+        'actionerName' => 'actionerName',
+        'appType' => 'appType',
+        'createTimeGMT' => 'createTimeGMT',
+        'currentActivityInstances' => 'currentActivityInstances',
+        'dataMap' => 'dataMap',
+        'dataType' => 'dataType',
+        'finishTimeGMT' => 'finishTimeGMT',
+        'formInstanceId' => 'formInstanceId',
+        'formUuid' => 'formUuid',
+        'instanceValue' => 'instanceValue',
+        'modifiedTimeGMT' => 'modifiedTimeGMT',
+        'originatorAvatar' => 'originatorAvatar',
+        'originatorDisplayName' => 'originatorDisplayName',
+        'originatorId' => 'originatorId',
+        'processApprovedResult' => 'processApprovedResult',
         'processApprovedResultText' => 'processApprovedResultText',
-        'processCode'               => 'processCode',
-        'processId'                 => 'processId',
-        'processInstanceId'         => 'processInstanceId',
-        'processInstanceStatus'     => 'processInstanceStatus',
+        'processCode' => 'processCode',
+        'processId' => 'processId',
+        'processInstanceId' => 'processInstanceId',
+        'processInstanceStatus' => 'processInstanceStatus',
         'processInstanceStatusText' => 'processInstanceStatusText',
-        'processName'               => 'processName',
-        'title'                     => 'title',
-        'version'                   => 'version',
+        'processName' => 'processName',
+        'title' => 'title',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -280,7 +278,7 @@ class data extends Model
         if (isset($map['actioner'])) {
             if (!empty($map['actioner'])) {
                 $model->actioner = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['actioner'] as $item) {
                     $model->actioner[$n++] = null !== $item ? actioner::fromMap($item) : $item;
                 }
@@ -305,7 +303,7 @@ class data extends Model
         if (isset($map['currentActivityInstances'])) {
             if (!empty($map['currentActivityInstances'])) {
                 $model->currentActivityInstances = [];
-                $n                               = 0;
+                $n = 0;
                 foreach ($map['currentActivityInstances'] as $item) {
                     $model->currentActivityInstances[$n++] = null !== $item ? currentActivityInstances::fromMap($item) : $item;
                 }

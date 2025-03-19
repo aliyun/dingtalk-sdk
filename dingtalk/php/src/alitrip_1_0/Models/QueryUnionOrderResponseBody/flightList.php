@@ -22,13 +22,11 @@ class flightList extends Model
      */
     public $flightOrderStatus;
     protected $_name = [
-        'flightOrderId'     => 'flightOrderId',
+        'flightOrderId' => 'flightOrderId',
         'flightOrderStatus' => 'flightOrderStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -38,17 +38,15 @@ class managementOptions extends Model
      */
     public $validationType;
     protected $_name = [
-        'chatBannedType'      => 'chatBannedType',
-        'managementType'      => 'managementType',
+        'chatBannedType' => 'chatBannedType',
+        'managementType' => 'managementType',
         'mentionAllAuthority' => 'mentionAllAuthority',
-        'searchable'          => 'searchable',
-        'showHistoryType'     => 'showHistoryType',
-        'validationType'      => 'validationType',
+        'searchable' => 'searchable',
+        'showHistoryType' => 'showHistoryType',
+        'validationType' => 'validationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

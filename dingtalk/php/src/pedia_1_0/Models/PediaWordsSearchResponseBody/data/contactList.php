@@ -30,13 +30,11 @@ class contactList extends Model
     public $userId;
     protected $_name = [
         'avatarMediaId' => 'avatarMediaId',
-        'nickName'      => 'nickName',
-        'userId'        => 'userId',
+        'nickName' => 'nickName',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -31,14 +31,12 @@ class QueryUnfurlingRegisterInfoRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'appId'      => 'appId',
+        'appId' => 'appId',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

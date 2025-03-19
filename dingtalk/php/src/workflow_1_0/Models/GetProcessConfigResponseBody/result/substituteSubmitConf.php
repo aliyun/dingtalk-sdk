@@ -19,13 +19,11 @@ class substituteSubmitConf extends Model
      */
     public $submitterList;
     protected $_name = [
-        'enable'        => 'enable',
+        'enable' => 'enable',
         'submitterList' => 'submitterList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class substituteSubmitConf extends Model
         if (isset($map['submitterList'])) {
             if (!empty($map['submitterList'])) {
                 $model->submitterList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['submitterList'] as $item) {
                     $model->submitterList[$n++] = null !== $item ? submitterList::fromMap($item) : $item;
                 }

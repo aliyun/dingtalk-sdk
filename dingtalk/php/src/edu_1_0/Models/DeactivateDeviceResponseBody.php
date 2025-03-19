@@ -18,9 +18,7 @@ class DeactivateDeviceResponseBody extends Model
         'activateTimes' => 'activateTimes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

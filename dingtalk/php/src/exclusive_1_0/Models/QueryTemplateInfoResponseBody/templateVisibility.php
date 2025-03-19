@@ -30,15 +30,13 @@ class templateVisibility extends Model
      */
     public $userIds;
     protected $_name = [
-        'corpId'  => 'corpId',
+        'corpId' => 'corpId',
         'deptIds' => 'deptIds',
         'roleIds' => 'roleIds',
         'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -85,7 +83,7 @@ class templateVisibility extends Model
         if (isset($map['deptIds'])) {
             if (!empty($map['deptIds'])) {
                 $model->deptIds = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['deptIds'] as $item) {
                     $model->deptIds[$n++] = null !== $item ? deptIds::fromMap($item) : $item;
                 }
@@ -99,7 +97,7 @@ class templateVisibility extends Model
         if (isset($map['userIds'])) {
             if (!empty($map['userIds'])) {
                 $model->userIds = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['userIds'] as $item) {
                     $model->userIds[$n++] = null !== $item ? userIds::fromMap($item) : $item;
                 }

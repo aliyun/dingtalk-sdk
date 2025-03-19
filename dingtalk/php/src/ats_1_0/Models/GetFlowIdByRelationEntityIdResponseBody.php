@@ -20,9 +20,7 @@ class GetFlowIdByRelationEntityIdResponseBody extends Model
         'flowId' => 'flowId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

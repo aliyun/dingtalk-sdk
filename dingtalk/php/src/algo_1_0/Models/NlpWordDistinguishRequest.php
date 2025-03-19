@@ -31,13 +31,11 @@ class NlpWordDistinguishRequest extends Model
     public $text;
     protected $_name = [
         'attachExtractDecisionInfo' => 'attachExtractDecisionInfo',
-        'isvAppId'                  => 'isvAppId',
-        'text'                      => 'text',
+        'isvAppId' => 'isvAppId',
+        'text' => 'text',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

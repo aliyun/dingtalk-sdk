@@ -26,9 +26,7 @@ class preCheckParam extends Model
         'size' => 'size',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

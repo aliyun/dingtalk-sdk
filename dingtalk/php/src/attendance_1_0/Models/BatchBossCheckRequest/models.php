@@ -38,15 +38,13 @@ class models extends Model
      */
     public $timeResult;
     protected $_name = [
-        'absentMin'  => 'absentMin',
-        'planId'     => 'planId',
-        'remark'     => 'remark',
+        'absentMin' => 'absentMin',
+        'planId' => 'planId',
+        'remark' => 'remark',
         'timeResult' => 'timeResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class ListByPluginIdsResponseBody extends Model
         'pluginInfoList' => 'pluginInfoList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListByPluginIdsResponseBody extends Model
         if (isset($map['pluginInfoList'])) {
             if (!empty($map['pluginInfoList'])) {
                 $model->pluginInfoList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['pluginInfoList'] as $item) {
                     $model->pluginInfoList[$n++] = null !== $item ? pluginInfoList::fromMap($item) : $item;
                 }

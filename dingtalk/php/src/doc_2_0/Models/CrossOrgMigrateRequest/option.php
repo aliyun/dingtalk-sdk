@@ -67,20 +67,18 @@ class option extends Model
      */
     public $workspaceIds;
     protected $_name = [
-        'checkOperatorSourceRole'      => 'checkOperatorSourceRole',
-        'deleteSource'                 => 'deleteSource',
+        'checkOperatorSourceRole' => 'checkOperatorSourceRole',
+        'deleteSource' => 'deleteSource',
         'needRecycleFailedWorkspaceId' => 'needRecycleFailedWorkspaceId',
-        'relateTeamId'                 => 'relateTeamId',
-        'relateTeamIdStr'              => 'relateTeamIdStr',
-        'retainOrgGroup'               => 'retainOrgGroup',
-        'skipRole'                     => 'skipRole',
-        'workspaceIdStrs'              => 'workspaceIdStrs',
-        'workspaceIds'                 => 'workspaceIds',
+        'relateTeamId' => 'relateTeamId',
+        'relateTeamIdStr' => 'relateTeamIdStr',
+        'retainOrgGroup' => 'retainOrgGroup',
+        'skipRole' => 'skipRole',
+        'workspaceIdStrs' => 'workspaceIdStrs',
+        'workspaceIds' => 'workspaceIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

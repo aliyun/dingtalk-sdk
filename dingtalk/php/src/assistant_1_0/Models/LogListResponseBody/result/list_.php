@@ -58,21 +58,19 @@ class list_ extends Model
      */
     public $userId;
     protected $_name = [
-        'actionNames'   => 'actionNames',
+        'actionNames' => 'actionNames',
         'customChannel' => 'customChannel',
-        'input'         => 'input',
-        'name'          => 'name',
-        'output'        => 'output',
-        'result'        => 'result',
-        'scene'         => 'scene',
-        'time'          => 'time',
-        'unionId'       => 'unionId',
-        'userId'        => 'userId',
+        'input' => 'input',
+        'name' => 'name',
+        'output' => 'output',
+        'result' => 'result',
+        'scene' => 'scene',
+        'time' => 'time',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

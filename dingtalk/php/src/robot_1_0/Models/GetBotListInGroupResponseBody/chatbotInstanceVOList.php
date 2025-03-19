@@ -29,14 +29,12 @@ class chatbotInstanceVOList extends Model
     public $robotCode;
     protected $_name = [
         'downloadIconURL' => 'downloadIconURL',
-        'name'            => 'name',
-        'openRobotType'   => 'openRobotType',
-        'robotCode'       => 'robotCode',
+        'name' => 'name',
+        'openRobotType' => 'openRobotType',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

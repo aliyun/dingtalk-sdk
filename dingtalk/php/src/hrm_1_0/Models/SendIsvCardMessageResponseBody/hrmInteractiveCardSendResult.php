@@ -23,14 +23,12 @@ class hrmInteractiveCardSendResult extends Model
      */
     public $errorMsg;
     protected $_name = [
-        'bizId'     => 'bizId',
+        'bizId' => 'bizId',
         'errorCode' => 'errorCode',
-        'errorMsg'  => 'errorMsg',
+        'errorMsg' => 'errorMsg',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

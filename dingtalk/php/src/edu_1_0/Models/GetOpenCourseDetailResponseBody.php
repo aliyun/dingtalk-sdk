@@ -88,20 +88,18 @@ class GetOpenCourseDetailResponseBody extends Model
      */
     public $title;
     protected $_name = [
-        'courseId'     => 'courseId',
-        'courseType'   => 'courseType',
-        'coverUrl'     => 'coverUrl',
+        'courseId' => 'courseId',
+        'courseType' => 'courseType',
+        'coverUrl' => 'coverUrl',
         'introduction' => 'introduction',
-        'pushModel'    => 'pushModel',
-        'startTime'    => 'startTime',
-        'teacherId'    => 'teacherId',
-        'teacherName'  => 'teacherName',
-        'title'        => 'title',
+        'pushModel' => 'pushModel',
+        'startTime' => 'startTime',
+        'teacherId' => 'teacherId',
+        'teacherName' => 'teacherName',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

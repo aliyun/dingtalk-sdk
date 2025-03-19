@@ -19,12 +19,10 @@ class mainCorp extends Model
     public $corpName;
     protected $_name = [
         'authorized' => 'authorized',
-        'corpName'   => 'corpName',
+        'corpName' => 'corpName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

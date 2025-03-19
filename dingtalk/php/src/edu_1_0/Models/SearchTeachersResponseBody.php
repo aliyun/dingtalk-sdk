@@ -19,9 +19,7 @@ class SearchTeachersResponseBody extends Model
         'users' => 'users',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class SearchTeachersResponseBody extends Model
         if (isset($map['users'])) {
             if (!empty($map['users'])) {
                 $model->users = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['users'] as $item) {
                     $model->users[$n++] = null !== $item ? users::fromMap($item) : $item;
                 }

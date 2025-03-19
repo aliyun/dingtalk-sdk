@@ -22,13 +22,11 @@ class UpdateMinutesTitleRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'title'   => 'title',
+        'title' => 'title',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -51,16 +51,14 @@ class DeleteInstanceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'           => 'appType',
-        'language'          => 'language',
+        'appType' => 'appType',
+        'language' => 'language',
         'processInstanceId' => 'processInstanceId',
-        'systemToken'       => 'systemToken',
-        'userId'            => 'userId',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

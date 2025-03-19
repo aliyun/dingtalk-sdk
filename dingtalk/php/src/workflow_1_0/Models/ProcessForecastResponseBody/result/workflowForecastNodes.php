@@ -27,12 +27,10 @@ class workflowForecastNodes extends Model
     public $outId;
     protected $_name = [
         'activityId' => 'activityId',
-        'outId'      => 'outId',
+        'outId' => 'outId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

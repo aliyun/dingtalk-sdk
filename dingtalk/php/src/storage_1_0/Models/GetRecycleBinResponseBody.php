@@ -17,9 +17,7 @@ class GetRecycleBinResponseBody extends Model
         'recycleBin' => 'recycleBin',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

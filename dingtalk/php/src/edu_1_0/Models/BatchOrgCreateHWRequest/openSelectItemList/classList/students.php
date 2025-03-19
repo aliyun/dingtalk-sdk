@@ -23,14 +23,12 @@ class students extends Model
      */
     public $staffId;
     protected $_name = [
-        'avatar'  => 'avatar',
-        'name'    => 'name',
+        'avatar' => 'avatar',
+        'name' => 'name',
         'staffId' => 'staffId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

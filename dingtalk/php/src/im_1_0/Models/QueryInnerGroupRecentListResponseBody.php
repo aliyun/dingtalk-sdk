@@ -20,12 +20,10 @@ class QueryInnerGroupRecentListResponseBody extends Model
     public $success;
     protected $_name = [
         'groupInfos' => 'groupInfos',
-        'success'    => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class QueryInnerGroupRecentListResponseBody extends Model
         if (isset($map['groupInfos'])) {
             if (!empty($map['groupInfos'])) {
                 $model->groupInfos = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['groupInfos'] as $item) {
                     $model->groupInfos[$n++] = null !== $item ? groupInfos::fromMap($item) : $item;
                 }

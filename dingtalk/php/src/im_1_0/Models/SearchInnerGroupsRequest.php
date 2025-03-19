@@ -36,13 +36,11 @@ class SearchInnerGroupsRequest extends Model
     public $userId;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'searchKey'  => 'searchKey',
-        'userId'     => 'userId',
+        'searchKey' => 'searchKey',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

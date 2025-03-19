@@ -31,14 +31,12 @@ class SearchUserTaskRequest extends Model
     public $tql;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'roleTypes'  => 'roleTypes',
-        'tql'        => 'tql',
+        'nextToken' => 'nextToken',
+        'roleTypes' => 'roleTypes',
+        'tql' => 'tql',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

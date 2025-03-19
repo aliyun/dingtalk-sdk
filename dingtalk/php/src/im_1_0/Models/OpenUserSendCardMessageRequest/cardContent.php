@@ -23,12 +23,10 @@ class cardContent extends Model
     public $outTrackId;
     protected $_name = [
         'lastMessage' => 'lastMessage',
-        'outTrackId'  => 'outTrackId',
+        'outTrackId' => 'outTrackId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

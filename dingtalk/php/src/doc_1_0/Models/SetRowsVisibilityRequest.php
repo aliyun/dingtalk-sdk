@@ -44,15 +44,13 @@ class SetRowsVisibilityRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'row'        => 'row',
-        'rowCount'   => 'rowCount',
+        'row' => 'row',
+        'rowCount' => 'rowCount',
         'visibility' => 'visibility',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

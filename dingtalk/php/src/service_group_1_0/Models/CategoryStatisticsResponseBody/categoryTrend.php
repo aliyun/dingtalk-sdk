@@ -36,13 +36,11 @@ class categoryTrend extends Model
     public $name;
     protected $_name = [
         'count' => 'count',
-        'dt'    => 'dt',
-        'name'  => 'name',
+        'dt' => 'dt',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -33,14 +33,12 @@ class AddResidentDepartmentRequest extends Model
      */
     public $parentDepartmentId;
     protected $_name = [
-        'departmentName'     => 'departmentName',
-        'isResidenceGroup'   => 'isResidenceGroup',
+        'departmentName' => 'departmentName',
+        'isResidenceGroup' => 'isResidenceGroup',
         'parentDepartmentId' => 'parentDepartmentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

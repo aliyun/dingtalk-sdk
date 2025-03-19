@@ -38,13 +38,11 @@ class GetYongYouOrgRelationResponseBody extends Model
     protected $_name = [
         'chanjetCorpId' => 'chanjetCorpId',
         'chanjetUserId' => 'chanjetUserId',
-        'corpId'        => 'corpId',
-        'userId'        => 'userId',
+        'corpId' => 'corpId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

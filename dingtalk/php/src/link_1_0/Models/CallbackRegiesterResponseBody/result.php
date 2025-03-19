@@ -20,13 +20,11 @@ class result extends Model
      */
     public $callbackUrl;
     protected $_name = [
-        'apiSecret'   => 'apiSecret',
+        'apiSecret' => 'apiSecret',
         'callbackUrl' => 'callbackUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

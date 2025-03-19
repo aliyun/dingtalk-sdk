@@ -22,13 +22,11 @@ class teacherList extends Model
      */
     public $teacherUserId;
     protected $_name = [
-        'teacherName'   => 'teacherName',
+        'teacherName' => 'teacherName',
         'teacherUserId' => 'teacherUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

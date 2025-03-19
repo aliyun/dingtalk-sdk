@@ -74,19 +74,17 @@ class ApplyBatchPayRequest extends Model
      */
     public $transExpireTime;
     protected $_name = [
-        'accountId'       => 'accountId',
-        'orderNo'         => 'orderNo',
-        'passBackParams'  => 'passBackParams',
-        'payTerminal'     => 'payTerminal',
-        'returnUrl'       => 'returnUrl',
-        'staffId'         => 'staffId',
-        'transAmount'     => 'transAmount',
+        'accountId' => 'accountId',
+        'orderNo' => 'orderNo',
+        'passBackParams' => 'passBackParams',
+        'payTerminal' => 'payTerminal',
+        'returnUrl' => 'returnUrl',
+        'staffId' => 'staffId',
+        'transAmount' => 'transAmount',
         'transExpireTime' => 'transExpireTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

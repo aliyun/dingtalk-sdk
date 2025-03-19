@@ -36,15 +36,13 @@ class appLink extends Model
      */
     public $phoneLink;
     protected $_name = [
-        'appName'   => 'appName',
-        'iconLink'  => 'iconLink',
-        'pcLink'    => 'pcLink',
+        'appName' => 'appName',
+        'iconLink' => 'iconLink',
+        'pcLink' => 'pcLink',
         'phoneLink' => 'phoneLink',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

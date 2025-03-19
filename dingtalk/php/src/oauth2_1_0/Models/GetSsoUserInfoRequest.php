@@ -18,9 +18,7 @@ class GetSsoUserInfoRequest extends Model
         'code' => 'code',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

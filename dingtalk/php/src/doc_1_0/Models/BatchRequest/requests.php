@@ -31,14 +31,12 @@ class requests extends Model
      */
     public $path;
     protected $_name = [
-        'body'   => 'body',
+        'body' => 'body',
         'method' => 'method',
-        'path'   => 'path',
+        'path' => 'path',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

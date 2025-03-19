@@ -104,23 +104,21 @@ class CardQueryCardFeedsRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizType'           => 'bizType',
-        'cardBizCode'       => 'cardBizCode',
-        'cardBizId'         => 'cardBizId',
-        'cardId'            => 'cardId',
-        'count'             => 'count',
-        'cursor'            => 'cursor',
-        'feedType'          => 'feedType',
+        'bizType' => 'bizType',
+        'cardBizCode' => 'cardBizCode',
+        'cardBizId' => 'cardBizId',
+        'cardId' => 'cardId',
+        'count' => 'count',
+        'cursor' => 'cursor',
+        'feedType' => 'feedType',
         'needFinishProcess' => 'needFinishProcess',
-        'sourceType'        => 'sourceType',
-        'studentId'         => 'studentId',
-        'subBizId'          => 'subBizId',
-        'userId'            => 'userId',
+        'sourceType' => 'sourceType',
+        'studentId' => 'studentId',
+        'subBizId' => 'subBizId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

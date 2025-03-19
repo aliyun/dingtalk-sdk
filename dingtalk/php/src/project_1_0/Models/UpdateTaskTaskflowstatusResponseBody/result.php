@@ -18,9 +18,7 @@ class result extends Model
         'updated' => 'updated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

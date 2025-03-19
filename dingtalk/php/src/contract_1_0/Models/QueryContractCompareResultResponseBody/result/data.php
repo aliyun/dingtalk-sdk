@@ -24,14 +24,12 @@ class data extends Model
      */
     public $compareStatus;
     protected $_name = [
-        'compareDetail'    => 'compareDetail',
+        'compareDetail' => 'compareDetail',
         'compareDetailUrl' => 'compareDetailUrl',
-        'compareStatus'    => 'compareStatus',
+        'compareStatus' => 'compareStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

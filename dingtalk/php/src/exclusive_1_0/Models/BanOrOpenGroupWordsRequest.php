@@ -22,13 +22,11 @@ class BanOrOpenGroupWordsRequest extends Model
      */
     public $openConverationId;
     protected $_name = [
-        'banWordsType'      => 'banWordsType',
+        'banWordsType' => 'banWordsType',
         'openConverationId' => 'openConverationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

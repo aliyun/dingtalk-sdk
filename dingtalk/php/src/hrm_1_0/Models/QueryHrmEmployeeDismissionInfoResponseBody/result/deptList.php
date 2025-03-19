@@ -18,13 +18,11 @@ class deptList extends Model
      */
     public $deptPath;
     protected $_name = [
-        'deptId'   => 'dept_id',
+        'deptId' => 'dept_id',
         'deptPath' => 'dept_path',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

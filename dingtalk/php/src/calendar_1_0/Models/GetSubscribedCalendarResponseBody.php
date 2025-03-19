@@ -39,17 +39,15 @@ class GetSubscribedCalendarResponseBody extends Model
      */
     public $subscribeScope;
     protected $_name = [
-        'author'         => 'author',
-        'calendarId'     => 'calendarId',
-        'description'    => 'description',
-        'managers'       => 'managers',
-        'name'           => 'name',
+        'author' => 'author',
+        'calendarId' => 'calendarId',
+        'description' => 'description',
+        'managers' => 'managers',
+        'name' => 'name',
         'subscribeScope' => 'subscribeScope',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

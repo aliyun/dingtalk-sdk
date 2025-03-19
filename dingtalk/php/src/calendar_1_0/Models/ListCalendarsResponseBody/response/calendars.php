@@ -54,17 +54,15 @@ class calendars extends Model
     public $type;
     protected $_name = [
         'description' => 'description',
-        'eTag'        => 'eTag',
-        'id'          => 'id',
-        'privilege'   => 'privilege',
-        'summary'     => 'summary',
-        'timeZone'    => 'timeZone',
-        'type'        => 'type',
+        'eTag' => 'eTag',
+        'id' => 'id',
+        'privilege' => 'privilege',
+        'summary' => 'summary',
+        'timeZone' => 'timeZone',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

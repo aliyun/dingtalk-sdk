@@ -71,20 +71,18 @@ class data extends Model
      */
     public $state;
     protected $_name = [
-        'appCode'         => 'appCode',
-        'displayName'     => 'displayName',
-        'isSystem'        => 'isSystem',
-        'nodeType'        => 'nodeType',
+        'appCode' => 'appCode',
+        'displayName' => 'displayName',
+        'isSystem' => 'isSystem',
+        'nodeType' => 'nodeType',
         'nodeVisibleType' => 'nodeVisibleType',
-        'parentCode'      => 'parentCode',
-        'schemaCode'      => 'schemaCode',
-        'sortKey'         => 'sortKey',
-        'state'           => 'state',
+        'parentCode' => 'parentCode',
+        'schemaCode' => 'schemaCode',
+        'sortKey' => 'sortKey',
+        'state' => 'state',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

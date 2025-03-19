@@ -45,16 +45,14 @@ class body extends Model
      */
     public $visibleDeptIds;
     protected $_name = [
-        'branchCorpId'         => 'branchCorpId',
-        'open'                 => 'open',
-        'type'                 => 'type',
+        'branchCorpId' => 'branchCorpId',
+        'open' => 'open',
+        'type' => 'type',
         'visibleBranchCorpIds' => 'visibleBranchCorpIds',
-        'visibleDeptIds'       => 'visibleDeptIds',
+        'visibleDeptIds' => 'visibleDeptIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

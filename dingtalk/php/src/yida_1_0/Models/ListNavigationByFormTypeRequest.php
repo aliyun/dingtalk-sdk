@@ -51,16 +51,14 @@ class ListNavigationByFormTypeRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
-        'formType'    => 'formType',
-        'language'    => 'language',
+        'appType' => 'appType',
+        'formType' => 'formType',
+        'language' => 'language',
         'systemToken' => 'systemToken',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

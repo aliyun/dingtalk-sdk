@@ -23,14 +23,12 @@ class UpdateTaskInvolvemembersRequest extends Model
      */
     public $involveMembers;
     protected $_name = [
-        'addInvolvers'   => 'addInvolvers',
-        'delInvolvers'   => 'delInvolvers',
+        'addInvolvers' => 'addInvolvers',
+        'delInvolvers' => 'delInvolvers',
         'involveMembers' => 'involveMembers',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

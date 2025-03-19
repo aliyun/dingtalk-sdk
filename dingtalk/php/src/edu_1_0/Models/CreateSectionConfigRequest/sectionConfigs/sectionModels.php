@@ -51,16 +51,14 @@ class sectionModels extends Model
      */
     public $sectionType;
     protected $_name = [
-        'sectionEndTime'   => 'sectionEndTime',
-        'sectionIndex'     => 'sectionIndex',
-        'sectionName'      => 'sectionName',
+        'sectionEndTime' => 'sectionEndTime',
+        'sectionIndex' => 'sectionIndex',
+        'sectionName' => 'sectionName',
         'sectionStartTime' => 'sectionStartTime',
-        'sectionType'      => 'sectionType',
+        'sectionType' => 'sectionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

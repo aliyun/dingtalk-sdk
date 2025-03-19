@@ -29,14 +29,12 @@ class GetScheduleByMeRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'endTime'   => 'endTime',
+        'endTime' => 'endTime',
         'startTime' => 'startTime',
-        'userIds'   => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

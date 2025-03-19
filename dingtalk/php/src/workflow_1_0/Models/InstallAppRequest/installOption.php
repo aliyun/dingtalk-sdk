@@ -16,9 +16,7 @@ class installOption extends Model
         'isSync' => 'isSync',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

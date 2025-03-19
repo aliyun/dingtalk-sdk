@@ -19,12 +19,10 @@ class result extends Model
     public $tbUserId;
     protected $_name = [
         'dingtalkUserId' => 'dingtalkUserId',
-        'tbUserId'       => 'tbUserId',
+        'tbUserId' => 'tbUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

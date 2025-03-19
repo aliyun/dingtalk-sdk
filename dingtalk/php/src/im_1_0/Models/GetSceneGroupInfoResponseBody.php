@@ -50,19 +50,17 @@ class GetSceneGroupInfoResponseBody extends Model
      */
     public $title;
     protected $_name = [
-        'groupUrl'           => 'groupUrl',
-        'icon'               => 'icon',
+        'groupUrl' => 'groupUrl',
+        'icon' => 'icon',
         'openConversationId' => 'openConversationId',
-        'ownerUserId'        => 'ownerUserId',
-        'status'             => 'status',
-        'success'            => 'success',
-        'templateId'         => 'templateId',
-        'title'              => 'title',
+        'ownerUserId' => 'ownerUserId',
+        'status' => 'status',
+        'success' => 'success',
+        'templateId' => 'templateId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

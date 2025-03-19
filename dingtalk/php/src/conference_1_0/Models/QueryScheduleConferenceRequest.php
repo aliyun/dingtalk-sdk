@@ -20,9 +20,7 @@ class QueryScheduleConferenceRequest extends Model
         'requestUnionId' => 'requestUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class QueryTradeOrderRequest extends Model
      */
     public $outerOrderId;
     protected $_name = [
-        'orderId'      => 'orderId',
+        'orderId' => 'orderId',
         'outerOrderId' => 'outerOrderId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

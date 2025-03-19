@@ -29,14 +29,12 @@ class HrmMokaOapiResponseBody extends Model
     public $result;
     protected $_name = [
         'bizSuccess' => 'bizSuccess',
-        'errorCode'  => 'errorCode',
-        'errorMsg'   => 'errorMsg',
-        'result'     => 'result',
+        'errorCode' => 'errorCode',
+        'errorMsg' => 'errorMsg',
+        'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

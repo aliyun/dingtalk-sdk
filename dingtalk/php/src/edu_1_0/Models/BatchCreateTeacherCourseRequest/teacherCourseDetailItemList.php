@@ -22,13 +22,11 @@ class teacherCourseDetailItemList extends Model
      */
     public $isvCourseId;
     protected $_name = [
-        'attributes'  => 'attributes',
+        'attributes' => 'attributes',
         'isvCourseId' => 'isvCourseId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

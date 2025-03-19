@@ -27,14 +27,12 @@ class pullConfig extends Model
      */
     public $timeUnit;
     protected $_name = [
-        'interval'     => 'interval',
+        'interval' => 'interval',
         'pullStrategy' => 'pullStrategy',
-        'timeUnit'     => 'timeUnit',
+        'timeUnit' => 'timeUnit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -30,13 +30,11 @@ class push extends Model
     public $pushTag;
     protected $_name = [
         'attendanceRule' => 'attendanceRule',
-        'pushSwitch'     => 'pushSwitch',
-        'pushTag'        => 'pushTag',
+        'pushSwitch' => 'pushSwitch',
+        'pushTag' => 'pushTag',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

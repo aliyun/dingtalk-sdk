@@ -19,12 +19,10 @@ class rows extends Model
     public $dsId;
     protected $_name = [
         'displayName' => 'displayName',
-        'dsId'        => 'dsId',
+        'dsId' => 'dsId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

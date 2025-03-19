@@ -88,20 +88,18 @@ class universityCourseGroupInfo extends Model
      */
     public $subjectName;
     protected $_name = [
-        'courseGroupCode'        => 'courseGroupCode',
-        'courseGroupIntroduce'   => 'courseGroupIntroduce',
-        'courseGroupName'        => 'courseGroupName',
+        'courseGroupCode' => 'courseGroupCode',
+        'courseGroupIntroduce' => 'courseGroupIntroduce',
+        'courseGroupName' => 'courseGroupName',
         'courserGroupItemModels' => 'courserGroupItemModels',
-        'isvCourseGroupCode'     => 'isvCourseGroupCode',
-        'periodCode'             => 'periodCode',
-        'schoolYear'             => 'schoolYear',
-        'semester'               => 'semester',
-        'subjectName'            => 'subjectName',
+        'isvCourseGroupCode' => 'isvCourseGroupCode',
+        'periodCode' => 'periodCode',
+        'schoolYear' => 'schoolYear',
+        'semester' => 'semester',
+        'subjectName' => 'subjectName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -163,7 +161,7 @@ class universityCourseGroupInfo extends Model
         if (isset($map['courserGroupItemModels'])) {
             if (!empty($map['courserGroupItemModels'])) {
                 $model->courserGroupItemModels = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['courserGroupItemModels'] as $item) {
                     $model->courserGroupItemModels[$n++] = null !== $item ? courserGroupItemModels::fromMap($item) : $item;
                 }

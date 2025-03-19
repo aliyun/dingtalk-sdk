@@ -26,9 +26,7 @@ class RobotSendDingResponseBody extends Model
         'openDingId' => 'openDingId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

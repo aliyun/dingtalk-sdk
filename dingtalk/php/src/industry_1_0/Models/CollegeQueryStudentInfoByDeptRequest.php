@@ -26,13 +26,11 @@ class CollegeQueryStudentInfoByDeptRequest extends Model
      */
     public $studentId;
     protected $_name = [
-        'deptId'    => 'deptId',
+        'deptId' => 'deptId',
         'studentId' => 'studentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class ResultValue extends Model
      */
     public $message;
     protected $_name = [
-        'result'  => 'result',
+        'result' => 'result',
         'message' => 'message',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

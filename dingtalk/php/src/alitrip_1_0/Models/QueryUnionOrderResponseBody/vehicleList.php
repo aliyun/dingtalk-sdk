@@ -22,13 +22,11 @@ class vehicleList extends Model
      */
     public $vehicleOrderStatus;
     protected $_name = [
-        'vehicleOrderId'     => 'vehicleOrderId',
+        'vehicleOrderId' => 'vehicleOrderId',
         'vehicleOrderStatus' => 'vehicleOrderStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

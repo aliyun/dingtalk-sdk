@@ -72,19 +72,17 @@ class UpdatePhysicalClassroomRequest extends Model
     public $opUserId;
     protected $_name = [
         'classroomBuilding' => 'classroomBuilding',
-        'classroomCampus'   => 'classroomCampus',
-        'classroomFloor'    => 'classroomFloor',
-        'classroomId'       => 'classroomId',
-        'classroomName'     => 'classroomName',
-        'classroomNumber'   => 'classroomNumber',
-        'directBroadcast'   => 'directBroadcast',
-        'ext'               => 'ext',
-        'opUserId'          => 'opUserId',
+        'classroomCampus' => 'classroomCampus',
+        'classroomFloor' => 'classroomFloor',
+        'classroomId' => 'classroomId',
+        'classroomName' => 'classroomName',
+        'classroomNumber' => 'classroomNumber',
+        'directBroadcast' => 'directBroadcast',
+        'ext' => 'ext',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -31,14 +31,12 @@ class StartCloudRecordRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'mode'                => 'mode',
+        'mode' => 'mode',
         'smallWindowPosition' => 'smallWindowPosition',
-        'unionId'             => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

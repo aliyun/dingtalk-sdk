@@ -28,14 +28,12 @@ class QueryMinutesTextResponseBody extends Model
      */
     public $paragraphList;
     protected $_name = [
-        'hasMore'       => 'hasMore',
-        'nextToken'     => 'nextToken',
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
         'paragraphList' => 'paragraphList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -76,7 +74,7 @@ class QueryMinutesTextResponseBody extends Model
         if (isset($map['paragraphList'])) {
             if (!empty($map['paragraphList'])) {
                 $model->paragraphList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['paragraphList'] as $item) {
                     $model->paragraphList[$n++] = null !== $item ? paragraphList::fromMap($item) : $item;
                 }

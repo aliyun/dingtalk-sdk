@@ -43,18 +43,16 @@ class UploadEventRequest extends Model
      */
     public $level;
     protected $_name = [
-        'content'    => 'content',
-        'coverUrl'   => 'coverUrl',
+        'content' => 'content',
+        'coverUrl' => 'coverUrl',
         'deviceCode' => 'deviceCode',
         'deviceUuid' => 'deviceUuid',
-        'eventTime'  => 'eventTime',
-        'eventType'  => 'eventType',
-        'level'      => 'level',
+        'eventTime' => 'eventTime',
+        'eventType' => 'eventType',
+        'level' => 'level',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

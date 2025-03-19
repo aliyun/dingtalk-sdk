@@ -39,16 +39,14 @@ class CreateScheduleConferenceResponseBody extends Model
      */
     public $url;
     protected $_name = [
-        'phones'               => 'phones',
-        'requestId'            => 'requestId',
-        'roomCode'             => 'roomCode',
+        'phones' => 'phones',
+        'requestId' => 'requestId',
+        'roomCode' => 'roomCode',
         'scheduleConferenceId' => 'scheduleConferenceId',
-        'url'                  => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

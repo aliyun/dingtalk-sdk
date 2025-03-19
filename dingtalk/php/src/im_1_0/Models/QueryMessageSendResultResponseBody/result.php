@@ -23,12 +23,10 @@ class result extends Model
     public $sendStatus;
     protected $_name = [
         'openMessageId' => 'openMessageId',
-        'sendStatus'    => 'sendStatus',
+        'sendStatus' => 'sendStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

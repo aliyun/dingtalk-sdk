@@ -101,24 +101,22 @@ class IndustryManufactureMesSubCooperationTeamRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'action'       => 'action',
-        'appKey'       => 'appKey',
+        'action' => 'action',
+        'appKey' => 'appKey',
         'baseDataName' => 'baseDataName',
-        'events'       => 'events',
-        'extendData'   => 'extendData',
+        'events' => 'events',
+        'extendData' => 'extendData',
         'groupPlugins' => 'groupPlugins',
-        'groupType'    => 'groupType',
-        'leaders'      => 'leaders',
-        'members'      => 'members',
-        'name'         => 'name',
-        'outCorpId'    => 'outCorpId',
-        'processIds'   => 'processIds',
-        'uuid'         => 'uuid',
+        'groupType' => 'groupType',
+        'leaders' => 'leaders',
+        'members' => 'members',
+        'name' => 'name',
+        'outCorpId' => 'outCorpId',
+        'processIds' => 'processIds',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -215,7 +213,7 @@ class IndustryManufactureMesSubCooperationTeamRequest extends Model
         if (isset($map['extendData'])) {
             if (!empty($map['extendData'])) {
                 $model->extendData = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['extendData'] as $item) {
                     $model->extendData[$n++] = null !== $item ? extendData::fromMap($item) : $item;
                 }
@@ -224,7 +222,7 @@ class IndustryManufactureMesSubCooperationTeamRequest extends Model
         if (isset($map['groupPlugins'])) {
             if (!empty($map['groupPlugins'])) {
                 $model->groupPlugins = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['groupPlugins'] as $item) {
                     $model->groupPlugins[$n++] = null !== $item ? groupPlugins::fromMap($item) : $item;
                 }
@@ -236,7 +234,7 @@ class IndustryManufactureMesSubCooperationTeamRequest extends Model
         if (isset($map['leaders'])) {
             if (!empty($map['leaders'])) {
                 $model->leaders = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['leaders'] as $item) {
                     $model->leaders[$n++] = null !== $item ? leaders::fromMap($item) : $item;
                 }
@@ -245,7 +243,7 @@ class IndustryManufactureMesSubCooperationTeamRequest extends Model
         if (isset($map['members'])) {
             if (!empty($map['members'])) {
                 $model->members = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['members'] as $item) {
                     $model->members[$n++] = null !== $item ? members::fromMap($item) : $item;
                 }

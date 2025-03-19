@@ -29,14 +29,12 @@ class TransferUserObjectiveResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'content'   => 'content',
+        'content' => 'content',
         'requestId' => 'requestId',
-        'success'   => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

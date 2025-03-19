@@ -18,9 +18,7 @@ class ApproveCityCarApplyResponseBody extends Model
         'approveResult' => 'approveResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

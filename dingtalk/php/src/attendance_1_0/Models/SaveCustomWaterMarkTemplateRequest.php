@@ -80,19 +80,17 @@ class SaveCustomWaterMarkTemplateRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizCode'            => 'bizCode',
-        'icon'               => 'icon',
-        'layoutDesignId'     => 'layoutDesignId',
-        'sceneCode'          => 'sceneCode',
-        'schemaContent'      => 'schemaContent',
-        'title'              => 'title',
+        'bizCode' => 'bizCode',
+        'icon' => 'icon',
+        'layoutDesignId' => 'layoutDesignId',
+        'sceneCode' => 'sceneCode',
+        'schemaContent' => 'schemaContent',
+        'title' => 'title',
         'openConversationId' => 'openConversationId',
-        'userId'             => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

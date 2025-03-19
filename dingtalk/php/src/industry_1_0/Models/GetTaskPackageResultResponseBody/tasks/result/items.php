@@ -48,19 +48,17 @@ class items extends Model
      */
     public $suggestion;
     protected $_name = [
-        'advantages'   => 'advantages',
+        'advantages' => 'advantages',
         'fabReference' => 'fabReference',
-        'info'         => 'info',
-        'name'         => 'name',
-        'point'        => 'point',
-        'reference'    => 'reference',
-        'res'          => 'res',
-        'suggestion'   => 'suggestion',
+        'info' => 'info',
+        'name' => 'name',
+        'point' => 'point',
+        'reference' => 'reference',
+        'res' => 'res',
+        'suggestion' => 'suggestion',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

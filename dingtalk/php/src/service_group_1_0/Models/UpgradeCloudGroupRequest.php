@@ -45,16 +45,14 @@ class UpgradeCloudGroupRequest extends Model
      */
     public $templateId;
     protected $_name = [
-        'ccsInstanceId'      => 'ccsInstanceId',
+        'ccsInstanceId' => 'ccsInstanceId',
         'openConversationId' => 'openConversationId',
-        'openGroupSetId'     => 'openGroupSetId',
-        'openTeamId'         => 'openTeamId',
-        'templateId'         => 'templateId',
+        'openGroupSetId' => 'openGroupSetId',
+        'openTeamId' => 'openTeamId',
+        'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

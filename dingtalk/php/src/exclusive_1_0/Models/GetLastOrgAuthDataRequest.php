@@ -20,9 +20,7 @@ class GetLastOrgAuthDataRequest extends Model
         'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

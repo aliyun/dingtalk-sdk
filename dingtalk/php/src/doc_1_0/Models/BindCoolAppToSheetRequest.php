@@ -25,12 +25,10 @@ class BindCoolAppToSheetRequest extends Model
     public $operatorId;
     protected $_name = [
         'coolAppCode' => 'coolAppCode',
-        'operatorId'  => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

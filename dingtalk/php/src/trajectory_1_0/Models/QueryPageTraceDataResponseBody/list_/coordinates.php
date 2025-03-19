@@ -22,13 +22,11 @@ class coordinates extends Model
      */
     public $longitude;
     protected $_name = [
-        'latitude'  => 'latitude',
+        'latitude' => 'latitude',
         'longitude' => 'longitude',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

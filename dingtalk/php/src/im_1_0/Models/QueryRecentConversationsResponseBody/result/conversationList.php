@@ -64,19 +64,17 @@ class conversationList extends Model
      */
     public $userId;
     protected $_name = [
-        'conversationType'   => 'conversationType',
-        'icon'               => 'icon',
-        'memberCount'        => 'memberCount',
-        'name'               => 'name',
-        'nickName'           => 'nickName',
+        'conversationType' => 'conversationType',
+        'icon' => 'icon',
+        'memberCount' => 'memberCount',
+        'name' => 'name',
+        'nickName' => 'nickName',
         'openConversationId' => 'openConversationId',
-        'title'              => 'title',
-        'userId'             => 'userId',
+        'title' => 'title',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

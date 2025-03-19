@@ -19,9 +19,7 @@ class ListGroupStaffMembersResponseBody extends Model
         'members' => 'members',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class ListGroupStaffMembersResponseBody extends Model
         if (isset($map['members'])) {
             if (!empty($map['members'])) {
                 $model->members = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['members'] as $item) {
                     $model->members[$n++] = null !== $item ? members::fromMap($item) : $item;
                 }

@@ -47,16 +47,14 @@ class AppLoginCodeGenRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appKey'           => 'appKey',
+        'appKey' => 'appKey',
         'signTimestampStr' => 'signTimestampStr',
-        'signature'        => 'signature',
-        'fullUrl'          => 'fullUrl',
-        'userId'           => 'userId',
+        'signature' => 'signature',
+        'fullUrl' => 'fullUrl',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

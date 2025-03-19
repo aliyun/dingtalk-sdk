@@ -33,15 +33,13 @@ class SetBorderRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'color'      => 'color',
-        'style'      => 'style',
-        'type'       => 'type',
+        'color' => 'color',
+        'style' => 'style',
+        'type' => 'type',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

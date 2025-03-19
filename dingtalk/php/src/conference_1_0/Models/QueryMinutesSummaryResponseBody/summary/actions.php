@@ -33,16 +33,14 @@ class actions extends Model
      */
     public $text;
     protected $_name = [
-        'end'        => 'end',
-        'id'         => 'id',
+        'end' => 'end',
+        'id' => 'id',
         'sentenceId' => 'sentenceId',
-        'start'      => 'start',
-        'text'       => 'text',
+        'start' => 'start',
+        'text' => 'text',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

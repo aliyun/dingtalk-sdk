@@ -45,16 +45,14 @@ class okrRecommendItems extends Model
      */
     public $userId;
     protected $_name = [
-        'krResultRelatedResults'  => 'krResultRelatedResults',
+        'krResultRelatedResults' => 'krResultRelatedResults',
         'objectiveRelatedResults' => 'objectiveRelatedResults',
-        'relatedLevel'            => 'relatedLevel',
-        'semanticLevel'           => 'semanticLevel',
-        'userId'                  => 'userId',
+        'relatedLevel' => 'relatedLevel',
+        'semanticLevel' => 'semanticLevel',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -101,7 +99,7 @@ class okrRecommendItems extends Model
         if (isset($map['krResultRelatedResults'])) {
             if (!empty($map['krResultRelatedResults'])) {
                 $model->krResultRelatedResults = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['krResultRelatedResults'] as $item) {
                     $model->krResultRelatedResults[$n++] = null !== $item ? krResultRelatedResults::fromMap($item) : $item;
                 }
@@ -110,7 +108,7 @@ class okrRecommendItems extends Model
         if (isset($map['objectiveRelatedResults'])) {
             if (!empty($map['objectiveRelatedResults'])) {
                 $model->objectiveRelatedResults = [];
-                $n                              = 0;
+                $n = 0;
                 foreach ($map['objectiveRelatedResults'] as $item) {
                     $model->objectiveRelatedResults[$n++] = null !== $item ? objectiveRelatedResults::fromMap($item) : $item;
                 }

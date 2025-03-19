@@ -51,16 +51,14 @@ class PremiumInsertOrUpdateDirRequest extends Model
      */
     public $operateUserId;
     protected $_name = [
-        'bizGroup'      => 'bizGroup',
-        'description'   => 'description',
-        'name'          => 'name',
-        'name18n'       => 'name18n',
+        'bizGroup' => 'bizGroup',
+        'description' => 'description',
+        'name' => 'name',
+        'name18n' => 'name18n',
         'operateUserId' => 'operateUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

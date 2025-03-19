@@ -51,16 +51,14 @@ class SendMessageRequest extends Model
      */
     public $type;
     protected $_name = [
-        'bizId'        => 'bizId',
-        'fromUserId'   => 'fromUserId',
-        'sn'           => 'sn',
+        'bizId' => 'bizId',
+        'fromUserId' => 'fromUserId',
+        'sn' => 'sn',
         'toUserIdList' => 'toUserIdList',
-        'type'         => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

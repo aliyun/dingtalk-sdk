@@ -23,8 +23,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -56,18 +56,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CheckUserTaskStatus',
-            'version'     => 'occupationauth_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/occupationauth/auths/userTasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CheckUserTaskStatus',
+            'version' => 'occupationauth_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/occupationauth/auths/userTasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CheckUserTaskStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -113,18 +113,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CheckUserTasksStatus',
-            'version'     => 'occupationauth_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/occupationauth/userTasks/check',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CheckUserTasksStatus',
+            'version' => 'occupationauth_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/occupationauth/userTasks/check',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CheckUserTasksStatusResponse::fromMap($this->execute($params, $req, $runtime));

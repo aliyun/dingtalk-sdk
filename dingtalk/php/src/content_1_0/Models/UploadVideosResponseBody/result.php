@@ -28,15 +28,13 @@ class result extends Model
      */
     public $total;
     protected $_name = [
-        'failed'      => 'failed',
+        'failed' => 'failed',
         'hasUploaded' => 'hasUploaded',
-        'success'     => 'success',
-        'total'       => 'total',
+        'success' => 'success',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

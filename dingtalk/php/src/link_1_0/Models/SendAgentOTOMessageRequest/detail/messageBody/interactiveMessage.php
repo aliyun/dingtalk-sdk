@@ -28,15 +28,13 @@ class interactiveMessage extends Model
      */
     public $cardTemplateId;
     protected $_name = [
-        'callbackUrl'    => 'callbackUrl',
-        'cardBizId'      => 'cardBizId',
-        'cardData'       => 'cardData',
+        'callbackUrl' => 'callbackUrl',
+        'cardBizId' => 'cardBizId',
+        'cardData' => 'cardData',
         'cardTemplateId' => 'cardTemplateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

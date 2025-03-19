@@ -48,16 +48,14 @@ class details extends Model
      */
     public $sourceBizCode;
     protected $_name = [
-        'amount'                         => 'amount',
-        'gmtCreate'                      => 'gmtCreate',
-        'outId'                          => 'outId',
+        'amount' => 'amount',
+        'gmtCreate' => 'gmtCreate',
+        'outId' => 'outId',
         'pointOperateFeatureResponseDTO' => 'pointOperateFeatureResponseDTO',
-        'sourceBizCode'                  => 'sourceBizCode',
+        'sourceBizCode' => 'sourceBizCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

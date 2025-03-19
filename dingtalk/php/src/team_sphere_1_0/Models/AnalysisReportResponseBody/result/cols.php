@@ -24,13 +24,11 @@ class cols extends Model
     public $theme;
     protected $_name = [
         'baseType' => 'baseType',
-        'name'     => 'name',
-        'theme'    => 'theme',
+        'name' => 'name',
+        'theme' => 'theme',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

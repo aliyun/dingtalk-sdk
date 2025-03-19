@@ -20,13 +20,11 @@ class QueryAdvancedContractVersionRequest extends Model
      */
     public $extension;
     protected $_name = [
-        'corpId'    => 'corpId',
+        'corpId' => 'corpId',
         'extension' => 'extension',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

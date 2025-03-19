@@ -23,12 +23,10 @@ class ListRelatedSpaceTeamsRequest extends Model
     public $type;
     protected $_name = [
         'operatorId' => 'operatorId',
-        'type'       => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

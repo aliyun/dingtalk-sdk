@@ -43,15 +43,13 @@ class UpdateInvoiceAndReceiptRelatedRequest extends Model
     public $receiptCode;
     protected $_name = [
         'generalInvoiceVO' => 'generalInvoiceVO',
-        'invoiceCode'      => 'invoiceCode',
-        'invoiceNo'        => 'invoiceNo',
-        'operator'         => 'operator',
-        'receiptCode'      => 'receiptCode',
+        'invoiceCode' => 'invoiceCode',
+        'invoiceNo' => 'invoiceNo',
+        'operator' => 'operator',
+        'receiptCode' => 'receiptCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

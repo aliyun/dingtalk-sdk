@@ -115,8 +115,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -167,19 +167,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddLiveInteractionPlugin',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/interactionPlugins',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddLiveInteractionPlugin',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/interactionPlugins',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddLiveInteractionPluginResponse::fromMap($this->execute($params, $req, $runtime));
@@ -237,18 +237,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AddLiveNoticeWidget',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/noticeWidgets',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddLiveNoticeWidget',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/noticeWidgets',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddLiveNoticeWidgetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -301,18 +301,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddShareCidList',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/cloudFeeds/' . $feedId . '/share',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddShareCidList',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/cloudFeeds/' . $feedId . '/share',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddShareCidListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -374,18 +374,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateCloudFeed',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/cloudFeeds',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateCloudFeed',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/cloudFeeds',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateCloudFeedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -449,18 +449,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateLive',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/lives',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateLive',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/lives',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateLiveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -512,18 +512,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DelLiveInteractionPlugin',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/interactionPlugins',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DelLiveInteractionPlugin',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/interactionPlugins',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DelLiveInteractionPluginResponse::fromMap($this->execute($params, $req, $runtime));
@@ -572,18 +572,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DelLiveNoticeWidget',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/noticeWidgets',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DelLiveNoticeWidget',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/noticeWidgets',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DelLiveNoticeWidgetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -632,18 +632,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteLive',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/lives',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteLive',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/lives',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteLiveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -690,18 +690,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteLiveFeed',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/openFeeds/' . $feedId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteLiveFeed',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/openFeeds/' . $feedId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteLiveFeedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -755,18 +755,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditFeedReplay',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/openFeeds/' . $feedId . '/cutReplay',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditFeedReplay',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/openFeeds/' . $feedId . '/cutReplay',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditFeedReplayResponse::fromMap($this->execute($params, $req, $runtime));
@@ -821,18 +821,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetGroupLiveList',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/groupLives',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetGroupLiveList',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/groupLives',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetGroupLiveListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -881,18 +881,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetLiveReplayUrl',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/lives/replayUrls',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetLiveReplayUrl',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/lives/replayUrls',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetLiveReplayUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -946,18 +946,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetOrgLiveList',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/organizations/liveLists/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOrgLiveList',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/organizations/liveLists/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOrgLiveListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1022,19 +1022,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetUserAllLiveList',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/users/allLiveInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserAllLiveList',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/users/allLiveInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserAllLiveListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1099,19 +1099,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetUserCreateLiveList',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/users/createLiveInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserCreateLiveList',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/users/createLiveInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserCreateLiveListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1166,18 +1166,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUserWatchLiveList',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/users/watchRecords',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserWatchLiveList',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/users/watchRecords',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserWatchLiveListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1235,18 +1235,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ModifyFeedWhiteList',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/openFeeds/' . $feedId . '/whiteList',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ModifyFeedWhiteList',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/openFeeds/' . $feedId . '/whiteList',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ModifyFeedWhiteListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1294,18 +1294,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryFeedWhiteList',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/openFeeds/' . $feedId . '/whiteList',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryFeedWhiteList',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/openFeeds/' . $feedId . '/whiteList',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryFeedWhiteListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1355,18 +1355,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryLiveInfo',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/lives',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryLiveInfo',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/lives',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryLiveInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1418,18 +1418,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryLiveInteractionPlugin',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/interactionPlugins',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryLiveInteractionPlugin',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/interactionPlugins',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryLiveInteractionPluginResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1478,18 +1478,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryLiveWatchDetail',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/lives/watchDetails',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryLiveWatchDetail',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/lives/watchDetails',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryLiveWatchDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1544,18 +1544,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryLiveWatchUserList',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/lives/watchUsers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryLiveWatchUserList',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/lives/watchUsers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryLiveWatchUserListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1609,18 +1609,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QuerySubscribeStatus',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/subscribeStatuses/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QuerySubscribeStatus',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/subscribeStatuses/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QuerySubscribeStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1688,19 +1688,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendLiveInteractionPluginEffectsMsg',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/interactionPlugins/effectMessages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendLiveInteractionPluginEffectsMsg',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/interactionPlugins/effectMessages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendLiveInteractionPluginEffectsMsgResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1757,18 +1757,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SendLivePluginUserActionMsg',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/interactionPlugins/actionMessages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendLivePluginUserActionMsg',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/interactionPlugins/actionMessages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendLivePluginUserActionMsgResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1815,18 +1815,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'StartCloudFeed',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/cloudFeeds/' . $feedId . '/start',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StartCloudFeed',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/cloudFeeds/' . $feedId . '/start',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StartCloudFeedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1874,18 +1874,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'StopCloudFeed',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/cloudFeeds/' . $feedId . '/stop',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StopCloudFeed',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/cloudFeeds/' . $feedId . '/stop',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StopCloudFeedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1938,18 +1938,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SubscribeLive',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/lives/subscribe',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SubscribeLive',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/lives/subscribe',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SubscribeLiveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2013,18 +2013,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateLive',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/lives',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateLive',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/lives',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateLiveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2083,18 +2083,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'UpdateLiveFeed',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/openFeeds/' . $feedId . '',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateLiveFeed',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/openFeeds/' . $feedId . '',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateLiveFeedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2163,19 +2163,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateLiveInteractionPlugin',
-            'version'     => 'live_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/live/interactionPlugins',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateLiveInteractionPlugin',
+            'version' => 'live_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/live/interactionPlugins',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateLiveInteractionPluginResponse::fromMap($this->execute($params, $req, $runtime));

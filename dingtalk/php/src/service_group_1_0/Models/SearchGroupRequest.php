@@ -57,18 +57,16 @@ class SearchGroupRequest extends Model
      */
     public $searchType;
     protected $_name = [
-        'groupName'          => 'groupName',
-        'maxResults'         => 'maxResults',
-        'nextToken'          => 'nextToken',
+        'groupName' => 'groupName',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'openConversationId' => 'openConversationId',
-        'openGroupSetId'     => 'openGroupSetId',
-        'openTeamId'         => 'openTeamId',
-        'searchType'         => 'searchType',
+        'openGroupSetId' => 'openGroupSetId',
+        'openTeamId' => 'openTeamId',
+        'searchType' => 'searchType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

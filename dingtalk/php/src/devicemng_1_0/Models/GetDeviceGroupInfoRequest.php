@@ -20,9 +20,7 @@ class GetDeviceGroupInfoRequest extends Model
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -257,8 +257,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -293,18 +293,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddApproveDentryAuth',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processInstances/spaces/files/authDownload',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddApproveDentryAuth',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processInstances/spaces/files/authDownload',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddApproveDentryAuthResponse::fromMap($this->execute($params, $req, $runtime));
@@ -359,18 +359,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddProcessInstanceComment',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processInstances/comments',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddProcessInstanceComment',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processInstances/comments',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddProcessInstanceCommentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -419,18 +419,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ArchiveProcessInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processInstances/archive',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ArchiveProcessInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processInstances/archive',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ArchiveProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -485,18 +485,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchExecuteProcessInstances',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processInstances/batchExecute',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchExecuteProcessInstances',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processInstances/batchExecute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchExecuteProcessInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -551,18 +551,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchTasksRedirect',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/tasks/batchRedirect',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchTasksRedirect',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/tasks/batchRedirect',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchTasksRedirectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -608,18 +608,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchUpdateProcessInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/instances/batch',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchUpdateProcessInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/instances/batch',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchUpdateProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -671,18 +671,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CancelIntegratedTask',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/tasks/cancel',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CancelIntegratedTask',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/tasks/cancel',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CancelIntegratedTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -731,18 +731,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CleanProcessData',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/clean',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CleanProcessData',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/clean',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CleanProcessDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -794,18 +794,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CopyProcess',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/copy',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CopyProcess',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/copy',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CopyProcessResponse::fromMap($this->execute($params, $req, $runtime));
@@ -860,18 +860,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateIntegratedTask',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/tasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateIntegratedTask',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/tasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateIntegratedTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -920,18 +920,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteDir',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/directories',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteDir',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/directories',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteDirResponse::fromMap($this->execute($params, $req, $runtime));
@@ -980,18 +980,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteProcess',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/schemas',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteProcess',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/schemas',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteProcessResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1052,18 +1052,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExecuteProcessInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processInstances/execute',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExecuteProcessInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processInstances/execute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExecuteProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1121,18 +1121,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'FormCreate',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/forms',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'FormCreate',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/forms',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return FormCreateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1181,18 +1181,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetAttachmentSpace',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processInstances/spaces/infos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAttachmentSpace',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processInstances/spaces/infos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAttachmentSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1241,18 +1241,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetConditionFormComponent',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/conditions/components',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetConditionFormComponent',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/conditions/components',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetConditionFormComponentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1294,15 +1294,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetCrmProcCodes',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/crm/processes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCrmProcCodes',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/crm/processes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCrmProcCodesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1349,18 +1349,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetFieldModifiedHistory',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/fields/modifiedRecords/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFieldModifiedHistory',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/fields/modifiedRecords/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFieldModifiedHistoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1409,18 +1409,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetHandSignDownloadUrl',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processInstances/handSigns/downloadUrls/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetHandSignDownloadUrl',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processInstances/handSigns/downloadUrls/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetHandSignDownloadUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1466,18 +1466,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetManageProcessByStaffId',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/managements/templates',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetManageProcessByStaffId',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/managements/templates',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetManageProcessByStaffIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1523,18 +1523,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProcessCodeByName',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/schemaNames/processCodes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProcessCodeByName',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/schemaNames/processCodes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProcessCodeByNameResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1580,18 +1580,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProcessConfig',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/crm/processes/configurations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProcessConfig',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/crm/processes/configurations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProcessConfigResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1637,18 +1637,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProcessInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processInstances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProcessInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processInstances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1694,18 +1694,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProcessInstanceWithExtra',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processInstances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProcessInstanceWithExtra',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processInstances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProcessInstanceWithExtraResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1756,18 +1756,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSchemaAndProcessconfigBatchlly',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/templates/batchQuery',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSchemaAndProcessconfigBatchlly',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/templates/batchQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSchemaAndProcessconfigBatchllyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1828,18 +1828,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetSpaceWithDownloadAuth',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processInstances/spaces/authPreview',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSpaceWithDownloadAuth',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processInstances/spaces/authPreview',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSpaceWithDownloadAuthResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1885,18 +1885,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUserTodoTaskSum',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/todoTasks/numbers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserTodoTaskSum',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/todoTasks/numbers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserTodoTaskSumResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1951,18 +1951,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GrantCspaceAuthorization',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/spaces/authorize',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GrantCspaceAuthorization',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/spaces/authorize',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return GrantCspaceAuthorizationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2014,18 +2014,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GrantProcessInstanceForDownloadFile',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processInstances/spaces/files/urls/download',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GrantProcessInstanceForDownloadFile',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processInstances/spaces/files/urls/download',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GrantProcessInstanceForDownloadFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2083,18 +2083,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InsertOrUpdateDir',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/directories',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InsertOrUpdateDir',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/directories',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InsertOrUpdateDirResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2146,18 +2146,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InstallApp',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/apps/install',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InstallApp',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/apps/install',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InstallAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2221,18 +2221,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListProcessInstanceIds',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/instanceIds/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListProcessInstanceIds',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/instanceIds/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListProcessInstanceIdsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2287,18 +2287,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListTodoWorkRecords',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/workRecords/todoTasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListTodoWorkRecords',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/workRecords/todoTasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListTodoWorkRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2350,18 +2350,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListUserVisibleBpmsProcesses',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/userVisibilities/templates',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListUserVisibleBpmsProcesses',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/userVisibilities/templates',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListUserVisibleBpmsProcessesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2425,18 +2425,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PagesExportInstances',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/instances/datas',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PagesExportInstances',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/instances/datas',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PagesExportInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2485,18 +2485,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumAddApproveDentryAuth',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processInstances/spaces/files/authDownload',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumAddApproveDentryAuth',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processInstances/spaces/files/authDownload',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumAddApproveDentryAuthResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2551,18 +2551,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumBatchExecuteProcessInstances',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processInstances/batchExecute',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumBatchExecuteProcessInstances',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processInstances/batchExecute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumBatchExecuteProcessInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2611,18 +2611,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PremiumDelDir',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processCentres/directories',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumDelDir',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processCentres/directories',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumDelDirResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2674,18 +2674,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumDeleteFormInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/dataForms/formInstances/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumDeleteFormInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/dataForms/formInstances/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumDeleteFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2734,18 +2734,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetAttachmentSpace',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processInstances/spaces/infos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetAttachmentSpace',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processInstances/spaces/infos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetAttachmentSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2797,18 +2797,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetDoneTasks',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processCentres/doneTasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetDoneTasks',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processCentres/doneTasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetDoneTasksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2857,18 +2857,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetFieldModifiedHistory',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processes/fields/modifiedRecords/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetFieldModifiedHistory',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processes/fields/modifiedRecords/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetFieldModifiedHistoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2920,18 +2920,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetFormInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/dataForms/formInstances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetFormInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/dataForms/formInstances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2986,18 +2986,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetFormInstances',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/dataForms/formInstances/pages',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetFormInstances',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/dataForms/formInstances/pages',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetFormInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3046,18 +3046,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetFormSchema',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/dataForms/schema/formCodes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetFormSchema',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/dataForms/schema/formCodes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetFormSchemaResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3106,18 +3106,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetInstFieldSetting',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processes/fields/settings/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetInstFieldSetting',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processes/fields/settings/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetInstFieldSettingResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3169,18 +3169,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetNoticedInstances',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processCentres/noticedInstances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetNoticedInstances',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processCentres/noticedInstances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetNoticedInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3241,18 +3241,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetProcessInstances',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processes/pages/instances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetProcessInstances',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processes/pages/instances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetProcessInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3313,18 +3313,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetSpaceWithDownloadAuth',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processInstances/spaces/authPreview',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetSpaceWithDownloadAuth',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processInstances/spaces/authPreview',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetSpaceWithDownloadAuthResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3376,18 +3376,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetSubmittedInstances',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processCentres/submittedInstances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetSubmittedInstances',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processCentres/submittedInstances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetSubmittedInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3442,18 +3442,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGetTodoTasks',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processCentres/todoTasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGetTodoTasks',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processCentres/todoTasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGetTodoTasksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3505,18 +3505,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumGrantProcessInstanceForDownloadFile',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processInstances/spaces/files/urls/download',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumGrantProcessInstanceForDownloadFile',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processInstances/spaces/files/urls/download',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumGrantProcessInstanceForDownloadFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3574,18 +3574,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumInsertOrUpdateDir',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processCentres/directories',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumInsertOrUpdateDir',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processCentres/directories',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumInsertOrUpdateDirResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3631,18 +3631,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumQuerySchemaAndProcessByCodeList',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processes/schemas/batchQuery',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumQuerySchemaAndProcessByCodeList',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processes/schemas/batchQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumQuerySchemaAndProcessByCodeListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3697,18 +3697,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PremiumQueryTodoTasksByManager',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/tasks/todoTasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumQueryTodoTasksByManager',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/tasks/todoTasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumQueryTodoTasksByManagerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3763,18 +3763,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumRedirectTasksByManager',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/tasks/batchRedirect',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumRedirectTasksByManager',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/tasks/batchRedirect',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumRedirectTasksByManagerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3832,18 +3832,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumSaveForm',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/dataForms/templates',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumSaveForm',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/dataForms/templates',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumSaveFormResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3895,18 +3895,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumSaveFormInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/dataForms/formInstances/save',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumSaveFormInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/dataForms/formInstances/save',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumSaveFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3967,18 +3967,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumSaveIntegratedProcess',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processCentres/schemas',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumSaveIntegratedProcess',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processCentres/schemas',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumSaveIntegratedProcessResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4042,18 +4042,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumSaveIntegratedProcessInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processCentres/instances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumSaveIntegratedProcessInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processCentres/instances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumSaveIntegratedProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4108,18 +4108,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumSaveIntegratedTask',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processCentres/tasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumSaveIntegratedTask',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processCentres/tasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumSaveIntegratedTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4174,18 +4174,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumUpdateFormInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/dataForms/formInstances',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumUpdateFormInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/dataForms/formInstances',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumUpdateFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4243,18 +4243,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PremiumUpdateProcessInstanceVariables',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/premium/processInstances',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PremiumUpdateProcessInstanceVariables',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/processInstances',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PremiumUpdateProcessInstanceVariablesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4309,18 +4309,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ProcessForecast',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/forecast',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ProcessForecast',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/forecast',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ProcessForecastResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4375,18 +4375,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAllFormInstances',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/forms/pages/instances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAllFormInstances',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/forms/pages/instances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAllFormInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4447,18 +4447,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAllProcessInstances',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/pages/instances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAllProcessInstances',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/pages/instances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAllProcessInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4507,18 +4507,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryFormByBizType',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/forms/forminfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryFormByBizType',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/forms/forminfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryFormByBizTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4570,18 +4570,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryFormInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/forms/instances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryFormInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/forms/instances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4636,18 +4636,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryIntegratedTodoTask',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/todoTasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryIntegratedTodoTask',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/todoTasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryIntegratedTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4696,18 +4696,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryProcessByBizCategoryId',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processes/categories/templates',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryProcessByBizCategoryId',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processes/categories/templates',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryProcessByBizCategoryIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4756,18 +4756,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QuerySchemaAndProcess',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/forms/schemaAndProcess',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QuerySchemaAndProcess',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/forms/schemaAndProcess',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QuerySchemaAndProcessResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4816,18 +4816,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QuerySchemaByProcessCode',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/forms/schemas/processCodes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QuerySchemaByProcessCode',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/forms/schemas/processCodes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QuerySchemaByProcessCodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4888,18 +4888,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RedirectWorkflowTask',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/tasks/redirect',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RedirectWorkflowTask',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/tasks/redirect',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RedirectWorkflowTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4966,18 +4966,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveIntegratedInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/instances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveIntegratedInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/instances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveIntegratedInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5038,18 +5038,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveProcess',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/schemas',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveProcess',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/schemas',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveProcessResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5122,18 +5122,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'StartProcessInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processInstances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'StartProcessInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processInstances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return StartProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5188,18 +5188,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TerminateProcessInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processInstances/terminate',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TerminateProcessInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processInstances/terminate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TerminateProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5254,18 +5254,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'TodoTasks',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/tasks/todoTasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TodoTasks',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/tasks/todoTasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TodoTasksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5314,18 +5314,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateIntegratedTask',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/tasks',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateIntegratedTask',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/tasks',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateIntegratedTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5380,18 +5380,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateProcessInstance',
-            'version'     => 'workflow_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workflow/processCentres/instances',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateProcessInstance',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/processCentres/instances',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));

@@ -18,9 +18,7 @@ class CheckUserTaskStatusRequest extends Model
         'provinceCode' => 'provinceCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

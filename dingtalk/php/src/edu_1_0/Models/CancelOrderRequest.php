@@ -58,17 +58,15 @@ class CancelOrderRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'faceId'    => 'faceId',
-        'orderNo'   => 'orderNo',
+        'faceId' => 'faceId',
+        'orderNo' => 'orderNo',
         'signature' => 'signature',
-        'sn'        => 'sn',
+        'sn' => 'sn',
         'timestamp' => 'timestamp',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

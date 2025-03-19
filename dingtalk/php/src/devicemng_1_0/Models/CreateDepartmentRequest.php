@@ -80,19 +80,17 @@ class CreateDepartmentRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'authInfo'       => 'authInfo',
-        'authType'       => 'authType',
-        'bizExt'         => 'bizExt',
+        'authInfo' => 'authInfo',
+        'authType' => 'authType',
+        'bizExt' => 'bizExt',
         'departmentName' => 'departmentName',
         'departmentType' => 'departmentType',
-        'description'    => 'description',
-        'systemUrl'      => 'systemUrl',
-        'userId'         => 'userId',
+        'description' => 'description',
+        'systemUrl' => 'systemUrl',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

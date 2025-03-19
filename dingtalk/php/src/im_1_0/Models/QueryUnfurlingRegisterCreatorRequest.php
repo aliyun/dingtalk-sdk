@@ -27,12 +27,10 @@ class QueryUnfurlingRegisterCreatorRequest extends Model
     public $path;
     protected $_name = [
         'domain' => 'domain',
-        'path'   => 'path',
+        'path' => 'path',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

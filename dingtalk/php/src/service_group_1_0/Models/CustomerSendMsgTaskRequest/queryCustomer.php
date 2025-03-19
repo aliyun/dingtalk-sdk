@@ -34,15 +34,13 @@ class queryCustomer extends Model
      */
     public $searchCustomerConditions;
     protected $_name = [
-        'openContactIds'           => 'openContactIds',
-        'queryType'                => 'queryType',
-        'searchContactConditions'  => 'searchContactConditions',
+        'openContactIds' => 'openContactIds',
+        'queryType' => 'queryType',
+        'searchContactConditions' => 'searchContactConditions',
         'searchCustomerConditions' => 'searchCustomerConditions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

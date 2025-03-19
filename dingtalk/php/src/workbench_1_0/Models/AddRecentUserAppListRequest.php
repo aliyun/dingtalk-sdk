@@ -34,14 +34,12 @@ class AddRecentUserAppListRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'corpId'            => 'corpId',
+        'corpId' => 'corpId',
         'usedAppDetailList' => 'usedAppDetailList',
-        'userId'            => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -79,7 +77,7 @@ class AddRecentUserAppListRequest extends Model
         if (isset($map['usedAppDetailList'])) {
             if (!empty($map['usedAppDetailList'])) {
                 $model->usedAppDetailList = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['usedAppDetailList'] as $item) {
                     $model->usedAppDetailList[$n++] = null !== $item ? usedAppDetailList::fromMap($item) : $item;
                 }

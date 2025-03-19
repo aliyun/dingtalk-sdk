@@ -24,14 +24,12 @@ class ListEventsResponseBody extends Model
      */
     public $syncToken;
     protected $_name = [
-        'events'    => 'events',
+        'events' => 'events',
         'nextToken' => 'nextToken',
         'syncToken' => 'syncToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class ListEventsResponseBody extends Model
         if (isset($map['events'])) {
             if (!empty($map['events'])) {
                 $model->events = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['events'] as $item) {
                     $model->events[$n++] = null !== $item ? events::fromMap($item) : $item;
                 }

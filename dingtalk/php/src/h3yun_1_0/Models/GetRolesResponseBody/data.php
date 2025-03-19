@@ -21,12 +21,10 @@ class data extends Model
     public $roles;
     protected $_name = [
         'roleGroups' => 'roleGroups',
-        'roles'      => 'roles',
+        'roles' => 'roles',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class data extends Model
         if (isset($map['roleGroups'])) {
             if (!empty($map['roleGroups'])) {
                 $model->roleGroups = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['roleGroups'] as $item) {
                     $model->roleGroups[$n++] = null !== $item ? roleGroups::fromMap($item) : $item;
                 }
@@ -73,7 +71,7 @@ class data extends Model
         if (isset($map['roles'])) {
             if (!empty($map['roles'])) {
                 $model->roles = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['roles'] as $item) {
                     $model->roles[$n++] = null !== $item ? roles::fromMap($item) : $item;
                 }

@@ -36,15 +36,13 @@ class moziConfOpenRecordSetting extends Model
      */
     public $recordAutoStartType;
     protected $_name = [
-        'isFollowHost'        => 'isFollowHost',
-        'mode'                => 'mode',
-        'recordAutoStart'     => 'recordAutoStart',
+        'isFollowHost' => 'isFollowHost',
+        'mode' => 'mode',
+        'recordAutoStart' => 'recordAutoStart',
         'recordAutoStartType' => 'recordAutoStartType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

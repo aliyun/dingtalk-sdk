@@ -18,13 +18,11 @@ class CreateTokenRequest extends Model
      */
     public $type;
     protected $_name = [
-        'sn'   => 'sn',
+        'sn' => 'sn',
         'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

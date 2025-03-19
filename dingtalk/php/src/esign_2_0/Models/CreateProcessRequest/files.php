@@ -29,14 +29,12 @@ class files extends Model
      */
     public $fileType;
     protected $_name = [
-        'fileId'   => 'fileId',
+        'fileId' => 'fileId',
         'fileName' => 'fileName',
         'fileType' => 'fileType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class BatchQueryGroupMemberRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'coolAppCode'        => 'coolAppCode',
-        'maxResults'         => 'maxResults',
-        'nextToken'          => 'nextToken',
+        'coolAppCode' => 'coolAppCode',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

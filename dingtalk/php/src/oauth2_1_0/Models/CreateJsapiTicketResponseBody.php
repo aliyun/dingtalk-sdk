@@ -18,13 +18,11 @@ class CreateJsapiTicketResponseBody extends Model
      */
     public $jsapiTicket;
     protected $_name = [
-        'expireIn'    => 'expireIn',
+        'expireIn' => 'expireIn',
         'jsapiTicket' => 'jsapiTicket',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

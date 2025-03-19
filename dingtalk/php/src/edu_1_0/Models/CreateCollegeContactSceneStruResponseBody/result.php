@@ -29,14 +29,12 @@ class result extends Model
      */
     public $teacherDeptId;
     protected $_name = [
-        'struId'        => 'struId',
+        'struId' => 'struId',
         'studentDeptId' => 'studentDeptId',
         'teacherDeptId' => 'teacherDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

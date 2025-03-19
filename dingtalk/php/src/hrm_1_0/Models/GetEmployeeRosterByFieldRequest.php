@@ -34,15 +34,13 @@ class GetEmployeeRosterByFieldRequest extends Model
      */
     public $userIdList;
     protected $_name = [
-        'appAgentId'         => 'appAgentId',
-        'fieldFilterList'    => 'fieldFilterList',
+        'appAgentId' => 'appAgentId',
+        'fieldFilterList' => 'fieldFilterList',
         'text2SelectConvert' => 'text2SelectConvert',
-        'userIdList'         => 'userIdList',
+        'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

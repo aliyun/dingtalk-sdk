@@ -45,17 +45,15 @@ class iOS extends Model
     public $version;
     protected $_name = [
         'baseLineVersion' => 'baseLineVersion',
-        'downloadUrl'     => 'downloadUrl',
-        'ext'             => 'ext',
-        'inGray'          => 'inGray',
-        'packTime'        => 'packTime',
-        'platform'        => 'platform',
-        'version'         => 'version',
+        'downloadUrl' => 'downloadUrl',
+        'ext' => 'ext',
+        'inGray' => 'inGray',
+        'packTime' => 'packTime',
+        'platform' => 'platform',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

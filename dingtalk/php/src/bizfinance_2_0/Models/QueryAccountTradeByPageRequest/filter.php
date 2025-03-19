@@ -36,15 +36,13 @@ class filter extends Model
      */
     public $tradeType;
     protected $_name = [
-        'endAmount'        => 'endAmount',
+        'endAmount' => 'endAmount',
         'otherAccountName' => 'otherAccountName',
-        'startAmount'      => 'startAmount',
-        'tradeType'        => 'tradeType',
+        'startAmount' => 'startAmount',
+        'tradeType' => 'tradeType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

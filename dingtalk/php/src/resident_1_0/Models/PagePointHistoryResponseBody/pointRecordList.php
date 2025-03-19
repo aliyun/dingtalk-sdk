@@ -63,14 +63,12 @@ class pointRecordList extends Model
         'createAt' => 'createAt',
         'ruleCode' => 'ruleCode',
         'ruleName' => 'ruleName',
-        'score'    => 'score',
-        'userId'   => 'userId',
-        'uuid'     => 'uuid',
+        'score' => 'score',
+        'userId' => 'userId',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

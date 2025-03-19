@@ -26,13 +26,11 @@ class HrmMokaEventRequest extends Model
      */
     public $content;
     protected $_name = [
-        'bizId'   => 'bizId',
+        'bizId' => 'bizId',
         'content' => 'content',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

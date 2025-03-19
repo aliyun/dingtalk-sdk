@@ -22,13 +22,11 @@ class availableTemplates extends Model
      */
     public $name;
     protected $_name = [
-        'id'   => 'id',
+        'id' => 'id',
         'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

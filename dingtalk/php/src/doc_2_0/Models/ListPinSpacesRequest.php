@@ -23,13 +23,11 @@ class ListPinSpacesRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'option'     => 'option',
+        'option' => 'option',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

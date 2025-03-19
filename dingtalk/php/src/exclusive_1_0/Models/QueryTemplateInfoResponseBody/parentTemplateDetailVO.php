@@ -26,13 +26,11 @@ class parentTemplateDetailVO extends Model
     public $toolbarPluginList;
     protected $_name = [
         'robotTemplateList' => 'robotTemplateList',
-        'templateId'        => 'templateId',
+        'templateId' => 'templateId',
         'toolbarPluginList' => 'toolbarPluginList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -73,7 +71,7 @@ class parentTemplateDetailVO extends Model
         if (isset($map['robotTemplateList'])) {
             if (!empty($map['robotTemplateList'])) {
                 $model->robotTemplateList = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['robotTemplateList'] as $item) {
                     $model->robotTemplateList[$n++] = null !== $item ? robotTemplateList::fromMap($item) : $item;
                 }
@@ -85,7 +83,7 @@ class parentTemplateDetailVO extends Model
         if (isset($map['toolbarPluginList'])) {
             if (!empty($map['toolbarPluginList'])) {
                 $model->toolbarPluginList = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['toolbarPluginList'] as $item) {
                     $model->toolbarPluginList[$n++] = null !== $item ? toolbarPluginList::fromMap($item) : $item;
                 }

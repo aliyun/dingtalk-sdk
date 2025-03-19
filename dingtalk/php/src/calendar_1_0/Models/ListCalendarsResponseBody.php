@@ -17,9 +17,7 @@ class ListCalendarsResponseBody extends Model
         'response' => 'response',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

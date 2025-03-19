@@ -16,9 +16,7 @@ class GetSchemaAndProcessconfigBatchllyShrinkRequest extends Model
         'processCodesShrink' => 'processCodes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

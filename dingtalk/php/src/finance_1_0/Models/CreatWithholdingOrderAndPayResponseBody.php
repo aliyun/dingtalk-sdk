@@ -112,23 +112,21 @@ class CreatWithholdingOrderAndPayResponseBody extends Model
      */
     public $title;
     protected $_name = [
-        'amount'              => 'amount',
-        'gmtPay'              => 'gmtPay',
-        'instId'              => 'instId',
-        'orderNo'             => 'orderNo',
-        'outTradeNo'          => 'outTradeNo',
-        'payChannel'          => 'payChannel',
+        'amount' => 'amount',
+        'gmtPay' => 'gmtPay',
+        'instId' => 'instId',
+        'orderNo' => 'orderNo',
+        'outTradeNo' => 'outTradeNo',
+        'payChannel' => 'payChannel',
         'payChannelAccountNo' => 'payChannelAccountNo',
-        'payerStaffId'        => 'payerStaffId',
-        'remark'              => 'remark',
-        'status'              => 'status',
-        'subInstId'           => 'subInstId',
-        'title'               => 'title',
+        'payerStaffId' => 'payerStaffId',
+        'remark' => 'remark',
+        'status' => 'status',
+        'subInstId' => 'subInstId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

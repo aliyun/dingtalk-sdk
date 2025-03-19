@@ -36,15 +36,13 @@ class QueryGoodsListRequest extends Model
      */
     public $startTimeInMills;
     protected $_name = [
-        'endTimeInMills'   => 'endTimeInMills',
-        'maxResults'       => 'maxResults',
-        'nextToken'        => 'nextToken',
+        'endTimeInMills' => 'endTimeInMills',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'startTimeInMills' => 'startTimeInMills',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

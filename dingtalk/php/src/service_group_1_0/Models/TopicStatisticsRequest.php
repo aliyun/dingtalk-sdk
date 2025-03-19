@@ -49,16 +49,14 @@ class TopicStatisticsRequest extends Model
      */
     public $searchContent;
     protected $_name = [
-        'maxDt'               => 'maxDt',
-        'minDt'               => 'minDt',
+        'maxDt' => 'maxDt',
+        'minDt' => 'minDt',
         'openConversationIds' => 'openConversationIds',
-        'openTeamId'          => 'openTeamId',
-        'searchContent'       => 'searchContent',
+        'openTeamId' => 'openTeamId',
+        'searchContent' => 'searchContent',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

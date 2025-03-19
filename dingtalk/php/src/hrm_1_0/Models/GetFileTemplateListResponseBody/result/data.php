@@ -87,23 +87,21 @@ class data extends Model
      */
     public $tenantId;
     protected $_name = [
-        'attachmentList'     => 'attachmentList',
-        'corpId'             => 'corpId',
-        'fieldList'          => 'fieldList',
-        'groupList'          => 'groupList',
-        'templateId'         => 'templateId',
-        'templateInstName'   => 'templateInstName',
-        'templateName'       => 'templateName',
+        'attachmentList' => 'attachmentList',
+        'corpId' => 'corpId',
+        'fieldList' => 'fieldList',
+        'groupList' => 'groupList',
+        'templateId' => 'templateId',
+        'templateInstName' => 'templateInstName',
+        'templateName' => 'templateName',
         'templateSignStatus' => 'templateSignStatus',
-        'templateStatus'     => 'templateStatus',
-        'templateType'       => 'templateType',
-        'templateTypeName'   => 'templateTypeName',
-        'tenantId'           => 'tenantId',
+        'templateStatus' => 'templateStatus',
+        'templateType' => 'templateType',
+        'templateTypeName' => 'templateTypeName',
+        'tenantId' => 'tenantId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -177,7 +175,7 @@ class data extends Model
         if (isset($map['attachmentList'])) {
             if (!empty($map['attachmentList'])) {
                 $model->attachmentList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['attachmentList'] as $item) {
                     $model->attachmentList[$n++] = null !== $item ? attachmentList::fromMap($item) : $item;
                 }
@@ -189,7 +187,7 @@ class data extends Model
         if (isset($map['fieldList'])) {
             if (!empty($map['fieldList'])) {
                 $model->fieldList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['fieldList'] as $item) {
                     $model->fieldList[$n++] = null !== $item ? fieldList::fromMap($item) : $item;
                 }
@@ -198,7 +196,7 @@ class data extends Model
         if (isset($map['groupList'])) {
             if (!empty($map['groupList'])) {
                 $model->groupList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['groupList'] as $item) {
                     $model->groupList[$n++] = null !== $item ? groupList::fromMap($item) : $item;
                 }

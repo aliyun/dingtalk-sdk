@@ -43,16 +43,14 @@ class arrival extends Model
      */
     public $nationalCityCode;
     protected $_name = [
-        'code'             => 'code',
-        'countryCode'      => 'countryCode',
-        'countryName'      => 'countryName',
-        'name'             => 'name',
+        'code' => 'code',
+        'countryCode' => 'countryCode',
+        'countryName' => 'countryName',
+        'name' => 'name',
         'nationalCityCode' => 'nationalCityCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

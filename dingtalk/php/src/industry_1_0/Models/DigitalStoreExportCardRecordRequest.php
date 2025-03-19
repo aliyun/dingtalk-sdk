@@ -34,15 +34,13 @@ class DigitalStoreExportCardRecordRequest extends Model
      */
     public $sceneCardName;
     protected $_name = [
-        'beginTime'     => 'beginTime',
-        'endTime'       => 'endTime',
-        'ids'           => 'ids',
+        'beginTime' => 'beginTime',
+        'endTime' => 'endTime',
+        'ids' => 'ids',
         'sceneCardName' => 'sceneCardName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

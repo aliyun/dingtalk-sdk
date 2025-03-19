@@ -19,12 +19,10 @@ class DeleteBookingBlacklistRequest extends Model
     public $unionId;
     protected $_name = [
         'blacklistUnionIds' => 'blacklistUnionIds',
-        'unionId'           => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

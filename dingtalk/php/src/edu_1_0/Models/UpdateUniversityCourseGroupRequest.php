@@ -59,17 +59,15 @@ class UpdateUniversityCourseGroupRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'courseGroupCode'        => 'courseGroupCode',
-        'courseGroupIntroduce'   => 'courseGroupIntroduce',
-        'courseGroupName'        => 'courseGroupName',
+        'courseGroupCode' => 'courseGroupCode',
+        'courseGroupIntroduce' => 'courseGroupIntroduce',
+        'courseGroupName' => 'courseGroupName',
         'courserGroupItemModels' => 'courserGroupItemModels',
-        'ext'                    => 'ext',
-        'opUserId'               => 'opUserId',
+        'ext' => 'ext',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -122,7 +120,7 @@ class UpdateUniversityCourseGroupRequest extends Model
         if (isset($map['courserGroupItemModels'])) {
             if (!empty($map['courserGroupItemModels'])) {
                 $model->courserGroupItemModels = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['courserGroupItemModels'] as $item) {
                     $model->courserGroupItemModels[$n++] = null !== $item ? courserGroupItemModels::fromMap($item) : $item;
                 }

@@ -35,16 +35,14 @@ class filter extends Model
      */
     public $q;
     protected $_name = [
-        'conditions'          => 'conditions',
+        'conditions' => 'conditions',
         'invisibleConditions' => 'invisibleConditions',
-        'logic'               => 'logic',
-        'logicDisabled'       => 'logicDisabled',
-        'q'                   => 'q',
+        'logic' => 'logic',
+        'logicDisabled' => 'logicDisabled',
+        'q' => 'q',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -91,7 +89,7 @@ class filter extends Model
         if (isset($map['conditions'])) {
             if (!empty($map['conditions'])) {
                 $model->conditions = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['conditions'] as $item) {
                     $model->conditions[$n++] = null !== $item ? conditions::fromMap($item) : $item;
                 }
@@ -100,7 +98,7 @@ class filter extends Model
         if (isset($map['invisibleConditions'])) {
             if (!empty($map['invisibleConditions'])) {
                 $model->invisibleConditions = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['invisibleConditions'] as $item) {
                     $model->invisibleConditions[$n++] = null !== $item ? invisibleConditions::fromMap($item) : $item;
                 }

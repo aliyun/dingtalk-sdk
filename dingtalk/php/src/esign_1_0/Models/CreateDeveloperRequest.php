@@ -16,9 +16,7 @@ class CreateDeveloperRequest extends Model
         'redirectUrl' => 'redirectUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

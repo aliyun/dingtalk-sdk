@@ -70,8 +70,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -103,18 +103,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AuthUrl',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/auths/url',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AuthUrl',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/auths/url',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AuthUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -156,15 +156,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'CancelCorpAuth',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/corps/auth/cancel',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CancelCorpAuth',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/corps/auth/cancel',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CancelCorpAuthResponse::fromMap($this->execute($params, $req, $runtime));
@@ -223,18 +223,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChannelOrder',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/orders/channel',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChannelOrder',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/orders/channel',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChannelOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -276,15 +276,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ContractMargin',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/contracts/margin',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ContractMargin',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/contracts/margin',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ContractMarginResponse::fromMap($this->execute($params, $req, $runtime));
@@ -324,15 +324,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'CorpConsole',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/corps/console',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CorpConsole',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/corps/console',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CorpConsoleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -372,15 +372,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'CorpInfo',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/corps/info',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CorpInfo',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/corps/info',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CorpInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -424,18 +424,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateDeveloper',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/developers/create',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateDeveloper',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/developers/create',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateDeveloperResponse::fromMap($this->execute($params, $req, $runtime));
@@ -481,18 +481,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetCorpRealnameUrl',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/corps/realname',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCorpRealnameUrl',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/corps/realname',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCorpRealnameUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -534,15 +534,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetCropStatus',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/corps/statuses',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCropStatus',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/corps/statuses',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCropStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -583,15 +583,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetFile',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/files/' . $fileId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFile',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/files/' . $fileId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -637,18 +637,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFlowDetail',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/flows/detail',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFlowDetail',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/flows/detail',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFlowDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -694,18 +694,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFlowSignDetail',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/flows/sign/detail',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFlowSignDetail',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/flows/sign/detail',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFlowSignDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -769,18 +769,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetProcessStartUrl',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/process/start',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProcessStartUrl',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/process/start',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProcessStartUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -826,18 +826,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetSignNoticeUrl',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/signs/notice/url',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSignNoticeUrl',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/signs/notice/url',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSignNoticeUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -895,18 +895,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetUploadUrl',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/files/getUploadUrl',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUploadUrl',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/files/getUploadUrl',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUploadUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -949,15 +949,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetUserInfo',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/users/' . $userId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserInfo',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/users/' . $userId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1006,18 +1006,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetUserRealnameUrl',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/users/realname',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserRealnameUrl',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/users/realname',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserRealnameUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1063,18 +1063,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListFlowDocs',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/flows/docs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListFlowDocs',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/flows/docs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListFlowDocsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1120,18 +1120,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListSealApproval',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/seals/approval/list',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListSealApproval',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/seals/approval/list',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListSealApprovalResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1189,18 +1189,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'OrderResale',
-            'version'     => 'esign_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/esign/orders/resale',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'OrderResale',
+            'version' => 'esign_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/esign/orders/resale',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return OrderResaleResponse::fromMap($this->execute($params, $req, $runtime));

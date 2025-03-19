@@ -78,21 +78,19 @@ class list_ extends Model
      */
     public $providerCorpId;
     protected $_name = [
-        'authorityUrl'    => 'authorityUrl',
-        'authorized'      => 'authorized',
+        'authorityUrl' => 'authorityUrl',
+        'authorized' => 'authorized',
         'connectAssetUri' => 'connectAssetUri',
-        'connectorId'     => 'connectorId',
-        'description'     => 'description',
-        'icon'            => 'icon',
-        'id'              => 'id',
+        'connectorId' => 'connectorId',
+        'description' => 'description',
+        'icon' => 'icon',
+        'id' => 'id',
         'integrationType' => 'integrationType',
-        'name'            => 'name',
-        'providerCorpId'  => 'providerCorpId',
+        'name' => 'name',
+        'providerCorpId' => 'providerCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

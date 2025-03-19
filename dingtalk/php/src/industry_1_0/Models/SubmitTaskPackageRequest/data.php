@@ -33,16 +33,14 @@ class data extends Model
      */
     public $textContent;
     protected $_name = [
-        'extension'   => 'extension',
-        'fileUrl'     => 'fileUrl',
-        'fileUrls'    => 'fileUrls',
-        'taskName'    => 'taskName',
+        'extension' => 'extension',
+        'fileUrl' => 'fileUrl',
+        'fileUrls' => 'fileUrls',
+        'taskName' => 'taskName',
         'textContent' => 'textContent',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

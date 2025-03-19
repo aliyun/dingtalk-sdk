@@ -20,9 +20,7 @@ class GetOrgInfoRequest extends Model
         'deptCode' => 'deptCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

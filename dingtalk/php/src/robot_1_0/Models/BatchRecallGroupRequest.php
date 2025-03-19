@@ -33,14 +33,12 @@ class BatchRecallGroupRequest extends Model
      */
     public $processQueryKeys;
     protected $_name = [
-        'chatbotId'          => 'chatbotId',
+        'chatbotId' => 'chatbotId',
         'openConversationId' => 'openConversationId',
-        'processQueryKeys'   => 'processQueryKeys',
+        'processQueryKeys' => 'processQueryKeys',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

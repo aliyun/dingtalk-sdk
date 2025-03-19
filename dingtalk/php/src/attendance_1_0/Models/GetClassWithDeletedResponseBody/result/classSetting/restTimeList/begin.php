@@ -22,13 +22,11 @@ class begin extends Model
      */
     public $checkTime;
     protected $_name = [
-        'across'    => 'across',
+        'across' => 'across',
         'checkTime' => 'checkTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

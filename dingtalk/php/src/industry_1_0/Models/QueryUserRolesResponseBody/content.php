@@ -30,9 +30,7 @@ class content extends Model
         'roleName' => 'roleName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

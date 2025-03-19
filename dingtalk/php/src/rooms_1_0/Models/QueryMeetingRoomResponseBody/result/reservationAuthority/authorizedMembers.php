@@ -29,14 +29,12 @@ class authorizedMembers extends Model
      */
     public $memberType;
     protected $_name = [
-        'memberId'   => 'memberId',
+        'memberId' => 'memberId',
         'memberName' => 'memberName',
         'memberType' => 'memberType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -137,34 +137,32 @@ class data extends Model
      */
     public $fhYunfei;
     protected $_name = [
-        'childMx'      => 'child_mx',
-        'dataUserid'   => 'data_userid',
-        'fhAddress'    => 'fh_address',
+        'childMx' => 'child_mx',
+        'dataUserid' => 'data_userid',
+        'fhAddress' => 'fh_address',
         'fhCustomerid' => 'fh_customerid',
-        'fhDate'       => 'fh_date',
-        'fhEmail'      => 'fh_email',
-        'fhHandset'    => 'fh_handset',
-        'fhHtorder'    => 'fh_htorder',
-        'fhJianshu'    => 'fh_jianshu',
-        'fhKg'         => 'fh_kg',
-        'fhLinkman'    => 'fh_linkman',
-        'fhLxrid'      => 'fh_lxrid',
-        'fhMode'       => 'fh_mode',
-        'fhMsn'        => 'fh_msn',
-        'fhNumber'     => 'fh_number',
-        'fhPost'       => 'fh_post',
-        'fhPreside'    => 'fh_preside',
-        'fhRemark'     => 'fh_remark',
-        'fhShipper'    => 'fh_shipper',
-        'fhState'      => 'fh_state',
-        'fhTel'        => 'fh_tel',
-        'fhTitle'      => 'fh_title',
-        'fhYunfei'     => 'fh_yunfei',
+        'fhDate' => 'fh_date',
+        'fhEmail' => 'fh_email',
+        'fhHandset' => 'fh_handset',
+        'fhHtorder' => 'fh_htorder',
+        'fhJianshu' => 'fh_jianshu',
+        'fhKg' => 'fh_kg',
+        'fhLinkman' => 'fh_linkman',
+        'fhLxrid' => 'fh_lxrid',
+        'fhMode' => 'fh_mode',
+        'fhMsn' => 'fh_msn',
+        'fhNumber' => 'fh_number',
+        'fhPost' => 'fh_post',
+        'fhPreside' => 'fh_preside',
+        'fhRemark' => 'fh_remark',
+        'fhShipper' => 'fh_shipper',
+        'fhState' => 'fh_state',
+        'fhTel' => 'fh_tel',
+        'fhTitle' => 'fh_title',
+        'fhYunfei' => 'fh_yunfei',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

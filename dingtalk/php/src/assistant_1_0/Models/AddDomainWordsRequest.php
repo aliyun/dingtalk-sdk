@@ -27,9 +27,7 @@ class AddDomainWordsRequest extends Model
         'domainWords' => 'domainWords',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class AddDomainWordsRequest extends Model
         if (isset($map['domainWords'])) {
             if (!empty($map['domainWords'])) {
                 $model->domainWords = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['domainWords'] as $item) {
                     $model->domainWords[$n++] = null !== $item ? domainWords::fromMap($item) : $item;
                 }

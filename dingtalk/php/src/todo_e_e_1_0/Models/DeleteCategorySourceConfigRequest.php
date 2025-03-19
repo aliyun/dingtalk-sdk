@@ -20,9 +20,7 @@ class DeleteCategorySourceConfigRequest extends Model
         'bizCategoryId' => 'bizCategoryId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,10 +29,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -66,18 +66,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCallBackFaileResult',
-            'version'     => 'event_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/event/callbacks/failedResults',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCallBackFaileResult',
+            'version' => 'event_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/event/callbacks/failedResults',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCallBackFaileResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -132,18 +132,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'InstallApp',
-            'version'     => 'event_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/event/elm/apps/install',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InstallApp',
+            'version' => 'event_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/event/elm/apps/install',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InstallAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -218,18 +218,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'InstallCoolApp',
-            'version'     => 'event_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/event/elm/coolApps/install',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InstallCoolApp',
+            'version' => 'event_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/event/elm/coolApps/install',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InstallCoolAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -271,18 +271,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RePushSuiteTicket',
-            'version'     => 'event_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/event/suiteTicket/rePush',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'RePushSuiteTicket',
+            'version' => 'event_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/event/suiteTicket/rePush',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RePushSuiteTicketResponse::fromMap($this->execute($params, $req, $runtime));

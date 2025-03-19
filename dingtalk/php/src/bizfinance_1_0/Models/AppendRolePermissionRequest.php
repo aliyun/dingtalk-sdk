@@ -22,12 +22,10 @@ class AppendRolePermissionRequest extends Model
     public $userId;
     protected $_name = [
         'rolePermissionItemList' => 'rolePermissionItemList',
-        'userId'                 => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class AppendRolePermissionRequest extends Model
         if (isset($map['rolePermissionItemList'])) {
             if (!empty($map['rolePermissionItemList'])) {
                 $model->rolePermissionItemList = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['rolePermissionItemList'] as $item) {
                     $model->rolePermissionItemList[$n++] = null !== $item ? rolePermissionItemList::fromMap($item) : $item;
                 }

@@ -19,9 +19,7 @@ class BatchCreateTemplateResponseBody extends Model
         'createResultList' => 'createResultList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class BatchCreateTemplateResponseBody extends Model
         if (isset($map['createResultList'])) {
             if (!empty($map['createResultList'])) {
                 $model->createResultList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['createResultList'] as $item) {
                     $model->createResultList[$n++] = null !== $item ? createResultList::fromMap($item) : $item;
                 }

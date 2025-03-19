@@ -16,9 +16,7 @@ class tags extends Model
         'tag' => 'tag',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

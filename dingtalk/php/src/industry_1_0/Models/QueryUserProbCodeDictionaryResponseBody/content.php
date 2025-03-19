@@ -35,14 +35,12 @@ class content extends Model
      */
     public $displayName;
     protected $_name = [
-        'category'    => 'category',
-        'code'        => 'code',
+        'category' => 'category',
+        'code' => 'code',
         'displayName' => 'displayName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

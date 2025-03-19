@@ -30,9 +30,7 @@ class OpenUserAdminDTO extends Model
         'dingUserId' => 'dingUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

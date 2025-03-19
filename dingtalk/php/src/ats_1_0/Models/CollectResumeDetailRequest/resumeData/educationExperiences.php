@@ -57,18 +57,16 @@ class educationExperiences extends Model
      */
     public $startDate;
     protected $_name = [
-        'degree'      => 'degree',
-        'department'  => 'department',
+        'degree' => 'degree',
+        'department' => 'department',
         'description' => 'description',
-        'endDate'     => 'endDate',
-        'major'       => 'major',
-        'schoolName'  => 'schoolName',
-        'startDate'   => 'startDate',
+        'endDate' => 'endDate',
+        'major' => 'major',
+        'schoolName' => 'schoolName',
+        'startDate' => 'startDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -42,15 +42,13 @@ class UpdateMemberBanWordsRequest extends Model
      */
     public $userIdList;
     protected $_name = [
-        'muteDuration'       => 'muteDuration',
-        'muteStatus'         => 'muteStatus',
+        'muteDuration' => 'muteDuration',
+        'muteStatus' => 'muteStatus',
         'openConversationId' => 'openConversationId',
-        'userIdList'         => 'userIdList',
+        'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

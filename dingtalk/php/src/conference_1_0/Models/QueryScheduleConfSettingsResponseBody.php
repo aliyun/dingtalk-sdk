@@ -17,9 +17,7 @@ class QueryScheduleConfSettingsResponseBody extends Model
         'scheduleConfSettingModel' => 'scheduleConfSettingModel',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

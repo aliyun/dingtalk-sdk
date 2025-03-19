@@ -29,14 +29,12 @@ class TerminateCloudAuthorizationRequest extends Model
      */
     public $instanceId;
     protected $_name = [
-        'accessKey'     => 'accessKey',
+        'accessKey' => 'accessKey',
         'callerUnionId' => 'callerUnionId',
-        'instanceId'    => 'instanceId',
+        'instanceId' => 'instanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

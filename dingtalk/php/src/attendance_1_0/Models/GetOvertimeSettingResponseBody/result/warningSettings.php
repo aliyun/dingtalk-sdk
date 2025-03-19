@@ -23,14 +23,12 @@ class warningSettings extends Model
      */
     public $time;
     protected $_name = [
-        'action'    => 'action',
+        'action' => 'action',
         'threshold' => 'threshold',
-        'time'      => 'time',
+        'time' => 'time',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

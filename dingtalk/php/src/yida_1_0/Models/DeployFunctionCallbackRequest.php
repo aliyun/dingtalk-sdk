@@ -50,17 +50,15 @@ class DeployFunctionCallbackRequest extends Model
      */
     public $gateWayDomain;
     protected $_name = [
-        'appId'            => 'appId',
-        'customDomain'     => 'customDomain',
-        'deployStage'      => 'deployStage',
-        'gateWayAppKey'    => 'gateWayAppKey',
+        'appId' => 'appId',
+        'customDomain' => 'customDomain',
+        'deployStage' => 'deployStage',
+        'gateWayAppKey' => 'gateWayAppKey',
         'gateWayAppSecret' => 'gateWayAppSecret',
-        'gateWayDomain'    => 'gateWayDomain',
+        'gateWayDomain' => 'gateWayDomain',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

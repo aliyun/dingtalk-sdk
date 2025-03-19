@@ -33,15 +33,13 @@ class ListRecordsRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'filter'     => 'filter',
+        'filter' => 'filter',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

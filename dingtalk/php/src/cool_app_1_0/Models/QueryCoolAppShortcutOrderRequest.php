@@ -30,13 +30,11 @@ class QueryCoolAppShortcutOrderRequest extends Model
     public $templateId;
     protected $_name = [
         'conversationId' => 'conversationId',
-        'operatorId'     => 'operatorId',
-        'templateId'     => 'templateId',
+        'operatorId' => 'operatorId',
+        'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

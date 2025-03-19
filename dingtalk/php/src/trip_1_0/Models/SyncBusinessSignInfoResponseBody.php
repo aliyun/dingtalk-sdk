@@ -19,12 +19,10 @@ class SyncBusinessSignInfoResponseBody extends Model
     public $success;
     protected $_name = [
         'requestId' => 'requestId',
-        'success'   => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

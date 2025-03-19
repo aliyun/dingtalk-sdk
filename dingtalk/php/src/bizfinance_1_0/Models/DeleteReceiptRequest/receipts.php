@@ -35,14 +35,12 @@ class receipts extends Model
      */
     public $receiptType;
     protected $_name = [
-        'code'         => 'code',
+        'code' => 'code',
         'deleteUserId' => 'deleteUserId',
-        'receiptType'  => 'receiptType',
+        'receiptType' => 'receiptType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

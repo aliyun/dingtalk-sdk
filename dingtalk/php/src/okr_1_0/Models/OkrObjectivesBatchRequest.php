@@ -20,13 +20,11 @@ class OkrObjectivesBatchRequest extends Model
      */
     public $objectiveIds;
     protected $_name = [
-        'goodsCode'    => 'goodsCode',
+        'goodsCode' => 'goodsCode',
         'objectiveIds' => 'objectiveIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

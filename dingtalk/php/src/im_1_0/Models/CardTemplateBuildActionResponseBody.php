@@ -18,9 +18,7 @@ class CardTemplateBuildActionResponseBody extends Model
         'cardTemplateJson' => 'cardTemplateJson',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

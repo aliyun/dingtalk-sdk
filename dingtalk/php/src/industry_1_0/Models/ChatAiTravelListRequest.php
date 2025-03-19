@@ -22,12 +22,10 @@ class ChatAiTravelListRequest extends Model
     public $travelId;
     protected $_name = [
         'paramList' => 'paramList',
-        'travelId'  => 'travelId',
+        'travelId' => 'travelId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class ChatAiTravelListRequest extends Model
         if (isset($map['paramList'])) {
             if (!empty($map['paramList'])) {
                 $model->paramList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['paramList'] as $item) {
                     $model->paramList[$n++] = null !== $item ? paramList::fromMap($item) : $item;
                 }

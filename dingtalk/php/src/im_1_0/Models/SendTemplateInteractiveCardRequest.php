@@ -71,19 +71,17 @@ class SendTemplateInteractiveCardRequest extends Model
      */
     public $singleChatReceiver;
     protected $_name = [
-        'callbackUrl'        => 'callbackUrl',
-        'cardData'           => 'cardData',
-        'cardTemplateId'     => 'cardTemplateId',
+        'callbackUrl' => 'callbackUrl',
+        'cardData' => 'cardData',
+        'cardTemplateId' => 'cardTemplateId',
         'openConversationId' => 'openConversationId',
-        'outTrackId'         => 'outTrackId',
-        'robotCode'          => 'robotCode',
-        'sendOptions'        => 'sendOptions',
+        'outTrackId' => 'outTrackId',
+        'robotCode' => 'robotCode',
+        'sendOptions' => 'sendOptions',
         'singleChatReceiver' => 'singleChatReceiver',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

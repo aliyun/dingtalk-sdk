@@ -83,26 +83,24 @@ class result extends Model
      */
     public $orgIndustryUpNameNew;
     protected $_name = [
-        'ccocScore'               => 'ccocScore',
-        'cityChangeCnt3y'         => 'cityChangeCnt3y',
-        'cityChangeTrend2y'       => 'cityChangeTrend2y',
-        'classificationOfOrg'     => 'classificationOfOrg',
+        'ccocScore' => 'ccocScore',
+        'cityChangeCnt3y' => 'cityChangeCnt3y',
+        'cityChangeTrend2y' => 'cityChangeTrend2y',
+        'classificationOfOrg' => 'classificationOfOrg',
         'growthRateLoginDays180d' => 'growthRateLoginDays180d',
-        'indChangeCnt3y'          => 'indChangeCnt3y',
-        'indChangeTrend2y'        => 'indChangeTrend2y',
-        'jobChangeCnt3y'          => 'jobChangeCnt3y',
-        'jobTitle'                => 'jobTitle',
-        'joinDays'                => 'joinDays',
-        'loginDays14dPct'         => 'loginDays14dPct',
-        'loginDays365dPct'        => 'loginDays365dPct',
-        'orgCnt'                  => 'orgCnt',
-        'orgIndustrySubNameNew'   => 'orgIndustrySubNameNew',
-        'orgIndustryUpNameNew'    => 'orgIndustryUpNameNew',
+        'indChangeCnt3y' => 'indChangeCnt3y',
+        'indChangeTrend2y' => 'indChangeTrend2y',
+        'jobChangeCnt3y' => 'jobChangeCnt3y',
+        'jobTitle' => 'jobTitle',
+        'joinDays' => 'joinDays',
+        'loginDays14dPct' => 'loginDays14dPct',
+        'loginDays365dPct' => 'loginDays365dPct',
+        'orgCnt' => 'orgCnt',
+        'orgIndustrySubNameNew' => 'orgIndustrySubNameNew',
+        'orgIndustryUpNameNew' => 'orgIndustryUpNameNew',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

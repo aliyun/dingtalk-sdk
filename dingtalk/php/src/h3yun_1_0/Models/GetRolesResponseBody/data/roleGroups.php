@@ -57,18 +57,16 @@ class roleGroups extends Model
      */
     public $visibility;
     protected $_name = [
-        'companyId'   => 'companyId',
+        'companyId' => 'companyId',
         'description' => 'description',
-        'groupCode'   => 'groupCode',
-        'groupId'     => 'groupId',
-        'groupName'   => 'groupName',
-        'state'       => 'state',
-        'visibility'  => 'visibility',
+        'groupCode' => 'groupCode',
+        'groupId' => 'groupId',
+        'groupName' => 'groupName',
+        'state' => 'state',
+        'visibility' => 'visibility',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

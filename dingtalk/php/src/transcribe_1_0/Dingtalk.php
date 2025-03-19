@@ -25,8 +25,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -55,15 +55,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetTranscribeBrief',
-            'version'     => 'transcribe_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/transcribe/tasks/' . $taskUuid . '/briefInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTranscribeBrief',
+            'version' => 'transcribe_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/transcribe/tasks/' . $taskUuid . '/briefInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTranscribeBriefResponse::fromMap($this->execute($params, $req, $runtime));
@@ -119,18 +119,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RemovePermission',
-            'version'     => 'transcribe_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/transcribe/tasks/' . $taskUuid . '/permissions/remove',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemovePermission',
+            'version' => 'transcribe_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/transcribe/tasks/' . $taskUuid . '/permissions/remove',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemovePermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -188,19 +188,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdatePermissionForUsers',
-            'version'     => 'transcribe_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/transcribe/tasks/' . $taskUuid . '/permissions',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdatePermissionForUsers',
+            'version' => 'transcribe_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/transcribe/tasks/' . $taskUuid . '/permissions',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdatePermissionForUsersResponse::fromMap($this->execute($params, $req, $runtime));

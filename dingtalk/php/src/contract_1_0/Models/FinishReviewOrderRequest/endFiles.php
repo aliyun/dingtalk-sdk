@@ -43,16 +43,14 @@ class endFiles extends Model
      */
     public $url;
     protected $_name = [
-        'fileName'    => 'fileName',
-        'fileSize'    => 'fileSize',
-        'fileType'    => 'fileType',
+        'fileName' => 'fileName',
+        'fileSize' => 'fileSize',
+        'fileType' => 'fileType',
         'fileVersion' => 'fileVersion',
-        'url'         => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

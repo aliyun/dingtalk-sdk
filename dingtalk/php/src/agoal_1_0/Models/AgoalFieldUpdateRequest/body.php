@@ -42,15 +42,13 @@ class body extends Model
      */
     public $value;
     protected $_name = [
-        'entityId'   => 'entityId',
+        'entityId' => 'entityId',
         'entityType' => 'entityType',
-        'fieldCode'  => 'fieldCode',
-        'value'      => 'value',
+        'fieldCode' => 'fieldCode',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -38,17 +38,15 @@ class param extends Model
      */
     public $userId;
     protected $_name = [
-        'deptId'       => 'deptId',
-        'deptLeader'   => 'deptLeader',
-        'isDelete'     => 'isDelete',
+        'deptId' => 'deptId',
+        'deptLeader' => 'deptLeader',
+        'isDelete' => 'isDelete',
         'leaderDeptId' => 'leaderDeptId',
-        'orderNumber'  => 'orderNumber',
-        'userId'       => 'userId',
+        'orderNumber' => 'orderNumber',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

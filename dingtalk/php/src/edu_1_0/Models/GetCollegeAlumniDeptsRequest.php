@@ -24,13 +24,11 @@ class GetCollegeAlumniDeptsRequest extends Model
      */
     public $operator;
     protected $_name = [
-        'deptId'   => 'deptId',
+        'deptId' => 'deptId',
         'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -37,14 +37,12 @@ class EditDeviceAdminRequest extends Model
     public $uuid;
     protected $_name = [
         'deviceCode' => 'deviceCode',
-        'roleUuid'   => 'roleUuid',
-        'userIds'    => 'userIds',
-        'uuid'       => 'uuid',
+        'roleUuid' => 'roleUuid',
+        'userIds' => 'userIds',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

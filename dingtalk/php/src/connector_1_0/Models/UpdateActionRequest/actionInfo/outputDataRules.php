@@ -29,14 +29,12 @@ class outputDataRules extends Model
      */
     public $propertyPath;
     protected $_name = [
-        'expectValue'  => 'expectValue',
-        'operate'      => 'operate',
+        'expectValue' => 'expectValue',
+        'operate' => 'operate',
         'propertyPath' => 'propertyPath',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

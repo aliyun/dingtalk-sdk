@@ -44,14 +44,12 @@ class ReportCustomerStatisticsResponseBody extends Model
     public $totalCount;
     protected $_name = [
         'currentPage' => 'currentPage',
-        'pageSize'    => 'pageSize',
-        'records'     => 'records',
-        'totalCount'  => 'totalCount',
+        'pageSize' => 'pageSize',
+        'records' => 'records',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -95,7 +93,7 @@ class ReportCustomerStatisticsResponseBody extends Model
         if (isset($map['records'])) {
             if (!empty($map['records'])) {
                 $model->records = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['records'] as $item) {
                     $model->records[$n++] = null !== $item ? records::fromMap($item) : $item;
                 }

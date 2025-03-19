@@ -16,9 +16,7 @@ class signDate extends Model
         'format' => 'format',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

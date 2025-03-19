@@ -70,18 +70,16 @@ class payChannelDetailList extends Model
      */
     public $promotionAmount;
     protected $_name = [
-        'amount'                  => 'amount',
-        'fundToolDetailList'      => 'fundToolDetailList',
-        'payChannelName'          => 'payChannelName',
-        'payChannelOrderNo'       => 'payChannelOrderNo',
+        'amount' => 'amount',
+        'fundToolDetailList' => 'fundToolDetailList',
+        'payChannelName' => 'payChannelName',
+        'payChannelOrderNo' => 'payChannelOrderNo',
         'payChannelRefundOrderNo' => 'payChannelRefundOrderNo',
-        'payChannelType'          => 'payChannelType',
-        'promotionAmount'         => 'promotionAmount',
+        'payChannelType' => 'payChannelType',
+        'promotionAmount' => 'promotionAmount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -131,7 +129,7 @@ class payChannelDetailList extends Model
         if (isset($map['fundToolDetailList'])) {
             if (!empty($map['fundToolDetailList'])) {
                 $model->fundToolDetailList = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['fundToolDetailList'] as $item) {
                     $model->fundToolDetailList[$n++] = null !== $item ? fundToolDetailList::fromMap($item) : $item;
                 }

@@ -23,12 +23,10 @@ class btns extends Model
     public $title;
     protected $_name = [
         'actionURL' => 'actionURL',
-        'title'     => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

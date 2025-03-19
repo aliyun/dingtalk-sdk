@@ -43,18 +43,16 @@ class UpdateTodoTaskRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'description'    => 'description',
-        'done'           => 'done',
-        'dueTime'        => 'dueTime',
-        'executorIds'    => 'executorIds',
+        'description' => 'description',
+        'done' => 'done',
+        'dueTime' => 'dueTime',
+        'executorIds' => 'executorIds',
         'participantIds' => 'participantIds',
-        'subject'        => 'subject',
-        'operatorId'     => 'operatorId',
+        'subject' => 'subject',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

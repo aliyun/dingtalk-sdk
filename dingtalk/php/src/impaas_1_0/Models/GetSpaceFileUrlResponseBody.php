@@ -29,14 +29,12 @@ class GetSpaceFileUrlResponseBody extends Model
      */
     public $resourceUrl;
     protected $_name = [
-        'headers'             => 'headers',
+        'headers' => 'headers',
         'internalResourceUrl' => 'internalResourceUrl',
-        'resourceUrl'         => 'resourceUrl',
+        'resourceUrl' => 'resourceUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

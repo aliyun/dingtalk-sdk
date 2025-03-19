@@ -48,18 +48,16 @@ class todoCardView extends Model
      */
     public $todoCardTitle;
     protected $_name = [
-        'actionType'          => 'actionType',
-        'cardType'            => 'cardType',
-        'circleELType'        => 'circleELType',
-        'contentType'         => 'contentType',
-        'icon'                => 'icon',
+        'actionType' => 'actionType',
+        'cardType' => 'cardType',
+        'circleELType' => 'circleELType',
+        'contentType' => 'contentType',
+        'icon' => 'icon',
         'todoCardContentList' => 'todoCardContentList',
-        'todoCardTitle'       => 'todoCardTitle',
+        'todoCardTitle' => 'todoCardTitle',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -121,7 +119,7 @@ class todoCardView extends Model
         if (isset($map['todoCardContentList'])) {
             if (!empty($map['todoCardContentList'])) {
                 $model->todoCardContentList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['todoCardContentList'] as $item) {
                     $model->todoCardContentList[$n++] = null !== $item ? todoCardContentList::fromMap($item) : $item;
                 }

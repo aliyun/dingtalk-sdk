@@ -29,14 +29,12 @@ class UpdateIsvCardMessageResponseBody extends Model
     public $success;
     protected $_name = [
         'errorCode' => 'errorCode',
-        'errorMsg'  => 'errorMsg',
+        'errorMsg' => 'errorMsg',
         'requestId' => 'requestId',
-        'success'   => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

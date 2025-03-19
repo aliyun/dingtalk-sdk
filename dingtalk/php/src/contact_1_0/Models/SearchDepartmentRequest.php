@@ -35,14 +35,12 @@ class SearchDepartmentRequest extends Model
      */
     public $size;
     protected $_name = [
-        'offset'    => 'offset',
+        'offset' => 'offset',
         'queryWord' => 'queryWord',
-        'size'      => 'size',
+        'size' => 'size',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

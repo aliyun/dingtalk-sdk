@@ -33,14 +33,12 @@ class UpdateMeetingRoomGroupRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'groupId'   => 'groupId',
+        'groupId' => 'groupId',
         'groupName' => 'groupName',
-        'unionId'   => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

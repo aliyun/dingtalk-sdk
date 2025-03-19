@@ -35,14 +35,12 @@ class AbandonCustomerRequest extends Model
     public $optType;
     protected $_name = [
         'customTrackDesc' => 'customTrackDesc',
-        'instanceIdList'  => 'instanceIdList',
-        'operatorUserId'  => 'operatorUserId',
-        'optType'         => 'optType',
+        'instanceIdList' => 'instanceIdList',
+        'operatorUserId' => 'operatorUserId',
+        'optType' => 'optType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

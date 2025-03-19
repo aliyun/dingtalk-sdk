@@ -44,15 +44,13 @@ class content extends Model
      */
     public $doctorType;
     protected $_name = [
-        'category'    => 'category',
-        'code'        => 'code',
+        'category' => 'category',
+        'code' => 'code',
         'displayName' => 'displayName',
-        'doctorType'  => 'doctorType',
+        'doctorType' => 'doctorType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

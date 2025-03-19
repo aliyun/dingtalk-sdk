@@ -22,13 +22,11 @@ class ListResidentUserInfosShrinkRequest extends Model
      */
     public $userIdsShrink;
     protected $_name = [
-        'subCorpId'     => 'subCorpId',
+        'subCorpId' => 'subCorpId',
         'userIdsShrink' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

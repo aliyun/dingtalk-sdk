@@ -27,13 +27,11 @@ class BatchOperateRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'requests'   => 'requests',
+        'requests' => 'requests',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -65,7 +63,7 @@ class BatchOperateRequest extends Model
         if (isset($map['requests'])) {
             if (!empty($map['requests'])) {
                 $model->requests = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['requests'] as $item) {
                     $model->requests[$n++] = null !== $item ? requests::fromMap($item) : $item;
                 }

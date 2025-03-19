@@ -71,20 +71,18 @@ class videoList extends Model
      */
     public $unionId;
     protected $_name = [
-        'duration'   => 'duration',
-        'endTime'    => 'endTime',
-        'fileSize'   => 'fileSize',
-        'mediaId'    => 'mediaId',
-        'recordId'   => 'recordId',
+        'duration' => 'duration',
+        'endTime' => 'endTime',
+        'fileSize' => 'fileSize',
+        'mediaId' => 'mediaId',
+        'recordId' => 'recordId',
         'recordType' => 'recordType',
-        'regionId'   => 'regionId',
-        'startTime'  => 'startTime',
-        'unionId'    => 'unionId',
+        'regionId' => 'regionId',
+        'startTime' => 'startTime',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -26,9 +26,7 @@ class name extends Model
         'zhCN' => 'zh_CN',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

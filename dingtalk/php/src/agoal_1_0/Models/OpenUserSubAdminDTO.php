@@ -40,15 +40,13 @@ class OpenUserSubAdminDTO extends Model
      */
     public $permissionGroupCodes;
     protected $_name = [
-        'deptIds'              => 'deptIds',
-        'dingCorpId'           => 'dingCorpId',
-        'dingUserId'           => 'dingUserId',
+        'deptIds' => 'deptIds',
+        'dingCorpId' => 'dingCorpId',
+        'dingUserId' => 'dingUserId',
         'permissionGroupCodes' => 'permissionGroupCodes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -44,17 +44,15 @@ class CreateWorkspaceDocRequest extends Model
      */
     public $templateType;
     protected $_name = [
-        'docType'      => 'docType',
-        'name'         => 'name',
-        'operatorId'   => 'operatorId',
+        'docType' => 'docType',
+        'name' => 'name',
+        'operatorId' => 'operatorId',
         'parentNodeId' => 'parentNodeId',
-        'templateId'   => 'templateId',
+        'templateId' => 'templateId',
         'templateType' => 'templateType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

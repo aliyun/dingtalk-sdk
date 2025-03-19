@@ -19,12 +19,10 @@ class cardData extends Model
     public $cardParamMap;
     protected $_name = [
         'cardMediaIdParamMap' => 'cardMediaIdParamMap',
-        'cardParamMap'        => 'cardParamMap',
+        'cardParamMap' => 'cardParamMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

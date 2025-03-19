@@ -67,18 +67,16 @@ class BatchRemovalByFormInstanceIdListRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'               => 'appType',
+        'appType' => 'appType',
         'asynchronousExecution' => 'asynchronousExecution',
-        'executeExpression'     => 'executeExpression',
-        'formInstanceIdList'    => 'formInstanceIdList',
-        'formUuid'              => 'formUuid',
-        'systemToken'           => 'systemToken',
-        'userId'                => 'userId',
+        'executeExpression' => 'executeExpression',
+        'formInstanceIdList' => 'formInstanceIdList',
+        'formUuid' => 'formUuid',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

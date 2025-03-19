@@ -37,15 +37,13 @@ class SubmitMemoryLearningTaskRequest extends Model
      */
     public $memoryKey;
     protected $_name = [
-        'agentCode'    => 'agentCode',
-        'content'      => 'content',
+        'agentCode' => 'agentCode',
+        'content' => 'content',
         'learningMode' => 'learningMode',
-        'memoryKey'    => 'memoryKey',
+        'memoryKey' => 'memoryKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -52,15 +52,13 @@ class DigitalStoreNodeInfoResponseBody extends Model
     public $type;
     protected $_name = [
         'dingDeptId' => 'dingDeptId',
-        'id'         => 'id',
-        'name'       => 'name',
-        'parentId'   => 'parentId',
-        'type'       => 'type',
+        'id' => 'id',
+        'name' => 'name',
+        'parentId' => 'parentId',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

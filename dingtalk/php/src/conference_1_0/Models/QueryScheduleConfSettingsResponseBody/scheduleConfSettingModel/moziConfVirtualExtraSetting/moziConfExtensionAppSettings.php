@@ -28,15 +28,13 @@ class moziConfExtensionAppSettings extends Model
      */
     public $extensionAppBizData;
     protected $_name = [
-        'autoOpenMode'        => 'autoOpenMode',
-        'clientId'            => 'clientId',
-        'coolAppCode'         => 'coolAppCode',
+        'autoOpenMode' => 'autoOpenMode',
+        'clientId' => 'clientId',
+        'coolAppCode' => 'coolAppCode',
         'extensionAppBizData' => 'extensionAppBizData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

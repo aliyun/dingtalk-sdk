@@ -16,9 +16,7 @@ class service extends Model
         'callbackUrl' => 'callbackUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

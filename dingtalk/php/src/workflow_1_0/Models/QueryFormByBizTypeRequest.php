@@ -24,13 +24,11 @@ class QueryFormByBizTypeRequest extends Model
      */
     public $bizTypes;
     protected $_name = [
-        'appUuid'  => 'appUuid',
+        'appUuid' => 'appUuid',
         'bizTypes' => 'bizTypes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -43,16 +43,14 @@ class reviewCustomRules extends Model
      */
     public $ruleTitle;
     protected $_name = [
-        'riskLevel'    => 'riskLevel',
-        'ruleDesc'     => 'ruleDesc',
+        'riskLevel' => 'riskLevel',
+        'ruleDesc' => 'ruleDesc',
         'ruleSequence' => 'ruleSequence',
-        'ruleTag'      => 'ruleTag',
-        'ruleTitle'    => 'ruleTitle',
+        'ruleTag' => 'ruleTag',
+        'ruleTitle' => 'ruleTitle',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

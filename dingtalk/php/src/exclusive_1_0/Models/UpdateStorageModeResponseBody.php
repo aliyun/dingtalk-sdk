@@ -18,9 +18,7 @@ class UpdateStorageModeResponseBody extends Model
         'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

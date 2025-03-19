@@ -29,14 +29,12 @@ class submitterList extends Model
      */
     public $value;
     protected $_name = [
-        'name'  => 'name',
-        'type'  => 'type',
+        'name' => 'name',
+        'type' => 'type',
         'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

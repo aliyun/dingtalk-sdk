@@ -52,19 +52,17 @@ class CreateVirusScanTaskRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'dentryId'    => 'dentryId',
+        'dentryId' => 'dentryId',
         'downloadUrl' => 'downloadUrl',
-        'fileMd5'     => 'fileMd5',
-        'fileName'    => 'fileName',
-        'fileSize'    => 'fileSize',
-        'source'      => 'source',
-        'spaceId'     => 'spaceId',
-        'userId'      => 'userId',
+        'fileMd5' => 'fileMd5',
+        'fileName' => 'fileName',
+        'fileSize' => 'fileSize',
+        'source' => 'source',
+        'spaceId' => 'spaceId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

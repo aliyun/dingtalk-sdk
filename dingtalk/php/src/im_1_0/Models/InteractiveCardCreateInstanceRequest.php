@@ -77,23 +77,21 @@ class InteractiveCardCreateInstanceRequest extends Model
      */
     public $userIdType;
     protected $_name = [
-        'callbackRouteKey'   => 'callbackRouteKey',
-        'cardData'           => 'cardData',
-        'cardTemplateId'     => 'cardTemplateId',
-        'chatBotId'          => 'chatBotId',
-        'conversationType'   => 'conversationType',
+        'callbackRouteKey' => 'callbackRouteKey',
+        'cardData' => 'cardData',
+        'cardTemplateId' => 'cardTemplateId',
+        'chatBotId' => 'chatBotId',
+        'conversationType' => 'conversationType',
         'openConversationId' => 'openConversationId',
-        'outTrackId'         => 'outTrackId',
-        'privateData'        => 'privateData',
-        'pullStrategy'       => 'pullStrategy',
+        'outTrackId' => 'outTrackId',
+        'privateData' => 'privateData',
+        'pullStrategy' => 'pullStrategy',
         'receiverUserIdList' => 'receiverUserIdList',
-        'robotCode'          => 'robotCode',
-        'userIdType'         => 'userIdType',
+        'robotCode' => 'robotCode',
+        'userIdType' => 'userIdType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

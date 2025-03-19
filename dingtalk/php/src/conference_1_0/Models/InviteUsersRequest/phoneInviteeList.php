@@ -37,14 +37,12 @@ class phoneInviteeList extends Model
     public $statusCode;
     protected $_name = [
         'inviteClient' => 'inviteClient',
-        'nick'         => 'nick',
-        'phoneNumber'  => 'phoneNumber',
-        'statusCode'   => 'statusCode',
+        'nick' => 'nick',
+        'phoneNumber' => 'phoneNumber',
+        'statusCode' => 'statusCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

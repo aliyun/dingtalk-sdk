@@ -19,13 +19,11 @@ class flashMinutesSummary extends Model
      */
     public $summary;
     protected $_name = [
-        'status'  => 'status',
+        'status' => 'status',
         'summary' => 'summary',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class flashMinutesSummary extends Model
         if (isset($map['summary'])) {
             if (!empty($map['summary'])) {
                 $model->summary = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['summary'] as $item) {
                     $model->summary[$n++] = null !== $item ? summary::fromMap($item) : $item;
                 }

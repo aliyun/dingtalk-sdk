@@ -22,9 +22,7 @@ class isvInfo extends Model
         'orgName' => 'orgName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,12 +27,10 @@ class recommends extends Model
     public $type;
     protected $_name = [
         'objectId' => 'objectId',
-        'type'     => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

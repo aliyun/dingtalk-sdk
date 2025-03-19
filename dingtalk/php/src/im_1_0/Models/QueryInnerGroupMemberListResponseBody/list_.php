@@ -28,15 +28,13 @@ class list_ extends Model
      */
     public $userId;
     protected $_name = [
-        'icon'     => 'icon',
-        'name'     => 'name',
+        'icon' => 'icon',
+        'name' => 'name',
         'nickName' => 'nickName',
-        'userId'   => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

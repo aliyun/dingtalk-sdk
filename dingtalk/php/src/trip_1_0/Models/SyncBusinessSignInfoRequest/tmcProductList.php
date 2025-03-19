@@ -22,12 +22,10 @@ class tmcProductList extends Model
     public $tmcCorpId;
     protected $_name = [
         'productDetailList' => 'productDetailList',
-        'tmcCorpId'         => 'tmcCorpId',
+        'tmcCorpId' => 'tmcCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class tmcProductList extends Model
         if (isset($map['productDetailList'])) {
             if (!empty($map['productDetailList'])) {
                 $model->productDetailList = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['productDetailList'] as $item) {
                     $model->productDetailList[$n++] = null !== $item ? productDetailList::fromMap($item) : $item;
                 }

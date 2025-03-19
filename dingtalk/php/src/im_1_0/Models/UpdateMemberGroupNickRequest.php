@@ -31,14 +31,12 @@ class UpdateMemberGroupNickRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'groupNick'          => 'groupNick',
+        'groupNick' => 'groupNick',
         'openConversationId' => 'openConversationId',
-        'userId'             => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -25,13 +25,11 @@ class UpdateVoiceMsgCtrlStatusRequest extends Model
      */
     public $voiceMsgCtrlInfo;
     protected $_name = [
-        'status'           => 'status',
+        'status' => 'status',
         'voiceMsgCtrlInfo' => 'voiceMsgCtrlInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

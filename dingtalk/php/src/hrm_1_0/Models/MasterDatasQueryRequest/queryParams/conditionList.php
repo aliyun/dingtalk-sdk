@@ -21,12 +21,10 @@ class conditionList extends Model
     public $value;
     protected $_name = [
         'operate' => 'operate',
-        'value'   => 'value',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

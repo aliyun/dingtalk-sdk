@@ -42,17 +42,15 @@ class contactList extends Model
      */
     public $weChat;
     protected $_name = [
-        'mobile'   => 'mobile',
-        'name'     => 'name',
-        'phone'    => 'phone',
-        'qq'       => 'qq',
+        'mobile' => 'mobile',
+        'name' => 'name',
+        'phone' => 'phone',
+        'qq' => 'qq',
         'wangWang' => 'wangWang',
-        'weChat'   => 'weChat',
+        'weChat' => 'weChat',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

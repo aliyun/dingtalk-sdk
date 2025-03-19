@@ -18,9 +18,7 @@ class HrmBenefitQueryRequest extends Model
         'benefitCodes' => 'benefitCodes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

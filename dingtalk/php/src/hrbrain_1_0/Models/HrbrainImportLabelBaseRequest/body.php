@@ -30,13 +30,11 @@ class body extends Model
     public $workNo;
     protected $_name = [
         'extendInfo' => 'extendInfo',
-        'name'       => 'name',
-        'workNo'     => 'workNo',
+        'name' => 'name',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

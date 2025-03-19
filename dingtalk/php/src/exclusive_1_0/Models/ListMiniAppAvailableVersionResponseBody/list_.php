@@ -27,12 +27,10 @@ class list_ extends Model
     public $version;
     protected $_name = [
         'buildStatus' => 'buildStatus',
-        'version'     => 'version',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

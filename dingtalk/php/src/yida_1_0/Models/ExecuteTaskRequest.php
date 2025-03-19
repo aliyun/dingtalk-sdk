@@ -99,22 +99,20 @@ class ExecuteTaskRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'              => 'appType',
-        'digitalSignUrl'       => 'digitalSignUrl',
-        'formDataJson'         => 'formDataJson',
-        'language'             => 'language',
+        'appType' => 'appType',
+        'digitalSignUrl' => 'digitalSignUrl',
+        'formDataJson' => 'formDataJson',
+        'language' => 'language',
         'noExecuteExpressions' => 'noExecuteExpressions',
-        'outResult'            => 'outResult',
-        'processInstanceId'    => 'processInstanceId',
-        'remark'               => 'remark',
-        'systemToken'          => 'systemToken',
-        'taskId'               => 'taskId',
-        'userId'               => 'userId',
+        'outResult' => 'outResult',
+        'processInstanceId' => 'processInstanceId',
+        'remark' => 'remark',
+        'systemToken' => 'systemToken',
+        'taskId' => 'taskId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

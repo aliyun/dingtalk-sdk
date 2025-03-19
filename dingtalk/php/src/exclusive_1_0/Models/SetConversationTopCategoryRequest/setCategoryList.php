@@ -25,12 +25,10 @@ class setCategoryList extends Model
     public $order;
     protected $_name = [
         'categoryId' => 'categoryId',
-        'order'      => 'order',
+        'order' => 'order',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

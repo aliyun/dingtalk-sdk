@@ -132,25 +132,23 @@ class DigitalStoreStoreInfoResponseBody extends Model
      */
     public $telephone;
     protected $_name = [
-        'address'         => 'address',
-        'businessHours'   => 'businessHours',
-        'dingDeptId'      => 'dingDeptId',
-        'latitude'        => 'latitude',
+        'address' => 'address',
+        'businessHours' => 'businessHours',
+        'dingDeptId' => 'dingDeptId',
+        'latitude' => 'latitude',
         'locationAddress' => 'locationAddress',
-        'longitude'       => 'longitude',
-        'name'            => 'name',
-        'parentId'        => 'parentId',
-        'status'          => 'status',
-        'storeAcreage'    => 'storeAcreage',
-        'storeBandwidth'  => 'storeBandwidth',
-        'storeCode'       => 'storeCode',
-        'storeId'         => 'storeId',
-        'telephone'       => 'telephone',
+        'longitude' => 'longitude',
+        'name' => 'name',
+        'parentId' => 'parentId',
+        'status' => 'status',
+        'storeAcreage' => 'storeAcreage',
+        'storeBandwidth' => 'storeBandwidth',
+        'storeCode' => 'storeCode',
+        'storeId' => 'storeId',
+        'telephone' => 'telephone',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

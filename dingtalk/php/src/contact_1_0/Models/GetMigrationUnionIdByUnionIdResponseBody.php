@@ -16,9 +16,7 @@ class GetMigrationUnionIdByUnionIdResponseBody extends Model
         'migrationUnionIdList' => 'migrationUnionIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

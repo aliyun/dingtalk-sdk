@@ -43,16 +43,14 @@ class data extends Model
      */
     public $redirection;
     protected $_name = [
-        'answer'      => 'answer',
-        'bizId'       => 'bizId',
-        'mediaId'     => 'mediaId',
-        'question'    => 'question',
+        'answer' => 'answer',
+        'bizId' => 'bizId',
+        'mediaId' => 'mediaId',
+        'question' => 'question',
         'redirection' => 'redirection',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

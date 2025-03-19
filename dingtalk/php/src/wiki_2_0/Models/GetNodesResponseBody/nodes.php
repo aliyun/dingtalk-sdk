@@ -112,26 +112,24 @@ class nodes extends Model
      */
     public $workspaceId;
     protected $_name = [
-        'category'        => 'category',
-        'createTime'      => 'createTime',
-        'creatorId'       => 'creatorId',
-        'extension'       => 'extension',
-        'hasChildren'     => 'hasChildren',
-        'modifiedTime'    => 'modifiedTime',
-        'modifierId'      => 'modifierId',
-        'name'            => 'name',
-        'nodeId'          => 'nodeId',
-        'permissionRole'  => 'permissionRole',
-        'size'            => 'size',
+        'category' => 'category',
+        'createTime' => 'createTime',
+        'creatorId' => 'creatorId',
+        'extension' => 'extension',
+        'hasChildren' => 'hasChildren',
+        'modifiedTime' => 'modifiedTime',
+        'modifierId' => 'modifierId',
+        'name' => 'name',
+        'nodeId' => 'nodeId',
+        'permissionRole' => 'permissionRole',
+        'size' => 'size',
         'statisticalInfo' => 'statisticalInfo',
-        'type'            => 'type',
-        'url'             => 'url',
-        'workspaceId'     => 'workspaceId',
+        'type' => 'type',
+        'url' => 'url',
+        'workspaceId' => 'workspaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

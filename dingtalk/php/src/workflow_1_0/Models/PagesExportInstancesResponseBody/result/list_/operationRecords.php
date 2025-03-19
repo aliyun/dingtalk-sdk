@@ -70,20 +70,18 @@ class operationRecords extends Model
      */
     public $userId;
     protected $_name = [
-        'activityId'    => 'activityId',
-        'attachments'   => 'attachments',
-        'images'        => 'images',
+        'activityId' => 'activityId',
+        'attachments' => 'attachments',
+        'images' => 'images',
         'operationType' => 'operationType',
-        'remark'        => 'remark',
-        'result'        => 'result',
-        'taskId'        => 'taskId',
-        'timestamp'     => 'timestamp',
-        'userId'        => 'userId',
+        'remark' => 'remark',
+        'result' => 'result',
+        'taskId' => 'taskId',
+        'timestamp' => 'timestamp',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -139,7 +137,7 @@ class operationRecords extends Model
         if (isset($map['attachments'])) {
             if (!empty($map['attachments'])) {
                 $model->attachments = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['attachments'] as $item) {
                     $model->attachments[$n++] = null !== $item ? attachments::fromMap($item) : $item;
                 }

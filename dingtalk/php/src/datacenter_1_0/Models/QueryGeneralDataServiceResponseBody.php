@@ -26,12 +26,10 @@ class QueryGeneralDataServiceResponseBody extends Model
     protected $_name = [
         'dataList' => 'dataList',
         'metaList' => 'metaList',
-        'total'    => 'total',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -71,7 +69,7 @@ class QueryGeneralDataServiceResponseBody extends Model
         if (isset($map['metaList'])) {
             if (!empty($map['metaList'])) {
                 $model->metaList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['metaList'] as $item) {
                     $model->metaList[$n++] = null !== $item ? metaList::fromMap($item) : $item;
                 }

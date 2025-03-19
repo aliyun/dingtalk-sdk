@@ -44,18 +44,16 @@ class actionList extends Model
      */
     public $url;
     protected $_name = [
-        'actionKey'       => 'actionKey',
-        'actionType'      => 'actionType',
+        'actionKey' => 'actionKey',
+        'actionType' => 'actionType',
         'buttonStyleType' => 'buttonStyleType',
-        'param'           => 'param',
-        'pcUrl'           => 'pcUrl',
-        'title'           => 'title',
-        'url'             => 'url',
+        'param' => 'param',
+        'pcUrl' => 'pcUrl',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

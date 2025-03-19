@@ -26,14 +26,12 @@ class QueryPermissionByUserIdResponseBody extends Model
      */
     public $userId;
     protected $_name = [
-        'companyCode'       => 'companyCode',
+        'companyCode' => 'companyCode',
         'permissionDTOList' => 'permissionDTOList',
-        'userId'            => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -71,7 +69,7 @@ class QueryPermissionByUserIdResponseBody extends Model
         if (isset($map['permissionDTOList'])) {
             if (!empty($map['permissionDTOList'])) {
                 $model->permissionDTOList = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['permissionDTOList'] as $item) {
                     $model->permissionDTOList[$n++] = null !== $item ? permissionDTOList::fromMap($item) : $item;
                 }

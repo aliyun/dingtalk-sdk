@@ -19,9 +19,7 @@ class param extends Model
         'createTeamParamList' => 'createTeamParamList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class param extends Model
         if (isset($map['createTeamParamList'])) {
             if (!empty($map['createTeamParamList'])) {
                 $model->createTeamParamList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['createTeamParamList'] as $item) {
                     $model->createTeamParamList[$n++] = null !== $item ? createTeamParamList::fromMap($item) : $item;
                 }

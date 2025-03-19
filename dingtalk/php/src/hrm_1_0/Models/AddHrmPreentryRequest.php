@@ -43,17 +43,15 @@ class AddHrmPreentryRequest extends Model
      */
     public $preEntryTime;
     protected $_name = [
-        'agentId'             => 'agentId',
-        'groups'              => 'groups',
-        'mobile'              => 'mobile',
-        'name'                => 'name',
+        'agentId' => 'agentId',
+        'groups' => 'groups',
+        'mobile' => 'mobile',
+        'name' => 'name',
         'needSendPreEntryMsg' => 'needSendPreEntryMsg',
-        'preEntryTime'        => 'preEntryTime',
+        'preEntryTime' => 'preEntryTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -100,7 +98,7 @@ class AddHrmPreentryRequest extends Model
         if (isset($map['groups'])) {
             if (!empty($map['groups'])) {
                 $model->groups = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['groups'] as $item) {
                     $model->groups[$n++] = null !== $item ? groups::fromMap($item) : $item;
                 }

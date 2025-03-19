@@ -59,19 +59,17 @@ class contacts extends Model
      */
     public $permission;
     protected $_name = [
-        'createTime'    => 'createTime',
-        'creatorNick'   => 'creatorNick',
+        'createTime' => 'createTime',
+        'creatorNick' => 'creatorNick',
         'creatorUserId' => 'creatorUserId',
-        'data'          => 'data',
-        'extendData'    => 'extendData',
-        'instanceId'    => 'instanceId',
-        'modifyTime'    => 'modifyTime',
-        'permission'    => 'permission',
+        'data' => 'data',
+        'extendData' => 'extendData',
+        'instanceId' => 'instanceId',
+        'modifyTime' => 'modifyTime',
+        'permission' => 'permission',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

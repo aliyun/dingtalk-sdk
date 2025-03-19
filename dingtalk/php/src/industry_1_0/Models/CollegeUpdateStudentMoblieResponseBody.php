@@ -18,9 +18,7 @@ class CollegeUpdateStudentMoblieResponseBody extends Model
         'updateResult' => 'updateResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

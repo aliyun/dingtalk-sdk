@@ -23,12 +23,10 @@ class unReadItems extends Model
     public $unReadCount;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'unReadCount'        => 'unReadCount',
+        'unReadCount' => 'unReadCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

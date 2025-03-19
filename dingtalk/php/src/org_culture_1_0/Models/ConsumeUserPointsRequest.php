@@ -41,14 +41,12 @@ class ConsumeUserPointsRequest extends Model
     public $usage;
     protected $_name = [
         'amount' => 'amount',
-        'outId'  => 'outId',
+        'outId' => 'outId',
         'remark' => 'remark',
-        'usage'  => 'usage',
+        'usage' => 'usage',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

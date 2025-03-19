@@ -32,15 +32,13 @@ class ChatAIRemoveDatasetPermissionRequest extends Model
      */
     public $optUser;
     protected $_name = [
-        'authorizationType'  => 'authorizationType',
+        'authorizationType' => 'authorizationType',
         'authorizedObjectId' => 'authorizedObjectId',
-        'datasetId'          => 'datasetId',
-        'optUser'            => 'optUser',
+        'datasetId' => 'datasetId',
+        'optUser' => 'optUser',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class UpdateGroupAvatarResponseBody extends Model
         'newGroupAvatar' => 'newGroupAvatar',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

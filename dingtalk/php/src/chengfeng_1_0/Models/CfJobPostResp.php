@@ -27,12 +27,10 @@ class CfJobPostResp extends Model
     public $name;
     protected $_name = [
         'jobPostCode' => 'jobPostCode',
-        'name'        => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

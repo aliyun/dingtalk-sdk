@@ -18,9 +18,7 @@ class DeleteRecordsRequest extends Model
         'recordIds' => 'recordIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

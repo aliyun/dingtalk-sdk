@@ -18,9 +18,7 @@ class ListParentByDeptResponseBody extends Model
         'departmentIdList' => 'departmentIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

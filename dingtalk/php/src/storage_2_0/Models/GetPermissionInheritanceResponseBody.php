@@ -18,9 +18,7 @@ class GetPermissionInheritanceResponseBody extends Model
         'inheritance' => 'inheritance',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

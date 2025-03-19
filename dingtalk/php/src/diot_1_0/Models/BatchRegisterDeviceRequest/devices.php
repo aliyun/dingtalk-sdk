@@ -87,21 +87,19 @@ class devices extends Model
      */
     public $productType;
     protected $_name = [
-        'deviceId'       => 'deviceId',
-        'deviceName'     => 'deviceName',
-        'deviceStatus'   => 'deviceStatus',
-        'deviceType'     => 'deviceType',
+        'deviceId' => 'deviceId',
+        'deviceName' => 'deviceName',
+        'deviceStatus' => 'deviceStatus',
+        'deviceType' => 'deviceType',
         'deviceTypeName' => 'deviceTypeName',
-        'extraData'      => 'extraData',
-        'liveUrls'       => 'liveUrls',
-        'location'       => 'location',
-        'parentId'       => 'parentId',
-        'productType'    => 'productType',
+        'extraData' => 'extraData',
+        'liveUrls' => 'liveUrls',
+        'location' => 'location',
+        'parentId' => 'parentId',
+        'productType' => 'productType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

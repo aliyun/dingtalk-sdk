@@ -29,14 +29,12 @@ class RenewTenantOrderRequest extends Model
      */
     public $endTimeGMT;
     protected $_name = [
-        'accessKey'     => 'accessKey',
+        'accessKey' => 'accessKey',
         'callerUnionId' => 'callerUnionId',
-        'endTimeGMT'    => 'endTimeGMT',
+        'endTimeGMT' => 'endTimeGMT',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

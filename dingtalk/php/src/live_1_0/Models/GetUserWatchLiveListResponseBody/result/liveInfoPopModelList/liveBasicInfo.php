@@ -68,23 +68,21 @@ class liveBasicInfo extends Model
      */
     public $uv;
     protected $_name = [
-        'coverUrl'       => 'coverUrl',
-        'duration'       => 'duration',
-        'endTime'        => 'endTime',
-        'introduction'   => 'introduction',
-        'liveId'         => 'liveId',
-        'livePlayUrl'    => 'livePlayUrl',
-        'liveStatus'     => 'liveStatus',
-        'startTime'      => 'startTime',
+        'coverUrl' => 'coverUrl',
+        'duration' => 'duration',
+        'endTime' => 'endTime',
+        'introduction' => 'introduction',
+        'liveId' => 'liveId',
+        'livePlayUrl' => 'livePlayUrl',
+        'liveStatus' => 'liveStatus',
+        'startTime' => 'startTime',
         'subscribeCount' => 'subscribeCount',
-        'title'          => 'title',
-        'unionId'        => 'unionId',
-        'uv'             => 'uv',
+        'title' => 'title',
+        'unionId' => 'unionId',
+        'uv' => 'uv',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

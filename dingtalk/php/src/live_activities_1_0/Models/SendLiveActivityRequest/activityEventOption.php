@@ -37,14 +37,12 @@ class activityEventOption extends Model
     public $staleDate;
     protected $_name = [
         'dismissalDate' => 'dismissalDate',
-        'pushType'      => 'pushType',
-        'sendDate'      => 'sendDate',
-        'staleDate'     => 'staleDate',
+        'pushType' => 'pushType',
+        'sendDate' => 'sendDate',
+        'staleDate' => 'staleDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

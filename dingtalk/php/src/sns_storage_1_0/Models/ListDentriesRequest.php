@@ -61,18 +61,16 @@ class ListDentriesRequest extends Model
      */
     public $withThumbnail;
     protected $_name = [
-        'maxResults'    => 'maxResults',
-        'nextToken'     => 'nextToken',
-        'order'         => 'order',
-        'orderBy'       => 'orderBy',
-        'parentId'      => 'parentId',
-        'unionId'       => 'unionId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'order' => 'order',
+        'orderBy' => 'orderBy',
+        'parentId' => 'parentId',
+        'unionId' => 'unionId',
         'withThumbnail' => 'withThumbnail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

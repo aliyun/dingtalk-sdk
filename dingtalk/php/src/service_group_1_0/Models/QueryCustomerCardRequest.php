@@ -22,9 +22,7 @@ class QueryCustomerCardRequest extends Model
         'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

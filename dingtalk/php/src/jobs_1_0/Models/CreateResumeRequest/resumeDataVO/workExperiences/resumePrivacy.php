@@ -18,13 +18,11 @@ class resumePrivacy extends Model
      */
     public $shieldedRelatedCompany;
     protected $_name = [
-        'shieldedCompany'        => 'shieldedCompany',
+        'shieldedCompany' => 'shieldedCompany',
         'shieldedRelatedCompany' => 'shieldedRelatedCompany',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

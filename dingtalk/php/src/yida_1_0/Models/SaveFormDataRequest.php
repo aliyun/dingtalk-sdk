@@ -58,17 +58,15 @@ class SaveFormDataRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'      => 'appType',
+        'appType' => 'appType',
         'formDataJson' => 'formDataJson',
-        'formUuid'     => 'formUuid',
-        'language'     => 'language',
-        'systemToken'  => 'systemToken',
-        'userId'       => 'userId',
+        'formUuid' => 'formUuid',
+        'language' => 'language',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

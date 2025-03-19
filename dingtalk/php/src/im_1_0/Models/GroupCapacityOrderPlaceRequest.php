@@ -83,22 +83,20 @@ class GroupCapacityOrderPlaceRequest extends Model
      */
     public $token;
     protected $_name = [
-        'actualPrice'        => 'actualPrice',
-        'currentCapacity'    => 'currentCapacity',
+        'actualPrice' => 'actualPrice',
+        'currentCapacity' => 'currentCapacity',
         'currentEffectUntil' => 'currentEffectUntil',
-        'discount'           => 'discount',
-        'extInfo'            => 'extInfo',
-        'markedPrice'        => 'markedPrice',
+        'discount' => 'discount',
+        'extInfo' => 'extInfo',
+        'markedPrice' => 'markedPrice',
         'openConversationId' => 'openConversationId',
-        'operator'           => 'operator',
-        'targetCapacity'     => 'targetCapacity',
-        'targetEffectUntil'  => 'targetEffectUntil',
-        'token'              => 'token',
+        'operator' => 'operator',
+        'targetCapacity' => 'targetCapacity',
+        'targetEffectUntil' => 'targetEffectUntil',
+        'token' => 'token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -30,14 +30,12 @@ class CreateRelationMetaRequest extends Model
      */
     public $tenant;
     protected $_name = [
-        'operatorUserId'  => 'operatorUserId',
+        'operatorUserId' => 'operatorUserId',
         'relationMetaDTO' => 'relationMetaDTO',
-        'tenant'          => 'tenant',
+        'tenant' => 'tenant',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

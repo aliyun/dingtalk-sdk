@@ -120,24 +120,22 @@ class SaveStudentLearningDataRequest extends Model
      */
     public $wrongQuestions;
     protected $_name = [
-        'assignNum'      => 'assignNum',
-        'bizId'          => 'bizId',
-        'bizType'        => 'bizType',
-        'corpId'         => 'corpId',
-        'correctNum'     => 'correctNum',
-        'deptId'         => 'deptId',
-        'fileSuffix'     => 'fileSuffix',
-        'generatedTime'  => 'generatedTime',
-        'questionNum'    => 'questionNum',
-        'studentUserId'  => 'studentUserId',
-        'subjectCode'    => 'subjectCode',
-        'submitNum'      => 'submitNum',
+        'assignNum' => 'assignNum',
+        'bizId' => 'bizId',
+        'bizType' => 'bizType',
+        'corpId' => 'corpId',
+        'correctNum' => 'correctNum',
+        'deptId' => 'deptId',
+        'fileSuffix' => 'fileSuffix',
+        'generatedTime' => 'generatedTime',
+        'questionNum' => 'questionNum',
+        'studentUserId' => 'studentUserId',
+        'subjectCode' => 'subjectCode',
+        'submitNum' => 'submitNum',
         'wrongQuestions' => 'wrongQuestions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -238,7 +236,7 @@ class SaveStudentLearningDataRequest extends Model
         if (isset($map['wrongQuestions'])) {
             if (!empty($map['wrongQuestions'])) {
                 $model->wrongQuestions = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['wrongQuestions'] as $item) {
                     $model->wrongQuestions[$n++] = null !== $item ? wrongQuestions::fromMap($item) : $item;
                 }

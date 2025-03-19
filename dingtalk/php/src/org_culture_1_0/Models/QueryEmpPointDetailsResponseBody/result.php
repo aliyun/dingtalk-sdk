@@ -27,9 +27,7 @@ class result extends Model
         'hasMore' => 'hasMore',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -61,7 +59,7 @@ class result extends Model
         if (isset($map['details'])) {
             if (!empty($map['details'])) {
                 $model->details = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['details'] as $item) {
                     $model->details[$n++] = null !== $item ? details::fromMap($item) : $item;
                 }

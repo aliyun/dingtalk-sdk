@@ -23,12 +23,10 @@ class DeleteKnowledgeRequest extends Model
     public $studyId;
     protected $_name = [
         'assistantId' => 'assistantId',
-        'studyId'     => 'studyId',
+        'studyId' => 'studyId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

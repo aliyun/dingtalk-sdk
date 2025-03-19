@@ -42,15 +42,13 @@ class GetInstanceByIdRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
-        'language'    => 'language',
+        'appType' => 'appType',
+        'language' => 'language',
         'systemToken' => 'systemToken',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

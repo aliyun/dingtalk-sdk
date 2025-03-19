@@ -23,12 +23,10 @@ class GetInnerAppRequest extends Model
     public $opUnionId;
     protected $_name = [
         'ecologicalCorpId' => 'ecologicalCorpId',
-        'opUnionId'        => 'opUnionId',
+        'opUnionId' => 'opUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

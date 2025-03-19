@@ -26,13 +26,11 @@ class DocAppendTextRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'text'       => 'text',
+        'text' => 'text',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

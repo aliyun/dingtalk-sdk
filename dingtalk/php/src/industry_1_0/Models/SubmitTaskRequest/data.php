@@ -55,18 +55,16 @@ class data extends Model
      */
     public $name;
     protected $_name = [
-        'date'      => 'date',
-        'desc'      => 'desc',
+        'date' => 'date',
+        'desc' => 'desc',
         'extension' => 'extension',
-        'fileType'  => 'fileType',
-        'fileUrl'   => 'fileUrl',
-        'id'        => 'id',
-        'name'      => 'name',
+        'fileType' => 'fileType',
+        'fileUrl' => 'fileUrl',
+        'id' => 'id',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

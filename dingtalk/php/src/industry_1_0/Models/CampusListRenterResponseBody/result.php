@@ -72,19 +72,17 @@ class result extends Model
     public $state;
     protected $_name = [
         'bindRenterCorpId' => 'bindRenterCorpId',
-        'bindTime'         => 'bindTime',
-        'creditCode'       => 'creditCode',
-        'endTime'          => 'endTime',
-        'extend'           => 'extend',
-        'name'             => 'name',
-        'renterDeptId'     => 'renterDeptId',
-        'startTime'        => 'startTime',
-        'state'            => 'state',
+        'bindTime' => 'bindTime',
+        'creditCode' => 'creditCode',
+        'endTime' => 'endTime',
+        'extend' => 'extend',
+        'name' => 'name',
+        'renterDeptId' => 'renterDeptId',
+        'startTime' => 'startTime',
+        'state' => 'state',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

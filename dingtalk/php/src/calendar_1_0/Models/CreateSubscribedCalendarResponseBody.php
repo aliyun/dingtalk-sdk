@@ -16,9 +16,7 @@ class CreateSubscribedCalendarResponseBody extends Model
         'calendarId' => 'calendarId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

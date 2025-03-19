@@ -40,15 +40,13 @@ class livePluginList extends Model
     protected $_name = [
         'anchorJumpUrl' => 'anchorJumpUrl',
         'pluginIconUrl' => 'pluginIconUrl',
-        'pluginId'      => 'pluginId',
-        'pluginName'    => 'pluginName',
-        'pluginNameEn'  => 'pluginNameEn',
+        'pluginId' => 'pluginId',
+        'pluginName' => 'pluginName',
+        'pluginNameEn' => 'pluginNameEn',
         'viewerJumpUrl' => 'viewerJumpUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,12 +23,10 @@ class RemoveUserFromGroupRequest extends Model
     public $userIds;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'userIds'            => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -56,18 +56,16 @@ class UpdateInstanceOrderInfoRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'failReason'  => 'failReason',
-        'orderNo'     => 'orderNo',
-        'outOrderNo'  => 'outOrderNo',
-        'payerBank'   => 'payerBank',
+        'failReason' => 'failReason',
+        'orderNo' => 'orderNo',
+        'outOrderNo' => 'outOrderNo',
+        'payerBank' => 'payerBank',
         'paymentTime' => 'paymentTime',
-        'status'      => 'status',
-        'userId'      => 'userId',
+        'status' => 'status',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

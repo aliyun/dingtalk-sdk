@@ -27,12 +27,10 @@ class GetDataViewRequest extends Model
     public $msgid;
     protected $_name = [
         'datatype' => 'datatype',
-        'msgid'    => 'msgid',
+        'msgid' => 'msgid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

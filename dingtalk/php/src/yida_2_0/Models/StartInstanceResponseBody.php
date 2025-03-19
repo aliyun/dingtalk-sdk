@@ -18,9 +18,7 @@ class StartInstanceResponseBody extends Model
         'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -75,20 +75,18 @@ class RedirectTaskRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'             => 'appType',
-        'byManager'           => 'byManager',
-        'language'            => 'language',
+        'appType' => 'appType',
+        'byManager' => 'byManager',
+        'language' => 'language',
         'nowActionExecutorId' => 'nowActionExecutorId',
-        'processInstanceId'   => 'processInstanceId',
-        'remark'              => 'remark',
-        'systemToken'         => 'systemToken',
-        'taskId'              => 'taskId',
-        'userId'              => 'userId',
+        'processInstanceId' => 'processInstanceId',
+        'remark' => 'remark',
+        'systemToken' => 'systemToken',
+        'taskId' => 'taskId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -82,22 +82,20 @@ class result extends Model
      */
     public $roomStatus;
     protected $_name = [
-        'corpId'       => 'corpId',
-        'isvRoomId'    => 'isvRoomId',
+        'corpId' => 'corpId',
+        'isvRoomId' => 'isvRoomId',
         'roomCapacity' => 'roomCapacity',
-        'roomGroup'    => 'roomGroup',
-        'roomId'       => 'roomId',
-        'roomLabels'   => 'roomLabels',
+        'roomGroup' => 'roomGroup',
+        'roomId' => 'roomId',
+        'roomLabels' => 'roomLabels',
         'roomLocation' => 'roomLocation',
-        'roomName'     => 'roomName',
-        'roomPicture'  => 'roomPicture',
-        'roomStaffId'  => 'roomStaffId',
-        'roomStatus'   => 'roomStatus',
+        'roomName' => 'roomName',
+        'roomPicture' => 'roomPicture',
+        'roomStaffId' => 'roomStaffId',
+        'roomStatus' => 'roomStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -171,7 +169,7 @@ class result extends Model
         if (isset($map['roomLabels'])) {
             if (!empty($map['roomLabels'])) {
                 $model->roomLabels = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['roomLabels'] as $item) {
                     $model->roomLabels[$n++] = null !== $item ? roomLabels::fromMap($item) : $item;
                 }

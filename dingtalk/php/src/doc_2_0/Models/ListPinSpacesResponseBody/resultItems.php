@@ -41,16 +41,14 @@ class resultItems extends Model
      */
     public $teamInfo;
     protected $_name = [
-        'createTime'          => 'createTime',
-        'modifiedTime'        => 'modifiedTime',
-        'spaceInfo'           => 'spaceInfo',
+        'createTime' => 'createTime',
+        'modifiedTime' => 'modifiedTime',
+        'spaceInfo' => 'spaceInfo',
         'spacePermissionRole' => 'spacePermissionRole',
-        'teamInfo'            => 'teamInfo',
+        'teamInfo' => 'teamInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

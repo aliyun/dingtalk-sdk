@@ -20,13 +20,11 @@ class targetSelectActioners extends Model
      */
     public $actionerUserIds;
     protected $_name = [
-        'actionerKey'     => 'actionerKey',
+        'actionerKey' => 'actionerKey',
         'actionerUserIds' => 'actionerUserIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,12 +23,10 @@ class FileStorageUpdateStorageResponseBody extends Model
     public $oss;
     protected $_name = [
         'accessKeyId' => 'accessKeyId',
-        'oss'         => 'oss',
+        'oss' => 'oss',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -26,9 +26,7 @@ class unionEmpMapList extends Model
         'userid' => 'userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

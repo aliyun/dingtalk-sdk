@@ -48,15 +48,13 @@ class RosterMetaFieldOptionsUpdateRequest extends Model
     public $modifyType;
     protected $_name = [
         'appAgentId' => 'appAgentId',
-        'fieldCode'  => 'fieldCode',
-        'groupId'    => 'groupId',
-        'labels'     => 'labels',
+        'fieldCode' => 'fieldCode',
+        'groupId' => 'groupId',
+        'labels' => 'labels',
         'modifyType' => 'modifyType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

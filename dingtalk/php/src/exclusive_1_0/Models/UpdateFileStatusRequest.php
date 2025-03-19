@@ -25,12 +25,10 @@ class UpdateFileStatusRequest extends Model
     public $status;
     protected $_name = [
         'requestIds' => 'requestIds',
-        'status'     => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

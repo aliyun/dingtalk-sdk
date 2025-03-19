@@ -67,18 +67,16 @@ class GetAutoFlowLogDetailRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'corpId'         => 'corpId',
-        'env'            => 'env',
-        'pageNumber'     => 'pageNumber',
-        'pageSize'       => 'pageSize',
+        'corpId' => 'corpId',
+        'env' => 'env',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'procInstanceId' => 'procInstanceId',
-        'token'          => 'token',
-        'userId'         => 'userId',
+        'token' => 'token',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

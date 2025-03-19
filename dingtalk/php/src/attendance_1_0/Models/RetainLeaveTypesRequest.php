@@ -30,13 +30,11 @@ class RetainLeaveTypesRequest extends Model
     public $source;
     protected $_name = [
         'leaveCodes' => 'leaveCodes',
-        'opUserId'   => 'opUserId',
-        'source'     => 'source',
+        'opUserId' => 'opUserId',
+        'source' => 'source',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

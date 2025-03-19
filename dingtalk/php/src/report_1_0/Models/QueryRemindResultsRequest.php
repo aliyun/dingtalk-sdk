@@ -44,15 +44,13 @@ class QueryRemindResultsRequest extends Model
      */
     public $templateId;
     protected $_name = [
-        'maxResults'      => 'maxResults',
-        'nextToken'       => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'operationUserId' => 'operationUserId',
-        'templateId'      => 'templateId',
+        'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

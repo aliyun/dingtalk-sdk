@@ -38,17 +38,15 @@ class result extends Model
      */
     public $vendor;
     protected $_name = [
-        'config'      => 'config',
+        'config' => 'config',
         'description' => 'description',
-        'id'          => 'id',
-        'name'        => 'name',
-        'status'      => 'status',
-        'vendor'      => 'vendor',
+        'id' => 'id',
+        'name' => 'name',
+        'status' => 'status',
+        'vendor' => 'vendor',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

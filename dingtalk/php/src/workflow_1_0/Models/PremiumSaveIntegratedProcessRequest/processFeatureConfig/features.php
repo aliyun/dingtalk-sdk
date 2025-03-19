@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class features extends Model
 {
     /**
-     * @var callback
+     * @var callable
      */
     public $callback;
 
@@ -42,16 +42,14 @@ class features extends Model
      */
     public $runType;
     protected $_name = [
-        'callback'  => 'callback',
+        'callback' => 'callback',
         'mobileUrl' => 'mobileUrl',
-        'name'      => 'name',
-        'pcUrl'     => 'pcUrl',
-        'runType'   => 'runType',
+        'name' => 'name',
+        'pcUrl' => 'pcUrl',
+        'runType' => 'runType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

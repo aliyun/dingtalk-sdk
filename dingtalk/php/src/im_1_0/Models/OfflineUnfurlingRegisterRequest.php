@@ -33,14 +33,12 @@ class OfflineUnfurlingRegisterRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appId'  => 'appId',
-        'id'     => 'id',
+        'appId' => 'appId',
+        'id' => 'id',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

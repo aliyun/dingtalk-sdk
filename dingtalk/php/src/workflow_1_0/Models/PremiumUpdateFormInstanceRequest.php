@@ -40,14 +40,12 @@ class PremiumUpdateFormInstanceRequest extends Model
     public $processCode;
     protected $_name = [
         'formComponentValueList' => 'formComponentValueList',
-        'formInstanceIds'        => 'formInstanceIds',
-        'originatorUserId'       => 'originatorUserId',
-        'processCode'            => 'processCode',
+        'formInstanceIds' => 'formInstanceIds',
+        'originatorUserId' => 'originatorUserId',
+        'processCode' => 'processCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -85,7 +83,7 @@ class PremiumUpdateFormInstanceRequest extends Model
         if (isset($map['formComponentValueList'])) {
             if (!empty($map['formComponentValueList'])) {
                 $model->formComponentValueList = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['formComponentValueList'] as $item) {
                     $model->formComponentValueList[$n++] = null !== $item ? formComponentValueList::fromMap($item) : $item;
                 }

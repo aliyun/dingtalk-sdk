@@ -74,19 +74,17 @@ class PreviewPublishedProcessRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'      => 'appType',
+        'appType' => 'appType',
         'departmentId' => 'departmentId',
         'formDataJson' => 'formDataJson',
-        'formUuid'     => 'formUuid',
-        'language'     => 'language',
-        'processCode'  => 'processCode',
-        'systemToken'  => 'systemToken',
-        'userId'       => 'userId',
+        'formUuid' => 'formUuid',
+        'language' => 'language',
+        'processCode' => 'processCode',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

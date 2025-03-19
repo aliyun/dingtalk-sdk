@@ -22,13 +22,11 @@ class ArchiveProcessInstanceResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'result'  => 'result',
+        'result' => 'result',
         'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

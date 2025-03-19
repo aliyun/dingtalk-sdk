@@ -142,30 +142,28 @@ class list_ extends Model
     public $voucherStatus;
     protected $_name = [
         'accountantBookId' => 'accountantBookId',
-        'amount'           => 'amount',
-        'approvedAt'       => 'approvedAt',
-        'businessId'       => 'businessId',
-        'companyCode'      => 'companyCode',
-        'createTime'       => 'createTime',
-        'creator'          => 'creator',
-        'customer'         => 'customer',
-        'instanceJumpUrl'  => 'instanceJumpUrl',
-        'modelId'          => 'modelId',
-        'principal'        => 'principal',
-        'project'          => 'project',
-        'receiptId'        => 'receiptId',
-        'recordTime'       => 'recordTime',
-        'remark'           => 'remark',
-        'source'           => 'source',
-        'status'           => 'status',
-        'supplier'         => 'supplier',
-        'title'            => 'title',
-        'voucherStatus'    => 'voucherStatus',
+        'amount' => 'amount',
+        'approvedAt' => 'approvedAt',
+        'businessId' => 'businessId',
+        'companyCode' => 'companyCode',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
+        'customer' => 'customer',
+        'instanceJumpUrl' => 'instanceJumpUrl',
+        'modelId' => 'modelId',
+        'principal' => 'principal',
+        'project' => 'project',
+        'receiptId' => 'receiptId',
+        'recordTime' => 'recordTime',
+        'remark' => 'remark',
+        'source' => 'source',
+        'status' => 'status',
+        'supplier' => 'supplier',
+        'title' => 'title',
+        'voucherStatus' => 'voucherStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

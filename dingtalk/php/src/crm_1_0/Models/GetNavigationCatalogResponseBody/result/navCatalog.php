@@ -34,15 +34,13 @@ class navCatalog extends Model
     public $navType;
     protected $_name = [
         'children' => 'children',
-        'navCode'  => 'navCode',
-        'navId'    => 'navId',
-        'navName'  => 'navName',
-        'navType'  => 'navType',
+        'navCode' => 'navCode',
+        'navId' => 'navId',
+        'navName' => 'navName',
+        'navType' => 'navType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

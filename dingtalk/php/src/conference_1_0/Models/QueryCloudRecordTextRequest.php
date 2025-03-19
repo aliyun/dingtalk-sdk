@@ -35,16 +35,14 @@ class QueryCloudRecordTextRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'direction'  => 'direction',
+        'direction' => 'direction',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'startTime'  => 'startTime',
-        'unionId'    => 'unionId',
+        'nextToken' => 'nextToken',
+        'startTime' => 'startTime',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

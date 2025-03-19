@@ -36,13 +36,11 @@ class GetUserMetricDataRequest extends Model
     public $unionId;
     protected $_name = [
         'beginTime' => 'beginTime',
-        'endTime'   => 'endTime',
-        'unionId'   => 'unionId',
+        'endTime' => 'endTime',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -40,15 +40,13 @@ class MoveFilesRequest extends Model
     public $unionId;
     protected $_name = [
         'addConflictPolicy' => 'addConflictPolicy',
-        'fileIds'           => 'fileIds',
-        'targetParentId'    => 'targetParentId',
-        'targetSpaceId'     => 'targetSpaceId',
-        'unionId'           => 'unionId',
+        'fileIds' => 'fileIds',
+        'targetParentId' => 'targetParentId',
+        'targetSpaceId' => 'targetSpaceId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

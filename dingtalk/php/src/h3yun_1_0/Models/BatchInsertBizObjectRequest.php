@@ -43,14 +43,12 @@ class BatchInsertBizObjectRequest extends Model
     public $schemaCode;
     protected $_name = [
         'bizObjectJsonArray' => 'bizObjectJsonArray',
-        'isDraft'            => 'isDraft',
-        'opUserId'           => 'opUserId',
-        'schemaCode'         => 'schemaCode',
+        'isDraft' => 'isDraft',
+        'opUserId' => 'opUserId',
+        'schemaCode' => 'schemaCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

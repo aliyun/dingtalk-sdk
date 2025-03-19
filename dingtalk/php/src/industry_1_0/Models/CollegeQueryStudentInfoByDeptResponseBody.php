@@ -92,23 +92,21 @@ class CollegeQueryStudentInfoByDeptResponseBody extends Model
      */
     public $userId;
     protected $_name = [
-        'deptId'           => 'deptId',
+        'deptId' => 'deptId',
         'dingMemberStatus' => 'dingMemberStatus',
-        'empExtension'     => 'empExtension',
-        'gender'           => 'gender',
-        'identifyId'       => 'identifyId',
-        'isActive'         => 'isActive',
-        'startYear'        => 'startYear',
-        'studentId'        => 'studentId',
-        'studentName'      => 'studentName',
-        'studentNumber'    => 'studentNumber',
-        'unionId'          => 'unionId',
-        'userId'           => 'userId',
+        'empExtension' => 'empExtension',
+        'gender' => 'gender',
+        'identifyId' => 'identifyId',
+        'isActive' => 'isActive',
+        'startYear' => 'startYear',
+        'studentId' => 'studentId',
+        'studentName' => 'studentName',
+        'studentNumber' => 'studentNumber',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

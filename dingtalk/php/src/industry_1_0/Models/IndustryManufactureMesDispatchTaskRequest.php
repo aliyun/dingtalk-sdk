@@ -189,36 +189,34 @@ class IndustryManufactureMesDispatchTaskRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'action'               => 'action',
-        'appKey'               => 'appKey',
-        'baseDataName'         => 'baseDataName',
-        'defectsAmount'        => 'defectsAmount',
-        'dispatchStaffName'    => 'dispatchStaffName',
-        'dispatchStaffNo'      => 'dispatchStaffNo',
-        'fineAmount'           => 'fineAmount',
-        'overdue'              => 'overdue',
-        'planQuantity'         => 'planQuantity',
-        'priority'             => 'priority',
-        'processName'          => 'processName',
-        'processUuid'          => 'processUuid',
-        'productCode'          => 'productCode',
-        'productName'          => 'productName',
+        'action' => 'action',
+        'appKey' => 'appKey',
+        'baseDataName' => 'baseDataName',
+        'defectsAmount' => 'defectsAmount',
+        'dispatchStaffName' => 'dispatchStaffName',
+        'dispatchStaffNo' => 'dispatchStaffNo',
+        'fineAmount' => 'fineAmount',
+        'overdue' => 'overdue',
+        'planQuantity' => 'planQuantity',
+        'priority' => 'priority',
+        'processName' => 'processName',
+        'processUuid' => 'processUuid',
+        'productCode' => 'productCode',
+        'productName' => 'productName',
         'productSpecification' => 'productSpecification',
-        'projectCode'          => 'projectCode',
-        'projectId'            => 'projectId',
-        'projectStatus'        => 'projectStatus',
-        'taskOperators'        => 'taskOperators',
-        'taskPlanEndTime'      => 'taskPlanEndTime',
-        'taskPlanStartTime'    => 'taskPlanStartTime',
-        'taskStatus'           => 'taskStatus',
-        'taskType'             => 'taskType',
-        'teamId'               => 'teamId',
-        'uuid'                 => 'uuid',
+        'projectCode' => 'projectCode',
+        'projectId' => 'projectId',
+        'projectStatus' => 'projectStatus',
+        'taskOperators' => 'taskOperators',
+        'taskPlanEndTime' => 'taskPlanEndTime',
+        'taskPlanStartTime' => 'taskPlanStartTime',
+        'taskStatus' => 'taskStatus',
+        'taskType' => 'taskType',
+        'teamId' => 'teamId',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

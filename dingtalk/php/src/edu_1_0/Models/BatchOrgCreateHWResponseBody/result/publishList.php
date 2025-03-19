@@ -19,12 +19,10 @@ class publishList extends Model
     public $hwid;
     protected $_name = [
         'corpid' => 'corpid',
-        'hwid'   => 'hwid',
+        'hwid' => 'hwid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

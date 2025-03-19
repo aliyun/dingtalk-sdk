@@ -19,9 +19,7 @@ class ShareUrlResponseBody extends Model
         'shareUrlInfo' => 'shareUrlInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

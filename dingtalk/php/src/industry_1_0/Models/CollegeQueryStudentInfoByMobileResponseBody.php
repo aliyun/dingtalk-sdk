@@ -85,21 +85,19 @@ class CollegeQueryStudentInfoByMobileResponseBody extends Model
     public $userId;
     protected $_name = [
         'deptStudentInfoList' => 'deptStudentInfoList',
-        'dingMemberStatus'    => 'dingMemberStatus',
-        'empExtension'        => 'empExtension',
-        'gender'              => 'gender',
-        'identifyId'          => 'identifyId',
-        'isActive'            => 'isActive',
-        'startYear'           => 'startYear',
-        'studentId'           => 'studentId',
-        'studentName'         => 'studentName',
-        'unionId'             => 'unionId',
-        'userId'              => 'userId',
+        'dingMemberStatus' => 'dingMemberStatus',
+        'empExtension' => 'empExtension',
+        'gender' => 'gender',
+        'identifyId' => 'identifyId',
+        'isActive' => 'isActive',
+        'startYear' => 'startYear',
+        'studentId' => 'studentId',
+        'studentName' => 'studentName',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -158,7 +156,7 @@ class CollegeQueryStudentInfoByMobileResponseBody extends Model
         if (isset($map['deptStudentInfoList'])) {
             if (!empty($map['deptStudentInfoList'])) {
                 $model->deptStudentInfoList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['deptStudentInfoList'] as $item) {
                     $model->deptStudentInfoList[$n++] = null !== $item ? deptStudentInfoList::fromMap($item) : $item;
                 }

@@ -94,22 +94,20 @@ class ResubmitTicketRequest extends Model
      */
     public $title;
     protected $_name = [
-        'creatorUnionId'    => 'creatorUnionId',
-        'customFields'      => 'customFields',
-        'notify'            => 'notify',
-        'openTeamId'        => 'openTeamId',
+        'creatorUnionId' => 'creatorUnionId',
+        'customFields' => 'customFields',
+        'notify' => 'notify',
+        'openTeamId' => 'openTeamId',
         'openTemplateBizId' => 'openTemplateBizId',
-        'openTicketId'      => 'openTicketId',
+        'openTicketId' => 'openTicketId',
         'processorUnionIds' => 'processorUnionIds',
-        'scene'             => 'scene',
-        'sceneContext'      => 'sceneContext',
-        'ticketMemo'        => 'ticketMemo',
-        'title'             => 'title',
+        'scene' => 'scene',
+        'sceneContext' => 'sceneContext',
+        'ticketMemo' => 'ticketMemo',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

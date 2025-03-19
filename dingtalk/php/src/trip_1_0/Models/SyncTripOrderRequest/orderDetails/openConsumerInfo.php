@@ -43,18 +43,16 @@ class openConsumerInfo extends Model
      */
     public $userId;
     protected $_name = [
-        'corpId'       => 'corpId',
-        'name'         => 'name',
-        'staffFlag'    => 'staffFlag',
-        'status'       => 'status',
+        'corpId' => 'corpId',
+        'name' => 'name',
+        'staffFlag' => 'staffFlag',
+        'status' => 'status',
         'ticketAmount' => 'ticketAmount',
-        'ticketNo'     => 'ticketNo',
-        'userId'       => 'userId',
+        'ticketNo' => 'ticketNo',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

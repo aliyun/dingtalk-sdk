@@ -45,18 +45,16 @@ class list_ extends Model
      */
     public $status;
     protected $_name = [
-        'jobId'              => 'jobId',
+        'jobId' => 'jobId',
         'positionCategoryId' => 'positionCategoryId',
-        'positionDes'        => 'positionDes',
-        'positionId'         => 'positionId',
-        'positionName'       => 'positionName',
-        'rankIdList'         => 'rankIdList',
-        'status'             => 'status',
+        'positionDes' => 'positionDes',
+        'positionId' => 'positionId',
+        'positionName' => 'positionName',
+        'rankIdList' => 'rankIdList',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

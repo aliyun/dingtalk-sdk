@@ -79,22 +79,20 @@ class PageListTicketRequest extends Model
      */
     public $ticketStatus;
     protected $_name = [
-        'endTime'        => 'endTime',
-        'foreignId'      => 'foreignId',
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
+        'endTime' => 'endTime',
+        'foreignId' => 'foreignId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'openInstanceId' => 'openInstanceId',
         'productionType' => 'productionType',
-        'sourceId'       => 'sourceId',
-        'startTime'      => 'startTime',
-        'templateId'     => 'templateId',
-        'ticketId'       => 'ticketId',
-        'ticketStatus'   => 'ticketStatus',
+        'sourceId' => 'sourceId',
+        'startTime' => 'startTime',
+        'templateId' => 'templateId',
+        'ticketId' => 'ticketId',
+        'ticketStatus' => 'ticketStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

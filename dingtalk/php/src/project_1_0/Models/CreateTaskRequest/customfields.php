@@ -28,14 +28,12 @@ class customfields extends Model
      */
     public $value;
     protected $_name = [
-        'customfieldId'   => 'customfieldId',
+        'customfieldId' => 'customfieldId',
         'customfieldName' => 'customfieldName',
-        'value'           => 'value',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -76,7 +74,7 @@ class customfields extends Model
         if (isset($map['value'])) {
             if (!empty($map['value'])) {
                 $model->value = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['value'] as $item) {
                     $model->value[$n++] = null !== $item ? value::fromMap($item) : $item;
                 }

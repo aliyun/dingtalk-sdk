@@ -43,16 +43,14 @@ class GetResidentDeptResponseBody extends Model
      */
     public $feature;
     protected $_name = [
-        'contactType'    => 'contactType',
-        'departmentId'   => 'departmentId',
+        'contactType' => 'contactType',
+        'departmentId' => 'departmentId',
         'departmentName' => 'departmentName',
-        'deptType'       => 'deptType',
-        'feature'        => 'feature',
+        'deptType' => 'deptType',
+        'feature' => 'feature',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

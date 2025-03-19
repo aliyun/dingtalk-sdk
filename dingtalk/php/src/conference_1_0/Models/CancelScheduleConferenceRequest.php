@@ -26,13 +26,11 @@ class CancelScheduleConferenceRequest extends Model
      */
     public $scheduleConferenceId;
     protected $_name = [
-        'creatorUnionId'       => 'creatorUnionId',
+        'creatorUnionId' => 'creatorUnionId',
         'scheduleConferenceId' => 'scheduleConferenceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

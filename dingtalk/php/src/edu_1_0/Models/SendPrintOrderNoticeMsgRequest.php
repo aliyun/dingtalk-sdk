@@ -49,18 +49,16 @@ class SendPrintOrderNoticeMsgRequest extends Model
      */
     public $sceneCode;
     protected $_name = [
-        'createOrderTime'     => 'createOrderTime',
+        'createOrderTime' => 'createOrderTime',
         'deliveryCompanyName' => 'deliveryCompanyName',
-        'deliveryNumber'      => 'deliveryNumber',
-        'deliveryTime'        => 'deliveryTime',
-        'paymentTime'         => 'paymentTime',
-        'price'               => 'price',
-        'sceneCode'           => 'sceneCode',
+        'deliveryNumber' => 'deliveryNumber',
+        'deliveryTime' => 'deliveryTime',
+        'paymentTime' => 'paymentTime',
+        'price' => 'price',
+        'sceneCode' => 'sceneCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

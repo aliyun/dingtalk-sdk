@@ -20,13 +20,11 @@ class result extends Model
      */
     public $requestId;
     protected $_name = [
-        'mediaUrl'  => 'mediaUrl',
+        'mediaUrl' => 'mediaUrl',
         'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

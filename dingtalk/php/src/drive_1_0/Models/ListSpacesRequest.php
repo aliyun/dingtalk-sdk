@@ -35,14 +35,12 @@ class ListSpacesRequest extends Model
     public $unionId;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'spaceType'  => 'spaceType',
-        'unionId'    => 'unionId',
+        'nextToken' => 'nextToken',
+        'spaceType' => 'spaceType',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -70,20 +70,18 @@ class group extends Model
      */
     public $remark;
     protected $_name = [
-        'deptId'         => 'deptId',
-        'deptStatus'     => 'deptStatus',
-        'gmtCreateStr'   => 'gmtCreateStr',
+        'deptId' => 'deptId',
+        'deptStatus' => 'deptStatus',
+        'gmtCreateStr' => 'gmtCreateStr',
         'gmtModifiedStr' => 'gmtModifiedStr',
-        'id'             => 'id',
-        'leader'         => 'leader',
-        'name'           => 'name',
+        'id' => 'id',
+        'leader' => 'leader',
+        'name' => 'name',
         'parentDeptCode' => 'parentDeptCode',
-        'remark'         => 'remark',
+        'remark' => 'remark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

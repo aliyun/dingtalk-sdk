@@ -19,12 +19,10 @@ class references extends Model
     public $url;
     protected $_name = [
         'name' => 'name',
-        'url'  => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

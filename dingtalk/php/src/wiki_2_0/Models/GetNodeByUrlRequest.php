@@ -32,14 +32,12 @@ class GetNodeByUrlRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'option'     => 'option',
-        'url'        => 'url',
+        'option' => 'option',
+        'url' => 'url',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

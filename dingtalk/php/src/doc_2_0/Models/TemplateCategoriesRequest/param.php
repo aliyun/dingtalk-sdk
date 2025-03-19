@@ -20,9 +20,7 @@ class param extends Model
         'tenantId' => 'tenantId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

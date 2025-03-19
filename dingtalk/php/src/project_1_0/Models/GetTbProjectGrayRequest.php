@@ -20,9 +20,7 @@ class GetTbProjectGrayRequest extends Model
         'label' => 'label',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,14 +23,12 @@ class result extends Model
      */
     public $activityNameInEnglish;
     protected $_name = [
-        'activityId'            => 'activityId',
-        'activityName'          => 'activityName',
+        'activityId' => 'activityId',
+        'activityName' => 'activityName',
         'activityNameInEnglish' => 'activityNameInEnglish',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,14 +23,12 @@ class GenerateCaldavAccountResponseBody extends Model
      */
     public $username;
     protected $_name = [
-        'password'      => 'password',
+        'password' => 'password',
         'serverAddress' => 'serverAddress',
-        'username'      => 'username',
+        'username' => 'username',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

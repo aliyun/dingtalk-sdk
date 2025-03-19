@@ -73,24 +73,22 @@ class RetrieveAssistantRunResponseBody extends Model
      */
     public $threadId;
     protected $_name = [
-        'assistantId'  => 'assistantId',
-        'cancelledAt'  => 'cancelledAt',
-        'completedAt'  => 'completedAt',
-        'createdAt'    => 'createdAt',
-        'expiresAt'    => 'expiresAt',
-        'failedAt'     => 'failedAt',
-        'id'           => 'id',
+        'assistantId' => 'assistantId',
+        'cancelledAt' => 'cancelledAt',
+        'completedAt' => 'completedAt',
+        'createdAt' => 'createdAt',
+        'expiresAt' => 'expiresAt',
+        'failedAt' => 'failedAt',
+        'id' => 'id',
         'lastErrorMsg' => 'lastErrorMsg',
-        'metadata'     => 'metadata',
-        'object'       => 'object',
-        'startedAt'    => 'startedAt',
-        'status'       => 'status',
-        'threadId'     => 'threadId',
+        'metadata' => 'metadata',
+        'object' => 'object',
+        'startedAt' => 'startedAt',
+        'status' => 'status',
+        'threadId' => 'threadId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -71,18 +71,16 @@ class UpdateApplicationRegFormResponseBody extends Model
      */
     public $templateVersion;
     protected $_name = [
-        'creatorUserId'     => 'creatorUserId',
-        'formId'            => 'formId',
-        'gmtCreateMillis'   => 'gmtCreateMillis',
+        'creatorUserId' => 'creatorUserId',
+        'formId' => 'formId',
+        'gmtCreateMillis' => 'gmtCreateMillis',
         'gmtModifiedMillis' => 'gmtModifiedMillis',
-        'status'            => 'status',
-        'templateId'        => 'templateId',
-        'templateVersion'   => 'templateVersion',
+        'status' => 'status',
+        'templateId' => 'templateId',
+        'templateVersion' => 'templateVersion',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

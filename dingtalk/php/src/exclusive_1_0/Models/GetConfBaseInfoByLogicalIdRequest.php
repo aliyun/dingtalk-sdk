@@ -18,9 +18,7 @@ class GetConfBaseInfoByLogicalIdRequest extends Model
         'logicalConferenceId' => 'logicalConferenceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class GetStarInfoResponseBody extends Model
         'starred' => 'starred',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

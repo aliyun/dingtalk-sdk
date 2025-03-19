@@ -28,14 +28,12 @@ class MoveDentryResponseBody extends Model
      */
     public $taskId;
     protected $_name = [
-        'async'  => 'async',
+        'async' => 'async',
         'dentry' => 'dentry',
         'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

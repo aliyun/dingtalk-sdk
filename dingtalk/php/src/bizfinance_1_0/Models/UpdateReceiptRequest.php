@@ -19,9 +19,7 @@ class UpdateReceiptRequest extends Model
         'receipts' => 'receipts',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class UpdateReceiptRequest extends Model
         if (isset($map['receipts'])) {
             if (!empty($map['receipts'])) {
                 $model->receipts = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['receipts'] as $item) {
                     $model->receipts[$n++] = null !== $item ? receipts::fromMap($item) : $item;
                 }

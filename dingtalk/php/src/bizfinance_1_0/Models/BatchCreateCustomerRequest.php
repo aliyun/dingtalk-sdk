@@ -24,12 +24,10 @@ class BatchCreateCustomerRequest extends Model
     public $operator;
     protected $_name = [
         'createCustomerRequestList' => 'createCustomerRequestList',
-        'operator'                  => 'operator',
+        'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -61,7 +59,7 @@ class BatchCreateCustomerRequest extends Model
         if (isset($map['createCustomerRequestList'])) {
             if (!empty($map['createCustomerRequestList'])) {
                 $model->createCustomerRequestList = [];
-                $n                                = 0;
+                $n = 0;
                 foreach ($map['createCustomerRequestList'] as $item) {
                     $model->createCustomerRequestList[$n++] = null !== $item ? createCustomerRequestList::fromMap($item) : $item;
                 }

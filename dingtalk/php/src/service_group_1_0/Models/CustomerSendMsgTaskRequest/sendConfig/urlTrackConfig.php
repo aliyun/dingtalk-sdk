@@ -29,14 +29,12 @@ class urlTrackConfig extends Model
      */
     public $trackUrl;
     protected $_name = [
-        'title'    => 'title',
-        'trackId'  => 'trackId',
+        'title' => 'title',
+        'trackId' => 'trackId',
         'trackUrl' => 'trackUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

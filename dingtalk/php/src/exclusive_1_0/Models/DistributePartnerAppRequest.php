@@ -34,15 +34,13 @@ class DistributePartnerAppRequest extends Model
      */
     public $type;
     protected $_name = [
-        'appId'     => 'appId',
-        'deptId'    => 'deptId',
+        'appId' => 'appId',
+        'deptId' => 'deptId',
         'subCorpId' => 'subCorpId',
-        'type'      => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

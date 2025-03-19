@@ -16,9 +16,7 @@ class cardSettings extends Model
         'pullStrategy' => 'pullStrategy',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

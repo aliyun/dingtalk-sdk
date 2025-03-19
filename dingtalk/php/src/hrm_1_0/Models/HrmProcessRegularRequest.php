@@ -44,13 +44,11 @@ class HrmProcessRegularRequest extends Model
     protected $_name = [
         'operationId' => 'operationId',
         'regularDate' => 'regularDate',
-        'remark'      => 'remark',
-        'userId'      => 'userId',
+        'remark' => 'remark',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

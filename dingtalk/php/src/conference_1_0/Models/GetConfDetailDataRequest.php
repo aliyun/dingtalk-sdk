@@ -30,13 +30,11 @@ class GetConfDetailDataRequest extends Model
     public $nick;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'nick'       => 'nick',
+        'nextToken' => 'nextToken',
+        'nick' => 'nick',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

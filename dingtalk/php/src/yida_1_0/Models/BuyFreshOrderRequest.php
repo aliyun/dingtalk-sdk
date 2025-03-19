@@ -85,22 +85,20 @@ class BuyFreshOrderRequest extends Model
      */
     public $produceCode;
     protected $_name = [
-        'accessKey'     => 'accessKey',
+        'accessKey' => 'accessKey',
         'accountNumber' => 'accountNumber',
-        'beginTimeGMT'  => 'beginTimeGMT',
+        'beginTimeGMT' => 'beginTimeGMT',
         'callerUnionId' => 'callerUnionId',
-        'chargeType'    => 'chargeType',
-        'commerceType'  => 'commerceType',
+        'chargeType' => 'chargeType',
+        'commerceType' => 'commerceType',
         'commodityType' => 'commodityType',
-        'endTimeGMT'    => 'endTimeGMT',
-        'instanceId'    => 'instanceId',
-        'instanceName'  => 'instanceName',
-        'produceCode'   => 'produceCode',
+        'endTimeGMT' => 'endTimeGMT',
+        'instanceId' => 'instanceId',
+        'instanceName' => 'instanceName',
+        'produceCode' => 'produceCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

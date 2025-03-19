@@ -18,9 +18,7 @@ class GenerateDarkWaterMarkRequest extends Model
         'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

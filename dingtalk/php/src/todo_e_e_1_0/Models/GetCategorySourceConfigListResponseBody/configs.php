@@ -23,14 +23,12 @@ class configs extends Model
      */
     public $configId;
     protected $_name = [
-        'bizCategoryId'   => 'bizCategoryId',
+        'bizCategoryId' => 'bizCategoryId',
         'bizCategoryName' => 'bizCategoryName',
-        'configId'        => 'configId',
+        'configId' => 'configId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

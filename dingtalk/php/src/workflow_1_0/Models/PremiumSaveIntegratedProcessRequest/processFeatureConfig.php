@@ -17,9 +17,7 @@ class processFeatureConfig extends Model
         'features' => 'features',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class processFeatureConfig extends Model
         if (isset($map['features'])) {
             if (!empty($map['features'])) {
                 $model->features = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['features'] as $item) {
                     $model->features[$n++] = null !== $item ? features::fromMap($item) : $item;
                 }

@@ -16,9 +16,7 @@ class AddRecordPermissionResponseBody extends Model
         'code' => 'code',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

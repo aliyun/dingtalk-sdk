@@ -145,31 +145,29 @@ class data extends Model
      */
     public $workItemType;
     protected $_name = [
-        'activityCode'      => 'activityCode',
-        'activityName'      => 'activityName',
-        'appCode'           => 'appCode',
-        'bizObjectId'       => 'bizObjectId',
-        'comment'           => 'comment',
-        'displayName'       => 'displayName',
-        'finishTimeGMT'     => 'finishTimeGMT',
-        'finisher'          => 'finisher',
-        'isApproval'        => 'isApproval',
-        'isFinish'          => 'isFinish',
-        'participant'       => 'participant',
+        'activityCode' => 'activityCode',
+        'activityName' => 'activityName',
+        'appCode' => 'appCode',
+        'bizObjectId' => 'bizObjectId',
+        'comment' => 'comment',
+        'displayName' => 'displayName',
+        'finishTimeGMT' => 'finishTimeGMT',
+        'finisher' => 'finisher',
+        'isApproval' => 'isApproval',
+        'isFinish' => 'isFinish',
+        'participant' => 'participant',
         'processInstanceId' => 'processInstanceId',
-        'processVersion'    => 'processVersion',
-        'receiptor'         => 'receiptor',
-        'receiveTimeGMT'    => 'receiveTimeGMT',
-        'schemaCode'        => 'schemaCode',
-        'startTimeGMT'      => 'startTimeGMT',
-        'state'             => 'state',
-        'workItemId'        => 'workItemId',
-        'workItemType'      => 'workItemType',
+        'processVersion' => 'processVersion',
+        'receiptor' => 'receiptor',
+        'receiveTimeGMT' => 'receiveTimeGMT',
+        'schemaCode' => 'schemaCode',
+        'startTimeGMT' => 'startTimeGMT',
+        'state' => 'state',
+        'workItemId' => 'workItemId',
+        'workItemType' => 'workItemType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

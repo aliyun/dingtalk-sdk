@@ -17,9 +17,7 @@ class AddEvaluatePerformanceRequest extends Model
         'evaluationData' => 'evaluationData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class AddEvaluatePerformanceRequest extends Model
         if (isset($map['evaluationData'])) {
             if (!empty($map['evaluationData'])) {
                 $model->evaluationData = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['evaluationData'] as $item) {
                     $model->evaluationData[$n++] = null !== $item ? evaluationData::fromMap($item) : $item;
                 }

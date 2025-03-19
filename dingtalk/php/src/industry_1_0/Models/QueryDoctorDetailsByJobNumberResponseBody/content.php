@@ -53,19 +53,17 @@ class content extends Model
      */
     public $userProbList;
     protected $_name = [
-        'deptList'          => 'deptList',
-        'groupList'         => 'groupList',
-        'jobNumber'         => 'jobNumber',
-        'jobStatus'         => 'jobStatus',
+        'deptList' => 'deptList',
+        'groupList' => 'groupList',
+        'jobNumber' => 'jobNumber',
+        'jobStatus' => 'jobStatus',
         'professionalTitle' => 'professionalTitle',
-        'userId'            => 'userId',
-        'userName'          => 'userName',
-        'userProbList'      => 'userProbList',
+        'userId' => 'userId',
+        'userName' => 'userName',
+        'userProbList' => 'userProbList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -133,7 +131,7 @@ class content extends Model
         if (isset($map['deptList'])) {
             if (!empty($map['deptList'])) {
                 $model->deptList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['deptList'] as $item) {
                     $model->deptList[$n++] = null !== $item ? deptList::fromMap($item) : $item;
                 }
@@ -142,7 +140,7 @@ class content extends Model
         if (isset($map['groupList'])) {
             if (!empty($map['groupList'])) {
                 $model->groupList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['groupList'] as $item) {
                     $model->groupList[$n++] = null !== $item ? groupList::fromMap($item) : $item;
                 }
@@ -154,7 +152,7 @@ class content extends Model
         if (isset($map['jobStatus'])) {
             if (!empty($map['jobStatus'])) {
                 $model->jobStatus = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['jobStatus'] as $item) {
                     $model->jobStatus[$n++] = null !== $item ? jobStatus::fromMap($item) : $item;
                 }
@@ -172,7 +170,7 @@ class content extends Model
         if (isset($map['userProbList'])) {
             if (!empty($map['userProbList'])) {
                 $model->userProbList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['userProbList'] as $item) {
                     $model->userProbList[$n++] = null !== $item ? userProbList::fromMap($item) : $item;
                 }

@@ -20,13 +20,11 @@ class contacts extends Model
      */
     public $extendData;
     protected $_name = [
-        'data'       => 'data',
+        'data' => 'data',
         'extendData' => 'extendData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

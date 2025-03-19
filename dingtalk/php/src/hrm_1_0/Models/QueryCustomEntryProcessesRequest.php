@@ -27,14 +27,12 @@ class QueryCustomEntryProcessesRequest extends Model
      */
     public $operateUserId;
     protected $_name = [
-        'maxResults'    => 'maxResults',
-        'nextToken'     => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'operateUserId' => 'operateUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

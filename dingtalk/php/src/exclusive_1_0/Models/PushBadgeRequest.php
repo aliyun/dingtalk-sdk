@@ -32,14 +32,12 @@ class PushBadgeRequest extends Model
      */
     public $pushType;
     protected $_name = [
-        'agentId'    => 'agentId',
+        'agentId' => 'agentId',
         'badgeItems' => 'badgeItems',
-        'pushType'   => 'pushType',
+        'pushType' => 'pushType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -77,7 +75,7 @@ class PushBadgeRequest extends Model
         if (isset($map['badgeItems'])) {
             if (!empty($map['badgeItems'])) {
                 $model->badgeItems = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['badgeItems'] as $item) {
                     $model->badgeItems[$n++] = null !== $item ? badgeItems::fromMap($item) : $item;
                 }

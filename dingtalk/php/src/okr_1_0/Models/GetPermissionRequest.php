@@ -41,16 +41,14 @@ class GetPermissionRequest extends Model
      */
     public $withObjective;
     protected $_name = [
-        'targetId'      => 'targetId',
-        'targetType'    => 'targetType',
-        'userId'        => 'userId',
-        'withKr'        => 'withKr',
+        'targetId' => 'targetId',
+        'targetType' => 'targetType',
+        'userId' => 'userId',
+        'withKr' => 'withKr',
         'withObjective' => 'withObjective',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -89,22 +89,20 @@ class CreateCustomerRequest extends Model
      */
     public $purchaserTel;
     protected $_name = [
-        'creator'           => 'creator',
-        'description'       => 'description',
-        'drawerEmail'       => 'drawerEmail',
-        'drawerTelephone'   => 'drawerTelephone',
-        'name'              => 'name',
-        'purchaserAccount'  => 'purchaserAccount',
-        'purchaserAddress'  => 'purchaserAddress',
+        'creator' => 'creator',
+        'description' => 'description',
+        'drawerEmail' => 'drawerEmail',
+        'drawerTelephone' => 'drawerTelephone',
+        'name' => 'name',
+        'purchaserAccount' => 'purchaserAccount',
+        'purchaserAddress' => 'purchaserAddress',
         'purchaserBankName' => 'purchaserBankName',
-        'purchaserName'     => 'purchaserName',
-        'purchaserTaxNo'    => 'purchaserTaxNo',
-        'purchaserTel'      => 'purchaserTel',
+        'purchaserName' => 'purchaserName',
+        'purchaserTaxNo' => 'purchaserTaxNo',
+        'purchaserTel' => 'purchaserTel',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

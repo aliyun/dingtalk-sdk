@@ -48,17 +48,15 @@ class resultList extends Model
      */
     public $recycleTime;
     protected $_name = [
-        'customerId'         => 'customerId',
+        'customerId' => 'customerId',
         'followUpActionTime' => 'followUpActionTime',
-        'isDeleted'          => 'isDeleted',
-        'notifyTime'         => 'notifyTime',
-        'recycleRuleId'      => 'recycleRuleId',
-        'recycleTime'        => 'recycleTime',
+        'isDeleted' => 'isDeleted',
+        'notifyTime' => 'notifyTime',
+        'recycleRuleId' => 'recycleRuleId',
+        'recycleTime' => 'recycleTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

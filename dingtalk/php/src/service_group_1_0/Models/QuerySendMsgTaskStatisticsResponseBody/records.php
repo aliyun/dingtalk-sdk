@@ -35,16 +35,14 @@ class records extends Model
      */
     public $status;
     protected $_name = [
-        'errorDetail'             => 'errorDetail',
-        'group'                   => 'group',
+        'errorDetail' => 'errorDetail',
+        'group' => 'group',
         'groupUserReadStatistics' => 'groupUserReadStatistics',
-        'openMsgId'               => 'openMsgId',
-        'status'                  => 'status',
+        'openMsgId' => 'openMsgId',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

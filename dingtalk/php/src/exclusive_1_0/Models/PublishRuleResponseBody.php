@@ -20,9 +20,7 @@ class PublishRuleResponseBody extends Model
         'isPublish' => 'isPublish',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

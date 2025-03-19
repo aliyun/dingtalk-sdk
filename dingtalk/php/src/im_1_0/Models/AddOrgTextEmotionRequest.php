@@ -44,15 +44,13 @@ class AddOrgTextEmotionRequest extends Model
      */
     public $emotionName;
     protected $_name = [
-        'backgroundMediaId'         => 'backgroundMediaId',
+        'backgroundMediaId' => 'backgroundMediaId',
         'backgroundMediaIdForPanel' => 'backgroundMediaIdForPanel',
-        'deptId'                    => 'deptId',
-        'emotionName'               => 'emotionName',
+        'deptId' => 'deptId',
+        'emotionName' => 'emotionName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

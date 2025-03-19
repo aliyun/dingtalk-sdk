@@ -35,16 +35,14 @@ class CreateDeliveryPlanRequest extends Model
      */
     public $userIdList;
     protected $_name = [
-        'content'    => 'content',
-        'endTime'    => 'endTime',
-        'resId'      => 'resId',
-        'startTime'  => 'startTime',
+        'content' => 'content',
+        'endTime' => 'endTime',
+        'resId' => 'resId',
+        'startTime' => 'startTime',
         'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

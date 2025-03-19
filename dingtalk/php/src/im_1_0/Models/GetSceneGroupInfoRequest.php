@@ -22,13 +22,11 @@ class GetSceneGroupInfoRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'coolAppCode'        => 'coolAppCode',
+        'coolAppCode' => 'coolAppCode',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

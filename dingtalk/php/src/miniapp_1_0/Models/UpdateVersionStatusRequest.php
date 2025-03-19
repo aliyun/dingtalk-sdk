@@ -34,15 +34,13 @@ class UpdateVersionStatusRequest extends Model
      */
     public $versionType;
     protected $_name = [
-        'bundleId'    => 'bundleId',
-        'miniAppId'   => 'miniAppId',
-        'version'     => 'version',
+        'bundleId' => 'bundleId',
+        'miniAppId' => 'miniAppId',
+        'version' => 'version',
         'versionType' => 'versionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

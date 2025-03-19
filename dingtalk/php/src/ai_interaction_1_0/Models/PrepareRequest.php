@@ -30,15 +30,13 @@ class PrepareRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'content'            => 'content',
-        'contentType'        => 'contentType',
+        'content' => 'content',
+        'contentType' => 'contentType',
         'openConversationId' => 'openConversationId',
-        'unionId'            => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

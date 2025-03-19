@@ -35,14 +35,12 @@ class CreateDeveloperMetadataRequest extends Model
     public $operatorId;
     protected $_name = [
         'associatedColumn' => 'associatedColumn',
-        'associatedRow'    => 'associatedRow',
-        'value'            => 'value',
-        'operatorId'       => 'operatorId',
+        'associatedRow' => 'associatedRow',
+        'value' => 'value',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

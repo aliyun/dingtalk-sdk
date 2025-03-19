@@ -30,13 +30,11 @@ class CampusUpdateCampusGroupRequest extends Model
     public $name;
     protected $_name = [
         'campusProjectGroupId' => 'campusProjectGroupId',
-        'extend'               => 'extend',
-        'name'                 => 'name',
+        'extend' => 'extend',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

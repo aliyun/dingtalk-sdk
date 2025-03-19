@@ -72,19 +72,17 @@ class request extends Model
     public $verifyStatus;
     protected $_name = [
         'accountantBookId' => 'accountantBookId',
-        'companyCode'      => 'companyCode',
-        'endTime'          => 'endTime',
-        'financeType'      => 'financeType',
-        'pageNumber'       => 'pageNumber',
-        'pageSize'         => 'pageSize',
-        'startTime'        => 'startTime',
-        'taxNo'            => 'taxNo',
-        'verifyStatus'     => 'verifyStatus',
+        'companyCode' => 'companyCode',
+        'endTime' => 'endTime',
+        'financeType' => 'financeType',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'startTime' => 'startTime',
+        'taxNo' => 'taxNo',
+        'verifyStatus' => 'verifyStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

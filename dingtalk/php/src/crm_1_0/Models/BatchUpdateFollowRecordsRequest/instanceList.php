@@ -25,13 +25,11 @@ class instanceList extends Model
      */
     public $instanceId;
     protected $_name = [
-        'dataArray'  => 'dataArray',
+        'dataArray' => 'dataArray',
         'instanceId' => 'instanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class instanceList extends Model
         if (isset($map['dataArray'])) {
             if (!empty($map['dataArray'])) {
                 $model->dataArray = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['dataArray'] as $item) {
                     $model->dataArray[$n++] = null !== $item ? dataArray::fromMap($item) : $item;
                 }

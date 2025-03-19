@@ -109,24 +109,22 @@ class result extends Model
      */
     public $status;
     protected $_name = [
-        'appType'     => 'appType',
-        'appUuid'     => 'appUuid',
-        'bizType'     => 'bizType',
-        'content'     => 'content',
-        'createTime'  => 'createTime',
-        'creator'     => 'creator',
-        'formCode'    => 'formCode',
-        'formUuid'    => 'formUuid',
-        'memo'        => 'memo',
+        'appType' => 'appType',
+        'appUuid' => 'appUuid',
+        'bizType' => 'bizType',
+        'content' => 'content',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
+        'formCode' => 'formCode',
+        'formUuid' => 'formUuid',
+        'memo' => 'memo',
         'modifedTime' => 'modifedTime',
-        'name'        => 'name',
-        'ownerId'     => 'ownerId',
-        'status'      => 'status',
+        'name' => 'name',
+        'ownerId' => 'ownerId',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

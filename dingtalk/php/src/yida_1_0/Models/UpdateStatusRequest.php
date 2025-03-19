@@ -43,18 +43,16 @@ class UpdateStatusRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'        => 'appType',
-        'errorLines'     => 'errorLines',
+        'appType' => 'appType',
+        'errorLines' => 'errorLines',
         'importSequence' => 'importSequence',
-        'language'       => 'language',
-        'status'         => 'status',
-        'systemToken'    => 'systemToken',
-        'userId'         => 'userId',
+        'language' => 'language',
+        'status' => 'status',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

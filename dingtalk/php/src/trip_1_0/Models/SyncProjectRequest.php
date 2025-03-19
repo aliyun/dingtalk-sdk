@@ -101,24 +101,22 @@ class SyncProjectRequest extends Model
     public $userId;
     protected $_name = [
         'channelCorpId' => 'channelCorpId',
-        'code'          => 'code',
-        'costCenterId'  => 'costCenterId',
-        'deleteFlag'    => 'deleteFlag',
-        'extension'     => 'extension',
-        'gmtAction'     => 'gmtAction',
-        'invoiceId'     => 'invoiceId',
-        'managerIds'    => 'managerIds',
-        'projectId'     => 'projectId',
-        'projectName'   => 'projectName',
-        'scope'         => 'scope',
-        'source'        => 'source',
-        'thirdPartId'   => 'thirdPartId',
-        'userId'        => 'userId',
+        'code' => 'code',
+        'costCenterId' => 'costCenterId',
+        'deleteFlag' => 'deleteFlag',
+        'extension' => 'extension',
+        'gmtAction' => 'gmtAction',
+        'invoiceId' => 'invoiceId',
+        'managerIds' => 'managerIds',
+        'projectId' => 'projectId',
+        'projectName' => 'projectName',
+        'scope' => 'scope',
+        'source' => 'source',
+        'thirdPartId' => 'thirdPartId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -38,15 +38,13 @@ class RobotSendDingRequest extends Model
      */
     public $robotCode;
     protected $_name = [
-        'content'            => 'content',
+        'content' => 'content',
         'receiverUserIdList' => 'receiverUserIdList',
-        'remindType'         => 'remindType',
-        'robotCode'          => 'robotCode',
+        'remindType' => 'remindType',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -86,20 +86,18 @@ class CreateBatchTradeOrderRequest extends Model
      */
     public $tradeTitle;
     protected $_name = [
-        'accountId'         => 'accountId',
-        'accountNo'         => 'accountNo',
-        'batchRemark'       => 'batchRemark',
+        'accountId' => 'accountId',
+        'accountNo' => 'accountNo',
+        'batchRemark' => 'batchRemark',
         'batchTradeDetails' => 'batchTradeDetails',
-        'outBatchNo'        => 'outBatchNo',
-        'staffId'           => 'staffId',
-        'totalAmount'       => 'totalAmount',
-        'totalCount'        => 'totalCount',
-        'tradeTitle'        => 'tradeTitle',
+        'outBatchNo' => 'outBatchNo',
+        'staffId' => 'staffId',
+        'totalAmount' => 'totalAmount',
+        'totalCount' => 'totalCount',
+        'tradeTitle' => 'tradeTitle',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -161,7 +159,7 @@ class CreateBatchTradeOrderRequest extends Model
         if (isset($map['batchTradeDetails'])) {
             if (!empty($map['batchTradeDetails'])) {
                 $model->batchTradeDetails = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['batchTradeDetails'] as $item) {
                     $model->batchTradeDetails[$n++] = null !== $item ? batchTradeDetails::fromMap($item) : $item;
                 }

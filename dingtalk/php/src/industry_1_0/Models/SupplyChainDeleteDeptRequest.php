@@ -20,9 +20,7 @@ class SupplyChainDeleteDeptRequest extends Model
         'supplyDeptId' => 'supplyDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

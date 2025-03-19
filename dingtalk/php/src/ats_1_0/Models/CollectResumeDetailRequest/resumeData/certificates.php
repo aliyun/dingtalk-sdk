@@ -23,12 +23,10 @@ class certificates extends Model
     public $grantTime;
     protected $_name = [
         'certificateName' => 'certificateName',
-        'grantTime'       => 'grantTime',
+        'grantTime' => 'grantTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

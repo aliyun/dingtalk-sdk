@@ -20,9 +20,7 @@ class result extends Model
         'tbUserId' => 'tbUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

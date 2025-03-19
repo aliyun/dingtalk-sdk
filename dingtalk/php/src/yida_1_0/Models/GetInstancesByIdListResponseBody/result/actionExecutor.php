@@ -32,14 +32,12 @@ class actionExecutor extends Model
     public $userId;
     protected $_name = [
         'departmentName' => 'departmentName',
-        'email'          => 'email',
-        'name'           => 'name',
-        'userId'         => 'userId',
+        'email' => 'email',
+        'name' => 'name',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

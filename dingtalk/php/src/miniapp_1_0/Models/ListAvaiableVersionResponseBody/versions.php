@@ -44,15 +44,13 @@ class versions extends Model
     public $version;
     protected $_name = [
         'buildStatus' => 'buildStatus',
-        'h5Bundle'    => 'h5Bundle',
+        'h5Bundle' => 'h5Bundle',
         'packageSize' => 'packageSize',
-        'packageUrl'  => 'packageUrl',
-        'version'     => 'version',
+        'packageUrl' => 'packageUrl',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

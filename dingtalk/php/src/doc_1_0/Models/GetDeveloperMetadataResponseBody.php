@@ -26,13 +26,11 @@ class GetDeveloperMetadataResponseBody extends Model
     public $value;
     protected $_name = [
         'associatedColumn' => 'associatedColumn',
-        'associatedRow'    => 'associatedRow',
-        'value'            => 'value',
+        'associatedRow' => 'associatedRow',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

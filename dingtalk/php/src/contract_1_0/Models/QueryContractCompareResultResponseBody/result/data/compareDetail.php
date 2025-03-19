@@ -20,13 +20,11 @@ class compareDetail extends Model
      */
     public $differenceCount;
     protected $_name = [
-        'details'         => 'details',
+        'details' => 'details',
         'differenceCount' => 'differenceCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -58,7 +56,7 @@ class compareDetail extends Model
         if (isset($map['details'])) {
             if (!empty($map['details'])) {
                 $model->details = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['details'] as $item) {
                     $model->details[$n++] = null !== $item ? details::fromMap($item) : $item;
                 }

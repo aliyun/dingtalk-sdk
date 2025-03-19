@@ -83,22 +83,20 @@ class result extends Model
      */
     public $updated;
     protected $_name = [
-        'created'                     => 'created',
-        'creatorId'                   => 'creatorId',
-        'isDeleted'                   => 'isDeleted',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
+        'isDeleted' => 'isDeleted',
         'isTaskflowstatusruleexector' => 'isTaskflowstatusruleexector',
-        'kind'                        => 'kind',
-        'name'                        => 'name',
-        'pos'                         => 'pos',
-        'rejectStatusIds'             => 'rejectStatusIds',
-        'taskflowId'                  => 'taskflowId',
-        'taskflowStatusId'            => 'taskflowStatusId',
-        'updated'                     => 'updated',
+        'kind' => 'kind',
+        'name' => 'name',
+        'pos' => 'pos',
+        'rejectStatusIds' => 'rejectStatusIds',
+        'taskflowId' => 'taskflowId',
+        'taskflowStatusId' => 'taskflowStatusId',
+        'updated' => 'updated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

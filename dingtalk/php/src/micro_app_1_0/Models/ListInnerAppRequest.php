@@ -18,9 +18,7 @@ class ListInnerAppRequest extends Model
         'ecologicalCorpId' => 'ecologicalCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

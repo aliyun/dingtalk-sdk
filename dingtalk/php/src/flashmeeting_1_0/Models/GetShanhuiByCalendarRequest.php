@@ -27,12 +27,10 @@ class GetShanhuiByCalendarRequest extends Model
     public $userId;
     protected $_name = [
         'eventId' => 'eventId',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

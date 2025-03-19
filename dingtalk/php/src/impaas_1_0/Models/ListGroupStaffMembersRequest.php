@@ -18,9 +18,7 @@ class ListGroupStaffMembersRequest extends Model
         'conversationId' => 'conversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

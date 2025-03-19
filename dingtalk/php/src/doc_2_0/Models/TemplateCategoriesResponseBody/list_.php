@@ -23,14 +23,12 @@ class list_ extends Model
      */
     public $sort;
     protected $_name = [
-        'categoryId'   => 'categoryId',
+        'categoryId' => 'categoryId',
         'categoryName' => 'categoryName',
-        'sort'         => 'sort',
+        'sort' => 'sort',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

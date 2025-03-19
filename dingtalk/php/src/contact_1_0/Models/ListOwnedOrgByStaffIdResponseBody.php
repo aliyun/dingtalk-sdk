@@ -17,9 +17,7 @@ class ListOwnedOrgByStaffIdResponseBody extends Model
         'orgList' => 'orgList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListOwnedOrgByStaffIdResponseBody extends Model
         if (isset($map['orgList'])) {
             if (!empty($map['orgList'])) {
                 $model->orgList = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['orgList'] as $item) {
                     $model->orgList[$n++] = null !== $item ? orgList::fromMap($item) : $item;
                 }

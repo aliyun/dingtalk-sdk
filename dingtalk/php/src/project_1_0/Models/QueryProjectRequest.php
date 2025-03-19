@@ -44,15 +44,13 @@ class QueryProjectRequest extends Model
     public $sourceId;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'name'       => 'name',
-        'nextToken'  => 'nextToken',
+        'name' => 'name',
+        'nextToken' => 'nextToken',
         'projectIds' => 'projectIds',
-        'sourceId'   => 'sourceId',
+        'sourceId' => 'sourceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

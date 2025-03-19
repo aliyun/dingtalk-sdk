@@ -18,9 +18,7 @@ class UpdateLiveFeedResponseBody extends Model
         'hasUpdate' => 'hasUpdate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

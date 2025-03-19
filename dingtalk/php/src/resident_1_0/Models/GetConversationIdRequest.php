@@ -20,9 +20,7 @@ class GetConversationIdRequest extends Model
         'chatId' => 'chatId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

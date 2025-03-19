@@ -124,31 +124,29 @@ class data extends Model
      */
     public $summoney;
     protected $_name = [
-        'cgFjmoney'     => 'cg_fjmoney',
-        'cgFjmoneylx'   => 'cg_fjmoneylx',
-        'cgKjmoney'     => 'cg_kjmoney',
+        'cgFjmoney' => 'cg_fjmoney',
+        'cgFjmoneylx' => 'cg_fjmoneylx',
+        'cgKjmoney' => 'cg_kjmoney',
         'cgMoneyzhekou' => 'cg_moneyzhekou',
-        'cgZxstate'     => 'cg_zxstate',
-        'cgdate'        => 'cgdate',
-        'cgname'        => 'cgname',
-        'cgno'          => 'cgno',
-        'cgremark'      => 'cgremark',
-        'cgtype'        => 'cgtype',
-        'childMx'       => 'child_mx',
-        'dataUserid'    => 'data_userid',
-        'empid'         => 'empid',
-        'gysLxrid'      => 'gys_lxrid',
-        'gysLxrinfo'    => 'gys_lxrinfo',
-        'gysid'         => 'gysid',
-        'gysjingban'    => 'gysjingban',
-        'orderHtid'     => 'order_htid',
-        'orderKhid'     => 'order_khid',
-        'summoney'      => 'summoney',
+        'cgZxstate' => 'cg_zxstate',
+        'cgdate' => 'cgdate',
+        'cgname' => 'cgname',
+        'cgno' => 'cgno',
+        'cgremark' => 'cgremark',
+        'cgtype' => 'cgtype',
+        'childMx' => 'child_mx',
+        'dataUserid' => 'data_userid',
+        'empid' => 'empid',
+        'gysLxrid' => 'gys_lxrid',
+        'gysLxrinfo' => 'gys_lxrinfo',
+        'gysid' => 'gysid',
+        'gysjingban' => 'gysjingban',
+        'orderHtid' => 'order_htid',
+        'orderKhid' => 'order_khid',
+        'summoney' => 'summoney',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

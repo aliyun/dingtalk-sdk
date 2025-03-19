@@ -58,17 +58,15 @@ class StartStreamOutRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'mode'                => 'mode',
-        'needHostJoin'        => 'needHostJoin',
+        'mode' => 'mode',
+        'needHostJoin' => 'needHostJoin',
         'smallWindowPosition' => 'smallWindowPosition',
-        'streamName'          => 'streamName',
-        'streamUrlList'       => 'streamUrlList',
-        'unionId'             => 'unionId',
+        'streamName' => 'streamName',
+        'streamUrlList' => 'streamUrlList',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

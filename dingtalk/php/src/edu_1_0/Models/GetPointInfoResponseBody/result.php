@@ -24,13 +24,11 @@ class result extends Model
     public $startTime;
     protected $_name = [
         'availableQuota' => 'availableQuota',
-        'endTime'        => 'endTime',
-        'startTime'      => 'startTime',
+        'endTime' => 'endTime',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,14 +20,23 @@ class ExclusiveModelCompleteServiceRequest extends Model
     public $maxTokens;
 
     /**
+     * @description This parameter is required.
+     *
      * @var messages[]
      */
     public $messages;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $model;
+
+    /**
+     * @var bool
+     */
+    public $stream;
 
     /**
      * @var float
@@ -40,16 +49,15 @@ class ExclusiveModelCompleteServiceRequest extends Model
     public $topP;
     protected $_name = [
         'enableSearch' => 'enable_search',
-        'maxTokens'    => 'max_tokens',
-        'messages'     => 'messages',
-        'model'        => 'model',
-        'temperature'  => 'temperature',
-        'topP'         => 'top_p',
+        'maxTokens' => 'max_tokens',
+        'messages' => 'messages',
+        'model' => 'model',
+        'stream' => 'stream',
+        'temperature' => 'temperature',
+        'topP' => 'top_p',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -71,6 +79,9 @@ class ExclusiveModelCompleteServiceRequest extends Model
         }
         if (null !== $this->model) {
             $res['model'] = $this->model;
+        }
+        if (null !== $this->stream) {
+            $res['stream'] = $this->stream;
         }
         if (null !== $this->temperature) {
             $res['temperature'] = $this->temperature;
@@ -99,7 +110,7 @@ class ExclusiveModelCompleteServiceRequest extends Model
         if (isset($map['messages'])) {
             if (!empty($map['messages'])) {
                 $model->messages = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['messages'] as $item) {
                     $model->messages[$n++] = null !== $item ? messages::fromMap($item) : $item;
                 }
@@ -107,6 +118,9 @@ class ExclusiveModelCompleteServiceRequest extends Model
         }
         if (isset($map['model'])) {
             $model->model = $map['model'];
+        }
+        if (isset($map['stream'])) {
+            $model->stream = $map['stream'];
         }
         if (isset($map['temperature'])) {
             $model->temperature = $map['temperature'];

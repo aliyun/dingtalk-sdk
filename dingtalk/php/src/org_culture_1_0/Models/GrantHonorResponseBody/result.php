@@ -18,13 +18,11 @@ class result extends Model
      */
     public $successUserIds;
     protected $_name = [
-        'failedUserIds'  => 'failedUserIds',
+        'failedUserIds' => 'failedUserIds',
         'successUserIds' => 'successUserIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

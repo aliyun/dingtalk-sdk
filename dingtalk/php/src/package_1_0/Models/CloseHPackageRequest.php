@@ -20,9 +20,7 @@ class CloseHPackageRequest extends Model
         'miniAppId' => 'miniAppId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

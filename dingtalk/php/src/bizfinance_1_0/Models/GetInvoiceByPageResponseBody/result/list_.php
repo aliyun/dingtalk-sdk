@@ -214,51 +214,49 @@ class list_ extends Model
      */
     public $voucherStatus;
     protected $_name = [
-        'accountPeriod'               => 'accountPeriod',
-        'amount'                      => 'amount',
-        'amountWithTax'               => 'amountWithTax',
-        'checkCode'                   => 'checkCode',
-        'checkTime'                   => 'checkTime',
-        'drewDate'                    => 'drewDate',
-        'electronicUrl'               => 'electronicUrl',
-        'financeType'                 => 'financeType',
-        'fundType'                    => 'fundType',
-        'generalInvoiceDetailVOList'  => 'generalInvoiceDetailVOList',
-        'imageUrl'                    => 'imageUrl',
-        'invoiceCode'                 => 'invoiceCode',
-        'invoiceNo'                   => 'invoiceNo',
-        'invoiceStatus'               => 'invoiceStatus',
-        'invoiceType'                 => 'invoiceType',
-        'machineCode'                 => 'machineCode',
-        'oilFlag'                     => 'oilFlag',
-        'payee'                       => 'payee',
-        'processInstCode'             => 'processInstCode',
-        'processInstType'             => 'processInstType',
-        'purchaserAddress'            => 'purchaserAddress',
-        'purchaserBankNameAccount'    => 'purchaserBankNameAccount',
-        'purchaserName'               => 'purchaserName',
-        'purchaserTaxNo'              => 'purchaserTaxNo',
-        'purchaserTel'                => 'purchaserTel',
-        'remark'                      => 'remark',
-        'sellerAddress'               => 'sellerAddress',
-        'sellerBankNameAccount'       => 'sellerBankNameAccount',
-        'sellerName'                  => 'sellerName',
-        'sellerTaxNo'                 => 'sellerTaxNo',
-        'sellerTel'                   => 'sellerTel',
-        'status'                      => 'status',
-        'supplySign'                  => 'supplySign',
-        'taxAmount'                   => 'taxAmount',
-        'transportFeeDetailVOList'    => 'transportFeeDetailVOList',
+        'accountPeriod' => 'accountPeriod',
+        'amount' => 'amount',
+        'amountWithTax' => 'amountWithTax',
+        'checkCode' => 'checkCode',
+        'checkTime' => 'checkTime',
+        'drewDate' => 'drewDate',
+        'electronicUrl' => 'electronicUrl',
+        'financeType' => 'financeType',
+        'fundType' => 'fundType',
+        'generalInvoiceDetailVOList' => 'generalInvoiceDetailVOList',
+        'imageUrl' => 'imageUrl',
+        'invoiceCode' => 'invoiceCode',
+        'invoiceNo' => 'invoiceNo',
+        'invoiceStatus' => 'invoiceStatus',
+        'invoiceType' => 'invoiceType',
+        'machineCode' => 'machineCode',
+        'oilFlag' => 'oilFlag',
+        'payee' => 'payee',
+        'processInstCode' => 'processInstCode',
+        'processInstType' => 'processInstType',
+        'purchaserAddress' => 'purchaserAddress',
+        'purchaserBankNameAccount' => 'purchaserBankNameAccount',
+        'purchaserName' => 'purchaserName',
+        'purchaserTaxNo' => 'purchaserTaxNo',
+        'purchaserTel' => 'purchaserTel',
+        'remark' => 'remark',
+        'sellerAddress' => 'sellerAddress',
+        'sellerBankNameAccount' => 'sellerBankNameAccount',
+        'sellerName' => 'sellerName',
+        'sellerTaxNo' => 'sellerTaxNo',
+        'sellerTel' => 'sellerTel',
+        'status' => 'status',
+        'supplySign' => 'supplySign',
+        'taxAmount' => 'taxAmount',
+        'transportFeeDetailVOList' => 'transportFeeDetailVOList',
         'usedVehicleSaleDetailVOList' => 'usedVehicleSaleDetailVOList',
-        'vehicleSaleDetailVOList'     => 'vehicleSaleDetailVOList',
-        'verifyStatus'                => 'verifyStatus',
-        'voucherCode'                 => 'voucherCode',
-        'voucherStatus'               => 'voucherStatus',
+        'vehicleSaleDetailVOList' => 'vehicleSaleDetailVOList',
+        'verifyStatus' => 'verifyStatus',
+        'voucherCode' => 'voucherCode',
+        'voucherStatus' => 'voucherStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -449,7 +447,7 @@ class list_ extends Model
         if (isset($map['generalInvoiceDetailVOList'])) {
             if (!empty($map['generalInvoiceDetailVOList'])) {
                 $model->generalInvoiceDetailVOList = [];
-                $n                                 = 0;
+                $n = 0;
                 foreach ($map['generalInvoiceDetailVOList'] as $item) {
                     $model->generalInvoiceDetailVOList[$n++] = null !== $item ? generalInvoiceDetailVOList::fromMap($item) : $item;
                 }
@@ -530,7 +528,7 @@ class list_ extends Model
         if (isset($map['transportFeeDetailVOList'])) {
             if (!empty($map['transportFeeDetailVOList'])) {
                 $model->transportFeeDetailVOList = [];
-                $n                               = 0;
+                $n = 0;
                 foreach ($map['transportFeeDetailVOList'] as $item) {
                     $model->transportFeeDetailVOList[$n++] = null !== $item ? transportFeeDetailVOList::fromMap($item) : $item;
                 }
@@ -539,7 +537,7 @@ class list_ extends Model
         if (isset($map['usedVehicleSaleDetailVOList'])) {
             if (!empty($map['usedVehicleSaleDetailVOList'])) {
                 $model->usedVehicleSaleDetailVOList = [];
-                $n                                  = 0;
+                $n = 0;
                 foreach ($map['usedVehicleSaleDetailVOList'] as $item) {
                     $model->usedVehicleSaleDetailVOList[$n++] = null !== $item ? usedVehicleSaleDetailVOList::fromMap($item) : $item;
                 }
@@ -548,7 +546,7 @@ class list_ extends Model
         if (isset($map['vehicleSaleDetailVOList'])) {
             if (!empty($map['vehicleSaleDetailVOList'])) {
                 $model->vehicleSaleDetailVOList = [];
-                $n                              = 0;
+                $n = 0;
                 foreach ($map['vehicleSaleDetailVOList'] as $item) {
                     $model->vehicleSaleDetailVOList[$n++] = null !== $item ? vehicleSaleDetailVOList::fromMap($item) : $item;
                 }

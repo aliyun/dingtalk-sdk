@@ -45,14 +45,12 @@ class QueryPurchaseInfoRequest extends Model
     public $userId;
     protected $_name = [
         'merchantId' => 'merchantId',
-        'scene'      => 'scene',
-        'sn'         => 'sn',
-        'userId'     => 'userId',
+        'scene' => 'scene',
+        'sn' => 'sn',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -30,14 +30,12 @@ class ListRecentsResponseBody extends Model
      */
     public $recentDentryList;
     protected $_name = [
-        'hasMore'          => 'hasMore',
-        'nextToken'        => 'nextToken',
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
         'recentDentryList' => 'recentDentryList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -78,7 +76,7 @@ class ListRecentsResponseBody extends Model
         if (isset($map['recentDentryList'])) {
             if (!empty($map['recentDentryList'])) {
                 $model->recentDentryList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['recentDentryList'] as $item) {
                     $model->recentDentryList[$n++] = null !== $item ? recentDentryList::fromMap($item) : $item;
                 }

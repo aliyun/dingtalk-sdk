@@ -16,9 +16,7 @@ class GetCorpLevelByAccountIdRequest extends Model
         'accountId' => 'accountId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

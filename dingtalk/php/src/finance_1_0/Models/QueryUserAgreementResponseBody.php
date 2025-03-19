@@ -116,23 +116,21 @@ class QueryUserAgreementResponseBody extends Model
      */
     public $userId;
     protected $_name = [
-        'agreementNo'           => 'agreementNo',
-        'corpId'                => 'corpId',
-        'gmtExpire'             => 'gmtExpire',
-        'gmtSign'               => 'gmtSign',
-        'gmtValid'              => 'gmtValid',
-        'instId'                => 'instId',
-        'payChannel'            => 'payChannel',
+        'agreementNo' => 'agreementNo',
+        'corpId' => 'corpId',
+        'gmtExpire' => 'gmtExpire',
+        'gmtSign' => 'gmtSign',
+        'gmtValid' => 'gmtValid',
+        'instId' => 'instId',
+        'payChannel' => 'payChannel',
         'payChannelAccountName' => 'payChannelAccountName',
-        'payChannelAccountNo'   => 'payChannelAccountNo',
-        'status'                => 'status',
-        'subInstId'             => 'subInstId',
-        'userId'                => 'userId',
+        'payChannelAccountNo' => 'payChannelAccountNo',
+        'status' => 'status',
+        'subInstId' => 'subInstId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

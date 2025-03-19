@@ -79,8 +79,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -120,19 +120,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AlignObjective',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/objectives/' . $objectiveId . '/alignments',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AlignObjective',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/objectives/' . $objectiveId . '/alignments',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AlignObjectiveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -189,19 +189,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchAddPermission',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/permissions/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchAddPermission',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/permissions/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchAddPermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -263,19 +263,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchQueryObjective',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/objectives/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchQueryObjective',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/objectives/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchQueryObjectiveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -324,18 +324,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchQueryUser',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/users/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchQueryUser',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/users/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchQueryUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -397,19 +397,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateKeyResult',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/keyResults',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateKeyResult',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/keyResults',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateKeyResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -465,19 +465,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateObjective',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/objectives',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateObjective',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/objectives',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateObjectiveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -526,18 +526,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteKeyResult',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/keyResults',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteKeyResult',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/keyResults',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteKeyResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -584,18 +584,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteObjective',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/objectives/' . $objectiveId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteObjective',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/objectives/' . $objectiveId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteObjectiveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -657,18 +657,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeletePermission',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/permissions/delete',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeletePermission',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/permissions/delete',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeletePermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -710,15 +710,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetPeriodList',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/periods',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPeriodList',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/periods',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPeriodListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -774,18 +774,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPermission',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/permissions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPermission',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/permissions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -840,18 +840,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUserOkr',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/users/okrs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserOkr',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/users/okrs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserOkrResponse::fromMap($this->execute($params, $req, $runtime));
@@ -900,18 +900,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'OkrObjectivesBatch',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/pro/objectives/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'OkrObjectivesBatch',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/pro/objectives/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return OkrObjectivesBatchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -964,18 +964,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'OkrObjectivesByUser',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/pro/users/' . $dingUserId . '/objectives',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'OkrObjectivesByUser',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/pro/users/' . $dingUserId . '/objectives',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return OkrObjectivesByUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1031,18 +1031,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'OkrPeriods',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/pro/periods',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'OkrPeriods',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/pro/periods',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return OkrPeriodsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1096,19 +1096,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UnAlignObjective',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/objectives/' . $objectiveId . '/alignments/cancel',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UnAlignObjective',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/objectives/' . $objectiveId . '/alignments/cancel',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UnAlignObjectiveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1165,19 +1165,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateKROfContent',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/keyResults/contents',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateKROfContent',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/keyResults/contents',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateKROfContentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1230,19 +1230,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateKROfScore',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/keyResults/scores',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateKROfScore',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/keyResults/scores',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateKROfScoreResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1295,19 +1295,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateKROfWeight',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/keyResults/weights',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateKROfWeight',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/keyResults/weights',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateKROfWeightResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1358,19 +1358,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateObjective',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/objectives/' . $objectiveId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateObjective',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/objectives/' . $objectiveId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateObjectiveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1427,19 +1427,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdatePrivacy',
-            'version'     => 'okr_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/okr/permissions/privacies',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdatePrivacy',
+            'version' => 'okr_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/okr/permissions/privacies',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdatePrivacyResponse::fromMap($this->execute($params, $req, $runtime));

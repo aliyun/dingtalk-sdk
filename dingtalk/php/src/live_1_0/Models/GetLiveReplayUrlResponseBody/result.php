@@ -18,9 +18,7 @@ class result extends Model
         'replayUrl' => 'replayUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

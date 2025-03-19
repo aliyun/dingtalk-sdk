@@ -42,16 +42,14 @@ class BatchAddInvoiceRequest extends Model
      */
     public $source;
     protected $_name = [
-        'companyCode'          => 'companyCode',
+        'companyCode' => 'companyCode',
         'generalInvoiceVOList' => 'generalInvoiceVOList',
-        'operator'             => 'operator',
-        'orderId'              => 'orderId',
-        'source'               => 'source',
+        'operator' => 'operator',
+        'orderId' => 'orderId',
+        'source' => 'source',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -95,7 +93,7 @@ class BatchAddInvoiceRequest extends Model
         if (isset($map['generalInvoiceVOList'])) {
             if (!empty($map['generalInvoiceVOList'])) {
                 $model->generalInvoiceVOList = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['generalInvoiceVOList'] as $item) {
                     $model->generalInvoiceVOList[$n++] = null !== $item ? generalInvoiceVOList::fromMap($item) : $item;
                 }

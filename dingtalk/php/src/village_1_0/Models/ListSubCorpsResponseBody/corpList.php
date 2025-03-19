@@ -57,18 +57,16 @@ class corpList extends Model
      */
     public $regionType;
     protected $_name = [
-        'corpId'         => 'corpId',
-        'corpName'       => 'corpName',
-        'industry'       => 'industry',
-        'industryCode'   => 'industryCode',
-        'regionId'       => 'regionId',
+        'corpId' => 'corpId',
+        'corpName' => 'corpName',
+        'industry' => 'industry',
+        'industryCode' => 'industryCode',
+        'regionId' => 'regionId',
         'regionLocation' => 'regionLocation',
-        'regionType'     => 'regionType',
+        'regionType' => 'regionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

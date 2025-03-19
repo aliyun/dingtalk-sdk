@@ -22,13 +22,11 @@ class GetPersonalCarbonInfoResponseBody extends Model
      */
     public $personalCarbonAmount;
     protected $_name = [
-        'content'              => 'content',
+        'content' => 'content',
         'personalCarbonAmount' => 'personalCarbonAmount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

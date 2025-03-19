@@ -17,9 +17,7 @@ class ListInnerAppVersionResponseBody extends Model
         'appVersionList' => 'appVersionList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListInnerAppVersionResponseBody extends Model
         if (isset($map['appVersionList'])) {
             if (!empty($map['appVersionList'])) {
                 $model->appVersionList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['appVersionList'] as $item) {
                     $model->appVersionList[$n++] = null !== $item ? appVersionList::fromMap($item) : $item;
                 }

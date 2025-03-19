@@ -24,13 +24,11 @@ class GetEmpsByOrgIdRequest extends Model
     public $nextToken;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'needDept'   => 'needDept',
-        'nextToken'  => 'nextToken',
+        'needDept' => 'needDept',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -35,14 +35,12 @@ class GetNavigationCatalogRequest extends Model
      */
     public $operatorUserId;
     protected $_name = [
-        'bizTraceId'     => 'bizTraceId',
-        'module'         => 'module',
+        'bizTraceId' => 'bizTraceId',
+        'module' => 'module',
         'operatorUserId' => 'operatorUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

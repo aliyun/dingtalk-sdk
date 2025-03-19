@@ -29,14 +29,12 @@ class financeEmpDeptOpenList extends Model
     public $superDeptId;
     protected $_name = [
         'cascadeDeptId' => 'cascadeDeptId',
-        'deptId'        => 'deptId',
-        'name'          => 'name',
-        'superDeptId'   => 'superDeptId',
+        'deptId' => 'deptId',
+        'name' => 'name',
+        'superDeptId' => 'superDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

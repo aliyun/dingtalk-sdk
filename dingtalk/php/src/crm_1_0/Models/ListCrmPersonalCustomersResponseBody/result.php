@@ -100,24 +100,22 @@ class result extends Model
      */
     public $procOutResult;
     protected $_name = [
-        'appUuid'        => 'appUuid',
-        'creatorNick'    => 'creatorNick',
-        'creatorUserId'  => 'creatorUserId',
-        'data'           => 'data',
-        'extendData'     => 'extendData',
-        'formCode'       => 'formCode',
-        'gmtCreate'      => 'gmtCreate',
-        'gmtModified'    => 'gmtModified',
-        'instanceId'     => 'instanceId',
-        'objectType'     => 'objectType',
-        'permission'     => 'permission',
+        'appUuid' => 'appUuid',
+        'creatorNick' => 'creatorNick',
+        'creatorUserId' => 'creatorUserId',
+        'data' => 'data',
+        'extendData' => 'extendData',
+        'formCode' => 'formCode',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'instanceId' => 'instanceId',
+        'objectType' => 'objectType',
+        'permission' => 'permission',
         'procInstStatus' => 'procInstStatus',
-        'procOutResult'  => 'procOutResult',
+        'procOutResult' => 'procOutResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

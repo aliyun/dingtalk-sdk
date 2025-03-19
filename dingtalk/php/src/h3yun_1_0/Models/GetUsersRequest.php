@@ -25,12 +25,10 @@ class GetUsersRequest extends Model
     public $isRecursive;
     protected $_name = [
         'departmentId' => 'departmentId',
-        'isRecursive'  => 'isRecursive',
+        'isRecursive' => 'isRecursive',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

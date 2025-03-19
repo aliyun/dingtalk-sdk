@@ -24,12 +24,10 @@ class QueryTemplateCategorysResponseBody extends Model
     public $total;
     protected $_name = [
         'categoryList' => 'categoryList',
-        'total'        => 'total',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -61,7 +59,7 @@ class QueryTemplateCategorysResponseBody extends Model
         if (isset($map['categoryList'])) {
             if (!empty($map['categoryList'])) {
                 $model->categoryList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['categoryList'] as $item) {
                     $model->categoryList[$n++] = null !== $item ? categoryList::fromMap($item) : $item;
                 }

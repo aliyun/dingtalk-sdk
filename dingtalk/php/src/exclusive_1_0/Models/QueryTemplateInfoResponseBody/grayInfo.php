@@ -19,12 +19,10 @@ class grayInfo extends Model
     public $whiteSet;
     protected $_name = [
         'tenThousandPercent' => 'tenThousandPercent',
-        'whiteSet'           => 'whiteSet',
+        'whiteSet' => 'whiteSet',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

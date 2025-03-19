@@ -36,13 +36,11 @@ class OpenAgoalUserDTO extends Model
     public $userId;
     protected $_name = [
         'dingUserId' => 'dingUserId',
-        'name'       => 'name',
-        'userId'     => 'userId',
+        'name' => 'name',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

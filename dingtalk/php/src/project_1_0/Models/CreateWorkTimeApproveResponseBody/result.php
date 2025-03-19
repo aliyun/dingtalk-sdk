@@ -76,21 +76,19 @@ class result extends Model
      */
     public $workTimeIds;
     protected $_name = [
-        'approveOpenId'  => 'approveOpenId',
-        'createdAt'      => 'createdAt',
-        'creatorId'      => 'creatorId',
+        'approveOpenId' => 'approveOpenId',
+        'createdAt' => 'createdAt',
+        'creatorId' => 'creatorId',
         'organizationId' => 'organizationId',
-        'status'         => 'status',
-        'taskId'         => 'taskId',
-        'time'           => 'time',
-        'updatedAt'      => 'updatedAt',
-        'userId'         => 'userId',
-        'workTimeIds'    => 'workTimeIds',
+        'status' => 'status',
+        'taskId' => 'taskId',
+        'time' => 'time',
+        'updatedAt' => 'updatedAt',
+        'userId' => 'userId',
+        'workTimeIds' => 'workTimeIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

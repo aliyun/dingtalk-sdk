@@ -32,14 +32,12 @@ class GetAuthInfoResponseBody extends Model
      */
     public $authUserInfo;
     protected $_name = [
-        'authAppInfo'  => 'authAppInfo',
+        'authAppInfo' => 'authAppInfo',
         'authCorpInfo' => 'authCorpInfo',
         'authUserInfo' => 'authUserInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

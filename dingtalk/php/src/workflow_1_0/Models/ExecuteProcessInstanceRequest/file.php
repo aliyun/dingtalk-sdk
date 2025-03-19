@@ -20,12 +20,10 @@ class file extends Model
     public $photos;
     protected $_name = [
         'attachments' => 'attachments',
-        'photos'      => 'photos',
+        'photos' => 'photos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class file extends Model
         if (isset($map['attachments'])) {
             if (!empty($map['attachments'])) {
                 $model->attachments = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['attachments'] as $item) {
                     $model->attachments[$n++] = null !== $item ? attachments::fromMap($item) : $item;
                 }

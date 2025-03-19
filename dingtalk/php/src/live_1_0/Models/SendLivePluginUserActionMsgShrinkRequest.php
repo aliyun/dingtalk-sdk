@@ -29,14 +29,12 @@ class SendLivePluginUserActionMsgShrinkRequest extends Model
      */
     public $pluginId;
     protected $_name = [
-        'liveId'                     => 'liveId',
+        'liveId' => 'liveId',
         'pluginEffectsMessageShrink' => 'pluginEffectsMessage',
-        'pluginId'                   => 'pluginId',
+        'pluginId' => 'pluginId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

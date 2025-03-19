@@ -29,13 +29,11 @@ class SearchFormDatasResponseBody extends Model
     public $totalCount;
     protected $_name = [
         'currentPage' => 'currentPage',
-        'data'        => 'data',
-        'totalCount'  => 'totalCount',
+        'data' => 'data',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -73,7 +71,7 @@ class SearchFormDatasResponseBody extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }

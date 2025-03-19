@@ -80,21 +80,19 @@ class spaceInfoVOList extends Model
      */
     public $tagCode;
     protected $_name = [
-        'billingArea'  => 'billingArea',
+        'billingArea' => 'billingArea',
         'buildingArea' => 'buildingArea',
         'buildingType' => 'buildingType',
-        'deptId'       => 'deptId',
-        'floor'        => 'floor',
-        'houseState'   => 'houseState',
-        'houseType'    => 'houseType',
-        'name'         => 'name',
+        'deptId' => 'deptId',
+        'floor' => 'floor',
+        'houseState' => 'houseState',
+        'houseType' => 'houseType',
+        'name' => 'name',
         'parentDeptId' => 'parentDeptId',
-        'tagCode'      => 'tagCode',
+        'tagCode' => 'tagCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

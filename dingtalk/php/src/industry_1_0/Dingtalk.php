@@ -509,8 +509,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -542,18 +542,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchGetTaskResult',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/ai/taskResults/batchQuery',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchGetTaskResult',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/ai/taskResults/batchQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchGetTaskResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -605,18 +605,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BusinessMatch',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/me/businesses/matching',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BusinessMatch',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/me/businesses/matching',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BusinessMatchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -665,18 +665,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'BusinessMatchResult',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/me/businesses/matchingResults',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BusinessMatchResult',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/me/businesses/matchingResults',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BusinessMatchResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -734,18 +734,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CampusAddRenterMember',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/renters/members',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusAddRenterMember',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/renters/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusAddRenterMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -839,18 +839,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CampusCreateCampus',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/projects',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusCreateCampus',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/projects',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusCreateCampusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -899,18 +899,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CampusCreateCampusGroup',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/projects/groups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusCreateCampusGroup',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/projects/groups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusCreateCampusGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -971,18 +971,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CampusCreateRenter',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/renters',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusCreateRenter',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/renters',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusCreateRenterResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1031,18 +1031,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CampusDelRenterMember',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/renters/members',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusDelRenterMember',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/renters/members',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusDelRenterMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1088,18 +1088,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CampusDeleteCampusGroup',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/projects/groups',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusDeleteCampusGroup',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/projects/groups',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusDeleteCampusGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1145,18 +1145,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CampusDeleteRenter',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/renters',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusDeleteRenter',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/renters',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return CampusDeleteRenterResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1202,18 +1202,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CampusGetCampus',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/projectInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusGetCampus',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/projectInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusGetCampusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1259,18 +1259,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CampusGetCampusGroup',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/projects/groupInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusGetCampusGroup',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/projects/groupInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusGetCampusGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1316,18 +1316,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CampusGetRenter',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/renterInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusGetRenter',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/renterInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusGetRenterResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1376,18 +1376,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CampusGetRenterMember',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/renters/memberInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusGetRenterMember',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/renters/memberInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusGetRenterMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1433,18 +1433,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CampusListCampus',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/projects',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusListCampus',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/projects',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusListCampusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1486,15 +1486,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'CampusListCampusGroup',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/projects/groups',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusListCampusGroup',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/projects/groups',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusListCampusGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1534,15 +1534,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'CampusListRenter',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/renters',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusListRenter',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/renters',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusListRenterResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1586,18 +1586,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CampusListRenterMembers',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/renters/members',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusListRenterMembers',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/renters/members',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusListRenterMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1688,18 +1688,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CampusUpdateCampus',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/projects',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusUpdateCampus',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/projects',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusUpdateCampusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1751,18 +1751,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CampusUpdateCampusGroup',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/projects/groups',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusUpdateCampusGroup',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/projects/groups',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusUpdateCampusGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1826,18 +1826,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CampusUpdateRenter',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/renters',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusUpdateRenter',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/renters',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusUpdateRenterResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1895,18 +1895,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CampusUpdateRenterMember',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/campuses/renters/members',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CampusUpdateRenterMember',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/campuses/renters/members',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CampusUpdateRenterMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1961,18 +1961,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatAIAddDatasetPermission',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatai/dataset/permissions/add',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatAIAddDatasetPermission',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatai/dataset/permissions/add',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatAIAddDatasetPermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2018,18 +2018,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ChatAIListDataset',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatai/datasets',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatAIListDataset',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatai/datasets',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatAIListDatasetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2075,18 +2075,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ChatAIQueryDatasetPermission',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatai/dataset/permissions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatAIQueryDatasetPermission',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatai/dataset/permissions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatAIQueryDatasetPermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2141,18 +2141,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatAIRemoveDatasetPermission',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatai/dataset/permissions/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatAIRemoveDatasetPermission',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatai/dataset/permissions/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatAIRemoveDatasetPermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2201,18 +2201,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatAITextSentimentAnalysis',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatai/abilities/sentiments/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatAITextSentimentAnalysis',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatai/abilities/sentiments/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatAITextSentimentAnalysisResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2261,18 +2261,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatAiTravelList',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/ai/travelLists/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatAiTravelList',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/ai/travelLists/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatAiTravelListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2318,18 +2318,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ChatFormGetDataForApiAccess',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatform/datas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatFormGetDataForApiAccess',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatform/datas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatFormGetDataForApiAccessResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2390,18 +2390,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoAddGeneralFile',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/files',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoAddGeneralFile',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/files',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoAddGeneralFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2453,18 +2453,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoAddKnowledgeGraphNode',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/nodes',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoAddKnowledgeGraphNode',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/nodes',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoAddKnowledgeGraphNodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2516,18 +2516,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoAddKnowledgeGraphRelation',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/relations',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoAddKnowledgeGraphRelation',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/relations',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoAddKnowledgeGraphRelationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2576,18 +2576,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoDeleteGeneralFile',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/files/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoDeleteGeneralFile',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/files/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoDeleteGeneralFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2639,18 +2639,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoDeleteKnowledgeGraphNode',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/nodes/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoDeleteKnowledgeGraphNode',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/nodes/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoDeleteKnowledgeGraphNodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2702,18 +2702,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoDeleteKnowledgeGraphRelation',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/relations/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoDeleteKnowledgeGraphRelation',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/relations/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoDeleteKnowledgeGraphRelationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2771,18 +2771,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoFaqAdd',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/faq',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoFaqAdd',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/faq',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoFaqAddResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2831,18 +2831,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoFaqDelete',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/faq/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoFaqDelete',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/faq/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoFaqDeleteResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2894,18 +2894,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoFaqList',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/faq/lists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoFaqList',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/faq/lists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoFaqListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2957,18 +2957,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoGetFileList',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/file/lists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoGetFileList',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/file/lists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoGetFileListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3017,18 +3017,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoGetFileStatus',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/files/statuses/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoGetFileStatus',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/files/statuses/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoGetFileStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3080,18 +3080,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoQueryKnowledgeGraphNode',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/nodes/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoQueryKnowledgeGraphNode',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/nodes/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoQueryKnowledgeGraphNodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3143,18 +3143,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoQueryKnowledgeGraphRelation',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/relations/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoQueryKnowledgeGraphRelation',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/relations/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoQueryKnowledgeGraphRelationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3206,18 +3206,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoUpdateKnowledgeGraphNode',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/nodes',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoUpdateKnowledgeGraphNode',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/nodes',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoUpdateKnowledgeGraphNodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3269,18 +3269,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ChatMemoUpdateKnowledgeGraphRelation',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatmemo/relations',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ChatMemoUpdateKnowledgeGraphRelation',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatmemo/relations',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ChatMemoUpdateKnowledgeGraphRelationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3326,18 +3326,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeActiveCollegeDeptGroup',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/depts/groups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeActiveCollegeDeptGroup',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/depts/groups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeActiveCollegeDeptGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3392,18 +3392,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeAddCollegeDept',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/depts',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeAddCollegeDept',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/depts',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeAddCollegeDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3452,18 +3452,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeAddManager',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/depts/managers',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeAddManager',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/depts/managers',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeAddManagerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3533,18 +3533,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CollegeAddStudent',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/depts/students',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeAddStudent',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/depts/students',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeAddStudentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3596,18 +3596,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeChangeStudentDept',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/depts/students/move',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeChangeStudentDept',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/depts/students/move',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeChangeStudentDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3653,18 +3653,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeDeleteCollegeDept',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/depts',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeDeleteCollegeDept',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/depts',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeDeleteCollegeDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3710,18 +3710,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeListCollegeSubDept',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/subDepts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeListCollegeSubDept',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/subDepts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeListCollegeSubDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3773,18 +3773,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeListDeptManager',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/depts/managers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeListDeptManager',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/depts/managers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeListDeptManagerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3839,18 +3839,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeListStudentInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/depts/students',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeListStudentInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/depts/students',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeListStudentInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3902,18 +3902,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeListUncheckedStudent',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/organizations/unjoinedStudents',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeListUncheckedStudent',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/organizations/unjoinedStudents',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeListUncheckedStudentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3959,18 +3959,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeQueryCollegeDeptGroupInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/depts/groupInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeQueryCollegeDeptGroupInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/depts/groupInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeQueryCollegeDeptGroupInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4016,18 +4016,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeQueryCollegeDeptInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/deptInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeQueryCollegeDeptInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/deptInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeQueryCollegeDeptInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4076,18 +4076,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeQueryStudentInfoByDept',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/depts/studentinfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeQueryStudentInfoByDept',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/depts/studentinfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeQueryStudentInfoByDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4133,18 +4133,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeQueryStudentInfoByMobile',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/students/mobiles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeQueryStudentInfoByMobile',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/students/mobiles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeQueryStudentInfoByMobileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4190,18 +4190,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeQueryStudentInfoByStudentId',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/students',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeQueryStudentInfoByStudentId',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/students',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeQueryStudentInfoByStudentIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4253,18 +4253,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeRemoveManager',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/managers',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeRemoveManager',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/managers',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeRemoveManagerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4313,18 +4313,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeRemoveStudent',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/depts/students',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeRemoveStudent',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/depts/students',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeRemoveStudentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4379,18 +4379,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeUpdateCollegeDept',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/depts',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeUpdateCollegeDept',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/depts',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeUpdateCollegeDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4442,18 +4442,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeUpdateStudentDeptInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/deptInfos',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeUpdateStudentDeptInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/deptInfos',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeUpdateStudentDeptInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4514,18 +4514,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CollegeUpdateStudentInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/depts/students',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeUpdateStudentInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/depts/students',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeUpdateStudentInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4577,18 +4577,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CollegeUpdateStudentMoblie',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/colleges/members/students/mobiles',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollegeUpdateStudentMoblie',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/colleges/members/students/mobiles',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollegeUpdateStudentMoblieResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4640,18 +4640,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactCreate',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/contacts',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactCreate',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/contacts',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactCreateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4697,18 +4697,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactDelete',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/contacts',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactDelete',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/contacts',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactDeleteResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4772,18 +4772,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactDeptCreate',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/departments',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactDeptCreate',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/departments',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactDeptCreateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4832,18 +4832,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactDeptDelete',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/departments',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactDeptDelete',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/departments',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactDeptDeleteResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4892,18 +4892,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactDeptGroupCreate',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/departmentGroups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactDeptGroupCreate',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/departmentGroups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactDeptGroupCreateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4952,18 +4952,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactDeptInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/departments',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactDeptInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/departments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactDeptInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5012,18 +5012,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactDeptList',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/subsidiaryDepartments',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactDeptList',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/subsidiaryDepartments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactDeptListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5084,18 +5084,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactDeptUpdate',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/departments',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactDeptUpdate',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/departments',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactDeptUpdateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5147,18 +5147,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactEmpAdd',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/users',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactEmpAdd',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/users',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactEmpAddResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5210,18 +5210,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactEmpDelete',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/users/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactEmpDelete',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/users/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactEmpDeleteResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5267,18 +5267,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactEmpList',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactEmpList',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactEmpListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5320,15 +5320,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactList',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/contacts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactList',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/contacts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5381,18 +5381,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CustomizeContactUpdate',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/customizations/contacts',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CustomizeContactUpdate',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/customizations/contacts',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CustomizeContactUpdateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5443,18 +5443,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DIgitalStoreMessagePush',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/messages/push',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DIgitalStoreMessagePush',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/messages/push',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DIgitalStoreMessagePushResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5515,18 +5515,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreCardRecord',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/cardSendRecords/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreCardRecord',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/cardSendRecords/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreCardRecordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5568,15 +5568,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreContactInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/contactInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreContactInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/contactInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreContactInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5623,18 +5623,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreConversations',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/conversations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreConversations',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/conversations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreConversationsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5689,18 +5689,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreExportCardRecord',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/cardRecords/export',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreExportCardRecord',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/cardRecords/export',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreExportCardRecordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5755,18 +5755,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreExportCardRecordDetail',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/cardRecordDetails/export',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreExportCardRecordDetail',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/cardRecordDetails/export',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreExportCardRecordDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5812,18 +5812,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreGroupInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/groupInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreGroupInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/groupInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreGroupInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5865,15 +5865,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreGroups',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/groups',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreGroups',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/groups',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreGroupsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5920,18 +5920,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreNodeInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/nodeInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreNodeInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/nodeInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreNodeInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5973,15 +5973,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreRightsInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/rightsInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreRightsInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/rightsInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreRightsInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6021,15 +6021,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreRoles',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/roles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreRoles',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/roles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreRolesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6076,18 +6076,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreSceneScope',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/sceneScopes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreSceneScope',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/sceneScopes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreSceneScopeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6136,18 +6136,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreStoreInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/storeInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreStoreInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/storeInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreStoreInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6196,18 +6196,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreSubNodes',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/subsidiaryNodes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreSubNodes',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/subsidiaryNodes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreSubNodesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6253,18 +6253,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreUpdateAuthInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/authInfos',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreUpdateAuthInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/authInfos',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreUpdateAuthInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6313,18 +6313,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreUserInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/userInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreUserInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/userInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6373,18 +6373,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStoreUsers',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/nodes/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStoreUsers',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/nodes/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStoreUsersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6433,18 +6433,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DigitalStorelistExportTaskRecord',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/digitalStores/exportTaskRecords',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DigitalStorelistExportTaskRecord',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/exportTaskRecords',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DigitalStorelistExportTaskRecordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6490,18 +6490,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ExternalQueryExternalAppOrgs',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/externals/apps/organizations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExternalQueryExternalAppOrgs',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/externals/apps/organizations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExternalQueryExternalAppOrgsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6547,18 +6547,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ExternalQueryExternalBelongMainOrg',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/externals/attributions/masterOrganizations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExternalQueryExternalBelongMainOrg',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/externals/attributions/masterOrganizations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExternalQueryExternalBelongMainOrgResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6604,18 +6604,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ExternalQueryExternalOrgs',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/externals/organizations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExternalQueryExternalOrgs',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/externals/organizations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExternalQueryExternalOrgsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6664,18 +6664,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetTaskPackageResult',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/ai/taskPackages/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTaskPackageResult',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/ai/taskPackages/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTaskPackageResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6742,18 +6742,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'HospitalDataCheck',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/datas/check',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'HospitalDataCheck',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/datas/check',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return HospitalDataCheckResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6808,18 +6808,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureCommonEvent',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufacturing/bases/commons/events',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureCommonEvent',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufacturing/bases/commons/events',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureCommonEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6916,18 +6916,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureCostRecordListGet',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufactures/materialCostRecords/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureCostRecordListGet',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufactures/materialCostRecords/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureCostRecordListGetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7021,18 +7021,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureFeeListGet',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufactures/fees/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureFeeListGet',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufactures/fees/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureFeeListGetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7123,18 +7123,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureLabourCost',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufactures/labourCosts/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureLabourCost',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufactures/labourCosts/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureLabourCostResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7225,18 +7225,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureMaterialList',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufactures/materials/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureMaterialList',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufactures/materials/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureMaterialListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7354,18 +7354,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureMesDispatchTask',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufacturings/dispatchTasks/manage',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureMesDispatchTask',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufacturings/dispatchTasks/manage',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureMesDispatchTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7441,18 +7441,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureMesMaterial',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufacturings/materials/manage',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureMesMaterial',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufacturings/materials/manage',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureMesMaterialResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7549,18 +7549,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureMesOutPlan',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufacturings/outPlans/manage',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureMesOutPlan',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufacturings/outPlans/manage',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureMesOutPlanResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7690,18 +7690,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureMesOutput',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufacturings/outputs/manage',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureMesOutput',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufacturings/outputs/manage',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureMesOutputResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7783,18 +7783,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureMesProcess',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufacturings/processes/manage',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureMesProcess',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufacturings/processes/manage',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureMesProcessResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7912,18 +7912,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureMesProductionPlan',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufacturings/productionPlans/manage',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureMesProductionPlan',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufacturings/productionPlans/manage',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureMesProductionPlanResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8005,18 +8005,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureMesSubCooperationTeam',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufacturings/outTeams/manage',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureMesSubCooperationTeam',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufacturings/outTeams/manage',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureMesSubCooperationTeamResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8104,18 +8104,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryManufactureMesTeamMgmt',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufacturing/base/data/team',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryManufactureMesTeamMgmt',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufacturing/base/data/team',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryManufactureMesTeamMgmtResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8206,18 +8206,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustryMmanufactureMaterialCostGet',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/manufactures/base/materialCosts/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustryMmanufactureMaterialCostGet',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/manufactures/base/materialCosts/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustryMmanufactureMaterialCostGetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8287,18 +8287,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PushDingMessage',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/works/notice',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PushDingMessage',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/works/notice',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PushDingMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8347,18 +8347,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAllDepartment',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/departments',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAllDepartment',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/departments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAllDepartmentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8410,18 +8410,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAllDoctors',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/doctors',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAllDoctors',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/doctors',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAllDoctorsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8470,18 +8470,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAllGroup',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/groups',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAllGroup',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/groups',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAllGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8531,18 +8531,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAllGroupsInDept',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/departments/' . $deptId . '/groups',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAllGroupsInDept',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/departments/' . $deptId . '/groups',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAllGroupsInDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8596,18 +8596,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAllMemberByDept',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/departments/' . $deptId . '/members',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAllMemberByDept',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/departments/' . $deptId . '/members',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAllMemberByDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8661,18 +8661,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAllMemberByGroup',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/groups/' . $groupId . '/members',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAllMemberByGroup',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/groups/' . $groupId . '/members',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAllMemberByGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8722,18 +8722,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryBizOptLog',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/bizOptLogs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryBizOptLog',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/bizOptLogs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryBizOptLogResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8779,18 +8779,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryChatAIOXMInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/chatai/oxm/infos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryChatAIOXMInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatai/oxm/infos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryChatAIOXMInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8839,18 +8839,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryDepartmentExtendInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/departments/extensions/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDepartmentExtendInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/departments/extensions/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDepartmentExtendInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8893,15 +8893,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryDepartmentInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/departments/' . $deptId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDepartmentInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/departments/' . $deptId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDepartmentInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8948,18 +8948,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryDoctorDetailsByJobNumber',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/doctors/' . $jobNumber . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDoctorDetailsByJobNumber',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/doctors/' . $jobNumber . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDoctorDetailsByJobNumberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9003,15 +9003,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryGroupInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/groups/' . $groupId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryGroupInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/groups/' . $groupId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryGroupInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9060,18 +9060,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryHospitalDistrictInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/districts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryHospitalDistrictInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/districts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryHospitalDistrictInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9120,18 +9120,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryHospitalRoleUserInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/roles/userInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryHospitalRoleUserInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/roles/userInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryHospitalRoleUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9173,15 +9173,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryHospitalRoles',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/roles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryHospitalRoles',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/roles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryHospitalRolesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9221,15 +9221,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryJobCodeDictionary',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/jobCodes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryJobCodeDictionary',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/jobCodes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryJobCodeDictionaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9269,15 +9269,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryJobStatusCodeDictionary',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/jobStatusCodes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryJobStatusCodeDictionary',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/jobStatusCodes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryJobStatusCodeDictionaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9317,15 +9317,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryMedicalEvents',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/events',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMedicalEvents',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/events',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMedicalEventsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9369,18 +9369,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryUserCredentials',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/users/credentials/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserCredentials',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/users/credentials/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserCredentialsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9423,15 +9423,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryUserExtInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/users/' . $userId . '/extInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserExtInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/users/' . $userId . '/extInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserExtInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9480,18 +9480,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryUserExtendValues',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/users/extends/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserExtendValues',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/users/extends/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserExtendValuesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9538,18 +9538,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryUserInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/users/' . $userId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/users/' . $userId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9592,15 +9592,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryUserProbCodeDictionary',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/userProbCodes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserProbCodeDictionary',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/userProbCodes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserProbCodeDictionaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9641,15 +9641,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryUserRoles',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/users/' . $userId . '/roles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserRoles',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/users/' . $userId . '/roles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserRolesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9702,18 +9702,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SaveUserExtendValues',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/users/' . $userId . '/extends',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveUserExtendValues',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/users/' . $userId . '/extends',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveUserExtendValuesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9766,18 +9766,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SubmitTask',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/ai/tasks/submit',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SubmitTask',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/ai/tasks/submit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SubmitTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9847,18 +9847,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SubmitTaskPackage',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/ai/taskPackages/submit',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SubmitTaskPackage',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/ai/taskPackages/submit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SubmitTaskPackageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9907,18 +9907,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplAddRole',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/roles',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplAddRole',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/roles',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplAddRoleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -9973,18 +9973,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyAddDept',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/departments',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyAddDept',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/departments',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyAddDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10045,18 +10045,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyAddMember',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/members',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyAddMember',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyAddMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10105,18 +10105,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyAddPartnerAdmins',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/partnerAdministrators',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyAddPartnerAdmins',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/partnerAdministrators',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyAddPartnerAdminsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10168,18 +10168,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyAddPartnerManagers',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/partnerInterfaces',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyAddPartnerManagers',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/partnerInterfaces',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyAddPartnerManagersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10228,18 +10228,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyAddPartnerType',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/partnerLabels',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyAddPartnerType',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/partnerLabels',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyAddPartnerTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10285,18 +10285,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyChainDeleteDept',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/departments',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyChainDeleteDept',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/departments',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyChainDeleteDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10342,18 +10342,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyChainQueryDeptInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/departments',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyChainQueryDeptInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/departments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyChainQueryDeptInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10411,18 +10411,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SupplyChainUpdateDeptInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/departments',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyChainUpdateDeptInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/departments',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyChainUpdateDeptInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10477,18 +10477,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyDeleteMember',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/members',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyDeleteMember',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/members',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyDeleteMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10537,18 +10537,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyDeletePartnerAdmins',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/partnerAdministrators',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyDeletePartnerAdmins',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/partnerAdministrators',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyDeletePartnerAdminsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10600,18 +10600,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyDeletePartnerManagers',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/partnerInterfaces',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyDeletePartnerManagers',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/partnerInterfaces',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyDeletePartnerManagersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10657,18 +10657,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyDeletePartnerType',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/partnerLabels',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyDeletePartnerType',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/partnerLabels',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyDeletePartnerTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10717,18 +10717,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyDeleteRole',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/roles',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyDeleteRole',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/roles',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyDeleteRoleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10780,18 +10780,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyGetMember',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/members',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyGetMember',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/members',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyGetMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10843,18 +10843,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyListDeptMembers',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/departments/members',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyListDeptMembers',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/departments/members',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyListDeptMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10900,18 +10900,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyListPartnerAdmins',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/partnerAdministrators',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyListPartnerAdmins',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/partnerAdministrators',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyListPartnerAdminsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -10957,18 +10957,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyListPartnerManagers',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/partnerInterfaces',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyListPartnerManagers',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/partnerInterfaces',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyListPartnerManagersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -11014,18 +11014,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyListPartnerType',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/partnerLabels/subLabels',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyListPartnerType',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/partnerLabels/subLabels',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyListPartnerTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -11071,18 +11071,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyListRole',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/roles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyListRole',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/roles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyListRoleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -11128,18 +11128,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyListSubDept',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/subDepartments',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyListSubDept',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/subDepartments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyListSubDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -11185,18 +11185,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyQueryPartnerType',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/partnerLabels',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyQueryPartnerType',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/partnerLabels',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyQueryPartnerTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -11266,18 +11266,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SupplyUpdateMember',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/members',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyUpdateMember',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/members',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyUpdateMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -11329,18 +11329,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyUpdatePartnerType',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/partnerLabels',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyUpdatePartnerType',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/partnerLabels',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyUpdatePartnerTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -11392,18 +11392,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SupplyUpdateRole',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/supplyChains/roles',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SupplyUpdateRole',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/supplyChains/roles',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SupplyUpdateRoleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -11459,18 +11459,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateUserExtendInfo',
-            'version'     => 'industry_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/industry/medicals/users/' . $userId . '/extInfos',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateUserExtendInfo',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/medicals/users/' . $userId . '/extInfos',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateUserExtendInfoResponse::fromMap($this->execute($params, $req, $runtime));

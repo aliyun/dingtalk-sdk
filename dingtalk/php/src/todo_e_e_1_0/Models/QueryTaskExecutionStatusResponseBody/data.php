@@ -23,14 +23,12 @@ class data extends Model
      */
     public $finishDate;
     protected $_name = [
-        'done'       => 'done',
+        'done' => 'done',
         'executorId' => 'executorId',
         'finishDate' => 'finishDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

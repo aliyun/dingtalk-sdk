@@ -98,29 +98,27 @@ class list_ extends Model
      */
     public $status;
     protected $_name = [
-        'apiSecret'       => 'apiSecret',
-        'appId'           => 'appId',
-        'appName'         => 'appName',
-        'callbackType'    => 'callbackType',
-        'callbackUrl'     => 'callbackUrl',
-        'cardTemplateId'  => 'cardTemplateId',
-        'creatorUserId'   => 'creatorUserId',
-        'domain'          => 'domain',
+        'apiSecret' => 'apiSecret',
+        'appId' => 'appId',
+        'appName' => 'appName',
+        'callbackType' => 'callbackType',
+        'callbackUrl' => 'callbackUrl',
+        'cardTemplateId' => 'cardTemplateId',
+        'creatorUserId' => 'creatorUserId',
+        'domain' => 'domain',
         'grayGroupIdList' => 'grayGroupIdList',
-        'grayUserIdList'  => 'grayUserIdList',
-        'hsfMethodName'   => 'hsfMethodName',
-        'hsfServiceName'  => 'hsfServiceName',
-        'hsfVersion'      => 'hsfVersion',
-        'id'              => 'id',
-        'path'            => 'path',
-        'ruleDesc'        => 'ruleDesc',
-        'ruleMatchType'   => 'ruleMatchType',
-        'status'          => 'status',
+        'grayUserIdList' => 'grayUserIdList',
+        'hsfMethodName' => 'hsfMethodName',
+        'hsfServiceName' => 'hsfServiceName',
+        'hsfVersion' => 'hsfVersion',
+        'id' => 'id',
+        'path' => 'path',
+        'ruleDesc' => 'ruleDesc',
+        'ruleMatchType' => 'ruleMatchType',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

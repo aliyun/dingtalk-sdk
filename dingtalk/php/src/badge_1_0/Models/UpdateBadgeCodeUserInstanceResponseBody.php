@@ -18,9 +18,7 @@ class UpdateBadgeCodeUserInstanceResponseBody extends Model
         'codeId' => 'codeId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

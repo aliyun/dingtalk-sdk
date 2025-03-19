@@ -19,13 +19,11 @@ class QuerySubscribeStatusRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'body'    => 'body',
+        'body' => 'body',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -62,17 +62,15 @@ class SyncExceedApplyRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'applyId'          => 'applyId',
-        'corpId'           => 'corpId',
-        'remark'           => 'remark',
-        'status'           => 'status',
+        'applyId' => 'applyId',
+        'corpId' => 'corpId',
+        'remark' => 'remark',
+        'status' => 'status',
         'thirdpartyFlowId' => 'thirdpartyFlowId',
-        'userId'           => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

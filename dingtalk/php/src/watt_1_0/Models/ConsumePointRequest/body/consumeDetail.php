@@ -20,12 +20,10 @@ class consumeDetail extends Model
     public $type;
     protected $_name = [
         'benefit' => 'benefit',
-        'type'    => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

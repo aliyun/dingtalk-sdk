@@ -26,13 +26,11 @@ class HUploadPackageRequest extends Model
      */
     public $ossObjectKey;
     protected $_name = [
-        'miniAppId'    => 'miniAppId',
+        'miniAppId' => 'miniAppId',
         'ossObjectKey' => 'ossObjectKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

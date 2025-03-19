@@ -18,9 +18,7 @@ class GetFinanceAccountRequest extends Model
         'accountCode' => 'accountCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,14 +29,12 @@ class result extends Model
     public $parentId;
     protected $_name = [
         'componentName' => 'componentName',
-        'fieldId'       => 'fieldId',
-        'label'         => 'label',
-        'parentId'      => 'parentId',
+        'fieldId' => 'fieldId',
+        'label' => 'label',
+        'parentId' => 'parentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

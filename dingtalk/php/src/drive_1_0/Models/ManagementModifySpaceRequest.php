@@ -29,14 +29,12 @@ class ManagementModifySpaceRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'quota'    => 'quota',
+        'quota' => 'quota',
         'spaceIds' => 'spaceIds',
-        'unionId'  => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

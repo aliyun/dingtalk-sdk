@@ -33,16 +33,14 @@ class robotInfoVO extends Model
      */
     public $robotOrganization;
     protected $_name = [
-        'agentId'           => 'agentId',
-        'brief'             => 'brief',
-        'description'       => 'description',
-        'name'              => 'name',
+        'agentId' => 'agentId',
+        'brief' => 'brief',
+        'description' => 'description',
+        'name' => 'name',
         'robotOrganization' => 'robotOrganization',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

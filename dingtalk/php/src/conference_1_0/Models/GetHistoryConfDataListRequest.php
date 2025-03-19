@@ -76,19 +76,17 @@ class GetHistoryConfDataListRequest extends Model
     public $title;
     protected $_name = [
         'creatorNike' => 'creatorNike',
-        'endTime'     => 'endTime',
-        'freeType'    => 'freeType',
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
-        'realData'    => 'realData',
-        'scene'       => 'scene',
-        'startTime'   => 'startTime',
-        'title'       => 'title',
+        'endTime' => 'endTime',
+        'freeType' => 'freeType',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'realData' => 'realData',
+        'scene' => 'scene',
+        'startTime' => 'startTime',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

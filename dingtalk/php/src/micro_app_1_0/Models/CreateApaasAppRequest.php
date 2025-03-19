@@ -84,23 +84,21 @@ class CreateApaasAppRequest extends Model
      */
     public $templateKey;
     protected $_name = [
-        'appDesc'            => 'appDesc',
-        'appIcon'            => 'appIcon',
-        'appName'            => 'appName',
-        'bizAppId'           => 'bizAppId',
-        'homepageEditLink'   => 'homepageEditLink',
-        'homepageLink'       => 'homepageLink',
-        'isShortCut'         => 'isShortCut',
-        'ompLink'            => 'ompLink',
-        'opUserId'           => 'opUserId',
+        'appDesc' => 'appDesc',
+        'appIcon' => 'appIcon',
+        'appName' => 'appName',
+        'bizAppId' => 'bizAppId',
+        'homepageEditLink' => 'homepageEditLink',
+        'homepageLink' => 'homepageLink',
+        'isShortCut' => 'isShortCut',
+        'ompLink' => 'ompLink',
+        'opUserId' => 'opUserId',
         'pcHomepageEditLink' => 'pcHomepageEditLink',
-        'pcHomepageLink'     => 'pcHomepageLink',
-        'templateKey'        => 'templateKey',
+        'pcHomepageLink' => 'pcHomepageLink',
+        'templateKey' => 'templateKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -25,13 +25,11 @@ class GetFeedResponseBody extends Model
      */
     public $feedItem;
     protected $_name = [
-        'feedId'   => 'feedId',
+        'feedId' => 'feedId',
         'feedItem' => 'feedItem',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class GetFeedResponseBody extends Model
         if (isset($map['feedItem'])) {
             if (!empty($map['feedItem'])) {
                 $model->feedItem = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['feedItem'] as $item) {
                     $model->feedItem[$n++] = null !== $item ? feedItem::fromMap($item) : $item;
                 }

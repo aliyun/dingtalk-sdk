@@ -18,9 +18,7 @@ class spaceInfo extends Model
         'sceneType' => 'sceneType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

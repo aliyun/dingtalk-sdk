@@ -98,23 +98,21 @@ class list_ extends Model
     public $userId;
     protected $_name = [
         'actualAmount' => 'actualAmount',
-        'buyerId'      => 'buyerId',
-        'corpId'       => 'corpId',
-        'createTime'   => 'createTime',
-        'endTime'      => 'endTime',
-        'orderNo'      => 'orderNo',
-        'payTime'      => 'payTime',
-        'refundNo'     => 'refundNo',
-        'scene'        => 'scene',
-        'startTime'    => 'startTime',
-        'status'       => 'status',
-        'tradeNo'      => 'tradeNo',
-        'userId'       => 'userId',
+        'buyerId' => 'buyerId',
+        'corpId' => 'corpId',
+        'createTime' => 'createTime',
+        'endTime' => 'endTime',
+        'orderNo' => 'orderNo',
+        'payTime' => 'payTime',
+        'refundNo' => 'refundNo',
+        'scene' => 'scene',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'tradeNo' => 'tradeNo',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

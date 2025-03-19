@@ -17,9 +17,7 @@ class attr extends Model
         'listTaskDynamicAttr' => 'listTaskDynamicAttr',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class attr extends Model
         if (isset($map['listTaskDynamicAttr'])) {
             if (!empty($map['listTaskDynamicAttr'])) {
                 $model->listTaskDynamicAttr = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['listTaskDynamicAttr'] as $item) {
                     $model->listTaskDynamicAttr[$n++] = null !== $item ? listTaskDynamicAttr::fromMap($item) : $item;
                 }

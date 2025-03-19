@@ -27,14 +27,12 @@ class memberList extends Model
      */
     public $type;
     protected $_name = [
-        'id'       => 'id',
+        'id' => 'id',
         'nickname' => 'nickname',
-        'type'     => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

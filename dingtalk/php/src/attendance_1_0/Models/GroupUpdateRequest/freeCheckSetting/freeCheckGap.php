@@ -26,9 +26,7 @@ class freeCheckGap extends Model
         'onOffCheckGapMinutes' => 'onOffCheckGapMinutes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -32,14 +32,12 @@ class messages extends Model
     public $openMsgId;
     protected $_name = [
         'contentType' => 'contentType',
-        'createAt'    => 'createAt',
+        'createAt' => 'createAt',
         'mediaModels' => 'mediaModels',
-        'openMsgId'   => 'openMsgId',
+        'openMsgId' => 'openMsgId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -83,7 +81,7 @@ class messages extends Model
         if (isset($map['mediaModels'])) {
             if (!empty($map['mediaModels'])) {
                 $model->mediaModels = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['mediaModels'] as $item) {
                     $model->mediaModels[$n++] = null !== $item ? mediaModels::fromMap($item) : $item;
                 }

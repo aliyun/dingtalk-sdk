@@ -19,12 +19,10 @@ class GetAccessTokenRequest extends Model
     public $appId;
     protected $_name = [
         'agentId' => 'agentId',
-        'appId'   => 'appId',
+        'appId' => 'appId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

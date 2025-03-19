@@ -25,12 +25,10 @@ class userList extends Model
     public $unionId;
     protected $_name = [
         'participantId' => 'participantId',
-        'unionId'       => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

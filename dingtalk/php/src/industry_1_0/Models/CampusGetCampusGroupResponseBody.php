@@ -22,13 +22,11 @@ class CampusGetCampusGroupResponseBody extends Model
      */
     public $projectGroupName;
     protected $_name = [
-        'extend'           => 'extend',
+        'extend' => 'extend',
         'projectGroupName' => 'projectGroupName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,12 +23,10 @@ class InitMultipartFileUploadResponseBody extends Model
     public $uploadKey;
     protected $_name = [
         'storageDriver' => 'storageDriver',
-        'uploadKey'     => 'uploadKey',
+        'uploadKey' => 'uploadKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

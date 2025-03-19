@@ -43,16 +43,14 @@ class CollegeQueryCollegeDeptInfoResponseBody extends Model
      */
     public $superId;
     protected $_name = [
-        'deptId'     => 'deptId',
-        'deptName'   => 'deptName',
-        'deptType'   => 'deptType',
+        'deptId' => 'deptId',
+        'deptName' => 'deptName',
+        'deptType' => 'deptType',
         'sortFactor' => 'sortFactor',
-        'superId'    => 'superId',
+        'superId' => 'superId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

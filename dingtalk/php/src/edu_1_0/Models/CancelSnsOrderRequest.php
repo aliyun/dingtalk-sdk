@@ -54,15 +54,13 @@ class CancelSnsOrderRequest extends Model
     public $timestamp;
     protected $_name = [
         'alipayAppId' => 'alipayAppId',
-        'merchantId'  => 'merchantId',
-        'orderNo'     => 'orderNo',
-        'signature'   => 'signature',
-        'timestamp'   => 'timestamp',
+        'merchantId' => 'merchantId',
+        'orderNo' => 'orderNo',
+        'signature' => 'signature',
+        'timestamp' => 'timestamp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

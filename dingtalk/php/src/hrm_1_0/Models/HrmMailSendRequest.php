@@ -24,13 +24,11 @@ class HrmMailSendRequest extends Model
      */
     public $operator;
     protected $_name = [
-        'mail'     => 'mail',
+        'mail' => 'mail',
         'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

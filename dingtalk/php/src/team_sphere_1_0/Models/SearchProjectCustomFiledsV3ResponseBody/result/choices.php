@@ -18,13 +18,11 @@ class choices extends Model
      */
     public $value;
     protected $_name = [
-        'id'    => 'id',
+        'id' => 'id',
         'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,14 +27,12 @@ class OkrObjectivesByUserRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'goodsCode'  => 'goodsCode',
+        'goodsCode' => 'goodsCode',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -33,16 +33,14 @@ class customFields extends Model
      */
     public $icon;
     protected $_name = [
-        'fieldKey'   => 'fieldKey',
-        'fieldLink'  => 'fieldLink',
-        'fieldType'  => 'fieldType',
+        'fieldKey' => 'fieldKey',
+        'fieldLink' => 'fieldLink',
+        'fieldType' => 'fieldType',
         'fieldValue' => 'fieldValue',
-        'icon'       => 'icon',
+        'icon' => 'icon',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

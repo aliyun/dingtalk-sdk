@@ -18,9 +18,7 @@ class QueryScheduleConfSettingsRequest extends Model
         'scheduleConferenceId' => 'scheduleConferenceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

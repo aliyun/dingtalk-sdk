@@ -71,18 +71,16 @@ class GetCategoryResponseBody extends Model
     public $type;
     protected $_name = [
         'accountantBookIdList' => 'accountantBookIdList',
-        'code'                 => 'code',
-        'isDir'                => 'isDir',
-        'name'                 => 'name',
-        'parentCode'           => 'parentCode',
-        'remark'               => 'remark',
-        'status'               => 'status',
-        'type'                 => 'type',
+        'code' => 'code',
+        'isDir' => 'isDir',
+        'name' => 'name',
+        'parentCode' => 'parentCode',
+        'remark' => 'remark',
+        'status' => 'status',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

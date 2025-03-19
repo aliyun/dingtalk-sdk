@@ -18,9 +18,7 @@ class QueryYydNoticeDayStatisticalDataRequest extends Model
         'statDate' => 'statDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

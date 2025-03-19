@@ -53,17 +53,15 @@ class LoadBizObjectsRequest extends Model
      */
     public $sortByFields;
     protected $_name = [
-        'matcherJson'  => 'matcherJson',
-        'pageNumber'   => 'pageNumber',
-        'pageSize'     => 'pageSize',
+        'matcherJson' => 'matcherJson',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'returnFields' => 'returnFields',
-        'schemaCode'   => 'schemaCode',
+        'schemaCode' => 'schemaCode',
         'sortByFields' => 'sortByFields',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -124,7 +122,7 @@ class LoadBizObjectsRequest extends Model
         if (isset($map['sortByFields'])) {
             if (!empty($map['sortByFields'])) {
                 $model->sortByFields = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['sortByFields'] as $item) {
                     $model->sortByFields[$n++] = null !== $item ? sortByFields::fromMap($item) : $item;
                 }

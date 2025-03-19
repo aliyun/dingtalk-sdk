@@ -16,9 +16,7 @@ class CreateAssistantThreadRequest extends Model
         'metadata' => 'metadata',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

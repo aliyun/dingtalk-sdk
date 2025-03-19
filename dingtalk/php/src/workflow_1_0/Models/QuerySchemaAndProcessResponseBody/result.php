@@ -38,17 +38,15 @@ class result extends Model
      */
     public $processConfig;
     protected $_name = [
-        'appType'        => 'appType',
-        'content'        => 'content',
+        'appType' => 'appType',
+        'content' => 'content',
         'handSignEnable' => 'handSignEnable',
-        'iconUrl'        => 'iconUrl',
-        'name'           => 'name',
-        'processConfig'  => 'processConfig',
+        'iconUrl' => 'iconUrl',
+        'name' => 'name',
+        'processConfig' => 'processConfig',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

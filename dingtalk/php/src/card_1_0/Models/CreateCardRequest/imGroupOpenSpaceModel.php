@@ -31,14 +31,12 @@ class imGroupOpenSpaceModel extends Model
     public $supportForward;
     protected $_name = [
         'lastMessageI18n' => 'lastMessageI18n',
-        'notification'    => 'notification',
-        'searchSupport'   => 'searchSupport',
-        'supportForward'  => 'supportForward',
+        'notification' => 'notification',
+        'searchSupport' => 'searchSupport',
+        'supportForward' => 'supportForward',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

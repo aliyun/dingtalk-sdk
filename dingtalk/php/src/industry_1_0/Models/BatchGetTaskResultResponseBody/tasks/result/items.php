@@ -45,17 +45,15 @@ class items extends Model
      */
     public $subs;
     protected $_name = [
-        'info'           => 'info',
-        'name'           => 'name',
-        'point'          => 'point',
-        'reference'      => 'reference',
+        'info' => 'info',
+        'name' => 'name',
+        'point' => 'point',
+        'reference' => 'reference',
         'referenceFrame' => 'referenceFrame',
-        'subs'           => 'subs',
+        'subs' => 'subs',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -116,7 +114,7 @@ class items extends Model
         if (isset($map['subs'])) {
             if (!empty($map['subs'])) {
                 $model->subs = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['subs'] as $item) {
                     $model->subs[$n++] = null !== $item ? subs::fromMap($item) : $item;
                 }

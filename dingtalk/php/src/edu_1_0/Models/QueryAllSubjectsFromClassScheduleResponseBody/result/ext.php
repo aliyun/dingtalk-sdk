@@ -36,14 +36,12 @@ class ext extends Model
     public $teacherList;
     protected $_name = [
         'backgroundColor' => 'backgroundColor',
-        'classId'         => 'classId',
-        'fontColor'       => 'fontColor',
-        'teacherList'     => 'teacherList',
+        'classId' => 'classId',
+        'fontColor' => 'fontColor',
+        'teacherList' => 'teacherList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -90,7 +88,7 @@ class ext extends Model
         if (isset($map['teacherList'])) {
             if (!empty($map['teacherList'])) {
                 $model->teacherList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['teacherList'] as $item) {
                     $model->teacherList[$n++] = null !== $item ? teacherList::fromMap($item) : $item;
                 }

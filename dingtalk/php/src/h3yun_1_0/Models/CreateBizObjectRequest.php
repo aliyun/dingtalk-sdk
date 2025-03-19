@@ -45,14 +45,12 @@ class CreateBizObjectRequest extends Model
     public $schemaCode;
     protected $_name = [
         'bizObjectJson' => 'bizObjectJson',
-        'isDraft'       => 'isDraft',
-        'opUserId'      => 'opUserId',
-        'schemaCode'    => 'schemaCode',
+        'isDraft' => 'isDraft',
+        'opUserId' => 'opUserId',
+        'schemaCode' => 'schemaCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -50,17 +50,15 @@ class option extends Model
      */
     public $subjectId;
     protected $_name = [
-        'actions'    => 'actions',
+        'actions' => 'actions',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
         'operatorId' => 'operatorId',
-        'scenes'     => 'scenes',
-        'subjectId'  => 'subjectId',
+        'scenes' => 'scenes',
+        'subjectId' => 'subjectId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class result extends Model
         'deviceIp' => 'deviceIp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

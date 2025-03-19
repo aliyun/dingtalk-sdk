@@ -33,16 +33,14 @@ class residenceList extends Model
      */
     public $relateType;
     protected $_name = [
-        'active'          => 'active',
-        'extField'        => 'extField',
+        'active' => 'active',
+        'extField' => 'extField',
         'isPropertyOwner' => 'isPropertyOwner',
-        'name'            => 'name',
-        'relateType'      => 'relateType',
+        'name' => 'name',
+        'relateType' => 'relateType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

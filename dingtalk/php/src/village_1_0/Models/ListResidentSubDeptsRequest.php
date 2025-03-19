@@ -29,14 +29,12 @@ class ListResidentSubDeptsRequest extends Model
      */
     public $subCorpId;
     protected $_name = [
-        'cursor'    => 'cursor',
-        'size'      => 'size',
+        'cursor' => 'cursor',
+        'size' => 'size',
         'subCorpId' => 'subCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

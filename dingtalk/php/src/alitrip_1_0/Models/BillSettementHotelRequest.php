@@ -50,17 +50,15 @@ class BillSettementHotelRequest extends Model
      */
     public $periodStart;
     protected $_name = [
-        'category'    => 'category',
-        'corpId'      => 'corpId',
-        'pageNumber'  => 'pageNumber',
-        'pageSize'    => 'pageSize',
-        'periodEnd'   => 'periodEnd',
+        'category' => 'category',
+        'corpId' => 'corpId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'periodEnd' => 'periodEnd',
         'periodStart' => 'periodStart',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

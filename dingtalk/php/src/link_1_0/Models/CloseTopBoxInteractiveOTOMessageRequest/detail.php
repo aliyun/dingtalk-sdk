@@ -35,14 +35,12 @@ class detail extends Model
      */
     public $userId;
     protected $_name = [
-        'cardBizId'      => 'cardBizId',
+        'cardBizId' => 'cardBizId',
         'cardTemplateId' => 'cardTemplateId',
-        'userId'         => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

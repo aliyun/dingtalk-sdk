@@ -31,15 +31,13 @@ class result extends Model
      */
     public $text;
     protected $_name = [
-        'children'    => 'children',
-        'id'          => 'id',
+        'children' => 'children',
+        'id' => 'id',
         'isDimension' => 'isDimension',
-        'text'        => 'text',
+        'text' => 'text',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -77,7 +75,7 @@ class result extends Model
         if (isset($map['children'])) {
             if (!empty($map['children'])) {
                 $model->children = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['children'] as $item) {
                     $model->children[$n++] = null !== $item ? children::fromMap($item) : $item;
                 }

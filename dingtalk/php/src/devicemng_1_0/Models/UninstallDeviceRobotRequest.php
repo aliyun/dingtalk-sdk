@@ -23,12 +23,10 @@ class UninstallDeviceRobotRequest extends Model
     public $uuid;
     protected $_name = [
         'deviceCode' => 'deviceCode',
-        'uuid'       => 'uuid',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

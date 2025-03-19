@@ -63,22 +63,20 @@ class data extends Model
      */
     public $statDate;
     protected $_name = [
-        'dingGroupId'          => 'dingGroupId',
-        'groupCreateTime'      => 'groupCreateTime',
-        'groupCreateUserId'    => 'groupCreateUserId',
-        'groupCreateUserName'  => 'groupCreateUserName',
-        'groupName'            => 'groupName',
-        'groupType'            => 'groupType',
-        'groupUserCnt1d'       => 'groupUserCnt1d',
-        'openConvUv1d'         => 'openConvUv1d',
-        'sendMessageCnt1d'     => 'sendMessageCnt1d',
+        'dingGroupId' => 'dingGroupId',
+        'groupCreateTime' => 'groupCreateTime',
+        'groupCreateUserId' => 'groupCreateUserId',
+        'groupCreateUserName' => 'groupCreateUserName',
+        'groupName' => 'groupName',
+        'groupType' => 'groupType',
+        'groupUserCnt1d' => 'groupUserCnt1d',
+        'openConvUv1d' => 'openConvUv1d',
+        'sendMessageCnt1d' => 'sendMessageCnt1d',
         'sendMessageUserCnt1d' => 'sendMessageUserCnt1d',
-        'statDate'             => 'statDate',
+        'statDate' => 'statDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

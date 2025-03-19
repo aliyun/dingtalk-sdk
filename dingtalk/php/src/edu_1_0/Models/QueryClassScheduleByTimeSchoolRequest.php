@@ -29,14 +29,12 @@ class QueryClassScheduleByTimeSchoolRequest extends Model
      */
     public $startTime;
     protected $_name = [
-        'endTime'   => 'endTime',
-        'opUserId'  => 'opUserId',
+        'endTime' => 'endTime',
+        'opUserId' => 'opUserId',
         'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class result extends Model
         'openRoleId' => 'openRoleId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

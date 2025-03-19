@@ -235,45 +235,43 @@ class FormComponentProps extends Model
      */
     public $verticalPrint;
     protected $_name = [
-        'actionName'         => 'actionName',
-        'addressModel'       => 'addressModel',
-        'align'              => 'align',
-        'asyncCondition'     => 'asyncCondition',
+        'actionName' => 'actionName',
+        'addressModel' => 'addressModel',
+        'align' => 'align',
+        'asyncCondition' => 'asyncCondition',
         'availableTemplates' => 'availableTemplates',
-        'bizAlias'           => 'bizAlias',
-        'bizType'            => 'bizType',
-        'choice'             => 'choice',
-        'commonBizType'      => 'commonBizType',
-        'componentId'        => 'componentId',
-        'content'            => 'content',
-        'dataSource'         => 'dataSource',
-        'disabled'           => 'disabled',
-        'duration'           => 'duration',
-        'durationLabel'      => 'durationLabel',
-        'format'             => 'format',
-        'formula'            => 'formula',
-        'invisible'          => 'invisible',
-        'label'              => 'label',
-        'limit'              => 'limit',
-        'link'               => 'link',
-        'maxLength'          => 'maxLength',
-        'mode'               => 'mode',
-        'multiple'           => 'multiple',
-        'options'            => 'options',
-        'placeholder'        => 'placeholder',
-        'precision'          => 'precision',
-        'print'              => 'print',
-        'required'           => 'required',
-        'statField'          => 'statField',
-        'tableViewMode'      => 'tableViewMode',
-        'unit'               => 'unit',
-        'upper'              => 'upper',
-        'verticalPrint'      => 'verticalPrint',
+        'bizAlias' => 'bizAlias',
+        'bizType' => 'bizType',
+        'choice' => 'choice',
+        'commonBizType' => 'commonBizType',
+        'componentId' => 'componentId',
+        'content' => 'content',
+        'dataSource' => 'dataSource',
+        'disabled' => 'disabled',
+        'duration' => 'duration',
+        'durationLabel' => 'durationLabel',
+        'format' => 'format',
+        'formula' => 'formula',
+        'invisible' => 'invisible',
+        'label' => 'label',
+        'limit' => 'limit',
+        'link' => 'link',
+        'maxLength' => 'maxLength',
+        'mode' => 'mode',
+        'multiple' => 'multiple',
+        'options' => 'options',
+        'placeholder' => 'placeholder',
+        'precision' => 'precision',
+        'print' => 'print',
+        'required' => 'required',
+        'statField' => 'statField',
+        'tableViewMode' => 'tableViewMode',
+        'unit' => 'unit',
+        'upper' => 'upper',
+        'verticalPrint' => 'verticalPrint',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -425,7 +423,7 @@ class FormComponentProps extends Model
         if (isset($map['availableTemplates'])) {
             if (!empty($map['availableTemplates'])) {
                 $model->availableTemplates = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['availableTemplates'] as $item) {
                     $model->availableTemplates[$n++] = null !== $item ? AvaliableTemplate::fromMap($item) : $item;
                 }
@@ -491,7 +489,7 @@ class FormComponentProps extends Model
         if (isset($map['options'])) {
             if (!empty($map['options'])) {
                 $model->options = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['options'] as $item) {
                     $model->options[$n++] = null !== $item ? SelectOption::fromMap($item) : $item;
                 }
@@ -512,7 +510,7 @@ class FormComponentProps extends Model
         if (isset($map['statField'])) {
             if (!empty($map['statField'])) {
                 $model->statField = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['statField'] as $item) {
                     $model->statField[$n++] = null !== $item ? statField::fromMap($item) : $item;
                 }

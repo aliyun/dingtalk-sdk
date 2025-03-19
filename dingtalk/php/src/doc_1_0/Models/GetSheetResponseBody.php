@@ -67,20 +67,18 @@ class GetSheetResponseBody extends Model
      */
     public $visibility;
     protected $_name = [
-        'columnCount'        => 'columnCount',
-        'frozenColumnCount'  => 'frozenColumnCount',
-        'frozenRowCount'     => 'frozenRowCount',
-        'id'                 => 'id',
+        'columnCount' => 'columnCount',
+        'frozenColumnCount' => 'frozenColumnCount',
+        'frozenRowCount' => 'frozenRowCount',
+        'id' => 'id',
         'lastNonEmptyColumn' => 'lastNonEmptyColumn',
-        'lastNonEmptyRow'    => 'lastNonEmptyRow',
-        'name'               => 'name',
-        'rowCount'           => 'rowCount',
-        'visibility'         => 'visibility',
+        'lastNonEmptyRow' => 'lastNonEmptyRow',
+        'name' => 'name',
+        'rowCount' => 'rowCount',
+        'visibility' => 'visibility',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

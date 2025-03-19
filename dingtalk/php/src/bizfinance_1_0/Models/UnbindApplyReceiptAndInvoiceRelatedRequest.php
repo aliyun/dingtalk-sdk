@@ -26,14 +26,12 @@ class UnbindApplyReceiptAndInvoiceRelatedRequest extends Model
      */
     public $operator;
     protected $_name = [
-        'instanceId'       => 'instanceId',
+        'instanceId' => 'instanceId',
         'invoiceKeyVOList' => 'invoiceKeyVOList',
-        'operator'         => 'operator',
+        'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -71,7 +69,7 @@ class UnbindApplyReceiptAndInvoiceRelatedRequest extends Model
         if (isset($map['invoiceKeyVOList'])) {
             if (!empty($map['invoiceKeyVOList'])) {
                 $model->invoiceKeyVOList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['invoiceKeyVOList'] as $item) {
                     $model->invoiceKeyVOList[$n++] = null !== $item ? invoiceKeyVOList::fromMap($item) : $item;
                 }

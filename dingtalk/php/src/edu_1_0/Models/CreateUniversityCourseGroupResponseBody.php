@@ -17,9 +17,7 @@ class CreateUniversityCourseGroupResponseBody extends Model
         'courseGroupInfo' => 'courseGroupInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

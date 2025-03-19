@@ -57,18 +57,16 @@ class PageQueryClassCourseRequest extends Model
      */
     public $startCourseDate;
     protected $_name = [
-        'classId'         => 'classId',
-        'corpId'          => 'corpId',
-        'endCourseDate'   => 'endCourseDate',
-        'isvCode'         => 'isvCode',
-        'pageNumber'      => 'pageNumber',
-        'pageSize'        => 'pageSize',
+        'classId' => 'classId',
+        'corpId' => 'corpId',
+        'endCourseDate' => 'endCourseDate',
+        'isvCode' => 'isvCode',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'startCourseDate' => 'startCourseDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

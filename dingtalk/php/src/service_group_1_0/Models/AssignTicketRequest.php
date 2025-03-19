@@ -52,17 +52,15 @@ class AssignTicketRequest extends Model
      */
     public $ticketMemo;
     protected $_name = [
-        'notify'            => 'notify',
-        'openTeamId'        => 'openTeamId',
-        'openTicketId'      => 'openTicketId',
-        'operatorUnionId'   => 'operatorUnionId',
+        'notify' => 'notify',
+        'openTeamId' => 'openTeamId',
+        'openTicketId' => 'openTicketId',
+        'operatorUnionId' => 'operatorUnionId',
         'processorUnionIds' => 'processorUnionIds',
-        'ticketMemo'        => 'ticketMemo',
+        'ticketMemo' => 'ticketMemo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

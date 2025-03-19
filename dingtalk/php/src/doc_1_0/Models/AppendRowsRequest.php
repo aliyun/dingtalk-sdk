@@ -24,13 +24,11 @@ class AppendRowsRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'values'     => 'values',
+        'values' => 'values',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

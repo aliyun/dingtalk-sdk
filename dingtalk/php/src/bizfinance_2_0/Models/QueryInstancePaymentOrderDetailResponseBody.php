@@ -45,18 +45,16 @@ class QueryInstancePaymentOrderDetailResponseBody extends Model
      */
     public $userId;
     protected $_name = [
-        'amount'          => 'amount',
-        'instanceId'      => 'instanceId',
+        'amount' => 'amount',
+        'instanceId' => 'instanceId',
         'payeeAccountDTO' => 'payeeAccountDTO',
         'payerAccountDTO' => 'payerAccountDTO',
-        'remark'          => 'remark',
-        'usage'           => 'usage',
-        'userId'          => 'userId',
+        'remark' => 'remark',
+        'usage' => 'usage',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

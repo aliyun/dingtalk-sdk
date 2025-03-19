@@ -37,14 +37,12 @@ class data extends Model
     public $docCreatedCnt;
     protected $_name = [
         'createDocUserCnt1d' => 'createDocUserCnt1d',
-        'deptId'             => 'deptId',
-        'deptName'           => 'deptName',
-        'docCreatedCnt'      => 'docCreatedCnt',
+        'deptId' => 'deptId',
+        'deptName' => 'deptName',
+        'docCreatedCnt' => 'docCreatedCnt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

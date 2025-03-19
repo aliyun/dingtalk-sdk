@@ -18,9 +18,7 @@ class result extends Model
         'customerBizType' => 'customerBizType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

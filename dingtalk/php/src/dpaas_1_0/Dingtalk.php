@@ -29,8 +29,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -71,18 +71,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InstallCoolAppOrderToGroup',
-            'version'     => 'dpaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dpaas/coolApps/shortcuts/plugins/order',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InstallCoolAppOrderToGroup',
+            'version' => 'dpaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dpaas/coolApps/shortcuts/plugins/order',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InstallCoolAppOrderToGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -137,18 +137,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InstallCoolAppToGroup',
-            'version'     => 'dpaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dpaas/coolApps/shortcuts/plugins/install',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InstallCoolAppToGroup',
+            'version' => 'dpaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dpaas/coolApps/shortcuts/plugins/install',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InstallCoolAppToGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -200,18 +200,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryCoolAppShortcutOrder',
-            'version'     => 'dpaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dpaas/coolApps/shortcuts/plugins/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCoolAppShortcutOrder',
+            'version' => 'dpaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dpaas/coolApps/shortcuts/plugins/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCoolAppShortcutOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -266,18 +266,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UninstallCoolAppFromGroup',
-            'version'     => 'dpaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dpaas/coolApps/shortcuts/plugins/uninstall',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UninstallCoolAppFromGroup',
+            'version' => 'dpaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dpaas/coolApps/shortcuts/plugins/uninstall',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UninstallCoolAppFromGroupResponse::fromMap($this->execute($params, $req, $runtime));

@@ -20,9 +20,7 @@ class ExternalQueryExternalBelongMainOrgRequest extends Model
         'externalType' => 'externalType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -49,19 +49,17 @@ class data extends Model
      */
     public $templateKey;
     protected $_name = [
-        'actions'      => 'actions',
-        'createTime'   => 'createTime',
-        'creatorId'    => 'creatorId',
-        'description'  => 'description',
+        'actions' => 'actions',
+        'createTime' => 'createTime',
+        'creatorId' => 'creatorId',
+        'description' => 'description',
         'modifiedTime' => 'modifiedTime',
-        'modifierId'   => 'modifierId',
-        'name'         => 'name',
-        'templateKey'  => 'templateKey',
+        'modifierId' => 'modifierId',
+        'name' => 'name',
+        'templateKey' => 'templateKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -111,7 +109,7 @@ class data extends Model
         if (isset($map['actions'])) {
             if (!empty($map['actions'])) {
                 $model->actions = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['actions'] as $item) {
                     $model->actions[$n++] = null !== $item ? actions::fromMap($item) : $item;
                 }

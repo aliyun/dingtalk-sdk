@@ -16,9 +16,7 @@ class CheckInResponseBody extends Model
         'checkInTime' => 'checkInTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

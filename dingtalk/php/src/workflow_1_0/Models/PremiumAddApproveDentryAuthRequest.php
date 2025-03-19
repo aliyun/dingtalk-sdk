@@ -26,12 +26,10 @@ class PremiumAddApproveDentryAuthRequest extends Model
     public $userId;
     protected $_name = [
         'fileInfos' => 'fileInfos',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class PremiumAddApproveDentryAuthRequest extends Model
         if (isset($map['fileInfos'])) {
             if (!empty($map['fileInfos'])) {
                 $model->fileInfos = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['fileInfos'] as $item) {
                     $model->fileInfos[$n++] = null !== $item ? fileInfos::fromMap($item) : $item;
                 }

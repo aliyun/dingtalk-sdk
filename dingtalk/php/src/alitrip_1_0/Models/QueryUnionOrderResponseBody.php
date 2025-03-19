@@ -39,16 +39,14 @@ class QueryUnionOrderResponseBody extends Model
      */
     public $vehicleList;
     protected $_name = [
-        'corpId'      => 'corpId',
-        'flightList'  => 'flightList',
-        'hotelList'   => 'hotelList',
-        'trainList'   => 'trainList',
+        'corpId' => 'corpId',
+        'flightList' => 'flightList',
+        'hotelList' => 'hotelList',
+        'trainList' => 'trainList',
         'vehicleList' => 'vehicleList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -110,7 +108,7 @@ class QueryUnionOrderResponseBody extends Model
         if (isset($map['flightList'])) {
             if (!empty($map['flightList'])) {
                 $model->flightList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['flightList'] as $item) {
                     $model->flightList[$n++] = null !== $item ? flightList::fromMap($item) : $item;
                 }
@@ -119,7 +117,7 @@ class QueryUnionOrderResponseBody extends Model
         if (isset($map['hotelList'])) {
             if (!empty($map['hotelList'])) {
                 $model->hotelList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['hotelList'] as $item) {
                     $model->hotelList[$n++] = null !== $item ? hotelList::fromMap($item) : $item;
                 }
@@ -128,7 +126,7 @@ class QueryUnionOrderResponseBody extends Model
         if (isset($map['trainList'])) {
             if (!empty($map['trainList'])) {
                 $model->trainList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['trainList'] as $item) {
                     $model->trainList[$n++] = null !== $item ? trainList::fromMap($item) : $item;
                 }
@@ -137,7 +135,7 @@ class QueryUnionOrderResponseBody extends Model
         if (isset($map['vehicleList'])) {
             if (!empty($map['vehicleList'])) {
                 $model->vehicleList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['vehicleList'] as $item) {
                     $model->vehicleList[$n++] = null !== $item ? vehicleList::fromMap($item) : $item;
                 }

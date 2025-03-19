@@ -36,15 +36,13 @@ class result extends Model
      */
     public $priorityId;
     protected $_name = [
-        'color'      => 'color',
-        'name'       => 'name',
-        'priority'   => 'priority',
+        'color' => 'color',
+        'name' => 'name',
+        'priority' => 'priority',
         'priorityId' => 'priorityId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

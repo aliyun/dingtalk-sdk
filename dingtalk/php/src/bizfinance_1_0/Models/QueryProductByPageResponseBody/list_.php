@@ -53,20 +53,18 @@ class list_ extends Model
      */
     public $userDefineCode;
     protected $_name = [
-        'code'           => 'code',
-        'createTime'     => 'createTime',
-        'description'    => 'description',
-        'information'    => 'information',
-        'name'           => 'name',
-        'specification'  => 'specification',
-        'status'         => 'status',
-        'unit'           => 'unit',
+        'code' => 'code',
+        'createTime' => 'createTime',
+        'description' => 'description',
+        'information' => 'information',
+        'name' => 'name',
+        'specification' => 'specification',
+        'status' => 'status',
+        'unit' => 'unit',
         'userDefineCode' => 'userDefineCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

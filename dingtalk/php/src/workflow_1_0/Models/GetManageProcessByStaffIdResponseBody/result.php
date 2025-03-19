@@ -60,17 +60,15 @@ class result extends Model
     public $processCode;
     protected $_name = [
         'attendanceType' => 'attendanceType',
-        'flowTitle'      => 'flowTitle',
-        'gmtModified'    => 'gmtModified',
-        'iconName'       => 'iconName',
-        'iconUrl'        => 'iconUrl',
-        'newProcess'     => 'newProcess',
-        'processCode'    => 'processCode',
+        'flowTitle' => 'flowTitle',
+        'gmtModified' => 'gmtModified',
+        'iconName' => 'iconName',
+        'iconUrl' => 'iconUrl',
+        'newProcess' => 'newProcess',
+        'processCode' => 'processCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

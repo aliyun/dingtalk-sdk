@@ -23,12 +23,10 @@ class GetUserRequest extends Model
     public $userId;
     protected $_name = [
         'okrUserId' => 'okrUserId',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

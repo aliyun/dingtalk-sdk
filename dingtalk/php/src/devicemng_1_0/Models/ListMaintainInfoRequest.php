@@ -29,12 +29,10 @@ class ListMaintainInfoRequest extends Model
     protected $_name = [
         'deviceUuid' => 'deviceUuid',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

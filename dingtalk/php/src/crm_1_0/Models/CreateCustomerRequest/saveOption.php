@@ -36,15 +36,13 @@ class saveOption extends Model
      */
     public $throwExceptionWhileSavingContactFailed;
     protected $_name = [
-        'customerExistedPolicy'                  => 'customerExistedPolicy',
-        'skipDuplicateCheck'                     => 'skipDuplicateCheck',
-        'subscribePolicy'                        => 'subscribePolicy',
+        'customerExistedPolicy' => 'customerExistedPolicy',
+        'skipDuplicateCheck' => 'skipDuplicateCheck',
+        'subscribePolicy' => 'subscribePolicy',
         'throwExceptionWhileSavingContactFailed' => 'throwExceptionWhileSavingContactFailed',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

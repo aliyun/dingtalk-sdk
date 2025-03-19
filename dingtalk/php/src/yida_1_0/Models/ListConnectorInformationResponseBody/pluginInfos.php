@@ -49,19 +49,17 @@ class pluginInfos extends Model
      */
     public $pluginUuid;
     protected $_name = [
-        'apps'              => 'apps',
-        'iconUrl'           => 'iconUrl',
-        'pluginName'        => 'pluginName',
-        'pluginPayType'     => 'pluginPayType',
-        'pluginStatus'      => 'pluginStatus',
+        'apps' => 'apps',
+        'iconUrl' => 'iconUrl',
+        'pluginName' => 'pluginName',
+        'pluginPayType' => 'pluginPayType',
+        'pluginStatus' => 'pluginStatus',
         'pluginTotalAmount' => 'pluginTotalAmount',
         'pluginUsageAmount' => 'pluginUsageAmount',
-        'pluginUuid'        => 'pluginUuid',
+        'pluginUuid' => 'pluginUuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -111,7 +109,7 @@ class pluginInfos extends Model
         if (isset($map['apps'])) {
             if (!empty($map['apps'])) {
                 $model->apps = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['apps'] as $item) {
                     $model->apps[$n++] = null !== $item ? apps::fromMap($item) : $item;
                 }

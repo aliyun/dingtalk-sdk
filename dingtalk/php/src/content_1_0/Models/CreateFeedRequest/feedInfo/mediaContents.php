@@ -36,13 +36,11 @@ class mediaContents extends Model
     public $type;
     protected $_name = [
         'mediaId' => 'mediaId',
-        'title'   => 'title',
-        'type'    => 'type',
+        'title' => 'title',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

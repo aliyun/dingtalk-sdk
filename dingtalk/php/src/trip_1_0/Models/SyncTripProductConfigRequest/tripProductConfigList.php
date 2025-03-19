@@ -44,18 +44,16 @@ class tripProductConfigList extends Model
      */
     public $tmcInfos;
     protected $_name = [
-        'allVisible'         => 'allVisible',
-        'deptVisibleScopes'  => 'deptVisibleScopes',
-        'openStatus'         => 'openStatus',
-        'productType'        => 'productType',
-        'roleVisibleScopes'  => 'roleVisibleScopes',
+        'allVisible' => 'allVisible',
+        'deptVisibleScopes' => 'deptVisibleScopes',
+        'openStatus' => 'openStatus',
+        'productType' => 'productType',
+        'roleVisibleScopes' => 'roleVisibleScopes',
         'staffVisibleScopes' => 'staffVisibleScopes',
-        'tmcInfos'           => 'tmcInfos',
+        'tmcInfos' => 'tmcInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -126,7 +124,7 @@ class tripProductConfigList extends Model
         if (isset($map['tmcInfos'])) {
             if (!empty($map['tmcInfos'])) {
                 $model->tmcInfos = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['tmcInfos'] as $item) {
                     $model->tmcInfos[$n++] = null !== $item ? tmcInfos::fromMap($item) : $item;
                 }

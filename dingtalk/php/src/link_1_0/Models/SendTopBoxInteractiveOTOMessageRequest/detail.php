@@ -63,18 +63,16 @@ class detail extends Model
      */
     public $userIdPrivateDataMap;
     protected $_name = [
-        'callbackUrl'          => 'callbackUrl',
-        'cardBizId'            => 'cardBizId',
-        'cardData'             => 'cardData',
-        'cardTemplateId'       => 'cardTemplateId',
-        'expiredTime'          => 'expiredTime',
-        'userId'               => 'userId',
+        'callbackUrl' => 'callbackUrl',
+        'cardBizId' => 'cardBizId',
+        'cardData' => 'cardData',
+        'cardTemplateId' => 'cardTemplateId',
+        'expiredTime' => 'expiredTime',
+        'userId' => 'userId',
         'userIdPrivateDataMap' => 'userIdPrivateDataMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

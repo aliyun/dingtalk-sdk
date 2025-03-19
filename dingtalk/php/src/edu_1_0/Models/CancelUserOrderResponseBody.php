@@ -51,18 +51,16 @@ class CancelUserOrderResponseBody extends Model
      */
     public $totalAmount;
     protected $_name = [
-        'alipayAppId'     => 'alipayAppId',
-        'merchantId'      => 'merchantId',
+        'alipayAppId' => 'alipayAppId',
+        'merchantId' => 'merchantId',
         'merchantOrderNo' => 'merchantOrderNo',
-        'orderNo'         => 'orderNo',
-        'payStatus'       => 'payStatus',
-        'refundStatus'    => 'refundStatus',
-        'totalAmount'     => 'totalAmount',
+        'orderNo' => 'orderNo',
+        'payStatus' => 'payStatus',
+        'refundStatus' => 'refundStatus',
+        'totalAmount' => 'totalAmount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

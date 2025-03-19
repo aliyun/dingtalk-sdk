@@ -29,14 +29,12 @@ class data extends Model
      */
     public $wordName;
     protected $_name = [
-        'endIndex'   => 'endIndex',
+        'endIndex' => 'endIndex',
         'startIndex' => 'startIndex',
-        'wordName'   => 'wordName',
+        'wordName' => 'wordName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

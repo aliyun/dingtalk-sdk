@@ -92,23 +92,21 @@ class controllers extends Model
      */
     public $shareCode;
     protected $_name = [
-        'corpId'          => 'corpId',
-        'deviceId'        => 'deviceId',
-        'deviceMac'       => 'deviceMac',
-        'deviceModel'     => 'deviceModel',
-        'deviceName'      => 'deviceName',
+        'corpId' => 'corpId',
+        'deviceId' => 'deviceId',
+        'deviceMac' => 'deviceMac',
+        'deviceModel' => 'deviceModel',
+        'deviceName' => 'deviceName',
         'deviceServiceId' => 'deviceServiceId',
-        'deviceSn'        => 'deviceSn',
-        'deviceStatus'    => 'deviceStatus',
-        'deviceType'      => 'deviceType',
-        'deviceUnionId'   => 'deviceUnionId',
-        'openRoomId'      => 'openRoomId',
-        'shareCode'       => 'shareCode',
+        'deviceSn' => 'deviceSn',
+        'deviceStatus' => 'deviceStatus',
+        'deviceType' => 'deviceType',
+        'deviceUnionId' => 'deviceUnionId',
+        'openRoomId' => 'openRoomId',
+        'shareCode' => 'shareCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

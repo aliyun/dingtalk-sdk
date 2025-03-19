@@ -57,18 +57,16 @@ class result extends Model
      */
     public $teacherUserId;
     protected $_name = [
-        'classId'       => 'classId',
-        'corpId'        => 'corpId',
-        'periodCode'    => 'periodCode',
-        'subjectCode'   => 'subjectCode',
-        'subjectName'   => 'subjectName',
-        'teacherName'   => 'teacherName',
+        'classId' => 'classId',
+        'corpId' => 'corpId',
+        'periodCode' => 'periodCode',
+        'subjectCode' => 'subjectCode',
+        'subjectName' => 'subjectName',
+        'teacherName' => 'teacherName',
         'teacherUserId' => 'teacherUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

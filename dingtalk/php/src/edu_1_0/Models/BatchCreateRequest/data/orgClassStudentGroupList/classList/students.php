@@ -18,13 +18,11 @@ class students extends Model
      */
     public $staffId;
     protected $_name = [
-        'name'    => 'name',
+        'name' => 'name',
         'staffId' => 'staffId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

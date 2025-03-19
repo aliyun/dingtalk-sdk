@@ -66,19 +66,17 @@ class SyncBusinessSignInfoRequest extends Model
      */
     public $tmcProductList;
     protected $_name = [
-        'bizTypeList'          => 'bizTypeList',
-        'gmtOrgPay'            => 'gmtOrgPay',
-        'gmtSign'              => 'gmtSign',
-        'orgPayStatus'         => 'orgPayStatus',
-        'signStatus'           => 'signStatus',
-        'targetCorpId'         => 'targetCorpId',
+        'bizTypeList' => 'bizTypeList',
+        'gmtOrgPay' => 'gmtOrgPay',
+        'gmtSign' => 'gmtSign',
+        'orgPayStatus' => 'orgPayStatus',
+        'signStatus' => 'signStatus',
+        'targetCorpId' => 'targetCorpId',
         'tmcProductDetailList' => 'tmcProductDetailList',
-        'tmcProductList'       => 'tmcProductList',
+        'tmcProductList' => 'tmcProductList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -154,7 +152,7 @@ class SyncBusinessSignInfoRequest extends Model
         if (isset($map['tmcProductDetailList'])) {
             if (!empty($map['tmcProductDetailList'])) {
                 $model->tmcProductDetailList = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['tmcProductDetailList'] as $item) {
                     $model->tmcProductDetailList[$n++] = null !== $item ? tmcProductDetailList::fromMap($item) : $item;
                 }
@@ -163,7 +161,7 @@ class SyncBusinessSignInfoRequest extends Model
         if (isset($map['tmcProductList'])) {
             if (!empty($map['tmcProductList'])) {
                 $model->tmcProductList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['tmcProductList'] as $item) {
                     $model->tmcProductList[$n++] = null !== $item ? tmcProductList::fromMap($item) : $item;
                 }

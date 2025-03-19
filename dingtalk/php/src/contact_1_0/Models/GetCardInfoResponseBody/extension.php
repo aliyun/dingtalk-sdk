@@ -65,21 +65,19 @@ class extension extends Model
     public $videoUrl;
     protected $_name = [
         'cardContactInfo' => 'cardContactInfo',
-        'corpId'          => 'corpId',
-        'department'      => 'department',
-        'orgAuthed'       => 'orgAuthed',
-        'orgLogo'         => 'orgLogo',
-        'originCardUrl'   => 'originCardUrl',
-        'shareContent'    => 'shareContent',
-        'thumbnailUrl'    => 'thumbnailUrl',
-        'videoFileName'   => 'videoFileName',
-        'videoTitle'      => 'videoTitle',
-        'videoUrl'        => 'videoUrl',
+        'corpId' => 'corpId',
+        'department' => 'department',
+        'orgAuthed' => 'orgAuthed',
+        'orgLogo' => 'orgLogo',
+        'originCardUrl' => 'originCardUrl',
+        'shareContent' => 'shareContent',
+        'thumbnailUrl' => 'thumbnailUrl',
+        'videoFileName' => 'videoFileName',
+        'videoTitle' => 'videoTitle',
+        'videoUrl' => 'videoUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

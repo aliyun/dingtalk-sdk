@@ -19,9 +19,7 @@ class IntentionCategoryStatisticsResponseBody extends Model
         'intentionCategoryRecords' => 'intentionCategoryRecords',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class IntentionCategoryStatisticsResponseBody extends Model
         if (isset($map['intentionCategoryRecords'])) {
             if (!empty($map['intentionCategoryRecords'])) {
                 $model->intentionCategoryRecords = [];
-                $n                               = 0;
+                $n = 0;
                 foreach ($map['intentionCategoryRecords'] as $item) {
                     $model->intentionCategoryRecords[$n++] = null !== $item ? intentionCategoryRecords::fromMap($item) : $item;
                 }

@@ -51,17 +51,15 @@ class CreateApproveRequest extends Model
      */
     public $userid;
     protected $_name = [
-        'approveId'  => 'approveId',
-        'opUserid'   => 'opUserid',
+        'approveId' => 'approveId',
+        'opUserid' => 'opUserid',
         'punchParam' => 'punchParam',
-        'subType'    => 'subType',
-        'tagName'    => 'tagName',
-        'userid'     => 'userid',
+        'subType' => 'subType',
+        'tagName' => 'tagName',
+        'userid' => 'userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

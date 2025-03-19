@@ -42,13 +42,11 @@ class variables extends Model
     protected $_name = [
         'bizAlias' => 'bizAlias',
         'extValue' => 'extValue',
-        'id'       => 'id',
-        'value'    => 'value',
+        'id' => 'id',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

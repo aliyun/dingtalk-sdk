@@ -26,12 +26,10 @@ class BatchBindingGroupBizIdsRequest extends Model
     public $openTeamId;
     protected $_name = [
         'bindingGroupBizIds' => 'bindingGroupBizIds',
-        'openTeamId'         => 'openTeamId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class BatchBindingGroupBizIdsRequest extends Model
         if (isset($map['bindingGroupBizIds'])) {
             if (!empty($map['bindingGroupBizIds'])) {
                 $model->bindingGroupBizIds = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['bindingGroupBizIds'] as $item) {
                     $model->bindingGroupBizIds[$n++] = null !== $item ? bindingGroupBizIds::fromMap($item) : $item;
                 }

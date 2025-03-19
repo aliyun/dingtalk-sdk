@@ -20,9 +20,7 @@ class QueryWithholdingOrderRequest extends Model
         'outTradeNo' => 'outTradeNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

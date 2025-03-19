@@ -25,13 +25,11 @@ class InsertDropdownListsRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'options'    => 'options',
+        'options' => 'options',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class InsertDropdownListsRequest extends Model
         if (isset($map['options'])) {
             if (!empty($map['options'])) {
                 $model->options = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['options'] as $item) {
                     $model->options[$n++] = null !== $item ? options::fromMap($item) : $item;
                 }

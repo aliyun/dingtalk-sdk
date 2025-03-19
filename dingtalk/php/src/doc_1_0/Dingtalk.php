@@ -157,6 +157,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertDropdownListsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertRowsBeforeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertRowsBeforeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertRowsBeforeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListCommentsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListCommentsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListCommentsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ListTemplateResponse;
@@ -223,8 +226,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -267,19 +270,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddComment',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/docs/' . $docId . '/comments',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddComment',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/docs/' . $docId . '/comments',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddCommentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -331,18 +334,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddWorkspaceDocMembers',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '/members',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddWorkspaceDocMembers',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return AddWorkspaceDocMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -394,18 +397,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddWorkspaceMembers',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/' . $workspaceId . '/members',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddWorkspaceMembers',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/' . $workspaceId . '/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddWorkspaceMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -458,19 +461,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AppendRows',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/appendRows',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AppendRows',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/appendRows',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return AppendRowsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -523,19 +526,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'Batch',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'Batch',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -585,18 +588,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchGetWorkspaceDocs',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/docs/infos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchGetWorkspaceDocs',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/docs/infos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchGetWorkspaceDocsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -648,18 +651,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchGetWorkspaces',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/infos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchGetWorkspaces',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/infos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchGetWorkspacesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -710,19 +713,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchOperate',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/suites/documents/' . $documentId . '/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchOperate',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $documentId . '/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchOperateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -774,19 +777,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BindCoolAppToSheet',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/coolApps',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BindCoolAppToSheet',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/coolApps',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BindCoolAppToSheetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -836,18 +839,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'Clear',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/clear',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'Clear',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/clear',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ClearResponse::fromMap($this->execute($params, $req, $runtime));
@@ -899,18 +902,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ClearData',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/clearData',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ClearData',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/clearData',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ClearDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -974,19 +977,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateConditionalFormattingRule',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/conditionalFormattingRules',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateConditionalFormattingRule',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/conditionalFormattingRules',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateConditionalFormattingRuleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1045,19 +1048,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateDeveloperMetadata',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/developerMetadatas',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateDeveloperMetadata',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/developerMetadatas',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateDeveloperMetadataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1117,19 +1120,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateRangeProtection',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/protections',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateRangeProtection',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/protections',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateRangeProtectionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1183,19 +1186,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateSheet',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateSheet',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateSheetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1248,18 +1251,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateWorkspace',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateWorkspace',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateWorkspaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1321,18 +1324,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateWorkspaceDoc',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/' . $workspaceId . '/docs',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateWorkspaceDoc',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/' . $workspaceId . '/docs',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateWorkspaceDocResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1388,19 +1391,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteColumns',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/deleteColumns',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteColumns',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/deleteColumns',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteColumnsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1451,18 +1454,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteDropdownLists',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/deleteDropdownLists',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteDropdownLists',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/deleteDropdownLists',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteDropdownListsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1515,18 +1518,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteRangeProtection',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/protections/' . $protectionId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteRangeProtection',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/protections/' . $protectionId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteRangeProtectionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1585,19 +1588,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteRows',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/deleteRows',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteRows',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/deleteRows',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteRowsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1647,18 +1650,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteSheet',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteSheet',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteSheetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1708,18 +1711,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteWorkspaceDoc',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteWorkspaceDoc',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return DeleteWorkspaceDocResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1772,18 +1775,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteWorkspaceDocMembers',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '/members/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteWorkspaceDocMembers',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '/members/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return DeleteWorkspaceDocMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1835,18 +1838,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteWorkspaceMembers',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/' . $workspaceId . '/members/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteWorkspaceMembers',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/' . $workspaceId . '/members/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return DeleteWorkspaceMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1902,19 +1905,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DocAppendParagraph',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/blocks/' . $blockId . '/paragraph/appendElement',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DocAppendParagraph',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $docKey . '/blocks/' . $blockId . '/paragraph/appendElement',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DocAppendParagraphResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1968,19 +1971,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DocAppendText',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/blocks/' . $blockId . '/paragraph/appendText',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DocAppendText',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $docKey . '/blocks/' . $blockId . '/paragraph/appendText',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DocAppendTextResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2038,18 +2041,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DocBlocksQuery',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/blocks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DocBlocksQuery',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $docKey . '/blocks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DocBlocksQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2098,18 +2101,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DocDeleteBlock',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/blocks/' . $blockId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DocDeleteBlock',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $docKey . '/blocks/' . $blockId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DocDeleteBlockResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2158,18 +2161,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DocExportSnapshot',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/suites/documents/' . $documentId . '/export/snapshot',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DocExportSnapshot',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $documentId . '/export/snapshot',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DocExportSnapshotResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2230,19 +2233,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DocInsertBlocks',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/blocks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DocInsertBlocks',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $docKey . '/blocks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DocInsertBlocksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2294,19 +2297,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DocSlotsModify',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/suites/documents/' . $documentId . '/slots',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DocSlotsModify',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $documentId . '/slots',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DocSlotsModifyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2354,18 +2357,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DocSlotsQuery',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/suites/documents/' . $documentId . '/slots',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DocSlotsQuery',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $documentId . '/slots',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DocSlotsQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2420,19 +2423,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DocUpdateContent',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/overwriteContent',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DocUpdateContent',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $docKey . '/overwriteContent',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DocUpdateContentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2480,18 +2483,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAllSheets',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAllSheets',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAllSheetsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2540,18 +2543,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDeveloperMetadata',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/developerMetadatas/' . $developerMetadataId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDeveloperMetadata',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/developerMetadatas/' . $developerMetadataId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDeveloperMetadataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2600,18 +2603,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetImportDocumentMark',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/docs/' . $docId . '/marks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetImportDocumentMark',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/docs/' . $docId . '/marks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetImportDocumentMarkResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2664,18 +2667,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRange',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRange',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRangeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2730,18 +2733,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRecentEditDocs',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/docs/recentEditDocs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRecentEditDocs',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/docs/recentEditDocs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRecentEditDocsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2793,18 +2796,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRecentOpenDocs',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/docs/recentOpenDocs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRecentOpenDocs',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/docs/recentOpenDocs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRecentOpenDocsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2853,18 +2856,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRelatedWorkspaces',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRelatedWorkspaces',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRelatedWorkspacesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2921,19 +2924,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetResourceUploadInfo',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/docs/resources/' . $docId . '/uploadInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetResourceUploadInfo',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/docs/resources/' . $docId . '/uploadInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetResourceUploadInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2982,18 +2985,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSheet',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSheet',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSheetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3045,18 +3048,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTemplateById',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/templates/' . $templateId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTemplateById',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/templates/' . $templateId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTemplateByIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3100,15 +3103,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetWorkspace',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/' . $workspaceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetWorkspace',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/' . $workspaceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetWorkspaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3156,18 +3159,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetWorkspaceNode',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetWorkspaceNode',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetWorkspaceNodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3229,19 +3232,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InitDocument',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/docs/' . $docId . '/init',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InitDocument',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/docs/' . $docId . '/init',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InitDocumentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3295,18 +3298,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InsertBlocks',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/documents/' . $documentId . '/blocks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InsertBlocks',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/documents/' . $documentId . '/blocks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return InsertBlocksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3362,19 +3365,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InsertColumnsBefore',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/insertColumnsBefore',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InsertColumnsBefore',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/insertColumnsBefore',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InsertColumnsBeforeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3429,19 +3432,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InsertDropdownLists',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/insertDropdownLists',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InsertDropdownLists',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/insertDropdownLists',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InsertDropdownListsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3499,19 +3502,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InsertRowsBefore',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/insertRowsBefore',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InsertRowsBefore',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/insertRowsBefore',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InsertRowsBeforeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3532,6 +3535,77 @@ class Dingtalk extends OpenApiClient
         $headers = new InsertRowsBeforeHeaders([]);
 
         return $this->insertRowsBeforeWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取文档所有评论
+     *  *
+     * @param string              $docId
+     * @param ListCommentsRequest $request ListCommentsRequest
+     * @param ListCommentsHeaders $headers ListCommentsHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListCommentsResponse ListCommentsResponse
+     */
+    public function listCommentsWithOptions($docId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isGlobal)) {
+            $query['isGlobal'] = $request->isGlobal;
+        }
+        if (!Utils::isUnset($request->isSolved)) {
+            $query['isSolved'] = $request->isSolved;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ListComments',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/docs/' . $docId . '/comments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListCommentsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取文档所有评论
+     *  *
+     * @param string              $docId
+     * @param ListCommentsRequest $request ListCommentsRequest
+     *
+     * @return ListCommentsResponse ListCommentsResponse
+     */
+    public function listComments($docId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListCommentsHeaders([]);
+
+        return $this->listCommentsWithOptions($docId, $request, $headers, $runtime);
     }
 
     /**
@@ -3571,18 +3645,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListTemplate',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/templates',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListTemplate',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/templates',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3635,19 +3709,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MergeRange',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/merge',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MergeRange',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/merge',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MergeRangeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3706,19 +3780,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RangeFindNext',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/findNext',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RangeFindNext',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/findNext',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RangeFindNextResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3779,18 +3853,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchWorkspaceDocs',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/docs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchWorkspaceDocs',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/docs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchWorkspaceDocsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3849,19 +3923,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetBorder',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/setBorder',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetBorder',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/setBorder',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetBorderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3919,19 +3993,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetColumnWidth',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setColumnWidth',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetColumnWidth',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setColumnWidth',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetColumnWidthResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3991,19 +4065,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetColumnsVisibility',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setColumnsVisibility',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetColumnsVisibility',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setColumnsVisibility',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetColumnsVisibilityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4063,19 +4137,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetColumnsWidth',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setColumnsWidth',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetColumnsWidth',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setColumnsWidth',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetColumnsWidthResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4132,19 +4206,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetRowHeight',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setRowHeight',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetRowHeight',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setRowHeight',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetRowHeightResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4207,19 +4281,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetRowsHeight',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setRowsHeight',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetRowsHeight',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setRowsHeight',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetRowsHeightResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4279,19 +4353,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetRowsVisibility',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setRowsVisibility',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetRowsVisibility',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setRowsVisibility',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetRowsVisibilityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4351,19 +4425,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SheetAutofitRows',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/autofitRows',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SheetAutofitRows',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/autofitRows',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SheetAutofitRowsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4423,19 +4497,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SheetFindAll',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/findAll',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SheetFindAll',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/findAll',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SheetFindAllResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4487,18 +4561,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'UnbindCoolAppToSheet',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/coolApps',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UnbindCoolAppToSheet',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/coolApps',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UnbindCoolAppToSheetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4546,6 +4620,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->complexValues)) {
             $body['complexValues'] = $request->complexValues;
         }
+        if (!Utils::isUnset($request->fontColors)) {
+            $body['fontColors'] = $request->fontColors;
+        }
         if (!Utils::isUnset($request->fontSizes)) {
             $body['fontSizes'] = $request->fontSizes;
         }
@@ -4579,19 +4656,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateRange',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateRange',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateRangeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4655,19 +4732,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateSheet',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateSheet',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return UpdateSheetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4720,18 +4797,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateWorkspaceDocMembers',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '/members',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateWorkspaceDocMembers',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/' . $workspaceId . '/docs/' . $nodeId . '/members',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return UpdateWorkspaceDocMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4783,18 +4860,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateWorkspaceMembers',
-            'version'     => 'doc_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/doc/workspaces/' . $workspaceId . '/members',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateWorkspaceMembers',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workspaces/' . $workspaceId . '/members',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return UpdateWorkspaceMembersResponse::fromMap($this->execute($params, $req, $runtime));

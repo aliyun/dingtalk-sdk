@@ -36,13 +36,11 @@ class ReportDeviceLogRequest extends Model
     public $type;
     protected $_name = [
         'mediaId' => 'mediaId',
-        'sn'      => 'sn',
-        'type'    => 'type',
+        'sn' => 'sn',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -31,12 +31,10 @@ class devices extends Model
         'deviceCode' => 'deviceCode',
         'deviceName' => 'deviceName',
         'deviceUuid' => 'deviceUuid',
-        'uuid'       => 'uuid',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

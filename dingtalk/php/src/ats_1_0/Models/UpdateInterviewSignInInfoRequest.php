@@ -24,13 +24,11 @@ class UpdateInterviewSignInInfoRequest extends Model
      */
     public $signInTimeMillis;
     protected $_name = [
-        'bizCode'          => 'bizCode',
+        'bizCode' => 'bizCode',
         'signInTimeMillis' => 'signInTimeMillis',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

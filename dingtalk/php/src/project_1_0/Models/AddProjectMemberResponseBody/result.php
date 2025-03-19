@@ -18,13 +18,11 @@ class result extends Model
      */
     public $nickname;
     protected $_name = [
-        'joined'   => 'joined',
+        'joined' => 'joined',
         'nickname' => 'nickname',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

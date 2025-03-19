@@ -20,9 +20,7 @@ class GetFeedRequest extends Model
         'mcnId' => 'mcnId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,13 +23,11 @@ class SyncScheduleInfoRequest extends Model
      */
     public $scheduleInfos;
     protected $_name = [
-        'opUserId'      => 'opUserId',
+        'opUserId' => 'opUserId',
         'scheduleInfos' => 'scheduleInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class SyncScheduleInfoRequest extends Model
         if (isset($map['scheduleInfos'])) {
             if (!empty($map['scheduleInfos'])) {
                 $model->scheduleInfos = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['scheduleInfos'] as $item) {
                     $model->scheduleInfos[$n++] = null !== $item ? scheduleInfos::fromMap($item) : $item;
                 }

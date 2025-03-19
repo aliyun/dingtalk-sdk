@@ -44,15 +44,13 @@ class ConsumeBenefitInventoryRequest extends Model
      */
     public $optUserId;
     protected $_name = [
-        'benefitCode'  => 'benefitCode',
+        'benefitCode' => 'benefitCode',
         'bizRequestId' => 'bizRequestId',
         'consumeQuota' => 'consumeQuota',
-        'optUserId'    => 'optUserId',
+        'optUserId' => 'optUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

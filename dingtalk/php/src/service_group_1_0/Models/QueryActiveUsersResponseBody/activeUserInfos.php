@@ -59,16 +59,14 @@ class activeUserInfos extends Model
     protected $_name = [
         'actionIndexL14d' => 'actionIndexL14d',
         'actionIndexL30d' => 'actionIndexL30d',
-        'actionIndexL7d'  => 'actionIndexL7d',
-        'activeScore'     => 'activeScore',
-        'nickName'        => 'nickName',
-        'ranking'         => 'ranking',
-        'unionId'         => 'unionId',
+        'actionIndexL7d' => 'actionIndexL7d',
+        'activeScore' => 'activeScore',
+        'nickName' => 'nickName',
+        'ranking' => 'ranking',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

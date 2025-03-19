@@ -50,17 +50,15 @@ class formInstDataList extends Model
      */
     public $value;
     protected $_name = [
-        'bizAlias'      => 'bizAlias',
+        'bizAlias' => 'bizAlias',
         'componentType' => 'componentType',
-        'extendValue'   => 'extendValue',
-        'key'           => 'key',
-        'label'         => 'label',
-        'value'         => 'value',
+        'extendValue' => 'extendValue',
+        'key' => 'key',
+        'label' => 'label',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

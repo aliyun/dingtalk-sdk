@@ -41,16 +41,14 @@ class QueryStudentClassRequest extends Model
      */
     public $studentUserIds;
     protected $_name = [
-        'classId'        => 'classId',
-        'classType'      => 'classType',
-        'corpId'         => 'corpId',
-        'isvCode'        => 'isvCode',
+        'classId' => 'classId',
+        'classType' => 'classType',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
         'studentUserIds' => 'studentUserIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

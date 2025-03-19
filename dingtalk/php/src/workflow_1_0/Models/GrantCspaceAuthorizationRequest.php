@@ -43,14 +43,12 @@ class GrantCspaceAuthorizationRequest extends Model
     public $userId;
     protected $_name = [
         'durationSeconds' => 'durationSeconds',
-        'spaceId'         => 'spaceId',
-        'type'            => 'type',
-        'userId'          => 'userId',
+        'spaceId' => 'spaceId',
+        'type' => 'type',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,12 +23,10 @@ class option extends Model
     public $version;
     protected $_name = [
         'preferIntranet' => 'preferIntranet',
-        'version'        => 'version',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

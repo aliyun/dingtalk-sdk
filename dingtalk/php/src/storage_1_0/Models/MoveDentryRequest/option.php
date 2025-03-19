@@ -22,13 +22,11 @@ class option extends Model
      */
     public $presevePermissions;
     protected $_name = [
-        'conflictStrategy'   => 'conflictStrategy',
+        'conflictStrategy' => 'conflictStrategy',
         'presevePermissions' => 'presevePermissions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

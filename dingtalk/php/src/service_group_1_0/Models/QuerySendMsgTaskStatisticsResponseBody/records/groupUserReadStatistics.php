@@ -33,16 +33,14 @@ class groupUserReadStatistics extends Model
      */
     public $unReadUserInc;
     protected $_name = [
-        'openBatchTaskId'    => 'openBatchTaskId',
+        'openBatchTaskId' => 'openBatchTaskId',
         'openConversationId' => 'openConversationId',
-        'readUserInc'        => 'readUserInc',
-        'sendUserInc'        => 'sendUserInc',
-        'unReadUserInc'      => 'unReadUserInc',
+        'readUserInc' => 'readUserInc',
+        'sendUserInc' => 'sendUserInc',
+        'unReadUserInc' => 'unReadUserInc',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

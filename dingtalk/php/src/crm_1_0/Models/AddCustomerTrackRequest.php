@@ -83,20 +83,18 @@ class AddCustomerTrackRequest extends Model
      */
     public $type;
     protected $_name = [
-        'content'        => 'content',
-        'customerId'     => 'customerId',
-        'extraBizInfo'   => 'extraBizInfo',
-        'idempotentKey'  => 'idempotentKey',
-        'maskedContent'  => 'maskedContent',
+        'content' => 'content',
+        'customerId' => 'customerId',
+        'extraBizInfo' => 'extraBizInfo',
+        'idempotentKey' => 'idempotentKey',
+        'maskedContent' => 'maskedContent',
         'operatorUserId' => 'operatorUserId',
-        'relationType'   => 'relationType',
-        'title'          => 'title',
-        'type'           => 'type',
+        'relationType' => 'relationType',
+        'title' => 'title',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

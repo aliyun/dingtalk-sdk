@@ -43,14 +43,12 @@ class agentList extends Model
     public $appId;
     protected $_name = [
         'adminList' => 'adminList',
-        'agentId'   => 'agentId',
+        'agentId' => 'agentId',
         'agentName' => 'agentName',
-        'appId'     => 'appId',
+        'appId' => 'appId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,14 +23,12 @@ class LinkCommonInvokeResponseBody extends Model
      */
     public $invokeId;
     protected $_name = [
-        'bizType'  => 'bizType',
-        'data'     => 'data',
+        'bizType' => 'bizType',
+        'data' => 'data',
         'invokeId' => 'invokeId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

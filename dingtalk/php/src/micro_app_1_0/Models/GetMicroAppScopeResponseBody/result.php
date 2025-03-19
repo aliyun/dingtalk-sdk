@@ -36,15 +36,13 @@ class result extends Model
      */
     public $userIds;
     protected $_name = [
-        'deptIds'          => 'deptIds',
+        'deptIds' => 'deptIds',
         'onlyAdminVisible' => 'onlyAdminVisible',
-        'roleIds'          => 'roleIds',
-        'userIds'          => 'userIds',
+        'roleIds' => 'roleIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

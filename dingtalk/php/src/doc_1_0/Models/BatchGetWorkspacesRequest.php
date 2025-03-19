@@ -28,13 +28,11 @@ class BatchGetWorkspacesRequest extends Model
     public $workspaceIds;
     protected $_name = [
         'includeRecent' => 'includeRecent',
-        'operatorId'    => 'operatorId',
-        'workspaceIds'  => 'workspaceIds',
+        'operatorId' => 'operatorId',
+        'workspaceIds' => 'workspaceIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

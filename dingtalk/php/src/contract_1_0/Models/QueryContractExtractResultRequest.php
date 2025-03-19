@@ -23,12 +23,10 @@ class QueryContractExtractResultRequest extends Model
     public $requestId;
     protected $_name = [
         'extractTaskId' => 'extractTaskId',
-        'requestId'     => 'requestId',
+        'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

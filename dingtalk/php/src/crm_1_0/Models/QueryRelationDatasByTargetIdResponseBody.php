@@ -19,9 +19,7 @@ class QueryRelationDatasByTargetIdResponseBody extends Model
         'relations' => 'relations',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class QueryRelationDatasByTargetIdResponseBody extends Model
         if (isset($map['relations'])) {
             if (!empty($map['relations'])) {
                 $model->relations = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['relations'] as $item) {
                     $model->relations[$n++] = null !== $item ? relations::fromMap($item) : $item;
                 }

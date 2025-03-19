@@ -18,9 +18,7 @@ class GetActiveUserSummaryResponseBody extends Model
         'actUsrCnt1m' => 'actUsrCnt1m',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -75,20 +75,18 @@ class CollectResumeDetailRequest extends Model
      */
     public $resumeFile;
     protected $_name = [
-        'bizCode'          => 'bizCode',
-        'channelCode'      => 'channelCode',
-        'channelOuterId'   => 'channelOuterId',
-        'channelTalentId'  => 'channelTalentId',
-        'deliverJobId'     => 'deliverJobId',
-        'optUserId'        => 'optUserId',
+        'bizCode' => 'bizCode',
+        'channelCode' => 'channelCode',
+        'channelOuterId' => 'channelOuterId',
+        'channelTalentId' => 'channelTalentId',
+        'deliverJobId' => 'deliverJobId',
+        'optUserId' => 'optUserId',
         'resumeChannelUrl' => 'resumeChannelUrl',
-        'resumeData'       => 'resumeData',
-        'resumeFile'       => 'resumeFile',
+        'resumeData' => 'resumeData',
+        'resumeFile' => 'resumeFile',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

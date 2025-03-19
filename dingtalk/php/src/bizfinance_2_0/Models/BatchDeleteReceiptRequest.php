@@ -21,12 +21,10 @@ class BatchDeleteReceiptRequest extends Model
     public $operator;
     protected $_name = [
         'instanceIdList' => 'instanceIdList',
-        'operator'       => 'operator',
+        'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

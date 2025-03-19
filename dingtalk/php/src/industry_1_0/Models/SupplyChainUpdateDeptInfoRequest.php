@@ -43,16 +43,14 @@ class SupplyChainUpdateDeptInfoRequest extends Model
      */
     public $supplyDeptId;
     protected $_name = [
-        'name'            => 'name',
-        'partnerNumber'   => 'partnerNumber',
+        'name' => 'name',
+        'partnerNumber' => 'partnerNumber',
         'partnerTypeList' => 'partnerTypeList',
-        'superId'         => 'superId',
-        'supplyDeptId'    => 'supplyDeptId',
+        'superId' => 'superId',
+        'supplyDeptId' => 'supplyDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

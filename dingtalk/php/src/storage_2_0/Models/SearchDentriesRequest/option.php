@@ -54,19 +54,17 @@ class option extends Model
      */
     public $visitTimeRange;
     protected $_name = [
-        'createTimeRange'  => 'createTimeRange',
-        'creatorIds'       => 'creatorIds',
+        'createTimeRange' => 'createTimeRange',
+        'creatorIds' => 'creatorIds',
         'dentryCategories' => 'dentryCategories',
-        'maxResults'       => 'maxResults',
-        'modifierIds'      => 'modifierIds',
-        'nextToken'        => 'nextToken',
-        'spaceIds'         => 'spaceIds',
-        'visitTimeRange'   => 'visitTimeRange',
+        'maxResults' => 'maxResults',
+        'modifierIds' => 'modifierIds',
+        'nextToken' => 'nextToken',
+        'spaceIds' => 'spaceIds',
+        'visitTimeRange' => 'visitTimeRange',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

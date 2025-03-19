@@ -33,16 +33,14 @@ class cardDTO extends Model
      */
     public $receiverAccount;
     protected $_name = [
-        'atAccount'       => 'atAccount',
+        'atAccount' => 'atAccount',
         'cardCallbackUrl' => 'cardCallbackUrl',
-        'content'         => 'content',
-        'isAtAll'         => 'isAtAll',
+        'content' => 'content',
+        'isAtAll' => 'isAtAll',
         'receiverAccount' => 'receiverAccount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

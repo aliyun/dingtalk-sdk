@@ -16,9 +16,7 @@ class AbandonCustomerResponseBody extends Model
         'instanceIdList' => 'instanceIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

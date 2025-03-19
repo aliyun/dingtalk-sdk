@@ -16,9 +16,7 @@ class DeleteEvaluatePerformanceRequest extends Model
         'evaluationIdList' => 'evaluationIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

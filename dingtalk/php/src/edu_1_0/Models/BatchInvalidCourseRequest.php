@@ -41,16 +41,14 @@ class BatchInvalidCourseRequest extends Model
      */
     public $isvCourseIds;
     protected $_name = [
-        'classId'      => 'classId',
-        'corpId'       => 'corpId',
-        'isvCode'      => 'isvCode',
-        'isvCourseId'  => 'isvCourseId',
+        'classId' => 'classId',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
+        'isvCourseId' => 'isvCourseId',
         'isvCourseIds' => 'isvCourseIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

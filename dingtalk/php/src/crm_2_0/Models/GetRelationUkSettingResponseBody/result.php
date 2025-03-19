@@ -23,9 +23,7 @@ class result extends Model
         'headerFieldIds' => 'headerFieldIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class result extends Model
         if (isset($map['formUkSettings'])) {
             if (!empty($map['formUkSettings'])) {
                 $model->formUkSettings = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['formUkSettings'] as $item) {
                     $model->formUkSettings[$n++] = null !== $item ? formUkSettings::fromMap($item) : $item;
                 }

@@ -35,14 +35,12 @@ class DeleteRowsRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'row'        => 'row',
-        'rowCount'   => 'rowCount',
+        'row' => 'row',
+        'rowCount' => 'rowCount',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

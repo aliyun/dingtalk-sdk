@@ -29,14 +29,12 @@ class DescribeMetaModelRequest extends Model
      */
     public $tenant;
     protected $_name = [
-        'bizTypes'       => 'bizTypes',
+        'bizTypes' => 'bizTypes',
         'operatorUserId' => 'operatorUserId',
-        'tenant'         => 'tenant',
+        'tenant' => 'tenant',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

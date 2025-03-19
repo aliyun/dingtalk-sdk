@@ -57,18 +57,16 @@ class SyncChannelMessageRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'bizCode'        => 'bizCode',
-        'channel'        => 'channel',
-        'content'        => 'content',
-        'createTime'     => 'createTime',
+        'bizCode' => 'bizCode',
+        'channel' => 'channel',
+        'content' => 'content',
+        'createTime' => 'createTime',
         'receiverUserId' => 'receiverUserId',
-        'senderUserId'   => 'senderUserId',
-        'uuid'           => 'uuid',
+        'senderUserId' => 'senderUserId',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

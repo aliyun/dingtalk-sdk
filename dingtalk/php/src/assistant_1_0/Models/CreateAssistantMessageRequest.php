@@ -32,15 +32,13 @@ class CreateAssistantMessageRequest extends Model
      */
     public $role;
     protected $_name = [
-        'content'   => 'content',
+        'content' => 'content',
         'extension' => 'extension',
-        'metadata'  => 'metadata',
-        'role'      => 'role',
+        'metadata' => 'metadata',
+        'role' => 'role',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

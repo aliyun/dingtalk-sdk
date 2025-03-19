@@ -21,13 +21,11 @@ class groups extends Model
      */
     public $sections;
     protected $_name = [
-        'groupId'  => 'groupId',
+        'groupId' => 'groupId',
         'sections' => 'sections',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class groups extends Model
         if (isset($map['sections'])) {
             if (!empty($map['sections'])) {
                 $model->sections = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['sections'] as $item) {
                     $model->sections[$n++] = null !== $item ? sections::fromMap($item) : $item;
                 }

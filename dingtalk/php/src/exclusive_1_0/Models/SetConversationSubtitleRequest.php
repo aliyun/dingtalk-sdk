@@ -32,13 +32,11 @@ class SetConversationSubtitleRequest extends Model
     public $subtitleColor;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'subtitle'           => 'subtitle',
-        'subtitleColor'      => 'subtitleColor',
+        'subtitle' => 'subtitle',
+        'subtitleColor' => 'subtitleColor',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

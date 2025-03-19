@@ -38,16 +38,14 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'code'       => 'code',
+        'code' => 'code',
         'customized' => 'customized',
-        'fields'     => 'fields',
-        'name'       => 'name',
-        'status'     => 'status',
+        'fields' => 'fields',
+        'name' => 'name',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -94,7 +92,7 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBody extends Model
         if (isset($map['fields'])) {
             if (!empty($map['fields'])) {
                 $model->fields = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['fields'] as $item) {
                     $model->fields[$n++] = null !== $item ? fields::fromMap($item) : $item;
                 }

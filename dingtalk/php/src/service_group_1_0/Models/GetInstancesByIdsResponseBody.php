@@ -17,9 +17,7 @@ class GetInstancesByIdsResponseBody extends Model
         'customFormInstanceResponseList' => 'customFormInstanceResponseList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class GetInstancesByIdsResponseBody extends Model
         if (isset($map['customFormInstanceResponseList'])) {
             if (!empty($map['customFormInstanceResponseList'])) {
                 $model->customFormInstanceResponseList = [];
-                $n                                     = 0;
+                $n = 0;
                 foreach ($map['customFormInstanceResponseList'] as $item) {
                     $model->customFormInstanceResponseList[$n++] = null !== $item ? customFormInstanceResponseList::fromMap($item) : $item;
                 }

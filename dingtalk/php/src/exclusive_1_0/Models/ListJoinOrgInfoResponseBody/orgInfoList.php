@@ -44,15 +44,13 @@ class orgInfoList extends Model
      */
     public $orgName;
     protected $_name = [
-        'corpId'      => 'corpId',
-        'domain'      => 'domain',
+        'corpId' => 'corpId',
+        'domain' => 'domain',
         'orgFullName' => 'orgFullName',
-        'orgName'     => 'orgName',
+        'orgName' => 'orgName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

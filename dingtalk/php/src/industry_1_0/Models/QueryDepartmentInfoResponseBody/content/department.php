@@ -94,23 +94,21 @@ class department extends Model
      */
     public $wardIdList;
     protected $_name = [
-        'deptCode'       => 'deptCode',
-        'deptName'       => 'deptName',
-        'deptOrder'      => 'deptOrder',
-        'deptStatus'     => 'deptStatus',
-        'deptType'       => 'deptType',
-        'gmtCreateStr'   => 'gmtCreateStr',
+        'deptCode' => 'deptCode',
+        'deptName' => 'deptName',
+        'deptOrder' => 'deptOrder',
+        'deptStatus' => 'deptStatus',
+        'deptType' => 'deptType',
+        'gmtCreateStr' => 'gmtCreateStr',
         'gmtModifiedStr' => 'gmtModifiedStr',
-        'id'             => 'id',
-        'name'           => 'name',
+        'id' => 'id',
+        'name' => 'name',
         'parentDeptCode' => 'parentDeptCode',
-        'remark'         => 'remark',
-        'wardIdList'     => 'wardIdList',
+        'remark' => 'remark',
+        'wardIdList' => 'wardIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

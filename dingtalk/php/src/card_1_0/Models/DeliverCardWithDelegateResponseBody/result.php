@@ -42,15 +42,13 @@ class result extends Model
     public $success;
     protected $_name = [
         'carrierId' => 'carrierId',
-        'errorMsg'  => 'errorMsg',
-        'spaceId'   => 'spaceId',
+        'errorMsg' => 'errorMsg',
+        'spaceId' => 'spaceId',
         'spaceType' => 'spaceType',
-        'success'   => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

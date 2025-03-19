@@ -17,9 +17,7 @@ class GetDentriesResponseBody extends Model
         'resultItems' => 'resultItems',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class GetDentriesResponseBody extends Model
         if (isset($map['resultItems'])) {
             if (!empty($map['resultItems'])) {
                 $model->resultItems = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['resultItems'] as $item) {
                     $model->resultItems[$n++] = null !== $item ? resultItems::fromMap($item) : $item;
                 }

@@ -29,14 +29,12 @@ class results extends Model
      */
     public $tabTitle;
     protected $_name = [
-        'formCode'          => 'formCode',
+        'formCode' => 'formCode',
         'relateComponentId' => 'relateComponentId',
-        'tabTitle'          => 'tabTitle',
+        'tabTitle' => 'tabTitle',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

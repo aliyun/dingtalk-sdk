@@ -23,12 +23,10 @@ class languageSkill extends Model
     public $languageName;
     protected $_name = [
         'certificateName' => 'certificateName',
-        'languageName'    => 'languageName',
+        'languageName' => 'languageName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

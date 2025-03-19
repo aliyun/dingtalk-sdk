@@ -207,41 +207,39 @@ class result extends Model
      */
     public $title;
     protected $_name = [
-        'accountantBookId'             => 'accountantBookId',
-        'amount'                       => 'amount',
-        'applyStatus'                  => 'applyStatus',
-        'bizStatus'                    => 'bizStatus',
-        'businessId'                   => 'businessId',
-        'companyCode'                  => 'companyCode',
-        'createTime'                   => 'createTime',
-        'creator'                      => 'creator',
-        'customer'                     => 'customer',
-        'drawerEmail'                  => 'drawerEmail',
-        'drawerTelephone'              => 'drawerTelephone',
-        'invoiceType'                  => 'invoiceType',
-        'modelId'                      => 'modelId',
-        'productInfoList'              => 'productInfoList',
-        'purchaserAccount'             => 'purchaserAccount',
-        'purchaserAddress'             => 'purchaserAddress',
-        'purchaserBankName'            => 'purchaserBankName',
-        'purchaserName'                => 'purchaserName',
-        'purchaserTaxNo'               => 'purchaserTaxNo',
-        'purchaserTel'                 => 'purchaserTel',
-        'receiptId'                    => 'receiptId',
-        'recordTime'                   => 'recordTime',
-        'remark'                       => 'remark',
+        'accountantBookId' => 'accountantBookId',
+        'amount' => 'amount',
+        'applyStatus' => 'applyStatus',
+        'bizStatus' => 'bizStatus',
+        'businessId' => 'businessId',
+        'companyCode' => 'companyCode',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
+        'customer' => 'customer',
+        'drawerEmail' => 'drawerEmail',
+        'drawerTelephone' => 'drawerTelephone',
+        'invoiceType' => 'invoiceType',
+        'modelId' => 'modelId',
+        'productInfoList' => 'productInfoList',
+        'purchaserAccount' => 'purchaserAccount',
+        'purchaserAddress' => 'purchaserAddress',
+        'purchaserBankName' => 'purchaserBankName',
+        'purchaserName' => 'purchaserName',
+        'purchaserTaxNo' => 'purchaserTaxNo',
+        'purchaserTel' => 'purchaserTel',
+        'receiptId' => 'receiptId',
+        'recordTime' => 'recordTime',
+        'remark' => 'remark',
         'showPurchaserAccountInRemark' => 'showPurchaserAccountInRemark',
         'showPurchaserContactInRemark' => 'showPurchaserContactInRemark',
-        'showSellerAccountInRemark'    => 'showSellerAccountInRemark',
-        'showSellerContactInRemark'    => 'showSellerContactInRemark',
-        'source'                       => 'source',
-        'status'                       => 'status',
-        'title'                        => 'title',
+        'showSellerAccountInRemark' => 'showSellerAccountInRemark',
+        'showSellerContactInRemark' => 'showSellerContactInRemark',
+        'source' => 'source',
+        'status' => 'status',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -396,7 +394,7 @@ class result extends Model
         if (isset($map['productInfoList'])) {
             if (!empty($map['productInfoList'])) {
                 $model->productInfoList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['productInfoList'] as $item) {
                     $model->productInfoList[$n++] = null !== $item ? productInfoList::fromMap($item) : $item;
                 }

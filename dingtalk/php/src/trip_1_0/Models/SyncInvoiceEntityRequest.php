@@ -45,15 +45,13 @@ class SyncInvoiceEntityRequest extends Model
     public $userId;
     protected $_name = [
         'channelCorpId' => 'channelCorpId',
-        'delAll'        => 'delAll',
-        'entityList'    => 'entityList',
-        'invoiceId'     => 'invoiceId',
-        'userId'        => 'userId',
+        'delAll' => 'delAll',
+        'entityList' => 'entityList',
+        'invoiceId' => 'invoiceId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -100,7 +98,7 @@ class SyncInvoiceEntityRequest extends Model
         if (isset($map['entityList'])) {
             if (!empty($map['entityList'])) {
                 $model->entityList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['entityList'] as $item) {
                     $model->entityList[$n++] = null !== $item ? entityList::fromMap($item) : $item;
                 }

@@ -33,14 +33,12 @@ class GenerateFlashMinutesDocumentUrlRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'bizType'    => 'bizType',
+        'bizType' => 'bizType',
         'expireTime' => 'expireTime',
-        'unionId'    => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

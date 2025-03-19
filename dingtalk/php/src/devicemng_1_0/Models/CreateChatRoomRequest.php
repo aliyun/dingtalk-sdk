@@ -38,15 +38,13 @@ class CreateChatRoomRequest extends Model
     public $roleList;
     protected $_name = [
         'chatGroupName' => 'chatGroupName',
-        'deviceCodes'   => 'deviceCodes',
-        'deviceTypeId'  => 'deviceTypeId',
-        'ownerUserId'   => 'ownerUserId',
-        'roleList'      => 'roleList',
+        'deviceCodes' => 'deviceCodes',
+        'deviceTypeId' => 'deviceTypeId',
+        'ownerUserId' => 'ownerUserId',
+        'roleList' => 'roleList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

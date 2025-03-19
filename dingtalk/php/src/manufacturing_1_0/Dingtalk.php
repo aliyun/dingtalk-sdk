@@ -22,10 +22,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -107,18 +107,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustrializeManufactureJobBook',
-            'version'     => 'manufacturing_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/manufacturing/users/' . $userId . '/jobs',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'IndustrializeManufactureJobBook',
+            'version' => 'manufacturing_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/manufacturing/users/' . $userId . '/jobs',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustrializeManufactureJobBookResponse::fromMap($this->execute($params, $req, $runtime));
@@ -207,18 +207,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'IndustrializeManufactureQueryJobs',
-            'version'     => 'manufacturing_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/manufacturing/users/jobs/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'IndustrializeManufactureQueryJobs',
+            'version' => 'manufacturing_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/manufacturing/users/jobs/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return IndustrializeManufactureQueryJobsResponse::fromMap($this->execute($params, $req, $runtime));

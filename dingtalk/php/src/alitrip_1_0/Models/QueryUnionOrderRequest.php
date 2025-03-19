@@ -31,14 +31,12 @@ class QueryUnionOrderRequest extends Model
      */
     public $unionNo;
     protected $_name = [
-        'corpId'           => 'corpId',
+        'corpId' => 'corpId',
         'thirdPartApplyId' => 'thirdPartApplyId',
-        'unionNo'          => 'unionNo',
+        'unionNo' => 'unionNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class filters extends Model
      */
     public $valueType;
     protected $_name = [
-        'fieldId'    => 'fieldId',
+        'fieldId' => 'fieldId',
         'filterType' => 'filterType',
-        'value'      => 'value',
-        'valueType'  => 'valueType',
+        'value' => 'value',
+        'valueType' => 'valueType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

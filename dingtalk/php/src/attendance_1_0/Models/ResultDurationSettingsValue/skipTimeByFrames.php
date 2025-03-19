@@ -24,13 +24,11 @@ class skipTimeByFrames extends Model
     public $valid;
     protected $_name = [
         'startTime' => 'startTime',
-        'endTime'   => 'endTime',
-        'valid'     => 'valid',
+        'endTime' => 'endTime',
+        'valid' => 'valid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

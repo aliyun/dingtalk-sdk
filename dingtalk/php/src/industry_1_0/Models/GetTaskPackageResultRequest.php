@@ -20,13 +20,11 @@ class GetTaskPackageResultRequest extends Model
      */
     public $taskPackageId;
     protected $_name = [
-        'bizCode'       => 'bizCode',
+        'bizCode' => 'bizCode',
         'taskPackageId' => 'taskPackageId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

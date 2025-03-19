@@ -50,15 +50,13 @@ class GetGroupActiveInfoRequest extends Model
     public $statDate;
     protected $_name = [
         'dingGroupId' => 'dingGroupId',
-        'groupType'   => 'groupType',
-        'pageNumber'  => 'pageNumber',
-        'pageSize'    => 'pageSize',
-        'statDate'    => 'statDate',
+        'groupType' => 'groupType',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'statDate' => 'statDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

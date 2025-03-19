@@ -24,14 +24,12 @@ class GetAssistantActionInfoResponseBody extends Model
      */
     public $corpId;
     protected $_name = [
-        'actionList'  => 'actionList',
+        'actionList' => 'actionList',
         'assistantId' => 'assistantId',
-        'corpId'      => 'corpId',
+        'corpId' => 'corpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class GetAssistantActionInfoResponseBody extends Model
         if (isset($map['actionList'])) {
             if (!empty($map['actionList'])) {
                 $model->actionList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['actionList'] as $item) {
                     $model->actionList[$n++] = null !== $item ? actionList::fromMap($item) : $item;
                 }

@@ -23,13 +23,11 @@ class HrbrainImportPunDetailRequest extends Model
      */
     public $corpId;
     protected $_name = [
-        'body'   => 'body',
+        'body' => 'body',
         'corpId' => 'corpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -61,7 +59,7 @@ class HrbrainImportPunDetailRequest extends Model
         if (isset($map['body'])) {
             if (!empty($map['body'])) {
                 $model->body = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['body'] as $item) {
                     $model->body[$n++] = null !== $item ? body::fromMap($item) : $item;
                 }

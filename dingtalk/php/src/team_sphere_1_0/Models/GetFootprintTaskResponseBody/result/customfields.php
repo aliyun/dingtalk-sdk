@@ -33,14 +33,12 @@ class customfields extends Model
     public $values;
     protected $_name = [
         'customfieldId' => 'customfieldId',
-        'type'          => 'type',
-        'value'         => 'value',
-        'values'        => 'values',
+        'type' => 'type',
+        'value' => 'value',
+        'values' => 'values',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

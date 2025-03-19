@@ -38,17 +38,15 @@ class CreateDataDeliverRequest extends Model
      */
     public $dispatchingStartDate;
     protected $_name = [
-        'bizcode'              => 'bizcode',
-        'param'                => 'param',
-        'userId'               => 'userId',
-        'dispatchingCycle'     => 'dispatchingCycle',
-        'dispatchingItemType'  => 'dispatchingItemType',
+        'bizcode' => 'bizcode',
+        'param' => 'param',
+        'userId' => 'userId',
+        'dispatchingCycle' => 'dispatchingCycle',
+        'dispatchingItemType' => 'dispatchingItemType',
         'dispatchingStartDate' => 'dispatchingStartDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

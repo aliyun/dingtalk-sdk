@@ -19,12 +19,10 @@ class QueryTotalDataCountServiceResponseBody extends Model
     public $total;
     protected $_name = [
         'success' => 'success',
-        'total'   => 'total',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

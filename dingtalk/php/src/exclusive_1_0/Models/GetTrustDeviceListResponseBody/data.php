@@ -65,20 +65,18 @@ class data extends Model
      */
     public $userId;
     protected $_name = [
-        'createTime'   => 'createTime',
-        'id'           => 'id',
-        'macAddress'   => 'macAddress',
-        'model'        => 'model',
+        'createTime' => 'createTime',
+        'id' => 'id',
+        'macAddress' => 'macAddress',
+        'model' => 'model',
         'modifiedTime' => 'modifiedTime',
-        'platform'     => 'platform',
-        'status'       => 'status',
-        'title'        => 'title',
-        'userId'       => 'userId',
+        'platform' => 'platform',
+        'status' => 'status',
+        'title' => 'title',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

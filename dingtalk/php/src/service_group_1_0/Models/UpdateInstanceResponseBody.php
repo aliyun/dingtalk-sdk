@@ -16,9 +16,7 @@ class UpdateInstanceResponseBody extends Model
         'openDataInstanceId' => 'openDataInstanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

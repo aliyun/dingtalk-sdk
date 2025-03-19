@@ -16,9 +16,7 @@ class AuthUrlRequest extends Model
         'redirectUrl' => 'redirectUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

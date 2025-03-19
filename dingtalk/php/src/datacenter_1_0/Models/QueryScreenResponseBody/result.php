@@ -34,15 +34,13 @@ class result extends Model
     public $thumbUrl;
     protected $_name = [
         'operatePermission' => 'operatePermission',
-        'screenId'          => 'screenId',
-        'screenName'        => 'screenName',
-        'state'             => 'state',
-        'thumbUrl'          => 'thumbUrl',
+        'screenId' => 'screenId',
+        'screenName' => 'screenName',
+        'state' => 'state',
+        'thumbUrl' => 'thumbUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

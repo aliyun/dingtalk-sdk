@@ -97,22 +97,20 @@ class CreateWorkTimeRequest extends Model
      */
     public $tenantType;
     protected $_name = [
-        'description'      => 'description',
-        'endDate'          => 'endDate',
-        'executorId'       => 'executorId',
+        'description' => 'description',
+        'endDate' => 'endDate',
+        'executorId' => 'executorId',
         'includesHolidays' => 'includesHolidays',
-        'isDuration'       => 'isDuration',
-        'objectId'         => 'objectId',
-        'objectType'       => 'objectType',
-        'startDate'        => 'startDate',
-        'submitterId'      => 'submitterId',
-        'workTime'         => 'workTime',
-        'tenantType'       => 'tenantType',
+        'isDuration' => 'isDuration',
+        'objectId' => 'objectId',
+        'objectType' => 'objectType',
+        'startDate' => 'startDate',
+        'submitterId' => 'submitterId',
+        'workTime' => 'workTime',
+        'tenantType' => 'tenantType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

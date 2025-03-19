@@ -32,13 +32,11 @@ class CreateCooperateOrgRequest extends Model
     public $orgName;
     protected $_name = [
         'industryCode' => 'industryCode',
-        'logoMediaId'  => 'logoMediaId',
-        'orgName'      => 'orgName',
+        'logoMediaId' => 'logoMediaId',
+        'orgName' => 'orgName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

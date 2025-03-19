@@ -24,12 +24,10 @@ class ListEmpLeaveRecordsResponseBody extends Model
     public $records;
     protected $_name = [
         'nextToken' => 'nextToken',
-        'records'   => 'records',
+        'records' => 'records',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class ListEmpLeaveRecordsResponseBody extends Model
         if (isset($map['records'])) {
             if (!empty($map['records'])) {
                 $model->records = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['records'] as $item) {
                     $model->records[$n++] = null !== $item ? records::fromMap($item) : $item;
                 }

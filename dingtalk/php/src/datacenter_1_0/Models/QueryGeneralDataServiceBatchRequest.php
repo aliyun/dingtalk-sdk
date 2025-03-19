@@ -69,21 +69,19 @@ class QueryGeneralDataServiceBatchRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'deptIds'     => 'deptIds',
-        'endDate'     => 'endDate',
-        'filters'     => 'filters',
-        'pageNumber'  => 'pageNumber',
-        'pageSize'    => 'pageSize',
+        'deptIds' => 'deptIds',
+        'endDate' => 'endDate',
+        'filters' => 'filters',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'returnTotal' => 'returnTotal',
-        'serviceId'   => 'serviceId',
-        'startDate'   => 'startDate',
-        'userId'      => 'userId',
-        'userIds'     => 'userIds',
+        'serviceId' => 'serviceId',
+        'startDate' => 'startDate',
+        'userId' => 'userId',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -147,7 +145,7 @@ class QueryGeneralDataServiceBatchRequest extends Model
         if (isset($map['filters'])) {
             if (!empty($map['filters'])) {
                 $model->filters = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['filters'] as $item) {
                     $model->filters[$n++] = null !== $item ? filters::fromMap($item) : $item;
                 }

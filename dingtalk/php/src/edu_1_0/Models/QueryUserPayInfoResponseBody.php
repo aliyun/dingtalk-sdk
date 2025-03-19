@@ -20,9 +20,7 @@ class QueryUserPayInfoResponseBody extends Model
         'signNo' => 'signNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

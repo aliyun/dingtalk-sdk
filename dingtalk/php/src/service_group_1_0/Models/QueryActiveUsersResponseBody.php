@@ -19,9 +19,7 @@ class QueryActiveUsersResponseBody extends Model
         'activeUserInfos' => 'activeUserInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class QueryActiveUsersResponseBody extends Model
         if (isset($map['activeUserInfos'])) {
             if (!empty($map['activeUserInfos'])) {
                 $model->activeUserInfos = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['activeUserInfos'] as $item) {
                     $model->activeUserInfos[$n++] = null !== $item ? activeUserInfos::fromMap($item) : $item;
                 }

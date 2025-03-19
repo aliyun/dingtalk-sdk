@@ -20,12 +20,10 @@ class GetDownloadInfoResponseBody extends Model
     public $region;
     protected $_name = [
         'downloadInfo' => 'downloadInfo',
-        'region'       => 'region',
+        'region' => 'region',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

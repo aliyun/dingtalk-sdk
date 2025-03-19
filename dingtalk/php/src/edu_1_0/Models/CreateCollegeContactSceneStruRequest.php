@@ -55,16 +55,14 @@ class CreateCollegeContactSceneStruRequest extends Model
     public $struType;
     protected $_name = [
         'hasStruFixedDept' => 'hasStruFixedDept',
-        'order'            => 'order',
+        'order' => 'order',
         'sourceIdentifier' => 'sourceIdentifier',
-        'struBrief'        => 'struBrief',
-        'struName'         => 'struName',
-        'struType'         => 'struType',
+        'struBrief' => 'struBrief',
+        'struName' => 'struName',
+        'struType' => 'struType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

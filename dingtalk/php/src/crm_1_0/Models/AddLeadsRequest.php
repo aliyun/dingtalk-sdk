@@ -51,15 +51,13 @@ class AddLeadsRequest extends Model
     public $outTaskId;
     protected $_name = [
         'assignTimestamp' => 'assignTimestamp',
-        'assignUserId'    => 'assignUserId',
-        'assignedUserId'  => 'assignedUserId',
-        'leads'           => 'leads',
-        'outTaskId'       => 'outTaskId',
+        'assignUserId' => 'assignUserId',
+        'assignedUserId' => 'assignedUserId',
+        'leads' => 'leads',
+        'outTaskId' => 'outTaskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -109,7 +107,7 @@ class AddLeadsRequest extends Model
         if (isset($map['leads'])) {
             if (!empty($map['leads'])) {
                 $model->leads = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['leads'] as $item) {
                     $model->leads[$n++] = null !== $item ? leads::fromMap($item) : $item;
                 }

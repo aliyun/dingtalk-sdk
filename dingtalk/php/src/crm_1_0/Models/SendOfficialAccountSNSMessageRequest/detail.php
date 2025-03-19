@@ -33,13 +33,11 @@ class detail extends Model
     public $uuid;
     protected $_name = [
         'messageBody' => 'messageBody',
-        'msgType'     => 'msgType',
-        'uuid'        => 'uuid',
+        'msgType' => 'msgType',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

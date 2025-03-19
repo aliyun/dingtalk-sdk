@@ -17,9 +17,7 @@ class RegisterAndActivateDeviceBatchRequest extends Model
         'registerAndActivateVOS' => 'registerAndActivateVOS',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class RegisterAndActivateDeviceBatchRequest extends Model
         if (isset($map['registerAndActivateVOS'])) {
             if (!empty($map['registerAndActivateVOS'])) {
                 $model->registerAndActivateVOS = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['registerAndActivateVOS'] as $item) {
                     $model->registerAndActivateVOS[$n++] = null !== $item ? registerAndActivateVOS::fromMap($item) : $item;
                 }

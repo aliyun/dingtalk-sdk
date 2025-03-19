@@ -76,19 +76,17 @@ class CreateOrUpdateFormDataRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'             => 'appType',
-        'formDataJson'        => 'formDataJson',
-        'formUuid'            => 'formUuid',
+        'appType' => 'appType',
+        'formDataJson' => 'formDataJson',
+        'formUuid' => 'formUuid',
         'noExecuteExpression' => 'noExecuteExpression',
-        'searchCondition'     => 'searchCondition',
-        'systemToken'         => 'systemToken',
-        'useAlias'            => 'useAlias',
-        'userId'              => 'userId',
+        'searchCondition' => 'searchCondition',
+        'systemToken' => 'systemToken',
+        'useAlias' => 'useAlias',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

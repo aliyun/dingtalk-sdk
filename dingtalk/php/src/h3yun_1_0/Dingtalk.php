@@ -76,8 +76,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -118,18 +118,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchInsertBizObject',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/forms/instances/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchInsertBizObject',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/forms/instances/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchInsertBizObjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -175,18 +175,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CancelProcessInstance',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/processes/instances/cancel',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CancelProcessInstance',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/processes/instances/cancel',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CancelProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -241,18 +241,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateBizObject',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/forms/instances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateBizObject',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/forms/instances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateBizObjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -304,18 +304,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateProcessesInstance',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/processes/instances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateProcessesInstance',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/processes/instances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateProcessesInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -364,18 +364,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteBizObject',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/forms/instances',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteBizObject',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/forms/instances',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteBizObjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -424,18 +424,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteProcessesInstance',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/processes/instances',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteProcessesInstance',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/processes/instances',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteProcessesInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -484,18 +484,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetApps',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/apps/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetApps',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/apps/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAppsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -541,18 +541,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAttachmentTemporaryUrl',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/attachments/temporaryUrls',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAttachmentTemporaryUrl',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/attachments/temporaryUrls',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAttachmentTemporaryUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -598,18 +598,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetOrganizations',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/departments',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOrganizations',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/departments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOrganizationsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -655,18 +655,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRoleUsers',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/roles/roleUsers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRoleUsers',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/roles/roleUsers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRoleUsersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -708,15 +708,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetRoles',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/roles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRoles',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/roles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRolesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -769,18 +769,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUploadUrl',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/attachments/uploadUrls',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUploadUrl',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/attachments/uploadUrls',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUploadUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -829,18 +829,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUsers',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUsers',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUsersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -886,18 +886,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'LoadBizFields',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/forms/loadBizFields',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'LoadBizFields',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/forms/loadBizFields',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return LoadBizFieldsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -946,18 +946,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'LoadBizObject',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/forms/instances/loadInstances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'LoadBizObject',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/forms/instances/loadInstances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return LoadBizObjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1018,18 +1018,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'LoadBizObjects',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/forms/instances/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'LoadBizObjects',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/forms/instances/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return LoadBizObjectsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1075,18 +1075,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAppFunctionNodes',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/apps/functionNodes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAppFunctionNodes',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/apps/functionNodes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAppFunctionNodesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1135,18 +1135,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryProcessesInstance',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/processes/instances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryProcessesInstance',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/processes/instances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryProcessesInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1192,18 +1192,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryProcessesWorkItems',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/processes/workItems',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryProcessesWorkItems',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/processes/workItems',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryProcessesWorkItemsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1255,18 +1255,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateBizObject',
-            'version'     => 'h3yun_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h3yun/forms/instances',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateBizObject',
+            'version' => 'h3yun_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h3yun/forms/instances',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateBizObjectResponse::fromMap($this->execute($params, $req, $runtime));

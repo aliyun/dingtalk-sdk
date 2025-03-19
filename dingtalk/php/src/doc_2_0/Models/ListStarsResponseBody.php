@@ -22,12 +22,10 @@ class ListStarsResponseBody extends Model
     public $starList;
     protected $_name = [
         'nextToken' => 'nextToken',
-        'starList'  => 'starList',
+        'starList' => 'starList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class ListStarsResponseBody extends Model
         if (isset($map['starList'])) {
             if (!empty($map['starList'])) {
                 $model->starList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['starList'] as $item) {
                     $model->starList[$n++] = null !== $item ? starList::fromMap($item) : $item;
                 }

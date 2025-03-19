@@ -79,20 +79,18 @@ class CollegeAddStudentRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'deptId'        => 'deptId',
-        'empExtension'  => 'empExtension',
-        'gender'        => 'gender',
-        'identifyId'    => 'identifyId',
-        'mobile'        => 'mobile',
-        'startYear'     => 'startYear',
-        'studentName'   => 'studentName',
+        'deptId' => 'deptId',
+        'empExtension' => 'empExtension',
+        'gender' => 'gender',
+        'identifyId' => 'identifyId',
+        'mobile' => 'mobile',
+        'startYear' => 'startYear',
+        'studentName' => 'studentName',
         'studentNumber' => 'studentNumber',
-        'userId'        => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

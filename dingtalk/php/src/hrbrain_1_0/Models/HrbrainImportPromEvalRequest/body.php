@@ -70,21 +70,19 @@ class body extends Model
      */
     public $workNo;
     protected $_name = [
-        'comment'         => 'comment',
-        'effectiveDate'   => 'effectiveDate',
-        'extendInfo'      => 'extendInfo',
-        'name'            => 'name',
-        'newJobLevel'     => 'newJobLevel',
-        'period'          => 'period',
-        'periodEndDate'   => 'periodEndDate',
+        'comment' => 'comment',
+        'effectiveDate' => 'effectiveDate',
+        'extendInfo' => 'extendInfo',
+        'name' => 'name',
+        'newJobLevel' => 'newJobLevel',
+        'period' => 'period',
+        'periodEndDate' => 'periodEndDate',
         'periodStartDate' => 'periodStartDate',
-        'preJobLevel'     => 'preJobLevel',
-        'workNo'          => 'workNo',
+        'preJobLevel' => 'preJobLevel',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

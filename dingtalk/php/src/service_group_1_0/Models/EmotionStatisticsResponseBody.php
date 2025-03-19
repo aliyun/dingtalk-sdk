@@ -19,9 +19,7 @@ class EmotionStatisticsResponseBody extends Model
         'emotionStatisticsRecords' => 'emotionStatisticsRecords',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class EmotionStatisticsResponseBody extends Model
         if (isset($map['emotionStatisticsRecords'])) {
             if (!empty($map['emotionStatisticsRecords'])) {
                 $model->emotionStatisticsRecords = [];
-                $n                               = 0;
+                $n = 0;
                 foreach ($map['emotionStatisticsRecords'] as $item) {
                     $model->emotionStatisticsRecords[$n++] = null !== $item ? emotionStatisticsRecords::fromMap($item) : $item;
                 }

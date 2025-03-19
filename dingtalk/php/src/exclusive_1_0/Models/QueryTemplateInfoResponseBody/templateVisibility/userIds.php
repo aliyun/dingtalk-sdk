@@ -24,13 +24,11 @@ class userIds extends Model
     public $userId;
     protected $_name = [
         'avatar' => 'avatar',
-        'nick'   => 'nick',
+        'nick' => 'nick',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

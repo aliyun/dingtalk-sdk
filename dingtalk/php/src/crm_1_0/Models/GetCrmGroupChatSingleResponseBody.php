@@ -50,19 +50,17 @@ class GetCrmGroupChatSingleResponseBody extends Model
      */
     public $ownerUserName;
     protected $_name = [
-        'gmtCreate'          => 'gmtCreate',
-        'iconUrl'            => 'iconUrl',
-        'memberCount'        => 'memberCount',
-        'name'               => 'name',
+        'gmtCreate' => 'gmtCreate',
+        'iconUrl' => 'iconUrl',
+        'memberCount' => 'memberCount',
+        'name' => 'name',
         'openConversationId' => 'openConversationId',
-        'openGroupSetId'     => 'openGroupSetId',
-        'ownerUserId'        => 'ownerUserId',
-        'ownerUserName'      => 'ownerUserName',
+        'openGroupSetId' => 'openGroupSetId',
+        'ownerUserId' => 'ownerUserId',
+        'ownerUserName' => 'ownerUserName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

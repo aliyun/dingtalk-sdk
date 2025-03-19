@@ -29,14 +29,12 @@ class AmdpEmployeeDataPushResponseBody extends Model
     public $success;
     protected $_name = [
         'requestId' => 'requestId',
-        'result'    => 'result',
-        'status'    => 'status',
-        'success'   => 'success',
+        'result' => 'result',
+        'status' => 'status',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

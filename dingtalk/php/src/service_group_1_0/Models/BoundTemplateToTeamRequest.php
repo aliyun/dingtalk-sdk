@@ -54,17 +54,15 @@ class BoundTemplateToTeamRequest extends Model
      */
     public $templateType;
     protected $_name = [
-        'openTeamId'   => 'openTeamId',
-        'robotConfig'  => 'robotConfig',
+        'openTeamId' => 'openTeamId',
+        'robotConfig' => 'robotConfig',
         'templateDesc' => 'templateDesc',
-        'templateId'   => 'templateId',
+        'templateId' => 'templateId',
         'templateName' => 'templateName',
         'templateType' => 'templateType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

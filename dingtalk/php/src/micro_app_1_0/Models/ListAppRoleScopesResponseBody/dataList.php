@@ -54,17 +54,15 @@ class dataList extends Model
     public $userIdList;
     protected $_name = [
         'canManageRole' => 'canManageRole',
-        'deptIdList'    => 'deptIdList',
-        'roleId'        => 'roleId',
-        'roleName'      => 'roleName',
-        'scopeType'     => 'scopeType',
-        'scopeVersion'  => 'scopeVersion',
-        'userIdList'    => 'userIdList',
+        'deptIdList' => 'deptIdList',
+        'roleId' => 'roleId',
+        'roleName' => 'roleName',
+        'scopeType' => 'scopeType',
+        'scopeVersion' => 'scopeVersion',
+        'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

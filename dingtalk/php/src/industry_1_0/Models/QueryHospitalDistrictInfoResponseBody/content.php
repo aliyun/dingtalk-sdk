@@ -80,19 +80,17 @@ class content extends Model
      */
     public $parentDistrictId;
     protected $_name = [
-        'address'          => 'address',
-        'deleted'          => 'deleted',
-        'districtName'     => 'districtName',
-        'districtType'     => 'districtType',
-        'gmtCreate'        => 'gmtCreate',
-        'gmtModified'      => 'gmtModified',
-        'id'               => 'id',
+        'address' => 'address',
+        'deleted' => 'deleted',
+        'districtName' => 'districtName',
+        'districtType' => 'districtType',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'id' => 'id',
         'parentDistrictId' => 'parentDistrictId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

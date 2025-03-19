@@ -19,12 +19,10 @@ class departmentOrderSet extends Model
     public $order;
     protected $_name = [
         'departmentId' => 'departmentId',
-        'order'        => 'order',
+        'order' => 'order',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

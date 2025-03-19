@@ -31,14 +31,12 @@ class CreateFeedRequest extends Model
      */
     public $feedInfo;
     protected $_name = [
-        'courseInfo'   => 'courseInfo',
+        'courseInfo' => 'courseInfo',
         'createUserId' => 'createUserId',
-        'feedInfo'     => 'feedInfo',
+        'feedInfo' => 'feedInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

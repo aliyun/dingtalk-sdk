@@ -20,9 +20,7 @@ class result extends Model
         'processCode' => 'processCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -58,17 +58,15 @@ class CreateCloudFeedRequest extends Model
      */
     public $videoUrl;
     protected $_name = [
-        'coverUrl'  => 'coverUrl',
-        'intro'     => 'intro',
+        'coverUrl' => 'coverUrl',
+        'intro' => 'intro',
         'startTime' => 'startTime',
-        'title'     => 'title',
-        'userId'    => 'userId',
-        'videoUrl'  => 'videoUrl',
+        'title' => 'title',
+        'userId' => 'userId',
+        'videoUrl' => 'videoUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

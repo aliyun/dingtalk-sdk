@@ -19,13 +19,11 @@ class result extends Model
      */
     public $leaveRecords;
     protected $_name = [
-        'hasMore'      => 'hasMore',
+        'hasMore' => 'hasMore',
         'leaveRecords' => 'leaveRecords',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class result extends Model
         if (isset($map['leaveRecords'])) {
             if (!empty($map['leaveRecords'])) {
                 $model->leaveRecords = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['leaveRecords'] as $item) {
                     $model->leaveRecords[$n++] = null !== $item ? leaveRecords::fromMap($item) : $item;
                 }

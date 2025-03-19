@@ -28,15 +28,13 @@ class QueryConversationMessageForAIRequest extends Model
      */
     public $recentN;
     protected $_name = [
-        'openMsgIds'  => 'openMsgIds',
-        'recentDays'  => 'recentDays',
+        'openMsgIds' => 'openMsgIds',
+        'recentDays' => 'recentDays',
         'recentHours' => 'recentHours',
-        'recentN'     => 'recentN',
+        'recentN' => 'recentN',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

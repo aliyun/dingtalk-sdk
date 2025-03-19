@@ -19,9 +19,7 @@ class GetPreviewInfoResponseBody extends Model
         'info' => 'info',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

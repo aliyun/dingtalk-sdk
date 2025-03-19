@@ -34,13 +34,11 @@ class result extends Model
     public $userId;
     protected $_name = [
         'dingMemberStatus' => 'dingMemberStatus',
-        'unionId'          => 'unionId',
-        'userId'           => 'userId',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

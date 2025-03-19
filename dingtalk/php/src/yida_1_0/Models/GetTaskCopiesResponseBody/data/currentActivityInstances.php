@@ -43,16 +43,14 @@ class currentActivityInstances extends Model
      */
     public $id;
     protected $_name = [
-        'activityId'             => 'activityId',
+        'activityId' => 'activityId',
         'activityInstanceStatus' => 'activityInstanceStatus',
-        'activityName'           => 'activityName',
-        'activityNameInEnglish'  => 'activityNameInEnglish',
-        'id'                     => 'id',
+        'activityName' => 'activityName',
+        'activityNameInEnglish' => 'activityNameInEnglish',
+        'id' => 'id',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

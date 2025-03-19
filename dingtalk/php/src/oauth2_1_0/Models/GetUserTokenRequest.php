@@ -35,16 +35,14 @@ class GetUserTokenRequest extends Model
      */
     public $refreshToken;
     protected $_name = [
-        'clientId'     => 'clientId',
+        'clientId' => 'clientId',
         'clientSecret' => 'clientSecret',
-        'code'         => 'code',
-        'grantType'    => 'grantType',
+        'code' => 'code',
+        'grantType' => 'grantType',
         'refreshToken' => 'refreshToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

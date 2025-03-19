@@ -22,13 +22,11 @@ class durationDetail extends Model
      */
     public $duration;
     protected $_name = [
-        'date'     => 'date',
+        'date' => 'date',
         'duration' => 'duration',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

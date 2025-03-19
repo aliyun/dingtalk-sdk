@@ -39,16 +39,14 @@ class PushHistoricalReceiptsRequest extends Model
      */
     public $startTime;
     protected $_name = [
-        'bizId'           => 'bizId',
-        'endTime'         => 'endTime',
+        'bizId' => 'bizId',
+        'endTime' => 'endTime',
         'forcedIgnoreDup' => 'forcedIgnoreDup',
-        'formCodeList'    => 'formCodeList',
-        'startTime'       => 'startTime',
+        'formCodeList' => 'formCodeList',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

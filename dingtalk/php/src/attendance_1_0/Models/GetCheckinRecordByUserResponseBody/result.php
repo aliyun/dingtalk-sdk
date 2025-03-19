@@ -20,12 +20,10 @@ class result extends Model
     public $pageList;
     protected $_name = [
         'nextToken' => 'nextToken',
-        'pageList'  => 'pageList',
+        'pageList' => 'pageList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class result extends Model
         if (isset($map['pageList'])) {
             if (!empty($map['pageList'])) {
                 $model->pageList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['pageList'] as $item) {
                     $model->pageList[$n++] = null !== $item ? pageList::fromMap($item) : $item;
                 }

@@ -21,13 +21,11 @@ class ListRecycleItemsResponseBody extends Model
      */
     public $recycleItems;
     protected $_name = [
-        'nextToken'    => 'nextToken',
+        'nextToken' => 'nextToken',
         'recycleItems' => 'recycleItems',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class ListRecycleItemsResponseBody extends Model
         if (isset($map['recycleItems'])) {
             if (!empty($map['recycleItems'])) {
                 $model->recycleItems = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['recycleItems'] as $item) {
                     $model->recycleItems[$n++] = null !== $item ? recycleItems::fromMap($item) : $item;
                 }

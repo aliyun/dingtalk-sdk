@@ -64,19 +64,17 @@ class content extends Model
      */
     public $type;
     protected $_name = [
-        'code'          => 'code',
-        'id'            => 'id',
+        'code' => 'code',
+        'id' => 'id',
         'managerIdList' => 'managerIdList',
-        'name'          => 'name',
-        'order'         => 'order',
-        'parentDeptId'  => 'parentDeptId',
-        'refId'         => 'refId',
-        'type'          => 'type',
+        'name' => 'name',
+        'order' => 'order',
+        'parentDeptId' => 'parentDeptId',
+        'refId' => 'refId',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -70,23 +70,21 @@ class ResultDurationSettingsValue extends Model
      */
     public $holidayPlanVacationRate;
     protected $_name = [
-        'calcType'                     => 'calcType',
-        'durationType'                 => 'durationType',
-        'overtimeRedress'              => 'overtimeRedress',
-        'settings'                     => 'settings',
-        'overtimeRedressBy'            => 'overtimeRedressBy',
-        'vacationRate'                 => 'vacationRate',
-        'skipTime'                     => 'skipTime',
-        'skipTimeByFrames'             => 'skipTimeByFrames',
-        'skipTimeByDurations'          => 'skipTimeByDurations',
-        'holidayPlanOvertimeRedress'   => 'holidayPlanOvertimeRedress',
+        'calcType' => 'calcType',
+        'durationType' => 'durationType',
+        'overtimeRedress' => 'overtimeRedress',
+        'settings' => 'settings',
+        'overtimeRedressBy' => 'overtimeRedressBy',
+        'vacationRate' => 'vacationRate',
+        'skipTime' => 'skipTime',
+        'skipTimeByFrames' => 'skipTimeByFrames',
+        'skipTimeByDurations' => 'skipTimeByDurations',
+        'holidayPlanOvertimeRedress' => 'holidayPlanOvertimeRedress',
         'holidayPlanOvertimeRedressBy' => 'holidayPlanOvertimeRedressBy',
-        'holidayPlanVacationRate'      => 'holidayPlanVacationRate',
+        'holidayPlanVacationRate' => 'holidayPlanVacationRate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -175,7 +173,7 @@ class ResultDurationSettingsValue extends Model
         if (isset($map['skipTimeByFrames'])) {
             if (!empty($map['skipTimeByFrames'])) {
                 $model->skipTimeByFrames = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['skipTimeByFrames'] as $item) {
                     $model->skipTimeByFrames[$n++] = null !== $item ? skipTimeByFrames::fromMap($item) : $item;
                 }
@@ -184,7 +182,7 @@ class ResultDurationSettingsValue extends Model
         if (isset($map['skipTimeByDurations'])) {
             if (!empty($map['skipTimeByDurations'])) {
                 $model->skipTimeByDurations = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['skipTimeByDurations'] as $item) {
                     $model->skipTimeByDurations[$n++] = null !== $item ? skipTimeByDurations::fromMap($item) : $item;
                 }

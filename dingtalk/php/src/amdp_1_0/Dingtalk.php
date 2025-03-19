@@ -29,8 +29,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -62,18 +62,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AmdpEmpRoleDataPush',
-            'version'     => 'amdp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/amdp/employeeRoles/datas/push',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AmdpEmpRoleDataPush',
+            'version' => 'amdp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/amdp/employeeRoles/datas/push',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AmdpEmpRoleDataPushResponse::fromMap($this->execute($params, $req, $runtime));
@@ -119,18 +119,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AmdpEmployeeDataPush',
-            'version'     => 'amdp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/amdp/employees/datas/push',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AmdpEmployeeDataPush',
+            'version' => 'amdp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/amdp/employees/datas/push',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AmdpEmployeeDataPushResponse::fromMap($this->execute($params, $req, $runtime));
@@ -176,18 +176,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AmdpJobPositionDataPush',
-            'version'     => 'amdp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/amdp/empJobs/datas/push',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AmdpJobPositionDataPush',
+            'version' => 'amdp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/amdp/empJobs/datas/push',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AmdpJobPositionDataPushResponse::fromMap($this->execute($params, $req, $runtime));
@@ -233,18 +233,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AmdpOrganizationDataPush',
-            'version'     => 'amdp_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/amdp/organizations/departments/datas/push',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AmdpOrganizationDataPush',
+            'version' => 'amdp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/amdp/organizations/departments/datas/push',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AmdpOrganizationDataPushResponse::fromMap($this->execute($params, $req, $runtime));

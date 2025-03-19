@@ -28,13 +28,11 @@ class PremiumDeleteFormInstanceRequest extends Model
     public $userId;
     protected $_name = [
         'formInstanceIds' => 'formInstanceIds',
-        'processCode'     => 'processCode',
-        'userId'          => 'userId',
+        'processCode' => 'processCode',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

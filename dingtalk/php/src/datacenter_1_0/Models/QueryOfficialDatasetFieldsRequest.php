@@ -22,13 +22,11 @@ class QueryOfficialDatasetFieldsRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'dsId'   => 'dsId',
+        'dsId' => 'dsId',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

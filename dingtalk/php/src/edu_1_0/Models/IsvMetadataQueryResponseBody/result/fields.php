@@ -47,16 +47,14 @@ class fields extends Model
     public $required;
     protected $_name = [
         'description' => 'description',
-        'fieldKey'    => 'fieldKey',
-        'fieldName'   => 'fieldName',
-        'fieldType'   => 'fieldType',
-        'primaryKey'  => 'primaryKey',
-        'required'    => 'required',
+        'fieldKey' => 'fieldKey',
+        'fieldName' => 'fieldName',
+        'fieldType' => 'fieldType',
+        'primaryKey' => 'primaryKey',
+        'required' => 'required',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

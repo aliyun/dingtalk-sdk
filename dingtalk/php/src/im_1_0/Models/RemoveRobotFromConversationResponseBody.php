@@ -16,9 +16,7 @@ class RemoveRobotFromConversationResponseBody extends Model
         'chatBotUserId' => 'chatBotUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

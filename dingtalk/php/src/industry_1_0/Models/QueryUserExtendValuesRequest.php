@@ -21,12 +21,10 @@ class QueryUserExtendValuesRequest extends Model
     public $userIds;
     protected $_name = [
         'userExtendKey' => 'userExtendKey',
-        'userIds'       => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

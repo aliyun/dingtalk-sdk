@@ -59,16 +59,14 @@ class CardGetCardFinishProgressRequest extends Model
     public $userId;
     protected $_name = [
         'cardBizCode' => 'cardBizCode',
-        'cardBizId'   => 'cardBizId',
-        'cardId'      => 'cardId',
-        'sourceType'  => 'sourceType',
-        'studentId'   => 'studentId',
-        'userId'      => 'userId',
+        'cardBizId' => 'cardBizId',
+        'cardId' => 'cardId',
+        'sourceType' => 'sourceType',
+        'studentId' => 'studentId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -101,22 +101,20 @@ class CreateUniversityCourseGroupRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'courseGroupIntroduce'   => 'courseGroupIntroduce',
-        'courseGroupName'        => 'courseGroupName',
+        'courseGroupIntroduce' => 'courseGroupIntroduce',
+        'courseGroupName' => 'courseGroupName',
         'courserGroupItemModels' => 'courserGroupItemModels',
-        'ext'                    => 'ext',
-        'isvCourseGroupCode'     => 'isvCourseGroupCode',
-        'periodCode'             => 'periodCode',
-        'schoolYear'             => 'schoolYear',
-        'semester'               => 'semester',
-        'subjectName'            => 'subjectName',
-        'teacherInfos'           => 'teacherInfos',
-        'opUserId'               => 'opUserId',
+        'ext' => 'ext',
+        'isvCourseGroupCode' => 'isvCourseGroupCode',
+        'periodCode' => 'periodCode',
+        'schoolYear' => 'schoolYear',
+        'semester' => 'semester',
+        'subjectName' => 'subjectName',
+        'teacherInfos' => 'teacherInfos',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -187,7 +185,7 @@ class CreateUniversityCourseGroupRequest extends Model
         if (isset($map['courserGroupItemModels'])) {
             if (!empty($map['courserGroupItemModels'])) {
                 $model->courserGroupItemModels = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['courserGroupItemModels'] as $item) {
                     $model->courserGroupItemModels[$n++] = null !== $item ? courserGroupItemModels::fromMap($item) : $item;
                 }
@@ -214,7 +212,7 @@ class CreateUniversityCourseGroupRequest extends Model
         if (isset($map['teacherInfos'])) {
             if (!empty($map['teacherInfos'])) {
                 $model->teacherInfos = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['teacherInfos'] as $item) {
                     $model->teacherInfos[$n++] = null !== $item ? teacherInfos::fromMap($item) : $item;
                 }

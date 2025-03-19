@@ -27,12 +27,10 @@ class words extends Model
     public $word;
     protected $_name = [
         'count' => 'count',
-        'word'  => 'word',
+        'word' => 'word',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

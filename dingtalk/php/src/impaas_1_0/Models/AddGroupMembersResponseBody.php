@@ -18,9 +18,7 @@ class AddGroupMembersResponseBody extends Model
         'memberUids' => 'memberUids',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -68,21 +68,19 @@ class props extends Model
      */
     public $stopAssociationRulesIfFailed;
     protected $_name = [
-        'allowCollaboration'           => 'allowCollaboration',
-        'allowTemporaryStorage'        => 'allowTemporaryStorage',
-        'allowWithdraw'                => 'allowWithdraw',
-        'bindingForm'                  => 'bindingForm',
-        'noRecordRecall'               => 'noRecordRecall',
-        'processCode'                  => 'processCode',
-        'processDetailUrl'             => 'processDetailUrl',
-        'processInitUrl'               => 'processInitUrl',
-        'processMobileDetailUrl'       => 'processMobileDetailUrl',
+        'allowCollaboration' => 'allowCollaboration',
+        'allowTemporaryStorage' => 'allowTemporaryStorage',
+        'allowWithdraw' => 'allowWithdraw',
+        'bindingForm' => 'bindingForm',
+        'noRecordRecall' => 'noRecordRecall',
+        'processCode' => 'processCode',
+        'processDetailUrl' => 'processDetailUrl',
+        'processInitUrl' => 'processInitUrl',
+        'processMobileDetailUrl' => 'processMobileDetailUrl',
         'stopAssociationRulesIfFailed' => 'stopAssociationRulesIfFailed',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

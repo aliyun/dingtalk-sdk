@@ -16,9 +16,7 @@ class result extends Model
         'upgradeResult' => 'upgradeResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

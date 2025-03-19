@@ -27,14 +27,12 @@ class ListAssistantRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'cursor'   => 'cursor',
+        'cursor' => 'cursor',
         'pageSize' => 'pageSize',
-        'unionId'  => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

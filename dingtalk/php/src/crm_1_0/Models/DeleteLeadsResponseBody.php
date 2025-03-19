@@ -16,9 +16,7 @@ class DeleteLeadsResponseBody extends Model
         'outLeadsIds' => 'outLeadsIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

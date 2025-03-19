@@ -60,19 +60,17 @@ class result extends Model
      */
     public $teacherDeptId;
     protected $_name = [
-        'enable'           => 'enable',
+        'enable' => 'enable',
         'hasStruFixedDept' => 'hasStruFixedDept',
-        'struBrief'        => 'struBrief',
-        'struId'           => 'struId',
-        'struName'         => 'struName',
-        'struType'         => 'struType',
-        'studentDeptId'    => 'studentDeptId',
-        'teacherDeptId'    => 'teacherDeptId',
+        'struBrief' => 'struBrief',
+        'struId' => 'struId',
+        'struName' => 'struName',
+        'struType' => 'struType',
+        'studentDeptId' => 'studentDeptId',
+        'teacherDeptId' => 'teacherDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -43,18 +43,16 @@ class orgInvoiceUrlList extends Model
      */
     public $xmlUrl;
     protected $_name = [
-        'invoiceCode'    => 'invoiceCode',
-        'invoiceNo'      => 'invoiceNo',
-        'ofdUrl'         => 'ofdUrl',
+        'invoiceCode' => 'invoiceCode',
+        'invoiceNo' => 'invoiceNo',
+        'ofdUrl' => 'ofdUrl',
         'originFileType' => 'originFileType',
-        'originFileUrl'  => 'originFileUrl',
-        'pdfUrl'         => 'pdfUrl',
-        'xmlUrl'         => 'xmlUrl',
+        'originFileUrl' => 'originFileUrl',
+        'pdfUrl' => 'pdfUrl',
+        'xmlUrl' => 'xmlUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -26,13 +26,11 @@ class billItemList extends Model
      */
     public $payerUnionId;
     protected $_name = [
-        'amount'       => 'amount',
+        'amount' => 'amount',
         'payerUnionId' => 'payerUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

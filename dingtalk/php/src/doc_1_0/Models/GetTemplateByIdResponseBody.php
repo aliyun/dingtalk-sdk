@@ -48,19 +48,17 @@ class GetTemplateByIdResponseBody extends Model
      */
     public $workspaceId;
     protected $_name = [
-        'coverUrl'     => 'coverUrl',
-        'createTime'   => 'createTime',
-        'docType'      => 'docType',
-        'id'           => 'id',
+        'coverUrl' => 'coverUrl',
+        'createTime' => 'createTime',
+        'docType' => 'docType',
+        'id' => 'id',
         'templateType' => 'templateType',
-        'title'        => 'title',
-        'updateTime'   => 'updateTime',
-        'workspaceId'  => 'workspaceId',
+        'title' => 'title',
+        'updateTime' => 'updateTime',
+        'workspaceId' => 'workspaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

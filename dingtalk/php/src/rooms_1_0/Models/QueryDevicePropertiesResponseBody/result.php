@@ -22,13 +22,11 @@ class result extends Model
      */
     public $propertyValue;
     protected $_name = [
-        'propertyName'  => 'propertyName',
+        'propertyName' => 'propertyName',
         'propertyValue' => 'propertyValue',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

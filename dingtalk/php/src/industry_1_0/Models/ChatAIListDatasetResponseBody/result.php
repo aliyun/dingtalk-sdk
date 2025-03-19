@@ -33,16 +33,14 @@ class result extends Model
      */
     public $resourceType;
     protected $_name = [
-        'datasetDesc'  => 'datasetDesc',
-        'datasetId'    => 'datasetId',
-        'datasetName'  => 'datasetName',
-        'memoType'     => 'memoType',
+        'datasetDesc' => 'datasetDesc',
+        'datasetId' => 'datasetId',
+        'datasetName' => 'datasetName',
+        'memoType' => 'memoType',
         'resourceType' => 'resourceType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

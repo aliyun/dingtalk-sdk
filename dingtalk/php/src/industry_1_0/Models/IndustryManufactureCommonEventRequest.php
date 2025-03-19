@@ -34,15 +34,13 @@ class IndustryManufactureCommonEventRequest extends Model
      */
     public $eventType;
     protected $_name = [
-        'action'    => 'action',
-        'appKey'    => 'appKey',
-        'bizData'   => 'bizData',
+        'action' => 'action',
+        'appKey' => 'appKey',
+        'bizData' => 'bizData',
         'eventType' => 'eventType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

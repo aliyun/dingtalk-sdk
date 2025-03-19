@@ -58,17 +58,15 @@ class CreateGroupBlackboardRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'content'            => 'content',
+        'content' => 'content',
         'openConversationId' => 'openConversationId',
-        'sendDing'           => 'sendDing',
-        'sticky'             => 'sticky',
-        'uniqueId'           => 'uniqueId',
-        'userId'             => 'userId',
+        'sendDing' => 'sendDing',
+        'sticky' => 'sticky',
+        'uniqueId' => 'uniqueId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

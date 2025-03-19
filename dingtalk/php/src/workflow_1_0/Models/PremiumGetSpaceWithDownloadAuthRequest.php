@@ -52,17 +52,15 @@ class PremiumGetSpaceWithDownloadAuthRequest extends Model
      */
     public $withCommentAttatchment;
     protected $_name = [
-        'agentId'                => 'agentId',
-        'fileId'                 => 'fileId',
-        'fileIdList'             => 'fileIdList',
-        'processInstanceId'      => 'processInstanceId',
-        'userId'                 => 'userId',
+        'agentId' => 'agentId',
+        'fileId' => 'fileId',
+        'fileIdList' => 'fileIdList',
+        'processInstanceId' => 'processInstanceId',
+        'userId' => 'userId',
         'withCommentAttatchment' => 'withCommentAttatchment',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

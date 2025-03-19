@@ -58,17 +58,15 @@ class result extends Model
     public $updated;
     protected $_name = [
         'accomplishTime' => 'accomplishTime',
-        'isDone'         => 'isDone',
-        'projectId'      => 'projectId',
-        'taskId'         => 'taskId',
-        'taskListId'     => 'taskListId',
-        'taskStageId'    => 'taskStageId',
-        'updated'        => 'updated',
+        'isDone' => 'isDone',
+        'projectId' => 'projectId',
+        'taskId' => 'taskId',
+        'taskListId' => 'taskListId',
+        'taskStageId' => 'taskStageId',
+        'updated' => 'updated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

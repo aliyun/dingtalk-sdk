@@ -27,12 +27,10 @@ class SyncDataScreenRequest extends Model
     public $ticket;
     protected $_name = [
         'screenId' => 'screenId',
-        'ticket'   => 'ticket',
+        'ticket' => 'ticket',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

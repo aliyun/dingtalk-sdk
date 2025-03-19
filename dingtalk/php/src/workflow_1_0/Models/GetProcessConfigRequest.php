@@ -20,9 +20,7 @@ class GetProcessConfigRequest extends Model
         'procCode' => 'procCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

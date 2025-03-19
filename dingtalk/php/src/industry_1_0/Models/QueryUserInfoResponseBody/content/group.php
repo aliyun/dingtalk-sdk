@@ -63,18 +63,16 @@ class group extends Model
      */
     public $relId;
     protected $_name = [
-        'deptId'         => 'deptId',
-        'deptName'       => 'deptName',
-        'gmtCreateStr'   => 'gmtCreateStr',
+        'deptId' => 'deptId',
+        'deptName' => 'deptName',
+        'gmtCreateStr' => 'gmtCreateStr',
         'gmtModifiedStr' => 'gmtModifiedStr',
-        'id'             => 'id',
-        'name'           => 'name',
-        'relId'          => 'relId',
+        'id' => 'id',
+        'name' => 'name',
+        'relId' => 'relId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

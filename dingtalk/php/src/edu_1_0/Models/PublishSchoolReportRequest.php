@@ -113,26 +113,24 @@ class PublishSchoolReportRequest extends Model
      */
     public $teacherName;
     protected $_name = [
-        'bizCode'             => 'bizCode',
-        'classDetailItems'    => 'classDetailItems',
-        'examClass'           => 'examClass',
-        'examTitle'           => 'examTitle',
-        'identifier'          => 'identifier',
-        'publishScope'        => 'publishScope',
-        'scoreType'           => 'scoreType',
-        'share'               => 'share',
-        'showRank'            => 'showRank',
+        'bizCode' => 'bizCode',
+        'classDetailItems' => 'classDetailItems',
+        'examClass' => 'examClass',
+        'examTitle' => 'examTitle',
+        'identifier' => 'identifier',
+        'publishScope' => 'publishScope',
+        'scoreType' => 'scoreType',
+        'share' => 'share',
+        'showRank' => 'showRank',
         'showStatisticsScore' => 'showStatisticsScore',
-        'subScoreType'        => 'subScoreType',
-        'subjectList'         => 'subjectList',
-        'subjects'            => 'subjects',
-        'teacherId'           => 'teacherId',
-        'teacherName'         => 'teacherName',
+        'subScoreType' => 'subScoreType',
+        'subjectList' => 'subjectList',
+        'subjects' => 'subjects',
+        'teacherId' => 'teacherId',
+        'teacherName' => 'teacherName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -212,7 +210,7 @@ class PublishSchoolReportRequest extends Model
         if (isset($map['classDetailItems'])) {
             if (!empty($map['classDetailItems'])) {
                 $model->classDetailItems = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['classDetailItems'] as $item) {
                     $model->classDetailItems[$n++] = null !== $item ? classDetailItems::fromMap($item) : $item;
                 }
@@ -248,7 +246,7 @@ class PublishSchoolReportRequest extends Model
         if (isset($map['subjectList'])) {
             if (!empty($map['subjectList'])) {
                 $model->subjectList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['subjectList'] as $item) {
                     $model->subjectList[$n++] = null !== $item ? subjectList::fromMap($item) : $item;
                 }

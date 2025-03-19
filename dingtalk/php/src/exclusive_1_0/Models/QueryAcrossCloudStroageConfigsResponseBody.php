@@ -53,16 +53,14 @@ class QueryAcrossCloudStroageConfigsResponseBody extends Model
      */
     public $endpoint;
     protected $_name = [
-        'accessKeyId'     => 'accessKeyId',
+        'accessKeyId' => 'accessKeyId',
         'accessKeySecret' => 'accessKeySecret',
-        'bucketName'      => 'bucketName',
-        'cloudType'       => 'cloudType',
-        'endpoint'        => 'endpoint',
+        'bucketName' => 'bucketName',
+        'cloudType' => 'cloudType',
+        'endpoint' => 'endpoint',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

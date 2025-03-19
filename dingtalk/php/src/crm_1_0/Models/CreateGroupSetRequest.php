@@ -66,21 +66,19 @@ class CreateGroupSetRequest extends Model
      */
     public $welcome;
     protected $_name = [
-        'creatorUserId'  => 'creatorUserId',
+        'creatorUserId' => 'creatorUserId',
         'managerUserIds' => 'managerUserIds',
-        'memberQuota'    => 'memberQuota',
-        'name'           => 'name',
-        'notice'         => 'notice',
-        'noticeToped'    => 'noticeToped',
-        'ownerUserId'    => 'ownerUserId',
-        'relationType'   => 'relationType',
-        'templateId'     => 'templateId',
-        'welcome'        => 'welcome',
+        'memberQuota' => 'memberQuota',
+        'name' => 'name',
+        'notice' => 'notice',
+        'noticeToped' => 'noticeToped',
+        'ownerUserId' => 'ownerUserId',
+        'relationType' => 'relationType',
+        'templateId' => 'templateId',
+        'welcome' => 'welcome',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -37,16 +37,14 @@ class headerSignatureInfo extends Model
      */
     public $resourceUrls;
     protected $_name = [
-        'expirationSeconds'    => 'expirationSeconds',
-        'headers'              => 'headers',
+        'expirationSeconds' => 'expirationSeconds',
+        'headers' => 'headers',
         'internalResourceUrls' => 'internalResourceUrls',
-        'region'               => 'region',
-        'resourceUrls'         => 'resourceUrls',
+        'region' => 'region',
+        'resourceUrls' => 'resourceUrls',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

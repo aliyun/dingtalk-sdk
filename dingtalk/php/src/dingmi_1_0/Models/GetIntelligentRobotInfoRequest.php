@@ -20,9 +20,7 @@ class GetIntelligentRobotInfoRequest extends Model
         'robotAppKey' => 'robotAppKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

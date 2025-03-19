@@ -23,12 +23,10 @@ class teacherInfos extends Model
     public $userId;
     protected $_name = [
         'participantRole' => 'participantRole',
-        'userId'          => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

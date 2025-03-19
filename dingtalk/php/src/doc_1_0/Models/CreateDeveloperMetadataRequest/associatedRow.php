@@ -22,13 +22,11 @@ class associatedRow extends Model
      */
     public $sheet;
     protected $_name = [
-        'row'   => 'row',
+        'row' => 'row',
         'sheet' => 'sheet',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

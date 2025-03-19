@@ -30,14 +30,12 @@ class WikiWordsDetailResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'data'    => 'data',
-        'errMsg'  => 'errMsg',
+        'data' => 'data',
+        'errMsg' => 'errMsg',
         'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -72,7 +70,7 @@ class WikiWordsDetailResponseBody extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }

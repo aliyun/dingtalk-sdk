@@ -57,18 +57,16 @@ class records extends Model
      */
     public $sendTimeStr;
     protected $_name = [
-        'readStatus'         => 'readStatus',
-        'readTimeStr'        => 'readTimeStr',
+        'readStatus' => 'readStatus',
+        'readTimeStr' => 'readTimeStr',
         'receiverDingTalkId' => 'receiverDingTalkId',
-        'receiverName'       => 'receiverName',
-        'receiverUnionId'    => 'receiverUnionId',
-        'receiverUserId'     => 'receiverUserId',
-        'sendTimeStr'        => 'sendTimeStr',
+        'receiverName' => 'receiverName',
+        'receiverUnionId' => 'receiverUnionId',
+        'receiverUserId' => 'receiverUserId',
+        'sendTimeStr' => 'sendTimeStr',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

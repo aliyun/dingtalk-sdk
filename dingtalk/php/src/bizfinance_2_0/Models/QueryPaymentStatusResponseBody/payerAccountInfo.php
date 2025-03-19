@@ -24,14 +24,12 @@ class payerAccountInfo extends Model
      */
     public $enterpriseAccountCode;
     protected $_name = [
-        'accountType'           => 'accountType',
-        'bankOpenDTO'           => 'bankOpenDTO',
+        'accountType' => 'accountType',
+        'bankOpenDTO' => 'bankOpenDTO',
         'enterpriseAccountCode' => 'enterpriseAccountCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

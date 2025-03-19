@@ -53,16 +53,14 @@ class records extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'groupName'          => 'groupName',
-        'groupUrl'           => 'groupUrl',
+        'groupName' => 'groupName',
+        'groupUrl' => 'groupUrl',
         'openConversationId' => 'openConversationId',
-        'openGroupSetId'     => 'openGroupSetId',
-        'openTeamId'         => 'openTeamId',
+        'openGroupSetId' => 'openGroupSetId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

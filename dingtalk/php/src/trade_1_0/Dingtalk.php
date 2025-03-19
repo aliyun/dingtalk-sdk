@@ -32,8 +32,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -77,18 +77,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CheckOpportunityResult',
-            'version'     => 'trade_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trade/opportunity/check',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CheckOpportunityResult',
+            'version' => 'trade_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trade/opportunity/check',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CheckOpportunityResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -161,18 +161,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateClueTemp',
-            'version'     => 'trade_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trade/clueTemps',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateClueTemp',
+            'version' => 'trade_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trade/clueTemps',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateClueTempResponse::fromMap($this->execute($params, $req, $runtime));
@@ -233,18 +233,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateNoteForIsv',
-            'version'     => 'trade_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trade/notes',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateNoteForIsv',
+            'version' => 'trade_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trade/notes',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateNoteForIsvResponse::fromMap($this->execute($params, $req, $runtime));
@@ -302,18 +302,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateOpportunity',
-            'version'     => 'trade_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trade/opportunities',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateOpportunity',
+            'version' => 'trade_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trade/opportunities',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateOpportunityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -362,18 +362,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryTradeOrder',
-            'version'     => 'trade_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/trade/orders/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryTradeOrder',
+            'version' => 'trade_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trade/orders/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryTradeOrderResponse::fromMap($this->execute($params, $req, $runtime));

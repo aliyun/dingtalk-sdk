@@ -196,35 +196,33 @@ class relateProps extends Model
      */
     public $verticalPrint;
     protected $_name = [
-        'align'                  => 'align',
-        'bizAlias'               => 'bizAlias',
-        'choice'                 => 'choice',
-        'content'                => 'content',
-        'disabled'               => 'disabled',
-        'duration'               => 'duration',
-        'fieldId'                => 'fieldId',
-        'format'                 => 'format',
-        'formula'                => 'formula',
-        'invisible'              => 'invisible',
-        'label'                  => 'label',
-        'labelEditableFreeze'    => 'labelEditableFreeze',
-        'link'                   => 'link',
-        'multi'                  => 'multi',
-        'notUpper'               => 'notUpper',
-        'options'                => 'options',
-        'payEnable'              => 'payEnable',
-        'placeholder'            => 'placeholder',
-        'quote'                  => 'quote',
-        'required'               => 'required',
+        'align' => 'align',
+        'bizAlias' => 'bizAlias',
+        'choice' => 'choice',
+        'content' => 'content',
+        'disabled' => 'disabled',
+        'duration' => 'duration',
+        'fieldId' => 'fieldId',
+        'format' => 'format',
+        'formula' => 'formula',
+        'invisible' => 'invisible',
+        'label' => 'label',
+        'labelEditableFreeze' => 'labelEditableFreeze',
+        'link' => 'link',
+        'multi' => 'multi',
+        'notUpper' => 'notUpper',
+        'options' => 'options',
+        'payEnable' => 'payEnable',
+        'placeholder' => 'placeholder',
+        'quote' => 'quote',
+        'required' => 'required',
         'requiredEditableFreeze' => 'requiredEditableFreeze',
-        'statField'              => 'statField',
-        'unit'                   => 'unit',
-        'verticalPrint'          => 'verticalPrint',
+        'statField' => 'statField',
+        'unit' => 'unit',
+        'verticalPrint' => 'verticalPrint',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -373,7 +371,7 @@ class relateProps extends Model
         if (isset($map['options'])) {
             if (!empty($map['options'])) {
                 $model->options = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['options'] as $item) {
                     $model->options[$n++] = null !== $item ? options::fromMap($item) : $item;
                 }
@@ -397,7 +395,7 @@ class relateProps extends Model
         if (isset($map['statField'])) {
             if (!empty($map['statField'])) {
                 $model->statField = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['statField'] as $item) {
                     $model->statField[$n++] = null !== $item ? statField::fromMap($item) : $item;
                 }

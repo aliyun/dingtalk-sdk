@@ -26,9 +26,7 @@ class roleVOList extends Model
         'roleName' => 'roleName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class params extends Model
         'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

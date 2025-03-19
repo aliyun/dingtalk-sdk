@@ -39,16 +39,14 @@ class ListActivateDevicesRequest extends Model
     public $pageSize;
     protected $_name = [
         'deviceCategory' => 'deviceCategory',
-        'deviceCode'     => 'deviceCode',
-        'deviceTypeId'   => 'deviceTypeId',
-        'groupId'        => 'groupId',
-        'pageNumber'     => 'pageNumber',
-        'pageSize'       => 'pageSize',
+        'deviceCode' => 'deviceCode',
+        'deviceTypeId' => 'deviceTypeId',
+        'groupId' => 'groupId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

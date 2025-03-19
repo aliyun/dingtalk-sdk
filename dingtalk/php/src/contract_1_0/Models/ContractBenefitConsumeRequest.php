@@ -68,15 +68,13 @@ class ContractBenefitConsumeRequest extends Model
         'benefitPoint' => 'benefitPoint',
         'bizRequestId' => 'bizRequestId',
         'consumeQuota' => 'consumeQuota',
-        'corpId'       => 'corpId',
-        'extParams'    => 'extParams',
-        'isvCorpId'    => 'isvCorpId',
-        'optUnionId'   => 'optUnionId',
+        'corpId' => 'corpId',
+        'extParams' => 'extParams',
+        'isvCorpId' => 'isvCorpId',
+        'optUnionId' => 'optUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

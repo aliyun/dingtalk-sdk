@@ -26,9 +26,7 @@ class option extends Model
         'templateStatus' => 'templateStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

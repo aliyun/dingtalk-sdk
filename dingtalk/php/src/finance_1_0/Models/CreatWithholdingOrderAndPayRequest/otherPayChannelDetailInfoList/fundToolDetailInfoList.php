@@ -58,17 +58,15 @@ class fundToolDetailInfoList extends Model
      */
     public $promotionFundTool;
     protected $_name = [
-        'amount'            => 'amount',
-        'extInfo'           => 'extInfo',
-        'fundToolName'      => 'fundToolName',
-        'gmtCreate'         => 'gmtCreate',
-        'gmtFinish'         => 'gmtFinish',
+        'amount' => 'amount',
+        'extInfo' => 'extInfo',
+        'fundToolName' => 'fundToolName',
+        'gmtCreate' => 'gmtCreate',
+        'gmtFinish' => 'gmtFinish',
         'promotionFundTool' => 'promotionFundTool',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

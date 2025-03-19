@@ -32,14 +32,12 @@ class AddFolderRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'name'    => 'name',
-        'option'  => 'option',
+        'name' => 'name',
+        'option' => 'option',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

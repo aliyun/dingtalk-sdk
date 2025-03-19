@@ -89,22 +89,20 @@ class settleInfo extends Model
      */
     public $usageType;
     protected $_name = [
-        'accountId'         => 'accountId',
-        'accountName'       => 'accountName',
-        'accountType'       => 'accountType',
-        'bankBranchName'    => 'bankBranchName',
-        'bankCity'          => 'bankCity',
-        'bankCode'          => 'bankCode',
-        'bankName'          => 'bankName',
-        'bankProvince'      => 'bankProvince',
+        'accountId' => 'accountId',
+        'accountName' => 'accountName',
+        'accountType' => 'accountType',
+        'bankBranchName' => 'bankBranchName',
+        'bankCity' => 'bankCity',
+        'bankCode' => 'bankCode',
+        'bankName' => 'bankName',
+        'bankProvince' => 'bankProvince',
         'bankShortNameCode' => 'bankShortNameCode',
-        'type'              => 'type',
-        'usageType'         => 'usageType',
+        'type' => 'type',
+        'usageType' => 'usageType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

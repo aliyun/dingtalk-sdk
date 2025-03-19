@@ -33,14 +33,12 @@ class UpdateResidentBlackBoardRequest extends Model
     public $title;
     protected $_name = [
         'blackboardId' => 'blackboardId',
-        'context'      => 'context',
-        'mediaId'      => 'mediaId',
-        'title'        => 'title',
+        'context' => 'context',
+        'mediaId' => 'mediaId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

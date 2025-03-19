@@ -63,16 +63,14 @@ class CreateOrgHonorRequest extends Model
     public $userId;
     protected $_name = [
         'avatarFrameMediaId' => 'avatarFrameMediaId',
-        'defaultBgColor'     => 'defaultBgColor',
-        'medalDesc'          => 'medalDesc',
-        'medalMediaId'       => 'medalMediaId',
-        'medalName'          => 'medalName',
-        'userId'             => 'userId',
+        'defaultBgColor' => 'defaultBgColor',
+        'medalDesc' => 'medalDesc',
+        'medalMediaId' => 'medalMediaId',
+        'medalName' => 'medalName',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

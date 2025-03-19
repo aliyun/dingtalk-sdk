@@ -23,14 +23,12 @@ class GetWebOfficeUrlResponseBody extends Model
      */
     public $webOfficeUrl;
     protected $_name = [
-        'webOfficeAccessToken'  => 'webOfficeAccessToken',
+        'webOfficeAccessToken' => 'webOfficeAccessToken',
         'webOfficeRefreshToken' => 'webOfficeRefreshToken',
-        'webOfficeUrl'          => 'webOfficeUrl',
+        'webOfficeUrl' => 'webOfficeUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

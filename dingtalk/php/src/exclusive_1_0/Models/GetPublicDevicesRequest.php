@@ -57,18 +57,16 @@ class GetPublicDevicesRequest extends Model
      */
     public $title;
     protected $_name = [
-        'endTime'    => 'endTime',
+        'endTime' => 'endTime',
         'macAddress' => 'macAddress',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'platform'   => 'platform',
-        'startTime'  => 'startTime',
-        'title'      => 'title',
+        'pageSize' => 'pageSize',
+        'platform' => 'platform',
+        'startTime' => 'startTime',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class RecallAuditTemplateRequest extends Model
         'templateKeys' => 'templateKeys',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

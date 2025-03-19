@@ -22,13 +22,11 @@ class MuteAllRequest extends Model
      */
     public $forceMute;
     protected $_name = [
-        'action'    => 'action',
+        'action' => 'action',
         'forceMute' => 'forceMute',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

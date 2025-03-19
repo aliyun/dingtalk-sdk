@@ -60,19 +60,17 @@ class InstallCoolAppRequest extends Model
      */
     public $suiteId;
     protected $_name = [
-        'appId'              => 'appId',
-        'coolAppCode'        => 'coolAppCode',
-        'corpId'             => 'corpId',
-        'feature'            => 'feature',
-        'installUid'         => 'installUid',
+        'appId' => 'appId',
+        'coolAppCode' => 'coolAppCode',
+        'corpId' => 'corpId',
+        'feature' => 'feature',
+        'installUid' => 'installUid',
         'openConversationId' => 'openConversationId',
-        'options'            => 'options',
-        'suiteId'            => 'suiteId',
+        'options' => 'options',
+        'suiteId' => 'suiteId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

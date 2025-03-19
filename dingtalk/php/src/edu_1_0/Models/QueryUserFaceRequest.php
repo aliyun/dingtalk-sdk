@@ -27,12 +27,10 @@ class QueryUserFaceRequest extends Model
     public $sn;
     protected $_name = [
         'faceId' => 'faceId',
-        'sn'     => 'sn',
+        'sn' => 'sn',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

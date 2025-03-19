@@ -28,15 +28,13 @@ class ListSimpleUsersByRoleRequest extends Model
      */
     public $subCorpId;
     protected $_name = [
-        'offset'    => 'offset',
-        'roleId'    => 'roleId',
-        'size'      => 'size',
+        'offset' => 'offset',
+        'roleId' => 'roleId',
+        'size' => 'size',
         'subCorpId' => 'subCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

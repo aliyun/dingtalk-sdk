@@ -25,12 +25,10 @@ class ValidateUserRoleRequest extends Model
     public $unionId;
     protected $_name = [
         'timeThreshold' => 'timeThreshold',
-        'unionId'       => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class QueryDeviceIpByCodeRequest extends Model
         'deviceSn' => 'deviceSn',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

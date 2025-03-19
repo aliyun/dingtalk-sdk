@@ -34,15 +34,13 @@ class result extends Model
     public $studyId;
     protected $_name = [
         'docFormat' => 'docFormat',
-        'docName'   => 'docName',
-        'docUrl'    => 'docUrl',
-        'status'    => 'status',
-        'studyId'   => 'studyId',
+        'docName' => 'docName',
+        'docUrl' => 'docUrl',
+        'status' => 'status',
+        'studyId' => 'studyId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -74,23 +74,21 @@ class data extends Model
     public $type;
     protected $_name = [
         'commonVariableList' => 'commonVariableList',
-        'creatorId'          => 'creatorId',
-        'expVariableList'    => 'expVariableList',
-        'extendType'         => 'extendType',
-        'gmtCreate'          => 'gmtCreate',
-        'gmtModified'        => 'gmtModified',
-        'localVariableList'  => 'localVariableList',
-        'miniAppId'          => 'miniAppId',
-        'name'               => 'name',
-        'preview'            => 'preview',
-        'status'             => 'status',
-        'templateId'         => 'templateId',
-        'type'               => 'type',
+        'creatorId' => 'creatorId',
+        'expVariableList' => 'expVariableList',
+        'extendType' => 'extendType',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'localVariableList' => 'localVariableList',
+        'miniAppId' => 'miniAppId',
+        'name' => 'name',
+        'preview' => 'preview',
+        'status' => 'status',
+        'templateId' => 'templateId',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

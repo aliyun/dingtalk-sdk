@@ -29,14 +29,12 @@ class RetrieveAssistantThreadResponseBody extends Model
     public $object;
     protected $_name = [
         'createdAt' => 'createdAt',
-        'id'        => 'id',
-        'metadata'  => 'metadata',
-        'object'    => 'object',
+        'id' => 'id',
+        'metadata' => 'metadata',
+        'object' => 'object',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

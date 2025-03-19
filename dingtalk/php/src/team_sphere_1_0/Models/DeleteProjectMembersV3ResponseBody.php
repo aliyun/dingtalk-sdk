@@ -24,14 +24,12 @@ class DeleteProjectMembersV3ResponseBody extends Model
      */
     public $result;
     protected $_name = [
-        'errors'    => 'errors',
+        'errors' => 'errors',
         'requestId' => 'requestId',
-        'result'    => 'result',
+        'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class DeleteProjectMembersV3ResponseBody extends Model
         if (isset($map['errors'])) {
             if (!empty($map['errors'])) {
                 $model->errors = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['errors'] as $item) {
                     $model->errors[$n++] = null !== $item ? errors::fromMap($item) : $item;
                 }

@@ -46,17 +46,15 @@ class result extends Model
      */
     public $workDays;
     protected $_name = [
-        'classId'      => 'classId',
+        'classId' => 'classId',
         'classSetting' => 'classSetting',
-        'corpId'       => 'corpId',
-        'name'         => 'name',
-        'sections'     => 'sections',
-        'workDays'     => 'workDays',
+        'corpId' => 'corpId',
+        'name' => 'name',
+        'sections' => 'sections',
+        'workDays' => 'workDays',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -112,7 +110,7 @@ class result extends Model
         if (isset($map['sections'])) {
             if (!empty($map['sections'])) {
                 $model->sections = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['sections'] as $item) {
                     $model->sections[$n++] = null !== $item ? sections::fromMap($item) : $item;
                 }

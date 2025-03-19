@@ -24,14 +24,12 @@ class ListSeniorSettingsResponseBody extends Model
      */
     public $seniorWhiteList;
     protected $_name = [
-        'protectScenes'   => 'protectScenes',
-        'seniorStaffId'   => 'seniorStaffId',
+        'protectScenes' => 'protectScenes',
+        'seniorStaffId' => 'seniorStaffId',
         'seniorWhiteList' => 'seniorWhiteList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -74,7 +72,7 @@ class ListSeniorSettingsResponseBody extends Model
         if (isset($map['seniorWhiteList'])) {
             if (!empty($map['seniorWhiteList'])) {
                 $model->seniorWhiteList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['seniorWhiteList'] as $item) {
                     $model->seniorWhiteList[$n++] = null !== $item ? seniorWhiteList::fromMap($item) : $item;
                 }

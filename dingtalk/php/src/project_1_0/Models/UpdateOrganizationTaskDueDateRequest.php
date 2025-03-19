@@ -31,14 +31,12 @@ class UpdateOrganizationTaskDueDateRequest extends Model
      */
     public $dueDate;
     protected $_name = [
-        'disableActivity'     => 'disableActivity',
+        'disableActivity' => 'disableActivity',
         'disableNotification' => 'disableNotification',
-        'dueDate'             => 'dueDate',
+        'dueDate' => 'dueDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

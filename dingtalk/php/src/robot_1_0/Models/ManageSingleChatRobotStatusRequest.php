@@ -27,12 +27,10 @@ class ManageSingleChatRobotStatusRequest extends Model
     public $status;
     protected $_name = [
         'robotCode' => 'robotCode',
-        'status'    => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

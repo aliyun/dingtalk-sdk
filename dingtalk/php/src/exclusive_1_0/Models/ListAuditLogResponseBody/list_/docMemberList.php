@@ -43,16 +43,14 @@ class docMemberList extends Model
      */
     public $permissionRoleView;
     protected $_name = [
-        'memberName'         => 'memberName',
-        'memberType'         => 'memberType',
-        'memberTypeView'     => 'memberTypeView',
-        'permissionRole'     => 'permissionRole',
+        'memberName' => 'memberName',
+        'memberType' => 'memberType',
+        'memberTypeView' => 'memberTypeView',
+        'permissionRole' => 'permissionRole',
         'permissionRoleView' => 'permissionRoleView',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

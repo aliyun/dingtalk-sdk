@@ -34,13 +34,11 @@ class AddShareCidListRequest extends Model
     public $userId;
     protected $_name = [
         'groupIdType' => 'groupIdType',
-        'groupIds'    => 'groupIds',
-        'userId'      => 'userId',
+        'groupIds' => 'groupIds',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

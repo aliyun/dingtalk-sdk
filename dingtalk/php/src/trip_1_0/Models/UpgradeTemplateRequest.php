@@ -32,13 +32,11 @@ class UpgradeTemplateRequest extends Model
     public $tmcCorpId;
     protected $_name = [
         'channelCorpId' => 'channelCorpId',
-        'forceUpgrade'  => 'forceUpgrade',
-        'tmcCorpId'     => 'tmcCorpId',
+        'forceUpgrade' => 'forceUpgrade',
+        'tmcCorpId' => 'tmcCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

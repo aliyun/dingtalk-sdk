@@ -34,13 +34,11 @@ class ListWorkBenchGroupRequest extends Model
     public $opUnionId;
     protected $_name = [
         'ecologicalCorpId' => 'ecologicalCorpId',
-        'groupType'        => 'groupType',
-        'opUnionId'        => 'opUnionId',
+        'groupType' => 'groupType',
+        'opUnionId' => 'opUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

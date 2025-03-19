@@ -51,16 +51,14 @@ class GetOaOperatorLogListRequest extends Model
     public $startTime;
     protected $_name = [
         'categoryList' => 'categoryList',
-        'endTime'      => 'endTime',
-        'opUserId'     => 'opUserId',
-        'pageNumber'   => 'pageNumber',
-        'pageSize'     => 'pageSize',
-        'startTime'    => 'startTime',
+        'endTime' => 'endTime',
+        'opUserId' => 'opUserId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

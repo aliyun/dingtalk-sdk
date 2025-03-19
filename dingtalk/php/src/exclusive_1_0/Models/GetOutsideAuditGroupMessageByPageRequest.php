@@ -31,14 +31,12 @@ class GetOutsideAuditGroupMessageByPageRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'maxResults'         => 'maxResults',
-        'nextToken'          => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

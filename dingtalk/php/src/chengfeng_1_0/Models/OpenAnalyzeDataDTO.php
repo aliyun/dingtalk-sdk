@@ -116,23 +116,21 @@ class OpenAnalyzeDataDTO extends Model
      */
     public $progressUpdateRateLast7Days;
     protected $_name = [
-        'deptCount'                    => 'deptCount',
-        'noAlignObjectiveCount'        => 'noAlignObjectiveCount',
-        'noKeyActionCount'             => 'noKeyActionCount',
-        'objectiveAlignRate'           => 'objectiveAlignRate',
-        'objectiveNoSetCount'          => 'objectiveNoSetCount',
-        'objectiveRiskCount'           => 'objectiveRiskCount',
-        'objectiveSetRate'             => 'objectiveSetRate',
-        'onlyOneKeyResultCount'        => 'onlyOneKeyResultCount',
-        'onlyOneObjectiveCount'        => 'onlyOneObjectiveCount',
+        'deptCount' => 'deptCount',
+        'noAlignObjectiveCount' => 'noAlignObjectiveCount',
+        'noKeyActionCount' => 'noKeyActionCount',
+        'objectiveAlignRate' => 'objectiveAlignRate',
+        'objectiveNoSetCount' => 'objectiveNoSetCount',
+        'objectiveRiskCount' => 'objectiveRiskCount',
+        'objectiveSetRate' => 'objectiveSetRate',
+        'onlyOneKeyResultCount' => 'onlyOneKeyResultCount',
+        'onlyOneObjectiveCount' => 'onlyOneObjectiveCount',
         'progressUpdateRateLast15Days' => 'progressUpdateRateLast15Days',
         'progressUpdateRateLast30Days' => 'progressUpdateRateLast30Days',
-        'progressUpdateRateLast7Days'  => 'progressUpdateRateLast7Days',
+        'progressUpdateRateLast7Days' => 'progressUpdateRateLast7Days',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

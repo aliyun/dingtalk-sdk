@@ -28,13 +28,11 @@ class value extends Model
     public $title;
     protected $_name = [
         'customFieldValueId' => 'customFieldValueId',
-        'metaString'         => 'metaString',
-        'title'              => 'title',
+        'metaString' => 'metaString',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

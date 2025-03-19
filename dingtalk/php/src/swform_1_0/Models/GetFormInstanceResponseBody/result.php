@@ -54,16 +54,14 @@ class result extends Model
     public $title;
     protected $_name = [
         'createTime' => 'createTime',
-        'creator'    => 'creator',
-        'formCode'   => 'formCode',
-        'forms'      => 'forms',
+        'creator' => 'creator',
+        'formCode' => 'formCode',
+        'forms' => 'forms',
         'modifyTime' => 'modifyTime',
-        'title'      => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -116,7 +114,7 @@ class result extends Model
         if (isset($map['forms'])) {
             if (!empty($map['forms'])) {
                 $model->forms = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['forms'] as $item) {
                     $model->forms[$n++] = null !== $item ? forms::fromMap($item) : $item;
                 }

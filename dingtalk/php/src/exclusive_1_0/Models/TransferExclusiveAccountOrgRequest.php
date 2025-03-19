@@ -26,13 +26,11 @@ class TransferExclusiveAccountOrgRequest extends Model
     public $userIds;
     protected $_name = [
         'isSettingMainOrg' => 'isSettingMainOrg',
-        'targetCorpId'     => 'targetCorpId',
-        'userIds'          => 'userIds',
+        'targetCorpId' => 'targetCorpId',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

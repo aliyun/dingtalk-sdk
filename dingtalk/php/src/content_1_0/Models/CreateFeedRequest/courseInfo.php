@@ -30,13 +30,11 @@ class courseInfo extends Model
     public $studyGroupName;
     protected $_name = [
         'lectorUserInfo' => 'lectorUserInfo',
-        'payInfo'        => 'payInfo',
+        'payInfo' => 'payInfo',
         'studyGroupName' => 'studyGroupName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

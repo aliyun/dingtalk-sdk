@@ -20,12 +20,10 @@ class result extends Model
     public $userId;
     protected $_name = [
         'holidays' => 'holidays',
-        'userId'   => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class result extends Model
         if (isset($map['holidays'])) {
             if (!empty($map['holidays'])) {
                 $model->holidays = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['holidays'] as $item) {
                     $model->holidays[$n++] = null !== $item ? holidays::fromMap($item) : $item;
                 }

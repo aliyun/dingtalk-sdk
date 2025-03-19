@@ -250,49 +250,47 @@ class result extends Model
      */
     public $workPlace;
     protected $_name = [
-        'active'                   => 'active',
-        'admin'                    => 'admin',
-        'avatar'                   => 'avatar',
-        'boss'                     => 'boss',
-        'deptIdList'               => 'deptIdList',
-        'deptOrderList'            => 'deptOrderList',
-        'deptPositionSet'          => 'deptPositionSet',
-        'deptTypeSet'              => 'deptTypeSet',
-        'email'                    => 'email',
-        'empType'                  => 'empType',
-        'exclusiveAccount'         => 'exclusiveAccount',
-        'exclusiveAccountCorpId'   => 'exclusiveAccountCorpId',
+        'active' => 'active',
+        'admin' => 'admin',
+        'avatar' => 'avatar',
+        'boss' => 'boss',
+        'deptIdList' => 'deptIdList',
+        'deptOrderList' => 'deptOrderList',
+        'deptPositionSet' => 'deptPositionSet',
+        'deptTypeSet' => 'deptTypeSet',
+        'email' => 'email',
+        'empType' => 'empType',
+        'exclusiveAccount' => 'exclusiveAccount',
+        'exclusiveAccountCorpId' => 'exclusiveAccountCorpId',
         'exclusiveAccountCorpName' => 'exclusiveAccountCorpName',
-        'exclusiveAccountType'     => 'exclusiveAccountType',
-        'extension'                => 'extension',
-        'hideMobile'               => 'hideMobile',
-        'hiredDate'                => 'hiredDate',
-        'jobNumber'                => 'jobNumber',
-        'leaderInDept'             => 'leaderInDept',
-        'loginId'                  => 'loginId',
-        'loginType'                => 'loginType',
-        'mainDeptId'               => 'mainDeptId',
-        'managerUserid'            => 'managerUserid',
-        'mobile'                   => 'mobile',
-        'name'                     => 'name',
-        'orgEmail'                 => 'orgEmail',
-        'orgEmailType'             => 'orgEmailType',
-        'realAuthed'               => 'realAuthed',
-        'remark'                   => 'remark',
-        'roleList'                 => 'roleList',
-        'senior'                   => 'senior',
-        'stateCode'                => 'stateCode',
-        'telephone'                => 'telephone',
-        'title'                    => 'title',
-        'unionEmpExt'              => 'unionEmpExt',
-        'unionId'                  => 'unionId',
-        'userid'                   => 'userid',
-        'workPlace'                => 'workPlace',
+        'exclusiveAccountType' => 'exclusiveAccountType',
+        'extension' => 'extension',
+        'hideMobile' => 'hideMobile',
+        'hiredDate' => 'hiredDate',
+        'jobNumber' => 'jobNumber',
+        'leaderInDept' => 'leaderInDept',
+        'loginId' => 'loginId',
+        'loginType' => 'loginType',
+        'mainDeptId' => 'mainDeptId',
+        'managerUserid' => 'managerUserid',
+        'mobile' => 'mobile',
+        'name' => 'name',
+        'orgEmail' => 'orgEmail',
+        'orgEmailType' => 'orgEmailType',
+        'realAuthed' => 'realAuthed',
+        'remark' => 'remark',
+        'roleList' => 'roleList',
+        'senior' => 'senior',
+        'stateCode' => 'stateCode',
+        'telephone' => 'telephone',
+        'title' => 'title',
+        'unionEmpExt' => 'unionEmpExt',
+        'unionId' => 'unionId',
+        'userid' => 'userid',
+        'workPlace' => 'workPlace',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -473,7 +471,7 @@ class result extends Model
         if (isset($map['deptOrderList'])) {
             if (!empty($map['deptOrderList'])) {
                 $model->deptOrderList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['deptOrderList'] as $item) {
                     $model->deptOrderList[$n++] = null !== $item ? deptOrderList::fromMap($item) : $item;
                 }
@@ -482,7 +480,7 @@ class result extends Model
         if (isset($map['deptPositionSet'])) {
             if (!empty($map['deptPositionSet'])) {
                 $model->deptPositionSet = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['deptPositionSet'] as $item) {
                     $model->deptPositionSet[$n++] = null !== $item ? deptPositionSet::fromMap($item) : $item;
                 }
@@ -491,7 +489,7 @@ class result extends Model
         if (isset($map['deptTypeSet'])) {
             if (!empty($map['deptTypeSet'])) {
                 $model->deptTypeSet = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['deptTypeSet'] as $item) {
                     $model->deptTypeSet[$n++] = null !== $item ? deptTypeSet::fromMap($item) : $item;
                 }
@@ -530,7 +528,7 @@ class result extends Model
         if (isset($map['leaderInDept'])) {
             if (!empty($map['leaderInDept'])) {
                 $model->leaderInDept = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['leaderInDept'] as $item) {
                     $model->leaderInDept[$n++] = null !== $item ? leaderInDept::fromMap($item) : $item;
                 }
@@ -569,7 +567,7 @@ class result extends Model
         if (isset($map['roleList'])) {
             if (!empty($map['roleList'])) {
                 $model->roleList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['roleList'] as $item) {
                     $model->roleList[$n++] = null !== $item ? roleList::fromMap($item) : $item;
                 }

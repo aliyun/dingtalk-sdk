@@ -17,9 +17,7 @@ class GetInvoiceByPageRequest extends Model
         'request' => 'request',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

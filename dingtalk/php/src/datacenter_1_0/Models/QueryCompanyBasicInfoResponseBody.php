@@ -33,16 +33,14 @@ class QueryCompanyBasicInfoResponseBody extends Model
      */
     public $total;
     protected $_name = [
-        'code'      => 'code',
-        'data'      => 'data',
-        'message'   => 'message',
+        'code' => 'code',
+        'data' => 'data',
+        'message' => 'message',
         'requestId' => 'requestId',
-        'total'     => 'total',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

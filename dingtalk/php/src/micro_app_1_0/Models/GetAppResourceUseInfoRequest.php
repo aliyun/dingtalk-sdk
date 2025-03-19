@@ -37,14 +37,12 @@ class GetAppResourceUseInfoRequest extends Model
     public $startTime;
     protected $_name = [
         'benefitCode' => 'benefitCode',
-        'endTime'     => 'endTime',
-        'periodType'  => 'periodType',
-        'startTime'   => 'startTime',
+        'endTime' => 'endTime',
+        'periodType' => 'periodType',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

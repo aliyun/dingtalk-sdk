@@ -48,18 +48,16 @@ class GetDefaultChildResponseBody extends Model
      */
     public $unionId;
     protected $_name = [
-        'avatar'       => 'avatar',
+        'avatar' => 'avatar',
         'bindStudents' => 'bindStudents',
-        'grade'        => 'grade',
-        'name'         => 'name',
-        'nick'         => 'nick',
-        'period'       => 'period',
-        'unionId'      => 'unionId',
+        'grade' => 'grade',
+        'name' => 'name',
+        'nick' => 'nick',
+        'period' => 'period',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -109,7 +107,7 @@ class GetDefaultChildResponseBody extends Model
         if (isset($map['bindStudents'])) {
             if (!empty($map['bindStudents'])) {
                 $model->bindStudents = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['bindStudents'] as $item) {
                     $model->bindStudents[$n++] = null !== $item ? bindStudents::fromMap($item) : $item;
                 }

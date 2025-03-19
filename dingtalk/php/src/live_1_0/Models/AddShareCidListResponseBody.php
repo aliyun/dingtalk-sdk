@@ -20,13 +20,11 @@ class AddShareCidListResponseBody extends Model
      */
     public $shareSuccessGroupList;
     protected $_name = [
-        'hasShareSuccess'       => 'hasShareSuccess',
+        'hasShareSuccess' => 'hasShareSuccess',
         'shareSuccessGroupList' => 'shareSuccessGroupList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

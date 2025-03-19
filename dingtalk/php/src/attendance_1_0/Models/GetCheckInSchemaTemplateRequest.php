@@ -42,15 +42,13 @@ class GetCheckInSchemaTemplateRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizCode'            => 'bizCode',
+        'bizCode' => 'bizCode',
         'openConversationId' => 'openConversationId',
-        'sceneCode'          => 'sceneCode',
-        'userId'             => 'userId',
+        'sceneCode' => 'sceneCode',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

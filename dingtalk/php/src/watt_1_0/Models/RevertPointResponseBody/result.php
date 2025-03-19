@@ -16,9 +16,7 @@ class result extends Model
         'revertedPoints' => 'revertedPoints',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

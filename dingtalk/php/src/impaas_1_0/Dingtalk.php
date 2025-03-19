@@ -77,8 +77,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -119,18 +119,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddGroupMembers',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/groups/members/batchAdd',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddGroupMembers',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/groups/members/batchAdd',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddGroupMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -185,18 +185,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddProfile',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/users/profiles',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddProfile',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/users/profiles',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return AddProfileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -251,18 +251,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchSend',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/messages/batchSend',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchSend',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/messages/batchSend',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchSendResponse::fromMap($this->execute($params, $req, $runtime));
@@ -326,18 +326,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateGroup',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/groups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateGroup',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/groups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -404,18 +404,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTrustGroup',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/groups/trusts',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTrustGroup',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/groups/trusts',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTrustGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -467,18 +467,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DismissGroup',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/groups/dismiss',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DismissGroup',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/groups/dismiss',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DismissGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -527,18 +527,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetConversationId',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/conversations',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetConversationId',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/conversations',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetConversationIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -587,18 +587,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetMediaUrl',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/medium/urls',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMediaUrl',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/medium/urls',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMediaUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -647,18 +647,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetMediaUrls',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/mediaUrls/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMediaUrls',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/mediaUrls/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMediaUrlsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -710,18 +710,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSpaceFileUrl',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/spaces/files/urls',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSpaceFileUrl',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/spaces/files/urls',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSpaceFileUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -767,18 +767,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListGroupStaffMembers',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/groups/staffMemers/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListGroupStaffMembers',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/groups/staffMemers/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListGroupStaffMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -827,18 +827,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryBatchSendResult',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/messages/batchSendResults',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryBatchSendResult',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/messages/batchSendResults',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryBatchSendResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -890,18 +890,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ReadMessage',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/messages/read',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReadMessage',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/messages/read',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return ReadMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -956,18 +956,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RecallMessage',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/messages/recall',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RecallMessage',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/messages/recall',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return RecallMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1022,18 +1022,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RemoveGroupMembers',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/groups/members/batchRemove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveGroupMembers',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/groups/members/batchRemove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemoveGroupMembersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1097,18 +1097,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendMessage',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/messages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendMessage',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/messages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1196,18 +1196,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendRobotMessage',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/robots/messages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendRobotMessage',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/robots/messages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendRobotMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1262,18 +1262,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateGroupName',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/groups/names',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateGroupName',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/groups/names',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateGroupNameResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1325,18 +1325,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateGroupOwner',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/groups/owners',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateGroupOwner',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/groups/owners',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateGroupOwnerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1391,18 +1391,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UploadFile',
-            'version'     => 'impaas_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/impaas/interconnections/files/upload',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UploadFile',
+            'version' => 'impaas_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/impaas/interconnections/files/upload',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UploadFileResponse::fromMap($this->execute($params, $req, $runtime));

@@ -173,35 +173,33 @@ class AddCollegeContactUserRequest extends Model
      */
     public $workPlace;
     protected $_name = [
-        'deptIdList'      => 'deptIdList',
-        'deptOrderList'   => 'deptOrderList',
+        'deptIdList' => 'deptIdList',
+        'deptOrderList' => 'deptOrderList',
         'deptPositionSet' => 'deptPositionSet',
-        'deptTitleList'   => 'deptTitleList',
-        'email'           => 'email',
-        'empType'         => 'empType',
-        'extension'       => 'extension',
-        'hideMobile'      => 'hideMobile',
-        'hiredDate'       => 'hiredDate',
-        'jobNumber'       => 'jobNumber',
-        'loginEmail'      => 'loginEmail',
-        'mainDeptId'      => 'mainDeptId',
-        'managerUserid'   => 'managerUserid',
-        'mobile'          => 'mobile',
-        'name'            => 'name',
-        'orgEmail'        => 'orgEmail',
-        'orgEmailType'    => 'orgEmailType',
-        'remark'          => 'remark',
-        'sendActiveSms'   => 'sendActiveSms',
-        'seniorMode'      => 'seniorMode',
-        'telephone'       => 'telephone',
-        'title'           => 'title',
-        'userid'          => 'userid',
-        'workPlace'       => 'workPlace',
+        'deptTitleList' => 'deptTitleList',
+        'email' => 'email',
+        'empType' => 'empType',
+        'extension' => 'extension',
+        'hideMobile' => 'hideMobile',
+        'hiredDate' => 'hiredDate',
+        'jobNumber' => 'jobNumber',
+        'loginEmail' => 'loginEmail',
+        'mainDeptId' => 'mainDeptId',
+        'managerUserid' => 'managerUserid',
+        'mobile' => 'mobile',
+        'name' => 'name',
+        'orgEmail' => 'orgEmail',
+        'orgEmailType' => 'orgEmailType',
+        'remark' => 'remark',
+        'sendActiveSms' => 'sendActiveSms',
+        'seniorMode' => 'seniorMode',
+        'telephone' => 'telephone',
+        'title' => 'title',
+        'userid' => 'userid',
+        'workPlace' => 'workPlace',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -316,7 +314,7 @@ class AddCollegeContactUserRequest extends Model
         if (isset($map['deptOrderList'])) {
             if (!empty($map['deptOrderList'])) {
                 $model->deptOrderList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['deptOrderList'] as $item) {
                     $model->deptOrderList[$n++] = null !== $item ? deptOrderList::fromMap($item) : $item;
                 }
@@ -325,7 +323,7 @@ class AddCollegeContactUserRequest extends Model
         if (isset($map['deptPositionSet'])) {
             if (!empty($map['deptPositionSet'])) {
                 $model->deptPositionSet = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['deptPositionSet'] as $item) {
                     $model->deptPositionSet[$n++] = null !== $item ? deptPositionSet::fromMap($item) : $item;
                 }
@@ -334,7 +332,7 @@ class AddCollegeContactUserRequest extends Model
         if (isset($map['deptTitleList'])) {
             if (!empty($map['deptTitleList'])) {
                 $model->deptTitleList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['deptTitleList'] as $item) {
                     $model->deptTitleList[$n++] = null !== $item ? deptTitleList::fromMap($item) : $item;
                 }

@@ -127,33 +127,31 @@ class props extends Model
      */
     public $unit;
     protected $_name = [
-        'align'                  => 'align',
-        'bizAlias'               => 'bizAlias',
-        'choice'                 => 'choice',
-        'content'                => 'content',
-        'disabled'               => 'disabled',
-        'duration'               => 'duration',
-        'fieldId'                => 'fieldId',
-        'format'                 => 'format',
-        'invisible'              => 'invisible',
-        'label'                  => 'label',
-        'labelEditableFreeze'    => 'labelEditableFreeze',
-        'link'                   => 'link',
-        'needDetail'             => 'needDetail',
-        'notPrint'               => 'notPrint',
-        'notUpper'               => 'notUpper',
-        'options'                => 'options',
-        'payEnable'              => 'payEnable',
-        'placeholder'            => 'placeholder',
-        'required'               => 'required',
+        'align' => 'align',
+        'bizAlias' => 'bizAlias',
+        'choice' => 'choice',
+        'content' => 'content',
+        'disabled' => 'disabled',
+        'duration' => 'duration',
+        'fieldId' => 'fieldId',
+        'format' => 'format',
+        'invisible' => 'invisible',
+        'label' => 'label',
+        'labelEditableFreeze' => 'labelEditableFreeze',
+        'link' => 'link',
+        'needDetail' => 'needDetail',
+        'notPrint' => 'notPrint',
+        'notUpper' => 'notUpper',
+        'options' => 'options',
+        'payEnable' => 'payEnable',
+        'placeholder' => 'placeholder',
+        'required' => 'required',
         'requiredEditableFreeze' => 'requiredEditableFreeze',
-        'sortable'               => 'sortable',
-        'unit'                   => 'unit',
+        'sortable' => 'sortable',
+        'unit' => 'unit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -290,7 +288,7 @@ class props extends Model
         if (isset($map['options'])) {
             if (!empty($map['options'])) {
                 $model->options = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['options'] as $item) {
                     $model->options[$n++] = null !== $item ? options::fromMap($item) : $item;
                 }

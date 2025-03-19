@@ -62,20 +62,18 @@ class messageContent extends Model
     public $top;
     protected $_name = [
         'atActiveMemberNum' => 'atActiveMemberNum',
-        'atActiveUser'      => 'atActiveUser',
-        'atAll'             => 'atAll',
-        'btns'              => 'btns',
-        'content'           => 'content',
-        'images'            => 'images',
-        'messageType'       => 'messageType',
-        'remind'            => 'remind',
-        'title'             => 'title',
-        'top'               => 'top',
+        'atActiveUser' => 'atActiveUser',
+        'atAll' => 'atAll',
+        'btns' => 'btns',
+        'content' => 'content',
+        'images' => 'images',
+        'messageType' => 'messageType',
+        'remind' => 'remind',
+        'title' => 'title',
+        'top' => 'top',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -140,7 +138,7 @@ class messageContent extends Model
         if (isset($map['btns'])) {
             if (!empty($map['btns'])) {
                 $model->btns = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['btns'] as $item) {
                     $model->btns[$n++] = null !== $item ? btns::fromMap($item) : $item;
                 }

@@ -141,30 +141,28 @@ class list_ extends Model
      */
     public $unit;
     protected $_name = [
-        'corpId'               => 'corpId',
-        'count'                => 'count',
-        'ext'                  => 'ext',
-        'gmtCreate'            => 'gmtCreate',
-        'gmtModified'          => 'gmtModified',
-        'instanceId'           => 'instanceId',
-        'isDeleted'            => 'isDeleted',
+        'corpId' => 'corpId',
+        'count' => 'count',
+        'ext' => 'ext',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'instanceId' => 'instanceId',
+        'isDeleted' => 'isDeleted',
         'materialCostRecordNo' => 'materialCostRecordNo',
-        'materialName'         => 'materialName',
-        'materialNo'           => 'materialNo',
-        'memo'                 => 'memo',
-        'orderNo'              => 'orderNo',
-        'price'                => 'price',
-        'processCode'          => 'processCode',
-        'productionTaskNo'     => 'productionTaskNo',
-        'realCount'            => 'realCount',
-        'realPrice'            => 'realPrice',
-        'type'                 => 'type',
-        'unit'                 => 'unit',
+        'materialName' => 'materialName',
+        'materialNo' => 'materialNo',
+        'memo' => 'memo',
+        'orderNo' => 'orderNo',
+        'price' => 'price',
+        'processCode' => 'processCode',
+        'productionTaskNo' => 'productionTaskNo',
+        'realCount' => 'realCount',
+        'realPrice' => 'realPrice',
+        'type' => 'type',
+        'unit' => 'unit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

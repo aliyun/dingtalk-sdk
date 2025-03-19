@@ -24,13 +24,11 @@ class GetRelatedViewTabMetaRequest extends Model
      */
     public $viewUserId;
     protected $_name = [
-        'formCode'   => 'formCode',
+        'formCode' => 'formCode',
         'viewUserId' => 'viewUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

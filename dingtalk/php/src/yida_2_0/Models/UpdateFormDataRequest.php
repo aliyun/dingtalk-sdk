@@ -77,20 +77,18 @@ class UpdateFormDataRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'            => 'appType',
-        'formInstanceId'     => 'formInstanceId',
-        'formUuid'           => 'formUuid',
-        'language'           => 'language',
-        'systemToken'        => 'systemToken',
+        'appType' => 'appType',
+        'formInstanceId' => 'formInstanceId',
+        'formUuid' => 'formUuid',
+        'language' => 'language',
+        'systemToken' => 'systemToken',
         'updateFormDataJson' => 'updateFormDataJson',
-        'useAlias'           => 'useAlias',
-        'useLatestVersion'   => 'useLatestVersion',
-        'userId'             => 'userId',
+        'useAlias' => 'useAlias',
+        'useLatestVersion' => 'useLatestVersion',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

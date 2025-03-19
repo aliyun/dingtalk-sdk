@@ -29,9 +29,7 @@ class GetOpenCoursesResponseBody extends Model
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class GetOpenCoursesResponseBody extends Model
         if (isset($map['courseList'])) {
             if (!empty($map['courseList'])) {
                 $model->courseList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['courseList'] as $item) {
                     $model->courseList[$n++] = null !== $item ? courseList::fromMap($item) : $item;
                 }

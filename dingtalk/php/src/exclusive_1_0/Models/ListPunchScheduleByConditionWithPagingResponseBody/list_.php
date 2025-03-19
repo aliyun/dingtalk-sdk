@@ -43,16 +43,14 @@ class list_ extends Model
      */
     public $userPunchTime;
     protected $_name = [
-        'bizOuterId'    => 'bizOuterId',
-        'positionName'  => 'positionName',
-        'punchSymbol'   => 'punchSymbol',
-        'userId'        => 'userId',
+        'bizOuterId' => 'bizOuterId',
+        'positionName' => 'positionName',
+        'punchSymbol' => 'punchSymbol',
+        'userId' => 'userId',
         'userPunchTime' => 'userPunchTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

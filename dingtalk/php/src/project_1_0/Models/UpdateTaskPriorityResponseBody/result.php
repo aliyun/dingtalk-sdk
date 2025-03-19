@@ -23,12 +23,10 @@ class result extends Model
     public $updated;
     protected $_name = [
         'priority' => 'priority',
-        'updated'  => 'updated',
+        'updated' => 'updated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

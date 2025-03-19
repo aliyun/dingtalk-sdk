@@ -42,15 +42,13 @@ class PremiumRedirectTasksByManagerRequest extends Model
      */
     public $transfereeUserId;
     protected $_name = [
-        'handoverUserId'   => 'handoverUserId',
-        'managerUserId'    => 'managerUserId',
-        'taskIds'          => 'taskIds',
+        'handoverUserId' => 'handoverUserId',
+        'managerUserId' => 'managerUserId',
+        'taskIds' => 'taskIds',
         'transfereeUserId' => 'transfereeUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

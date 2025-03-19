@@ -28,15 +28,13 @@ class GetMiniAppMetaDataRequest extends Model
      */
     public $miniAppIdTableGmtModified;
     protected $_name = [
-        'bundleId'                  => 'bundleId',
-        'bundleIdTableGmtModified'  => 'bundleIdTableGmtModified',
-        'fromAppName'               => 'fromAppName',
+        'bundleId' => 'bundleId',
+        'bundleIdTableGmtModified' => 'bundleIdTableGmtModified',
+        'fromAppName' => 'fromAppName',
         'miniAppIdTableGmtModified' => 'miniAppIdTableGmtModified',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class ValidateNewGradeManagerResponseBody extends Model
         'matchRule' => 'matchRule',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

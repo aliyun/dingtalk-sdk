@@ -44,15 +44,13 @@ class UpdatePrivacyRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'privacy'    => 'privacy',
-        'targetId'   => 'targetId',
+        'privacy' => 'privacy',
+        'targetId' => 'targetId',
         'targetType' => 'targetType',
-        'userId'     => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

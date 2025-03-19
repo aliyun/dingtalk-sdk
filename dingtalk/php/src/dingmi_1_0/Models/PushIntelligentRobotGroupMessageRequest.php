@@ -44,15 +44,13 @@ class PushIntelligentRobotGroupMessageRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'chatbotId'          => 'chatbotId',
-        'msgKey'             => 'msgKey',
-        'msgParam'           => 'msgParam',
+        'chatbotId' => 'chatbotId',
+        'msgKey' => 'msgKey',
+        'msgParam' => 'msgParam',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

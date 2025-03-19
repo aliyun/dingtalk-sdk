@@ -28,14 +28,12 @@ class relationList extends Model
      */
     public $sourceDataId;
     protected $_name = [
-        'bizDataList'  => 'bizDataList',
-        'bizExtMap'    => 'bizExtMap',
+        'bizDataList' => 'bizDataList',
+        'bizExtMap' => 'bizExtMap',
         'sourceDataId' => 'sourceDataId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class relationList extends Model
         if (isset($map['bizDataList'])) {
             if (!empty($map['bizDataList'])) {
                 $model->bizDataList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['bizDataList'] as $item) {
                     $model->bizDataList[$n++] = null !== $item ? bizDataList::fromMap($item) : $item;
                 }

@@ -73,20 +73,18 @@ class EduAIGCCallbackRequest extends Model
      */
     public $remark;
     protected $_name = [
-        'channelCode'  => 'channelCode',
-        'commitTime'   => 'commitTime',
+        'channelCode' => 'channelCode',
+        'commitTime' => 'commitTime',
         'completeTime' => 'completeTime',
-        'content'      => 'content',
-        'contentSize'  => 'contentSize',
-        'contentType'  => 'contentType',
-        'ext'          => 'ext',
-        'prompt'       => 'prompt',
-        'remark'       => 'remark',
+        'content' => 'content',
+        'contentSize' => 'contentSize',
+        'contentType' => 'contentType',
+        'ext' => 'ext',
+        'prompt' => 'prompt',
+        'remark' => 'remark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

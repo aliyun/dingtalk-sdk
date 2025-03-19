@@ -18,9 +18,7 @@ class SearchProjectTemplateRequest extends Model
         'keyword' => 'keyword',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

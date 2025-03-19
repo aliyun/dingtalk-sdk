@@ -27,12 +27,10 @@ class PediaWordsQueryRequest extends Model
     public $uuid;
     protected $_name = [
         'userId' => 'userId',
-        'uuid'   => 'uuid',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,9 +20,7 @@ class QueryDeviceRequest extends Model
         'sn' => 'sn',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

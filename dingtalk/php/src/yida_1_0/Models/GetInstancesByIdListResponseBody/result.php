@@ -69,20 +69,18 @@ class result extends Model
      */
     public $title;
     protected $_name = [
-        'actionExecutor'    => 'actionExecutor',
-        'approvedResult'    => 'approvedResult',
-        'data'              => 'data',
-        'formUuid'          => 'formUuid',
-        'instanceStatus'    => 'instanceStatus',
-        'originator'        => 'originator',
-        'processCode'       => 'processCode',
+        'actionExecutor' => 'actionExecutor',
+        'approvedResult' => 'approvedResult',
+        'data' => 'data',
+        'formUuid' => 'formUuid',
+        'instanceStatus' => 'instanceStatus',
+        'originator' => 'originator',
+        'processCode' => 'processCode',
         'processInstanceId' => 'processInstanceId',
-        'title'             => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -135,7 +133,7 @@ class result extends Model
         if (isset($map['actionExecutor'])) {
             if (!empty($map['actionExecutor'])) {
                 $model->actionExecutor = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['actionExecutor'] as $item) {
                     $model->actionExecutor[$n++] = null !== $item ? actionExecutor::fromMap($item) : $item;
                 }

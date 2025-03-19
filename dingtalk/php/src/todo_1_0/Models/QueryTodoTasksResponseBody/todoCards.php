@@ -92,27 +92,25 @@ class todoCards extends Model
      */
     public $todoStatus;
     protected $_name = [
-        'bizTag'         => 'bizTag',
-        'category'       => 'category',
-        'createdTime'    => 'createdTime',
-        'creatorId'      => 'creatorId',
-        'detailUrl'      => 'detailUrl',
-        'dueTime'        => 'dueTime',
-        'isDone'         => 'isDone',
-        'modifiedTime'   => 'modifiedTime',
-        'orgInfo'        => 'orgInfo',
+        'bizTag' => 'bizTag',
+        'category' => 'category',
+        'createdTime' => 'createdTime',
+        'creatorId' => 'creatorId',
+        'detailUrl' => 'detailUrl',
+        'dueTime' => 'dueTime',
+        'isDone' => 'isDone',
+        'modifiedTime' => 'modifiedTime',
+        'orgInfo' => 'orgInfo',
         'originalSource' => 'originalSource',
-        'priority'       => 'priority',
-        'sourceId'       => 'sourceId',
-        'subject'        => 'subject',
-        'taskId'         => 'taskId',
-        'todoCardView'   => 'todoCardView',
-        'todoStatus'     => 'todoStatus',
+        'priority' => 'priority',
+        'sourceId' => 'sourceId',
+        'subject' => 'subject',
+        'taskId' => 'taskId',
+        'todoCardView' => 'todoCardView',
+        'todoStatus' => 'todoStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

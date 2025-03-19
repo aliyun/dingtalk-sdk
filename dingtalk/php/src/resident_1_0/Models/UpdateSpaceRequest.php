@@ -21,9 +21,7 @@ class UpdateSpaceRequest extends Model
         'spaceInfoVOList' => 'spaceInfoVOList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -52,7 +50,7 @@ class UpdateSpaceRequest extends Model
         if (isset($map['spaceInfoVOList'])) {
             if (!empty($map['spaceInfoVOList'])) {
                 $model->spaceInfoVOList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['spaceInfoVOList'] as $item) {
                     $model->spaceInfoVOList[$n++] = null !== $item ? spaceInfoVOList::fromMap($item) : $item;
                 }

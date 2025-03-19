@@ -32,13 +32,11 @@ class PageListObjectiveProgressRequest extends Model
     public $pageSize;
     protected $_name = [
         'objectiveId' => 'objectiveId',
-        'pageNumber'  => 'pageNumber',
-        'pageSize'    => 'pageSize',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

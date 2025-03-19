@@ -139,30 +139,28 @@ class deviceCustomTemplate extends Model
      */
     public $templateName;
     protected $_name = [
-        'bgImageList'                  => 'bgImageList',
-        'bgType'                       => 'bgType',
-        'bgUrl'                        => 'bgUrl',
-        'confSubType'                  => 'confSubType',
-        'confType'                     => 'confType',
-        'corpId'                       => 'corpId',
-        'customDoc'                    => 'customDoc',
-        'desensitizeUserName'          => 'desensitizeUserName',
+        'bgImageList' => 'bgImageList',
+        'bgType' => 'bgType',
+        'bgUrl' => 'bgUrl',
+        'confSubType' => 'confSubType',
+        'confType' => 'confType',
+        'corpId' => 'corpId',
+        'customDoc' => 'customDoc',
+        'desensitizeUserName' => 'desensitizeUserName',
         'hideServerCodeWhenProjecting' => 'hideServerCodeWhenProjecting',
-        'instruction'                  => 'instruction',
-        'isPicTop'                     => 'isPicTop',
-        'logo'                         => 'logo',
-        'orgName'                      => 'orgName',
-        'picturePlayInterval'          => 'picturePlayInterval',
-        'showCalendarCard'             => 'showCalendarCard',
-        'showCalendarTitle'            => 'showCalendarTitle',
-        'showFunctionCard'             => 'showFunctionCard',
-        'templateId'                   => 'templateId',
-        'templateName'                 => 'templateName',
+        'instruction' => 'instruction',
+        'isPicTop' => 'isPicTop',
+        'logo' => 'logo',
+        'orgName' => 'orgName',
+        'picturePlayInterval' => 'picturePlayInterval',
+        'showCalendarCard' => 'showCalendarCard',
+        'showCalendarTitle' => 'showCalendarTitle',
+        'showFunctionCard' => 'showFunctionCard',
+        'templateId' => 'templateId',
+        'templateName' => 'templateName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

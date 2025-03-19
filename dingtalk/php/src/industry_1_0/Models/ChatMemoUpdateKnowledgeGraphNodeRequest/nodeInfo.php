@@ -24,13 +24,11 @@ class nodeInfo extends Model
      */
     public $propertiesString;
     protected $_name = [
-        'mediaId'          => 'mediaId',
+        'mediaId' => 'mediaId',
         'propertiesString' => 'propertiesString',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class UpdateTaskPriorityRequest extends Model
         'priority' => 'priority',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

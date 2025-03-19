@@ -22,13 +22,11 @@ class UpdateConversationTypeRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'manageSign'         => 'manageSign',
+        'manageSign' => 'manageSign',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

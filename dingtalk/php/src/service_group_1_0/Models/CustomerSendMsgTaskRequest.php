@@ -47,15 +47,13 @@ class CustomerSendMsgTaskRequest extends Model
     public $taskName;
     protected $_name = [
         'messageContent' => 'messageContent',
-        'openTeamId'     => 'openTeamId',
-        'queryCustomer'  => 'queryCustomer',
-        'sendConfig'     => 'sendConfig',
-        'taskName'       => 'taskName',
+        'openTeamId' => 'openTeamId',
+        'queryCustomer' => 'queryCustomer',
+        'sendConfig' => 'sendConfig',
+        'taskName' => 'taskName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

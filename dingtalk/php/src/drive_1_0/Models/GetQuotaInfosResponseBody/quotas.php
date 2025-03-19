@@ -29,14 +29,12 @@ class quotas extends Model
     public $usedQuota;
     protected $_name = [
         'identifier' => 'identifier',
-        'quota'      => 'quota',
-        'type'       => 'type',
-        'usedQuota'  => 'usedQuota',
+        'quota' => 'quota',
+        'type' => 'type',
+        'usedQuota' => 'usedQuota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class ClearEvaluatePerformanceCountRequest extends Model
         'studentIdList' => 'studentIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,13 +36,11 @@ class GetWebChannelUserTokenRequest extends Model
     public $source;
     protected $_name = [
         'foreignId' => 'foreignId',
-        'nick'      => 'nick',
-        'source'    => 'source',
+        'nick' => 'nick',
+        'source' => 'source',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

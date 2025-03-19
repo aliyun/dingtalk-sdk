@@ -31,14 +31,12 @@ class CollegeUpdateStudentMoblieRequest extends Model
      */
     public $studentId;
     protected $_name = [
-        'isForce'   => 'isForce',
+        'isForce' => 'isForce',
         'newMobile' => 'newMobile',
         'studentId' => 'studentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

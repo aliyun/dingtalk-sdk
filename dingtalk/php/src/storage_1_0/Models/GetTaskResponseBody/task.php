@@ -64,19 +64,17 @@ class task extends Model
      */
     public $totalCount;
     protected $_name = [
-        'beginTime'    => 'beginTime',
-        'endTime'      => 'endTime',
-        'failCount'    => 'failCount',
-        'failMessage'  => 'failMessage',
-        'id'           => 'id',
-        'status'       => 'status',
+        'beginTime' => 'beginTime',
+        'endTime' => 'endTime',
+        'failCount' => 'failCount',
+        'failMessage' => 'failMessage',
+        'id' => 'id',
+        'status' => 'status',
         'successCount' => 'successCount',
-        'totalCount'   => 'totalCount',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

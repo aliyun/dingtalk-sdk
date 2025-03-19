@@ -63,19 +63,17 @@ class ProcessApproveFinishRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'approveId'                        => 'approveId',
-        'jumpUrl'                          => 'jumpUrl',
-        'overTimeToMore'                   => 'overTimeToMore',
-        'overtimeDuration'                 => 'overtimeDuration',
-        'subType'                          => 'subType',
-        'tagName'                          => 'tagName',
+        'approveId' => 'approveId',
+        'jumpUrl' => 'jumpUrl',
+        'overTimeToMore' => 'overTimeToMore',
+        'overtimeDuration' => 'overtimeDuration',
+        'subType' => 'subType',
+        'tagName' => 'tagName',
         'topCalculateApproveDurationParam' => 'topCalculateApproveDurationParam',
-        'userId'                           => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

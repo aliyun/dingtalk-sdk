@@ -24,13 +24,11 @@ class QueryUnReadMessageRequest extends Model
      */
     public $openConversationIds;
     protected $_name = [
-        'appUserId'           => 'appUserId',
+        'appUserId' => 'appUserId',
         'openConversationIds' => 'openConversationIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

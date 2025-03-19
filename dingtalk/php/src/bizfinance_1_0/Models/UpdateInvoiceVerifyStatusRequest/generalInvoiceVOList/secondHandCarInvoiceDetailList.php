@@ -58,21 +58,19 @@ class secondHandCarInvoiceDetailList extends Model
      */
     public $vehicleType;
     protected $_name = [
-        'amount'      => 'amount',
-        'cardNo'      => 'cardNo',
-        'endDate'     => 'endDate',
-        'goodsName'   => 'goodsName',
+        'amount' => 'amount',
+        'cardNo' => 'cardNo',
+        'endDate' => 'endDate',
+        'goodsName' => 'goodsName',
         'revenueCode' => 'revenueCode',
-        'rowNo'       => 'rowNo',
-        'startDate'   => 'startDate',
-        'taxAmount'   => 'taxAmount',
-        'taxRate'     => 'taxRate',
+        'rowNo' => 'rowNo',
+        'startDate' => 'startDate',
+        'taxAmount' => 'taxAmount',
+        'taxRate' => 'taxRate',
         'vehicleType' => 'vehicleType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

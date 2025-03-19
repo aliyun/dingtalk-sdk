@@ -26,13 +26,11 @@ class OpenInnerGroupTransferToDeptGroupRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'deptId'             => 'deptId',
+        'deptId' => 'deptId',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

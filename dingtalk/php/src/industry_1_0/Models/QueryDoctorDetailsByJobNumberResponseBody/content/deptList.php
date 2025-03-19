@@ -39,16 +39,14 @@ class deptList extends Model
     public $relationId;
     protected $_name = [
         'categoryName' => 'categoryName',
-        'deptId'       => 'deptId',
-        'deptName'     => 'deptName',
-        'gmtCreate'    => 'gmtCreate',
-        'gmtModified'  => 'gmtModified',
-        'relationId'   => 'relationId',
+        'deptId' => 'deptId',
+        'deptName' => 'deptName',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'relationId' => 'relationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

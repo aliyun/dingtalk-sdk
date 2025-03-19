@@ -27,14 +27,12 @@ class CreateBatchTradeOrderResponseBody extends Model
      */
     public $outBatchNo;
     protected $_name = [
-        'orderNo'     => 'orderNo',
+        'orderNo' => 'orderNo',
         'orderStatus' => 'orderStatus',
-        'outBatchNo'  => 'outBatchNo',
+        'outBatchNo' => 'outBatchNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

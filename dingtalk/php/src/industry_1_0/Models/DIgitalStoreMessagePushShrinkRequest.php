@@ -16,9 +16,7 @@ class DIgitalStoreMessagePushShrinkRequest extends Model
         'messageDataListShrink' => 'messageDataList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

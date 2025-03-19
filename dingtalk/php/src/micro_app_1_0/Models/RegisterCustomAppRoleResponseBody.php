@@ -22,13 +22,11 @@ class RegisterCustomAppRoleResponseBody extends Model
      */
     public $scopeVersion;
     protected $_name = [
-        'roleId'       => 'roleId',
+        'roleId' => 'roleId',
         'scopeVersion' => 'scopeVersion',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

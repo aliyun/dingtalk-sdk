@@ -41,14 +41,12 @@ class GetUserOkrRequest extends Model
     public $userId;
     protected $_name = [
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'periodId'   => 'periodId',
-        'userId'     => 'userId',
+        'pageSize' => 'pageSize',
+        'periodId' => 'periodId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

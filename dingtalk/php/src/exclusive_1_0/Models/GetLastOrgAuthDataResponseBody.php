@@ -26,9 +26,7 @@ class GetLastOrgAuthDataResponseBody extends Model
         'authStatus' => 'authStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

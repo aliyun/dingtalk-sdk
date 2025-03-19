@@ -44,15 +44,13 @@ class GrantPrivilegeOfCustomSpaceRequest extends Model
     public $userId;
     protected $_name = [
         'duration' => 'duration',
-        'fileIds'  => 'fileIds',
-        'type'     => 'type',
-        'unionId'  => 'unionId',
-        'userId'   => 'userId',
+        'fileIds' => 'fileIds',
+        'type' => 'type',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

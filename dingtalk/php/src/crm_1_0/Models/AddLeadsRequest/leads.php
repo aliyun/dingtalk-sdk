@@ -26,13 +26,11 @@ class leads extends Model
      */
     public $outLeadsId;
     protected $_name = [
-        'leadsName'  => 'leadsName',
+        'leadsName' => 'leadsName',
         'outLeadsId' => 'outLeadsId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -55,18 +55,16 @@ class posts extends Model
      */
     public $status;
     protected $_name = [
-        'author'   => 'author',
-        'bizType'  => 'bizType',
-        'content'  => 'content',
+        'author' => 'author',
+        'bizType' => 'bizType',
+        'content' => 'content',
         'createAt' => 'createAt',
         'feedType' => 'feedType',
-        'postId'   => 'postId',
-        'status'   => 'status',
+        'postId' => 'postId',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

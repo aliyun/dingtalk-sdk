@@ -20,9 +20,7 @@ class ReplyRobotRequest extends Model
         'proxyMessageStr' => 'proxyMessageStr',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

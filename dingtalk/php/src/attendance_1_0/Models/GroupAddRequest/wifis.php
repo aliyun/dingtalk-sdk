@@ -23,12 +23,10 @@ class wifis extends Model
     public $ssid;
     protected $_name = [
         'macAddr' => 'macAddr',
-        'ssid'    => 'ssid',
+        'ssid' => 'ssid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

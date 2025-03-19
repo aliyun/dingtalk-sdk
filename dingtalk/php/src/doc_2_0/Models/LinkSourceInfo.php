@@ -43,15 +43,13 @@ class LinkSourceInfo extends Model
     public $spaceId;
     protected $_name = [
         'extension' => 'extension',
-        'iconUrl'   => 'iconUrl',
-        'id'        => 'id',
-        'linkType'  => 'linkType',
-        'spaceId'   => 'spaceId',
+        'iconUrl' => 'iconUrl',
+        'id' => 'id',
+        'linkType' => 'linkType',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

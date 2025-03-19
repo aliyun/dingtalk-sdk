@@ -20,9 +20,7 @@ class QueryBlackboardSpaceRequest extends Model
         'operationUserId' => 'operationUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -28,12 +28,10 @@ class UpdateResidentMemberRequest extends Model
     public $unionId;
     protected $_name = [
         'residentUpdateInfo' => 'residentUpdateInfo',
-        'unionId'            => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

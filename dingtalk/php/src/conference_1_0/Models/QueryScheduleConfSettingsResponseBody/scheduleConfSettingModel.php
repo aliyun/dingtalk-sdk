@@ -44,18 +44,16 @@ class scheduleConfSettingModel extends Model
      */
     public $screenShareForbidden;
     protected $_name = [
-        'cohostUnionIds'              => 'cohostUnionIds',
-        'confAllowedCorpId'           => 'confAllowedCorpId',
-        'hostUnionId'                 => 'hostUnionId',
-        'lockRoom'                    => 'lockRoom',
+        'cohostUnionIds' => 'cohostUnionIds',
+        'confAllowedCorpId' => 'confAllowedCorpId',
+        'hostUnionId' => 'hostUnionId',
+        'lockRoom' => 'lockRoom',
         'moziConfVirtualExtraSetting' => 'moziConfVirtualExtraSetting',
-        'muteOnJoin'                  => 'muteOnJoin',
-        'screenShareForbidden'        => 'screenShareForbidden',
+        'muteOnJoin' => 'muteOnJoin',
+        'screenShareForbidden' => 'screenShareForbidden',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

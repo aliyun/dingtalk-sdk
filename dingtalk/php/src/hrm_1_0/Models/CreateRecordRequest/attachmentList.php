@@ -43,16 +43,14 @@ class attachmentList extends Model
      */
     public $groupId;
     protected $_name = [
-        'fieldCode'  => 'fieldCode',
-        'fieldName'  => 'fieldName',
-        'fieldType'  => 'fieldType',
+        'fieldCode' => 'fieldCode',
+        'fieldName' => 'fieldName',
+        'fieldType' => 'fieldType',
         'fieldValue' => 'fieldValue',
-        'groupId'    => 'groupId',
+        'groupId' => 'groupId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

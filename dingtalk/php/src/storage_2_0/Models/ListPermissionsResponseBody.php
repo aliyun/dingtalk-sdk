@@ -21,13 +21,11 @@ class ListPermissionsResponseBody extends Model
      */
     public $permissions;
     protected $_name = [
-        'nextToken'   => 'nextToken',
+        'nextToken' => 'nextToken',
         'permissions' => 'permissions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class ListPermissionsResponseBody extends Model
         if (isset($map['permissions'])) {
             if (!empty($map['permissions'])) {
                 $model->permissions = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['permissions'] as $item) {
                     $model->permissions[$n++] = null !== $item ? permissions::fromMap($item) : $item;
                 }

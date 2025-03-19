@@ -23,14 +23,12 @@ class GetDentryIdByUuidResponseBody extends Model
      */
     public $spaceId;
     protected $_name = [
-        'dentryId'   => 'dentryId',
+        'dentryId' => 'dentryId',
         'dentryUuid' => 'dentryUuid',
-        'spaceId'    => 'spaceId',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

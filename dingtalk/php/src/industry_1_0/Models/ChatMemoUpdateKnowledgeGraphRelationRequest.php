@@ -32,14 +32,12 @@ class ChatMemoUpdateKnowledgeGraphRelationRequest extends Model
      */
     public $relationInfo;
     protected $_name = [
-        'bizId'        => 'bizId',
-        'datasetId'    => 'datasetId',
+        'bizId' => 'bizId',
+        'datasetId' => 'datasetId',
         'relationInfo' => 'relationInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,13 +20,11 @@ class permissionList extends Model
      */
     public $resourceIdentity;
     protected $_name = [
-        'actionIdList'     => 'actionIdList',
+        'actionIdList' => 'actionIdList',
         'resourceIdentity' => 'resourceIdentity',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

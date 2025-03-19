@@ -24,13 +24,11 @@ class GetWorkspaceRequest extends Model
      */
     public $withPermissionRole;
     protected $_name = [
-        'operatorId'         => 'operatorId',
+        'operatorId' => 'operatorId',
         'withPermissionRole' => 'withPermissionRole',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

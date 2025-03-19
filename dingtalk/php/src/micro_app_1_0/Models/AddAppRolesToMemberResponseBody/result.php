@@ -44,15 +44,13 @@ class result extends Model
     public $success;
     protected $_name = [
         'latestScopeVersion' => 'latestScopeVersion',
-        'roleId'             => 'roleId',
-        'subErrorCode'       => 'subErrorCode',
-        'subErrorMsg'        => 'subErrorMsg',
-        'success'            => 'success',
+        'roleId' => 'roleId',
+        'subErrorCode' => 'subErrorCode',
+        'subErrorMsg' => 'subErrorMsg',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

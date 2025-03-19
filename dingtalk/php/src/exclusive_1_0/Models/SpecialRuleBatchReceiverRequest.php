@@ -44,18 +44,16 @@ class SpecialRuleBatchReceiverRequest extends Model
      */
     public $taskBatchNo;
     protected $_name = [
-        'batchNo'         => 'batchNo',
-        'cardOptions'     => 'cardOptions',
-        'data'            => 'data',
-        'ruleCode'        => 'ruleCode',
-        'secretKey'       => 'secretKey',
+        'batchNo' => 'batchNo',
+        'cardOptions' => 'cardOptions',
+        'data' => 'data',
+        'ruleCode' => 'ruleCode',
+        'secretKey' => 'secretKey',
         'specialStrategy' => 'specialStrategy',
-        'taskBatchNo'     => 'taskBatchNo',
+        'taskBatchNo' => 'taskBatchNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -108,7 +106,7 @@ class SpecialRuleBatchReceiverRequest extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }

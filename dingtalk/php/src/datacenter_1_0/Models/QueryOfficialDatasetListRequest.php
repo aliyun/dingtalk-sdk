@@ -27,14 +27,12 @@ class QueryOfficialDatasetListRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'keyword'    => 'keyword',
+        'keyword' => 'keyword',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

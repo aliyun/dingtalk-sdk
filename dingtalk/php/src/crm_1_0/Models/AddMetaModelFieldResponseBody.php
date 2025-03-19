@@ -18,9 +18,7 @@ class AddMetaModelFieldResponseBody extends Model
         'bizType' => 'bizType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

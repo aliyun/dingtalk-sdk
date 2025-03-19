@@ -42,8 +42,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -76,18 +76,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchInsertSearchItem',
-            'version'     => 'search_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/search/tabs/' . $tabId . '/items/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchInsertSearchItem',
+            'version' => 'search_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/search/tabs/' . $tabId . '/items/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return BatchInsertSearchItemResponse::fromMap($this->execute($params, $req, $runtime));
@@ -149,18 +149,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateSearchTab',
-            'version'     => 'search_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/search/tabs',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateSearchTab',
+            'version' => 'search_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/search/tabs',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateSearchTabResponse::fromMap($this->execute($params, $req, $runtime));
@@ -204,15 +204,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DeleteSearchItem',
-            'version'     => 'search_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/search/tabs/' . $tabId . '/items/' . $itemId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteSearchItem',
+            'version' => 'search_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/search/tabs/' . $tabId . '/items/' . $itemId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteSearchItemResponse::fromMap($this->execute($params, $req, $runtime));
@@ -256,15 +256,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DeleteSearchTab',
-            'version'     => 'search_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/search/tabs/' . $tabId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteSearchTab',
+            'version' => 'search_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/search/tabs/' . $tabId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteSearchTabResponse::fromMap($this->execute($params, $req, $runtime));
@@ -308,15 +308,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetSearchItem',
-            'version'     => 'search_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/search/tabs/' . $tabId . '/items/' . $itemId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSearchItem',
+            'version' => 'search_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/search/tabs/' . $tabId . '/items/' . $itemId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSearchItemResponse::fromMap($this->execute($params, $req, $runtime));
@@ -370,18 +370,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSearchItemsByKeyWord',
-            'version'     => 'search_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/search/tabs/' . $tabId . '/items',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSearchItemsByKeyWord',
+            'version' => 'search_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/search/tabs/' . $tabId . '/items',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSearchItemsByKeyWordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -425,15 +425,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetSearchTab',
-            'version'     => 'search_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/search/tabs/' . $tabId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSearchTab',
+            'version' => 'search_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/search/tabs/' . $tabId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSearchTabResponse::fromMap($this->execute($params, $req, $runtime));
@@ -501,18 +501,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InsertSearchItem',
-            'version'     => 'search_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/search/tabs/' . $tabId . '/items',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InsertSearchItem',
+            'version' => 'search_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/search/tabs/' . $tabId . '/items',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return InsertSearchItemResponse::fromMap($this->execute($params, $req, $runtime));
@@ -555,15 +555,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListSearchTabsByOrgId',
-            'version'     => 'search_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/search/tabs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListSearchTabsByOrgId',
+            'version' => 'search_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/search/tabs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListSearchTabsByOrgIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -623,18 +623,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateSearchTab',
-            'version'     => 'search_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/search/tabs/' . $tabId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateSearchTab',
+            'version' => 'search_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/search/tabs/' . $tabId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return UpdateSearchTabResponse::fromMap($this->execute($params, $req, $runtime));

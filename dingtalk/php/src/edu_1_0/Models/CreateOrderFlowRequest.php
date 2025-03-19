@@ -110,24 +110,22 @@ class CreateOrderFlowRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'actualAmount'   => 'actualAmount',
-        'alipayUid'      => 'alipayUid',
-        'createTime'     => 'createTime',
-        'detailList'     => 'detailList',
-        'faceId'         => 'faceId',
+        'actualAmount' => 'actualAmount',
+        'alipayUid' => 'alipayUid',
+        'createTime' => 'createTime',
+        'detailList' => 'detailList',
+        'faceId' => 'faceId',
         'guardianUserId' => 'guardianUserId',
-        'merchantId'     => 'merchantId',
-        'orderNo'        => 'orderNo',
-        'signature'      => 'signature',
-        'sn'             => 'sn',
-        'timestamp'      => 'timestamp',
-        'totalAmount'    => 'totalAmount',
-        'userId'         => 'userId',
+        'merchantId' => 'merchantId',
+        'orderNo' => 'orderNo',
+        'signature' => 'signature',
+        'sn' => 'sn',
+        'timestamp' => 'timestamp',
+        'totalAmount' => 'totalAmount',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -201,7 +199,7 @@ class CreateOrderFlowRequest extends Model
         if (isset($map['detailList'])) {
             if (!empty($map['detailList'])) {
                 $model->detailList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['detailList'] as $item) {
                     $model->detailList[$n++] = null !== $item ? detailList::fromMap($item) : $item;
                 }

@@ -17,9 +17,7 @@ class ListByCodesResponseBody extends Model
         'robotInfoList' => 'robotInfoList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListByCodesResponseBody extends Model
         if (isset($map['robotInfoList'])) {
             if (!empty($map['robotInfoList'])) {
                 $model->robotInfoList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['robotInfoList'] as $item) {
                     $model->robotInfoList[$n++] = null !== $item ? robotInfoList::fromMap($item) : $item;
                 }

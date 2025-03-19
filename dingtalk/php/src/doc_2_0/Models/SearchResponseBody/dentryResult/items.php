@@ -86,26 +86,24 @@ class items extends Model
      */
     public $url;
     protected $_name = [
-        'content'        => 'content',
-        'creation'       => 'creation',
-        'dentryId'       => 'dentryId',
-        'dentryUuid'     => 'dentryUuid',
-        'extension'      => 'extension',
-        'iconUrl'        => 'iconUrl',
-        'lastEdition'    => 'lastEdition',
-        'name'           => 'name',
-        'originName'     => 'originName',
-        'path'           => 'path',
-        'sceneType'      => 'sceneType',
+        'content' => 'content',
+        'creation' => 'creation',
+        'dentryId' => 'dentryId',
+        'dentryUuid' => 'dentryUuid',
+        'extension' => 'extension',
+        'iconUrl' => 'iconUrl',
+        'lastEdition' => 'lastEdition',
+        'name' => 'name',
+        'originName' => 'originName',
+        'path' => 'path',
+        'sceneType' => 'sceneType',
         'searchFileType' => 'searchFileType',
-        'spaceId'        => 'spaceId',
-        'thumbnailUrl'   => 'thumbnailUrl',
-        'url'            => 'url',
+        'spaceId' => 'spaceId',
+        'thumbnailUrl' => 'thumbnailUrl',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -82,21 +82,19 @@ class CreateOrganizationTaskRequest extends Model
      */
     public $visible;
     protected $_name = [
-        'content'             => 'content',
-        'createTime'          => 'createTime',
-        'disableActivity'     => 'disableActivity',
+        'content' => 'content',
+        'createTime' => 'createTime',
+        'disableActivity' => 'disableActivity',
         'disableNotification' => 'disableNotification',
-        'dueDate'             => 'dueDate',
-        'executorId'          => 'executorId',
-        'involveMembers'      => 'involveMembers',
-        'note'                => 'note',
-        'priority'            => 'priority',
-        'visible'             => 'visible',
+        'dueDate' => 'dueDate',
+        'executorId' => 'executorId',
+        'involveMembers' => 'involveMembers',
+        'note' => 'note',
+        'priority' => 'priority',
+        'visible' => 'visible',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

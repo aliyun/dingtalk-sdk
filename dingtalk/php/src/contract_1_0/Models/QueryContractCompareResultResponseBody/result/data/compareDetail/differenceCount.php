@@ -28,15 +28,13 @@ class differenceCount extends Model
      */
     public $total;
     protected $_name = [
-        'add'     => 'add',
-        'delete'  => 'delete',
+        'add' => 'add',
+        'delete' => 'delete',
         'replace' => 'replace',
-        'total'   => 'total',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

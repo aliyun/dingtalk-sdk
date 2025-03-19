@@ -40,15 +40,13 @@ class PageListActionRequest extends Model
      */
     public $productionType;
     protected $_name = [
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'openInstanceId' => 'openInstanceId',
         'productionType' => 'productionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

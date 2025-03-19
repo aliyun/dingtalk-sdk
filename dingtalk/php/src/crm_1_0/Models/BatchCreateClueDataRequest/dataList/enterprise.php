@@ -35,16 +35,14 @@ class enterprise extends Model
      */
     public $unifiedSocialCreditCode;
     protected $_name = [
-        'address'                 => 'address',
-        'industryCode'            => 'industryCode',
-        'name'                    => 'name',
-        'region'                  => 'region',
+        'address' => 'address',
+        'industryCode' => 'industryCode',
+        'name' => 'name',
+        'region' => 'region',
         'unifiedSocialCreditCode' => 'unifiedSocialCreditCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

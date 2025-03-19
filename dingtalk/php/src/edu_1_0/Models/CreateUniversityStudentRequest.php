@@ -55,18 +55,16 @@ class CreateUniversityStudentRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'classId'        => 'classId',
-        'gender'         => 'gender',
+        'classId' => 'classId',
+        'gender' => 'gender',
         'identityNumber' => 'identityNumber',
-        'mobile'         => 'mobile',
-        'name'           => 'name',
-        'studentNumber'  => 'studentNumber',
-        'opUserId'       => 'opUserId',
+        'mobile' => 'mobile',
+        'name' => 'name',
+        'studentNumber' => 'studentNumber',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

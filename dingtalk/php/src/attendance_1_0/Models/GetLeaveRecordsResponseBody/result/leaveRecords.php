@@ -120,27 +120,25 @@ class leaveRecords extends Model
      */
     public $userId;
     protected $_name = [
-        'calType'          => 'calType',
-        'endTime'          => 'endTime',
-        'gmtCreate'        => 'gmtCreate',
-        'gmtModified'      => 'gmtModified',
-        'leaveCode'        => 'leaveCode',
-        'leaveReason'      => 'leaveReason',
-        'leaveRecordType'  => 'leaveRecordType',
-        'leaveStatus'      => 'leaveStatus',
-        'leaveViewUnit'    => 'leaveViewUnit',
-        'opUserId'         => 'opUserId',
-        'quotaId'          => 'quotaId',
-        'recordId'         => 'recordId',
-        'recordNumPerDay'  => 'recordNumPerDay',
+        'calType' => 'calType',
+        'endTime' => 'endTime',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'leaveCode' => 'leaveCode',
+        'leaveReason' => 'leaveReason',
+        'leaveRecordType' => 'leaveRecordType',
+        'leaveStatus' => 'leaveStatus',
+        'leaveViewUnit' => 'leaveViewUnit',
+        'opUserId' => 'opUserId',
+        'quotaId' => 'quotaId',
+        'recordId' => 'recordId',
+        'recordNumPerDay' => 'recordNumPerDay',
         'recordNumPerHour' => 'recordNumPerHour',
-        'startTime'        => 'startTime',
-        'userId'           => 'userId',
+        'startTime' => 'startTime',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

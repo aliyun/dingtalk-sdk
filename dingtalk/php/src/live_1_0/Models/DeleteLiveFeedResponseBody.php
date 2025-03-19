@@ -18,9 +18,7 @@ class DeleteLiveFeedResponseBody extends Model
         'hasDelete' => 'hasDelete',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

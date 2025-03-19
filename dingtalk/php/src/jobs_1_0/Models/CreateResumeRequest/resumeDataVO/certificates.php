@@ -23,14 +23,12 @@ class certificates extends Model
      */
     public $crantTime;
     protected $_name = [
-        'certificateId'   => 'certificateId',
+        'certificateId' => 'certificateId',
         'certificateName' => 'certificateName',
-        'crantTime'       => 'crantTime',
+        'crantTime' => 'crantTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

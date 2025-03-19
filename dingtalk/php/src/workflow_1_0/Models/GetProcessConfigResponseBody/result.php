@@ -122,30 +122,28 @@ class result extends Model
      */
     public $visibility;
     protected $_name = [
-        'abstractGenRule'            => 'abstractGenRule',
-        'activityAuth'               => 'activityAuth',
-        'allowRevoke'                => 'allowRevoke',
-        'appendEnable'               => 'appendEnable',
+        'abstractGenRule' => 'abstractGenRule',
+        'activityAuth' => 'activityAuth',
+        'allowRevoke' => 'allowRevoke',
+        'appendEnable' => 'appendEnable',
         'autoExecuteOriginatorTasks' => 'autoExecuteOriginatorTasks',
-        'bizCategoryId'              => 'bizCategoryId',
-        'bizType'                    => 'bizType',
-        'commentConf'                => 'commentConf',
-        'duplicateRemoval'           => 'duplicateRemoval',
-        'formSchema'                 => 'formSchema',
-        'handSignConf'               => 'handSignConf',
-        'managers'                   => 'managers',
-        'name'                       => 'name',
-        'processAppType'             => 'processAppType',
-        'processConfig'              => 'processConfig',
-        'staticProc'                 => 'staticProc',
-        'substituteSubmitConf'       => 'substituteSubmitConf',
-        'titleGenRule'               => 'titleGenRule',
-        'visibility'                 => 'visibility',
+        'bizCategoryId' => 'bizCategoryId',
+        'bizType' => 'bizType',
+        'commentConf' => 'commentConf',
+        'duplicateRemoval' => 'duplicateRemoval',
+        'formSchema' => 'formSchema',
+        'handSignConf' => 'handSignConf',
+        'managers' => 'managers',
+        'name' => 'name',
+        'processAppType' => 'processAppType',
+        'processConfig' => 'processConfig',
+        'staticProc' => 'staticProc',
+        'substituteSubmitConf' => 'substituteSubmitConf',
+        'titleGenRule' => 'titleGenRule',
+        'visibility' => 'visibility',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -286,7 +284,7 @@ class result extends Model
         if (isset($map['visibility'])) {
             if (!empty($map['visibility'])) {
                 $model->visibility = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['visibility'] as $item) {
                     $model->visibility[$n++] = null !== $item ? visibility::fromMap($item) : $item;
                 }

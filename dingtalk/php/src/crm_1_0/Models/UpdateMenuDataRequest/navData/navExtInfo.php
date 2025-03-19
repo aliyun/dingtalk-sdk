@@ -23,12 +23,10 @@ class navExtInfo extends Model
     public $provider;
     protected $_name = [
         'productMode' => 'productMode',
-        'provider'    => 'provider',
+        'provider' => 'provider',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

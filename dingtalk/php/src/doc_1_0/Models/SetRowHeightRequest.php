@@ -27,14 +27,12 @@ class SetRowHeightRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'height'     => 'height',
-        'row'        => 'row',
+        'height' => 'height',
+        'row' => 'row',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

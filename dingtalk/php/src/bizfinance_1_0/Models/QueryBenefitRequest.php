@@ -18,9 +18,7 @@ class QueryBenefitRequest extends Model
         'benefitCode' => 'benefitCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

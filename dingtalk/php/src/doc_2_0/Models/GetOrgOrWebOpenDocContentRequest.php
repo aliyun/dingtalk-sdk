@@ -29,14 +29,12 @@ class GetOrgOrWebOpenDocContentRequest extends Model
      */
     public $targetFormat;
     protected $_name = [
-        'generateCp'   => 'generateCp',
-        'scopeType'    => 'scopeType',
+        'generateCp' => 'generateCp',
+        'scopeType' => 'scopeType',
         'targetFormat' => 'targetFormat',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

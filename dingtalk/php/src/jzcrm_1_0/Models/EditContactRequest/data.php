@@ -156,39 +156,37 @@ class data extends Model
      */
     public $lxrWorktel;
     protected $_name = [
-        'dataUserid'    => 'data_userid',
-        'lxrAddress'    => 'lxr_address',
-        'lxrBirthday'   => 'lxr_birthday',
-        'lxrChengwei'   => 'lxr_chengwei',
-        'lxrCtnumber'   => 'lxr_ctnumber',
-        'lxrCttype'     => 'lxr_cttype',
+        'dataUserid' => 'data_userid',
+        'lxrAddress' => 'lxr_address',
+        'lxrBirthday' => 'lxr_birthday',
+        'lxrChengwei' => 'lxr_chengwei',
+        'lxrCtnumber' => 'lxr_ctnumber',
+        'lxrCttype' => 'lxr_cttype',
         'lxrCustomerid' => 'lxr_customerid',
         'lxrDepartment' => 'lxr_department',
-        'lxrDingtalk'   => 'lxr_dingtalk',
-        'lxrEmail'      => 'lxr_email',
-        'lxrFax'        => 'lxr_fax',
-        'lxrGroup'      => 'lxr_group',
-        'lxrHandset'    => 'lxr_handset',
-        'lxrHeadship'   => 'lxr_headship',
-        'lxrLike'       => 'lxr_like',
-        'lxrName'       => 'lxr_name',
-        'lxrPhoto'      => 'lxr_photo',
-        'lxrPreside'    => 'lxr_preside',
-        'lxrPst'        => 'lxr_pst',
-        'lxrQq'         => 'lxr_qq',
-        'lxrRemark'     => 'lxr_remark',
-        'lxrSex'        => 'lxr_sex',
-        'lxrSkype'      => 'lxr_skype',
-        'lxrTel'        => 'lxr_tel',
-        'lxrType'       => 'lxr_type',
-        'lxrWangwang'   => 'lxr_wangwang',
-        'lxrWeixin'     => 'lxr_weixin',
-        'lxrWorktel'    => 'lxr_worktel',
+        'lxrDingtalk' => 'lxr_dingtalk',
+        'lxrEmail' => 'lxr_email',
+        'lxrFax' => 'lxr_fax',
+        'lxrGroup' => 'lxr_group',
+        'lxrHandset' => 'lxr_handset',
+        'lxrHeadship' => 'lxr_headship',
+        'lxrLike' => 'lxr_like',
+        'lxrName' => 'lxr_name',
+        'lxrPhoto' => 'lxr_photo',
+        'lxrPreside' => 'lxr_preside',
+        'lxrPst' => 'lxr_pst',
+        'lxrQq' => 'lxr_qq',
+        'lxrRemark' => 'lxr_remark',
+        'lxrSex' => 'lxr_sex',
+        'lxrSkype' => 'lxr_skype',
+        'lxrTel' => 'lxr_tel',
+        'lxrType' => 'lxr_type',
+        'lxrWangwang' => 'lxr_wangwang',
+        'lxrWeixin' => 'lxr_weixin',
+        'lxrWorktel' => 'lxr_worktel',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

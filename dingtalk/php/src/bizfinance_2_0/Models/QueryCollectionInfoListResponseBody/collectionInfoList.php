@@ -54,19 +54,17 @@ class collectionInfoList extends Model
     public $type;
     protected $_name = [
         'accountHolderName' => 'accountHolderName',
-        'alipayLogonId'     => 'alipayLogonId',
-        'auditStatus'       => 'auditStatus',
-        'certNo'            => 'certNo',
-        'collectionInfoId'  => 'collectionInfoId',
-        'failReason'        => 'failReason',
-        'gmtAudit'          => 'gmtAudit',
-        'merchantName'      => 'merchantName',
-        'type'              => 'type',
+        'alipayLogonId' => 'alipayLogonId',
+        'auditStatus' => 'auditStatus',
+        'certNo' => 'certNo',
+        'collectionInfoId' => 'collectionInfoId',
+        'failReason' => 'failReason',
+        'gmtAudit' => 'gmtAudit',
+        'merchantName' => 'merchantName',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

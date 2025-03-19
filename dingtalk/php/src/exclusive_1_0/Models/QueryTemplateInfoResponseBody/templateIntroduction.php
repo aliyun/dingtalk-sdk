@@ -25,12 +25,10 @@ class templateIntroduction extends Model
     protected $_name = [
         'banner' => 'banner',
         'detail' => 'detail',
-        'title'  => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

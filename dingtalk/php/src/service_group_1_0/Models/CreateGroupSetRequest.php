@@ -29,14 +29,12 @@ class CreateGroupSetRequest extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'groupSetName'    => 'groupSetName',
+        'groupSetName' => 'groupSetName',
         'groupTemplateId' => 'groupTemplateId',
-        'openTeamId'      => 'openTeamId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

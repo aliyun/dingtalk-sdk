@@ -63,19 +63,17 @@ class GetActionDetailResponseBody extends Model
      */
     public $refType;
     protected $_name = [
-        'connectAssetUri'   => 'connectAssetUri',
-        'inputSchema'       => 'inputSchema',
+        'connectAssetUri' => 'connectAssetUri',
+        'inputSchema' => 'inputSchema',
         'integrationConfig' => 'integrationConfig',
-        'name'              => 'name',
-        'outputSchema'      => 'outputSchema',
-        'refId'             => 'refId',
+        'name' => 'name',
+        'outputSchema' => 'outputSchema',
+        'refId' => 'refId',
         'refProviderCorpId' => 'refProviderCorpId',
-        'refType'           => 'refType',
+        'refType' => 'refType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

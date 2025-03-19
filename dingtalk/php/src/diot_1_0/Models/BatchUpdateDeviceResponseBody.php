@@ -18,9 +18,7 @@ class BatchUpdateDeviceResponseBody extends Model
         'deviceIds' => 'deviceIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

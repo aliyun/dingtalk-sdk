@@ -18,9 +18,7 @@ class option extends Model
         'conflictStrategy' => 'conflictStrategy',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

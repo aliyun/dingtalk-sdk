@@ -35,14 +35,12 @@ class permissions extends Model
     public $role;
     protected $_name = [
         'dentryUuid' => 'dentryUuid',
-        'duration'   => 'duration',
-        'member'     => 'member',
-        'role'       => 'role',
+        'duration' => 'duration',
+        'member' => 'member',
+        'role' => 'role',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -40,15 +40,13 @@ class QueryAllFormInstancesRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'appUuid'    => 'appUuid',
-        'formCode'   => 'formCode',
+        'appUuid' => 'appUuid',
+        'formCode' => 'formCode',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

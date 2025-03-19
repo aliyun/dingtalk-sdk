@@ -29,14 +29,12 @@ class reviewStatus extends Model
     public $stage;
     protected $_name = [
         'overview' => 'overview',
-        'result'   => 'result',
-        'rule'     => 'rule',
-        'stage'    => 'stage',
+        'result' => 'result',
+        'rule' => 'rule',
+        'stage' => 'stage',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

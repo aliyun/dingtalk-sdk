@@ -41,8 +41,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -86,18 +86,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddPluginRule',
-            'version'     => 'flashmsg_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmsg/plugins',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddPluginRule',
+            'version' => 'flashmsg_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmsg/plugins',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddPluginRuleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -146,18 +146,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeletePlguinRule',
-            'version'     => 'flashmsg_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmsg/plugins/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeletePlguinRule',
+            'version' => 'flashmsg_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmsg/plugins/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeletePlguinRuleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -199,18 +199,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => $request->body,
+            'body' => $request->body,
         ]);
         $params = new Params([
-            'action'      => 'GetBaseProfileList',
-            'version'     => 'flashmsg_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmsg/users/baseInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetBaseProfileList',
+            'version' => 'flashmsg_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmsg/users/baseInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetBaseProfileListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -259,18 +259,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetConversation',
-            'version'     => 'flashmsg_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmsg/conversations/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetConversation',
+            'version' => 'flashmsg_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmsg/conversations/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetConversationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -325,18 +325,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetMemberList',
-            'version'     => 'flashmsg_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmsg/conversations/memberIdLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMemberList',
+            'version' => 'flashmsg_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmsg/conversations/memberIdLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMemberListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -397,18 +397,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryPluginRule',
-            'version'     => 'flashmsg_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmsg/plugins',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryPluginRule',
+            'version' => 'flashmsg_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmsg/plugins',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryPluginRuleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -469,18 +469,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendDingTip',
-            'version'     => 'flashmsg_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmsg/ding/messages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendDingTip',
+            'version' => 'flashmsg_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmsg/ding/messages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendDingTipResponse::fromMap($this->execute($params, $req, $runtime));
@@ -544,18 +544,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendMessageTip',
-            'version'     => 'flashmsg_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmsg/messages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendMessageTip',
+            'version' => 'flashmsg_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmsg/messages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendMessageTipResponse::fromMap($this->execute($params, $req, $runtime));

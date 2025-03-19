@@ -60,17 +60,15 @@ class AgoalSendMessageRequest extends Model
      */
     public $templateId;
     protected $_name = [
-        'mobileUrl'         => 'mobileUrl',
-        'params'            => 'params',
-        'pcUrl'             => 'pcUrl',
-        'sourceDingUserId'  => 'sourceDingUserId',
+        'mobileUrl' => 'mobileUrl',
+        'params' => 'params',
+        'pcUrl' => 'pcUrl',
+        'sourceDingUserId' => 'sourceDingUserId',
         'targetDingUserIds' => 'targetDingUserIds',
-        'templateId'        => 'templateId',
+        'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

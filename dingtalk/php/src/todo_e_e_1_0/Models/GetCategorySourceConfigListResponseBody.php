@@ -24,14 +24,12 @@ class GetCategorySourceConfigListResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'configs'    => 'configs',
-        'nextToken'  => 'nextToken',
+        'configs' => 'configs',
+        'nextToken' => 'nextToken',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class GetCategorySourceConfigListResponseBody extends Model
         if (isset($map['configs'])) {
             if (!empty($map['configs'])) {
                 $model->configs = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['configs'] as $item) {
                     $model->configs[$n++] = null !== $item ? configs::fromMap($item) : $item;
                 }

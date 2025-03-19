@@ -25,13 +25,11 @@ class DocSlotsModifyRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'request'    => 'request',
+        'request' => 'request',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class DocSlotsModifyRequest extends Model
         if (isset($map['request'])) {
             if (!empty($map['request'])) {
                 $model->request = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['request'] as $item) {
                     $model->request[$n++] = null !== $item ? request::fromMap($item) : $item;
                 }

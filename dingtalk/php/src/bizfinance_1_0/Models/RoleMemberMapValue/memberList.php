@@ -29,14 +29,12 @@ class memberList extends Model
      */
     public $avatarUrl;
     protected $_name = [
-        'userId'    => 'userId',
-        'nick'      => 'nick',
+        'userId' => 'userId',
+        'nick' => 'nick',
         'avatarUrl' => 'avatarUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -61,18 +61,16 @@ class ListProcessInstanceIdsRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'endTime'     => 'endTime',
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
+        'endTime' => 'endTime',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'processCode' => 'processCode',
-        'startTime'   => 'startTime',
-        'statuses'    => 'statuses',
-        'userIds'     => 'userIds',
+        'startTime' => 'startTime',
+        'statuses' => 'statuses',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

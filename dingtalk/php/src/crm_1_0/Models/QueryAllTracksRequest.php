@@ -32,13 +32,11 @@ class QueryAllTracksRequest extends Model
     public $order;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'order'      => 'order',
+        'nextToken' => 'nextToken',
+        'order' => 'order',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

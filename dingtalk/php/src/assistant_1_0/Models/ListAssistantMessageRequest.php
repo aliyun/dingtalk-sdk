@@ -28,9 +28,7 @@ class ListAssistantMessageRequest extends Model
         'runId' => 'runId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

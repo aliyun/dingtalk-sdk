@@ -45,16 +45,14 @@ class DigitalStoreUserInfoResponseBody extends Model
      */
     public $userId;
     protected $_name = [
-        'name'       => 'name',
+        'name' => 'name',
         'roleIdList' => 'roleIdList',
-        'scopeList'  => 'scopeList',
-        'storeList'  => 'storeList',
-        'userId'     => 'userId',
+        'scopeList' => 'scopeList',
+        'storeList' => 'storeList',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

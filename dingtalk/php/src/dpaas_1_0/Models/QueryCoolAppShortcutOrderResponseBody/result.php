@@ -27,13 +27,11 @@ class result extends Model
     public $otherPluginList;
     protected $_name = [
         'forbiddenPluginList' => 'forbiddenPluginList',
-        'myPluginList'        => 'myPluginList',
-        'otherPluginList'     => 'otherPluginList',
+        'myPluginList' => 'myPluginList',
+        'otherPluginList' => 'otherPluginList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -80,7 +78,7 @@ class result extends Model
         if (isset($map['forbiddenPluginList'])) {
             if (!empty($map['forbiddenPluginList'])) {
                 $model->forbiddenPluginList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['forbiddenPluginList'] as $item) {
                     $model->forbiddenPluginList[$n++] = null !== $item ? forbiddenPluginList::fromMap($item) : $item;
                 }
@@ -89,7 +87,7 @@ class result extends Model
         if (isset($map['myPluginList'])) {
             if (!empty($map['myPluginList'])) {
                 $model->myPluginList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['myPluginList'] as $item) {
                     $model->myPluginList[$n++] = null !== $item ? myPluginList::fromMap($item) : $item;
                 }
@@ -98,7 +96,7 @@ class result extends Model
         if (isset($map['otherPluginList'])) {
             if (!empty($map['otherPluginList'])) {
                 $model->otherPluginList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['otherPluginList'] as $item) {
                     $model->otherPluginList[$n++] = null !== $item ? otherPluginList::fromMap($item) : $item;
                 }

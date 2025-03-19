@@ -107,23 +107,21 @@ class CreateOrderRequest extends Model
      */
     public $version;
     protected $_name = [
-        'actualAmount'   => 'actualAmount',
-        'createTime'     => 'createTime',
-        'detailList'     => 'detailList',
-        'faceId'         => 'faceId',
-        'ftoken'         => 'ftoken',
-        'signature'      => 'signature',
-        'sn'             => 'sn',
+        'actualAmount' => 'actualAmount',
+        'createTime' => 'createTime',
+        'detailList' => 'detailList',
+        'faceId' => 'faceId',
+        'ftoken' => 'ftoken',
+        'signature' => 'signature',
+        'sn' => 'sn',
         'terminalParams' => 'terminalParams',
-        'timestamp'      => 'timestamp',
-        'totalAmount'    => 'totalAmount',
-        'userId'         => 'userId',
-        'version'        => 'version',
+        'timestamp' => 'timestamp',
+        'totalAmount' => 'totalAmount',
+        'userId' => 'userId',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -191,7 +189,7 @@ class CreateOrderRequest extends Model
         if (isset($map['detailList'])) {
             if (!empty($map['detailList'])) {
                 $model->detailList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['detailList'] as $item) {
                     $model->detailList[$n++] = null !== $item ? detailList::fromMap($item) : $item;
                 }

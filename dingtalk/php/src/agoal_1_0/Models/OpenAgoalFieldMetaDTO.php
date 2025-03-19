@@ -12,6 +12,7 @@ class OpenAgoalFieldMetaDTO extends Model
      * @description 是否启用
      *
      * This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -31,6 +32,7 @@ class OpenAgoalFieldMetaDTO extends Model
      * @description 字段元数据标识
      *
      * This parameter is required.
+     *
      * @example foo
      *
      * @var string
@@ -41,6 +43,7 @@ class OpenAgoalFieldMetaDTO extends Model
      * @description 实体类型
      *
      * This parameter is required.
+     *
      * @example OBJECTIVE
      *
      * @var string
@@ -51,6 +54,7 @@ class OpenAgoalFieldMetaDTO extends Model
      * @description 字段ID
      *
      * This parameter is required.
+     *
      * @example 662e006fe4b0f579bbcxxxxx
      *
      * @var string
@@ -70,6 +74,7 @@ class OpenAgoalFieldMetaDTO extends Model
      * @description 字段数据来源
      *
      * This parameter is required.
+     *
      * @example OPEN
      *
      * @var string
@@ -80,6 +85,7 @@ class OpenAgoalFieldMetaDTO extends Model
      * @description 字段元数据名称
      *
      * This parameter is required.
+     *
      * @example 字段名
      *
      * @var string
@@ -90,26 +96,25 @@ class OpenAgoalFieldMetaDTO extends Model
      * @description 字段类型
      *
      * This parameter is required.
+     *
      * @example string
      *
      * @var string
      */
     public $type;
     protected $_name = [
-        'active'     => 'active',
-        'alias'      => 'alias',
-        'code'       => 'code',
+        'active' => 'active',
+        'alias' => 'alias',
+        'code' => 'code',
         'entityType' => 'entityType',
-        'fieldId'    => 'fieldId',
-        'note'       => 'note',
-        'source'     => 'source',
-        'title'      => 'title',
-        'type'       => 'type',
+        'fieldId' => 'fieldId',
+        'note' => 'note',
+        'source' => 'source',
+        'title' => 'title',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

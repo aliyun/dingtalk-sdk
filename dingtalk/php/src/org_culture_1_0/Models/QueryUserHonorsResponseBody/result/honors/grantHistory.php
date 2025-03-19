@@ -18,13 +18,11 @@ class grantHistory extends Model
      */
     public $senderUserid;
     protected $_name = [
-        'grantTime'    => 'grantTime',
+        'grantTime' => 'grantTime',
         'senderUserid' => 'senderUserid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

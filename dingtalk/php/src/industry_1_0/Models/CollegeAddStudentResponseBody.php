@@ -44,15 +44,13 @@ class CollegeAddStudentResponseBody extends Model
     public $userId;
     protected $_name = [
         'dingMemberStatus' => 'dingMemberStatus',
-        'isActive'         => 'isActive',
-        'studentId'        => 'studentId',
-        'unionId'          => 'unionId',
-        'userId'           => 'userId',
+        'isActive' => 'isActive',
+        'studentId' => 'studentId',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

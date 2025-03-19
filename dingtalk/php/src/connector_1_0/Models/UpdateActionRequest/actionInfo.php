@@ -75,23 +75,21 @@ class actionInfo extends Model
      */
     public $outputSchema;
     protected $_name = [
-        'apiPath'               => 'apiPath',
-        'description'           => 'description',
-        'dingActionId'          => 'dingActionId',
-        'dingConnectorId'       => 'dingConnectorId',
-        'inputMappingConfig'    => 'inputMappingConfig',
-        'inputSchema'           => 'inputSchema',
-        'integratorActionId'    => 'integratorActionId',
+        'apiPath' => 'apiPath',
+        'description' => 'description',
+        'dingActionId' => 'dingActionId',
+        'dingConnectorId' => 'dingConnectorId',
+        'inputMappingConfig' => 'inputMappingConfig',
+        'inputSchema' => 'inputSchema',
+        'integratorActionId' => 'integratorActionId',
         'integratorConnectorId' => 'integratorConnectorId',
-        'name'                  => 'name',
-        'outputDataRules'       => 'outputDataRules',
-        'outputMappingConfig'   => 'outputMappingConfig',
-        'outputSchema'          => 'outputSchema',
+        'name' => 'name',
+        'outputDataRules' => 'outputDataRules',
+        'outputMappingConfig' => 'outputMappingConfig',
+        'outputSchema' => 'outputSchema',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -180,7 +178,7 @@ class actionInfo extends Model
         if (isset($map['outputDataRules'])) {
             if (!empty($map['outputDataRules'])) {
                 $model->outputDataRules = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['outputDataRules'] as $item) {
                     $model->outputDataRules[$n++] = null !== $item ? outputDataRules::fromMap($item) : $item;
                 }

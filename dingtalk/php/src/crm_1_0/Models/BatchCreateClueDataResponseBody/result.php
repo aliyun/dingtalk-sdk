@@ -23,14 +23,12 @@ class result extends Model
      */
     public $resultCode;
     protected $_name = [
-        'clueId'     => 'clueId',
-        'dataId'     => 'dataId',
+        'clueId' => 'clueId',
+        'dataId' => 'dataId',
         'resultCode' => 'resultCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -53,15 +53,13 @@ class AddPluginRuleRequest extends Model
     public $userId;
     protected $_name = [
         'chatType' => 'chatType',
-        'code'     => 'code',
+        'code' => 'code',
         'itemType' => 'itemType',
-        'rules'    => 'rules',
-        'userId'   => 'userId',
+        'rules' => 'rules',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -111,7 +109,7 @@ class AddPluginRuleRequest extends Model
         if (isset($map['rules'])) {
             if (!empty($map['rules'])) {
                 $model->rules = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['rules'] as $item) {
                     $model->rules[$n++] = null !== $item ? rules::fromMap($item) : $item;
                 }

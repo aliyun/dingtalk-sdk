@@ -24,13 +24,11 @@ class CreateApaasAppResponseBody extends Model
      */
     public $bizAppId;
     protected $_name = [
-        'agentId'  => 'agentId',
+        'agentId' => 'agentId',
         'bizAppId' => 'bizAppId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

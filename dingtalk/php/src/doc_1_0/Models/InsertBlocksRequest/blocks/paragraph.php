@@ -21,12 +21,10 @@ class paragraph extends Model
     public $style;
     protected $_name = [
         'children' => 'children',
-        'style'    => 'style',
+        'style' => 'style',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -58,7 +56,7 @@ class paragraph extends Model
         if (isset($map['children'])) {
             if (!empty($map['children'])) {
                 $model->children = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['children'] as $item) {
                     $model->children[$n++] = null !== $item ? children::fromMap($item) : $item;
                 }

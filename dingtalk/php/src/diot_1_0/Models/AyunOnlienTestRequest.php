@@ -16,9 +16,7 @@ class AyunOnlienTestRequest extends Model
         'reqId' => 'reqId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

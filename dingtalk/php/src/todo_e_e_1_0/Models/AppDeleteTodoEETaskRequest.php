@@ -19,12 +19,10 @@ class AppDeleteTodoEETaskRequest extends Model
     public $taskIds;
     protected $_name = [
         'operatorId' => 'operatorId',
-        'taskIds'    => 'taskIds',
+        'taskIds' => 'taskIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -44,15 +44,13 @@ class userProb extends Model
      */
     public $displayName;
     protected $_name = [
-        'bizType'     => 'bizType',
-        'category'    => 'category',
-        'code'        => 'code',
+        'bizType' => 'bizType',
+        'category' => 'category',
+        'code' => 'code',
         'displayName' => 'displayName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

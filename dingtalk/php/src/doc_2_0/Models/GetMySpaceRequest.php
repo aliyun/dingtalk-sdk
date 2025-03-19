@@ -18,9 +18,7 @@ class GetMySpaceRequest extends Model
         'isMySpace' => 'isMySpace',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

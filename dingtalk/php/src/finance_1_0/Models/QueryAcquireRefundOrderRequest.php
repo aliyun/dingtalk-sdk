@@ -20,9 +20,7 @@ class QueryAcquireRefundOrderRequest extends Model
         'outRefundNo' => 'outRefundNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

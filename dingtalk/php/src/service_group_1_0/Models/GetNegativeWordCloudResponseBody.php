@@ -19,9 +19,7 @@ class GetNegativeWordCloudResponseBody extends Model
         'words' => 'words',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class GetNegativeWordCloudResponseBody extends Model
         if (isset($map['words'])) {
             if (!empty($map['words'])) {
                 $model->words = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['words'] as $item) {
                     $model->words[$n++] = null !== $item ? words::fromMap($item) : $item;
                 }

@@ -23,12 +23,10 @@ class UpdateHrmVersionRollBackStatusRequest extends Model
     public $optUserId;
     protected $_name = [
         'configValue' => 'configValue',
-        'optUserId'   => 'optUserId',
+        'optUserId' => 'optUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

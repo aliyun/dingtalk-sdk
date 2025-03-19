@@ -89,21 +89,19 @@ class result extends Model
      */
     public $status;
     protected $_name = [
-        'appType'       => 'appType',
+        'appType' => 'appType',
         'creatorUserId' => 'creatorUserId',
-        'formCode'      => 'formCode',
-        'gmtCreate'     => 'gmtCreate',
-        'gmtModified'   => 'gmtModified',
-        'icon'          => 'icon',
-        'memo'          => 'memo',
-        'name'          => 'name',
+        'formCode' => 'formCode',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'icon' => 'icon',
+        'memo' => 'memo',
+        'name' => 'name',
         'schemaContent' => 'schemaContent',
-        'status'        => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

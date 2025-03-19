@@ -62,20 +62,18 @@ class UpdateCrmPersonalCustomerRequest extends Model
      */
     public $skipDuplicateCheck;
     protected $_name = [
-        'action'             => 'action',
-        'data'               => 'data',
-        'extendData'         => 'extendData',
-        'instanceId'         => 'instanceId',
-        'modifierNick'       => 'modifierNick',
-        'modifierUserId'     => 'modifierUserId',
-        'permission'         => 'permission',
-        'relationType'       => 'relationType',
+        'action' => 'action',
+        'data' => 'data',
+        'extendData' => 'extendData',
+        'instanceId' => 'instanceId',
+        'modifierNick' => 'modifierNick',
+        'modifierUserId' => 'modifierUserId',
+        'permission' => 'permission',
+        'relationType' => 'relationType',
         'skipDuplicateCheck' => 'skipDuplicateCheck',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

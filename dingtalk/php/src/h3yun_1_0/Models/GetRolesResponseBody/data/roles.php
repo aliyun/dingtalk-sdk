@@ -64,19 +64,17 @@ class roles extends Model
      */
     public $visibility;
     protected $_name = [
-        'companyId'   => 'companyId',
+        'companyId' => 'companyId',
         'description' => 'description',
-        'groupId'     => 'groupId',
-        'roleCode'    => 'roleCode',
-        'roleId'      => 'roleId',
-        'roleName'    => 'roleName',
-        'state'       => 'state',
-        'visibility'  => 'visibility',
+        'groupId' => 'groupId',
+        'roleCode' => 'roleCode',
+        'roleId' => 'roleId',
+        'roleName' => 'roleName',
+        'state' => 'state',
+        'visibility' => 'visibility',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class result extends Model
      */
     public $optionText;
     protected $_name = [
-        'fieldCode'  => 'fieldCode',
-        'fieldName'  => 'fieldName',
-        'fieldType'  => 'fieldType',
+        'fieldCode' => 'fieldCode',
+        'fieldName' => 'fieldName',
+        'fieldType' => 'fieldType',
         'optionText' => 'optionText',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

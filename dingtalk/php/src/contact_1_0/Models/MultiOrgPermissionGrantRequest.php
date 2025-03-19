@@ -25,12 +25,10 @@ class MultiOrgPermissionGrantRequest extends Model
     public $joinCorpId;
     protected $_name = [
         'grantDeptIdList' => 'grantDeptIdList',
-        'joinCorpId'      => 'joinCorpId',
+        'joinCorpId' => 'joinCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,13 +19,11 @@ class openAction extends Model
      */
     public $openCondition;
     protected $_name = [
-        'actionIds'     => 'actionIds',
+        'actionIds' => 'actionIds',
         'openCondition' => 'openCondition',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

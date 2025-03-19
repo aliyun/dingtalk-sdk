@@ -40,15 +40,13 @@ class CreateGroupConversationResponseBody extends Model
      */
     public $userIds;
     protected $_name = [
-        'appUserIds'         => 'appUserIds',
-        'conversationId'     => 'conversationId',
+        'appUserIds' => 'appUserIds',
+        'conversationId' => 'conversationId',
         'openConversationId' => 'openConversationId',
-        'userIds'            => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

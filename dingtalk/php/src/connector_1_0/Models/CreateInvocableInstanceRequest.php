@@ -27,12 +27,10 @@ class CreateInvocableInstanceRequest extends Model
     public $instanceKey;
     protected $_name = [
         'connectAssetUri' => 'connectAssetUri',
-        'instanceKey'     => 'instanceKey',
+        'instanceKey' => 'instanceKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

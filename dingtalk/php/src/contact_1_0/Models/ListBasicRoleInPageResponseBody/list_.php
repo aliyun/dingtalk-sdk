@@ -35,16 +35,14 @@ class list_ extends Model
      */
     public $openRoleName;
     protected $_name = [
-        'openAction'    => 'openAction',
-        'openMembers'   => 'openMembers',
+        'openAction' => 'openAction',
+        'openMembers' => 'openMembers',
         'openResources' => 'openResources',
-        'openRoleId'    => 'openRoleId',
-        'openRoleName'  => 'openRoleName',
+        'openRoleId' => 'openRoleId',
+        'openRoleName' => 'openRoleName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -88,7 +86,7 @@ class list_ extends Model
         if (isset($map['openMembers'])) {
             if (!empty($map['openMembers'])) {
                 $model->openMembers = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['openMembers'] as $item) {
                     $model->openMembers[$n++] = null !== $item ? openMembers::fromMap($item) : $item;
                 }

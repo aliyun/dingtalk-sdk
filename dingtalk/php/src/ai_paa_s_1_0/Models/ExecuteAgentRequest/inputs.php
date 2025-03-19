@@ -23,14 +23,12 @@ class inputs extends Model
      */
     public $input;
     protected $_name = [
-        'cardData'       => 'cardData',
+        'cardData' => 'cardData',
         'cardTemplateId' => 'cardTemplateId',
-        'input'          => 'input',
+        'input' => 'input',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

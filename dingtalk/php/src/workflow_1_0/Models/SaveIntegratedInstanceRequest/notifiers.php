@@ -23,12 +23,10 @@ class notifiers extends Model
     public $userid;
     protected $_name = [
         'position' => 'position',
-        'userid'   => 'userid',
+        'userid' => 'userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

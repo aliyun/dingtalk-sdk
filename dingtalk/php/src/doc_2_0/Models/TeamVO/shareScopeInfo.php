@@ -19,12 +19,10 @@ class shareScopeInfo extends Model
     public $scope;
     protected $_name = [
         'roleId' => 'roleId',
-        'scope'  => 'scope',
+        'scope' => 'scope',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

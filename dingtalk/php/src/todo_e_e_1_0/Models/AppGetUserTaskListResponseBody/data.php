@@ -65,21 +65,19 @@ class data extends Model
     public $taskId;
     protected $_name = [
         'bizCategoryId' => 'bizCategoryId',
-        'createdTime'   => 'createdTime',
-        'description'   => 'description',
-        'detailUrl'     => 'detailUrl',
-        'done'          => 'done',
-        'dueTime'       => 'dueTime',
-        'modifiedTime'  => 'modifiedTime',
-        'operatorId'    => 'operatorId',
-        'priority'      => 'priority',
-        'subject'       => 'subject',
-        'taskId'        => 'taskId',
+        'createdTime' => 'createdTime',
+        'description' => 'description',
+        'detailUrl' => 'detailUrl',
+        'done' => 'done',
+        'dueTime' => 'dueTime',
+        'modifiedTime' => 'modifiedTime',
+        'operatorId' => 'operatorId',
+        'priority' => 'priority',
+        'subject' => 'subject',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

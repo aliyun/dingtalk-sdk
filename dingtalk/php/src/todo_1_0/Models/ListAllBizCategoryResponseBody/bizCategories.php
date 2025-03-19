@@ -34,15 +34,13 @@ class bizCategories extends Model
     public $name;
     protected $_name = [
         'bizCategoryId' => 'bizCategoryId',
-        'createdTime'   => 'createdTime',
-        'description'   => 'description',
-        'modifiedTime'  => 'modifiedTime',
-        'name'          => 'name',
+        'createdTime' => 'createdTime',
+        'description' => 'description',
+        'modifiedTime' => 'modifiedTime',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

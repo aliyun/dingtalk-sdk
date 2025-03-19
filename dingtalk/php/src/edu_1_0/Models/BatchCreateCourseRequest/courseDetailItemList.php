@@ -126,28 +126,26 @@ class courseDetailItemList extends Model
      */
     public $type;
     protected $_name = [
-        'attributes'    => 'attributes',
-        'classRoomId'   => 'classRoomId',
+        'attributes' => 'attributes',
+        'classRoomId' => 'classRoomId',
         'classRoomName' => 'classRoomName',
-        'courseCode'    => 'courseCode',
-        'courseDate'    => 'courseDate',
-        'courseName'    => 'courseName',
-        'courseWeek'    => 'courseWeek',
-        'endTime'       => 'endTime',
-        'isvCourseId'   => 'isvCourseId',
-        'memo'          => 'memo',
-        'startTime'     => 'startTime',
-        'status'        => 'status',
-        'teachWeek'     => 'teachWeek',
-        'teacherList'   => 'teacherList',
-        'timeslotName'  => 'timeslotName',
-        'timeslotNum'   => 'timeslotNum',
-        'type'          => 'type',
+        'courseCode' => 'courseCode',
+        'courseDate' => 'courseDate',
+        'courseName' => 'courseName',
+        'courseWeek' => 'courseWeek',
+        'endTime' => 'endTime',
+        'isvCourseId' => 'isvCourseId',
+        'memo' => 'memo',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'teachWeek' => 'teachWeek',
+        'teacherList' => 'teacherList',
+        'timeslotName' => 'timeslotName',
+        'timeslotNum' => 'timeslotNum',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -263,7 +261,7 @@ class courseDetailItemList extends Model
         if (isset($map['teacherList'])) {
             if (!empty($map['teacherList'])) {
                 $model->teacherList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['teacherList'] as $item) {
                     $model->teacherList[$n++] = null !== $item ? teacherList::fromMap($item) : $item;
                 }

@@ -53,19 +53,17 @@ class dentryRequest extends Model
      */
     public $visitTimeRange;
     protected $_name = [
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
-        'searchField'    => 'searchField',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'searchField' => 'searchField',
         'searchFileType' => 'searchFileType',
-        'spaceId'        => 'spaceId',
-        'spaceIds'       => 'spaceIds',
-        'summaryLength'  => 'summaryLength',
+        'spaceId' => 'spaceId',
+        'spaceIds' => 'spaceIds',
+        'summaryLength' => 'summaryLength',
         'visitTimeRange' => 'visitTimeRange',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class IsvMetadataQueryRequest extends Model
         'objectCode' => 'objectCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

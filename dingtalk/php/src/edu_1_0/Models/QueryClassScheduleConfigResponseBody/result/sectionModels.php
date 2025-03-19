@@ -39,16 +39,14 @@ class sectionModels extends Model
      */
     public $start;
     protected $_name = [
-        'end'          => 'end',
+        'end' => 'end',
         'sectionIndex' => 'sectionIndex',
-        'sectionName'  => 'sectionName',
-        'sectionType'  => 'sectionType',
-        'start'        => 'start',
+        'sectionName' => 'sectionName',
+        'sectionType' => 'sectionType',
+        'start' => 'start',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

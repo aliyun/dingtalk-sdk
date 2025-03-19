@@ -20,9 +20,7 @@ class GetRoleUsersRequest extends Model
         'roleId' => 'roleId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

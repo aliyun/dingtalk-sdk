@@ -88,8 +88,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -125,18 +125,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AnalysisReport',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/analyses/report',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AnalysisReport',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/analyses/report',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AnalysisReportResponse::fromMap($this->execute($params, $req, $runtime));
@@ -205,18 +205,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateOrganizationTask',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/organizations/users/' . $userId . '/tasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateOrganizationTask',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/organizations/users/' . $userId . '/tasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateOrganizationTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -265,18 +265,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateProjectMembersV3',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/members',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateProjectMembersV3',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateProjectMembersV3Response::fromMap($this->execute($params, $req, $runtime));
@@ -329,19 +329,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateProjectV3',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateProjectV3',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/projects',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateProjectV3Response::fromMap($this->execute($params, $req, $runtime));
@@ -410,18 +410,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTask',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/tasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTask',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/tasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -470,18 +470,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteProjectMembersV3',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/members/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteProjectMembersV3',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/members/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteProjectMembersV3Response::fromMap($this->execute($params, $req, $runtime));
@@ -526,15 +526,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetFootprintProject',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/footprints/projects',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFootprintProject',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/footprints/projects',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFootprintProjectResponse::fromMap($this->execute($params, $req, $runtime));
@@ -577,15 +577,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetFootprintTask',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/footprints/tasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFootprintTask',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/footprints/tasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFootprintTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -632,18 +632,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFreeTask',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/organizations/tasks/' . $taskId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFreeTask',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/organizations/tasks/' . $taskId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFreeTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -701,18 +701,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProjectMembersV3',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/members',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProjectMembersV3',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/members',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProjectMembersV3Response::fromMap($this->execute($params, $req, $runtime));
@@ -771,18 +771,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetProjectRolesV3',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/roles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetProjectRolesV3',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/roles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetProjectRolesV3Response::fromMap($this->execute($params, $req, $runtime));
@@ -837,18 +837,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetStaredProjects',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/staredProjects',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetStaredProjects',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/staredProjects',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetStaredProjectsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -898,18 +898,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTbUserIdByDingUserId',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/idmaps/userIds',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTbUserIdByDingUserId',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/idmaps/userIds',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTbUserIdByDingUserIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -951,15 +951,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetThingOrgIdByDingOrgId',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/organizations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetThingOrgIdByDingOrgId',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/organizations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetThingOrgIdByDingOrgIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1016,18 +1016,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUserJoinedProjectsV3',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/userJoined',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserJoinedProjectsV3',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/projects/userJoined',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserJoinedProjectsV3Response::fromMap($this->execute($params, $req, $runtime));
@@ -1071,15 +1071,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListAllTaskView',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/allTaskViews',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAllTaskView',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/allTaskViews',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAllTaskViewResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1129,18 +1129,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListMyShortcutViews',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/shortcutViews',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListMyShortcutViews',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/shortcutViews',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListMyShortcutViewsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1188,18 +1188,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAllTask',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/tasks/query',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAllTask',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/tasks/query',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAllTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1253,18 +1253,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryTask',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/tasks/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryTask',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/tasks/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1312,18 +1312,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryTasksV3',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/user/' . $userId . '/tasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryTasksV3',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/user/' . $userId . '/tasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryTasksV3Response::fromMap($this->execute($params, $req, $runtime));
@@ -1379,18 +1379,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchAllTasksByTql',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/taskIds',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchAllTasksByTql',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/taskIds',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchAllTasksByTqlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1447,18 +1447,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchProjectCustomFiledsV3',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/customFields',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchProjectCustomFiledsV3',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/customFields',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchProjectCustomFiledsV3Response::fromMap($this->execute($params, $req, $runtime));
@@ -1524,18 +1524,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchProjectsV3',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/projects',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchProjectsV3',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/projects',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchProjectsV3Response::fromMap($this->execute($params, $req, $runtime));
@@ -1586,18 +1586,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateProjectMemberRoleV3',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/roles/assign',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateProjectMemberRoleV3',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/roles/assign',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateProjectMemberRoleV3Response::fromMap($this->execute($params, $req, $runtime));
@@ -1650,18 +1650,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateProjectV3',
-            'version'     => 'teamSphere_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateProjectV3',
+            'version' => 'teamSphere_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateProjectV3Response::fromMap($this->execute($params, $req, $runtime));

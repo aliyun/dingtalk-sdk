@@ -58,17 +58,15 @@ class UpdateReceiptVoucherStatusRequest extends Model
     public $voucherNo;
     protected $_name = [
         'accountPeriod' => 'accountPeriod',
-        'actionType'    => 'actionType',
-        'operatorId'    => 'operatorId',
-        'receiptId'     => 'receiptId',
-        'voucherCode'   => 'voucherCode',
-        'voucherId'     => 'voucherId',
-        'voucherNo'     => 'voucherNo',
+        'actionType' => 'actionType',
+        'operatorId' => 'operatorId',
+        'receiptId' => 'receiptId',
+        'voucherCode' => 'voucherCode',
+        'voucherId' => 'voucherId',
+        'voucherNo' => 'voucherNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

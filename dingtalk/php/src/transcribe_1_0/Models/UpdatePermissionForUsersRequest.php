@@ -39,15 +39,13 @@ class UpdatePermissionForUsersRequest extends Model
      */
     public $operatorUid;
     protected $_name = [
-        'bizType'     => 'bizType',
-        'members'     => 'members',
+        'bizType' => 'bizType',
+        'members' => 'members',
         'taskCreator' => 'taskCreator',
         'operatorUid' => 'operatorUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -88,7 +86,7 @@ class UpdatePermissionForUsersRequest extends Model
         if (isset($map['members'])) {
             if (!empty($map['members'])) {
                 $model->members = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['members'] as $item) {
                     $model->members[$n++] = null !== $item ? members::fromMap($item) : $item;
                 }

@@ -23,12 +23,10 @@ class badgeItems extends Model
     public $userId;
     protected $_name = [
         'pushValue' => 'pushValue',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

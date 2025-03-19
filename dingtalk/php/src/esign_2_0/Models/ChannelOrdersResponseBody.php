@@ -16,9 +16,7 @@ class ChannelOrdersResponseBody extends Model
         'esignOrderId' => 'esignOrderId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class CollegeUpdateCollegeDeptRequest extends Model
      */
     public $superId;
     protected $_name = [
-        'deptId'     => 'deptId',
-        'deptName'   => 'deptName',
+        'deptId' => 'deptId',
+        'deptName' => 'deptName',
         'sortFactor' => 'sortFactor',
-        'superId'    => 'superId',
+        'superId' => 'superId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class result extends Model
         'livePluginList' => 'livePluginList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class result extends Model
         if (isset($map['livePluginList'])) {
             if (!empty($map['livePluginList'])) {
                 $model->livePluginList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['livePluginList'] as $item) {
                     $model->livePluginList[$n++] = null !== $item ? livePluginList::fromMap($item) : $item;
                 }

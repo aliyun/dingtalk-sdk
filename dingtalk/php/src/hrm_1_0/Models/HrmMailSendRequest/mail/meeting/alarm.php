@@ -33,14 +33,12 @@ class alarm extends Model
      */
     public $alarmSummary;
     protected $_name = [
-        'alarmDesc'    => 'alarmDesc',
+        'alarmDesc' => 'alarmDesc',
         'alarmMinutes' => 'alarmMinutes',
         'alarmSummary' => 'alarmSummary',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

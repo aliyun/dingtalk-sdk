@@ -67,22 +67,20 @@ class QueryReceiptForInvoiceRequest extends Model
      */
     public $title;
     protected $_name = [
-        'accountantBookId'  => 'accountantBookId',
-        'applyStatusList'   => 'applyStatusList',
-        'bizStatusList'     => 'bizStatusList',
-        'companyCode'       => 'companyCode',
-        'endTime'           => 'endTime',
-        'pageNumber'        => 'pageNumber',
-        'pageSize'          => 'pageSize',
+        'accountantBookId' => 'accountantBookId',
+        'applyStatusList' => 'applyStatusList',
+        'bizStatusList' => 'bizStatusList',
+        'companyCode' => 'companyCode',
+        'endTime' => 'endTime',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'receiptStatusList' => 'receiptStatusList',
-        'searchParams'      => 'searchParams',
-        'startTime'         => 'startTime',
-        'title'             => 'title',
+        'searchParams' => 'searchParams',
+        'startTime' => 'startTime',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

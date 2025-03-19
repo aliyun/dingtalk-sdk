@@ -16,9 +16,7 @@ class GetKnowledgeListRequest extends Model
         'assistantId' => 'assistantId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

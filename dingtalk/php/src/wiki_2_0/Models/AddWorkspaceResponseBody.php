@@ -17,9 +17,7 @@ class AddWorkspaceResponseBody extends Model
         'workspace' => 'workspace',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

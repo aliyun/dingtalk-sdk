@@ -40,14 +40,12 @@ class PremiumBatchExecuteProcessInstancesRequest extends Model
     public $taskInfoList;
     protected $_name = [
         'actionerUserId' => 'actionerUserId',
-        'remark'         => 'remark',
-        'result'         => 'result',
-        'taskInfoList'   => 'taskInfoList',
+        'remark' => 'remark',
+        'result' => 'result',
+        'taskInfoList' => 'taskInfoList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -94,7 +92,7 @@ class PremiumBatchExecuteProcessInstancesRequest extends Model
         if (isset($map['taskInfoList'])) {
             if (!empty($map['taskInfoList'])) {
                 $model->taskInfoList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['taskInfoList'] as $item) {
                     $model->taskInfoList[$n++] = null !== $item ? taskInfoList::fromMap($item) : $item;
                 }

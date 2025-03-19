@@ -28,15 +28,13 @@ class GetUserTokenResponseBody extends Model
      */
     public $refreshToken;
     protected $_name = [
-        'accessToken'  => 'accessToken',
-        'corpId'       => 'corpId',
-        'expireIn'     => 'expireIn',
+        'accessToken' => 'accessToken',
+        'corpId' => 'corpId',
+        'expireIn' => 'expireIn',
         'refreshToken' => 'refreshToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

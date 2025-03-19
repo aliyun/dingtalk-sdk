@@ -48,17 +48,15 @@ class GetCreateStatusResponseBody extends Model
      */
     public $version;
     protected $_name = [
-        'buildTime'   => 'buildTime',
-        'finished'    => 'finished',
+        'buildTime' => 'buildTime',
+        'finished' => 'finished',
         'packageSize' => 'packageSize',
-        'status'      => 'status',
-        'taskId'      => 'taskId',
-        'version'     => 'version',
+        'status' => 'status',
+        'taskId' => 'taskId',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

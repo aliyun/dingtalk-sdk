@@ -23,12 +23,10 @@ class HrmMokaOapiRequest extends Model
     public $params;
     protected $_name = [
         'apiCode' => 'apiCode',
-        'params'  => 'params',
+        'params' => 'params',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

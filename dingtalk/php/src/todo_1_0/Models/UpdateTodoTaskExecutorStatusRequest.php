@@ -20,12 +20,10 @@ class UpdateTodoTaskExecutorStatusRequest extends Model
     public $operatorId;
     protected $_name = [
         'executorStatusList' => 'executorStatusList',
-        'operatorId'         => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class UpdateTodoTaskExecutorStatusRequest extends Model
         if (isset($map['executorStatusList'])) {
             if (!empty($map['executorStatusList'])) {
                 $model->executorStatusList = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['executorStatusList'] as $item) {
                     $model->executorStatusList[$n++] = null !== $item ? executorStatusList::fromMap($item) : $item;
                 }

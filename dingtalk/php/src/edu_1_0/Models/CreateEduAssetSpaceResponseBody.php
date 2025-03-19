@@ -70,17 +70,15 @@ class CreateEduAssetSpaceResponseBody extends Model
     protected $_name = [
         'createTimeMillis' => 'createTimeMillis',
         'modifyTimeMillis' => 'modifyTimeMillis',
-        'permissionMode'   => 'permissionMode',
-        'quota'            => 'quota',
-        'spaceId'          => 'spaceId',
-        'spaceName'        => 'spaceName',
-        'spaceType'        => 'spaceType',
-        'usedQuota'        => 'usedQuota',
+        'permissionMode' => 'permissionMode',
+        'quota' => 'quota',
+        'spaceId' => 'spaceId',
+        'spaceName' => 'spaceName',
+        'spaceType' => 'spaceType',
+        'usedQuota' => 'usedQuota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

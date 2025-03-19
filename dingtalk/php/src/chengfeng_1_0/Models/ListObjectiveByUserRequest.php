@@ -26,13 +26,11 @@ class ListObjectiveByUserRequest extends Model
     public $userId;
     protected $_name = [
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'userId'     => 'userId',
+        'pageSize' => 'pageSize',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

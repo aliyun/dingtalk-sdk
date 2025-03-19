@@ -16,9 +16,7 @@ class CreateUserResponseBody extends Model
         'email' => 'email',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

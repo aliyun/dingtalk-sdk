@@ -41,15 +41,13 @@ class SearchPublishDentriesRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'keyword'     => 'keyword',
-        'option'      => 'option',
+        'keyword' => 'keyword',
+        'option' => 'option',
         'workspaceId' => 'workspaceId',
-        'operatorId'  => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

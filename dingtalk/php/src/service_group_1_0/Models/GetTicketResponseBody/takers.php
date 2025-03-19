@@ -19,12 +19,10 @@ class takers extends Model
     public $unionId;
     protected $_name = [
         'nickName' => 'nickName',
-        'unionId'  => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

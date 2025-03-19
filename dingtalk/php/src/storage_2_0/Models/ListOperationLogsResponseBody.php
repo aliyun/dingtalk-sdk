@@ -26,14 +26,12 @@ class ListOperationLogsResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'items'      => 'items',
-        'nextToken'  => 'nextToken',
+        'items' => 'items',
+        'nextToken' => 'nextToken',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -68,7 +66,7 @@ class ListOperationLogsResponseBody extends Model
         if (isset($map['items'])) {
             if (!empty($map['items'])) {
                 $model->items = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['items'] as $item) {
                     $model->items[$n++] = null !== $item ? items::fromMap($item) : $item;
                 }

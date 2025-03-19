@@ -18,9 +18,7 @@ class topOpenSpaceModel extends Model
         'spaceType' => 'spaceType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

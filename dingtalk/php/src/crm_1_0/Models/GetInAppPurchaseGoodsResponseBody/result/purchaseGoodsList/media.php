@@ -23,12 +23,10 @@ class media extends Model
     public $url;
     protected $_name = [
         'mediaType' => 'mediaType',
-        'url'       => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

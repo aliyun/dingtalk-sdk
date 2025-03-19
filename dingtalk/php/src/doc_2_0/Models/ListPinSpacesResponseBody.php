@@ -21,13 +21,11 @@ class ListPinSpacesResponseBody extends Model
      */
     public $resultItems;
     protected $_name = [
-        'nextToken'   => 'nextToken',
+        'nextToken' => 'nextToken',
         'resultItems' => 'resultItems',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class ListPinSpacesResponseBody extends Model
         if (isset($map['resultItems'])) {
             if (!empty($map['resultItems'])) {
                 $model->resultItems = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['resultItems'] as $item) {
                     $model->resultItems[$n++] = null !== $item ? resultItems::fromMap($item) : $item;
                 }

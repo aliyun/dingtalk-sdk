@@ -43,16 +43,14 @@ class process extends Model
      */
     public $today;
     protected $_name = [
-        'date'                  => 'date',
-        'finishedStudentsNum'   => 'finishedStudentsNum',
+        'date' => 'date',
+        'finishedStudentsNum' => 'finishedStudentsNum',
         'needFinishStudentsNum' => 'needFinishStudentsNum',
-        'taskCode'              => 'taskCode',
-        'today'                 => 'today',
+        'taskCode' => 'taskCode',
+        'today' => 'today',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

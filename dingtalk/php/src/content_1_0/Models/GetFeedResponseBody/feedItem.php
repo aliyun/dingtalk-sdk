@@ -53,16 +53,14 @@ class feedItem extends Model
      */
     public $url;
     protected $_name = [
-        'durationMillis'  => 'durationMillis',
+        'durationMillis' => 'durationMillis',
         'feedContentType' => 'feedContentType',
-        'itemId'          => 'itemId',
-        'title'           => 'title',
-        'url'             => 'url',
+        'itemId' => 'itemId',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

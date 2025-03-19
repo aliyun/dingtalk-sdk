@@ -39,17 +39,15 @@ class workspace extends Model
      */
     public $workspaceId;
     protected $_name = [
-        'createTime'   => 'createTime',
-        'name'         => 'name',
+        'createTime' => 'createTime',
+        'name' => 'name',
         'orgPublished' => 'orgPublished',
-        'recentList'   => 'recentList',
-        'url'          => 'url',
-        'workspaceId'  => 'workspaceId',
+        'recentList' => 'recentList',
+        'url' => 'url',
+        'workspaceId' => 'workspaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -102,7 +100,7 @@ class workspace extends Model
         if (isset($map['recentList'])) {
             if (!empty($map['recentList'])) {
                 $model->recentList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['recentList'] as $item) {
                     $model->recentList[$n++] = null !== $item ? recentList::fromMap($item) : $item;
                 }

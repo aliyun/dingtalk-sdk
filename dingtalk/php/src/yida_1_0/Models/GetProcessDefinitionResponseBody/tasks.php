@@ -30,14 +30,12 @@ class tasks extends Model
     public $taskId;
     protected $_name = [
         'actionerId' => 'actionerId',
-        'activity'   => 'activity',
-        'status'     => 'status',
-        'taskId'     => 'taskId',
+        'activity' => 'activity',
+        'status' => 'status',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

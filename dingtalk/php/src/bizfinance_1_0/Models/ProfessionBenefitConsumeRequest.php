@@ -27,14 +27,12 @@ class ProfessionBenefitConsumeRequest extends Model
      */
     public $quota;
     protected $_name = [
-        'benefitCode'  => 'benefitCode',
+        'benefitCode' => 'benefitCode',
         'bizRequestId' => 'bizRequestId',
-        'quota'        => 'quota',
+        'quota' => 'quota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

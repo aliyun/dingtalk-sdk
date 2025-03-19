@@ -17,9 +17,7 @@ class SubmitTaskResponseBody extends Model
         'tasks' => 'tasks',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class SubmitTaskResponseBody extends Model
         if (isset($map['tasks'])) {
             if (!empty($map['tasks'])) {
                 $model->tasks = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['tasks'] as $item) {
                     $model->tasks[$n++] = null !== $item ? tasks::fromMap($item) : $item;
                 }

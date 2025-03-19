@@ -111,27 +111,25 @@ class result extends Model
      */
     public $roomUnionId;
     protected $_name = [
-        'corpId'                 => 'corpId',
-        'deviceUnionIds'         => 'deviceUnionIds',
+        'corpId' => 'corpId',
+        'deviceUnionIds' => 'deviceUnionIds',
         'enableCycleReservation' => 'enableCycleReservation',
-        'extensionConfig'        => 'extensionConfig',
-        'isvRoomId'              => 'isvRoomId',
-        'reservationAuthority'   => 'reservationAuthority',
-        'roomCapacity'           => 'roomCapacity',
-        'roomGroup'              => 'roomGroup',
-        'roomId'                 => 'roomId',
-        'roomLabels'             => 'roomLabels',
-        'roomLocation'           => 'roomLocation',
-        'roomName'               => 'roomName',
-        'roomPicture'            => 'roomPicture',
-        'roomStaffId'            => 'roomStaffId',
-        'roomStatus'             => 'roomStatus',
-        'roomUnionId'            => 'roomUnionId',
+        'extensionConfig' => 'extensionConfig',
+        'isvRoomId' => 'isvRoomId',
+        'reservationAuthority' => 'reservationAuthority',
+        'roomCapacity' => 'roomCapacity',
+        'roomGroup' => 'roomGroup',
+        'roomId' => 'roomId',
+        'roomLabels' => 'roomLabels',
+        'roomLocation' => 'roomLocation',
+        'roomName' => 'roomName',
+        'roomPicture' => 'roomPicture',
+        'roomStaffId' => 'roomStaffId',
+        'roomStatus' => 'roomStatus',
+        'roomUnionId' => 'roomUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -234,7 +232,7 @@ class result extends Model
         if (isset($map['roomLabels'])) {
             if (!empty($map['roomLabels'])) {
                 $model->roomLabels = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['roomLabels'] as $item) {
                     $model->roomLabels[$n++] = null !== $item ? roomLabels::fromMap($item) : $item;
                 }

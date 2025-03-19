@@ -156,29 +156,27 @@ class SaveAndSubmitAuthInfoRequest extends Model
      */
     public $unifiedSocialCredit;
     protected $_name = [
-        'applyRemark'             => 'applyRemark',
-        'authorizeMediaId'        => 'authorizeMediaId',
-        'industry'                => 'industry',
-        'legalPerson'             => 'legalPerson',
-        'legalPersonIdCard'       => 'legalPersonIdCard',
-        'licenseMediaId'          => 'licenseMediaId',
-        'locCity'                 => 'locCity',
-        'locCityName'             => 'locCityName',
-        'locProvince'             => 'locProvince',
-        'locProvinceName'         => 'locProvinceName',
-        'mobileNum'               => 'mobileNum',
-        'orgName'                 => 'orgName',
-        'organizationCode'        => 'organizationCode',
+        'applyRemark' => 'applyRemark',
+        'authorizeMediaId' => 'authorizeMediaId',
+        'industry' => 'industry',
+        'legalPerson' => 'legalPerson',
+        'legalPersonIdCard' => 'legalPersonIdCard',
+        'licenseMediaId' => 'licenseMediaId',
+        'locCity' => 'locCity',
+        'locCityName' => 'locCityName',
+        'locProvince' => 'locProvince',
+        'locProvinceName' => 'locProvinceName',
+        'mobileNum' => 'mobileNum',
+        'orgName' => 'orgName',
+        'organizationCode' => 'organizationCode',
         'organizationCodeMediaId' => 'organizationCodeMediaId',
-        'registLocation'          => 'registLocation',
-        'registNum'               => 'registNum',
-        'targetCorpId'            => 'targetCorpId',
-        'unifiedSocialCredit'     => 'unifiedSocialCredit',
+        'registLocation' => 'registLocation',
+        'registNum' => 'registNum',
+        'targetCorpId' => 'targetCorpId',
+        'unifiedSocialCredit' => 'unifiedSocialCredit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

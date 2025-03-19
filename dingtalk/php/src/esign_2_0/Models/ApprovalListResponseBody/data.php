@@ -49,19 +49,17 @@ class data extends Model
      */
     public $status;
     protected $_name = [
-        'approvalName'       => 'approvalName',
-        'approvalNodes'      => 'approvalNodes',
-        'endTime'            => 'endTime',
-        'refuseReason'       => 'refuseReason',
-        'sealIdImg'          => 'sealIdImg',
+        'approvalName' => 'approvalName',
+        'approvalNodes' => 'approvalNodes',
+        'endTime' => 'endTime',
+        'refuseReason' => 'refuseReason',
+        'sealIdImg' => 'sealIdImg',
         'sponsorAccountName' => 'sponsorAccountName',
-        'startTime'          => 'startTime',
-        'status'             => 'status',
+        'startTime' => 'startTime',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -114,7 +112,7 @@ class data extends Model
         if (isset($map['approvalNodes'])) {
             if (!empty($map['approvalNodes'])) {
                 $model->approvalNodes = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['approvalNodes'] as $item) {
                     $model->approvalNodes[$n++] = null !== $item ? approvalNodes::fromMap($item) : $item;
                 }

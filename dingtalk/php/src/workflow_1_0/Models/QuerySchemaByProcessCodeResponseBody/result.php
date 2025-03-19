@@ -158,30 +158,28 @@ class result extends Model
      */
     public $visibleRange;
     protected $_name = [
-        'appType'       => 'appType',
-        'appUuid'       => 'appUuid',
-        'bizType'       => 'bizType',
+        'appType' => 'appType',
+        'appUuid' => 'appUuid',
+        'bizType' => 'bizType',
         'creatorUserId' => 'creatorUserId',
         'customSetting' => 'customSetting',
-        'engineType'    => 'engineType',
-        'formCode'      => 'formCode',
-        'formUuid'      => 'formUuid',
-        'gmtCreate'     => 'gmtCreate',
-        'gmtModified'   => 'gmtModified',
-        'icon'          => 'icon',
-        'listOrder'     => 'listOrder',
-        'memo'          => 'memo',
-        'name'          => 'name',
-        'ownerIdType'   => 'ownerIdType',
-        'procType'      => 'procType',
+        'engineType' => 'engineType',
+        'formCode' => 'formCode',
+        'formUuid' => 'formUuid',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'icon' => 'icon',
+        'listOrder' => 'listOrder',
+        'memo' => 'memo',
+        'name' => 'name',
+        'ownerIdType' => 'ownerIdType',
+        'procType' => 'procType',
         'schemaContent' => 'schemaContent',
-        'status'        => 'status',
-        'visibleRange'  => 'visibleRange',
+        'status' => 'status',
+        'visibleRange' => 'visibleRange',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -152,8 +152,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -194,19 +194,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddFolder',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $parentId . '/folders',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddFolder',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $parentId . '/folders',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddFolderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -266,19 +266,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddPermission',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddPermission',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddPermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -330,19 +330,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddSpace',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddSpace',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -389,18 +389,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ClearRecycleBin',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/recycleBins/' . $recycleBinId . '/clear',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ClearRecycleBin',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/recycleBins/' . $recycleBinId . '/clear',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ClearRecycleBinResponse::fromMap($this->execute($params, $req, $runtime));
@@ -464,19 +464,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CommitFile',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/files/commit',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CommitFile',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/files/commit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CommitFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -537,19 +537,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CopyDentries',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/batchCopy',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CopyDentries',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/batchCopy',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CopyDentriesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -608,19 +608,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CopyDentry',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/copy',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CopyDentry',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/copy',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CopyDentryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -676,19 +676,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteDentries',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/batchRemove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteDentries',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/batchRemove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteDentriesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -740,18 +740,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteDentry',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteDentry',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteDentryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -805,19 +805,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteDentryAppProperties',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/appProperties/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteDentryAppProperties',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/appProperties/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteDentryAppPropertiesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -874,19 +874,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeletePermission',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeletePermission',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeletePermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -936,18 +936,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteRecycleItem',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/' . $recycleItemId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteRecycleItem',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/' . $recycleItemId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteRecycleItemResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1000,19 +1000,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteRecycleItems',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/batchRemove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteRecycleItems',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/batchRemove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteRecycleItemsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1059,18 +1059,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCurrentApp',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/currentApps/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCurrentApp',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/currentApps/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCurrentAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1124,19 +1124,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetDentries',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDentries',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDentriesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1189,19 +1189,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetDentry',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDentry',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDentryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1255,19 +1255,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetDentryOpenInfo',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/openInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDentryOpenInfo',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/openInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDentryOpenInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1320,19 +1320,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetDentryThumbnails',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/thumbnails/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDentryThumbnails',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/thumbnails/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDentryThumbnailsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1385,19 +1385,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetFileDownloadInfo',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/downloadInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFileDownloadInfo',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/downloadInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFileDownloadInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1456,19 +1456,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetFileUploadInfo',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/files/uploadInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFileUploadInfo',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/files/uploadInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFileUploadInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1525,19 +1525,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetMultipartFileUploadInfos',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/files/multiPartUploadInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMultipartFileUploadInfos',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/files/multiPartUploadInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMultipartFileUploadInfosResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1584,18 +1584,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetOrg',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/orgs/' . $corpId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOrg',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/orgs/' . $corpId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOrgResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1648,18 +1648,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRecycleBin',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/recycleBins',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRecycleBin',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/recycleBins',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRecycleBinResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1707,18 +1707,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRecycleItem',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/' . $recycleItemId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRecycleItem',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/' . $recycleItemId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRecycleItemResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1767,18 +1767,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSpace',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSpace',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1826,18 +1826,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTask',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/tasks/' . $taskId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTask',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/tasks/' . $taskId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1886,18 +1886,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetWebOfficeUrl',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/webOfficeUrls',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetWebOfficeUrl',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/webOfficeUrls',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetWebOfficeUrlResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1950,19 +1950,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'InitMultipartFileUpload',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/files/multiPartUploadInfos/init',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'InitMultipartFileUpload',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/files/multiPartUploadInfos/init',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return InitMultipartFileUploadResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2014,19 +2014,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListAllDentries',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/listAll',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAllDentries',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/listAll',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAllDentriesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2092,18 +2092,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListDentries',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListDentries',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListDentriesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2158,18 +2158,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListDentryVersions',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/versions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListDentryVersions',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/versions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListDentryVersionsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2223,19 +2223,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListPermissions',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListPermissions',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListPermissionsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2290,18 +2290,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListRecycleItems',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListRecycleItems',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListRecycleItemsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2362,19 +2362,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MoveDentries',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/batchMove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MoveDentries',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/batchMove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MoveDentriesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2433,19 +2433,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MoveDentry',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/move',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MoveDentry',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/move',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MoveDentryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2501,18 +2501,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RefreshWebOfficeToken',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/refreshWebOfficeToken',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RefreshWebOfficeToken',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/refreshWebOfficeToken',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RefreshWebOfficeTokenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2569,19 +2569,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RegisterOpenInfo',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/openInfos/register',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RegisterOpenInfo',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/openInfos/register',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RegisterOpenInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2635,19 +2635,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RenameDentry',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/rename',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RenameDentry',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/rename',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RenameDentryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2701,19 +2701,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RestoreRecycleItem',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/' . $recycleItemId . '/restore',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RestoreRecycleItem',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/' . $recycleItemId . '/restore',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RestoreRecycleItemResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2769,19 +2769,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RestoreRecycleItems',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/batchRestore',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RestoreRecycleItems',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/recycleBins/' . $recycleBinId . '/recycleItems/batchRestore',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RestoreRecycleItemsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2831,18 +2831,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RevertDentryVersion',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/versions/' . $version . '/revert',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RevertDentryVersion',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/versions/' . $version . '/revert',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RevertDentryVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2898,19 +2898,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SubscribeEvent',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/events/subscribe',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SubscribeEvent',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/events/subscribe',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SubscribeEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2963,19 +2963,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UnsubscribeEvent',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/events/unsubscribe',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UnsubscribeEvent',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/events/unsubscribe',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UnsubscribeEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3027,19 +3027,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateDentryAppProperties',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/appProperties',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateDentryAppProperties',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/appProperties',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateDentryAppPropertiesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3099,19 +3099,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdatePermission',
-            'version'     => 'storage_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdatePermission',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/permissions',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdatePermissionResponse::fromMap($this->execute($params, $req, $runtime));

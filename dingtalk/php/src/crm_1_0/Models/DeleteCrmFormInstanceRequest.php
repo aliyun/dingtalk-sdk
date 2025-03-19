@@ -27,12 +27,10 @@ class DeleteCrmFormInstanceRequest extends Model
     public $name;
     protected $_name = [
         'currentOperatorUserId' => 'currentOperatorUserId',
-        'name'                  => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

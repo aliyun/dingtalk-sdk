@@ -88,27 +88,25 @@ class usedVehicleSaleDetailVOList extends Model
      */
     public $vehicleType;
     protected $_name = [
-        'auctionUnit'        => 'auctionUnit',
+        'auctionUnit' => 'auctionUnit',
         'auctionUnitAddress' => 'auctionUnitAddress',
-        'auctionUnitBank'    => 'auctionUnitBank',
-        'auctionUnitTaxNo'   => 'auctionUnitTaxNo',
-        'auctionUtilTel'     => 'auctionUtilTel',
-        'carModel'           => 'carModel',
-        'cardNo'             => 'cardNo',
-        'registration'       => 'registration',
-        'transferVehicle'    => 'transferVehicle',
-        'usedCarAddress'     => 'usedCarAddress',
-        'usedCarMarket'      => 'usedCarMarket',
-        'usedCarMarketBank'  => 'usedCarMarketBank',
+        'auctionUnitBank' => 'auctionUnitBank',
+        'auctionUnitTaxNo' => 'auctionUnitTaxNo',
+        'auctionUtilTel' => 'auctionUtilTel',
+        'carModel' => 'carModel',
+        'cardNo' => 'cardNo',
+        'registration' => 'registration',
+        'transferVehicle' => 'transferVehicle',
+        'usedCarAddress' => 'usedCarAddress',
+        'usedCarMarket' => 'usedCarMarket',
+        'usedCarMarketBank' => 'usedCarMarketBank',
         'usedCarMarketPhone' => 'usedCarMarketPhone',
         'usedCarMarketTaxNo' => 'usedCarMarketTaxNo',
-        'vehicleNo'          => 'vehicleNo',
-        'vehicleType'        => 'vehicleType',
+        'vehicleNo' => 'vehicleNo',
+        'vehicleType' => 'vehicleType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

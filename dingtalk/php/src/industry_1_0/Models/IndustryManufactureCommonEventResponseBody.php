@@ -24,14 +24,12 @@ class IndustryManufactureCommonEventResponseBody extends Model
      */
     public $result;
     protected $_name = [
-        'errorMsg'  => 'errorMsg',
+        'errorMsg' => 'errorMsg',
         'requestId' => 'requestId',
-        'result'    => 'result',
+        'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

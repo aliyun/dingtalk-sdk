@@ -56,17 +56,15 @@ class PremiumGetProcessInstancesRequest extends Model
      */
     public $startTimeInMills;
     protected $_name = [
-        'appUuid'          => 'appUuid',
-        'endTimeInMills'   => 'endTimeInMills',
-        'maxResults'       => 'maxResults',
-        'nextToken'        => 'nextToken',
-        'processCode'      => 'processCode',
+        'appUuid' => 'appUuid',
+        'endTimeInMills' => 'endTimeInMills',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'processCode' => 'processCode',
         'startTimeInMills' => 'startTimeInMills',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

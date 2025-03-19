@@ -34,13 +34,11 @@ class PushVerifyEventRequest extends Model
     protected $_name = [
         'callerDeviceId' => 'callerDeviceId',
         'factorCodeList' => 'factorCodeList',
-        'state'          => 'state',
-        'userId'         => 'userId',
+        'state' => 'state',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

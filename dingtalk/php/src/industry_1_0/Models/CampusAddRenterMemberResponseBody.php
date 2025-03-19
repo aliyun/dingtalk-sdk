@@ -23,14 +23,12 @@ class CampusAddRenterMemberResponseBody extends Model
      */
     public $userState;
     protected $_name = [
-        'unionId'   => 'unionId',
-        'userId'    => 'userId',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
         'userState' => 'userState',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

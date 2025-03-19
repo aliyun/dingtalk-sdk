@@ -65,20 +65,18 @@ class CreateGroupConversationRequest extends Model
      */
     public $serverGroupId;
     protected $_name = [
-        'corpId'             => 'corpId',
-        'dingGroupId'        => 'dingGroupId',
-        'dingSuiteKey'       => 'dingSuiteKey',
+        'corpId' => 'corpId',
+        'dingGroupId' => 'dingGroupId',
+        'dingSuiteKey' => 'dingSuiteKey',
         'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingUserId'         => 'dingUserId',
-        'dingUserName'       => 'dingUserName',
-        'extValues'          => 'extValues',
-        'openTeamId'         => 'openTeamId',
-        'serverGroupId'      => 'serverGroupId',
+        'dingUserId' => 'dingUserId',
+        'dingUserName' => 'dingUserName',
+        'extValues' => 'extValues',
+        'openTeamId' => 'openTeamId',
+        'serverGroupId' => 'serverGroupId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,13 +20,11 @@ class tagIdList extends Model
      */
     public $tagName;
     protected $_name = [
-        'tagId'   => 'tagId',
+        'tagId' => 'tagId',
         'tagName' => 'tagName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

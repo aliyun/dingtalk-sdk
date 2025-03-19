@@ -18,9 +18,7 @@ class CloseHumanSessionResponseBody extends Model
         'sessionId' => 'sessionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

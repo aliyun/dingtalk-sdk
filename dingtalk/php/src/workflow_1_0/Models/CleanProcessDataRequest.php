@@ -26,13 +26,11 @@ class CleanProcessDataRequest extends Model
      */
     public $processCode;
     protected $_name = [
-        'corpId'      => 'corpId',
+        'corpId' => 'corpId',
         'processCode' => 'processCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

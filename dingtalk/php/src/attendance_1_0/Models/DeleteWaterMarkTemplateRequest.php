@@ -49,16 +49,14 @@ class DeleteWaterMarkTemplateRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'formCode'           => 'formCode',
-        'formContent'        => 'formContent',
+        'formCode' => 'formCode',
+        'formContent' => 'formContent',
         'openConversationId' => 'openConversationId',
-        'systemTemplate'     => 'systemTemplate',
-        'userId'             => 'userId',
+        'systemTemplate' => 'systemTemplate',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

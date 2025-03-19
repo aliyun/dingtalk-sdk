@@ -31,12 +31,10 @@ class InvokeInstanceRequest extends Model
     protected $_name = [
         'connectAssetUri' => 'connectAssetUri',
         'inputJsonString' => 'inputJsonString',
-        'instanceKey'     => 'instanceKey',
+        'instanceKey' => 'instanceKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

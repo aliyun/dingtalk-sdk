@@ -16,9 +16,7 @@ class location extends Model
         'head' => 'head',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

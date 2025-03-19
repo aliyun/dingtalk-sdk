@@ -53,17 +53,15 @@ class QueryInstancesByMultiConditionsRequest extends Model
      */
     public $sortFields;
     protected $_name = [
-        'formCode'     => 'formCode',
-        'maxResults'   => 'maxResults',
-        'nextToken'    => 'nextToken',
-        'openTeamId'   => 'openTeamId',
+        'formCode' => 'formCode',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'openTeamId' => 'openTeamId',
         'searchFields' => 'searchFields',
-        'sortFields'   => 'sortFields',
+        'sortFields' => 'sortFields',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -122,7 +120,7 @@ class QueryInstancesByMultiConditionsRequest extends Model
         if (isset($map['sortFields'])) {
             if (!empty($map['sortFields'])) {
                 $model->sortFields = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['sortFields'] as $item) {
                     $model->sortFields[$n++] = null !== $item ? sortFields::fromMap($item) : $item;
                 }

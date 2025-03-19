@@ -39,16 +39,14 @@ class subRisks extends Model
     public $riskExplain;
     protected $_name = [
         'originalContent' => 'originalContent',
-        'resultContent'   => 'resultContent',
-        'resultType'      => 'resultType',
-        'riskBrief'       => 'riskBrief',
-        'riskClause'      => 'riskClause',
-        'riskExplain'     => 'riskExplain',
+        'resultContent' => 'resultContent',
+        'resultType' => 'resultType',
+        'riskBrief' => 'riskBrief',
+        'riskClause' => 'riskClause',
+        'riskExplain' => 'riskExplain',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

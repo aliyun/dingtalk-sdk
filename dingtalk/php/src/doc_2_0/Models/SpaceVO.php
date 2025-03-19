@@ -68,20 +68,18 @@ class SpaceVO extends Model
      */
     public $visitorInfo;
     protected $_name = [
-        'cover'       => 'cover',
+        'cover' => 'cover',
         'description' => 'description',
-        'iconVO'      => 'iconVO',
-        'id'          => 'id',
-        'name'        => 'name',
-        'owner'       => 'owner',
-        'type'        => 'type',
-        'url'         => 'url',
+        'iconVO' => 'iconVO',
+        'id' => 'id',
+        'name' => 'name',
+        'owner' => 'owner',
+        'type' => 'type',
+        'url' => 'url',
         'visitorInfo' => 'visitorInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

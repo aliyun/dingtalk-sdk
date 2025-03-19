@@ -34,15 +34,13 @@ class QueryTeacherCourseRequest extends Model
      */
     public $teacherUserId;
     protected $_name = [
-        'corpId'          => 'corpId',
-        'isvCode'         => 'isvCode',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
         'isvCourseIdList' => 'isvCourseIdList',
-        'teacherUserId'   => 'teacherUserId',
+        'teacherUserId' => 'teacherUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

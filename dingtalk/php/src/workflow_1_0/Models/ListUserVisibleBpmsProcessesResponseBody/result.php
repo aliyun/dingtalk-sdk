@@ -21,13 +21,11 @@ class result extends Model
      */
     public $processList;
     protected $_name = [
-        'nextToken'   => 'nextToken',
+        'nextToken' => 'nextToken',
         'processList' => 'processList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class result extends Model
         if (isset($map['processList'])) {
             if (!empty($map['processList'])) {
                 $model->processList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['processList'] as $item) {
                     $model->processList[$n++] = null !== $item ? processList::fromMap($item) : $item;
                 }

@@ -36,15 +36,13 @@ class TextToImageRequest extends Model
      */
     public $query;
     protected $_name = [
-        'modelId'     => 'modelId',
-        'pictureNum'  => 'pictureNum',
+        'modelId' => 'modelId',
+        'pictureNum' => 'pictureNum',
         'pictureSize' => 'pictureSize',
-        'query'       => 'query',
+        'query' => 'query',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -43,16 +43,14 @@ class deptTypeSet extends Model
      */
     public $structDeptId;
     protected $_name = [
-        'deptId'         => 'deptId',
-        'deptName'       => 'deptName',
+        'deptId' => 'deptId',
+        'deptName' => 'deptName',
         'deptStructType' => 'deptStructType',
-        'deptType'       => 'deptType',
-        'structDeptId'   => 'structDeptId',
+        'deptType' => 'deptType',
+        'structDeptId' => 'structDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -66,19 +66,17 @@ class OpenObjectiveDTO extends Model
      */
     public $title;
     protected $_name = [
-        'executor'   => 'executor',
-        'id'         => 'id',
+        'executor' => 'executor',
+        'id' => 'id',
         'keyResults' => 'keyResults',
-        'period'     => 'period',
-        'progress'   => 'progress',
-        'status'     => 'status',
-        'teams'      => 'teams',
-        'title'      => 'title',
+        'period' => 'period',
+        'progress' => 'progress',
+        'status' => 'status',
+        'teams' => 'teams',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -140,7 +138,7 @@ class OpenObjectiveDTO extends Model
         if (isset($map['keyResults'])) {
             if (!empty($map['keyResults'])) {
                 $model->keyResults = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['keyResults'] as $item) {
                     $model->keyResults[$n++] = null !== $item ? OpenKeyResultDTO::fromMap($item) : $item;
                 }
@@ -158,7 +156,7 @@ class OpenObjectiveDTO extends Model
         if (isset($map['teams'])) {
             if (!empty($map['teams'])) {
                 $model->teams = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['teams'] as $item) {
                     $model->teams[$n++] = null !== $item ? OpenTeamDTO::fromMap($item) : $item;
                 }

@@ -35,14 +35,12 @@ class GetSearchItemsByKeyWordRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'keyWord'    => 'keyWord',
+        'keyWord' => 'keyWord',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

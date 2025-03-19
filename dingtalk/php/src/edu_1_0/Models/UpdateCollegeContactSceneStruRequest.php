@@ -52,17 +52,15 @@ class UpdateCollegeContactSceneStruRequest extends Model
      */
     public $struType;
     protected $_name = [
-        'order'            => 'order',
+        'order' => 'order',
         'sourceIdentifier' => 'sourceIdentifier',
-        'struBrief'        => 'struBrief',
-        'struId'           => 'struId',
-        'struName'         => 'struName',
-        'struType'         => 'struType',
+        'struBrief' => 'struBrief',
+        'struId' => 'struId',
+        'struName' => 'struName',
+        'struType' => 'struType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

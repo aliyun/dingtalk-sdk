@@ -33,16 +33,14 @@ class ExportShanhuiToDocRequest extends Model
      */
     public $workspaceKey;
     protected $_name = [
-        'contentEnums'  => 'contentEnums',
+        'contentEnums' => 'contentEnums',
         'parentNodeKey' => 'parentNodeKey',
-        'shanhuiKey'    => 'shanhuiKey',
-        'userId'        => 'userId',
-        'workspaceKey'  => 'workspaceKey',
+        'shanhuiKey' => 'shanhuiKey',
+        'userId' => 'userId',
+        'workspaceKey' => 'workspaceKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

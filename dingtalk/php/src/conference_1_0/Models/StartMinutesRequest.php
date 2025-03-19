@@ -30,13 +30,11 @@ class StartMinutesRequest extends Model
     public $unionId;
     protected $_name = [
         'ownerUnionId' => 'ownerUnionId',
-        'recordAudio'  => 'recordAudio',
-        'unionId'      => 'unionId',
+        'recordAudio' => 'recordAudio',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

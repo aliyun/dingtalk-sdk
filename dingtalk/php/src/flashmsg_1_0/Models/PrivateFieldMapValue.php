@@ -35,16 +35,14 @@ class PrivateFieldMapValue extends Model
      */
     public $extension;
     protected $_name = [
-        'tipTitle'     => 'tipTitle',
-        'isDingSend'   => 'isDingSend',
-        'isRead'       => 'isRead',
+        'tipTitle' => 'tipTitle',
+        'isDingSend' => 'isDingSend',
+        'isRead' => 'isRead',
         'buttonStatus' => 'buttonStatus',
-        'extension'    => 'extension',
+        'extension' => 'extension',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

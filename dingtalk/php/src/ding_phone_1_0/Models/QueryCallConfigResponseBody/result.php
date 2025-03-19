@@ -59,20 +59,18 @@ class result extends Model
     public $status;
     protected $_name = [
         'accountDomain' => 'accountDomain',
-        'accountId'     => 'accountId',
-        'callInType'    => 'callInType',
-        'callOutType'   => 'callOutType',
-        'createUid'     => 'createUid',
-        'phoneNumber'   => 'phoneNumber',
-        'scopeType'     => 'scopeType',
-        'showType'      => 'showType',
-        'sourceType'    => 'sourceType',
-        'status'        => 'status',
+        'accountId' => 'accountId',
+        'callInType' => 'callInType',
+        'callOutType' => 'callOutType',
+        'createUid' => 'createUid',
+        'phoneNumber' => 'phoneNumber',
+        'scopeType' => 'scopeType',
+        'showType' => 'showType',
+        'sourceType' => 'sourceType',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

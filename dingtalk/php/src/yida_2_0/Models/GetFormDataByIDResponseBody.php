@@ -35,15 +35,13 @@ class GetFormDataByIDResponseBody extends Model
      */
     public $originator;
     protected $_name = [
-        'formData'        => 'formData',
-        'formInstId'      => 'formInstId',
+        'formData' => 'formData',
+        'formInstId' => 'formInstId',
         'modifiedTimeGMT' => 'modifiedTimeGMT',
-        'originator'      => 'originator',
+        'originator' => 'originator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

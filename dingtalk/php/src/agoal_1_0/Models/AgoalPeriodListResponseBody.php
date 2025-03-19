@@ -23,14 +23,12 @@ class AgoalPeriodListResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'content'   => 'content',
+        'content' => 'content',
         'requestId' => 'requestId',
-        'success'   => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -65,7 +63,7 @@ class AgoalPeriodListResponseBody extends Model
         if (isset($map['content'])) {
             if (!empty($map['content'])) {
                 $model->content = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['content'] as $item) {
                     $model->content[$n++] = null !== $item ? OpenAgoalPeriodDTO::fromMap($item) : $item;
                 }

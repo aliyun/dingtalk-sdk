@@ -72,20 +72,18 @@ class data extends Model
      */
     public $productType;
     protected $_name = [
-        'deviceId'       => 'deviceId',
-        'deviceName'     => 'deviceName',
-        'deviceStatus'   => 'deviceStatus',
-        'deviceType'     => 'deviceType',
+        'deviceId' => 'deviceId',
+        'deviceName' => 'deviceName',
+        'deviceStatus' => 'deviceStatus',
+        'deviceType' => 'deviceType',
         'deviceTypeName' => 'deviceTypeName',
-        'liveUrls'       => 'liveUrls',
-        'location'       => 'location',
-        'parentId'       => 'parentId',
-        'productType'    => 'productType',
+        'liveUrls' => 'liveUrls',
+        'location' => 'location',
+        'parentId' => 'parentId',
+        'productType' => 'productType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

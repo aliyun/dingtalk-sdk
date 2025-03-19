@@ -17,9 +17,7 @@ class ListAvaiableVersionResponseBody extends Model
         'versions' => 'versions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListAvaiableVersionResponseBody extends Model
         if (isset($map['versions'])) {
             if (!empty($map['versions'])) {
                 $model->versions = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['versions'] as $item) {
                     $model->versions[$n++] = null !== $item ? versions::fromMap($item) : $item;
                 }

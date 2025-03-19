@@ -23,12 +23,10 @@ class CreateInvocableInstanceResponseBody extends Model
     public $versionId;
     protected $_name = [
         'connectAssetUri' => 'connectAssetUri',
-        'versionId'       => 'versionId',
+        'versionId' => 'versionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

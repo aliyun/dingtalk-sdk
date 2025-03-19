@@ -78,21 +78,19 @@ class krList extends Model
      */
     public $weight;
     protected $_name = [
-        'content'     => 'content',
-        'gmtCreate'   => 'gmtCreate',
+        'content' => 'content',
+        'gmtCreate' => 'gmtCreate',
         'gmtModified' => 'gmtModified',
-        'id'          => 'id',
+        'id' => 'id',
         'objectiveId' => 'objectiveId',
-        'permission'  => 'permission',
-        'position'    => 'position',
-        'progress'    => 'progress',
-        'score'       => 'score',
-        'weight'      => 'weight',
+        'permission' => 'permission',
+        'position' => 'position',
+        'progress' => 'progress',
+        'score' => 'score',
+        'weight' => 'weight',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

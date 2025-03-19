@@ -51,18 +51,16 @@ class PagesExportInstancesRequest extends Model
      */
     public $status;
     protected $_name = [
-        'endTimeInMills'   => 'endTimeInMills',
-        'maxResults'       => 'maxResults',
-        'nextToken'        => 'nextToken',
-        'orderBy'          => 'orderBy',
-        'processCode'      => 'processCode',
+        'endTimeInMills' => 'endTimeInMills',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'orderBy' => 'orderBy',
+        'processCode' => 'processCode',
         'startTimeInMills' => 'startTimeInMills',
-        'status'           => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

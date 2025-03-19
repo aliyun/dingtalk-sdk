@@ -44,17 +44,15 @@ class UpdateEmpDismissionInfoRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'dismissionMemo'             => 'dismissionMemo',
-        'lastWorkDate'               => 'lastWorkDate',
-        'partner'                    => 'partner',
-        'terminationReasonPassive'   => 'terminationReasonPassive',
+        'dismissionMemo' => 'dismissionMemo',
+        'lastWorkDate' => 'lastWorkDate',
+        'partner' => 'partner',
+        'terminationReasonPassive' => 'terminationReasonPassive',
         'terminationReasonVoluntary' => 'terminationReasonVoluntary',
-        'userId'                     => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

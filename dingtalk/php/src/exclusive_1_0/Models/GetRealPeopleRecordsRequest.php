@@ -66,19 +66,17 @@ class GetRealPeopleRecordsRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'agentId'              => 'agentId',
-        'fromTime'             => 'fromTime',
-        'maxResults'           => 'maxResults',
-        'nextToken'            => 'nextToken',
+        'agentId' => 'agentId',
+        'fromTime' => 'fromTime',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'personIdentification' => 'personIdentification',
-        'scene'                => 'scene',
-        'toTime'               => 'toTime',
-        'userIds'              => 'userIds',
+        'scene' => 'scene',
+        'toTime' => 'toTime',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

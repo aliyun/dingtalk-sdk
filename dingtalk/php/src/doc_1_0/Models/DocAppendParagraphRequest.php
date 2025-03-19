@@ -36,13 +36,11 @@ class DocAppendParagraphRequest extends Model
     public $operatorId;
     protected $_name = [
         'elementType' => 'elementType',
-        'properties'  => 'properties',
-        'operatorId'  => 'operatorId',
+        'properties' => 'properties',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

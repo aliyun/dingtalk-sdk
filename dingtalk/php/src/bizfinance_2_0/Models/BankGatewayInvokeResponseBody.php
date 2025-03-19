@@ -16,9 +16,7 @@ class BankGatewayInvokeResponseBody extends Model
         'outputData' => 'outputData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

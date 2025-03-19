@@ -18,9 +18,7 @@ class option extends Model
         'withPermissionRole' => 'withPermissionRole',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

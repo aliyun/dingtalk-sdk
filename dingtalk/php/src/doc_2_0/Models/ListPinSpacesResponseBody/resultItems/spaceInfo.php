@@ -82,22 +82,20 @@ class spaceInfo extends Model
      */
     public $pcUrl;
     protected $_name = [
-        'cover'        => 'cover',
-        'createTime'   => 'createTime',
-        'creator'      => 'creator',
-        'description'  => 'description',
-        'iconVO'       => 'iconVO',
-        'id'           => 'id',
-        'mobileUrl'    => 'mobileUrl',
+        'cover' => 'cover',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
+        'description' => 'description',
+        'iconVO' => 'iconVO',
+        'id' => 'id',
+        'mobileUrl' => 'mobileUrl',
         'modifiedTime' => 'modifiedTime',
-        'modifier'     => 'modifier',
-        'name'         => 'name',
-        'pcUrl'        => 'pcUrl',
+        'modifier' => 'modifier',
+        'name' => 'name',
+        'pcUrl' => 'pcUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

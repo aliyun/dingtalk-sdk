@@ -73,24 +73,22 @@ class MapValue extends Model
      */
     public $contentDownloadUrl;
     protected $_name = [
-        'templateId'         => 'templateId',
-        'title'              => 'title',
-        'type'               => 'type',
-        'coverDownloadUrl'   => 'coverDownloadUrl',
-        'description'        => 'description',
-        'authorName'         => 'authorName',
-        'createTime'         => 'createTime',
-        'modifiedTime'       => 'modifiedTime',
-        'workspaceId'        => 'workspaceId',
-        'workspaceName'      => 'workspaceName',
-        'usedCount'          => 'usedCount',
-        'belong'             => 'belong',
+        'templateId' => 'templateId',
+        'title' => 'title',
+        'type' => 'type',
+        'coverDownloadUrl' => 'coverDownloadUrl',
+        'description' => 'description',
+        'authorName' => 'authorName',
+        'createTime' => 'createTime',
+        'modifiedTime' => 'modifiedTime',
+        'workspaceId' => 'workspaceId',
+        'workspaceName' => 'workspaceName',
+        'usedCount' => 'usedCount',
+        'belong' => 'belong',
         'contentDownloadUrl' => 'contentDownloadUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

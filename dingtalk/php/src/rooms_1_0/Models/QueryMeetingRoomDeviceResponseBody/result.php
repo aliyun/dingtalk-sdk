@@ -203,39 +203,37 @@ class result extends Model
      */
     public $softwareVersion;
     protected $_name = [
-        'activeTime'      => 'activeTime',
-        'controllers'     => 'controllers',
-        'corpId'          => 'corpId',
-        'creatorUnionId'  => 'creatorUnionId',
-        'devCamera'       => 'devCamera',
-        'devHdmi'         => 'devHdmi',
-        'devMic'          => 'devMic',
-        'devMirror'       => 'devMirror',
-        'devNetIp'        => 'devNetIp',
-        'devNetType'      => 'devNetType',
-        'devVoice'        => 'devVoice',
-        'devWifiMac'      => 'devWifiMac',
-        'devWireMac'      => 'devWireMac',
-        'deviceId'        => 'deviceId',
-        'deviceMac'       => 'deviceMac',
-        'deviceModel'     => 'deviceModel',
-        'deviceName'      => 'deviceName',
+        'activeTime' => 'activeTime',
+        'controllers' => 'controllers',
+        'corpId' => 'corpId',
+        'creatorUnionId' => 'creatorUnionId',
+        'devCamera' => 'devCamera',
+        'devHdmi' => 'devHdmi',
+        'devMic' => 'devMic',
+        'devMirror' => 'devMirror',
+        'devNetIp' => 'devNetIp',
+        'devNetType' => 'devNetType',
+        'devVoice' => 'devVoice',
+        'devWifiMac' => 'devWifiMac',
+        'devWireMac' => 'devWireMac',
+        'deviceId' => 'deviceId',
+        'deviceMac' => 'deviceMac',
+        'deviceModel' => 'deviceModel',
+        'deviceName' => 'deviceName',
         'deviceServiceId' => 'deviceServiceId',
-        'deviceSn'        => 'deviceSn',
-        'deviceStatus'    => 'deviceStatus',
-        'deviceType'      => 'deviceType',
-        'deviceUnionId'   => 'deviceUnionId',
+        'deviceSn' => 'deviceSn',
+        'deviceStatus' => 'deviceStatus',
+        'deviceType' => 'deviceType',
+        'deviceUnionId' => 'deviceUnionId',
         'firmwareVersion' => 'firmwareVersion',
-        'openRoomId'      => 'openRoomId',
-        'roomName'        => 'roomName',
-        'shareCode'       => 'shareCode',
-        'sipAccountName'  => 'sipAccountName',
+        'openRoomId' => 'openRoomId',
+        'roomName' => 'roomName',
+        'shareCode' => 'shareCode',
+        'sipAccountName' => 'sipAccountName',
         'softwareVersion' => 'softwareVersion',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -348,7 +346,7 @@ class result extends Model
         if (isset($map['controllers'])) {
             if (!empty($map['controllers'])) {
                 $model->controllers = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['controllers'] as $item) {
                     $model->controllers[$n++] = null !== $item ? controllers::fromMap($item) : $item;
                 }

@@ -43,15 +43,13 @@ class ProcessForecastRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'deptId'              => 'deptId',
+        'deptId' => 'deptId',
         'formComponentValues' => 'formComponentValues',
-        'processCode'         => 'processCode',
-        'userId'              => 'userId',
+        'processCode' => 'processCode',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -92,7 +90,7 @@ class ProcessForecastRequest extends Model
         if (isset($map['formComponentValues'])) {
             if (!empty($map['formComponentValues'])) {
                 $model->formComponentValues = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['formComponentValues'] as $item) {
                     $model->formComponentValues[$n++] = null !== $item ? formComponentValues::fromMap($item) : $item;
                 }

@@ -142,37 +142,35 @@ class GetTodoTaskDetailResponseBody extends Model
      */
     public $todoCardView;
     protected $_name = [
-        'bizTag'             => 'bizTag',
-        'category'           => 'category',
-        'createdTime'        => 'createdTime',
-        'creatorId'          => 'creatorId',
-        'description'        => 'description',
-        'detailUrl'          => 'detailUrl',
-        'done'               => 'done',
-        'dueTime'            => 'dueTime',
-        'executorIds'        => 'executorIds',
-        'executorStatus'     => 'executorStatus',
-        'finishTime'         => 'finishTime',
-        'id'                 => 'id',
+        'bizTag' => 'bizTag',
+        'category' => 'category',
+        'createdTime' => 'createdTime',
+        'creatorId' => 'creatorId',
+        'description' => 'description',
+        'detailUrl' => 'detailUrl',
+        'done' => 'done',
+        'dueTime' => 'dueTime',
+        'executorIds' => 'executorIds',
+        'executorStatus' => 'executorStatus',
+        'finishTime' => 'finishTime',
+        'id' => 'id',
         'isOnlyShowExecutor' => 'isOnlyShowExecutor',
-        'modifiedTime'       => 'modifiedTime',
-        'modifierId'         => 'modifierId',
-        'orgInfo'            => 'orgInfo',
-        'participantIds'     => 'participantIds',
-        'priority'           => 'priority',
-        'requestId'          => 'requestId',
-        'source'             => 'source',
-        'sourceId'           => 'sourceId',
-        'startTime'          => 'startTime',
-        'subject'            => 'subject',
-        'tenantId'           => 'tenantId',
-        'tenantType'         => 'tenantType',
-        'todoCardView'       => 'todoCardView',
+        'modifiedTime' => 'modifiedTime',
+        'modifierId' => 'modifierId',
+        'orgInfo' => 'orgInfo',
+        'participantIds' => 'participantIds',
+        'priority' => 'priority',
+        'requestId' => 'requestId',
+        'source' => 'source',
+        'sourceId' => 'sourceId',
+        'startTime' => 'startTime',
+        'subject' => 'subject',
+        'tenantId' => 'tenantId',
+        'tenantType' => 'tenantType',
+        'todoCardView' => 'todoCardView',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -305,7 +303,7 @@ class GetTodoTaskDetailResponseBody extends Model
         if (isset($map['executorStatus'])) {
             if (!empty($map['executorStatus'])) {
                 $model->executorStatus = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['executorStatus'] as $item) {
                     $model->executorStatus[$n++] = null !== $item ? executorStatus::fromMap($item) : $item;
                 }

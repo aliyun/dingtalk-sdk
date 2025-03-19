@@ -38,17 +38,15 @@ class result extends Model
      */
     public $originalId;
     protected $_name = [
-        'display'       => 'display',
-        'id'            => 'id',
+        'display' => 'display',
+        'id' => 'id',
         'isDefaultRole' => 'isDefaultRole',
-        'level'         => 'level',
-        'name'          => 'name',
-        'originalId'    => 'originalId',
+        'level' => 'level',
+        'name' => 'name',
+        'originalId' => 'originalId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

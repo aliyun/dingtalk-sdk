@@ -26,13 +26,11 @@ class GetAgentIdByRelatedAppIdRequest extends Model
      */
     public $targetCorpId;
     protected $_name = [
-        'appId'        => 'appId',
+        'appId' => 'appId',
         'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

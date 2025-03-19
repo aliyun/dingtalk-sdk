@@ -175,35 +175,33 @@ class CreateCourseRequest extends Model
      */
     public $type;
     protected $_name = [
-        'attributes'    => 'attributes',
-        'classId'       => 'classId',
-        'className'     => 'className',
-        'classRoomId'   => 'classRoomId',
+        'attributes' => 'attributes',
+        'classId' => 'classId',
+        'className' => 'className',
+        'classRoomId' => 'classRoomId',
         'classRoomName' => 'classRoomName',
-        'classType'     => 'classType',
-        'corpId'        => 'corpId',
-        'courseCode'    => 'courseCode',
-        'courseDate'    => 'courseDate',
-        'courseName'    => 'courseName',
-        'courseWeek'    => 'courseWeek',
-        'endTime'       => 'endTime',
-        'isvCode'       => 'isvCode',
-        'isvCourseId'   => 'isvCourseId',
-        'memo'          => 'memo',
-        'schoolYear'    => 'schoolYear',
-        'semester'      => 'semester',
-        'startTime'     => 'startTime',
-        'status'        => 'status',
-        'teachWeek'     => 'teachWeek',
-        'teacherList'   => 'teacherList',
-        'timeslotName'  => 'timeslotName',
-        'timeslotNum'   => 'timeslotNum',
-        'type'          => 'type',
+        'classType' => 'classType',
+        'corpId' => 'corpId',
+        'courseCode' => 'courseCode',
+        'courseDate' => 'courseDate',
+        'courseName' => 'courseName',
+        'courseWeek' => 'courseWeek',
+        'endTime' => 'endTime',
+        'isvCode' => 'isvCode',
+        'isvCourseId' => 'isvCourseId',
+        'memo' => 'memo',
+        'schoolYear' => 'schoolYear',
+        'semester' => 'semester',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'teachWeek' => 'teachWeek',
+        'teacherList' => 'teacherList',
+        'timeslotName' => 'timeslotName',
+        'timeslotNum' => 'timeslotNum',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -361,7 +359,7 @@ class CreateCourseRequest extends Model
         if (isset($map['teacherList'])) {
             if (!empty($map['teacherList'])) {
                 $model->teacherList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['teacherList'] as $item) {
                     $model->teacherList[$n++] = null !== $item ? teacherList::fromMap($item) : $item;
                 }

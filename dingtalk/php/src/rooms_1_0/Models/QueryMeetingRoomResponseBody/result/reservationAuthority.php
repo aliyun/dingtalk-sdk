@@ -17,9 +17,7 @@ class reservationAuthority extends Model
         'authorizedMembers' => 'authorizedMembers',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class reservationAuthority extends Model
         if (isset($map['authorizedMembers'])) {
             if (!empty($map['authorizedMembers'])) {
                 $model->authorizedMembers = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['authorizedMembers'] as $item) {
                     $model->authorizedMembers[$n++] = null !== $item ? authorizedMembers::fromMap($item) : $item;
                 }

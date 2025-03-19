@@ -29,15 +29,13 @@ class QueryOrgConferenceListResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'hasMore'         => 'hasMore',
-        'nextToken'       => 'nextToken',
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
         'onGoingConfList' => 'onGoingConfList',
-        'totalCount'      => 'totalCount',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -81,7 +79,7 @@ class QueryOrgConferenceListResponseBody extends Model
         if (isset($map['onGoingConfList'])) {
             if (!empty($map['onGoingConfList'])) {
                 $model->onGoingConfList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['onGoingConfList'] as $item) {
                     $model->onGoingConfList[$n++] = null !== $item ? onGoingConfList::fromMap($item) : $item;
                 }

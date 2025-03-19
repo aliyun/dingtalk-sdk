@@ -29,15 +29,13 @@ class PersonalSendCardMessageRequest extends Model
      */
     public $receiveUserId;
     protected $_name = [
-        'atUserIds'          => 'atUserIds',
-        'cardContent'        => 'cardContent',
+        'atUserIds' => 'atUserIds',
+        'cardContent' => 'cardContent',
         'openConversationId' => 'openConversationId',
-        'receiveUserId'      => 'receiveUserId',
+        'receiveUserId' => 'receiveUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

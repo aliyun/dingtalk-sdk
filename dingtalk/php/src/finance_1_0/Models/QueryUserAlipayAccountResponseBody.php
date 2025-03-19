@@ -20,9 +20,7 @@ class QueryUserAlipayAccountResponseBody extends Model
         'alipayUid' => 'alipayUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

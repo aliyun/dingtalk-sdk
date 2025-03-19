@@ -18,13 +18,11 @@ class QueryBotInstanceInGroupInfoResponseBody extends Model
      */
     public $openConversationIds;
     protected $_name = [
-        'hasMore'             => 'hasMore',
+        'hasMore' => 'hasMore',
         'openConversationIds' => 'openConversationIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

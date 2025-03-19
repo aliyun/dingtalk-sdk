@@ -29,15 +29,13 @@ class sentenceList extends Model
      */
     public $wordList;
     protected $_name = [
-        'endTime'   => 'endTime',
-        'sentence'  => 'sentence',
+        'endTime' => 'endTime',
+        'sentence' => 'sentence',
         'startTime' => 'startTime',
-        'wordList'  => 'wordList',
+        'wordList' => 'wordList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -84,7 +82,7 @@ class sentenceList extends Model
         if (isset($map['wordList'])) {
             if (!empty($map['wordList'])) {
                 $model->wordList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['wordList'] as $item) {
                     $model->wordList[$n++] = null !== $item ? wordList::fromMap($item) : $item;
                 }

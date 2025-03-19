@@ -53,16 +53,14 @@ class CollegeUpdateStudentInfoRequest extends Model
     public $studentName;
     protected $_name = [
         'empExtension' => 'empExtension',
-        'gender'       => 'gender',
-        'identifyId'   => 'identifyId',
-        'startYear'    => 'startYear',
-        'studentId'    => 'studentId',
-        'studentName'  => 'studentName',
+        'gender' => 'gender',
+        'identifyId' => 'identifyId',
+        'startYear' => 'startYear',
+        'studentId' => 'studentId',
+        'studentName' => 'studentName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

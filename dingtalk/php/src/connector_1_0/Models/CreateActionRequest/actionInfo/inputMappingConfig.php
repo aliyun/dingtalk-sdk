@@ -19,12 +19,10 @@ class inputMappingConfig extends Model
     public $rules;
     protected $_name = [
         'customSchemaMapping' => 'customSchemaMapping',
-        'rules'               => 'rules',
+        'rules' => 'rules',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

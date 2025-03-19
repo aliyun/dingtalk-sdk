@@ -16,9 +16,7 @@ class result extends Model
         'canAccess' => 'canAccess',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -45,15 +45,13 @@ class PagePointHistoryResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
-        'hasMore'         => 'hasMore',
-        'nextToken'       => 'nextToken',
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
         'pointRecordList' => 'pointRecordList',
-        'totalCount'      => 'totalCount',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -97,7 +95,7 @@ class PagePointHistoryResponseBody extends Model
         if (isset($map['pointRecordList'])) {
             if (!empty($map['pointRecordList'])) {
                 $model->pointRecordList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['pointRecordList'] as $item) {
                     $model->pointRecordList[$n++] = null !== $item ? pointRecordList::fromMap($item) : $item;
                 }

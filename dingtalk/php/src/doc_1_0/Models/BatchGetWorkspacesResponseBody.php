@@ -17,9 +17,7 @@ class BatchGetWorkspacesResponseBody extends Model
         'workspaces' => 'workspaces',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class BatchGetWorkspacesResponseBody extends Model
         if (isset($map['workspaces'])) {
             if (!empty($map['workspaces'])) {
                 $model->workspaces = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['workspaces'] as $item) {
                     $model->workspaces[$n++] = null !== $item ? workspaces::fromMap($item) : $item;
                 }

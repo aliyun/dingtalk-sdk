@@ -60,17 +60,15 @@ class QueryPurchaseInfoResponseBody extends Model
      */
     public $userId;
     protected $_name = [
-        'corpId'     => 'corpId',
+        'corpId' => 'corpId',
         'merchantId' => 'merchantId',
-        'name'       => 'name',
-        'scene'      => 'scene',
-        'status'     => 'status',
-        'userId'     => 'userId',
+        'name' => 'name',
+        'scene' => 'scene',
+        'status' => 'status',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

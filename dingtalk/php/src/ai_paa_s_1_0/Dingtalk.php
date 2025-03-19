@@ -68,10 +68,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -102,6 +102,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->model)) {
             $body['model'] = $request->model;
         }
+        if (!Utils::isUnset($request->stream)) {
+            $body['stream'] = $request->stream;
+        }
         if (!Utils::isUnset($request->temperature)) {
             $body['temperature'] = $request->temperature;
         }
@@ -117,18 +120,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExclusiveModelCompleteService',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/ai/complete',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExclusiveModelCompleteService',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/ai/complete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExclusiveModelCompleteServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -186,18 +189,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExecuteAgent',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/me/agents/execute',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExecuteAgent',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/me/agents/execute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExecuteAgentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -249,18 +252,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'LiandanTextImageGet',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/ai/textToImage/results/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'LiandanTextImageGet',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/ai/textToImage/results/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return LiandanTextImageGetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -315,18 +318,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'LiandanluExclusiveModel',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/ai/generate',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'LiandanluExclusiveModel',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/ai/generate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return LiandanluExclusiveModelResponse::fromMap($this->execute($params, $req, $runtime));
@@ -384,18 +387,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'LiandanluTextToImageModel',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/ai/textToImage/generate',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'LiandanluTextToImageModel',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/ai/textToImage/generate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return LiandanluTextToImageModelResponse::fromMap($this->execute($params, $req, $runtime));
@@ -453,18 +456,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'NLToFrameService',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/ai/nl2frame',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'NLToFrameService',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/ai/nl2frame',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return NLToFrameServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -519,18 +522,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryBaymaxSkillLog',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/skills/logs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryBaymaxSkillLog',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/skills/logs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryBaymaxSkillLogResponse::fromMap($this->execute($params, $req, $runtime));
@@ -591,18 +594,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryConversationMessageForAI',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/me/memory/im/' . $cid . '/messages',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryConversationMessageForAI',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/me/memory/im/' . $cid . '/messages',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryConversationMessageForAIResponse::fromMap($this->execute($params, $req, $runtime));
@@ -652,18 +655,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryMemoryLearningTask',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/me/memory/learningTask/get',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMemoryLearningTask',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/me/memory/learningTask/get',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMemoryLearningTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -702,18 +705,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SmartFormulaResultService',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/nl2x/smartFormulas/results/query',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'SmartFormulaResultService',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/nl2x/smartFormulas/results/query',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SmartFormulaResultServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -752,18 +755,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SmartFormulaTriggerService',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/nl2x/smartFormulas/trigger',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'SmartFormulaTriggerService',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/nl2x/smartFormulas/trigger',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SmartFormulaTriggerServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -809,18 +812,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SmartQuoteBatchQueryResultService',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/nl2x/smartQuotations/results/batchQuery',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SmartQuoteBatchQueryResultService',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/nl2x/smartQuotations/results/batchQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SmartQuoteBatchQueryResultServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -866,18 +869,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SmartQuoteBatchQueryService',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/nl2x/smartQuotations/batchQuery',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SmartQuoteBatchQueryService',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/nl2x/smartQuotations/batchQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SmartQuoteBatchQueryServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -923,18 +926,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SmartQuoteDataService',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/nl2x/smartQuotations/datas',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SmartQuoteDataService',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/nl2x/smartQuotations/datas',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SmartQuoteDataServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -980,18 +983,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SmartQuoteQueryResultService',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/nl2x/smartQuotations/results/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SmartQuoteQueryResultService',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/nl2x/smartQuotations/results/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SmartQuoteQueryResultServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1037,18 +1040,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SmartQuoteQueryService',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/nl2x/smartQuotations/triggerQuery',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SmartQuoteQueryService',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/nl2x/smartQuotations/triggerQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SmartQuoteQueryServiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1108,18 +1111,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SubmitMemoryLearningTask',
-            'version'     => 'aiPaaS_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/me/memory/learningTask/put',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SubmitMemoryLearningTask',
+            'version' => 'aiPaaS_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiPaaS/me/memory/learningTask/put',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SubmitMemoryLearningTaskResponse::fromMap($this->execute($params, $req, $runtime));

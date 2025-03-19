@@ -22,13 +22,11 @@ class GetDocContentRequest extends Model
      */
     public $targetFormat;
     protected $_name = [
-        'generateCp'   => 'generateCp',
+        'generateCp' => 'generateCp',
         'targetFormat' => 'targetFormat',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -24,13 +24,11 @@ class additionInfo extends Model
     public $dataType;
     protected $_name = [
         'additionContent' => 'additionContent',
-        'additionName'    => 'additionName',
-        'dataType'        => 'dataType',
+        'additionName' => 'additionName',
+        'dataType' => 'dataType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

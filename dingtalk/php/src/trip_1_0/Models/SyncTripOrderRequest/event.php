@@ -26,13 +26,11 @@ class event extends Model
      */
     public $gmtAction;
     protected $_name = [
-        'action'    => 'action',
+        'action' => 'action',
         'gmtAction' => 'gmtAction',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

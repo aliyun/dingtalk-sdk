@@ -18,9 +18,7 @@ class ListObjectiveByIdsRequest extends Model
         'objectiveIds' => 'objectiveIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

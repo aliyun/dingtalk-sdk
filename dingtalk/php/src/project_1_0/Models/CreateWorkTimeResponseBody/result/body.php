@@ -29,14 +29,12 @@ class body extends Model
      */
     public $workTime;
     protected $_name = [
-        'date'     => 'date',
-        'taskId'   => 'taskId',
+        'date' => 'date',
+        'taskId' => 'taskId',
         'workTime' => 'workTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

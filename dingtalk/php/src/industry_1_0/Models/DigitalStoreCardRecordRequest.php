@@ -48,17 +48,15 @@ class DigitalStoreCardRecordRequest extends Model
      */
     public $sceneCardName;
     protected $_name = [
-        'beginTime'     => 'beginTime',
-        'endTime'       => 'endTime',
-        'ids'           => 'ids',
-        'pageNumber'    => 'pageNumber',
-        'pageSize'      => 'pageSize',
+        'beginTime' => 'beginTime',
+        'endTime' => 'endTime',
+        'ids' => 'ids',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'sceneCardName' => 'sceneCardName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

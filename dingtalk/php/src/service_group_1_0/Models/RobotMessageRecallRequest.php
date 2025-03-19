@@ -36,13 +36,11 @@ class RobotMessageRecallRequest extends Model
     public $openTeamId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openMsgId'          => 'openMsgId',
-        'openTeamId'         => 'openTeamId',
+        'openMsgId' => 'openMsgId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

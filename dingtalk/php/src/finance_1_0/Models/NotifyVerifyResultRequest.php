@@ -88,21 +88,19 @@ class NotifyVerifyResultRequest extends Model
      */
     public $verifyTime;
     protected $_name = [
-        'corpId'               => 'corpId',
-        'payCode'              => 'payCode',
-        'remark'               => 'remark',
+        'corpId' => 'corpId',
+        'payCode' => 'payCode',
+        'remark' => 'remark',
         'userCorpRelationType' => 'userCorpRelationType',
-        'userIdentity'         => 'userIdentity',
-        'verifyEvent'          => 'verifyEvent',
-        'verifyLocation'       => 'verifyLocation',
-        'verifyNo'             => 'verifyNo',
-        'verifyResult'         => 'verifyResult',
-        'verifyTime'           => 'verifyTime',
+        'userIdentity' => 'userIdentity',
+        'verifyEvent' => 'verifyEvent',
+        'verifyLocation' => 'verifyLocation',
+        'verifyNo' => 'verifyNo',
+        'verifyResult' => 'verifyResult',
+        'verifyTime' => 'verifyTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

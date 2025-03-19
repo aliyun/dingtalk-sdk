@@ -71,8 +71,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -108,18 +108,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDept',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/deptartments/' . $departmentId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDept',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/deptartments/' . $departmentId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -167,18 +167,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetResidentDept',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/residentDepartments/departments/' . $departmentId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetResidentDept',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/residentDepartments/departments/' . $departmentId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetResidentDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -227,18 +227,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetResidentUserInfo',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/residentDepartments/' . $departmentId . '/users/' . $userId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetResidentUserInfo',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/residentDepartments/' . $departmentId . '/users/' . $userId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetResidentUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -290,18 +290,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUser',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/users/getByUserId',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUser',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/users/getByUserId',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -354,18 +354,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUserByUnionId',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/users/getByUnionId',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserByUnionId',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/users/getByUnionId',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserByUnionIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -408,15 +408,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetVillageOrgInfo',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/corps/' . $subCorpId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetVillageOrgInfo',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/corps/' . $subCorpId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetVillageOrgInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -478,18 +478,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListDeptSimpleUsers',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/departments/' . $departmentId . '/simpleUsers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListDeptSimpleUsers',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/departments/' . $departmentId . '/simpleUsers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListDeptSimpleUsersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -537,18 +537,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListDeptUserIds',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/departments/' . $departmentId . '/userIds',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListDeptUserIds',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/departments/' . $departmentId . '/userIds',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListDeptUserIdsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -611,18 +611,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListDeptUsers',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/departments/' . $departmentId . '/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListDeptUsers',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/departments/' . $departmentId . '/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListDeptUsersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -672,18 +672,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListParentByDept',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/departments/listParentByDepartment',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListParentByDept',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/departments/listParentByDepartment',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListParentByDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -732,18 +732,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListParentByUser',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/departments/listParentByUser',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListParentByUser',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/departments/listParentByUser',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListParentByUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -799,18 +799,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListResidentDeptUsers',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/residentDepartments/' . $departmentId . '/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListResidentDeptUsers',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/residentDepartments/' . $departmentId . '/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListResidentDeptUsersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -864,18 +864,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListResidentSubDepts',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/residentDepartments/' . $departmentId . '/subDepartments',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListResidentSubDepts',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/residentDepartments/' . $departmentId . '/subDepartments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListResidentSubDeptsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -930,18 +930,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListResidentUserInfos',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/residentUsers/getByUserIds',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListResidentUserInfos',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/residentUsers/getByUserIds',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListResidentUserInfosResponse::fromMap($this->execute($params, $req, $runtime));
@@ -996,18 +996,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListSimpleUsersByRole',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/users/listByRole',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListSimpleUsersByRole',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/users/listByRole',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListSimpleUsersByRoleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1059,18 +1059,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListSubCorps',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/corps/subCorps',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListSubCorps',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/corps/subCorps',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListSubCorpsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1120,18 +1120,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListSubDept',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/departments/' . $departmentId . '/subDepartments',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListSubDept',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/departments/' . $departmentId . '/subDepartments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListSubDeptResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1179,18 +1179,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListSubDeptIds',
-            'version'     => 'village_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/village/departments/' . $departmentId . '/subDepartmentIds',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListSubDeptIds',
+            'version' => 'village_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/village/departments/' . $departmentId . '/subDepartmentIds',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListSubDeptIdsResponse::fromMap($this->execute($params, $req, $runtime));

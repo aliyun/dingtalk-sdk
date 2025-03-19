@@ -21,13 +21,11 @@ class CreateActionRequest extends Model
      */
     public $integratorFlag;
     protected $_name = [
-        'actionInfo'     => 'actionInfo',
+        'actionInfo' => 'actionInfo',
         'integratorFlag' => 'integratorFlag',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class CreateActionRequest extends Model
         if (isset($map['actionInfo'])) {
             if (!empty($map['actionInfo'])) {
                 $model->actionInfo = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['actionInfo'] as $item) {
                     $model->actionInfo[$n++] = null !== $item ? actionInfo::fromMap($item) : $item;
                 }

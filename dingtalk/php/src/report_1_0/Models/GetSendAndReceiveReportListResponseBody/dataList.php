@@ -50,17 +50,15 @@ class dataList extends Model
      */
     public $templateName;
     protected $_name = [
-        'createTime'   => 'createTime',
-        'creatorId'    => 'creatorId',
-        'creatorName'  => 'creatorName',
+        'createTime' => 'createTime',
+        'creatorId' => 'creatorId',
+        'creatorName' => 'creatorName',
         'modifiedTime' => 'modifiedTime',
-        'reportId'     => 'reportId',
+        'reportId' => 'reportId',
         'templateName' => 'templateName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

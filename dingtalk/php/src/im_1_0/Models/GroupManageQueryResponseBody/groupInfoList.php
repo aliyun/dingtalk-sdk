@@ -74,21 +74,19 @@ class groupInfoList extends Model
      */
     public $type;
     protected $_name = [
-        'banWordsMode'       => 'banWordsMode',
-        'capacity'           => 'capacity',
-        'createdAt'          => 'createdAt',
-        'extInfo'            => 'extInfo',
-        'groupAdminList'     => 'groupAdminList',
-        'groupOwner'         => 'groupOwner',
-        'groupTitle'         => 'groupTitle',
-        'memberCount'        => 'memberCount',
+        'banWordsMode' => 'banWordsMode',
+        'capacity' => 'capacity',
+        'createdAt' => 'createdAt',
+        'extInfo' => 'extInfo',
+        'groupAdminList' => 'groupAdminList',
+        'groupOwner' => 'groupOwner',
+        'groupTitle' => 'groupTitle',
+        'memberCount' => 'memberCount',
         'openConversationId' => 'openConversationId',
-        'type'               => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

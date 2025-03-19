@@ -126,29 +126,27 @@ class list_ extends Model
      */
     public $weight;
     protected $_name = [
-        'alignFromIds'    => 'alignFromIds',
-        'alignToIds'      => 'alignToIds',
-        'content'         => 'content',
-        'gmtCreate'       => 'gmtCreate',
-        'gmtModified'     => 'gmtModified',
-        'id'              => 'id',
-        'krList'          => 'krList',
-        'owner'           => 'owner',
-        'periodId'        => 'periodId',
-        'permission'      => 'permission',
-        'position'        => 'position',
-        'progress'        => 'progress',
+        'alignFromIds' => 'alignFromIds',
+        'alignToIds' => 'alignToIds',
+        'content' => 'content',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'id' => 'id',
+        'krList' => 'krList',
+        'owner' => 'owner',
+        'periodId' => 'periodId',
+        'permission' => 'permission',
+        'position' => 'position',
+        'progress' => 'progress',
         'progressPercent' => 'progressPercent',
-        'published'       => 'published',
-        'score'           => 'score',
-        'status'          => 'status',
-        'userId'          => 'userId',
-        'weight'          => 'weight',
+        'published' => 'published',
+        'score' => 'score',
+        'status' => 'status',
+        'userId' => 'userId',
+        'weight' => 'weight',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -250,7 +248,7 @@ class list_ extends Model
         if (isset($map['krList'])) {
             if (!empty($map['krList'])) {
                 $model->krList = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['krList'] as $item) {
                     $model->krList[$n++] = null !== $item ? krList::fromMap($item) : $item;
                 }

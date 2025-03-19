@@ -29,14 +29,12 @@ class recycleBin extends Model
      */
     public $scopeId;
     protected $_name = [
-        'id'      => 'id',
-        'scope'   => 'scope',
+        'id' => 'id',
+        'scope' => 'scope',
         'scopeId' => 'scopeId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

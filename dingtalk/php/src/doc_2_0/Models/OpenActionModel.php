@@ -22,13 +22,11 @@ class OpenActionModel extends Model
      */
     public $timestamp;
     protected $_name = [
-        'name'      => 'name',
+        'name' => 'name',
         'timestamp' => 'timestamp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

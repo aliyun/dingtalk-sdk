@@ -22,13 +22,11 @@ class GetSpacesInfoRequest extends Model
      */
     public $residentCorpId;
     protected $_name = [
-        'referIds'       => 'referIds',
+        'referIds' => 'referIds',
         'residentCorpId' => 'residentCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

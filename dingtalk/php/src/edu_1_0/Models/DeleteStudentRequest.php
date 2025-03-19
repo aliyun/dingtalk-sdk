@@ -20,9 +20,7 @@ class DeleteStudentRequest extends Model
         'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

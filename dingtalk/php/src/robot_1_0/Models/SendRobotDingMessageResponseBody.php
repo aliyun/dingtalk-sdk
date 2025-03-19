@@ -18,9 +18,7 @@ class SendRobotDingMessageResponseBody extends Model
         'dingSendResultId' => 'dingSendResultId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

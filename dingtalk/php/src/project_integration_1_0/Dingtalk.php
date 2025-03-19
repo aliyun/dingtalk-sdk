@@ -26,8 +26,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -57,15 +57,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'AddAttendeeToEventGroup',
-            'version'     => 'projectIntegration_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/projectIntegration/users/' . $userId . '/eventGroups/' . $groupId . '/members',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddAttendeeToEventGroup',
+            'version' => 'projectIntegration_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/projectIntegration/users/' . $userId . '/eventGroups/' . $groupId . '/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddAttendeeToEventGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -109,15 +109,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'CreateEventGroup',
-            'version'     => 'projectIntegration_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/projectIntegration/users/' . $userId . '/eventGroups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateEventGroup',
+            'version' => 'projectIntegration_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/projectIntegration/users/' . $userId . '/eventGroups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateEventGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -160,15 +160,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'SendInteractiveCard',
-            'version'     => 'projectIntegration_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/projectIntegration/users/' . $userId . '/groupChatCardMessages',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendInteractiveCard',
+            'version' => 'projectIntegration_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/projectIntegration/users/' . $userId . '/groupChatCardMessages',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendInteractiveCardResponse::fromMap($this->execute($params, $req, $runtime));
@@ -211,15 +211,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'SendSingleInteractiveCard',
-            'version'     => 'projectIntegration_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/projectIntegration/users/' . $userId . '/singleChatCardMessages',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendSingleInteractiveCard',
+            'version' => 'projectIntegration_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/projectIntegration/users/' . $userId . '/singleChatCardMessages',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendSingleInteractiveCardResponse::fromMap($this->execute($params, $req, $runtime));
@@ -262,15 +262,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'UpdateInteractiveCard',
-            'version'     => 'projectIntegration_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/projectIntegration/users/' . $userId . '/cardMessages',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInteractiveCard',
+            'version' => 'projectIntegration_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/projectIntegration/users/' . $userId . '/cardMessages',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInteractiveCardResponse::fromMap($this->execute($params, $req, $runtime));

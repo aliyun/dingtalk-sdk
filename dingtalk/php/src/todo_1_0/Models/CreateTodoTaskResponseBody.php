@@ -129,33 +129,31 @@ class CreateTodoTaskResponseBody extends Model
      */
     public $subject;
     protected $_name = [
-        'bizTag'             => 'bizTag',
-        'contentFieldList'   => 'contentFieldList',
-        'createdTime'        => 'createdTime',
-        'creatorId'          => 'creatorId',
-        'description'        => 'description',
-        'detailUrl'          => 'detailUrl',
-        'done'               => 'done',
-        'dueTime'            => 'dueTime',
-        'executorIds'        => 'executorIds',
-        'finishTime'         => 'finishTime',
-        'id'                 => 'id',
+        'bizTag' => 'bizTag',
+        'contentFieldList' => 'contentFieldList',
+        'createdTime' => 'createdTime',
+        'creatorId' => 'creatorId',
+        'description' => 'description',
+        'detailUrl' => 'detailUrl',
+        'done' => 'done',
+        'dueTime' => 'dueTime',
+        'executorIds' => 'executorIds',
+        'finishTime' => 'finishTime',
+        'id' => 'id',
         'isOnlyShowExecutor' => 'isOnlyShowExecutor',
-        'modifiedTime'       => 'modifiedTime',
-        'modifierId'         => 'modifierId',
-        'notifyConfigs'      => 'notifyConfigs',
-        'participantIds'     => 'participantIds',
-        'priority'           => 'priority',
-        'requestId'          => 'requestId',
-        'source'             => 'source',
-        'sourceId'           => 'sourceId',
-        'startTime'          => 'startTime',
-        'subject'            => 'subject',
+        'modifiedTime' => 'modifiedTime',
+        'modifierId' => 'modifierId',
+        'notifyConfigs' => 'notifyConfigs',
+        'participantIds' => 'participantIds',
+        'priority' => 'priority',
+        'requestId' => 'requestId',
+        'source' => 'source',
+        'sourceId' => 'sourceId',
+        'startTime' => 'startTime',
+        'subject' => 'subject',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -250,7 +248,7 @@ class CreateTodoTaskResponseBody extends Model
         if (isset($map['contentFieldList'])) {
             if (!empty($map['contentFieldList'])) {
                 $model->contentFieldList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['contentFieldList'] as $item) {
                     $model->contentFieldList[$n++] = null !== $item ? contentFieldList::fromMap($item) : $item;
                 }

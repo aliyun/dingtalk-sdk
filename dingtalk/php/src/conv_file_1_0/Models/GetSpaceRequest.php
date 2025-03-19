@@ -27,12 +27,10 @@ class GetSpaceRequest extends Model
     public $unionId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'unionId'            => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -47,18 +47,16 @@ class triggerInfo extends Model
      */
     public $name;
     protected $_name = [
-        'description'           => 'description',
-        'dingConnectorId'       => 'dingConnectorId',
-        'dingTriggerId'         => 'dingTriggerId',
-        'inputSchema'           => 'inputSchema',
+        'description' => 'description',
+        'dingConnectorId' => 'dingConnectorId',
+        'dingTriggerId' => 'dingTriggerId',
+        'inputSchema' => 'inputSchema',
         'integratorConnectorId' => 'integratorConnectorId',
-        'integratorTriggerId'   => 'integratorTriggerId',
-        'name'                  => 'name',
+        'integratorTriggerId' => 'integratorTriggerId',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

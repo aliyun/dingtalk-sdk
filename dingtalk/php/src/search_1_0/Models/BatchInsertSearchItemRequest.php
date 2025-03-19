@@ -19,9 +19,7 @@ class BatchInsertSearchItemRequest extends Model
         'searchItemModels' => 'searchItemModels',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class BatchInsertSearchItemRequest extends Model
         if (isset($map['searchItemModels'])) {
             if (!empty($map['searchItemModels'])) {
                 $model->searchItemModels = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['searchItemModels'] as $item) {
                     $model->searchItemModels[$n++] = null !== $item ? searchItemModels::fromMap($item) : $item;
                 }

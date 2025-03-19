@@ -83,22 +83,20 @@ class SearchFormDataIdListRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'createFromTimeGMT'   => 'createFromTimeGMT',
-        'createToTimeGMT'     => 'createToTimeGMT',
-        'language'            => 'language',
+        'createFromTimeGMT' => 'createFromTimeGMT',
+        'createToTimeGMT' => 'createToTimeGMT',
+        'language' => 'language',
         'modifiedFromTimeGMT' => 'modifiedFromTimeGMT',
-        'modifiedToTimeGMT'   => 'modifiedToTimeGMT',
-        'originatorId'        => 'originatorId',
-        'searchFieldJson'     => 'searchFieldJson',
-        'systemToken'         => 'systemToken',
-        'userId'              => 'userId',
-        'pageNumber'          => 'pageNumber',
-        'pageSize'            => 'pageSize',
+        'modifiedToTimeGMT' => 'modifiedToTimeGMT',
+        'originatorId' => 'originatorId',
+        'searchFieldJson' => 'searchFieldJson',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

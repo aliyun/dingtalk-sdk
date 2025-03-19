@@ -54,19 +54,17 @@ class items extends Model
     public $updateTime;
     protected $_name = [
         'createTime' => 'createTime',
-        'deadline'   => 'deadline',
-        'deleted'    => 'deleted',
-        'priority'   => 'priority',
-        'taskKey'    => 'taskKey',
+        'deadline' => 'deadline',
+        'deleted' => 'deleted',
+        'priority' => 'priority',
+        'taskKey' => 'taskKey',
         'taskStatus' => 'taskStatus',
-        'taskType'   => 'taskType',
-        'title'      => 'title',
+        'taskType' => 'taskType',
+        'title' => 'title',
         'updateTime' => 'updateTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

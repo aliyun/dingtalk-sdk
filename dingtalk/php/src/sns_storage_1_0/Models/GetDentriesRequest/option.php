@@ -16,9 +16,7 @@ class option extends Model
         'appIdsForAppProperties' => 'appIdsForAppProperties',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

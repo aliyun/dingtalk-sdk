@@ -19,9 +19,7 @@ class GetCrmRolePermissionResponseBody extends Model
         'permissions' => 'permissions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class GetCrmRolePermissionResponseBody extends Model
         if (isset($map['permissions'])) {
             if (!empty($map['permissions'])) {
                 $model->permissions = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['permissions'] as $item) {
                     $model->permissions[$n++] = null !== $item ? permissions::fromMap($item) : $item;
                 }

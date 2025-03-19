@@ -25,13 +25,11 @@ class body extends Model
     public $urlList;
     protected $_name = [
         'companyCode' => 'companyCode',
-        'operator'    => 'operator',
-        'urlList'     => 'urlList',
+        'operator' => 'operator',
+        'urlList' => 'urlList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -72,7 +70,7 @@ class body extends Model
         if (isset($map['urlList'])) {
             if (!empty($map['urlList'])) {
                 $model->urlList = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['urlList'] as $item) {
                     $model->urlList[$n++] = null !== $item ? urlList::fromMap($item) : $item;
                 }

@@ -20,9 +20,7 @@ class customClass extends Model
         'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class CreateDeviceCustomTemplateResponseBody extends Model
         'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

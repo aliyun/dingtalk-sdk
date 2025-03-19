@@ -29,14 +29,12 @@ class ListFollowerRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'accountId'  => 'accountId',
+        'accountId' => 'accountId',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

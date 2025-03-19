@@ -29,14 +29,12 @@ class body extends Model
      */
     public $quotaNum;
     protected $_name = [
-        'period'   => 'period',
-        'usedNum'  => 'usedNum',
+        'period' => 'period',
+        'usedNum' => 'usedNum',
         'quotaNum' => 'quotaNum',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

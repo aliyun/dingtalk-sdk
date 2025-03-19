@@ -43,16 +43,14 @@ class ListFilesRequest extends Model
     public $withIcon;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'orderType'  => 'orderType',
-        'parentId'   => 'parentId',
-        'unionId'    => 'unionId',
-        'withIcon'   => 'withIcon',
+        'nextToken' => 'nextToken',
+        'orderType' => 'orderType',
+        'parentId' => 'parentId',
+        'unionId' => 'unionId',
+        'withIcon' => 'withIcon',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

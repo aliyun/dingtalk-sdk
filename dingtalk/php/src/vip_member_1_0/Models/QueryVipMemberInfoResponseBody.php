@@ -19,12 +19,10 @@ class QueryVipMemberInfoResponseBody extends Model
     public $isVip;
     protected $_name = [
         'expireTime' => 'expireTime',
-        'isVip'      => 'isVip',
+        'isVip' => 'isVip',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

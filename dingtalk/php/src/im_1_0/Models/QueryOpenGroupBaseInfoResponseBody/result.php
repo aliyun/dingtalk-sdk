@@ -33,16 +33,14 @@ class result extends Model
      */
     public $title;
     protected $_name = [
-        'icon'               => 'icon',
-        'memberCount'        => 'memberCount',
+        'icon' => 'icon',
+        'memberCount' => 'memberCount',
         'openConversationId' => 'openConversationId',
-        'tag'                => 'tag',
-        'title'              => 'title',
+        'tag' => 'tag',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

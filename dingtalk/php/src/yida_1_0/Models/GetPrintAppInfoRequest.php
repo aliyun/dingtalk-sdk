@@ -25,12 +25,10 @@ class GetPrintAppInfoRequest extends Model
     public $userId;
     protected $_name = [
         'nameLike' => 'nameLike',
-        'userId'   => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

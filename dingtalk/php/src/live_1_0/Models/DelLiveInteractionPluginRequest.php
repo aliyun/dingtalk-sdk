@@ -29,14 +29,12 @@ class DelLiveInteractionPluginRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'liveId'   => 'liveId',
+        'liveId' => 'liveId',
         'pluginId' => 'pluginId',
-        'unionId'  => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

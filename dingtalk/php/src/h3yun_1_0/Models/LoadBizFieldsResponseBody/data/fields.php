@@ -30,13 +30,11 @@ class fields extends Model
     public $label;
     protected $_name = [
         'bizDataType' => 'bizDataType',
-        'fieldName'   => 'fieldName',
-        'label'       => 'label',
+        'fieldName' => 'fieldName',
+        'label' => 'label',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

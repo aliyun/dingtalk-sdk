@@ -17,9 +17,7 @@ class AddSpaceResponseBody extends Model
         'space' => 'space',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

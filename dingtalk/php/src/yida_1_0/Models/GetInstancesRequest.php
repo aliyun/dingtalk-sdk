@@ -133,28 +133,26 @@ class GetInstancesRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'appType'             => 'appType',
-        'approvedResult'      => 'approvedResult',
-        'createFromTimeGMT'   => 'createFromTimeGMT',
-        'createToTimeGMT'     => 'createToTimeGMT',
-        'formUuid'            => 'formUuid',
-        'instanceStatus'      => 'instanceStatus',
-        'language'            => 'language',
+        'appType' => 'appType',
+        'approvedResult' => 'approvedResult',
+        'createFromTimeGMT' => 'createFromTimeGMT',
+        'createToTimeGMT' => 'createToTimeGMT',
+        'formUuid' => 'formUuid',
+        'instanceStatus' => 'instanceStatus',
+        'language' => 'language',
         'modifiedFromTimeGMT' => 'modifiedFromTimeGMT',
-        'modifiedToTimeGMT'   => 'modifiedToTimeGMT',
-        'orderConfigJson'     => 'orderConfigJson',
-        'originatorId'        => 'originatorId',
-        'searchFieldJson'     => 'searchFieldJson',
-        'systemToken'         => 'systemToken',
-        'taskId'              => 'taskId',
-        'userId'              => 'userId',
-        'pageNumber'          => 'pageNumber',
-        'pageSize'            => 'pageSize',
+        'modifiedToTimeGMT' => 'modifiedToTimeGMT',
+        'orderConfigJson' => 'orderConfigJson',
+        'originatorId' => 'originatorId',
+        'searchFieldJson' => 'searchFieldJson',
+        'systemToken' => 'systemToken',
+        'taskId' => 'taskId',
+        'userId' => 'userId',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

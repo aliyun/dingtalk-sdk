@@ -58,19 +58,17 @@ class RegisterAndActivateDeviceRequest extends Model
     public $userIds;
     protected $_name = [
         'deviceCallbackUrl' => 'deviceCallbackUrl',
-        'deviceCategory'    => 'deviceCategory',
-        'deviceCode'        => 'deviceCode',
-        'deviceDetailUrl'   => 'deviceDetailUrl',
-        'deviceName'        => 'deviceName',
-        'introduction'      => 'introduction',
-        'roleUuid'          => 'roleUuid',
-        'typeUuid'          => 'typeUuid',
-        'userIds'           => 'userIds',
+        'deviceCategory' => 'deviceCategory',
+        'deviceCode' => 'deviceCode',
+        'deviceDetailUrl' => 'deviceDetailUrl',
+        'deviceName' => 'deviceName',
+        'introduction' => 'introduction',
+        'roleUuid' => 'roleUuid',
+        'typeUuid' => 'typeUuid',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

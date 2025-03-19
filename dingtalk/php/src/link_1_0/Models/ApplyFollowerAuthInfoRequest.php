@@ -40,13 +40,11 @@ class ApplyFollowerAuthInfoRequest extends Model
     protected $_name = [
         'appAuthKey' => 'appAuthKey',
         'fieldScope' => 'fieldScope',
-        'sessionId'  => 'sessionId',
-        'userId'     => 'userId',
+        'sessionId' => 'sessionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

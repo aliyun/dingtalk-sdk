@@ -56,17 +56,15 @@ class folders extends Model
     public $unreadItemCount;
     protected $_name = [
         'childFolderCount' => 'childFolderCount',
-        'displayName'      => 'displayName',
-        'extensions'       => 'extensions',
-        'id'               => 'id',
-        'parentFolderId'   => 'parentFolderId',
-        'totalItemCount'   => 'totalItemCount',
-        'unreadItemCount'  => 'unreadItemCount',
+        'displayName' => 'displayName',
+        'extensions' => 'extensions',
+        'id' => 'id',
+        'parentFolderId' => 'parentFolderId',
+        'totalItemCount' => 'totalItemCount',
+        'unreadItemCount' => 'unreadItemCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

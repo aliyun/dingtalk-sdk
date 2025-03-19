@@ -79,22 +79,20 @@ class isvOpportunityStatusList extends Model
      */
     public $userId;
     protected $_name = [
-        'isvCorpId'         => 'isvCorpId',
-        'microAppId'        => 'microAppId',
-        'name'              => 'name',
-        'note'              => 'note',
-        'operCorpId'        => 'operCorpId',
-        'operName'          => 'operName',
-        'operTime'          => 'operTime',
-        'operUserId'        => 'operUserId',
-        'oppSourceCorpId'   => 'oppSourceCorpId',
+        'isvCorpId' => 'isvCorpId',
+        'microAppId' => 'microAppId',
+        'name' => 'name',
+        'note' => 'note',
+        'operCorpId' => 'operCorpId',
+        'operName' => 'operName',
+        'operTime' => 'operTime',
+        'operUserId' => 'operUserId',
+        'oppSourceCorpId' => 'oppSourceCorpId',
         'opportunityStatus' => 'opportunityStatus',
-        'userId'            => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

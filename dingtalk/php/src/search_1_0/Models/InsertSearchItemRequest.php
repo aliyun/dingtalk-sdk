@@ -66,19 +66,17 @@ class InsertSearchItemRequest extends Model
      */
     public $url;
     protected $_name = [
-        'footer'    => 'footer',
-        'icon'      => 'icon',
-        'itemId'    => 'itemId',
+        'footer' => 'footer',
+        'icon' => 'icon',
+        'itemId' => 'itemId',
         'mobileUrl' => 'mobileUrl',
-        'pcUrl'     => 'pcUrl',
-        'summary'   => 'summary',
-        'title'     => 'title',
-        'url'       => 'url',
+        'pcUrl' => 'pcUrl',
+        'summary' => 'summary',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

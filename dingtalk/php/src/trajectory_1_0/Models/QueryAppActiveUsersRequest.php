@@ -35,14 +35,12 @@ class QueryAppActiveUsersRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'maxResults'       => 'maxResults',
+        'maxResults' => 'maxResults',
         'needPositionInfo' => 'needPositionInfo',
-        'nextToken'        => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

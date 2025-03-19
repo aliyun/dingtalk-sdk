@@ -23,12 +23,10 @@ class result extends Model
     public $name;
     protected $_name = [
         'departmentId' => 'departmentId',
-        'name'         => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

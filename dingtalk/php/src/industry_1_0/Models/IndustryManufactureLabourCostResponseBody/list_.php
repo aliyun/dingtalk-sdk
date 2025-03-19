@@ -134,29 +134,27 @@ class list_ extends Model
      */
     public $unQualifiedReason2;
     protected $_name = [
-        'corpId'             => 'corpId',
-        'ext'                => 'ext',
-        'gmtCreate'          => 'gmtCreate',
-        'gmtModified'        => 'gmtModified',
-        'instanceId'         => 'instanceId',
-        'labourCostName'     => 'labourCostName',
-        'labourCostNo'       => 'labourCostNo',
-        'materialName'       => 'materialName',
-        'materialNo'         => 'materialNo',
-        'processCode'        => 'processCode',
-        'processName'        => 'processName',
-        'processNo'          => 'processNo',
-        'qualifiedPrice'     => 'qualifiedPrice',
-        'unQualifiedInfo'    => 'unQualifiedInfo',
-        'unQualifiedPrice1'  => 'unQualifiedPrice1',
-        'unQualifiedPrice2'  => 'unQualifiedPrice2',
+        'corpId' => 'corpId',
+        'ext' => 'ext',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'instanceId' => 'instanceId',
+        'labourCostName' => 'labourCostName',
+        'labourCostNo' => 'labourCostNo',
+        'materialName' => 'materialName',
+        'materialNo' => 'materialNo',
+        'processCode' => 'processCode',
+        'processName' => 'processName',
+        'processNo' => 'processNo',
+        'qualifiedPrice' => 'qualifiedPrice',
+        'unQualifiedInfo' => 'unQualifiedInfo',
+        'unQualifiedPrice1' => 'unQualifiedPrice1',
+        'unQualifiedPrice2' => 'unQualifiedPrice2',
         'unQualifiedReason1' => 'unQualifiedReason1',
         'unQualifiedReason2' => 'unQualifiedReason2',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

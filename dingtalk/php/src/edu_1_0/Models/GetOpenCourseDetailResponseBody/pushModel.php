@@ -22,13 +22,11 @@ class pushModel extends Model
      */
     public $pushRoleNameList;
     protected $_name = [
-        'pushOrgNameList'  => 'pushOrgNameList',
+        'pushOrgNameList' => 'pushOrgNameList',
         'pushRoleNameList' => 'pushRoleNameList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

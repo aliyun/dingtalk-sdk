@@ -24,13 +24,11 @@ class QueryFinanceCompanyInfoResponseBody extends Model
     public $taxNo;
     protected $_name = [
         'companyName' => 'companyName',
-        'taxNature'   => 'taxNature',
-        'taxNo'       => 'taxNo',
+        'taxNature' => 'taxNature',
+        'taxNo' => 'taxNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

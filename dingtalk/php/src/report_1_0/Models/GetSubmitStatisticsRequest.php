@@ -53,16 +53,14 @@ class GetSubmitStatisticsRequest extends Model
      */
     public $templateId;
     protected $_name = [
-        'endTime'         => 'endTime',
+        'endTime' => 'endTime',
         'operationUserId' => 'operationUserId',
-        'remindId'        => 'remindId',
-        'startTime'       => 'startTime',
-        'templateId'      => 'templateId',
+        'remindId' => 'remindId',
+        'startTime' => 'startTime',
+        'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

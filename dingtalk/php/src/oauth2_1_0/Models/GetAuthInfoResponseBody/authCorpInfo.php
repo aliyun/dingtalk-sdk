@@ -89,20 +89,18 @@ class authCorpInfo extends Model
      */
     public $licenseCode;
     protected $_name = [
-        'authChannel'     => 'authChannel',
+        'authChannel' => 'authChannel',
         'authChannelType' => 'authChannelType',
-        'authLevel'       => 'authLevel',
-        'corpLogoUrl'     => 'corpLogoUrl',
-        'corpName'        => 'corpName',
-        'industry'        => 'industry',
-        'inviteCode'      => 'inviteCode',
-        'inviteUrl'       => 'inviteUrl',
-        'licenseCode'     => 'licenseCode',
+        'authLevel' => 'authLevel',
+        'corpLogoUrl' => 'corpLogoUrl',
+        'corpName' => 'corpName',
+        'industry' => 'industry',
+        'inviteCode' => 'inviteCode',
+        'inviteUrl' => 'inviteUrl',
+        'licenseCode' => 'licenseCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

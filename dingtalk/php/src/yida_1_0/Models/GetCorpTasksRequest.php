@@ -98,23 +98,21 @@ class GetCorpTasksRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appTypes'          => 'appTypes',
-        'corpId'            => 'corpId',
+        'appTypes' => 'appTypes',
+        'corpId' => 'corpId',
         'createFromTimeGMT' => 'createFromTimeGMT',
-        'createToTimeGMT'   => 'createToTimeGMT',
-        'env'               => 'env',
-        'keyword'           => 'keyword',
-        'language'          => 'language',
-        'pageNumber'        => 'pageNumber',
-        'pageSize'          => 'pageSize',
-        'processCodes'      => 'processCodes',
-        'token'             => 'token',
-        'userId'            => 'userId',
+        'createToTimeGMT' => 'createToTimeGMT',
+        'env' => 'env',
+        'keyword' => 'keyword',
+        'language' => 'language',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'processCodes' => 'processCodes',
+        'token' => 'token',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

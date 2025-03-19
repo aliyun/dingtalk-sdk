@@ -31,13 +31,11 @@ class RangeFindNextRequest extends Model
     public $operatorId;
     protected $_name = [
         'findOptions' => 'findOptions',
-        'text'        => 'text',
-        'operatorId'  => 'operatorId',
+        'text' => 'text',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

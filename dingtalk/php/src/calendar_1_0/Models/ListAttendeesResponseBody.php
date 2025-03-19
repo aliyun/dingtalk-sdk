@@ -23,9 +23,7 @@ class ListAttendeesResponseBody extends Model
         'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class ListAttendeesResponseBody extends Model
         if (isset($map['attendees'])) {
             if (!empty($map['attendees'])) {
                 $model->attendees = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['attendees'] as $item) {
                     $model->attendees[$n++] = null !== $item ? attendees::fromMap($item) : $item;
                 }

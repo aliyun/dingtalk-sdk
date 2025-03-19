@@ -22,9 +22,7 @@ class title extends Model
         'zhCN' => 'zhCN',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

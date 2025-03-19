@@ -49,16 +49,14 @@ class GetProcessDesignByCodeRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
+        'appType' => 'appType',
         'processCode' => 'processCode',
-        'processId'   => 'processId',
+        'processId' => 'processId',
         'systemToken' => 'systemToken',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

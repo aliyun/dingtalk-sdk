@@ -20,9 +20,7 @@ class QueryTripProcessTemplatesRequest extends Model
         'customerCorpId' => 'customerCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

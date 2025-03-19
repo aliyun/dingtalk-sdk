@@ -74,21 +74,19 @@ class GetTrustDeviceListRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'gmtCreateEnd'     => 'gmtCreateEnd',
-        'gmtCreateStart'   => 'gmtCreateStart',
-        'gmtModifiedEnd'   => 'gmtModifiedEnd',
+        'gmtCreateEnd' => 'gmtCreateEnd',
+        'gmtCreateStart' => 'gmtCreateStart',
+        'gmtModifiedEnd' => 'gmtModifiedEnd',
         'gmtModifiedStart' => 'gmtModifiedStart',
-        'macAddress'       => 'macAddress',
-        'pageNumber'       => 'pageNumber',
-        'pageSize'         => 'pageSize',
-        'platform'         => 'platform',
-        'status'           => 'status',
-        'userIds'          => 'userIds',
+        'macAddress' => 'macAddress',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'platform' => 'platform',
+        'status' => 'status',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

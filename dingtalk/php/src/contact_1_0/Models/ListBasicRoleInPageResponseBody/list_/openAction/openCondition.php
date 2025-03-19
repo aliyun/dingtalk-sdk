@@ -17,9 +17,7 @@ class openCondition extends Model
         'openContactScope' => 'openContactScope',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

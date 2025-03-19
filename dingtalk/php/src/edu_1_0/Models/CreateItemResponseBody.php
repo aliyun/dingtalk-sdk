@@ -36,15 +36,13 @@ class CreateItemResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'corpId'     => 'corpId',
-        'id'         => 'id',
+        'corpId' => 'corpId',
+        'id' => 'id',
         'merchantId' => 'merchantId',
-        'status'     => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

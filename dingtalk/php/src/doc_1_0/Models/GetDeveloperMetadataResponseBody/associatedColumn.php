@@ -22,13 +22,11 @@ class associatedColumn extends Model
      */
     public $sheetId;
     protected $_name = [
-        'column'  => 'column',
+        'column' => 'column',
         'sheetId' => 'sheetId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

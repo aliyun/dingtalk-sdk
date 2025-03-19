@@ -41,15 +41,13 @@ class messageContent extends Model
      */
     public $title;
     protected $_name = [
-        'btns'        => 'btns',
-        'content'     => 'content',
+        'btns' => 'btns',
+        'content' => 'content',
         'messageType' => 'messageType',
-        'title'       => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -87,7 +85,7 @@ class messageContent extends Model
         if (isset($map['btns'])) {
             if (!empty($map['btns'])) {
                 $model->btns = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['btns'] as $item) {
                     $model->btns[$n++] = null !== $item ? btns::fromMap($item) : $item;
                 }

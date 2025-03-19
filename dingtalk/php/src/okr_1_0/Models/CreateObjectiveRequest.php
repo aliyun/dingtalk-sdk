@@ -44,15 +44,13 @@ class CreateObjectiveRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'content'      => 'content',
-        'periodId'     => 'periodId',
+        'content' => 'content',
+        'periodId' => 'periodId',
         'prevPosition' => 'prevPosition',
-        'userId'       => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

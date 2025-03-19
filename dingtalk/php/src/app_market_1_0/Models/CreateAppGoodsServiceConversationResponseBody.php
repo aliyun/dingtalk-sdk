@@ -19,12 +19,10 @@ class CreateAppGoodsServiceConversationResponseBody extends Model
     public $newConversation;
     protected $_name = [
         'conversationName' => 'conversationName',
-        'newConversation'  => 'newConversation',
+        'newConversation' => 'newConversation',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

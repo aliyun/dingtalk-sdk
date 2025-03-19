@@ -57,18 +57,16 @@ class data extends Model
      */
     public $unitType;
     protected $_name = [
-        'code'        => 'code',
+        'code' => 'code',
         'description' => 'description',
-        'id'          => 'id',
-        'name'        => 'name',
-        'parentId'    => 'parentId',
-        'sortKey'     => 'sortKey',
-        'unitType'    => 'unitType',
+        'id' => 'id',
+        'name' => 'name',
+        'parentId' => 'parentId',
+        'sortKey' => 'sortKey',
+        'unitType' => 'unitType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

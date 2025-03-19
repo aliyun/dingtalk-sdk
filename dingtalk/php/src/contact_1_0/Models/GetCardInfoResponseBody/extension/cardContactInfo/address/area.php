@@ -18,13 +18,11 @@ class area extends Model
      */
     public $regionFullName;
     protected $_name = [
-        'region'         => 'region',
+        'region' => 'region',
         'regionFullName' => 'regionFullName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

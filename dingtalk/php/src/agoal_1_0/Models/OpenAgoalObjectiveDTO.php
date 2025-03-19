@@ -102,23 +102,21 @@ class OpenAgoalObjectiveDTO extends Model
      */
     public $weight;
     protected $_name = [
-        'executor'       => 'executor',
-        'keyActions'     => 'keyActions',
-        'keyResults'     => 'keyResults',
+        'executor' => 'executor',
+        'keyActions' => 'keyActions',
+        'keyResults' => 'keyResults',
         'latestProgress' => 'latestProgress',
-        'objectiveId'    => 'objectiveId',
-        'objectiveRule'  => 'objectiveRule',
-        'period'         => 'period',
-        'progress'       => 'progress',
-        'status'         => 'status',
-        'teams'          => 'teams',
-        'title'          => 'title',
-        'weight'         => 'weight',
+        'objectiveId' => 'objectiveId',
+        'objectiveRule' => 'objectiveRule',
+        'period' => 'period',
+        'progress' => 'progress',
+        'status' => 'status',
+        'teams' => 'teams',
+        'title' => 'title',
+        'weight' => 'weight',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -195,7 +193,7 @@ class OpenAgoalObjectiveDTO extends Model
         if (isset($map['keyActions'])) {
             if (!empty($map['keyActions'])) {
                 $model->keyActions = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['keyActions'] as $item) {
                     $model->keyActions[$n++] = null !== $item ? OpenAgoalKeyActionDTO::fromMap($item) : $item;
                 }
@@ -204,7 +202,7 @@ class OpenAgoalObjectiveDTO extends Model
         if (isset($map['keyResults'])) {
             if (!empty($map['keyResults'])) {
                 $model->keyResults = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['keyResults'] as $item) {
                     $model->keyResults[$n++] = null !== $item ? OpenAgoalKeyResultDTO::fromMap($item) : $item;
                 }
@@ -231,7 +229,7 @@ class OpenAgoalObjectiveDTO extends Model
         if (isset($map['teams'])) {
             if (!empty($map['teams'])) {
                 $model->teams = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['teams'] as $item) {
                     $model->teams[$n++] = null !== $item ? OpenAgoalTeamDTO::fromMap($item) : $item;
                 }

@@ -130,25 +130,23 @@ class QueryAcquireRefundOrderResponseBody extends Model
      */
     public $title;
     protected $_name = [
-        'amount'              => 'amount',
-        'gmtCreate'           => 'gmtCreate',
-        'gmtRefund'           => 'gmtRefund',
-        'instId'              => 'instId',
-        'orderNo'             => 'orderNo',
-        'originOutTradeNo'    => 'originOutTradeNo',
-        'outRefundNo'         => 'outRefundNo',
-        'payChannel'          => 'payChannel',
+        'amount' => 'amount',
+        'gmtCreate' => 'gmtCreate',
+        'gmtRefund' => 'gmtRefund',
+        'instId' => 'instId',
+        'orderNo' => 'orderNo',
+        'originOutTradeNo' => 'originOutTradeNo',
+        'outRefundNo' => 'outRefundNo',
+        'payChannel' => 'payChannel',
         'payChannelAccountNo' => 'payChannelAccountNo',
-        'payerUserId'         => 'payerUserId',
-        'remark'              => 'remark',
-        'status'              => 'status',
-        'subInstId'           => 'subInstId',
-        'title'               => 'title',
+        'payerUserId' => 'payerUserId',
+        'remark' => 'remark',
+        'status' => 'status',
+        'subInstId' => 'subInstId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class request extends Model
      */
     public $slotId;
     protected $_name = [
-        'body'   => 'body',
+        'body' => 'body',
         'slotId' => 'slotId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

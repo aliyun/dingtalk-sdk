@@ -49,19 +49,17 @@ class data extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'groupName'            => 'groupName',
-        'groupTemplateId'      => 'groupTemplateId',
-        'groupTemplateName'    => 'groupTemplateName',
-        'groupTopic'           => 'groupTopic',
-        'groupType'            => 'groupType',
-        'id'                   => 'id',
+        'groupName' => 'groupName',
+        'groupTemplateId' => 'groupTemplateId',
+        'groupTemplateName' => 'groupTemplateName',
+        'groupTopic' => 'groupTopic',
+        'groupType' => 'groupType',
+        'id' => 'id',
         'listGroupDynamicAttr' => 'listGroupDynamicAttr',
-        'openConversationId'   => 'openConversationId',
+        'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -129,7 +127,7 @@ class data extends Model
         if (isset($map['listGroupDynamicAttr'])) {
             if (!empty($map['listGroupDynamicAttr'])) {
                 $model->listGroupDynamicAttr = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['listGroupDynamicAttr'] as $item) {
                     $model->listGroupDynamicAttr[$n++] = null !== $item ? listGroupDynamicAttr::fromMap($item) : $item;
                 }

@@ -46,13 +46,11 @@ class RunCallUserRequest extends Model
     protected $_name = [
         'authorizeCorpId' => 'authorizeCorpId',
         'authorizeUserId' => 'authorizeUserId',
-        'orderId'         => 'orderId',
-        'userId'          => 'userId',
+        'orderId' => 'orderId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

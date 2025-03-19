@@ -23,12 +23,10 @@ class ClearRecycleFilesRequest extends Model
     public $unionId;
     protected $_name = [
         'recycleType' => 'recycleType',
-        'unionId'     => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

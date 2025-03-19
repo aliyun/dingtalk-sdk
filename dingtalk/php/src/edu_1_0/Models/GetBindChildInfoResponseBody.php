@@ -29,14 +29,12 @@ class GetBindChildInfoResponseBody extends Model
      */
     public $familyCorpId;
     protected $_name = [
-        'childUserId'   => 'childUserId',
+        'childUserId' => 'childUserId',
         'currentUserId' => 'currentUserId',
-        'familyCorpId'  => 'familyCorpId',
+        'familyCorpId' => 'familyCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

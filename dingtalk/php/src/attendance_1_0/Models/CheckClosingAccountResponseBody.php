@@ -29,14 +29,12 @@ class CheckClosingAccountResponseBody extends Model
      */
     public $pass;
     protected $_name = [
-        'code'   => 'code',
+        'code' => 'code',
         'mesage' => 'mesage',
-        'pass'   => 'pass',
+        'pass' => 'pass',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

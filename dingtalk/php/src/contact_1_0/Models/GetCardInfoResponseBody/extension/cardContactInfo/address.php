@@ -19,13 +19,11 @@ class address extends Model
      */
     public $detail;
     protected $_name = [
-        'area'   => 'area',
+        'area' => 'area',
         'detail' => 'detail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

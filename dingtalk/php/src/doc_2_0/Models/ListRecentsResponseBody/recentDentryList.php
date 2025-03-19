@@ -44,16 +44,14 @@ class recentDentryList extends Model
      */
     public $resource;
     protected $_name = [
-        'accessTime'  => 'accessTime',
-        'deleted'     => 'deleted',
-        'icon'        => 'icon',
+        'accessTime' => 'accessTime',
+        'deleted' => 'deleted',
+        'icon' => 'icon',
         'operateType' => 'operateType',
-        'resource'    => 'resource',
+        'resource' => 'resource',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

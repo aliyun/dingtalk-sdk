@@ -36,13 +36,11 @@ class QueryCategoryByPageRequest extends Model
     public $type;
     protected $_name = [
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'type'       => 'type',
+        'pageSize' => 'pageSize',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

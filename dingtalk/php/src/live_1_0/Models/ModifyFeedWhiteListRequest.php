@@ -31,14 +31,12 @@ class ModifyFeedWhiteListRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'action'         => 'action',
+        'action' => 'action',
         'modifyUserList' => 'modifyUserList',
-        'userId'         => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

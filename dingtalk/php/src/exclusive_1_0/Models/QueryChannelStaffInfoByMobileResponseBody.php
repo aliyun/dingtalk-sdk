@@ -20,13 +20,11 @@ class QueryChannelStaffInfoByMobileResponseBody extends Model
      */
     public $exclusiveAccountEmpInfoList;
     protected $_name = [
-        'empInfo'                     => 'empInfo',
+        'empInfo' => 'empInfo',
         'exclusiveAccountEmpInfoList' => 'exclusiveAccountEmpInfoList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -61,7 +59,7 @@ class QueryChannelStaffInfoByMobileResponseBody extends Model
         if (isset($map['exclusiveAccountEmpInfoList'])) {
             if (!empty($map['exclusiveAccountEmpInfoList'])) {
                 $model->exclusiveAccountEmpInfoList = [];
-                $n                                  = 0;
+                $n = 0;
                 foreach ($map['exclusiveAccountEmpInfoList'] as $item) {
                     $model->exclusiveAccountEmpInfoList[$n++] = null !== $item ? exclusiveAccountEmpInfoList::fromMap($item) : $item;
                 }

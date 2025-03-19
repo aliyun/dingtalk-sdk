@@ -25,14 +25,12 @@ class value extends Model
      */
     public $title;
     protected $_name = [
-        'id'       => 'id',
+        'id' => 'id',
         'thumbUrl' => 'thumbUrl',
-        'title'    => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

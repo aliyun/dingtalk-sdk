@@ -23,12 +23,10 @@ class CreateAppGoodsServiceConversationRequest extends Model
     public $orderId;
     protected $_name = [
         'isvUserId' => 'isvUserId',
-        'orderId'   => 'orderId',
+        'orderId' => 'orderId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class VerifyEduOrgCertificationResponseBody extends Model
         'certificated' => 'certificated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

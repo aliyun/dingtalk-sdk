@@ -72,19 +72,17 @@ class interconnections extends Model
      */
     public $userId;
     protected $_name = [
-        'appUserAvatar'          => 'appUserAvatar',
+        'appUserAvatar' => 'appUserAvatar',
         'appUserAvatarMediaType' => 'appUserAvatarMediaType',
-        'appUserDynamics'        => 'appUserDynamics',
-        'appUserId'              => 'appUserId',
-        'appUserMobile'          => 'appUserMobile',
-        'appUserName'            => 'appUserName',
-        'channelCode'            => 'channelCode',
-        'userId'                 => 'userId',
+        'appUserDynamics' => 'appUserDynamics',
+        'appUserId' => 'appUserId',
+        'appUserMobile' => 'appUserMobile',
+        'appUserName' => 'appUserName',
+        'channelCode' => 'channelCode',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

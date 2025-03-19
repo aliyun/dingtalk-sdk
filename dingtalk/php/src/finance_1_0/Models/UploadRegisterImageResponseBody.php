@@ -20,9 +20,7 @@ class UploadRegisterImageResponseBody extends Model
         'ossUrl' => 'ossUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

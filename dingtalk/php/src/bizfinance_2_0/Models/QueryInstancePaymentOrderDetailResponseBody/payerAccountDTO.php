@@ -19,13 +19,11 @@ class payerAccountDTO extends Model
      */
     public $enterpriseAccountCode;
     protected $_name = [
-        'bankOpenDTO'           => 'bankOpenDTO',
+        'bankOpenDTO' => 'bankOpenDTO',
         'enterpriseAccountCode' => 'enterpriseAccountCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

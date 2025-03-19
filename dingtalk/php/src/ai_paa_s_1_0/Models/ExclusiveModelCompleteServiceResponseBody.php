@@ -37,14 +37,12 @@ class ExclusiveModelCompleteServiceResponseBody extends Model
     protected $_name = [
         'choices' => 'choices',
         'created' => 'created',
-        'id'      => 'id',
-        'model'   => 'model',
-        'usage'   => 'usage',
+        'id' => 'id',
+        'model' => 'model',
+        'usage' => 'usage',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -85,7 +83,7 @@ class ExclusiveModelCompleteServiceResponseBody extends Model
         if (isset($map['choices'])) {
             if (!empty($map['choices'])) {
                 $model->choices = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['choices'] as $item) {
                     $model->choices[$n++] = null !== $item ? choices::fromMap($item) : $item;
                 }

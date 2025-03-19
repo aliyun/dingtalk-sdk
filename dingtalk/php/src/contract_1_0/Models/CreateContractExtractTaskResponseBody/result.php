@@ -19,13 +19,11 @@ class result extends Model
      */
     public $requestId;
     protected $_name = [
-        'data'      => 'data',
+        'data' => 'data',
         'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

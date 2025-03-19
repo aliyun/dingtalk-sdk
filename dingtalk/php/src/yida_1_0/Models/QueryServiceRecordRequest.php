@@ -123,26 +123,24 @@ class QueryServiceRecordRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'             => 'appType',
-        'formUuid'            => 'formUuid',
-        'hookType'            => 'hookType',
-        'hookUuid'            => 'hookUuid',
-        'instanceId'          => 'instanceId',
-        'invokeAfterDateGMT'  => 'invokeAfterDateGMT',
+        'appType' => 'appType',
+        'formUuid' => 'formUuid',
+        'hookType' => 'hookType',
+        'hookUuid' => 'hookUuid',
+        'instanceId' => 'instanceId',
+        'invokeAfterDateGMT' => 'invokeAfterDateGMT',
         'invokeBeforeDateGMT' => 'invokeBeforeDateGMT',
-        'invokeStatus'        => 'invokeStatus',
-        'pageNumber'          => 'pageNumber',
-        'pageSize'            => 'pageSize',
-        'requestUrl'          => 'requestUrl',
-        'sourceUuid'          => 'sourceUuid',
-        'success'             => 'success',
-        'systemToken'         => 'systemToken',
-        'userId'              => 'userId',
+        'invokeStatus' => 'invokeStatus',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'requestUrl' => 'requestUrl',
+        'sourceUuid' => 'sourceUuid',
+        'success' => 'success',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

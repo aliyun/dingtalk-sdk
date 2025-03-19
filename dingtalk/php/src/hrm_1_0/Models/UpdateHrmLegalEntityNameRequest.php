@@ -33,14 +33,12 @@ class UpdateHrmLegalEntityNameRequest extends Model
      */
     public $originLegalEntityName;
     protected $_name = [
-        'dingTenantId'          => 'dingTenantId',
-        'legalEntityName'       => 'legalEntityName',
+        'dingTenantId' => 'dingTenantId',
+        'legalEntityName' => 'legalEntityName',
         'originLegalEntityName' => 'originLegalEntityName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -28,15 +28,13 @@ class teachingParticipant extends Model
      */
     public $participantName;
     protected $_name = [
-        'corpId'          => 'corpId',
-        'orgName'         => 'orgName',
-        'participantId'   => 'participantId',
+        'corpId' => 'corpId',
+        'orgName' => 'orgName',
+        'participantId' => 'participantId',
         'participantName' => 'participantName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -134,25 +134,23 @@ class batchTradeOrderVOs extends Model
      */
     public $totalAmount;
     protected $_name = [
-        'alipayTransId'   => 'alipayTransId',
-        'failAmount'      => 'failAmount',
-        'failCount'       => 'failCount',
-        'failReason'      => 'failReason',
-        'gmtFinish'       => 'gmtFinish',
-        'gmtSubmit'       => 'gmtSubmit',
-        'outBatchNo'      => 'outBatchNo',
-        'payerStaffId'    => 'payerStaffId',
-        'paymentAmount'   => 'paymentAmount',
+        'alipayTransId' => 'alipayTransId',
+        'failAmount' => 'failAmount',
+        'failCount' => 'failCount',
+        'failReason' => 'failReason',
+        'gmtFinish' => 'gmtFinish',
+        'gmtSubmit' => 'gmtSubmit',
+        'outBatchNo' => 'outBatchNo',
+        'payerStaffId' => 'payerStaffId',
+        'paymentAmount' => 'paymentAmount',
         'paymentCurrency' => 'paymentCurrency',
-        'status'          => 'status',
-        'successAmount'   => 'successAmount',
-        'successCount'    => 'successCount',
-        'totalAmount'     => 'totalAmount',
+        'status' => 'status',
+        'successAmount' => 'successAmount',
+        'successCount' => 'successCount',
+        'totalAmount' => 'totalAmount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

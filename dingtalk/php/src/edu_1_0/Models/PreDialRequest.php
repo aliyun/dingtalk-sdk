@@ -44,15 +44,13 @@ class PreDialRequest extends Model
      */
     public $type;
     protected $_name = [
-        'callerUserId'   => 'callerUserId',
+        'callerUserId' => 'callerUserId',
         'receiverUserId' => 'receiverUserId',
-        'sn'             => 'sn',
-        'type'           => 'type',
+        'sn' => 'sn',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

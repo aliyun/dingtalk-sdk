@@ -19,9 +19,7 @@ class GetQuotaInfosResponseBody extends Model
         'quotas' => 'quotas',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class GetQuotaInfosResponseBody extends Model
         if (isset($map['quotas'])) {
             if (!empty($map['quotas'])) {
                 $model->quotas = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['quotas'] as $item) {
                     $model->quotas[$n++] = null !== $item ? quotas::fromMap($item) : $item;
                 }

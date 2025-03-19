@@ -12,6 +12,7 @@ class GetScheduleRequest extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $endTime;
@@ -20,6 +21,7 @@ class GetScheduleRequest extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $startTime;
@@ -31,14 +33,12 @@ class GetScheduleRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'endTime'   => 'endTime',
+        'endTime' => 'endTime',
         'startTime' => 'startTime',
-        'userIds'   => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

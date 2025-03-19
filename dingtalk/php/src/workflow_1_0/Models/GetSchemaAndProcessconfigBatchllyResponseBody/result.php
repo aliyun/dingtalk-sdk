@@ -78,25 +78,23 @@ class result extends Model
      */
     public $visibleScope;
     protected $_name = [
-        'appUuid'       => 'appUuid',
+        'appUuid' => 'appUuid',
         'bizCategoryId' => 'bizCategoryId',
-        'createTime'    => 'createTime',
+        'createTime' => 'createTime',
         'creatorUserId' => 'creatorUserId',
-        'formUuid'      => 'formUuid',
-        'managerList'   => 'managerList',
-        'memo'          => 'memo',
-        'name'          => 'name',
-        'processCode'   => 'processCode',
+        'formUuid' => 'formUuid',
+        'managerList' => 'managerList',
+        'memo' => 'memo',
+        'name' => 'name',
+        'processCode' => 'processCode',
         'processConfig' => 'processConfig',
-        'processId'     => 'processId',
-        'properties'    => 'properties',
+        'processId' => 'processId',
+        'properties' => 'properties',
         'schemaContent' => 'schemaContent',
-        'visibleScope'  => 'visibleScope',
+        'visibleScope' => 'visibleScope',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

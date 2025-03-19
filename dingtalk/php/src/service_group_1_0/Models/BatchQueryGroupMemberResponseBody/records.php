@@ -34,15 +34,13 @@ class records extends Model
     public $userId;
     protected $_name = [
         'innerStaff' => 'innerStaff',
-        'nickName'   => 'nickName',
-        'owner'      => 'owner',
-        'unionId'    => 'unionId',
-        'userId'     => 'userId',
+        'nickName' => 'nickName',
+        'owner' => 'owner',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

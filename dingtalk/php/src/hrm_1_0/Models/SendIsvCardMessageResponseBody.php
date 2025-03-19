@@ -34,16 +34,14 @@ class SendIsvCardMessageResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'errorCode'                    => 'errorCode',
-        'errorMsg'                     => 'errorMsg',
+        'errorCode' => 'errorCode',
+        'errorMsg' => 'errorMsg',
         'hrmInteractiveCardSendResult' => 'hrmInteractiveCardSendResult',
-        'requestId'                    => 'requestId',
-        'success'                      => 'success',
+        'requestId' => 'requestId',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

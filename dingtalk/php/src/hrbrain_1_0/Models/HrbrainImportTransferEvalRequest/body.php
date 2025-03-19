@@ -62,19 +62,17 @@ class body extends Model
      */
     public $workNo;
     protected $_name = [
-        'currInfo'       => 'currInfo',
-        'extendInfo'     => 'extendInfo',
-        'name'           => 'name',
-        'preInfo'        => 'preInfo',
-        'transferDate'   => 'transferDate',
+        'currInfo' => 'currInfo',
+        'extendInfo' => 'extendInfo',
+        'name' => 'name',
+        'preInfo' => 'preInfo',
+        'transferDate' => 'transferDate',
         'transferReason' => 'transferReason',
-        'transferType'   => 'transferType',
-        'workNo'         => 'workNo',
+        'transferType' => 'transferType',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

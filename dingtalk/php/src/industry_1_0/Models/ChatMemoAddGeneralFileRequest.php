@@ -55,17 +55,15 @@ class ChatMemoAddGeneralFileRequest extends Model
      */
     public $tagList;
     protected $_name = [
-        'bizId'       => 'bizId',
-        'datasetId'   => 'datasetId',
+        'bizId' => 'bizId',
+        'datasetId' => 'datasetId',
         'downloadUrl' => 'downloadUrl',
-        'fileDesc'    => 'fileDesc',
-        'fileName'    => 'fileName',
-        'tagList'     => 'tagList',
+        'fileDesc' => 'fileDesc',
+        'fileName' => 'fileName',
+        'tagList' => 'tagList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -124,7 +122,7 @@ class ChatMemoAddGeneralFileRequest extends Model
         if (isset($map['tagList'])) {
             if (!empty($map['tagList'])) {
                 $model->tagList = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['tagList'] as $item) {
                     $model->tagList[$n++] = null !== $item ? tagList::fromMap($item) : $item;
                 }

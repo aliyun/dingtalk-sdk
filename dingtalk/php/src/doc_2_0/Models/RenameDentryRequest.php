@@ -22,13 +22,11 @@ class RenameDentryRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'name'       => 'name',
+        'name' => 'name',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

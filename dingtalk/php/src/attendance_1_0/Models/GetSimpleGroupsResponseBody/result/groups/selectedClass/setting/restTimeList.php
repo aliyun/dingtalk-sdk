@@ -21,12 +21,10 @@ class restTimeList extends Model
     public $end;
     protected $_name = [
         'begin' => 'begin',
-        'end'   => 'end',
+        'end' => 'end',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

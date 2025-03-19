@@ -53,18 +53,16 @@ class QueryUserBehaviorRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'endTime'    => 'endTime',
+        'endTime' => 'endTime',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'platform'   => 'platform',
-        'startTime'  => 'startTime',
-        'type'       => 'type',
-        'userId'     => 'userId',
+        'pageSize' => 'pageSize',
+        'platform' => 'platform',
+        'startTime' => 'startTime',
+        'type' => 'type',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -71,18 +71,16 @@ class CfStaffResp extends Model
      */
     public $workNumbers;
     protected $_name = [
-        'deptCode'    => 'deptCode',
-        'deptName'    => 'deptName',
-        'email'       => 'email',
-        'mobile'      => 'mobile',
-        'name'        => 'name',
-        'nickName'    => 'nickName',
+        'deptCode' => 'deptCode',
+        'deptName' => 'deptName',
+        'email' => 'email',
+        'mobile' => 'mobile',
+        'name' => 'name',
+        'nickName' => 'nickName',
         'workNumbers' => 'workNumbers',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

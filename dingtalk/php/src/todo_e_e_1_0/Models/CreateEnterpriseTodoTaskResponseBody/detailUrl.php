@@ -22,9 +22,7 @@ class detailUrl extends Model
         'webUrl' => 'webUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

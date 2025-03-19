@@ -19,12 +19,10 @@ class result extends Model
     public $skillId;
     protected $_name = [
         'executeResult' => 'executeResult',
-        'skillId'       => 'skillId',
+        'skillId' => 'skillId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -34,13 +34,11 @@ class BatchRecallPrivateChatRequest extends Model
     public $robotCode;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'processQueryKeys'   => 'processQueryKeys',
-        'robotCode'          => 'robotCode',
+        'processQueryKeys' => 'processQueryKeys',
+        'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

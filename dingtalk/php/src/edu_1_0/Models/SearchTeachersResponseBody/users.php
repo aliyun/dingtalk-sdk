@@ -44,15 +44,13 @@ class users extends Model
      */
     public $userId;
     protected $_name = [
-        'classId'  => 'classId',
+        'classId' => 'classId',
         'deptName' => 'deptName',
-        'name'     => 'name',
-        'userId'   => 'userId',
+        'name' => 'name',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

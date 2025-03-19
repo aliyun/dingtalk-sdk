@@ -36,13 +36,11 @@ class QueryUserPayInfoRequest extends Model
     public $userId;
     protected $_name = [
         'faceId' => 'faceId',
-        'sn'     => 'sn',
+        'sn' => 'sn',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

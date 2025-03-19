@@ -19,13 +19,11 @@ class GetJobPositionResponseBody extends Model
      */
     public $requestId;
     protected $_name = [
-        'content'   => 'content',
+        'content' => 'content',
         'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

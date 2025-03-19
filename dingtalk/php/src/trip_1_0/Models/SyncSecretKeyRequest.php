@@ -54,17 +54,15 @@ class SyncSecretKeyRequest extends Model
      */
     public $tripCorpId;
     protected $_name = [
-        'actionType'      => 'actionType',
-        'secretString'    => 'secretString',
-        'targetCorpId'    => 'targetCorpId',
-        'tripAppKey'      => 'tripAppKey',
+        'actionType' => 'actionType',
+        'secretString' => 'secretString',
+        'targetCorpId' => 'targetCorpId',
+        'tripAppKey' => 'tripAppKey',
         'tripAppSecurity' => 'tripAppSecurity',
-        'tripCorpId'      => 'tripCorpId',
+        'tripCorpId' => 'tripCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

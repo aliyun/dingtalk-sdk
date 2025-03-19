@@ -37,15 +37,13 @@ class UpdateRelationMetaFieldRequest extends Model
      */
     public $tenant;
     protected $_name = [
-        'fieldDTOList'   => 'fieldDTOList',
+        'fieldDTOList' => 'fieldDTOList',
         'operatorUserId' => 'operatorUserId',
-        'relationType'   => 'relationType',
-        'tenant'         => 'tenant',
+        'relationType' => 'relationType',
+        'tenant' => 'tenant',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -83,7 +81,7 @@ class UpdateRelationMetaFieldRequest extends Model
         if (isset($map['fieldDTOList'])) {
             if (!empty($map['fieldDTOList'])) {
                 $model->fieldDTOList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['fieldDTOList'] as $item) {
                     $model->fieldDTOList[$n++] = null !== $item ? fieldDTOList::fromMap($item) : $item;
                 }

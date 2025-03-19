@@ -51,16 +51,14 @@ class UpdateInvoiceVoucherStatusRequest extends Model
     public $voucherId;
     protected $_name = [
         'accountantBookId' => 'accountantBookId',
-        'actionType'       => 'actionType',
-        'invoiceCode'      => 'invoiceCode',
-        'invoiceNo'        => 'invoiceNo',
-        'operator'         => 'operator',
-        'voucherId'        => 'voucherId',
+        'actionType' => 'actionType',
+        'invoiceCode' => 'invoiceCode',
+        'invoiceNo' => 'invoiceNo',
+        'operator' => 'operator',
+        'voucherId' => 'voucherId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

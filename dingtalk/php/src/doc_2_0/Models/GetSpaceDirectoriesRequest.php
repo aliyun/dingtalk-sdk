@@ -32,15 +32,13 @@ class GetSpaceDirectoriesRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'dentryId'   => 'dentryId',
+        'dentryId' => 'dentryId',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

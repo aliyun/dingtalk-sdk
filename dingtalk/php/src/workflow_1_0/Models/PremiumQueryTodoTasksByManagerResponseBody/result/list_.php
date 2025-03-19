@@ -60,19 +60,17 @@ class list_ extends Model
      */
     public $userId;
     protected $_name = [
-        'businessId'        => 'businessId',
-        'canRedirect'       => 'canRedirect',
-        'createTime'        => 'createTime',
-        'processCode'       => 'processCode',
+        'businessId' => 'businessId',
+        'canRedirect' => 'canRedirect',
+        'createTime' => 'createTime',
+        'processCode' => 'processCode',
         'processInstanceId' => 'processInstanceId',
-        'taskId'            => 'taskId',
-        'title'             => 'title',
-        'userId'            => 'userId',
+        'taskId' => 'taskId',
+        'title' => 'title',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

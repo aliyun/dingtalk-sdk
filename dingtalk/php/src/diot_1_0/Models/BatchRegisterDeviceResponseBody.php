@@ -18,9 +18,7 @@ class BatchRegisterDeviceResponseBody extends Model
         'deviceIds' => 'deviceIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

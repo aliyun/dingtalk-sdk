@@ -17,9 +17,7 @@ class GetNodeResponseBody extends Model
         'node' => 'node',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,14 +29,12 @@ class body extends Model
      */
     public $unionRootName;
     protected $_name = [
-        'branchCorpId'  => 'branchCorpId',
-        'linkDeptId'    => 'linkDeptId',
+        'branchCorpId' => 'branchCorpId',
+        'linkDeptId' => 'linkDeptId',
         'unionRootName' => 'unionRootName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

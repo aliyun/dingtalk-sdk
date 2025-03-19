@@ -169,34 +169,32 @@ class MetricMapValue extends Model
      */
     public $audioJitterAvg;
     protected $_name = [
-        'timestamp'                  => 'timestamp',
-        'sendBitRate'                => 'sendBitRate',
-        'recvBitRate'                => 'recvBitRate',
-        'lostRate'                   => 'lostRate',
-        'roundTripTime'              => 'roundTripTime',
-        'audioSendBitRate'           => 'audioSendBitRate',
-        'audioRecvBitRate'           => 'audioRecvBitRate',
-        'audioRecLevel'              => 'audioRecLevel',
-        'audioPlayLevel'             => 'audioPlayLevel',
-        'cameraSendBitRate'          => 'cameraSendBitRate',
-        'cameraRecvBitRate'          => 'cameraRecvBitRate',
+        'timestamp' => 'timestamp',
+        'sendBitRate' => 'sendBitRate',
+        'recvBitRate' => 'recvBitRate',
+        'lostRate' => 'lostRate',
+        'roundTripTime' => 'roundTripTime',
+        'audioSendBitRate' => 'audioSendBitRate',
+        'audioRecvBitRate' => 'audioRecvBitRate',
+        'audioRecLevel' => 'audioRecLevel',
+        'audioPlayLevel' => 'audioPlayLevel',
+        'cameraSendBitRate' => 'cameraSendBitRate',
+        'cameraRecvBitRate' => 'cameraRecvBitRate',
         'cameraSendResolutionActual' => 'cameraSendResolutionActual',
         'cameraRecvResolutionActual' => 'cameraRecvResolutionActual',
-        'cameraSendFrame'            => 'cameraSendFrame',
-        'screenSendBitRate'          => 'screenSendBitRate',
-        'cameraRecvFrame'            => 'cameraRecvFrame',
-        'screenRecvBitRate'          => 'screenRecvBitRate',
+        'cameraSendFrame' => 'cameraSendFrame',
+        'screenSendBitRate' => 'screenSendBitRate',
+        'cameraRecvFrame' => 'cameraRecvFrame',
+        'screenRecvBitRate' => 'screenRecvBitRate',
         'screenSendResolutionActual' => 'screenSendResolutionActual',
         'screenRecvResolutionActual' => 'screenRecvResolutionActual',
-        'screenSendFrame'            => 'screenSendFrame',
-        'screenRecvFrame'            => 'screenRecvFrame',
-        'audioJitterMax'             => 'audioJitterMax',
-        'audioJitterAvg'             => 'audioJitterAvg',
+        'screenSendFrame' => 'screenSendFrame',
+        'screenRecvFrame' => 'screenRecvFrame',
+        'audioJitterMax' => 'audioJitterMax',
+        'audioJitterAvg' => 'audioJitterAvg',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -56,17 +56,15 @@ class ReduceQuotaWithLeaveRecordRequest extends Model
      */
     public $startTime;
     protected $_name = [
-        'endTime'   => 'endTime',
+        'endTime' => 'endTime',
         'leaveCode' => 'leaveCode',
-        'outerId'   => 'outerId',
-        'quotaNum'  => 'quotaNum',
-        'reason'    => 'reason',
+        'outerId' => 'outerId',
+        'quotaNum' => 'quotaNum',
+        'reason' => 'reason',
         'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,12 +27,10 @@ class GetTbUserIdByStaffIdRequest extends Model
     public $userId;
     protected $_name = [
         'optUserId' => 'optUserId',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

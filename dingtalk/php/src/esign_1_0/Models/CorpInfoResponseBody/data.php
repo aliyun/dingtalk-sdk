@@ -19,12 +19,10 @@ class data extends Model
     public $realName;
     protected $_name = [
         'orgRealName' => 'orgRealName',
-        'realName'    => 'realName',
+        'realName' => 'realName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

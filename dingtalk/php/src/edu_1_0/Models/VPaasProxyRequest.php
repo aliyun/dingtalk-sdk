@@ -36,13 +36,11 @@ class VPaasProxyRequest extends Model
     public $publicKey;
     protected $_name = [
         'actionCode' => 'actionCode',
-        'params'     => 'params',
-        'publicKey'  => 'publicKey',
+        'params' => 'params',
+        'publicKey' => 'publicKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

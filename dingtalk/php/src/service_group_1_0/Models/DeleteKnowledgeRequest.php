@@ -36,15 +36,13 @@ class DeleteKnowledgeRequest extends Model
      */
     public $sourcePrimaryKey;
     protected $_name = [
-        'libraryKey'       => 'libraryKey',
-        'openTeamId'       => 'openTeamId',
-        'source'           => 'source',
+        'libraryKey' => 'libraryKey',
+        'openTeamId' => 'openTeamId',
+        'source' => 'source',
         'sourcePrimaryKey' => 'sourcePrimaryKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

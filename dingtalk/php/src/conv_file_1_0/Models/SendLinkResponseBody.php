@@ -17,9 +17,7 @@ class SendLinkResponseBody extends Model
         'file' => 'file',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

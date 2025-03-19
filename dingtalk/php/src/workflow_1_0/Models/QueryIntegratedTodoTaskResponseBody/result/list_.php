@@ -64,19 +64,17 @@ class list_ extends Model
      */
     public $userId;
     protected $_name = [
-        'activityId'        => 'activityId',
-        'createTime'        => 'createTime',
-        'finishTime'        => 'finishTime',
+        'activityId' => 'activityId',
+        'createTime' => 'createTime',
+        'finishTime' => 'finishTime',
         'processInstanceId' => 'processInstanceId',
-        'result'            => 'result',
-        'status'            => 'status',
-        'taskId'            => 'taskId',
-        'userId'            => 'userId',
+        'result' => 'result',
+        'status' => 'status',
+        'taskId' => 'taskId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -59,16 +59,14 @@ class SupplyAddMemberRequest extends Model
     public $supplyDeptId;
     protected $_name = [
         'isPartnerManager' => 'isPartnerManager',
-        'memberMobile'     => 'memberMobile',
-        'memberName'       => 'memberName',
-        'memberTitle'      => 'memberTitle',
+        'memberMobile' => 'memberMobile',
+        'memberName' => 'memberName',
+        'memberTitle' => 'memberTitle',
         'memberWorkNumber' => 'memberWorkNumber',
-        'supplyDeptId'     => 'supplyDeptId',
+        'supplyDeptId' => 'supplyDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

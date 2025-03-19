@@ -56,17 +56,15 @@ class residentAddInfo extends Model
      */
     public $relateType;
     protected $_name = [
-        'deptId'              => 'deptId',
-        'isPropertyOwner'     => 'isPropertyOwner',
+        'deptId' => 'deptId',
+        'isPropertyOwner' => 'isPropertyOwner',
         'memberDeptExtension' => 'memberDeptExtension',
-        'mobile'              => 'mobile',
-        'name'                => 'name',
-        'relateType'          => 'relateType',
+        'mobile' => 'mobile',
+        'name' => 'name',
+        'relateType' => 'relateType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

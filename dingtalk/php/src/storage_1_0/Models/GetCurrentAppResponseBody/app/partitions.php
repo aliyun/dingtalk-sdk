@@ -22,12 +22,10 @@ class partitions extends Model
     public $quota;
     protected $_name = [
         'partitionType' => 'partitionType',
-        'quota'         => 'quota',
+        'quota' => 'quota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

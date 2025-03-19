@@ -22,12 +22,10 @@ class GetFileDownloadInfoResponseBody extends Model
     public $protocol;
     protected $_name = [
         'headerSignatureInfo' => 'headerSignatureInfo',
-        'protocol'            => 'protocol',
+        'protocol' => 'protocol',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

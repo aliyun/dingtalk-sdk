@@ -58,17 +58,15 @@ class ApproveCityCarApplyRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'corpId'           => 'corpId',
-        'operateTime'      => 'operateTime',
-        'remark'           => 'remark',
-        'status'           => 'status',
+        'corpId' => 'corpId',
+        'operateTime' => 'operateTime',
+        'remark' => 'remark',
+        'status' => 'status',
         'thirdPartApplyId' => 'thirdPartApplyId',
-        'userId'           => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

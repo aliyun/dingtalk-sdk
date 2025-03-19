@@ -37,12 +37,10 @@ class UnAlignObjectiveRequest extends Model
     protected $_name = [
         'periodId' => 'periodId',
         'targetId' => 'targetId',
-        'userId'   => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

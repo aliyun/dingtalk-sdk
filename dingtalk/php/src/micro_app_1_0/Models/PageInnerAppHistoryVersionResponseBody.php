@@ -22,12 +22,10 @@ class PageInnerAppHistoryVersionResponseBody extends Model
     public $totalCount;
     protected $_name = [
         'miniAppVersionList' => 'miniAppVersionList',
-        'totalCount'         => 'totalCount',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class PageInnerAppHistoryVersionResponseBody extends Model
         if (isset($map['miniAppVersionList'])) {
             if (!empty($map['miniAppVersionList'])) {
                 $model->miniAppVersionList = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['miniAppVersionList'] as $item) {
                     $model->miniAppVersionList[$n++] = null !== $item ? miniAppVersionList::fromMap($item) : $item;
                 }

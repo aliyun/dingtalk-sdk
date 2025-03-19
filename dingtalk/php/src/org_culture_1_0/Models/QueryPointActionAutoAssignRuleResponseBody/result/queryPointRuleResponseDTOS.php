@@ -53,16 +53,14 @@ class queryPointRuleResponseDTOS extends Model
      */
     public $status;
     protected $_name = [
-        'awardScore'    => 'awardScore',
-        'code'          => 'code',
+        'awardScore' => 'awardScore',
+        'code' => 'code',
         'dayLimitTimes' => 'dayLimitTimes',
-        'description'   => 'description',
-        'status'        => 'status',
+        'description' => 'description',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

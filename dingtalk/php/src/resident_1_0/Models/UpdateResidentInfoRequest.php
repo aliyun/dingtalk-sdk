@@ -66,21 +66,19 @@ class UpdateResidentInfoRequest extends Model
      */
     public $telephone;
     protected $_name = [
-        'address'       => 'address',
-        'buildingArea'  => 'buildingArea',
-        'cityName'      => 'cityName',
+        'address' => 'address',
+        'buildingArea' => 'buildingArea',
+        'cityName' => 'cityName',
         'communityType' => 'communityType',
-        'countyName'    => 'countyName',
-        'location'      => 'location',
-        'name'          => 'name',
-        'provName'      => 'provName',
-        'state'         => 'state',
-        'telephone'     => 'telephone',
+        'countyName' => 'countyName',
+        'location' => 'location',
+        'name' => 'name',
+        'provName' => 'provName',
+        'state' => 'state',
+        'telephone' => 'telephone',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

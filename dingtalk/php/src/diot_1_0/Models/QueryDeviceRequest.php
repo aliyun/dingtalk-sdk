@@ -29,14 +29,12 @@ class QueryDeviceRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'corpId'     => 'corpId',
+        'corpId' => 'corpId',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -75,23 +75,21 @@ class AppCreateEnterpriseTodoTaskResponseBody extends Model
     public $taskId;
     protected $_name = [
         'bizCategoryId' => 'bizCategoryId',
-        'createdTime'   => 'createdTime',
-        'creatorId'     => 'creatorId',
-        'description'   => 'description',
-        'detailUrl'     => 'detailUrl',
-        'done'          => 'done',
-        'dueTime'       => 'dueTime',
-        'executorIds'   => 'executorIds',
-        'modifiedTime'  => 'modifiedTime',
-        'priority'      => 'priority',
-        'sourceId'      => 'sourceId',
-        'subject'       => 'subject',
-        'taskId'        => 'taskId',
+        'createdTime' => 'createdTime',
+        'creatorId' => 'creatorId',
+        'description' => 'description',
+        'detailUrl' => 'detailUrl',
+        'done' => 'done',
+        'dueTime' => 'dueTime',
+        'executorIds' => 'executorIds',
+        'modifiedTime' => 'modifiedTime',
+        'priority' => 'priority',
+        'sourceId' => 'sourceId',
+        'subject' => 'subject',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

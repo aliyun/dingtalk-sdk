@@ -32,14 +32,12 @@ class AddWorkspaceRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'name'       => 'name',
-        'option'     => 'option',
+        'name' => 'name',
+        'option' => 'option',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class CreateCustomerResponseBody extends Model
         'customerCode' => 'customerCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

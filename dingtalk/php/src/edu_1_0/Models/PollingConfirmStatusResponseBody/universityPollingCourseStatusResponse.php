@@ -34,14 +34,12 @@ class universityPollingCourseStatusResponse extends Model
      */
     public $livePlayInfoList;
     protected $_name = [
-        'confirmStatus'    => 'confirmStatus',
-        'courseCode'       => 'courseCode',
+        'confirmStatus' => 'confirmStatus',
+        'courseCode' => 'courseCode',
         'livePlayInfoList' => 'livePlayInfoList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -82,7 +80,7 @@ class universityPollingCourseStatusResponse extends Model
         if (isset($map['livePlayInfoList'])) {
             if (!empty($map['livePlayInfoList'])) {
                 $model->livePlayInfoList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['livePlayInfoList'] as $item) {
                     $model->livePlayInfoList[$n++] = null !== $item ? livePlayInfoList::fromMap($item) : $item;
                 }

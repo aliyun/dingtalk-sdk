@@ -51,16 +51,14 @@ class GetContactsRequest extends Model
     public $queryDsl;
     protected $_name = [
         'currentOperatorUserId' => 'currentOperatorUserId',
-        'maxResults'            => 'maxResults',
-        'nextToken'             => 'nextToken',
-        'objectType'            => 'objectType',
-        'providerCorpId'        => 'providerCorpId',
-        'queryDsl'              => 'queryDsl',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'objectType' => 'objectType',
+        'providerCorpId' => 'providerCorpId',
+        'queryDsl' => 'queryDsl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -26,13 +26,11 @@ class DeleteTeacherRequest extends Model
      */
     public $operator;
     protected $_name = [
-        'adviser'  => 'adviser',
+        'adviser' => 'adviser',
         'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

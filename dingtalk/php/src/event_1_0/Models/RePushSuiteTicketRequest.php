@@ -18,13 +18,11 @@ class RePushSuiteTicketRequest extends Model
      */
     public $suiteSecret;
     protected $_name = [
-        'suiteId'     => 'suiteId',
+        'suiteId' => 'suiteId',
         'suiteSecret' => 'suiteSecret',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

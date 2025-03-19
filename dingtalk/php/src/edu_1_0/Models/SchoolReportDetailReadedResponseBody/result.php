@@ -16,9 +16,7 @@ class result extends Model
         'schoolReportDetailId' => 'schoolReportDetailId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

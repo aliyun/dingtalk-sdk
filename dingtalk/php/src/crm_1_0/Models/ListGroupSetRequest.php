@@ -30,15 +30,13 @@ class ListGroupSetRequest extends Model
      */
     public $relationType;
     protected $_name = [
-        'maxResults'   => 'maxResults',
-        'nextToken'    => 'nextToken',
-        'queryDsl'     => 'queryDsl',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'queryDsl' => 'queryDsl',
         'relationType' => 'relationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

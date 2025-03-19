@@ -64,19 +64,17 @@ class result extends Model
      */
     public $uv;
     protected $_name = [
-        'avgWatchTime'   => 'avgWatchTime',
-        'liveUv'         => 'liveUv',
-        'msgCount'       => 'msgCount',
-        'playbackUv'     => 'playbackUv',
-        'praiseCount'    => 'praiseCount',
-        'pv'             => 'pv',
+        'avgWatchTime' => 'avgWatchTime',
+        'liveUv' => 'liveUv',
+        'msgCount' => 'msgCount',
+        'playbackUv' => 'playbackUv',
+        'praiseCount' => 'praiseCount',
+        'pv' => 'pv',
         'totalWatchTime' => 'totalWatchTime',
-        'uv'             => 'uv',
+        'uv' => 'uv',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

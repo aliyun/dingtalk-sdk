@@ -86,22 +86,20 @@ class values extends Model
      */
     public $procOutResult;
     protected $_name = [
-        'creatorNick'    => 'creatorNick',
-        'creatorUserId'  => 'creatorUserId',
-        'data'           => 'data',
-        'extendData'     => 'extendData',
-        'gmtCreate'      => 'gmtCreate',
-        'gmtModified'    => 'gmtModified',
-        'instanceId'     => 'instanceId',
-        'objectType'     => 'objectType',
-        'permission'     => 'permission',
+        'creatorNick' => 'creatorNick',
+        'creatorUserId' => 'creatorUserId',
+        'data' => 'data',
+        'extendData' => 'extendData',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'instanceId' => 'instanceId',
+        'objectType' => 'objectType',
+        'permission' => 'permission',
         'procInstStatus' => 'procInstStatus',
-        'procOutResult'  => 'procOutResult',
+        'procOutResult' => 'procOutResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

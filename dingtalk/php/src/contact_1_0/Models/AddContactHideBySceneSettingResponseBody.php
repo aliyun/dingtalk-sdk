@@ -18,9 +18,7 @@ class AddContactHideBySceneSettingResponseBody extends Model
         'settingId' => 'settingId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

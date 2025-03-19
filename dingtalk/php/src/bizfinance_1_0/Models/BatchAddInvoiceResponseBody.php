@@ -20,13 +20,11 @@ class BatchAddInvoiceResponseBody extends Model
      */
     public $successResult;
     protected $_name = [
-        'errorResult'   => 'errorResult',
+        'errorResult' => 'errorResult',
         'successResult' => 'successResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class BatchAddInvoiceResponseBody extends Model
         if (isset($map['errorResult'])) {
             if (!empty($map['errorResult'])) {
                 $model->errorResult = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['errorResult'] as $item) {
                     $model->errorResult[$n++] = null !== $item ? errorResult::fromMap($item) : $item;
                 }
@@ -73,7 +71,7 @@ class BatchAddInvoiceResponseBody extends Model
         if (isset($map['successResult'])) {
             if (!empty($map['successResult'])) {
                 $model->successResult = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['successResult'] as $item) {
                     $model->successResult[$n++] = null !== $item ? successResult::fromMap($item) : $item;
                 }

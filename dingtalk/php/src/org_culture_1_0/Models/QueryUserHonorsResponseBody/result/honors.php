@@ -35,15 +35,13 @@ class honors extends Model
     public $honorName;
     protected $_name = [
         'expirationTime' => 'expirationTime',
-        'grantHistory'   => 'grantHistory',
-        'honorDesc'      => 'honorDesc',
-        'honorId'        => 'honorId',
-        'honorName'      => 'honorName',
+        'grantHistory' => 'grantHistory',
+        'honorDesc' => 'honorDesc',
+        'honorId' => 'honorId',
+        'honorName' => 'honorName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -87,7 +85,7 @@ class honors extends Model
         if (isset($map['grantHistory'])) {
             if (!empty($map['grantHistory'])) {
                 $model->grantHistory = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['grantHistory'] as $item) {
                     $model->grantHistory[$n++] = null !== $item ? grantHistory::fromMap($item) : $item;
                 }

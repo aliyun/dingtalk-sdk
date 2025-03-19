@@ -36,15 +36,13 @@ class statField extends Model
      */
     public $upper;
     protected $_name = [
-        'id'    => 'id',
+        'id' => 'id',
         'label' => 'label',
-        'unit'  => 'unit',
+        'unit' => 'unit',
         'upper' => 'upper',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

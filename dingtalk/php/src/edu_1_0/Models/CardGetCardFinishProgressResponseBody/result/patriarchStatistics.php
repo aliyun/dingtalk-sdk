@@ -70,21 +70,19 @@ class patriarchStatistics extends Model
      */
     public $userSubTaskId;
     protected $_name = [
-        'cardTaskCode'            => 'cardTaskCode',
-        'date'                    => 'date',
-        'isFinished'              => 'isFinished',
+        'cardTaskCode' => 'cardTaskCode',
+        'date' => 'date',
+        'isFinished' => 'isFinished',
         'isFinishedByReissueCard' => 'isFinishedByReissueCard',
-        'isLastDay'               => 'isLastDay',
-        'reissueCard'             => 'reissueCard',
-        'studentId'               => 'studentId',
-        'studentName'             => 'studentName',
-        'today'                   => 'today',
-        'userSubTaskId'           => 'userSubTaskId',
+        'isLastDay' => 'isLastDay',
+        'reissueCard' => 'reissueCard',
+        'studentId' => 'studentId',
+        'studentName' => 'studentName',
+        'today' => 'today',
+        'userSubTaskId' => 'userSubTaskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

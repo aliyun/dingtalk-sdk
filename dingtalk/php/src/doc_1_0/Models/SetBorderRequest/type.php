@@ -38,17 +38,15 @@ class type extends Model
      */
     public $vertical;
     protected $_name = [
-        'bottom'     => 'bottom',
+        'bottom' => 'bottom',
         'horizontal' => 'horizontal',
-        'left'       => 'left',
-        'right'      => 'right',
-        'top'        => 'top',
-        'vertical'   => 'vertical',
+        'left' => 'left',
+        'right' => 'right',
+        'top' => 'top',
+        'vertical' => 'vertical',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

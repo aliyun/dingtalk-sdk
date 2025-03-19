@@ -18,13 +18,11 @@ class jobStatus extends Model
      */
     public $statusName;
     protected $_name = [
-        'code'       => 'code',
+        'code' => 'code',
         'statusName' => 'statusName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

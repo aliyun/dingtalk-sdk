@@ -18,9 +18,7 @@ class AddMemberToAppRoleResponseBody extends Model
         'latestScopeVersion' => 'latestScopeVersion',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

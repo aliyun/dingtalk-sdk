@@ -46,17 +46,15 @@ class findOptions extends Model
      */
     public $useRegExp;
     protected $_name = [
-        'includeHidden'    => 'includeHidden',
-        'matchCase'        => 'matchCase',
-        'matchEntireCell'  => 'matchEntireCell',
+        'includeHidden' => 'includeHidden',
+        'matchCase' => 'matchCase',
+        'matchEntireCell' => 'matchEntireCell',
         'matchFormulaText' => 'matchFormulaText',
-        'scope'            => 'scope',
-        'useRegExp'        => 'useRegExp',
+        'scope' => 'scope',
+        'useRegExp' => 'useRegExp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

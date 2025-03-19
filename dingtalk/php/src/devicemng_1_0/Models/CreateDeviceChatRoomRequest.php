@@ -48,17 +48,15 @@ class CreateDeviceChatRoomRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'chatType'    => 'chatType',
+        'chatType' => 'chatType',
         'deviceCodes' => 'deviceCodes',
         'deviceUuids' => 'deviceUuids',
         'ownerUserId' => 'ownerUserId',
-        'title'       => 'title',
-        'userIds'     => 'userIds',
+        'title' => 'title',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

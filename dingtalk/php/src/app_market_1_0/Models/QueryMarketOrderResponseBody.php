@@ -122,25 +122,23 @@ class QueryMarketOrderResponseBody extends Model
      */
     public $totalActualPayFee;
     protected $_name = [
-        'bizOrderId'        => 'bizOrderId',
-        'corpId'            => 'corpId',
-        'createTimestamp'   => 'createTimestamp',
-        'endTimestamp'      => 'endTimestamp',
-        'goodsCode'         => 'goodsCode',
-        'goodsName'         => 'goodsName',
-        'inAppOrder'        => 'inAppOrder',
-        'itemCode'          => 'itemCode',
-        'itemName'          => 'itemName',
-        'paidTimestamp'     => 'paidTimestamp',
-        'quantity'          => 'quantity',
-        'startTimestamp'    => 'startTimestamp',
-        'status'            => 'status',
+        'bizOrderId' => 'bizOrderId',
+        'corpId' => 'corpId',
+        'createTimestamp' => 'createTimestamp',
+        'endTimestamp' => 'endTimestamp',
+        'goodsCode' => 'goodsCode',
+        'goodsName' => 'goodsName',
+        'inAppOrder' => 'inAppOrder',
+        'itemCode' => 'itemCode',
+        'itemName' => 'itemName',
+        'paidTimestamp' => 'paidTimestamp',
+        'quantity' => 'quantity',
+        'startTimestamp' => 'startTimestamp',
+        'status' => 'status',
         'totalActualPayFee' => 'totalActualPayFee',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

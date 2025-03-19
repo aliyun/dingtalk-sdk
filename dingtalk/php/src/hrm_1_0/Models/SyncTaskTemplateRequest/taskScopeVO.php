@@ -28,15 +28,13 @@ class taskScopeVO extends Model
      */
     public $userIds;
     protected $_name = [
-        'deptIds'     => 'deptIds',
+        'deptIds' => 'deptIds',
         'positionIds' => 'positionIds',
-        'roleIds'     => 'roleIds',
-        'userIds'     => 'userIds',
+        'roleIds' => 'roleIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

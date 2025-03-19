@@ -33,16 +33,14 @@ class actionList extends Model
      */
     public $icon;
     protected $_name = [
-        'actionId'      => 'actionId',
-        'actionName'    => 'actionName',
+        'actionId' => 'actionId',
+        'actionName' => 'actionName',
         'actionVersion' => 'actionVersion',
-        'description'   => 'description',
-        'icon'          => 'icon',
+        'description' => 'description',
+        'icon' => 'icon',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

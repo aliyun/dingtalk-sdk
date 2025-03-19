@@ -58,18 +58,16 @@ class ExecuteActivityRequest extends Model
      */
     public $sourceId;
     protected $_name = [
-        'activityCode'   => 'activityCode',
-        'foreignId'      => 'foreignId',
-        'foreignName'    => 'foreignName',
+        'activityCode' => 'activityCode',
+        'foreignId' => 'foreignId',
+        'foreignName' => 'foreignName',
         'openInstanceId' => 'openInstanceId',
         'productionType' => 'productionType',
-        'properties'     => 'properties',
-        'sourceId'       => 'sourceId',
+        'properties' => 'properties',
+        'sourceId' => 'sourceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -131,7 +129,7 @@ class ExecuteActivityRequest extends Model
         if (isset($map['properties'])) {
             if (!empty($map['properties'])) {
                 $model->properties = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['properties'] as $item) {
                     $model->properties[$n++] = null !== $item ? properties::fromMap($item) : $item;
                 }

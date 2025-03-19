@@ -34,9 +34,7 @@ class bindStudents extends Model
         'periodCode' => 'periodCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

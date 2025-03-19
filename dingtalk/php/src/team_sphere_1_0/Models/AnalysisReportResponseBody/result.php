@@ -46,18 +46,16 @@ class result extends Model
      */
     public $visualizationSettings;
     protected $_name = [
-        'cols'                  => 'cols',
-        'listQuery'             => 'listQuery',
-        'name'                  => 'name',
-        'rows'                  => 'rows',
-        'tips'                  => 'tips',
-        'title'                 => 'title',
+        'cols' => 'cols',
+        'listQuery' => 'listQuery',
+        'name' => 'name',
+        'rows' => 'rows',
+        'tips' => 'tips',
+        'title' => 'title',
         'visualizationSettings' => 'visualizationSettings',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -104,7 +102,7 @@ class result extends Model
         if (isset($map['cols'])) {
             if (!empty($map['cols'])) {
                 $model->cols = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['cols'] as $item) {
                     $model->cols[$n++] = null !== $item ? cols::fromMap($item) : $item;
                 }

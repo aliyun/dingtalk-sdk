@@ -35,14 +35,12 @@ class CategoryStatisticsRequest extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'maxDt'      => 'maxDt',
-        'minDt'      => 'minDt',
+        'maxDt' => 'maxDt',
+        'minDt' => 'minDt',
         'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

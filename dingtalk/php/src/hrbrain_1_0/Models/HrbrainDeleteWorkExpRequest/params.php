@@ -31,14 +31,12 @@ class params extends Model
     public $workNo;
     protected $_name = [
         'companyName' => 'companyName',
-        'endDate'     => 'endDate',
-        'startDate'   => 'startDate',
-        'workNo'      => 'workNo',
+        'endDate' => 'endDate',
+        'startDate' => 'startDate',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

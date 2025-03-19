@@ -21,12 +21,10 @@ class extendedProperties extends Model
     public $sharedProperties;
     protected $_name = [
         'privateProperties' => 'privateProperties',
-        'sharedProperties'  => 'sharedProperties',
+        'sharedProperties' => 'sharedProperties',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

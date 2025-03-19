@@ -17,9 +17,7 @@ class QueryUserCredentialsResponseBody extends Model
         'content' => 'content',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class QueryUserCredentialsResponseBody extends Model
         if (isset($map['content'])) {
             if (!empty($map['content'])) {
                 $model->content = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['content'] as $item) {
                     $model->content[$n++] = null !== $item ? content::fromMap($item) : $item;
                 }

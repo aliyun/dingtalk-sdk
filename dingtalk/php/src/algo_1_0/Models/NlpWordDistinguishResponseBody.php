@@ -21,13 +21,11 @@ class NlpWordDistinguishResponseBody extends Model
      */
     public $wordEntities;
     protected $_name = [
-        'requestId'    => 'requestId',
+        'requestId' => 'requestId',
         'wordEntities' => 'wordEntities',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class NlpWordDistinguishResponseBody extends Model
         if (isset($map['wordEntities'])) {
             if (!empty($map['wordEntities'])) {
                 $model->wordEntities = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['wordEntities'] as $item) {
                     $model->wordEntities[$n++] = null !== $item ? wordEntities::fromMap($item) : $item;
                 }

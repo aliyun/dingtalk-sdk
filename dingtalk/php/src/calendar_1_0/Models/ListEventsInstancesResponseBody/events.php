@@ -122,28 +122,26 @@ class events extends Model
      */
     public $updateTime;
     protected $_name = [
-        'attendees'          => 'attendees',
-        'createTime'         => 'createTime',
-        'description'        => 'description',
-        'end'                => 'end',
+        'attendees' => 'attendees',
+        'createTime' => 'createTime',
+        'description' => 'description',
+        'end' => 'end',
         'extendedProperties' => 'extendedProperties',
-        'id'                 => 'id',
-        'isAllDay'           => 'isAllDay',
-        'location'           => 'location',
-        'onlineMeetingInfo'  => 'onlineMeetingInfo',
-        'organizer'          => 'organizer',
-        'recurrence'         => 'recurrence',
-        'reminders'          => 'reminders',
-        'seriesMasterId'     => 'seriesMasterId',
-        'start'              => 'start',
-        'status'             => 'status',
-        'summary'            => 'summary',
-        'updateTime'         => 'updateTime',
+        'id' => 'id',
+        'isAllDay' => 'isAllDay',
+        'location' => 'location',
+        'onlineMeetingInfo' => 'onlineMeetingInfo',
+        'organizer' => 'organizer',
+        'recurrence' => 'recurrence',
+        'reminders' => 'reminders',
+        'seriesMasterId' => 'seriesMasterId',
+        'start' => 'start',
+        'status' => 'status',
+        'summary' => 'summary',
+        'updateTime' => 'updateTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -226,7 +224,7 @@ class events extends Model
         if (isset($map['attendees'])) {
             if (!empty($map['attendees'])) {
                 $model->attendees = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['attendees'] as $item) {
                     $model->attendees[$n++] = null !== $item ? attendees::fromMap($item) : $item;
                 }
@@ -265,7 +263,7 @@ class events extends Model
         if (isset($map['reminders'])) {
             if (!empty($map['reminders'])) {
                 $model->reminders = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['reminders'] as $item) {
                     $model->reminders[$n++] = null !== $item ? reminders::fromMap($item) : $item;
                 }

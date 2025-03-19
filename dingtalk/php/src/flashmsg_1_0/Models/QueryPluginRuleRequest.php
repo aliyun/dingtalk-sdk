@@ -54,17 +54,15 @@ class QueryPluginRuleRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'chatType'   => 'chatType',
-        'code'       => 'code',
-        'itemId'     => 'itemId',
-        'itemType'   => 'itemType',
+        'chatType' => 'chatType',
+        'code' => 'code',
+        'itemId' => 'itemId',
+        'itemType' => 'itemType',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class GetRobotInfoByCodeRequest extends Model
         'robotCode' => 'robotCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

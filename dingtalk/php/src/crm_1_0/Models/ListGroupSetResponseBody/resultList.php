@@ -124,27 +124,25 @@ class resultList extends Model
      */
     public $templateId;
     protected $_name = [
-        'gmtCreate'              => 'gmtCreate',
-        'gmtModified'            => 'gmtModified',
-        'groupChatCount'         => 'groupChatCount',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'groupChatCount' => 'groupChatCount',
         'lastOpenConversationId' => 'lastOpenConversationId',
-        'manager'                => 'manager',
-        'managerUserIds'         => 'managerUserIds',
-        'memberCount'            => 'memberCount',
-        'memberQuota'            => 'memberQuota',
-        'name'                   => 'name',
-        'notice'                 => 'notice',
-        'noticeToped'            => 'noticeToped',
-        'openGroupSetId'         => 'openGroupSetId',
-        'owner'                  => 'owner',
-        'ownerUserId'            => 'ownerUserId',
-        'relationType'           => 'relationType',
-        'templateId'             => 'templateId',
+        'manager' => 'manager',
+        'managerUserIds' => 'managerUserIds',
+        'memberCount' => 'memberCount',
+        'memberQuota' => 'memberQuota',
+        'name' => 'name',
+        'notice' => 'notice',
+        'noticeToped' => 'noticeToped',
+        'openGroupSetId' => 'openGroupSetId',
+        'owner' => 'owner',
+        'ownerUserId' => 'ownerUserId',
+        'relationType' => 'relationType',
+        'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -230,7 +228,7 @@ class resultList extends Model
         if (isset($map['manager'])) {
             if (!empty($map['manager'])) {
                 $model->manager = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['manager'] as $item) {
                     $model->manager[$n++] = null !== $item ? manager::fromMap($item) : $item;
                 }

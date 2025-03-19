@@ -43,16 +43,14 @@ class results extends Model
      */
     public $msgId;
     protected $_name = [
-        'appUid'         => 'appUid',
+        'appUid' => 'appUid',
         'conversationId' => 'conversationId',
-        'errorCode'      => 'errorCode',
-        'errorMessage'   => 'errorMessage',
-        'msgId'          => 'msgId',
+        'errorCode' => 'errorCode',
+        'errorMessage' => 'errorMessage',
+        'msgId' => 'msgId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

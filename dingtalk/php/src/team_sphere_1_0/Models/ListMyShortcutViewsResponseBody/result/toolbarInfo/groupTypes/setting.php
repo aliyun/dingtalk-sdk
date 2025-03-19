@@ -23,14 +23,12 @@ class setting extends Model
      */
     public $fieldType;
     protected $_name = [
-        'dateType'  => 'dateType',
+        'dateType' => 'dateType',
         'fieldName' => 'fieldName',
         'fieldType' => 'fieldType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

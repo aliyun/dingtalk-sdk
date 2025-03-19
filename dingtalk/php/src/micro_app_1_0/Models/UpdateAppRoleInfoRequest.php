@@ -26,13 +26,11 @@ class UpdateAppRoleInfoRequest extends Model
     public $opUserId;
     protected $_name = [
         'canManageRole' => 'canManageRole',
-        'newRoleName'   => 'newRoleName',
-        'opUserId'      => 'opUserId',
+        'newRoleName' => 'newRoleName',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

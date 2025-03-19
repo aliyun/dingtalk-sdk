@@ -134,30 +134,28 @@ class result extends Model
      */
     public $visible;
     protected $_name = [
-        'ancestorIds'      => 'ancestorIds',
+        'ancestorIds' => 'ancestorIds',
         'attachmentsCount' => 'attachmentsCount',
-        'content'          => 'content',
-        'created'          => 'created',
-        'creator'          => 'creator',
-        'creatorId'        => 'creatorId',
-        'dueDate'          => 'dueDate',
-        'executor'         => 'executor',
-        'executorId'       => 'executorId',
-        'hasReminder'      => 'hasReminder',
-        'id'               => 'id',
-        'involveMembers'   => 'involveMembers',
-        'involvers'        => 'involvers',
-        'isDeleted'        => 'isDeleted',
-        'isDone'           => 'isDone',
-        'note'             => 'note',
-        'priority'         => 'priority',
-        'updated'          => 'updated',
-        'visible'          => 'visible',
+        'content' => 'content',
+        'created' => 'created',
+        'creator' => 'creator',
+        'creatorId' => 'creatorId',
+        'dueDate' => 'dueDate',
+        'executor' => 'executor',
+        'executorId' => 'executorId',
+        'hasReminder' => 'hasReminder',
+        'id' => 'id',
+        'involveMembers' => 'involveMembers',
+        'involvers' => 'involvers',
+        'isDeleted' => 'isDeleted',
+        'isDone' => 'isDone',
+        'note' => 'note',
+        'priority' => 'priority',
+        'updated' => 'updated',
+        'visible' => 'visible',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -280,7 +278,7 @@ class result extends Model
         if (isset($map['involvers'])) {
             if (!empty($map['involvers'])) {
                 $model->involvers = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['involvers'] as $item) {
                     $model->involvers[$n++] = null !== $item ? involvers::fromMap($item) : $item;
                 }

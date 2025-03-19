@@ -78,20 +78,18 @@ class UpdateResidentUserRequest extends Model
      */
     public $userName;
     protected $_name = [
-        'address'         => 'address',
-        'departmentId'    => 'departmentId',
-        'extField'        => 'extField',
+        'address' => 'address',
+        'departmentId' => 'departmentId',
+        'extField' => 'extField',
         'isRetainOldDept' => 'isRetainOldDept',
-        'mobile'          => 'mobile',
+        'mobile' => 'mobile',
         'oldDepartmentId' => 'oldDepartmentId',
-        'relateType'      => 'relateType',
-        'userId'          => 'userId',
-        'userName'        => 'userName',
+        'relateType' => 'relateType',
+        'userId' => 'userId',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -150,7 +148,7 @@ class UpdateResidentUserRequest extends Model
         if (isset($map['extField'])) {
             if (!empty($map['extField'])) {
                 $model->extField = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['extField'] as $item) {
                     $model->extField[$n++] = null !== $item ? extField::fromMap($item) : $item;
                 }

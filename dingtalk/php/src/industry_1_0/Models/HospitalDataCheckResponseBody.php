@@ -53,20 +53,18 @@ class HospitalDataCheckResponseBody extends Model
      */
     public $match;
     protected $_name = [
-        'allDeptCount'      => 'allDeptCount',
-        'allDeptUserCount'  => 'allDeptUserCount',
-        'allGroupCount'     => 'allGroupCount',
+        'allDeptCount' => 'allDeptCount',
+        'allDeptUserCount' => 'allDeptUserCount',
+        'allGroupCount' => 'allGroupCount',
         'allGroupUserCount' => 'allGroupUserCount',
-        'deptCount'         => 'deptCount',
-        'deptUserCount'     => 'deptUserCount',
-        'groupCount'        => 'groupCount',
-        'groupUserCount'    => 'groupUserCount',
-        'match'             => 'match',
+        'deptCount' => 'deptCount',
+        'deptUserCount' => 'deptUserCount',
+        'groupCount' => 'groupCount',
+        'groupUserCount' => 'groupUserCount',
+        'match' => 'match',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

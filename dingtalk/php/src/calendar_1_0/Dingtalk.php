@@ -128,8 +128,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -173,18 +173,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddAttendee',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/attendees',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddAttendee',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/attendees',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return AddAttendeeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -239,18 +239,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddMeetingRooms',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/meetingRooms',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddMeetingRooms',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/meetingRooms',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddMeetingRoomsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -305,18 +305,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'CancelEvent',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/cancel',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CancelEvent',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/cancel',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CancelEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -364,15 +364,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'CheckIn',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/checkIn',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CheckIn',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/checkIn',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CheckInResponse::fromMap($this->execute($params, $req, $runtime));
@@ -421,18 +421,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ConvertLegacyEventId',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/legacyEventIds/convert',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ConvertLegacyEventId',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/legacyEventIds/convert',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ConvertLegacyEventIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -487,18 +487,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateAcls',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/acls',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateAcls',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/acls',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateAclsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -590,18 +590,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateEvent',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateEvent',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -689,18 +689,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateEventByMe',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/me/calendars/' . $calendarId . '/events',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateEventByMe',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/me/calendars/' . $calendarId . '/events',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateEventByMeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -757,18 +757,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateSubscribedCalendar',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/subscribedCalendars',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateSubscribedCalendar',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/subscribedCalendars',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateSubscribedCalendarResponse::fromMap($this->execute($params, $req, $runtime));
@@ -814,15 +814,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DeleteAcl',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/acls/' . $aclId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteAcl',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/acls/' . $aclId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return DeleteAclResponse::fromMap($this->execute($params, $req, $runtime));
@@ -876,18 +876,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteEvent',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteEvent',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return DeleteEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -934,15 +934,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DeleteSubscribedCalendar',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/subscribedCalendars/' . $calendarId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteSubscribedCalendar',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/subscribedCalendars/' . $calendarId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteSubscribedCalendarResponse::fromMap($this->execute($params, $req, $runtime));
@@ -993,18 +993,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GenerateCaldavAccount',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/caldavAccounts',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GenerateCaldavAccount',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/caldavAccounts',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GenerateCaldavAccountResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1054,18 +1054,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetEvent',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetEvent',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1121,18 +1121,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetMeetingRoomsSchedule',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/meetingRooms/schedules/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMeetingRoomsSchedule',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/meetingRooms/schedules/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMeetingRoomsScheduleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1186,18 +1186,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetSchedule',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/querySchedule',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSchedule',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/querySchedule',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetScheduleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1253,18 +1253,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetScheduleByMe',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/me/schedules/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetScheduleByMe',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/me/schedules/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetScheduleByMeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1309,15 +1309,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetSignInLink',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signInLinks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSignInLink',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signInLinks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSignInLinkResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1374,18 +1374,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSignInList',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signin',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSignInList',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signin',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSignInListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1433,15 +1433,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetSignOutLink',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signOutLinks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSignOutLink',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signOutLinks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSignOutLinkResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1498,18 +1498,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSignOutList',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signOut',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSignOutList',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signOut',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSignOutListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1556,15 +1556,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetSubscribedCalendar',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/subscribedCalendars/' . $calendarId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSubscribedCalendar',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/subscribedCalendars/' . $calendarId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSubscribedCalendarResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1609,15 +1609,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListAcls',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/acls',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAcls',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/acls',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAclsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1670,18 +1670,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListAttendees',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/attendees',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAttendees',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/attendees',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAttendeesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1727,15 +1727,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListCalendars',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListCalendars',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListCalendarsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1804,18 +1804,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListEvents',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListEvents',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListEventsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1874,18 +1874,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListEventsInstances',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/instances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListEventsInstances',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/instances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListEventsInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1947,18 +1947,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListEventsView',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/eventsview',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListEventsView',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/eventsview',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListEventsViewResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2022,18 +2022,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListEventsViewByMe',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/me/calendars/' . $calendarId . '/eventsview',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListEventsViewByMe',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/me/calendars/' . $calendarId . '/eventsview',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListEventsViewByMeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2095,18 +2095,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListInstances',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/instances',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListInstances',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/instances',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListInstancesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2165,18 +2165,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'MeetingRoomRespond',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/meetingRooms/' . $roomId . '/respond',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'MeetingRoomRespond',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/meetingRooms/' . $roomId . '/respond',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return MeetingRoomRespondResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2274,18 +2274,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PatchEvent',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PatchEvent',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PatchEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2340,18 +2340,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RemoveAttendee',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/attendees/batchRemove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveAttendee',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/attendees/batchRemove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return RemoveAttendeeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2406,18 +2406,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RemoveMeetingRooms',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/meetingRooms/batchRemove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveMeetingRooms',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/meetingRooms/batchRemove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemoveMeetingRoomsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2472,18 +2472,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RespondEvent',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/respond',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RespondEvent',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/respond',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return RespondEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2531,15 +2531,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'SignIn',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signin',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SignIn',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signin',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SignInResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2586,15 +2586,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'SignOut',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signOut',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SignOut',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signOut',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SignOutResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2640,15 +2640,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'SubscribeCalendar',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/subscribe',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SubscribeCalendar',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/subscribe',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return SubscribeCalendarResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2707,18 +2707,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TransferEvent',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/transfer',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TransferEvent',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/transfer',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TransferEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2765,15 +2765,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'UnsubscribeCalendar',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/unsubscribe',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UnsubscribeCalendar',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/unsubscribe',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UnsubscribeCalendarResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2831,18 +2831,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateSubscribedCalendars',
-            'version'     => 'calendar_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/calendar/users/' . $userId . '/subscribedCalendars/' . $calendarId . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateSubscribedCalendars',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/subscribedCalendars/' . $calendarId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateSubscribedCalendarsResponse::fromMap($this->execute($params, $req, $runtime));

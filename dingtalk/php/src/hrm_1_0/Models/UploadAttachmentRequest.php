@@ -23,12 +23,10 @@ class UploadAttachmentRequest extends Model
     public $userId;
     protected $_name = [
         'mediaId' => 'mediaId',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

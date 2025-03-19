@@ -24,14 +24,12 @@ class CreateAclsResponseBody extends Model
      */
     public $scope;
     protected $_name = [
-        'aclId'     => 'aclId',
+        'aclId' => 'aclId',
         'privilege' => 'privilege',
-        'scope'     => 'scope',
+        'scope' => 'scope',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

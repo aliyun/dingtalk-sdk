@@ -18,9 +18,7 @@ class progress extends Model
         'percent' => 'percent',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

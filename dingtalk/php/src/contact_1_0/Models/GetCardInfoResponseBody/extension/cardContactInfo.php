@@ -38,16 +38,14 @@ class cardContactInfo extends Model
      */
     public $workPhone;
     protected $_name = [
-        'address'   => 'address',
-        'email'     => 'email',
-        'link'      => 'link',
+        'address' => 'address',
+        'email' => 'email',
+        'link' => 'link',
         'telephone' => 'telephone',
         'workPhone' => 'workPhone',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -112,7 +110,7 @@ class cardContactInfo extends Model
         if (isset($map['address'])) {
             if (!empty($map['address'])) {
                 $model->address = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['address'] as $item) {
                     $model->address[$n++] = null !== $item ? address::fromMap($item) : $item;
                 }
@@ -121,7 +119,7 @@ class cardContactInfo extends Model
         if (isset($map['email'])) {
             if (!empty($map['email'])) {
                 $model->email = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['email'] as $item) {
                     $model->email[$n++] = null !== $item ? email::fromMap($item) : $item;
                 }
@@ -130,7 +128,7 @@ class cardContactInfo extends Model
         if (isset($map['link'])) {
             if (!empty($map['link'])) {
                 $model->link = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['link'] as $item) {
                     $model->link[$n++] = null !== $item ? link::fromMap($item) : $item;
                 }
@@ -139,7 +137,7 @@ class cardContactInfo extends Model
         if (isset($map['telephone'])) {
             if (!empty($map['telephone'])) {
                 $model->telephone = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['telephone'] as $item) {
                     $model->telephone[$n++] = null !== $item ? telephone::fromMap($item) : $item;
                 }
@@ -148,7 +146,7 @@ class cardContactInfo extends Model
         if (isset($map['workPhone'])) {
             if (!empty($map['workPhone'])) {
                 $model->workPhone = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['workPhone'] as $item) {
                     $model->workPhone[$n++] = null !== $item ? workPhone::fromMap($item) : $item;
                 }

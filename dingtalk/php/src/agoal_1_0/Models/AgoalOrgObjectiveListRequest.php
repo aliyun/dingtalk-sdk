@@ -40,13 +40,11 @@ class AgoalOrgObjectiveListRequest extends Model
     protected $_name = [
         'dingTeamId' => 'dingTeamId',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'periodId'   => 'periodId',
+        'pageSize' => 'pageSize',
+        'periodId' => 'periodId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

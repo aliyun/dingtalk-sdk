@@ -16,9 +16,7 @@ class body extends Model
         'liveIds' => 'liveIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

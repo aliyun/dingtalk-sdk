@@ -46,17 +46,15 @@ class groupInfoList extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'corpId'             => 'corpId',
-        'deptNameChain'      => 'deptNameChain',
-        'groupName'          => 'groupName',
-        'groupType'          => 'groupType',
-        'joinGroupTime'      => 'joinGroupTime',
+        'corpId' => 'corpId',
+        'deptNameChain' => 'deptNameChain',
+        'groupName' => 'groupName',
+        'groupType' => 'groupType',
+        'joinGroupTime' => 'joinGroupTime',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

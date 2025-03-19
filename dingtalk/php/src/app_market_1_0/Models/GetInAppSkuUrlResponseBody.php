@@ -16,9 +16,7 @@ class GetInAppSkuUrlResponseBody extends Model
         'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

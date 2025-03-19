@@ -119,28 +119,26 @@ class SyncInvoiceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'address'       => 'address',
-        'bankName'      => 'bankName',
-        'bankNo'        => 'bankNo',
+        'address' => 'address',
+        'bankName' => 'bankName',
+        'bankNo' => 'bankNo',
         'channelCorpId' => 'channelCorpId',
-        'deleteFlag'    => 'deleteFlag',
-        'gmtAction'     => 'gmtAction',
-        'invoiceId'     => 'invoiceId',
-        'projectIds'    => 'projectIds',
-        'scope'         => 'scope',
-        'source'        => 'source',
-        'taxNo'         => 'taxNo',
-        'tel'           => 'tel',
-        'thirdPartId'   => 'thirdPartId',
-        'title'         => 'title',
-        'type'          => 'type',
-        'unitType'      => 'unitType',
-        'userId'        => 'userId',
+        'deleteFlag' => 'deleteFlag',
+        'gmtAction' => 'gmtAction',
+        'invoiceId' => 'invoiceId',
+        'projectIds' => 'projectIds',
+        'scope' => 'scope',
+        'source' => 'source',
+        'taxNo' => 'taxNo',
+        'tel' => 'tel',
+        'thirdPartId' => 'thirdPartId',
+        'title' => 'title',
+        'type' => 'type',
+        'unitType' => 'unitType',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

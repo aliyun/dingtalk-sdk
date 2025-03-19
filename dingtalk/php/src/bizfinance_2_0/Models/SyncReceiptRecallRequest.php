@@ -30,13 +30,11 @@ class SyncReceiptRecallRequest extends Model
     public $orderNo;
     protected $_name = [
         'fileDownloadUrl' => 'fileDownloadUrl',
-        'fileName'        => 'fileName',
-        'orderNo'         => 'orderNo',
+        'fileName' => 'fileName',
+        'orderNo' => 'orderNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

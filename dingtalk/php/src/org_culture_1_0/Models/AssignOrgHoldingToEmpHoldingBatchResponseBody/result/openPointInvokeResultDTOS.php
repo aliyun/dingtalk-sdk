@@ -49,16 +49,14 @@ class openPointInvokeResultDTOS extends Model
      */
     public $userId;
     protected $_name = [
-        'code'         => 'code',
+        'code' => 'code',
         'invokeStatus' => 'invokeStatus',
-        'msg'          => 'msg',
-        'outId'        => 'outId',
-        'userId'       => 'userId',
+        'msg' => 'msg',
+        'outId' => 'outId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

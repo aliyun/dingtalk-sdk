@@ -59,18 +59,16 @@ class QueryCityCarApplyRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'corpId'           => 'corpId',
-        'createdEndAt'     => 'createdEndAt',
-        'createdStartAt'   => 'createdStartAt',
-        'pageNumber'       => 'pageNumber',
-        'pageSize'         => 'pageSize',
+        'corpId' => 'corpId',
+        'createdEndAt' => 'createdEndAt',
+        'createdStartAt' => 'createdStartAt',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
         'thirdPartApplyId' => 'thirdPartApplyId',
-        'userId'           => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

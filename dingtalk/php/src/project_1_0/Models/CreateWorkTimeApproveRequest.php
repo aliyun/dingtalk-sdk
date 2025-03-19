@@ -18,9 +18,7 @@ class CreateWorkTimeApproveRequest extends Model
         'workTimeIds' => 'workTimeIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -33,14 +33,12 @@ class GetFlowIdByRelationEntityIdRequest extends Model
      */
     public $relationEntityId;
     protected $_name = [
-        'bizCode'          => 'bizCode',
-        'relationEntity'   => 'relationEntity',
+        'bizCode' => 'bizCode',
+        'relationEntity' => 'relationEntity',
         'relationEntityId' => 'relationEntityId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

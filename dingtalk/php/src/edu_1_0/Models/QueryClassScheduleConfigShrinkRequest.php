@@ -23,12 +23,10 @@ class QueryClassScheduleConfigShrinkRequest extends Model
     public $opUserId;
     protected $_name = [
         'classIdsShrink' => 'classIds',
-        'opUserId'       => 'opUserId',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

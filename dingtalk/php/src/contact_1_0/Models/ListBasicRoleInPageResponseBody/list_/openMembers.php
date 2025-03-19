@@ -28,15 +28,13 @@ class openMembers extends Model
      */
     public $operateUserId;
     protected $_name = [
-        'belongCorpId'  => 'belongCorpId',
-        'memberId'      => 'memberId',
-        'memberType'    => 'memberType',
+        'belongCorpId' => 'belongCorpId',
+        'memberId' => 'memberId',
+        'memberType' => 'memberType',
         'operateUserId' => 'operateUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class GetDingIdByMigrationDingIdResponseBody extends Model
         'dingId' => 'dingId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

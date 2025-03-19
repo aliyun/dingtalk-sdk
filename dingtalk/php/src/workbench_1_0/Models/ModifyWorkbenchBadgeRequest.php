@@ -54,17 +54,15 @@ class ModifyWorkbenchBadgeRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizIdList'        => 'bizIdList',
-        'isAdded'          => 'isAdded',
-        'modifyMode'       => 'modifyMode',
+        'bizIdList' => 'bizIdList',
+        'isAdded' => 'isAdded',
+        'modifyMode' => 'modifyMode',
         'redDotRelationId' => 'redDotRelationId',
-        'redDotType'       => 'redDotType',
-        'userId'           => 'userId',
+        'redDotType' => 'redDotType',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -58,18 +58,16 @@ class resource extends Model
      */
     public $url;
     protected $_name = [
-        'dentryUuid'    => 'dentryUuid',
+        'dentryUuid' => 'dentryUuid',
         'driveDentryId' => 'driveDentryId',
-        'driveSpaceId'  => 'driveSpaceId',
-        'extension'     => 'extension',
-        'name'          => 'name',
-        'spaceInfo'     => 'spaceInfo',
-        'url'           => 'url',
+        'driveSpaceId' => 'driveSpaceId',
+        'extension' => 'extension',
+        'name' => 'name',
+        'spaceInfo' => 'spaceInfo',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,6 +17,7 @@ class MoveFileResponseBody extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $createTime;
@@ -73,6 +74,7 @@ class MoveFileResponseBody extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $modifyTime;
@@ -89,24 +91,22 @@ class MoveFileResponseBody extends Model
      */
     public $spaceId;
     protected $_name = [
-        'contentType'   => 'contentType',
-        'createTime'    => 'createTime',
-        'creator'       => 'creator',
+        'contentType' => 'contentType',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
         'fileExtension' => 'fileExtension',
-        'fileId'        => 'fileId',
-        'fileName'      => 'fileName',
-        'filePath'      => 'filePath',
-        'fileSize'      => 'fileSize',
-        'fileType'      => 'fileType',
-        'modifier'      => 'modifier',
-        'modifyTime'    => 'modifyTime',
-        'parentId'      => 'parentId',
-        'spaceId'       => 'spaceId',
+        'fileId' => 'fileId',
+        'fileName' => 'fileName',
+        'filePath' => 'filePath',
+        'fileSize' => 'fileSize',
+        'fileType' => 'fileType',
+        'modifier' => 'modifier',
+        'modifyTime' => 'modifyTime',
+        'parentId' => 'parentId',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

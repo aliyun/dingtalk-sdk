@@ -36,15 +36,13 @@ class followContent extends Model
      */
     public $value;
     protected $_name = [
-        'bizAlias'    => 'bizAlias',
+        'bizAlias' => 'bizAlias',
         'extendValue' => 'extendValue',
-        'key'         => 'key',
-        'value'       => 'value',
+        'key' => 'key',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

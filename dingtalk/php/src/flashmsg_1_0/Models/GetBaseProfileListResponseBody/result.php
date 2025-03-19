@@ -29,14 +29,12 @@ class result extends Model
     public $userId;
     protected $_name = [
         'avatarMediaId' => 'avatarMediaId',
-        'nick'          => 'nick',
-        'nickPinyin'    => 'nickPinyin',
-        'userId'        => 'userId',
+        'nick' => 'nick',
+        'nickPinyin' => 'nickPinyin',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

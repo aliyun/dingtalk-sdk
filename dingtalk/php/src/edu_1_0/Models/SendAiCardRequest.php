@@ -48,17 +48,15 @@ class SendAiCardRequest extends Model
      */
     public $isvCode;
     protected $_name = [
-        'actionType'  => 'actionType',
-        'bizData'     => 'bizData',
+        'actionType' => 'actionType',
+        'bizData' => 'bizData',
         'cardChannel' => 'cardChannel',
-        'corpId'      => 'corpId',
-        'identifier'  => 'identifier',
-        'isvCode'     => 'isvCode',
+        'corpId' => 'corpId',
+        'identifier' => 'identifier',
+        'isvCode' => 'isvCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

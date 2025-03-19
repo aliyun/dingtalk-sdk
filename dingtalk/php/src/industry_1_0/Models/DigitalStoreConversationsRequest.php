@@ -23,12 +23,10 @@ class DigitalStoreConversationsRequest extends Model
     public $conversationType;
     protected $_name = [
         'conversationTitle' => 'conversationTitle',
-        'conversationType'  => 'conversationType',
+        'conversationType' => 'conversationType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

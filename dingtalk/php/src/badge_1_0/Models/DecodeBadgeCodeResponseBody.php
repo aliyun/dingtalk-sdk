@@ -79,20 +79,18 @@ class DecodeBadgeCodeResponseBody extends Model
      */
     public $userId;
     protected $_name = [
-        'alipayCode'           => 'alipayCode',
-        'codeId'               => 'codeId',
-        'codeIdentity'         => 'codeIdentity',
-        'codeType'             => 'codeType',
-        'corpId'               => 'corpId',
-        'extInfo'              => 'extInfo',
-        'outBizId'             => 'outBizId',
+        'alipayCode' => 'alipayCode',
+        'codeId' => 'codeId',
+        'codeIdentity' => 'codeIdentity',
+        'codeType' => 'codeType',
+        'corpId' => 'corpId',
+        'extInfo' => 'extInfo',
+        'outBizId' => 'outBizId',
         'userCorpRelationType' => 'userCorpRelationType',
-        'userId'               => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

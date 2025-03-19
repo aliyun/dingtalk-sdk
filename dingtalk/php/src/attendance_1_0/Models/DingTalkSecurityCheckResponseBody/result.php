@@ -22,13 +22,11 @@ class result extends Model
      */
     public $riskInfo;
     protected $_name = [
-        'hasRisk'  => 'hasRisk',
+        'hasRisk' => 'hasRisk',
         'riskInfo' => 'riskInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

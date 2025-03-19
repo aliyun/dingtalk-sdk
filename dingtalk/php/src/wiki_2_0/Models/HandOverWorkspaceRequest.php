@@ -46,13 +46,11 @@ class HandOverWorkspaceRequest extends Model
     protected $_name = [
         'sourceOwnerId' => 'sourceOwnerId',
         'targetOwnerId' => 'targetOwnerId',
-        'workspaceId'   => 'workspaceId',
-        'operatorId'    => 'operatorId',
+        'workspaceId' => 'workspaceId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

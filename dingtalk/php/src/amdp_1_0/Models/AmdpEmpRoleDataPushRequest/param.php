@@ -28,15 +28,13 @@ class param extends Model
      */
     public $userId;
     protected $_name = [
-        'deptId'   => 'deptId',
+        'deptId' => 'deptId',
         'isDelete' => 'isDelete',
         'roleCode' => 'roleCode',
-        'userId'   => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

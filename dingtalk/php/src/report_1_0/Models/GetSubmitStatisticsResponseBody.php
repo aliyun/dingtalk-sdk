@@ -48,17 +48,15 @@ class GetSubmitStatisticsResponseBody extends Model
     public $userMap;
     protected $_name = [
         'shouldRemindTimes' => 'shouldRemindTimes',
-        'templateName'      => 'templateName',
-        'userDeptMap'       => 'userDeptMap',
-        'userIdCountMap'    => 'userIdCountMap',
-        'userIdStatusMap'   => 'userIdStatusMap',
-        'userIds'           => 'userIds',
-        'userMap'           => 'userMap',
+        'templateName' => 'templateName',
+        'userDeptMap' => 'userDeptMap',
+        'userIdCountMap' => 'userIdCountMap',
+        'userIdStatusMap' => 'userIdStatusMap',
+        'userIds' => 'userIds',
+        'userMap' => 'userMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

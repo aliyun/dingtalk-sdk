@@ -30,9 +30,7 @@ class param extends Model
         'exportType' => 'exportType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

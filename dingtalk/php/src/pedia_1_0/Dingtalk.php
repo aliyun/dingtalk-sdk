@@ -35,8 +35,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -92,18 +92,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PediaWordsAdd',
-            'version'     => 'pedia_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/pedia/words',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PediaWordsAdd',
+            'version' => 'pedia_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/pedia/words',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PediaWordsAddResponse::fromMap($this->execute($params, $req, $runtime));
@@ -164,18 +164,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PediaWordsApprove',
-            'version'     => 'pedia_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/pedia/words/approve',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PediaWordsApprove',
+            'version' => 'pedia_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/pedia/words/approve',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PediaWordsApproveResponse::fromMap($this->execute($params, $req, $runtime));
@@ -224,18 +224,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PediaWordsDelete',
-            'version'     => 'pedia_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/pedia/words',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PediaWordsDelete',
+            'version' => 'pedia_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/pedia/words',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PediaWordsDeleteResponse::fromMap($this->execute($params, $req, $runtime));
@@ -284,18 +284,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PediaWordsQuery',
-            'version'     => 'pedia_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/pedia/words/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PediaWordsQuery',
+            'version' => 'pedia_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/pedia/words/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PediaWordsQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -353,18 +353,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PediaWordsSearch',
-            'version'     => 'pedia_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/pedia/words/search',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PediaWordsSearch',
+            'version' => 'pedia_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/pedia/words/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PediaWordsSearchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -440,18 +440,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PediaWordsUpdate',
-            'version'     => 'pedia_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/pedia/words',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PediaWordsUpdate',
+            'version' => 'pedia_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/pedia/words',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PediaWordsUpdateResponse::fromMap($this->execute($params, $req, $runtime));

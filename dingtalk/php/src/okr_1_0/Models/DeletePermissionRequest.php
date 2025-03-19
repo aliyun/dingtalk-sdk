@@ -52,17 +52,15 @@ class DeletePermissionRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'id'         => 'id',
+        'id' => 'id',
         'policyType' => 'policyType',
-        'targetId'   => 'targetId',
+        'targetId' => 'targetId',
         'targetType' => 'targetType',
-        'type'       => 'type',
-        'userId'     => 'userId',
+        'type' => 'type',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

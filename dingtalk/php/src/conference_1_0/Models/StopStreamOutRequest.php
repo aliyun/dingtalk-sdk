@@ -34,13 +34,11 @@ class StopStreamOutRequest extends Model
     public $unionId;
     protected $_name = [
         'stopAllStream' => 'stopAllStream',
-        'streamId'      => 'streamId',
-        'unionId'       => 'unionId',
+        'streamId' => 'streamId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

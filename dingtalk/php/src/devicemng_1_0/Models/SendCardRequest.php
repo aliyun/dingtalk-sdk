@@ -76,21 +76,19 @@ class SendCardRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizId'              => 'bizId',
-        'cardData'           => 'cardData',
-        'deviceCode'         => 'deviceCode',
-        'deviceUuid'         => 'deviceUuid',
+        'bizId' => 'bizId',
+        'cardData' => 'cardData',
+        'deviceCode' => 'deviceCode',
+        'deviceUuid' => 'deviceUuid',
         'openConversationId' => 'openConversationId',
-        'partVisible'        => 'partVisible',
-        'receivers'          => 'receivers',
-        'templateId'         => 'templateId',
-        'topbox'             => 'topbox',
-        'userId'             => 'userId',
+        'partVisible' => 'partVisible',
+        'receivers' => 'receivers',
+        'templateId' => 'templateId',
+        'topbox' => 'topbox',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

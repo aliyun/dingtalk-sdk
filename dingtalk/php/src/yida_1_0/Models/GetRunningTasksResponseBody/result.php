@@ -68,23 +68,21 @@ class result extends Model
      */
     public $titleInEnglish;
     protected $_name = [
-        'activeTimeGMT'     => 'activeTimeGMT',
-        'activityId'        => 'activityId',
-        'actualActionerId'  => 'actualActionerId',
-        'createTimeGMT'     => 'createTimeGMT',
-        'finishTimeGMT'     => 'finishTimeGMT',
-        'originatorId'      => 'originatorId',
+        'activeTimeGMT' => 'activeTimeGMT',
+        'activityId' => 'activityId',
+        'actualActionerId' => 'actualActionerId',
+        'createTimeGMT' => 'createTimeGMT',
+        'finishTimeGMT' => 'finishTimeGMT',
+        'originatorId' => 'originatorId',
         'processInstanceId' => 'processInstanceId',
-        'status'            => 'status',
-        'taskId'            => 'taskId',
-        'taskType'          => 'taskType',
-        'title'             => 'title',
-        'titleInEnglish'    => 'titleInEnglish',
+        'status' => 'status',
+        'taskId' => 'taskId',
+        'taskType' => 'taskType',
+        'title' => 'title',
+        'titleInEnglish' => 'titleInEnglish',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

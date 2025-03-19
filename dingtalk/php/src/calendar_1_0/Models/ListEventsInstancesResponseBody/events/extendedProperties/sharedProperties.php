@@ -16,9 +16,7 @@ class sharedProperties extends Model
         'sourceOpenCid' => 'sourceOpenCid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

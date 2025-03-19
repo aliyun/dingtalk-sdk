@@ -57,17 +57,15 @@ class UpdateMenuDataRequest extends Model
      */
     public $operatorUserId;
     protected $_name = [
-        'attr'           => 'attr',
-        'bizTraceId'     => 'bizTraceId',
-        'module'         => 'module',
-        'navData'        => 'navData',
-        'operateType'    => 'operateType',
+        'attr' => 'attr',
+        'bizTraceId' => 'bizTraceId',
+        'module' => 'module',
+        'navData' => 'navData',
+        'operateType' => 'operateType',
         'operatorUserId' => 'operatorUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

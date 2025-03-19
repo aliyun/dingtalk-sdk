@@ -18,13 +18,11 @@ class subInstShopInfo extends Model
      */
     public $outDoorImages;
     protected $_name = [
-        'inDoorImages'  => 'inDoorImages',
+        'inDoorImages' => 'inDoorImages',
         'outDoorImages' => 'outDoorImages',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

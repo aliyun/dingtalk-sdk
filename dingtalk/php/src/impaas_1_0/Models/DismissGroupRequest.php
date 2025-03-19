@@ -21,12 +21,10 @@ class DismissGroupRequest extends Model
     public $operatorUid;
     protected $_name = [
         'conversationId' => 'conversationId',
-        'operatorUid'    => 'operatorUid',
+        'operatorUid' => 'operatorUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -50,17 +50,15 @@ class GetRelatedViewTabDataRequest extends Model
      */
     public $viewUserId;
     protected $_name = [
-        'formCode'      => 'formCode',
-        'maxResults'    => 'maxResults',
-        'nextToken'     => 'nextToken',
-        'relatedField'  => 'relatedField',
+        'formCode' => 'formCode',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'relatedField' => 'relatedField',
         'relatedInstId' => 'relatedInstId',
-        'viewUserId'    => 'viewUserId',
+        'viewUserId' => 'viewUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

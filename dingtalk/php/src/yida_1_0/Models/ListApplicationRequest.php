@@ -70,19 +70,17 @@ class ListApplicationRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appFilter'            => 'appFilter',
+        'appFilter' => 'appFilter',
         'appNameSearchKeyword' => 'appNameSearchKeyword',
-        'corpId'               => 'corpId',
-        'env'                  => 'env',
-        'pageNumber'           => 'pageNumber',
-        'pageSize'             => 'pageSize',
-        'token'                => 'token',
-        'userId'               => 'userId',
+        'corpId' => 'corpId',
+        'env' => 'env',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'token' => 'token',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

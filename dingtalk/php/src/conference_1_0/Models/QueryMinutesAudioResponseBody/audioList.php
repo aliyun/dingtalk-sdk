@@ -57,18 +57,16 @@ class audioList extends Model
      */
     public $unionId;
     protected $_name = [
-        'duration'  => 'duration',
-        'endTime'   => 'endTime',
-        'fileSize'  => 'fileSize',
-        'playUrl'   => 'playUrl',
-        'recordId'  => 'recordId',
+        'duration' => 'duration',
+        'endTime' => 'endTime',
+        'fileSize' => 'fileSize',
+        'playUrl' => 'playUrl',
+        'recordId' => 'recordId',
         'startTime' => 'startTime',
-        'unionId'   => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

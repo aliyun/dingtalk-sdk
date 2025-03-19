@@ -34,15 +34,13 @@ class GetStoragePolicyResponseBody extends Model
     public $signature;
     protected $_name = [
         'accessKeyId' => 'accessKeyId',
-        'endpoint'    => 'endpoint',
-        'key'         => 'key',
-        'policy'      => 'policy',
-        'signature'   => 'signature',
+        'endpoint' => 'endpoint',
+        'key' => 'key',
+        'policy' => 'policy',
+        'signature' => 'signature',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

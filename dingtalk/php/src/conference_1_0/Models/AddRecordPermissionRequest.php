@@ -35,14 +35,12 @@ class AddRecordPermissionRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'bizType'      => 'bizType',
+        'bizType' => 'bizType',
         'ownerUnionId' => 'ownerUnionId',
-        'unionId'      => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

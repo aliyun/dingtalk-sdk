@@ -35,14 +35,12 @@ class FileStorageUpdateStorageRequest extends Model
      */
     public $targetCorpId;
     protected $_name = [
-        'accessKeyId'     => 'accessKeyId',
+        'accessKeyId' => 'accessKeyId',
         'accessKeySecret' => 'accessKeySecret',
-        'targetCorpId'    => 'targetCorpId',
+        'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

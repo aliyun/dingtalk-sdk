@@ -16,9 +16,7 @@ class result extends Model
         'commentId' => 'commentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

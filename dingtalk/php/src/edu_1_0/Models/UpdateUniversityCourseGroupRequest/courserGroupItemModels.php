@@ -65,18 +65,16 @@ class courserGroupItemModels extends Model
      */
     public $sectionIndex;
     protected $_name = [
-        'classPeriodType'           => 'classPeriodType',
-        'classroomId'               => 'classroomId',
-        'courseType'                => 'courseType',
-        'courserGroupItemEndDate'   => 'courserGroupItemEndDate',
+        'classPeriodType' => 'classPeriodType',
+        'classroomId' => 'classroomId',
+        'courseType' => 'courseType',
+        'courserGroupItemEndDate' => 'courserGroupItemEndDate',
         'courserGroupItemStartDate' => 'courserGroupItemStartDate',
-        'dayOfWeek'                 => 'dayOfWeek',
-        'sectionIndex'              => 'sectionIndex',
+        'dayOfWeek' => 'dayOfWeek',
+        'sectionIndex' => 'sectionIndex',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

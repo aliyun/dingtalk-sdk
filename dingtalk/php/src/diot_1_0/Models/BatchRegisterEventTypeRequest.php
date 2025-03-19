@@ -23,13 +23,11 @@ class BatchRegisterEventTypeRequest extends Model
      */
     public $eventTypes;
     protected $_name = [
-        'corpId'     => 'corpId',
+        'corpId' => 'corpId',
         'eventTypes' => 'eventTypes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class BatchRegisterEventTypeRequest extends Model
         if (isset($map['eventTypes'])) {
             if (!empty($map['eventTypes'])) {
                 $model->eventTypes = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['eventTypes'] as $item) {
                     $model->eventTypes[$n++] = null !== $item ? eventTypes::fromMap($item) : $item;
                 }

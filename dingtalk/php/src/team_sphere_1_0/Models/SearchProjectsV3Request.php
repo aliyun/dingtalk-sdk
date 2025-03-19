@@ -48,17 +48,15 @@ class SearchProjectsV3Request extends Model
     public $userId;
     protected $_name = [
         'includeTemplate' => 'includeTemplate',
-        'maxResults'      => 'maxResults',
-        'name'            => 'name',
-        'nextToken'       => 'nextToken',
-        'projectIds'      => 'projectIds',
-        'sourceId'        => 'sourceId',
-        'userId'          => 'userId',
+        'maxResults' => 'maxResults',
+        'name' => 'name',
+        'nextToken' => 'nextToken',
+        'projectIds' => 'projectIds',
+        'sourceId' => 'sourceId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

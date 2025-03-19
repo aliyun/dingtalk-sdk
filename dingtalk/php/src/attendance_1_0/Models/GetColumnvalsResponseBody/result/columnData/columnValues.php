@@ -20,13 +20,11 @@ class columnValues extends Model
      */
     public $value;
     protected $_name = [
-        'date'  => 'date',
+        'date' => 'date',
         'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

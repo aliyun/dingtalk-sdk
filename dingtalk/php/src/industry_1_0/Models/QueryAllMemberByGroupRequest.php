@@ -27,14 +27,12 @@ class QueryAllMemberByGroupRequest extends Model
      */
     public $pageSize;
     protected $_name = [
-        'monthMark'  => 'monthMark',
+        'monthMark' => 'monthMark',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

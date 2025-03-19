@@ -62,17 +62,15 @@ class AddOrgAccountOwnnessRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'endTime'     => 'endTime',
+        'endTime' => 'endTime',
         'ownenssType' => 'ownenssType',
-        'ownnessId'   => 'ownnessId',
-        'startTime'   => 'startTime',
-        'text'        => 'text',
-        'userId'      => 'userId',
+        'ownnessId' => 'ownnessId',
+        'startTime' => 'startTime',
+        'text' => 'text',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

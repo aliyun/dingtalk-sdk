@@ -48,19 +48,17 @@ class masterDataDepartments extends Model
      */
     public $masterWorkNo;
     protected $_name = [
-        'deptName'                    => 'deptName',
-        'deptNameInEnglish'           => 'deptNameInEnglish',
-        'deptNo'                      => 'deptNo',
-        'deptPath'                    => 'deptPath',
+        'deptName' => 'deptName',
+        'deptNameInEnglish' => 'deptNameInEnglish',
+        'deptNo' => 'deptNo',
+        'deptPath' => 'deptPath',
         'humanSourceGroupOrderNumber' => 'humanSourceGroupOrderNumber',
-        'humanSourceGroupWorkNo'      => 'humanSourceGroupWorkNo',
-        'id'                          => 'id',
-        'masterWorkNo'                => 'masterWorkNo',
+        'humanSourceGroupWorkNo' => 'humanSourceGroupWorkNo',
+        'id' => 'id',
+        'masterWorkNo' => 'masterWorkNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

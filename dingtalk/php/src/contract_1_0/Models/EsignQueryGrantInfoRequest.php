@@ -27,14 +27,12 @@ class EsignQueryGrantInfoRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'corpId'    => 'corpId',
+        'corpId' => 'corpId',
         'extension' => 'extension',
-        'unionId'   => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

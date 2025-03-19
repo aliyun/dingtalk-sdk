@@ -29,14 +29,12 @@ class recentList extends Model
     public $url;
     protected $_name = [
         'lastEditTime' => 'lastEditTime',
-        'name'         => 'name',
-        'nodeId'       => 'nodeId',
-        'url'          => 'url',
+        'name' => 'name',
+        'nodeId' => 'nodeId',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

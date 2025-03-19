@@ -96,22 +96,20 @@ class PreCreateGroupBillOrderRequest extends Model
      */
     public $totalAmount;
     protected $_name = [
-        'billItemList'    => 'billItemList',
-        'extParams'       => 'extParams',
-        'headCount'       => 'headCount',
+        'billItemList' => 'billItemList',
+        'extParams' => 'extParams',
+        'headCount' => 'headCount',
         'isAverageAmount' => 'isAverageAmount',
-        'merchantId'      => 'merchantId',
-        'openCid'         => 'openCid',
-        'outBizNo'        => 'outBizNo',
-        'payeeCorpId'     => 'payeeCorpId',
-        'payeeUnionId'    => 'payeeUnionId',
-        'remark'          => 'remark',
-        'totalAmount'     => 'totalAmount',
+        'merchantId' => 'merchantId',
+        'openCid' => 'openCid',
+        'outBizNo' => 'outBizNo',
+        'payeeCorpId' => 'payeeCorpId',
+        'payeeUnionId' => 'payeeUnionId',
+        'remark' => 'remark',
+        'totalAmount' => 'totalAmount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -170,7 +168,7 @@ class PreCreateGroupBillOrderRequest extends Model
         if (isset($map['billItemList'])) {
             if (!empty($map['billItemList'])) {
                 $model->billItemList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['billItemList'] as $item) {
                     $model->billItemList[$n++] = null !== $item ? billItemList::fromMap($item) : $item;
                 }

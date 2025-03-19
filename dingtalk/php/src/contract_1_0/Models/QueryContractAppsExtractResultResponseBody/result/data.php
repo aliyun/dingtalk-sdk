@@ -20,12 +20,10 @@ class data extends Model
     public $extractStatus;
     protected $_name = [
         'extractEntities' => 'extractEntities',
-        'extractStatus'   => 'extractStatus',
+        'extractStatus' => 'extractStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class data extends Model
         if (isset($map['extractEntities'])) {
             if (!empty($map['extractEntities'])) {
                 $model->extractEntities = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['extractEntities'] as $item) {
                     $model->extractEntities[$n++] = null !== $item ? extractEntities::fromMap($item) : $item;
                 }

@@ -44,15 +44,13 @@ class FileStorageGetQuotaDataRequest extends Model
      */
     public $type;
     protected $_name = [
-        'endTime'      => 'endTime',
-        'startTime'    => 'startTime',
+        'endTime' => 'endTime',
+        'startTime' => 'startTime',
         'targetCorpId' => 'targetCorpId',
-        'type'         => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -90,22 +90,20 @@ class IndustryManufactureMesMaterialRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'action'               => 'action',
-        'appKey'               => 'appKey',
-        'baseDataName'         => 'baseDataName',
-        'category'             => 'category',
-        'extendData'           => 'extendData',
-        'productCode'          => 'productCode',
-        'productName'          => 'productName',
+        'action' => 'action',
+        'appKey' => 'appKey',
+        'baseDataName' => 'baseDataName',
+        'category' => 'category',
+        'extendData' => 'extendData',
+        'productCode' => 'productCode',
+        'productName' => 'productName',
         'productSpecification' => 'productSpecification',
-        'prop'                 => 'prop',
-        'unit'                 => 'unit',
-        'uuid'                 => 'uuid',
+        'prop' => 'prop',
+        'unit' => 'unit',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -176,7 +174,7 @@ class IndustryManufactureMesMaterialRequest extends Model
         if (isset($map['extendData'])) {
             if (!empty($map['extendData'])) {
                 $model->extendData = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['extendData'] as $item) {
                     $model->extendData[$n++] = null !== $item ? extendData::fromMap($item) : $item;
                 }

@@ -43,16 +43,14 @@ class ListAvaiableVersionRequest extends Model
      */
     public $versionTypeSet;
     protected $_name = [
-        'bundleId'       => 'bundleId',
-        'miniAppId'      => 'miniAppId',
-        'pageNum'        => 'pageNum',
-        'pageSize'       => 'pageSize',
+        'bundleId' => 'bundleId',
+        'miniAppId' => 'miniAppId',
+        'pageNum' => 'pageNum',
+        'pageSize' => 'pageSize',
         'versionTypeSet' => 'versionTypeSet',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

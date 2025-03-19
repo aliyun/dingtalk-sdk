@@ -30,13 +30,11 @@ class RegisterCustomAppRoleRequest extends Model
     public $roleName;
     protected $_name = [
         'canManageRole' => 'canManageRole',
-        'opUserId'      => 'opUserId',
-        'roleName'      => 'roleName',
+        'opUserId' => 'opUserId',
+        'roleName' => 'roleName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

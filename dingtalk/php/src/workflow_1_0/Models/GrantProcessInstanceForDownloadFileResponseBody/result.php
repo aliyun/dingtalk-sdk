@@ -30,13 +30,11 @@ class result extends Model
     public $spaceId;
     protected $_name = [
         'downloadUri' => 'downloadUri',
-        'fileId'      => 'fileId',
-        'spaceId'     => 'spaceId',
+        'fileId' => 'fileId',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

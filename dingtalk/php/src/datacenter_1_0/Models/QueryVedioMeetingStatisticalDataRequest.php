@@ -18,9 +18,7 @@ class QueryVedioMeetingStatisticalDataRequest extends Model
         'statDate' => 'statDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

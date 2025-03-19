@@ -23,12 +23,10 @@ class AddGroupMemberResponseBody extends Model
     public $userIds;
     protected $_name = [
         'appUserIds' => 'appUserIds',
-        'userIds'    => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

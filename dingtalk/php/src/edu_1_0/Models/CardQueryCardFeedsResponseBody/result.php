@@ -20,12 +20,10 @@ class result extends Model
     public $posts;
     protected $_name = [
         'hasMore' => 'hasMore',
-        'posts'   => 'posts',
+        'posts' => 'posts',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class result extends Model
         if (isset($map['posts'])) {
             if (!empty($map['posts'])) {
                 $model->posts = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['posts'] as $item) {
                     $model->posts[$n++] = null !== $item ? posts::fromMap($item) : $item;
                 }

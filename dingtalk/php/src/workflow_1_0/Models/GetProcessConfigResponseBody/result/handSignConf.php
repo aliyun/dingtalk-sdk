@@ -19,12 +19,10 @@ class handSignConf extends Model
     public $resignEnable;
     protected $_name = [
         'handSignEnable' => 'handSignEnable',
-        'resignEnable'   => 'resignEnable',
+        'resignEnable' => 'resignEnable',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -84,23 +84,21 @@ class RenderBatchCallbackRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'     => 'appType',
-        'corpId'      => 'corpId',
-        'fileSize'    => 'fileSize',
-        'language'    => 'language',
-        'namespace'   => 'namespace',
-        'ossUrl'      => 'ossUrl',
-        'sequenceId'  => 'sequenceId',
-        'source'      => 'source',
-        'status'      => 'status',
+        'appType' => 'appType',
+        'corpId' => 'corpId',
+        'fileSize' => 'fileSize',
+        'language' => 'language',
+        'namespace' => 'namespace',
+        'ossUrl' => 'ossUrl',
+        'sequenceId' => 'sequenceId',
+        'source' => 'source',
+        'status' => 'status',
         'systemToken' => 'systemToken',
-        'timeZone'    => 'timeZone',
-        'userId'      => 'userId',
+        'timeZone' => 'timeZone',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

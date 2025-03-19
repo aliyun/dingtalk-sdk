@@ -35,14 +35,12 @@ class UnsubscribeEventRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'scope'   => 'scope',
+        'scope' => 'scope',
         'scopeId' => 'scopeId',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

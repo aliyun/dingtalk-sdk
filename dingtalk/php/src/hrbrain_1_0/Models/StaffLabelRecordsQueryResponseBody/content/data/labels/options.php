@@ -24,13 +24,11 @@ class options extends Model
     public $value;
     protected $_name = [
         'label' => 'label',
-        'tip'   => 'tip',
+        'tip' => 'tip',
         'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class OrderInfoRequest extends Model
         'orderNo' => 'orderNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

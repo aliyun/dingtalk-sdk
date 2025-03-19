@@ -16,9 +16,7 @@ class attrs extends Model
         'listUnitId' => 'listUnitId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

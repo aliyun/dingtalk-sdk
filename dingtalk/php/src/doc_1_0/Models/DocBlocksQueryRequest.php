@@ -38,15 +38,13 @@ class DocBlocksQueryRequest extends Model
      */
     public $startIndex;
     protected $_name = [
-        'blockType'  => 'blockType',
-        'endIndex'   => 'endIndex',
+        'blockType' => 'blockType',
+        'endIndex' => 'endIndex',
         'operatorId' => 'operatorId',
         'startIndex' => 'startIndex',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

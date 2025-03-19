@@ -36,15 +36,13 @@ class content extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'conversationTitle'  => 'conversationTitle',
-        'conversationType'   => 'conversationType',
-        'id'                 => 'id',
+        'conversationTitle' => 'conversationTitle',
+        'conversationType' => 'conversationType',
+        'id' => 'id',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

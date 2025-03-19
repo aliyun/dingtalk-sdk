@@ -41,16 +41,14 @@ class AppendSpaceWithDelegateRequest extends Model
      */
     public $topOpenSpaceModel;
     protected $_name = [
-        'coFeedOpenSpaceModel'  => 'coFeedOpenSpaceModel',
+        'coFeedOpenSpaceModel' => 'coFeedOpenSpaceModel',
         'imGroupOpenSpaceModel' => 'imGroupOpenSpaceModel',
         'imRobotOpenSpaceModel' => 'imRobotOpenSpaceModel',
-        'outTrackId'            => 'outTrackId',
-        'topOpenSpaceModel'     => 'topOpenSpaceModel',
+        'outTrackId' => 'outTrackId',
+        'topOpenSpaceModel' => 'topOpenSpaceModel',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,9 +20,7 @@ class result extends Model
         'nextAutoIssuePointTime' => 'nextAutoIssuePointTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

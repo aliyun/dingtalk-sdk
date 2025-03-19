@@ -30,13 +30,11 @@ class UpdateInvoiceIgnoreStatusRequest extends Model
     public $status;
     protected $_name = [
         'instanceId' => 'instanceId',
-        'operator'   => 'operator',
-        'status'     => 'status',
+        'operator' => 'operator',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

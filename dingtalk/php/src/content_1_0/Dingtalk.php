@@ -38,8 +38,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -77,18 +77,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateFeed',
-            'version'     => 'content_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/content/feeds',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateFeed',
+            'version' => 'content_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/content/feeds',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateFeedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -130,18 +130,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => $request->body,
+            'body' => $request->body,
         ]);
         $params = new Params([
-            'action'      => 'DeleteVideos',
-            'version'     => 'content_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/content/dian/videos/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteVideos',
+            'version' => 'content_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/content/dian/videos/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteVideosResponse::fromMap($this->execute($params, $req, $runtime));
@@ -188,18 +188,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFeed',
-            'version'     => 'content_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/content/feeds/' . $feedId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFeed',
+            'version' => 'content_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/content/feeds/' . $feedId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFeedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -264,18 +264,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetMediaCerficate',
-            'version'     => 'content_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/content/media/cerficates',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMediaCerficate',
+            'version' => 'content_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/content/media/cerficates',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMediaCerficateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -318,18 +318,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => $request->body,
+            'body' => $request->body,
         ]);
         $params = new Params([
-            'action'      => 'ListItemUserData',
-            'version'     => 'content_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/content/feeds/items/' . $itemId . '/userStatistics/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListItemUserData',
+            'version' => 'content_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/content/feeds/items/' . $itemId . '/userStatistics/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListItemUserDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -382,19 +382,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => $request->body,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => $request->body,
         ]);
         $params = new Params([
-            'action'      => 'PageFeed',
-            'version'     => 'content_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/content/feeds/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PageFeed',
+            'version' => 'content_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/content/feeds/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PageFeedResponse::fromMap($this->execute($params, $req, $runtime));
@@ -436,18 +436,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => Utils::toArray($request->body),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'UploadVideos',
-            'version'     => 'content_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/content/dian/videos/upload',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UploadVideos',
+            'version' => 'content_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/content/dian/videos/upload',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UploadVideosResponse::fromMap($this->execute($params, $req, $runtime));

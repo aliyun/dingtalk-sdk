@@ -37,14 +37,12 @@ class GetCustomerTracksByRelationIdRequest extends Model
     public $typeGroup;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
         'relationId' => 'relationId',
-        'typeGroup'  => 'typeGroup',
+        'typeGroup' => 'typeGroup',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

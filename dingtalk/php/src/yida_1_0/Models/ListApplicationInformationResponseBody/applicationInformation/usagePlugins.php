@@ -18,13 +18,11 @@ class usagePlugins extends Model
      */
     public $pluginName;
     protected $_name = [
-        'iconUrl'    => 'iconUrl',
+        'iconUrl' => 'iconUrl',
         'pluginName' => 'pluginName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

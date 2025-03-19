@@ -22,13 +22,11 @@ class iconUrl extends Model
      */
     public $small;
     protected $_name = [
-        'line'  => 'line',
+        'line' => 'line',
         'small' => 'small',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

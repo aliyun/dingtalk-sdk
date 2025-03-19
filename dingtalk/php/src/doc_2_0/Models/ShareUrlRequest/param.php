@@ -24,13 +24,11 @@ class param extends Model
      */
     public $triggerShare;
     protected $_name = [
-        'dentryUuid'   => 'dentryUuid',
+        'dentryUuid' => 'dentryUuid',
         'triggerShare' => 'triggerShare',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

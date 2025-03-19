@@ -18,9 +18,7 @@ class OpenOemMicroAppRequest extends Model
         'tenantId' => 'tenantId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

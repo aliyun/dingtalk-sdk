@@ -78,21 +78,19 @@ class result extends Model
      */
     public $userId;
     protected $_name = [
-        'endTime'         => 'endTime',
-        'leaveCode'       => 'leaveCode',
-        'quotaCycle'      => 'quotaCycle',
-        'quotaId'         => 'quotaId',
-        'quotaNumPerDay'  => 'quotaNumPerDay',
+        'endTime' => 'endTime',
+        'leaveCode' => 'leaveCode',
+        'quotaCycle' => 'quotaCycle',
+        'quotaId' => 'quotaId',
+        'quotaNumPerDay' => 'quotaNumPerDay',
         'quotaNumPerHour' => 'quotaNumPerHour',
-        'startTime'       => 'startTime',
-        'usedNumPerDay'   => 'usedNumPerDay',
-        'usedNumPerHour'  => 'usedNumPerHour',
-        'userId'          => 'userId',
+        'startTime' => 'startTime',
+        'usedNumPerDay' => 'usedNumPerDay',
+        'usedNumPerHour' => 'usedNumPerHour',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

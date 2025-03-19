@@ -23,12 +23,10 @@ class RenameFileRequest extends Model
     public $unionId;
     protected $_name = [
         'newFileName' => 'newFileName',
-        'unionId'     => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

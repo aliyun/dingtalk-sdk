@@ -20,12 +20,10 @@ class result extends Model
     public $pass;
     protected $_name = [
         'blockRecords' => 'blockRecords',
-        'pass'         => 'pass',
+        'pass' => 'pass',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class result extends Model
         if (isset($map['blockRecords'])) {
             if (!empty($map['blockRecords'])) {
                 $model->blockRecords = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['blockRecords'] as $item) {
                     $model->blockRecords[$n++] = null !== $item ? blockRecords::fromMap($item) : $item;
                 }

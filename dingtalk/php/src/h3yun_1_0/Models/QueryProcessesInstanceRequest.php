@@ -27,12 +27,10 @@ class QueryProcessesInstanceRequest extends Model
     public $schemaCode;
     protected $_name = [
         'bizObjectId' => 'bizObjectId',
-        'schemaCode'  => 'schemaCode',
+        'schemaCode' => 'schemaCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

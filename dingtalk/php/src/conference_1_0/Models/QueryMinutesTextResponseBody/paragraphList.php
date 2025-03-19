@@ -61,19 +61,17 @@ class paragraphList extends Model
      */
     public $unionId;
     protected $_name = [
-        'endTime'      => 'endTime',
-        'nickName'     => 'nickName',
-        'paragraph'    => 'paragraph',
-        'paragraphId'  => 'paragraphId',
-        'recordId'     => 'recordId',
+        'endTime' => 'endTime',
+        'nickName' => 'nickName',
+        'paragraph' => 'paragraph',
+        'paragraphId' => 'paragraphId',
+        'recordId' => 'recordId',
         'sentenceList' => 'sentenceList',
-        'startTime'    => 'startTime',
-        'unionId'      => 'unionId',
+        'startTime' => 'startTime',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -138,7 +136,7 @@ class paragraphList extends Model
         if (isset($map['sentenceList'])) {
             if (!empty($map['sentenceList'])) {
                 $model->sentenceList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['sentenceList'] as $item) {
                     $model->sentenceList[$n++] = null !== $item ? sentenceList::fromMap($item) : $item;
                 }

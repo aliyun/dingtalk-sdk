@@ -45,16 +45,14 @@ class pages extends Model
     public $userids;
     protected $_name = [
         'allVisible' => 'allVisible',
-        'deptIds'    => 'deptIds',
-        'pageName'   => 'pageName',
-        'pageUuid'   => 'pageUuid',
-        'roleIds'    => 'roleIds',
-        'userids'    => 'userids',
+        'deptIds' => 'deptIds',
+        'pageName' => 'pageName',
+        'pageUuid' => 'pageUuid',
+        'roleIds' => 'roleIds',
+        'userids' => 'userids',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

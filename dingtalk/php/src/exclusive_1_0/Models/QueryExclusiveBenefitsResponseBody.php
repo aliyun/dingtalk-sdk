@@ -16,9 +16,7 @@ class QueryExclusiveBenefitsResponseBody extends Model
         'benefitsList' => 'benefitsList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

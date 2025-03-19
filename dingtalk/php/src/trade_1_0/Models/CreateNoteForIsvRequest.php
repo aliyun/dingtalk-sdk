@@ -46,17 +46,15 @@ class CreateNoteForIsvRequest extends Model
      */
     public $inputPhoneNum;
     protected $_name = [
-        'contactName'     => 'contactName',
+        'contactName' => 'contactName',
         'contactPhoneNum' => 'contactPhoneNum',
-        'contactTitle'    => 'contactTitle',
-        'content'         => 'content',
-        'corpId'          => 'corpId',
-        'inputPhoneNum'   => 'inputPhoneNum',
+        'contactTitle' => 'contactTitle',
+        'content' => 'content',
+        'corpId' => 'corpId',
+        'inputPhoneNum' => 'inputPhoneNum',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

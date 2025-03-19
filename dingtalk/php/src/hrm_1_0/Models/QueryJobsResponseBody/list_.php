@@ -30,13 +30,11 @@ class list_ extends Model
     public $jobName;
     protected $_name = [
         'jobDescription' => 'jobDescription',
-        'jobId'          => 'jobId',
-        'jobName'        => 'jobName',
+        'jobId' => 'jobId',
+        'jobName' => 'jobName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

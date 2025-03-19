@@ -37,14 +37,12 @@ class invoiceFinanceInfoVOList extends Model
     public $invoiceType;
     protected $_name = [
         'accountingStatus' => 'accountingStatus',
-        'invoiceCode'      => 'invoiceCode',
-        'invoiceNo'        => 'invoiceNo',
-        'invoiceType'      => 'invoiceType',
+        'invoiceCode' => 'invoiceCode',
+        'invoiceNo' => 'invoiceNo',
+        'invoiceType' => 'invoiceType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

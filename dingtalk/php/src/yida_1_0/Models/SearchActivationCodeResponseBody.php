@@ -34,15 +34,13 @@ class SearchActivationCodeResponseBody extends Model
     public $status;
     protected $_name = [
         'activationCode' => 'activationCode',
-        'authType'       => 'authType',
-        'expireTimeGMT'  => 'expireTimeGMT',
-        'instanceId'     => 'instanceId',
-        'status'         => 'status',
+        'authType' => 'authType',
+        'expireTimeGMT' => 'expireTimeGMT',
+        'instanceId' => 'instanceId',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

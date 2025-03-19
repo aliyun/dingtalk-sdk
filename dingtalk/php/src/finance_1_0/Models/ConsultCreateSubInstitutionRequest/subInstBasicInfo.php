@@ -42,15 +42,13 @@ class subInstBasicInfo extends Model
      */
     public $type;
     protected $_name = [
-        'aliasName'   => 'aliasName',
-        'mcc'         => 'mcc',
+        'aliasName' => 'aliasName',
+        'mcc' => 'mcc',
         'subInstName' => 'subInstName',
-        'type'        => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

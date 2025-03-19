@@ -19,13 +19,11 @@ class content extends Model
      */
     public $progressList;
     protected $_name = [
-        'count'        => 'count',
+        'count' => 'count',
         'progressList' => 'progressList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class content extends Model
         if (isset($map['progressList'])) {
             if (!empty($map['progressList'])) {
                 $model->progressList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['progressList'] as $item) {
                     $model->progressList[$n++] = null !== $item ? OpenProgressDTO::fromMap($item) : $item;
                 }

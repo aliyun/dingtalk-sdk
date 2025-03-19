@@ -90,6 +90,11 @@ class list_ extends Model
     public $invoiceType;
 
     /**
+     * @var string
+     */
+    public $jumpUrl;
+
+    /**
      * @example EM-xxxxx
      *
      * @var string
@@ -185,37 +190,36 @@ class list_ extends Model
      */
     public $title;
     protected $_name = [
-        'accountantBookId'  => 'accountantBookId',
-        'amount'            => 'amount',
-        'applyStatus'       => 'applyStatus',
-        'bizStatus'         => 'bizStatus',
-        'businessId'        => 'businessId',
-        'companyCode'       => 'companyCode',
-        'createTime'        => 'createTime',
-        'creator'           => 'creator',
-        'customer'          => 'customer',
-        'drawerEmail'       => 'drawerEmail',
-        'drawerTelephone'   => 'drawerTelephone',
-        'invoiceType'       => 'invoiceType',
-        'modelId'           => 'modelId',
-        'productInfoList'   => 'productInfoList',
-        'purchaserAccount'  => 'purchaserAccount',
-        'purchaserAddress'  => 'purchaserAddress',
+        'accountantBookId' => 'accountantBookId',
+        'amount' => 'amount',
+        'applyStatus' => 'applyStatus',
+        'bizStatus' => 'bizStatus',
+        'businessId' => 'businessId',
+        'companyCode' => 'companyCode',
+        'createTime' => 'createTime',
+        'creator' => 'creator',
+        'customer' => 'customer',
+        'drawerEmail' => 'drawerEmail',
+        'drawerTelephone' => 'drawerTelephone',
+        'invoiceType' => 'invoiceType',
+        'jumpUrl' => 'jumpUrl',
+        'modelId' => 'modelId',
+        'productInfoList' => 'productInfoList',
+        'purchaserAccount' => 'purchaserAccount',
+        'purchaserAddress' => 'purchaserAddress',
         'purchaserBankName' => 'purchaserBankName',
-        'purchaserName'     => 'purchaserName',
-        'purchaserTaxNo'    => 'purchaserTaxNo',
-        'purchaserTel'      => 'purchaserTel',
-        'receiptId'         => 'receiptId',
-        'recordTime'        => 'recordTime',
-        'remark'            => 'remark',
-        'source'            => 'source',
-        'status'            => 'status',
-        'title'             => 'title',
+        'purchaserName' => 'purchaserName',
+        'purchaserTaxNo' => 'purchaserTaxNo',
+        'purchaserTel' => 'purchaserTel',
+        'receiptId' => 'receiptId',
+        'recordTime' => 'recordTime',
+        'remark' => 'remark',
+        'source' => 'source',
+        'status' => 'status',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -255,6 +259,9 @@ class list_ extends Model
         }
         if (null !== $this->invoiceType) {
             $res['invoiceType'] = $this->invoiceType;
+        }
+        if (null !== $this->jumpUrl) {
+            $res['jumpUrl'] = $this->jumpUrl;
         }
         if (null !== $this->modelId) {
             $res['modelId'] = $this->modelId;
@@ -352,13 +359,16 @@ class list_ extends Model
         if (isset($map['invoiceType'])) {
             $model->invoiceType = $map['invoiceType'];
         }
+        if (isset($map['jumpUrl'])) {
+            $model->jumpUrl = $map['jumpUrl'];
+        }
         if (isset($map['modelId'])) {
             $model->modelId = $map['modelId'];
         }
         if (isset($map['productInfoList'])) {
             if (!empty($map['productInfoList'])) {
                 $model->productInfoList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['productInfoList'] as $item) {
                     $model->productInfoList[$n++] = null !== $item ? productInfoList::fromMap($item) : $item;
                 }

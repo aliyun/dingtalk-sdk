@@ -18,9 +18,7 @@ class visitInfo extends Model
         'roleCode' => 'roleCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

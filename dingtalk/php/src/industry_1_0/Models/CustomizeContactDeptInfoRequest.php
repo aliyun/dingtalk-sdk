@@ -22,13 +22,11 @@ class CustomizeContactDeptInfoRequest extends Model
      */
     public $deptId;
     protected $_name = [
-        'code'   => 'code',
+        'code' => 'code',
         'deptId' => 'deptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

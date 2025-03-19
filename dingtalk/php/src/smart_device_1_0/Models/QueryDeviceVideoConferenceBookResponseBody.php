@@ -22,13 +22,11 @@ class QueryDeviceVideoConferenceBookResponseBody extends Model
      */
     public $conferenceId;
     protected $_name = [
-        'code'         => 'code',
+        'code' => 'code',
         'conferenceId' => 'conferenceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

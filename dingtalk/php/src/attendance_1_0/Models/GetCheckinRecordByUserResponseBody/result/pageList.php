@@ -59,21 +59,19 @@ class pageList extends Model
      */
     public $visitUser;
     protected $_name = [
-        'checkinTime'    => 'checkinTime',
+        'checkinTime' => 'checkinTime',
         'customDataList' => 'customDataList',
-        'detailPlace'    => 'detailPlace',
-        'imageList'      => 'imageList',
-        'latitude'       => 'latitude',
-        'longitude'      => 'longitude',
-        'place'          => 'place',
-        'remark'         => 'remark',
-        'userId'         => 'userId',
-        'visitUser'      => 'visitUser',
+        'detailPlace' => 'detailPlace',
+        'imageList' => 'imageList',
+        'latitude' => 'latitude',
+        'longitude' => 'longitude',
+        'place' => 'place',
+        'remark' => 'remark',
+        'userId' => 'userId',
+        'visitUser' => 'visitUser',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -132,7 +130,7 @@ class pageList extends Model
         if (isset($map['customDataList'])) {
             if (!empty($map['customDataList'])) {
                 $model->customDataList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['customDataList'] as $item) {
                     $model->customDataList[$n++] = null !== $item ? customDataList::fromMap($item) : $item;
                 }

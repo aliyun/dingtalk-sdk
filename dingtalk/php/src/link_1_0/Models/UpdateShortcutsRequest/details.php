@@ -63,18 +63,16 @@ class details extends Model
      */
     public $title;
     protected $_name = [
-        'actionUrl'        => 'actionUrl',
-        'callbackKey'      => 'callbackKey',
-        'iconFont'         => 'iconFont',
-        'iconMediaId'      => 'iconMediaId',
-        'shortcutId'       => 'shortcutId',
+        'actionUrl' => 'actionUrl',
+        'callbackKey' => 'callbackKey',
+        'iconFont' => 'iconFont',
+        'iconMediaId' => 'iconMediaId',
+        'shortcutId' => 'shortcutId',
         'slideIconMediaId' => 'slideIconMediaId',
-        'title'            => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

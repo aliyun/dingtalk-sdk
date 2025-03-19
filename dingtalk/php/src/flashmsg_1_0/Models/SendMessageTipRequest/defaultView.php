@@ -69,22 +69,20 @@ class defaultView extends Model
      */
     public $title;
     protected $_name = [
-        'actionName'         => 'actionName',
-        'actionUrl'          => 'actionUrl',
-        'authCode'           => 'authCode',
-        'authMediaId'        => 'authMediaId',
-        'cardTitle'          => 'cardTitle',
-        'cardTitleColor'     => 'cardTitleColor',
-        'desc'               => 'desc',
-        'mediaId'            => 'mediaId',
+        'actionName' => 'actionName',
+        'actionUrl' => 'actionUrl',
+        'authCode' => 'authCode',
+        'authMediaId' => 'authMediaId',
+        'cardTitle' => 'cardTitle',
+        'cardTitleColor' => 'cardTitleColor',
+        'desc' => 'desc',
+        'mediaId' => 'mediaId',
         'needShowUpdateTail' => 'needShowUpdateTail',
-        'summary'            => 'summary',
-        'title'              => 'title',
+        'summary' => 'summary',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

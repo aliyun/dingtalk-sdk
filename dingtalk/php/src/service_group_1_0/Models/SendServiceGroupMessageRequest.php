@@ -101,25 +101,23 @@ class SendServiceGroupMessageRequest extends Model
      */
     public $title;
     protected $_name = [
-        'atDingtalkIds'            => 'atDingtalkIds',
-        'atMobiles'                => 'atMobiles',
-        'atUnionIds'               => 'atUnionIds',
-        'btnOrientation'           => 'btnOrientation',
-        'btns'                     => 'btns',
-        'content'                  => 'content',
-        'hasContentLinks'          => 'hasContentLinks',
-        'isAtAll'                  => 'isAtAll',
-        'messageType'              => 'messageType',
-        'receiverDingtalkIds'      => 'receiverDingtalkIds',
-        'receiverMobiles'          => 'receiverMobiles',
-        'receiverUnionIds'         => 'receiverUnionIds',
+        'atDingtalkIds' => 'atDingtalkIds',
+        'atMobiles' => 'atMobiles',
+        'atUnionIds' => 'atUnionIds',
+        'btnOrientation' => 'btnOrientation',
+        'btns' => 'btns',
+        'content' => 'content',
+        'hasContentLinks' => 'hasContentLinks',
+        'isAtAll' => 'isAtAll',
+        'messageType' => 'messageType',
+        'receiverDingtalkIds' => 'receiverDingtalkIds',
+        'receiverMobiles' => 'receiverMobiles',
+        'receiverUnionIds' => 'receiverUnionIds',
         'targetOpenConversationId' => 'targetOpenConversationId',
-        'title'                    => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -205,7 +203,7 @@ class SendServiceGroupMessageRequest extends Model
         if (isset($map['btns'])) {
             if (!empty($map['btns'])) {
                 $model->btns = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['btns'] as $item) {
                     $model->btns[$n++] = null !== $item ? btns::fromMap($item) : $item;
                 }

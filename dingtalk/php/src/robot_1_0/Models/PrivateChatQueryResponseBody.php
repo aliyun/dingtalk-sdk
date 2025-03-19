@@ -34,15 +34,13 @@ class PrivateChatQueryResponseBody extends Model
      */
     public $sendStatus;
     protected $_name = [
-        'hasMore'     => 'hasMore',
-        'nextToken'   => 'nextToken',
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
         'readUserIds' => 'readUserIds',
-        'sendStatus'  => 'sendStatus',
+        'sendStatus' => 'sendStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

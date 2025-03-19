@@ -44,15 +44,13 @@ class OpenAgoalAlignDTO extends Model
      */
     public $objectiveId;
     protected $_name = [
-        'alignType'   => 'alignType',
-        'objectId'    => 'objectId',
-        'objectType'  => 'objectType',
+        'alignType' => 'alignType',
+        'objectId' => 'objectId',
+        'objectType' => 'objectType',
         'objectiveId' => 'objectiveId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

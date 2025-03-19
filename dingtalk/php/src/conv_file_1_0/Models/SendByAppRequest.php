@@ -36,13 +36,11 @@ class SendByAppRequest extends Model
     public $unionId;
     protected $_name = [
         'dentryId' => 'dentryId',
-        'spaceId'  => 'spaceId',
-        'unionId'  => 'unionId',
+        'spaceId' => 'spaceId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

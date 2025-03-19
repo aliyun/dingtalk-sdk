@@ -50,15 +50,13 @@ class CreateBookingBlacklistRequest extends Model
     public $unionId;
     protected $_name = [
         'blacklistUnionId' => 'blacklistUnionId',
-        'endTime'          => 'endTime',
-        'memo'             => 'memo',
-        'startTime'        => 'startTime',
-        'unionId'          => 'unionId',
+        'endTime' => 'endTime',
+        'memo' => 'memo',
+        'startTime' => 'startTime',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

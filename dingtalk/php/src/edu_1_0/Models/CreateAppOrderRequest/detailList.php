@@ -44,15 +44,13 @@ class detailList extends Model
      */
     public $goodsQuantity;
     protected $_name = [
-        'goodsId'       => 'goodsId',
-        'goodsName'     => 'goodsName',
-        'goodsPrice'    => 'goodsPrice',
+        'goodsId' => 'goodsId',
+        'goodsName' => 'goodsName',
+        'goodsPrice' => 'goodsPrice',
         'goodsQuantity' => 'goodsQuantity',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

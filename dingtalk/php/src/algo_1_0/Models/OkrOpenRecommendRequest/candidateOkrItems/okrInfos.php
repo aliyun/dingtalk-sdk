@@ -30,14 +30,12 @@ class okrInfos extends Model
     public $words;
     protected $_name = [
         'keyResultInfos' => 'keyResultInfos',
-        'objective'      => 'objective',
-        'objectiveId'    => 'objectiveId',
-        'words'          => 'words',
+        'objective' => 'objective',
+        'objectiveId' => 'objectiveId',
+        'words' => 'words',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -75,7 +73,7 @@ class okrInfos extends Model
         if (isset($map['keyResultInfos'])) {
             if (!empty($map['keyResultInfos'])) {
                 $model->keyResultInfos = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['keyResultInfos'] as $item) {
                     $model->keyResultInfos[$n++] = null !== $item ? keyResultInfos::fromMap($item) : $item;
                 }

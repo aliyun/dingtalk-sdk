@@ -95,23 +95,21 @@ class CreateTaskRequest extends Model
      */
     public $visible;
     protected $_name = [
-        'content'               => 'content',
-        'customfields'          => 'customfields',
-        'dueDate'               => 'dueDate',
-        'executorId'            => 'executorId',
-        'note'                  => 'note',
-        'parentTaskId'          => 'parentTaskId',
-        'priority'              => 'priority',
-        'projectId'             => 'projectId',
+        'content' => 'content',
+        'customfields' => 'customfields',
+        'dueDate' => 'dueDate',
+        'executorId' => 'executorId',
+        'note' => 'note',
+        'parentTaskId' => 'parentTaskId',
+        'priority' => 'priority',
+        'projectId' => 'projectId',
         'scenariofieldconfigId' => 'scenariofieldconfigId',
-        'stageId'               => 'stageId',
-        'startDate'             => 'startDate',
-        'visible'               => 'visible',
+        'stageId' => 'stageId',
+        'startDate' => 'startDate',
+        'visible' => 'visible',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -176,7 +174,7 @@ class CreateTaskRequest extends Model
         if (isset($map['customfields'])) {
             if (!empty($map['customfields'])) {
                 $model->customfields = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['customfields'] as $item) {
                     $model->customfields[$n++] = null !== $item ? customfields::fromMap($item) : $item;
                 }

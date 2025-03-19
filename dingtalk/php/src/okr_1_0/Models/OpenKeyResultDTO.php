@@ -55,18 +55,16 @@ class OpenKeyResultDTO extends Model
      */
     public $weight;
     protected $_name = [
-        'krId'          => 'krId',
-        'progress'      => 'progress',
-        'status'        => 'status',
-        'title'         => 'title',
+        'krId' => 'krId',
+        'progress' => 'progress',
+        'status' => 'status',
+        'title' => 'title',
         'titleMentions' => 'titleMentions',
-        'type'          => 'type',
-        'weight'        => 'weight',
+        'type' => 'type',
+        'weight' => 'weight',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -125,7 +123,7 @@ class OpenKeyResultDTO extends Model
         if (isset($map['titleMentions'])) {
             if (!empty($map['titleMentions'])) {
                 $model->titleMentions = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['titleMentions'] as $item) {
                     $model->titleMentions[$n++] = null !== $item ? TitleMention::fromMap($item) : $item;
                 }

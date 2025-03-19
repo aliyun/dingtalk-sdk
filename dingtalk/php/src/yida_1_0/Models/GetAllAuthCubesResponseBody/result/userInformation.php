@@ -61,20 +61,18 @@ class userInformation extends Model
      */
     public $workNo;
     protected $_name = [
-        'authProvider'         => 'authProvider',
-        'corpId'               => 'corpId',
-        'departmentName'       => 'departmentName',
-        'name'                 => 'name',
-        'nickName'             => 'nickName',
-        'realmId'              => 'realmId',
+        'authProvider' => 'authProvider',
+        'corpId' => 'corpId',
+        'departmentName' => 'departmentName',
+        'name' => 'name',
+        'nickName' => 'nickName',
+        'realmId' => 'realmId',
         'refererNamespaceCode' => 'refererNamespaceCode',
-        'showName'             => 'showName',
-        'workNo'               => 'workNo',
+        'showName' => 'showName',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

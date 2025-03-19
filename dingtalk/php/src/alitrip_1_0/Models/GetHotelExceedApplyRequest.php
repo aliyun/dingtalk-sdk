@@ -27,12 +27,10 @@ class GetHotelExceedApplyRequest extends Model
     public $corpId;
     protected $_name = [
         'applyId' => 'applyId',
-        'corpId'  => 'corpId',
+        'corpId' => 'corpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

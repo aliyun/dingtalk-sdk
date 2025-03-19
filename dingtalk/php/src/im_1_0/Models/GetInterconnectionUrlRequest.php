@@ -77,22 +77,20 @@ class GetInterconnectionUrlRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appUserAvatar'       => 'appUserAvatar',
-        'appUserAvatarType'   => 'appUserAvatarType',
-        'appUserId'           => 'appUserId',
+        'appUserAvatar' => 'appUserAvatar',
+        'appUserAvatarType' => 'appUserAvatarType',
+        'appUserId' => 'appUserId',
         'appUserMobileNumber' => 'appUserMobileNumber',
-        'appUserName'         => 'appUserName',
-        'msgPageType'         => 'msgPageType',
-        'qrCode'              => 'qrCode',
-        'signature'           => 'signature',
-        'sourceCode'          => 'sourceCode',
-        'sourceType'          => 'sourceType',
-        'userId'              => 'userId',
+        'appUserName' => 'appUserName',
+        'msgPageType' => 'msgPageType',
+        'qrCode' => 'qrCode',
+        'signature' => 'signature',
+        'sourceCode' => 'sourceCode',
+        'sourceType' => 'sourceType',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

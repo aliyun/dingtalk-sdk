@@ -29,14 +29,12 @@ class QueryAllSubjectsFromClassScheduleRequest extends Model
      */
     public $periodCode;
     protected $_name = [
-        'classIds'   => 'classIds',
-        'opUserId'   => 'opUserId',
+        'classIds' => 'classIds',
+        'opUserId' => 'opUserId',
         'periodCode' => 'periodCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,12 +27,10 @@ class QueryAcrossCloudStroageConfigsRequest extends Model
     public $targetCorpId;
     protected $_name = [
         'targetCloudType' => 'targetCloudType',
-        'targetCorpId'    => 'targetCorpId',
+        'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

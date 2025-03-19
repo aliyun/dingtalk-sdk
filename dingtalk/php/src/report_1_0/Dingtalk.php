@@ -32,8 +32,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -107,18 +107,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTemplates',
-            'version'     => 'report_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/report/templates',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTemplates',
+            'version' => 'report_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/report/templates',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTemplatesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -176,18 +176,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSendAndReceiveReportList',
-            'version'     => 'report_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/report/users/sendAndReceiveLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSendAndReceiveReportList',
+            'version' => 'report_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/report/users/sendAndReceiveLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSendAndReceiveReportListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -245,18 +245,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSubmitStatistics',
-            'version'     => 'report_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/report/submitStatisticalResults',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSubmitStatistics',
+            'version' => 'report_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/report/submitStatisticalResults',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSubmitStatisticsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -311,18 +311,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryRemindResults',
-            'version'     => 'report_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/report/statisticalRules/results',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryRemindResults',
+            'version' => 'report_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/report/statisticalRules/results',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryRemindResultsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -371,18 +371,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryReportDetail',
-            'version'     => 'report_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/report/details',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryReportDetail',
+            'version' => 'report_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/report/details',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryReportDetailResponse::fromMap($this->execute($params, $req, $runtime));

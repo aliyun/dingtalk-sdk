@@ -28,13 +28,11 @@ class SaveUserExtendValuesRequest extends Model
     public $userExtendValue;
     protected $_name = [
         'userDisplayName' => 'userDisplayName',
-        'userExtendKey'   => 'userExtendKey',
+        'userExtendKey' => 'userExtendKey',
         'userExtendValue' => 'userExtendValue',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

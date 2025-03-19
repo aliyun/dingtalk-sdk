@@ -65,18 +65,16 @@ class CreateLiveRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'coverUrl'     => 'coverUrl',
+        'coverUrl' => 'coverUrl',
         'introduction' => 'introduction',
-        'preEndTime'   => 'preEndTime',
+        'preEndTime' => 'preEndTime',
         'preStartTime' => 'preStartTime',
-        'publicType'   => 'publicType',
-        'title'        => 'title',
-        'unionId'      => 'unionId',
+        'publicType' => 'publicType',
+        'title' => 'title',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

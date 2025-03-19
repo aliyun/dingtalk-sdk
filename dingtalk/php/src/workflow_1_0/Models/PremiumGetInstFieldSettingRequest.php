@@ -27,12 +27,10 @@ class PremiumGetInstFieldSettingRequest extends Model
     public $userId;
     protected $_name = [
         'processInstanceId' => 'processInstanceId',
-        'userId'            => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

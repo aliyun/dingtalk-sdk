@@ -60,17 +60,15 @@ class CreateCoupleGroupConversationRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'appUserId'       => 'appUserId',
-        'groupAvatar'     => 'groupAvatar',
-        'groupName'       => 'groupName',
-        'groupOwnerId'    => 'groupOwnerId',
+        'appUserId' => 'appUserId',
+        'groupAvatar' => 'groupAvatar',
+        'groupName' => 'groupName',
+        'groupOwnerId' => 'groupOwnerId',
         'groupTemplateId' => 'groupTemplateId',
-        'operatorId'      => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

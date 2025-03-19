@@ -27,12 +27,10 @@ class GetPersonalCarbonInfoRequest extends Model
     public $unionId;
     protected $_name = [
         'actionType' => 'actionType',
-        'unionId'    => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

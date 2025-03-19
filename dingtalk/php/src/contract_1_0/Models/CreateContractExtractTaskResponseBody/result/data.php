@@ -16,9 +16,7 @@ class data extends Model
         'extractTaskId' => 'extractTaskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

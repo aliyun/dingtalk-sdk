@@ -17,9 +17,7 @@ class CreateTaskObjectLinkRequest extends Model
         'linkedData' => 'linkedData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

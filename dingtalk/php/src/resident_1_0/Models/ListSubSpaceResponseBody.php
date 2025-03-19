@@ -17,9 +17,7 @@ class ListSubSpaceResponseBody extends Model
         'spaceList' => 'spaceList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListSubSpaceResponseBody extends Model
         if (isset($map['spaceList'])) {
             if (!empty($map['spaceList'])) {
                 $model->spaceList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['spaceList'] as $item) {
                     $model->spaceList[$n++] = null !== $item ? spaceList::fromMap($item) : $item;
                 }

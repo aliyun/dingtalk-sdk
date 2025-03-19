@@ -124,31 +124,29 @@ class events extends Model
      */
     public $updateTime;
     protected $_name = [
-        'attendees'           => 'attendees',
-        'categories'          => 'categories',
-        'createTime'          => 'createTime',
-        'description'         => 'description',
-        'end'                 => 'end',
-        'extendedProperties'  => 'extendedProperties',
-        'id'                  => 'id',
-        'isAllDay'            => 'isAllDay',
-        'location'            => 'location',
-        'meetingRooms'        => 'meetingRooms',
-        'onlineMeetingInfo'   => 'onlineMeetingInfo',
-        'organizer'           => 'organizer',
-        'originStart'         => 'originStart',
-        'recurrence'          => 'recurrence',
+        'attendees' => 'attendees',
+        'categories' => 'categories',
+        'createTime' => 'createTime',
+        'description' => 'description',
+        'end' => 'end',
+        'extendedProperties' => 'extendedProperties',
+        'id' => 'id',
+        'isAllDay' => 'isAllDay',
+        'location' => 'location',
+        'meetingRooms' => 'meetingRooms',
+        'onlineMeetingInfo' => 'onlineMeetingInfo',
+        'organizer' => 'organizer',
+        'originStart' => 'originStart',
+        'recurrence' => 'recurrence',
         'richTextDescription' => 'richTextDescription',
-        'seriesMasterId'      => 'seriesMasterId',
-        'start'               => 'start',
-        'status'              => 'status',
-        'summary'             => 'summary',
-        'updateTime'          => 'updateTime',
+        'seriesMasterId' => 'seriesMasterId',
+        'start' => 'start',
+        'status' => 'status',
+        'summary' => 'summary',
+        'updateTime' => 'updateTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -246,7 +244,7 @@ class events extends Model
         if (isset($map['attendees'])) {
             if (!empty($map['attendees'])) {
                 $model->attendees = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['attendees'] as $item) {
                     $model->attendees[$n++] = null !== $item ? attendees::fromMap($item) : $item;
                 }
@@ -255,7 +253,7 @@ class events extends Model
         if (isset($map['categories'])) {
             if (!empty($map['categories'])) {
                 $model->categories = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['categories'] as $item) {
                     $model->categories[$n++] = null !== $item ? categories::fromMap($item) : $item;
                 }
@@ -285,7 +283,7 @@ class events extends Model
         if (isset($map['meetingRooms'])) {
             if (!empty($map['meetingRooms'])) {
                 $model->meetingRooms = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['meetingRooms'] as $item) {
                     $model->meetingRooms[$n++] = null !== $item ? meetingRooms::fromMap($item) : $item;
                 }

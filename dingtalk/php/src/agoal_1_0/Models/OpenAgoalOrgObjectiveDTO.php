@@ -91,22 +91,20 @@ class OpenAgoalOrgObjectiveDTO extends Model
      */
     public $upAlignObjects;
     protected $_name = [
-        'dimension'        => 'dimension',
+        'dimension' => 'dimension',
         'downAlignObjects' => 'downAlignObjects',
-        'executor'         => 'executor',
-        'fieldConfig'      => 'fieldConfig',
-        'fieldValueMap'    => 'fieldValueMap',
-        'objectiveId'      => 'objectiveId',
-        'period'           => 'period',
-        'status'           => 'status',
-        'team'             => 'team',
-        'title'            => 'title',
-        'upAlignObjects'   => 'upAlignObjects',
+        'executor' => 'executor',
+        'fieldConfig' => 'fieldConfig',
+        'fieldValueMap' => 'fieldValueMap',
+        'objectiveId' => 'objectiveId',
+        'period' => 'period',
+        'status' => 'status',
+        'team' => 'team',
+        'title' => 'title',
+        'upAlignObjects' => 'upAlignObjects',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -180,7 +178,7 @@ class OpenAgoalOrgObjectiveDTO extends Model
         if (isset($map['downAlignObjects'])) {
             if (!empty($map['downAlignObjects'])) {
                 $model->downAlignObjects = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['downAlignObjects'] as $item) {
                     $model->downAlignObjects[$n++] = null !== $item ? OpenAgoalAlignDTO::fromMap($item) : $item;
                 }
@@ -192,7 +190,7 @@ class OpenAgoalOrgObjectiveDTO extends Model
         if (isset($map['fieldConfig'])) {
             if (!empty($map['fieldConfig'])) {
                 $model->fieldConfig = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['fieldConfig'] as $item) {
                     $model->fieldConfig[$n++] = null !== $item ? OpenAgoalFieldMetaDTO::fromMap($item) : $item;
                 }
@@ -219,7 +217,7 @@ class OpenAgoalOrgObjectiveDTO extends Model
         if (isset($map['upAlignObjects'])) {
             if (!empty($map['upAlignObjects'])) {
                 $model->upAlignObjects = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['upAlignObjects'] as $item) {
                     $model->upAlignObjects[$n++] = null !== $item ? OpenAgoalAlignDTO::fromMap($item) : $item;
                 }

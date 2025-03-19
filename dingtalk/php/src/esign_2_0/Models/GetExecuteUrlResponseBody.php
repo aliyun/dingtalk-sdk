@@ -28,15 +28,13 @@ class GetExecuteUrlResponseBody extends Model
      */
     public $shortUrl;
     protected $_name = [
-        'longUrl'   => 'longUrl',
+        'longUrl' => 'longUrl',
         'mobileUrl' => 'mobileUrl',
-        'pcUrl'     => 'pcUrl',
-        'shortUrl'  => 'shortUrl',
+        'pcUrl' => 'pcUrl',
+        'shortUrl' => 'shortUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

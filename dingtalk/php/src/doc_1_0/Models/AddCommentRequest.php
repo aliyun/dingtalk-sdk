@@ -38,14 +38,12 @@ class AddCommentRequest extends Model
     public $operatorId;
     protected $_name = [
         'commentContent' => 'commentContent',
-        'commentType'    => 'commentType',
-        'option'         => 'option',
-        'operatorId'     => 'operatorId',
+        'commentType' => 'commentType',
+        'option' => 'option',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

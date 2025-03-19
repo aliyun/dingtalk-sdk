@@ -22,12 +22,10 @@ class CollegeListStudentInfoResponseBody extends Model
     public $totalCount;
     protected $_name = [
         'studentInfoSimpleList' => 'studentInfoSimpleList',
-        'totalCount'            => 'totalCount',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class CollegeListStudentInfoResponseBody extends Model
         if (isset($map['studentInfoSimpleList'])) {
             if (!empty($map['studentInfoSimpleList'])) {
                 $model->studentInfoSimpleList = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['studentInfoSimpleList'] as $item) {
                     $model->studentInfoSimpleList[$n++] = null !== $item ? studentInfoSimpleList::fromMap($item) : $item;
                 }

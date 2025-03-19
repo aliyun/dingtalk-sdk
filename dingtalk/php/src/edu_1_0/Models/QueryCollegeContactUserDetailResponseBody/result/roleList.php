@@ -30,13 +30,11 @@ class roleList extends Model
     public $name;
     protected $_name = [
         'groupName' => 'groupName',
-        'id'        => 'id',
-        'name'      => 'name',
+        'id' => 'id',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

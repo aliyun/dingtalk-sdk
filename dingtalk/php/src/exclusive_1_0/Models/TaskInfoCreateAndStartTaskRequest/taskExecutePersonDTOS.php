@@ -19,12 +19,10 @@ class taskExecutePersonDTOS extends Model
     public $personType;
     protected $_name = [
         'employeeCode' => 'employeeCode',
-        'personType'   => 'personType',
+        'personType' => 'personType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

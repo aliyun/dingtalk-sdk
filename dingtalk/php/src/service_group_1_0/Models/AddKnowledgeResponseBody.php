@@ -18,9 +18,7 @@ class AddKnowledgeResponseBody extends Model
         'openKnowledgeId' => 'openKnowledgeId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

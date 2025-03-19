@@ -26,12 +26,10 @@ class QueryBatchSendResultResponseBody extends Model
     public $status;
     protected $_name = [
         'results' => 'results',
-        'status'  => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class QueryBatchSendResultResponseBody extends Model
         if (isset($map['results'])) {
             if (!empty($map['results'])) {
                 $model->results = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['results'] as $item) {
                     $model->results[$n++] = null !== $item ? results::fromMap($item) : $item;
                 }

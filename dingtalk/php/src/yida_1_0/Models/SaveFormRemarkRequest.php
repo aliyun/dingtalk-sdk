@@ -74,19 +74,17 @@ class SaveFormRemarkRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'        => 'appType',
-        'atUserId'       => 'atUserId',
-        'content'        => 'content',
+        'appType' => 'appType',
+        'atUserId' => 'atUserId',
+        'content' => 'content',
         'formInstanceId' => 'formInstanceId',
-        'language'       => 'language',
-        'replyId'        => 'replyId',
-        'systemToken'    => 'systemToken',
-        'userId'         => 'userId',
+        'language' => 'language',
+        'replyId' => 'replyId',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

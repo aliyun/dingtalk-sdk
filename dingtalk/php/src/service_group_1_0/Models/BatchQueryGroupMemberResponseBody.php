@@ -29,15 +29,13 @@ class BatchQueryGroupMemberResponseBody extends Model
      */
     public $records;
     protected $_name = [
-        'hasMore'            => 'hasMore',
-        'nextToken'          => 'nextToken',
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
         'openConversationId' => 'openConversationId',
-        'records'            => 'records',
+        'records' => 'records',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -84,7 +82,7 @@ class BatchQueryGroupMemberResponseBody extends Model
         if (isset($map['records'])) {
             if (!empty($map['records'])) {
                 $model->records = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['records'] as $item) {
                     $model->records[$n++] = null !== $item ? records::fromMap($item) : $item;
                 }

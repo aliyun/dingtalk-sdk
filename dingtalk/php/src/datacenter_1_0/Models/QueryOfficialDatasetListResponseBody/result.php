@@ -19,13 +19,11 @@ class result extends Model
      */
     public $totalCount;
     protected $_name = [
-        'rows'       => 'rows',
+        'rows' => 'rows',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class result extends Model
         if (isset($map['rows'])) {
             if (!empty($map['rows'])) {
                 $model->rows = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['rows'] as $item) {
                     $model->rows[$n++] = null !== $item ? rows::fromMap($item) : $item;
                 }

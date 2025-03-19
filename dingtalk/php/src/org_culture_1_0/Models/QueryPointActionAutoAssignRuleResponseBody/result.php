@@ -17,9 +17,7 @@ class result extends Model
         'queryPointRuleResponseDTOS' => 'queryPointRuleResponseDTOS',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class result extends Model
         if (isset($map['queryPointRuleResponseDTOS'])) {
             if (!empty($map['queryPointRuleResponseDTOS'])) {
                 $model->queryPointRuleResponseDTOS = [];
-                $n                                 = 0;
+                $n = 0;
                 foreach ($map['queryPointRuleResponseDTOS'] as $item) {
                     $model->queryPointRuleResponseDTOS[$n++] = null !== $item ? queryPointRuleResponseDTOS::fromMap($item) : $item;
                 }

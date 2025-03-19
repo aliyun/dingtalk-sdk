@@ -34,13 +34,11 @@ class dataArray extends Model
     public $value;
     protected $_name = [
         'extendValue' => 'extendValue',
-        'key'         => 'key',
-        'value'       => 'value',
+        'key' => 'key',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

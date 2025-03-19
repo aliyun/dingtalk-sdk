@@ -20,13 +20,11 @@ class GetAccessTokenRequest extends Model
      */
     public $appSecret;
     protected $_name = [
-        'appKey'    => 'appKey',
+        'appKey' => 'appKey',
         'appSecret' => 'appSecret',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

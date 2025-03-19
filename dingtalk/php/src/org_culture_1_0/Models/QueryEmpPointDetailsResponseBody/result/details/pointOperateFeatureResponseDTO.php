@@ -38,13 +38,11 @@ class pointOperateFeatureResponseDTO extends Model
     protected $_name = [
         'accountSource' => 'accountSource',
         'accountTarget' => 'accountTarget',
-        'remark'        => 'remark',
-        'usage'         => 'usage',
+        'remark' => 'remark',
+        'usage' => 'usage',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

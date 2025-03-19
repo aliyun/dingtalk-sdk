@@ -16,9 +16,7 @@ class ListCategorysResponseBody extends Model
         'detailModelList' => 'detailModelList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

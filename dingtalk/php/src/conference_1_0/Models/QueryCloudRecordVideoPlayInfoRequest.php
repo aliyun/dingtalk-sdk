@@ -29,14 +29,12 @@ class QueryCloudRecordVideoPlayInfoRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'mediaId'  => 'mediaId',
+        'mediaId' => 'mediaId',
         'regionId' => 'regionId',
-        'unionId'  => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

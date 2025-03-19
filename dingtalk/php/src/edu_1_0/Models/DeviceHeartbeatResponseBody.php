@@ -20,9 +20,7 @@ class DeviceHeartbeatResponseBody extends Model
         'command' => 'command',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

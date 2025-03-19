@@ -17,9 +17,7 @@ class result extends Model
         'customFields' => 'customFields',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class result extends Model
         if (isset($map['customFields'])) {
             if (!empty($map['customFields'])) {
                 $model->customFields = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['customFields'] as $item) {
                     $model->customFields[$n++] = null !== $item ? customFields::fromMap($item) : $item;
                 }

@@ -68,19 +68,17 @@ class CloseTopboxRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'conversationType'   => 'conversationType',
-        'coolAppCode'        => 'coolAppCode',
-        'groupTemplateId'    => 'groupTemplateId',
+        'conversationType' => 'conversationType',
+        'coolAppCode' => 'coolAppCode',
+        'groupTemplateId' => 'groupTemplateId',
         'openConversationId' => 'openConversationId',
-        'outTrackId'         => 'outTrackId',
-        'robotCode'          => 'robotCode',
-        'unoinId'            => 'unoinId',
-        'userId'             => 'userId',
+        'outTrackId' => 'outTrackId',
+        'robotCode' => 'robotCode',
+        'unoinId' => 'unoinId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

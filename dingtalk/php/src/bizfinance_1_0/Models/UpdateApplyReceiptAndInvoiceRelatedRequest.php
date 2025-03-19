@@ -27,13 +27,11 @@ class UpdateApplyReceiptAndInvoiceRelatedRequest extends Model
     public $operator;
     protected $_name = [
         'generalInvoiceVOList' => 'generalInvoiceVOList',
-        'instanceId'           => 'instanceId',
-        'operator'             => 'operator',
+        'instanceId' => 'instanceId',
+        'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -68,7 +66,7 @@ class UpdateApplyReceiptAndInvoiceRelatedRequest extends Model
         if (isset($map['generalInvoiceVOList'])) {
             if (!empty($map['generalInvoiceVOList'])) {
                 $model->generalInvoiceVOList = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['generalInvoiceVOList'] as $item) {
                     $model->generalInvoiceVOList[$n++] = null !== $item ? generalInvoiceVOList::fromMap($item) : $item;
                 }

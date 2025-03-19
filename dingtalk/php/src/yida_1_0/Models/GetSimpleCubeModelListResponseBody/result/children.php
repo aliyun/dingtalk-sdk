@@ -70,23 +70,21 @@ class children extends Model
      */
     public $timeGranularityType;
     protected $_name = [
-        'classifiedCode'      => 'classifiedCode',
-        'cubeCode'            => 'cubeCode',
-        'dataType'            => 'dataType',
-        'dimensionType'       => 'dimensionType',
-        'fieldCode'           => 'fieldCode',
-        'id'                  => 'id',
-        'isDimension'         => 'isDimension',
-        'isVisible'           => 'isVisible',
-        'measureType'         => 'measureType',
-        'text'                => 'text',
-        'timeFormat'          => 'timeFormat',
+        'classifiedCode' => 'classifiedCode',
+        'cubeCode' => 'cubeCode',
+        'dataType' => 'dataType',
+        'dimensionType' => 'dimensionType',
+        'fieldCode' => 'fieldCode',
+        'id' => 'id',
+        'isDimension' => 'isDimension',
+        'isVisible' => 'isVisible',
+        'measureType' => 'measureType',
+        'text' => 'text',
+        'timeFormat' => 'timeFormat',
         'timeGranularityType' => 'timeGranularityType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

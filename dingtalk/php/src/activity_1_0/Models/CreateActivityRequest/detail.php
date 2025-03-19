@@ -98,22 +98,20 @@ class detail extends Model
      */
     public $url;
     protected $_name = [
-        'address'       => 'address',
+        'address' => 'address',
         'bannerMediaId' => 'bannerMediaId',
-        'endTime'       => 'endTime',
-        'foreignId'     => 'foreignId',
-        'industry'      => 'industry',
-        'roleName'      => 'roleName',
-        'source'        => 'source',
-        'startTime'     => 'startTime',
-        'title'         => 'title',
-        'type'          => 'type',
-        'url'           => 'url',
+        'endTime' => 'endTime',
+        'foreignId' => 'foreignId',
+        'industry' => 'industry',
+        'roleName' => 'roleName',
+        'source' => 'source',
+        'startTime' => 'startTime',
+        'title' => 'title',
+        'type' => 'type',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -61,19 +61,17 @@ class SaveIntegratedInstanceRequest extends Model
      */
     public $url;
     protected $_name = [
-        'bizData'                => 'bizData',
-        'featureConfig'          => 'featureConfig',
+        'bizData' => 'bizData',
+        'featureConfig' => 'featureConfig',
         'formComponentValueList' => 'formComponentValueList',
-        'notifiers'              => 'notifiers',
-        'originatorUserId'       => 'originatorUserId',
-        'processCode'            => 'processCode',
-        'title'                  => 'title',
-        'url'                    => 'url',
+        'notifiers' => 'notifiers',
+        'originatorUserId' => 'originatorUserId',
+        'processCode' => 'processCode',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -135,7 +133,7 @@ class SaveIntegratedInstanceRequest extends Model
         if (isset($map['formComponentValueList'])) {
             if (!empty($map['formComponentValueList'])) {
                 $model->formComponentValueList = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['formComponentValueList'] as $item) {
                     $model->formComponentValueList[$n++] = null !== $item ? formComponentValueList::fromMap($item) : $item;
                 }
@@ -144,7 +142,7 @@ class SaveIntegratedInstanceRequest extends Model
         if (isset($map['notifiers'])) {
             if (!empty($map['notifiers'])) {
                 $model->notifiers = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['notifiers'] as $item) {
                     $model->notifiers[$n++] = null !== $item ? notifiers::fromMap($item) : $item;
                 }

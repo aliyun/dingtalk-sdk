@@ -31,14 +31,12 @@ class GetInAppSkuUrlRequest extends Model
     public $itemCode;
     protected $_name = [
         'callbackPage' => 'callbackPage',
-        'extendParam'  => 'extendParam',
-        'goodsCode'    => 'goodsCode',
-        'itemCode'     => 'itemCode',
+        'extendParam' => 'extendParam',
+        'goodsCode' => 'goodsCode',
+        'itemCode' => 'itemCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,14 +29,12 @@ class rule extends Model
      */
     public $source;
     protected $_name = [
-        'content'     => 'content',
+        'content' => 'content',
         'displayRule' => 'displayRule',
-        'source'      => 'source',
+        'source' => 'source',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

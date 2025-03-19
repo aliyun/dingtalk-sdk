@@ -30,13 +30,11 @@ class path extends Model
     public $url;
     protected $_name = [
         'longPath' => 'longPath',
-        'path'     => 'path',
-        'url'      => 'url',
+        'path' => 'path',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

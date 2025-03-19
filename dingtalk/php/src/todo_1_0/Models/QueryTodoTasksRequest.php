@@ -53,20 +53,18 @@ class QueryTodoTasksRequest extends Model
      */
     public $toDueTime;
     protected $_name = [
-        'category'       => 'category',
-        'fromDueTime'    => 'fromDueTime',
-        'isDone'         => 'isDone',
-        'isRecycled'     => 'isRecycled',
-        'nextToken'      => 'nextToken',
-        'orderBy'        => 'orderBy',
+        'category' => 'category',
+        'fromDueTime' => 'fromDueTime',
+        'isDone' => 'isDone',
+        'isRecycled' => 'isRecycled',
+        'nextToken' => 'nextToken',
+        'orderBy' => 'orderBy',
         'orderDirection' => 'orderDirection',
-        'roleTypes'      => 'roleTypes',
-        'toDueTime'      => 'toDueTime',
+        'roleTypes' => 'roleTypes',
+        'toDueTime' => 'toDueTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

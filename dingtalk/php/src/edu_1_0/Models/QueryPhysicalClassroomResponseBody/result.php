@@ -60,17 +60,15 @@ class result extends Model
     public $directBroadcast;
     protected $_name = [
         'classroomBuilding' => 'classroomBuilding',
-        'classroomCampus'   => 'classroomCampus',
-        'classroomFloor'    => 'classroomFloor',
-        'classroomId'       => 'classroomId',
-        'classroomName'     => 'classroomName',
-        'classroomNumber'   => 'classroomNumber',
-        'directBroadcast'   => 'directBroadcast',
+        'classroomCampus' => 'classroomCampus',
+        'classroomFloor' => 'classroomFloor',
+        'classroomId' => 'classroomId',
+        'classroomName' => 'classroomName',
+        'classroomNumber' => 'classroomNumber',
+        'directBroadcast' => 'directBroadcast',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

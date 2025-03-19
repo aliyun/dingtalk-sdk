@@ -16,9 +16,7 @@ class CancelEventRequest extends Model
         'scope' => 'scope',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

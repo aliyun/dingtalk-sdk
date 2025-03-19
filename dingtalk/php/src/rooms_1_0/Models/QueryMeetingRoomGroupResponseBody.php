@@ -29,14 +29,12 @@ class QueryMeetingRoomGroupResponseBody extends Model
      */
     public $parentId;
     protected $_name = [
-        'groupId'   => 'groupId',
+        'groupId' => 'groupId',
         'groupName' => 'groupName',
-        'parentId'  => 'parentId',
+        'parentId' => 'parentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

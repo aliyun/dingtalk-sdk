@@ -18,13 +18,11 @@ class ListSubSpaceRequest extends Model
      */
     public $residentCorpId;
     protected $_name = [
-        'referId'        => 'referId',
+        'referId' => 'referId',
         'residentCorpId' => 'residentCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

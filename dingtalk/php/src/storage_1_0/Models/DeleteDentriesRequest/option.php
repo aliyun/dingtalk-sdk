@@ -18,9 +18,7 @@ class option extends Model
         'toRecycleBin' => 'toRecycleBin',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

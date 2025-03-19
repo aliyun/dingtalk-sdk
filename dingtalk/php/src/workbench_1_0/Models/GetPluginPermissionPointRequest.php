@@ -16,9 +16,7 @@ class GetPluginPermissionPointRequest extends Model
         'miniAppId' => 'miniAppId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

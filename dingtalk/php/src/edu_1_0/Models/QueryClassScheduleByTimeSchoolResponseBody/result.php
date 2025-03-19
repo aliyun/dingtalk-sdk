@@ -156,33 +156,31 @@ class result extends Model
      */
     public $teacherUserName;
     protected $_name = [
-        'bizKey'          => 'bizKey',
-        'classId'         => 'classId',
-        'classrooms'      => 'classrooms',
-        'code'            => 'code',
+        'bizKey' => 'bizKey',
+        'classId' => 'classId',
+        'classrooms' => 'classrooms',
+        'code' => 'code',
         'courseGroupCode' => 'courseGroupCode',
-        'coverUrl'        => 'coverUrl',
-        'creatorCorpId'   => 'creatorCorpId',
-        'creatorUserId'   => 'creatorUserId',
+        'coverUrl' => 'coverUrl',
+        'creatorCorpId' => 'creatorCorpId',
+        'creatorUserId' => 'creatorUserId',
         'creatorUserName' => 'creatorUserName',
-        'eduUserModels'   => 'eduUserModels',
-        'endTime'         => 'endTime',
-        'extInfo'         => 'extInfo',
-        'introduce'       => 'introduce',
-        'name'            => 'name',
-        'sectionIndex'    => 'sectionIndex',
-        'sectionName'     => 'sectionName',
-        'startTime'       => 'startTime',
-        'status'          => 'status',
-        'subjectCode'     => 'subjectCode',
-        'teacherCorpId'   => 'teacherCorpId',
-        'teacherUserId'   => 'teacherUserId',
+        'eduUserModels' => 'eduUserModels',
+        'endTime' => 'endTime',
+        'extInfo' => 'extInfo',
+        'introduce' => 'introduce',
+        'name' => 'name',
+        'sectionIndex' => 'sectionIndex',
+        'sectionName' => 'sectionName',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'subjectCode' => 'subjectCode',
+        'teacherCorpId' => 'teacherCorpId',
+        'teacherUserId' => 'teacherUserId',
         'teacherUserName' => 'teacherUserName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -286,7 +284,7 @@ class result extends Model
         if (isset($map['classrooms'])) {
             if (!empty($map['classrooms'])) {
                 $model->classrooms = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['classrooms'] as $item) {
                     $model->classrooms[$n++] = null !== $item ? classrooms::fromMap($item) : $item;
                 }
@@ -313,7 +311,7 @@ class result extends Model
         if (isset($map['eduUserModels'])) {
             if (!empty($map['eduUserModels'])) {
                 $model->eduUserModels = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['eduUserModels'] as $item) {
                     $model->eduUserModels[$n++] = null !== $item ? eduUserModels::fromMap($item) : $item;
                 }

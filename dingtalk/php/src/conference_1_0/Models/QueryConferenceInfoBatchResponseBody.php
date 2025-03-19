@@ -17,9 +17,7 @@ class QueryConferenceInfoBatchResponseBody extends Model
         'infos' => 'infos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class QueryConferenceInfoBatchResponseBody extends Model
         if (isset($map['infos'])) {
             if (!empty($map['infos'])) {
                 $model->infos = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['infos'] as $item) {
                     $model->infos[$n++] = null !== $item ? infos::fromMap($item) : $item;
                 }

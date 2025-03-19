@@ -17,9 +17,7 @@ class EduListUserByFromUserIdsResponseBody extends Model
         'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class EduListUserByFromUserIdsResponseBody extends Model
         if (isset($map['result'])) {
             if (!empty($map['result'])) {
                 $model->result = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['result'] as $item) {
                     $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
                 }

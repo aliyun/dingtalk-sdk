@@ -32,14 +32,12 @@ class UpdateCardRequest extends Model
      */
     public $tips;
     protected $_name = [
-        'bizId'    => 'bizId',
+        'bizId' => 'bizId',
         'cardData' => 'cardData',
-        'tips'     => 'tips',
+        'tips' => 'tips',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

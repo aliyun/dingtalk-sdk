@@ -34,16 +34,14 @@ class applicationInformation extends Model
      */
     public $usagePlugins;
     protected $_name = [
-        'appName'               => 'appName',
-        'appType'               => 'appType',
+        'appName' => 'appName',
+        'appType' => 'appType',
         'attachmentUsageAmount' => 'attachmentUsageAmount',
-        'instanceUsageAmount'   => 'instanceUsageAmount',
-        'usagePlugins'          => 'usagePlugins',
+        'instanceUsageAmount' => 'instanceUsageAmount',
+        'usagePlugins' => 'usagePlugins',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -96,7 +94,7 @@ class applicationInformation extends Model
         if (isset($map['usagePlugins'])) {
             if (!empty($map['usagePlugins'])) {
                 $model->usagePlugins = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['usagePlugins'] as $item) {
                     $model->usagePlugins[$n++] = null !== $item ? usagePlugins::fromMap($item) : $item;
                 }

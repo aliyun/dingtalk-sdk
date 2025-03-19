@@ -28,14 +28,12 @@ class UpdateWorkTimeApproveResponseBody extends Model
      */
     public $result;
     protected $_name = [
-        'message'   => 'message',
+        'message' => 'message',
         'requestId' => 'requestId',
-        'result'    => 'result',
+        'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

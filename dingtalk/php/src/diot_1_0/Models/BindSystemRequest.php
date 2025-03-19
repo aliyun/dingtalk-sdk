@@ -47,16 +47,14 @@ class BindSystemRequest extends Model
      */
     public $extraData;
     protected $_name = [
-        'authCode'   => 'authCode',
-        'clientId'   => 'clientId',
+        'authCode' => 'authCode',
+        'clientId' => 'clientId',
         'clientName' => 'clientName',
-        'corpId'     => 'corpId',
-        'extraData'  => 'extraData',
+        'corpId' => 'corpId',
+        'extraData' => 'extraData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

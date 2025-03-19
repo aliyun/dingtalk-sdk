@@ -38,14 +38,12 @@ class options extends Model
     public $warn;
     protected $_name = [
         'extension' => 'extension',
-        'key'       => 'key',
-        'value'     => 'value',
-        'warn'      => 'warn',
+        'key' => 'key',
+        'value' => 'value',
+        'warn' => 'warn',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

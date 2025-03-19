@@ -16,9 +16,7 @@ class GetUserLastMetricResponseBody extends Model
         'metricMap' => 'metricMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

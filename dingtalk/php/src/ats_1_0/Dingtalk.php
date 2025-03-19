@@ -80,8 +80,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -126,19 +126,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddApplicationRegFormTemplate',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/flows/applicationRegForms/templates',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddApplicationRegFormTemplate',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/flows/applicationRegForms/templates',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddApplicationRegFormTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -194,19 +194,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddFile',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/files',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddFile',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/files',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -268,19 +268,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddUserAccount',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/channels/users/accounts',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddUserAccount',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/channels/users/accounts',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddUserAccountResponse::fromMap($this->execute($params, $req, $runtime));
@@ -348,19 +348,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CollectRecruitJobDetail',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/channels/jobs/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollectRecruitJobDetail',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/channels/jobs/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollectRecruitJobDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -431,19 +431,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CollectResumeDetail',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/resumes/details',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollectResumeDetail',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/resumes/details',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollectResumeDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -526,19 +526,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CollectResumeMail',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/resumes/mails',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CollectResumeMail',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/resumes/mails',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CollectResumeMailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -585,18 +585,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ConfirmRights',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/rights/' . $rightsCode . '/confirm',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ConfirmRights',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/rights/' . $rightsCode . '/confirm',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ConfirmRightsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -647,18 +647,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'FinishBeginnerTask',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/beginnerTasks/' . $taskCode . '/finish',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'FinishBeginnerTask',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/beginnerTasks/' . $taskCode . '/finish',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return FinishBeginnerTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -706,18 +706,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetApplicationRegFormByFlowId',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/flows/' . $flowId . '/applicationRegForms',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetApplicationRegFormByFlowId',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/flows/' . $flowId . '/applicationRegForms',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetApplicationRegFormByFlowIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -767,18 +767,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCandidateByPhoneNumber',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/candidates',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCandidateByPhoneNumber',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/candidates',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCandidateByPhoneNumberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -836,18 +836,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFileUploadInfo',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/files/uploadInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFileUploadInfo',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/files/uploadInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFileUploadInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -899,18 +899,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetFlowIdByRelationEntityId',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/flows/ids',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetFlowIdByRelationEntityId',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/flows/ids',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetFlowIdByRelationEntityIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -957,18 +957,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetJobAuth',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/auths/jobs/' . $jobId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetJobAuth',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/auths/jobs/' . $jobId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetJobAuthResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1011,18 +1011,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => Utils::toArray($request->body),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'ImportJobData',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/weHire/jobs/import',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ImportJobData',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/weHire/jobs/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ImportJobDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1078,19 +1078,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryCandidates',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/candidates/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCandidates',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/candidates/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCandidatesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1152,19 +1152,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryInterviews',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/interviews/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryInterviews',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/interviews/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryInterviewsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1229,19 +1229,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ReportMessageStatus',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/channels/messages/statuses/report',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReportMessageStatus',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/channels/messages/statuses/report',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReportMessageStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1306,19 +1306,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SyncChannelMessage',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/channels/messages/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SyncChannelMessage',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/channels/messages/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SyncChannelMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1372,19 +1372,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateApplicationRegForm',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/flows/' . $flowId . '/applicationRegForms',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateApplicationRegForm',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/flows/' . $flowId . '/applicationRegForms',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateApplicationRegFormResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1436,19 +1436,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateInterviewSignInInfo',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/interviews/' . $interviewId . '/signInInfos',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateInterviewSignInInfo',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/interviews/' . $interviewId . '/signInInfos',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateInterviewSignInInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1520,19 +1520,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateJobDeliver',
-            'version'     => 'ats_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/ats/jobs/deliveryStatus',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateJobDeliver',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/jobs/deliveryStatus',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateJobDeliverResponse::fromMap($this->execute($params, $req, $runtime));

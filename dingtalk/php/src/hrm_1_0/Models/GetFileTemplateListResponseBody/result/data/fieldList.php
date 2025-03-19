@@ -53,18 +53,16 @@ class fieldList extends Model
      */
     public $userCustomField;
     protected $_name = [
-        'desc'            => 'desc',
-        'fieldCode'       => 'fieldCode',
-        'fieldName'       => 'fieldName',
-        'fieldType'       => 'fieldType',
-        'groupId'         => 'groupId',
-        'signRequired'    => 'signRequired',
+        'desc' => 'desc',
+        'fieldCode' => 'fieldCode',
+        'fieldName' => 'fieldName',
+        'fieldType' => 'fieldType',
+        'groupId' => 'groupId',
+        'signRequired' => 'signRequired',
         'userCustomField' => 'userCustomField',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

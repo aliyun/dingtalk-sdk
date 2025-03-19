@@ -71,20 +71,18 @@ class result extends Model
      */
     public $userId;
     protected $_name = [
-        'approveId'      => 'approveId',
-        'beginTime'      => 'beginTime',
-        'bizType'        => 'bizType',
+        'approveId' => 'approveId',
+        'beginTime' => 'beginTime',
+        'bizType' => 'bizType',
         'calculateModel' => 'calculateModel',
-        'durationUnit'   => 'durationUnit',
-        'endTime'        => 'endTime',
-        'subType'        => 'subType',
-        'tagName'        => 'tagName',
-        'userId'         => 'userId',
+        'durationUnit' => 'durationUnit',
+        'endTime' => 'endTime',
+        'subType' => 'subType',
+        'tagName' => 'tagName',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

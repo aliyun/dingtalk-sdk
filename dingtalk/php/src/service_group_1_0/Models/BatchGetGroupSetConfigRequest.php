@@ -29,14 +29,12 @@ class BatchGetGroupSetConfigRequest extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'configKeys'     => 'configKeys',
+        'configKeys' => 'configKeys',
         'openGroupSetId' => 'openGroupSetId',
-        'openTeamId'     => 'openTeamId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

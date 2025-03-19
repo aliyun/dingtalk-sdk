@@ -36,15 +36,13 @@ class subInstAddressInfo extends Model
      */
     public $provinceCode;
     protected $_name = [
-        'address'      => 'address',
-        'cityCode'     => 'cityCode',
+        'address' => 'address',
+        'cityCode' => 'cityCode',
         'districtCode' => 'districtCode',
         'provinceCode' => 'provinceCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

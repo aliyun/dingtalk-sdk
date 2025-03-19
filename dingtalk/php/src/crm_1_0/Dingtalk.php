@@ -248,8 +248,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -290,18 +290,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AbandonCustomer',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customers/abandon',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AbandonCustomer',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customers/abandon',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AbandonCustomerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -368,18 +368,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddCrmPersonalCustomer',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/personalCustomers',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddCrmPersonalCustomer',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/personalCustomers',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddCrmPersonalCustomerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -449,18 +449,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddCustomerTrack',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customerTracks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddCustomerTrack',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customerTracks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddCustomerTrackResponse::fromMap($this->execute($params, $req, $runtime));
@@ -518,18 +518,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddLeads',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/leads',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddLeads',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/leads',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddLeadsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -584,18 +584,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddMetaModelField',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/metas/models/fields',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddMetaModelField',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/metas/models/fields',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddMetaModelFieldResponse::fromMap($this->execute($params, $req, $runtime));
@@ -650,18 +650,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddRelationMetaField',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/relations/metas/fields',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddRelationMetaField',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/relations/metas/fields',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddRelationMetaFieldResponse::fromMap($this->execute($params, $req, $runtime));
@@ -722,18 +722,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AppendCustomerDataAuth',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customers/dataAuth/append',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AppendCustomerDataAuth',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customers/dataAuth/append',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AppendCustomerDataAuthResponse::fromMap($this->execute($params, $req, $runtime));
@@ -782,18 +782,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchAddContacts',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/contacts/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchAddContacts',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/contacts/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchAddContactsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -842,18 +842,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchAddFollowRecords',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/followRecords/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchAddFollowRecords',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/followRecords/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchAddFollowRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -908,18 +908,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchAddRelationDatas',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/relationDatas/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchAddRelationDatas',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/relationDatas/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchAddRelationDatasResponse::fromMap($this->execute($params, $req, $runtime));
@@ -971,18 +971,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchCreateClueData',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/clues/datas/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchCreateClueData',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/clues/datas/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchCreateClueDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1031,18 +1031,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchRemoveFollowRecords',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/followRecords/batchRemove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchRemoveFollowRecords',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/followRecords/batchRemove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchRemoveFollowRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1094,18 +1094,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchSendOfficialAccountOTOMessage',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/officialAccounts/oToMessages/batchSend',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchSendOfficialAccountOTOMessage',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/officialAccounts/oToMessages/batchSend',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchSendOfficialAccountOTOMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1154,18 +1154,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchUpdateContacts',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/contacts/batch',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchUpdateContacts',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/contacts/batch',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchUpdateContactsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1214,18 +1214,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchUpdateFollowRecords',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/followRecords/batch',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchUpdateFollowRecords',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/followRecords/batch',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchUpdateFollowRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1280,18 +1280,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchUpdateRelationDatas',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/relationDatas/batch',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchUpdateRelationDatas',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/relationDatas/batch',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchUpdateRelationDatasResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1346,18 +1346,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ConsumeBenefitInventory',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/benefitInventories/consume',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ConsumeBenefitInventory',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/benefitInventories/consume',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ConsumeBenefitInventoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1424,18 +1424,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateCustomer',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customers',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateCustomer',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customers',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateCustomerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1490,18 +1490,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateGroup',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/groups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateGroup',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/groups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1574,18 +1574,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateGroupSet',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/groupSets',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateGroupSet',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/groupSets',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateGroupSetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1637,18 +1637,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateRelationMeta',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/relations/metas/create',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateRelationMeta',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/relations/metas/create',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateRelationMetaResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1695,18 +1695,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteCrmCustomObjectData',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customObjectDatas/instances/' . $instanceId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteCrmCustomObjectData',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customObjectDatas/instances/' . $instanceId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteCrmCustomObjectDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1757,18 +1757,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteCrmFormInstance',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/formInstances/' . $instanceId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteCrmFormInstance',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/formInstances/' . $instanceId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteCrmFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1819,18 +1819,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteCrmPersonalCustomer',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/personalCustomers/' . $dataId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteCrmPersonalCustomer',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/personalCustomers/' . $dataId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteCrmPersonalCustomerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1877,18 +1877,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteLeads',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/leads/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteLeads',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/leads/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteLeadsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1943,18 +1943,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteRelationMetaField',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/relations/metas/fields/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteRelationMetaField',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/relations/metas/fields/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteRelationMetaFieldResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2000,18 +2000,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DescribeCrmPersonalCustomerObjectMeta',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/personalCustomers/objectMeta',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DescribeCrmPersonalCustomerObjectMeta',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/personalCustomers/objectMeta',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DescribeCrmPersonalCustomerObjectMetaResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2063,18 +2063,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DescribeMetaModel',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/metas/models/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DescribeMetaModel',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/metas/models/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DescribeMetaModelResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2126,18 +2126,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DescribeRelationMeta',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/relations/metas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DescribeRelationMeta',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/relations/metas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DescribeRelationMetaResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2192,18 +2192,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'FindTargetRelatedFollowRecords',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/targetFollowRecords/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'FindTargetRelatedFollowRecords',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/targetFollowRecords/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return FindTargetRelatedFollowRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2252,18 +2252,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAllCustomerRecycles',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customerRecycles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAllCustomerRecycles',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customerRecycles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAllCustomerRecyclesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2324,18 +2324,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetContacts',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customObjects/contacts/datas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetContacts',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customObjects/contacts/datas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetContactsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2378,15 +2378,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetCrmGroupChat',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/crmGroupChats/' . $openConversationId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCrmGroupChat',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/crmGroupChats/' . $openConversationId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCrmGroupChatResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2432,18 +2432,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetCrmGroupChatMulti',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/crmGroupChats/batchQuery',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCrmGroupChatMulti',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/crmGroupChats/batchQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCrmGroupChatMultiResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2489,18 +2489,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCrmGroupChatSingle',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/crmGroupChats/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCrmGroupChatSingle',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/crmGroupChats/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCrmGroupChatSingleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2549,18 +2549,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCrmRolePermission',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/permissions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCrmRolePermission',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/permissions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCrmRolePermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2615,18 +2615,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCustomerTracksByRelationId',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customerTracks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCustomerTracksByRelationId',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customerTracks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCustomerTracksByRelationIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2672,18 +2672,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetGroupSet',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/groupSets',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetGroupSet',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/groupSets',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetGroupSetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2729,18 +2729,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetInAppPurchaseGoods',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/inAppPurchaseGoods/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetInAppPurchaseGoods',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/inAppPurchaseGoods/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetInAppPurchaseGoodsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2792,18 +2792,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetNavigationCatalog',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/navigations/catalogs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetNavigationCatalog',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/navigations/catalogs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetNavigationCatalogResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2861,18 +2861,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetObjectData',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customObjects/datas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetObjectData',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customObjects/datas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetObjectDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2915,15 +2915,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetOfficialAccountContactInfo',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/officialAccounts/contacts/' . $userId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOfficialAccountContactInfo',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/officialAccounts/contacts/' . $userId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOfficialAccountContactInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2972,18 +2972,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetOfficialAccountContacts',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/officialAccounts/contacts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOfficialAccountContacts',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/officialAccounts/contacts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOfficialAccountContactsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3032,18 +3032,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetOfficialAccountOTOMessageResult',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/officialAccounts/oToMessages/sendResults',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOfficialAccountOTOMessageResult',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/officialAccounts/oToMessages/sendResults',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOfficialAccountOTOMessageResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3104,18 +3104,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetRelatedViewTabData',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/formRelatedTabs/datas/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRelatedViewTabData',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/formRelatedTabs/datas/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRelatedViewTabDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3164,18 +3164,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetRelatedViewTabMeta',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/formRelatedTabs/meta/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRelatedViewTabMeta',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/formRelatedTabs/meta/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRelatedViewTabMetaResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3221,18 +3221,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRelationUkSetting',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/relationUkSettings',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRelationUkSetting',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/relationUkSettings',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRelationUkSettingResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3287,18 +3287,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'JoinGroupSet',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/groupSets/join',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'JoinGroupSet',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/groupSets/join',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return JoinGroupSetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3344,18 +3344,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListAvailableBenefit',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/benefits/lists/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAvailableBenefit',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/benefits/lists/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAvailableBenefitResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3401,18 +3401,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListBenefitLicense',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/benefitLicenses/lists/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListBenefitLicense',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/benefitLicenses/lists/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListBenefitLicenseResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3454,15 +3454,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListClueTag',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/clues/tags',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListClueTag',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/clues/tags',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListClueTagResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3509,19 +3509,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => $request->body,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => $request->body,
         ]);
         $params = new Params([
-            'action'      => 'ListCrmPersonalCustomers',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/personalCustomers/batchQuery',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListCrmPersonalCustomers',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/personalCustomers/batchQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListCrmPersonalCustomersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3576,18 +3576,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListGroupSet',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/groupSets/lists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListGroupSet',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/groupSets/lists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListGroupSetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3648,18 +3648,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'OverrideUpdateCustomerDataAuth',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customers/dataAuth/overrideUpdate',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'OverrideUpdateCustomerDataAuth',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customers/dataAuth/overrideUpdate',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return OverrideUpdateCustomerDataAuthResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3714,18 +3714,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryAllCustomer',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customerInstances',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAllCustomer',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customerInstances',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAllCustomerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3777,18 +3777,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAllTracks',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/customers/tracks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAllTracks',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/customers/tracks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAllTracksResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3834,18 +3834,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryAppManager',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/apps/managers/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAppManager',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/apps/managers/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAppManagerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3891,18 +3891,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryBenefitInventory',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/benefitInventories/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryBenefitInventory',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/benefitInventories/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryBenefitInventoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3948,18 +3948,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryClueFollowStatus',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/clues/followStatuses',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryClueFollowStatus',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/clues/followStatuses',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryClueFollowStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4014,18 +4014,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCrmGroupChats',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/crmGroupChats',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCrmGroupChats',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/crmGroupChats',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCrmGroupChatsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4083,18 +4083,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryCrmPersonalCustomer',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/personalCustomers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCrmPersonalCustomer',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/personalCustomers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCrmPersonalCustomerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4140,18 +4140,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryCustomerBizType',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/orgSettings/templates/customerBizTypes/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryCustomerBizType',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/orgSettings/templates/customerBizTypes/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryCustomerBizTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4197,18 +4197,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryGlobalInfo',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/globalInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryGlobalInfo',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/globalInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryGlobalInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4254,18 +4254,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryHasAppPermission',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/apps/adminPermissions/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryHasAppPermission',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/apps/adminPermissions/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryHasAppPermissionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4314,18 +4314,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryOfficialAccountUserBasicInfo',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/officialAccounts/basics/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryOfficialAccountUserBasicInfo',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/officialAccounts/basics/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryOfficialAccountUserBasicInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4372,18 +4372,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryRelationDatasByTargetId',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/relations/datas/targets/' . $targetId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryRelationDatasByTargetId',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/relations/datas/targets/' . $targetId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryRelationDatasByTargetIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4433,18 +4433,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RecallOfficialAccountOTOMessage',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/officialAccounts/oToMessages/recall',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RecallOfficialAccountOTOMessage',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/officialAccounts/oToMessages/recall',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RecallOfficialAccountOTOMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4496,18 +4496,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveBenefitLicense',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/benefitLicenses/save',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveBenefitLicense',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/benefitLicenses/save',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveBenefitLicenseResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4559,18 +4559,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendOfficialAccountOTOMessage',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/officialAccounts/oToMessages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendOfficialAccountOTOMessage',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/officialAccounts/oToMessages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendOfficialAccountOTOMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4622,18 +4622,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendOfficialAccountSNSMessage',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/officialAccounts/snsMessages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendOfficialAccountSNSMessage',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/officialAccounts/snsMessages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendOfficialAccountSNSMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4682,18 +4682,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ServiceWindowMessageBatchPush',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/messages/batchSend',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ServiceWindowMessageBatchPush',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/messages/batchSend',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ServiceWindowMessageBatchPushResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4748,18 +4748,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TwoPhaseCommitInventory',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/benefitInventories/twoPhases/commit',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TwoPhaseCommitInventory',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/benefitInventories/twoPhases/commit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TwoPhaseCommitInventoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4829,18 +4829,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateCrmPersonalCustomer',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/personalCustomers',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateCrmPersonalCustomer',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/personalCustomers',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateCrmPersonalCustomerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4889,18 +4889,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateCustomerBizType',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/orgSettings/templates/customerBizTypes',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateCustomerBizType',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/orgSettings/templates/customerBizTypes',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateCustomerBizTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4970,18 +4970,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateGroupSet',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/groupSets/set',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateGroupSet',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/groupSets/set',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'boolean',
+            'bodyType' => 'boolean',
         ]);
 
         return UpdateGroupSetResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5042,18 +5042,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateMenuData',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/navigations/menus/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateMenuData',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/navigations/menus/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateMenuDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5108,18 +5108,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateMetaModelField',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/metas/models/fields',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateMetaModelField',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/metas/models/fields',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateMetaModelFieldResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5174,18 +5174,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateRelationMetaField',
-            'version'     => 'crm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/relations/metas/fields',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateRelationMetaField',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/relations/metas/fields',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateRelationMetaFieldResponse::fromMap($this->execute($params, $req, $runtime));

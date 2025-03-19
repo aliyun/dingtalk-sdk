@@ -67,18 +67,16 @@ class UploadLearningDataCallbackRequest extends Model
      */
     public $subjectCode;
     protected $_name = [
-        'bizId'         => 'bizId',
-        'bizType'       => 'bizType',
-        'corpId'        => 'corpId',
-        'deptId'        => 'deptId',
+        'bizId' => 'bizId',
+        'bizType' => 'bizType',
+        'corpId' => 'corpId',
+        'deptId' => 'deptId',
         'generatedTime' => 'generatedTime',
         'studentUserId' => 'studentUserId',
-        'subjectCode'   => 'subjectCode',
+        'subjectCode' => 'subjectCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

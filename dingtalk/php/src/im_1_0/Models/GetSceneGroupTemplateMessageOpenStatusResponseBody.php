@@ -18,13 +18,11 @@ class GetSceneGroupTemplateMessageOpenStatusResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'status'  => 'status',
+        'status' => 'status',
         'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -31,8 +31,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -70,18 +70,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateFlashMeeting',
-            'version'     => 'flashmeeting_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmeeting/meetings',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateFlashMeeting',
+            'version' => 'flashmeeting_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmeeting/meetings',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateFlashMeetingResponse::fromMap($this->execute($params, $req, $runtime));
@@ -139,18 +139,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExportShanhuiToDoc',
-            'version'     => 'flashmeeting_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmeeting/meetings/export',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExportShanhuiToDoc',
+            'version' => 'flashmeeting_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmeeting/meetings/export',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExportShanhuiToDocResponse::fromMap($this->execute($params, $req, $runtime));
@@ -199,18 +199,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetShanhuiByCalendar',
-            'version'     => 'flashmeeting_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmeeting/calendars/meeting',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetShanhuiByCalendar',
+            'version' => 'flashmeeting_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmeeting/calendars/meeting',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetShanhuiByCalendarResponse::fromMap($this->execute($params, $req, $runtime));
@@ -253,15 +253,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetShanhuiByShanhuiKey',
-            'version'     => 'flashmeeting_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmeeting/meetings/keys/' . $flashmeetingKey . '/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetShanhuiByShanhuiKey',
+            'version' => 'flashmeeting_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmeeting/meetings/keys/' . $flashmeetingKey . '/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetShanhuiByShanhuiKeyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -316,18 +316,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetTaskFromShanhuiDoc',
-            'version'     => 'flashmeeting_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/flashmeeting/meetings/tasks',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTaskFromShanhuiDoc',
+            'version' => 'flashmeeting_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmeeting/meetings/tasks',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTaskFromShanhuiDocResponse::fromMap($this->execute($params, $req, $runtime));

@@ -22,13 +22,11 @@ class DeleteDentryResponseBody extends Model
      */
     public $taskId;
     protected $_name = [
-        'async'  => 'async',
+        'async' => 'async',
         'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

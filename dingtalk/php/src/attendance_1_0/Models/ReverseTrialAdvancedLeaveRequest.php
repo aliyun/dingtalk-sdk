@@ -26,9 +26,7 @@ class ReverseTrialAdvancedLeaveRequest extends Model
         'servCode' => 'servCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

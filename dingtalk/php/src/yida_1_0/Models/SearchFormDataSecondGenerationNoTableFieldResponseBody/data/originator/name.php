@@ -26,9 +26,7 @@ class name extends Model
         'nameInEnglish' => 'nameInEnglish',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,13 +36,11 @@ class GetAccountTransferListRequest extends Model
     public $status;
     protected $_name = [
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'status'     => 'status',
+        'pageSize' => 'pageSize',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

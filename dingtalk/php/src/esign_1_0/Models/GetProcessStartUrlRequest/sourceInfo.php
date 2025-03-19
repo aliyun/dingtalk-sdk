@@ -24,13 +24,11 @@ class sourceInfo extends Model
     public $showText;
     protected $_name = [
         'mobileUrl' => 'mobileUrl',
-        'pcUrl'     => 'pcUrl',
-        'showText'  => 'showText',
+        'pcUrl' => 'pcUrl',
+        'showText' => 'showText',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -27,12 +27,10 @@ class openInfos extends Model
     public $url;
     protected $_name = [
         'openType' => 'openType',
-        'url'      => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class ListSubCorpsResponseBody extends Model
         'corpList' => 'corpList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListSubCorpsResponseBody extends Model
         if (isset($map['corpList'])) {
             if (!empty($map['corpList'])) {
                 $model->corpList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['corpList'] as $item) {
                     $model->corpList[$n++] = null !== $item ? corpList::fromMap($item) : $item;
                 }

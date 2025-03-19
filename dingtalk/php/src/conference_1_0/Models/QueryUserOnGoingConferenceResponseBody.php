@@ -18,13 +18,11 @@ class QueryUserOnGoingConferenceResponseBody extends Model
      */
     public $onGoingConfIdList;
     protected $_name = [
-        'memberModelMap'    => 'memberModelMap',
+        'memberModelMap' => 'memberModelMap',
         'onGoingConfIdList' => 'onGoingConfIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -115,28 +115,26 @@ class data extends Model
      */
     public $unitOfMeasurement;
     protected $_name = [
-        'canReissueCard'           => 'canReissueCard',
-        'cardCycle'                => 'cardCycle',
-        'cardFrequency'            => 'cardFrequency',
-        'cardRuleItemParamList'    => 'cardRuleItemParamList',
-        'classIds'                 => 'classIds',
-        'classNames'               => 'classNames',
-        'content'                  => 'content',
-        'effectDate'               => 'effectDate',
-        'medias'                   => 'medias',
-        'needMetering'             => 'needMetering',
+        'canReissueCard' => 'canReissueCard',
+        'cardCycle' => 'cardCycle',
+        'cardFrequency' => 'cardFrequency',
+        'cardRuleItemParamList' => 'cardRuleItemParamList',
+        'classIds' => 'classIds',
+        'classNames' => 'classNames',
+        'content' => 'content',
+        'effectDate' => 'effectDate',
+        'medias' => 'medias',
+        'needMetering' => 'needMetering',
         'orgClassStudentGroupList' => 'orgClassStudentGroupList',
-        'remindHour'               => 'remindHour',
-        'remindMinute'             => 'remindMinute',
-        'targetRole'               => 'targetRole',
-        'templateId'               => 'templateId',
-        'title'                    => 'title',
-        'unitOfMeasurement'        => 'unitOfMeasurement',
+        'remindHour' => 'remindHour',
+        'remindMinute' => 'remindMinute',
+        'targetRole' => 'targetRole',
+        'templateId' => 'templateId',
+        'title' => 'title',
+        'unitOfMeasurement' => 'unitOfMeasurement',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -230,7 +228,7 @@ class data extends Model
         if (isset($map['cardRuleItemParamList'])) {
             if (!empty($map['cardRuleItemParamList'])) {
                 $model->cardRuleItemParamList = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['cardRuleItemParamList'] as $item) {
                     $model->cardRuleItemParamList[$n++] = null !== $item ? cardRuleItemParamList::fromMap($item) : $item;
                 }
@@ -261,7 +259,7 @@ class data extends Model
         if (isset($map['orgClassStudentGroupList'])) {
             if (!empty($map['orgClassStudentGroupList'])) {
                 $model->orgClassStudentGroupList = [];
-                $n                               = 0;
+                $n = 0;
                 foreach ($map['orgClassStudentGroupList'] as $item) {
                     $model->orgClassStudentGroupList[$n++] = null !== $item ? orgClassStudentGroupList::fromMap($item) : $item;
                 }

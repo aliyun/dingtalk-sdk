@@ -24,13 +24,11 @@ class GetCandidateByPhoneNumberRequest extends Model
      */
     public $phoneNumber;
     protected $_name = [
-        'bizCode'     => 'bizCode',
+        'bizCode' => 'bizCode',
         'phoneNumber' => 'phoneNumber',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,9 +20,7 @@ class UserAgreementPageSignResponseBody extends Model
         'pageData' => 'pageData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

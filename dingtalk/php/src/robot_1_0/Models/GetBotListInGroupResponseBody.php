@@ -17,9 +17,7 @@ class GetBotListInGroupResponseBody extends Model
         'chatbotInstanceVOList' => 'chatbotInstanceVOList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class GetBotListInGroupResponseBody extends Model
         if (isset($map['chatbotInstanceVOList'])) {
             if (!empty($map['chatbotInstanceVOList'])) {
                 $model->chatbotInstanceVOList = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['chatbotInstanceVOList'] as $item) {
                     $model->chatbotInstanceVOList[$n++] = null !== $item ? chatbotInstanceVOList::fromMap($item) : $item;
                 }

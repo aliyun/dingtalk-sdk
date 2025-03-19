@@ -22,13 +22,11 @@ class ReadMessageRequest extends Model
      */
     public $operatorUid;
     protected $_name = [
-        'messageId'   => 'messageId',
+        'messageId' => 'messageId',
         'operatorUid' => 'operatorUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

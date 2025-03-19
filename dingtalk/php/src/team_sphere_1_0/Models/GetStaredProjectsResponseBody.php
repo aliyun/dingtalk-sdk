@@ -21,12 +21,10 @@ class GetStaredProjectsResponseBody extends Model
     public $result;
     protected $_name = [
         'nextToken' => 'nextToken',
-        'result'    => 'result',
+        'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

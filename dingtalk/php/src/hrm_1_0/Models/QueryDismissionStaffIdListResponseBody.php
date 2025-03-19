@@ -23,14 +23,12 @@ class QueryDismissionStaffIdListResponseBody extends Model
      */
     public $userIdList;
     protected $_name = [
-        'hasMore'    => 'hasMore',
-        'nextToken'  => 'nextToken',
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
         'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

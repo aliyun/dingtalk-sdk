@@ -35,14 +35,12 @@ class ChangeGroupOwnerRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'groupOwnerId'       => 'groupOwnerId',
-        'groupOwnerType'     => 'groupOwnerType',
+        'groupOwnerId' => 'groupOwnerId',
+        'groupOwnerType' => 'groupOwnerType',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -74,23 +74,21 @@ class body extends Model
     public $webpUrl;
     protected $_name = [
         'authorIconUrl' => 'authorIconUrl',
-        'authorId'      => 'authorId',
-        'authorName'    => 'authorName',
-        'coverUrl'      => 'coverUrl',
-        'jumpIconUrl'   => 'jumpIconUrl',
-        'jumpTitle'     => 'jumpTitle',
-        'jumpUrl'       => 'jumpUrl',
+        'authorId' => 'authorId',
+        'authorName' => 'authorName',
+        'coverUrl' => 'coverUrl',
+        'jumpIconUrl' => 'jumpIconUrl',
+        'jumpTitle' => 'jumpTitle',
+        'jumpUrl' => 'jumpUrl',
         'videoDuration' => 'videoDuration',
-        'videoHeight'   => 'videoHeight',
-        'videoId'       => 'videoId',
-        'videoTitle'    => 'videoTitle',
-        'videoWidth'    => 'videoWidth',
-        'webpUrl'       => 'webpUrl',
+        'videoHeight' => 'videoHeight',
+        'videoId' => 'videoId',
+        'videoTitle' => 'videoTitle',
+        'videoWidth' => 'videoWidth',
+        'webpUrl' => 'webpUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

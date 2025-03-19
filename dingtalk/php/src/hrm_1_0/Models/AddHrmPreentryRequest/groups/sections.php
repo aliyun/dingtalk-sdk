@@ -22,12 +22,10 @@ class sections extends Model
     public $oldIndex;
     protected $_name = [
         'empFieldVOList' => 'empFieldVOList',
-        'oldIndex'       => 'oldIndex',
+        'oldIndex' => 'oldIndex',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class sections extends Model
         if (isset($map['empFieldVOList'])) {
             if (!empty($map['empFieldVOList'])) {
                 $model->empFieldVOList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['empFieldVOList'] as $item) {
                     $model->empFieldVOList[$n++] = null !== $item ? empFieldVOList::fromMap($item) : $item;
                 }

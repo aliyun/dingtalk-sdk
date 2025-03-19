@@ -14,9 +14,15 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CheckEsignFileResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsCompareTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsCompareTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsCompareTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsExtractTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsExtractTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsExtractTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsReviewTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsReviewTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsReviewTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractCompareTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractCompareTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractCompareTaskResponse;
@@ -47,9 +53,15 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\FinishReviewOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsCompareResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsCompareResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsCompareResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsExtractResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsExtractResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsExtractResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsReviewResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsReviewResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsReviewResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareResultResponse;
@@ -74,8 +86,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -113,18 +125,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CancelReviewOrder',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/reviews/cancel',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CancelReviewOrder',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/reviews/cancel',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CancelReviewOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -179,18 +191,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CheckEsignFile',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/esignFiles/check',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CheckEsignFile',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/esignFiles/check',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CheckEsignFileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -254,18 +266,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ContractBenefitConsume',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/benefits/consume',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ContractBenefitConsume',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/benefits/consume',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ContractBenefitConsumeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -284,6 +296,87 @@ class Dingtalk extends OpenApiClient
         $headers = new ContractBenefitConsumeHeaders([]);
 
         return $this->contractBenefitConsumeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建合同比对任务
+     *  *
+     * @param CreateContractAppsCompareTaskRequest $request CreateContractAppsCompareTaskRequest
+     * @param CreateContractAppsCompareTaskHeaders $headers CreateContractAppsCompareTaskHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateContractAppsCompareTaskResponse CreateContractAppsCompareTaskResponse
+     */
+    public function createContractAppsCompareTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->comparativeFile)) {
+            $body['comparativeFile'] = $request->comparativeFile;
+        }
+        if (!Utils::isUnset($request->comparativeFileDownloadUrl)) {
+            $body['comparativeFileDownloadUrl'] = $request->comparativeFileDownloadUrl;
+        }
+        if (!Utils::isUnset($request->comparativeFileName)) {
+            $body['comparativeFileName'] = $request->comparativeFileName;
+        }
+        if (!Utils::isUnset($request->fileSource)) {
+            $body['fileSource'] = $request->fileSource;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->standardFile)) {
+            $body['standardFile'] = $request->standardFile;
+        }
+        if (!Utils::isUnset($request->standardFileDownloadUrl)) {
+            $body['standardFileDownloadUrl'] = $request->standardFileDownloadUrl;
+        }
+        if (!Utils::isUnset($request->standardFileName)) {
+            $body['standardFileName'] = $request->standardFileName;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateContractAppsCompareTask',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/apps/comparisonTasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateContractAppsCompareTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建合同比对任务
+     *  *
+     * @param CreateContractAppsCompareTaskRequest $request CreateContractAppsCompareTaskRequest
+     *
+     * @return CreateContractAppsCompareTaskResponse CreateContractAppsCompareTaskResponse
+     */
+    public function createContractAppsCompareTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateContractAppsCompareTaskHeaders([]);
+
+        return $this->createContractAppsCompareTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -329,18 +422,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateContractAppsExtractTask',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/apps/extractTasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateContractAppsExtractTask',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/apps/extractTasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateContractAppsExtractTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -359,6 +452,87 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateContractAppsExtractTaskHeaders([]);
 
         return $this->createContractAppsExtractTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建合同审查任务
+     *  *
+     * @param CreateContractAppsReviewTaskRequest $request CreateContractAppsReviewTaskRequest
+     * @param CreateContractAppsReviewTaskHeaders $headers CreateContractAppsReviewTaskHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateContractAppsReviewTaskResponse CreateContractAppsReviewTaskResponse
+     */
+    public function createContractAppsReviewTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->contractFile)) {
+            $body['contractFile'] = $request->contractFile;
+        }
+        if (!Utils::isUnset($request->contractFileDownloadUrl)) {
+            $body['contractFileDownloadUrl'] = $request->contractFileDownloadUrl;
+        }
+        if (!Utils::isUnset($request->contractFileName)) {
+            $body['contractFileName'] = $request->contractFileName;
+        }
+        if (!Utils::isUnset($request->fileSource)) {
+            $body['fileSource'] = $request->fileSource;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->reviewCustomRules)) {
+            $body['reviewCustomRules'] = $request->reviewCustomRules;
+        }
+        if (!Utils::isUnset($request->ruleType)) {
+            $body['ruleType'] = $request->ruleType;
+        }
+        if (!Utils::isUnset($request->standpoint)) {
+            $body['standpoint'] = $request->standpoint;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateContractAppsReviewTask',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/apps/reviewTasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateContractAppsReviewTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建合同审查任务
+     *  *
+     * @param CreateContractAppsReviewTaskRequest $request CreateContractAppsReviewTaskRequest
+     *
+     * @return CreateContractAppsReviewTaskResponse CreateContractAppsReviewTaskResponse
+     */
+    public function createContractAppsReviewTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateContractAppsReviewTaskHeaders([]);
+
+        return $this->createContractAppsReviewTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -407,18 +581,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateContractCompareTask',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/comparisonTasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateContractCompareTask',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/comparisonTasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateContractCompareTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -479,18 +653,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateContractExtractTask',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/extractTasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateContractExtractTask',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/extractTasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateContractExtractTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -557,18 +731,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateContractReviewTask',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/reviewTasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateContractReviewTask',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/reviewTasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateContractReviewTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -620,18 +794,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EsignQueryApprovalInfo',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/esign/approvalInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EsignQueryApprovalInfo',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/esign/approvalInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EsignQueryApprovalInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -683,18 +857,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EsignQueryGrantInfo',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/esign/anthInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EsignQueryGrantInfo',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/esign/anthInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EsignQueryGrantInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -746,18 +920,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EsignQueryIdentityByTicket',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/esign/tickets/identities/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EsignQueryIdentityByTicket',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/esign/tickets/identities/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EsignQueryIdentityByTicketResponse::fromMap($this->execute($params, $req, $runtime));
@@ -815,18 +989,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EsignSyncEvent',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/esign/events/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EsignSyncEvent',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/esign/events/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EsignSyncEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -875,18 +1049,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EsignUserVerify',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/esign/user/verify',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EsignUserVerify',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/esign/user/verify',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EsignUserVerifyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -938,18 +1112,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'FinishReviewOrder',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/reviews/finish',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'FinishReviewOrder',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/reviews/finish',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return FinishReviewOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -998,18 +1172,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryAdvancedContractVersion',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/versions/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAdvancedContractVersion',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/versions/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAdvancedContractVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1028,6 +1202,69 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryAdvancedContractVersionHeaders([]);
 
         return $this->queryAdvancedContractVersionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询合同比对结果
+     *  *
+     * @param QueryContractAppsCompareResultRequest $request QueryContractAppsCompareResultRequest
+     * @param QueryContractAppsCompareResultHeaders $headers QueryContractAppsCompareResultHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryContractAppsCompareResultResponse QueryContractAppsCompareResultResponse
+     */
+    public function queryContractAppsCompareResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->compareTaskId)) {
+            $body['compareTaskId'] = $request->compareTaskId;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryContractAppsCompareResult',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/apps/comparisonResults/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryContractAppsCompareResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询合同比对结果
+     *  *
+     * @param QueryContractAppsCompareResultRequest $request QueryContractAppsCompareResultRequest
+     *
+     * @return QueryContractAppsCompareResultResponse QueryContractAppsCompareResultResponse
+     */
+    public function queryContractAppsCompareResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryContractAppsCompareResultHeaders([]);
+
+        return $this->queryContractAppsCompareResultWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1061,18 +1298,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryContractAppsExtractResult',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/apps/extractResults/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryContractAppsExtractResult',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/apps/extractResults/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryContractAppsExtractResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1091,6 +1328,69 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryContractAppsExtractResultHeaders([]);
 
         return $this->queryContractAppsExtractResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询合同审查结果
+     *  *
+     * @param QueryContractAppsReviewResultRequest $request QueryContractAppsReviewResultRequest
+     * @param QueryContractAppsReviewResultHeaders $headers QueryContractAppsReviewResultHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryContractAppsReviewResultResponse QueryContractAppsReviewResultResponse
+     */
+    public function queryContractAppsReviewResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->reviewTaskId)) {
+            $body['reviewTaskId'] = $request->reviewTaskId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryContractAppsReviewResult',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/apps/reviewResults/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryContractAppsReviewResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询合同审查结果
+     *  *
+     * @param QueryContractAppsReviewResultRequest $request QueryContractAppsReviewResultRequest
+     *
+     * @return QueryContractAppsReviewResultResponse QueryContractAppsReviewResultResponse
+     */
+    public function queryContractAppsReviewResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryContractAppsReviewResultHeaders([]);
+
+        return $this->queryContractAppsReviewResultWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1121,18 +1421,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryContractCompareResult',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/comparisonResults/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryContractCompareResult',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/comparisonResults/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryContractCompareResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1181,18 +1481,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryContractExtractResult',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/extractResults/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryContractExtractResult',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/extractResults/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryContractExtractResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1241,18 +1541,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryContractReviewResult',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/reviewResults/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryContractReviewResult',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/reviewResults/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryContractReviewResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1322,18 +1622,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendContractCard',
-            'version'     => 'contract_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contract/cards/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendContractCard',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/cards/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendContractCardResponse::fromMap($this->execute($params, $req, $runtime));

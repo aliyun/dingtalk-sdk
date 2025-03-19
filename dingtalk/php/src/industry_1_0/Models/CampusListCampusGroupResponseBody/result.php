@@ -29,14 +29,12 @@ class result extends Model
      */
     public $groupName;
     protected $_name = [
-        'extend'      => 'extend',
+        'extend' => 'extend',
         'groupDeptId' => 'groupDeptId',
-        'groupName'   => 'groupName',
+        'groupName' => 'groupName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

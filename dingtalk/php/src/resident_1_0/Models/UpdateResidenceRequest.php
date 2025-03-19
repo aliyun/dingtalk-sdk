@@ -63,18 +63,16 @@ class UpdateResidenceRequest extends Model
      */
     public $parentDepartmentId;
     protected $_name = [
-        'departmentId'       => 'departmentId',
-        'departmentName'     => 'departmentName',
-        'destitute'          => 'destitute',
-        'grid'               => 'grid',
-        'homeTel'            => 'homeTel',
-        'managerUserId'      => 'managerUserId',
+        'departmentId' => 'departmentId',
+        'departmentName' => 'departmentName',
+        'destitute' => 'destitute',
+        'grid' => 'grid',
+        'homeTel' => 'homeTel',
+        'managerUserId' => 'managerUserId',
         'parentDepartmentId' => 'parentDepartmentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

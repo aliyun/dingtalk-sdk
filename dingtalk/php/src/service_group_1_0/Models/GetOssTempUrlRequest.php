@@ -36,15 +36,13 @@ class GetOssTempUrlRequest extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'fetchMode'  => 'fetchMode',
-        'fileName'   => 'fileName',
-        'key'        => 'key',
+        'fetchMode' => 'fetchMode',
+        'fileName' => 'fileName',
+        'key' => 'key',
         'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,13 +36,11 @@ class OpenAgoalKeyActionDTO extends Model
     public $url;
     protected $_name = [
         'keyActionId' => 'keyActionId',
-        'title'       => 'title',
-        'url'         => 'url',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

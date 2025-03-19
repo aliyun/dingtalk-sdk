@@ -39,16 +39,14 @@ class RebuildRoleScopeForAppRoleRequest extends Model
      */
     public $userIdList;
     protected $_name = [
-        'deptIdList'   => 'deptIdList',
-        'opUserId'     => 'opUserId',
-        'scopeType'    => 'scopeType',
+        'deptIdList' => 'deptIdList',
+        'opUserId' => 'opUserId',
+        'scopeType' => 'scopeType',
         'scopeVersion' => 'scopeVersion',
-        'userIdList'   => 'userIdList',
+        'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

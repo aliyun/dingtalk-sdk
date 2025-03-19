@@ -23,12 +23,10 @@ class topics extends Model
     public $title;
     protected $_name = [
         'docKey' => 'docKey',
-        'title'  => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

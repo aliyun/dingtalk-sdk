@@ -22,13 +22,11 @@ class GetDeptRequest extends Model
      */
     public $subCorpId;
     protected $_name = [
-        'language'  => 'language',
+        'language' => 'language',
         'subCorpId' => 'subCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

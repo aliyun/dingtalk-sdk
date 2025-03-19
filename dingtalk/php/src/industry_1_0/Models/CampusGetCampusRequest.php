@@ -20,9 +20,7 @@ class CampusGetCampusRequest extends Model
         'campusDeptId' => 'campusDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

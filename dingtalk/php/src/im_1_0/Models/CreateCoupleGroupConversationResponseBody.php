@@ -26,13 +26,11 @@ class CreateCoupleGroupConversationResponseBody extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'conversationId'     => 'conversationId',
+        'conversationId' => 'conversationId',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

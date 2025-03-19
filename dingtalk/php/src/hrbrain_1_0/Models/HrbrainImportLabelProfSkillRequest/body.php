@@ -49,16 +49,14 @@ class body extends Model
     public $workNo;
     protected $_name = [
         'extendInfo' => 'extendInfo',
-        'level1'     => 'level1',
-        'level2'     => 'level2',
-        'level3'     => 'level3',
-        'name'       => 'name',
-        'workNo'     => 'workNo',
+        'level1' => 'level1',
+        'level2' => 'level2',
+        'level3' => 'level3',
+        'name' => 'name',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class ValidateApplicationAuthorizationOrderRequest extends Model
      */
     public $callerUnionId;
     protected $_name = [
-        'accessKey'     => 'accessKey',
+        'accessKey' => 'accessKey',
         'callerUnionId' => 'callerUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

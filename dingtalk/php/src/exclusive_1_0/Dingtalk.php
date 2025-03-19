@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ApproveProcessCallbackRespon
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CheckControlHitStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CheckControlHitStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CheckControlHitStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsResponse;
@@ -388,8 +391,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -445,18 +448,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddCustomSignConfig',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/sign/addCustomSignConfig',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddCustomSignConfig',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/sign/addCustomSignConfig',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddCustomSignConfigResponse::fromMap($this->execute($params, $req, $runtime));
@@ -517,18 +520,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddOrg',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/orgnizations',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddOrg',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/orgnizations',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddOrgResponse::fromMap($this->execute($params, $req, $runtime));
@@ -583,18 +586,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ApproveProcessCallback',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/approvalResults/callback',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ApproveProcessCallback',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/approvalResults/callback',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ApproveProcessCallbackResponse::fromMap($this->execute($params, $req, $runtime));
@@ -643,18 +646,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BanOrOpenGroupWords',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/enterpriseSecurities/banOrOpenGroupWords',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BanOrOpenGroupWords',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/enterpriseSecurities/banOrOpenGroupWords',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BanOrOpenGroupWordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -673,6 +676,66 @@ class Dingtalk extends OpenApiClient
         $headers = new BanOrOpenGroupWordsHeaders([]);
 
         return $this->banOrOpenGroupWordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 检测安全管控功能命中状态
+     *  *
+     * @param CheckControlHitStatusRequest $request CheckControlHitStatusRequest
+     * @param CheckControlHitStatusHeaders $headers CheckControlHitStatusHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CheckControlHitStatusResponse CheckControlHitStatusResponse
+     */
+    public function checkControlHitStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->needMissedFunction)) {
+            $query['needMissedFunction'] = $request->needMissedFunction;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'CheckControlHitStatus',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/soc/functionHitStatuses/check',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CheckControlHitStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 检测安全管控功能命中状态
+     *  *
+     * @param CheckControlHitStatusRequest $request CheckControlHitStatusRequest
+     *
+     * @return CheckControlHitStatusResponse CheckControlHitStatusResponse
+     */
+    public function checkControlHitStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CheckControlHitStatusHeaders([]);
+
+        return $this->checkControlHitStatusWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -703,18 +766,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateCategoryAndBindingGroups',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/messageCategories/categories/createAndBind',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateCategoryAndBindingGroups',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/messageCategories/categories/createAndBind',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateCategoryAndBindingGroupsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -766,18 +829,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateDlpTask',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/dlpTasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateDlpTask',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/dlpTasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateDlpTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -826,18 +889,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateMessageCategory',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/messageCategories/categories/create',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateMessageCategory',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/messageCategories/categories/create',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateMessageCategoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -883,18 +946,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateRule',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/messageCategories/rules',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateRule',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/messageCategories/rules',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateRuleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -955,18 +1018,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTrustedDevice',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/trustedDevices',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTrustedDevice',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/trustedDevices',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTrustedDeviceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1021,18 +1084,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTrustedDeviceBatch',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/trusts/devices',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTrustedDeviceBatch',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/trusts/devices',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTrustedDeviceBatchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1099,18 +1162,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateVirusScanTask',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/virusScanTasks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateVirusScanTask',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/virusScanTasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateVirusScanTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1156,18 +1219,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DataSync',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/datas/sync',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DataSync',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/datas/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DataSyncResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1210,15 +1273,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DeleteAcrossCloudStroageConfigs',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/fileStorages/acrossClouds/configurations/' . $targetCorpId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteAcrossCloudStroageConfigs',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/fileStorages/acrossClouds/configurations/' . $targetCorpId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteAcrossCloudStroageConfigsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1262,15 +1325,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'DeleteComment',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/publishers/' . $publisherId . '/comments/' . $commentId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteComment',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/publishers/' . $publisherId . '/comments/' . $commentId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'boolean',
+            'bodyType' => 'boolean',
         ]);
 
         return DeleteCommentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1326,18 +1389,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteTrustedDevice',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/trustedDevices/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteTrustedDevice',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/trustedDevices/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteTrustedDeviceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1392,18 +1455,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DistributePartnerApp',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/partners/applications/distribute',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DistributePartnerApp',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/partners/applications/distribute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DistributePartnerAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1458,18 +1521,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditSecurityConfigMember',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/securities/configs/members',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditSecurityConfigMember',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/securities/configs/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditSecurityConfigMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1521,18 +1584,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExchangeMainAdmin',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/orgnizations/mainAdministrators/exchange',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExchangeMainAdmin',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/orgnizations/mainAdministrators/exchange',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExchangeMainAdminResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1587,18 +1650,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ExclusiveCreateDingPortal',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/workbenches/templates/spread',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ExclusiveCreateDingPortal',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/workbenches/templates/spread',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ExclusiveCreateDingPortalResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1653,18 +1716,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'FileStorageActiveStorage',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/fileStorages/active',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'FileStorageActiveStorage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/fileStorages/active',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return FileStorageActiveStorageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1719,18 +1782,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'FileStorageCheckConnection',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/fileStorages/connections/check',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'FileStorageCheckConnection',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/fileStorages/connections/check',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return FileStorageCheckConnectionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1785,18 +1848,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'FileStorageGetQuotaData',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/fileStorages/quotaDatas',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'FileStorageGetQuotaData',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/fileStorages/quotaDatas',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return FileStorageGetQuotaDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1842,18 +1905,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'FileStorageGetStorageState',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/fileStorages/states',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'FileStorageGetStorageState',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/fileStorages/states',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return FileStorageGetStorageStateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1905,18 +1968,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'FileStorageUpdateStorage',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/fileStorages/configurations',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'FileStorageUpdateStorage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/fileStorages/configurations',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return FileStorageUpdateStorageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1962,18 +2025,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GenerateDarkWaterMark',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/enterpriseSecurities/darkWatermarks/generate',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GenerateDarkWaterMark',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/enterpriseSecurities/darkWatermarks/generate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GenerateDarkWaterMarkResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2025,18 +2088,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAccountTransferList',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/dataTransfer/accounts',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAccountTransferList',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/dataTransfer/accounts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAccountTransferListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2079,15 +2142,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetActiveUserSummary',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/dau/org/' . $dataId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetActiveUserSummary',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/dau/org/' . $dataId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetActiveUserSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2136,18 +2199,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAgentIdByRelatedAppId',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/exclusiveDesigns/agentId',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAgentIdByRelatedAppId',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/exclusiveDesigns/agentId',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAgentIdByRelatedAppIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2189,15 +2252,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetAllLabelableDepts',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/partnerDepartments',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAllLabelableDepts',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/partnerDepartments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAllLabelableDeptsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2244,18 +2307,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAppDispatchInfo',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/apps/distributionInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAppDispatchInfo',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/apps/distributionInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAppDispatchInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2298,15 +2361,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetCalenderSummary',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/calendar/org/' . $dataId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCalenderSummary',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/calendar/org/' . $dataId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCalenderSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2358,18 +2421,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCidsByBotCode',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/groups/openConversationIds',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCidsByBotCode',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/groups/openConversationIds',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCidsByBotCodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2419,18 +2482,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCommentList',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/publishers/' . $publisherId . '/comments/list',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCommentList',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/publishers/' . $publisherId . '/comments/list',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCommentListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2477,18 +2540,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetConfBaseInfoByLogicalId',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/conferences',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetConfBaseInfoByLogicalId',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/conferences',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetConfBaseInfoByLogicalIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2531,15 +2594,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetConferenceDetail',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/conferences/' . $conferenceId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetConferenceDetail',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/conferences/' . $conferenceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetConferenceDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2581,15 +2644,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetConversationCategory',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/conversationCategories',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetConversationCategory',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/conversationCategories',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetConversationCategoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2633,18 +2696,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetConversationDetail',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/categories/conversations/details/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetConversationDetail',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/categories/conversations/details/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetConversationDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2694,18 +2757,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDingReportDeptSummary',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/report/dept/' . $dataId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDingReportDeptSummary',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/report/dept/' . $dataId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDingReportDeptSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2749,15 +2812,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetDingReportSummary',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/datas/' . $dataId . '/reports/organizations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDingReportSummary',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/datas/' . $dataId . '/reports/organizations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDingReportSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2807,18 +2870,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDocCreatedDeptSummary',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/doc/dept/' . $dataId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDocCreatedDeptSummary',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/doc/dept/' . $dataId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDocCreatedDeptSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2862,15 +2925,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetDocCreatedSummary',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/doc/org/' . $dataId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDocCreatedSummary',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/doc/org/' . $dataId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDocCreatedSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2916,18 +2979,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetExclusiveAccountAllOrgList',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/exclusiveAccounts/organizations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetExclusiveAccountAllOrgList',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/exclusiveAccounts/organizations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetExclusiveAccountAllOrgListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2977,18 +3040,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetGeneralFormCreatedDeptSummary',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/generalForm/dept/' . $dataId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetGeneralFormCreatedDeptSummary',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/generalForm/dept/' . $dataId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetGeneralFormCreatedDeptSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3032,15 +3095,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetGeneralFormCreatedSummary',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/generalForm/org/' . $dataId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetGeneralFormCreatedSummary',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/generalForm/org/' . $dataId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetGeneralFormCreatedSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3098,18 +3161,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetGroupActiveInfo',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/activeGroups',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetGroupActiveInfo',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/activeGroups',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetGroupActiveInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3155,18 +3218,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetGroupInfoByCid',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/groups/infos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetGroupInfoByCid',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/groups/infos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetGroupInfoByCidResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3212,18 +3275,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetGroupOrgByCid',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/groups/organizations/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetGroupOrgByCid',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/groups/organizations/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetGroupOrgByCidResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3278,18 +3341,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetInActiveUserList',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/inactives/users/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetInActiveUserList',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/inactives/users/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetInActiveUserListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3335,18 +3398,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetLastOrgAuthData',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/organizations/authInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetLastOrgAuthData',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/organizations/authInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetLastOrgAuthDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3422,18 +3485,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetMsgConfig',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/portals/msgConfigs/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMsgConfig',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/portals/msgConfigs/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMsgConfigResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3485,18 +3548,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetMsgLocation',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/messageLocations/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetMsgLocation',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/messageLocations/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetMsgLocationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3557,18 +3620,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetOaOperatorLogList',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/oaOperatorLogs/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOaOperatorLogList',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/oaOperatorLogs/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOaOperatorLogListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3617,18 +3680,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetOutGroupsByPage',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/audits/outsideGroups/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOutGroupsByPage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/audits/outsideGroups/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOutGroupsByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3680,18 +3743,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetOutsideAuditGroupMessageByPage',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/audits/outsideGroups/messages/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOutsideAuditGroupMessageByPage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/audits/outsideGroups/messages/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOutsideAuditGroupMessageByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3734,15 +3797,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetPartnerTypeByParentId',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/partnerLabels/' . $parentId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPartnerTypeByParentId',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/partnerLabels/' . $parentId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPartnerTypeByParentIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3791,18 +3854,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetPrivateStoreFilePath',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/privateStores/filePaths/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPrivateStoreFilePath',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/privateStores/filePaths/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPrivateStoreFilePathResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3866,18 +3929,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPublicDevices',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/trusts/publicDevices',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPublicDevices',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/trusts/publicDevices',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPublicDevicesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -3927,18 +3990,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPublisherSummary',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/publisher/' . $dataId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPublisherSummary',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/publisher/' . $dataId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPublisherSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4006,18 +4069,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetRealPeopleRecords',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/persons/identificationRecords/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRealPeopleRecords',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/persons/identificationRecords/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRealPeopleRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4081,18 +4144,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetRecognizeRecords',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/faces/recognizeRecords/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRecognizeRecords',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/faces/recognizeRecords/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRecognizeRecordsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4138,18 +4201,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetRobotInfoByCode',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/robots/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetRobotInfoByCode',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/robots/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetRobotInfoByCodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4201,18 +4264,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetSecurityConfigMember',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/securities/configs/members/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSecurityConfigMember',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/securities/configs/members/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSecurityConfigMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4264,18 +4327,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSignedDetailByPage',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/audits/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSignedDetailByPage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/audits/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSignedDetailByPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4348,18 +4411,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetTrustDeviceList',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/trustedDevices/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetTrustDeviceList',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/trustedDevices/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetTrustDeviceListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4409,18 +4472,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUserAppVersionSummary',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/appVersion/org/' . $dataId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserAppVersionSummary',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/appVersion/org/' . $dataId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserAppVersionSummaryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4467,18 +4530,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetUserFaceState',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/faces/recognizeStates/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserFaceState',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/faces/recognizeStates/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserFaceStateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4524,18 +4587,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetUserRealPeopleState',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/persons/identificationStates/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserRealPeopleState',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/persons/identificationStates/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserRealPeopleStateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4587,18 +4650,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetUserStayLength',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/data/users/stayTimes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetUserStayLength',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/data/users/stayTimes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetUserStayLengthResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4644,18 +4707,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetVirusScanResult',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/virusScanTasks/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetVirusScanResult',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/virusScanTasks/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetVirusScanResultResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4719,18 +4782,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GroupQueryByAttr',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/portals/groups/queryGroup',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GroupQueryByAttr',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/portals/groups/queryGroup',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GroupQueryByAttrResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4779,18 +4842,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GroupQueryByOpenId',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/portals/groups/getGroupByOpenConversationId',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GroupQueryByOpenId',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/portals/groups/getGroupByOpenConversationId',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GroupQueryByOpenIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4848,18 +4911,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListAuditLog',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/fileAuditLogs',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListAuditLog',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/fileAuditLogs',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListAuditLogResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4901,18 +4964,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => $request->body,
+            'body' => $request->body,
         ]);
         $params = new Params([
-            'action'      => 'ListByCodes',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/sceneGroups/robotInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListByCodes',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/sceneGroups/robotInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListByCodesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4954,18 +5017,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => $request->body,
+            'body' => $request->body,
         ]);
         $params = new Params([
-            'action'      => 'ListByPluginIds',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/sceneGroups/pluginInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListByPluginIds',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/sceneGroups/pluginInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListByPluginIdsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5016,18 +5079,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListCategorys',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/messageCategories/categories/listCategories',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListCategorys',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/messageCategories/categories/listCategories',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListCategorysResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5073,18 +5136,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListJoinOrgInfo',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/exclusiveAccounts/organizations/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListJoinOrgInfo',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/exclusiveAccounts/organizations/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListJoinOrgInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5139,18 +5202,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListMiniAppAvailableVersion',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/miniApps/versions/availableLists',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListMiniAppAvailableVersion',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/miniApps/versions/availableLists',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListMiniAppAvailableVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5202,18 +5265,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListMiniAppHistoryVersion',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/miniApps/versions/historyLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListMiniAppHistoryVersion',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/miniApps/versions/historyLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListMiniAppHistoryVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5256,15 +5319,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'ListPartnerRoles',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/partners/roles/' . $parentId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListPartnerRoles',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/partners/roles/' . $parentId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListPartnerRolesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5325,18 +5388,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ListPunchScheduleByConditionWithPaging',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/punchSchedules/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListPunchScheduleByConditionWithPaging',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/punchSchedules/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListPunchScheduleByConditionWithPagingResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5387,18 +5450,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListRules',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/messageCategories/rules/listRules',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListRules',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/messageCategories/rules/listRules',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListRulesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5447,18 +5510,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'Logout',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/users/logout',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'Logout',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/users/logout',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return LogoutResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5513,18 +5576,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'OpenBenefitPackage',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/benefitPackages/purchase',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'OpenBenefitPackage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/benefitPackages/purchase',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return OpenBenefitPackageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5570,18 +5633,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'OpportunitySearch',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/opportunities/check',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'OpportunitySearch',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/opportunities/check',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return OpportunitySearchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5639,18 +5702,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PreventCheatingCheckRisk',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/preventCheats/risks/check',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PreventCheatingCheckRisk',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/preventCheats/risks/check',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PreventCheatingCheckRiskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5705,18 +5768,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PublishFileChangeNotice',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/comments/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PublishFileChangeNotice',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/comments/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return PublishFileChangeNoticeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5762,18 +5825,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PublishRule',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/messageCategories/rules/publish',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PublishRule',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/messageCategories/rules/publish',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PublishRuleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5825,18 +5888,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PushBadge',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/exclusiveDesigns/redPoints/push',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PushBadge',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/exclusiveDesigns/redPoints/push',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PushBadgeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5885,18 +5948,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryAcrossCloudStroageConfigs',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/fileStorages/acrossClouds/configurations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryAcrossCloudStroageConfigs',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/fileStorages/acrossClouds/configurations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryAcrossCloudStroageConfigsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -5945,18 +6008,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryChannelStaffInfoByMobile',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/channelOrganizations/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryChannelStaffInfoByMobile',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/channelOrganizations/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryChannelStaffInfoByMobileResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6008,18 +6071,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryConversationPage',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/categories/conversations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryConversationPage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/categories/conversations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryConversationPageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6061,15 +6124,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryExclusiveBenefits',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/benefits',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryExclusiveBenefits',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/benefits',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryExclusiveBenefitsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6110,15 +6173,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryPartnerInfo',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/partners/users/' . $userId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryPartnerInfo',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/partners/users/' . $userId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryPartnerInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6161,15 +6224,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryTemplateInfo',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/sceneGroups/templates/' . $templateId . '/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryTemplateInfo',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/sceneGroups/templates/' . $templateId . '/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryTemplateInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6233,18 +6296,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryUserBehavior',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/enterpriseSecurities/userBehaviors/screenshots/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryUserBehavior',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/enterpriseSecurities/userBehaviors/screenshots/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryUserBehaviorResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6296,18 +6359,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RollbackMiniAppVersion',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/miniApps/versions/rollback',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RollbackMiniAppVersion',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/miniApps/versions/rollback',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RollbackMiniAppVersionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6371,18 +6434,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RuleBatchReceiver',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/dmc/rules/messages/batchSend',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RuleBatchReceiver',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/dmc/rules/messages/batchSend',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RuleBatchReceiverResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6443,18 +6506,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveAcrossCloudStroageConfigs',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/fileStorages/acrossClouds/configurations',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveAcrossCloudStroageConfigs',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/fileStorages/acrossClouds/configurations',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveAcrossCloudStroageConfigsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6551,18 +6614,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveAndSubmitAuthInfo',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/ognizations/authInfos/saveAndSubmit',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveAndSubmitAuthInfo',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/ognizations/authInfos/saveAndSubmit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveAndSubmitAuthInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6617,18 +6680,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveOpenTerminalInfo',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/externalLogs/terminalInfos/save',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveOpenTerminalInfo',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/externalLogs/terminalInfos/save',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveOpenTerminalInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6677,18 +6740,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveStorageFunctionSwitch',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/storages/functions/save',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveStorageFunctionSwitch',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/storages/functions/save',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveStorageFunctionSwitchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6737,18 +6800,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveStorageSwitch',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/storages/switches/save',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveStorageSwitch',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/storages/switches/save',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveStorageSwitchResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6800,18 +6863,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SaveWhiteApp',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/miniApps/whiteLists/save',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SaveWhiteApp',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/miniApps/whiteLists/save',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SaveWhiteAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6893,18 +6956,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchOrgInnerGroupInfo',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/securities/orgGroupInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchOrgInnerGroupInfo',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/securities/orgGroupInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchOrgInnerGroupInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -6953,18 +7016,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendAppDing',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/appDings/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendAppDing',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/appDings/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return SendAppDingResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7022,18 +7085,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendInvitation',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/partnerDepartments/invitations/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendInvitation',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/partnerDepartments/invitations/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'none',
+            'bodyType' => 'none',
         ]);
 
         return SendInvitationResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7082,18 +7145,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendPhoneDing',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/phoneDings/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendPhoneDing',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/phoneDings/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendPhoneDingResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7142,18 +7205,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetConversationCategory',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/conversationCategories/set',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetConversationCategory',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/conversationCategories/set',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetConversationCategoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7205,18 +7268,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetConversationSubtitle',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/conversations/subtitles/set',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetConversationSubtitle',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/conversations/subtitles/set',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetConversationSubtitleResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7268,18 +7331,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetConversationTopCategory',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/conversations/topCategories/set',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetConversationTopCategory',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/conversations/topCategories/set',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetConversationTopCategoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7331,18 +7394,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetDeptPartnerTypeAndNum',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/partnerDepartments',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetDeptPartnerTypeAndNum',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/partnerDepartments',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetDeptPartnerTypeAndNumResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7384,18 +7447,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => Utils::toArray($request->body),
+            'body' => Utils::toArray($request->body),
         ]);
         $params = new Params([
-            'action'      => 'SetOrgTopConversationCategory',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/topConversations/categories/set',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetOrgTopConversationCategory',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/topConversations/categories/set',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetOrgTopConversationCategoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7459,18 +7522,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SpecialRuleBatchReceiver',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/dmc/rules/specialMessages/batchSend',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SpecialRuleBatchReceiver',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/dmc/rules/specialMessages/batchSend',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SpecialRuleBatchReceiverResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7531,18 +7594,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TaskInfoAddDelTaskPerson',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/taskCenters/taskInfos/addDelTaskPerson',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TaskInfoAddDelTaskPerson',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/taskCenters/taskInfos/addDelTaskPerson',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TaskInfoAddDelTaskPersonResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7606,18 +7669,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TaskInfoCancelOrDelTask',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/taskCenters/taskInfos/cancelOrDelTask',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TaskInfoCancelOrDelTask',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/taskCenters/taskInfos/cancelOrDelTask',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TaskInfoCancelOrDelTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7747,18 +7810,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TaskInfoCreateAndStartTask',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/taskCenters/taskInfos/createAndStart',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TaskInfoCreateAndStartTask',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/taskCenters/taskInfos/createAndStart',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TaskInfoCreateAndStartTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7822,18 +7885,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TaskInfoFinishTask',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/taskCenters/taskInfos/finishTask',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TaskInfoFinishTask',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/taskCenters/taskInfos/finishTask',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TaskInfoFinishTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7936,18 +7999,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TaskInfoUpdateTask',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/taskCenters/taskInfos/update',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TaskInfoUpdateTask',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/taskCenters/taskInfos/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TaskInfoUpdateTaskResponse::fromMap($this->execute($params, $req, $runtime));
@@ -7999,18 +8062,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'TransferExclusiveAccountOrg',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/organizations/transfer',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'TransferExclusiveAccountOrg',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/organizations/transfer',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return TransferExclusiveAccountOrgResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8059,18 +8122,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateCategoryName',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/messageCategories/categories/names',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateCategoryName',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/messageCategories/categories/names',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateCategoryNameResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8119,18 +8182,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateConversationType',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/conversationTypes',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateConversationType',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/conversationTypes',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateConversationTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8179,18 +8242,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateFileStatus',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/sending/files/status',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateFileStatus',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/sending/files/status',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateFileStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8242,18 +8305,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateMiniAppVersionStatus',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/miniApps/versions/versionStatus',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateMiniAppVersionStatus',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/miniApps/versions/versionStatus',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateMiniAppVersionStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8305,18 +8368,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdatePartnerVisibility',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/partnerDepartments/visibilityPartners',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdatePartnerVisibility',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/partnerDepartments/visibilityPartners',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'boolean',
+            'bodyType' => 'boolean',
         ]);
 
         return UpdatePartnerVisibilityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8362,18 +8425,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateRealmLicense',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/frontLines/licenses',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateRealmLicense',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/frontLines/licenses',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateRealmLicenseResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8425,18 +8488,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateRoleVisibility',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/partnerDepartments/visibilityRoles',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateRoleVisibility',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/partnerDepartments/visibilityRoles',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'boolean',
+            'bodyType' => 'boolean',
         ]);
 
         return UpdateRoleVisibilityResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8485,18 +8548,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateStorageMode',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/fileStorages/acrossClouds/storageModes',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateStorageMode',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/fileStorages/acrossClouds/storageModes',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateStorageModeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -8545,18 +8608,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateVoiceMsgCtrlStatus',
-            'version'     => 'exclusive_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/voiceMessages/ctrlStatuses',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateVoiceMsgCtrlStatus',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/voiceMessages/ctrlStatuses',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateVoiceMsgCtrlStatusResponse::fromMap($this->execute($params, $req, $runtime));

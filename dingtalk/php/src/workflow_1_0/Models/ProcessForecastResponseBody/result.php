@@ -67,18 +67,16 @@ class result extends Model
      */
     public $workflowForecastNodes;
     protected $_name = [
-        'isForecastSuccess'     => 'isForecastSuccess',
-        'isStaticWorkflow'      => 'isStaticWorkflow',
-        'processCode'           => 'processCode',
-        'processId'             => 'processId',
-        'userId'                => 'userId',
+        'isForecastSuccess' => 'isForecastSuccess',
+        'isStaticWorkflow' => 'isStaticWorkflow',
+        'processCode' => 'processCode',
+        'processId' => 'processId',
+        'userId' => 'userId',
         'workflowActivityRules' => 'workflowActivityRules',
         'workflowForecastNodes' => 'workflowForecastNodes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -146,7 +144,7 @@ class result extends Model
         if (isset($map['workflowActivityRules'])) {
             if (!empty($map['workflowActivityRules'])) {
                 $model->workflowActivityRules = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['workflowActivityRules'] as $item) {
                     $model->workflowActivityRules[$n++] = null !== $item ? workflowActivityRules::fromMap($item) : $item;
                 }
@@ -155,7 +153,7 @@ class result extends Model
         if (isset($map['workflowForecastNodes'])) {
             if (!empty($map['workflowForecastNodes'])) {
                 $model->workflowForecastNodes = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['workflowForecastNodes'] as $item) {
                     $model->workflowForecastNodes[$n++] = null !== $item ? workflowForecastNodes::fromMap($item) : $item;
                 }

@@ -92,25 +92,23 @@ class CreateEventRequest extends Model
      */
     public $uiConfigs;
     protected $_name = [
-        'attendees'           => 'attendees',
-        'cardInstances'       => 'cardInstances',
-        'description'         => 'description',
-        'end'                 => 'end',
-        'extra'               => 'extra',
-        'isAllDay'            => 'isAllDay',
-        'location'            => 'location',
-        'onlineMeetingInfo'   => 'onlineMeetingInfo',
-        'recurrence'          => 'recurrence',
-        'reminders'           => 'reminders',
+        'attendees' => 'attendees',
+        'cardInstances' => 'cardInstances',
+        'description' => 'description',
+        'end' => 'end',
+        'extra' => 'extra',
+        'isAllDay' => 'isAllDay',
+        'location' => 'location',
+        'onlineMeetingInfo' => 'onlineMeetingInfo',
+        'recurrence' => 'recurrence',
+        'reminders' => 'reminders',
         'richTextDescription' => 'richTextDescription',
-        'start'               => 'start',
-        'summary'             => 'summary',
-        'uiConfigs'           => 'uiConfigs',
+        'start' => 'start',
+        'summary' => 'summary',
+        'uiConfigs' => 'uiConfigs',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -196,7 +194,7 @@ class CreateEventRequest extends Model
         if (isset($map['attendees'])) {
             if (!empty($map['attendees'])) {
                 $model->attendees = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['attendees'] as $item) {
                     $model->attendees[$n++] = null !== $item ? attendees::fromMap($item) : $item;
                 }
@@ -205,7 +203,7 @@ class CreateEventRequest extends Model
         if (isset($map['cardInstances'])) {
             if (!empty($map['cardInstances'])) {
                 $model->cardInstances = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['cardInstances'] as $item) {
                     $model->cardInstances[$n++] = null !== $item ? cardInstances::fromMap($item) : $item;
                 }
@@ -235,7 +233,7 @@ class CreateEventRequest extends Model
         if (isset($map['reminders'])) {
             if (!empty($map['reminders'])) {
                 $model->reminders = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['reminders'] as $item) {
                     $model->reminders[$n++] = null !== $item ? reminders::fromMap($item) : $item;
                 }
@@ -253,7 +251,7 @@ class CreateEventRequest extends Model
         if (isset($map['uiConfigs'])) {
             if (!empty($map['uiConfigs'])) {
                 $model->uiConfigs = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['uiConfigs'] as $item) {
                     $model->uiConfigs[$n++] = null !== $item ? uiConfigs::fromMap($item) : $item;
                 }

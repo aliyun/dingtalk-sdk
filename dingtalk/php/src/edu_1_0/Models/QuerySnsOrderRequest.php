@@ -45,14 +45,12 @@ class QuerySnsOrderRequest extends Model
     public $signature;
     protected $_name = [
         'alipayAppId' => 'alipayAppId',
-        'merchantId'  => 'merchantId',
-        'orderNo'     => 'orderNo',
-        'signature'   => 'signature',
+        'merchantId' => 'merchantId',
+        'orderNo' => 'orderNo',
+        'signature' => 'signature',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -33,15 +33,13 @@ class content extends Model
      */
     public $totalCountt;
     protected $_name = [
-        'data'        => 'data',
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
+        'data' => 'data',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'totalCountt' => 'totalCountt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -79,7 +77,7 @@ class content extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }

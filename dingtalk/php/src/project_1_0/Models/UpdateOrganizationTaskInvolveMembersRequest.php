@@ -37,16 +37,14 @@ class UpdateOrganizationTaskInvolveMembersRequest extends Model
      */
     public $involveMembers;
     protected $_name = [
-        'addInvolvers'        => 'addInvolvers',
-        'delInvolvers'        => 'delInvolvers',
-        'disableActivity'     => 'disableActivity',
+        'addInvolvers' => 'addInvolvers',
+        'delInvolvers' => 'delInvolvers',
+        'disableActivity' => 'disableActivity',
         'disableNotification' => 'disableNotification',
-        'involveMembers'      => 'involveMembers',
+        'involveMembers' => 'involveMembers',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

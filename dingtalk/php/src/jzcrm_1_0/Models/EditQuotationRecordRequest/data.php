@@ -122,31 +122,29 @@ class data extends Model
      */
     public $dataUserid;
     protected $_name = [
-        'bjBjren'       => 'bj_bjren',
-        'bjBzremark'    => 'bj_bzremark',
-        'bjCustomerid'  => 'bj_customerid',
-        'bjDate'        => 'bj_date',
-        'bjFjmoney'     => 'bj_fjmoney',
-        'bjFjmoneylx'   => 'bj_fjmoneylx',
-        'bjFkremark'    => 'bj_fkremark',
-        'bjJfremark'    => 'bj_jfremark',
-        'bjJshren'      => 'bj_jshren',
-        'bjKjmoney'     => 'bj_kjmoney',
-        'bjLianxi'      => 'bj_lianxi',
+        'bjBjren' => 'bj_bjren',
+        'bjBzremark' => 'bj_bzremark',
+        'bjCustomerid' => 'bj_customerid',
+        'bjDate' => 'bj_date',
+        'bjFjmoney' => 'bj_fjmoney',
+        'bjFjmoneylx' => 'bj_fjmoneylx',
+        'bjFkremark' => 'bj_fkremark',
+        'bjJfremark' => 'bj_jfremark',
+        'bjJshren' => 'bj_jshren',
+        'bjKjmoney' => 'bj_kjmoney',
+        'bjLianxi' => 'bj_lianxi',
         'bjMoneyzhekou' => 'bj_moneyzhekou',
-        'bjNumber'      => 'bj_number',
-        'bjPrice'       => 'bj_price',
-        'bjRemark'      => 'bj_remark',
-        'bjState'       => 'bj_state',
-        'bjTitle'       => 'bj_title',
-        'bjXshid'       => 'bj_xshid',
-        'childMx'       => 'child_mx',
-        'dataUserid'    => 'data_userid',
+        'bjNumber' => 'bj_number',
+        'bjPrice' => 'bj_price',
+        'bjRemark' => 'bj_remark',
+        'bjState' => 'bj_state',
+        'bjTitle' => 'bj_title',
+        'bjXshid' => 'bj_xshid',
+        'childMx' => 'child_mx',
+        'dataUserid' => 'data_userid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

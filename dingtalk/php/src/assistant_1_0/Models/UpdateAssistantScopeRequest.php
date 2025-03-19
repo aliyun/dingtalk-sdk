@@ -33,15 +33,13 @@ class UpdateAssistantScopeRequest extends Model
      */
     public $sharing;
     protected $_name = [
-        'assistantId'     => 'assistantId',
+        'assistantId' => 'assistantId',
         'operatorUnionId' => 'operatorUnionId',
-        'scopes'          => 'scopes',
-        'sharing'         => 'sharing',
+        'scopes' => 'scopes',
+        'sharing' => 'sharing',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

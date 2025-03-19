@@ -51,16 +51,14 @@ class AddAccountMappingRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'domain'      => 'domain',
-        'extension'   => 'extension',
-        'outId'       => 'outId',
+        'domain' => 'domain',
+        'extension' => 'extension',
+        'outId' => 'outId',
         'outTenantId' => 'outTenantId',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -89,23 +89,21 @@ class result extends Model
      */
     public $updated;
     protected $_name = [
-        'content'        => 'content',
-        'created'        => 'created',
-        'creatorId'      => 'creatorId',
-        'customfields'   => 'customfields',
-        'dueDate'        => 'dueDate',
-        'executorId'     => 'executorId',
+        'content' => 'content',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
+        'customfields' => 'customfields',
+        'dueDate' => 'dueDate',
+        'executorId' => 'executorId',
         'involveMembers' => 'involveMembers',
-        'note'           => 'note',
-        'priority'       => 'priority',
-        'projectId'      => 'projectId',
-        'taskId'         => 'taskId',
-        'updated'        => 'updated',
+        'note' => 'note',
+        'priority' => 'priority',
+        'projectId' => 'projectId',
+        'taskId' => 'taskId',
+        'updated' => 'updated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -176,7 +174,7 @@ class result extends Model
         if (isset($map['customfields'])) {
             if (!empty($map['customfields'])) {
                 $model->customfields = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['customfields'] as $item) {
                     $model->customfields[$n++] = null !== $item ? customfields::fromMap($item) : $item;
                 }

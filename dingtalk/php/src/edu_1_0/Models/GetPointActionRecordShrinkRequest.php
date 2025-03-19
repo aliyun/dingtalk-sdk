@@ -16,9 +16,7 @@ class GetPointActionRecordShrinkRequest extends Model
         'bodyShrink' => 'body',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

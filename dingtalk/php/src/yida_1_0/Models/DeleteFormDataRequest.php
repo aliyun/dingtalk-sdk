@@ -51,16 +51,14 @@ class DeleteFormDataRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'        => 'appType',
+        'appType' => 'appType',
         'formInstanceId' => 'formInstanceId',
-        'language'       => 'language',
-        'systemToken'    => 'systemToken',
-        'userId'         => 'userId',
+        'language' => 'language',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

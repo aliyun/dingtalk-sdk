@@ -67,19 +67,17 @@ class UpdateHrmLegalEntityWithoutNameRequest extends Model
      */
     public $dingTenantId;
     protected $_name = [
-        'corpId'               => 'corpId',
-        'createUserId'         => 'createUserId',
-        'ext'                  => 'ext',
-        'legalEntityName'      => 'legalEntityName',
+        'corpId' => 'corpId',
+        'createUserId' => 'createUserId',
+        'ext' => 'ext',
+        'legalEntityName' => 'legalEntityName',
         'legalEntityShortName' => 'legalEntityShortName',
-        'legalEntityStatus'    => 'legalEntityStatus',
-        'legalPersonName'      => 'legalPersonName',
-        'dingTenantId'         => 'dingTenantId',
+        'legalEntityStatus' => 'legalEntityStatus',
+        'legalPersonName' => 'legalPersonName',
+        'dingTenantId' => 'dingTenantId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

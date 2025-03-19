@@ -36,13 +36,11 @@ class SearchAllTasksByTqlResponseBody extends Model
     protected $_name = [
         'nextToken' => 'nextToken',
         'requestId' => 'requestId',
-        'result'    => 'result',
+        'result' => 'result',
         'totalSize' => 'totalSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

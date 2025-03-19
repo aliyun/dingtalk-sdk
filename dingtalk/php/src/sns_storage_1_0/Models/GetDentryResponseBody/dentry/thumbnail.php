@@ -30,13 +30,11 @@ class thumbnail extends Model
     public $width;
     protected $_name = [
         'height' => 'height',
-        'url'    => 'url',
-        'width'  => 'width',
+        'url' => 'url',
+        'width' => 'width',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

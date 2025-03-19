@@ -23,12 +23,10 @@ class RemoveBizCategoryRequest extends Model
     public $operatorId;
     protected $_name = [
         'bizCategoryId' => 'bizCategoryId',
-        'operatorId'    => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

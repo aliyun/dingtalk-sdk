@@ -23,12 +23,10 @@ class GetUserByUnionIdResponseBody extends Model
     public $userId;
     protected $_name = [
         'contactType' => 'contactType',
-        'userId'      => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

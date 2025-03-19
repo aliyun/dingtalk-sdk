@@ -16,9 +16,7 @@ class AddCallConfigResponseBody extends Model
         'token' => 'token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

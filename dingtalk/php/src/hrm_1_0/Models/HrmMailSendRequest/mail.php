@@ -70,19 +70,17 @@ class mail extends Model
      */
     public $subject;
     protected $_name = [
-        'attachments'     => 'attachments',
-        'bccAddress'      => 'bccAddress',
-        'ccAddress'       => 'ccAddress',
-        'content'         => 'content',
-        'meeting'         => 'meeting',
+        'attachments' => 'attachments',
+        'bccAddress' => 'bccAddress',
+        'ccAddress' => 'ccAddress',
+        'content' => 'content',
+        'meeting' => 'meeting',
         'receiverAddress' => 'receiverAddress',
-        'senderAlias'     => 'senderAlias',
-        'subject'         => 'subject',
+        'senderAlias' => 'senderAlias',
+        'subject' => 'subject',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -132,7 +130,7 @@ class mail extends Model
         if (isset($map['attachments'])) {
             if (!empty($map['attachments'])) {
                 $model->attachments = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['attachments'] as $item) {
                     $model->attachments[$n++] = null !== $item ? attachments::fromMap($item) : $item;
                 }

@@ -23,14 +23,12 @@ class ReleaseCommodityRequest extends Model
      */
     public $instanceId;
     protected $_name = [
-        'accessKey'  => 'accessKey',
-        'callerUid'  => 'callerUid',
+        'accessKey' => 'accessKey',
+        'callerUid' => 'callerUid',
         'instanceId' => 'instanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

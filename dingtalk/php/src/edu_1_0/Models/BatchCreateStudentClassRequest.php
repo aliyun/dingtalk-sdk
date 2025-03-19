@@ -49,17 +49,15 @@ class BatchCreateStudentClassRequest extends Model
      */
     public $studentList;
     protected $_name = [
-        'classId'     => 'classId',
-        'className'   => 'className',
-        'classType'   => 'classType',
-        'corpId'      => 'corpId',
-        'isvCode'     => 'isvCode',
+        'classId' => 'classId',
+        'className' => 'className',
+        'classType' => 'classType',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
         'studentList' => 'studentList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -118,7 +116,7 @@ class BatchCreateStudentClassRequest extends Model
         if (isset($map['studentList'])) {
             if (!empty($map['studentList'])) {
                 $model->studentList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['studentList'] as $item) {
                     $model->studentList[$n++] = null !== $item ? studentList::fromMap($item) : $item;
                 }

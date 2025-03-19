@@ -44,17 +44,15 @@ class messageBody extends Model
      */
     public $text;
     protected $_name = [
-        'actionCard'         => 'actionCard',
-        'image'              => 'image',
+        'actionCard' => 'actionCard',
+        'image' => 'image',
         'interactiveMessage' => 'interactiveMessage',
-        'link'               => 'link',
-        'markdown'           => 'markdown',
-        'text'               => 'text',
+        'link' => 'link',
+        'markdown' => 'markdown',
+        'text' => 'text',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -43,14 +43,12 @@ class PremiumQueryTodoTasksByManagerRequest extends Model
     public $nextToken;
     protected $_name = [
         'actionerUserId' => 'actionerUserId',
-        'managerUserId'  => 'managerUserId',
-        'maxResults'     => 'maxResults',
-        'nextToken'      => 'nextToken',
+        'managerUserId' => 'managerUserId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

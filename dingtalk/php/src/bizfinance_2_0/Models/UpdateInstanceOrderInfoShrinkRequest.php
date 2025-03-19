@@ -55,18 +55,16 @@ class UpdateInstanceOrderInfoShrinkRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'failReason'      => 'failReason',
-        'orderNo'         => 'orderNo',
-        'outOrderNo'      => 'outOrderNo',
+        'failReason' => 'failReason',
+        'orderNo' => 'orderNo',
+        'outOrderNo' => 'outOrderNo',
         'payerBankShrink' => 'payerBank',
-        'paymentTime'     => 'paymentTime',
-        'status'          => 'status',
-        'userId'          => 'userId',
+        'paymentTime' => 'paymentTime',
+        'status' => 'status',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

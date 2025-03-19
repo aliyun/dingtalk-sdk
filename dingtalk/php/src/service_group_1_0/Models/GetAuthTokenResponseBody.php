@@ -30,14 +30,12 @@ class GetAuthTokenResponseBody extends Model
     public $success;
     protected $_name = [
         'dingOpenErrcode' => 'dingOpenErrcode',
-        'errorMsg'        => 'errorMsg',
-        'result'          => 'result',
-        'success'         => 'success',
+        'errorMsg' => 'errorMsg',
+        'result' => 'result',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -63,19 +63,17 @@ class BatchCreateCourseRequest extends Model
      */
     public $semester;
     protected $_name = [
-        'classId'              => 'classId',
-        'className'            => 'className',
-        'classType'            => 'classType',
-        'corpId'               => 'corpId',
+        'classId' => 'classId',
+        'className' => 'className',
+        'classType' => 'classType',
+        'corpId' => 'corpId',
         'courseDetailItemList' => 'courseDetailItemList',
-        'isvCode'              => 'isvCode',
-        'schoolYear'           => 'schoolYear',
-        'semester'             => 'semester',
+        'isvCode' => 'isvCode',
+        'schoolYear' => 'schoolYear',
+        'semester' => 'semester',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -137,7 +135,7 @@ class BatchCreateCourseRequest extends Model
         if (isset($map['courseDetailItemList'])) {
             if (!empty($map['courseDetailItemList'])) {
                 $model->courseDetailItemList = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['courseDetailItemList'] as $item) {
                     $model->courseDetailItemList[$n++] = null !== $item ? courseDetailItemList::fromMap($item) : $item;
                 }

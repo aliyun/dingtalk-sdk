@@ -30,13 +30,11 @@ class accountSource extends Model
     public $userId;
     protected $_name = [
         'accountType' => 'accountType',
-        'empName'     => 'empName',
-        'userId'      => 'userId',
+        'empName' => 'empName',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

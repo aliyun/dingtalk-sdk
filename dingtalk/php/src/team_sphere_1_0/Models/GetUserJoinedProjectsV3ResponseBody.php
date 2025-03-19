@@ -27,12 +27,10 @@ class GetUserJoinedProjectsV3ResponseBody extends Model
     protected $_name = [
         'nextToken' => 'nextToken',
         'requestId' => 'requestId',
-        'result'    => 'result',
+        'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

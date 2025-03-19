@@ -30,13 +30,11 @@ class UpdateGroupSetRequest extends Model
     public $openTeamId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openGroupSetId'     => 'openGroupSetId',
-        'openTeamId'         => 'openTeamId',
+        'openGroupSetId' => 'openGroupSetId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

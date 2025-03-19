@@ -35,15 +35,13 @@ class viewEntityFieldVOList extends Model
      */
     public $fieldType;
     protected $_name = [
-        'fieldCode'   => 'fieldCode',
+        'fieldCode' => 'fieldCode',
         'fieldDataVO' => 'fieldDataVO',
-        'fieldName'   => 'fieldName',
-        'fieldType'   => 'fieldType',
+        'fieldName' => 'fieldName',
+        'fieldType' => 'fieldType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

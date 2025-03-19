@@ -45,16 +45,14 @@ class QueryCustomerTaskUserDetailRequest extends Model
      */
     public $receiverUnionIds;
     protected $_name = [
-        'maxResults'       => 'maxResults',
-        'nextToken'        => 'nextToken',
-        'openBatchTaskId'  => 'openBatchTaskId',
-        'openTeamId'       => 'openTeamId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'openBatchTaskId' => 'openBatchTaskId',
+        'openTeamId' => 'openTeamId',
         'receiverUnionIds' => 'receiverUnionIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

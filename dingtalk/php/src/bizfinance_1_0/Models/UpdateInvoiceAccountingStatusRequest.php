@@ -28,14 +28,12 @@ class UpdateInvoiceAccountingStatusRequest extends Model
      */
     public $operator;
     protected $_name = [
-        'companyCode'              => 'companyCode',
+        'companyCode' => 'companyCode',
         'invoiceFinanceInfoVOList' => 'invoiceFinanceInfoVOList',
-        'operator'                 => 'operator',
+        'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -73,7 +71,7 @@ class UpdateInvoiceAccountingStatusRequest extends Model
         if (isset($map['invoiceFinanceInfoVOList'])) {
             if (!empty($map['invoiceFinanceInfoVOList'])) {
                 $model->invoiceFinanceInfoVOList = [];
-                $n                               = 0;
+                $n = 0;
                 foreach ($map['invoiceFinanceInfoVOList'] as $item) {
                     $model->invoiceFinanceInfoVOList[$n++] = null !== $item ? invoiceFinanceInfoVOList::fromMap($item) : $item;
                 }

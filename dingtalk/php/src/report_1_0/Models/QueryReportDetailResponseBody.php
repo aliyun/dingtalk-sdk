@@ -70,20 +70,18 @@ class QueryReportDetailResponseBody extends Model
      */
     public $templateName;
     protected $_name = [
-        'content'      => 'content',
-        'createTime'   => 'createTime',
-        'creatorId'    => 'creatorId',
-        'creatorName'  => 'creatorName',
-        'deptName'     => 'deptName',
+        'content' => 'content',
+        'createTime' => 'createTime',
+        'creatorId' => 'creatorId',
+        'creatorName' => 'creatorName',
+        'deptName' => 'deptName',
         'modifiedTime' => 'modifiedTime',
-        'remark'       => 'remark',
-        'reportId'     => 'reportId',
+        'remark' => 'remark',
+        'reportId' => 'reportId',
         'templateName' => 'templateName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -136,7 +134,7 @@ class QueryReportDetailResponseBody extends Model
         if (isset($map['content'])) {
             if (!empty($map['content'])) {
                 $model->content = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['content'] as $item) {
                     $model->content[$n++] = null !== $item ? content::fromMap($item) : $item;
                 }

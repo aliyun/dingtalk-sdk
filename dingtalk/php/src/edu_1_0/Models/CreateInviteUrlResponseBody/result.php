@@ -18,9 +18,7 @@ class result extends Model
         'inviteUrl' => 'inviteUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

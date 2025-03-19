@@ -76,21 +76,19 @@ class items extends Model
      */
     public $subjectUrl;
     protected $_name = [
-        'action'      => 'action',
-        'details'     => 'details',
-        'id'          => 'id',
+        'action' => 'action',
+        'details' => 'details',
+        'id' => 'id',
         'operateTime' => 'operateTime',
-        'operatorId'  => 'operatorId',
-        'scene'       => 'scene',
-        'subjectId'   => 'subjectId',
+        'operatorId' => 'operatorId',
+        'scene' => 'scene',
+        'subjectId' => 'subjectId',
         'subjectName' => 'subjectName',
         'subjectType' => 'subjectType',
-        'subjectUrl'  => 'subjectUrl',
+        'subjectUrl' => 'subjectUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

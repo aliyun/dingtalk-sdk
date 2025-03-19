@@ -51,17 +51,15 @@ class periodList extends Model
      */
     public $startTime;
     protected $_name = [
-        'endTime'   => 'endTime',
-        'id'        => 'id',
+        'endTime' => 'endTime',
+        'id' => 'id',
         'isCurrent' => 'isCurrent',
-        'isYearly'  => 'isYearly',
-        'name'      => 'name',
+        'isYearly' => 'isYearly',
+        'name' => 'name',
         'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

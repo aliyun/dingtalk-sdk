@@ -23,12 +23,10 @@ class sections extends Model
     public $late;
     protected $_name = [
         'extra' => 'extra',
-        'late'  => 'late',
+        'late' => 'late',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

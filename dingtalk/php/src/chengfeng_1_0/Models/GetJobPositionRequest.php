@@ -20,9 +20,7 @@ class GetJobPositionRequest extends Model
         'jobPositionCode' => 'jobPositionCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

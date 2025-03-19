@@ -38,15 +38,13 @@ class RegisterCallbackRequest extends Model
      */
     public $forceUpdate;
     protected $_name = [
-        'apiSecret'        => 'apiSecret',
+        'apiSecret' => 'apiSecret',
         'callbackRouteKey' => 'callbackRouteKey',
-        'callbackUrl'      => 'callbackUrl',
-        'forceUpdate'      => 'forceUpdate',
+        'callbackUrl' => 'callbackUrl',
+        'forceUpdate' => 'forceUpdate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

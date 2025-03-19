@@ -70,17 +70,15 @@ class AddOpenLibraryRequest extends Model
     public $userName;
     protected $_name = [
         'description' => 'description',
-        'openTeamId'  => 'openTeamId',
-        'source'      => 'source',
-        'title'       => 'title',
-        'type'        => 'type',
-        'userId'      => 'userId',
-        'userName'    => 'userName',
+        'openTeamId' => 'openTeamId',
+        'source' => 'source',
+        'title' => 'title',
+        'type' => 'type',
+        'userId' => 'userId',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

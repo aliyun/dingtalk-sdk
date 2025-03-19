@@ -49,16 +49,14 @@ class GetFileUploadInfoRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'bizCode'  => 'bizCode',
+        'bizCode' => 'bizCode',
         'fileName' => 'fileName',
         'fileSize' => 'fileSize',
-        'md5'      => 'md5',
+        'md5' => 'md5',
         'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

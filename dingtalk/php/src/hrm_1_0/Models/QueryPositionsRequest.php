@@ -46,17 +46,15 @@ class QueryPositionsRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'deptId'        => 'deptId',
+        'deptId' => 'deptId',
         'inCategoryIds' => 'inCategoryIds',
         'inPositionIds' => 'inPositionIds',
-        'positionName'  => 'positionName',
-        'maxResults'    => 'maxResults',
-        'nextToken'     => 'nextToken',
+        'positionName' => 'positionName',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

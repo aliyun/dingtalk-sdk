@@ -21,12 +21,10 @@ class QueryMicroAppViewRequest extends Model
     public $viewUserId;
     protected $_name = [
         'tenantIdList' => 'tenantIdList',
-        'viewUserId'   => 'viewUserId',
+        'viewUserId' => 'viewUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,9 +20,7 @@ class CampusDeleteRenterRequest extends Model
         'renterId' => 'renterId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

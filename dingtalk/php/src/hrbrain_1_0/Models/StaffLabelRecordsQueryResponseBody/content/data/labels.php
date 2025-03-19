@@ -56,18 +56,16 @@ class labels extends Model
      */
     public $value;
     protected $_name = [
-        'code'     => 'code',
-        'guid'     => 'guid',
-        'name'     => 'name',
-        'options'  => 'options',
+        'code' => 'code',
+        'guid' => 'guid',
+        'name' => 'name',
+        'options' => 'options',
         'typeCode' => 'typeCode',
         'typeName' => 'typeName',
-        'value'    => 'value',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -123,7 +121,7 @@ class labels extends Model
         if (isset($map['options'])) {
             if (!empty($map['options'])) {
                 $model->options = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['options'] as $item) {
                     $model->options[$n++] = null !== $item ? options::fromMap($item) : $item;
                 }

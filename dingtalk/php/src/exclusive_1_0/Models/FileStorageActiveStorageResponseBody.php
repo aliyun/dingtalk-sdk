@@ -28,15 +28,13 @@ class FileStorageActiveStorageResponseBody extends Model
      */
     public $usedQuota;
     protected $_name = [
-        'createDate'            => 'createDate',
+        'createDate' => 'createDate',
         'fileStorageOpenStatus' => 'fileStorageOpenStatus',
-        'storageStatus'         => 'storageStatus',
-        'usedQuota'             => 'usedQuota',
+        'storageStatus' => 'storageStatus',
+        'usedQuota' => 'usedQuota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

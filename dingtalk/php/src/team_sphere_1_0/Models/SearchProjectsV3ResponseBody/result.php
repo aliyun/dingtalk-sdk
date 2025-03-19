@@ -67,22 +67,20 @@ class result extends Model
      */
     public $updated;
     protected $_name = [
-        'created'        => 'created',
-        'creatorId'      => 'creatorId',
-        'description'    => 'description',
-        'id'             => 'id',
-        'isArchived'     => 'isArchived',
-        'isTemplate'     => 'isTemplate',
-        'logo'           => 'logo',
-        'name'           => 'name',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
+        'description' => 'description',
+        'id' => 'id',
+        'isArchived' => 'isArchived',
+        'isTemplate' => 'isTemplate',
+        'logo' => 'logo',
+        'name' => 'name',
         'organizationId' => 'organizationId',
-        'sourceId'       => 'sourceId',
-        'updated'        => 'updated',
+        'sourceId' => 'sourceId',
+        'updated' => 'updated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

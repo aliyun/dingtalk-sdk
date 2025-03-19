@@ -21,13 +21,11 @@ class QueryCloudRecordTextResponseBody extends Model
      */
     public $paragraphList;
     protected $_name = [
-        'hasMore'       => 'hasMore',
+        'hasMore' => 'hasMore',
         'paragraphList' => 'paragraphList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class QueryCloudRecordTextResponseBody extends Model
         if (isset($map['paragraphList'])) {
             if (!empty($map['paragraphList'])) {
                 $model->paragraphList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['paragraphList'] as $item) {
                     $model->paragraphList[$n++] = null !== $item ? paragraphList::fromMap($item) : $item;
                 }

@@ -26,13 +26,11 @@ class QueryChartDataRequest extends Model
      */
     public $ticket;
     protected $_name = [
-        'code'   => 'code',
+        'code' => 'code',
         'ticket' => 'ticket',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

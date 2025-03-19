@@ -18,13 +18,11 @@ class StartStreamOutResponseBody extends Model
      */
     public $successStreamMap;
     protected $_name = [
-        'failStreamMap'    => 'failStreamMap',
+        'failStreamMap' => 'failStreamMap',
         'successStreamMap' => 'successStreamMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

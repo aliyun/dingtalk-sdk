@@ -44,15 +44,13 @@ class GetTaskStudentListRequest extends Model
      */
     public $taskId;
     protected $_name = [
-        'operator'   => 'operator',
+        'operator' => 'operator',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'taskId'     => 'taskId',
+        'pageSize' => 'pageSize',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

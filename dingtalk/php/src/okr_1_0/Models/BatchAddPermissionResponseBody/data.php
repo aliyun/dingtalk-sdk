@@ -27,9 +27,7 @@ class data extends Model
         'permissionTree' => 'permissionTree',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

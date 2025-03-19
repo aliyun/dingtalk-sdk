@@ -26,13 +26,11 @@ class content extends Model
      */
     public $userId;
     protected $_name = [
-        'name'   => 'name',
+        'name' => 'name',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,13 +36,11 @@ class OpenAgoalTeamDTO extends Model
     public $teamId;
     protected $_name = [
         'deptId' => 'deptId',
-        'name'   => 'name',
+        'name' => 'name',
         'teamId' => 'teamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

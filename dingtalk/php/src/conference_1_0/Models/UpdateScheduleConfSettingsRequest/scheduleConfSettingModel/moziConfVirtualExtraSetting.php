@@ -85,23 +85,21 @@ class moziConfVirtualExtraSetting extends Model
      */
     public $waitingRoom;
     protected $_name = [
-        'cloudRecordOwnerUnionId'      => 'cloudRecordOwnerUnionId',
-        'enableChat'                   => 'enableChat',
-        'enableWebAnonymousJoin'       => 'enableWebAnonymousJoin',
-        'joinBeforeHost'               => 'joinBeforeHost',
-        'lockMediaStatusMicMute'       => 'lockMediaStatusMicMute',
-        'lockNick'                     => 'lockNick',
-        'minutesOwnerUnionId'          => 'minutesOwnerUnionId',
+        'cloudRecordOwnerUnionId' => 'cloudRecordOwnerUnionId',
+        'enableChat' => 'enableChat',
+        'enableWebAnonymousJoin' => 'enableWebAnonymousJoin',
+        'joinBeforeHost' => 'joinBeforeHost',
+        'lockMediaStatusMicMute' => 'lockMediaStatusMicMute',
+        'lockNick' => 'lockNick',
+        'minutesOwnerUnionId' => 'minutesOwnerUnionId',
         'moziConfExtensionAppSettings' => 'moziConfExtensionAppSettings',
-        'pushAllMeetingRecords'        => 'pushAllMeetingRecords',
-        'pushCloudRecordCard'          => 'pushCloudRecordCard',
-        'pushMinutesCard'              => 'pushMinutesCard',
-        'waitingRoom'                  => 'waitingRoom',
+        'pushAllMeetingRecords' => 'pushAllMeetingRecords',
+        'pushCloudRecordCard' => 'pushCloudRecordCard',
+        'pushMinutesCard' => 'pushMinutesCard',
+        'waitingRoom' => 'waitingRoom',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -184,7 +182,7 @@ class moziConfVirtualExtraSetting extends Model
         if (isset($map['moziConfExtensionAppSettings'])) {
             if (!empty($map['moziConfExtensionAppSettings'])) {
                 $model->moziConfExtensionAppSettings = [];
-                $n                                   = 0;
+                $n = 0;
                 foreach ($map['moziConfExtensionAppSettings'] as $item) {
                     $model->moziConfExtensionAppSettings[$n++] = null !== $item ? moziConfExtensionAppSettings::fromMap($item) : $item;
                 }

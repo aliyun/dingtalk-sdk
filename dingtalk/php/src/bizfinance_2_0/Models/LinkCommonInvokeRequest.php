@@ -36,15 +36,13 @@ class LinkCommonInvokeRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizType'  => 'bizType',
-        'data'     => 'data',
+        'bizType' => 'bizType',
+        'data' => 'data',
         'invokeId' => 'invokeId',
-        'userId'   => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

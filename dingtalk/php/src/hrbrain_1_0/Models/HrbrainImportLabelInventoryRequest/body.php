@@ -35,14 +35,12 @@ class body extends Model
     public $workNo;
     protected $_name = [
         'extendInfo' => 'extendInfo',
-        'name'       => 'name',
-        'period'     => 'period',
-        'workNo'     => 'workNo',
+        'name' => 'name',
+        'period' => 'period',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

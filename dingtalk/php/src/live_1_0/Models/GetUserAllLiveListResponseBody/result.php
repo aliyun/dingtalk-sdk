@@ -19,13 +19,11 @@ class result extends Model
      */
     public $liveInfoPopModelList;
     protected $_name = [
-        'hasFinish'            => 'hasFinish',
+        'hasFinish' => 'hasFinish',
         'liveInfoPopModelList' => 'liveInfoPopModelList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class result extends Model
         if (isset($map['liveInfoPopModelList'])) {
             if (!empty($map['liveInfoPopModelList'])) {
                 $model->liveInfoPopModelList = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['liveInfoPopModelList'] as $item) {
                     $model->liveInfoPopModelList[$n++] = null !== $item ? liveInfoPopModelList::fromMap($item) : $item;
                 }

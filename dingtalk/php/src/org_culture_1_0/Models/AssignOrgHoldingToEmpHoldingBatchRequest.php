@@ -59,17 +59,15 @@ class AssignOrgHoldingToEmpHoldingBatchRequest extends Model
      */
     public $targetUserList;
     protected $_name = [
-        'remark'               => 'remark',
+        'remark' => 'remark',
         'sendOrgCultureInform' => 'sendOrgCultureInform',
-        'singleAmount'         => 'singleAmount',
-        'sourceUsage'          => 'sourceUsage',
-        'targetUsage'          => 'targetUsage',
-        'targetUserList'       => 'targetUserList',
+        'singleAmount' => 'singleAmount',
+        'sourceUsage' => 'sourceUsage',
+        'targetUsage' => 'targetUsage',
+        'targetUserList' => 'targetUserList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -128,7 +126,7 @@ class AssignOrgHoldingToEmpHoldingBatchRequest extends Model
         if (isset($map['targetUserList'])) {
             if (!empty($map['targetUserList'])) {
                 $model->targetUserList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['targetUserList'] as $item) {
                     $model->targetUserList[$n++] = null !== $item ? targetUserList::fromMap($item) : $item;
                 }

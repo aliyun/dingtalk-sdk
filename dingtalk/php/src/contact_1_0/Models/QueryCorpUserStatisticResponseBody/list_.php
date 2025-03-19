@@ -43,16 +43,14 @@ class list_ extends Model
      */
     public $unionId;
     protected $_name = [
-        'avatarUrl'  => 'avatarUrl',
-        'name'       => 'name',
+        'avatarUrl' => 'avatarUrl',
+        'name' => 'name',
         'receiveCnt' => 'receiveCnt',
-        'sendCnt'    => 'sendCnt',
-        'unionId'    => 'unionId',
+        'sendCnt' => 'sendCnt',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

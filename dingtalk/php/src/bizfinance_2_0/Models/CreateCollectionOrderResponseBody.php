@@ -16,9 +16,7 @@ class CreateCollectionOrderResponseBody extends Model
         'collectionUrl' => 'collectionUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

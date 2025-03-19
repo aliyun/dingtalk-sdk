@@ -43,18 +43,16 @@ class ConversationTransferCompleteNotifyRequest extends Model
      */
     public $visitorToken;
     protected $_name = [
-        'alipayUserId'   => 'alipayUserId',
+        'alipayUserId' => 'alipayUserId',
         'conversationId' => 'conversationId',
-        'nickName'       => 'nickName',
-        'openTeamId'     => 'openTeamId',
-        'serviceToken'   => 'serviceToken',
-        'userId'         => 'userId',
-        'visitorToken'   => 'visitorToken',
+        'nickName' => 'nickName',
+        'openTeamId' => 'openTeamId',
+        'serviceToken' => 'serviceToken',
+        'userId' => 'userId',
+        'visitorToken' => 'visitorToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

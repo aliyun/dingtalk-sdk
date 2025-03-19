@@ -89,23 +89,21 @@ class purchaseGoodsList extends Model
     public $title;
     protected $_name = [
         'applicableVersion' => 'applicableVersion',
-        'applyNum'          => 'applyNum',
-        'belongIndustry'    => 'belongIndustry',
-        'goodsId'           => 'goodsId',
-        'goodsType'         => 'goodsType',
-        'icon'              => 'icon',
+        'applyNum' => 'applyNum',
+        'belongIndustry' => 'belongIndustry',
+        'goodsId' => 'goodsId',
+        'goodsType' => 'goodsType',
+        'icon' => 'icon',
         'mainOperationInfo' => 'mainOperationInfo',
-        'media'             => 'media',
-        'price'             => 'price',
-        'subOperationInfo'  => 'subOperationInfo',
-        'subTitle'          => 'subTitle',
-        'tag'               => 'tag',
-        'title'             => 'title',
+        'media' => 'media',
+        'price' => 'price',
+        'subOperationInfo' => 'subOperationInfo',
+        'subTitle' => 'subTitle',
+        'tag' => 'tag',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -195,7 +193,7 @@ class purchaseGoodsList extends Model
         if (isset($map['media'])) {
             if (!empty($map['media'])) {
                 $model->media = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['media'] as $item) {
                     $model->media[$n++] = null !== $item ? media::fromMap($item) : $item;
                 }

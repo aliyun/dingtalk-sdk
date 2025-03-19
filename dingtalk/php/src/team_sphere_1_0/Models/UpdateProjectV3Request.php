@@ -19,12 +19,10 @@ class UpdateProjectV3Request extends Model
     public $name;
     protected $_name = [
         'description' => 'description',
-        'name'        => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

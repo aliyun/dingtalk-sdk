@@ -29,14 +29,12 @@ class forms extends Model
      */
     public $value;
     protected $_name = [
-        'key'   => 'key',
+        'key' => 'key',
         'label' => 'label',
         'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

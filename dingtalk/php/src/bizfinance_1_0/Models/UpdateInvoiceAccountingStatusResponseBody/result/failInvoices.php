@@ -36,15 +36,13 @@ class failInvoices extends Model
      */
     public $invoiceNo;
     protected $_name = [
-        'errorCode'   => 'errorCode',
-        'errorMsg'    => 'errorMsg',
+        'errorCode' => 'errorCode',
+        'errorMsg' => 'errorMsg',
         'invoiceCode' => 'invoiceCode',
-        'invoiceNo'   => 'invoiceNo',
+        'invoiceNo' => 'invoiceNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

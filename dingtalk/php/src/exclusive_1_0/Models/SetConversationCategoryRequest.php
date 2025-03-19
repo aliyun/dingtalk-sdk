@@ -24,13 +24,11 @@ class SetConversationCategoryRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'categoryId'         => 'categoryId',
+        'categoryId' => 'categoryId',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

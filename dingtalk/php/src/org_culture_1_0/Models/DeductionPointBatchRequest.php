@@ -50,16 +50,14 @@ class DeductionPointBatchRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'deductionAmount'      => 'deductionAmount',
-        'remark'               => 'remark',
+        'deductionAmount' => 'deductionAmount',
+        'remark' => 'remark',
         'sendOrgCultureInform' => 'sendOrgCultureInform',
-        'targetUserList'       => 'targetUserList',
-        'userId'               => 'userId',
+        'targetUserList' => 'targetUserList',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -109,7 +107,7 @@ class DeductionPointBatchRequest extends Model
         if (isset($map['targetUserList'])) {
             if (!empty($map['targetUserList'])) {
                 $model->targetUserList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['targetUserList'] as $item) {
                     $model->targetUserList[$n++] = null !== $item ? targetUserList::fromMap($item) : $item;
                 }

@@ -20,9 +20,7 @@ class param extends Model
         'categoryId' => 'categoryId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

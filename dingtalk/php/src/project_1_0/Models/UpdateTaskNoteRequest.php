@@ -18,9 +18,7 @@ class UpdateTaskNoteRequest extends Model
         'note' => 'note',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

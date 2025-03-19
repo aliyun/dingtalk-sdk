@@ -84,22 +84,20 @@ class items extends Model
      */
     public $visitorInfo;
     protected $_name = [
-        'cover'       => 'cover',
+        'cover' => 'cover',
         'description' => 'description',
-        'hdIconVO'    => 'hdIconVO',
-        'iconVO'      => 'iconVO',
-        'id'          => 'id',
-        'name'        => 'name',
-        'owner'       => 'owner',
-        'recentList'  => 'recentList',
-        'type'        => 'type',
-        'url'         => 'url',
+        'hdIconVO' => 'hdIconVO',
+        'iconVO' => 'iconVO',
+        'id' => 'id',
+        'name' => 'name',
+        'owner' => 'owner',
+        'recentList' => 'recentList',
+        'type' => 'type',
+        'url' => 'url',
         'visitorInfo' => 'visitorInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -179,7 +177,7 @@ class items extends Model
         if (isset($map['recentList'])) {
             if (!empty($map['recentList'])) {
                 $model->recentList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['recentList'] as $item) {
                     $model->recentList[$n++] = null !== $item ? DentryModel::fromMap($item) : $item;
                 }

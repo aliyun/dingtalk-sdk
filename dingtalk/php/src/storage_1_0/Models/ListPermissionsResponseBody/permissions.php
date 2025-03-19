@@ -62,19 +62,17 @@ class permissions extends Model
      */
     public $spaceId;
     protected $_name = [
-        'createTime'   => 'createTime',
-        'dentryId'     => 'dentryId',
-        'duration'     => 'duration',
-        'member'       => 'member',
+        'createTime' => 'createTime',
+        'dentryId' => 'dentryId',
+        'duration' => 'duration',
+        'member' => 'member',
         'modifiedTime' => 'modifiedTime',
-        'operatorId'   => 'operatorId',
-        'role'         => 'role',
-        'spaceId'      => 'spaceId',
+        'operatorId' => 'operatorId',
+        'role' => 'role',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

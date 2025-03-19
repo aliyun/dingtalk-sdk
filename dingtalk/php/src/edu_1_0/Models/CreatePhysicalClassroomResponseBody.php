@@ -18,9 +18,7 @@ class CreatePhysicalClassroomResponseBody extends Model
         'classroomId' => 'classroomId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,13 +36,11 @@ class ProvidePointRequest extends Model
     public $pointType;
     protected $_name = [
         'actionCode' => 'actionCode',
-        'bizId'      => 'bizId',
-        'pointType'  => 'pointType',
+        'bizId' => 'bizId',
+        'pointType' => 'pointType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

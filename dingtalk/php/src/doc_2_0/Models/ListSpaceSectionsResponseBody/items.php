@@ -43,15 +43,13 @@ class items extends Model
     public $spaces;
     protected $_name = [
         'displayType' => 'displayType',
-        'id'          => 'id',
-        'name'        => 'name',
-        'spaceNum'    => 'spaceNum',
-        'spaces'      => 'spaces',
+        'id' => 'id',
+        'name' => 'name',
+        'spaceNum' => 'spaceNum',
+        'spaces' => 'spaces',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -104,7 +102,7 @@ class items extends Model
         if (isset($map['spaces'])) {
             if (!empty($map['spaces'])) {
                 $model->spaces = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['spaces'] as $item) {
                     $model->spaces[$n++] = null !== $item ? SpaceModel::fromMap($item) : $item;
                 }

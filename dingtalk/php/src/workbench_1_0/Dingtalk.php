@@ -44,8 +44,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -83,18 +83,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddRecentUserAppList',
-            'version'     => 'workbench_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workbench/components/recentUsed/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddRecentUserAppList',
+            'version' => 'workbench_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workbench/components/recentUsed/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddRecentUserAppListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -137,15 +137,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetDingPortalDetail',
-            'version'     => 'workbench_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workbench/dingPortals/' . $appUuid . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDingPortalDetail',
+            'version' => 'workbench_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workbench/dingPortals/' . $appUuid . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDingPortalDetailResponse::fromMap($this->execute($params, $req, $runtime));
@@ -191,18 +191,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPluginPermissionPoint',
-            'version'     => 'workbench_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workbench/plugins/permissions',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPluginPermissionPoint',
+            'version' => 'workbench_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workbench/plugins/permissions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPluginPermissionPointResponse::fromMap($this->execute($params, $req, $runtime));
@@ -248,18 +248,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPluginRuleCheckInfo',
-            'version'     => 'workbench_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workbench/plugins/validationRules',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPluginRuleCheckInfo',
+            'version' => 'workbench_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workbench/plugins/validationRules',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPluginRuleCheckInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -311,18 +311,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListWorkBenchGroup',
-            'version'     => 'workbench_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workbench/groups',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListWorkBenchGroup',
+            'version' => 'workbench_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workbench/groups',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListWorkBenchGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -383,18 +383,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ModifyWorkbenchBadge',
-            'version'     => 'workbench_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workbench/badges/modify',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ModifyWorkbenchBadge',
+            'version' => 'workbench_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workbench/badges/modify',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ModifyWorkbenchBadgeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -437,15 +437,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryComponentScopes',
-            'version'     => 'workbench_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workbench/components/' . $componentId . '/scopes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryComponentScopes',
+            'version' => 'workbench_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workbench/components/' . $componentId . '/scopes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryComponentScopesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -488,15 +488,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryShortcutScopes',
-            'version'     => 'workbench_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workbench/shortcuts/' . $shortcutKey . '/scopes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryShortcutScopes',
+            'version' => 'workbench_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workbench/shortcuts/' . $shortcutKey . '/scopes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryShortcutScopesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -551,18 +551,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UndoDeletion',
-            'version'     => 'workbench_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workbench/badges/undoDeleted',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UndoDeletion',
+            'version' => 'workbench_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workbench/badges/undoDeleted',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UndoDeletionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -619,18 +619,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateDingPortalPageScope',
-            'version'     => 'workbench_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/workbench/dingPortals/' . $appUuid . '/pageScopes/' . $pageUuid . '',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateDingPortalPageScope',
+            'version' => 'workbench_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workbench/dingPortals/' . $appUuid . '/pageScopes/' . $pageUuid . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateDingPortalPageScopeResponse::fromMap($this->execute($params, $req, $runtime));

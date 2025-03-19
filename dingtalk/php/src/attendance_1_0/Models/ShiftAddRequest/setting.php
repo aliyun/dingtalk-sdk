@@ -85,22 +85,20 @@ class setting extends Model
     public $topRestTimeList;
     protected $_name = [
         'absenteeismLateMinutes' => 'absenteeismLateMinutes',
-        'attendDays'             => 'attendDays',
-        'demandWorkTimeMinutes'  => 'demandWorkTimeMinutes',
-        'enableOutsideLateBack'  => 'enableOutsideLateBack',
-        'extras'                 => 'extras',
-        'isFlexible'             => 'isFlexible',
-        'lateBackSetting'        => 'lateBackSetting',
-        'referenceClassId'       => 'referenceClassId',
-        'seriousLateMinutes'     => 'seriousLateMinutes',
-        'shiftType'              => 'shiftType',
-        'tags'                   => 'tags',
-        'topRestTimeList'        => 'topRestTimeList',
+        'attendDays' => 'attendDays',
+        'demandWorkTimeMinutes' => 'demandWorkTimeMinutes',
+        'enableOutsideLateBack' => 'enableOutsideLateBack',
+        'extras' => 'extras',
+        'isFlexible' => 'isFlexible',
+        'lateBackSetting' => 'lateBackSetting',
+        'referenceClassId' => 'referenceClassId',
+        'seriousLateMinutes' => 'seriousLateMinutes',
+        'shiftType' => 'shiftType',
+        'tags' => 'tags',
+        'topRestTimeList' => 'topRestTimeList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -195,7 +193,7 @@ class setting extends Model
         if (isset($map['topRestTimeList'])) {
             if (!empty($map['topRestTimeList'])) {
                 $model->topRestTimeList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['topRestTimeList'] as $item) {
                     $model->topRestTimeList[$n++] = null !== $item ? topRestTimeList::fromMap($item) : $item;
                 }

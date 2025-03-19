@@ -20,9 +20,7 @@ class DeleteCrmCustomObjectDataRequest extends Model
         'formCode' => 'formCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -33,14 +33,12 @@ class DigitalStoreGroupInfoResponseBody extends Model
      */
     public $storeIdList;
     protected $_name = [
-        'groupId'     => 'groupId',
-        'groupName'   => 'groupName',
+        'groupId' => 'groupId',
+        'groupName' => 'groupName',
         'storeIdList' => 'storeIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

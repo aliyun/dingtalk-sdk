@@ -55,17 +55,15 @@ class fields extends Model
      */
     public $sort;
     protected $_name = [
-        'dataType'  => 'dataType',
+        'dataType' => 'dataType',
         'dataValue' => 'dataValue',
         'fieldName' => 'fieldName',
-        'need'      => 'need',
-        'order'     => 'order',
-        'sort'      => 'sort',
+        'need' => 'need',
+        'order' => 'order',
+        'sort' => 'sort',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

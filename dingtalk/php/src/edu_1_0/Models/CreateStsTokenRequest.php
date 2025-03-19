@@ -27,12 +27,10 @@ class CreateStsTokenRequest extends Model
     public $stsType;
     protected $_name = [
         'deviceSn' => 'deviceSn',
-        'stsType'  => 'stsType',
+        'stsType' => 'stsType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

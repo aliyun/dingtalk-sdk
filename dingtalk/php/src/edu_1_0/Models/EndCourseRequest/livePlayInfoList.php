@@ -43,16 +43,14 @@ class livePlayInfoList extends Model
      */
     public $replayUrl;
     protected $_name = [
-        'liveInputUrl'     => 'liveInputUrl',
+        'liveInputUrl' => 'liveInputUrl',
         'liveOutputFlvUrl' => 'liveOutputFlvUrl',
         'liveOutputHlsUrl' => 'liveOutputHlsUrl',
-        'liveType'         => 'liveType',
-        'replayUrl'        => 'replayUrl',
+        'liveType' => 'liveType',
+        'replayUrl' => 'replayUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

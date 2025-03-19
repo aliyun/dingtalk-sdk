@@ -29,14 +29,12 @@ class seniorWhiteList extends Model
      */
     public $type;
     protected $_name = [
-        'id'   => 'id',
+        'id' => 'id',
         'name' => 'name',
         'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

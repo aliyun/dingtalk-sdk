@@ -28,15 +28,13 @@ class ListApplicationAuthorizationServiceConnectorInformationRequest extends Mod
      */
     public $pageSize;
     protected $_name = [
-        'accessKey'  => 'accessKey',
-        'callerUid'  => 'callerUid',
+        'accessKey' => 'accessKey',
+        'callerUid' => 'callerUid',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -61,20 +61,18 @@ class GetUploadInfoRequest extends Model
      */
     public $withRegion;
     protected $_name = [
-        'addConflictPolicy'    => 'addConflictPolicy',
-        'callerRegion'         => 'callerRegion',
-        'fileName'             => 'fileName',
-        'fileSize'             => 'fileSize',
-        'md5'                  => 'md5',
-        'mediaId'              => 'mediaId',
-        'unionId'              => 'unionId',
+        'addConflictPolicy' => 'addConflictPolicy',
+        'callerRegion' => 'callerRegion',
+        'fileName' => 'fileName',
+        'fileSize' => 'fileSize',
+        'md5' => 'md5',
+        'mediaId' => 'mediaId',
+        'unionId' => 'unionId',
         'withInternalEndPoint' => 'withInternalEndPoint',
-        'withRegion'           => 'withRegion',
+        'withRegion' => 'withRegion',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

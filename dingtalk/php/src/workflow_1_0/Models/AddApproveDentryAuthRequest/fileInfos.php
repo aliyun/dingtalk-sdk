@@ -26,13 +26,11 @@ class fileInfos extends Model
      */
     public $spaceId;
     protected $_name = [
-        'fileId'  => 'fileId',
+        'fileId' => 'fileId',
         'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

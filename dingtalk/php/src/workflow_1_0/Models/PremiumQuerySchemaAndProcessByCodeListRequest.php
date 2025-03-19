@@ -18,9 +18,7 @@ class PremiumQuerySchemaAndProcessByCodeListRequest extends Model
         'processCodes' => 'processCodes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

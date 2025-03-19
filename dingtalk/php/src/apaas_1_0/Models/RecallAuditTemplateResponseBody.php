@@ -19,9 +19,7 @@ class RecallAuditTemplateResponseBody extends Model
         'recallResult' => 'recallResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class RecallAuditTemplateResponseBody extends Model
         if (isset($map['recallResult'])) {
             if (!empty($map['recallResult'])) {
                 $model->recallResult = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['recallResult'] as $item) {
                     $model->recallResult[$n++] = null !== $item ? recallResult::fromMap($item) : $item;
                 }

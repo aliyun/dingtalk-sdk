@@ -20,9 +20,7 @@ class GetSpaceIdByTypeRequest extends Model
         'departmentType' => 'departmentType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

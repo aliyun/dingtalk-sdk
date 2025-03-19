@@ -25,12 +25,10 @@ class GetTranslateFileJobResultResponseBody extends Model
     public $url;
     protected $_name = [
         'status' => 'status',
-        'url'    => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

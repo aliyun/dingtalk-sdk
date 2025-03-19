@@ -41,16 +41,14 @@ class attendees extends Model
      */
     public $self;
     protected $_name = [
-        'displayName'    => 'displayName',
-        'id'             => 'id',
-        'isOptional'     => 'isOptional',
+        'displayName' => 'displayName',
+        'id' => 'id',
+        'isOptional' => 'isOptional',
         'responseStatus' => 'responseStatus',
-        'self'           => 'self',
+        'self' => 'self',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

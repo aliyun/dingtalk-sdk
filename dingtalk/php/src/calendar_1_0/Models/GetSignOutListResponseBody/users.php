@@ -24,13 +24,11 @@ class users extends Model
     public $userId;
     protected $_name = [
         'checkOutTime' => 'checkOutTime',
-        'displayName'  => 'displayName',
-        'userId'       => 'userId',
+        'displayName' => 'displayName',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

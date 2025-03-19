@@ -28,13 +28,11 @@ class result extends Model
     public $userDef;
     protected $_name = [
         'deptType' => 'deptType',
-        'name'     => 'name',
-        'userDef'  => 'userDef',
+        'name' => 'name',
+        'userDef' => 'userDef',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

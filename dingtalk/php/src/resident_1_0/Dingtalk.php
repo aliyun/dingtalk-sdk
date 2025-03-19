@@ -112,8 +112,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -163,18 +163,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AddPoint',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/points',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddPoint',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/points',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddPointResponse::fromMap($this->execute($params, $req, $runtime));
@@ -226,18 +226,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AddResidentDepartment',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/departments',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddResidentDepartment',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/departments',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddResidentDepartmentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -283,18 +283,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddResidentMember',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/members',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddResidentMember',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddResidentMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -358,18 +358,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AddResidentUsers',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/users',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddResidentUsers',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/users',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddResidentUsersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -424,18 +424,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateResidentBlackBoard',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/blackboards',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateResidentBlackBoard',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/blackboards',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateResidentBlackBoardResponse::fromMap($this->execute($params, $req, $runtime));
@@ -502,18 +502,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateSpace',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/spaces',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateSpace',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/spaces',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -559,18 +559,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteResidentBlackBoard',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/blackboards',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteResidentBlackBoard',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/blackboards',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteResidentBlackBoardResponse::fromMap($this->execute($params, $req, $runtime));
@@ -616,18 +616,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteResidentDepartment',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/departments',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteResidentDepartment',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/departments',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteResidentDepartmentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -673,18 +673,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteSpace',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/spaces/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteSpace',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/spaces/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -730,18 +730,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetConversationId',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/conversations',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetConversationId',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/conversations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetConversationIdResponse::fromMap($this->execute($params, $req, $runtime));
@@ -783,15 +783,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'GetIndustryType',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/organizations/industryTypes',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetIndustryType',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/organizations/industryTypes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetIndustryTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -835,18 +835,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPropertyInfo',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/propertyInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPropertyInfo',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/propertyInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPropertyInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -892,18 +892,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetResidentInfo',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/residentInfos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetResidentInfo',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/residentInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetResidentInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -952,18 +952,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetResidentMembersInfo',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/residences/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetResidentMembersInfo',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/residences/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetResidentMembersInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1009,18 +1009,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetSpaceIdByType',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/spaces/types',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSpaceIdByType',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/spaces/types',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSpaceIdByTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1069,18 +1069,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetSpacesInfo',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/spaces/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSpacesInfo',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/spaces/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSpacesInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1126,18 +1126,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListIndustryRoleUsers',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/industryRoles/users',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListIndustryRoleUsers',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/industryRoles/users',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListIndustryRoleUsersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1183,18 +1183,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListPointRules',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/points/rules',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListPointRules',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/points/rules',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListPointRulesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1243,18 +1243,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListSubSpace',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/spaces/subSpaces',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListSubSpace',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/spaces/subSpaces',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListSubSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1309,18 +1309,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListUncheckUsers',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/organizations/noJoinUsers',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListUncheckUsers',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/organizations/noJoinUsers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListUncheckUsersResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1366,18 +1366,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'ListUserIndustryRoles',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/users/industryRoles',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ListUserIndustryRoles',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/users/industryRoles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ListUserIndustryRolesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1438,18 +1438,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'PagePointHistory',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/points/records',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PagePointHistory',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/points/records',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PagePointHistoryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1501,18 +1501,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RemoveResidentMember',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/members/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveResidentMember',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/members/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemoveResidentMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1561,18 +1561,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RemoveResidentUser',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/users/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveResidentUser',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/users/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemoveResidentUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1621,18 +1621,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'SearchResident',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/residences',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SearchResident',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/residences',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SearchResidentResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1684,18 +1684,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'UpdateResideceGroup',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/departments/updateResideceGroup',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateResideceGroup',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/departments/updateResideceGroup',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateResideceGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1759,18 +1759,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'UpdateResidence',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/departments/updateResidece',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateResidence',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/departments/updateResidece',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateResidenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1825,18 +1825,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateResidentBlackBoard',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/blackboards',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateResidentBlackBoard',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/blackboards',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateResidentBlackBoardResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1909,18 +1909,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateResidentInfo',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/residences',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateResidentInfo',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/residences',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateResidentInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1969,18 +1969,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateResidentMember',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/members',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateResidentMember',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/members',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateResidentMemberResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2050,18 +2050,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'UpdateResidentUser',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/users',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateResidentUser',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/users',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateResidentUserResponse::fromMap($this->execute($params, $req, $runtime));
@@ -2107,18 +2107,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateSpace',
-            'version'     => 'resident_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/resident/spaces',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateSpace',
+            'version' => 'resident_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/resident/spaces',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateSpaceResponse::fromMap($this->execute($params, $req, $runtime));

@@ -63,22 +63,20 @@ class generalInvoiceDetailVOList extends Model
      */
     public $unitPrice;
     protected $_name = [
-        'amount'        => 'amount',
-        'goodsName'     => 'goodsName',
-        'quantity'      => 'quantity',
-        'revenueCode'   => 'revenueCode',
-        'rowNo'         => 'rowNo',
+        'amount' => 'amount',
+        'goodsName' => 'goodsName',
+        'quantity' => 'quantity',
+        'revenueCode' => 'revenueCode',
+        'rowNo' => 'rowNo',
         'specification' => 'specification',
-        'taxAmount'     => 'taxAmount',
-        'taxPre'        => 'taxPre',
-        'taxRate'       => 'taxRate',
-        'unit'          => 'unit',
-        'unitPrice'     => 'unitPrice',
+        'taxAmount' => 'taxAmount',
+        'taxPre' => 'taxPre',
+        'taxRate' => 'taxRate',
+        'unit' => 'unit',
+        'unitPrice' => 'unitPrice',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

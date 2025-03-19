@@ -30,13 +30,11 @@ class UserMapValue extends Model
     public $deptId;
     protected $_name = [
         'userId' => 'userId',
-        'name'   => 'name',
+        'name' => 'name',
         'deptId' => 'deptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

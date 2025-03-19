@@ -140,29 +140,27 @@ class IndustryManufactureMesOutPlanRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'approvalStatus'            => 'approvalStatus',
-        'approver'                  => 'approver',
-        'baseDataName'              => 'baseDataName',
-        'outSourceProjectCode'      => 'outSourceProjectCode',
-        'outSourceTeamId'           => 'outSourceTeamId',
-        'price'                     => 'price',
+        'approvalStatus' => 'approvalStatus',
+        'approver' => 'approver',
+        'baseDataName' => 'baseDataName',
+        'outSourceProjectCode' => 'outSourceProjectCode',
+        'outSourceTeamId' => 'outSourceTeamId',
+        'price' => 'price',
         'processIdentificationCode' => 'processIdentificationCode',
-        'processUuids'              => 'processUuids',
-        'productCode'               => 'productCode',
-        'productName'               => 'productName',
-        'productSpecification'      => 'productSpecification',
-        'projectCode'               => 'projectCode',
-        'projectId'                 => 'projectId',
-        'sendPlanQuantity'          => 'sendPlanQuantity',
-        'supplierCode'              => 'supplierCode',
-        'supplierName'              => 'supplierName',
-        'totalWage'                 => 'totalWage',
-        'uuid'                      => 'uuid',
+        'processUuids' => 'processUuids',
+        'productCode' => 'productCode',
+        'productName' => 'productName',
+        'productSpecification' => 'productSpecification',
+        'projectCode' => 'projectCode',
+        'projectId' => 'projectId',
+        'sendPlanQuantity' => 'sendPlanQuantity',
+        'supplierCode' => 'supplierCode',
+        'supplierName' => 'supplierName',
+        'totalWage' => 'totalWage',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

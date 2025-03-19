@@ -23,12 +23,10 @@ class GroupQueryByOpenIdRequest extends Model
     public $secretKey;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'secretKey'          => 'secretKey',
+        'secretKey' => 'secretKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

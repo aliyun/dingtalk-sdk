@@ -17,9 +17,7 @@ class BatchQueryPaymentRecallFileResponseBody extends Model
         'paymentRecallFileList' => 'paymentRecallFileList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class BatchQueryPaymentRecallFileResponseBody extends Model
         if (isset($map['paymentRecallFileList'])) {
             if (!empty($map['paymentRecallFileList'])) {
                 $model->paymentRecallFileList = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['paymentRecallFileList'] as $item) {
                     $model->paymentRecallFileList[$n++] = null !== $item ? paymentRecallFileList::fromMap($item) : $item;
                 }

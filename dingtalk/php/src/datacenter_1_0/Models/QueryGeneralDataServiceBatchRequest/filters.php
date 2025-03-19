@@ -23,14 +23,12 @@ class filters extends Model
      */
     public $value;
     protected $_name = [
-        'fieldId'  => 'fieldId',
+        'fieldId' => 'fieldId',
         'operator' => 'operator',
-        'value'    => 'value',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

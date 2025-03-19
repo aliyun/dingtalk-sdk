@@ -22,13 +22,11 @@ class hotelList extends Model
      */
     public $hotelOrderStatus;
     protected $_name = [
-        'hotelOrderId'     => 'hotelOrderId',
+        'hotelOrderId' => 'hotelOrderId',
         'hotelOrderStatus' => 'hotelOrderStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

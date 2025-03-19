@@ -36,13 +36,11 @@ class GetATManageScopeRequest extends Model
     public $userId;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'userId'     => 'userId',
+        'nextToken' => 'nextToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

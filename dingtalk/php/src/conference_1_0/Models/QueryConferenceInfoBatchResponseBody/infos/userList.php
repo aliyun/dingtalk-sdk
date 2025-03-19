@@ -46,17 +46,15 @@ class userList extends Model
      */
     public $userId;
     protected $_name = [
-        'attendStatus'      => 'attendStatus',
-        'cameraStatus'      => 'cameraStatus',
-        'micStatus'         => 'micStatus',
-        'nick'              => 'nick',
+        'attendStatus' => 'attendStatus',
+        'cameraStatus' => 'cameraStatus',
+        'micStatus' => 'micStatus',
+        'nick' => 'nick',
         'rejectDescription' => 'rejectDescription',
-        'userId'            => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

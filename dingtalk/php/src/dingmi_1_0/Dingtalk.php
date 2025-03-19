@@ -56,8 +56,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -92,18 +92,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AddRobotInstanceToGroup',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/intelligentRobots/groups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AddRobotInstanceToGroup',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/intelligentRobots/groups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AddRobotInstanceToGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -158,18 +158,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AskRobot',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/robots/ask',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AskRobot',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/robots/ask',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AskRobotResponse::fromMap($this->execute($params, $req, $runtime));
@@ -224,18 +224,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDingMeBaseData',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/robots/data',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDingMeBaseData',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/robots/data',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDingMeBaseDataResponse::fromMap($this->execute($params, $req, $runtime));
@@ -281,18 +281,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetIntelligentRobotInfo',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/intelligentRobots/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetIntelligentRobotInfo',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/intelligentRobots/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetIntelligentRobotInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -338,18 +338,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetOfficialAccountRobotInfo',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/officialAccounts/robots',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetOfficialAccountRobotInfo',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/officialAccounts/robots',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetOfficialAccountRobotInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -401,18 +401,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetWebChannelUserToken',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/webChannels/userTokens',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetWebChannelUserToken',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/webChannels/userTokens',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetWebChannelUserTokenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -464,18 +464,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PushCustomerGroupMessage',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/officialAccounts/robots/groupMessages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PushCustomerGroupMessage',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/officialAccounts/robots/groupMessages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PushCustomerGroupMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -530,18 +530,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PushIntelligentRobotGroupMessage',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/intelligentRobots/groupMessages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PushIntelligentRobotGroupMessage',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/intelligentRobots/groupMessages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PushIntelligentRobotGroupMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -596,18 +596,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PushIntelligentRobotMessage',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/intelligentRobots/oToMessages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PushIntelligentRobotMessage',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/intelligentRobots/oToMessages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PushIntelligentRobotMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -659,18 +659,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PushOfficialAccountMessage',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/officialAccounts/robots/oToMessages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PushOfficialAccountMessage',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/officialAccounts/robots/oToMessages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PushOfficialAccountMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -725,18 +725,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PushRobotMessage',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/robots/oToMessages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PushRobotMessage',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/robots/oToMessages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PushRobotMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -782,18 +782,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'ReplyRobot',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/robots/reply',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'ReplyRobot',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/robots/reply',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'json',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReplyRobotResponse::fromMap($this->execute($params, $req, $runtime));
@@ -855,19 +855,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateOfficialAccountRobotInfo',
-            'version'     => 'dingmi_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/dingmi/officialAccounts/robots',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateOfficialAccountRobotInfo',
+            'version' => 'dingmi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dingmi/officialAccounts/robots',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateOfficialAccountRobotInfoResponse::fromMap($this->execute($params, $req, $runtime));

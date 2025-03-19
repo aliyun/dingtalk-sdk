@@ -36,14 +36,12 @@ class content extends Model
     public $totalCount;
     protected $_name = [
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'result'     => 'result',
+        'pageSize' => 'pageSize',
+        'result' => 'result',
         'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -87,7 +85,7 @@ class content extends Model
         if (isset($map['result'])) {
             if (!empty($map['result'])) {
                 $model->result = [];
-                $n             = 0;
+                $n = 0;
                 foreach ($map['result'] as $item) {
                     $model->result[$n++] = null !== $item ? OpenPeriodDTO::fromMap($item) : $item;
                 }

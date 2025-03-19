@@ -54,17 +54,15 @@ class CreateTrustedDeviceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'did'        => 'did',
+        'did' => 'did',
         'macAddress' => 'macAddress',
-        'platform'   => 'platform',
-        'status'     => 'status',
-        'title'      => 'title',
-        'userId'     => 'userId',
+        'platform' => 'platform',
+        'status' => 'status',
+        'title' => 'title',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

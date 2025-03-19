@@ -51,18 +51,16 @@ class CreateTodoTypeConfigRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'actionList'          => 'actionList',
-        'cardType'            => 'cardType',
-        'contentFieldList'    => 'contentFieldList',
-        'description'         => 'description',
-        'icon'                => 'icon',
+        'actionList' => 'actionList',
+        'cardType' => 'cardType',
+        'contentFieldList' => 'contentFieldList',
+        'description' => 'description',
+        'icon' => 'icon',
         'pcDetailUrlOpenMode' => 'pcDetailUrlOpenMode',
-        'operatorId'          => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -115,7 +113,7 @@ class CreateTodoTypeConfigRequest extends Model
         if (isset($map['actionList'])) {
             if (!empty($map['actionList'])) {
                 $model->actionList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['actionList'] as $item) {
                     $model->actionList[$n++] = null !== $item ? actionList::fromMap($item) : $item;
                 }
@@ -127,7 +125,7 @@ class CreateTodoTypeConfigRequest extends Model
         if (isset($map['contentFieldList'])) {
             if (!empty($map['contentFieldList'])) {
                 $model->contentFieldList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['contentFieldList'] as $item) {
                     $model->contentFieldList[$n++] = null !== $item ? contentFieldList::fromMap($item) : $item;
                 }

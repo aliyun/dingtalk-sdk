@@ -32,8 +32,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -65,18 +65,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'Finish',
-            'version'     => 'aiInteraction_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiInteraction/finish',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'Finish',
+            'version' => 'aiInteraction_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiInteraction/finish',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return FinishResponse::fromMap($this->execute($params, $req, $runtime));
@@ -131,18 +131,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'Prepare',
-            'version'     => 'aiInteraction_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiInteraction/prepare',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'Prepare',
+            'version' => 'aiInteraction_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiInteraction/prepare',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PrepareResponse::fromMap($this->execute($params, $req, $runtime));
@@ -194,18 +194,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'Reply',
-            'version'     => 'aiInteraction_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiInteraction/reply',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'Reply',
+            'version' => 'aiInteraction_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiInteraction/reply',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return ReplyResponse::fromMap($this->execute($params, $req, $runtime));
@@ -260,18 +260,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'Send',
-            'version'     => 'aiInteraction_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiInteraction/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'Send',
+            'version' => 'aiInteraction_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiInteraction/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendResponse::fromMap($this->execute($params, $req, $runtime));
@@ -323,18 +323,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'Update',
-            'version'     => 'aiInteraction_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiInteraction/update',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'Update',
+            'version' => 'aiInteraction_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiInteraction/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateResponse::fromMap($this->execute($params, $req, $runtime));

@@ -32,13 +32,11 @@ class UnsubscribeUniversityCourseGroupRequest extends Model
     public $opUserId;
     protected $_name = [
         'courseGroupCode' => 'courseGroupCode',
-        'studentUserIds'  => 'studentUserIds',
-        'opUserId'        => 'opUserId',
+        'studentUserIds' => 'studentUserIds',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -51,16 +51,14 @@ class GetFamilySchoolConversationMsgRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'maxResults'         => 'maxResults',
-        'msgTypes'           => 'msgTypes',
-        'nextToken'          => 'nextToken',
+        'maxResults' => 'maxResults',
+        'msgTypes' => 'msgTypes',
+        'nextToken' => 'nextToken',
         'openConversationId' => 'openConversationId',
-        'unionId'            => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

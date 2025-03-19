@@ -50,17 +50,15 @@ class CreateAppOrderResponseBody extends Model
      */
     public $orderNo;
     protected $_name = [
-        'actualAmount'    => 'actualAmount',
-        'alipayAppId'     => 'alipayAppId',
-        'body'            => 'body',
-        'merchantId'      => 'merchantId',
+        'actualAmount' => 'actualAmount',
+        'alipayAppId' => 'alipayAppId',
+        'body' => 'body',
+        'merchantId' => 'merchantId',
         'merchantOrderNo' => 'merchantOrderNo',
-        'orderNo'         => 'orderNo',
+        'orderNo' => 'orderNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -57,18 +57,16 @@ class ReportMessageStatusRequest extends Model
      */
     public $senderUserId;
     protected $_name = [
-        'bizCode'        => 'bizCode',
-        'channel'        => 'channel',
-        'errorCode'      => 'errorCode',
-        'errorMsg'       => 'errorMsg',
-        'messageId'      => 'messageId',
+        'bizCode' => 'bizCode',
+        'channel' => 'channel',
+        'errorCode' => 'errorCode',
+        'errorMsg' => 'errorMsg',
+        'messageId' => 'messageId',
         'receiverUserId' => 'receiverUserId',
-        'senderUserId'   => 'senderUserId',
+        'senderUserId' => 'senderUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

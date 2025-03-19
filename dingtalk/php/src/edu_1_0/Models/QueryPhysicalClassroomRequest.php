@@ -23,12 +23,10 @@ class QueryPhysicalClassroomRequest extends Model
     public $opUserId;
     protected $_name = [
         'classroomId' => 'classroomId',
-        'opUserId'    => 'opUserId',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

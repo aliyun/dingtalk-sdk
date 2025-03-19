@@ -73,24 +73,22 @@ class msgConfigs extends Model
      */
     public $taskBatchNo;
     protected $_name = [
-        'cardId'               => 'cardId',
-        'corpId'               => 'corpId',
-        'customParameters'     => 'customParameters',
+        'cardId' => 'cardId',
+        'corpId' => 'corpId',
+        'customParameters' => 'customParameters',
         'msgContentConsisFlag' => 'msgContentConsisFlag',
-        'msgId'                => 'msgId',
-        'robotCode'            => 'robotCode',
-        'ruleBusinessCode'     => 'ruleBusinessCode',
-        'ruleCategory'         => 'ruleCategory',
-        'ruleCode'             => 'ruleCode',
-        'ruleName'             => 'ruleName',
-        'subRuleCode'          => 'subRuleCode',
-        'systemCode'           => 'systemCode',
-        'taskBatchNo'          => 'taskBatchNo',
+        'msgId' => 'msgId',
+        'robotCode' => 'robotCode',
+        'ruleBusinessCode' => 'ruleBusinessCode',
+        'ruleCategory' => 'ruleCategory',
+        'ruleCode' => 'ruleCode',
+        'ruleName' => 'ruleName',
+        'subRuleCode' => 'subRuleCode',
+        'systemCode' => 'systemCode',
+        'taskBatchNo' => 'taskBatchNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

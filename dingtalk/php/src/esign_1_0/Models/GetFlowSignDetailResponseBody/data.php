@@ -25,13 +25,11 @@ class data extends Model
     public $signers;
     protected $_name = [
         'businessSense' => 'businessSense',
-        'flowStatus'    => 'flowStatus',
-        'signers'       => 'signers',
+        'flowStatus' => 'flowStatus',
+        'signers' => 'signers',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -72,7 +70,7 @@ class data extends Model
         if (isset($map['signers'])) {
             if (!empty($map['signers'])) {
                 $model->signers = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['signers'] as $item) {
                     $model->signers[$n++] = null !== $item ? signers::fromMap($item) : $item;
                 }

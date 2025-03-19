@@ -53,8 +53,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -101,18 +101,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AgoalCreateProgress',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/objectives/progresses',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalCreateProgress',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/objectives/progresses',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalCreateProgressResponse::fromMap($this->execute($params, $req, $runtime));
@@ -163,18 +163,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AgoalFieldUpdate',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/fields',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalFieldUpdate',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/fields',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalFieldUpdateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -226,18 +226,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AgoalObjectiveKeyActionList',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/objectives/keyActionLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalObjectiveKeyActionList',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/objectives/keyActionLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalObjectiveKeyActionListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -283,18 +283,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AgoalObjectiveRulePeriodList',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/objectiveRules/periodLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalObjectiveRulePeriodList',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/objectiveRules/periodLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalObjectiveRulePeriodListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -349,18 +349,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AgoalOrgObjectiveList',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/orgObjectives/list',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalOrgObjectiveList',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/orgObjectives/list',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalOrgObjectiveListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -406,18 +406,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AgoalOrgObjectiveQuery',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/orgObjectives',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalOrgObjectiveQuery',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/orgObjectives',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalOrgObjectiveQueryResponse::fromMap($this->execute($params, $req, $runtime));
@@ -459,15 +459,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'AgoalOrgObjectiveRuleList',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/objectiveRules/lists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalOrgObjectiveRuleList',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/objectiveRules/lists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalOrgObjectiveRuleListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -516,18 +516,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AgoalPeriodList',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/periods/list',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalPeriodList',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/periods/list',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalPeriodListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -588,18 +588,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AgoalSendMessage',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/messages/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalSendMessage',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/messages/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalSendMessageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -641,15 +641,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'AgoalUserAdminList',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/administrators/lists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalUserAdminList',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/administrators/lists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalUserAdminListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -699,18 +699,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'AgoalUserObjectiveList',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/users/objectiveLists/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalUserObjectiveList',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/users/objectiveLists/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalUserObjectiveListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -756,18 +756,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AgoalUserSubAdminList',
-            'version'     => 'agoal_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/agoal/administrators/sub/lists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'AgoalUserSubAdminList',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/administrators/sub/lists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AgoalUserSubAdminListResponse::fromMap($this->execute($params, $req, $runtime));

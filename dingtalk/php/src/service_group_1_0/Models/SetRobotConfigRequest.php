@@ -45,18 +45,16 @@ class SetRobotConfigRequest extends Model
      */
     public $status;
     protected $_name = [
-        'dingIsvOrgId'       => 'dingIsvOrgId',
-        'dingOrgId'          => 'dingOrgId',
-        'dingSuiteKey'       => 'dingSuiteKey',
+        'dingIsvOrgId' => 'dingIsvOrgId',
+        'dingOrgId' => 'dingOrgId',
+        'dingSuiteKey' => 'dingSuiteKey',
         'dingTokenGrantType' => 'dingTokenGrantType',
-        'openGroupSetId'     => 'openGroupSetId',
-        'openTeamId'         => 'openTeamId',
-        'status'             => 'status',
+        'openGroupSetId' => 'openGroupSetId',
+        'openTeamId' => 'openTeamId',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

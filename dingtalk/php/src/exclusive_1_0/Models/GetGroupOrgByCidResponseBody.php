@@ -16,9 +16,7 @@ class GetGroupOrgByCidResponseBody extends Model
         'groupOrganization' => 'groupOrganization',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

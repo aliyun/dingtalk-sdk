@@ -38,17 +38,15 @@ class param extends Model
      */
     public $workNo;
     protected $_name = [
-        'avatar'   => 'avatar',
+        'avatar' => 'avatar',
         'isDelete' => 'isDelete',
-        'name'     => 'name',
-        'unionId'  => 'unionId',
-        'userId'   => 'userId',
-        'workNo'   => 'workNo',
+        'name' => 'name',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

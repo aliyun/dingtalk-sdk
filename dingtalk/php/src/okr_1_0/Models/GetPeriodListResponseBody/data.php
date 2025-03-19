@@ -19,9 +19,7 @@ class data extends Model
         'periodList' => 'periodList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class data extends Model
         if (isset($map['periodList'])) {
             if (!empty($map['periodList'])) {
                 $model->periodList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['periodList'] as $item) {
                     $model->periodList[$n++] = null !== $item ? periodList::fromMap($item) : $item;
                 }

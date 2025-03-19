@@ -58,17 +58,15 @@ class list_ extends Model
     public $userId;
     protected $_name = [
         'dingMemberStatus' => 'dingMemberStatus',
-        'isActive'         => 'isActive',
-        'memberName'       => 'memberName',
-        'memberTitle'      => 'memberTitle',
+        'isActive' => 'isActive',
+        'memberName' => 'memberName',
+        'memberTitle' => 'memberTitle',
         'memberWorkNumber' => 'memberWorkNumber',
-        'unionId'          => 'unionId',
-        'userId'           => 'userId',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

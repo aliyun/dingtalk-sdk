@@ -90,8 +90,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -135,18 +135,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateBookingBlacklist',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/bookings/blacklist',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateBookingBlacklist',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/bookings/blacklist',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateBookingBlacklistResponse::fromMap($this->execute($params, $req, $runtime));
@@ -243,18 +243,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateDeviceCustomTemplate',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/devices/screens/templates',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateDeviceCustomTemplate',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/devices/screens/templates',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateDeviceCustomTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -333,18 +333,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateMeetingRoom',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/meetingrooms',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateMeetingRoom',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/meetingrooms',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
@@ -402,18 +402,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateMeetingRoomControlPanel',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/panels',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateMeetingRoomControlPanel',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/panels',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateMeetingRoomControlPanelResponse::fromMap($this->execute($params, $req, $runtime));
@@ -465,18 +465,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateMeetingRoomGroup',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/groups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateMeetingRoomGroup',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/groups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateMeetingRoomGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -525,18 +525,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteBookingBlacklist',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/bookings/blacklist/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteBookingBlacklist',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/bookings/blacklist/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteBookingBlacklistResponse::fromMap($this->execute($params, $req, $runtime));
@@ -582,18 +582,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteDeviceCustomTemplate',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/devices/screens/templates/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteDeviceCustomTemplate',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/devices/screens/templates/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteDeviceCustomTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -640,18 +640,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteMeetingRoom',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/meetingRooms/' . $roomId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteMeetingRoom',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/meetingRooms/' . $roomId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
@@ -701,18 +701,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeleteMeetingRoomControlPanel',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/panels/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteMeetingRoomControlPanel',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/panels/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteMeetingRoomControlPanelResponse::fromMap($this->execute($params, $req, $runtime));
@@ -759,18 +759,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'DeleteMeetingRoomGroup',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/groups/' . $groupId . '',
-            'method'      => 'DELETE',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeleteMeetingRoomGroup',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/groups/' . $groupId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeleteMeetingRoomGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -814,15 +814,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryDeviceCustomTemplate',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/devices/screens/templates/' . $templateId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDeviceCustomTemplate',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/devices/screens/templates/' . $templateId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDeviceCustomTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -864,15 +864,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $realHeaders,
         ]);
         $params = new Params([
-            'action'      => 'QueryDeviceCustomTemplateList',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/devices/screens/templateLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDeviceCustomTemplateList',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/devices/screens/templateLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDeviceCustomTemplateListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -917,18 +917,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryDeviceIpByCode',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/devices/shareCodes/' . $shareCode . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDeviceIpByCode',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/devices/shareCodes/' . $shareCode . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDeviceIpByCodeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -985,19 +985,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryDeviceProperties',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/devices/properties/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDeviceProperties',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/devices/properties/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDevicePropertiesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1044,18 +1044,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryMeetingRoom',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/meetingRooms/' . $roomId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMeetingRoom',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/meetingRooms/' . $roomId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1111,18 +1111,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryMeetingRoomControlPanelList',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/panels/lists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMeetingRoomControlPanelList',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/panels/lists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMeetingRoomControlPanelListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1174,18 +1174,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryMeetingRoomDevice',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/devices',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMeetingRoomDevice',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/devices',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMeetingRoomDeviceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1232,18 +1232,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryMeetingRoomGroup',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/groups/' . $groupId . '',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMeetingRoomGroup',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/groups/' . $groupId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMeetingRoomGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1290,18 +1290,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryMeetingRoomGroupList',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/groupLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMeetingRoomGroupList',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/groupLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMeetingRoomGroupListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1353,18 +1353,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryMeetingRoomList',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/meetingRoomLists',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryMeetingRoomList',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/meetingRoomLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryMeetingRoomListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1413,18 +1413,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'RemoveSuperUserMeetingRoom',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/meetingRooms/superUsers/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RemoveSuperUserMeetingRoom',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/meetingRooms/superUsers/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RemoveSuperUserMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1479,18 +1479,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SetSuperUserMeetingRoom',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/meetingRooms/superUsers/set',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SetSuperUserMeetingRoom',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/meetingRooms/superUsers/set',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SetSuperUserMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1590,18 +1590,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateDeviceCustomTemplate',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/devices/screens/templates',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateDeviceCustomTemplate',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/devices/screens/templates',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateDeviceCustomTemplateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1683,18 +1683,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateMeetingRoom',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/meetingRooms',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateMeetingRoom',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/meetingRooms',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1746,18 +1746,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'UpdateMeetingRoomGroup',
-            'version'     => 'rooms_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/rooms/groups',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'UpdateMeetingRoomGroup',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/groups',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpdateMeetingRoomGroupResponse::fromMap($this->execute($params, $req, $runtime));

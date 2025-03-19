@@ -18,9 +18,7 @@ class extension extends Model
         'editFreeze' => 'editFreeze',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

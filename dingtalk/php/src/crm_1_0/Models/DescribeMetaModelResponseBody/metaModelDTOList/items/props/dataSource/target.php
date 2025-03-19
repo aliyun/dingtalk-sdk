@@ -30,15 +30,13 @@ class target extends Model
      */
     public $formCode;
     protected $_name = [
-        'appType'  => 'appType',
-        'appUuid'  => 'appUuid',
-        'bizType'  => 'bizType',
+        'appType' => 'appType',
+        'appUuid' => 'appUuid',
+        'bizType' => 'bizType',
         'formCode' => 'formCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

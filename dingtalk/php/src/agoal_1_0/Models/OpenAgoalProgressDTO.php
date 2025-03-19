@@ -50,17 +50,15 @@ class OpenAgoalProgressDTO extends Model
      */
     public $updated;
     protected $_name = [
-        'created'     => 'created',
-        'creator'     => 'creator',
+        'created' => 'created',
+        'creator' => 'creator',
         'htmlContent' => 'htmlContent',
-        'modifier'    => 'modifier',
-        'progressId'  => 'progressId',
-        'updated'     => 'updated',
+        'modifier' => 'modifier',
+        'progressId' => 'progressId',
+        'updated' => 'updated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

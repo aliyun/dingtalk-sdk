@@ -33,14 +33,12 @@ class UpdateMiniAppVersionStatusRequest extends Model
      */
     public $versionType;
     protected $_name = [
-        'miniAppId'   => 'miniAppId',
-        'version'     => 'version',
+        'miniAppId' => 'miniAppId',
+        'version' => 'version',
         'versionType' => 'versionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

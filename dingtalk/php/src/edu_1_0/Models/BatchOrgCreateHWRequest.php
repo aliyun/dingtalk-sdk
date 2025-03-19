@@ -126,30 +126,28 @@ class BatchOrgCreateHWRequest extends Model
      */
     public $teacherUserId;
     protected $_name = [
-        'attributes'         => 'attributes',
-        'bizCode'            => 'bizCode',
-        'courseName'         => 'courseName',
-        'hwContent'          => 'hwContent',
-        'hwDeadline'         => 'hwDeadline',
-        'hwDeadlineOpen'     => 'hwDeadlineOpen',
-        'hwMedia'            => 'hwMedia',
-        'hwPhoto'            => 'hwPhoto',
-        'hwTitle'            => 'hwTitle',
-        'hwType'             => 'hwType',
-        'hwVideo'            => 'hwVideo',
-        'identifier'         => 'identifier',
+        'attributes' => 'attributes',
+        'bizCode' => 'bizCode',
+        'courseName' => 'courseName',
+        'hwContent' => 'hwContent',
+        'hwDeadline' => 'hwDeadline',
+        'hwDeadlineOpen' => 'hwDeadlineOpen',
+        'hwMedia' => 'hwMedia',
+        'hwPhoto' => 'hwPhoto',
+        'hwTitle' => 'hwTitle',
+        'hwType' => 'hwType',
+        'hwVideo' => 'hwVideo',
+        'identifier' => 'identifier',
         'openSelectItemList' => 'openSelectItemList',
-        'scheduledRelease'   => 'scheduledRelease',
-        'scheduledTime'      => 'scheduledTime',
-        'status'             => 'status',
-        'targetRole'         => 'targetRole',
-        'teacherName'        => 'teacherName',
-        'teacherUserId'      => 'teacherUserId',
+        'scheduledRelease' => 'scheduledRelease',
+        'scheduledTime' => 'scheduledTime',
+        'status' => 'status',
+        'targetRole' => 'targetRole',
+        'teacherName' => 'teacherName',
+        'teacherUserId' => 'teacherUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -268,7 +266,7 @@ class BatchOrgCreateHWRequest extends Model
         if (isset($map['openSelectItemList'])) {
             if (!empty($map['openSelectItemList'])) {
                 $model->openSelectItemList = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['openSelectItemList'] as $item) {
                     $model->openSelectItemList[$n++] = null !== $item ? openSelectItemList::fromMap($item) : $item;
                 }

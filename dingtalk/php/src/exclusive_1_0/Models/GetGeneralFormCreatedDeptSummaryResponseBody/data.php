@@ -36,15 +36,13 @@ class data extends Model
      */
     public $useGeneralFormUserCnt1d;
     protected $_name = [
-        'deptId'                  => 'deptId',
-        'deptName'                => 'deptName',
-        'generalFormCreateCnt1d'  => 'generalFormCreateCnt1d',
+        'deptId' => 'deptId',
+        'deptName' => 'deptName',
+        'generalFormCreateCnt1d' => 'generalFormCreateCnt1d',
         'useGeneralFormUserCnt1d' => 'useGeneralFormUserCnt1d',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

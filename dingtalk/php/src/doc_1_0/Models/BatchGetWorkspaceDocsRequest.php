@@ -22,13 +22,11 @@ class BatchGetWorkspaceDocsRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'nodeIds'    => 'nodeIds',
+        'nodeIds' => 'nodeIds',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

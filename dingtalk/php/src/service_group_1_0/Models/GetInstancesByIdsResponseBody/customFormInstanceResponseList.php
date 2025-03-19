@@ -61,20 +61,18 @@ class customFormInstanceResponseList extends Model
      */
     public $ownerUnionId;
     protected $_name = [
-        'creatorUnionId'     => 'creatorUnionId',
-        'fields'             => 'fields',
-        'formCode'           => 'formCode',
-        'gmtCreate'          => 'gmtCreate',
-        'gmtModified'        => 'gmtModified',
-        'modifiedUnionId'    => 'modifiedUnionId',
+        'creatorUnionId' => 'creatorUnionId',
+        'fields' => 'fields',
+        'formCode' => 'formCode',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'modifiedUnionId' => 'modifiedUnionId',
         'openDataInstanceId' => 'openDataInstanceId',
-        'openTeamId'         => 'openTeamId',
-        'ownerUnionId'       => 'ownerUnionId',
+        'openTeamId' => 'openTeamId',
+        'ownerUnionId' => 'ownerUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

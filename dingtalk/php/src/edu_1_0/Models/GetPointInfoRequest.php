@@ -20,9 +20,7 @@ class GetPointInfoRequest extends Model
         'pointType' => 'pointType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

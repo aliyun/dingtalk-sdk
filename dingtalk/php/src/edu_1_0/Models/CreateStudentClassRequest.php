@@ -64,19 +64,17 @@ class CreateStudentClassRequest extends Model
      */
     public $studentUserId;
     protected $_name = [
-        'attributes'    => 'attributes',
-        'classId'       => 'classId',
-        'className'     => 'className',
-        'classType'     => 'classType',
-        'corpId'        => 'corpId',
-        'isvCode'       => 'isvCode',
-        'studentName'   => 'studentName',
+        'attributes' => 'attributes',
+        'classId' => 'classId',
+        'className' => 'className',
+        'classType' => 'classType',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
+        'studentName' => 'studentName',
         'studentUserId' => 'studentUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -35,14 +35,12 @@ class UpdateKROfScoreRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'score'  => 'score',
-        'krId'   => 'krId',
+        'score' => 'score',
+        'krId' => 'krId',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

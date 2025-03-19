@@ -29,14 +29,12 @@ class mainOperationInfo extends Model
      */
     public $url;
     protected $_name = [
-        'goodsCode'   => 'goodsCode',
+        'goodsCode' => 'goodsCode',
         'originalUrl' => 'originalUrl',
-        'url'         => 'url',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

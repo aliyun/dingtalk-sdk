@@ -82,20 +82,18 @@ class CreateAcquireRefundOrderRequest extends Model
      */
     public $title;
     protected $_name = [
-        'instId'                        => 'instId',
-        'operatorUserId'                => 'operatorUserId',
-        'originOutTradeNo'              => 'originOutTradeNo',
+        'instId' => 'instId',
+        'operatorUserId' => 'operatorUserId',
+        'originOutTradeNo' => 'originOutTradeNo',
         'otherPayChannelDetailInfoList' => 'otherPayChannelDetailInfoList',
-        'outRefundNo'                   => 'outRefundNo',
-        'refundAmount'                  => 'refundAmount',
-        'remark'                        => 'remark',
-        'subInstId'                     => 'subInstId',
-        'title'                         => 'title',
+        'outRefundNo' => 'outRefundNo',
+        'refundAmount' => 'refundAmount',
+        'remark' => 'remark',
+        'subInstId' => 'subInstId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -157,7 +155,7 @@ class CreateAcquireRefundOrderRequest extends Model
         if (isset($map['otherPayChannelDetailInfoList'])) {
             if (!empty($map['otherPayChannelDetailInfoList'])) {
                 $model->otherPayChannelDetailInfoList = [];
-                $n                                    = 0;
+                $n = 0;
                 foreach ($map['otherPayChannelDetailInfoList'] as $item) {
                     $model->otherPayChannelDetailInfoList[$n++] = null !== $item ? otherPayChannelDetailInfoList::fromMap($item) : $item;
                 }

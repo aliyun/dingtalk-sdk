@@ -36,15 +36,13 @@ class data extends Model
      */
     public $unionId;
     protected $_name = [
-        'publisherArticleCntStd'   => 'publisherArticleCntStd',
+        'publisherArticleCntStd' => 'publisherArticleCntStd',
         'publisherArticlePvCntStd' => 'publisherArticlePvCntStd',
-        'publisherName'            => 'publisherName',
-        'unionId'                  => 'unionId',
+        'publisherName' => 'publisherName',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

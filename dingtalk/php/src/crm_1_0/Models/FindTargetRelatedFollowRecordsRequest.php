@@ -43,14 +43,12 @@ class FindTargetRelatedFollowRecordsRequest extends Model
     public $nextToken;
     protected $_name = [
         'followTargetDataId' => 'followTargetDataId',
-        'followTargetType'   => 'followTargetType',
-        'maxResults'         => 'maxResults',
-        'nextToken'          => 'nextToken',
+        'followTargetType' => 'followTargetType',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

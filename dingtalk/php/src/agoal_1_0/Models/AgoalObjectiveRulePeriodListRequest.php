@@ -20,9 +20,7 @@ class AgoalObjectiveRulePeriodListRequest extends Model
         'objectiveRuleId' => 'objectiveRuleId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

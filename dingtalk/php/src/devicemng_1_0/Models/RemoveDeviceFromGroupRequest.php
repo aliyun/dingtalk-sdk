@@ -36,15 +36,13 @@ class RemoveDeviceFromGroupRequest extends Model
      */
     public $operator;
     protected $_name = [
-        'deviceCodes'        => 'deviceCodes',
-        'deviceUuids'        => 'deviceUuids',
+        'deviceCodes' => 'deviceCodes',
+        'deviceUuids' => 'deviceUuids',
         'openConversationId' => 'openConversationId',
-        'operator'           => 'operator',
+        'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

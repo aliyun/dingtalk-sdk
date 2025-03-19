@@ -38,17 +38,15 @@ class cardRuleItemParamList extends Model
      */
     public $relationUrl;
     protected $_name = [
-        'cardRuleAttr'  => 'cardRuleAttr',
-        'cardTaskCode'  => 'cardTaskCode',
-        'dailyDubbing'  => 'dailyDubbing',
-        'relationId'    => 'relationId',
+        'cardRuleAttr' => 'cardRuleAttr',
+        'cardTaskCode' => 'cardTaskCode',
+        'dailyDubbing' => 'dailyDubbing',
+        'relationId' => 'relationId',
         'relationTitle' => 'relationTitle',
-        'relationUrl'   => 'relationUrl',
+        'relationUrl' => 'relationUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

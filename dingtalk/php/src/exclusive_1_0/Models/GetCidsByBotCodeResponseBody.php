@@ -20,12 +20,10 @@ class GetCidsByBotCodeResponseBody extends Model
     public $hasMore;
     protected $_name = [
         'groupInfos' => 'groupInfos',
-        'hasMore'    => 'hasMore',
+        'hasMore' => 'hasMore',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class GetCidsByBotCodeResponseBody extends Model
         if (isset($map['groupInfos'])) {
             if (!empty($map['groupInfos'])) {
                 $model->groupInfos = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['groupInfos'] as $item) {
                     $model->groupInfos[$n++] = null !== $item ? groupInfos::fromMap($item) : $item;
                 }

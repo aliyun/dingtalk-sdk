@@ -59,17 +59,15 @@ class SetRightPanelRequest extends Model
      */
     public $width;
     protected $_name = [
-        'openConversationId'       => 'openConversationId',
+        'openConversationId' => 'openConversationId',
         'rightPanelClosePermitted' => 'rightPanelClosePermitted',
-        'rightPanelOpenStatus'     => 'rightPanelOpenStatus',
-        'title'                    => 'title',
-        'webWndParams'             => 'webWndParams',
-        'width'                    => 'width',
+        'rightPanelOpenStatus' => 'rightPanelOpenStatus',
+        'title' => 'title',
+        'webWndParams' => 'webWndParams',
+        'width' => 'width',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

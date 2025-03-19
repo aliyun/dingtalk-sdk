@@ -53,20 +53,18 @@ class AppUpdateTaskRequest extends Model
      */
     public $toolbarTemplateKey;
     protected $_name = [
-        'bizCreatedTime'     => 'bizCreatedTime',
-        'description'        => 'description',
-        'done'               => 'done',
-        'dueTime'            => 'dueTime',
-        'executorIds'        => 'executorIds',
-        'operatorId'         => 'operatorId',
-        'subject'            => 'subject',
-        'taskId'             => 'taskId',
+        'bizCreatedTime' => 'bizCreatedTime',
+        'description' => 'description',
+        'done' => 'done',
+        'dueTime' => 'dueTime',
+        'executorIds' => 'executorIds',
+        'operatorId' => 'operatorId',
+        'subject' => 'subject',
+        'taskId' => 'taskId',
         'toolbarTemplateKey' => 'toolbarTemplateKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

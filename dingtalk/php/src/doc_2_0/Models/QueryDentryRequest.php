@@ -25,12 +25,10 @@ class QueryDentryRequest extends Model
     public $operatorId;
     protected $_name = [
         'includeSpace' => 'includeSpace',
-        'operatorId'   => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -28,14 +28,12 @@ class SubmitTaskRequest extends Model
      */
     public $data;
     protected $_name = [
-        'appId'   => 'appId',
+        'appId' => 'appId',
         'bizCode' => 'bizCode',
-        'data'    => 'data',
+        'data' => 'data',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -76,7 +74,7 @@ class SubmitTaskRequest extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }

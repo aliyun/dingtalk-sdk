@@ -35,14 +35,12 @@ class GetSpaceFileUrlRequest extends Model
      */
     public $spaceId;
     protected $_name = [
-        'fileId'    => 'fileId',
+        'fileId' => 'fileId',
         'senderUid' => 'senderUid',
-        'spaceId'   => 'spaceId',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

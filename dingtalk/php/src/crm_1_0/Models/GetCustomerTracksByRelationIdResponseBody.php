@@ -34,14 +34,12 @@ class GetCustomerTracksByRelationIdResponseBody extends Model
      */
     public $resultList;
     protected $_name = [
-        'hasMore'    => 'hasMore',
-        'nextToken'  => 'nextToken',
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
         'resultList' => 'resultList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -82,7 +80,7 @@ class GetCustomerTracksByRelationIdResponseBody extends Model
         if (isset($map['resultList'])) {
             if (!empty($map['resultList'])) {
                 $model->resultList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['resultList'] as $item) {
                     $model->resultList[$n++] = null !== $item ? resultList::fromMap($item) : $item;
                 }

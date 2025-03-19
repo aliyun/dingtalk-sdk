@@ -49,17 +49,15 @@ class workflowActivityRules extends Model
      */
     public $workflowActor;
     protected $_name = [
-        'activityId'     => 'activityId',
-        'activityName'   => 'activityName',
-        'activityType'   => 'activityType',
+        'activityId' => 'activityId',
+        'activityName' => 'activityName',
+        'activityType' => 'activityType',
         'isTargetSelect' => 'isTargetSelect',
         'prevActivityId' => 'prevActivityId',
-        'workflowActor'  => 'workflowActor',
+        'workflowActor' => 'workflowActor',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

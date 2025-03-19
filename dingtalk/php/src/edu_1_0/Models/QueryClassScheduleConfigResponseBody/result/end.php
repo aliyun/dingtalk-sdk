@@ -30,13 +30,11 @@ class end extends Model
     public $year;
     protected $_name = [
         'dayOfMonth' => 'dayOfMonth',
-        'month'      => 'month',
-        'year'       => 'year',
+        'month' => 'month',
+        'year' => 'year',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

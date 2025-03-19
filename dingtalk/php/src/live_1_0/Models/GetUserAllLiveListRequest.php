@@ -55,18 +55,16 @@ class GetUserAllLiveListRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'endTime'    => 'endTime',
-        'startTime'  => 'startTime',
-        'statuses'   => 'statuses',
-        'title'      => 'title',
+        'endTime' => 'endTime',
+        'startTime' => 'startTime',
+        'statuses' => 'statuses',
+        'title' => 'title',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'unionId'    => 'unionId',
+        'pageSize' => 'pageSize',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -65,18 +65,16 @@ class UpdateInstanceRequest extends Model
      */
     public $ownerUnionId;
     protected $_name = [
-        'externalBizId'      => 'externalBizId',
-        'formCode'           => 'formCode',
-        'formDataList'       => 'formDataList',
+        'externalBizId' => 'externalBizId',
+        'formCode' => 'formCode',
+        'formDataList' => 'formDataList',
         'openDataInstanceId' => 'openDataInstanceId',
-        'openTeamId'         => 'openTeamId',
-        'operatorUnionId'    => 'operatorUnionId',
-        'ownerUnionId'       => 'ownerUnionId',
+        'openTeamId' => 'openTeamId',
+        'operatorUnionId' => 'operatorUnionId',
+        'ownerUnionId' => 'ownerUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

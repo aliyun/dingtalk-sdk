@@ -26,14 +26,12 @@ class data extends Model
      */
     public $reviewStatus;
     protected $_name = [
-        'reviewRiskDetail'   => 'reviewRiskDetail',
+        'reviewRiskDetail' => 'reviewRiskDetail',
         'reviewRiskOverview' => 'reviewRiskOverview',
-        'reviewStatus'       => 'reviewStatus',
+        'reviewStatus' => 'reviewStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -68,7 +66,7 @@ class data extends Model
         if (isset($map['reviewRiskDetail'])) {
             if (!empty($map['reviewRiskDetail'])) {
                 $model->reviewRiskDetail = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['reviewRiskDetail'] as $item) {
                     $model->reviewRiskDetail[$n++] = null !== $item ? reviewRiskDetail::fromMap($item) : $item;
                 }

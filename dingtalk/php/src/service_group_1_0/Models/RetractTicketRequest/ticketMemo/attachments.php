@@ -19,12 +19,10 @@ class attachments extends Model
     public $key;
     protected $_name = [
         'fileName' => 'fileName',
-        'key'      => 'key',
+        'key' => 'key',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

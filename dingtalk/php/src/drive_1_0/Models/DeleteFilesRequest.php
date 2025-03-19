@@ -30,13 +30,11 @@ class DeleteFilesRequest extends Model
     public $unionId;
     protected $_name = [
         'deletePolicy' => 'deletePolicy',
-        'fileIds'      => 'fileIds',
-        'unionId'      => 'unionId',
+        'fileIds' => 'fileIds',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

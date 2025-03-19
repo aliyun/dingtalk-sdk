@@ -23,12 +23,10 @@ class sortFields extends Model
     public $sortBy;
     protected $_name = [
         'fieldCode' => 'fieldCode',
-        'sortBy'    => 'sortBy',
+        'sortBy' => 'sortBy',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

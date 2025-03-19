@@ -73,24 +73,22 @@ class robotInfoList extends Model
      */
     public $status;
     protected $_name = [
-        'brief'          => 'brief',
-        'code'           => 'code',
-        'createAt'       => 'createAt',
-        'description'    => 'description',
-        'dev'            => 'dev',
-        'icon'           => 'icon',
-        'modifiedAt'     => 'modifiedAt',
-        'name'           => 'name',
-        'outgoingToken'  => 'outgoingToken',
-        'outgoingUrl'    => 'outgoingUrl',
+        'brief' => 'brief',
+        'code' => 'code',
+        'createAt' => 'createAt',
+        'description' => 'description',
+        'dev' => 'dev',
+        'icon' => 'icon',
+        'modifiedAt' => 'modifiedAt',
+        'name' => 'name',
+        'outgoingToken' => 'outgoingToken',
+        'outgoingUrl' => 'outgoingUrl',
         'previewMediaId' => 'previewMediaId',
-        'sourceUrl'      => 'sourceUrl',
-        'status'         => 'status',
+        'sourceUrl' => 'sourceUrl',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

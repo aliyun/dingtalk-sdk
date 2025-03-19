@@ -22,13 +22,11 @@ class BatchDeleteDeviceRequest extends Model
      */
     public $deviceIds;
     protected $_name = [
-        'corpId'    => 'corpId',
+        'corpId' => 'corpId',
         'deviceIds' => 'deviceIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

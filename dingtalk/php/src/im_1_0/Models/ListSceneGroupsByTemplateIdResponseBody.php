@@ -19,12 +19,10 @@ class ListSceneGroupsByTemplateIdResponseBody extends Model
     public $success;
     protected $_name = [
         'openConversationIds' => 'openConversationIds',
-        'success'             => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

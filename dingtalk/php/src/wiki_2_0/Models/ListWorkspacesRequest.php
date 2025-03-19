@@ -52,17 +52,15 @@ class ListWorkspacesRequest extends Model
      */
     public $withPermissionRole;
     protected $_name = [
-        'maxResults'         => 'maxResults',
-        'nextToken'          => 'nextToken',
-        'operatorId'         => 'operatorId',
-        'orderBy'            => 'orderBy',
-        'teamId'             => 'teamId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'operatorId' => 'operatorId',
+        'orderBy' => 'orderBy',
+        'teamId' => 'teamId',
         'withPermissionRole' => 'withPermissionRole',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -30,13 +30,11 @@ class SendMessageResponseBody extends Model
     public $msgId;
     protected $_name = [
         'createTime' => 'createTime',
-        'messageId'  => 'messageId',
-        'msgId'      => 'msgId',
+        'messageId' => 'messageId',
+        'msgId' => 'msgId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

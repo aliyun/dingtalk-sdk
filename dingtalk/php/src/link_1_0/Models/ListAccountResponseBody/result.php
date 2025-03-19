@@ -18,13 +18,11 @@ class result extends Model
      */
     public $accountName;
     protected $_name = [
-        'accountId'   => 'accountId',
+        'accountId' => 'accountId',
         'accountName' => 'accountName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

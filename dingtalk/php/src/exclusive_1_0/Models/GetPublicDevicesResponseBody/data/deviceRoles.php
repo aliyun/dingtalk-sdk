@@ -22,13 +22,11 @@ class deviceRoles extends Model
      */
     public $tagCode;
     protected $_name = [
-        'name'    => 'name',
+        'name' => 'name',
         'tagCode' => 'tagCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

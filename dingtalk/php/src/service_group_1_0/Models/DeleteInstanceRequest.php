@@ -42,15 +42,13 @@ class DeleteInstanceRequest extends Model
      */
     public $operatorUnionId;
     protected $_name = [
-        'formCode'           => 'formCode',
+        'formCode' => 'formCode',
         'openDataInstanceId' => 'openDataInstanceId',
-        'openTeamId'         => 'openTeamId',
-        'operatorUnionId'    => 'operatorUnionId',
+        'openTeamId' => 'openTeamId',
+        'operatorUnionId' => 'operatorUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

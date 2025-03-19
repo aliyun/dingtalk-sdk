@@ -18,9 +18,7 @@ class licenses extends Model
         'licenseUserId' => 'licenseUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

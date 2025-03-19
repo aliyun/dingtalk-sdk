@@ -22,12 +22,10 @@ class BatchOTOQueryResponseBody extends Model
     public $sendStatus;
     protected $_name = [
         'messageReadInfoList' => 'messageReadInfoList',
-        'sendStatus'          => 'sendStatus',
+        'sendStatus' => 'sendStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class BatchOTOQueryResponseBody extends Model
         if (isset($map['messageReadInfoList'])) {
             if (!empty($map['messageReadInfoList'])) {
                 $model->messageReadInfoList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['messageReadInfoList'] as $item) {
                     $model->messageReadInfoList[$n++] = null !== $item ? messageReadInfoList::fromMap($item) : $item;
                 }

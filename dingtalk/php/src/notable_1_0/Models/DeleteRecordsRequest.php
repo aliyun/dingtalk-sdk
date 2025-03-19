@@ -24,13 +24,11 @@ class DeleteRecordsRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'recordIds'  => 'recordIds',
+        'recordIds' => 'recordIds',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

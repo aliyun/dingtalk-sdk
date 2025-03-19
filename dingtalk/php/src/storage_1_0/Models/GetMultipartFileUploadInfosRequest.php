@@ -39,15 +39,13 @@ class GetMultipartFileUploadInfosRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'option'      => 'option',
+        'option' => 'option',
         'partNumbers' => 'partNumbers',
-        'uploadKey'   => 'uploadKey',
-        'unionId'     => 'unionId',
+        'uploadKey' => 'uploadKey',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

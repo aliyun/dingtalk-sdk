@@ -18,13 +18,11 @@ class PostResumeRequest extends Model
      */
     public $userIdentify;
     protected $_name = [
-        'jobId'        => 'jobId',
+        'jobId' => 'jobId',
         'userIdentify' => 'userIdentify',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

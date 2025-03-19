@@ -41,14 +41,12 @@ class QueryCandidatesRequest extends Model
     public $opUserId;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'statId'     => 'statId',
-        'opUserId'   => 'opUserId',
+        'nextToken' => 'nextToken',
+        'statId' => 'statId',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

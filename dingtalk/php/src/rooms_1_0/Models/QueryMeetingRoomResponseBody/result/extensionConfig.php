@@ -39,16 +39,14 @@ class extensionConfig extends Model
      */
     public $reservationCloseDetail;
     protected $_name = [
-        'advanceReservation'         => 'advanceReservation',
+        'advanceReservation' => 'advanceReservation',
         'maxReservationTimeInterval' => 'maxReservationTimeInterval',
         'minReservationTimeInterval' => 'minReservationTimeInterval',
-        'openReservation'            => 'openReservation',
-        'reservationCloseDetail'     => 'reservationCloseDetail',
+        'openReservation' => 'openReservation',
+        'reservationCloseDetail' => 'reservationCloseDetail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

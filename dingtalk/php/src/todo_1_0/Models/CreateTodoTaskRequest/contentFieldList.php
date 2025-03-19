@@ -18,13 +18,11 @@ class contentFieldList extends Model
      */
     public $fieldValue;
     protected $_name = [
-        'fieldKey'   => 'fieldKey',
+        'fieldKey' => 'fieldKey',
         'fieldValue' => 'fieldValue',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

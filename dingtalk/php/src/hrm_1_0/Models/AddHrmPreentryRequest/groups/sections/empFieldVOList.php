@@ -23,12 +23,10 @@ class empFieldVOList extends Model
     public $value;
     protected $_name = [
         'fieldCode' => 'fieldCode',
-        'value'     => 'value',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

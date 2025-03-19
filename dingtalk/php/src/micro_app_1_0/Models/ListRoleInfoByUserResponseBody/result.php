@@ -30,13 +30,11 @@ class result extends Model
     public $roleName;
     protected $_name = [
         'canManageRole' => 'canManageRole',
-        'roleId'        => 'roleId',
-        'roleName'      => 'roleName',
+        'roleId' => 'roleId',
+        'roleName' => 'roleName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

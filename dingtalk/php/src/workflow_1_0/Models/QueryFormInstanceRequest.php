@@ -33,14 +33,12 @@ class QueryFormInstanceRequest extends Model
      */
     public $formInstanceId;
     protected $_name = [
-        'appUuid'        => 'appUuid',
-        'formCode'       => 'formCode',
+        'appUuid' => 'appUuid',
+        'formCode' => 'formCode',
         'formInstanceId' => 'formInstanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

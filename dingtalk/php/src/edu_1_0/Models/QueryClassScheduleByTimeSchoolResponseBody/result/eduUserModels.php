@@ -23,14 +23,12 @@ class eduUserModels extends Model
      */
     public $userId;
     protected $_name = [
-        'name'   => 'name',
-        'uid'    => 'uid',
+        'name' => 'name',
+        'uid' => 'uid',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

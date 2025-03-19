@@ -23,14 +23,12 @@ class QueryRecentConversationsRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'onlyHuman'      => 'onlyHuman',
+        'onlyHuman' => 'onlyHuman',
         'onlyInnerGroup' => 'onlyInnerGroup',
-        'userId'         => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

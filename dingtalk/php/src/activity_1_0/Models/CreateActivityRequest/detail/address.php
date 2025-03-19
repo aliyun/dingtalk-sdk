@@ -37,14 +37,12 @@ class address extends Model
     public $name;
     protected $_name = [
         'district' => 'district',
-        'lat'      => 'lat',
-        'lng'      => 'lng',
-        'name'     => 'name',
+        'lat' => 'lat',
+        'lng' => 'lng',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

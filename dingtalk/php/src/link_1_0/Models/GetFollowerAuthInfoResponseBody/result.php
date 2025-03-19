@@ -17,9 +17,7 @@ class result extends Model
         'authInfo' => 'authInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

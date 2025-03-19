@@ -77,20 +77,18 @@ class searchTabResult extends Model
      */
     public $tabId;
     protected $_name = [
-        'darkIcon'    => 'darkIcon',
-        'gmtCreate'   => 'gmtCreate',
+        'darkIcon' => 'darkIcon',
+        'gmtCreate' => 'gmtCreate',
         'gmtModified' => 'gmtModified',
-        'icon'        => 'icon',
-        'name'        => 'name',
-        'priority'    => 'priority',
-        'source'      => 'source',
-        'status'      => 'status',
-        'tabId'       => 'tabId',
+        'icon' => 'icon',
+        'name' => 'name',
+        'priority' => 'priority',
+        'source' => 'source',
+        'status' => 'status',
+        'tabId' => 'tabId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

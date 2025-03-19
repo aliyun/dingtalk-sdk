@@ -36,15 +36,13 @@ class UninstallCoolAppFromGroupRequest extends Model
      */
     public $templateId;
     protected $_name = [
-        'conversationId'     => 'conversationId',
+        'conversationId' => 'conversationId',
         'operateCoolAppCode' => 'operateCoolAppCode',
-        'operatorId'         => 'operatorId',
-        'templateId'         => 'templateId',
+        'operatorId' => 'operatorId',
+        'templateId' => 'templateId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

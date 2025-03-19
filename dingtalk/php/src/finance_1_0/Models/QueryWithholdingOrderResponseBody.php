@@ -121,24 +121,22 @@ class QueryWithholdingOrderResponseBody extends Model
      */
     public $title;
     protected $_name = [
-        'amount'              => 'amount',
-        'gmtCreate'           => 'gmtCreate',
-        'gmtPay'              => 'gmtPay',
-        'instId'              => 'instId',
-        'orderNo'             => 'orderNo',
-        'outTradeNo'          => 'outTradeNo',
-        'payChannel'          => 'payChannel',
+        'amount' => 'amount',
+        'gmtCreate' => 'gmtCreate',
+        'gmtPay' => 'gmtPay',
+        'instId' => 'instId',
+        'orderNo' => 'orderNo',
+        'outTradeNo' => 'outTradeNo',
+        'payChannel' => 'payChannel',
         'payChannelAccountNo' => 'payChannelAccountNo',
-        'payerUserId'         => 'payerUserId',
-        'remark'              => 'remark',
-        'status'              => 'status',
-        'subInstId'           => 'subInstId',
-        'title'               => 'title',
+        'payerUserId' => 'payerUserId',
+        'remark' => 'remark',
+        'status' => 'status',
+        'subInstId' => 'subInstId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

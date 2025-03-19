@@ -36,15 +36,13 @@ class SubmitMemoryLearningTaskShrinkRequest extends Model
      */
     public $memoryKey;
     protected $_name = [
-        'agentCode'     => 'agentCode',
+        'agentCode' => 'agentCode',
         'contentShrink' => 'content',
-        'learningMode'  => 'learningMode',
-        'memoryKey'     => 'memoryKey',
+        'learningMode' => 'learningMode',
+        'memoryKey' => 'memoryKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

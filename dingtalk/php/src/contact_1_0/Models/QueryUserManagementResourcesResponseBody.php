@@ -16,9 +16,7 @@ class QueryUserManagementResourcesResponseBody extends Model
         'resourceIds' => 'resourceIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

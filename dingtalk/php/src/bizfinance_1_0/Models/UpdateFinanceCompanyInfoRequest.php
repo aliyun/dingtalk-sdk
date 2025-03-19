@@ -33,16 +33,14 @@ class UpdateFinanceCompanyInfoRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'companyName'         => 'companyName',
-        'taxNature'           => 'taxNature',
-        'taxNo'               => 'taxNo',
+        'companyName' => 'companyName',
+        'taxNature' => 'taxNature',
+        'taxNo' => 'taxNo',
         'taxOrInvoiceHasInit' => 'taxOrInvoiceHasInit',
-        'userId'              => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

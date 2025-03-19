@@ -59,19 +59,17 @@ class AddCrmPersonalCustomerRequest extends Model
      */
     public $skipDuplicateCheck;
     protected $_name = [
-        'action'             => 'action',
-        'creatorNick'        => 'creatorNick',
-        'creatorUserId'      => 'creatorUserId',
-        'data'               => 'data',
-        'extendData'         => 'extendData',
-        'permission'         => 'permission',
-        'relationType'       => 'relationType',
+        'action' => 'action',
+        'creatorNick' => 'creatorNick',
+        'creatorUserId' => 'creatorUserId',
+        'data' => 'data',
+        'extendData' => 'extendData',
+        'permission' => 'permission',
+        'relationType' => 'relationType',
         'skipDuplicateCheck' => 'skipDuplicateCheck',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

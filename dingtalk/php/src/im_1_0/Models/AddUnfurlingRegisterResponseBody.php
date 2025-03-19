@@ -20,13 +20,11 @@ class AddUnfurlingRegisterResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'id'      => 'id',
+        'id' => 'id',
         'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

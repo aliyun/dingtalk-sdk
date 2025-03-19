@@ -78,21 +78,19 @@ class QueryReceiptsBaseInfoRequest extends Model
     public $voucherStatus;
     protected $_name = [
         'accountantBookId' => 'accountantBookId',
-        'amountEnd'        => 'amountEnd',
-        'amountStart'      => 'amountStart',
-        'companyCode'      => 'companyCode',
-        'endTime'          => 'endTime',
-        'pageNumber'       => 'pageNumber',
-        'pageSize'         => 'pageSize',
-        'startTime'        => 'startTime',
-        'timeFilterField'  => 'timeFilterField',
-        'title'            => 'title',
-        'voucherStatus'    => 'voucherStatus',
+        'amountEnd' => 'amountEnd',
+        'amountStart' => 'amountStart',
+        'companyCode' => 'companyCode',
+        'endTime' => 'endTime',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'startTime' => 'startTime',
+        'timeFilterField' => 'timeFilterField',
+        'title' => 'title',
+        'voucherStatus' => 'voucherStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

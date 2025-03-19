@@ -51,16 +51,14 @@ class SyncSolutionStatusRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'bizId'          => 'bizId',
+        'bizId' => 'bizId',
         'solutionStatus' => 'solutionStatus',
-        'solutionType'   => 'solutionType',
-        'tenantId'       => 'tenantId',
-        'userIds'        => 'userIds',
+        'solutionType' => 'solutionType',
+        'tenantId' => 'tenantId',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

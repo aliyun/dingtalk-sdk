@@ -25,13 +25,11 @@ class BatchAddFollowRecordsRequest extends Model
      */
     public $operatorUserId;
     protected $_name = [
-        'instanceList'   => 'instanceList',
+        'instanceList' => 'instanceList',
         'operatorUserId' => 'operatorUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -63,7 +61,7 @@ class BatchAddFollowRecordsRequest extends Model
         if (isset($map['instanceList'])) {
             if (!empty($map['instanceList'])) {
                 $model->instanceList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['instanceList'] as $item) {
                     $model->instanceList[$n++] = null !== $item ? instanceList::fromMap($item) : $item;
                 }

@@ -28,14 +28,12 @@ class GetTaskStudentListResponseBody extends Model
      */
     public $taskId;
     protected $_name = [
-        'count'       => 'count',
+        'count' => 'count',
         'studentList' => 'studentList',
-        'taskId'      => 'taskId',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -73,7 +71,7 @@ class GetTaskStudentListResponseBody extends Model
         if (isset($map['studentList'])) {
             if (!empty($map['studentList'])) {
                 $model->studentList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['studentList'] as $item) {
                     $model->studentList[$n++] = null !== $item ? studentList::fromMap($item) : $item;
                 }

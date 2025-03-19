@@ -39,16 +39,14 @@ class ListDeptUsersRequest extends Model
     public $subCorpId;
     protected $_name = [
         'containAccessLimit' => 'containAccessLimit',
-        'cursor'             => 'cursor',
-        'language'           => 'language',
-        'orderField'         => 'orderField',
-        'size'               => 'size',
-        'subCorpId'          => 'subCorpId',
+        'cursor' => 'cursor',
+        'language' => 'language',
+        'orderField' => 'orderField',
+        'size' => 'size',
+        'subCorpId' => 'subCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

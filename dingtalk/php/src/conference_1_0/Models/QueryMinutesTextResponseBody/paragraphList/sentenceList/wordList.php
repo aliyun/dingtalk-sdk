@@ -36,15 +36,13 @@ class wordList extends Model
      */
     public $wordId;
     protected $_name = [
-        'endTime'   => 'endTime',
+        'endTime' => 'endTime',
         'startTime' => 'startTime',
-        'word'      => 'word',
-        'wordId'    => 'wordId',
+        'word' => 'word',
+        'wordId' => 'wordId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

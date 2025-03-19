@@ -30,14 +30,12 @@ class GetWorkspacesRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'option'       => 'option',
+        'option' => 'option',
         'workspaceIds' => 'workspaceIds',
-        'operatorId'   => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

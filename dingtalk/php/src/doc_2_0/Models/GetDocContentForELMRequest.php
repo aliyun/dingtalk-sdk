@@ -18,9 +18,7 @@ class GetDocContentForELMRequest extends Model
         'targetFormat' => 'targetFormat',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

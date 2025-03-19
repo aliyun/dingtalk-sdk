@@ -26,13 +26,11 @@ class RemoveSuperUserMeetingRoomRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'roomId'  => 'roomId',
+        'roomId' => 'roomId',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

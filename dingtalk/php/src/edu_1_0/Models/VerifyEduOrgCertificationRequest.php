@@ -22,13 +22,11 @@ class VerifyEduOrgCertificationRequest extends Model
      */
     public $targetCorpId;
     protected $_name = [
-        'bizCode'      => 'bizCode',
+        'bizCode' => 'bizCode',
         'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

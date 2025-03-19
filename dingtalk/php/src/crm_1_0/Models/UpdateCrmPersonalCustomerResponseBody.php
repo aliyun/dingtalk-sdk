@@ -18,9 +18,7 @@ class UpdateCrmPersonalCustomerResponseBody extends Model
         'instanceId' => 'instanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -32,13 +32,11 @@ class ListRecycleItemsRequest extends Model
     public $unionId;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'unionId'    => 'unionId',
+        'nextToken' => 'nextToken',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,13 +36,11 @@ class DelOrgAccUserOwnnessRequest extends Model
     public $userId;
     protected $_name = [
         'ownenssType' => 'ownenssType',
-        'ownnessId'   => 'ownnessId',
-        'userId'      => 'userId',
+        'ownnessId' => 'ownnessId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

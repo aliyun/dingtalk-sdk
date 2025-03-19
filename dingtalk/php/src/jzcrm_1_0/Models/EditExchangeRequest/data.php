@@ -102,27 +102,25 @@ class data extends Model
      */
     public $hhType;
     protected $_name = [
-        'childMx'      => 'child_mx',
-        'dataUserid'   => 'data_userid',
+        'childMx' => 'child_mx',
+        'dataUserid' => 'data_userid',
         'hhCustomerid' => 'hh_customerid',
-        'hhDate'       => 'hh_date',
-        'hhInempid'    => 'hh_inempid',
-        'hhInlibid'    => 'hh_inlibid',
-        'hhIntime'     => 'hh_intime',
-        'hhNumber'     => 'hh_number',
-        'hhOrderid'    => 'hh_orderid',
-        'hhOutempid'   => 'hh_outempid',
-        'hhOutlibid'   => 'hh_outlibid',
-        'hhOuttime'    => 'hh_outtime',
-        'hhRemark'     => 'hh_remark',
-        'hhState'      => 'hh_state',
-        'hhTitle'      => 'hh_title',
-        'hhType'       => 'hh_type',
+        'hhDate' => 'hh_date',
+        'hhInempid' => 'hh_inempid',
+        'hhInlibid' => 'hh_inlibid',
+        'hhIntime' => 'hh_intime',
+        'hhNumber' => 'hh_number',
+        'hhOrderid' => 'hh_orderid',
+        'hhOutempid' => 'hh_outempid',
+        'hhOutlibid' => 'hh_outlibid',
+        'hhOuttime' => 'hh_outtime',
+        'hhRemark' => 'hh_remark',
+        'hhState' => 'hh_state',
+        'hhTitle' => 'hh_title',
+        'hhType' => 'hh_type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

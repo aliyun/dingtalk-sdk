@@ -34,15 +34,13 @@ class GetSceneGroupMembersResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'hasMore'       => 'hasMore',
+        'hasMore' => 'hasMore',
         'memberUserIds' => 'memberUserIds',
-        'nextCursor'    => 'nextCursor',
-        'success'       => 'success',
+        'nextCursor' => 'nextCursor',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

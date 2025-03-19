@@ -23,13 +23,11 @@ class list_ extends Model
      */
     public $policyType;
     protected $_name = [
-        'member'     => 'member',
+        'member' => 'member',
         'policyType' => 'policyType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

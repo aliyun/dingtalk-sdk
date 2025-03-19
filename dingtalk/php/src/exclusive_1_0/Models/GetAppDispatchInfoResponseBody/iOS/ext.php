@@ -16,9 +16,7 @@ class ext extends Model
         'plist' => 'plist',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -22,13 +22,11 @@ class markdown extends Model
      */
     public $title;
     protected $_name = [
-        'text'  => 'text',
+        'text' => 'text',
         'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

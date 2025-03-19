@@ -18,9 +18,7 @@ class ChatAIQueryDatasetPermissionRequest extends Model
         'datasetId' => 'datasetId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

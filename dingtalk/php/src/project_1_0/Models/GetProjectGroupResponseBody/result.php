@@ -44,15 +44,13 @@ class result extends Model
     public $visible;
     protected $_name = [
         'created' => 'created',
-        'id'      => 'id',
-        'name'    => 'name',
+        'id' => 'id',
+        'name' => 'name',
         'updated' => 'updated',
         'visible' => 'visible',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

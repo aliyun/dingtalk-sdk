@@ -23,12 +23,10 @@ class RollbackMiniAppVersionResponseBody extends Model
     public $code;
     protected $_name = [
         'cause' => 'cause',
-        'code'  => 'code',
+        'code' => 'code',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

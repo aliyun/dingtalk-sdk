@@ -23,12 +23,10 @@ class option extends Model
     public $industryId;
     protected $_name = [
         'categoryStatus' => 'categoryStatus',
-        'industryId'     => 'industryId',
+        'industryId' => 'industryId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

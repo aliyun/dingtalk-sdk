@@ -106,23 +106,21 @@ class UpdateInvoiceVerifyStatusRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'bizId'           => 'bizId',
-        'checkingResult'  => 'checkingResult',
-        'checkingStatus'  => 'checkingStatus',
-        'code'            => 'code',
-        'corpId'          => 'corpId',
-        'extension'       => 'extension',
-        'invoiceCode'     => 'invoiceCode',
-        'invoiceNo'       => 'invoiceNo',
-        'invoiceStatus'   => 'invoiceStatus',
+        'bizId' => 'bizId',
+        'checkingResult' => 'checkingResult',
+        'checkingStatus' => 'checkingStatus',
+        'code' => 'code',
+        'corpId' => 'corpId',
+        'extension' => 'extension',
+        'invoiceCode' => 'invoiceCode',
+        'invoiceNo' => 'invoiceNo',
+        'invoiceStatus' => 'invoiceStatus',
         'invoiceVerifyId' => 'invoiceVerifyId',
-        'msg'             => 'msg',
-        'unionId'         => 'unionId',
+        'msg' => 'msg',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

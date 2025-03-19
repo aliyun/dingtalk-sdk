@@ -31,14 +31,12 @@ class items extends Model
      */
     public $props;
     protected $_name = [
-        'children'      => 'children',
+        'children' => 'children',
         'componentName' => 'componentName',
-        'props'         => 'props',
+        'props' => 'props',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -73,7 +71,7 @@ class items extends Model
         if (isset($map['children'])) {
             if (!empty($map['children'])) {
                 $model->children = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['children'] as $item) {
                     $model->children[$n++] = null !== $item ? children::fromMap($item) : $item;
                 }

@@ -20,9 +20,7 @@ class CreateFeedResponseBody extends Model
         'feedId' => 'feedId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

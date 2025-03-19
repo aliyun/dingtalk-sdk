@@ -35,16 +35,14 @@ class customPlan extends Model
      */
     public $userIds;
     protected $_name = [
-        'currentCategoryList'  => 'currentCategoryList',
-        'deptIds'              => 'deptIds',
-        'planName'             => 'planName',
+        'currentCategoryList' => 'currentCategoryList',
+        'deptIds' => 'deptIds',
+        'planName' => 'planName',
         'unSelectCategoryList' => 'unSelectCategoryList',
-        'userIds'              => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class UpdateTaskStageRequest extends Model
         'taskStageId' => 'taskStageId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -54,17 +54,15 @@ class OverrideUpdateCustomerDataAuthRequest extends Model
      */
     public $roleType;
     protected $_name = [
-        'customerIds'     => 'customerIds',
+        'customerIds' => 'customerIds',
         'dataAuthUserIds' => 'dataAuthUserIds',
-        'formCode'        => 'formCode',
-        'operateUserId'   => 'operateUserId',
-        'relationType'    => 'relationType',
-        'roleType'        => 'roleType',
+        'formCode' => 'formCode',
+        'operateUserId' => 'operateUserId',
+        'relationType' => 'relationType',
+        'roleType' => 'roleType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

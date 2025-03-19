@@ -78,21 +78,19 @@ class DecodePayCodeResponseBody extends Model
      */
     public $userInCorp;
     protected $_name = [
-        'alipayCode'           => 'alipayCode',
-        'codeId'               => 'codeId',
-        'codeIdentity'         => 'codeIdentity',
-        'codeType'             => 'codeType',
-        'corpId'               => 'corpId',
-        'extInfo'              => 'extInfo',
-        'outBizId'             => 'outBizId',
+        'alipayCode' => 'alipayCode',
+        'codeId' => 'codeId',
+        'codeIdentity' => 'codeIdentity',
+        'codeType' => 'codeType',
+        'corpId' => 'corpId',
+        'extInfo' => 'extInfo',
+        'outBizId' => 'outBizId',
         'userCorpRelationType' => 'userCorpRelationType',
-        'userId'               => 'userId',
-        'userInCorp'           => 'userInCorp',
+        'userId' => 'userId',
+        'userInCorp' => 'userInCorp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

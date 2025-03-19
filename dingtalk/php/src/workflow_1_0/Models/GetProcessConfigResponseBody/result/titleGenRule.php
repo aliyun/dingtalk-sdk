@@ -23,12 +23,10 @@ class titleGenRule extends Model
     public $type;
     protected $_name = [
         'express' => 'express',
-        'type'    => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class LogListRequest extends Model
     public $startTime;
     protected $_name = [
         'assistantId' => 'assistantId',
-        'endTime'     => 'endTime',
-        'pageNumber'  => 'pageNumber',
-        'pageSize'    => 'pageSize',
-        'startTime'   => 'startTime',
+        'endTime' => 'endTime',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

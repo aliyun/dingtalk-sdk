@@ -30,13 +30,11 @@ class DeleteRecycleFilesRequest extends Model
     public $unionId;
     protected $_name = [
         'recycleItemIdList' => 'recycleItemIdList',
-        'recycleType'       => 'recycleType',
-        'unionId'           => 'unionId',
+        'recycleType' => 'recycleType',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

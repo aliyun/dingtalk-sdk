@@ -19,12 +19,10 @@ class relationPermissionDTO extends Model
     public $principalUserIds;
     protected $_name = [
         'participantUserIds' => 'participantUserIds',
-        'principalUserIds'   => 'principalUserIds',
+        'principalUserIds' => 'principalUserIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

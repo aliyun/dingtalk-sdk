@@ -26,13 +26,11 @@ class JoinGroupSetResponseBody extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'chatId'             => 'chatId',
+        'chatId' => 'chatId',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

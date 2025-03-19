@@ -25,12 +25,10 @@ class IntentionStatisticsResponseBody extends Model
     public $intentionTrend;
     protected $_name = [
         'intentionStatisticsRecords' => 'intentionStatisticsRecords',
-        'intentionTrend'             => 'intentionTrend',
+        'intentionTrend' => 'intentionTrend',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -68,7 +66,7 @@ class IntentionStatisticsResponseBody extends Model
         if (isset($map['intentionStatisticsRecords'])) {
             if (!empty($map['intentionStatisticsRecords'])) {
                 $model->intentionStatisticsRecords = [];
-                $n                                 = 0;
+                $n = 0;
                 foreach ($map['intentionStatisticsRecords'] as $item) {
                     $model->intentionStatisticsRecords[$n++] = null !== $item ? intentionStatisticsRecords::fromMap($item) : $item;
                 }
@@ -77,7 +75,7 @@ class IntentionStatisticsResponseBody extends Model
         if (isset($map['intentionTrend'])) {
             if (!empty($map['intentionTrend'])) {
                 $model->intentionTrend = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['intentionTrend'] as $item) {
                     $model->intentionTrend[$n++] = null !== $item ? intentionTrend::fromMap($item) : $item;
                 }

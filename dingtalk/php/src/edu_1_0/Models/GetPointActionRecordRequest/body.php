@@ -23,14 +23,12 @@ class body extends Model
      */
     public $pointType;
     protected $_name = [
-        'bizId'     => 'bizId',
-        'ownerId'   => 'ownerId',
+        'bizId' => 'bizId',
+        'ownerId' => 'ownerId',
         'pointType' => 'pointType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

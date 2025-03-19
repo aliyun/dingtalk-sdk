@@ -20,13 +20,11 @@ class visibilityRules extends Model
      */
     public $visible;
     protected $_name = [
-        'type'    => 'type',
+        'type' => 'type',
         'visible' => 'visible',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -106,25 +106,23 @@ class list_ extends Model
      */
     public $unit;
     protected $_name = [
-        'actPrice'       => 'actPrice',
-        'corpId'         => 'corpId',
-        'count'          => 'count',
-        'ext'            => 'ext',
-        'gmtCreate'      => 'gmtCreate',
-        'gmtModified'    => 'gmtModified',
-        'instanceId'     => 'instanceId',
+        'actPrice' => 'actPrice',
+        'corpId' => 'corpId',
+        'count' => 'count',
+        'ext' => 'ext',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'instanceId' => 'instanceId',
         'materialCostNo' => 'materialCostNo',
-        'materialName'   => 'materialName',
-        'materialNo'     => 'materialNo',
-        'memo'           => 'memo',
-        'price'          => 'price',
-        'processCode'    => 'processCode',
-        'unit'           => 'unit',
+        'materialName' => 'materialName',
+        'materialNo' => 'materialNo',
+        'memo' => 'memo',
+        'price' => 'price',
+        'processCode' => 'processCode',
+        'unit' => 'unit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

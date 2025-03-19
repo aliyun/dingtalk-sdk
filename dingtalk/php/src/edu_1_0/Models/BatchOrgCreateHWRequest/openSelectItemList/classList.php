@@ -29,15 +29,13 @@ class classList extends Model
      */
     public $students;
     protected $_name = [
-        'all'       => 'all',
-        'classId'   => 'classId',
+        'all' => 'all',
+        'classId' => 'classId',
         'className' => 'className',
-        'students'  => 'students',
+        'students' => 'students',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -84,7 +82,7 @@ class classList extends Model
         if (isset($map['students'])) {
             if (!empty($map['students'])) {
                 $model->students = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['students'] as $item) {
                     $model->students[$n++] = null !== $item ? students::fromMap($item) : $item;
                 }

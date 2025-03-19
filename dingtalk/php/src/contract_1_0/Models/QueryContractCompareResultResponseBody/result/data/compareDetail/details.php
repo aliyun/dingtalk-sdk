@@ -23,14 +23,12 @@ class details extends Model
      */
     public $type;
     protected $_name = [
-        'compareWords'  => 'compareWords',
+        'compareWords' => 'compareWords',
         'originalWords' => 'originalWords',
-        'type'          => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

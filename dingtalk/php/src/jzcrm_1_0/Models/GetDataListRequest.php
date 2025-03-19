@@ -36,13 +36,11 @@ class GetDataListRequest extends Model
     public $pagesize;
     protected $_name = [
         'datatype' => 'datatype',
-        'page'     => 'page',
+        'page' => 'page',
         'pagesize' => 'pagesize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

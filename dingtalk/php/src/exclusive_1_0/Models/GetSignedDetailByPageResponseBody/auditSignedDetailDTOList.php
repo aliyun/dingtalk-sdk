@@ -58,17 +58,15 @@ class auditSignedDetailDTOList extends Model
     public $title;
     protected $_name = [
         'deptName' => 'deptName',
-        'email'    => 'email',
-        'name'     => 'name',
-        'phone'    => 'phone',
-        'roles'    => 'roles',
-        'staffId'  => 'staffId',
-        'title'    => 'title',
+        'email' => 'email',
+        'name' => 'name',
+        'phone' => 'phone',
+        'roles' => 'roles',
+        'staffId' => 'staffId',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

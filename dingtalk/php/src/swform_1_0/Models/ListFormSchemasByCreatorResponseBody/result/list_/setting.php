@@ -59,18 +59,16 @@ class setting extends Model
      */
     public $stop;
     protected $_name = [
-        'bizType'    => 'bizType',
+        'bizType' => 'bizType',
         'createTime' => 'createTime',
-        'endTime'    => 'endTime',
-        'formType'   => 'formType',
-        'loopDays'   => 'loopDays',
-        'loopTime'   => 'loopTime',
-        'stop'       => 'stop',
+        'endTime' => 'endTime',
+        'formType' => 'formType',
+        'loopDays' => 'loopDays',
+        'loopTime' => 'loopTime',
+        'stop' => 'stop',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

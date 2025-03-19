@@ -32,15 +32,13 @@ class param extends Model
      */
     public $teamId;
     protected $_name = [
-        'leave'    => 'leave',
+        'leave' => 'leave',
         'newOwner' => 'newOwner',
-        'notify'   => 'notify',
-        'teamId'   => 'teamId',
+        'notify' => 'notify',
+        'teamId' => 'teamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

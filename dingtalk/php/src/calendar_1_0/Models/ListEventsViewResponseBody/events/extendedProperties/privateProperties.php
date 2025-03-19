@@ -16,9 +16,7 @@ class privateProperties extends Model
         'dingtalkDetailUrl' => 'dingtalkDetailUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

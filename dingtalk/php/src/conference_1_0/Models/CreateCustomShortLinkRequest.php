@@ -49,16 +49,14 @@ class CreateCustomShortLinkRequest extends Model
      */
     public $useExtensionApp;
     protected $_name = [
-        'coolAppCode'          => 'coolAppCode',
-        'creatorUnionId'       => 'creatorUnionId',
-        'extensionAppBizData'  => 'extensionAppBizData',
+        'coolAppCode' => 'coolAppCode',
+        'creatorUnionId' => 'creatorUnionId',
+        'extensionAppBizData' => 'extensionAppBizData',
         'scheduleConferenceId' => 'scheduleConferenceId',
-        'useExtensionApp'      => 'useExtensionApp',
+        'useExtensionApp' => 'useExtensionApp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class picList extends Model
         'mediaIdUrl' => 'mediaIdUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

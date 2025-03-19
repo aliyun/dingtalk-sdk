@@ -19,9 +19,7 @@ class BatchUpdateTemplateRequest extends Model
         'templateList' => 'templateList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class BatchUpdateTemplateRequest extends Model
         if (isset($map['templateList'])) {
             if (!empty($map['templateList'])) {
                 $model->templateList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['templateList'] as $item) {
                     $model->templateList[$n++] = null !== $item ? templateList::fromMap($item) : $item;
                 }

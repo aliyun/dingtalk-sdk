@@ -17,9 +17,7 @@ class FileStorageGetQuotaDataResponseBody extends Model
         'quotaModelList' => 'quotaModelList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class FileStorageGetQuotaDataResponseBody extends Model
         if (isset($map['quotaModelList'])) {
             if (!empty($map['quotaModelList'])) {
                 $model->quotaModelList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['quotaModelList'] as $item) {
                     $model->quotaModelList[$n++] = null !== $item ? quotaModelList::fromMap($item) : $item;
                 }

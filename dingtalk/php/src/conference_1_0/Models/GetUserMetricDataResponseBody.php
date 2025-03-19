@@ -17,9 +17,7 @@ class GetUserMetricDataResponseBody extends Model
         'metricDataList' => 'metricDataList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class GetUserMetricDataResponseBody extends Model
         if (isset($map['metricDataList'])) {
             if (!empty($map['metricDataList'])) {
                 $model->metricDataList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['metricDataList'] as $item) {
                     $model->metricDataList[$n++] = null !== $item ? metricDataList::fromMap($item) : $item;
                 }

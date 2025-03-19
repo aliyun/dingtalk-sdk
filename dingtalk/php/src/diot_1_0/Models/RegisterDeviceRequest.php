@@ -96,22 +96,20 @@ class RegisterDeviceRequest extends Model
      */
     public $productType;
     protected $_name = [
-        'corpId'         => 'corpId',
-        'deviceName'     => 'deviceName',
-        'deviceStatus'   => 'deviceStatus',
-        'deviceType'     => 'deviceType',
+        'corpId' => 'corpId',
+        'deviceName' => 'deviceName',
+        'deviceStatus' => 'deviceStatus',
+        'deviceType' => 'deviceType',
         'deviceTypeName' => 'deviceTypeName',
-        'id'             => 'id',
-        'liveUrls'       => 'liveUrls',
-        'location'       => 'location',
-        'nickName'       => 'nickName',
-        'parentId'       => 'parentId',
-        'productType'    => 'productType',
+        'id' => 'id',
+        'liveUrls' => 'liveUrls',
+        'location' => 'location',
+        'nickName' => 'nickName',
+        'parentId' => 'parentId',
+        'productType' => 'productType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

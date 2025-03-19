@@ -29,8 +29,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -66,19 +66,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'GetSpace',
-            'version'     => 'convFile_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/convFile/conversations/spaces/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetSpace',
+            'version' => 'convFile_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/convFile/conversations/spaces/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetSpaceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -134,19 +134,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'Send',
-            'version'     => 'convFile_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/convFile/conversations/files/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'Send',
+            'version' => 'convFile_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/convFile/conversations/files/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendResponse::fromMap($this->execute($params, $req, $runtime));
@@ -199,19 +199,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendByApp',
-            'version'     => 'convFile_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/convFile/apps/conversations/files/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendByApp',
+            'version' => 'convFile_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/convFile/apps/conversations/files/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendByAppResponse::fromMap($this->execute($params, $req, $runtime));
@@ -267,19 +267,19 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'SendLink',
-            'version'     => 'convFile_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/convFile/conversations/files/links/send',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'SendLink',
+            'version' => 'convFile_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/convFile/conversations/files/links/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return SendLinkResponse::fromMap($this->execute($params, $req, $runtime));

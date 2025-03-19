@@ -30,15 +30,13 @@ class recentList extends Model
      */
     public $team;
     protected $_name = [
-        'deleted'    => 'deleted',
-        'dentry'     => 'dentry',
+        'deleted' => 'deleted',
+        'dentry' => 'dentry',
         'recentTime' => 'recentTime',
-        'team'       => 'team',
+        'team' => 'team',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class style extends Model
         'headingLevel' => 'headingLevel',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

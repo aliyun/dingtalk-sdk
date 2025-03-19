@@ -116,23 +116,21 @@ class applyIntentionInfoDO extends Model
      */
     public $trainTypeDesc;
     protected $_name = [
-        'arrCity'       => 'arrCity',
-        'arrCityName'   => 'arrCityName',
-        'arrStation'    => 'arrStation',
-        'arrTime'       => 'arrTime',
-        'depCity'       => 'depCity',
-        'depCityName'   => 'depCityName',
-        'depStation'    => 'depStation',
-        'depTime'       => 'depTime',
-        'price'         => 'price',
-        'seatName'      => 'seatName',
-        'trainNo'       => 'trainNo',
+        'arrCity' => 'arrCity',
+        'arrCityName' => 'arrCityName',
+        'arrStation' => 'arrStation',
+        'arrTime' => 'arrTime',
+        'depCity' => 'depCity',
+        'depCityName' => 'depCityName',
+        'depStation' => 'depStation',
+        'depTime' => 'depTime',
+        'price' => 'price',
+        'seatName' => 'seatName',
+        'trainNo' => 'trainNo',
         'trainTypeDesc' => 'trainTypeDesc',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

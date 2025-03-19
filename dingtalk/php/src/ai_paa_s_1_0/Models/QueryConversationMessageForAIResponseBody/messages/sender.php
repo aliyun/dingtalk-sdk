@@ -34,15 +34,13 @@ class sender extends Model
     public $userId;
     protected $_name = [
         'agentCode' => 'agentCode',
-        'nick'      => 'nick',
-        'type'      => 'type',
-        'unionId'   => 'unionId',
-        'userId'    => 'userId',
+        'nick' => 'nick',
+        'type' => 'type',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -25,12 +25,10 @@ class PremiumGetAttachmentSpaceRequest extends Model
     public $userId;
     protected $_name = [
         'agentId' => 'agentId',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

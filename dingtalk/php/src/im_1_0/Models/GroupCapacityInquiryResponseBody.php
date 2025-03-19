@@ -111,26 +111,24 @@ class GroupCapacityInquiryResponseBody extends Model
      */
     public $token;
     protected $_name = [
-        'actualPrice'        => 'actualPrice',
-        'createdAt'          => 'createdAt',
-        'currentCapacity'    => 'currentCapacity',
+        'actualPrice' => 'actualPrice',
+        'createdAt' => 'createdAt',
+        'currentCapacity' => 'currentCapacity',
         'currentEffectUntil' => 'currentEffectUntil',
-        'discount'           => 'discount',
-        'extInfo'            => 'extInfo',
-        'groupOwner'         => 'groupOwner',
-        'groupTitle'         => 'groupTitle',
-        'markedPrice'        => 'markedPrice',
-        'memberCount'        => 'memberCount',
+        'discount' => 'discount',
+        'extInfo' => 'extInfo',
+        'groupOwner' => 'groupOwner',
+        'groupTitle' => 'groupTitle',
+        'markedPrice' => 'markedPrice',
+        'memberCount' => 'memberCount',
         'openConversationId' => 'openConversationId',
-        'operator'           => 'operator',
-        'targetCapacity'     => 'targetCapacity',
-        'targetEffectUntil'  => 'targetEffectUntil',
-        'token'              => 'token',
+        'operator' => 'operator',
+        'targetCapacity' => 'targetCapacity',
+        'targetEffectUntil' => 'targetEffectUntil',
+        'token' => 'token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

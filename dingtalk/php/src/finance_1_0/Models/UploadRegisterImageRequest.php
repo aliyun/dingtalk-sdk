@@ -54,15 +54,13 @@ class UploadRegisterImageRequest extends Model
     public $payChannel;
     protected $_name = [
         'imageContent' => 'imageContent',
-        'imageName'    => 'imageName',
-        'imageType'    => 'imageType',
-        'instId'       => 'instId',
-        'payChannel'   => 'payChannel',
+        'imageName' => 'imageName',
+        'imageType' => 'imageType',
+        'instId' => 'instId',
+        'payChannel' => 'payChannel',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

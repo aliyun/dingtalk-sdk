@@ -57,18 +57,16 @@ class PullDataByPkResponseBody extends Model
      */
     public $jsonData;
     protected $_name = [
-        'dataCreateAppId'     => 'dataCreateAppId',
-        'dataCreateAppType'   => 'dataCreateAppType',
-        'dataGmtCreate'       => 'dataGmtCreate',
-        'dataGmtModified'     => 'dataGmtModified',
-        'dataModifiedAppId'   => 'dataModifiedAppId',
+        'dataCreateAppId' => 'dataCreateAppId',
+        'dataCreateAppType' => 'dataCreateAppType',
+        'dataGmtCreate' => 'dataGmtCreate',
+        'dataGmtModified' => 'dataGmtModified',
+        'dataModifiedAppId' => 'dataModifiedAppId',
         'dataModifiedAppType' => 'dataModifiedAppType',
-        'jsonData'            => 'jsonData',
+        'jsonData' => 'jsonData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

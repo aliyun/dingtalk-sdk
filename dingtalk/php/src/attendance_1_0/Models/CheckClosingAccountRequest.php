@@ -30,14 +30,12 @@ class CheckClosingAccountRequest extends Model
      */
     public $userTimeRange;
     protected $_name = [
-        'bizCode'       => 'bizCode',
-        'userIds'       => 'userIds',
+        'bizCode' => 'bizCode',
+        'userIds' => 'userIds',
         'userTimeRange' => 'userTimeRange',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -80,7 +78,7 @@ class CheckClosingAccountRequest extends Model
         if (isset($map['userTimeRange'])) {
             if (!empty($map['userTimeRange'])) {
                 $model->userTimeRange = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['userTimeRange'] as $item) {
                     $model->userTimeRange[$n++] = null !== $item ? userTimeRange::fromMap($item) : $item;
                 }

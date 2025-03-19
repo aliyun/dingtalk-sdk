@@ -29,14 +29,12 @@ class ResultItemsDentryAppPropertiesValue extends Model
      */
     public $visibility;
     protected $_name = [
-        'name'       => 'name',
-        'value'      => 'value',
+        'name' => 'name',
+        'value' => 'value',
         'visibility' => 'visibility',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

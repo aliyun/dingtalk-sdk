@@ -40,15 +40,13 @@ class PageFeedRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'body'       => 'body',
+        'body' => 'body',
         'maxResults' => 'maxResults',
-        'mcnId'      => 'mcnId',
-        'nextToken'  => 'nextToken',
+        'mcnId' => 'mcnId',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

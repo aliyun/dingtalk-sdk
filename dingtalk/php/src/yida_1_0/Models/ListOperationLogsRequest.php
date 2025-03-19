@@ -51,16 +51,14 @@ class ListOperationLogsRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'            => 'appType',
+        'appType' => 'appType',
         'formInstanceIdList' => 'formInstanceIdList',
-        'formUuid'           => 'formUuid',
-        'systemToken'        => 'systemToken',
-        'userId'             => 'userId',
+        'formUuid' => 'formUuid',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

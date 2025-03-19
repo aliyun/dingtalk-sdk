@@ -37,14 +37,12 @@ class PollingConfirmStatusRequest extends Model
     public $opUserId;
     protected $_name = [
         'courseCode' => 'courseCode',
-        'ext'        => 'ext',
-        'isvCode'    => 'isvCode',
-        'opUserId'   => 'opUserId',
+        'ext' => 'ext',
+        'isvCode' => 'isvCode',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

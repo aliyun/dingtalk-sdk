@@ -28,15 +28,13 @@ class SearchProjectCustomFiledsV3Request extends Model
      */
     public $sfcId;
     protected $_name = [
-        'cfIds'      => 'cfIds',
+        'cfIds' => 'cfIds',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'sfcId'      => 'sfcId',
+        'nextToken' => 'nextToken',
+        'sfcId' => 'sfcId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

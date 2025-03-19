@@ -30,10 +30,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -85,18 +85,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CloseTopbox',
-            'version'     => 'im_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/im/topBoxes/close',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CloseTopbox',
+            'version' => 'im_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/im/topBoxes/close',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CloseTopboxResponse::fromMap($this->execute($params, $req, $runtime));
@@ -148,18 +148,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateCoupleGroup',
-            'version'     => 'im_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/im/interconnections/couples/groups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateCoupleGroup',
+            'version' => 'im_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/im/interconnections/couples/groups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateCoupleGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -217,18 +217,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateGroup',
-            'version'     => 'im_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/im/interconnections/groups',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateGroup',
+            'version' => 'im_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/im/interconnections/groups',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateGroupResponse::fromMap($this->execute($params, $req, $runtime));
@@ -325,18 +325,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreateTopbox',
-            'version'     => 'im_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/im/topBoxes',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreateTopbox',
+            'version' => 'im_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/im/topBoxes',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreateTopboxResponse::fromMap($this->execute($params, $req, $runtime));
@@ -371,15 +371,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'GroupManagerDeviceMarket',
-            'version'     => 'im_2.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v2.0/im/group/device/market/manager',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'GroupManagerDeviceMarket',
+            'version' => 'im_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/im/group/device/market/manager',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GroupManagerDeviceMarketResponse::fromMap($this->execute($params, $req, $runtime));

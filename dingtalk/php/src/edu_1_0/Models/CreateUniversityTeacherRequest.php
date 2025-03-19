@@ -44,15 +44,13 @@ class CreateUniversityTeacherRequest extends Model
      */
     public $teacherUserId;
     protected $_name = [
-        'classId'       => 'classId',
-        'opUserId'      => 'opUserId',
-        'role'          => 'role',
+        'classId' => 'classId',
+        'opUserId' => 'opUserId',
+        'role' => 'role',
         'teacherUserId' => 'teacherUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

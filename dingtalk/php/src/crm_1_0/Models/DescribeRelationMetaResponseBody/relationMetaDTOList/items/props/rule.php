@@ -22,13 +22,11 @@ class rule extends Model
      */
     public $value;
     protected $_name = [
-        'type'  => 'type',
+        'type' => 'type',
         'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

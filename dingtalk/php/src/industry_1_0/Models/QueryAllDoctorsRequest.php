@@ -28,13 +28,11 @@ class QueryAllDoctorsRequest extends Model
     public $pageSize;
     protected $_name = [
         'monthMark' => 'monthMark',
-        'pageNum'   => 'pageNum',
-        'pageSize'  => 'pageSize',
+        'pageNum' => 'pageNum',
+        'pageSize' => 'pageSize',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

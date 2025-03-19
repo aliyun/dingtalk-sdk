@@ -22,13 +22,11 @@ class member extends Model
      */
     public $type;
     protected $_name = [
-        'id'   => 'id',
+        'id' => 'id',
         'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -188,36 +188,34 @@ class IndustryManufactureMesProductionPlanRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'action'               => 'action',
-        'actualEndTime'        => 'actualEndTime',
-        'actualStartTime'      => 'actualStartTime',
-        'appKey'               => 'appKey',
-        'baseDataName'         => 'baseDataName',
-        'bomUuid'              => 'bomUuid',
-        'events'               => 'events',
-        'extendData'           => 'extendData',
-        'no'                   => 'no',
-        'overdue'              => 'overdue',
-        'planEndTime'          => 'planEndTime',
-        'planQuantity'         => 'planQuantity',
-        'planStartTime'        => 'planStartTime',
-        'processUuids'         => 'processUuids',
-        'productCode'          => 'productCode',
-        'productName'          => 'productName',
+        'action' => 'action',
+        'actualEndTime' => 'actualEndTime',
+        'actualStartTime' => 'actualStartTime',
+        'appKey' => 'appKey',
+        'baseDataName' => 'baseDataName',
+        'bomUuid' => 'bomUuid',
+        'events' => 'events',
+        'extendData' => 'extendData',
+        'no' => 'no',
+        'overdue' => 'overdue',
+        'planEndTime' => 'planEndTime',
+        'planQuantity' => 'planQuantity',
+        'planStartTime' => 'planStartTime',
+        'processUuids' => 'processUuids',
+        'productCode' => 'productCode',
+        'productName' => 'productName',
         'productSpecification' => 'productSpecification',
-        'qualifiedQuantity'    => 'qualifiedQuantity',
-        'sellOrderNo'          => 'sellOrderNo',
-        'status'               => 'status',
-        'teamList'             => 'teamList',
-        'title'                => 'title',
-        'type'                 => 'type',
-        'unit'                 => 'unit',
-        'uuid'                 => 'uuid',
+        'qualifiedQuantity' => 'qualifiedQuantity',
+        'sellOrderNo' => 'sellOrderNo',
+        'status' => 'status',
+        'teamList' => 'teamList',
+        'title' => 'title',
+        'type' => 'type',
+        'unit' => 'unit',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -341,7 +339,7 @@ class IndustryManufactureMesProductionPlanRequest extends Model
         if (isset($map['extendData'])) {
             if (!empty($map['extendData'])) {
                 $model->extendData = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['extendData'] as $item) {
                     $model->extendData[$n++] = null !== $item ? extendData::fromMap($item) : $item;
                 }

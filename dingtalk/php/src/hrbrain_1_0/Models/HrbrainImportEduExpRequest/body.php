@@ -60,19 +60,17 @@ class body extends Model
      */
     public $workNo;
     protected $_name = [
-        'eduName'    => 'eduName',
-        'endDate'    => 'endDate',
+        'eduName' => 'eduName',
+        'endDate' => 'endDate',
         'extendInfo' => 'extendInfo',
-        'major'      => 'major',
-        'name'       => 'name',
+        'major' => 'major',
+        'name' => 'name',
         'schoolName' => 'schoolName',
-        'startDate'  => 'startDate',
-        'workNo'     => 'workNo',
+        'startDate' => 'startDate',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

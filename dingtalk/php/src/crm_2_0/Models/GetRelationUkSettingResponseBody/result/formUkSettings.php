@@ -17,9 +17,7 @@ class formUkSettings extends Model
         'fieldList' => 'fieldList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class formUkSettings extends Model
         if (isset($map['fieldList'])) {
             if (!empty($map['fieldList'])) {
                 $model->fieldList = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['fieldList'] as $item) {
                     $model->fieldList[$n++] = null !== $item ? fieldList::fromMap($item) : $item;
                 }

@@ -33,15 +33,13 @@ class GetSendAndReceiveReportListResponseBody extends Model
      */
     public $nextToken;
     protected $_name = [
-        'dataList'   => 'dataList',
-        'hasMore'    => 'hasMore',
+        'dataList' => 'dataList',
+        'hasMore' => 'hasMore',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -79,7 +77,7 @@ class GetSendAndReceiveReportListResponseBody extends Model
         if (isset($map['dataList'])) {
             if (!empty($map['dataList'])) {
                 $model->dataList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['dataList'] as $item) {
                     $model->dataList[$n++] = null !== $item ? dataList::fromMap($item) : $item;
                 }

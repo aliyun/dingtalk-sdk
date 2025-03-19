@@ -29,14 +29,12 @@ class CreateInviteUrlRequest extends Model
      */
     public $targetOperator;
     protected $_name = [
-        'authCode'       => 'authCode',
-        'targetCorpId'   => 'targetCorpId',
+        'authCode' => 'authCode',
+        'targetCorpId' => 'targetCorpId',
         'targetOperator' => 'targetOperator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

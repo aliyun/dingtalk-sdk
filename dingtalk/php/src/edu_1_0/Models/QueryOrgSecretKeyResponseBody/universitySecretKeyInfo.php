@@ -20,9 +20,7 @@ class universitySecretKeyInfo extends Model
         'secretKey' => 'secretKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

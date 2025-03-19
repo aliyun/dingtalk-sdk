@@ -18,13 +18,11 @@ class partnerLabelModelLevel1 extends Model
      */
     public $labelname;
     protected $_name = [
-        'labelId'   => 'labelId',
+        'labelId' => 'labelId',
         'labelname' => 'labelname',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

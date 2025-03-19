@@ -44,15 +44,13 @@ class MoveStudentRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'operator'      => 'operator',
+        'operator' => 'operator',
         'originClassId' => 'originClassId',
         'targetClassId' => 'targetClassId',
-        'userId'        => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

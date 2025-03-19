@@ -16,9 +16,7 @@ class originalSource extends Model
         'sourceTitle' => 'sourceTitle',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

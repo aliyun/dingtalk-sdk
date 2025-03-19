@@ -61,20 +61,18 @@ class AddCollegeAlumniUserInfoRequest extends Model
      */
     public $studentNumber;
     protected $_name = [
-        'address'       => 'address',
-        'deptIds'       => 'deptIds',
-        'email'         => 'email',
-        'intake'        => 'intake',
-        'mobile'        => 'mobile',
-        'name'          => 'name',
-        'operator'      => 'operator',
-        'outtake'       => 'outtake',
+        'address' => 'address',
+        'deptIds' => 'deptIds',
+        'email' => 'email',
+        'intake' => 'intake',
+        'mobile' => 'mobile',
+        'name' => 'name',
+        'operator' => 'operator',
+        'outtake' => 'outtake',
         'studentNumber' => 'studentNumber',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

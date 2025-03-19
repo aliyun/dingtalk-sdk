@@ -18,13 +18,11 @@ class userTaskStatuses extends Model
      */
     public $taskId;
     protected $_name = [
-        'done'   => 'done',
+        'done' => 'done',
         'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

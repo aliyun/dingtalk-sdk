@@ -27,12 +27,10 @@ class operateScopes extends Model
     public $type;
     protected $_name = [
         'hasAuth' => 'hasAuth',
-        'type'    => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

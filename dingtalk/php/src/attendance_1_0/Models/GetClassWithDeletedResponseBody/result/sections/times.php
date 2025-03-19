@@ -43,16 +43,14 @@ class times extends Model
      */
     public $endMin;
     protected $_name = [
-        'across'    => 'across',
-        'beginMin'  => 'beginMin',
+        'across' => 'across',
+        'beginMin' => 'beginMin',
         'checkTime' => 'checkTime',
         'checkType' => 'checkType',
-        'endMin'    => 'endMin',
+        'endMin' => 'endMin',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

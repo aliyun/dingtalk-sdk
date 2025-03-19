@@ -30,13 +30,11 @@ class involvers extends Model
     public $name;
     protected $_name = [
         'avatarUrl' => 'avatarUrl',
-        'id'        => 'id',
-        'name'      => 'name',
+        'id' => 'id',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

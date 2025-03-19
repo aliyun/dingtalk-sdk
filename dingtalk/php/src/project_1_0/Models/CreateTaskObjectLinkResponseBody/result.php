@@ -22,13 +22,11 @@ class result extends Model
      */
     public $objectLinkId;
     protected $_name = [
-        'created'      => 'created',
+        'created' => 'created',
         'objectLinkId' => 'objectLinkId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

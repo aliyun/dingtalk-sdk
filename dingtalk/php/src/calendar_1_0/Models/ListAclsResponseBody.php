@@ -17,9 +17,7 @@ class ListAclsResponseBody extends Model
         'acls' => 'acls',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListAclsResponseBody extends Model
         if (isset($map['acls'])) {
             if (!empty($map['acls'])) {
                 $model->acls = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['acls'] as $item) {
                     $model->acls[$n++] = null !== $item ? acls::fromMap($item) : $item;
                 }

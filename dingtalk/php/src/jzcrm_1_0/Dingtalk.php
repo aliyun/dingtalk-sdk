@@ -62,8 +62,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -104,18 +104,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditContact',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/contacts',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditContact',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/contacts',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditContactResponse::fromMap($this->execute($params, $req, $runtime));
@@ -170,18 +170,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditCustomer',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/customers',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditCustomer',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/customers',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditCustomerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -236,18 +236,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditCustomerPool',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/customerPools',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditCustomerPool',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/customerPools',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditCustomerPoolResponse::fromMap($this->execute($params, $req, $runtime));
@@ -302,18 +302,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditExchange',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/exchanges',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditExchange',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/exchanges',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditExchangeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -368,18 +368,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditGoods',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/goods',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditGoods',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/goods',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditGoodsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -434,18 +434,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditIntostock',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/intostocks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditIntostock',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/intostocks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditIntostockResponse::fromMap($this->execute($params, $req, $runtime));
@@ -500,18 +500,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditInvoice',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/invoices',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditInvoice',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/invoices',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditInvoiceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -566,18 +566,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditOrder',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/orders',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditOrder',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/orders',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditOrderResponse::fromMap($this->execute($params, $req, $runtime));
@@ -632,18 +632,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditOutstock',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/outstocks',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditOutstock',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/outstocks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditOutstockResponse::fromMap($this->execute($params, $req, $runtime));
@@ -698,18 +698,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditProduction',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/productions',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditProduction',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/productions',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditProductionResponse::fromMap($this->execute($params, $req, $runtime));
@@ -764,18 +764,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditPurchase',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/purchases',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditPurchase',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/purchases',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditPurchaseResponse::fromMap($this->execute($params, $req, $runtime));
@@ -830,18 +830,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditQuotationRecord',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/quotationRecords',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditQuotationRecord',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/quotationRecords',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditQuotationRecordResponse::fromMap($this->execute($params, $req, $runtime));
@@ -896,18 +896,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'EditSales',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/sales',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'EditSales',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/sales',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return EditSalesResponse::fromMap($this->execute($params, $req, $runtime));
@@ -959,18 +959,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDataList',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/data',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDataList',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/data',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDataListResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1019,18 +1019,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetDataView',
-            'version'     => 'jzcrm_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/jzcrm/dataView',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetDataView',
+            'version' => 'jzcrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/jzcrm/dataView',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetDataViewResponse::fromMap($this->execute($params, $req, $runtime));

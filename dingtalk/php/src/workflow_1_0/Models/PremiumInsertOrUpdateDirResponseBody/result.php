@@ -23,12 +23,10 @@ class result extends Model
     public $dirId;
     protected $_name = [
         'bizGroup' => 'bizGroup',
-        'dirId'    => 'dirId',
+        'dirId' => 'dirId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

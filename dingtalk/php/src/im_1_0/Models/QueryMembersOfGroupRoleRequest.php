@@ -34,13 +34,11 @@ class QueryMembersOfGroupRoleRequest extends Model
     public $timestamp;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openRoleId'         => 'openRoleId',
-        'timestamp'          => 'timestamp',
+        'openRoleId' => 'openRoleId',
+        'timestamp' => 'timestamp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

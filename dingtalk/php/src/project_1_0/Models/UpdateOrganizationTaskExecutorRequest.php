@@ -25,14 +25,12 @@ class UpdateOrganizationTaskExecutorRequest extends Model
      */
     public $executorId;
     protected $_name = [
-        'disableActivity'     => 'disableActivity',
+        'disableActivity' => 'disableActivity',
         'disableNotification' => 'disableNotification',
-        'executorId'          => 'executorId',
+        'executorId' => 'executorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

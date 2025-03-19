@@ -21,9 +21,7 @@ class AddResidentMemberRequest extends Model
         'residentAddInfo' => 'residentAddInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

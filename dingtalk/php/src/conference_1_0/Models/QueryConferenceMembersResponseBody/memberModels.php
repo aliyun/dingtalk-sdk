@@ -71,22 +71,20 @@ class memberModels extends Model
      */
     public $userNick;
     protected $_name = [
-        'attendStatus'   => 'attendStatus',
-        'coHost'         => 'coHost',
-        'conferenceId'   => 'conferenceId',
-        'duration'       => 'duration',
-        'host'           => 'host',
-        'joinTime'       => 'joinTime',
-        'leaveTime'      => 'leaveTime',
+        'attendStatus' => 'attendStatus',
+        'coHost' => 'coHost',
+        'conferenceId' => 'conferenceId',
+        'duration' => 'duration',
+        'host' => 'host',
+        'joinTime' => 'joinTime',
+        'leaveTime' => 'leaveTime',
         'outerOrgMember' => 'outerOrgMember',
-        'pstnJoin'       => 'pstnJoin',
-        'unionId'        => 'unionId',
-        'userNick'       => 'userNick',
+        'pstnJoin' => 'pstnJoin',
+        'unionId' => 'unionId',
+        'userNick' => 'userNick',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

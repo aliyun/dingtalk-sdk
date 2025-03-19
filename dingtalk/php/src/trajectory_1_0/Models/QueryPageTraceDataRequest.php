@@ -46,17 +46,15 @@ class QueryPageTraceDataRequest extends Model
      */
     public $traceId;
     protected $_name = [
-        'endTime'    => 'endTime',
+        'endTime' => 'endTime',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'staffId'    => 'staffId',
-        'startTime'  => 'startTime',
-        'traceId'    => 'traceId',
+        'nextToken' => 'nextToken',
+        'staffId' => 'staffId',
+        'startTime' => 'startTime',
+        'traceId' => 'traceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

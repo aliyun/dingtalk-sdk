@@ -89,20 +89,18 @@ class userDetailsList extends Model
      */
     public $version;
     protected $_name = [
-        'actionEndTime'   => 'actionEndTime',
-        'actionId'        => 'actionId',
+        'actionEndTime' => 'actionEndTime',
+        'actionId' => 'actionId',
         'actionStartTime' => 'actionStartTime',
-        'actionType'      => 'actionType',
-        'carbonAmount'    => 'carbonAmount',
-        'corpId'          => 'corpId',
-        'deptId'          => 'deptId',
-        'userId'          => 'userId',
-        'version'         => 'version',
+        'actionType' => 'actionType',
+        'carbonAmount' => 'carbonAmount',
+        'corpId' => 'corpId',
+        'deptId' => 'deptId',
+        'userId' => 'userId',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

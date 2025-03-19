@@ -36,14 +36,12 @@ class ListApplicationInformationResponseBody extends Model
     public $totalCount;
     protected $_name = [
         'applicationInformation' => 'applicationInformation',
-        'pageNumber'             => 'pageNumber',
-        'pageSize'               => 'pageSize',
-        'totalCount'             => 'totalCount',
+        'pageNumber' => 'pageNumber',
+        'pageSize' => 'pageSize',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -81,7 +79,7 @@ class ListApplicationInformationResponseBody extends Model
         if (isset($map['applicationInformation'])) {
             if (!empty($map['applicationInformation'])) {
                 $model->applicationInformation = [];
-                $n                             = 0;
+                $n = 0;
                 foreach ($map['applicationInformation'] as $item) {
                     $model->applicationInformation[$n++] = null !== $item ? applicationInformation::fromMap($item) : $item;
                 }

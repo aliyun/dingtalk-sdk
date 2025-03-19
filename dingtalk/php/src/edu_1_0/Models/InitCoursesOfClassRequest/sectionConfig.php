@@ -32,14 +32,12 @@ class sectionConfig extends Model
      */
     public $start;
     protected $_name = [
-        'end'           => 'end',
+        'end' => 'end',
         'sectionModels' => 'sectionModels',
-        'start'         => 'start',
+        'start' => 'start',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -77,7 +75,7 @@ class sectionConfig extends Model
         if (isset($map['sectionModels'])) {
             if (!empty($map['sectionModels'])) {
                 $model->sectionModels = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['sectionModels'] as $item) {
                     $model->sectionModels[$n++] = null !== $item ? sectionModels::fromMap($item) : $item;
                 }

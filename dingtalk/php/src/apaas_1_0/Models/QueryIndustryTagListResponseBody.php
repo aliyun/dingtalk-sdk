@@ -18,9 +18,7 @@ class QueryIndustryTagListResponseBody extends Model
         'industryList' => 'industryList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

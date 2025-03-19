@@ -42,17 +42,15 @@ class UpdateSeniorSettingRequest extends Model
      */
     public $seniorStaffId;
     protected $_name = [
-        'open'           => 'open',
-        'permitDeptIds'  => 'permitDeptIds',
+        'open' => 'open',
+        'permitDeptIds' => 'permitDeptIds',
         'permitStaffIds' => 'permitStaffIds',
-        'permitTagIds'   => 'permitTagIds',
-        'protectScenes'  => 'protectScenes',
-        'seniorStaffId'  => 'seniorStaffId',
+        'permitTagIds' => 'permitTagIds',
+        'protectScenes' => 'protectScenes',
+        'seniorStaffId' => 'seniorStaffId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

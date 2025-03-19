@@ -38,15 +38,13 @@ class SupplyDeleteMemberRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'deptId'  => 'deptId',
-        'mobile'  => 'mobile',
+        'deptId' => 'deptId',
+        'mobile' => 'mobile',
         'unionId' => 'unionId',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -21,12 +21,10 @@ class content extends Model
     public $group;
     protected $_name = [
         'extendInfos' => 'extendInfos',
-        'group'       => 'group',
+        'group' => 'group',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -58,7 +56,7 @@ class content extends Model
         if (isset($map['extendInfos'])) {
             if (!empty($map['extendInfos'])) {
                 $model->extendInfos = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['extendInfos'] as $item) {
                     $model->extendInfos[$n++] = null !== $item ? extendInfos::fromMap($item) : $item;
                 }

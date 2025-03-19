@@ -35,12 +35,10 @@ class TitleMention extends Model
     protected $_name = [
         'length' => 'length',
         'offset' => 'offset',
-        'user'   => 'user',
+        'user' => 'user',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,13 +19,11 @@ class result extends Model
      */
     public $openHonors;
     protected $_name = [
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
         'openHonors' => 'openHonors',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class result extends Model
         if (isset($map['openHonors'])) {
             if (!empty($map['openHonors'])) {
                 $model->openHonors = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['openHonors'] as $item) {
                     $model->openHonors[$n++] = null !== $item ? openHonors::fromMap($item) : $item;
                 }

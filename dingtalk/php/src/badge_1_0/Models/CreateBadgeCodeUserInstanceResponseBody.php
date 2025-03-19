@@ -23,12 +23,10 @@ class CreateBadgeCodeUserInstanceResponseBody extends Model
     public $codeId;
     protected $_name = [
         'codeDetailUrl' => 'codeDetailUrl',
-        'codeId'        => 'codeId',
+        'codeId' => 'codeId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

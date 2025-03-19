@@ -25,14 +25,12 @@ class TransferEventRequest extends Model
      */
     public $newOrganizerId;
     protected $_name = [
-        'isExitCalendar'   => 'isExitCalendar',
+        'isExitCalendar' => 'isExitCalendar',
         'needNotifyViaO2O' => 'needNotifyViaO2O',
-        'newOrganizerId'   => 'newOrganizerId',
+        'newOrganizerId' => 'newOrganizerId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

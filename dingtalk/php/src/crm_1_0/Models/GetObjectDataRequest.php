@@ -48,15 +48,13 @@ class GetObjectDataRequest extends Model
     public $queryDsl;
     protected $_name = [
         'currentOperatorUserId' => 'currentOperatorUserId',
-        'maxResults'            => 'maxResults',
-        'name'                  => 'name',
-        'nextToken'             => 'nextToken',
-        'queryDsl'              => 'queryDsl',
+        'maxResults' => 'maxResults',
+        'name' => 'name',
+        'nextToken' => 'nextToken',
+        'queryDsl' => 'queryDsl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

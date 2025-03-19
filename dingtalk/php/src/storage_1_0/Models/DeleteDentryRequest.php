@@ -25,12 +25,10 @@ class DeleteDentryRequest extends Model
     public $unionId;
     protected $_name = [
         'toRecycleBin' => 'toRecycleBin',
-        'unionId'      => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

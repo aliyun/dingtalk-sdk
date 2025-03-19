@@ -84,22 +84,20 @@ class punches extends Model
     public $seriousLateMinutes;
     protected $_name = [
         'absenteeismLateMinutes' => 'absenteeismLateMinutes',
-        'across'                 => 'across',
-        'beginMin'               => 'beginMin',
-        'checkTime'              => 'checkTime',
-        'checkType'              => 'checkType',
-        'endMin'                 => 'endMin',
-        'flexMinutes'            => 'flexMinutes',
-        'freeCheck'              => 'freeCheck',
-        'lateBackSetting'        => 'lateBackSetting',
-        'permitMinutes'          => 'permitMinutes',
-        'puncheId'               => 'puncheId',
-        'seriousLateMinutes'     => 'seriousLateMinutes',
+        'across' => 'across',
+        'beginMin' => 'beginMin',
+        'checkTime' => 'checkTime',
+        'checkType' => 'checkType',
+        'endMin' => 'endMin',
+        'flexMinutes' => 'flexMinutes',
+        'freeCheck' => 'freeCheck',
+        'lateBackSetting' => 'lateBackSetting',
+        'permitMinutes' => 'permitMinutes',
+        'puncheId' => 'puncheId',
+        'seriousLateMinutes' => 'seriousLateMinutes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

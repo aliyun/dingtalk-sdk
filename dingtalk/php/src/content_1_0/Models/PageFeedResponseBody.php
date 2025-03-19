@@ -34,14 +34,12 @@ class PageFeedResponseBody extends Model
      */
     public $nextCursor;
     protected $_name = [
-        'feedList'   => 'feedList',
-        'hasNext'    => 'hasNext',
+        'feedList' => 'feedList',
+        'hasNext' => 'hasNext',
         'nextCursor' => 'nextCursor',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -76,7 +74,7 @@ class PageFeedResponseBody extends Model
         if (isset($map['feedList'])) {
             if (!empty($map['feedList'])) {
                 $model->feedList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['feedList'] as $item) {
                     $model->feedList[$n++] = null !== $item ? feedList::fromMap($item) : $item;
                 }

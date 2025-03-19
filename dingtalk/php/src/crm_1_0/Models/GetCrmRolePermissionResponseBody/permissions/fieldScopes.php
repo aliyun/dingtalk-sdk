@@ -25,12 +25,10 @@ class fieldScopes extends Model
     public $fieldId;
     protected $_name = [
         'fieldActions' => 'fieldActions',
-        'fieldId'      => 'fieldId',
+        'fieldId' => 'fieldId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,15 +36,13 @@ class DeleteRelationMetaFieldRequest extends Model
      */
     public $tenant;
     protected $_name = [
-        'fieldIdList'    => 'fieldIdList',
+        'fieldIdList' => 'fieldIdList',
         'operatorUserId' => 'operatorUserId',
-        'relationType'   => 'relationType',
-        'tenant'         => 'tenant',
+        'relationType' => 'relationType',
+        'tenant' => 'tenant',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

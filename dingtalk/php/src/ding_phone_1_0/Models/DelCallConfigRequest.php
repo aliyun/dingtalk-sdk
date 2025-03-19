@@ -29,14 +29,12 @@ class DelCallConfigRequest extends Model
      */
     public $phoneNumber;
     protected $_name = [
-        'corpId'      => 'corpId',
-        'isvToken'    => 'isvToken',
+        'corpId' => 'corpId',
+        'isvToken' => 'isvToken',
         'phoneNumber' => 'phoneNumber',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -28,13 +28,11 @@ class GetStaredProjectsRequest extends Model
     public $sortBy;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'sortBy'     => 'sortBy',
+        'nextToken' => 'nextToken',
+        'sortBy' => 'sortBy',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

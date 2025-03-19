@@ -54,17 +54,15 @@ class OrgGroupSendRequest extends Model
      */
     public $token;
     protected $_name = [
-        'coolAppCode'        => 'coolAppCode',
-        'msgKey'             => 'msgKey',
-        'msgParam'           => 'msgParam',
+        'coolAppCode' => 'coolAppCode',
+        'msgKey' => 'msgKey',
+        'msgParam' => 'msgParam',
         'openConversationId' => 'openConversationId',
-        'robotCode'          => 'robotCode',
-        'token'              => 'token',
+        'robotCode' => 'robotCode',
+        'token' => 'token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

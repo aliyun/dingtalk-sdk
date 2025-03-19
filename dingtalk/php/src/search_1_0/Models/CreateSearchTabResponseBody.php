@@ -20,9 +20,7 @@ class CreateSearchTabResponseBody extends Model
         'tabId' => 'tabId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

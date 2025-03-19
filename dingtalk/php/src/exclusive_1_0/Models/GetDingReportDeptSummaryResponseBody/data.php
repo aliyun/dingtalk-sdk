@@ -36,15 +36,13 @@ class data extends Model
      */
     public $dingReportSendUsrCnt;
     protected $_name = [
-        'deptId'               => 'deptId',
-        'deptName'             => 'deptName',
-        'dingReportSendCnt'    => 'dingReportSendCnt',
+        'deptId' => 'deptId',
+        'deptName' => 'deptName',
+        'dingReportSendCnt' => 'dingReportSendCnt',
         'dingReportSendUsrCnt' => 'dingReportSendUsrCnt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

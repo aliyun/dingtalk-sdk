@@ -52,17 +52,15 @@ class userIdentity extends Model
      */
     public $userId;
     protected $_name = [
-        'mobile'          => 'mobile',
+        'mobile' => 'mobile',
         'mobileStateCode' => 'mobileStateCode',
-        'targetCorpId'    => 'targetCorpId',
-        'type'            => 'type',
-        'unionId'         => 'unionId',
-        'userId'          => 'userId',
+        'targetCorpId' => 'targetCorpId',
+        'type' => 'type',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

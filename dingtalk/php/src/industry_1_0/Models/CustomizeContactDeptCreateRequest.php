@@ -51,18 +51,16 @@ class CustomizeContactDeptCreateRequest extends Model
      */
     public $type;
     protected $_name = [
-        'code'          => 'code',
+        'code' => 'code',
         'managerIdList' => 'managerIdList',
-        'name'          => 'name',
-        'order'         => 'order',
-        'parentDeptId'  => 'parentDeptId',
-        'refId'         => 'refId',
-        'type'          => 'type',
+        'name' => 'name',
+        'order' => 'order',
+        'parentDeptId' => 'parentDeptId',
+        'refId' => 'refId',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

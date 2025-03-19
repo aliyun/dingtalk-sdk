@@ -25,13 +25,11 @@ class result extends Model
     public $navCatalog;
     protected $_name = [
         'bizTraceId' => 'bizTraceId',
-        'module'     => 'module',
+        'module' => 'module',
         'navCatalog' => 'navCatalog',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -72,7 +70,7 @@ class result extends Model
         if (isset($map['navCatalog'])) {
             if (!empty($map['navCatalog'])) {
                 $model->navCatalog = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['navCatalog'] as $item) {
                     $model->navCatalog[$n++] = null !== $item ? navCatalog::fromMap($item) : $item;
                 }

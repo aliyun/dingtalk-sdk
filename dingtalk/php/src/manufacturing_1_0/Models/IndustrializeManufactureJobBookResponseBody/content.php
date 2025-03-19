@@ -21,12 +21,10 @@ class content extends Model
     public $id;
     protected $_name = [
         'count' => 'count',
-        'id'    => 'id',
+        'id' => 'id',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

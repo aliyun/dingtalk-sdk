@@ -18,9 +18,7 @@ class param extends Model
         'corpId' => 'corpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

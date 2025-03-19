@@ -16,9 +16,7 @@ class CreateDevelopersRequest extends Model
         'noticeUrl' => 'noticeUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

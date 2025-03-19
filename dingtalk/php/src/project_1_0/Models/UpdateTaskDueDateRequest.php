@@ -18,9 +18,7 @@ class UpdateTaskDueDateRequest extends Model
         'dueDate' => 'dueDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class SendMsgByTaskSupportInviteJoinOrgResponseBody extends Model
         'openBatchTaskId' => 'openBatchTaskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

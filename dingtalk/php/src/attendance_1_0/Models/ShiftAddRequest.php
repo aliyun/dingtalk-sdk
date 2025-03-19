@@ -61,18 +61,16 @@ class ShiftAddRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'name'      => 'name',
-        'owner'     => 'owner',
-        'sections'  => 'sections',
+        'name' => 'name',
+        'owner' => 'owner',
+        'sections' => 'sections',
         'serviceId' => 'serviceId',
-        'setting'   => 'setting',
-        'shiftId'   => 'shiftId',
-        'opUserId'  => 'opUserId',
+        'setting' => 'setting',
+        'shiftId' => 'shiftId',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -125,7 +123,7 @@ class ShiftAddRequest extends Model
         if (isset($map['sections'])) {
             if (!empty($map['sections'])) {
                 $model->sections = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['sections'] as $item) {
                     $model->sections[$n++] = null !== $item ? sections::fromMap($item) : $item;
                 }

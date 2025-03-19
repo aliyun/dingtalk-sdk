@@ -24,14 +24,12 @@ class BatchQueryOrgInvoiceUrlRequest extends Model
      */
     public $operator;
     protected $_name = [
-        'companyCode'      => 'companyCode',
+        'companyCode' => 'companyCode',
         'invoiceKeyVOList' => 'invoiceKeyVOList',
-        'operator'         => 'operator',
+        'operator' => 'operator',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -69,7 +67,7 @@ class BatchQueryOrgInvoiceUrlRequest extends Model
         if (isset($map['invoiceKeyVOList'])) {
             if (!empty($map['invoiceKeyVOList'])) {
                 $model->invoiceKeyVOList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['invoiceKeyVOList'] as $item) {
                     $model->invoiceKeyVOList[$n++] = null !== $item ? invoiceKeyVOList::fromMap($item) : $item;
                 }

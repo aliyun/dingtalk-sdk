@@ -29,14 +29,12 @@ class DeleteSchoolReportRequest extends Model
      */
     public $teacherId;
     protected $_name = [
-        'bizCode'        => 'bizCode',
+        'bizCode' => 'bizCode',
         'schoolReportId' => 'schoolReportId',
-        'teacherId'      => 'teacherId',
+        'teacherId' => 'teacherId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

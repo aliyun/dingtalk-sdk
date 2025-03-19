@@ -133,36 +133,34 @@ class result extends Model
      */
     public $type;
     protected $_name = [
-        'action'              => 'action',
-        'actionExit'          => 'actionExit',
-        'activeTimeGMT'       => 'activeTimeGMT',
-        'activityId'          => 'activityId',
-        'dataId'              => 'dataId',
-        'digitalSign'         => 'digitalSign',
-        'domains'             => 'domains',
-        'files'               => 'files',
-        'operateTimeGMT'      => 'operateTimeGMT',
-        'operateType'         => 'operateType',
+        'action' => 'action',
+        'actionExit' => 'actionExit',
+        'activeTimeGMT' => 'activeTimeGMT',
+        'activityId' => 'activityId',
+        'dataId' => 'dataId',
+        'digitalSign' => 'digitalSign',
+        'domains' => 'domains',
+        'files' => 'files',
+        'operateTimeGMT' => 'operateTimeGMT',
+        'operateType' => 'operateType',
         'operatorDisplayName' => 'operatorDisplayName',
-        'operatorName'        => 'operatorName',
-        'operatorNickName'    => 'operatorNickName',
-        'operatorPhotoUrl'    => 'operatorPhotoUrl',
-        'operatorStatus'      => 'operatorStatus',
-        'operatorUserId'      => 'operatorUserId',
-        'processInstanceId'   => 'processInstanceId',
-        'remark'              => 'remark',
-        'showName'            => 'showName',
-        'size'                => 'size',
-        'taskExecuteType'     => 'taskExecuteType',
-        'taskHoldTimeGMT'     => 'taskHoldTimeGMT',
-        'taskId'              => 'taskId',
-        'taskType'            => 'taskType',
-        'type'                => 'type',
+        'operatorName' => 'operatorName',
+        'operatorNickName' => 'operatorNickName',
+        'operatorPhotoUrl' => 'operatorPhotoUrl',
+        'operatorStatus' => 'operatorStatus',
+        'operatorUserId' => 'operatorUserId',
+        'processInstanceId' => 'processInstanceId',
+        'remark' => 'remark',
+        'showName' => 'showName',
+        'size' => 'size',
+        'taskExecuteType' => 'taskExecuteType',
+        'taskHoldTimeGMT' => 'taskHoldTimeGMT',
+        'taskId' => 'taskId',
+        'taskType' => 'taskType',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

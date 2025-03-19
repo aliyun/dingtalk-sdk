@@ -20,9 +20,7 @@ class GetActionDetailRequest extends Model
         'connectAssetUri' => 'connectAssetUri',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

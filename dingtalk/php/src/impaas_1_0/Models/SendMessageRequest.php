@@ -44,17 +44,15 @@ class SendMessageRequest extends Model
      */
     public $uuid;
     protected $_name = [
-        'content'        => 'content',
+        'content' => 'content',
         'conversationId' => 'conversationId',
-        'createTime'     => 'createTime',
-        'receiverUid'    => 'receiverUid',
-        'senderUid'      => 'senderUid',
-        'uuid'           => 'uuid',
+        'createTime' => 'createTime',
+        'receiverUid' => 'receiverUid',
+        'senderUid' => 'senderUid',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

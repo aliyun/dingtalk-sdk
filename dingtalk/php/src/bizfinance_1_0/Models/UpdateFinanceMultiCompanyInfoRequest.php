@@ -52,17 +52,15 @@ class UpdateFinanceMultiCompanyInfoRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'companyCode'         => 'companyCode',
-        'companyName'         => 'companyName',
-        'taxNature'           => 'taxNature',
-        'taxNo'               => 'taxNo',
+        'companyCode' => 'companyCode',
+        'companyName' => 'companyName',
+        'taxNature' => 'taxNature',
+        'taxNo' => 'taxNo',
         'taxOrInvoiceHasInit' => 'taxOrInvoiceHasInit',
-        'userId'              => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

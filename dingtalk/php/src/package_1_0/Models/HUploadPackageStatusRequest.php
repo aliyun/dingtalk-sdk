@@ -27,12 +27,10 @@ class HUploadPackageStatusRequest extends Model
     public $taskId;
     protected $_name = [
         'miniAppId' => 'miniAppId',
-        'taskId'    => 'taskId',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

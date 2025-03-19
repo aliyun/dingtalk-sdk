@@ -30,14 +30,12 @@ class QueryConferenceInfoByRoomCodeResponseBody extends Model
     public $totalCount;
     protected $_name = [
         'conferenceList' => 'conferenceList',
-        'hasMore'        => 'hasMore',
-        'nextToken'      => 'nextToken',
-        'totalCount'     => 'totalCount',
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
+        'totalCount' => 'totalCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -75,7 +73,7 @@ class QueryConferenceInfoByRoomCodeResponseBody extends Model
         if (isset($map['conferenceList'])) {
             if (!empty($map['conferenceList'])) {
                 $model->conferenceList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['conferenceList'] as $item) {
                     $model->conferenceList[$n++] = null !== $item ? conferenceList::fromMap($item) : $item;
                 }

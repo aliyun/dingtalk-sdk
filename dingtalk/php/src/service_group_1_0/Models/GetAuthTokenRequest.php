@@ -33,16 +33,14 @@ class GetAuthTokenRequest extends Model
      */
     public $serverName;
     protected $_name = [
-        'channel'       => 'channel',
+        'channel' => 'channel',
         'effectiveTime' => 'effectiveTime',
-        'openTeamId'    => 'openTeamId',
-        'serverId'      => 'serverId',
-        'serverName'    => 'serverName',
+        'openTeamId' => 'openTeamId',
+        'serverId' => 'serverId',
+        'serverName' => 'serverName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

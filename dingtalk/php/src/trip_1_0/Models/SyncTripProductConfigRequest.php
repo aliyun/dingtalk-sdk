@@ -19,13 +19,11 @@ class SyncTripProductConfigRequest extends Model
      */
     public $tripProductConfigList;
     protected $_name = [
-        'targetCorpId'          => 'targetCorpId',
+        'targetCorpId' => 'targetCorpId',
         'tripProductConfigList' => 'tripProductConfigList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class SyncTripProductConfigRequest extends Model
         if (isset($map['tripProductConfigList'])) {
             if (!empty($map['tripProductConfigList'])) {
                 $model->tripProductConfigList = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['tripProductConfigList'] as $item) {
                     $model->tripProductConfigList[$n++] = null !== $item ? tripProductConfigList::fromMap($item) : $item;
                 }

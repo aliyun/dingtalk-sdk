@@ -30,14 +30,12 @@ class result extends Model
     public $roomIdTemplateMap;
     protected $_name = [
         'deviceCustomTemplates' => 'deviceCustomTemplates',
-        'deviceTemplateMap'     => 'deviceTemplateMap',
-        'groupIdTemplateMap'    => 'groupIdTemplateMap',
-        'roomIdTemplateMap'     => 'roomIdTemplateMap',
+        'deviceTemplateMap' => 'deviceTemplateMap',
+        'groupIdTemplateMap' => 'groupIdTemplateMap',
+        'roomIdTemplateMap' => 'roomIdTemplateMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -75,7 +73,7 @@ class result extends Model
         if (isset($map['deviceCustomTemplates'])) {
             if (!empty($map['deviceCustomTemplates'])) {
                 $model->deviceCustomTemplates = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['deviceCustomTemplates'] as $item) {
                     $model->deviceCustomTemplates[$n++] = null !== $item ? deviceCustomTemplates::fromMap($item) : $item;
                 }

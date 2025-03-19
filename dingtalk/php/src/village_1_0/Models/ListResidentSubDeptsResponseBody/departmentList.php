@@ -29,14 +29,12 @@ class departmentList extends Model
      */
     public $superDepartmentId;
     protected $_name = [
-        'departmentId'      => 'departmentId',
-        'departmentName'    => 'departmentName',
+        'departmentId' => 'departmentId',
+        'departmentName' => 'departmentName',
         'superDepartmentId' => 'superDepartmentId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

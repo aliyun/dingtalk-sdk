@@ -46,16 +46,14 @@ class OpenConnectionRequest extends Model
      */
     public $subscriptions;
     protected $_name = [
-        'clientId'      => 'clientId',
-        'clientSecret'  => 'clientSecret',
-        'extras'        => 'extras',
-        'localIp'       => 'localIp',
+        'clientId' => 'clientId',
+        'clientSecret' => 'clientSecret',
+        'extras' => 'extras',
+        'localIp' => 'localIp',
         'subscriptions' => 'subscriptions',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -108,7 +106,7 @@ class OpenConnectionRequest extends Model
         if (isset($map['subscriptions'])) {
             if (!empty($map['subscriptions'])) {
                 $model->subscriptions = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['subscriptions'] as $item) {
                     $model->subscriptions[$n++] = null !== $item ? subscriptions::fromMap($item) : $item;
                 }

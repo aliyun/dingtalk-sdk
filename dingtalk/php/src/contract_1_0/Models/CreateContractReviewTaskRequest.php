@@ -62,19 +62,17 @@ class CreateContractReviewTaskRequest extends Model
      */
     public $standpoint;
     protected $_name = [
-        'contractFile'            => 'contractFile',
+        'contractFile' => 'contractFile',
         'contractFileDownloadUrl' => 'contractFileDownloadUrl',
-        'contractFileName'        => 'contractFileName',
-        'fileSource'              => 'fileSource',
-        'requestId'               => 'requestId',
-        'reviewCustomRules'       => 'reviewCustomRules',
-        'ruleType'                => 'ruleType',
-        'standpoint'              => 'standpoint',
+        'contractFileName' => 'contractFileName',
+        'fileSource' => 'fileSource',
+        'requestId' => 'requestId',
+        'reviewCustomRules' => 'reviewCustomRules',
+        'ruleType' => 'ruleType',
+        'standpoint' => 'standpoint',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -139,7 +137,7 @@ class CreateContractReviewTaskRequest extends Model
         if (isset($map['reviewCustomRules'])) {
             if (!empty($map['reviewCustomRules'])) {
                 $model->reviewCustomRules = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['reviewCustomRules'] as $item) {
                     $model->reviewCustomRules[$n++] = null !== $item ? reviewCustomRules::fromMap($item) : $item;
                 }

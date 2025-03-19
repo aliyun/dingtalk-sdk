@@ -16,9 +16,7 @@ class SendRobotMessageResponseBody extends Model
         'openMsgId' => 'openMsgId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

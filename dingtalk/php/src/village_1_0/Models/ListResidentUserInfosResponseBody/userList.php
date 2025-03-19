@@ -44,16 +44,14 @@ class userList extends Model
      */
     public $userName;
     protected $_name = [
-        'feature'  => 'feature',
-        'roles'    => 'roles',
-        'unionId'  => 'unionId',
-        'userId'   => 'userId',
+        'feature' => 'feature',
+        'roles' => 'roles',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
         'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -97,7 +95,7 @@ class userList extends Model
         if (isset($map['roles'])) {
             if (!empty($map['roles'])) {
                 $model->roles = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['roles'] as $item) {
                     $model->roles[$n++] = null !== $item ? roles::fromMap($item) : $item;
                 }

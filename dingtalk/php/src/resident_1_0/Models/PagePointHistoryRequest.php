@@ -56,17 +56,15 @@ class PagePointHistoryRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'endTime'    => 'endTime',
-        'isCircle'   => 'isCircle',
+        'endTime' => 'endTime',
+        'isCircle' => 'isCircle',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'startTime'  => 'startTime',
-        'userId'     => 'userId',
+        'nextToken' => 'nextToken',
+        'startTime' => 'startTime',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

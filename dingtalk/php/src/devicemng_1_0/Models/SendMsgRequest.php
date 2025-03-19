@@ -39,16 +39,14 @@ class SendMsgRequest extends Model
      */
     public $userList;
     protected $_name = [
-        'content'            => 'content',
-        'deviceCode'         => 'deviceCode',
-        'deviceUuid'         => 'deviceUuid',
+        'content' => 'content',
+        'deviceCode' => 'deviceCode',
+        'deviceUuid' => 'deviceUuid',
         'openConversationId' => 'openConversationId',
-        'userList'           => 'userList',
+        'userList' => 'userList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

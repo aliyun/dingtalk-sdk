@@ -19,12 +19,10 @@ class GetRecordResponseBody extends Model
     public $id;
     protected $_name = [
         'fields' => 'fields',
-        'id'     => 'id',
+        'id' => 'id',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

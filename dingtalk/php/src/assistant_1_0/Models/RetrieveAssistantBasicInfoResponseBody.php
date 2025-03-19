@@ -83,26 +83,24 @@ class RetrieveAssistantBasicInfoResponseBody extends Model
      */
     public $welcomeContent;
     protected $_name = [
-        'actionNames'        => 'actionNames',
-        'assistantId'        => 'assistantId',
-        'assistantUnionId'   => 'assistantUnionId',
-        'createdAt'          => 'createdAt',
-        'creatorUnionId'     => 'creatorUnionId',
-        'description'        => 'description',
-        'fallbackContent'    => 'fallbackContent',
-        'icon'               => 'icon',
-        'instructions'       => 'instructions',
+        'actionNames' => 'actionNames',
+        'assistantId' => 'assistantId',
+        'assistantUnionId' => 'assistantUnionId',
+        'createdAt' => 'createdAt',
+        'creatorUnionId' => 'creatorUnionId',
+        'description' => 'description',
+        'fallbackContent' => 'fallbackContent',
+        'icon' => 'icon',
+        'instructions' => 'instructions',
         'knowledgeFileNames' => 'knowledgeFileNames',
-        'model'              => 'model',
-        'name'               => 'name',
-        'recommendPrompts'   => 'recommendPrompts',
-        'unifiedAppId'       => 'unifiedAppId',
-        'welcomeContent'     => 'welcomeContent',
+        'model' => 'model',
+        'name' => 'name',
+        'recommendPrompts' => 'recommendPrompts',
+        'unifiedAppId' => 'unifiedAppId',
+        'welcomeContent' => 'welcomeContent',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

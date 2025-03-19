@@ -51,16 +51,14 @@ class atmManagerRightMap extends Model
     public $fingerPunchManage;
     protected $_name = [
         'attendancePersonManage' => 'attendancePersonManage',
-        'bluetoothPunchManage'   => 'bluetoothPunchManage',
-        'deviceReset'            => 'deviceReset',
-        'deviceSettings'         => 'deviceSettings',
-        'facePunchManage'        => 'facePunchManage',
-        'fingerPunchManage'      => 'fingerPunchManage',
+        'bluetoothPunchManage' => 'bluetoothPunchManage',
+        'deviceReset' => 'deviceReset',
+        'deviceSettings' => 'deviceSettings',
+        'facePunchManage' => 'facePunchManage',
+        'fingerPunchManage' => 'fingerPunchManage',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

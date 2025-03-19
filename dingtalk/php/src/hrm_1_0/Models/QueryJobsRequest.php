@@ -33,14 +33,12 @@ class QueryJobsRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'jobName'    => 'jobName',
+        'jobName' => 'jobName',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

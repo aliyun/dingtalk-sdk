@@ -24,13 +24,11 @@ class CreateGroupBlackboardResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'dataId'  => 'dataId',
+        'dataId' => 'dataId',
         'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

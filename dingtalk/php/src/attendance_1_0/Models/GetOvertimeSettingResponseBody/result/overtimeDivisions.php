@@ -23,14 +23,12 @@ class overtimeDivisions extends Model
      */
     public $timeSplitPoint;
     protected $_name = [
-        'nextDayType'     => 'nextDayType',
+        'nextDayType' => 'nextDayType',
         'previousDayType' => 'previousDayType',
-        'timeSplitPoint'  => 'timeSplitPoint',
+        'timeSplitPoint' => 'timeSplitPoint',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

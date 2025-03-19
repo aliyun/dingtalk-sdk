@@ -26,13 +26,11 @@ class GetReceiptRequest extends Model
      */
     public $modelId;
     protected $_name = [
-        'code'    => 'code',
+        'code' => 'code',
         'modelId' => 'modelId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,9 +18,7 @@ class ListDataDeliversRequest extends Model
         'dispatchingItemType' => 'dispatchingItemType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

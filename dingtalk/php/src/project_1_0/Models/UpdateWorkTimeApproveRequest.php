@@ -52,15 +52,13 @@ class UpdateWorkTimeApproveRequest extends Model
     protected $_name = [
         'finishTime' => 'finishTime',
         'instanceId' => 'instanceId',
-        'status'     => 'status',
+        'status' => 'status',
         'submitTime' => 'submitTime',
-        'title'      => 'title',
-        'url'        => 'url',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

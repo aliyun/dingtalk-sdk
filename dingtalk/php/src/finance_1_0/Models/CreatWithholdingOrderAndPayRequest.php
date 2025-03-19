@@ -91,21 +91,19 @@ class CreatWithholdingOrderAndPayRequest extends Model
      */
     public $title;
     protected $_name = [
-        'amount'                        => 'amount',
-        'instId'                        => 'instId',
+        'amount' => 'amount',
+        'instId' => 'instId',
         'otherPayChannelDetailInfoList' => 'otherPayChannelDetailInfoList',
-        'outTradeNo'                    => 'outTradeNo',
-        'payChannel'                    => 'payChannel',
-        'payerUserId'                   => 'payerUserId',
-        'remark'                        => 'remark',
-        'subInstId'                     => 'subInstId',
-        'timeOutExpress'                => 'timeOutExpress',
-        'title'                         => 'title',
+        'outTradeNo' => 'outTradeNo',
+        'payChannel' => 'payChannel',
+        'payerUserId' => 'payerUserId',
+        'remark' => 'remark',
+        'subInstId' => 'subInstId',
+        'timeOutExpress' => 'timeOutExpress',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -167,7 +165,7 @@ class CreatWithholdingOrderAndPayRequest extends Model
         if (isset($map['otherPayChannelDetailInfoList'])) {
             if (!empty($map['otherPayChannelDetailInfoList'])) {
                 $model->otherPayChannelDetailInfoList = [];
-                $n                                    = 0;
+                $n = 0;
                 foreach ($map['otherPayChannelDetailInfoList'] as $item) {
                     $model->otherPayChannelDetailInfoList[$n++] = null !== $item ? otherPayChannelDetailInfoList::fromMap($item) : $item;
                 }

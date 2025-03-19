@@ -94,24 +94,22 @@ class result extends Model
      */
     public $status;
     protected $_name = [
-        'categoryId'           => 'categoryId',
-        'categoryName'         => 'categoryName',
-        'groupCode'            => 'groupCode',
-        'groupMembersCnt'      => 'groupMembersCnt',
-        'groupName'            => 'groupName',
-        'groupOwnerName'       => 'groupOwnerName',
-        'groupOwnerUserId'     => 'groupOwnerUserId',
-        'isKpConversation'     => 'isKpConversation',
-        'manageSign'           => 'manageSign',
+        'categoryId' => 'categoryId',
+        'categoryName' => 'categoryName',
+        'groupCode' => 'groupCode',
+        'groupMembersCnt' => 'groupMembersCnt',
+        'groupName' => 'groupName',
+        'groupOwnerName' => 'groupOwnerName',
+        'groupOwnerUserId' => 'groupOwnerUserId',
+        'isKpConversation' => 'isKpConversation',
+        'manageSign' => 'manageSign',
         'multipleCategoryList' => 'multipleCategoryList',
-        'openConversationId'   => 'openConversationId',
-        'order'                => 'order',
-        'status'               => 'status',
+        'openConversationId' => 'openConversationId',
+        'order' => 'order',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -203,7 +201,7 @@ class result extends Model
         if (isset($map['multipleCategoryList'])) {
             if (!empty($map['multipleCategoryList'])) {
                 $model->multipleCategoryList = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['multipleCategoryList'] as $item) {
                     $model->multipleCategoryList[$n++] = null !== $item ? multipleCategoryList::fromMap($item) : $item;
                 }

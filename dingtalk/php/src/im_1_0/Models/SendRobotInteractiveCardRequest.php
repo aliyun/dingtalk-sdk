@@ -86,22 +86,20 @@ class SendRobotInteractiveCardRequest extends Model
      */
     public $userIdPrivateDataMap;
     protected $_name = [
-        'callbackUrl'           => 'callbackUrl',
-        'cardBizId'             => 'cardBizId',
-        'cardData'              => 'cardData',
-        'cardTemplateId'        => 'cardTemplateId',
-        'openConversationId'    => 'openConversationId',
-        'pullStrategy'          => 'pullStrategy',
-        'robotCode'             => 'robotCode',
-        'sendOptions'           => 'sendOptions',
-        'singleChatReceiver'    => 'singleChatReceiver',
+        'callbackUrl' => 'callbackUrl',
+        'cardBizId' => 'cardBizId',
+        'cardData' => 'cardData',
+        'cardTemplateId' => 'cardTemplateId',
+        'openConversationId' => 'openConversationId',
+        'pullStrategy' => 'pullStrategy',
+        'robotCode' => 'robotCode',
+        'sendOptions' => 'sendOptions',
+        'singleChatReceiver' => 'singleChatReceiver',
         'unionIdPrivateDataMap' => 'unionIdPrivateDataMap',
-        'userIdPrivateDataMap'  => 'userIdPrivateDataMap',
+        'userIdPrivateDataMap' => 'userIdPrivateDataMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

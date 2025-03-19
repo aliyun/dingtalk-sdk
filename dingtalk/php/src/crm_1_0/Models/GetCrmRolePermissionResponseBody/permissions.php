@@ -76,19 +76,17 @@ class permissions extends Model
      */
     public $roleName;
     protected $_name = [
-        'defaultRole'       => 'defaultRole',
-        'fieldScopes'       => 'fieldScopes',
+        'defaultRole' => 'defaultRole',
+        'fieldScopes' => 'fieldScopes',
         'managingScopeList' => 'managingScopeList',
-        'operateScopes'     => 'operateScopes',
-        'resourceId'        => 'resourceId',
-        'roleId'            => 'roleId',
-        'roleMemberList'    => 'roleMemberList',
-        'roleName'          => 'roleName',
+        'operateScopes' => 'operateScopes',
+        'resourceId' => 'resourceId',
+        'roleId' => 'roleId',
+        'roleMemberList' => 'roleMemberList',
+        'roleName' => 'roleName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -159,7 +157,7 @@ class permissions extends Model
         if (isset($map['fieldScopes'])) {
             if (!empty($map['fieldScopes'])) {
                 $model->fieldScopes = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['fieldScopes'] as $item) {
                     $model->fieldScopes[$n++] = null !== $item ? fieldScopes::fromMap($item) : $item;
                 }
@@ -168,7 +166,7 @@ class permissions extends Model
         if (isset($map['managingScopeList'])) {
             if (!empty($map['managingScopeList'])) {
                 $model->managingScopeList = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['managingScopeList'] as $item) {
                     $model->managingScopeList[$n++] = null !== $item ? managingScopeList::fromMap($item) : $item;
                 }
@@ -177,7 +175,7 @@ class permissions extends Model
         if (isset($map['operateScopes'])) {
             if (!empty($map['operateScopes'])) {
                 $model->operateScopes = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['operateScopes'] as $item) {
                     $model->operateScopes[$n++] = null !== $item ? operateScopes::fromMap($item) : $item;
                 }
@@ -192,7 +190,7 @@ class permissions extends Model
         if (isset($map['roleMemberList'])) {
             if (!empty($map['roleMemberList'])) {
                 $model->roleMemberList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['roleMemberList'] as $item) {
                     $model->roleMemberList[$n++] = null !== $item ? roleMemberList::fromMap($item) : $item;
                 }

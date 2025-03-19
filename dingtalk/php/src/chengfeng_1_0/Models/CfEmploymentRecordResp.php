@@ -134,25 +134,23 @@ class CfEmploymentRecordResp extends Model
      */
     public $workNumbers;
     protected $_name = [
-        'deptCode'        => 'deptCode',
-        'deptName'        => 'deptName',
-        'employeeStatus'  => 'employeeStatus',
-        'endDate'         => 'endDate',
-        'isLatestRecord'  => 'isLatestRecord',
-        'jobLevelName'    => 'jobLevelName',
+        'deptCode' => 'deptCode',
+        'deptName' => 'deptName',
+        'employeeStatus' => 'employeeStatus',
+        'endDate' => 'endDate',
+        'isLatestRecord' => 'isLatestRecord',
+        'jobLevelName' => 'jobLevelName',
         'jobPositionCode' => 'jobPositionCode',
         'jobPositionName' => 'jobPositionName',
-        'jobPostCode'     => 'jobPostCode',
-        'jobPostName'     => 'jobPostName',
-        'serviceStatus'   => 'serviceStatus',
-        'serviceType'     => 'serviceType',
-        'startDate'       => 'startDate',
-        'workNumbers'     => 'workNumbers',
+        'jobPostCode' => 'jobPostCode',
+        'jobPostName' => 'jobPostName',
+        'serviceStatus' => 'serviceStatus',
+        'serviceType' => 'serviceType',
+        'startDate' => 'startDate',
+        'workNumbers' => 'workNumbers',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

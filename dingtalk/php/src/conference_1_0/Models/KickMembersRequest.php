@@ -22,12 +22,10 @@ class KickMembersRequest extends Model
     public $userList;
     protected $_name = [
         'forbiddenRejoin' => 'forbiddenRejoin',
-        'userList'        => 'userList',
+        'userList' => 'userList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class KickMembersRequest extends Model
         if (isset($map['userList'])) {
             if (!empty($map['userList'])) {
                 $model->userList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['userList'] as $item) {
                     $model->userList[$n++] = null !== $item ? userList::fromMap($item) : $item;
                 }

@@ -31,14 +31,12 @@ class GetNodeRequest extends Model
      */
     public $withStatisticalInfo;
     protected $_name = [
-        'operatorId'          => 'operatorId',
-        'withPermissionRole'  => 'withPermissionRole',
+        'operatorId' => 'operatorId',
+        'withPermissionRole' => 'withPermissionRole',
         'withStatisticalInfo' => 'withStatisticalInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

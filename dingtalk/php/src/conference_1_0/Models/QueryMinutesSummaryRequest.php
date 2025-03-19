@@ -23,12 +23,10 @@ class QueryMinutesSummaryRequest extends Model
     public $unionId;
     protected $_name = [
         'summaryTypeList' => 'summaryTypeList',
-        'unionId'         => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

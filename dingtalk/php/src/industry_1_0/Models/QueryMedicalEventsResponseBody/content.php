@@ -27,14 +27,12 @@ class content extends Model
      */
     public $eventId;
     protected $_name = [
-        'code'    => 'code',
+        'code' => 'code',
         'content' => 'content',
         'eventId' => 'eventId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

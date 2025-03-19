@@ -44,15 +44,13 @@ class metaList extends Model
     public $unit;
     protected $_name = [
         'kpiCaliber' => 'kpiCaliber',
-        'kpiId'      => 'kpiId',
-        'kpiName'    => 'kpiName',
-        'period'     => 'period',
-        'unit'       => 'unit',
+        'kpiId' => 'kpiId',
+        'kpiName' => 'kpiName',
+        'period' => 'period',
+        'unit' => 'unit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

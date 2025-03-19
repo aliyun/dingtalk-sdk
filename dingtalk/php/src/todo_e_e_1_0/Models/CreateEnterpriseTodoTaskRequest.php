@@ -82,24 +82,22 @@ class CreateEnterpriseTodoTaskRequest extends Model
     public $type;
     protected $_name = [
         'bizCategoryId' => 'bizCategoryId',
-        'customFields'  => 'customFields',
-        'description'   => 'description',
-        'detailUrl'     => 'detailUrl',
-        'dueTime'       => 'dueTime',
-        'executorIds'   => 'executorIds',
+        'customFields' => 'customFields',
+        'description' => 'description',
+        'detailUrl' => 'detailUrl',
+        'dueTime' => 'dueTime',
+        'executorIds' => 'executorIds',
         'notifyConfigs' => 'notifyConfigs',
-        'operatorId'    => 'operatorId',
-        'priority'      => 'priority',
-        'sourceId'      => 'sourceId',
-        'sourceTitle'   => 'sourceTitle',
-        'subject'       => 'subject',
-        'trackerIds'    => 'trackerIds',
-        'type'          => 'type',
+        'operatorId' => 'operatorId',
+        'priority' => 'priority',
+        'sourceId' => 'sourceId',
+        'sourceTitle' => 'sourceTitle',
+        'subject' => 'subject',
+        'trackerIds' => 'trackerIds',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -170,7 +168,7 @@ class CreateEnterpriseTodoTaskRequest extends Model
         if (isset($map['customFields'])) {
             if (!empty($map['customFields'])) {
                 $model->customFields = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['customFields'] as $item) {
                     $model->customFields[$n++] = null !== $item ? customFields::fromMap($item) : $item;
                 }

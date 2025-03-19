@@ -18,9 +18,7 @@ class ListSeniorSettingsRequest extends Model
         'seniorStaffId' => 'seniorStaffId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

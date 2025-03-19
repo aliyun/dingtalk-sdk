@@ -18,9 +18,7 @@ class GetTbProjectSourceResponseBody extends Model
         'installSource' => 'installSource',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

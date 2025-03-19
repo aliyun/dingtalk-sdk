@@ -31,13 +31,11 @@ class policyList extends Model
     public $type;
     protected $_name = [
         'memberList' => 'memberList',
-        'name'       => 'name',
-        'type'       => 'type',
+        'name' => 'name',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -72,7 +70,7 @@ class policyList extends Model
         if (isset($map['memberList'])) {
             if (!empty($map['memberList'])) {
                 $model->memberList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['memberList'] as $item) {
                     $model->memberList[$n++] = null !== $item ? memberList::fromMap($item) : $item;
                 }

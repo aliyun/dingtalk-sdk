@@ -58,10 +58,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -85,18 +85,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'AyunOnlienTest',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/ayunTest',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'AyunOnlienTest',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/ayunTest',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return AyunOnlienTestResponse::fromMap($this->execute($params, $req, $runtime));
@@ -145,18 +145,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchDeleteDevice',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/devices/remove',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchDeleteDevice',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/devices/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchDeleteDeviceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -205,18 +205,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchRegisterDevice',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/devices/registrations/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchRegisterDevice',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/devices/registrations/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchRegisterDeviceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -265,18 +265,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchRegisterEventType',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/eventTypes/registrations/batch',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchRegisterEventType',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/eventTypes/registrations/batch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchRegisterEventTypeResponse::fromMap($this->execute($params, $req, $runtime));
@@ -325,18 +325,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BatchUpdateDevice',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/devices/batch',
-            'method'      => 'PUT',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BatchUpdateDevice',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/devices/batch',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BatchUpdateDeviceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -394,18 +394,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'BindSystem',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/systems/bind',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'BindSystem',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/systems/bind',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return BindSystemResponse::fromMap($this->execute($params, $req, $runtime));
@@ -460,18 +460,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'DeviceConference',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/deviceConferences/initiate',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'DeviceConference',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/deviceConferences/initiate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DeviceConferenceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -506,15 +506,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'DiotMama',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'DiotMama',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DiotMamaResponse::fromMap($this->execute($params, $req, $runtime));
@@ -547,15 +547,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'DiotMarketManagerTest',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/market/manager/test',
-            'method'      => 'PUT',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'DiotMarketManagerTest',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/market/manager/test',
+            'method' => 'PUT',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DiotMarketManagerTestResponse::fromMap($this->execute($params, $req, $runtime));
@@ -588,15 +588,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'DiotSystemMarkTest',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/sys/mark/test',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'DiotSystemMarkTest',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/sys/mark/test',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DiotSystemMarkTestResponse::fromMap($this->execute($params, $req, $runtime));
@@ -629,15 +629,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'Diot_Market_Manager',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/market/manager',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'Diot_Market_Manager',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/market/manager',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return DiotMarketManagerResponse::fromMap($this->execute($params, $req, $runtime));
@@ -708,18 +708,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PushEvent',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/events/push',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PushEvent',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/events/push',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PushEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -771,18 +771,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'QueryDevice',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/devices',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDevice',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/devices',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDeviceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -828,18 +828,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryDevicePk',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/devices/pkInfos/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryDevicePk',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/devices/pkInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryDevicePkResponse::fromMap($this->execute($params, $req, $runtime));
@@ -909,18 +909,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'QueryEvent',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/events/query',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'QueryEvent',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/events/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return QueryEventResponse::fromMap($this->execute($params, $req, $runtime));
@@ -996,18 +996,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'RegisterDevice',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/devices/register',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'RegisterDevice',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/devices/register',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return RegisterDeviceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1042,15 +1042,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'UpgradeDevice',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/upgrade/device',
-            'method'      => 'POST',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'UpgradeDevice',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/upgrade/device',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return UpgradeDeviceResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1083,15 +1083,15 @@ class Dingtalk extends OpenApiClient
             'headers' => $headers,
         ]);
         $params = new Params([
-            'action'      => 'WorkbenchTransformInfo',
-            'version'     => 'diot_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/diot/workbench/transform',
-            'method'      => 'GET',
-            'authType'    => 'Anonymous',
-            'style'       => 'ROA',
+            'action' => 'WorkbenchTransformInfo',
+            'version' => 'diot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/diot/workbench/transform',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return WorkbenchTransformInfoResponse::fromMap($this->execute($params, $req, $runtime));

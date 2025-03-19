@@ -40,15 +40,13 @@ class ListEmpLeaveRecordsRequest extends Model
      */
     public $startTime;
     protected $_name = [
-        'endTime'    => 'endTime',
+        'endTime' => 'endTime',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'startTime'  => 'startTime',
+        'nextToken' => 'nextToken',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

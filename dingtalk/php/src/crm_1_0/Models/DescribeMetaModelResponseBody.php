@@ -19,9 +19,7 @@ class DescribeMetaModelResponseBody extends Model
         'metaModelDTOList' => 'metaModelDTOList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class DescribeMetaModelResponseBody extends Model
         if (isset($map['metaModelDTOList'])) {
             if (!empty($map['metaModelDTOList'])) {
                 $model->metaModelDTOList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['metaModelDTOList'] as $item) {
                     $model->metaModelDTOList[$n++] = null !== $item ? metaModelDTOList::fromMap($item) : $item;
                 }

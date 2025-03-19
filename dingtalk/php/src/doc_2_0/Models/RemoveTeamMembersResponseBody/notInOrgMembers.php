@@ -36,15 +36,13 @@ class notInOrgMembers extends Model
      */
     public $roleCode;
     protected $_name = [
-        'memberId'   => 'memberId',
+        'memberId' => 'memberId',
         'memberType' => 'memberType',
-        'name'       => 'name',
-        'roleCode'   => 'roleCode',
+        'name' => 'name',
+        'roleCode' => 'roleCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

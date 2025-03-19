@@ -23,14 +23,12 @@ class groupInfos extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'botCreator'            => 'botCreator',
+        'botCreator' => 'botCreator',
         'botCreatorIsOrgMember' => 'botCreatorIsOrgMember',
-        'openConversationId'    => 'openConversationId',
+        'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -36,14 +36,12 @@ class GetFileUploadInfoResponseBody extends Model
     public $uploadKey;
     protected $_name = [
         'headerSignatureInfo' => 'headerSignatureInfo',
-        'protocol'            => 'protocol',
-        'storageDriver'       => 'storageDriver',
-        'uploadKey'           => 'uploadKey',
+        'protocol' => 'protocol',
+        'storageDriver' => 'storageDriver',
+        'uploadKey' => 'uploadKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

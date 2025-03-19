@@ -20,9 +20,7 @@ class ListPointRulesRequest extends Model
         'isCircle' => 'isCircle',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

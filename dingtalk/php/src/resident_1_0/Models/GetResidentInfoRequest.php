@@ -16,9 +16,7 @@ class GetResidentInfoRequest extends Model
         'residentCorpId' => 'residentCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

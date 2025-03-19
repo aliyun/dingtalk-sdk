@@ -22,12 +22,10 @@ class ListNodesResponseBody extends Model
     public $nodes;
     protected $_name = [
         'nextToken' => 'nextToken',
-        'nodes'     => 'nodes',
+        'nodes' => 'nodes',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class ListNodesResponseBody extends Model
         if (isset($map['nodes'])) {
             if (!empty($map['nodes'])) {
                 $model->nodes = [];
-                $n            = 0;
+                $n = 0;
                 foreach ($map['nodes'] as $item) {
                     $model->nodes[$n++] = null !== $item ? nodes::fromMap($item) : $item;
                 }

@@ -35,14 +35,12 @@ class emotionStatisticsRecords extends Model
      */
     public $emotionScore;
     protected $_name = [
-        'count'        => 'count',
-        'dt'           => 'dt',
+        'count' => 'count',
+        'dt' => 'dt',
         'emotionScore' => 'emotionScore',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

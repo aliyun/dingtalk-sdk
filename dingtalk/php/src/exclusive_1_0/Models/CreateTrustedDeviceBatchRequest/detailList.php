@@ -19,12 +19,10 @@ class detailList extends Model
     public $title;
     protected $_name = [
         'macAddress' => 'macAddress',
-        'title'      => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

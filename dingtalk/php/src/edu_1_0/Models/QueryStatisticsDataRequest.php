@@ -40,15 +40,13 @@ class QueryStatisticsDataRequest extends Model
     public $startTime;
     protected $_name = [
         'sectionIndexList' => 'sectionIndexList',
-        'teacherUserIds'   => 'teacherUserIds',
-        'endTime'          => 'endTime',
-        'opUserId'         => 'opUserId',
-        'startTime'        => 'startTime',
+        'teacherUserIds' => 'teacherUserIds',
+        'endTime' => 'endTime',
+        'opUserId' => 'opUserId',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -153,34 +153,32 @@ class CreateCollegeContactDeptRequest extends Model
      */
     public $userPermits;
     protected $_name = [
-        'autoApproveApply'  => 'autoApproveApply',
-        'brief'             => 'brief',
-        'code'              => 'code',
-        'createDeptGroup'   => 'createDeptGroup',
-        'deptCode'          => 'deptCode',
-        'deptPermits'       => 'deptPermits',
-        'deptType'          => 'deptType',
-        'empApplyJoinDept'  => 'empApplyJoinDept',
-        'extension'         => 'extension',
-        'hideDept'          => 'hideDept',
-        'hideSceneConfig'   => 'hideSceneConfig',
-        'name'              => 'name',
-        'order'             => 'order',
-        'outerDept'         => 'outerDept',
+        'autoApproveApply' => 'autoApproveApply',
+        'brief' => 'brief',
+        'code' => 'code',
+        'createDeptGroup' => 'createDeptGroup',
+        'deptCode' => 'deptCode',
+        'deptPermits' => 'deptPermits',
+        'deptType' => 'deptType',
+        'empApplyJoinDept' => 'empApplyJoinDept',
+        'extension' => 'extension',
+        'hideDept' => 'hideDept',
+        'hideSceneConfig' => 'hideSceneConfig',
+        'name' => 'name',
+        'order' => 'order',
+        'outerDept' => 'outerDept',
         'outerDeptOnlySelf' => 'outerDeptOnlySelf',
-        'outerPermitDepts'  => 'outerPermitDepts',
-        'outerPermitUsers'  => 'outerPermitUsers',
-        'outerSceneConfig'  => 'outerSceneConfig',
-        'parentId'          => 'parentId',
-        'sourceIdentifier'  => 'sourceIdentifier',
-        'struId'            => 'struId',
-        'telephone'         => 'telephone',
-        'userPermits'       => 'userPermits',
+        'outerPermitDepts' => 'outerPermitDepts',
+        'outerPermitUsers' => 'outerPermitUsers',
+        'outerSceneConfig' => 'outerSceneConfig',
+        'parentId' => 'parentId',
+        'sourceIdentifier' => 'sourceIdentifier',
+        'struId' => 'struId',
+        'telephone' => 'telephone',
+        'userPermits' => 'userPermits',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

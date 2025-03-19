@@ -24,13 +24,11 @@ class GetLeaveTypeRequest extends Model
      */
     public $vacationSource;
     protected $_name = [
-        'opUserId'       => 'opUserId',
+        'opUserId' => 'opUserId',
         'vacationSource' => 'vacationSource',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

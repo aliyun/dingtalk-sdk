@@ -42,15 +42,13 @@ class UpdateSheetRequest extends Model
     public $operatorId;
     protected $_name = [
         'frozenColumnCount' => 'frozenColumnCount',
-        'frozenRowCount'    => 'frozenRowCount',
-        'name'              => 'name',
-        'visibility'        => 'visibility',
-        'operatorId'        => 'operatorId',
+        'frozenRowCount' => 'frozenRowCount',
+        'name' => 'name',
+        'visibility' => 'visibility',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

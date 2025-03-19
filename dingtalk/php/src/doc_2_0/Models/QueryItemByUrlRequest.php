@@ -31,14 +31,12 @@ class QueryItemByUrlRequest extends Model
      */
     public $withStatisticalInfo;
     protected $_name = [
-        'operatorId'          => 'operatorId',
-        'url'                 => 'url',
+        'operatorId' => 'operatorId',
+        'url' => 'url',
         'withStatisticalInfo' => 'withStatisticalInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

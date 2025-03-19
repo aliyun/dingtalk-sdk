@@ -79,20 +79,18 @@ class CreateTicketRequest extends Model
      */
     public $title;
     protected $_name = [
-        'creatorUnionId'    => 'creatorUnionId',
-        'customFields'      => 'customFields',
-        'notify'            => 'notify',
-        'openTeamId'        => 'openTeamId',
+        'creatorUnionId' => 'creatorUnionId',
+        'customFields' => 'customFields',
+        'notify' => 'notify',
+        'openTeamId' => 'openTeamId',
         'openTemplateBizId' => 'openTemplateBizId',
         'processorUnionIds' => 'processorUnionIds',
-        'scene'             => 'scene',
-        'sceneContext'      => 'sceneContext',
-        'title'             => 'title',
+        'scene' => 'scene',
+        'sceneContext' => 'sceneContext',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

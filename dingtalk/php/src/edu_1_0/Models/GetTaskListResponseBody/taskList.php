@@ -29,14 +29,12 @@ class taskList extends Model
      */
     public $taskYear;
     protected $_name = [
-        'name'     => 'name',
-        'taskId'   => 'taskId',
+        'name' => 'name',
+        'taskId' => 'taskId',
         'taskYear' => 'taskYear',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

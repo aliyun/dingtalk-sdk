@@ -19,13 +19,11 @@ class QueryPaymentRecallFileResponseBody extends Model
      */
     public $paymentRecallFileList;
     protected $_name = [
-        'corpId'                => 'corpId',
+        'corpId' => 'corpId',
         'paymentRecallFileList' => 'paymentRecallFileList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class QueryPaymentRecallFileResponseBody extends Model
         if (isset($map['paymentRecallFileList'])) {
             if (!empty($map['paymentRecallFileList'])) {
                 $model->paymentRecallFileList = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['paymentRecallFileList'] as $item) {
                     $model->paymentRecallFileList[$n++] = null !== $item ? paymentRecallFileList::fromMap($item) : $item;
                 }

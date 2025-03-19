@@ -36,13 +36,11 @@ class GetSignedDetailByPageRequest extends Model
     public $signStatus;
     protected $_name = [
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
+        'pageSize' => 'pageSize',
         'signStatus' => 'signStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

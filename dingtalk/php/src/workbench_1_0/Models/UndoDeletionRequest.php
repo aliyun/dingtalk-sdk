@@ -38,15 +38,13 @@ class UndoDeletionRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'bizIdList'        => 'bizIdList',
+        'bizIdList' => 'bizIdList',
         'redDotRelationId' => 'redDotRelationId',
-        'redDotType'       => 'redDotType',
-        'userId'           => 'userId',
+        'redDotType' => 'redDotType',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

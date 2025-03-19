@@ -18,13 +18,11 @@ class QueryGeneralDataUpdateDateResponseBody extends Model
      */
     public $updateDate;
     protected $_name = [
-        'success'    => 'success',
+        'success' => 'success',
         'updateDate' => 'updateDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

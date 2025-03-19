@@ -36,14 +36,12 @@ class data extends Model
      */
     public $weight;
     protected $_name = [
-        'id'       => 'id',
+        'id' => 'id',
         'position' => 'position',
-        'weight'   => 'weight',
+        'weight' => 'weight',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

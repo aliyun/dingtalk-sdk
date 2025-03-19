@@ -19,9 +19,7 @@ class QueryBatchTradeOrderResponseBody extends Model
         'batchTradeOrderVOs' => 'batchTradeOrderVOs',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class QueryBatchTradeOrderResponseBody extends Model
         if (isset($map['batchTradeOrderVOs'])) {
             if (!empty($map['batchTradeOrderVOs'])) {
                 $model->batchTradeOrderVOs = [];
-                $n                         = 0;
+                $n = 0;
                 foreach ($map['batchTradeOrderVOs'] as $item) {
                     $model->batchTradeOrderVOs[$n++] = null !== $item ? batchTradeOrderVOs::fromMap($item) : $item;
                 }

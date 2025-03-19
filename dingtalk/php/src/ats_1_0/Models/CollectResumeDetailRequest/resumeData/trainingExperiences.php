@@ -50,17 +50,15 @@ class trainingExperiences extends Model
      */
     public $startDate;
     protected $_name = [
-        'description'     => 'description',
-        'endDate'         => 'endDate',
+        'description' => 'description',
+        'endDate' => 'endDate',
         'institutionName' => 'institutionName',
-        'location'        => 'location',
-        'name'            => 'name',
-        'startDate'       => 'startDate',
+        'location' => 'location',
+        'name' => 'name',
+        'startDate' => 'startDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

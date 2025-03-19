@@ -84,25 +84,23 @@ class list_ extends Model
      */
     public $url;
     protected $_name = [
-        'activityId'        => 'activityId',
-        'appType'           => 'appType',
-        'formMassage'       => 'formMassage',
-        'originatorId'      => 'originatorId',
-        'originatorName'    => 'originatorName',
-        'originatorPhoto'   => 'originatorPhoto',
+        'activityId' => 'activityId',
+        'appType' => 'appType',
+        'formMassage' => 'formMassage',
+        'originatorId' => 'originatorId',
+        'originatorName' => 'originatorName',
+        'originatorPhoto' => 'originatorPhoto',
         'processCreateTime' => 'processCreateTime',
-        'processEndTime'    => 'processEndTime',
+        'processEndTime' => 'processEndTime',
         'processInstanceId' => 'processInstanceId',
-        'processType'       => 'processType',
-        'status'            => 'status',
-        'taskId'            => 'taskId',
-        'title'             => 'title',
-        'url'               => 'url',
+        'processType' => 'processType',
+        'status' => 'status',
+        'taskId' => 'taskId',
+        'title' => 'title',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -52,15 +52,13 @@ class CardEndCardRequest extends Model
     public $userId;
     protected $_name = [
         'cardBizCode' => 'cardBizCode',
-        'cardBizId'   => 'cardBizId',
-        'cardId'      => 'cardId',
-        'sourceType'  => 'sourceType',
-        'userId'      => 'userId',
+        'cardBizId' => 'cardBizId',
+        'cardId' => 'cardId',
+        'sourceType' => 'sourceType',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

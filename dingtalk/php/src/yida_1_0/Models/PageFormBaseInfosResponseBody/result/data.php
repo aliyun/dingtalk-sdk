@@ -34,16 +34,14 @@ class data extends Model
      */
     public $title;
     protected $_name = [
-        'creator'   => 'creator',
-        'formType'  => 'formType',
-        'formUuid'  => 'formUuid',
+        'creator' => 'creator',
+        'formType' => 'formType',
+        'formUuid' => 'formUuid',
         'gmtCreate' => 'gmtCreate',
-        'title'     => 'title',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

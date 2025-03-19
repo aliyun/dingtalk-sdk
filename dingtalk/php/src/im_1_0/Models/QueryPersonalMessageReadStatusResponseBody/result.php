@@ -17,9 +17,7 @@ class result extends Model
         'messageReadInfoList' => 'messageReadInfoList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class result extends Model
         if (isset($map['messageReadInfoList'])) {
             if (!empty($map['messageReadInfoList'])) {
                 $model->messageReadInfoList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['messageReadInfoList'] as $item) {
                     $model->messageReadInfoList[$n++] = null !== $item ? messageReadInfoList::fromMap($item) : $item;
                 }

@@ -22,12 +22,10 @@ class CreateTriggerRequest extends Model
     public $triggerInfo;
     protected $_name = [
         'integratorFlag' => 'integratorFlag',
-        'triggerInfo'    => 'triggerInfo',
+        'triggerInfo' => 'triggerInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -62,7 +60,7 @@ class CreateTriggerRequest extends Model
         if (isset($map['triggerInfo'])) {
             if (!empty($map['triggerInfo'])) {
                 $model->triggerInfo = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['triggerInfo'] as $item) {
                     $model->triggerInfo[$n++] = null !== $item ? triggerInfo::fromMap($item) : $item;
                 }

@@ -68,17 +68,15 @@ class AddPointRequest extends Model
     public $uuid;
     protected $_name = [
         'actionTime' => 'actionTime',
-        'isCircle'   => 'isCircle',
-        'ruleCode'   => 'ruleCode',
-        'ruleName'   => 'ruleName',
-        'score'      => 'score',
-        'userId'     => 'userId',
-        'uuid'       => 'uuid',
+        'isCircle' => 'isCircle',
+        'ruleCode' => 'ruleCode',
+        'ruleName' => 'ruleName',
+        'score' => 'score',
+        'userId' => 'userId',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

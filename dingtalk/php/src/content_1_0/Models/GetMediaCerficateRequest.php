@@ -65,18 +65,16 @@ class GetMediaCerficateRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'fileName'          => 'fileName',
-        'mcnId'             => 'mcnId',
-        'mediaId'           => 'mediaId',
+        'fileName' => 'fileName',
+        'mcnId' => 'mcnId',
+        'mediaId' => 'mediaId',
         'mediaIntroduction' => 'mediaIntroduction',
-        'mediaTitle'        => 'mediaTitle',
-        'thumbUrl'          => 'thumbUrl',
-        'userId'            => 'userId',
+        'mediaTitle' => 'mediaTitle',
+        'thumbUrl' => 'thumbUrl',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

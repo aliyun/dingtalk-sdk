@@ -93,22 +93,20 @@ class CreateMeetingRoomRequest extends Model
     public $unionId;
     protected $_name = [
         'enableCycleReservation' => 'enableCycleReservation',
-        'groupId'                => 'groupId',
-        'isvRoomId'              => 'isvRoomId',
-        'openReservation'        => 'openReservation',
-        'reservationAuthority'   => 'reservationAuthority',
-        'roomCapacity'           => 'roomCapacity',
-        'roomLabelIds'           => 'roomLabelIds',
-        'roomLocation'           => 'roomLocation',
-        'roomName'               => 'roomName',
-        'roomPicture'            => 'roomPicture',
-        'roomStatus'             => 'roomStatus',
-        'unionId'                => 'unionId',
+        'groupId' => 'groupId',
+        'isvRoomId' => 'isvRoomId',
+        'openReservation' => 'openReservation',
+        'reservationAuthority' => 'reservationAuthority',
+        'roomCapacity' => 'roomCapacity',
+        'roomLabelIds' => 'roomLabelIds',
+        'roomLocation' => 'roomLocation',
+        'roomName' => 'roomName',
+        'roomPicture' => 'roomPicture',
+        'roomStatus' => 'roomStatus',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -48,16 +48,14 @@ class PremiumUpdateProcessInstanceVariablesRequest extends Model
      */
     public $variables;
     protected $_name = [
-        'opUserId'          => 'opUserId',
-        'processCode'       => 'processCode',
+        'opUserId' => 'opUserId',
+        'processCode' => 'processCode',
         'processInstanceId' => 'processInstanceId',
-        'remark'            => 'remark',
-        'variables'         => 'variables',
+        'remark' => 'remark',
+        'variables' => 'variables',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -110,7 +108,7 @@ class PremiumUpdateProcessInstanceVariablesRequest extends Model
         if (isset($map['variables'])) {
             if (!empty($map['variables'])) {
                 $model->variables = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['variables'] as $item) {
                     $model->variables[$n++] = null !== $item ? variables::fromMap($item) : $item;
                 }

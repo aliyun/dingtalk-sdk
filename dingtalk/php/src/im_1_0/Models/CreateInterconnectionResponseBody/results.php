@@ -24,13 +24,11 @@ class results extends Model
     public $userId;
     protected $_name = [
         'appUserId' => 'appUserId',
-        'message'   => 'message',
-        'userId'    => 'userId',
+        'message' => 'message',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

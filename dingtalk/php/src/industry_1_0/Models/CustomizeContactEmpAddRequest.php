@@ -31,14 +31,12 @@ class CustomizeContactEmpAddRequest extends Model
      */
     public $userIdList;
     protected $_name = [
-        'code'       => 'code',
-        'deptId'     => 'deptId',
+        'code' => 'code',
+        'deptId' => 'deptId',
         'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

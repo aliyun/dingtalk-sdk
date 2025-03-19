@@ -16,9 +16,7 @@ class apps extends Model
         'appName' => 'appName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

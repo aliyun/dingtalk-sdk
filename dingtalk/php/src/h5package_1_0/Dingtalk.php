@@ -29,8 +29,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -71,18 +71,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'CreatePackage',
-            'version'     => 'h5package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h5package/asyncUpload',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'CreatePackage',
+            'version' => 'h5package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h5package/asyncUpload',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return CreatePackageResponse::fromMap($this->execute($params, $req, $runtime));
@@ -131,18 +131,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetAccessToken',
-            'version'     => 'h5package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h5package/uploadTokens',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetAccessToken',
+            'version' => 'h5package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h5package/uploadTokens',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
@@ -188,18 +188,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetCreateStatus',
-            'version'     => 'h5package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h5package/uploadStatus',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetCreateStatus',
+            'version' => 'h5package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h5package/uploadStatus',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetCreateStatusResponse::fromMap($this->execute($params, $req, $runtime));
@@ -251,18 +251,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'PublishPackage',
-            'version'     => 'h5package_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/h5package/publish',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'PublishPackage',
+            'version' => 'h5package_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/h5package/publish',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return PublishPackageResponse::fromMap($this->execute($params, $req, $runtime));

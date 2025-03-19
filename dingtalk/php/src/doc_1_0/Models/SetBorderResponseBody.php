@@ -16,9 +16,7 @@ class SetBorderResponseBody extends Model
         'data' => 'data',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

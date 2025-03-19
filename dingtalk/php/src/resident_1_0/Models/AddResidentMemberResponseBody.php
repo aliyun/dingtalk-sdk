@@ -25,14 +25,12 @@ class AddResidentMemberResponseBody extends Model
      */
     public $userId;
     protected $_name = [
-        'status'  => 'status',
+        'status' => 'status',
         'unionId' => 'unionId',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -48,17 +48,15 @@ class UpdateInvoiceVerifyStatusRequest extends Model
      */
     public $verifyStatus;
     protected $_name = [
-        'companyCode'          => 'companyCode',
-        'deductStatus'         => 'deductStatus',
+        'companyCode' => 'companyCode',
+        'deductStatus' => 'deductStatus',
         'generalInvoiceVOList' => 'generalInvoiceVOList',
-        'invoiceKeyVOList'     => 'invoiceKeyVOList',
-        'operator'             => 'operator',
-        'verifyStatus'         => 'verifyStatus',
+        'invoiceKeyVOList' => 'invoiceKeyVOList',
+        'operator' => 'operator',
+        'verifyStatus' => 'verifyStatus',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -114,7 +112,7 @@ class UpdateInvoiceVerifyStatusRequest extends Model
         if (isset($map['generalInvoiceVOList'])) {
             if (!empty($map['generalInvoiceVOList'])) {
                 $model->generalInvoiceVOList = [];
-                $n                           = 0;
+                $n = 0;
                 foreach ($map['generalInvoiceVOList'] as $item) {
                     $model->generalInvoiceVOList[$n++] = null !== $item ? generalInvoiceVOList::fromMap($item) : $item;
                 }
@@ -123,7 +121,7 @@ class UpdateInvoiceVerifyStatusRequest extends Model
         if (isset($map['invoiceKeyVOList'])) {
             if (!empty($map['invoiceKeyVOList'])) {
                 $model->invoiceKeyVOList = [];
-                $n                       = 0;
+                $n = 0;
                 foreach ($map['invoiceKeyVOList'] as $item) {
                     $model->invoiceKeyVOList[$n++] = null !== $item ? invoiceKeyVOList::fromMap($item) : $item;
                 }

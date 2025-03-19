@@ -52,17 +52,15 @@ class UpdateIsvCardMessageRequest extends Model
      */
     public $valueMap;
     protected $_name = [
-        'agentId'     => 'agentId',
-        'bizId'       => 'bizId',
+        'agentId' => 'agentId',
+        'bizId' => 'bizId',
         'messageType' => 'messageType',
-        'sceneType'   => 'sceneType',
-        'scope'       => 'scope',
-        'valueMap'    => 'valueMap',
+        'sceneType' => 'sceneType',
+        'scope' => 'scope',
+        'valueMap' => 'valueMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -12,6 +12,7 @@ class GetAsyncTaskInfoResponseBody extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $beginTime;
@@ -20,6 +21,7 @@ class GetAsyncTaskInfoResponseBody extends Model
      * @description This parameter is required.
      *
      * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $endTime;
@@ -58,17 +60,15 @@ class GetAsyncTaskInfoResponseBody extends Model
     public $total;
     protected $_name = [
         'beginTime' => 'beginTime',
-        'endTime'   => 'endTime',
-        'failed'    => 'failed',
-        'status'    => 'status',
-        'success'   => 'success',
-        'taskId'    => 'taskId',
-        'total'     => 'total',
+        'endTime' => 'endTime',
+        'failed' => 'failed',
+        'status' => 'status',
+        'success' => 'success',
+        'taskId' => 'taskId',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

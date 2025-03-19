@@ -20,13 +20,11 @@ class result extends Model
      */
     public $voluntaryList;
     protected $_name = [
-        'passiveList'   => 'passiveList',
+        'passiveList' => 'passiveList',
         'voluntaryList' => 'voluntaryList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -64,7 +62,7 @@ class result extends Model
         if (isset($map['passiveList'])) {
             if (!empty($map['passiveList'])) {
                 $model->passiveList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['passiveList'] as $item) {
                     $model->passiveList[$n++] = null !== $item ? passiveList::fromMap($item) : $item;
                 }
@@ -73,7 +71,7 @@ class result extends Model
         if (isset($map['voluntaryList'])) {
             if (!empty($map['voluntaryList'])) {
                 $model->voluntaryList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['voluntaryList'] as $item) {
                     $model->voluntaryList[$n++] = null !== $item ? voluntaryList::fromMap($item) : $item;
                 }

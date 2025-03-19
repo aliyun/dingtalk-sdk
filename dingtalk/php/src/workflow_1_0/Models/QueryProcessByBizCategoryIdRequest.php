@@ -25,12 +25,10 @@ class QueryProcessByBizCategoryIdRequest extends Model
     public $userId;
     protected $_name = [
         'bizType' => 'bizType',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

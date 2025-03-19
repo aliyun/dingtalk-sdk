@@ -63,18 +63,16 @@ class EmotionStatisticsRequest extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'maxDt'               => 'maxDt',
-        'maxEmotion'          => 'maxEmotion',
-        'minDt'               => 'minDt',
-        'minEmotion'          => 'minEmotion',
+        'maxDt' => 'maxDt',
+        'maxEmotion' => 'maxEmotion',
+        'minDt' => 'minDt',
+        'minEmotion' => 'minEmotion',
         'openConversationIds' => 'openConversationIds',
-        'openGroupSetId'      => 'openGroupSetId',
-        'openTeamId'          => 'openTeamId',
+        'openGroupSetId' => 'openGroupSetId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

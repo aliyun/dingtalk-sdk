@@ -23,14 +23,12 @@ class deptList extends Model
      */
     public $parentId;
     protected $_name = [
-        'deptId'   => 'dept_id',
-        'name'     => 'name',
+        'deptId' => 'dept_id',
+        'name' => 'name',
         'parentId' => 'parent_id',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

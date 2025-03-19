@@ -16,9 +16,7 @@ class SendMsgByTaskResponseBody extends Model
         'openBatchTaskId' => 'openBatchTaskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

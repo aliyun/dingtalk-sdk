@@ -26,13 +26,11 @@ class DeleteKeyResultRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'krId'   => 'krId',
+        'krId' => 'krId',
         'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

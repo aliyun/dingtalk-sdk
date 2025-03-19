@@ -32,13 +32,11 @@ class AttendanceBleDevicesAddRequest extends Model
     public $opUserId;
     protected $_name = [
         'deviceIdList' => 'deviceIdList',
-        'groupKey'     => 'groupKey',
-        'opUserId'     => 'opUserId',
+        'groupKey' => 'groupKey',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -52,15 +52,13 @@ class InitDeviceRequest extends Model
     public $version;
     protected $_name = [
         'encryptPubKey' => 'encryptPubKey',
-        'signature'     => 'signature',
-        'sn'            => 'sn',
-        'timestamp'     => 'timestamp',
-        'version'       => 'version',
+        'signature' => 'signature',
+        'sn' => 'sn',
+        'timestamp' => 'timestamp',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

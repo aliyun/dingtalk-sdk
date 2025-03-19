@@ -32,15 +32,13 @@ class ListVisibleAssistantRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'cursor'   => 'cursor',
-        'name'     => 'name',
+        'cursor' => 'cursor',
+        'name' => 'name',
         'pageSize' => 'pageSize',
-        'unionId'  => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -34,13 +34,11 @@ class AddMemberToServiceGroupRequest extends Model
     public $userIds;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'openTeamId'         => 'openTeamId',
-        'userIds'            => 'userIds',
+        'openTeamId' => 'openTeamId',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

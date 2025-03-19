@@ -83,22 +83,20 @@ class QueryPaymentStatusResponseBody extends Model
      */
     public $userId;
     protected $_name = [
-        'corpId'           => 'corpId',
-        'failReason'       => 'failReason',
-        'instanceId'       => 'instanceId',
-        'orderNo'          => 'orderNo',
+        'corpId' => 'corpId',
+        'failReason' => 'failReason',
+        'instanceId' => 'instanceId',
+        'orderNo' => 'orderNo',
         'payeeAccountInfo' => 'payeeAccountInfo',
         'payerAccountInfo' => 'payerAccountInfo',
-        'paymentStatus'    => 'paymentStatus',
-        'paymentTime'      => 'paymentTime',
-        'remark'           => 'remark',
-        'usage'            => 'usage',
-        'userId'           => 'userId',
+        'paymentStatus' => 'paymentStatus',
+        'paymentTime' => 'paymentTime',
+        'remark' => 'remark',
+        'usage' => 'usage',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

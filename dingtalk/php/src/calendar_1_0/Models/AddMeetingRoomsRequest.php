@@ -19,9 +19,7 @@ class AddMeetingRoomsRequest extends Model
         'meetingRoomsToAdd' => 'meetingRoomsToAdd',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class AddMeetingRoomsRequest extends Model
         if (isset($map['meetingRoomsToAdd'])) {
             if (!empty($map['meetingRoomsToAdd'])) {
                 $model->meetingRoomsToAdd = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['meetingRoomsToAdd'] as $item) {
                     $model->meetingRoomsToAdd[$n++] = null !== $item ? meetingRoomsToAdd::fromMap($item) : $item;
                 }

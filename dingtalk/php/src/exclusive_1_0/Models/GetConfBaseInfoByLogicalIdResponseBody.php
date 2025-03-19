@@ -38,17 +38,15 @@ class GetConfBaseInfoByLogicalIdResponseBody extends Model
      */
     public $unionId;
     protected $_name = [
-        'conferenceId'        => 'conferenceId',
+        'conferenceId' => 'conferenceId',
         'logicalConferenceId' => 'logicalConferenceId',
-        'nickname'            => 'nickname',
-        'startTime'           => 'startTime',
-        'title'               => 'title',
-        'unionId'             => 'unionId',
+        'nickname' => 'nickname',
+        'startTime' => 'startTime',
+        'title' => 'title',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -38,17 +38,15 @@ class nodeBO extends Model
      */
     public $url;
     protected $_name = [
-        'deleted'      => 'deleted',
-        'docType'      => 'docType',
+        'deleted' => 'deleted',
+        'docType' => 'docType',
         'lastEditTime' => 'lastEditTime',
-        'name'         => 'name',
-        'nodeId'       => 'nodeId',
-        'url'          => 'url',
+        'name' => 'name',
+        'nodeId' => 'nodeId',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,14 +29,12 @@ class InvokeHtmlBundleBuildRequest extends Model
      */
     public $version;
     protected $_name = [
-        'bundleId'  => 'bundleId',
+        'bundleId' => 'bundleId',
         'miniAppId' => 'miniAppId',
-        'version'   => 'version',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

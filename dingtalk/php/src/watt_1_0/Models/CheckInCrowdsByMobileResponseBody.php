@@ -23,14 +23,12 @@ class CheckInCrowdsByMobileResponseBody extends Model
      */
     public $total;
     protected $_name = [
-        'data'    => 'data',
+        'data' => 'data',
         'success' => 'success',
-        'total'   => 'total',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

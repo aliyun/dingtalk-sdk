@@ -93,21 +93,19 @@ class data extends Model
      */
     public $superDeptId;
     protected $_name = [
-        'deptId'               => 'deptId',
-        'deptName'             => 'deptName',
-        'memberCount'          => 'memberCount',
+        'deptId' => 'deptId',
+        'deptName' => 'deptName',
+        'memberCount' => 'memberCount',
         'partnerLabelVOLevel1' => 'partnerLabelVOLevel1',
         'partnerLabelVOLevel2' => 'partnerLabelVOLevel2',
         'partnerLabelVOLevel3' => 'partnerLabelVOLevel3',
         'partnerLabelVOLevel4' => 'partnerLabelVOLevel4',
         'partnerLabelVOLevel5' => 'partnerLabelVOLevel5',
-        'partnerNum'           => 'partnerNum',
-        'superDeptId'          => 'superDeptId',
+        'partnerNum' => 'partnerNum',
+        'superDeptId' => 'superDeptId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

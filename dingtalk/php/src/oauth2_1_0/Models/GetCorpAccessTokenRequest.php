@@ -36,15 +36,13 @@ class GetCorpAccessTokenRequest extends Model
      */
     public $suiteTicket;
     protected $_name = [
-        'authCorpId'  => 'authCorpId',
-        'suiteKey'    => 'suiteKey',
+        'authCorpId' => 'authCorpId',
+        'suiteKey' => 'suiteKey',
         'suiteSecret' => 'suiteSecret',
         'suiteTicket' => 'suiteTicket',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -38,14 +38,12 @@ class SheetFindAllRequest extends Model
     public $select;
     protected $_name = [
         'findOptions' => 'findOptions',
-        'text'        => 'text',
-        'operatorId'  => 'operatorId',
-        'select'      => 'select',
+        'text' => 'text',
+        'operatorId' => 'operatorId',
+        'select' => 'select',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

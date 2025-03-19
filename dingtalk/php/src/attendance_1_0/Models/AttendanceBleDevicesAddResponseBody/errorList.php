@@ -28,14 +28,12 @@ class errorList extends Model
      */
     public $msg;
     protected $_name = [
-        'code'        => 'code',
+        'code' => 'code',
         'failureList' => 'failureList',
-        'msg'         => 'msg',
+        'msg' => 'msg',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -73,7 +71,7 @@ class errorList extends Model
         if (isset($map['failureList'])) {
             if (!empty($map['failureList'])) {
                 $model->failureList = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['failureList'] as $item) {
                     $model->failureList[$n++] = null !== $item ? failureList::fromMap($item) : $item;
                 }

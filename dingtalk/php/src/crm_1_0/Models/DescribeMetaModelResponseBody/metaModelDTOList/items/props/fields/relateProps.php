@@ -224,39 +224,37 @@ class relateProps extends Model
      */
     public $watermark;
     protected $_name = [
-        'align'                  => 'align',
-        'bizAlias'               => 'bizAlias',
-        'choice'                 => 'choice',
-        'content'                => 'content',
-        'disabled'               => 'disabled',
-        'duration'               => 'duration',
-        'durationLabel'          => 'durationLabel',
-        'fieldId'                => 'fieldId',
-        'format'                 => 'format',
-        'formula'                => 'formula',
-        'invisible'              => 'invisible',
-        'label'                  => 'label',
-        'labelEditableFreeze'    => 'labelEditableFreeze',
-        'limit'                  => 'limit',
-        'link'                   => 'link',
-        'mode'                   => 'mode',
-        'notUpper'               => 'notUpper',
-        'options'                => 'options',
-        'payEnable'              => 'payEnable',
-        'placeholder'            => 'placeholder',
-        'ratio'                  => 'ratio',
-        'required'               => 'required',
+        'align' => 'align',
+        'bizAlias' => 'bizAlias',
+        'choice' => 'choice',
+        'content' => 'content',
+        'disabled' => 'disabled',
+        'duration' => 'duration',
+        'durationLabel' => 'durationLabel',
+        'fieldId' => 'fieldId',
+        'format' => 'format',
+        'formula' => 'formula',
+        'invisible' => 'invisible',
+        'label' => 'label',
+        'labelEditableFreeze' => 'labelEditableFreeze',
+        'limit' => 'limit',
+        'link' => 'link',
+        'mode' => 'mode',
+        'notUpper' => 'notUpper',
+        'options' => 'options',
+        'payEnable' => 'payEnable',
+        'placeholder' => 'placeholder',
+        'ratio' => 'ratio',
+        'required' => 'required',
         'requiredEditableFreeze' => 'requiredEditableFreeze',
-        'spread'                 => 'spread',
-        'statField'              => 'statField',
-        'unit'                   => 'unit',
-        'verticalPrint'          => 'verticalPrint',
-        'watermark'              => 'watermark',
+        'spread' => 'spread',
+        'statField' => 'statField',
+        'unit' => 'unit',
+        'verticalPrint' => 'verticalPrint',
+        'watermark' => 'watermark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -423,7 +421,7 @@ class relateProps extends Model
         if (isset($map['options'])) {
             if (!empty($map['options'])) {
                 $model->options = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['options'] as $item) {
                     $model->options[$n++] = null !== $item ? options::fromMap($item) : $item;
                 }
@@ -450,7 +448,7 @@ class relateProps extends Model
         if (isset($map['statField'])) {
             if (!empty($map['statField'])) {
                 $model->statField = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['statField'] as $item) {
                     $model->statField[$n++] = null !== $item ? statField::fromMap($item) : $item;
                 }

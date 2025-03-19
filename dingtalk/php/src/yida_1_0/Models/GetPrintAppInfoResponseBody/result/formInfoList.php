@@ -22,9 +22,7 @@ class formInfoList extends Model
         'formUuid' => 'formUuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

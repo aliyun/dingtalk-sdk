@@ -48,15 +48,13 @@ class templateConfig extends Model
     public $templateEditUrl;
     protected $_name = [
         'createInstanceMobileUrl' => 'createInstanceMobileUrl',
-        'createInstancePcUrl'     => 'createInstancePcUrl',
-        'disableSendCard'         => 'disableSendCard',
-        'hidden'                  => 'hidden',
-        'templateEditUrl'         => 'templateEditUrl',
+        'createInstancePcUrl' => 'createInstancePcUrl',
+        'disableSendCard' => 'disableSendCard',
+        'hidden' => 'hidden',
+        'templateEditUrl' => 'templateEditUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

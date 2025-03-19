@@ -28,15 +28,13 @@ class data extends Model
      */
     public $processIds;
     protected $_name = [
-        'bizObjectIds'   => 'bizObjectIds',
-        'failedDatas'    => 'failedDatas',
+        'bizObjectIds' => 'bizObjectIds',
+        'failedDatas' => 'failedDatas',
         'failedMessages' => 'failedMessages',
-        'processIds'     => 'processIds',
+        'processIds' => 'processIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -17,9 +17,7 @@ class QueryMinutesSummaryResponseBody extends Model
         'summary' => 'summary',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

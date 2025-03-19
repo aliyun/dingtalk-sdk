@@ -26,13 +26,11 @@ class QueryAnhmdStatisticalDataRequest extends Model
     public $statDate;
     protected $_name = [
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'statDate'   => 'statDate',
+        'pageSize' => 'pageSize',
+        'statDate' => 'statDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

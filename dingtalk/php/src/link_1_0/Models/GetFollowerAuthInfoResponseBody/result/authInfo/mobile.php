@@ -24,13 +24,11 @@ class mobile extends Model
     public $stateCode;
     protected $_name = [
         'authorized' => 'authorized',
-        'mobile'     => 'mobile',
-        'stateCode'  => 'stateCode',
+        'mobile' => 'mobile',
+        'stateCode' => 'stateCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

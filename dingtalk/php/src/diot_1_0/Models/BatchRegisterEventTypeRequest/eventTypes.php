@@ -26,13 +26,11 @@ class eventTypes extends Model
      */
     public $eventTypeName;
     protected $_name = [
-        'eventType'     => 'eventType',
+        'eventType' => 'eventType',
         'eventTypeName' => 'eventTypeName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

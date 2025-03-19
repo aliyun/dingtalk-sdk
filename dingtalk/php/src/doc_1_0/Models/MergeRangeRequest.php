@@ -22,13 +22,11 @@ class MergeRangeRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'mergeType'  => 'mergeType',
+        'mergeType' => 'mergeType',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

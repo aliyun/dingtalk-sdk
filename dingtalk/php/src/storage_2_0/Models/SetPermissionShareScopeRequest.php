@@ -32,14 +32,12 @@ class SetPermissionShareScopeRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'option'  => 'option',
-        'scope'   => 'scope',
+        'option' => 'option',
+        'scope' => 'scope',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

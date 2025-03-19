@@ -22,13 +22,11 @@ class GetTicketRequest extends Model
      */
     public $openTicketId;
     protected $_name = [
-        'openTeamId'   => 'openTeamId',
+        'openTeamId' => 'openTeamId',
         'openTicketId' => 'openTicketId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -34,15 +34,13 @@ class BatchQueryGroupMemberResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'hasMore'       => 'hasMore',
+        'hasMore' => 'hasMore',
         'memberUserIds' => 'memberUserIds',
-        'nextToken'     => 'nextToken',
-        'success'       => 'success',
+        'nextToken' => 'nextToken',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

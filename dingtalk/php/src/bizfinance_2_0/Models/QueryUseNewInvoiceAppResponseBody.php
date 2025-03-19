@@ -18,9 +18,7 @@ class QueryUseNewInvoiceAppResponseBody extends Model
         'useNew' => 'useNew',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

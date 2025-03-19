@@ -23,12 +23,10 @@ class viewSetting extends Model
     public $showSubTask;
     protected $_name = [
         'showDoneTask' => 'showDoneTask',
-        'showSubTask'  => 'showSubTask',
+        'showSubTask' => 'showSubTask',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

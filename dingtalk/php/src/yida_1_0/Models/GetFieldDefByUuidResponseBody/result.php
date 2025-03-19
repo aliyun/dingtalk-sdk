@@ -38,17 +38,15 @@ class result extends Model
      */
     public $props;
     protected $_name = [
-        'behavior'      => 'behavior',
-        'children'      => 'children',
+        'behavior' => 'behavior',
+        'children' => 'children',
         'componentName' => 'componentName',
-        'fieldId'       => 'fieldId',
-        'label'         => 'label',
-        'props'         => 'props',
+        'fieldId' => 'fieldId',
+        'label' => 'label',
+        'props' => 'props',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

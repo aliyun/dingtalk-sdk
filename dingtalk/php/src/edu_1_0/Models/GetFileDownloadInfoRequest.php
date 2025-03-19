@@ -23,12 +23,10 @@ class GetFileDownloadInfoRequest extends Model
     public $spaceId;
     protected $_name = [
         'fileIdList' => 'fileIdList',
-        'spaceId'    => 'spaceId',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

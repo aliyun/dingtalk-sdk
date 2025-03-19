@@ -21,13 +21,11 @@ class text extends Model
      */
     public $textStyle;
     protected $_name = [
-        'content'   => 'content',
+        'content' => 'content',
         'textStyle' => 'textStyle',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -33,15 +33,13 @@ class StaffLabelRecordsQueryRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'body'       => 'body',
+        'body' => 'body',
         'dingCorpId' => 'dingCorpId',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -79,7 +77,7 @@ class StaffLabelRecordsQueryRequest extends Model
         if (isset($map['body'])) {
             if (!empty($map['body'])) {
                 $model->body = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['body'] as $item) {
                     $model->body[$n++] = null !== $item ? body::fromMap($item) : $item;
                 }

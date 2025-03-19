@@ -26,9 +26,7 @@ class sortByFields extends Model
         'fieldName' => 'fieldName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -78,21 +78,19 @@ class SavePrintTplDetailInfoRequest extends Model
      */
     public $vm;
     protected $_name = [
-        'appType'        => 'appType',
-        'description'    => 'description',
+        'appType' => 'appType',
+        'description' => 'description',
         'fileNameConfig' => 'fileNameConfig',
-        'formUuid'       => 'formUuid',
-        'formVersion'    => 'formVersion',
-        'setting'        => 'setting',
-        'templateId'     => 'templateId',
-        'title'          => 'title',
-        'userId'         => 'userId',
-        'vm'             => 'vm',
+        'formUuid' => 'formUuid',
+        'formVersion' => 'formVersion',
+        'setting' => 'setting',
+        'templateId' => 'templateId',
+        'title' => 'title',
+        'userId' => 'userId',
+        'vm' => 'vm',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

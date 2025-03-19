@@ -18,13 +18,11 @@ class GetApplyInviteInfoRequest extends Model
      */
     public $inviterUserId;
     protected $_name = [
-        'deptId'        => 'deptId',
+        'deptId' => 'deptId',
         'inviterUserId' => 'inviterUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

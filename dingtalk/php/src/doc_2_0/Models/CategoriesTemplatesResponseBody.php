@@ -16,9 +16,7 @@ class CategoriesTemplatesResponseBody extends Model
         'map' => 'map',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -45,16 +45,14 @@ class DebugUnfurlingRegisterRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appId'           => 'appId',
+        'appId' => 'appId',
         'grayGroupIdList' => 'grayGroupIdList',
-        'grayUserIdList'  => 'grayUserIdList',
-        'id'              => 'id',
-        'userId'          => 'userId',
+        'grayUserIdList' => 'grayUserIdList',
+        'id' => 'id',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

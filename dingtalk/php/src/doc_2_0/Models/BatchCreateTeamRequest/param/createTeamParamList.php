@@ -41,14 +41,12 @@ class createTeamParamList extends Model
     public $teamName;
     protected $_name = [
         'adminUnionIdList' => 'adminUnionIdList',
-        'creatorUnionId'   => 'creatorUnionId',
-        'deptId'           => 'deptId',
-        'teamName'         => 'teamName',
+        'creatorUnionId' => 'creatorUnionId',
+        'deptId' => 'deptId',
+        'teamName' => 'teamName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

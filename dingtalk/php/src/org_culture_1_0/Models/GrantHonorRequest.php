@@ -66,19 +66,17 @@ class GrantHonorRequest extends Model
      */
     public $senderUserId;
     protected $_name = [
-        'expirationTime'      => 'expirationTime',
-        'grantReason'         => 'grantReason',
-        'granterName'         => 'granterName',
-        'noticeAnnouncer'     => 'noticeAnnouncer',
-        'noticeSingle'        => 'noticeSingle',
+        'expirationTime' => 'expirationTime',
+        'grantReason' => 'grantReason',
+        'granterName' => 'granterName',
+        'noticeAnnouncer' => 'noticeAnnouncer',
+        'noticeSingle' => 'noticeSingle',
         'openConversationIds' => 'openConversationIds',
-        'receiverUserIds'     => 'receiverUserIds',
-        'senderUserId'        => 'senderUserId',
+        'receiverUserIds' => 'receiverUserIds',
+        'senderUserId' => 'senderUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

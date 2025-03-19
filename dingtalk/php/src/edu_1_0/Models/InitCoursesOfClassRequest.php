@@ -33,14 +33,12 @@ class InitCoursesOfClassRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'courses'       => 'courses',
+        'courses' => 'courses',
         'sectionConfig' => 'sectionConfig',
-        'opUserId'      => 'opUserId',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -75,7 +73,7 @@ class InitCoursesOfClassRequest extends Model
         if (isset($map['courses'])) {
             if (!empty($map['courses'])) {
                 $model->courses = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['courses'] as $item) {
                     $model->courses[$n++] = null !== $item ? courses::fromMap($item) : $item;
                 }

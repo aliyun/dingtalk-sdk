@@ -42,15 +42,13 @@ class UploadFileRequest extends Model
      */
     public $senderUid;
     protected $_name = [
-        'fileName'  => 'fileName',
-        'fileType'  => 'fileType',
-        'fileUrl'   => 'fileUrl',
+        'fileName' => 'fileName',
+        'fileType' => 'fileType',
+        'fileUrl' => 'fileUrl',
         'senderUid' => 'senderUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -16,9 +16,7 @@ class QueryBlackboardSpaceResponseBody extends Model
         'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

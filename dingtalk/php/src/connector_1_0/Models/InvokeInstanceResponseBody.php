@@ -43,16 +43,14 @@ class InvokeInstanceResponseBody extends Model
      */
     public $outputJson;
     protected $_name = [
-        'cost'         => 'cost',
-        'errorCode'    => 'errorCode',
+        'cost' => 'cost',
+        'errorCode' => 'errorCode',
         'errorMessage' => 'errorMessage',
-        'instanceId'   => 'instanceId',
-        'outputJson'   => 'outputJson',
+        'instanceId' => 'instanceId',
+        'outputJson' => 'outputJson',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

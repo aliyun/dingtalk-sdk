@@ -48,16 +48,14 @@ class detail extends Model
     public $uuid;
     protected $_name = [
         'bizRequestId' => 'bizRequestId',
-        'messageBody'  => 'messageBody',
-        'msgType'      => 'msgType',
-        'sendToAll'    => 'sendToAll',
-        'userIdList'   => 'userIdList',
-        'uuid'         => 'uuid',
+        'messageBody' => 'messageBody',
+        'msgType' => 'msgType',
+        'sendToAll' => 'sendToAll',
+        'userIdList' => 'userIdList',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -37,15 +37,13 @@ class detail extends Model
      */
     public $userIdPrivateDataMap;
     protected $_name = [
-        'cardBizId'            => 'cardBizId',
-        'cardData'             => 'cardData',
-        'updateOptions'        => 'updateOptions',
+        'cardBizId' => 'cardBizId',
+        'cardData' => 'cardData',
+        'updateOptions' => 'updateOptions',
         'userIdPrivateDataMap' => 'userIdPrivateDataMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

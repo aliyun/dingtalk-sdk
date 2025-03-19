@@ -21,12 +21,10 @@ class SearchResponseBody extends Model
     public $spaceResult;
     protected $_name = [
         'dentryResult' => 'dentryResult',
-        'spaceResult'  => 'spaceResult',
+        'spaceResult' => 'spaceResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

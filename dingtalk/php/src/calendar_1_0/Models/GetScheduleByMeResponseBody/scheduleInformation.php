@@ -24,14 +24,12 @@ class scheduleInformation extends Model
      */
     public $userId;
     protected $_name = [
-        'error'         => 'error',
+        'error' => 'error',
         'scheduleItems' => 'scheduleItems',
-        'userId'        => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -69,7 +67,7 @@ class scheduleInformation extends Model
         if (isset($map['scheduleItems'])) {
             if (!empty($map['scheduleItems'])) {
                 $model->scheduleItems = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['scheduleItems'] as $item) {
                     $model->scheduleItems[$n++] = null !== $item ? scheduleItems::fromMap($item) : $item;
                 }

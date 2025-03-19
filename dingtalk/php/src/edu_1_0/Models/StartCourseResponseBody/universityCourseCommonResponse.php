@@ -27,12 +27,10 @@ class universityCourseCommonResponse extends Model
     public $success;
     protected $_name = [
         'courseCode' => 'courseCode',
-        'success'    => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

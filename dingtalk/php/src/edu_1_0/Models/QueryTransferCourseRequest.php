@@ -29,14 +29,12 @@ class QueryTransferCourseRequest extends Model
      */
     public $isvRecordId;
     protected $_name = [
-        'corpId'      => 'corpId',
-        'isvCode'     => 'isvCode',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
         'isvRecordId' => 'isvRecordId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

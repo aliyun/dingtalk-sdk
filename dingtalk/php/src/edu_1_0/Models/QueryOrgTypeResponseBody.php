@@ -20,9 +20,7 @@ class QueryOrgTypeResponseBody extends Model
         'orgType' => 'orgType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

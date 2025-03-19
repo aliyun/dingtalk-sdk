@@ -24,13 +24,11 @@ class recentList extends Model
      */
     public $workspaceBO;
     protected $_name = [
-        'nodeBO'      => 'nodeBO',
+        'nodeBO' => 'nodeBO',
         'workspaceBO' => 'workspaceBO',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

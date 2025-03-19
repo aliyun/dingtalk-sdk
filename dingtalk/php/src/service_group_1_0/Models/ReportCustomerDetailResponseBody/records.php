@@ -80,19 +80,17 @@ class records extends Model
      */
     public $userId;
     protected $_name = [
-        'atRobotCnt'   => 'atRobotCnt',
+        'atRobotCnt' => 'atRobotCnt',
         'customerName' => 'customerName',
-        'groupName'    => 'groupName',
-        'hasLogin'     => 'hasLogin',
-        'hasOpenConv'  => 'hasOpenConv',
-        'sendMsgCnt'   => 'sendMsgCnt',
-        'unionId'      => 'unionId',
-        'userId'       => 'userId',
+        'groupName' => 'groupName',
+        'hasLogin' => 'hasLogin',
+        'hasOpenConv' => 'hasOpenConv',
+        'sendMsgCnt' => 'sendMsgCnt',
+        'unionId' => 'unionId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

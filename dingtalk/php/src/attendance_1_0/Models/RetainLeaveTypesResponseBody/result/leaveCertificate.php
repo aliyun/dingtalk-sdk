@@ -34,15 +34,13 @@ class leaveCertificate extends Model
      */
     public $unit;
     protected $_name = [
-        'duration'          => 'duration',
-        'enable'            => 'enable',
+        'duration' => 'duration',
+        'enable' => 'enable',
         'promptInformation' => 'promptInformation',
-        'unit'              => 'unit',
+        'unit' => 'unit',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

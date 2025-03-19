@@ -25,12 +25,10 @@ class GetDentryThumbnailsRequest extends Model
     public $unionId;
     protected $_name = [
         'dentryIds' => 'dentryIds',
-        'unionId'   => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

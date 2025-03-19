@@ -22,13 +22,11 @@ class tasks extends Model
      */
     public $taskId;
     protected $_name = [
-        'id'     => 'id',
+        'id' => 'id',
         'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

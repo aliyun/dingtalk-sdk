@@ -16,9 +16,7 @@ class GenerateFlashMinutesDocumentUrlResponseBody extends Model
         'minutesDocUrl' => 'minutesDocUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -31,9 +31,7 @@ class SaveStorageFunctionSwitchRequest extends Model
         'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -65,7 +63,7 @@ class SaveStorageFunctionSwitchRequest extends Model
         if (isset($map['functionList'])) {
             if (!empty($map['functionList'])) {
                 $model->functionList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['functionList'] as $item) {
                     $model->functionList[$n++] = null !== $item ? functionList::fromMap($item) : $item;
                 }

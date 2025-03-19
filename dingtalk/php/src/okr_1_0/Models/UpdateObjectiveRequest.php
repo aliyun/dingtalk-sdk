@@ -27,12 +27,10 @@ class UpdateObjectiveRequest extends Model
     public $userId;
     protected $_name = [
         'content' => 'content',
-        'userId'  => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

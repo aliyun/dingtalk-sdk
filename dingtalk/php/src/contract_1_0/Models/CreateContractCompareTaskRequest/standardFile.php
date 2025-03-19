@@ -33,16 +33,14 @@ class standardFile extends Model
      */
     public $spaceId;
     protected $_name = [
-        'fileId'   => 'fileId',
+        'fileId' => 'fileId',
         'fileName' => 'fileName',
         'fileSize' => 'fileSize',
         'fileType' => 'fileType',
-        'spaceId'  => 'spaceId',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

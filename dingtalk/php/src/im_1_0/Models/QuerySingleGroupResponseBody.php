@@ -19,9 +19,7 @@ class QuerySingleGroupResponseBody extends Model
         'openConversations' => 'openConversations',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class QuerySingleGroupResponseBody extends Model
         if (isset($map['openConversations'])) {
             if (!empty($map['openConversations'])) {
                 $model->openConversations = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['openConversations'] as $item) {
                     $model->openConversations[$n++] = null !== $item ? openConversations::fromMap($item) : $item;
                 }

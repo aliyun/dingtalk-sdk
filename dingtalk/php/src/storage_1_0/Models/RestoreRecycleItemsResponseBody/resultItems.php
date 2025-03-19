@@ -64,19 +64,17 @@ class resultItems extends Model
      */
     public $taskId;
     protected $_name = [
-        'async'         => 'async',
-        'dentryId'      => 'dentryId',
-        'errorCode'     => 'errorCode',
-        'recycleBinId'  => 'recycleBinId',
+        'async' => 'async',
+        'dentryId' => 'dentryId',
+        'errorCode' => 'errorCode',
+        'recycleBinId' => 'recycleBinId',
         'recycleItemId' => 'recycleItemId',
-        'spaceId'       => 'spaceId',
-        'success'       => 'success',
-        'taskId'        => 'taskId',
+        'spaceId' => 'spaceId',
+        'success' => 'success',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

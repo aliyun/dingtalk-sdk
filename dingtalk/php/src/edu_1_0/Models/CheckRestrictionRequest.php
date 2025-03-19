@@ -54,15 +54,13 @@ class CheckRestrictionRequest extends Model
     public $userId;
     protected $_name = [
         'actualAmount' => 'actualAmount',
-        'faceId'       => 'faceId',
-        'scene'        => 'scene',
-        'sn'           => 'sn',
-        'userId'       => 'userId',
+        'faceId' => 'faceId',
+        'scene' => 'scene',
+        'sn' => 'sn',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

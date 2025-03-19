@@ -71,18 +71,16 @@ class applyIntentionInfoDO extends Model
      */
     public $type;
     protected $_name = [
-        'checkIn'  => 'checkIn',
+        'checkIn' => 'checkIn',
         'checkOut' => 'checkOut',
         'cityCode' => 'cityCode',
         'cityName' => 'cityName',
-        'price'    => 'price',
+        'price' => 'price',
         'together' => 'together',
-        'type'     => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

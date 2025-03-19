@@ -26,13 +26,11 @@ class QueryChannelStaffInfoByMobileRequest extends Model
      */
     public $targetCorpId;
     protected $_name = [
-        'mobile'       => 'mobile',
+        'mobile' => 'mobile',
         'targetCorpId' => 'targetCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -35,14 +35,12 @@ class SetSuperUserMeetingRoomRequest extends Model
     public $userIdWhiteList;
     protected $_name = [
         'deptIdWhiteList' => 'deptIdWhiteList',
-        'roomId'          => 'roomId',
-        'unionId'         => 'unionId',
+        'roomId' => 'roomId',
+        'unionId' => 'unionId',
         'userIdWhiteList' => 'userIdWhiteList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

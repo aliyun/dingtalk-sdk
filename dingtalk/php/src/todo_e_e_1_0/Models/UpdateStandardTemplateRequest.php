@@ -30,15 +30,13 @@ class UpdateStandardTemplateRequest extends Model
      */
     public $templateKey;
     protected $_name = [
-        'actions'     => 'actions',
-        'operatorId'  => 'operatorId',
-        'service'     => 'service',
+        'actions' => 'actions',
+        'operatorId' => 'operatorId',
+        'service' => 'service',
         'templateKey' => 'templateKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -76,7 +74,7 @@ class UpdateStandardTemplateRequest extends Model
         if (isset($map['actions'])) {
             if (!empty($map['actions'])) {
                 $model->actions = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['actions'] as $item) {
                     $model->actions[$n++] = null !== $item ? actions::fromMap($item) : $item;
                 }

@@ -25,12 +25,10 @@ class DeletePlguinRuleRequest extends Model
     public $userId;
     protected $_name = [
         'bizIdList' => 'bizIdList',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

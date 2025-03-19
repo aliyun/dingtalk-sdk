@@ -18,9 +18,7 @@ class copyOptions extends Model
         'copyType' => 'copyType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -30,13 +30,11 @@ class QueryAllSubjectsFromClassScheduleShrinkRequest extends Model
     public $periodCode;
     protected $_name = [
         'classIdsShrink' => 'classIds',
-        'opUserId'       => 'opUserId',
-        'periodCode'     => 'periodCode',
+        'opUserId' => 'opUserId',
+        'periodCode' => 'periodCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

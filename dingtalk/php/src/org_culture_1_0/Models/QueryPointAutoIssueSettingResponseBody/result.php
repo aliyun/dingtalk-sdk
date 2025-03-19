@@ -35,14 +35,12 @@ class result extends Model
      */
     public $pointAutoTime;
     protected $_name = [
-        'pointAutoNum'   => 'pointAutoNum',
+        'pointAutoNum' => 'pointAutoNum',
         'pointAutoState' => 'pointAutoState',
-        'pointAutoTime'  => 'pointAutoTime',
+        'pointAutoTime' => 'pointAutoTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

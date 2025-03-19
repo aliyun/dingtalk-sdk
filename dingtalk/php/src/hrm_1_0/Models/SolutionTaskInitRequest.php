@@ -83,20 +83,18 @@ class SolutionTaskInitRequest extends Model
      */
     public $solutionType;
     protected $_name = [
-        'category'     => 'category',
-        'claimTime'    => 'claimTime',
-        'description'  => 'description',
-        'finishTime'   => 'finishTime',
-        'outerId'      => 'outerId',
-        'status'       => 'status',
-        'title'        => 'title',
-        'userId'       => 'userId',
+        'category' => 'category',
+        'claimTime' => 'claimTime',
+        'description' => 'description',
+        'finishTime' => 'finishTime',
+        'outerId' => 'outerId',
+        'status' => 'status',
+        'title' => 'title',
+        'userId' => 'userId',
         'solutionType' => 'solutionType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

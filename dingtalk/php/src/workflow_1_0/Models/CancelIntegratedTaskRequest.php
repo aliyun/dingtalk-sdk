@@ -31,14 +31,12 @@ class CancelIntegratedTaskRequest extends Model
      */
     public $processInstanceId;
     protected $_name = [
-        'activityId'        => 'activityId',
-        'activityIds'       => 'activityIds',
+        'activityId' => 'activityId',
+        'activityIds' => 'activityIds',
         'processInstanceId' => 'processInstanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

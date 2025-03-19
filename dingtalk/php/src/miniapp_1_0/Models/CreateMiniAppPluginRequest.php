@@ -48,17 +48,15 @@ class CreateMiniAppPluginRequest extends Model
      */
     public $name;
     protected $_name = [
-        'bizId'    => 'bizId',
-        'bizType'  => 'bizType',
+        'bizId' => 'bizId',
+        'bizType' => 'bizType',
         'bundleId' => 'bundleId',
-        'desc'     => 'desc',
-        'icon'     => 'icon',
-        'name'     => 'name',
+        'desc' => 'desc',
+        'icon' => 'icon',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

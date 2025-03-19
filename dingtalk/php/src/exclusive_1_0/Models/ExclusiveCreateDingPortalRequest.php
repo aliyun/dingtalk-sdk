@@ -42,15 +42,13 @@ class ExclusiveCreateDingPortalRequest extends Model
      */
     public $templateCorpId;
     protected $_name = [
-        'dingPortalName'  => 'dingPortalName',
-        'targetCorpId'    => 'targetCorpId',
+        'dingPortalName' => 'dingPortalName',
+        'targetCorpId' => 'targetCorpId',
         'templateAppUuid' => 'templateAppUuid',
-        'templateCorpId'  => 'templateCorpId',
+        'templateCorpId' => 'templateCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

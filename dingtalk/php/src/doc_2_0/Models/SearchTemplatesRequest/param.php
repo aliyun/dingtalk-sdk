@@ -26,13 +26,11 @@ class param extends Model
      */
     public $searchName;
     protected $_name = [
-        'belong'     => 'belong',
+        'belong' => 'belong',
         'searchName' => 'searchName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

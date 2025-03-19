@@ -47,16 +47,14 @@ class AddContactMemberToGroupRequest extends Model
      */
     public $openTeamId;
     protected $_name = [
-        'fissionType'        => 'fissionType',
-        'memberUnionId'      => 'memberUnionId',
-        'memberUserId'       => 'memberUserId',
+        'fissionType' => 'fissionType',
+        'memberUnionId' => 'memberUnionId',
+        'memberUserId' => 'memberUserId',
         'openConversationId' => 'openConversationId',
-        'openTeamId'         => 'openTeamId',
+        'openTeamId' => 'openTeamId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

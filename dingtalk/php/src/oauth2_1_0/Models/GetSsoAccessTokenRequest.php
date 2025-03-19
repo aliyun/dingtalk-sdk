@@ -26,13 +26,11 @@ class GetSsoAccessTokenRequest extends Model
      */
     public $ssoSecret;
     protected $_name = [
-        'corpid'    => 'corpid',
+        'corpid' => 'corpid',
         'ssoSecret' => 'ssoSecret',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -57,17 +57,15 @@ class GetMultiCompanyInfoByCodeResponseBody extends Model
     public $taxNo;
     protected $_name = [
         'advancedSettingList' => 'advancedSettingList',
-        'companyCode'         => 'companyCode',
-        'companyName'         => 'companyName',
-        'remark'              => 'remark',
-        'status'              => 'status',
-        'taxNature'           => 'taxNature',
-        'taxNo'               => 'taxNo',
+        'companyCode' => 'companyCode',
+        'companyName' => 'companyName',
+        'remark' => 'remark',
+        'status' => 'status',
+        'taxNature' => 'taxNature',
+        'taxNo' => 'taxNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -114,7 +112,7 @@ class GetMultiCompanyInfoByCodeResponseBody extends Model
         if (isset($map['advancedSettingList'])) {
             if (!empty($map['advancedSettingList'])) {
                 $model->advancedSettingList = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['advancedSettingList'] as $item) {
                     $model->advancedSettingList[$n++] = null !== $item ? advancedSettingList::fromMap($item) : $item;
                 }

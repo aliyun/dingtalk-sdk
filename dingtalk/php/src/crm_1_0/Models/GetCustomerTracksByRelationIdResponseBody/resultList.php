@@ -83,21 +83,19 @@ class resultList extends Model
      */
     public $typeGroup;
     protected $_name = [
-        'content'     => 'content',
+        'content' => 'content',
         'creatorName' => 'creatorName',
-        'detail'      => 'detail',
-        'format'      => 'format',
-        'gmtCreate'   => 'gmtCreate',
-        'id'          => 'id',
-        'isvInfo'     => 'isvInfo',
-        'title'       => 'title',
-        'type'        => 'type',
-        'typeGroup'   => 'typeGroup',
+        'detail' => 'detail',
+        'format' => 'format',
+        'gmtCreate' => 'gmtCreate',
+        'id' => 'id',
+        'isvInfo' => 'isvInfo',
+        'title' => 'title',
+        'type' => 'type',
+        'typeGroup' => 'typeGroup',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

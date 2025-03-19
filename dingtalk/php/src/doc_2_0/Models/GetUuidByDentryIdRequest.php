@@ -27,12 +27,10 @@ class GetUuidByDentryIdRequest extends Model
     public $spaceId;
     protected $_name = [
         'operatorId' => 'operatorId',
-        'spaceId'    => 'spaceId',
+        'spaceId' => 'spaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

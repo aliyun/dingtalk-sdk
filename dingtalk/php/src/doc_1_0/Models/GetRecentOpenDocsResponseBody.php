@@ -19,13 +19,11 @@ class GetRecentOpenDocsResponseBody extends Model
      */
     public $recentList;
     protected $_name = [
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
         'recentList' => 'recentList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class GetRecentOpenDocsResponseBody extends Model
         if (isset($map['recentList'])) {
             if (!empty($map['recentList'])) {
                 $model->recentList = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['recentList'] as $item) {
                     $model->recentList[$n++] = null !== $item ? recentList::fromMap($item) : $item;
                 }

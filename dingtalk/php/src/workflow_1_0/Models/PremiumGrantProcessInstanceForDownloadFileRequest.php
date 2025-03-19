@@ -31,14 +31,12 @@ class PremiumGrantProcessInstanceForDownloadFileRequest extends Model
      */
     public $withCommentAttatchment;
     protected $_name = [
-        'fileId'                 => 'fileId',
-        'processInstanceId'      => 'processInstanceId',
+        'fileId' => 'fileId',
+        'processInstanceId' => 'processInstanceId',
         'withCommentAttatchment' => 'withCommentAttatchment',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

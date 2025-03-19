@@ -18,9 +18,7 @@ class ConfirmRightsRequest extends Model
         'bizCode' => 'bizCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

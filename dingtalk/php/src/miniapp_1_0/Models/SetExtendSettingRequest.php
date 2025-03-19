@@ -23,12 +23,10 @@ class SetExtendSettingRequest extends Model
     public $miniAppId;
     protected $_name = [
         'buildH5Bundle' => 'buildH5Bundle',
-        'miniAppId'     => 'miniAppId',
+        'miniAppId' => 'miniAppId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

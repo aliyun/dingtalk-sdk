@@ -62,17 +62,15 @@ class CfOrgResp extends Model
      */
     public $parentDeptCode;
     protected $_name = [
-        'deptCode'             => 'deptCode',
-        'deptName'             => 'deptName',
-        'level'                => 'level',
+        'deptCode' => 'deptCode',
+        'deptName' => 'deptName',
+        'level' => 'level',
         'organizationCodePath' => 'organizationCodePath',
-        'organizationPath'     => 'organizationPath',
-        'parentDeptCode'       => 'parentDeptCode',
+        'organizationPath' => 'organizationPath',
+        'parentDeptCode' => 'parentDeptCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

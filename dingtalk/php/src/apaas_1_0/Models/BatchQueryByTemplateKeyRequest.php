@@ -18,9 +18,7 @@ class BatchQueryByTemplateKeyRequest extends Model
         'templateKeys' => 'templateKeys',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

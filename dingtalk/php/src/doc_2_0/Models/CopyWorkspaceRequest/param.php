@@ -18,9 +18,7 @@ class param extends Model
         'originWorkspaceId' => 'originWorkspaceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

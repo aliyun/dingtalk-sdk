@@ -21,13 +21,11 @@ class CreateConnectorRequest extends Model
      */
     public $integratorFlag;
     protected $_name = [
-        'connectorInfo'  => 'connectorInfo',
+        'connectorInfo' => 'connectorInfo',
         'integratorFlag' => 'integratorFlag',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -59,7 +57,7 @@ class CreateConnectorRequest extends Model
         if (isset($map['connectorInfo'])) {
             if (!empty($map['connectorInfo'])) {
                 $model->connectorInfo = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['connectorInfo'] as $item) {
                     $model->connectorInfo[$n++] = null !== $item ? connectorInfo::fromMap($item) : $item;
                 }

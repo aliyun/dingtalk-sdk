@@ -41,16 +41,14 @@ class TransformToExclusiveAccountRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'idpDingTalk'   => 'idpDingTalk',
-        'initPassword'  => 'initPassword',
-        'loginId'       => 'loginId',
+        'idpDingTalk' => 'idpDingTalk',
+        'initPassword' => 'initPassword',
+        'loginId' => 'loginId',
         'transformType' => 'transformType',
-        'userId'        => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

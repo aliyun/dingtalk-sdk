@@ -36,15 +36,13 @@ class QueryDevicePropertiesRequest extends Model
      */
     public $operatorUnionId;
     protected $_name = [
-        'propertyNames'   => 'propertyNames',
-        'deviceId'        => 'deviceId',
-        'deviceUnionId'   => 'deviceUnionId',
+        'propertyNames' => 'propertyNames',
+        'deviceId' => 'deviceId',
+        'deviceUnionId' => 'deviceUnionId',
         'operatorUnionId' => 'operatorUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

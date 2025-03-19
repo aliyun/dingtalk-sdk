@@ -38,8 +38,8 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
+        $gatewayClient = new Client();
+        $this->_spi = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -74,18 +74,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'GetPersonalCarbonInfo',
-            'version'     => 'carbon_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/carbon/personals/infos',
-            'method'      => 'GET',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'GetPersonalCarbonInfo',
+            'version' => 'carbon_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/carbon/personals/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return GetPersonalCarbonInfoResponse::fromMap($this->execute($params, $req, $runtime));
@@ -131,18 +131,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'WriteAlibabaOrgCarbon',
-            'version'     => 'carbon_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/carbon/alibabaOrgDetails/write',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'WriteAlibabaOrgCarbon',
+            'version' => 'carbon_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/carbon/alibabaOrgDetails/write',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return WriteAlibabaOrgCarbonResponse::fromMap($this->execute($params, $req, $runtime));
@@ -188,18 +188,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'WriteAlibabaUserCarbon',
-            'version'     => 'carbon_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/carbon/alibabaUserDetails/write',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'WriteAlibabaUserCarbon',
+            'version' => 'carbon_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/carbon/alibabaUserDetails/write',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return WriteAlibabaUserCarbonResponse::fromMap($this->execute($params, $req, $runtime));
@@ -248,18 +248,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
-            'action'      => 'WriteIsvState',
-            'version'     => 'carbon_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/carbon/datas/states/write',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'WriteIsvState',
+            'version' => 'carbon_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/carbon/datas/states/write',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return WriteIsvStateResponse::fromMap($this->execute($params, $req, $runtime));
@@ -305,18 +305,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'WriteOrgCarbon',
-            'version'     => 'carbon_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/carbon/orgDetails/write',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'WriteOrgCarbon',
+            'version' => 'carbon_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/carbon/orgDetails/write',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return WriteOrgCarbonResponse::fromMap($this->execute($params, $req, $runtime));
@@ -362,18 +362,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'WriteUserCarbon',
-            'version'     => 'carbon_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/carbon/userDetails/write',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'WriteUserCarbon',
+            'version' => 'carbon_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/carbon/userDetails/write',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return WriteUserCarbonResponse::fromMap($this->execute($params, $req, $runtime));
@@ -419,18 +419,18 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
-            'action'      => 'WriteUserCarbonEnergy',
-            'version'     => 'carbon_1.0',
-            'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/carbon/userDetails/energies/write',
-            'method'      => 'POST',
-            'authType'    => 'AK',
-            'style'       => 'ROA',
+            'action' => 'WriteUserCarbonEnergy',
+            'version' => 'carbon_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/carbon/userDetails/energies/write',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'json',
+            'bodyType' => 'json',
         ]);
 
         return WriteUserCarbonEnergyResponse::fromMap($this->execute($params, $req, $runtime));

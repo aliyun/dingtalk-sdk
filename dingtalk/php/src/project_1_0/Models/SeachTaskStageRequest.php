@@ -43,16 +43,14 @@ class SeachTaskStageRequest extends Model
      */
     public $taskStageIds;
     protected $_name = [
-        'maxResults'   => 'maxResults',
-        'nextToken'    => 'nextToken',
-        'query'        => 'query',
-        'taskListId'   => 'taskListId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'query' => 'query',
+        'taskListId' => 'taskListId',
         'taskStageIds' => 'taskStageIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

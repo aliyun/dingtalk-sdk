@@ -32,14 +32,12 @@ class UpdateApplicationRegFormRequest extends Model
      */
     public $dingPanFile;
     protected $_name = [
-        'bizCode'     => 'bizCode',
-        'content'     => 'content',
+        'bizCode' => 'bizCode',
+        'content' => 'content',
         'dingPanFile' => 'dingPanFile',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

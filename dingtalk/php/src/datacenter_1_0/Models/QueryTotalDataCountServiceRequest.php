@@ -56,19 +56,17 @@ class QueryTotalDataCountServiceRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'deptIds'    => 'deptIds',
-        'endDate'    => 'endDate',
+        'deptIds' => 'deptIds',
+        'endDate' => 'endDate',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'serviceId'  => 'serviceId',
-        'startDate'  => 'startDate',
-        'userId'     => 'userId',
-        'userIds'    => 'userIds',
+        'pageSize' => 'pageSize',
+        'serviceId' => 'serviceId',
+        'startDate' => 'startDate',
+        'userId' => 'userId',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

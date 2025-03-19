@@ -23,12 +23,10 @@ class BatchGetMinutesDetailsRequest extends Model
     public $unionId;
     protected $_name = [
         'taskUuids' => 'taskUuids',
-        'unionId'   => 'unionId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

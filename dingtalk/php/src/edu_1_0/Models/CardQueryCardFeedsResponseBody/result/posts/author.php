@@ -30,13 +30,11 @@ class author extends Model
     public $userRole;
     protected $_name = [
         'showName' => 'showName',
-        'userId'   => 'userId',
+        'userId' => 'userId',
         'userRole' => 'userRole',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

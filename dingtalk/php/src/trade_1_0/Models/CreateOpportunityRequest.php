@@ -42,15 +42,13 @@ class CreateOpportunityRequest extends Model
     public $marketCode;
     protected $_name = [
         'belongToPhoneNum' => 'belongToPhoneNum',
-        'contactPhoneNum'  => 'contactPhoneNum',
-        'corpId'           => 'corpId',
-        'deptId'           => 'deptId',
-        'marketCode'       => 'marketCode',
+        'contactPhoneNum' => 'contactPhoneNum',
+        'corpId' => 'corpId',
+        'deptId' => 'deptId',
+        'marketCode' => 'marketCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

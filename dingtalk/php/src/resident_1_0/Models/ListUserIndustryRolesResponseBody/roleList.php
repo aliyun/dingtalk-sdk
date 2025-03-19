@@ -29,14 +29,12 @@ class roleList extends Model
      */
     public $tagCode;
     protected $_name = [
-        'roleId'   => 'roleId',
+        'roleId' => 'roleId',
         'roleName' => 'roleName',
-        'tagCode'  => 'tagCode',
+        'tagCode' => 'tagCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

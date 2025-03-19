@@ -59,18 +59,16 @@ class PageFormBaseInfosRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appKey'       => 'appKey',
+        'appKey' => 'appKey',
         'formTypeList' => 'formTypeList',
-        'language'     => 'language',
-        'pageIndex'    => 'pageIndex',
-        'pageSize'     => 'pageSize',
-        'systemToken'  => 'systemToken',
-        'userId'       => 'userId',
+        'language' => 'language',
+        'pageIndex' => 'pageIndex',
+        'pageSize' => 'pageSize',
+        'systemToken' => 'systemToken',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

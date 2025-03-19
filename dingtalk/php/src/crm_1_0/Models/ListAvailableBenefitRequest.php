@@ -18,9 +18,7 @@ class ListAvailableBenefitRequest extends Model
         'benefitCodeList' => 'benefitCodeList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

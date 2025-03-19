@@ -27,14 +27,12 @@ class GetEventDataRequest extends Model
      */
     public $subId;
     protected $_name = [
-        'bizId'    => 'bizId',
+        'bizId' => 'bizId',
         'eventUid' => 'eventUid',
-        'subId'    => 'subId',
+        'subId' => 'subId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

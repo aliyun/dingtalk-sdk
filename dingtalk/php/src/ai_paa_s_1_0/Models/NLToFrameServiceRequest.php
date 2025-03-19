@@ -38,15 +38,13 @@ class NLToFrameServiceRequest extends Model
     public $userId;
     protected $_name = [
         'extensionStr' => 'extensionStr',
-        'isNewModel'   => 'isNewModel',
-        'modelId'      => 'modelId',
-        'modelName'    => 'modelName',
-        'userId'       => 'userId',
+        'isNewModel' => 'isNewModel',
+        'modelId' => 'modelId',
+        'modelName' => 'modelName',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

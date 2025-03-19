@@ -49,16 +49,14 @@ class ListAuditLogRequest extends Model
      */
     public $startDate;
     protected $_name = [
-        'endDate'       => 'endDate',
-        'nextBizId'     => 'nextBizId',
+        'endDate' => 'endDate',
+        'nextBizId' => 'nextBizId',
         'nextGmtCreate' => 'nextGmtCreate',
-        'pageSize'      => 'pageSize',
-        'startDate'     => 'startDate',
+        'pageSize' => 'pageSize',
+        'startDate' => 'startDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

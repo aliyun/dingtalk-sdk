@@ -44,15 +44,13 @@ class topicStatisticsRecords extends Model
      */
     public $topicNum;
     protected $_name = [
-        'dt'              => 'dt',
-        'msgCount'        => 'msgCount',
+        'dt' => 'dt',
+        'msgCount' => 'msgCount',
         'participantsNum' => 'participantsNum',
-        'topicNum'        => 'topicNum',
+        'topicNum' => 'topicNum',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

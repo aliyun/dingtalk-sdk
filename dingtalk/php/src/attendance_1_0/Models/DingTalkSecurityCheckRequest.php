@@ -53,16 +53,14 @@ class DingTalkSecurityCheckRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'clientVer'   => 'clientVer',
-        'platform'    => 'platform',
+        'clientVer' => 'clientVer',
+        'platform' => 'platform',
         'platformVer' => 'platformVer',
-        'sec'         => 'sec',
-        'userId'      => 'userId',
+        'sec' => 'sec',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

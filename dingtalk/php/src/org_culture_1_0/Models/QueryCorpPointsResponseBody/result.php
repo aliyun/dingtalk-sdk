@@ -18,9 +18,7 @@ class result extends Model
         'amount' => 'amount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

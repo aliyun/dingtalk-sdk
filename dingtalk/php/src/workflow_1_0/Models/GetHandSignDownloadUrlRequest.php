@@ -26,13 +26,11 @@ class GetHandSignDownloadUrlRequest extends Model
      */
     public $processInstanceId;
     protected $_name = [
-        'handSignToken'     => 'handSignToken',
+        'handSignToken' => 'handSignToken',
         'processInstanceId' => 'processInstanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

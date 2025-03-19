@@ -71,18 +71,16 @@ class content extends Model
      */
     public $userExtendValue;
     protected $_name = [
-        'gmtCreate'             => 'gmtCreate',
-        'gmtModified'           => 'gmtModified',
-        'status'                => 'status',
-        'userCode'              => 'userCode',
+        'gmtCreate' => 'gmtCreate',
+        'gmtModified' => 'gmtModified',
+        'status' => 'status',
+        'userCode' => 'userCode',
         'userExtendDisplayName' => 'userExtendDisplayName',
-        'userExtendKey'         => 'userExtendKey',
-        'userExtendValue'       => 'userExtendValue',
+        'userExtendKey' => 'userExtendKey',
+        'userExtendValue' => 'userExtendValue',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

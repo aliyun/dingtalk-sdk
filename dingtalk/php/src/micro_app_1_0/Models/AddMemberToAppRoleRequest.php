@@ -32,15 +32,13 @@ class AddMemberToAppRoleRequest extends Model
      */
     public $userIdList;
     protected $_name = [
-        'deptIdList'   => 'deptIdList',
-        'opUserId'     => 'opUserId',
+        'deptIdList' => 'deptIdList',
+        'opUserId' => 'opUserId',
         'scopeVersion' => 'scopeVersion',
-        'userIdList'   => 'userIdList',
+        'userIdList' => 'userIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

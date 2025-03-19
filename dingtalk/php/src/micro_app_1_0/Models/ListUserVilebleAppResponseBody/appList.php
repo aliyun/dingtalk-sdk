@@ -93,22 +93,20 @@ class appList extends Model
      */
     public $unifiedAppId;
     protected $_name = [
-        'agentId'        => 'agentId',
-        'appId'          => 'appId',
-        'appStatus'      => 'appStatus',
-        'desc'           => 'desc',
-        'developType'    => 'developType',
-        'homepageLink'   => 'homepageLink',
-        'icon'           => 'icon',
-        'name'           => 'name',
-        'ompLink'        => 'ompLink',
+        'agentId' => 'agentId',
+        'appId' => 'appId',
+        'appStatus' => 'appStatus',
+        'desc' => 'desc',
+        'developType' => 'developType',
+        'homepageLink' => 'homepageLink',
+        'icon' => 'icon',
+        'name' => 'name',
+        'ompLink' => 'ompLink',
         'pcHomepageLink' => 'pcHomepageLink',
-        'unifiedAppId'   => 'unifiedAppId',
+        'unifiedAppId' => 'unifiedAppId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

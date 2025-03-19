@@ -40,16 +40,14 @@ class UpdateRobotInteractiveCardRequest extends Model
      */
     public $userIdPrivateDataMap;
     protected $_name = [
-        'cardBizId'             => 'cardBizId',
-        'cardData'              => 'cardData',
+        'cardBizId' => 'cardBizId',
+        'cardData' => 'cardData',
         'unionIdPrivateDataMap' => 'unionIdPrivateDataMap',
-        'updateOptions'         => 'updateOptions',
-        'userIdPrivateDataMap'  => 'userIdPrivateDataMap',
+        'updateOptions' => 'updateOptions',
+        'userIdPrivateDataMap' => 'userIdPrivateDataMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

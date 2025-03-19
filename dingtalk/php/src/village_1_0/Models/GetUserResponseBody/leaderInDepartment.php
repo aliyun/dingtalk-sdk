@@ -19,12 +19,10 @@ class leaderInDepartment extends Model
     public $leader;
     protected $_name = [
         'departmentId' => 'departmentId',
-        'leader'       => 'leader',
+        'leader' => 'leader',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -57,18 +57,16 @@ class flightItineraryDetails extends Model
      */
     public $seat;
     protected $_name = [
-        'carrier'      => 'carrier',
+        'carrier' => 'carrier',
         'flightNumber' => 'flightNumber',
-        'flyDate'      => 'flyDate',
-        'flyFrom'      => 'flyFrom',
-        'flyTime'      => 'flyTime',
-        'flyTo'        => 'flyTo',
-        'seat'         => 'seat',
+        'flyDate' => 'flyDate',
+        'flyFrom' => 'flyFrom',
+        'flyTime' => 'flyTime',
+        'flyTo' => 'flyTo',
+        'seat' => 'seat',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

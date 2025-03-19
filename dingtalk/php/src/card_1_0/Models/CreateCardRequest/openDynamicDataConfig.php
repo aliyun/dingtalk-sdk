@@ -17,9 +17,7 @@ class openDynamicDataConfig extends Model
         'dynamicDataSourceConfigs' => 'dynamicDataSourceConfigs',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class openDynamicDataConfig extends Model
         if (isset($map['dynamicDataSourceConfigs'])) {
             if (!empty($map['dynamicDataSourceConfigs'])) {
                 $model->dynamicDataSourceConfigs = [];
-                $n                               = 0;
+                $n = 0;
                 foreach ($map['dynamicDataSourceConfigs'] as $item) {
                     $model->dynamicDataSourceConfigs[$n++] = null !== $item ? dynamicDataSourceConfigs::fromMap($item) : $item;
                 }

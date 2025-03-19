@@ -62,19 +62,17 @@ class ext extends Model
      */
     public $zipCode;
     protected $_name = [
-        'legalEntityEnName'       => 'legalEntityEnName',
-        'legalEntityEnShortName'  => 'legalEntityEnShortName',
-        'legalEntityType'         => 'legalEntityType',
-        'manageAddress'           => 'manageAddress',
-        'registrationAddress'     => 'registrationAddress',
-        'registrationDate'        => 'registrationDate',
+        'legalEntityEnName' => 'legalEntityEnName',
+        'legalEntityEnShortName' => 'legalEntityEnShortName',
+        'legalEntityType' => 'legalEntityType',
+        'manageAddress' => 'manageAddress',
+        'registrationAddress' => 'registrationAddress',
+        'registrationDate' => 'registrationDate',
         'unifiedSocialCreditCode' => 'unifiedSocialCreditCode',
-        'zipCode'                 => 'zipCode',
+        'zipCode' => 'zipCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -61,17 +61,15 @@ class ProcessApproveCreateRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'approveId'  => 'approveId',
-        'opUserId'   => 'opUserId',
+        'approveId' => 'approveId',
+        'opUserId' => 'opUserId',
         'punchParam' => 'punchParam',
-        'subType'    => 'subType',
-        'tagName'    => 'tagName',
-        'userId'     => 'userId',
+        'subType' => 'subType',
+        'tagName' => 'tagName',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

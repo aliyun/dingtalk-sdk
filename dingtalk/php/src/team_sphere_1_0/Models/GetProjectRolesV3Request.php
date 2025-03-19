@@ -29,14 +29,12 @@ class GetProjectRolesV3Request extends Model
     public $nextToken;
     protected $_name = [
         'includeHidden' => 'includeHidden',
-        'level'         => 'level',
-        'maxResults'    => 'maxResults',
-        'nextToken'     => 'nextToken',
+        'level' => 'level',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -57,18 +57,16 @@ class AdjustKitRequest extends Model
      */
     public $openUserId;
     protected $_name = [
-        'attributes'      => 'attributes',
-        'corpId'          => 'corpId',
-        'isvCode'         => 'isvCode',
+        'attributes' => 'attributes',
+        'corpId' => 'corpId',
+        'isvCode' => 'isvCode',
         'isvProductScene' => 'isvProductScene',
-        'openEndTime'     => 'openEndTime',
-        'openStartTime'   => 'openStartTime',
-        'openUserId'      => 'openUserId',
+        'openEndTime' => 'openEndTime',
+        'openStartTime' => 'openStartTime',
+        'openUserId' => 'openUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

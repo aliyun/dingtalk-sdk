@@ -19,12 +19,10 @@ class GetTokenResponseBody extends Model
     public $expiresIn;
     protected $_name = [
         'accessToken' => 'access_token',
-        'expiresIn'   => 'expires_in',
+        'expiresIn' => 'expires_in',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

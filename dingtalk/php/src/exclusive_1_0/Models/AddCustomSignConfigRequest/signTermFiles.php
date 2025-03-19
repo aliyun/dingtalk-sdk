@@ -23,12 +23,10 @@ class signTermFiles extends Model
     public $mediaId;
     protected $_name = [
         'fileName' => 'fileName',
-        'mediaId'  => 'mediaId',
+        'mediaId' => 'mediaId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -186,37 +186,35 @@ class SyncTripOrderRequest extends Model
      */
     public $type;
     protected $_name = [
-        'bizExtension'    => 'bizExtension',
-        'channelType'     => 'channelType',
-        'currency'        => 'currency',
-        'dingUserId'      => 'dingUserId',
-        'discountAmount'  => 'discountAmount',
-        'endorseFlag'     => 'endorseFlag',
-        'event'           => 'event',
-        'gmtOrder'        => 'gmtOrder',
-        'gmtPay'          => 'gmtPay',
-        'gmtRefund'       => 'gmtRefund',
+        'bizExtension' => 'bizExtension',
+        'channelType' => 'channelType',
+        'currency' => 'currency',
+        'dingUserId' => 'dingUserId',
+        'discountAmount' => 'discountAmount',
+        'endorseFlag' => 'endorseFlag',
+        'event' => 'event',
+        'gmtOrder' => 'gmtOrder',
+        'gmtPay' => 'gmtPay',
+        'gmtRefund' => 'gmtRefund',
         'invoiceApplyUrl' => 'invoiceApplyUrl',
-        'journeyBizNo'    => 'journeyBizNo',
-        'orderDetails'    => 'orderDetails',
-        'orderNo'         => 'orderNo',
-        'orderUrl'        => 'orderUrl',
-        'processId'       => 'processId',
-        'realAmount'      => 'realAmount',
-        'refundAmount'    => 'refundAmount',
+        'journeyBizNo' => 'journeyBizNo',
+        'orderDetails' => 'orderDetails',
+        'orderNo' => 'orderNo',
+        'orderUrl' => 'orderUrl',
+        'processId' => 'processId',
+        'realAmount' => 'realAmount',
+        'refundAmount' => 'refundAmount',
         'relativeOrderNo' => 'relativeOrderNo',
-        'source'          => 'source',
-        'supplyLogo'      => 'supplyLogo',
-        'supplyName'      => 'supplyName',
-        'targetCorpId'    => 'targetCorpId',
-        'tmcCorpId'       => 'tmcCorpId',
-        'totalAmount'     => 'totalAmount',
-        'type'            => 'type',
+        'source' => 'source',
+        'supplyLogo' => 'supplyLogo',
+        'supplyName' => 'supplyName',
+        'targetCorpId' => 'targetCorpId',
+        'tmcCorpId' => 'tmcCorpId',
+        'totalAmount' => 'totalAmount',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -356,7 +354,7 @@ class SyncTripOrderRequest extends Model
         if (isset($map['orderDetails'])) {
             if (!empty($map['orderDetails'])) {
                 $model->orderDetails = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['orderDetails'] as $item) {
                     $model->orderDetails[$n++] = null !== $item ? orderDetails::fromMap($item) : $item;
                 }

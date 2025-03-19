@@ -25,12 +25,10 @@ class BatchDeleteRecentsRequest extends Model
     public $operatorId;
     protected $_name = [
         'dentryUuids' => 'dentryUuids',
-        'operatorId'  => 'operatorId',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -63,16 +63,14 @@ class list_ extends Model
     public $userId;
     protected $_name = [
         'appTraceId' => 'appTraceId',
-        'latitude'   => 'latitude',
-        'longitude'  => 'longitude',
+        'latitude' => 'latitude',
+        'longitude' => 'longitude',
         'reportTime' => 'reportTime',
-        'startTime'  => 'startTime',
-        'userId'     => 'userId',
+        'startTime' => 'startTime',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

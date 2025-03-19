@@ -34,15 +34,13 @@ class AttachmentsMapValue extends Model
      */
     public $resourceId;
     protected $_name = [
-        'uploadKey'  => 'uploadKey',
-        'name'       => 'name',
-        'mediaType'  => 'mediaType',
+        'uploadKey' => 'uploadKey',
+        'name' => 'name',
+        'mediaType' => 'mediaType',
         'resourceId' => 'resourceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

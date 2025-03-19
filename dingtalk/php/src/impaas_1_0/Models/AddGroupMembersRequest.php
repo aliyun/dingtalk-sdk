@@ -29,13 +29,11 @@ class AddGroupMembersRequest extends Model
     public $operatorUid;
     protected $_name = [
         'conversationId' => 'conversationId',
-        'members'        => 'members',
-        'operatorUid'    => 'operatorUid',
+        'members' => 'members',
+        'operatorUid' => 'operatorUid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -73,7 +71,7 @@ class AddGroupMembersRequest extends Model
         if (isset($map['members'])) {
             if (!empty($map['members'])) {
                 $model->members = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['members'] as $item) {
                     $model->members[$n++] = null !== $item ? members::fromMap($item) : $item;
                 }

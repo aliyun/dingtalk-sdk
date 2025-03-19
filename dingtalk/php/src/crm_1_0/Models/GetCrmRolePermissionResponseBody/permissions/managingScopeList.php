@@ -34,14 +34,12 @@ class managingScopeList extends Model
      */
     public $type;
     protected $_name = [
-        'ext'     => 'ext',
+        'ext' => 'ext',
         'manager' => 'manager',
-        'type'    => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

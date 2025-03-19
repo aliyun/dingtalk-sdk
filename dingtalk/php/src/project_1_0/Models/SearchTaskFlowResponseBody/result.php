@@ -64,19 +64,17 @@ class result extends Model
      */
     public $updated;
     protected $_name = [
-        'boundToObjectId'   => 'boundToObjectId',
+        'boundToObjectId' => 'boundToObjectId',
         'boundToObjectType' => 'boundToObjectType',
-        'created'           => 'created',
-        'creatorId'         => 'creatorId',
-        'isDeleted'         => 'isDeleted',
-        'name'              => 'name',
-        'taskflowId'        => 'taskflowId',
-        'updated'           => 'updated',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
+        'isDeleted' => 'isDeleted',
+        'name' => 'name',
+        'taskflowId' => 'taskflowId',
+        'updated' => 'updated',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

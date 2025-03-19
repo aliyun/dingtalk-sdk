@@ -44,15 +44,13 @@ class data extends Model
     public $userCnt;
     protected $_name = [
         'appVersion' => 'appVersion',
-        'client'     => 'client',
-        'orgName'    => 'orgName',
-        'statDate'   => 'statDate',
-        'userCnt'    => 'userCnt',
+        'client' => 'client',
+        'orgName' => 'orgName',
+        'statDate' => 'statDate',
+        'userCnt' => 'userCnt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

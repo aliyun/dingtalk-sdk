@@ -17,9 +17,7 @@ class ListAllBizCategoryResponseBody extends Model
         'bizCategories' => 'bizCategories',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class ListAllBizCategoryResponseBody extends Model
         if (isset($map['bizCategories'])) {
             if (!empty($map['bizCategories'])) {
                 $model->bizCategories = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['bizCategories'] as $item) {
                     $model->bizCategories[$n++] = null !== $item ? bizCategories::fromMap($item) : $item;
                 }

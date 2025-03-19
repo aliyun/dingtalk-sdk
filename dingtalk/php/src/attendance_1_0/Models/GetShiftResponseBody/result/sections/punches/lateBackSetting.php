@@ -17,9 +17,7 @@ class lateBackSetting extends Model
         'lateBackPairs' => 'lateBackPairs',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -48,7 +46,7 @@ class lateBackSetting extends Model
         if (isset($map['lateBackPairs'])) {
             if (!empty($map['lateBackPairs'])) {
                 $model->lateBackPairs = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['lateBackPairs'] as $item) {
                     $model->lateBackPairs[$n++] = null !== $item ? lateBackPairs::fromMap($item) : $item;
                 }

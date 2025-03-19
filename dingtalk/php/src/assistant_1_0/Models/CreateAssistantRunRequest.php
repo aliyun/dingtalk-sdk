@@ -30,15 +30,13 @@ class CreateAssistantRunRequest extends Model
      */
     public $stream;
     protected $_name = [
-        'assistantId'  => 'assistantId',
+        'assistantId' => 'assistantId',
         'instructions' => 'instructions',
-        'metadata'     => 'metadata',
-        'stream'       => 'stream',
+        'metadata' => 'metadata',
+        'stream' => 'stream',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -23,12 +23,10 @@ class ListParentByDeptRequest extends Model
     public $subCorpId;
     protected $_name = [
         'departmentId' => 'departmentId',
-        'subCorpId'    => 'subCorpId',
+        'subCorpId' => 'subCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

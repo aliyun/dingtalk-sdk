@@ -16,9 +16,7 @@ class GetTotalNumberOfSpacesResponseBody extends Model
         'spacesCount' => 'spacesCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

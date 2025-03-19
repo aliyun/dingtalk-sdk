@@ -26,13 +26,11 @@ class params extends Model
     public $workNo;
     protected $_name = [
         'effectiveDate' => 'effectiveDate',
-        'punName'       => 'punName',
-        'workNo'        => 'workNo',
+        'punName' => 'punName',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

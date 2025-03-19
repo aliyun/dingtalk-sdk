@@ -30,14 +30,12 @@ class ManagementBuyQuotaRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'order'   => 'order',
-        'token'   => 'token',
+        'order' => 'order',
+        'token' => 'token',
         'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -19,9 +19,7 @@ class WriteAlibabaOrgCarbonRequest extends Model
         'orgDetailsList' => 'orgDetailsList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -50,7 +48,7 @@ class WriteAlibabaOrgCarbonRequest extends Model
         if (isset($map['orgDetailsList'])) {
             if (!empty($map['orgDetailsList'])) {
                 $model->orgDetailsList = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['orgDetailsList'] as $item) {
                     $model->orgDetailsList[$n++] = null !== $item ? orgDetailsList::fromMap($item) : $item;
                 }

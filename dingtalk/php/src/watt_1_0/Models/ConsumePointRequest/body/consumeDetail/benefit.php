@@ -28,15 +28,13 @@ class benefit extends Model
      */
     public $useUrl;
     protected $_name = [
-        'benefitId'    => 'benefitId',
-        'name'         => 'name',
+        'benefitId' => 'benefitId',
+        'name' => 'name',
         'supplierName' => 'supplierName',
-        'useUrl'       => 'useUrl',
+        'useUrl' => 'useUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

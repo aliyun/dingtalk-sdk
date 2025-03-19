@@ -36,13 +36,11 @@ class HrmProcessUpdateTerminationInfoRequest extends Model
     public $userId;
     protected $_name = [
         'dismissionMemo' => 'dismissionMemo',
-        'lastWorkDate'   => 'lastWorkDate',
-        'userId'         => 'userId',
+        'lastWorkDate' => 'lastWorkDate',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

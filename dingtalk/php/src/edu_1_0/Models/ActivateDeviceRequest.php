@@ -54,15 +54,13 @@ class ActivateDeviceRequest extends Model
     public $type;
     protected $_name = [
         'licenseKey' => 'licenseKey',
-        'model'      => 'model',
-        'name'       => 'name',
-        'sn'         => 'sn',
-        'type'       => 'type',
+        'model' => 'model',
+        'name' => 'name',
+        'sn' => 'sn',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -60,17 +60,15 @@ class UpdateInstanceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'appType'            => 'appType',
-        'language'           => 'language',
-        'processInstanceId'  => 'processInstanceId',
-        'systemToken'        => 'systemToken',
+        'appType' => 'appType',
+        'language' => 'language',
+        'processInstanceId' => 'processInstanceId',
+        'systemToken' => 'systemToken',
         'updateFormDataJson' => 'updateFormDataJson',
-        'userId'             => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

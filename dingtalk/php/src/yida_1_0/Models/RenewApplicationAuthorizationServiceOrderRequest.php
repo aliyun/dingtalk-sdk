@@ -36,15 +36,13 @@ class RenewApplicationAuthorizationServiceOrderRequest extends Model
      */
     public $instanceId;
     protected $_name = [
-        'accessKey'     => 'accessKey',
+        'accessKey' => 'accessKey',
         'callerUnionId' => 'callerUnionId',
-        'endTimeGMT'    => 'endTimeGMT',
-        'instanceId'    => 'instanceId',
+        'endTimeGMT' => 'endTimeGMT',
+        'instanceId' => 'instanceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

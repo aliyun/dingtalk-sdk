@@ -19,12 +19,10 @@ class detailUrl extends Model
     public $pcUrl;
     protected $_name = [
         'appUrl' => 'appUrl',
-        'pcUrl'  => 'pcUrl',
+        'pcUrl' => 'pcUrl',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

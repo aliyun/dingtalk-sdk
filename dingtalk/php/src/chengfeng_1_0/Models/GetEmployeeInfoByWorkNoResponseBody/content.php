@@ -22,13 +22,11 @@ class content extends Model
      */
     public $workNo;
     protected $_name = [
-        'name'   => 'name',
+        'name' => 'name',
         'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

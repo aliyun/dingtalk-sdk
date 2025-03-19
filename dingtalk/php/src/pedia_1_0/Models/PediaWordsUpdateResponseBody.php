@@ -21,12 +21,10 @@ class PediaWordsUpdateResponseBody extends Model
     public $uuid;
     protected $_name = [
         'success' => 'success',
-        'uuid'    => 'uuid',
+        'uuid' => 'uuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

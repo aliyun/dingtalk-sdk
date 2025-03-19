@@ -33,16 +33,14 @@ class myPluginList extends Model
      */
     public $title;
     protected $_name = [
-        'appCode'  => 'appCode',
-        'desc'     => 'desc',
+        'appCode' => 'appCode',
+        'desc' => 'desc',
         'pluginId' => 'pluginId',
-        'source'   => 'source',
-        'title'    => 'title',
+        'source' => 'source',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

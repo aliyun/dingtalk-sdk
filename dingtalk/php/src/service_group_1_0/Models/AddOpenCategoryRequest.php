@@ -60,17 +60,15 @@ class AddOpenCategoryRequest extends Model
      */
     public $userName;
     protected $_name = [
-        'libraryId'  => 'libraryId',
+        'libraryId' => 'libraryId',
         'openTeamId' => 'openTeamId',
-        'parentId'   => 'parentId',
-        'title'      => 'title',
-        'userId'     => 'userId',
-        'userName'   => 'userName',
+        'parentId' => 'parentId',
+        'title' => 'title',
+        'userId' => 'userId',
+        'userName' => 'userName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

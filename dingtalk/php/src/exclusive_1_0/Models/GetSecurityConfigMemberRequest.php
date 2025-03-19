@@ -31,14 +31,12 @@ class GetSecurityConfigMemberRequest extends Model
      */
     public $nextToken;
     protected $_name = [
-        'configKey'  => 'configKey',
+        'configKey' => 'configKey',
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

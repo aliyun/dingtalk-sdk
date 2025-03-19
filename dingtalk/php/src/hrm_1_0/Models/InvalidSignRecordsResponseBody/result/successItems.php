@@ -18,9 +18,7 @@ class successItems extends Model
         'itemId' => 'itemId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

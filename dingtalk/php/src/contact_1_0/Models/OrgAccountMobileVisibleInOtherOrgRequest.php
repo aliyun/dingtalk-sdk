@@ -26,9 +26,7 @@ class OrgAccountMobileVisibleInOtherOrgRequest extends Model
         'toCorpIds' => 'toCorpIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

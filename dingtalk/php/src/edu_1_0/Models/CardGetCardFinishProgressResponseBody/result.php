@@ -25,14 +25,12 @@ class result extends Model
      */
     public $studentNameList;
     protected $_name = [
-        'classStatistics'     => 'classStatistics',
+        'classStatistics' => 'classStatistics',
         'patriarchStatistics' => 'patriarchStatistics',
-        'studentNameList'     => 'studentNameList',
+        'studentNameList' => 'studentNameList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -73,7 +71,7 @@ class result extends Model
         if (isset($map['classStatistics'])) {
             if (!empty($map['classStatistics'])) {
                 $model->classStatistics = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['classStatistics'] as $item) {
                     $model->classStatistics[$n++] = null !== $item ? classStatistics::fromMap($item) : $item;
                 }
@@ -82,7 +80,7 @@ class result extends Model
         if (isset($map['patriarchStatistics'])) {
             if (!empty($map['patriarchStatistics'])) {
                 $model->patriarchStatistics = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['patriarchStatistics'] as $item) {
                     $model->patriarchStatistics[$n++] = null !== $item ? patriarchStatistics::fromMap($item) : $item;
                 }

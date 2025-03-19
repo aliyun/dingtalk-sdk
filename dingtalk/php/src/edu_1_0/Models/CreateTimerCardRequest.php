@@ -54,17 +54,15 @@ class CreateTimerCardRequest extends Model
     public $memo;
     protected $_name = [
         'actionTime' => 'actionTime',
-        'bizData'    => 'bizData',
-        'bizType'    => 'bizType',
-        'corpId'     => 'corpId',
+        'bizData' => 'bizData',
+        'bizType' => 'bizType',
+        'corpId' => 'corpId',
         'identifier' => 'identifier',
-        'isvCode'    => 'isvCode',
-        'memo'       => 'memo',
+        'isvCode' => 'isvCode',
+        'memo' => 'memo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

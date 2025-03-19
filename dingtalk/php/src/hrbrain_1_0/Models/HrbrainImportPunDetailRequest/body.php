@@ -51,18 +51,16 @@ class body extends Model
      */
     public $workNo;
     protected $_name = [
-        'comment'       => 'comment',
+        'comment' => 'comment',
         'effectiveDate' => 'effectiveDate',
-        'extendInfo'    => 'extendInfo',
-        'name'          => 'name',
-        'punName'       => 'punName',
-        'punOrg'        => 'punOrg',
-        'workNo'        => 'workNo',
+        'extendInfo' => 'extendInfo',
+        'name' => 'name',
+        'punName' => 'punName',
+        'punOrg' => 'punOrg',
+        'workNo' => 'workNo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

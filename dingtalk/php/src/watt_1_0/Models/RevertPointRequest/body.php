@@ -19,12 +19,10 @@ class body extends Model
     public $requestId;
     protected $_name = [
         'pointPoolCode' => 'pointPoolCode',
-        'requestId'     => 'requestId',
+        'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

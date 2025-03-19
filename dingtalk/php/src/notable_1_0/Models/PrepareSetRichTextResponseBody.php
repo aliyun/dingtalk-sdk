@@ -19,13 +19,11 @@ class PrepareSetRichTextResponseBody extends Model
      */
     public $uploadInfos;
     protected $_name = [
-        'markdown'    => 'markdown',
+        'markdown' => 'markdown',
         'uploadInfos' => 'uploadInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class PrepareSetRichTextResponseBody extends Model
         if (isset($map['uploadInfos'])) {
             if (!empty($map['uploadInfos'])) {
                 $model->uploadInfos = [];
-                $n                  = 0;
+                $n = 0;
                 foreach ($map['uploadInfos'] as $item) {
                     $model->uploadInfos[$n++] = null !== $item ? uploadInfos::fromMap($item) : $item;
                 }

@@ -17,9 +17,7 @@ class GetSimpleOvertimeSettingResponseBody extends Model
         'result' => 'result',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

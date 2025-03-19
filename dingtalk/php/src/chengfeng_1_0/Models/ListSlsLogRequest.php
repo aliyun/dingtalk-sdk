@@ -45,16 +45,14 @@ class ListSlsLogRequest extends Model
      */
     public $startTime;
     protected $_name = [
-        'appCode'    => 'appCode',
-        'endTime'    => 'endTime',
+        'appCode' => 'appCode',
+        'endTime' => 'endTime',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'startTime'  => 'startTime',
+        'pageSize' => 'pageSize',
+        'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

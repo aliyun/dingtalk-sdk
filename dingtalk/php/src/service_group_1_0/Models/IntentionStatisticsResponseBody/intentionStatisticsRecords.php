@@ -35,14 +35,12 @@ class intentionStatisticsRecords extends Model
      */
     public $lastCount;
     protected $_name = [
-        'count'     => 'count',
+        'count' => 'count',
         'intention' => 'intention',
         'lastCount' => 'lastCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

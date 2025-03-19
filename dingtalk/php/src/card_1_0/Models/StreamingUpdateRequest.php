@@ -51,18 +51,16 @@ class StreamingUpdateRequest extends Model
      */
     public $outTrackId;
     protected $_name = [
-        'content'    => 'content',
-        'guid'       => 'guid',
-        'isError'    => 'isError',
+        'content' => 'content',
+        'guid' => 'guid',
+        'isError' => 'isError',
         'isFinalize' => 'isFinalize',
-        'isFull'     => 'isFull',
-        'key'        => 'key',
+        'isFull' => 'isFull',
+        'key' => 'key',
         'outTrackId' => 'outTrackId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

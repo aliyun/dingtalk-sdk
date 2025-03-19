@@ -23,12 +23,10 @@ class OpenConnectionResponseBody extends Model
     public $ticket;
     protected $_name = [
         'endpoint' => 'endpoint',
-        'ticket'   => 'ticket',
+        'ticket' => 'ticket',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

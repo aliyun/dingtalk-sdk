@@ -23,12 +23,10 @@ class visibleDepts extends Model
     public $name;
     protected $_name = [
         'deptId' => 'deptId',
-        'name'   => 'name',
+        'name' => 'name',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

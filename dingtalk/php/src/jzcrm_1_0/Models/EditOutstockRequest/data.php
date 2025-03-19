@@ -96,25 +96,23 @@ class data extends Model
      */
     public $stocklibid;
     protected $_name = [
-        'askempid'   => 'askempid',
+        'askempid' => 'askempid',
         'auditreson' => 'auditreson',
-        'billno'     => 'billno',
-        'childMx'    => 'child_mx',
+        'billno' => 'billno',
+        'childMx' => 'child_mx',
         'customerid' => 'customerid',
         'dataUserid' => 'data_userid',
-        'empid'      => 'empid',
-        'inorout'    => 'inorout',
-        'libiodate'  => 'libiodate',
-        'libioname'  => 'libioname',
+        'empid' => 'empid',
+        'inorout' => 'inorout',
+        'libiodate' => 'libiodate',
+        'libioname' => 'libioname',
         'libiostate' => 'libiostate',
-        'orderid'    => 'orderid',
-        'remark'     => 'remark',
+        'orderid' => 'orderid',
+        'remark' => 'remark',
         'stocklibid' => 'stocklibid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

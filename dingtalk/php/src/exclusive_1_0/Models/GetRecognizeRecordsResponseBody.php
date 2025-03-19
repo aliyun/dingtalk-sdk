@@ -28,14 +28,12 @@ class GetRecognizeRecordsResponseBody extends Model
      */
     public $total;
     protected $_name = [
-        'data'      => 'data',
+        'data' => 'data',
         'nextToken' => 'nextToken',
-        'total'     => 'total',
+        'total' => 'total',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -70,7 +68,7 @@ class GetRecognizeRecordsResponseBody extends Model
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['data'] as $item) {
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }

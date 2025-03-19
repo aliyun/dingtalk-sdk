@@ -20,13 +20,11 @@ class DataSyncResponseBody extends Model
      */
     public $rowsAffected;
     protected $_name = [
-        'dataList'     => 'dataList',
+        'dataList' => 'dataList',
         'rowsAffected' => 'rowsAffected',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -35,16 +35,14 @@ class ccs extends Model
      */
     public $userId;
     protected $_name = [
-        'account'     => 'account',
+        'account' => 'account',
         'accountName' => 'accountName',
         'accountType' => 'accountType',
-        'orgName'     => 'orgName',
-        'userId'      => 'userId',
+        'orgName' => 'orgName',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

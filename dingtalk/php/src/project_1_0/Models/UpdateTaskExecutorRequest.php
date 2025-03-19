@@ -18,9 +18,7 @@ class UpdateTaskExecutorRequest extends Model
         'executorId' => 'executorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

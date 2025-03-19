@@ -34,16 +34,14 @@ class data extends Model
      */
     public $logs;
     protected $_name = [
-        'businessSense'           => 'businessSense',
-        'flowStatus'              => 'flowStatus',
+        'businessSense' => 'businessSense',
+        'flowStatus' => 'flowStatus',
         'initiatorAuthorizedName' => 'initiatorAuthorizedName',
-        'initiatorName'           => 'initiatorName',
-        'logs'                    => 'logs',
+        'initiatorName' => 'initiatorName',
+        'logs' => 'logs',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -96,7 +94,7 @@ class data extends Model
         if (isset($map['logs'])) {
             if (!empty($map['logs'])) {
                 $model->logs = [];
-                $n           = 0;
+                $n = 0;
                 foreach ($map['logs'] as $item) {
                     $model->logs[$n++] = null !== $item ? logs::fromMap($item) : $item;
                 }

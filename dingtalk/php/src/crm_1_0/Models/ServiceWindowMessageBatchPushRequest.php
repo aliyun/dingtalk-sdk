@@ -21,13 +21,11 @@ class ServiceWindowMessageBatchPushRequest extends Model
      */
     public $detail;
     protected $_name = [
-        'bizId'  => 'bizId',
+        'bizId' => 'bizId',
         'detail' => 'detail',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

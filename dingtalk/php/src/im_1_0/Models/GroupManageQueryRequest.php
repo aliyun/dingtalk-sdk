@@ -74,21 +74,19 @@ class GroupManageQueryRequest extends Model
      */
     public $openConversationId;
     protected $_name = [
-        'createdAfter'       => 'createdAfter',
-        'groupId'            => 'groupId',
+        'createdAfter' => 'createdAfter',
+        'groupId' => 'groupId',
         'groupMemberSamples' => 'groupMemberSamples',
-        'groupOwner'         => 'groupOwner',
+        'groupOwner' => 'groupOwner',
         'groupTitleKeywords' => 'groupTitleKeywords',
-        'groupUrl'           => 'groupUrl',
-        'maxResults'         => 'maxResults',
-        'membersOver'        => 'membersOver',
-        'nextToken'          => 'nextToken',
+        'groupUrl' => 'groupUrl',
+        'maxResults' => 'maxResults',
+        'membersOver' => 'membersOver',
+        'nextToken' => 'nextToken',
         'openConversationId' => 'openConversationId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

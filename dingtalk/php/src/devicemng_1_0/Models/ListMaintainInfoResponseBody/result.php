@@ -55,18 +55,16 @@ class result extends Model
      */
     public $remark;
     protected $_name = [
-        'deviceCode'       => 'deviceCode',
-        'deviceName'       => 'deviceName',
-        'gmtCreate'        => 'gmtCreate',
-        'handleTime'       => 'handleTime',
+        'deviceCode' => 'deviceCode',
+        'deviceName' => 'deviceName',
+        'gmtCreate' => 'gmtCreate',
+        'handleTime' => 'handleTime',
         'maintenanceStaff' => 'maintenanceStaff',
-        'processState'     => 'processState',
-        'remark'           => 'remark',
+        'processState' => 'processState',
+        'remark' => 'remark',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

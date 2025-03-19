@@ -22,13 +22,11 @@ class DigitalStoreStoreInfoRequest extends Model
      */
     public $storeId;
     protected $_name = [
-        'code'    => 'code',
+        'code' => 'code',
         'storeId' => 'storeId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

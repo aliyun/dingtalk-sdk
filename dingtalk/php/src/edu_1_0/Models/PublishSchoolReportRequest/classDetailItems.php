@@ -24,14 +24,12 @@ class classDetailItems extends Model
      */
     public $studentDetailList;
     protected $_name = [
-        'classId'           => 'classId',
-        'className'         => 'className',
+        'classId' => 'classId',
+        'className' => 'className',
         'studentDetailList' => 'studentDetailList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -72,7 +70,7 @@ class classDetailItems extends Model
         if (isset($map['studentDetailList'])) {
             if (!empty($map['studentDetailList'])) {
                 $model->studentDetailList = [];
-                $n                        = 0;
+                $n = 0;
                 foreach ($map['studentDetailList'] as $item) {
                     $model->studentDetailList[$n++] = null !== $item ? studentDetailList::fromMap($item) : $item;
                 }

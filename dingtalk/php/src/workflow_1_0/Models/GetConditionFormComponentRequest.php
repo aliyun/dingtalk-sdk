@@ -24,13 +24,11 @@ class GetConditionFormComponentRequest extends Model
      */
     public $processCode;
     protected $_name = [
-        'agentId'     => 'agentId',
+        'agentId' => 'agentId',
         'processCode' => 'processCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

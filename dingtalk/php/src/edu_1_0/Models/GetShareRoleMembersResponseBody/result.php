@@ -24,13 +24,11 @@ class result extends Model
      */
     public $memberUserIdListInTrunkOrg;
     protected $_name = [
-        'corpId'                     => 'corpId',
+        'corpId' => 'corpId',
         'memberUserIdListInTrunkOrg' => 'memberUserIdListInTrunkOrg',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

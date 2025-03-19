@@ -18,13 +18,11 @@ class RemoveAssistantRequest extends Model
      */
     public $operatorUnionId;
     protected $_name = [
-        'assistantId'     => 'assistantId',
+        'assistantId' => 'assistantId',
         'operatorUnionId' => 'operatorUnionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

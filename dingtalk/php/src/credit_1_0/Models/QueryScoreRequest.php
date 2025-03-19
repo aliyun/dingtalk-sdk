@@ -55,16 +55,14 @@ class QueryScoreRequest extends Model
     public $uniScCode;
     protected $_name = [
         'encryption' => 'encryption',
-        'fullName'   => 'fullName',
+        'fullName' => 'fullName',
         'idCardCode' => 'idCardCode',
-        'mobile'     => 'mobile',
-        'orgName'    => 'orgName',
-        'uniScCode'  => 'uniScCode',
+        'mobile' => 'mobile',
+        'orgName' => 'orgName',
+        'uniScCode' => 'uniScCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -41,16 +41,14 @@ class UpdateApaasAppRequest extends Model
      */
     public $opUserId;
     protected $_name = [
-        'appIcon'   => 'appIcon',
-        'appName'   => 'appName',
+        'appIcon' => 'appIcon',
+        'appName' => 'appName',
         'appStatus' => 'appStatus',
-        'bizAppId'  => 'bizAppId',
-        'opUserId'  => 'opUserId',
+        'bizAppId' => 'bizAppId',
+        'opUserId' => 'opUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

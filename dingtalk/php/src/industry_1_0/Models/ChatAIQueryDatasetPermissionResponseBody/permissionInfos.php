@@ -18,13 +18,11 @@ class permissionInfos extends Model
      */
     public $permissionValues;
     protected $_name = [
-        'permissionType'   => 'permissionType',
+        'permissionType' => 'permissionType',
         'permissionValues' => 'permissionValues',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

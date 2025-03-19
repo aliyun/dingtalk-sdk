@@ -47,16 +47,14 @@ class GetOfficialAccountContactInfoResponseBody extends Model
     public $userInfos;
     protected $_name = [
         'authItems' => 'authItems',
-        'corpName'  => 'corpName',
-        'mobile'    => 'mobile',
+        'corpName' => 'corpName',
+        'mobile' => 'mobile',
         'stateCode' => 'stateCode',
-        'unionId'   => 'unionId',
+        'unionId' => 'unionId',
         'userInfos' => 'userInfos',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

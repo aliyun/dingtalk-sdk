@@ -24,14 +24,12 @@ class CancelReviewOrderRequest extends Model
      */
     public $orderId;
     protected $_name = [
-        'endFiles'  => 'endFiles',
+        'endFiles' => 'endFiles',
         'extension' => 'extension',
-        'orderId'   => 'orderId',
+        'orderId' => 'orderId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class CancelReviewOrderRequest extends Model
         if (isset($map['endFiles'])) {
             if (!empty($map['endFiles'])) {
                 $model->endFiles = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['endFiles'] as $item) {
                     $model->endFiles[$n++] = null !== $item ? endFiles::fromMap($item) : $item;
                 }

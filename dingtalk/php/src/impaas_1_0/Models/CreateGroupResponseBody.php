@@ -29,14 +29,12 @@ class CreateGroupResponseBody extends Model
      */
     public $createTime;
     protected $_name = [
-        'chatId'         => 'chatId',
+        'chatId' => 'chatId',
         'conversationId' => 'conversationId',
-        'createTime'     => 'createTime',
+        'createTime' => 'createTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

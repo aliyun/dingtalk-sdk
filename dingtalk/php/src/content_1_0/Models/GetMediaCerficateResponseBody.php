@@ -80,19 +80,17 @@ class GetMediaCerficateResponseBody extends Model
      */
     public $ossSecurityToken;
     protected $_name = [
-        'mediaId'            => 'mediaId',
-        'ossAccessKeyId'     => 'ossAccessKeyId',
+        'mediaId' => 'mediaId',
+        'ossAccessKeyId' => 'ossAccessKeyId',
         'ossAccessKeySecret' => 'ossAccessKeySecret',
-        'ossBucketName'      => 'ossBucketName',
-        'ossEndpoint'        => 'ossEndpoint',
-        'ossExpiration'      => 'ossExpiration',
-        'ossFileName'        => 'ossFileName',
-        'ossSecurityToken'   => 'ossSecurityToken',
+        'ossBucketName' => 'ossBucketName',
+        'ossEndpoint' => 'ossEndpoint',
+        'ossExpiration' => 'ossExpiration',
+        'ossFileName' => 'ossFileName',
+        'ossSecurityToken' => 'ossSecurityToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

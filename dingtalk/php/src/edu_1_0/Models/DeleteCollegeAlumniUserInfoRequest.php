@@ -29,14 +29,12 @@ class DeleteCollegeAlumniUserInfoRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'deptId'   => 'deptId',
+        'deptId' => 'deptId',
         'operator' => 'operator',
-        'userIds'  => 'userIds',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

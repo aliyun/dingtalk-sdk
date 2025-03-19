@@ -29,14 +29,12 @@ class user extends Model
      */
     public $userId;
     protected $_name = [
-        'name'      => 'name',
+        'name' => 'name',
         'timestamp' => 'timestamp',
-        'userId'    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

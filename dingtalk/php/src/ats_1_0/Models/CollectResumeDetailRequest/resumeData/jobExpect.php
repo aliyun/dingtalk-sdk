@@ -41,16 +41,14 @@ class jobExpect extends Model
      */
     public $onboardTime;
     protected $_name = [
-        'jobName'     => 'jobName',
-        'locations'   => 'locations',
-        'maxSalary'   => 'maxSalary',
-        'minSalary'   => 'minSalary',
+        'jobName' => 'jobName',
+        'locations' => 'locations',
+        'maxSalary' => 'maxSalary',
+        'minSalary' => 'minSalary',
         'onboardTime' => 'onboardTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

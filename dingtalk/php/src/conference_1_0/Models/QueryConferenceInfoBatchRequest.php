@@ -18,9 +18,7 @@ class QueryConferenceInfoBatchRequest extends Model
         'conferenceIdList' => 'conferenceIdList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

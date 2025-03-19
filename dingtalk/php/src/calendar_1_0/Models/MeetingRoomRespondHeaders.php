@@ -25,14 +25,12 @@ class MeetingRoomRespondHeaders extends Model
      */
     public $xAcsDingtalkAccessToken;
     protected $_name = [
-        'userAgent'               => 'userAgent',
-        'xClientToken'            => 'x-client-token',
+        'userAgent' => 'userAgent',
+        'xClientToken' => 'x-client-token',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

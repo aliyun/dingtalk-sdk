@@ -41,16 +41,14 @@ class wrongQuestions extends Model
      */
     public $userAnswerPictureNum;
     protected $_name = [
-        'knowledgePoints'          => 'knowledgePoints',
-        'questionNo'               => 'questionNo',
-        'questionPictureNum'       => 'questionPictureNum',
+        'knowledgePoints' => 'knowledgePoints',
+        'questionNo' => 'questionNo',
+        'questionPictureNum' => 'questionPictureNum',
         'standardAnswerPictureNum' => 'standardAnswerPictureNum',
-        'userAnswerPictureNum'     => 'userAnswerPictureNum',
+        'userAnswerPictureNum' => 'userAnswerPictureNum',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

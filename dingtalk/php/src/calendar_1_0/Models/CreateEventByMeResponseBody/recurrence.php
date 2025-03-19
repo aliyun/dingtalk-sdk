@@ -21,12 +21,10 @@ class recurrence extends Model
     public $range;
     protected $_name = [
         'pattern' => 'pattern',
-        'range'   => 'range',
+        'range' => 'range',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

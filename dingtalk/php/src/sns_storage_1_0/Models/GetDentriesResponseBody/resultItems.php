@@ -42,16 +42,14 @@ class resultItems extends Model
      */
     public $success;
     protected $_name = [
-        'dentry'    => 'dentry',
-        'dentryId'  => 'dentryId',
+        'dentry' => 'dentry',
+        'dentryId' => 'dentryId',
         'errorCode' => 'errorCode',
-        'spaceId'   => 'spaceId',
-        'success'   => 'success',
+        'spaceId' => 'spaceId',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

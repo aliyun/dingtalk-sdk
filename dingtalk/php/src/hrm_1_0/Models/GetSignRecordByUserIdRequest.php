@@ -37,14 +37,12 @@ class GetSignRecordByUserIdRequest extends Model
     public $signUserId;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'nextToken' => 'nextToken',
         'signStatus' => 'signStatus',
         'signUserId' => 'signUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

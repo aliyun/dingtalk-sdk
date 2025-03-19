@@ -30,13 +30,11 @@ class recordInfos extends Model
     public $url;
     protected $_name = [
         'startTime' => 'startTime',
-        'stopTime'  => 'stopTime',
-        'url'       => 'url',
+        'stopTime' => 'stopTime',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

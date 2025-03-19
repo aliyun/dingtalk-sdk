@@ -19,13 +19,11 @@ class UpdateEvaluatePerformanceCountRequest extends Model
      */
     public $unreadData;
     protected $_name = [
-        'teacherId'  => 'teacherId',
+        'teacherId' => 'teacherId',
         'unreadData' => 'unreadData',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -60,7 +58,7 @@ class UpdateEvaluatePerformanceCountRequest extends Model
         if (isset($map['unreadData'])) {
             if (!empty($map['unreadData'])) {
                 $model->unreadData = [];
-                $n                 = 0;
+                $n = 0;
                 foreach ($map['unreadData'] as $item) {
                     $model->unreadData[$n++] = null !== $item ? unreadData::fromMap($item) : $item;
                 }

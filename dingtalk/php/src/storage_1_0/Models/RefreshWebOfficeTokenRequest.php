@@ -31,14 +31,12 @@ class RefreshWebOfficeTokenRequest extends Model
      */
     public $webOfficeRefreshToken;
     protected $_name = [
-        'unionId'               => 'unionId',
-        'webOfficeAccessToken'  => 'webOfficeAccessToken',
+        'unionId' => 'unionId',
+        'webOfficeAccessToken' => 'webOfficeAccessToken',
         'webOfficeRefreshToken' => 'webOfficeRefreshToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

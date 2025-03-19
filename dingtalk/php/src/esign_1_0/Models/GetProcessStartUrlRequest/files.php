@@ -18,13 +18,11 @@ class files extends Model
      */
     public $fileName;
     protected $_name = [
-        'fileId'   => 'fileId',
+        'fileId' => 'fileId',
         'fileName' => 'fileName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

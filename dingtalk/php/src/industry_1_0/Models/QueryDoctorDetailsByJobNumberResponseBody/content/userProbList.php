@@ -18,13 +18,11 @@ class userProbList extends Model
      */
     public $userPropertyName;
     protected $_name = [
-        'code'             => 'code',
+        'code' => 'code',
         'userPropertyName' => 'userPropertyName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

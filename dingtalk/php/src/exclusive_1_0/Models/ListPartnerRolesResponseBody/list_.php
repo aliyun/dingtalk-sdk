@@ -65,18 +65,16 @@ class list_ extends Model
      */
     public $warningUsers;
     protected $_name = [
-        'id'           => 'id',
-        'isNecessary'  => 'isNecessary',
-        'name'         => 'name',
+        'id' => 'id',
+        'isNecessary' => 'isNecessary',
+        'name' => 'name',
         'visibleDepts' => 'visibleDepts',
         'visibleUsers' => 'visibleUsers',
         'warningDepts' => 'warningDepts',
         'warningUsers' => 'warningUsers',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -150,7 +148,7 @@ class list_ extends Model
         if (isset($map['visibleDepts'])) {
             if (!empty($map['visibleDepts'])) {
                 $model->visibleDepts = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['visibleDepts'] as $item) {
                     $model->visibleDepts[$n++] = null !== $item ? visibleDepts::fromMap($item) : $item;
                 }
@@ -159,7 +157,7 @@ class list_ extends Model
         if (isset($map['visibleUsers'])) {
             if (!empty($map['visibleUsers'])) {
                 $model->visibleUsers = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['visibleUsers'] as $item) {
                     $model->visibleUsers[$n++] = null !== $item ? visibleUsers::fromMap($item) : $item;
                 }
@@ -168,7 +166,7 @@ class list_ extends Model
         if (isset($map['warningDepts'])) {
             if (!empty($map['warningDepts'])) {
                 $model->warningDepts = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['warningDepts'] as $item) {
                     $model->warningDepts[$n++] = null !== $item ? warningDepts::fromMap($item) : $item;
                 }
@@ -177,7 +175,7 @@ class list_ extends Model
         if (isset($map['warningUsers'])) {
             if (!empty($map['warningUsers'])) {
                 $model->warningUsers = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['warningUsers'] as $item) {
                     $model->warningUsers[$n++] = null !== $item ? warningUsers::fromMap($item) : $item;
                 }

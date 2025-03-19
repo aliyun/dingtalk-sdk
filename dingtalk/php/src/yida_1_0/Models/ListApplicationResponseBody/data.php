@@ -90,23 +90,21 @@ class data extends Model
      */
     public $systemToken;
     protected $_name = [
-        'appConfig'           => 'appConfig',
-        'appType'             => 'appType',
-        'applicationStatus'   => 'applicationStatus',
-        'corpId'              => 'corpId',
-        'creatorUserId'       => 'creatorUserId',
-        'description'         => 'description',
-        'icon'                => 'icon',
-        'inexistence'         => 'inexistence',
-        'name'                => 'name',
+        'appConfig' => 'appConfig',
+        'appType' => 'appType',
+        'applicationStatus' => 'applicationStatus',
+        'corpId' => 'corpId',
+        'creatorUserId' => 'creatorUserId',
+        'description' => 'description',
+        'icon' => 'icon',
+        'inexistence' => 'inexistence',
+        'name' => 'name',
         'releaseToDingStatus' => 'releaseToDingStatus',
-        'subCorpId'           => 'subCorpId',
-        'systemToken'         => 'systemToken',
+        'subCorpId' => 'subCorpId',
+        'systemToken' => 'systemToken',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

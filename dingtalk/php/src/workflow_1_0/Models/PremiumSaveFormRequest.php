@@ -45,16 +45,14 @@ class PremiumSaveFormRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'description'    => 'description',
+        'description' => 'description',
         'formComponents' => 'formComponents',
-        'name'           => 'name',
-        'processCode'    => 'processCode',
-        'userId'         => 'userId',
+        'name' => 'name',
+        'processCode' => 'processCode',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -98,7 +96,7 @@ class PremiumSaveFormRequest extends Model
         if (isset($map['formComponents'])) {
             if (!empty($map['formComponents'])) {
                 $model->formComponents = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['formComponents'] as $item) {
                     $model->formComponents[$n++] = null !== $item ? FormComponent::fromMap($item) : $item;
                 }

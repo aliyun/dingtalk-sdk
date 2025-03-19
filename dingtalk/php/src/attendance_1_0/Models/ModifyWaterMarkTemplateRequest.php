@@ -72,19 +72,17 @@ class ModifyWaterMarkTemplateRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'formCode'           => 'formCode',
-        'icon'               => 'icon',
-        'layoutDesignId'     => 'layoutDesignId',
-        'schemaContent'      => 'schemaContent',
-        'title'              => 'title',
-        'waterMarkId'        => 'waterMarkId',
+        'formCode' => 'formCode',
+        'icon' => 'icon',
+        'layoutDesignId' => 'layoutDesignId',
+        'schemaContent' => 'schemaContent',
+        'title' => 'title',
+        'waterMarkId' => 'waterMarkId',
         'openConversationId' => 'openConversationId',
-        'userId'             => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -30,14 +30,12 @@ class GetNodesRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'nodeIds'    => 'nodeIds',
-        'option'     => 'option',
+        'nodeIds' => 'nodeIds',
+        'option' => 'option',
         'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

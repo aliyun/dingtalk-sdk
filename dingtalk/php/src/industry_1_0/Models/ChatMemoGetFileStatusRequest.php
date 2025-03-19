@@ -27,12 +27,10 @@ class ChatMemoGetFileStatusRequest extends Model
     public $mediaId;
     protected $_name = [
         'datasetId' => 'datasetId',
-        'mediaId'   => 'mediaId',
+        'mediaId' => 'mediaId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

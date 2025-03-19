@@ -29,14 +29,12 @@ class link extends Model
     public $title;
     protected $_name = [
         'messageUrl' => 'messageUrl',
-        'picUrl'     => 'picUrl',
-        'text'       => 'text',
-        'title'      => 'title',
+        'picUrl' => 'picUrl',
+        'text' => 'text',
+        'title' => 'title',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

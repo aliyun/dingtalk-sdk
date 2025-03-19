@@ -24,14 +24,12 @@ class unionEmpExt extends Model
      */
     public $unionEmpMapList;
     protected $_name = [
-        'corpId'          => 'corpId',
-        'staffId'         => 'staffId',
+        'corpId' => 'corpId',
+        'staffId' => 'staffId',
         'unionEmpMapList' => 'unionEmpMapList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -72,7 +70,7 @@ class unionEmpExt extends Model
         if (isset($map['unionEmpMapList'])) {
             if (!empty($map['unionEmpMapList'])) {
                 $model->unionEmpMapList = [];
-                $n                      = 0;
+                $n = 0;
                 foreach ($map['unionEmpMapList'] as $item) {
                     $model->unionEmpMapList[$n++] = null !== $item ? unionEmpMapList::fromMap($item) : $item;
                 }

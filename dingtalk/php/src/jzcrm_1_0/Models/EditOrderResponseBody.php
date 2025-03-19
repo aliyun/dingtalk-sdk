@@ -23,12 +23,10 @@ class EditOrderResponseBody extends Model
     public $time;
     protected $_name = [
         'msgid' => 'msgid',
-        'time'  => 'time',
+        'time' => 'time',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

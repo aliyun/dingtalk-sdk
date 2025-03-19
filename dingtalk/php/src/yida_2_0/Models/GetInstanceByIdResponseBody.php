@@ -70,23 +70,21 @@ class GetInstanceByIdResponseBody extends Model
      */
     public $version;
     protected $_name = [
-        'actionExecutor'    => 'actionExecutor',
-        'approvedResult'    => 'approvedResult',
-        'createTimeGMT'     => 'createTimeGMT',
-        'data'              => 'data',
-        'formUuid'          => 'formUuid',
-        'instanceStatus'    => 'instanceStatus',
-        'modifiedTimeGMT'   => 'modifiedTimeGMT',
-        'originator'        => 'originator',
-        'processCode'       => 'processCode',
+        'actionExecutor' => 'actionExecutor',
+        'approvedResult' => 'approvedResult',
+        'createTimeGMT' => 'createTimeGMT',
+        'data' => 'data',
+        'formUuid' => 'formUuid',
+        'instanceStatus' => 'instanceStatus',
+        'modifiedTimeGMT' => 'modifiedTimeGMT',
+        'originator' => 'originator',
+        'processCode' => 'processCode',
         'processInstanceId' => 'processInstanceId',
-        'title'             => 'title',
-        'version'           => 'version',
+        'title' => 'title',
+        'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -148,7 +146,7 @@ class GetInstanceByIdResponseBody extends Model
         if (isset($map['actionExecutor'])) {
             if (!empty($map['actionExecutor'])) {
                 $model->actionExecutor = [];
-                $n                     = 0;
+                $n = 0;
                 foreach ($map['actionExecutor'] as $item) {
                     $model->actionExecutor[$n++] = null !== $item ? actionExecutor::fromMap($item) : $item;
                 }

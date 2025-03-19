@@ -34,13 +34,11 @@ class InitAndGetLeaveALlocationQuotasRequest extends Model
     public $userId;
     protected $_name = [
         'leaveCode' => 'leaveCode',
-        'opUserId'  => 'opUserId',
-        'userId'    => 'userId',
+        'opUserId' => 'opUserId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class UpdateBranchAttributesInCooperateResponse extends Model
      */
     public $statusCode;
     protected $_name = [
-        'headers'    => 'headers',
+        'headers' => 'headers',
         'statusCode' => 'statusCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

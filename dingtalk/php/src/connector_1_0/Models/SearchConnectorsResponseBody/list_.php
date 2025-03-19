@@ -43,16 +43,14 @@ class list_ extends Model
      */
     public $providerCorpId;
     protected $_name = [
-        'description'    => 'description',
-        'icon'           => 'icon',
-        'id'             => 'id',
-        'name'           => 'name',
+        'description' => 'description',
+        'icon' => 'icon',
+        'id' => 'id',
+        'name' => 'name',
         'providerCorpId' => 'providerCorpId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -20,13 +20,11 @@ class result extends Model
      */
     public $updateLive;
     protected $_name = [
-        'newLive'    => 'newLive',
+        'newLive' => 'newLive',
         'updateLive' => 'updateLive',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

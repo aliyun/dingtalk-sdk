@@ -27,14 +27,12 @@ class ListObjectiveByIdsResponseBody extends Model
      */
     public $success;
     protected $_name = [
-        'content'   => 'content',
+        'content' => 'content',
         'requestId' => 'requestId',
-        'success'   => 'success',
+        'success' => 'success',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -69,7 +67,7 @@ class ListObjectiveByIdsResponseBody extends Model
         if (isset($map['content'])) {
             if (!empty($map['content'])) {
                 $model->content = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['content'] as $item) {
                     $model->content[$n++] = null !== $item ? OpenObjectiveDTO::fromMap($item) : $item;
                 }

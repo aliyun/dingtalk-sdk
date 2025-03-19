@@ -23,14 +23,12 @@ class BusinessMatchResultResponseBody extends Model
      */
     public $status;
     protected $_name = [
-        'content'   => 'content',
+        'content' => 'content',
         'isMatched' => 'isMatched',
-        'status'    => 'status',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

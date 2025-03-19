@@ -79,21 +79,19 @@ class StartProcessInstanceRequest extends Model
      */
     public $targetSelectActioners;
     protected $_name = [
-        'approvers'             => 'approvers',
-        'bizDetailPageUrl'      => 'bizDetailPageUrl',
-        'ccList'                => 'ccList',
-        'ccPosition'            => 'ccPosition',
-        'deptId'                => 'deptId',
-        'formComponentValues'   => 'formComponentValues',
-        'microappAgentId'       => 'microappAgentId',
-        'originatorUserId'      => 'originatorUserId',
-        'processCode'           => 'processCode',
+        'approvers' => 'approvers',
+        'bizDetailPageUrl' => 'bizDetailPageUrl',
+        'ccList' => 'ccList',
+        'ccPosition' => 'ccPosition',
+        'deptId' => 'deptId',
+        'formComponentValues' => 'formComponentValues',
+        'microappAgentId' => 'microappAgentId',
+        'originatorUserId' => 'originatorUserId',
+        'processCode' => 'processCode',
         'targetSelectActioners' => 'targetSelectActioners',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -161,7 +159,7 @@ class StartProcessInstanceRequest extends Model
         if (isset($map['approvers'])) {
             if (!empty($map['approvers'])) {
                 $model->approvers = [];
-                $n                = 0;
+                $n = 0;
                 foreach ($map['approvers'] as $item) {
                     $model->approvers[$n++] = null !== $item ? approvers::fromMap($item) : $item;
                 }
@@ -184,7 +182,7 @@ class StartProcessInstanceRequest extends Model
         if (isset($map['formComponentValues'])) {
             if (!empty($map['formComponentValues'])) {
                 $model->formComponentValues = [];
-                $n                          = 0;
+                $n = 0;
                 foreach ($map['formComponentValues'] as $item) {
                     $model->formComponentValues[$n++] = null !== $item ? formComponentValues::fromMap($item) : $item;
                 }
@@ -202,7 +200,7 @@ class StartProcessInstanceRequest extends Model
         if (isset($map['targetSelectActioners'])) {
             if (!empty($map['targetSelectActioners'])) {
                 $model->targetSelectActioners = [];
-                $n                            = 0;
+                $n = 0;
                 foreach ($map['targetSelectActioners'] as $item) {
                     $model->targetSelectActioners[$n++] = null !== $item ? targetSelectActioners::fromMap($item) : $item;
                 }

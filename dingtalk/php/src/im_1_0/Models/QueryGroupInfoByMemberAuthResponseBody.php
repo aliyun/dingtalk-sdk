@@ -18,9 +18,7 @@ class QueryGroupInfoByMemberAuthResponseBody extends Model
         'memberCount' => 'memberCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

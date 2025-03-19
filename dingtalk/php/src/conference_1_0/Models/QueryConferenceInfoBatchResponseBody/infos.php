@@ -44,16 +44,14 @@ class infos extends Model
     public $userList;
     protected $_name = [
         'conferenceId' => 'conferenceId',
-        'mediaStatus'  => 'mediaStatus',
-        'startTime'    => 'startTime',
-        'status'       => 'status',
-        'title'        => 'title',
-        'userList'     => 'userList',
+        'mediaStatus' => 'mediaStatus',
+        'startTime' => 'startTime',
+        'status' => 'status',
+        'title' => 'title',
+        'userList' => 'userList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -112,7 +110,7 @@ class infos extends Model
         if (isset($map['userList'])) {
             if (!empty($map['userList'])) {
                 $model->userList = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['userList'] as $item) {
                     $model->userList[$n++] = null !== $item ? userList::fromMap($item) : $item;
                 }

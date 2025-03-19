@@ -38,17 +38,15 @@ class UpdateVideoConferenceSettingRequest extends Model
      */
     public $onlyInternalEmployeesJoin;
     protected $_name = [
-        'allowUnmuteSelf'           => 'allowUnmuteSelf',
-        'autoTransferHost'          => 'autoTransferHost',
-        'forbiddenShareScreen'      => 'forbiddenShareScreen',
-        'lockConference'            => 'lockConference',
-        'muteAll'                   => 'muteAll',
+        'allowUnmuteSelf' => 'allowUnmuteSelf',
+        'autoTransferHost' => 'autoTransferHost',
+        'forbiddenShareScreen' => 'forbiddenShareScreen',
+        'lockConference' => 'lockConference',
+        'muteAll' => 'muteAll',
         'onlyInternalEmployeesJoin' => 'onlyInternalEmployeesJoin',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

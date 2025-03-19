@@ -48,19 +48,17 @@ class QueryVerifyResultResponseBody extends Model
      */
     public $verifyTimestamp;
     protected $_name = [
-        'corpId'          => 'corpId',
-        'factorCode'      => 'factorCode',
-        'factorDesc'      => 'factorDesc',
-        'resultCode'      => 'resultCode',
-        'resultDesc'      => 'resultDesc',
-        'state'           => 'state',
-        'userId'          => 'userId',
+        'corpId' => 'corpId',
+        'factorCode' => 'factorCode',
+        'factorDesc' => 'factorDesc',
+        'resultCode' => 'resultCode',
+        'resultDesc' => 'resultDesc',
+        'state' => 'state',
+        'userId' => 'userId',
         'verifyTimestamp' => 'verifyTimestamp',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

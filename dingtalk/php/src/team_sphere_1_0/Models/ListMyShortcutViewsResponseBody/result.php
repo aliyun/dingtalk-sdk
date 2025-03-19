@@ -113,28 +113,26 @@ class result extends Model
      */
     public $viewSetting;
     protected $_name = [
-        'boundToObjectId'   => 'boundToObjectId',
+        'boundToObjectId' => 'boundToObjectId',
         'boundToObjectType' => 'boundToObjectType',
-        'created'           => 'created',
-        'creatorId'         => 'creatorId',
-        'description'       => 'description',
-        'filter'            => 'filter',
-        'groupType'         => 'groupType',
-        'id'                => 'id',
-        'isDeleted'         => 'isDeleted',
-        'name'              => 'name',
-        'orderType'         => 'orderType',
-        'organizationId'    => 'organizationId',
-        'showType'          => 'showType',
-        'toolbarInfo'       => 'toolbarInfo',
-        'tql'               => 'tql',
-        'updated'           => 'updated',
-        'viewSetting'       => 'viewSetting',
+        'created' => 'created',
+        'creatorId' => 'creatorId',
+        'description' => 'description',
+        'filter' => 'filter',
+        'groupType' => 'groupType',
+        'id' => 'id',
+        'isDeleted' => 'isDeleted',
+        'name' => 'name',
+        'orderType' => 'orderType',
+        'organizationId' => 'organizationId',
+        'showType' => 'showType',
+        'toolbarInfo' => 'toolbarInfo',
+        'tql' => 'tql',
+        'updated' => 'updated',
+        'viewSetting' => 'viewSetting',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

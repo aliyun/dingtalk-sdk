@@ -18,9 +18,7 @@ class result extends Model
         'openApplyId' => 'openApplyId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

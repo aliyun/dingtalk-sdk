@@ -33,14 +33,12 @@ class UpdateResideceGroupRequest extends Model
      */
     public $managerUserId;
     protected $_name = [
-        'departmentId'   => 'departmentId',
+        'departmentId' => 'departmentId',
         'departmentName' => 'departmentName',
-        'managerUserId'  => 'managerUserId',
+        'managerUserId' => 'managerUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

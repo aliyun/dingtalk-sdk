@@ -19,12 +19,10 @@ class visualizationSettings extends Model
     public $type;
     protected $_name = [
         'dimension' => 'dimension',
-        'type'      => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

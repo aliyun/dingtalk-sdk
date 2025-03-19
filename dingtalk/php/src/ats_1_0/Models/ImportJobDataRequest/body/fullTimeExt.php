@@ -16,9 +16,7 @@ class fullTimeExt extends Model
         'salaryMonth' => 'salaryMonth',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

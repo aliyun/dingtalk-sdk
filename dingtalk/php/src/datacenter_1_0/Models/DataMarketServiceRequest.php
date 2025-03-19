@@ -19,12 +19,10 @@ class DataMarketServiceRequest extends Model
     public $args;
     protected $_name = [
         'apiId' => 'apiId',
-        'args'  => 'args',
+        'args' => 'args',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

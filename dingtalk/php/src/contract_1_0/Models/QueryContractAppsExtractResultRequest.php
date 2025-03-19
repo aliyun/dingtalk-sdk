@@ -30,13 +30,11 @@ class QueryContractAppsExtractResultRequest extends Model
     public $unionId;
     protected $_name = [
         'extractTaskId' => 'extractTaskId',
-        'requestId'     => 'requestId',
-        'unionId'       => 'unionId',
+        'requestId' => 'requestId',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

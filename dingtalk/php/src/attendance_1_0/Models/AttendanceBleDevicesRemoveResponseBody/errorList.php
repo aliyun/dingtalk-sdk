@@ -27,14 +27,12 @@ class errorList extends Model
      */
     public $msg;
     protected $_name = [
-        'code'        => 'code',
+        'code' => 'code',
         'failureList' => 'failureList',
-        'msg'         => 'msg',
+        'msg' => 'msg',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -104,22 +104,20 @@ class result extends Model
      */
     public $voiceMode;
     protected $_name = [
-        'atmManagerList'     => 'atmManagerList',
-        'devId'              => 'devId',
-        'deviceId'           => 'deviceId',
-        'deviceName'         => 'deviceName',
-        'deviceSn'           => 'deviceSn',
+        'atmManagerList' => 'atmManagerList',
+        'devId' => 'devId',
+        'deviceId' => 'deviceId',
+        'deviceName' => 'deviceName',
+        'deviceSn' => 'deviceSn',
         'machineBluetoothVO' => 'machineBluetoothVO',
-        'maxFace'            => 'maxFace',
-        'netStatus'          => 'netStatus',
-        'productName'        => 'productName',
-        'productVersion'     => 'productVersion',
-        'voiceMode'          => 'voiceMode',
+        'maxFace' => 'maxFace',
+        'netStatus' => 'netStatus',
+        'productName' => 'productName',
+        'productVersion' => 'productVersion',
+        'voiceMode' => 'voiceMode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

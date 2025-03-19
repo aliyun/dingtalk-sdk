@@ -27,12 +27,10 @@ class CloseTopCardRequest extends Model
     public $outTrackId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'outTrackId'         => 'outTrackId',
+        'outTrackId' => 'outTrackId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

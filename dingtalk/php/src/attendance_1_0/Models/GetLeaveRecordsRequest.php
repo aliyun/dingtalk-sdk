@@ -51,16 +51,14 @@ class GetLeaveRecordsRequest extends Model
      */
     public $userIds;
     protected $_name = [
-        'leaveCode'  => 'leaveCode',
-        'opUserId'   => 'opUserId',
+        'leaveCode' => 'leaveCode',
+        'opUserId' => 'opUserId',
         'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'userIds'    => 'userIds',
+        'pageSize' => 'pageSize',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,14 +29,12 @@ class GetTokenRequest extends Model
      */
     public $grantType;
     protected $_name = [
-        'clientId'     => 'client_id',
+        'clientId' => 'client_id',
         'clientSecret' => 'client_secret',
-        'grantType'    => 'grant_type',
+        'grantType' => 'grant_type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

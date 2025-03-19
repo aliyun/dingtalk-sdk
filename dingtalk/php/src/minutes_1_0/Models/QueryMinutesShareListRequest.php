@@ -33,14 +33,12 @@ class QueryMinutesShareListRequest extends Model
     public $unionId;
     protected $_name = [
         'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'scene'      => 'scene',
-        'unionId'    => 'unionId',
+        'nextToken' => 'nextToken',
+        'scene' => 'scene',
+        'unionId' => 'unionId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

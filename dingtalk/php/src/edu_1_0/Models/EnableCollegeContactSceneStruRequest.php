@@ -20,9 +20,7 @@ class EnableCollegeContactSceneStruRequest extends Model
         'struId' => 'struId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

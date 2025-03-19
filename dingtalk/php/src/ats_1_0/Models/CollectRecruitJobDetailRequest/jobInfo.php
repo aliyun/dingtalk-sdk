@@ -99,25 +99,23 @@ class jobInfo extends Model
      */
     public $requiredEdu;
     protected $_name = [
-        'address'      => 'address',
-        'category'     => 'category',
-        'description'  => 'description',
-        'extInfo'      => 'extInfo',
+        'address' => 'address',
+        'category' => 'category',
+        'description' => 'description',
+        'extInfo' => 'extInfo',
         'fullTimeInfo' => 'fullTimeInfo',
-        'headCount'    => 'headCount',
-        'jobNature'    => 'jobNature',
-        'jobTags'      => 'jobTags',
-        'maxSalary'    => 'maxSalary',
-        'minSalary'    => 'minSalary',
-        'name'         => 'name',
-        'outJobId'     => 'outJobId',
+        'headCount' => 'headCount',
+        'jobNature' => 'jobNature',
+        'jobTags' => 'jobTags',
+        'maxSalary' => 'maxSalary',
+        'minSalary' => 'minSalary',
+        'name' => 'name',
+        'outJobId' => 'outJobId',
         'partTimeInfo' => 'partTimeInfo',
-        'requiredEdu'  => 'requiredEdu',
+        'requiredEdu' => 'requiredEdu',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -50,17 +50,15 @@ class resultItems extends Model
      */
     public $taskId;
     protected $_name = [
-        'async'     => 'async',
-        'dentryId'  => 'dentryId',
+        'async' => 'async',
+        'dentryId' => 'dentryId',
         'errorCode' => 'errorCode',
-        'spaceId'   => 'spaceId',
-        'success'   => 'success',
-        'taskId'    => 'taskId',
+        'spaceId' => 'spaceId',
+        'success' => 'success',
+        'taskId' => 'taskId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

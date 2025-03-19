@@ -29,14 +29,12 @@ class studentList extends Model
      */
     public $studentUserId;
     protected $_name = [
-        'attributes'    => 'attributes',
-        'studentName'   => 'studentName',
+        'attributes' => 'attributes',
+        'studentName' => 'studentName',
         'studentUserId' => 'studentUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

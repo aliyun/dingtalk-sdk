@@ -32,13 +32,11 @@ class UpdateGroupSubAdminRequest extends Model
     public $userIds;
     protected $_name = [
         'openConversationId' => 'openConversationId',
-        'role'               => 'role',
-        'userIds'            => 'userIds',
+        'role' => 'role',
+        'userIds' => 'userIds',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

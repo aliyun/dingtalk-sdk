@@ -21,9 +21,7 @@ class ListPointRulesResponseBody extends Model
         'pointRuleList' => 'pointRuleList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -52,7 +50,7 @@ class ListPointRulesResponseBody extends Model
         if (isset($map['pointRuleList'])) {
             if (!empty($map['pointRuleList'])) {
                 $model->pointRuleList = [];
-                $n                    = 0;
+                $n = 0;
                 foreach ($map['pointRuleList'] as $item) {
                     $model->pointRuleList[$n++] = null !== $item ? pointRuleList::fromMap($item) : $item;
                 }

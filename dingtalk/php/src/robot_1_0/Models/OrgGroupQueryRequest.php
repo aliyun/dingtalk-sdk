@@ -52,17 +52,15 @@ class OrgGroupQueryRequest extends Model
      */
     public $token;
     protected $_name = [
-        'maxResults'         => 'maxResults',
-        'nextToken'          => 'nextToken',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
         'openConversationId' => 'openConversationId',
-        'processQueryKey'    => 'processQueryKey',
-        'robotCode'          => 'robotCode',
-        'token'              => 'token',
+        'processQueryKey' => 'processQueryKey',
+        'robotCode' => 'robotCode',
+        'token' => 'token',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

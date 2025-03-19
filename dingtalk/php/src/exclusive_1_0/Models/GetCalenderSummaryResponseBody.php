@@ -31,12 +31,10 @@ class GetCalenderSummaryResponseBody extends Model
     protected $_name = [
         'calendarCreateUserCnt' => 'calendarCreateUserCnt',
         'recvCalendarUserCnt1d' => 'recvCalendarUserCnt1d',
-        'useCalendarUserCnt1d'  => 'useCalendarUserCnt1d',
+        'useCalendarUserCnt1d' => 'useCalendarUserCnt1d',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

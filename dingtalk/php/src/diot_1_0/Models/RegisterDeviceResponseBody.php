@@ -20,9 +20,7 @@ class RegisterDeviceResponseBody extends Model
         'deviceId' => 'deviceId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -18,13 +18,11 @@ class result extends Model
      */
     public $tagId;
     protected $_name = [
-        'name'  => 'name',
+        'name' => 'name',
         'tagId' => 'tagId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

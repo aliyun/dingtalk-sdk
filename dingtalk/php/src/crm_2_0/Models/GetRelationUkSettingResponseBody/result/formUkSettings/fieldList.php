@@ -19,12 +19,10 @@ class fieldList extends Model
     public $fieldId;
     protected $_name = [
         'bizAlias' => 'bizAlias',
-        'fieldId'  => 'fieldId',
+        'fieldId' => 'fieldId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -29,14 +29,12 @@ class body extends Model
      */
     public $planTime;
     protected $_name = [
-        'date'     => 'date',
+        'date' => 'date',
         'objectId' => 'objectId',
         'planTime' => 'planTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

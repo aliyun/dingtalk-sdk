@@ -24,13 +24,11 @@ class bankOpenDTO extends Model
     public $bankName;
     protected $_name = [
         'bankBranchName' => 'bankBranchName',
-        'bankCardNo'     => 'bankCardNo',
-        'bankName'       => 'bankName',
+        'bankCardNo' => 'bankCardNo',
+        'bankName' => 'bankName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

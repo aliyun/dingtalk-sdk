@@ -37,15 +37,13 @@ class AddMetaModelFieldRequest extends Model
      */
     public $tenant;
     protected $_name = [
-        'bizType'        => 'bizType',
-        'fieldDTOList'   => 'fieldDTOList',
+        'bizType' => 'bizType',
+        'fieldDTOList' => 'fieldDTOList',
         'operatorUserId' => 'operatorUserId',
-        'tenant'         => 'tenant',
+        'tenant' => 'tenant',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -86,7 +84,7 @@ class AddMetaModelFieldRequest extends Model
         if (isset($map['fieldDTOList'])) {
             if (!empty($map['fieldDTOList'])) {
                 $model->fieldDTOList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['fieldDTOList'] as $item) {
                     $model->fieldDTOList[$n++] = null !== $item ? fieldDTOList::fromMap($item) : $item;
                 }

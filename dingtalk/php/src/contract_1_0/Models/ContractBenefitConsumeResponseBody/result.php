@@ -16,9 +16,7 @@ class result extends Model
         'consumeResult' => 'consumeResult',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -33,15 +33,13 @@ class CreateSubscribedCalendarRequest extends Model
      */
     public $subscribeScope;
     protected $_name = [
-        'description'    => 'description',
-        'managers'       => 'managers',
-        'name'           => 'name',
+        'description' => 'description',
+        'managers' => 'managers',
+        'name' => 'name',
         'subscribeScope' => 'subscribeScope',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

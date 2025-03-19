@@ -44,15 +44,13 @@ class CallbackRegiesterRequest extends Model
      */
     public $type;
     protected $_name = [
-        'apiSecret'   => 'apiSecret',
+        'apiSecret' => 'apiSecret',
         'callbackKey' => 'callbackKey',
         'callbackUrl' => 'callbackUrl',
-        'type'        => 'type',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

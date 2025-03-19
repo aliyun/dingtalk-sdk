@@ -26,13 +26,11 @@ class DeleteBizObjectResponseBody extends Model
      */
     public $message;
     protected $_name = [
-        'code'    => 'code',
+        'code' => 'code',
         'message' => 'message',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

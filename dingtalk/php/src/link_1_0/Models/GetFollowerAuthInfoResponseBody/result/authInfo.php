@@ -21,12 +21,10 @@ class authInfo extends Model
     public $mobile;
     protected $_name = [
         'mainCorp' => 'mainCorp',
-        'mobile'   => 'mobile',
+        'mobile' => 'mobile',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -105,22 +105,20 @@ class records extends Model
      */
     public $senderCnt;
     protected $_name = [
-        'atRobotCnt'         => 'atRobotCnt',
-        'bizId'              => 'bizId',
-        'customerCnt'        => 'customerCnt',
-        'groupName'          => 'groupName',
-        'groupSetName'       => 'groupSetName',
-        'loginCnt'           => 'loginCnt',
-        'openConvCnt'        => 'openConvCnt',
+        'atRobotCnt' => 'atRobotCnt',
+        'bizId' => 'bizId',
+        'customerCnt' => 'customerCnt',
+        'groupName' => 'groupName',
+        'groupSetName' => 'groupSetName',
+        'loginCnt' => 'loginCnt',
+        'openConvCnt' => 'openConvCnt',
         'openConversationId' => 'openConversationId',
-        'openGroupSetId'     => 'openGroupSetId',
-        'sendMsgCnt'         => 'sendMsgCnt',
-        'senderCnt'          => 'senderCnt',
+        'openGroupSetId' => 'openGroupSetId',
+        'sendMsgCnt' => 'sendMsgCnt',
+        'senderCnt' => 'senderCnt',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

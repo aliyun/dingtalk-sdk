@@ -42,15 +42,13 @@ class TwoPhaseCommitInventoryRequest extends Model
      */
     public $quota;
     protected $_name = [
-        'benefitCode'   => 'benefitCode',
-        'bizRequestId'  => 'bizRequestId',
+        'benefitCode' => 'benefitCode',
+        'bizRequestId' => 'bizRequestId',
         'executeResult' => 'executeResult',
-        'quota'         => 'quota',
+        'quota' => 'quota',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

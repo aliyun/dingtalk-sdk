@@ -22,13 +22,11 @@ class extField extends Model
      */
     public $itemValue;
     protected $_name = [
-        'itemName'  => 'itemName',
+        'itemName' => 'itemName',
         'itemValue' => 'itemValue',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

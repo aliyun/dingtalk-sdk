@@ -31,13 +31,11 @@ class body extends Model
     protected $_name = [
         'consumeDetail' => 'consumeDetail',
         'pointPoolCode' => 'pointPoolCode',
-        'points'        => 'points',
-        'requestId'     => 'requestId',
+        'points' => 'points',
+        'requestId' => 'requestId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

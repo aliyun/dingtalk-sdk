@@ -16,9 +16,7 @@ class body extends Model
         'keys' => 'keys',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

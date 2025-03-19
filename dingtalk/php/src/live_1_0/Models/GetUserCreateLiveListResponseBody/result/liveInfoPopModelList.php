@@ -24,9 +24,7 @@ class liveInfoPopModelList extends Model
         'liveBasicInfo' => 'liveBasicInfo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

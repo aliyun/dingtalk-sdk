@@ -35,14 +35,12 @@ class ListFeedsRequest extends Model
     public $operatorId;
     protected $_name = [
         'excludeFile' => 'excludeFile',
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
-        'operatorId'  => 'operatorId',
+        'maxResults' => 'maxResults',
+        'nextToken' => 'nextToken',
+        'operatorId' => 'operatorId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

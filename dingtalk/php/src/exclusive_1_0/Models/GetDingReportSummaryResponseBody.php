@@ -20,9 +20,7 @@ class GetDingReportSummaryResponseBody extends Model
         'reportCommentUserCnt1d' => 'reportCommentUserCnt1d',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

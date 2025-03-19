@@ -16,9 +16,7 @@ class notifyConfigs extends Model
         'dingNotify' => 'dingNotify',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

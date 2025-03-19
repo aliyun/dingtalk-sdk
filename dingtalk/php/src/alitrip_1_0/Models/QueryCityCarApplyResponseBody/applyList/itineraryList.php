@@ -106,25 +106,23 @@ class itineraryList extends Model
      */
     public $trafficType;
     protected $_name = [
-        'arrCity'        => 'arrCity',
-        'arrCityCode'    => 'arrCityCode',
-        'arrDate'        => 'arrDate',
-        'costCenterId'   => 'costCenterId',
+        'arrCity' => 'arrCity',
+        'arrCityCode' => 'arrCityCode',
+        'arrDate' => 'arrDate',
+        'costCenterId' => 'costCenterId',
         'costCenterName' => 'costCenterName',
-        'depCity'        => 'depCity',
-        'depCityCode'    => 'depCityCode',
-        'depDate'        => 'depDate',
-        'invoiceId'      => 'invoiceId',
-        'invoiceName'    => 'invoiceName',
-        'itineraryId'    => 'itineraryId',
-        'projectCode'    => 'projectCode',
-        'projectTitle'   => 'projectTitle',
-        'trafficType'    => 'trafficType',
+        'depCity' => 'depCity',
+        'depCityCode' => 'depCityCode',
+        'depDate' => 'depDate',
+        'invoiceId' => 'invoiceId',
+        'invoiceName' => 'invoiceName',
+        'itineraryId' => 'itineraryId',
+        'projectCode' => 'projectCode',
+        'projectTitle' => 'projectTitle',
+        'trafficType' => 'trafficType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

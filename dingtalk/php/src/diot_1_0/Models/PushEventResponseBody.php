@@ -16,9 +16,7 @@ class PushEventResponseBody extends Model
         'eventId' => 'eventId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

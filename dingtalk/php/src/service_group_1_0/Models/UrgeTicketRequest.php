@@ -43,15 +43,13 @@ class UrgeTicketRequest extends Model
      */
     public $ticketMemo;
     protected $_name = [
-        'openTeamId'      => 'openTeamId',
-        'openTicketId'    => 'openTicketId',
+        'openTeamId' => 'openTeamId',
+        'openTicketId' => 'openTicketId',
         'operatorUnionId' => 'operatorUnionId',
-        'ticketMemo'      => 'ticketMemo',
+        'ticketMemo' => 'ticketMemo',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

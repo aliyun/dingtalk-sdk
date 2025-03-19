@@ -38,15 +38,13 @@ class result extends Model
      */
     public $userId;
     protected $_name = [
-        'closingAccountModel'       => 'closingAccountModel',
-        'switchOn'                  => 'switchOn',
+        'closingAccountModel' => 'closingAccountModel',
+        'switchOn' => 'switchOn',
         'unsealClosingAccountModel' => 'unsealClosingAccountModel',
-        'userId'                    => 'userId',
+        'userId' => 'userId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

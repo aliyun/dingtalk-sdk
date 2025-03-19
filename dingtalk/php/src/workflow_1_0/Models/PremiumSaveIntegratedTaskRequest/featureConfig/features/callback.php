@@ -29,14 +29,12 @@ class callback extends Model
      */
     public $version;
     protected $_name = [
-        'apiKey'  => 'apiKey',
+        'apiKey' => 'apiKey',
         'appUuid' => 'appUuid',
         'version' => 'version',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -57,7 +55,7 @@ class callback extends Model
     /**
      * @param array $map
      *
-     * @return callback
+     * @return callable
      */
     public static function fromMap($map = [])
     {

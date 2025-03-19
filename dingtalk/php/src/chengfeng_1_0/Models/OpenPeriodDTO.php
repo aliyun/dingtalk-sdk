@@ -53,16 +53,14 @@ class OpenPeriodDTO extends Model
      */
     public $startDate;
     protected $_name = [
-        'endDate'       => 'endDate',
-        'id'            => 'id',
-        'name'          => 'name',
+        'endDate' => 'endDate',
+        'id' => 'id',
+        'name' => 'name',
         'periodBizType' => 'periodBizType',
-        'startDate'     => 'startDate',
+        'startDate' => 'startDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

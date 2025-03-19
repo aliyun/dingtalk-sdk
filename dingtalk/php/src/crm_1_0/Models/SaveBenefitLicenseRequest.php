@@ -34,14 +34,12 @@ class SaveBenefitLicenseRequest extends Model
      */
     public $saveUserId;
     protected $_name = [
-        'domain'     => 'domain',
-        'licenses'   => 'licenses',
+        'domain' => 'domain',
+        'licenses' => 'licenses',
         'saveUserId' => 'saveUserId',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -79,7 +77,7 @@ class SaveBenefitLicenseRequest extends Model
         if (isset($map['licenses'])) {
             if (!empty($map['licenses'])) {
                 $model->licenses = [];
-                $n               = 0;
+                $n = 0;
                 foreach ($map['licenses'] as $item) {
                     $model->licenses[$n++] = null !== $item ? licenses::fromMap($item) : $item;
                 }

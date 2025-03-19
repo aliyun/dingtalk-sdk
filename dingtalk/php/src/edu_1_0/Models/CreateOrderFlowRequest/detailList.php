@@ -52,15 +52,13 @@ class detailList extends Model
     public $scene;
     protected $_name = [
         'actualAmount' => 'actualAmount',
-        'itemAmount'   => 'itemAmount',
-        'itemId'       => 'itemId',
-        'itemName'     => 'itemName',
-        'scene'        => 'scene',
+        'itemAmount' => 'itemAmount',
+        'itemId' => 'itemId',
+        'itemName' => 'itemName',
+        'scene' => 'scene',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

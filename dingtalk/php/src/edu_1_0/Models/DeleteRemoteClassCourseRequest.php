@@ -20,9 +20,7 @@ class DeleteRemoteClassCourseRequest extends Model
         'authCode' => 'authCode',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

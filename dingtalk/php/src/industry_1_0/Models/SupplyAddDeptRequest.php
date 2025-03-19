@@ -42,15 +42,13 @@ class SupplyAddDeptRequest extends Model
      */
     public $supplyDeptType;
     protected $_name = [
-        'deptName'       => 'deptName',
-        'partnerNumber'  => 'partnerNumber',
-        'superDeptId'    => 'superDeptId',
+        'deptName' => 'deptName',
+        'partnerNumber' => 'partnerNumber',
+        'superDeptId' => 'superDeptId',
         'supplyDeptType' => 'supplyDeptType',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

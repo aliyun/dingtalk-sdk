@@ -16,9 +16,7 @@ class DeleteMinutesResponseBody extends Model
         'taskUuid' => 'taskUuid',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

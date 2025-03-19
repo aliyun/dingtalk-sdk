@@ -53,16 +53,14 @@ class GetLatestDingIndexResponseBody extends Model
      */
     public $statDate;
     protected $_name = [
-        'idxCarbon'     => 'idxCarbon',
+        'idxCarbon' => 'idxCarbon',
         'idxEfficiency' => 'idxEfficiency',
         'idxMonthlyAvg' => 'idxMonthlyAvg',
-        'idxTotal'      => 'idxTotal',
-        'statDate'      => 'statDate',
+        'idxTotal' => 'idxTotal',
+        'statDate' => 'statDate',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

@@ -98,21 +98,19 @@ class machineBluetoothVO extends Model
      */
     public $userDeviceCount;
     protected $_name = [
-        'address'                   => 'address',
-        'bluetoothCheckWithFace'    => 'bluetoothCheckWithFace',
-        'bluetoothDistanceMode'     => 'bluetoothDistanceMode',
+        'address' => 'address',
+        'bluetoothCheckWithFace' => 'bluetoothCheckWithFace',
+        'bluetoothDistanceMode' => 'bluetoothDistanceMode',
         'bluetoothDistanceModeDesc' => 'bluetoothDistanceModeDesc',
-        'bluetoothValue'            => 'bluetoothValue',
-        'latitude'                  => 'latitude',
-        'limitUserDeviceCount'      => 'limitUserDeviceCount',
-        'longitude'                 => 'longitude',
-        'monitorLocationAbnormal'   => 'monitorLocationAbnormal',
-        'userDeviceCount'           => 'userDeviceCount',
+        'bluetoothValue' => 'bluetoothValue',
+        'latitude' => 'latitude',
+        'limitUserDeviceCount' => 'limitUserDeviceCount',
+        'longitude' => 'longitude',
+        'monitorLocationAbnormal' => 'monitorLocationAbnormal',
+        'userDeviceCount' => 'userDeviceCount',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

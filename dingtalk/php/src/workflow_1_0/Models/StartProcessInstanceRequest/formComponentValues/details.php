@@ -16,7 +16,7 @@ class details extends Model
     public $bizAlias;
 
     /**
-     * @var \AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\StartProcessInstanceRequest\formComponentValues\details\details[]
+     * @var details\details[]
      */
     public $details;
 
@@ -49,16 +49,14 @@ class details extends Model
     public $value;
     protected $_name = [
         'bizAlias' => 'bizAlias',
-        'details'  => 'details',
+        'details' => 'details',
         'extValue' => 'extValue',
-        'id'       => 'id',
-        'name'     => 'name',
-        'value'    => 'value',
+        'id' => 'id',
+        'name' => 'name',
+        'value' => 'value',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -105,9 +103,9 @@ class details extends Model
         if (isset($map['details'])) {
             if (!empty($map['details'])) {
                 $model->details = [];
-                $n              = 0;
+                $n = 0;
                 foreach ($map['details'] as $item) {
-                    $model->details[$n++] = null !== $item ? \AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\StartProcessInstanceRequest\formComponentValues\details\details::fromMap($item) : $item;
+                    $model->details[$n++] = null !== $item ? details\details::fromMap($item) : $item;
                 }
             }
         }

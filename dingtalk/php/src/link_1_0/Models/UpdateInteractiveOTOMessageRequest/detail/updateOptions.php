@@ -18,13 +18,11 @@ class updateOptions extends Model
      */
     public $updatePrivateDataByKey;
     protected $_name = [
-        'updateCardDataByKey'    => 'updateCardDataByKey',
+        'updateCardDataByKey' => 'updateCardDataByKey',
         'updatePrivateDataByKey' => 'updatePrivateDataByKey',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

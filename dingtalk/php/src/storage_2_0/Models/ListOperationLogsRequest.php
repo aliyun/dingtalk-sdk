@@ -24,14 +24,12 @@ class ListOperationLogsRequest extends Model
      */
     public $startTime;
     protected $_name = [
-        'endTime'   => 'endTime',
-        'option'    => 'option',
+        'endTime' => 'endTime',
+        'option' => 'option',
         'startTime' => 'startTime',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

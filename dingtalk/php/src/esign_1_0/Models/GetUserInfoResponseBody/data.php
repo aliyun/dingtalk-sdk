@@ -18,13 +18,11 @@ class data extends Model
      */
     public $userRealName;
     protected $_name = [
-        'realName'     => 'realName',
+        'realName' => 'realName',
         'userRealName' => 'userRealName',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

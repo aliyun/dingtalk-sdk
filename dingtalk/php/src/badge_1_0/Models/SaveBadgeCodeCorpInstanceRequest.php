@@ -41,14 +41,12 @@ class SaveBadgeCodeCorpInstanceRequest extends Model
     public $status;
     protected $_name = [
         'codeIdentity' => 'codeIdentity',
-        'corpId'       => 'corpId',
-        'extInfo'      => 'extInfo',
-        'status'       => 'status',
+        'corpId' => 'corpId',
+        'extInfo' => 'extInfo',
+        'status' => 'status',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

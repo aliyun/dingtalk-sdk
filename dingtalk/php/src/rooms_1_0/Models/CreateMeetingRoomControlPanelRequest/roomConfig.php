@@ -62,17 +62,15 @@ class roomConfig extends Model
      */
     public $url;
     protected $_name = [
-        'enName'   => 'enName',
-        'icon'     => 'icon',
-        'name'     => 'name',
+        'enName' => 'enName',
+        'icon' => 'icon',
+        'name' => 'name',
         'showTime' => 'showTime',
-        'sort'     => 'sort',
-        'url'      => 'url',
+        'sort' => 'sort',
+        'url' => 'url',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

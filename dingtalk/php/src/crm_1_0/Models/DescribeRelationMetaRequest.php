@@ -30,13 +30,11 @@ class DescribeRelationMetaRequest extends Model
     public $tenant;
     protected $_name = [
         'operatorUserId' => 'operatorUserId',
-        'relationTypes'  => 'relationTypes',
-        'tenant'         => 'tenant',
+        'relationTypes' => 'relationTypes',
+        'tenant' => 'tenant',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

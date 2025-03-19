@@ -26,12 +26,10 @@ class BatchAddContactsRequest extends Model
     public $relationList;
     protected $_name = [
         'operatorUserId' => 'operatorUserId',
-        'relationList'   => 'relationList',
+        'relationList' => 'relationList',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
@@ -66,7 +64,7 @@ class BatchAddContactsRequest extends Model
         if (isset($map['relationList'])) {
             if (!empty($map['relationList'])) {
                 $model->relationList = [];
-                $n                   = 0;
+                $n = 0;
                 foreach ($map['relationList'] as $item) {
                     $model->relationList[$n++] = null !== $item ? relationList::fromMap($item) : $item;
                 }

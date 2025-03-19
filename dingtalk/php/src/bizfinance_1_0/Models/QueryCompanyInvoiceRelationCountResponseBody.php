@@ -16,9 +16,7 @@ class QueryCompanyInvoiceRelationCountResponseBody extends Model
         'relationCountMap' => 'relationCountMap',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {

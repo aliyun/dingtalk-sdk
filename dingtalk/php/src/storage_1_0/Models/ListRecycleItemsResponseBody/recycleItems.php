@@ -71,20 +71,18 @@ class recycleItems extends Model
      */
     public $type;
     protected $_name = [
-        'dentryId'     => 'dentryId',
-        'id'           => 'id',
-        'operatorId'   => 'operatorId',
+        'dentryId' => 'dentryId',
+        'id' => 'id',
+        'operatorId' => 'operatorId',
         'operatorTime' => 'operatorTime',
         'originalName' => 'originalName',
         'originalPath' => 'originalPath',
-        'size'         => 'size',
-        'spaceId'      => 'spaceId',
-        'type'         => 'type',
+        'size' => 'size',
+        'spaceId' => 'spaceId',
+        'type' => 'type',
     ];
 
-    public function validate()
-    {
-    }
+    public function validate() {}
 
     public function toMap()
     {
