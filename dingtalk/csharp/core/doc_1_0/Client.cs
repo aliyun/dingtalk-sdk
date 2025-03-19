@@ -8194,6 +8194,186 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取文档所有评论</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListCommentsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListCommentsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListCommentsResponse
+        /// </returns>
+        public ListCommentsResponse ListCommentsWithOptions(string docId, ListCommentsRequest request, ListCommentsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsGlobal))
+            {
+                query["isGlobal"] = request.IsGlobal;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsSolved))
+            {
+                query["isSolved"] = request.IsSolved;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListComments",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/docs/" + docId + "/comments",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListCommentsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取文档所有评论</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListCommentsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListCommentsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListCommentsResponse
+        /// </returns>
+        public async Task<ListCommentsResponse> ListCommentsWithOptionsAsync(string docId, ListCommentsRequest request, ListCommentsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsGlobal))
+            {
+                query["isGlobal"] = request.IsGlobal;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsSolved))
+            {
+                query["isSolved"] = request.IsSolved;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListComments",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/docs/" + docId + "/comments",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListCommentsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取文档所有评论</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListCommentsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListCommentsResponse
+        /// </returns>
+        public ListCommentsResponse ListComments(string docId, ListCommentsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListCommentsHeaders headers = new ListCommentsHeaders();
+            return ListCommentsWithOptions(docId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取文档所有评论</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListCommentsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListCommentsResponse
+        /// </returns>
+        public async Task<ListCommentsResponse> ListCommentsAsync(string docId, ListCommentsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListCommentsHeaders headers = new ListCommentsHeaders();
+            return await ListCommentsWithOptionsAsync(docId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询文档模版</para>
         /// </summary>
         /// 
@@ -10647,6 +10827,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 body["complexValues"] = request.ComplexValues;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FontColors))
+            {
+                body["fontColors"] = request.FontColors;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FontSizes))
             {
                 body["fontSizes"] = request.FontSizes;
@@ -10743,6 +10927,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ComplexValues))
             {
                 body["complexValues"] = request.ComplexValues;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FontColors))
+            {
+                body["fontColors"] = request.FontColors;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FontSizes))
             {

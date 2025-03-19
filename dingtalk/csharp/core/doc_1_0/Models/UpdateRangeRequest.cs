@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public List<List<object>> ComplexValues { get; set; }
 
+        [NameInMap("fontColors")]
+        [Validation(Required=false)]
+        public List<List<string>> FontColors { get; set; }
+
         [NameInMap("fontSizes")]
         [Validation(Required=false)]
         public List<List<int?>> FontSizes { get; set; }

@@ -149,6 +149,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
             [Validation(Required=false)]
             public string InvoiceType { get; set; }
 
+            [NameInMap("jumpUrl")]
+            [Validation(Required=false)]
+            public string JumpUrl { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>EM-xxxxx</para>

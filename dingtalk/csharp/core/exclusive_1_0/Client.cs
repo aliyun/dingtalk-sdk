@@ -758,6 +758,162 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>检测安全管控功能命中状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckControlHitStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckControlHitStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckControlHitStatusResponse
+        /// </returns>
+        public CheckControlHitStatusResponse CheckControlHitStatusWithOptions(CheckControlHitStatusRequest request, CheckControlHitStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedMissedFunction))
+            {
+                query["needMissedFunction"] = request.NeedMissedFunction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckControlHitStatus",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/soc/functionHitStatuses/check",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckControlHitStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检测安全管控功能命中状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckControlHitStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckControlHitStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckControlHitStatusResponse
+        /// </returns>
+        public async Task<CheckControlHitStatusResponse> CheckControlHitStatusWithOptionsAsync(CheckControlHitStatusRequest request, CheckControlHitStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedMissedFunction))
+            {
+                query["needMissedFunction"] = request.NeedMissedFunction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckControlHitStatus",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/soc/functionHitStatuses/check",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckControlHitStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检测安全管控功能命中状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckControlHitStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckControlHitStatusResponse
+        /// </returns>
+        public CheckControlHitStatusResponse CheckControlHitStatus(CheckControlHitStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CheckControlHitStatusHeaders headers = new CheckControlHitStatusHeaders();
+            return CheckControlHitStatusWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检测安全管控功能命中状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckControlHitStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckControlHitStatusResponse
+        /// </returns>
+        public async Task<CheckControlHitStatusResponse> CheckControlHitStatusAsync(CheckControlHitStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CheckControlHitStatusHeaders headers = new CheckControlHitStatusHeaders();
+            return await CheckControlHitStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建分组并绑定会话</para>
         /// </summary>
         /// 

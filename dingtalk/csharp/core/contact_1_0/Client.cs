@@ -1272,6 +1272,162 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>修改钉钉号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeDingTalkIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChangeDingTalkIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeDingTalkIdResponse
+        /// </returns>
+        public ChangeDingTalkIdResponse ChangeDingTalkIdWithOptions(ChangeDingTalkIdRequest request, ChangeDingTalkIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTalkId))
+            {
+                body["dingTalkId"] = request.DingTalkId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChangeDingTalkId",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/orgAccounts/dingTalkIds/change",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChangeDingTalkIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改钉钉号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeDingTalkIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChangeDingTalkIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeDingTalkIdResponse
+        /// </returns>
+        public async Task<ChangeDingTalkIdResponse> ChangeDingTalkIdWithOptionsAsync(ChangeDingTalkIdRequest request, ChangeDingTalkIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTalkId))
+            {
+                body["dingTalkId"] = request.DingTalkId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChangeDingTalkId",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/orgAccounts/dingTalkIds/change",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChangeDingTalkIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改钉钉号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeDingTalkIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeDingTalkIdResponse
+        /// </returns>
+        public ChangeDingTalkIdResponse ChangeDingTalkId(ChangeDingTalkIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChangeDingTalkIdHeaders headers = new ChangeDingTalkIdHeaders();
+            return ChangeDingTalkIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改钉钉号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeDingTalkIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeDingTalkIdResponse
+        /// </returns>
+        public async Task<ChangeDingTalkIdResponse> ChangeDingTalkIdAsync(ChangeDingTalkIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChangeDingTalkIdHeaders headers = new ChangeDingTalkIdHeaders();
+            return await ChangeDingTalkIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>专属帐号转交主管理员(创建者)</para>
         /// </summary>
         /// 

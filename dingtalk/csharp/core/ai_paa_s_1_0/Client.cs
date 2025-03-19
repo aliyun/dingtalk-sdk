@@ -67,6 +67,10 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             {
                 body["model"] = request.Model;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Stream))
+            {
+                body["stream"] = request.Stream;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Temperature))
             {
                 body["temperature"] = request.Temperature;
@@ -141,6 +145,10 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Model))
             {
                 body["model"] = request.Model;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Stream))
+            {
+                body["stream"] = request.Stream;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Temperature))
             {

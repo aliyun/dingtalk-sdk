@@ -30,6 +30,170 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>创建邮件文件夹</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMailFolderRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateMailFolderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMailFolderResponse
+        /// </returns>
+        public CreateMailFolderResponse CreateMailFolderWithOptions(string email, CreateMailFolderRequest request, CreateMailFolderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisplayName))
+            {
+                body["displayName"] = request.DisplayName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extensions))
+            {
+                body["extensions"] = request.Extensions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FolerId))
+            {
+                body["folerId"] = request.FolerId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMailFolder",
+                Version = "mail_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/mail/users/" + email + "/mailFolders",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMailFolderResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建邮件文件夹</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMailFolderRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateMailFolderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMailFolderResponse
+        /// </returns>
+        public async Task<CreateMailFolderResponse> CreateMailFolderWithOptionsAsync(string email, CreateMailFolderRequest request, CreateMailFolderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisplayName))
+            {
+                body["displayName"] = request.DisplayName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extensions))
+            {
+                body["extensions"] = request.Extensions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FolerId))
+            {
+                body["folerId"] = request.FolerId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMailFolder",
+                Version = "mail_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/mail/users/" + email + "/mailFolders",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMailFolderResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建邮件文件夹</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMailFolderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMailFolderResponse
+        /// </returns>
+        public CreateMailFolderResponse CreateMailFolder(string email, CreateMailFolderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateMailFolderHeaders headers = new CreateMailFolderHeaders();
+            return CreateMailFolderWithOptions(email, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建邮件文件夹</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMailFolderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMailFolderResponse
+        /// </returns>
+        public async Task<CreateMailFolderResponse> CreateMailFolderAsync(string email, CreateMailFolderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateMailFolderHeaders headers = new CreateMailFolderHeaders();
+            return await CreateMailFolderWithOptionsAsync(email, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建企业邮箱用户</para>
         /// </summary>
         /// 

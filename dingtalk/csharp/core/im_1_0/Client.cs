@@ -5446,6 +5446,154 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询群信息（超管接口）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSuperAdminOpenSceneGroupInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSuperAdminOpenSceneGroupInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSuperAdminOpenSceneGroupInfoResponse
+        /// </returns>
+        public GetSuperAdminOpenSceneGroupInfoResponse GetSuperAdminOpenSceneGroupInfoWithOptions(GetSuperAdminOpenSceneGroupInfoRequest request, GetSuperAdminOpenSceneGroupInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                query["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSuperAdminOpenSceneGroupInfo",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/groupInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSuperAdminOpenSceneGroupInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群信息（超管接口）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSuperAdminOpenSceneGroupInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSuperAdminOpenSceneGroupInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSuperAdminOpenSceneGroupInfoResponse
+        /// </returns>
+        public async Task<GetSuperAdminOpenSceneGroupInfoResponse> GetSuperAdminOpenSceneGroupInfoWithOptionsAsync(GetSuperAdminOpenSceneGroupInfoRequest request, GetSuperAdminOpenSceneGroupInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                query["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSuperAdminOpenSceneGroupInfo",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/groupInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSuperAdminOpenSceneGroupInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群信息（超管接口）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSuperAdminOpenSceneGroupInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSuperAdminOpenSceneGroupInfoResponse
+        /// </returns>
+        public GetSuperAdminOpenSceneGroupInfoResponse GetSuperAdminOpenSceneGroupInfo(GetSuperAdminOpenSceneGroupInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSuperAdminOpenSceneGroupInfoHeaders headers = new GetSuperAdminOpenSceneGroupInfoHeaders();
+            return GetSuperAdminOpenSceneGroupInfoWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群信息（超管接口）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSuperAdminOpenSceneGroupInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSuperAdminOpenSceneGroupInfoResponse
+        /// </returns>
+        public async Task<GetSuperAdminOpenSceneGroupInfoResponse> GetSuperAdminOpenSceneGroupInfoAsync(GetSuperAdminOpenSceneGroupInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSuperAdminOpenSceneGroupInfoHeaders headers = new GetSuperAdminOpenSceneGroupInfoHeaders();
+            return await GetSuperAdminOpenSceneGroupInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>群禁言</para>
         /// </summary>
         /// 
@@ -11726,6 +11874,154 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryUnfurlingRegisterInfoHeaders headers = new QueryUnfurlingRegisterInfoHeaders();
             return await QueryUnfurlingRegisterInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群主视角群LastMessage时间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserViewGroupLastMessageTimeRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserViewGroupLastMessageTimeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserViewGroupLastMessageTimeResponse
+        /// </returns>
+        public QueryUserViewGroupLastMessageTimeResponse QueryUserViewGroupLastMessageTimeWithOptions(QueryUserViewGroupLastMessageTimeRequest request, QueryUserViewGroupLastMessageTimeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUserViewGroupLastMessageTime",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/lastMessageTime/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUserViewGroupLastMessageTimeResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群主视角群LastMessage时间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserViewGroupLastMessageTimeRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserViewGroupLastMessageTimeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserViewGroupLastMessageTimeResponse
+        /// </returns>
+        public async Task<QueryUserViewGroupLastMessageTimeResponse> QueryUserViewGroupLastMessageTimeWithOptionsAsync(QueryUserViewGroupLastMessageTimeRequest request, QueryUserViewGroupLastMessageTimeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUserViewGroupLastMessageTime",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/lastMessageTime/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUserViewGroupLastMessageTimeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群主视角群LastMessage时间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserViewGroupLastMessageTimeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserViewGroupLastMessageTimeResponse
+        /// </returns>
+        public QueryUserViewGroupLastMessageTimeResponse QueryUserViewGroupLastMessageTime(QueryUserViewGroupLastMessageTimeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUserViewGroupLastMessageTimeHeaders headers = new QueryUserViewGroupLastMessageTimeHeaders();
+            return QueryUserViewGroupLastMessageTimeWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群主视角群LastMessage时间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserViewGroupLastMessageTimeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserViewGroupLastMessageTimeResponse
+        /// </returns>
+        public async Task<QueryUserViewGroupLastMessageTimeResponse> QueryUserViewGroupLastMessageTimeAsync(QueryUserViewGroupLastMessageTimeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUserViewGroupLastMessageTimeHeaders headers = new QueryUserViewGroupLastMessageTimeHeaders();
+            return await QueryUserViewGroupLastMessageTimeWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

@@ -39,7 +39,7 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
 
         [NameInMap("created")]
         [Validation(Required=false)]
-        public int? Created { get; set; }
+        public long? Created { get; set; }
 
         [NameInMap("id")]
         [Validation(Required=false)]
@@ -53,13 +53,13 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
         [Validation(Required=false)]
         public ExclusiveModelCompleteServiceResponseBodyUsage Usage { get; set; }
         public class ExclusiveModelCompleteServiceResponseBodyUsage : TeaModel {
-            [NameInMap("input_tokens")]
+            [NameInMap("completion_tokens")]
             [Validation(Required=false)]
-            public int? InputTokens { get; set; }
+            public int? CompletionTokens { get; set; }
 
-            [NameInMap("output_tokens")]
+            [NameInMap("prompt_tokens")]
             [Validation(Required=false)]
-            public int? OutputTokens { get; set; }
+            public int? PromptTokens { get; set; }
 
             [NameInMap("total_tokens")]
             [Validation(Required=false)]
