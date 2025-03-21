@@ -8,7 +8,7 @@ public class ExclusiveModelCompleteServiceResponseBody extends TeaModel {
     public java.util.List<ExclusiveModelCompleteServiceResponseBodyChoices> choices;
 
     @NameInMap("created")
-    public Integer created;
+    public Long created;
 
     @NameInMap("id")
     public String id;
@@ -32,11 +32,11 @@ public class ExclusiveModelCompleteServiceResponseBody extends TeaModel {
         return this.choices;
     }
 
-    public ExclusiveModelCompleteServiceResponseBody setCreated(Integer created) {
+    public ExclusiveModelCompleteServiceResponseBody setCreated(Long created) {
         this.created = created;
         return this;
     }
-    public Integer getCreated() {
+    public Long getCreated() {
         return this.created;
     }
 
@@ -136,11 +136,11 @@ public class ExclusiveModelCompleteServiceResponseBody extends TeaModel {
     }
 
     public static class ExclusiveModelCompleteServiceResponseBodyUsage extends TeaModel {
-        @NameInMap("input_tokens")
-        public Integer inputTokens;
+        @NameInMap("completion_tokens")
+        public Integer completionTokens;
 
-        @NameInMap("output_tokens")
-        public Integer outputTokens;
+        @NameInMap("prompt_tokens")
+        public Integer promptTokens;
 
         @NameInMap("total_tokens")
         public Integer totalTokens;
@@ -150,20 +150,20 @@ public class ExclusiveModelCompleteServiceResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public ExclusiveModelCompleteServiceResponseBodyUsage setInputTokens(Integer inputTokens) {
-            this.inputTokens = inputTokens;
+        public ExclusiveModelCompleteServiceResponseBodyUsage setCompletionTokens(Integer completionTokens) {
+            this.completionTokens = completionTokens;
             return this;
         }
-        public Integer getInputTokens() {
-            return this.inputTokens;
+        public Integer getCompletionTokens() {
+            return this.completionTokens;
         }
 
-        public ExclusiveModelCompleteServiceResponseBodyUsage setOutputTokens(Integer outputTokens) {
-            this.outputTokens = outputTokens;
+        public ExclusiveModelCompleteServiceResponseBodyUsage setPromptTokens(Integer promptTokens) {
+            this.promptTokens = promptTokens;
             return this;
         }
-        public Integer getOutputTokens() {
-            return this.outputTokens;
+        public Integer getPromptTokens() {
+            return this.promptTokens;
         }
 
         public ExclusiveModelCompleteServiceResponseBodyUsage setTotalTokens(Integer totalTokens) {

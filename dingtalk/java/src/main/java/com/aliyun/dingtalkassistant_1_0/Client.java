@@ -144,6 +144,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>分页查询算粒的使用记录</p>
+     * 
+     * @param request BatchGetAICreditsRecordRequest
+     * @param headers BatchGetAICreditsRecordHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchGetAICreditsRecordResponse
+     */
+    public BatchGetAICreditsRecordResponse batchGetAICreditsRecordWithOptions(BatchGetAICreditsRecordRequest request, BatchGetAICreditsRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.assistantId)) {
+            query.put("assistantId", request.assistantId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
+            query.put("cursor", request.cursor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            query.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            query.put("startTime", request.startTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchGetAICreditsRecord"),
+            new TeaPair("version", "assistant_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/assistant/aiCredits/list"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchGetAICreditsRecordResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分页查询算粒的使用记录</p>
+     * 
+     * @param request BatchGetAICreditsRecordRequest
+     * @return BatchGetAICreditsRecordResponse
+     */
+    public BatchGetAICreditsRecordResponse batchGetAICreditsRecord(BatchGetAICreditsRecordRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        BatchGetAICreditsRecordHeaders headers = new BatchGetAICreditsRecordHeaders();
+        return this.batchGetAICreditsRecordWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建AI助理</p>
      * 
      * @param request CreateAssistantRequest
@@ -1232,6 +1308,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListAssistantRunHeaders headers = new ListAssistantRunHeaders();
         return this.listAssistantRunWithOptions(threadId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取指定助理在组织下已安装的实例信息列表</p>
+     * 
+     * @param request ListInstanceRequest
+     * @param headers ListInstanceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListInstanceResponse
+     */
+    public ListInstanceResponse listInstanceWithOptions(ListInstanceRequest request, ListInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.prototypeAssistantId)) {
+            query.put("prototypeAssistantId", request.prototypeAssistantId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListInstance"),
+            new TeaPair("version", "assistant_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/assistant/instances/list"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListInstanceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取指定助理在组织下已安装的实例信息列表</p>
+     * 
+     * @param request ListInstanceRequest
+     * @return ListInstanceResponse
+     */
+    public ListInstanceResponse listInstance(ListInstanceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListInstanceHeaders headers = new ListInstanceHeaders();
+        return this.listInstanceWithOptions(request, headers, runtime);
     }
 
     /**

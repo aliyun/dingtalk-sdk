@@ -10,6 +10,9 @@ public class UpdateRangeRequest extends TeaModel {
     @NameInMap("complexValues")
     public java.util.List<java.util.List<?>> complexValues;
 
+    @NameInMap("fontColors")
+    public java.util.List<java.util.List<String>> fontColors;
+
     @NameInMap("fontSizes")
     public java.util.List<java.util.List<Integer>> fontSizes;
 
@@ -70,6 +73,14 @@ public class UpdateRangeRequest extends TeaModel {
     }
     public java.util.List<java.util.List<?>> getComplexValues() {
         return this.complexValues;
+    }
+
+    public UpdateRangeRequest setFontColors(java.util.List<java.util.List<String>> fontColors) {
+        this.fontColors = fontColors;
+        return this;
+    }
+    public java.util.List<java.util.List<String>> getFontColors() {
+        return this.fontColors;
     }
 
     public UpdateRangeRequest setFontSizes(java.util.List<java.util.List<Integer>> fontSizes) {

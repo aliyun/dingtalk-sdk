@@ -10,11 +10,20 @@ public class ExclusiveModelCompleteServiceRequest extends TeaModel {
     @NameInMap("max_tokens")
     public Integer maxTokens;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("messages")
     public java.util.List<ExclusiveModelCompleteServiceRequestMessages> messages;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("model")
     public String model;
+
+    @NameInMap("stream")
+    public Boolean stream;
 
     @NameInMap("temperature")
     public Double temperature;
@@ -59,6 +68,14 @@ public class ExclusiveModelCompleteServiceRequest extends TeaModel {
         return this.model;
     }
 
+    public ExclusiveModelCompleteServiceRequest setStream(Boolean stream) {
+        this.stream = stream;
+        return this;
+    }
+    public Boolean getStream() {
+        return this.stream;
+    }
+
     public ExclusiveModelCompleteServiceRequest setTemperature(Double temperature) {
         this.temperature = temperature;
         return this;
@@ -76,9 +93,15 @@ public class ExclusiveModelCompleteServiceRequest extends TeaModel {
     }
 
     public static class ExclusiveModelCompleteServiceRequestMessages extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("role")
         public String role;
 

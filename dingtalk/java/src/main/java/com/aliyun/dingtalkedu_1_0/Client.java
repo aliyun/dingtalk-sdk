@@ -6288,6 +6288,86 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>教育大模型开放接口</p>
+     * 
+     * @param request EduAIModelCompleteRequest
+     * @param headers EduAIModelCompleteHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EduAIModelCompleteResponse
+     */
+    public EduAIModelCompleteResponse eduAIModelCompleteWithOptions(EduAIModelCompleteRequest request, EduAIModelCompleteHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxTokens)) {
+            body.put("maxTokens", request.maxTokens);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.model)) {
+            body.put("model", request.model);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.prompt)) {
+            body.put("prompt", request.prompt);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.scene)) {
+            body.put("scene", request.scene);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.temperature)) {
+            body.put("temperature", request.temperature);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.topP)) {
+            body.put("top_p", request.topP);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EduAIModelComplete"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/ai/models/complete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EduAIModelCompleteResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>教育大模型开放接口</p>
+     * 
+     * @param request EduAIModelCompleteRequest
+     * @return EduAIModelCompleteResponse
+     */
+    public EduAIModelCompleteResponse eduAIModelComplete(EduAIModelCompleteRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        EduAIModelCompleteHeaders headers = new EduAIModelCompleteHeaders();
+        return this.eduAIModelCompleteWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>教育侧用户的所有角色</p>
      * 
      * @param request EduFindUserRolesByUserIdRequest
@@ -12128,6 +12208,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>高校AI助理主动发送消息</p>
+     * 
+     * @param request SendCollegeAiAssistantMsgRequest
+     * @param headers SendCollegeAiAssistantMsgHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendCollegeAiAssistantMsgResponse
+     */
+    public SendCollegeAiAssistantMsgResponse sendCollegeAiAssistantMsgWithOptions(SendCollegeAiAssistantMsgRequest request, SendCollegeAiAssistantMsgHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contentType)) {
+            body.put("contentType", request.contentType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SendCollegeAiAssistantMsg"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/colleges/aiAssistants/messages/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SendCollegeAiAssistantMsgResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>高校AI助理主动发送消息</p>
+     * 
+     * @param request SendCollegeAiAssistantMsgRequest
+     * @return SendCollegeAiAssistantMsgResponse
+     */
+    public SendCollegeAiAssistantMsgResponse sendCollegeAiAssistantMsg(SendCollegeAiAssistantMsgRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SendCollegeAiAssistantMsgHeaders headers = new SendCollegeAiAssistantMsgHeaders();
+        return this.sendCollegeAiAssistantMsgWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>收藏文件消息发送</p>
      * 
      * @param request SendFileMessageRequest
@@ -14102,6 +14250,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         VerifyEduOrgCertificationHeaders headers = new VerifyEduOrgCertificationHeaders();
         return this.verifyEduOrgCertificationWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>校验教育用户特殊身份权限</p>
+     * 
+     * @param request VerifyEduUserCertificationRequest
+     * @param headers VerifyEduUserCertificationHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return VerifyEduUserCertificationResponse
+     */
+    public VerifyEduUserCertificationResponse verifyEduUserCertificationWithOptions(VerifyEduUserCertificationRequest request, VerifyEduUserCertificationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            body.put("bizCode", request.bizCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetUserId)) {
+            body.put("targetUserId", request.targetUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "VerifyEduUserCertification"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/users/certifications/verify"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new VerifyEduUserCertificationResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>校验教育用户特殊身份权限</p>
+     * 
+     * @param request VerifyEduUserCertificationRequest
+     * @return VerifyEduUserCertificationResponse
+     */
+    public VerifyEduUserCertificationResponse verifyEduUserCertification(VerifyEduUserCertificationRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        VerifyEduUserCertificationHeaders headers = new VerifyEduUserCertificationHeaders();
+        return this.verifyEduUserCertificationWithOptions(request, headers, runtime);
     }
 
     /**

@@ -47,6 +47,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("model", request.model);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.stream)) {
+            body.put("stream", request.stream);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.temperature)) {
             body.put("temperature", request.temperature);
         }

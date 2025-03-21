@@ -398,6 +398,9 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         @NameInMap("invoiceType")
         public String invoiceType;
 
+        @NameInMap("jumpUrl")
+        public String jumpUrl;
+
         /**
          * <strong>example:</strong>
          * <p>EM-xxxxx</p>
@@ -591,6 +594,14 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         }
         public String getInvoiceType() {
             return this.invoiceType;
+        }
+
+        public QueryReceiptForInvoiceResponseBodyList setJumpUrl(String jumpUrl) {
+            this.jumpUrl = jumpUrl;
+            return this;
+        }
+        public String getJumpUrl() {
+            return this.jumpUrl;
         }
 
         public QueryReceiptForInvoiceResponseBodyList setModelId(String modelId) {
