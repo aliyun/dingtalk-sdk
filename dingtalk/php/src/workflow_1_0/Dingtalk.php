@@ -4015,6 +4015,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->bizData)) {
             $body['bizData'] = $request->bizData;
         }
+        if (!Utils::isUnset($request->featureConfig)) {
+            $body['featureConfig'] = $request->featureConfig;
+        }
         if (!Utils::isUnset($request->formComponentValueList)) {
             $body['formComponentValueList'] = $request->formComponentValueList;
         }

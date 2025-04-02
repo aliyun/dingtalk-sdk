@@ -14,14 +14,14 @@ class BatchGetAICreditsRecordRequest extends Model
     public $assistantId;
 
     /**
-     * @var int
-     */
-    public $cursor;
-
-    /**
      * @var string
      */
     public $endTime;
+
+    /**
+     * @var int
+     */
+    public $pageNumber;
 
     /**
      * @var int
@@ -39,8 +39,8 @@ class BatchGetAICreditsRecordRequest extends Model
     public $unionId;
     protected $_name = [
         'assistantId' => 'assistantId',
-        'cursor' => 'cursor',
         'endTime' => 'endTime',
+        'pageNumber' => 'pageNumber',
         'pageSize' => 'pageSize',
         'startTime' => 'startTime',
         'unionId' => 'unionId',
@@ -54,11 +54,11 @@ class BatchGetAICreditsRecordRequest extends Model
         if (null !== $this->assistantId) {
             $res['assistantId'] = $this->assistantId;
         }
-        if (null !== $this->cursor) {
-            $res['cursor'] = $this->cursor;
-        }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
+        }
+        if (null !== $this->pageNumber) {
+            $res['pageNumber'] = $this->pageNumber;
         }
         if (null !== $this->pageSize) {
             $res['pageSize'] = $this->pageSize;
@@ -84,11 +84,11 @@ class BatchGetAICreditsRecordRequest extends Model
         if (isset($map['assistantId'])) {
             $model->assistantId = $map['assistantId'];
         }
-        if (isset($map['cursor'])) {
-            $model->cursor = $map['cursor'];
-        }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
+        }
+        if (isset($map['pageNumber'])) {
+            $model->pageNumber = $map['pageNumber'];
         }
         if (isset($map['pageSize'])) {
             $model->pageSize = $map['pageSize'];

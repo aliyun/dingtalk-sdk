@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddFinanceEnterpriseAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddFinanceEnterpriseAccountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddFinanceEnterpriseAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BankGatewayInvokeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BankGatewayInvokeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BankGatewayInvokeResponse;
@@ -23,9 +26,15 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptRespons
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\ConfirmPaymentOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\ConfirmPaymentOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\ConfirmPaymentOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreateCollectionOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreateCollectionOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreateCollectionOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryResponse;
@@ -74,6 +83,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCustomerByPageResponse
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountSignUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountSignUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountSignUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailResponse;
@@ -81,6 +93,13 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInvoiceTransferDataHea
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInvoiceTransferDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInvoiceTransferDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInvoiceTransferDataShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentBenefitHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentBenefitRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentBenefitResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentOrderDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentOrderDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentOrderDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentOrderDetailShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileResponse;
@@ -107,6 +126,12 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SignEnterpriseAccountRespon
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SyncReceiptRecallHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SyncReceiptRecallRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SyncReceiptRecallResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateAuxiliaryStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateAuxiliaryStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateAuxiliaryStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateFinanceEnterpriseAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateFinanceEnterpriseAccountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateFinanceEnterpriseAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoResponse;
@@ -135,6 +160,99 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 新增智能财务的企业账户
+     *  *
+     * @param AddFinanceEnterpriseAccountRequest $request AddFinanceEnterpriseAccountRequest
+     * @param AddFinanceEnterpriseAccountHeaders $headers AddFinanceEnterpriseAccountHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddFinanceEnterpriseAccountResponse AddFinanceEnterpriseAccountResponse
+     */
+    public function addFinanceEnterpriseAccountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accountName)) {
+            $body['accountName'] = $request->accountName;
+        }
+        if (!Utils::isUnset($request->accountType)) {
+            $body['accountType'] = $request->accountType;
+        }
+        if (!Utils::isUnset($request->bankCardNo)) {
+            $body['bankCardNo'] = $request->bankCardNo;
+        }
+        if (!Utils::isUnset($request->bankCode)) {
+            $body['bankCode'] = $request->bankCode;
+        }
+        if (!Utils::isUnset($request->bankName)) {
+            $body['bankName'] = $request->bankName;
+        }
+        if (!Utils::isUnset($request->city)) {
+            $body['city'] = $request->city;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->officialName)) {
+            $body['officialName'] = $request->officialName;
+        }
+        if (!Utils::isUnset($request->officialNumber)) {
+            $body['officialNumber'] = $request->officialNumber;
+        }
+        if (!Utils::isUnset($request->province)) {
+            $body['province'] = $request->province;
+        }
+        if (!Utils::isUnset($request->taxNature)) {
+            $body['taxNature'] = $request->taxNature;
+        }
+        if (!Utils::isUnset($request->taxNo)) {
+            $body['taxNo'] = $request->taxNo;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AddFinanceEnterpriseAccount',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/enterpriseAccounts',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AddFinanceEnterpriseAccountResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 新增智能财务的企业账户
+     *  *
+     * @param AddFinanceEnterpriseAccountRequest $request AddFinanceEnterpriseAccountRequest
+     *
+     * @return AddFinanceEnterpriseAccountResponse AddFinanceEnterpriseAccountResponse
+     */
+    public function addFinanceEnterpriseAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddFinanceEnterpriseAccountHeaders([]);
+
+        return $this->addFinanceEnterpriseAccountWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -521,6 +639,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取唤起智能财务收银台的地址
+     *  *
+     * @param ConfirmPaymentOrderRequest $request ConfirmPaymentOrderRequest
+     * @param ConfirmPaymentOrderHeaders $headers ConfirmPaymentOrderHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ConfirmPaymentOrderResponse ConfirmPaymentOrderResponse
+     */
+    public function confirmPaymentOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->outBizNoList)) {
+            $body['outBizNoList'] = $request->outBizNoList;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ConfirmPaymentOrder',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/payments/confirm',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ConfirmPaymentOrderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取唤起智能财务收银台的地址
+     *  *
+     * @param ConfirmPaymentOrderRequest $request ConfirmPaymentOrderRequest
+     *
+     * @return ConfirmPaymentOrderResponse ConfirmPaymentOrderResponse
+     */
+    public function confirmPaymentOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ConfirmPaymentOrderHeaders([]);
+
+        return $this->confirmPaymentOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建收款订单
      *  *
      * @param CreateCollectionOrderRequest $request CreateCollectionOrderRequest
@@ -584,6 +762,87 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateCollectionOrderHeaders([]);
 
         return $this->createCollectionOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建智能财务待支付订单
+     *  *
+     * @param CreatePaymentOrderRequest $request CreatePaymentOrderRequest
+     * @param CreatePaymentOrderHeaders $headers CreatePaymentOrderHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreatePaymentOrderResponse CreatePaymentOrderResponse
+     */
+    public function createPaymentOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->amount)) {
+            $body['amount'] = $request->amount;
+        }
+        if (!Utils::isUnset($request->expireTime)) {
+            $body['expireTime'] = $request->expireTime;
+        }
+        if (!Utils::isUnset($request->outBizNo)) {
+            $body['outBizNo'] = $request->outBizNo;
+        }
+        if (!Utils::isUnset($request->payeeAccountDTO)) {
+            $body['payeeAccountDTO'] = $request->payeeAccountDTO;
+        }
+        if (!Utils::isUnset($request->payerAccountDTO)) {
+            $body['payerAccountDTO'] = $request->payerAccountDTO;
+        }
+        if (!Utils::isUnset($request->paymentOrderTitle)) {
+            $body['paymentOrderTitle'] = $request->paymentOrderTitle;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->usage)) {
+            $body['usage'] = $request->usage;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreatePaymentOrder',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/payments/orders',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreatePaymentOrderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建智能财务待支付订单
+     *  *
+     * @param CreatePaymentOrderRequest $request CreatePaymentOrderRequest
+     *
+     * @return CreatePaymentOrderResponse CreatePaymentOrderResponse
+     */
+    public function createPaymentOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreatePaymentOrderHeaders([]);
+
+        return $this->createPaymentOrderWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1628,6 +1887,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取智能财务企业账户签约地址
+     *  *
+     * @param QueryEnterpriseAccountSignUrlRequest $request QueryEnterpriseAccountSignUrlRequest
+     * @param QueryEnterpriseAccountSignUrlHeaders $headers QueryEnterpriseAccountSignUrlHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryEnterpriseAccountSignUrlResponse QueryEnterpriseAccountSignUrlResponse
+     */
+    public function queryEnterpriseAccountSignUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accountCode)) {
+            $query['accountCode'] = $request->accountCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryEnterpriseAccountSignUrl',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/enterpriseAccounts/sign',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryEnterpriseAccountSignUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取智能财务企业账户签约地址
+     *  *
+     * @param QueryEnterpriseAccountSignUrlRequest $request QueryEnterpriseAccountSignUrlRequest
+     *
+     * @return QueryEnterpriseAccountSignUrlResponse QueryEnterpriseAccountSignUrlResponse
+     */
+    public function queryEnterpriseAccountSignUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryEnterpriseAccountSignUrlHeaders([]);
+
+        return $this->queryEnterpriseAccountSignUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询支付订单详情
      *  *
      * @param string                                 $instanceId
@@ -1746,6 +2065,128 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryInvoiceTransferDataHeaders([]);
 
         return $this->queryInvoiceTransferDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询支付的权益使用信息
+     *  *
+     * @param QueryPaymentBenefitRequest $request QueryPaymentBenefitRequest
+     * @param QueryPaymentBenefitHeaders $headers QueryPaymentBenefitHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryPaymentBenefitResponse QueryPaymentBenefitResponse
+     */
+    public function queryPaymentBenefitWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryPaymentBenefit',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/payments/benefits',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryPaymentBenefitResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询支付的权益使用信息
+     *  *
+     * @param QueryPaymentBenefitRequest $request QueryPaymentBenefitRequest
+     *
+     * @return QueryPaymentBenefitResponse QueryPaymentBenefitResponse
+     */
+    public function queryPaymentBenefit($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPaymentBenefitHeaders([]);
+
+        return $this->queryPaymentBenefitWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询智能财务支付订单信息
+     *  *
+     * @param QueryPaymentOrderDetailRequest $tmpReq  QueryPaymentOrderDetailRequest
+     * @param QueryPaymentOrderDetailHeaders $headers QueryPaymentOrderDetailHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryPaymentOrderDetailResponse QueryPaymentOrderDetailResponse
+     */
+    public function queryPaymentOrderDetailWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new QueryPaymentOrderDetailShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->outBizNoList)) {
+            $request->outBizNoListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->outBizNoList, 'outBizNoList', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->outBizNoListShrink)) {
+            $query['outBizNoList'] = $request->outBizNoListShrink;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryPaymentOrderDetail',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/payments/orders',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryPaymentOrderDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询智能财务支付订单信息
+     *  *
+     * @param QueryPaymentOrderDetailRequest $request QueryPaymentOrderDetailRequest
+     *
+     * @return QueryPaymentOrderDetailResponse QueryPaymentOrderDetailResponse
+     */
+    public function queryPaymentOrderDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPaymentOrderDetailHeaders([]);
+
+        return $this->queryPaymentOrderDetailWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2198,6 +2639,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->accountCode)) {
+            $query['accountCode'] = $request->accountCode;
+        }
         if (!Utils::isUnset($request->bankCardNo)) {
             $query['bankCardNo'] = $request->bankCardNo;
         }
@@ -2315,6 +2759,168 @@ class Dingtalk extends OpenApiClient
         $headers = new SyncReceiptRecallHeaders([]);
 
         return $this->syncReceiptRecallWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新智能财务档案的状态
+     *  *
+     * @param UpdateAuxiliaryStatusRequest $request UpdateAuxiliaryStatusRequest
+     * @param UpdateAuxiliaryStatusHeaders $headers UpdateAuxiliaryStatusHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateAuxiliaryStatusResponse UpdateAuxiliaryStatusResponse
+     */
+    public function updateAuxiliaryStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->auxiliaryId)) {
+            $query['auxiliaryId'] = $request->auxiliaryId;
+        }
+        if (!Utils::isUnset($request->auxiliaryType)) {
+            $query['auxiliaryType'] = $request->auxiliaryType;
+        }
+        if (!Utils::isUnset($request->operateType)) {
+            $query['operateType'] = $request->operateType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateAuxiliaryStatus',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/auxiliaries/status',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateAuxiliaryStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新智能财务档案的状态
+     *  *
+     * @param UpdateAuxiliaryStatusRequest $request UpdateAuxiliaryStatusRequest
+     *
+     * @return UpdateAuxiliaryStatusResponse UpdateAuxiliaryStatusResponse
+     */
+    public function updateAuxiliaryStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateAuxiliaryStatusHeaders([]);
+
+        return $this->updateAuxiliaryStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新智能财务的企业账户
+     *  *
+     * @param UpdateFinanceEnterpriseAccountRequest $request UpdateFinanceEnterpriseAccountRequest
+     * @param UpdateFinanceEnterpriseAccountHeaders $headers UpdateFinanceEnterpriseAccountHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateFinanceEnterpriseAccountResponse UpdateFinanceEnterpriseAccountResponse
+     */
+    public function updateFinanceEnterpriseAccountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accountCode)) {
+            $body['accountCode'] = $request->accountCode;
+        }
+        if (!Utils::isUnset($request->accountName)) {
+            $body['accountName'] = $request->accountName;
+        }
+        if (!Utils::isUnset($request->accountType)) {
+            $body['accountType'] = $request->accountType;
+        }
+        if (!Utils::isUnset($request->bankCardNo)) {
+            $body['bankCardNo'] = $request->bankCardNo;
+        }
+        if (!Utils::isUnset($request->bankCode)) {
+            $body['bankCode'] = $request->bankCode;
+        }
+        if (!Utils::isUnset($request->bankName)) {
+            $body['bankName'] = $request->bankName;
+        }
+        if (!Utils::isUnset($request->city)) {
+            $body['city'] = $request->city;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->officialName)) {
+            $body['officialName'] = $request->officialName;
+        }
+        if (!Utils::isUnset($request->officialNumber)) {
+            $body['officialNumber'] = $request->officialNumber;
+        }
+        if (!Utils::isUnset($request->province)) {
+            $body['province'] = $request->province;
+        }
+        if (!Utils::isUnset($request->taxNature)) {
+            $body['taxNature'] = $request->taxNature;
+        }
+        if (!Utils::isUnset($request->taxNo)) {
+            $body['taxNo'] = $request->taxNo;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateFinanceEnterpriseAccount',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/enterpriseAccounts',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateFinanceEnterpriseAccountResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新智能财务的企业账户
+     *  *
+     * @param UpdateFinanceEnterpriseAccountRequest $request UpdateFinanceEnterpriseAccountRequest
+     *
+     * @return UpdateFinanceEnterpriseAccountResponse UpdateFinanceEnterpriseAccountResponse
+     */
+    public function updateFinanceEnterpriseAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateFinanceEnterpriseAccountHeaders([]);
+
+        return $this->updateFinanceEnterpriseAccountWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -86,6 +86,21 @@ class GetFinanceAccountResponseBody extends Model
      * @var string
      */
     public $creator;
+
+    /**
+     * @var string
+     */
+    public $officialName;
+
+    /**
+     * @var string
+     */
+    public $officialNumber;
+
+    /**
+     * @var string
+     */
+    public $signStatus;
     protected $_name = [
         'accountCode' => 'accountCode',
         'accountId' => 'accountId',
@@ -98,6 +113,9 @@ class GetFinanceAccountResponseBody extends Model
         'bankName' => 'bankName',
         'createTime' => 'createTime',
         'creator' => 'creator',
+        'officialName' => 'officialName',
+        'officialNumber' => 'officialNumber',
+        'signStatus' => 'signStatus',
     ];
 
     public function validate() {}
@@ -137,6 +155,15 @@ class GetFinanceAccountResponseBody extends Model
         }
         if (null !== $this->creator) {
             $res['creator'] = $this->creator;
+        }
+        if (null !== $this->officialName) {
+            $res['officialName'] = $this->officialName;
+        }
+        if (null !== $this->officialNumber) {
+            $res['officialNumber'] = $this->officialNumber;
+        }
+        if (null !== $this->signStatus) {
+            $res['signStatus'] = $this->signStatus;
         }
 
         return $res;
@@ -184,6 +211,15 @@ class GetFinanceAccountResponseBody extends Model
         }
         if (isset($map['creator'])) {
             $model->creator = $map['creator'];
+        }
+        if (isset($map['officialName'])) {
+            $model->officialName = $map['officialName'];
+        }
+        if (isset($map['officialNumber'])) {
+            $model->officialNumber = $map['officialNumber'];
+        }
+        if (isset($map['signStatus'])) {
+            $model->signStatus = $map['signStatus'];
         }
 
         return $model;

@@ -221,6 +221,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallPersonalMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallPersonalMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallPersonalMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReleaseUnfurlingRegisterHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReleaseUnfurlingRegisterRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReleaseUnfurlingRegisterResponse;
@@ -260,6 +263,12 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardResponse
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SetRightPanelHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SetRightPanelRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SetRightPanelResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SuperAdminApplyTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SuperAdminApplyTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SuperAdminApplyTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SuperAdminCloseTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SuperAdminCloseTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SuperAdminCloseTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxCloseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxCloseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxCloseResponse;
@@ -4954,6 +4963,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 用户身份撤回消息
+     *  *
+     * @param RecallPersonalMessageRequest $request RecallPersonalMessageRequest
+     * @param RecallPersonalMessageHeaders $headers RecallPersonalMessageHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RecallPersonalMessageResponse RecallPersonalMessageResponse
+     */
+    public function recallPersonalMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openMessageId)) {
+            $body['openMessageId'] = $request->openMessageId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'RecallPersonalMessage',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/me/messages/recall',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return RecallPersonalMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 用户身份撤回消息
+     *  *
+     * @param RecallPersonalMessageRequest $request RecallPersonalMessageRequest
+     *
+     * @return RecallPersonalMessageResponse RecallPersonalMessageResponse
+     */
+    public function recallPersonalMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RecallPersonalMessageHeaders([]);
+
+        return $this->recallPersonalMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 链接增强规则发布
      *  *
      * @param ReleaseUnfurlingRegisterRequest $request ReleaseUnfurlingRegisterRequest
@@ -5704,6 +5773,132 @@ class Dingtalk extends OpenApiClient
         $headers = new SetRightPanelHeaders([]);
 
         return $this->setRightPanelWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 启用群模板(超管接口)
+     *  *
+     * @param SuperAdminApplyTemplateRequest $request SuperAdminApplyTemplateRequest
+     * @param SuperAdminApplyTemplateHeaders $headers SuperAdminApplyTemplateHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SuperAdminApplyTemplateResponse SuperAdminApplyTemplateResponse
+     */
+    public function superAdminApplyTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->ownerUserId)) {
+            $body['ownerUserId'] = $request->ownerUserId;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SuperAdminApplyTemplate',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/chats/scenegroups/templates/apply',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SuperAdminApplyTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 启用群模板(超管接口)
+     *  *
+     * @param SuperAdminApplyTemplateRequest $request SuperAdminApplyTemplateRequest
+     *
+     * @return SuperAdminApplyTemplateResponse SuperAdminApplyTemplateResponse
+     */
+    public function superAdminApplyTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SuperAdminApplyTemplateHeaders([]);
+
+        return $this->superAdminApplyTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 停用群模板（超管接口）
+     *  *
+     * @param SuperAdminCloseTemplateRequest $request SuperAdminCloseTemplateRequest
+     * @param SuperAdminCloseTemplateHeaders $headers SuperAdminCloseTemplateHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SuperAdminCloseTemplateResponse SuperAdminCloseTemplateResponse
+     */
+    public function superAdminCloseTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->ownerUserId)) {
+            $body['ownerUserId'] = $request->ownerUserId;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SuperAdminCloseTemplate',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/chats/scenegroups/templates/close',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SuperAdminCloseTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 停用群模板（超管接口）
+     *  *
+     * @param SuperAdminCloseTemplateRequest $request SuperAdminCloseTemplateRequest
+     *
+     * @return SuperAdminCloseTemplateResponse SuperAdminCloseTemplateResponse
+     */
+    public function superAdminCloseTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SuperAdminCloseTemplateHeaders([]);
+
+        return $this->superAdminCloseTemplateWithOptions($request, $headers, $runtime);
     }
 
     /**

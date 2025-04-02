@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessInstanceRequest\featureConfig;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessInstanceRequest\formComponentValueList;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessInstanceRequest\notifiers;
 use AlibabaCloud\Tea\Model;
@@ -16,6 +17,11 @@ class PremiumSaveIntegratedProcessInstanceRequest extends Model
      * @var string
      */
     public $bizData;
+
+    /**
+     * @var featureConfig
+     */
+    public $featureConfig;
 
     /**
      * @var formComponentValueList[]
@@ -56,6 +62,7 @@ class PremiumSaveIntegratedProcessInstanceRequest extends Model
     public $url;
     protected $_name = [
         'bizData' => 'bizData',
+        'featureConfig' => 'featureConfig',
         'formComponentValueList' => 'formComponentValueList',
         'notifiers' => 'notifiers',
         'originatorUserId' => 'originatorUserId',
@@ -71,6 +78,9 @@ class PremiumSaveIntegratedProcessInstanceRequest extends Model
         $res = [];
         if (null !== $this->bizData) {
             $res['bizData'] = $this->bizData;
+        }
+        if (null !== $this->featureConfig) {
+            $res['featureConfig'] = null !== $this->featureConfig ? $this->featureConfig->toMap() : null;
         }
         if (null !== $this->formComponentValueList) {
             $res['formComponentValueList'] = [];
@@ -116,6 +126,9 @@ class PremiumSaveIntegratedProcessInstanceRequest extends Model
         $model = new self();
         if (isset($map['bizData'])) {
             $model->bizData = $map['bizData'];
+        }
+        if (isset($map['featureConfig'])) {
+            $model->featureConfig = featureConfig::fromMap($map['featureConfig']);
         }
         if (isset($map['formComponentValueList'])) {
             if (!empty($map['formComponentValueList'])) {

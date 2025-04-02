@@ -67,6 +67,11 @@ class list_ extends Model
     public $bankName;
 
     /**
+     * @var string
+     */
+    public $companyCode;
+
+    /**
      * @description This parameter is required.
      *
      * @example 1631526550994
@@ -83,6 +88,16 @@ class list_ extends Model
      * @var string
      */
     public $creator;
+
+    /**
+     * @var string
+     */
+    public $officialName;
+
+    /**
+     * @var string
+     */
+    public $officialNumber;
 
     /**
      * @var string
@@ -107,8 +122,11 @@ class list_ extends Model
         'amount' => 'amount',
         'bankCode' => 'bankCode',
         'bankName' => 'bankName',
+        'companyCode' => 'companyCode',
         'createTime' => 'createTime',
         'creator' => 'creator',
+        'officialName' => 'officialName',
+        'officialNumber' => 'officialNumber',
         'signStatus' => 'signStatus',
         'supportReceipt' => 'supportReceipt',
         'supportTradeDetail' => 'supportTradeDetail',
@@ -143,11 +161,20 @@ class list_ extends Model
         if (null !== $this->bankName) {
             $res['bankName'] = $this->bankName;
         }
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
+        }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
         }
         if (null !== $this->creator) {
             $res['creator'] = $this->creator;
+        }
+        if (null !== $this->officialName) {
+            $res['officialName'] = $this->officialName;
+        }
+        if (null !== $this->officialNumber) {
+            $res['officialNumber'] = $this->officialNumber;
         }
         if (null !== $this->signStatus) {
             $res['signStatus'] = $this->signStatus;
@@ -194,11 +221,20 @@ class list_ extends Model
         if (isset($map['bankName'])) {
             $model->bankName = $map['bankName'];
         }
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
+        }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
         }
         if (isset($map['creator'])) {
             $model->creator = $map['creator'];
+        }
+        if (isset($map['officialName'])) {
+            $model->officialName = $map['officialName'];
+        }
+        if (isset($map['officialNumber'])) {
+            $model->officialNumber = $map['officialNumber'];
         }
         if (isset($map['signStatus'])) {
             $model->signStatus = $map['signStatus'];

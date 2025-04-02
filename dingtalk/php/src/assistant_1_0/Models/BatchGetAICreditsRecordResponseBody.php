@@ -22,16 +22,10 @@ class BatchGetAICreditsRecordResponseBody extends Model
     /**
      * @var int
      */
-    public $nextCursor;
-
-    /**
-     * @var int
-     */
     public $totalCount;
     protected $_name = [
         'hasMore' => 'hasMore',
         'list' => 'list',
-        'nextCursor' => 'nextCursor',
         'totalCount' => 'totalCount',
     ];
 
@@ -51,9 +45,6 @@ class BatchGetAICreditsRecordResponseBody extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->nextCursor) {
-            $res['nextCursor'] = $this->nextCursor;
         }
         if (null !== $this->totalCount) {
             $res['totalCount'] = $this->totalCount;
@@ -81,9 +72,6 @@ class BatchGetAICreditsRecordResponseBody extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['nextCursor'])) {
-            $model->nextCursor = $map['nextCursor'];
         }
         if (isset($map['totalCount'])) {
             $model->totalCount = $map['totalCount'];

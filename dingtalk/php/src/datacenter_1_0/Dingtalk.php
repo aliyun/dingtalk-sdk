@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateDataDeliverResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateScreenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateScreenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateScreenResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\DataMarketIsvServiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\DataMarketIsvServiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\DataMarketIsvServiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\DataMarketServiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\DataMarketServiceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\DataMarketServiceResponse;
@@ -548,6 +551,72 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateScreenHeaders([]);
 
         return $this->createScreenWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 数据流通中心获取数据服务
+     *  *
+     * @param DataMarketIsvServiceRequest $request DataMarketIsvServiceRequest
+     * @param DataMarketIsvServiceHeaders $headers DataMarketIsvServiceHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DataMarketIsvServiceResponse DataMarketIsvServiceResponse
+     */
+    public function dataMarketIsvServiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accountId)) {
+            $body['accountId'] = $request->accountId;
+        }
+        if (!Utils::isUnset($request->apiId)) {
+            $body['apiId'] = $request->apiId;
+        }
+        if (!Utils::isUnset($request->args)) {
+            $body['args'] = $request->args;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DataMarketIsvService',
+            'version' => 'datacenter_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/datacenter/isv/dataMarketServices/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DataMarketIsvServiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 数据流通中心获取数据服务
+     *  *
+     * @param DataMarketIsvServiceRequest $request DataMarketIsvServiceRequest
+     *
+     * @return DataMarketIsvServiceResponse DataMarketIsvServiceResponse
+     */
+    public function dataMarketIsvService($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DataMarketIsvServiceHeaders([]);
+
+        return $this->dataMarketIsvServiceWithOptions($request, $headers, $runtime);
     }
 
     /**

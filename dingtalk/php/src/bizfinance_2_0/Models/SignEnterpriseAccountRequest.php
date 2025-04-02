@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class SignEnterpriseAccountRequest extends Model
 {
     /**
+     * @example ACC_XXX
+     *
+     * @var string
+     */
+    public $accountCode;
+
+    /**
      * @example 123
      *
      * @var string
@@ -43,6 +50,7 @@ class SignEnterpriseAccountRequest extends Model
      */
     public $signOperateType;
     protected $_name = [
+        'accountCode' => 'accountCode',
         'bankCardNo' => 'bankCardNo',
         'bankOpenId' => 'bankOpenId',
         'channelType' => 'channelType',
@@ -55,6 +63,9 @@ class SignEnterpriseAccountRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->accountCode) {
+            $res['accountCode'] = $this->accountCode;
+        }
         if (null !== $this->bankCardNo) {
             $res['bankCardNo'] = $this->bankCardNo;
         }
@@ -82,6 +93,9 @@ class SignEnterpriseAccountRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['accountCode'])) {
+            $model->accountCode = $map['accountCode'];
+        }
         if (isset($map['bankCardNo'])) {
             $model->bankCardNo = $map['bankCardNo'];
         }

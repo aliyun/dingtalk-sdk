@@ -125,6 +125,7 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduAssetSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateFulfilRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateFulfilRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateFulfilRecordResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlResponse;
@@ -149,6 +150,8 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateRefundFlowResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateRemoteClassCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateRemoteClassCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateRemoteClassCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSectionConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSectionConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSectionConfigResponse;
@@ -182,6 +185,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateUniversityStudentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateUniversityTeacherHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateUniversityTeacherRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateUniversityTeacherResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateWrongQuestionsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateWrongQuestionsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateWrongQuestionsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeactivateDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeactivateDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeactivateDeviceResponse;
@@ -269,6 +275,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EnableCollegeContactSceneStruRespo
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EventTrackHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EventTrackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EventTrackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoResponse;
@@ -435,6 +444,7 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryKitOpenRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryKitOpenRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryKitOpenRecordResponse;
@@ -461,6 +471,7 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryPurchaseInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryRemoteClassCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryRemoteClassCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryRemoteClassCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceResponse;
@@ -3044,6 +3055,111 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 错题本-添加错题
+     *  *
+     * @param CreateRequest  $request CreateRequest
+     * @param CreateHeaders  $headers CreateHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateResponse CreateResponse
+     */
+    public function createWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->answerContent)) {
+            $body['answerContent'] = $request->answerContent;
+        }
+        if (!Utils::isUnset($request->difficultyLevel)) {
+            $body['difficultyLevel'] = $request->difficultyLevel;
+        }
+        if (!Utils::isUnset($request->explainAudio)) {
+            $body['explainAudio'] = $request->explainAudio;
+        }
+        if (!Utils::isUnset($request->explainContent)) {
+            $body['explainContent'] = $request->explainContent;
+        }
+        if (!Utils::isUnset($request->generateTime)) {
+            $body['generateTime'] = $request->generateTime;
+        }
+        if (!Utils::isUnset($request->knowledgePointList)) {
+            $body['knowledgePointList'] = $request->knowledgePointList;
+        }
+        if (!Utils::isUnset($request->ownerCode)) {
+            $body['ownerCode'] = $request->ownerCode;
+        }
+        if (!Utils::isUnset($request->ownerType)) {
+            $body['ownerType'] = $request->ownerType;
+        }
+        if (!Utils::isUnset($request->proficiencyLevel)) {
+            $body['proficiencyLevel'] = $request->proficiencyLevel;
+        }
+        if (!Utils::isUnset($request->questionAudio)) {
+            $body['questionAudio'] = $request->questionAudio;
+        }
+        if (!Utils::isUnset($request->questionContent)) {
+            $body['questionContent'] = $request->questionContent;
+        }
+        if (!Utils::isUnset($request->questionExtension)) {
+            $body['questionExtension'] = $request->questionExtension;
+        }
+        if (!Utils::isUnset($request->questionPicUrl)) {
+            $body['questionPicUrl'] = $request->questionPicUrl;
+        }
+        if (!Utils::isUnset($request->questionType)) {
+            $body['questionType'] = $request->questionType;
+        }
+        if (!Utils::isUnset($request->sourceCode)) {
+            $body['sourceCode'] = $request->sourceCode;
+        }
+        if (!Utils::isUnset($request->studentUserId)) {
+            $body['studentUserId'] = $request->studentUserId;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            $body['subject'] = $request->subject;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'Create',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/wrongQuestions',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 错题本-添加错题
+     *  *
+     * @param CreateRequest $request CreateRequest
+     *
+     * @return CreateResponse CreateResponse
+     */
+    public function create($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateHeaders([]);
+
+        return $this->createWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建App支付订单
      *  *
      * @param CreateAppOrderRequest $request CreateAppOrderRequest
@@ -5194,6 +5310,111 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 错题本-添加错题
+     *  *
+     * @param CreateWrongQuestionsRequest $request CreateWrongQuestionsRequest
+     * @param CreateWrongQuestionsHeaders $headers CreateWrongQuestionsHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateWrongQuestionsResponse CreateWrongQuestionsResponse
+     */
+    public function createWrongQuestionsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->answerContent)) {
+            $body['answerContent'] = $request->answerContent;
+        }
+        if (!Utils::isUnset($request->difficultyLevel)) {
+            $body['difficultyLevel'] = $request->difficultyLevel;
+        }
+        if (!Utils::isUnset($request->explainAudio)) {
+            $body['explainAudio'] = $request->explainAudio;
+        }
+        if (!Utils::isUnset($request->explainContent)) {
+            $body['explainContent'] = $request->explainContent;
+        }
+        if (!Utils::isUnset($request->generateTime)) {
+            $body['generateTime'] = $request->generateTime;
+        }
+        if (!Utils::isUnset($request->knowledgePointList)) {
+            $body['knowledgePointList'] = $request->knowledgePointList;
+        }
+        if (!Utils::isUnset($request->ownerCode)) {
+            $body['ownerCode'] = $request->ownerCode;
+        }
+        if (!Utils::isUnset($request->ownerType)) {
+            $body['ownerType'] = $request->ownerType;
+        }
+        if (!Utils::isUnset($request->proficiencyLevel)) {
+            $body['proficiencyLevel'] = $request->proficiencyLevel;
+        }
+        if (!Utils::isUnset($request->questionAudio)) {
+            $body['questionAudio'] = $request->questionAudio;
+        }
+        if (!Utils::isUnset($request->questionContent)) {
+            $body['questionContent'] = $request->questionContent;
+        }
+        if (!Utils::isUnset($request->questionExtension)) {
+            $body['questionExtension'] = $request->questionExtension;
+        }
+        if (!Utils::isUnset($request->questionPicUrl)) {
+            $body['questionPicUrl'] = $request->questionPicUrl;
+        }
+        if (!Utils::isUnset($request->questionType)) {
+            $body['questionType'] = $request->questionType;
+        }
+        if (!Utils::isUnset($request->sourceCode)) {
+            $body['sourceCode'] = $request->sourceCode;
+        }
+        if (!Utils::isUnset($request->studentUserId)) {
+            $body['studentUserId'] = $request->studentUserId;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            $body['subject'] = $request->subject;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateWrongQuestions',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/corp/wrongQuestions',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateWrongQuestionsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 错题本-添加错题
+     *  *
+     * @param CreateWrongQuestionsRequest $request CreateWrongQuestionsRequest
+     *
+     * @return CreateWrongQuestionsResponse CreateWrongQuestionsResponse
+     */
+    public function createWrongQuestions($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateWrongQuestionsHeaders([]);
+
+        return $this->createWrongQuestionsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 视讯paas机具取消激活
      *  *
      * @param DeactivateDeviceRequest $request DeactivateDeviceRequest
@@ -7000,6 +7221,99 @@ class Dingtalk extends OpenApiClient
         $headers = new EndCourseHeaders([]);
 
         return $this->endCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 新增用户事件跟踪日志
+     *  *
+     * @param EventTrackRequest $request EventTrackRequest
+     * @param EventTrackHeaders $headers EventTrackHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EventTrackResponse EventTrackResponse
+     */
+    public function eventTrackWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionKey)) {
+            $body['actionKey'] = $request->actionKey;
+        }
+        if (!Utils::isUnset($request->actionTime)) {
+            $body['actionTime'] = $request->actionTime;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->bizReq)) {
+            $body['bizReq'] = $request->bizReq;
+        }
+        if (!Utils::isUnset($request->bizResp)) {
+            $body['bizResp'] = $request->bizResp;
+        }
+        if (!Utils::isUnset($request->deviceId)) {
+            $body['deviceId'] = $request->deviceId;
+        }
+        if (!Utils::isUnset($request->eventId)) {
+            $body['eventId'] = $request->eventId;
+        }
+        if (!Utils::isUnset($request->eventType)) {
+            $body['eventType'] = $request->eventType;
+        }
+        if (!Utils::isUnset($request->eventUnit)) {
+            $body['eventUnit'] = $request->eventUnit;
+        }
+        if (!Utils::isUnset($request->eventValue)) {
+            $body['eventValue'] = $request->eventValue;
+        }
+        if (!Utils::isUnset($request->extend)) {
+            $body['extend'] = $request->extend;
+        }
+        if (!Utils::isUnset($request->platform)) {
+            $body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'EventTrack',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/users/events/traceLogs',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return EventTrackResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 新增用户事件跟踪日志
+     *  *
+     * @param EventTrackRequest $request EventTrackRequest
+     *
+     * @return EventTrackResponse EventTrackResponse
+     */
+    public function eventTrack($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EventTrackHeaders([]);
+
+        return $this->eventTrackWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -9893,6 +10207,54 @@ class Dingtalk extends OpenApiClient
         $headers = new PublishSchoolReportHeaders([]);
 
         return $this->publishSchoolReportWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 错题本-查询错题本
+     *  *
+     * @param QueryHeaders   $headers QueryHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryResponse QueryResponse
+     */
+    public function queryWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'Query',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/wrongQuestions/codes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 错题本-查询错题本
+     *  *
+     * @return QueryResponse QueryResponse
+     */
+    public function query()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryHeaders([]);
+
+        return $this->queryWithOptions($headers, $runtime);
     }
 
     /**

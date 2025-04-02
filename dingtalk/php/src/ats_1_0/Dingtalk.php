@@ -59,6 +59,9 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ReportMessageStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncChannelMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncChannelMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncChannelMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncInterviewInfoToAIInterviewAssistantHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncInterviewInfoToAIInterviewAssistantRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncInterviewInfoToAIInterviewAssistantResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateApplicationRegFormHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateApplicationRegFormRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\UpdateApplicationRegFormResponse;
@@ -1337,6 +1340,87 @@ class Dingtalk extends OpenApiClient
         $headers = new SyncChannelMessageHeaders([]);
 
         return $this->syncChannelMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary ats系统同步面试信息给AI面试助手
+     *  *
+     * @param SyncInterviewInfoToAIInterviewAssistantRequest $request SyncInterviewInfoToAIInterviewAssistantRequest
+     * @param SyncInterviewInfoToAIInterviewAssistantHeaders $headers SyncInterviewInfoToAIInterviewAssistantHeaders
+     * @param RuntimeOptions                                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SyncInterviewInfoToAIInterviewAssistantResponse SyncInterviewInfoToAIInterviewAssistantResponse
+     */
+    public function syncInterviewInfoToAIInterviewAssistantWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->conferenceInfoVO)) {
+            $body['conferenceInfoVO'] = $request->conferenceInfoVO;
+        }
+        if (!Utils::isUnset($request->interviewEndTime)) {
+            $body['interviewEndTime'] = $request->interviewEndTime;
+        }
+        if (!Utils::isUnset($request->interviewId)) {
+            $body['interviewId'] = $request->interviewId;
+        }
+        if (!Utils::isUnset($request->interviewStartTime)) {
+            $body['interviewStartTime'] = $request->interviewStartTime;
+        }
+        if (!Utils::isUnset($request->interviewType)) {
+            $body['interviewType'] = $request->interviewType;
+        }
+        if (!Utils::isUnset($request->intervieweeInfoVOList)) {
+            $body['intervieweeInfoVOList'] = $request->intervieweeInfoVOList;
+        }
+        if (!Utils::isUnset($request->interviewerInfoVOList)) {
+            $body['interviewerInfoVOList'] = $request->interviewerInfoVOList;
+        }
+        if (!Utils::isUnset($request->isvId)) {
+            $body['isvId'] = $request->isvId;
+        }
+        if (!Utils::isUnset($request->jobContentVO)) {
+            $body['jobContentVO'] = $request->jobContentVO;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SyncInterviewInfoToAIInterviewAssistant',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/ai/interview/interviewInfos/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SyncInterviewInfoToAIInterviewAssistantResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary ats系统同步面试信息给AI面试助手
+     *  *
+     * @param SyncInterviewInfoToAIInterviewAssistantRequest $request SyncInterviewInfoToAIInterviewAssistantRequest
+     *
+     * @return SyncInterviewInfoToAIInterviewAssistantResponse SyncInterviewInfoToAIInterviewAssistantResponse
+     */
+    public function syncInterviewInfoToAIInterviewAssistant($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncInterviewInfoToAIInterviewAssistantHeaders([]);
+
+        return $this->syncInterviewInfoToAIInterviewAssistantWithOptions($request, $headers, $runtime);
     }
 
     /**
