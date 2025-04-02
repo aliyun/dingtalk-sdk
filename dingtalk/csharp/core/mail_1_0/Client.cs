@@ -194,6 +194,154 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>创建草稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMessageResponse
+        /// </returns>
+        public CreateMessageResponse CreateMessageWithOptions(string email, CreateMessageRequest request, CreateMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Message))
+            {
+                body["message"] = request.Message;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMessage",
+                Version = "mail_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/mail/users/" + email + "/messages",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMessageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建草稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMessageResponse
+        /// </returns>
+        public async Task<CreateMessageResponse> CreateMessageWithOptionsAsync(string email, CreateMessageRequest request, CreateMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Message))
+            {
+                body["message"] = request.Message;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMessage",
+                Version = "mail_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/mail/users/" + email + "/messages",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMessageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建草稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMessageResponse
+        /// </returns>
+        public CreateMessageResponse CreateMessage(string email, CreateMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateMessageHeaders headers = new CreateMessageHeaders();
+            return CreateMessageWithOptions(email, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建草稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMessageResponse
+        /// </returns>
+        public async Task<CreateMessageResponse> CreateMessageAsync(string email, CreateMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateMessageHeaders headers = new CreateMessageHeaders();
+            return await CreateMessageWithOptionsAsync(email, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建企业邮箱用户</para>
         /// </summary>
         /// 
@@ -366,6 +514,154 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取邮件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetMessageResponse
+        /// </returns>
+        public GetMessageResponse GetMessageWithOptions(string email, string id, GetMessageRequest request, GetMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SelectFields))
+            {
+                query["selectFields"] = request.SelectFields;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMessage",
+                Version = "mail_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/mail/users/" + email + "/messages/" + id,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMessageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取邮件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetMessageResponse
+        /// </returns>
+        public async Task<GetMessageResponse> GetMessageWithOptionsAsync(string email, string id, GetMessageRequest request, GetMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SelectFields))
+            {
+                query["selectFields"] = request.SelectFields;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMessage",
+                Version = "mail_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/mail/users/" + email + "/messages/" + id,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMessageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取邮件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetMessageResponse
+        /// </returns>
+        public GetMessageResponse GetMessage(string email, string id, GetMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMessageHeaders headers = new GetMessageHeaders();
+            return GetMessageWithOptions(email, id, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取邮件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetMessageResponse
+        /// </returns>
+        public async Task<GetMessageResponse> GetMessageAsync(string email, string id, GetMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMessageHeaders headers = new GetMessageHeaders();
+            return await GetMessageWithOptionsAsync(email, id, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取指定文件夹的子文件夹列表</para>
         /// </summary>
         /// 
@@ -510,6 +806,318 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListMailFoldersHeaders headers = new ListMailFoldersHeaders();
             return await ListMailFoldersWithOptionsAsync(email, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取邮件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMessagesRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListMessagesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMessagesResponse
+        /// </returns>
+        public ListMessagesResponse ListMessagesWithOptions(string email, string folderId, ListMessagesRequest request, ListMessagesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SelectFields))
+            {
+                query["selectFields"] = request.SelectFields;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListMessages",
+                Version = "mail_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/mail/users/" + email + "/mailFolders/" + folderId + "/messages",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListMessagesResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取邮件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMessagesRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListMessagesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMessagesResponse
+        /// </returns>
+        public async Task<ListMessagesResponse> ListMessagesWithOptionsAsync(string email, string folderId, ListMessagesRequest request, ListMessagesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SelectFields))
+            {
+                query["selectFields"] = request.SelectFields;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListMessages",
+                Version = "mail_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/mail/users/" + email + "/mailFolders/" + folderId + "/messages",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListMessagesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取邮件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMessagesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMessagesResponse
+        /// </returns>
+        public ListMessagesResponse ListMessages(string email, string folderId, ListMessagesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListMessagesHeaders headers = new ListMessagesHeaders();
+            return ListMessagesWithOptions(email, folderId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取邮件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMessagesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMessagesResponse
+        /// </returns>
+        public async Task<ListMessagesResponse> ListMessagesAsync(string email, string folderId, ListMessagesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListMessagesHeaders headers = new ListMessagesHeaders();
+            return await ListMessagesWithOptionsAsync(email, folderId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送邮件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendMessageResponse
+        /// </returns>
+        public SendMessageResponse SendMessageWithOptions(string email, string id, SendMessageRequest request, SendMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SaveToSentItems))
+            {
+                body["saveToSentItems"] = request.SaveToSentItems;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendMessage",
+                Version = "mail_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/mail/users/" + email + "/messages/" + id + "/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendMessageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送邮件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendMessageResponse
+        /// </returns>
+        public async Task<SendMessageResponse> SendMessageWithOptionsAsync(string email, string id, SendMessageRequest request, SendMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SaveToSentItems))
+            {
+                body["saveToSentItems"] = request.SaveToSentItems;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendMessage",
+                Version = "mail_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/mail/users/" + email + "/messages/" + id + "/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendMessageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送邮件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendMessageResponse
+        /// </returns>
+        public SendMessageResponse SendMessage(string email, string id, SendMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendMessageHeaders headers = new SendMessageHeaders();
+            return SendMessageWithOptions(email, id, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送邮件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendMessageResponse
+        /// </returns>
+        public async Task<SendMessageResponse> SendMessageAsync(string email, string id, SendMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendMessageHeaders headers = new SendMessageHeaders();
+            return await SendMessageWithOptionsAsync(email, id, request, headers, runtime);
         }
 
     }

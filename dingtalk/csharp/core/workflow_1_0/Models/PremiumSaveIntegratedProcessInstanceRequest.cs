@@ -17,6 +17,88 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public string BizData { get; set; }
 
+        [NameInMap("featureConfig")]
+        [Validation(Required=false)]
+        public PremiumSaveIntegratedProcessInstanceRequestFeatureConfig FeatureConfig { get; set; }
+        public class PremiumSaveIntegratedProcessInstanceRequestFeatureConfig : TeaModel {
+            [NameInMap("features")]
+            [Validation(Required=false)]
+            public List<PremiumSaveIntegratedProcessInstanceRequestFeatureConfigFeatures> Features { get; set; }
+            public class PremiumSaveIntegratedProcessInstanceRequestFeatureConfigFeatures : TeaModel {
+                [NameInMap("callback")]
+                [Validation(Required=false)]
+                public PremiumSaveIntegratedProcessInstanceRequestFeatureConfigFeaturesCallback Callback { get; set; }
+                public class PremiumSaveIntegratedProcessInstanceRequestFeatureConfigFeaturesCallback : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>abc</para>
+                    /// </summary>
+                    [NameInMap("apiKey")]
+                    [Validation(Required=false)]
+                    public string ApiKey { get; set; }
+
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>abc</para>
+                    /// </summary>
+                    [NameInMap("appUuid")]
+                    [Validation(Required=false)]
+                    public string AppUuid { get; set; }
+
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>1</para>
+                    /// </summary>
+                    [NameInMap("version")]
+                    [Validation(Required=false)]
+                    public string Version { get; set; }
+
+                }
+
+                /// <summary>
+                /// <b>if can be null:</b>
+                /// <c>true</c>
+                /// </summary>
+                [NameInMap("config")]
+                [Validation(Required=false)]
+                public string Config { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para><a href="http://www.dingtalk.com">www.dingtalk.com</a></para>
+                /// </summary>
+                [NameInMap("mobileUrl")]
+                [Validation(Required=false)]
+                public string MobileUrl { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>abc</para>
+                /// </summary>
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para><a href="http://www.dingtalk.com">www.dingtalk.com</a></para>
+                /// </summary>
+                [NameInMap("pcUrl")]
+                [Validation(Required=false)]
+                public string PcUrl { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>ORIGIN</para>
+                /// </summary>
+                [NameInMap("runType")]
+                [Validation(Required=false)]
+                public string RunType { get; set; }
+
+            }
+
+        }
+
         [NameInMap("formComponentValueList")]
         [Validation(Required=false)]
         public List<PremiumSaveIntegratedProcessInstanceRequestFormComponentValueList> FormComponentValueList { get; set; }

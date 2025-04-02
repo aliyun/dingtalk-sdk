@@ -59,10 +59,6 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
 
         }
 
-        [NameInMap("nextCursor")]
-        [Validation(Required=false)]
-        public long? NextCursor { get; set; }
-
         [NameInMap("totalCount")]
         [Validation(Required=false)]
         public int? TotalCount { get; set; }

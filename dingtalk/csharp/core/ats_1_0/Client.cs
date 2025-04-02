@@ -3260,6 +3260,218 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>ats系统同步面试信息给AI面试助手</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncInterviewInfoToAIInterviewAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// SyncInterviewInfoToAIInterviewAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncInterviewInfoToAIInterviewAssistantResponse
+        /// </returns>
+        public SyncInterviewInfoToAIInterviewAssistantResponse SyncInterviewInfoToAIInterviewAssistantWithOptions(SyncInterviewInfoToAIInterviewAssistantRequest request, SyncInterviewInfoToAIInterviewAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConferenceInfoVO))
+            {
+                body["conferenceInfoVO"] = request.ConferenceInfoVO;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewEndTime))
+            {
+                body["interviewEndTime"] = request.InterviewEndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewId))
+            {
+                body["interviewId"] = request.InterviewId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewStartTime))
+            {
+                body["interviewStartTime"] = request.InterviewStartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewType))
+            {
+                body["interviewType"] = request.InterviewType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntervieweeInfoVOList))
+            {
+                body["intervieweeInfoVOList"] = request.IntervieweeInfoVOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewerInfoVOList))
+            {
+                body["interviewerInfoVOList"] = request.InterviewerInfoVOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvId))
+            {
+                body["isvId"] = request.IsvId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobContentVO))
+            {
+                body["jobContentVO"] = request.JobContentVO;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncInterviewInfoToAIInterviewAssistant",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/ai/interview/interviewInfos/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncInterviewInfoToAIInterviewAssistantResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ats系统同步面试信息给AI面试助手</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncInterviewInfoToAIInterviewAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// SyncInterviewInfoToAIInterviewAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncInterviewInfoToAIInterviewAssistantResponse
+        /// </returns>
+        public async Task<SyncInterviewInfoToAIInterviewAssistantResponse> SyncInterviewInfoToAIInterviewAssistantWithOptionsAsync(SyncInterviewInfoToAIInterviewAssistantRequest request, SyncInterviewInfoToAIInterviewAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConferenceInfoVO))
+            {
+                body["conferenceInfoVO"] = request.ConferenceInfoVO;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewEndTime))
+            {
+                body["interviewEndTime"] = request.InterviewEndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewId))
+            {
+                body["interviewId"] = request.InterviewId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewStartTime))
+            {
+                body["interviewStartTime"] = request.InterviewStartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewType))
+            {
+                body["interviewType"] = request.InterviewType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntervieweeInfoVOList))
+            {
+                body["intervieweeInfoVOList"] = request.IntervieweeInfoVOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewerInfoVOList))
+            {
+                body["interviewerInfoVOList"] = request.InterviewerInfoVOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvId))
+            {
+                body["isvId"] = request.IsvId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobContentVO))
+            {
+                body["jobContentVO"] = request.JobContentVO;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncInterviewInfoToAIInterviewAssistant",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/ai/interview/interviewInfos/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncInterviewInfoToAIInterviewAssistantResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ats系统同步面试信息给AI面试助手</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncInterviewInfoToAIInterviewAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncInterviewInfoToAIInterviewAssistantResponse
+        /// </returns>
+        public SyncInterviewInfoToAIInterviewAssistantResponse SyncInterviewInfoToAIInterviewAssistant(SyncInterviewInfoToAIInterviewAssistantRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncInterviewInfoToAIInterviewAssistantHeaders headers = new SyncInterviewInfoToAIInterviewAssistantHeaders();
+            return SyncInterviewInfoToAIInterviewAssistantWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ats系统同步面试信息给AI面试助手</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncInterviewInfoToAIInterviewAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncInterviewInfoToAIInterviewAssistantResponse
+        /// </returns>
+        public async Task<SyncInterviewInfoToAIInterviewAssistantResponse> SyncInterviewInfoToAIInterviewAssistantAsync(SyncInterviewInfoToAIInterviewAssistantRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncInterviewInfoToAIInterviewAssistantHeaders headers = new SyncInterviewInfoToAIInterviewAssistantHeaders();
+            return await SyncInterviewInfoToAIInterviewAssistantWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>更新应聘登记表内容</para>
         /// </summary>
         /// 

@@ -538,6 +538,178 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
         /// </summary>
         /// 
         /// <param name="request">
+        /// DataMarketIsvServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// DataMarketIsvServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DataMarketIsvServiceResponse
+        /// </returns>
+        public DataMarketIsvServiceResponse DataMarketIsvServiceWithOptions(DataMarketIsvServiceRequest request, DataMarketIsvServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountId))
+            {
+                body["accountId"] = request.AccountId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApiId))
+            {
+                body["apiId"] = request.ApiId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Args))
+            {
+                body["args"] = request.Args;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DataMarketIsvService",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/isv/dataMarketServices/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DataMarketIsvServiceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>数据流通中心获取数据服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DataMarketIsvServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// DataMarketIsvServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DataMarketIsvServiceResponse
+        /// </returns>
+        public async Task<DataMarketIsvServiceResponse> DataMarketIsvServiceWithOptionsAsync(DataMarketIsvServiceRequest request, DataMarketIsvServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountId))
+            {
+                body["accountId"] = request.AccountId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApiId))
+            {
+                body["apiId"] = request.ApiId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Args))
+            {
+                body["args"] = request.Args;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DataMarketIsvService",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/isv/dataMarketServices/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DataMarketIsvServiceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>数据流通中心获取数据服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DataMarketIsvServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DataMarketIsvServiceResponse
+        /// </returns>
+        public DataMarketIsvServiceResponse DataMarketIsvService(DataMarketIsvServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DataMarketIsvServiceHeaders headers = new DataMarketIsvServiceHeaders();
+            return DataMarketIsvServiceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>数据流通中心获取数据服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DataMarketIsvServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DataMarketIsvServiceResponse
+        /// </returns>
+        public async Task<DataMarketIsvServiceResponse> DataMarketIsvServiceAsync(DataMarketIsvServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DataMarketIsvServiceHeaders headers = new DataMarketIsvServiceHeaders();
+            return await DataMarketIsvServiceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>数据流通中心获取数据服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
         /// DataMarketServiceRequest
         /// </param>
         /// <param name="headers">

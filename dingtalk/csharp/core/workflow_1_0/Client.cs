@@ -9770,6 +9770,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 body["bizData"] = request.BizData;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeatureConfig))
+            {
+                body["featureConfig"] = request.FeatureConfig;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormComponentValueList))
             {
                 body["formComponentValueList"] = request.FormComponentValueList;
@@ -9848,6 +9852,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizData))
             {
                 body["bizData"] = request.BizData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeatureConfig))
+            {
+                body["featureConfig"] = request.FeatureConfig;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormComponentValueList))
             {

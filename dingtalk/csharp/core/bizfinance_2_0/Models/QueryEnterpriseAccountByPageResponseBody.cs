@@ -88,6 +88,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
             [Validation(Required=false)]
             public string BankName { get; set; }
 
+            [NameInMap("companyCode")]
+            [Validation(Required=false)]
+            public string CompanyCode { get; set; }
+
             /// <summary>
             /// <para>This parameter is required.</para>
             /// 
@@ -107,6 +111,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
             [NameInMap("creator")]
             [Validation(Required=false)]
             public string Creator { get; set; }
+
+            [NameInMap("officialName")]
+            [Validation(Required=false)]
+            public string OfficialName { get; set; }
+
+            [NameInMap("officialNumber")]
+            [Validation(Required=false)]
+            public string OfficialNumber { get; set; }
 
             [NameInMap("signStatus")]
             [Validation(Required=false)]

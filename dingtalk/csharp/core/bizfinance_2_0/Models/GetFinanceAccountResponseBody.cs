@@ -91,6 +91,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public string Creator { get; set; }
 
+        [NameInMap("officialName")]
+        [Validation(Required=false)]
+        public string OfficialName { get; set; }
+
+        [NameInMap("officialNumber")]
+        [Validation(Required=false)]
+        public string OfficialNumber { get; set; }
+
+        [NameInMap("signStatus")]
+        [Validation(Required=false)]
+        public string SignStatus { get; set; }
+
     }
 
 }

@@ -11,6 +11,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
     public class SignEnterpriseAccountRequest : TeaModel {
         /// <summary>
         /// <b>Example:</b>
+        /// <para>ACC_XXX</para>
+        /// </summary>
+        [NameInMap("accountCode")]
+        [Validation(Required=false)]
+        public string AccountCode { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
         /// <para>123</para>
         /// </summary>
         [NameInMap("bankCardNo")]
