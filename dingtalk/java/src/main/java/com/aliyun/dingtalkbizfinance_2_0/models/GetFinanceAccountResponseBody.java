@@ -75,6 +75,15 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     @NameInMap("creator")
     public String creator;
 
+    @NameInMap("officialName")
+    public String officialName;
+
+    @NameInMap("officialNumber")
+    public String officialNumber;
+
+    @NameInMap("signStatus")
+    public String signStatus;
+
     public static GetFinanceAccountResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetFinanceAccountResponseBody self = new GetFinanceAccountResponseBody();
         return TeaModel.build(map, self);
@@ -166,6 +175,30 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     }
     public String getCreator() {
         return this.creator;
+    }
+
+    public GetFinanceAccountResponseBody setOfficialName(String officialName) {
+        this.officialName = officialName;
+        return this;
+    }
+    public String getOfficialName() {
+        return this.officialName;
+    }
+
+    public GetFinanceAccountResponseBody setOfficialNumber(String officialNumber) {
+        this.officialNumber = officialNumber;
+        return this;
+    }
+    public String getOfficialNumber() {
+        return this.officialNumber;
+    }
+
+    public GetFinanceAccountResponseBody setSignStatus(String signStatus) {
+        this.signStatus = signStatus;
+        return this;
+    }
+    public String getSignStatus() {
+        return this.signStatus;
     }
 
 }

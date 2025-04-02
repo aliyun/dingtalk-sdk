@@ -20,6 +20,110 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>新增智能财务的企业账户</p>
+     * 
+     * @param request AddFinanceEnterpriseAccountRequest
+     * @param headers AddFinanceEnterpriseAccountHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddFinanceEnterpriseAccountResponse
+     */
+    public AddFinanceEnterpriseAccountResponse addFinanceEnterpriseAccountWithOptions(AddFinanceEnterpriseAccountRequest request, AddFinanceEnterpriseAccountHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.accountName)) {
+            body.put("accountName", request.accountName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.accountType)) {
+            body.put("accountType", request.accountType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bankCardNo)) {
+            body.put("bankCardNo", request.bankCardNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bankCode)) {
+            body.put("bankCode", request.bankCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bankName)) {
+            body.put("bankName", request.bankName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.city)) {
+            body.put("city", request.city);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.officialName)) {
+            body.put("officialName", request.officialName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.officialNumber)) {
+            body.put("officialNumber", request.officialNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.province)) {
+            body.put("province", request.province);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxNature)) {
+            body.put("taxNature", request.taxNature);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxNo)) {
+            body.put("taxNo", request.taxNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddFinanceEnterpriseAccount"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/enterpriseAccounts"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddFinanceEnterpriseAccountResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>新增智能财务的企业账户</p>
+     * 
+     * @param request AddFinanceEnterpriseAccountRequest
+     * @return AddFinanceEnterpriseAccountResponse
+     */
+    public AddFinanceEnterpriseAccountResponse addFinanceEnterpriseAccount(AddFinanceEnterpriseAccountRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddFinanceEnterpriseAccountHeaders headers = new AddFinanceEnterpriseAccountHeaders();
+        return this.addFinanceEnterpriseAccountWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>银行接入层通用接口</p>
      * 
      * @param request BankGatewayInvokeRequest
@@ -411,6 +515,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取唤起智能财务收银台的地址</p>
+     * 
+     * @param request ConfirmPaymentOrderRequest
+     * @param headers ConfirmPaymentOrderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ConfirmPaymentOrderResponse
+     */
+    public ConfirmPaymentOrderResponse confirmPaymentOrderWithOptions(ConfirmPaymentOrderRequest request, ConfirmPaymentOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.outBizNoList)) {
+            body.put("outBizNoList", request.outBizNoList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ConfirmPaymentOrder"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/payments/confirm"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ConfirmPaymentOrderResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取唤起智能财务收银台的地址</p>
+     * 
+     * @param request ConfirmPaymentOrderRequest
+     * @return ConfirmPaymentOrderResponse
+     */
+    public ConfirmPaymentOrderResponse confirmPaymentOrder(ConfirmPaymentOrderRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ConfirmPaymentOrderHeaders headers = new ConfirmPaymentOrderHeaders();
+        return this.confirmPaymentOrderWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建收款订单</p>
      * 
      * @param request CreateCollectionOrderRequest
@@ -475,6 +639,94 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateCollectionOrderHeaders headers = new CreateCollectionOrderHeaders();
         return this.createCollectionOrderWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建智能财务待支付订单</p>
+     * 
+     * @param request CreatePaymentOrderRequest
+     * @param headers CreatePaymentOrderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreatePaymentOrderResponse
+     */
+    public CreatePaymentOrderResponse createPaymentOrderWithOptions(CreatePaymentOrderRequest request, CreatePaymentOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.amount)) {
+            body.put("amount", request.amount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.expireTime)) {
+            body.put("expireTime", request.expireTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outBizNo)) {
+            body.put("outBizNo", request.outBizNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.payeeAccountDTO)) {
+            body.put("payeeAccountDTO", request.payeeAccountDTO);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.payerAccountDTO)) {
+            body.put("payerAccountDTO", request.payerAccountDTO);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.paymentOrderTitle)) {
+            body.put("paymentOrderTitle", request.paymentOrderTitle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.usage)) {
+            body.put("usage", request.usage);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreatePaymentOrder"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/payments/orders"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreatePaymentOrderResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建智能财务待支付订单</p>
+     * 
+     * @param request CreatePaymentOrderRequest
+     * @return CreatePaymentOrderResponse
+     */
+    public CreatePaymentOrderResponse createPaymentOrder(CreatePaymentOrderRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreatePaymentOrderHeaders headers = new CreatePaymentOrderHeaders();
+        return this.createPaymentOrderWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1547,6 +1799,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取智能财务企业账户签约地址</p>
+     * 
+     * @param request QueryEnterpriseAccountSignUrlRequest
+     * @param headers QueryEnterpriseAccountSignUrlHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryEnterpriseAccountSignUrlResponse
+     */
+    public QueryEnterpriseAccountSignUrlResponse queryEnterpriseAccountSignUrlWithOptions(QueryEnterpriseAccountSignUrlRequest request, QueryEnterpriseAccountSignUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.accountCode)) {
+            query.put("accountCode", request.accountCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryEnterpriseAccountSignUrl"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/enterpriseAccounts/sign"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryEnterpriseAccountSignUrlResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取智能财务企业账户签约地址</p>
+     * 
+     * @param request QueryEnterpriseAccountSignUrlRequest
+     * @return QueryEnterpriseAccountSignUrlResponse
+     */
+    public QueryEnterpriseAccountSignUrlResponse queryEnterpriseAccountSignUrl(QueryEnterpriseAccountSignUrlRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryEnterpriseAccountSignUrlHeaders headers = new QueryEnterpriseAccountSignUrlHeaders();
+        return this.queryEnterpriseAccountSignUrlWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询支付订单详情</p>
      * 
      * @param request QueryInstancePaymentOrderDetailRequest
@@ -1661,6 +1973,128 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryInvoiceTransferDataHeaders headers = new QueryInvoiceTransferDataHeaders();
         return this.queryInvoiceTransferDataWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询支付的权益使用信息</p>
+     * 
+     * @param request QueryPaymentBenefitRequest
+     * @param headers QueryPaymentBenefitHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryPaymentBenefitResponse
+     */
+    public QueryPaymentBenefitResponse queryPaymentBenefitWithOptions(QueryPaymentBenefitRequest request, QueryPaymentBenefitHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryPaymentBenefit"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/payments/benefits"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryPaymentBenefitResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询支付的权益使用信息</p>
+     * 
+     * @param request QueryPaymentBenefitRequest
+     * @return QueryPaymentBenefitResponse
+     */
+    public QueryPaymentBenefitResponse queryPaymentBenefit(QueryPaymentBenefitRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryPaymentBenefitHeaders headers = new QueryPaymentBenefitHeaders();
+        return this.queryPaymentBenefitWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询智能财务支付订单信息</p>
+     * 
+     * @param tmpReq QueryPaymentOrderDetailRequest
+     * @param headers QueryPaymentOrderDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryPaymentOrderDetailResponse
+     */
+    public QueryPaymentOrderDetailResponse queryPaymentOrderDetailWithOptions(QueryPaymentOrderDetailRequest tmpReq, QueryPaymentOrderDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        QueryPaymentOrderDetailShrinkRequest request = new QueryPaymentOrderDetailShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.outBizNoList)) {
+            request.outBizNoListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.outBizNoList, "outBizNoList", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.outBizNoListShrink)) {
+            query.put("outBizNoList", request.outBizNoListShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryPaymentOrderDetail"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/payments/orders"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryPaymentOrderDetailResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询智能财务支付订单信息</p>
+     * 
+     * @param request QueryPaymentOrderDetailRequest
+     * @return QueryPaymentOrderDetailResponse
+     */
+    public QueryPaymentOrderDetailResponse queryPaymentOrderDetail(QueryPaymentOrderDetailRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryPaymentOrderDetailHeaders headers = new QueryPaymentOrderDetailHeaders();
+        return this.queryPaymentOrderDetailWithOptions(request, headers, runtime);
     }
 
     /**
@@ -2117,6 +2551,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SignEnterpriseAccountResponse signEnterpriseAccountWithOptions(SignEnterpriseAccountRequest request, SignEnterpriseAccountHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.accountCode)) {
+            query.put("accountCode", request.accountCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.bankCardNo)) {
             query.put("bankCardNo", request.bankCardNo);
         }
@@ -2239,6 +2677,182 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncReceiptRecallHeaders headers = new SyncReceiptRecallHeaders();
         return this.syncReceiptRecallWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新智能财务档案的状态</p>
+     * 
+     * @param request UpdateAuxiliaryStatusRequest
+     * @param headers UpdateAuxiliaryStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateAuxiliaryStatusResponse
+     */
+    public UpdateAuxiliaryStatusResponse updateAuxiliaryStatusWithOptions(UpdateAuxiliaryStatusRequest request, UpdateAuxiliaryStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.auxiliaryId)) {
+            query.put("auxiliaryId", request.auxiliaryId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.auxiliaryType)) {
+            query.put("auxiliaryType", request.auxiliaryType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateType)) {
+            query.put("operateType", request.operateType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateAuxiliaryStatus"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/auxiliaries/status"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateAuxiliaryStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新智能财务档案的状态</p>
+     * 
+     * @param request UpdateAuxiliaryStatusRequest
+     * @return UpdateAuxiliaryStatusResponse
+     */
+    public UpdateAuxiliaryStatusResponse updateAuxiliaryStatus(UpdateAuxiliaryStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateAuxiliaryStatusHeaders headers = new UpdateAuxiliaryStatusHeaders();
+        return this.updateAuxiliaryStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新智能财务的企业账户</p>
+     * 
+     * @param request UpdateFinanceEnterpriseAccountRequest
+     * @param headers UpdateFinanceEnterpriseAccountHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateFinanceEnterpriseAccountResponse
+     */
+    public UpdateFinanceEnterpriseAccountResponse updateFinanceEnterpriseAccountWithOptions(UpdateFinanceEnterpriseAccountRequest request, UpdateFinanceEnterpriseAccountHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.accountCode)) {
+            body.put("accountCode", request.accountCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.accountName)) {
+            body.put("accountName", request.accountName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.accountType)) {
+            body.put("accountType", request.accountType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bankCardNo)) {
+            body.put("bankCardNo", request.bankCardNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bankCode)) {
+            body.put("bankCode", request.bankCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bankName)) {
+            body.put("bankName", request.bankName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.city)) {
+            body.put("city", request.city);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.officialName)) {
+            body.put("officialName", request.officialName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.officialNumber)) {
+            body.put("officialNumber", request.officialNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.province)) {
+            body.put("province", request.province);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxNature)) {
+            body.put("taxNature", request.taxNature);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxNo)) {
+            body.put("taxNo", request.taxNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateFinanceEnterpriseAccount"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/enterpriseAccounts"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateFinanceEnterpriseAccountResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新智能财务的企业账户</p>
+     * 
+     * @param request UpdateFinanceEnterpriseAccountRequest
+     * @return UpdateFinanceEnterpriseAccountResponse
+     */
+    public UpdateFinanceEnterpriseAccountResponse updateFinanceEnterpriseAccount(UpdateFinanceEnterpriseAccountRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateFinanceEnterpriseAccountHeaders headers = new UpdateFinanceEnterpriseAccountHeaders();
+        return this.updateFinanceEnterpriseAccountWithOptions(request, headers, runtime);
     }
 
     /**

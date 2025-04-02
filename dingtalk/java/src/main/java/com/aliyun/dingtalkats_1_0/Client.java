@@ -1311,6 +1311,94 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>ats系统同步面试信息给AI面试助手</p>
+     * 
+     * @param request SyncInterviewInfoToAIInterviewAssistantRequest
+     * @param headers SyncInterviewInfoToAIInterviewAssistantHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncInterviewInfoToAIInterviewAssistantResponse
+     */
+    public SyncInterviewInfoToAIInterviewAssistantResponse syncInterviewInfoToAIInterviewAssistantWithOptions(SyncInterviewInfoToAIInterviewAssistantRequest request, SyncInterviewInfoToAIInterviewAssistantHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.conferenceInfoVO)) {
+            body.put("conferenceInfoVO", request.conferenceInfoVO);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.interviewEndTime)) {
+            body.put("interviewEndTime", request.interviewEndTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.interviewId)) {
+            body.put("interviewId", request.interviewId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.interviewStartTime)) {
+            body.put("interviewStartTime", request.interviewStartTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.interviewType)) {
+            body.put("interviewType", request.interviewType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.intervieweeInfoVOList)) {
+            body.put("intervieweeInfoVOList", request.intervieweeInfoVOList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.interviewerInfoVOList)) {
+            body.put("interviewerInfoVOList", request.interviewerInfoVOList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isvId)) {
+            body.put("isvId", request.isvId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.jobContentVO)) {
+            body.put("jobContentVO", request.jobContentVO);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SyncInterviewInfoToAIInterviewAssistant"),
+            new TeaPair("version", "ats_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/ats/ai/interview/interviewInfos/sync"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SyncInterviewInfoToAIInterviewAssistantResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>ats系统同步面试信息给AI面试助手</p>
+     * 
+     * @param request SyncInterviewInfoToAIInterviewAssistantRequest
+     * @return SyncInterviewInfoToAIInterviewAssistantResponse
+     */
+    public SyncInterviewInfoToAIInterviewAssistantResponse syncInterviewInfoToAIInterviewAssistant(SyncInterviewInfoToAIInterviewAssistantRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SyncInterviewInfoToAIInterviewAssistantHeaders headers = new SyncInterviewInfoToAIInterviewAssistantHeaders();
+        return this.syncInterviewInfoToAIInterviewAssistantWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>更新应聘登记表内容</p>
      * 
      * @param request UpdateApplicationRegFormRequest

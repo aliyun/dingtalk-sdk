@@ -7,11 +7,11 @@ public class BatchGetAICreditsRecordRequest extends TeaModel {
     @NameInMap("assistantId")
     public String assistantId;
 
-    @NameInMap("cursor")
-    public Integer cursor;
-
     @NameInMap("endTime")
     public String endTime;
+
+    @NameInMap("pageNumber")
+    public Integer pageNumber;
 
     @NameInMap("pageSize")
     public Integer pageSize;
@@ -35,20 +35,20 @@ public class BatchGetAICreditsRecordRequest extends TeaModel {
         return this.assistantId;
     }
 
-    public BatchGetAICreditsRecordRequest setCursor(Integer cursor) {
-        this.cursor = cursor;
-        return this;
-    }
-    public Integer getCursor() {
-        return this.cursor;
-    }
-
     public BatchGetAICreditsRecordRequest setEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
     public String getEndTime() {
         return this.endTime;
+    }
+
+    public BatchGetAICreditsRecordRequest setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
+        return this;
+    }
+    public Integer getPageNumber() {
+        return this.pageNumber;
     }
 
     public BatchGetAICreditsRecordRequest setPageSize(Integer pageSize) {

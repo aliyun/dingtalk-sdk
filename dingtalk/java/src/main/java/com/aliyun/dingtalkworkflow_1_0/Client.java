@@ -3834,6 +3834,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("bizData", request.bizData);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.featureConfig)) {
+            body.put("featureConfig", request.featureConfig);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.formComponentValueList)) {
             body.put("formComponentValueList", request.formComponentValueList);
         }

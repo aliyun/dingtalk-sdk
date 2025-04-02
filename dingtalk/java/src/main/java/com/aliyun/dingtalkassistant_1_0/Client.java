@@ -158,12 +158,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("assistantId", request.assistantId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
-            query.put("cursor", request.cursor);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
             query.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {

@@ -95,6 +95,9 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
         @NameInMap("bankName")
         public String bankName;
 
+        @NameInMap("companyCode")
+        public String companyCode;
+
         /**
          * <p>This parameter is required.</p>
          * 
@@ -112,6 +115,12 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
          */
         @NameInMap("creator")
         public String creator;
+
+        @NameInMap("officialName")
+        public String officialName;
+
+        @NameInMap("officialNumber")
+        public String officialNumber;
 
         @NameInMap("signStatus")
         public String signStatus;
@@ -191,6 +200,14 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
             return this.bankName;
         }
 
+        public QueryEnterpriseAccountByPageResponseBodyList setCompanyCode(String companyCode) {
+            this.companyCode = companyCode;
+            return this;
+        }
+        public String getCompanyCode() {
+            return this.companyCode;
+        }
+
         public QueryEnterpriseAccountByPageResponseBodyList setCreateTime(Long createTime) {
             this.createTime = createTime;
             return this;
@@ -205,6 +222,22 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
         }
         public String getCreator() {
             return this.creator;
+        }
+
+        public QueryEnterpriseAccountByPageResponseBodyList setOfficialName(String officialName) {
+            this.officialName = officialName;
+            return this;
+        }
+        public String getOfficialName() {
+            return this.officialName;
+        }
+
+        public QueryEnterpriseAccountByPageResponseBodyList setOfficialNumber(String officialNumber) {
+            this.officialNumber = officialNumber;
+            return this;
+        }
+        public String getOfficialNumber() {
+            return this.officialNumber;
         }
 
         public QueryEnterpriseAccountByPageResponseBodyList setSignStatus(String signStatus) {

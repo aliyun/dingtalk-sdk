@@ -4728,6 +4728,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>用户身份撤回消息</p>
+     * 
+     * @param request RecallPersonalMessageRequest
+     * @param headers RecallPersonalMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RecallPersonalMessageResponse
+     */
+    public RecallPersonalMessageResponse recallPersonalMessageWithOptions(RecallPersonalMessageRequest request, RecallPersonalMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openMessageId)) {
+            body.put("openMessageId", request.openMessageId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RecallPersonalMessage"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/me/messages/recall"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RecallPersonalMessageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>用户身份撤回消息</p>
+     * 
+     * @param request RecallPersonalMessageRequest
+     * @return RecallPersonalMessageResponse
+     */
+    public RecallPersonalMessageResponse recallPersonalMessage(RecallPersonalMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RecallPersonalMessageHeaders headers = new RecallPersonalMessageHeaders();
+        return this.recallPersonalMessageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>链接增强规则发布</p>
      * 
      * @param request ReleaseUnfurlingRegisterRequest
@@ -5528,6 +5588,134 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SetRightPanelHeaders headers = new SetRightPanelHeaders();
         return this.setRightPanelWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>启用群模板(超管接口)</p>
+     * 
+     * @param request SuperAdminApplyTemplateRequest
+     * @param headers SuperAdminApplyTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SuperAdminApplyTemplateResponse
+     */
+    public SuperAdminApplyTemplateResponse superAdminApplyTemplateWithOptions(SuperAdminApplyTemplateRequest request, SuperAdminApplyTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ownerUserId)) {
+            body.put("ownerUserId", request.ownerUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
+            body.put("templateId", request.templateId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SuperAdminApplyTemplate"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/chats/scenegroups/templates/apply"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SuperAdminApplyTemplateResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>启用群模板(超管接口)</p>
+     * 
+     * @param request SuperAdminApplyTemplateRequest
+     * @return SuperAdminApplyTemplateResponse
+     */
+    public SuperAdminApplyTemplateResponse superAdminApplyTemplate(SuperAdminApplyTemplateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SuperAdminApplyTemplateHeaders headers = new SuperAdminApplyTemplateHeaders();
+        return this.superAdminApplyTemplateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>停用群模板（超管接口）</p>
+     * 
+     * @param request SuperAdminCloseTemplateRequest
+     * @param headers SuperAdminCloseTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SuperAdminCloseTemplateResponse
+     */
+    public SuperAdminCloseTemplateResponse superAdminCloseTemplateWithOptions(SuperAdminCloseTemplateRequest request, SuperAdminCloseTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ownerUserId)) {
+            body.put("ownerUserId", request.ownerUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
+            body.put("templateId", request.templateId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SuperAdminCloseTemplate"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/chats/scenegroups/templates/close"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SuperAdminCloseTemplateResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>停用群模板（超管接口）</p>
+     * 
+     * @param request SuperAdminCloseTemplateRequest
+     * @return SuperAdminCloseTemplateResponse
+     */
+    public SuperAdminCloseTemplateResponse superAdminCloseTemplate(SuperAdminCloseTemplateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SuperAdminCloseTemplateHeaders headers = new SuperAdminCloseTemplateHeaders();
+        return this.superAdminCloseTemplateWithOptions(request, headers, runtime);
     }
 
     /**

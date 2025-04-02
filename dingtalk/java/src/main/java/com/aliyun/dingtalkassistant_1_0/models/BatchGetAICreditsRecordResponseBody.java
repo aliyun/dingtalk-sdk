@@ -10,9 +10,6 @@ public class BatchGetAICreditsRecordResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<BatchGetAICreditsRecordResponseBodyList> list;
 
-    @NameInMap("nextCursor")
-    public Long nextCursor;
-
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -35,14 +32,6 @@ public class BatchGetAICreditsRecordResponseBody extends TeaModel {
     }
     public java.util.List<BatchGetAICreditsRecordResponseBodyList> getList() {
         return this.list;
-    }
-
-    public BatchGetAICreditsRecordResponseBody setNextCursor(Long nextCursor) {
-        this.nextCursor = nextCursor;
-        return this;
-    }
-    public Long getNextCursor() {
-        return this.nextCursor;
     }
 
     public BatchGetAICreditsRecordResponseBody setTotalCount(Integer totalCount) {

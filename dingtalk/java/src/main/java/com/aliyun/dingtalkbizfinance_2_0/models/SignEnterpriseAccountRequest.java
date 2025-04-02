@@ -6,6 +6,13 @@ import com.aliyun.tea.*;
 public class SignEnterpriseAccountRequest extends TeaModel {
     /**
      * <strong>example:</strong>
+     * <p>ACC_XXX</p>
+     */
+    @NameInMap("accountCode")
+    public String accountCode;
+
+    /**
+     * <strong>example:</strong>
      * <p>123</p>
      */
     @NameInMap("bankCardNo")
@@ -48,6 +55,14 @@ public class SignEnterpriseAccountRequest extends TeaModel {
     public static SignEnterpriseAccountRequest build(java.util.Map<String, ?> map) throws Exception {
         SignEnterpriseAccountRequest self = new SignEnterpriseAccountRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SignEnterpriseAccountRequest setAccountCode(String accountCode) {
+        this.accountCode = accountCode;
+        return this;
+    }
+    public String getAccountCode() {
+        return this.accountCode;
     }
 
     public SignEnterpriseAccountRequest setBankCardNo(String bankCardNo) {

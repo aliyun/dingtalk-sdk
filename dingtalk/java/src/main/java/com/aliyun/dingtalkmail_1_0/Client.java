@@ -84,6 +84,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建草稿</p>
+     * 
+     * @param request CreateMessageRequest
+     * @param headers CreateMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateMessageResponse
+     */
+    public CreateMessageResponse createMessageWithOptions(String email, CreateMessageRequest request, CreateMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.message)) {
+            body.put("message", request.message);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateMessage"),
+            new TeaPair("version", "mail_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/mail/users/" + email + "/messages"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateMessageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建草稿</p>
+     * 
+     * @param request CreateMessageRequest
+     * @return CreateMessageResponse
+     */
+    public CreateMessageResponse createMessage(String email, CreateMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateMessageHeaders headers = new CreateMessageHeaders();
+        return this.createMessageWithOptions(email, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建企业邮箱用户</p>
      * 
      * @param request CreateUserRequest
@@ -152,6 +208,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取邮件</p>
+     * 
+     * @param request GetMessageRequest
+     * @param headers GetMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetMessageResponse
+     */
+    public GetMessageResponse getMessageWithOptions(String email, String id, GetMessageRequest request, GetMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.selectFields)) {
+            query.put("selectFields", request.selectFields);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetMessage"),
+            new TeaPair("version", "mail_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/mail/users/" + email + "/messages/" + id + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetMessageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取邮件</p>
+     * 
+     * @param request GetMessageRequest
+     * @return GetMessageResponse
+     */
+    public GetMessageResponse getMessage(String email, String id, GetMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetMessageHeaders headers = new GetMessageHeaders();
+        return this.getMessageWithOptions(email, id, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取指定文件夹的子文件夹列表</p>
      * 
      * @param request ListMailFoldersRequest
@@ -204,5 +316,125 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListMailFoldersHeaders headers = new ListMailFoldersHeaders();
         return this.listMailFoldersWithOptions(email, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取邮件列表</p>
+     * 
+     * @param request ListMessagesRequest
+     * @param headers ListMessagesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListMessagesResponse
+     */
+    public ListMessagesResponse listMessagesWithOptions(String email, String folderId, ListMessagesRequest request, ListMessagesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.selectFields)) {
+            query.put("selectFields", request.selectFields);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListMessages"),
+            new TeaPair("version", "mail_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/mail/users/" + email + "/mailFolders/" + folderId + "/messages"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListMessagesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取邮件列表</p>
+     * 
+     * @param request ListMessagesRequest
+     * @return ListMessagesResponse
+     */
+    public ListMessagesResponse listMessages(String email, String folderId, ListMessagesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListMessagesHeaders headers = new ListMessagesHeaders();
+        return this.listMessagesWithOptions(email, folderId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>发送邮件</p>
+     * 
+     * @param request SendMessageRequest
+     * @param headers SendMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendMessageResponse
+     */
+    public SendMessageResponse sendMessageWithOptions(String email, String id, SendMessageRequest request, SendMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.saveToSentItems)) {
+            body.put("saveToSentItems", request.saveToSentItems);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SendMessage"),
+            new TeaPair("version", "mail_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/mail/users/" + email + "/messages/" + id + "/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SendMessageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>发送邮件</p>
+     * 
+     * @param request SendMessageRequest
+     * @return SendMessageResponse
+     */
+    public SendMessageResponse sendMessage(String email, String id, SendMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SendMessageHeaders headers = new SendMessageHeaders();
+        return this.sendMessageWithOptions(email, id, request, headers, runtime);
     }
 }
