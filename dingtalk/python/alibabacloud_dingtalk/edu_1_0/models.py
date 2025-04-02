@@ -7899,6 +7899,230 @@ class CourseSchedulingComplimentNoticeResponse(TeaModel):
         return self
 
 
+class CreateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateRequest(TeaModel):
+    def __init__(
+        self,
+        answer_content: str = None,
+        difficulty_level: int = None,
+        explain_audio: str = None,
+        explain_content: str = None,
+        generate_time: int = None,
+        knowledge_point_list: List[str] = None,
+        owner_code: str = None,
+        owner_type: str = None,
+        proficiency_level: int = None,
+        question_audio: str = None,
+        question_content: str = None,
+        question_extension: Dict[str, str] = None,
+        question_pic_url: str = None,
+        question_type: str = None,
+        source_code: str = None,
+        student_user_id: str = None,
+        subject: str = None,
+    ):
+        self.answer_content = answer_content
+        self.difficulty_level = difficulty_level
+        self.explain_audio = explain_audio
+        self.explain_content = explain_content
+        self.generate_time = generate_time
+        self.knowledge_point_list = knowledge_point_list
+        self.owner_code = owner_code
+        self.owner_type = owner_type
+        self.proficiency_level = proficiency_level
+        self.question_audio = question_audio
+        self.question_content = question_content
+        self.question_extension = question_extension
+        self.question_pic_url = question_pic_url
+        self.question_type = question_type
+        self.source_code = source_code
+        self.student_user_id = student_user_id
+        self.subject = subject
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.answer_content is not None:
+            result['answerContent'] = self.answer_content
+        if self.difficulty_level is not None:
+            result['difficultyLevel'] = self.difficulty_level
+        if self.explain_audio is not None:
+            result['explainAudio'] = self.explain_audio
+        if self.explain_content is not None:
+            result['explainContent'] = self.explain_content
+        if self.generate_time is not None:
+            result['generateTime'] = self.generate_time
+        if self.knowledge_point_list is not None:
+            result['knowledgePointList'] = self.knowledge_point_list
+        if self.owner_code is not None:
+            result['ownerCode'] = self.owner_code
+        if self.owner_type is not None:
+            result['ownerType'] = self.owner_type
+        if self.proficiency_level is not None:
+            result['proficiencyLevel'] = self.proficiency_level
+        if self.question_audio is not None:
+            result['questionAudio'] = self.question_audio
+        if self.question_content is not None:
+            result['questionContent'] = self.question_content
+        if self.question_extension is not None:
+            result['questionExtension'] = self.question_extension
+        if self.question_pic_url is not None:
+            result['questionPicUrl'] = self.question_pic_url
+        if self.question_type is not None:
+            result['questionType'] = self.question_type
+        if self.source_code is not None:
+            result['sourceCode'] = self.source_code
+        if self.student_user_id is not None:
+            result['studentUserId'] = self.student_user_id
+        if self.subject is not None:
+            result['subject'] = self.subject
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('answerContent') is not None:
+            self.answer_content = m.get('answerContent')
+        if m.get('difficultyLevel') is not None:
+            self.difficulty_level = m.get('difficultyLevel')
+        if m.get('explainAudio') is not None:
+            self.explain_audio = m.get('explainAudio')
+        if m.get('explainContent') is not None:
+            self.explain_content = m.get('explainContent')
+        if m.get('generateTime') is not None:
+            self.generate_time = m.get('generateTime')
+        if m.get('knowledgePointList') is not None:
+            self.knowledge_point_list = m.get('knowledgePointList')
+        if m.get('ownerCode') is not None:
+            self.owner_code = m.get('ownerCode')
+        if m.get('ownerType') is not None:
+            self.owner_type = m.get('ownerType')
+        if m.get('proficiencyLevel') is not None:
+            self.proficiency_level = m.get('proficiencyLevel')
+        if m.get('questionAudio') is not None:
+            self.question_audio = m.get('questionAudio')
+        if m.get('questionContent') is not None:
+            self.question_content = m.get('questionContent')
+        if m.get('questionExtension') is not None:
+            self.question_extension = m.get('questionExtension')
+        if m.get('questionPicUrl') is not None:
+            self.question_pic_url = m.get('questionPicUrl')
+        if m.get('questionType') is not None:
+            self.question_type = m.get('questionType')
+        if m.get('sourceCode') is not None:
+            self.source_code = m.get('sourceCode')
+        if m.get('studentUserId') is not None:
+            self.student_user_id = m.get('studentUserId')
+        if m.get('subject') is not None:
+            self.subject = m.get('subject')
+        return self
+
+
+class CreateResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateAppOrderHeaders(TeaModel):
     def __init__(
         self,
@@ -14303,6 +14527,230 @@ class CreateUniversityTeacherResponse(TeaModel):
         return self
 
 
+class CreateWrongQuestionsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateWrongQuestionsRequest(TeaModel):
+    def __init__(
+        self,
+        answer_content: str = None,
+        difficulty_level: int = None,
+        explain_audio: str = None,
+        explain_content: str = None,
+        generate_time: int = None,
+        knowledge_point_list: List[str] = None,
+        owner_code: str = None,
+        owner_type: str = None,
+        proficiency_level: int = None,
+        question_audio: str = None,
+        question_content: str = None,
+        question_extension: Dict[str, str] = None,
+        question_pic_url: str = None,
+        question_type: str = None,
+        source_code: str = None,
+        student_user_id: str = None,
+        subject: str = None,
+    ):
+        self.answer_content = answer_content
+        self.difficulty_level = difficulty_level
+        self.explain_audio = explain_audio
+        self.explain_content = explain_content
+        self.generate_time = generate_time
+        self.knowledge_point_list = knowledge_point_list
+        self.owner_code = owner_code
+        self.owner_type = owner_type
+        self.proficiency_level = proficiency_level
+        self.question_audio = question_audio
+        self.question_content = question_content
+        self.question_extension = question_extension
+        self.question_pic_url = question_pic_url
+        self.question_type = question_type
+        self.source_code = source_code
+        self.student_user_id = student_user_id
+        self.subject = subject
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.answer_content is not None:
+            result['answerContent'] = self.answer_content
+        if self.difficulty_level is not None:
+            result['difficultyLevel'] = self.difficulty_level
+        if self.explain_audio is not None:
+            result['explainAudio'] = self.explain_audio
+        if self.explain_content is not None:
+            result['explainContent'] = self.explain_content
+        if self.generate_time is not None:
+            result['generateTime'] = self.generate_time
+        if self.knowledge_point_list is not None:
+            result['knowledgePointList'] = self.knowledge_point_list
+        if self.owner_code is not None:
+            result['ownerCode'] = self.owner_code
+        if self.owner_type is not None:
+            result['ownerType'] = self.owner_type
+        if self.proficiency_level is not None:
+            result['proficiencyLevel'] = self.proficiency_level
+        if self.question_audio is not None:
+            result['questionAudio'] = self.question_audio
+        if self.question_content is not None:
+            result['questionContent'] = self.question_content
+        if self.question_extension is not None:
+            result['questionExtension'] = self.question_extension
+        if self.question_pic_url is not None:
+            result['questionPicUrl'] = self.question_pic_url
+        if self.question_type is not None:
+            result['questionType'] = self.question_type
+        if self.source_code is not None:
+            result['sourceCode'] = self.source_code
+        if self.student_user_id is not None:
+            result['studentUserId'] = self.student_user_id
+        if self.subject is not None:
+            result['subject'] = self.subject
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('answerContent') is not None:
+            self.answer_content = m.get('answerContent')
+        if m.get('difficultyLevel') is not None:
+            self.difficulty_level = m.get('difficultyLevel')
+        if m.get('explainAudio') is not None:
+            self.explain_audio = m.get('explainAudio')
+        if m.get('explainContent') is not None:
+            self.explain_content = m.get('explainContent')
+        if m.get('generateTime') is not None:
+            self.generate_time = m.get('generateTime')
+        if m.get('knowledgePointList') is not None:
+            self.knowledge_point_list = m.get('knowledgePointList')
+        if m.get('ownerCode') is not None:
+            self.owner_code = m.get('ownerCode')
+        if m.get('ownerType') is not None:
+            self.owner_type = m.get('ownerType')
+        if m.get('proficiencyLevel') is not None:
+            self.proficiency_level = m.get('proficiencyLevel')
+        if m.get('questionAudio') is not None:
+            self.question_audio = m.get('questionAudio')
+        if m.get('questionContent') is not None:
+            self.question_content = m.get('questionContent')
+        if m.get('questionExtension') is not None:
+            self.question_extension = m.get('questionExtension')
+        if m.get('questionPicUrl') is not None:
+            self.question_pic_url = m.get('questionPicUrl')
+        if m.get('questionType') is not None:
+            self.question_type = m.get('questionType')
+        if m.get('sourceCode') is not None:
+            self.source_code = m.get('sourceCode')
+        if m.get('studentUserId') is not None:
+            self.student_user_id = m.get('studentUserId')
+        if m.get('subject') is not None:
+            self.subject = m.get('subject')
+        return self
+
+
+class CreateWrongQuestionsResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateWrongQuestionsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateWrongQuestionsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateWrongQuestionsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeactivateDeviceHeaders(TeaModel):
     def __init__(
         self,
@@ -18732,6 +19180,217 @@ class EndCourseResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EndCourseResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class EventTrackHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EventTrackRequest(TeaModel):
+    def __init__(
+        self,
+        action_key: str = None,
+        action_time: str = None,
+        biz_code: str = None,
+        biz_req: str = None,
+        biz_resp: str = None,
+        device_id: str = None,
+        event_id: str = None,
+        event_type: str = None,
+        event_unit: str = None,
+        event_value: str = None,
+        extend: str = None,
+        platform: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.action_key = action_key
+        # This parameter is required.
+        self.action_time = action_time
+        # This parameter is required.
+        self.biz_code = biz_code
+        self.biz_req = biz_req
+        self.biz_resp = biz_resp
+        self.device_id = device_id
+        # This parameter is required.
+        self.event_id = event_id
+        self.event_type = event_type
+        self.event_unit = event_unit
+        self.event_value = event_value
+        self.extend = extend
+        self.platform = platform
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_key is not None:
+            result['actionKey'] = self.action_key
+        if self.action_time is not None:
+            result['actionTime'] = self.action_time
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.biz_req is not None:
+            result['bizReq'] = self.biz_req
+        if self.biz_resp is not None:
+            result['bizResp'] = self.biz_resp
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.event_id is not None:
+            result['eventId'] = self.event_id
+        if self.event_type is not None:
+            result['eventType'] = self.event_type
+        if self.event_unit is not None:
+            result['eventUnit'] = self.event_unit
+        if self.event_value is not None:
+            result['eventValue'] = self.event_value
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionKey') is not None:
+            self.action_key = m.get('actionKey')
+        if m.get('actionTime') is not None:
+            self.action_time = m.get('actionTime')
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('bizReq') is not None:
+            self.biz_req = m.get('bizReq')
+        if m.get('bizResp') is not None:
+            self.biz_resp = m.get('bizResp')
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('eventId') is not None:
+            self.event_id = m.get('eventId')
+        if m.get('eventType') is not None:
+            self.event_type = m.get('eventType')
+        if m.get('eventUnit') is not None:
+            self.event_unit = m.get('eventUnit')
+        if m.get('eventValue') is not None:
+            self.event_value = m.get('eventValue')
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class EventTrackResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class EventTrackResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EventTrackResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EventTrackResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -28973,6 +29632,154 @@ class PublishSchoolReportResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PublishSchoolReportResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        owner_code: str = None,
+    ):
+        self.name = name
+        self.owner_code = owner_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.owner_code is not None:
+            result['ownerCode'] = self.owner_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('ownerCode') is not None:
+            self.owner_code = m.get('ownerCode')
+        return self
+
+
+class QueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

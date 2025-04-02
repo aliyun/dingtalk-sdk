@@ -367,15 +367,15 @@ class BatchGetAICreditsRecordRequest(TeaModel):
     def __init__(
         self,
         assistant_id: str = None,
-        cursor: int = None,
         end_time: str = None,
+        page_number: int = None,
         page_size: int = None,
         start_time: str = None,
         union_id: str = None,
     ):
         self.assistant_id = assistant_id
-        self.cursor = cursor
         self.end_time = end_time
+        self.page_number = page_number
         self.page_size = page_size
         self.start_time = start_time
         self.union_id = union_id
@@ -391,10 +391,10 @@ class BatchGetAICreditsRecordRequest(TeaModel):
         result = dict()
         if self.assistant_id is not None:
             result['assistantId'] = self.assistant_id
-        if self.cursor is not None:
-            result['cursor'] = self.cursor
         if self.end_time is not None:
             result['endTime'] = self.end_time
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
         if self.page_size is not None:
             result['pageSize'] = self.page_size
         if self.start_time is not None:
@@ -407,10 +407,10 @@ class BatchGetAICreditsRecordRequest(TeaModel):
         m = m or dict()
         if m.get('assistantId') is not None:
             self.assistant_id = m.get('assistantId')
-        if m.get('cursor') is not None:
-            self.cursor = m.get('cursor')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
         if m.get('startTime') is not None:
@@ -506,12 +506,10 @@ class BatchGetAICreditsRecordResponseBody(TeaModel):
         self,
         has_more: bool = None,
         list: List[BatchGetAICreditsRecordResponseBodyList] = None,
-        next_cursor: int = None,
         total_count: int = None,
     ):
         self.has_more = has_more
         self.list = list
-        self.next_cursor = next_cursor
         self.total_count = total_count
 
     def validate(self):
@@ -532,8 +530,6 @@ class BatchGetAICreditsRecordResponseBody(TeaModel):
         if self.list is not None:
             for k in self.list:
                 result['list'].append(k.to_map() if k else None)
-        if self.next_cursor is not None:
-            result['nextCursor'] = self.next_cursor
         if self.total_count is not None:
             result['totalCount'] = self.total_count
         return result
@@ -547,8 +543,6 @@ class BatchGetAICreditsRecordResponseBody(TeaModel):
             for k in m.get('list'):
                 temp_model = BatchGetAICreditsRecordResponseBodyList()
                 self.list.append(temp_model.from_map(k))
-        if m.get('nextCursor') is not None:
-            self.next_cursor = m.get('nextCursor')
         if m.get('totalCount') is not None:
             self.total_count = m.get('totalCount')
         return self

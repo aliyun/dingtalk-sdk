@@ -2396,6 +2396,152 @@ class Client(OpenApiClient):
         headers = dingtalkats__1__0_models.SyncChannelMessageHeaders()
         return await self.sync_channel_message_with_options_async(request, headers, runtime)
 
+    def sync_interview_info_to_aiinterview_assistant_with_options(
+        self,
+        request: dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantRequest,
+        headers: dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantResponse:
+        """
+        @summary ats系统同步面试信息给AI面试助手
+        
+        @param request: SyncInterviewInfoToAIInterviewAssistantRequest
+        @param headers: SyncInterviewInfoToAIInterviewAssistantHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncInterviewInfoToAIInterviewAssistantResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conference_info_vo):
+            body['conferenceInfoVO'] = request.conference_info_vo
+        if not UtilClient.is_unset(request.interview_end_time):
+            body['interviewEndTime'] = request.interview_end_time
+        if not UtilClient.is_unset(request.interview_id):
+            body['interviewId'] = request.interview_id
+        if not UtilClient.is_unset(request.interview_start_time):
+            body['interviewStartTime'] = request.interview_start_time
+        if not UtilClient.is_unset(request.interview_type):
+            body['interviewType'] = request.interview_type
+        if not UtilClient.is_unset(request.interviewee_info_volist):
+            body['intervieweeInfoVOList'] = request.interviewee_info_volist
+        if not UtilClient.is_unset(request.interviewer_info_volist):
+            body['interviewerInfoVOList'] = request.interviewer_info_volist
+        if not UtilClient.is_unset(request.isv_id):
+            body['isvId'] = request.isv_id
+        if not UtilClient.is_unset(request.job_content_vo):
+            body['jobContentVO'] = request.job_content_vo
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncInterviewInfoToAIInterviewAssistant',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/ai/interview/interviewInfos/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_interview_info_to_aiinterview_assistant_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantRequest,
+        headers: dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantResponse:
+        """
+        @summary ats系统同步面试信息给AI面试助手
+        
+        @param request: SyncInterviewInfoToAIInterviewAssistantRequest
+        @param headers: SyncInterviewInfoToAIInterviewAssistantHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncInterviewInfoToAIInterviewAssistantResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conference_info_vo):
+            body['conferenceInfoVO'] = request.conference_info_vo
+        if not UtilClient.is_unset(request.interview_end_time):
+            body['interviewEndTime'] = request.interview_end_time
+        if not UtilClient.is_unset(request.interview_id):
+            body['interviewId'] = request.interview_id
+        if not UtilClient.is_unset(request.interview_start_time):
+            body['interviewStartTime'] = request.interview_start_time
+        if not UtilClient.is_unset(request.interview_type):
+            body['interviewType'] = request.interview_type
+        if not UtilClient.is_unset(request.interviewee_info_volist):
+            body['intervieweeInfoVOList'] = request.interviewee_info_volist
+        if not UtilClient.is_unset(request.interviewer_info_volist):
+            body['interviewerInfoVOList'] = request.interviewer_info_volist
+        if not UtilClient.is_unset(request.isv_id):
+            body['isvId'] = request.isv_id
+        if not UtilClient.is_unset(request.job_content_vo):
+            body['jobContentVO'] = request.job_content_vo
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncInterviewInfoToAIInterviewAssistant',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/ai/interview/interviewInfos/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_interview_info_to_aiinterview_assistant(
+        self,
+        request: dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantRequest,
+    ) -> dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantResponse:
+        """
+        @summary ats系统同步面试信息给AI面试助手
+        
+        @param request: SyncInterviewInfoToAIInterviewAssistantRequest
+        @return: SyncInterviewInfoToAIInterviewAssistantResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantHeaders()
+        return self.sync_interview_info_to_aiinterview_assistant_with_options(request, headers, runtime)
+
+    async def sync_interview_info_to_aiinterview_assistant_async(
+        self,
+        request: dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantRequest,
+    ) -> dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantResponse:
+        """
+        @summary ats系统同步面试信息给AI面试助手
+        
+        @param request: SyncInterviewInfoToAIInterviewAssistantRequest
+        @return: SyncInterviewInfoToAIInterviewAssistantResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.SyncInterviewInfoToAIInterviewAssistantHeaders()
+        return await self.sync_interview_info_to_aiinterview_assistant_with_options_async(request, headers, runtime)
+
     def update_application_reg_form_with_options(
         self,
         flow_id: str,

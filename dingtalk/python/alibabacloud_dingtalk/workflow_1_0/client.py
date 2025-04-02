@@ -7256,6 +7256,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.biz_data):
             body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.feature_config):
+            body['featureConfig'] = request.feature_config
         if not UtilClient.is_unset(request.form_component_value_list):
             body['formComponentValueList'] = request.form_component_value_list
         if not UtilClient.is_unset(request.notifiers):
@@ -7311,6 +7313,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.biz_data):
             body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.feature_config):
+            body['featureConfig'] = request.feature_config
         if not UtilClient.is_unset(request.form_component_value_list):
             body['formComponentValueList'] = request.form_component_value_list
         if not UtilClient.is_unset(request.notifiers):

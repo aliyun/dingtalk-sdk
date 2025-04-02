@@ -4474,6 +4474,184 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeHeaders()
         return await self.course_scheduling_compliment_notice_with_options_async(request, headers, runtime)
 
+    def create_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateRequest,
+        headers: dingtalkedu__1__0_models.CreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateResponse:
+        """
+        @summary 错题本-添加错题
+        
+        @param request: CreateRequest
+        @param headers: CreateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.answer_content):
+            body['answerContent'] = request.answer_content
+        if not UtilClient.is_unset(request.difficulty_level):
+            body['difficultyLevel'] = request.difficulty_level
+        if not UtilClient.is_unset(request.explain_audio):
+            body['explainAudio'] = request.explain_audio
+        if not UtilClient.is_unset(request.explain_content):
+            body['explainContent'] = request.explain_content
+        if not UtilClient.is_unset(request.generate_time):
+            body['generateTime'] = request.generate_time
+        if not UtilClient.is_unset(request.knowledge_point_list):
+            body['knowledgePointList'] = request.knowledge_point_list
+        if not UtilClient.is_unset(request.owner_code):
+            body['ownerCode'] = request.owner_code
+        if not UtilClient.is_unset(request.owner_type):
+            body['ownerType'] = request.owner_type
+        if not UtilClient.is_unset(request.proficiency_level):
+            body['proficiencyLevel'] = request.proficiency_level
+        if not UtilClient.is_unset(request.question_audio):
+            body['questionAudio'] = request.question_audio
+        if not UtilClient.is_unset(request.question_content):
+            body['questionContent'] = request.question_content
+        if not UtilClient.is_unset(request.question_extension):
+            body['questionExtension'] = request.question_extension
+        if not UtilClient.is_unset(request.question_pic_url):
+            body['questionPicUrl'] = request.question_pic_url
+        if not UtilClient.is_unset(request.question_type):
+            body['questionType'] = request.question_type
+        if not UtilClient.is_unset(request.source_code):
+            body['sourceCode'] = request.source_code
+        if not UtilClient.is_unset(request.student_user_id):
+            body['studentUserId'] = request.student_user_id
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='Create',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/wrongQuestions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateRequest,
+        headers: dingtalkedu__1__0_models.CreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateResponse:
+        """
+        @summary 错题本-添加错题
+        
+        @param request: CreateRequest
+        @param headers: CreateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.answer_content):
+            body['answerContent'] = request.answer_content
+        if not UtilClient.is_unset(request.difficulty_level):
+            body['difficultyLevel'] = request.difficulty_level
+        if not UtilClient.is_unset(request.explain_audio):
+            body['explainAudio'] = request.explain_audio
+        if not UtilClient.is_unset(request.explain_content):
+            body['explainContent'] = request.explain_content
+        if not UtilClient.is_unset(request.generate_time):
+            body['generateTime'] = request.generate_time
+        if not UtilClient.is_unset(request.knowledge_point_list):
+            body['knowledgePointList'] = request.knowledge_point_list
+        if not UtilClient.is_unset(request.owner_code):
+            body['ownerCode'] = request.owner_code
+        if not UtilClient.is_unset(request.owner_type):
+            body['ownerType'] = request.owner_type
+        if not UtilClient.is_unset(request.proficiency_level):
+            body['proficiencyLevel'] = request.proficiency_level
+        if not UtilClient.is_unset(request.question_audio):
+            body['questionAudio'] = request.question_audio
+        if not UtilClient.is_unset(request.question_content):
+            body['questionContent'] = request.question_content
+        if not UtilClient.is_unset(request.question_extension):
+            body['questionExtension'] = request.question_extension
+        if not UtilClient.is_unset(request.question_pic_url):
+            body['questionPicUrl'] = request.question_pic_url
+        if not UtilClient.is_unset(request.question_type):
+            body['questionType'] = request.question_type
+        if not UtilClient.is_unset(request.source_code):
+            body['sourceCode'] = request.source_code
+        if not UtilClient.is_unset(request.student_user_id):
+            body['studentUserId'] = request.student_user_id
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='Create',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/wrongQuestions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create(
+        self,
+        request: dingtalkedu__1__0_models.CreateRequest,
+    ) -> dingtalkedu__1__0_models.CreateResponse:
+        """
+        @summary 错题本-添加错题
+        
+        @param request: CreateRequest
+        @return: CreateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateHeaders()
+        return self.create_with_options(request, headers, runtime)
+
+    async def create_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateRequest,
+    ) -> dingtalkedu__1__0_models.CreateResponse:
+        """
+        @summary 错题本-添加错题
+        
+        @param request: CreateRequest
+        @return: CreateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateHeaders()
+        return await self.create_with_options_async(request, headers, runtime)
+
     def create_app_order_with_options(
         self,
         request: dingtalkedu__1__0_models.CreateAppOrderRequest,
@@ -8372,6 +8550,184 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.CreateUniversityTeacherHeaders()
         return await self.create_university_teacher_with_options_async(request, headers, runtime)
 
+    def create_wrong_questions_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateWrongQuestionsRequest,
+        headers: dingtalkedu__1__0_models.CreateWrongQuestionsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateWrongQuestionsResponse:
+        """
+        @summary 错题本-添加错题
+        
+        @param request: CreateWrongQuestionsRequest
+        @param headers: CreateWrongQuestionsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateWrongQuestionsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.answer_content):
+            body['answerContent'] = request.answer_content
+        if not UtilClient.is_unset(request.difficulty_level):
+            body['difficultyLevel'] = request.difficulty_level
+        if not UtilClient.is_unset(request.explain_audio):
+            body['explainAudio'] = request.explain_audio
+        if not UtilClient.is_unset(request.explain_content):
+            body['explainContent'] = request.explain_content
+        if not UtilClient.is_unset(request.generate_time):
+            body['generateTime'] = request.generate_time
+        if not UtilClient.is_unset(request.knowledge_point_list):
+            body['knowledgePointList'] = request.knowledge_point_list
+        if not UtilClient.is_unset(request.owner_code):
+            body['ownerCode'] = request.owner_code
+        if not UtilClient.is_unset(request.owner_type):
+            body['ownerType'] = request.owner_type
+        if not UtilClient.is_unset(request.proficiency_level):
+            body['proficiencyLevel'] = request.proficiency_level
+        if not UtilClient.is_unset(request.question_audio):
+            body['questionAudio'] = request.question_audio
+        if not UtilClient.is_unset(request.question_content):
+            body['questionContent'] = request.question_content
+        if not UtilClient.is_unset(request.question_extension):
+            body['questionExtension'] = request.question_extension
+        if not UtilClient.is_unset(request.question_pic_url):
+            body['questionPicUrl'] = request.question_pic_url
+        if not UtilClient.is_unset(request.question_type):
+            body['questionType'] = request.question_type
+        if not UtilClient.is_unset(request.source_code):
+            body['sourceCode'] = request.source_code
+        if not UtilClient.is_unset(request.student_user_id):
+            body['studentUserId'] = request.student_user_id
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateWrongQuestions',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/corp/wrongQuestions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateWrongQuestionsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_wrong_questions_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateWrongQuestionsRequest,
+        headers: dingtalkedu__1__0_models.CreateWrongQuestionsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateWrongQuestionsResponse:
+        """
+        @summary 错题本-添加错题
+        
+        @param request: CreateWrongQuestionsRequest
+        @param headers: CreateWrongQuestionsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateWrongQuestionsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.answer_content):
+            body['answerContent'] = request.answer_content
+        if not UtilClient.is_unset(request.difficulty_level):
+            body['difficultyLevel'] = request.difficulty_level
+        if not UtilClient.is_unset(request.explain_audio):
+            body['explainAudio'] = request.explain_audio
+        if not UtilClient.is_unset(request.explain_content):
+            body['explainContent'] = request.explain_content
+        if not UtilClient.is_unset(request.generate_time):
+            body['generateTime'] = request.generate_time
+        if not UtilClient.is_unset(request.knowledge_point_list):
+            body['knowledgePointList'] = request.knowledge_point_list
+        if not UtilClient.is_unset(request.owner_code):
+            body['ownerCode'] = request.owner_code
+        if not UtilClient.is_unset(request.owner_type):
+            body['ownerType'] = request.owner_type
+        if not UtilClient.is_unset(request.proficiency_level):
+            body['proficiencyLevel'] = request.proficiency_level
+        if not UtilClient.is_unset(request.question_audio):
+            body['questionAudio'] = request.question_audio
+        if not UtilClient.is_unset(request.question_content):
+            body['questionContent'] = request.question_content
+        if not UtilClient.is_unset(request.question_extension):
+            body['questionExtension'] = request.question_extension
+        if not UtilClient.is_unset(request.question_pic_url):
+            body['questionPicUrl'] = request.question_pic_url
+        if not UtilClient.is_unset(request.question_type):
+            body['questionType'] = request.question_type
+        if not UtilClient.is_unset(request.source_code):
+            body['sourceCode'] = request.source_code
+        if not UtilClient.is_unset(request.student_user_id):
+            body['studentUserId'] = request.student_user_id
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateWrongQuestions',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/corp/wrongQuestions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateWrongQuestionsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_wrong_questions(
+        self,
+        request: dingtalkedu__1__0_models.CreateWrongQuestionsRequest,
+    ) -> dingtalkedu__1__0_models.CreateWrongQuestionsResponse:
+        """
+        @summary 错题本-添加错题
+        
+        @param request: CreateWrongQuestionsRequest
+        @return: CreateWrongQuestionsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateWrongQuestionsHeaders()
+        return self.create_wrong_questions_with_options(request, headers, runtime)
+
+    async def create_wrong_questions_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateWrongQuestionsRequest,
+    ) -> dingtalkedu__1__0_models.CreateWrongQuestionsResponse:
+        """
+        @summary 错题本-添加错题
+        
+        @param request: CreateWrongQuestionsRequest
+        @return: CreateWrongQuestionsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateWrongQuestionsHeaders()
+        return await self.create_wrong_questions_with_options_async(request, headers, runtime)
+
     def deactivate_device_with_options(
         self,
         request: dingtalkedu__1__0_models.DeactivateDeviceRequest,
@@ -11897,6 +12253,168 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.EndCourseHeaders()
         return await self.end_course_with_options_async(request, headers, runtime)
+
+    def event_track_with_options(
+        self,
+        request: dingtalkedu__1__0_models.EventTrackRequest,
+        headers: dingtalkedu__1__0_models.EventTrackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EventTrackResponse:
+        """
+        @summary 新增用户事件跟踪日志
+        
+        @param request: EventTrackRequest
+        @param headers: EventTrackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EventTrackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_key):
+            body['actionKey'] = request.action_key
+        if not UtilClient.is_unset(request.action_time):
+            body['actionTime'] = request.action_time
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.biz_req):
+            body['bizReq'] = request.biz_req
+        if not UtilClient.is_unset(request.biz_resp):
+            body['bizResp'] = request.biz_resp
+        if not UtilClient.is_unset(request.device_id):
+            body['deviceId'] = request.device_id
+        if not UtilClient.is_unset(request.event_id):
+            body['eventId'] = request.event_id
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.event_unit):
+            body['eventUnit'] = request.event_unit
+        if not UtilClient.is_unset(request.event_value):
+            body['eventValue'] = request.event_value
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EventTrack',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/users/events/traceLogs',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EventTrackResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def event_track_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.EventTrackRequest,
+        headers: dingtalkedu__1__0_models.EventTrackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EventTrackResponse:
+        """
+        @summary 新增用户事件跟踪日志
+        
+        @param request: EventTrackRequest
+        @param headers: EventTrackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EventTrackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_key):
+            body['actionKey'] = request.action_key
+        if not UtilClient.is_unset(request.action_time):
+            body['actionTime'] = request.action_time
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.biz_req):
+            body['bizReq'] = request.biz_req
+        if not UtilClient.is_unset(request.biz_resp):
+            body['bizResp'] = request.biz_resp
+        if not UtilClient.is_unset(request.device_id):
+            body['deviceId'] = request.device_id
+        if not UtilClient.is_unset(request.event_id):
+            body['eventId'] = request.event_id
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.event_unit):
+            body['eventUnit'] = request.event_unit
+        if not UtilClient.is_unset(request.event_value):
+            body['eventValue'] = request.event_value
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EventTrack',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/users/events/traceLogs',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EventTrackResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def event_track(
+        self,
+        request: dingtalkedu__1__0_models.EventTrackRequest,
+    ) -> dingtalkedu__1__0_models.EventTrackResponse:
+        """
+        @summary 新增用户事件跟踪日志
+        
+        @param request: EventTrackRequest
+        @return: EventTrackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EventTrackHeaders()
+        return self.event_track_with_options(request, headers, runtime)
+
+    async def event_track_async(
+        self,
+        request: dingtalkedu__1__0_models.EventTrackRequest,
+    ) -> dingtalkedu__1__0_models.EventTrackResponse:
+        """
+        @summary 新增用户事件跟踪日志
+        
+        @param request: EventTrackRequest
+        @return: EventTrackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EventTrackHeaders()
+        return await self.event_track_with_options_async(request, headers, runtime)
 
     def get_bind_child_info_with_options(
         self,
@@ -17467,6 +17985,98 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.PublishSchoolReportHeaders()
         return await self.publish_school_report_with_options_async(request, headers, runtime)
+
+    def query_with_options(
+        self,
+        headers: dingtalkedu__1__0_models.QueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryResponse:
+        """
+        @summary 错题本-查询错题本
+        
+        @param headers: QueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='Query',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/wrongQuestions/codes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_with_options_async(
+        self,
+        headers: dingtalkedu__1__0_models.QueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryResponse:
+        """
+        @summary 错题本-查询错题本
+        
+        @param headers: QueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='Query',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/wrongQuestions/codes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query(self) -> dingtalkedu__1__0_models.QueryResponse:
+        """
+        @summary 错题本-查询错题本
+        
+        @return: QueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryHeaders()
+        return self.query_with_options(headers, runtime)
+
+    async def query_async(self) -> dingtalkedu__1__0_models.QueryResponse:
+        """
+        @summary 错题本-查询错题本
+        
+        @return: QueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryHeaders()
+        return await self.query_with_options_async(headers, runtime)
 
     def query_all_subjects_from_class_schedule_with_options(
         self,

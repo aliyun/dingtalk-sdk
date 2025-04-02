@@ -4,6 +4,245 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class BenefitMapValue(TeaModel):
+    def __init__(
+        self,
+        can_use: bool = None,
+        can_use_quota: int = None,
+        used_quota: int = None,
+    ):
+        self.can_use = can_use
+        self.can_use_quota = can_use_quota
+        self.used_quota = used_quota
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.can_use is not None:
+            result['canUse'] = self.can_use
+        if self.can_use_quota is not None:
+            result['canUseQuota'] = self.can_use_quota
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('canUse') is not None:
+            self.can_use = m.get('canUse')
+        if m.get('canUseQuota') is not None:
+            self.can_use_quota = m.get('canUseQuota')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        return self
+
+
+class AddFinanceEnterpriseAccountHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddFinanceEnterpriseAccountRequest(TeaModel):
+    def __init__(
+        self,
+        account_name: str = None,
+        account_type: str = None,
+        bank_card_no: str = None,
+        bank_code: str = None,
+        bank_name: str = None,
+        city: str = None,
+        description: str = None,
+        official_name: str = None,
+        official_number: str = None,
+        province: str = None,
+        tax_nature: str = None,
+        tax_no: str = None,
+        user_id: str = None,
+    ):
+        self.account_name = account_name
+        self.account_type = account_type
+        self.bank_card_no = bank_card_no
+        self.bank_code = bank_code
+        self.bank_name = bank_name
+        self.city = city
+        self.description = description
+        self.official_name = official_name
+        self.official_number = official_number
+        self.province = province
+        self.tax_nature = tax_nature
+        self.tax_no = tax_no
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_name is not None:
+            result['accountName'] = self.account_name
+        if self.account_type is not None:
+            result['accountType'] = self.account_type
+        if self.bank_card_no is not None:
+            result['bankCardNo'] = self.bank_card_no
+        if self.bank_code is not None:
+            result['bankCode'] = self.bank_code
+        if self.bank_name is not None:
+            result['bankName'] = self.bank_name
+        if self.city is not None:
+            result['city'] = self.city
+        if self.description is not None:
+            result['description'] = self.description
+        if self.official_name is not None:
+            result['officialName'] = self.official_name
+        if self.official_number is not None:
+            result['officialNumber'] = self.official_number
+        if self.province is not None:
+            result['province'] = self.province
+        if self.tax_nature is not None:
+            result['taxNature'] = self.tax_nature
+        if self.tax_no is not None:
+            result['taxNo'] = self.tax_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountName') is not None:
+            self.account_name = m.get('accountName')
+        if m.get('accountType') is not None:
+            self.account_type = m.get('accountType')
+        if m.get('bankCardNo') is not None:
+            self.bank_card_no = m.get('bankCardNo')
+        if m.get('bankCode') is not None:
+            self.bank_code = m.get('bankCode')
+        if m.get('bankName') is not None:
+            self.bank_name = m.get('bankName')
+        if m.get('city') is not None:
+            self.city = m.get('city')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('officialName') is not None:
+            self.official_name = m.get('officialName')
+        if m.get('officialNumber') is not None:
+            self.official_number = m.get('officialNumber')
+        if m.get('province') is not None:
+            self.province = m.get('province')
+        if m.get('taxNature') is not None:
+            self.tax_nature = m.get('taxNature')
+        if m.get('taxNo') is not None:
+            self.tax_no = m.get('taxNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class AddFinanceEnterpriseAccountResponseBody(TeaModel):
+    def __init__(
+        self,
+        account_code: str = None,
+    ):
+        self.account_code = account_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_code is not None:
+            result['accountCode'] = self.account_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountCode') is not None:
+            self.account_code = m.get('accountCode')
+        return self
+
+
+class AddFinanceEnterpriseAccountResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddFinanceEnterpriseAccountResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddFinanceEnterpriseAccountResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BankGatewayInvokeHeaders(TeaModel):
     def __init__(
         self,
@@ -1158,6 +1397,140 @@ class CheckVoucherStatusResponse(TeaModel):
         return self
 
 
+class ConfirmPaymentOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ConfirmPaymentOrderRequest(TeaModel):
+    def __init__(
+        self,
+        out_biz_no_list: List[str] = None,
+        user_id: str = None,
+    ):
+        self.out_biz_no_list = out_biz_no_list
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.out_biz_no_list is not None:
+            result['outBizNoList'] = self.out_biz_no_list
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('outBizNoList') is not None:
+            self.out_biz_no_list = m.get('outBizNoList')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ConfirmPaymentOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        url: str = None,
+    ):
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class ConfirmPaymentOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ConfirmPaymentOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ConfirmPaymentOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateCollectionOrderHeaders(TeaModel):
     def __init__(
         self,
@@ -1303,6 +1676,318 @@ class CreateCollectionOrderResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateCollectionOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreatePaymentOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreatePaymentOrderRequestPayeeAccountDTOBankDTO(TeaModel):
+    def __init__(
+        self,
+        account_name: str = None,
+        bank_branch_code: str = None,
+        bank_branch_name: str = None,
+        bank_card_no: str = None,
+        bank_code: str = None,
+        bank_name: str = None,
+        type: str = None,
+    ):
+        self.account_name = account_name
+        self.bank_branch_code = bank_branch_code
+        self.bank_branch_name = bank_branch_name
+        self.bank_card_no = bank_card_no
+        self.bank_code = bank_code
+        self.bank_name = bank_name
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_name is not None:
+            result['accountName'] = self.account_name
+        if self.bank_branch_code is not None:
+            result['bankBranchCode'] = self.bank_branch_code
+        if self.bank_branch_name is not None:
+            result['bankBranchName'] = self.bank_branch_name
+        if self.bank_card_no is not None:
+            result['bankCardNo'] = self.bank_card_no
+        if self.bank_code is not None:
+            result['bankCode'] = self.bank_code
+        if self.bank_name is not None:
+            result['bankName'] = self.bank_name
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountName') is not None:
+            self.account_name = m.get('accountName')
+        if m.get('bankBranchCode') is not None:
+            self.bank_branch_code = m.get('bankBranchCode')
+        if m.get('bankBranchName') is not None:
+            self.bank_branch_name = m.get('bankBranchName')
+        if m.get('bankCardNo') is not None:
+            self.bank_card_no = m.get('bankCardNo')
+        if m.get('bankCode') is not None:
+            self.bank_code = m.get('bankCode')
+        if m.get('bankName') is not None:
+            self.bank_name = m.get('bankName')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CreatePaymentOrderRequestPayeeAccountDTO(TeaModel):
+    def __init__(
+        self,
+        bank_dto: CreatePaymentOrderRequestPayeeAccountDTOBankDTO = None,
+    ):
+        self.bank_dto = bank_dto
+
+    def validate(self):
+        if self.bank_dto:
+            self.bank_dto.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bank_dto is not None:
+            result['bankDTO'] = self.bank_dto.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bankDTO') is not None:
+            temp_model = CreatePaymentOrderRequestPayeeAccountDTOBankDTO()
+            self.bank_dto = temp_model.from_map(m['bankDTO'])
+        return self
+
+
+class CreatePaymentOrderRequestPayerAccountDTO(TeaModel):
+    def __init__(
+        self,
+        enterprise_account_code: str = None,
+    ):
+        self.enterprise_account_code = enterprise_account_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enterprise_account_code is not None:
+            result['enterpriseAccountCode'] = self.enterprise_account_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enterpriseAccountCode') is not None:
+            self.enterprise_account_code = m.get('enterpriseAccountCode')
+        return self
+
+
+class CreatePaymentOrderRequest(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        expire_time: int = None,
+        out_biz_no: str = None,
+        payee_account_dto: CreatePaymentOrderRequestPayeeAccountDTO = None,
+        payer_account_dto: CreatePaymentOrderRequestPayerAccountDTO = None,
+        payment_order_title: str = None,
+        remark: str = None,
+        usage: str = None,
+        user_id: str = None,
+    ):
+        self.amount = amount
+        self.expire_time = expire_time
+        self.out_biz_no = out_biz_no
+        self.payee_account_dto = payee_account_dto
+        self.payer_account_dto = payer_account_dto
+        self.payment_order_title = payment_order_title
+        self.remark = remark
+        self.usage = usage
+        self.user_id = user_id
+
+    def validate(self):
+        if self.payee_account_dto:
+            self.payee_account_dto.validate()
+        if self.payer_account_dto:
+            self.payer_account_dto.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.expire_time is not None:
+            result['expireTime'] = self.expire_time
+        if self.out_biz_no is not None:
+            result['outBizNo'] = self.out_biz_no
+        if self.payee_account_dto is not None:
+            result['payeeAccountDTO'] = self.payee_account_dto.to_map()
+        if self.payer_account_dto is not None:
+            result['payerAccountDTO'] = self.payer_account_dto.to_map()
+        if self.payment_order_title is not None:
+            result['paymentOrderTitle'] = self.payment_order_title
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.usage is not None:
+            result['usage'] = self.usage
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('expireTime') is not None:
+            self.expire_time = m.get('expireTime')
+        if m.get('outBizNo') is not None:
+            self.out_biz_no = m.get('outBizNo')
+        if m.get('payeeAccountDTO') is not None:
+            temp_model = CreatePaymentOrderRequestPayeeAccountDTO()
+            self.payee_account_dto = temp_model.from_map(m['payeeAccountDTO'])
+        if m.get('payerAccountDTO') is not None:
+            temp_model = CreatePaymentOrderRequestPayerAccountDTO()
+            self.payer_account_dto = temp_model.from_map(m['payerAccountDTO'])
+        if m.get('paymentOrderTitle') is not None:
+            self.payment_order_title = m.get('paymentOrderTitle')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('usage') is not None:
+            self.usage = m.get('usage')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreatePaymentOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        expire_time: int = None,
+        order_no: str = None,
+        out_biz_no: str = None,
+    ):
+        self.expire_time = expire_time
+        self.order_no = order_no
+        self.out_biz_no = out_biz_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.expire_time is not None:
+            result['expireTime'] = self.expire_time
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.out_biz_no is not None:
+            result['outBizNo'] = self.out_biz_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('expireTime') is not None:
+            self.expire_time = m.get('expireTime')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('outBizNo') is not None:
+            self.out_biz_no = m.get('outBizNo')
+        return self
+
+
+class CreatePaymentOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreatePaymentOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreatePaymentOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1974,6 +2659,9 @@ class GetFinanceAccountResponseBody(TeaModel):
         bank_name: str = None,
         create_time: int = None,
         creator: str = None,
+        official_name: str = None,
+        official_number: str = None,
+        sign_status: str = None,
     ):
         # This parameter is required.
         self.account_code = account_code
@@ -1991,6 +2679,9 @@ class GetFinanceAccountResponseBody(TeaModel):
         self.create_time = create_time
         # This parameter is required.
         self.creator = creator
+        self.official_name = official_name
+        self.official_number = official_number
+        self.sign_status = sign_status
 
     def validate(self):
         pass
@@ -2023,6 +2714,12 @@ class GetFinanceAccountResponseBody(TeaModel):
             result['createTime'] = self.create_time
         if self.creator is not None:
             result['creator'] = self.creator
+        if self.official_name is not None:
+            result['officialName'] = self.official_name
+        if self.official_number is not None:
+            result['officialNumber'] = self.official_number
+        if self.sign_status is not None:
+            result['signStatus'] = self.sign_status
         return result
 
     def from_map(self, m: dict = None):
@@ -2049,6 +2746,12 @@ class GetFinanceAccountResponseBody(TeaModel):
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:
             self.creator = m.get('creator')
+        if m.get('officialName') is not None:
+            self.official_name = m.get('officialName')
+        if m.get('officialNumber') is not None:
+            self.official_number = m.get('officialNumber')
+        if m.get('signStatus') is not None:
+            self.sign_status = m.get('signStatus')
         return self
 
 
@@ -4792,8 +5495,11 @@ class QueryEnterpriseAccountByPageResponseBodyList(TeaModel):
         amount: str = None,
         bank_code: str = None,
         bank_name: str = None,
+        company_code: str = None,
         create_time: int = None,
         creator: str = None,
+        official_name: str = None,
+        official_number: str = None,
         sign_status: str = None,
         support_receipt: bool = None,
         support_trade_detail: bool = None,
@@ -4809,10 +5515,13 @@ class QueryEnterpriseAccountByPageResponseBodyList(TeaModel):
         self.amount = amount
         self.bank_code = bank_code
         self.bank_name = bank_name
+        self.company_code = company_code
         # This parameter is required.
         self.create_time = create_time
         # This parameter is required.
         self.creator = creator
+        self.official_name = official_name
+        self.official_number = official_number
         self.sign_status = sign_status
         self.support_receipt = support_receipt
         self.support_trade_detail = support_trade_detail
@@ -4842,10 +5551,16 @@ class QueryEnterpriseAccountByPageResponseBodyList(TeaModel):
             result['bankCode'] = self.bank_code
         if self.bank_name is not None:
             result['bankName'] = self.bank_name
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
             result['creator'] = self.creator
+        if self.official_name is not None:
+            result['officialName'] = self.official_name
+        if self.official_number is not None:
+            result['officialNumber'] = self.official_number
         if self.sign_status is not None:
             result['signStatus'] = self.sign_status
         if self.support_receipt is not None:
@@ -4872,10 +5587,16 @@ class QueryEnterpriseAccountByPageResponseBodyList(TeaModel):
             self.bank_code = m.get('bankCode')
         if m.get('bankName') is not None:
             self.bank_name = m.get('bankName')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:
             self.creator = m.get('creator')
+        if m.get('officialName') is not None:
+            self.official_name = m.get('officialName')
+        if m.get('officialNumber') is not None:
+            self.official_number = m.get('officialNumber')
         if m.get('signStatus') is not None:
             self.sign_status = m.get('signStatus')
         if m.get('supportReceipt') is not None:
@@ -4965,6 +5686,140 @@ class QueryEnterpriseAccountByPageResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryEnterpriseAccountByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryEnterpriseAccountSignUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryEnterpriseAccountSignUrlRequest(TeaModel):
+    def __init__(
+        self,
+        account_code: str = None,
+        user_id: str = None,
+    ):
+        self.account_code = account_code
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_code is not None:
+            result['accountCode'] = self.account_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountCode') is not None:
+            self.account_code = m.get('accountCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryEnterpriseAccountSignUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        url: str = None,
+    ):
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class QueryEnterpriseAccountSignUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryEnterpriseAccountSignUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryEnterpriseAccountSignUrlResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -5508,6 +6363,760 @@ class QueryInvoiceTransferDataResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryInvoiceTransferDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryPaymentBenefitHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryPaymentBenefitRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryPaymentBenefitResponseBody(TeaModel):
+    def __init__(
+        self,
+        benefit_map: Dict[str, BenefitMapValue] = None,
+        corp_id: str = None,
+        request_id: str = None,
+    ):
+        self.benefit_map = benefit_map
+        self.corp_id = corp_id
+        self.request_id = request_id
+
+    def validate(self):
+        if self.benefit_map:
+            for v in self.benefit_map.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['benefitMap'] = {}
+        if self.benefit_map is not None:
+            for k, v in self.benefit_map.items():
+                result['benefitMap'][k] = v.to_map()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.benefit_map = {}
+        if m.get('benefitMap') is not None:
+            for k, v in m.get('benefitMap').items():
+                temp_model = BenefitMapValue()
+                self.benefit_map[k] = temp_model.from_map(v)
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class QueryPaymentBenefitResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryPaymentBenefitResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryPaymentBenefitResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryPaymentOrderDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryPaymentOrderDetailRequest(TeaModel):
+    def __init__(
+        self,
+        out_biz_no_list: List[str] = None,
+        user_id: str = None,
+    ):
+        self.out_biz_no_list = out_biz_no_list
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.out_biz_no_list is not None:
+            result['outBizNoList'] = self.out_biz_no_list
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('outBizNoList') is not None:
+            self.out_biz_no_list = m.get('outBizNoList')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryPaymentOrderDetailShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        out_biz_no_list_shrink: str = None,
+        user_id: str = None,
+    ):
+        self.out_biz_no_list_shrink = out_biz_no_list_shrink
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.out_biz_no_list_shrink is not None:
+            result['outBizNoList'] = self.out_biz_no_list_shrink
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('outBizNoList') is not None:
+            self.out_biz_no_list_shrink = m.get('outBizNoList')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryPaymentOrderDetailResponseBodyOrderListPayeeAccountDTOBankDTO(TeaModel):
+    def __init__(
+        self,
+        account_name: str = None,
+        bank_branch_code: str = None,
+        bank_branch_name: str = None,
+        bank_card_no: str = None,
+        bank_code: str = None,
+        bank_name: str = None,
+        type: str = None,
+    ):
+        self.account_name = account_name
+        self.bank_branch_code = bank_branch_code
+        self.bank_branch_name = bank_branch_name
+        self.bank_card_no = bank_card_no
+        self.bank_code = bank_code
+        self.bank_name = bank_name
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_name is not None:
+            result['accountName'] = self.account_name
+        if self.bank_branch_code is not None:
+            result['bankBranchCode'] = self.bank_branch_code
+        if self.bank_branch_name is not None:
+            result['bankBranchName'] = self.bank_branch_name
+        if self.bank_card_no is not None:
+            result['bankCardNo'] = self.bank_card_no
+        if self.bank_code is not None:
+            result['bankCode'] = self.bank_code
+        if self.bank_name is not None:
+            result['bankName'] = self.bank_name
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountName') is not None:
+            self.account_name = m.get('accountName')
+        if m.get('bankBranchCode') is not None:
+            self.bank_branch_code = m.get('bankBranchCode')
+        if m.get('bankBranchName') is not None:
+            self.bank_branch_name = m.get('bankBranchName')
+        if m.get('bankCardNo') is not None:
+            self.bank_card_no = m.get('bankCardNo')
+        if m.get('bankCode') is not None:
+            self.bank_code = m.get('bankCode')
+        if m.get('bankName') is not None:
+            self.bank_name = m.get('bankName')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class QueryPaymentOrderDetailResponseBodyOrderListPayeeAccountDTO(TeaModel):
+    def __init__(
+        self,
+        bank_dto: QueryPaymentOrderDetailResponseBodyOrderListPayeeAccountDTOBankDTO = None,
+    ):
+        self.bank_dto = bank_dto
+
+    def validate(self):
+        if self.bank_dto:
+            self.bank_dto.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bank_dto is not None:
+            result['bankDTO'] = self.bank_dto.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bankDTO') is not None:
+            temp_model = QueryPaymentOrderDetailResponseBodyOrderListPayeeAccountDTOBankDTO()
+            self.bank_dto = temp_model.from_map(m['bankDTO'])
+        return self
+
+
+class QueryPaymentOrderDetailResponseBodyOrderListPayerAccountDTO(TeaModel):
+    def __init__(
+        self,
+        enterprise_account_code: str = None,
+    ):
+        self.enterprise_account_code = enterprise_account_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enterprise_account_code is not None:
+            result['enterpriseAccountCode'] = self.enterprise_account_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enterpriseAccountCode') is not None:
+            self.enterprise_account_code = m.get('enterpriseAccountCode')
+        return self
+
+
+class QueryPaymentOrderDetailResponseBodyOrderListSubOrderListPayeeAccountDTOBankDTO(TeaModel):
+    def __init__(
+        self,
+        account_name: str = None,
+        bank_branch_code: str = None,
+        bank_branch_name: str = None,
+        bank_card_no: str = None,
+        bank_code: str = None,
+        bank_name: str = None,
+        type: str = None,
+    ):
+        self.account_name = account_name
+        self.bank_branch_code = bank_branch_code
+        self.bank_branch_name = bank_branch_name
+        self.bank_card_no = bank_card_no
+        self.bank_code = bank_code
+        self.bank_name = bank_name
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_name is not None:
+            result['accountName'] = self.account_name
+        if self.bank_branch_code is not None:
+            result['bankBranchCode'] = self.bank_branch_code
+        if self.bank_branch_name is not None:
+            result['bankBranchName'] = self.bank_branch_name
+        if self.bank_card_no is not None:
+            result['bankCardNo'] = self.bank_card_no
+        if self.bank_code is not None:
+            result['bankCode'] = self.bank_code
+        if self.bank_name is not None:
+            result['bankName'] = self.bank_name
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountName') is not None:
+            self.account_name = m.get('accountName')
+        if m.get('bankBranchCode') is not None:
+            self.bank_branch_code = m.get('bankBranchCode')
+        if m.get('bankBranchName') is not None:
+            self.bank_branch_name = m.get('bankBranchName')
+        if m.get('bankCardNo') is not None:
+            self.bank_card_no = m.get('bankCardNo')
+        if m.get('bankCode') is not None:
+            self.bank_code = m.get('bankCode')
+        if m.get('bankName') is not None:
+            self.bank_name = m.get('bankName')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class QueryPaymentOrderDetailResponseBodyOrderListSubOrderListPayeeAccountDTO(TeaModel):
+    def __init__(
+        self,
+        bank_dto: QueryPaymentOrderDetailResponseBodyOrderListSubOrderListPayeeAccountDTOBankDTO = None,
+    ):
+        self.bank_dto = bank_dto
+
+    def validate(self):
+        if self.bank_dto:
+            self.bank_dto.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bank_dto is not None:
+            result['bankDTO'] = self.bank_dto.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bankDTO') is not None:
+            temp_model = QueryPaymentOrderDetailResponseBodyOrderListSubOrderListPayeeAccountDTOBankDTO()
+            self.bank_dto = temp_model.from_map(m['bankDTO'])
+        return self
+
+
+class QueryPaymentOrderDetailResponseBodyOrderListSubOrderListPayerAccountDTO(TeaModel):
+    def __init__(
+        self,
+        enterprise_account_code: str = None,
+    ):
+        self.enterprise_account_code = enterprise_account_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enterprise_account_code is not None:
+            result['enterpriseAccountCode'] = self.enterprise_account_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enterpriseAccountCode') is not None:
+            self.enterprise_account_code = m.get('enterpriseAccountCode')
+        return self
+
+
+class QueryPaymentOrderDetailResponseBodyOrderListSubOrderList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        corp_id: str = None,
+        order_no: str = None,
+        out_biz_no: str = None,
+        payee_account_dto: QueryPaymentOrderDetailResponseBodyOrderListSubOrderListPayeeAccountDTO = None,
+        payer_account_dto: QueryPaymentOrderDetailResponseBodyOrderListSubOrderListPayerAccountDTO = None,
+        remark: str = None,
+        status: str = None,
+        usage: str = None,
+        user_id: str = None,
+    ):
+        self.amount = amount
+        self.corp_id = corp_id
+        self.order_no = order_no
+        self.out_biz_no = out_biz_no
+        self.payee_account_dto = payee_account_dto
+        self.payer_account_dto = payer_account_dto
+        self.remark = remark
+        self.status = status
+        self.usage = usage
+        self.user_id = user_id
+
+    def validate(self):
+        if self.payee_account_dto:
+            self.payee_account_dto.validate()
+        if self.payer_account_dto:
+            self.payer_account_dto.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.out_biz_no is not None:
+            result['outBizNo'] = self.out_biz_no
+        if self.payee_account_dto is not None:
+            result['payeeAccountDTO'] = self.payee_account_dto.to_map()
+        if self.payer_account_dto is not None:
+            result['payerAccountDTO'] = self.payer_account_dto.to_map()
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.status is not None:
+            result['status'] = self.status
+        if self.usage is not None:
+            result['usage'] = self.usage
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('outBizNo') is not None:
+            self.out_biz_no = m.get('outBizNo')
+        if m.get('payeeAccountDTO') is not None:
+            temp_model = QueryPaymentOrderDetailResponseBodyOrderListSubOrderListPayeeAccountDTO()
+            self.payee_account_dto = temp_model.from_map(m['payeeAccountDTO'])
+        if m.get('payerAccountDTO') is not None:
+            temp_model = QueryPaymentOrderDetailResponseBodyOrderListSubOrderListPayerAccountDTO()
+            self.payer_account_dto = temp_model.from_map(m['payerAccountDTO'])
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('usage') is not None:
+            self.usage = m.get('usage')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryPaymentOrderDetailResponseBodyOrderList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        corp_id: str = None,
+        order_no: str = None,
+        out_biz_no: str = None,
+        payee_account_dto: QueryPaymentOrderDetailResponseBodyOrderListPayeeAccountDTO = None,
+        payer_account_dto: QueryPaymentOrderDetailResponseBodyOrderListPayerAccountDTO = None,
+        remark: str = None,
+        status: str = None,
+        sub_order_list: List[QueryPaymentOrderDetailResponseBodyOrderListSubOrderList] = None,
+        usage: str = None,
+        user_id: str = None,
+    ):
+        self.amount = amount
+        self.corp_id = corp_id
+        self.order_no = order_no
+        self.out_biz_no = out_biz_no
+        self.payee_account_dto = payee_account_dto
+        self.payer_account_dto = payer_account_dto
+        self.remark = remark
+        self.status = status
+        self.sub_order_list = sub_order_list
+        self.usage = usage
+        self.user_id = user_id
+
+    def validate(self):
+        if self.payee_account_dto:
+            self.payee_account_dto.validate()
+        if self.payer_account_dto:
+            self.payer_account_dto.validate()
+        if self.sub_order_list:
+            for k in self.sub_order_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.out_biz_no is not None:
+            result['outBizNo'] = self.out_biz_no
+        if self.payee_account_dto is not None:
+            result['payeeAccountDTO'] = self.payee_account_dto.to_map()
+        if self.payer_account_dto is not None:
+            result['payerAccountDTO'] = self.payer_account_dto.to_map()
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.status is not None:
+            result['status'] = self.status
+        result['subOrderList'] = []
+        if self.sub_order_list is not None:
+            for k in self.sub_order_list:
+                result['subOrderList'].append(k.to_map() if k else None)
+        if self.usage is not None:
+            result['usage'] = self.usage
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('outBizNo') is not None:
+            self.out_biz_no = m.get('outBizNo')
+        if m.get('payeeAccountDTO') is not None:
+            temp_model = QueryPaymentOrderDetailResponseBodyOrderListPayeeAccountDTO()
+            self.payee_account_dto = temp_model.from_map(m['payeeAccountDTO'])
+        if m.get('payerAccountDTO') is not None:
+            temp_model = QueryPaymentOrderDetailResponseBodyOrderListPayerAccountDTO()
+            self.payer_account_dto = temp_model.from_map(m['payerAccountDTO'])
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        self.sub_order_list = []
+        if m.get('subOrderList') is not None:
+            for k in m.get('subOrderList'):
+                temp_model = QueryPaymentOrderDetailResponseBodyOrderListSubOrderList()
+                self.sub_order_list.append(temp_model.from_map(k))
+        if m.get('usage') is not None:
+            self.usage = m.get('usage')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryPaymentOrderDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        order_list: List[QueryPaymentOrderDetailResponseBodyOrderList] = None,
+        request_id: str = None,
+    ):
+        self.order_list = order_list
+        self.request_id = request_id
+
+    def validate(self):
+        if self.order_list:
+            for k in self.order_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['orderList'] = []
+        if self.order_list is not None:
+            for k in self.order_list:
+                result['orderList'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.order_list = []
+        if m.get('orderList') is not None:
+            for k in m.get('orderList'):
+                temp_model = QueryPaymentOrderDetailResponseBodyOrderList()
+                self.order_list.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class QueryPaymentOrderDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryPaymentOrderDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryPaymentOrderDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -7483,12 +9092,14 @@ class SignEnterpriseAccountHeaders(TeaModel):
 class SignEnterpriseAccountRequest(TeaModel):
     def __init__(
         self,
+        account_code: str = None,
         bank_card_no: str = None,
         bank_open_id: str = None,
         channel_type: str = None,
         operator: str = None,
         sign_operate_type: str = None,
     ):
+        self.account_code = account_code
         self.bank_card_no = bank_card_no
         self.bank_open_id = bank_open_id
         self.channel_type = channel_type
@@ -7504,6 +9115,8 @@ class SignEnterpriseAccountRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.account_code is not None:
+            result['accountCode'] = self.account_code
         if self.bank_card_no is not None:
             result['bankCardNo'] = self.bank_card_no
         if self.bank_open_id is not None:
@@ -7518,6 +9131,8 @@ class SignEnterpriseAccountRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountCode') is not None:
+            self.account_code = m.get('accountCode')
         if m.get('bankCardNo') is not None:
             self.bank_card_no = m.get('bankCardNo')
         if m.get('bankOpenId') is not None:
@@ -7735,6 +9350,358 @@ class SyncReceiptRecallResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncReceiptRecallResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateAuxiliaryStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateAuxiliaryStatusRequest(TeaModel):
+    def __init__(
+        self,
+        auxiliary_id: str = None,
+        auxiliary_type: str = None,
+        operate_type: str = None,
+        user_id: str = None,
+    ):
+        self.auxiliary_id = auxiliary_id
+        self.auxiliary_type = auxiliary_type
+        self.operate_type = operate_type
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auxiliary_id is not None:
+            result['auxiliaryId'] = self.auxiliary_id
+        if self.auxiliary_type is not None:
+            result['auxiliaryType'] = self.auxiliary_type
+        if self.operate_type is not None:
+            result['operateType'] = self.operate_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('auxiliaryId') is not None:
+            self.auxiliary_id = m.get('auxiliaryId')
+        if m.get('auxiliaryType') is not None:
+            self.auxiliary_type = m.get('auxiliaryType')
+        if m.get('operateType') is not None:
+            self.operate_type = m.get('operateType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateAuxiliaryStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateAuxiliaryStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateAuxiliaryStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateAuxiliaryStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateFinanceEnterpriseAccountHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateFinanceEnterpriseAccountRequest(TeaModel):
+    def __init__(
+        self,
+        account_code: str = None,
+        account_name: str = None,
+        account_type: str = None,
+        bank_card_no: str = None,
+        bank_code: str = None,
+        bank_name: str = None,
+        city: str = None,
+        description: str = None,
+        official_name: str = None,
+        official_number: str = None,
+        province: str = None,
+        tax_nature: str = None,
+        tax_no: str = None,
+        user_id: str = None,
+    ):
+        self.account_code = account_code
+        self.account_name = account_name
+        self.account_type = account_type
+        self.bank_card_no = bank_card_no
+        self.bank_code = bank_code
+        self.bank_name = bank_name
+        self.city = city
+        self.description = description
+        self.official_name = official_name
+        self.official_number = official_number
+        self.province = province
+        self.tax_nature = tax_nature
+        self.tax_no = tax_no
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_code is not None:
+            result['accountCode'] = self.account_code
+        if self.account_name is not None:
+            result['accountName'] = self.account_name
+        if self.account_type is not None:
+            result['accountType'] = self.account_type
+        if self.bank_card_no is not None:
+            result['bankCardNo'] = self.bank_card_no
+        if self.bank_code is not None:
+            result['bankCode'] = self.bank_code
+        if self.bank_name is not None:
+            result['bankName'] = self.bank_name
+        if self.city is not None:
+            result['city'] = self.city
+        if self.description is not None:
+            result['description'] = self.description
+        if self.official_name is not None:
+            result['officialName'] = self.official_name
+        if self.official_number is not None:
+            result['officialNumber'] = self.official_number
+        if self.province is not None:
+            result['province'] = self.province
+        if self.tax_nature is not None:
+            result['taxNature'] = self.tax_nature
+        if self.tax_no is not None:
+            result['taxNo'] = self.tax_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountCode') is not None:
+            self.account_code = m.get('accountCode')
+        if m.get('accountName') is not None:
+            self.account_name = m.get('accountName')
+        if m.get('accountType') is not None:
+            self.account_type = m.get('accountType')
+        if m.get('bankCardNo') is not None:
+            self.bank_card_no = m.get('bankCardNo')
+        if m.get('bankCode') is not None:
+            self.bank_code = m.get('bankCode')
+        if m.get('bankName') is not None:
+            self.bank_name = m.get('bankName')
+        if m.get('city') is not None:
+            self.city = m.get('city')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('officialName') is not None:
+            self.official_name = m.get('officialName')
+        if m.get('officialNumber') is not None:
+            self.official_number = m.get('officialNumber')
+        if m.get('province') is not None:
+            self.province = m.get('province')
+        if m.get('taxNature') is not None:
+            self.tax_nature = m.get('taxNature')
+        if m.get('taxNo') is not None:
+            self.tax_no = m.get('taxNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateFinanceEnterpriseAccountResponseBody(TeaModel):
+    def __init__(
+        self,
+        account_code: str = None,
+    ):
+        self.account_code = account_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_code is not None:
+            result['accountCode'] = self.account_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountCode') is not None:
+            self.account_code = m.get('accountCode')
+        return self
+
+
+class UpdateFinanceEnterpriseAccountResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateFinanceEnterpriseAccountResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateFinanceEnterpriseAccountResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

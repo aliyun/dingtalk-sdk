@@ -15939,6 +15939,139 @@ class PremiumSaveIntegratedProcessInstanceHeaders(TeaModel):
         return self
 
 
+class PremiumSaveIntegratedProcessInstanceRequestFeatureConfigFeaturesCallback(TeaModel):
+    def __init__(
+        self,
+        api_key: str = None,
+        app_uuid: str = None,
+        version: str = None,
+    ):
+        self.api_key = api_key
+        self.app_uuid = app_uuid
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.api_key is not None:
+            result['apiKey'] = self.api_key
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('apiKey') is not None:
+            self.api_key = m.get('apiKey')
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class PremiumSaveIntegratedProcessInstanceRequestFeatureConfigFeatures(TeaModel):
+    def __init__(
+        self,
+        callback: PremiumSaveIntegratedProcessInstanceRequestFeatureConfigFeaturesCallback = None,
+        config: str = None,
+        mobile_url: str = None,
+        name: str = None,
+        pc_url: str = None,
+        run_type: str = None,
+    ):
+        self.callback = callback
+        self.config = config
+        self.mobile_url = mobile_url
+        self.name = name
+        self.pc_url = pc_url
+        self.run_type = run_type
+
+    def validate(self):
+        if self.callback:
+            self.callback.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.callback is not None:
+            result['callback'] = self.callback.to_map()
+        if self.config is not None:
+            result['config'] = self.config
+        if self.mobile_url is not None:
+            result['mobileUrl'] = self.mobile_url
+        if self.name is not None:
+            result['name'] = self.name
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        if self.run_type is not None:
+            result['runType'] = self.run_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('callback') is not None:
+            temp_model = PremiumSaveIntegratedProcessInstanceRequestFeatureConfigFeaturesCallback()
+            self.callback = temp_model.from_map(m['callback'])
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('mobileUrl') is not None:
+            self.mobile_url = m.get('mobileUrl')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        if m.get('runType') is not None:
+            self.run_type = m.get('runType')
+        return self
+
+
+class PremiumSaveIntegratedProcessInstanceRequestFeatureConfig(TeaModel):
+    def __init__(
+        self,
+        features: List[PremiumSaveIntegratedProcessInstanceRequestFeatureConfigFeatures] = None,
+    ):
+        self.features = features
+
+    def validate(self):
+        if self.features:
+            for k in self.features:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['features'] = []
+        if self.features is not None:
+            for k in self.features:
+                result['features'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.features = []
+        if m.get('features') is not None:
+            for k in m.get('features'):
+                temp_model = PremiumSaveIntegratedProcessInstanceRequestFeatureConfigFeatures()
+                self.features.append(temp_model.from_map(k))
+        return self
+
+
 class PremiumSaveIntegratedProcessInstanceRequestFormComponentValueList(TeaModel):
     def __init__(
         self,
@@ -16033,6 +16166,7 @@ class PremiumSaveIntegratedProcessInstanceRequest(TeaModel):
     def __init__(
         self,
         biz_data: str = None,
+        feature_config: PremiumSaveIntegratedProcessInstanceRequestFeatureConfig = None,
         form_component_value_list: List[PremiumSaveIntegratedProcessInstanceRequestFormComponentValueList] = None,
         notifiers: List[PremiumSaveIntegratedProcessInstanceRequestNotifiers] = None,
         originator_user_id: str = None,
@@ -16041,6 +16175,7 @@ class PremiumSaveIntegratedProcessInstanceRequest(TeaModel):
         url: str = None,
     ):
         self.biz_data = biz_data
+        self.feature_config = feature_config
         self.form_component_value_list = form_component_value_list
         self.notifiers = notifiers
         # This parameter is required.
@@ -16052,6 +16187,8 @@ class PremiumSaveIntegratedProcessInstanceRequest(TeaModel):
         self.url = url
 
     def validate(self):
+        if self.feature_config:
+            self.feature_config.validate()
         if self.form_component_value_list:
             for k in self.form_component_value_list:
                 if k:
@@ -16069,6 +16206,8 @@ class PremiumSaveIntegratedProcessInstanceRequest(TeaModel):
         result = dict()
         if self.biz_data is not None:
             result['bizData'] = self.biz_data
+        if self.feature_config is not None:
+            result['featureConfig'] = self.feature_config.to_map()
         result['formComponentValueList'] = []
         if self.form_component_value_list is not None:
             for k in self.form_component_value_list:
@@ -16091,6 +16230,9 @@ class PremiumSaveIntegratedProcessInstanceRequest(TeaModel):
         m = m or dict()
         if m.get('bizData') is not None:
             self.biz_data = m.get('bizData')
+        if m.get('featureConfig') is not None:
+            temp_model = PremiumSaveIntegratedProcessInstanceRequestFeatureConfig()
+            self.feature_config = temp_model.from_map(m['featureConfig'])
         self.form_component_value_list = []
         if m.get('formComponentValueList') is not None:
             for k in m.get('formComponentValueList'):

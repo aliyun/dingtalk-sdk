@@ -8924,6 +8924,124 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.QueryUserViewGroupLastMessageTimeHeaders()
         return await self.query_user_view_group_last_message_time_with_options_async(request, headers, runtime)
 
+    def recall_personal_message_with_options(
+        self,
+        request: dingtalkim__1__0_models.RecallPersonalMessageRequest,
+        headers: dingtalkim__1__0_models.RecallPersonalMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RecallPersonalMessageResponse:
+        """
+        @summary 用户身份撤回消息
+        
+        @param request: RecallPersonalMessageRequest
+        @param headers: RecallPersonalMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecallPersonalMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_message_id):
+            body['openMessageId'] = request.open_message_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RecallPersonalMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/messages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RecallPersonalMessageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def recall_personal_message_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.RecallPersonalMessageRequest,
+        headers: dingtalkim__1__0_models.RecallPersonalMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RecallPersonalMessageResponse:
+        """
+        @summary 用户身份撤回消息
+        
+        @param request: RecallPersonalMessageRequest
+        @param headers: RecallPersonalMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecallPersonalMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_message_id):
+            body['openMessageId'] = request.open_message_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RecallPersonalMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/messages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RecallPersonalMessageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def recall_personal_message(
+        self,
+        request: dingtalkim__1__0_models.RecallPersonalMessageRequest,
+    ) -> dingtalkim__1__0_models.RecallPersonalMessageResponse:
+        """
+        @summary 用户身份撤回消息
+        
+        @param request: RecallPersonalMessageRequest
+        @return: RecallPersonalMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RecallPersonalMessageHeaders()
+        return self.recall_personal_message_with_options(request, headers, runtime)
+
+    async def recall_personal_message_async(
+        self,
+        request: dingtalkim__1__0_models.RecallPersonalMessageRequest,
+    ) -> dingtalkim__1__0_models.RecallPersonalMessageResponse:
+        """
+        @summary 用户身份撤回消息
+        
+        @param request: RecallPersonalMessageRequest
+        @return: RecallPersonalMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RecallPersonalMessageHeaders()
+        return await self.recall_personal_message_with_options_async(request, headers, runtime)
+
     def release_unfurling_register_with_options(
         self,
         request: dingtalkim__1__0_models.ReleaseUnfurlingRegisterRequest,
@@ -10307,6 +10425,250 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SetRightPanelHeaders()
         return await self.set_right_panel_with_options_async(request, headers, runtime)
+
+    def super_admin_apply_template_with_options(
+        self,
+        request: dingtalkim__1__0_models.SuperAdminApplyTemplateRequest,
+        headers: dingtalkim__1__0_models.SuperAdminApplyTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SuperAdminApplyTemplateResponse:
+        """
+        @summary 启用群模板(超管接口)
+        
+        @param request: SuperAdminApplyTemplateRequest
+        @param headers: SuperAdminApplyTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SuperAdminApplyTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SuperAdminApplyTemplate',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/scenegroups/templates/apply',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SuperAdminApplyTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def super_admin_apply_template_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.SuperAdminApplyTemplateRequest,
+        headers: dingtalkim__1__0_models.SuperAdminApplyTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SuperAdminApplyTemplateResponse:
+        """
+        @summary 启用群模板(超管接口)
+        
+        @param request: SuperAdminApplyTemplateRequest
+        @param headers: SuperAdminApplyTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SuperAdminApplyTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SuperAdminApplyTemplate',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/scenegroups/templates/apply',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SuperAdminApplyTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def super_admin_apply_template(
+        self,
+        request: dingtalkim__1__0_models.SuperAdminApplyTemplateRequest,
+    ) -> dingtalkim__1__0_models.SuperAdminApplyTemplateResponse:
+        """
+        @summary 启用群模板(超管接口)
+        
+        @param request: SuperAdminApplyTemplateRequest
+        @return: SuperAdminApplyTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SuperAdminApplyTemplateHeaders()
+        return self.super_admin_apply_template_with_options(request, headers, runtime)
+
+    async def super_admin_apply_template_async(
+        self,
+        request: dingtalkim__1__0_models.SuperAdminApplyTemplateRequest,
+    ) -> dingtalkim__1__0_models.SuperAdminApplyTemplateResponse:
+        """
+        @summary 启用群模板(超管接口)
+        
+        @param request: SuperAdminApplyTemplateRequest
+        @return: SuperAdminApplyTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SuperAdminApplyTemplateHeaders()
+        return await self.super_admin_apply_template_with_options_async(request, headers, runtime)
+
+    def super_admin_close_template_with_options(
+        self,
+        request: dingtalkim__1__0_models.SuperAdminCloseTemplateRequest,
+        headers: dingtalkim__1__0_models.SuperAdminCloseTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SuperAdminCloseTemplateResponse:
+        """
+        @summary 停用群模板（超管接口）
+        
+        @param request: SuperAdminCloseTemplateRequest
+        @param headers: SuperAdminCloseTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SuperAdminCloseTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SuperAdminCloseTemplate',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/scenegroups/templates/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SuperAdminCloseTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def super_admin_close_template_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.SuperAdminCloseTemplateRequest,
+        headers: dingtalkim__1__0_models.SuperAdminCloseTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SuperAdminCloseTemplateResponse:
+        """
+        @summary 停用群模板（超管接口）
+        
+        @param request: SuperAdminCloseTemplateRequest
+        @param headers: SuperAdminCloseTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SuperAdminCloseTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['ownerUserId'] = request.owner_user_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SuperAdminCloseTemplate',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/scenegroups/templates/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SuperAdminCloseTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def super_admin_close_template(
+        self,
+        request: dingtalkim__1__0_models.SuperAdminCloseTemplateRequest,
+    ) -> dingtalkim__1__0_models.SuperAdminCloseTemplateResponse:
+        """
+        @summary 停用群模板（超管接口）
+        
+        @param request: SuperAdminCloseTemplateRequest
+        @return: SuperAdminCloseTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SuperAdminCloseTemplateHeaders()
+        return self.super_admin_close_template_with_options(request, headers, runtime)
+
+    async def super_admin_close_template_async(
+        self,
+        request: dingtalkim__1__0_models.SuperAdminCloseTemplateRequest,
+    ) -> dingtalkim__1__0_models.SuperAdminCloseTemplateResponse:
+        """
+        @summary 停用群模板（超管接口）
+        
+        @param request: SuperAdminCloseTemplateRequest
+        @return: SuperAdminCloseTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SuperAdminCloseTemplateHeaders()
+        return await self.super_admin_close_template_with_options_async(request, headers, runtime)
 
     def topbox_close_with_options(
         self,

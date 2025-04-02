@@ -284,10 +284,10 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.assistant_id):
             query['assistantId'] = request.assistant_id
-        if not UtilClient.is_unset(request.cursor):
-            query['cursor'] = request.cursor
         if not UtilClient.is_unset(request.end_time):
             query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.start_time):
@@ -337,10 +337,10 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.assistant_id):
             query['assistantId'] = request.assistant_id
-        if not UtilClient.is_unset(request.cursor):
-            query['cursor'] = request.cursor
         if not UtilClient.is_unset(request.end_time):
             query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.start_time):
