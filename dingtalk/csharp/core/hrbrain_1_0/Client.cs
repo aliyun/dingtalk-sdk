@@ -178,6 +178,154 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>删除组织架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainDeleteDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteDeptInfoResponse
+        /// </returns>
+        public HrbrainDeleteDeptInfoResponse HrbrainDeleteDeptInfoWithOptions(HrbrainDeleteDeptInfoRequest request, HrbrainDeleteDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
+            {
+                body["params"] = request.Params;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainDeleteDeptInfo",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/deptInfos/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainDeleteDeptInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除组织架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainDeleteDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteDeptInfoResponse
+        /// </returns>
+        public async Task<HrbrainDeleteDeptInfoResponse> HrbrainDeleteDeptInfoWithOptionsAsync(HrbrainDeleteDeptInfoRequest request, HrbrainDeleteDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
+            {
+                body["params"] = request.Params;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainDeleteDeptInfo",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/deptInfos/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainDeleteDeptInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除组织架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteDeptInfoResponse
+        /// </returns>
+        public HrbrainDeleteDeptInfoResponse HrbrainDeleteDeptInfo(HrbrainDeleteDeptInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainDeleteDeptInfoHeaders headers = new HrbrainDeleteDeptInfoHeaders();
+            return HrbrainDeleteDeptInfoWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除组织架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteDeptInfoResponse
+        /// </returns>
+        public async Task<HrbrainDeleteDeptInfoResponse> HrbrainDeleteDeptInfoAsync(HrbrainDeleteDeptInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainDeleteDeptInfoHeaders headers = new HrbrainDeleteDeptInfoHeaders();
+            return await HrbrainDeleteDeptInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>删除离职记录</para>
         /// </summary>
         /// 
@@ -1654,6 +1802,302 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             HrbrainDeleteRegistHeaders headers = new HrbrainDeleteRegistHeaders();
             return await HrbrainDeleteRegistWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除转正记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteRegularRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainDeleteRegularHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteRegularResponse
+        /// </returns>
+        public HrbrainDeleteRegularResponse HrbrainDeleteRegularWithOptions(HrbrainDeleteRegularRequest request, HrbrainDeleteRegularHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
+            {
+                body["params"] = request.Params;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainDeleteRegular",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/regulars/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainDeleteRegularResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除转正记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteRegularRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainDeleteRegularHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteRegularResponse
+        /// </returns>
+        public async Task<HrbrainDeleteRegularResponse> HrbrainDeleteRegularWithOptionsAsync(HrbrainDeleteRegularRequest request, HrbrainDeleteRegularHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
+            {
+                body["params"] = request.Params;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainDeleteRegular",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/regulars/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainDeleteRegularResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除转正记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteRegularRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteRegularResponse
+        /// </returns>
+        public HrbrainDeleteRegularResponse HrbrainDeleteRegular(HrbrainDeleteRegularRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainDeleteRegularHeaders headers = new HrbrainDeleteRegularHeaders();
+            return HrbrainDeleteRegularWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除转正记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteRegularRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteRegularResponse
+        /// </returns>
+        public async Task<HrbrainDeleteRegularResponse> HrbrainDeleteRegularAsync(HrbrainDeleteRegularRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainDeleteRegularHeaders headers = new HrbrainDeleteRegularHeaders();
+            return await HrbrainDeleteRegularWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除培训学习记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteTrainingRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainDeleteTrainingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteTrainingResponse
+        /// </returns>
+        public HrbrainDeleteTrainingResponse HrbrainDeleteTrainingWithOptions(HrbrainDeleteTrainingRequest request, HrbrainDeleteTrainingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
+            {
+                body["params"] = request.Params;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainDeleteTraining",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/trainings/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainDeleteTrainingResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除培训学习记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteTrainingRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainDeleteTrainingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteTrainingResponse
+        /// </returns>
+        public async Task<HrbrainDeleteTrainingResponse> HrbrainDeleteTrainingWithOptionsAsync(HrbrainDeleteTrainingRequest request, HrbrainDeleteTrainingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
+            {
+                body["params"] = request.Params;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainDeleteTraining",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/trainings/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainDeleteTrainingResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除培训学习记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteTrainingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteTrainingResponse
+        /// </returns>
+        public HrbrainDeleteTrainingResponse HrbrainDeleteTraining(HrbrainDeleteTrainingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainDeleteTrainingHeaders headers = new HrbrainDeleteTrainingHeaders();
+            return HrbrainDeleteTrainingWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除培训学习记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainDeleteTrainingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainDeleteTrainingResponse
+        /// </returns>
+        public async Task<HrbrainDeleteTrainingResponse> HrbrainDeleteTrainingAsync(HrbrainDeleteTrainingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainDeleteTrainingHeaders headers = new HrbrainDeleteTrainingHeaders();
+            return await HrbrainDeleteTrainingWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -4198,6 +4642,306 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             HrbrainImportRegistHeaders headers = new HrbrainImportRegistHeaders();
             return await HrbrainImportRegistWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成转正记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportRegularRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportRegularHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportRegularResponse
+        /// </returns>
+        public HrbrainImportRegularResponse HrbrainImportRegularWithOptions(HrbrainImportRegularRequest request, HrbrainImportRegularHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainImportRegular",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/regulars/import",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainImportRegularResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成转正记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportRegularRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportRegularHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportRegularResponse
+        /// </returns>
+        public async Task<HrbrainImportRegularResponse> HrbrainImportRegularWithOptionsAsync(HrbrainImportRegularRequest request, HrbrainImportRegularHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainImportRegular",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/regulars/import",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainImportRegularResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成转正记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportRegularRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportRegularResponse
+        /// </returns>
+        public HrbrainImportRegularResponse HrbrainImportRegular(HrbrainImportRegularRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainImportRegularHeaders headers = new HrbrainImportRegularHeaders();
+            return HrbrainImportRegularWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成转正记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportRegularRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportRegularResponse
+        /// </returns>
+        public async Task<HrbrainImportRegularResponse> HrbrainImportRegularAsync(HrbrainImportRegularRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainImportRegularHeaders headers = new HrbrainImportRegularHeaders();
+            return await HrbrainImportRegularWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成培训学习记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportTrainingRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportTrainingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportTrainingResponse
+        /// </returns>
+        public HrbrainImportTrainingResponse HrbrainImportTrainingWithOptions(HrbrainImportTrainingRequest request, HrbrainImportTrainingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainImportTraining",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/trainings/import",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainImportTrainingResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成培训学习记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportTrainingRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportTrainingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportTrainingResponse
+        /// </returns>
+        public async Task<HrbrainImportTrainingResponse> HrbrainImportTrainingWithOptionsAsync(HrbrainImportTrainingRequest request, HrbrainImportTrainingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainImportTraining",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/trainings/import",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainImportTrainingResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成培训学习记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportTrainingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportTrainingResponse
+        /// </returns>
+        public HrbrainImportTrainingResponse HrbrainImportTraining(HrbrainImportTrainingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainImportTrainingHeaders headers = new HrbrainImportTrainingHeaders();
+            return HrbrainImportTrainingWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成培训学习记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportTrainingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportTrainingResponse
+        /// </returns>
+        public async Task<HrbrainImportTrainingResponse> HrbrainImportTrainingAsync(HrbrainImportTrainingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainImportTrainingHeaders headers = new HrbrainImportTrainingHeaders();
+            return await HrbrainImportTrainingWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

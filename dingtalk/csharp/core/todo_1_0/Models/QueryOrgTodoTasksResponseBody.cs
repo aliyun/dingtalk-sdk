@@ -71,6 +71,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public string TaskId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>TODO</para>
+            /// </summary>
+            [NameInMap("todoType")]
+            [Validation(Required=false)]
+            public string TodoType { get; set; }
+
         }
 
     }

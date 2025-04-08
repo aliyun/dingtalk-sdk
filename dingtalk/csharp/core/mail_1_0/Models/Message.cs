@@ -48,6 +48,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>conversationid</para>
         /// </summary>
         [NameInMap("conversationId")]
         [Validation(Required=false)]
@@ -72,6 +75,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>false</para>
         /// </summary>
         [NameInMap("hasAttachments")]
         [Validation(Required=false)]
@@ -79,6 +85,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>mailid</para>
         /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
@@ -86,6 +95,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>由RFC5322定义的邮件头集合</para>
         /// </summary>
         [NameInMap("internetMessageHeaders")]
         [Validation(Required=false)]
@@ -103,6 +115,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>false</para>
         /// </summary>
         [NameInMap("isForwarded")]
         [Validation(Required=false)]
@@ -110,6 +125,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>false</para>
         /// </summary>
         [NameInMap("isRead")]
         [Validation(Required=false)]
@@ -127,6 +145,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>false</para>
         /// </summary>
         [NameInMap("isReplied")]
         [Validation(Required=false)]
@@ -134,6 +155,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2024-10-01T00:00:00Z</para>
         /// </summary>
         [NameInMap("lastModifiedDateTime")]
         [Validation(Required=false)]
@@ -151,6 +175,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2024-10-01T00:00:00Z</para>
         /// </summary>
         [NameInMap("receivedDateTime")]
         [Validation(Required=false)]
@@ -165,6 +192,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2024-10-01T00:00:00Z</para>
         /// </summary>
         [NameInMap("sentDateTime")]
         [Validation(Required=false)]
@@ -182,6 +212,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>一般取邮件正文的前一段</para>
         /// </summary>
         [NameInMap("summary")]
         [Validation(Required=false)]

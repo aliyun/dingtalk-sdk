@@ -3280,6 +3280,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CandidateInfoVOList))
+            {
+                body["candidateInfoVOList"] = request.CandidateInfoVOList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConferenceInfoVO))
             {
                 body["conferenceInfoVO"] = request.ConferenceInfoVO;
@@ -3299,10 +3303,6 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewType))
             {
                 body["interviewType"] = request.InterviewType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntervieweeInfoVOList))
-            {
-                body["intervieweeInfoVOList"] = request.IntervieweeInfoVOList;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewerInfoVOList))
             {
@@ -3367,6 +3367,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CandidateInfoVOList))
+            {
+                body["candidateInfoVOList"] = request.CandidateInfoVOList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConferenceInfoVO))
             {
                 body["conferenceInfoVO"] = request.ConferenceInfoVO;
@@ -3386,10 +3390,6 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewType))
             {
                 body["interviewType"] = request.InterviewType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IntervieweeInfoVOList))
-            {
-                body["intervieweeInfoVOList"] = request.IntervieweeInfoVOList;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InterviewerInfoVOList))
             {

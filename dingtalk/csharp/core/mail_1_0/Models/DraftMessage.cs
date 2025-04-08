@@ -55,6 +55,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>由RFC5322定义的邮件头集合</para>
         /// </summary>
         [NameInMap("internetMessageHeaders")]
         [Validation(Required=false)]
@@ -109,6 +112,9 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>一般取邮件正文的前一段</para>
         /// </summary>
         [NameInMap("summary")]
         [Validation(Required=false)]

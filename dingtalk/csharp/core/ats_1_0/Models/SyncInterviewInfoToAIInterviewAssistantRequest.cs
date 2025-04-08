@@ -9,6 +9,60 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class SyncInterviewInfoToAIInterviewAssistantRequest : TeaModel {
+        [NameInMap("candidateInfoVOList")]
+        [Validation(Required=false)]
+        public List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList> CandidateInfoVOList { get; set; }
+        public class SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList : TeaModel {
+            [NameInMap("bizCandidateId")]
+            [Validation(Required=false)]
+            public string BizCandidateId { get; set; }
+
+            [NameInMap("historyInterviewInfoVOList")]
+            [Validation(Required=false)]
+            public List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList> HistoryInterviewInfoVOList { get; set; }
+            public class SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList : TeaModel {
+                [NameInMap("aiInterviewHistoryEvaluationContentList")]
+                [Validation(Required=false)]
+                public List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList> AiInterviewHistoryEvaluationContentList { get; set; }
+                public class SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList : TeaModel {
+                    [NameInMap("historyInterviewContent")]
+                    [Validation(Required=false)]
+                    public string HistoryInterviewContent { get; set; }
+
+                    [NameInMap("interviewerUserId")]
+                    [Validation(Required=false)]
+                    public string InterviewerUserId { get; set; }
+
+                }
+
+                [NameInMap("canViewUserIdList")]
+                [Validation(Required=false)]
+                public List<string> CanViewUserIdList { get; set; }
+
+                [NameInMap("historyInterviewId")]
+                [Validation(Required=false)]
+                public string HistoryInterviewId { get; set; }
+
+                [NameInMap("historyInterviewRounds")]
+                [Validation(Required=false)]
+                public string HistoryInterviewRounds { get; set; }
+
+            }
+
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
+            [NameInMap("phone")]
+            [Validation(Required=false)]
+            public string Phone { get; set; }
+
+            [NameInMap("resumeContent")]
+            [Validation(Required=false)]
+            public string ResumeContent { get; set; }
+
+        }
+
         [NameInMap("conferenceInfoVO")]
         [Validation(Required=false)]
         public SyncInterviewInfoToAIInterviewAssistantRequestConferenceInfoVO ConferenceInfoVO { get; set; }
@@ -56,58 +110,6 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [NameInMap("interviewType")]
         [Validation(Required=false)]
         public string InterviewType { get; set; }
-
-        [NameInMap("intervieweeInfoVOList")]
-        [Validation(Required=false)]
-        public List<SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList> IntervieweeInfoVOList { get; set; }
-        public class SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList : TeaModel {
-            [NameInMap("bizIntervieweeId")]
-            [Validation(Required=false)]
-            public string BizIntervieweeId { get; set; }
-
-            [NameInMap("historyInterviewInfoVOList")]
-            [Validation(Required=false)]
-            public List<SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList> HistoryInterviewInfoVOList { get; set; }
-            public class SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList : TeaModel {
-                [NameInMap("canViewUserIdList")]
-                [Validation(Required=false)]
-                public List<string> CanViewUserIdList { get; set; }
-
-                [NameInMap("evaluation")]
-                [Validation(Required=false)]
-                public string Evaluation { get; set; }
-
-                [NameInMap("historyInterviewId")]
-                [Validation(Required=false)]
-                public string HistoryInterviewId { get; set; }
-
-                [NameInMap("historyInterviewResult")]
-                [Validation(Required=false)]
-                public string HistoryInterviewResult { get; set; }
-
-                [NameInMap("interviewRounds")]
-                [Validation(Required=false)]
-                public string InterviewRounds { get; set; }
-
-                [NameInMap("interviewerName")]
-                [Validation(Required=false)]
-                public string InterviewerName { get; set; }
-
-            }
-
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            [NameInMap("phone")]
-            [Validation(Required=false)]
-            public string Phone { get; set; }
-
-            [NameInMap("resumeContent")]
-            [Validation(Required=false)]
-            public string ResumeContent { get; set; }
-
-        }
 
         [NameInMap("interviewerInfoVOList")]
         [Validation(Required=false)]

@@ -487,6 +487,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["subject"] = request.Subject;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TodoType))
+            {
+                body["todoType"] = request.TodoType;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -599,6 +603,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
             {
                 body["subject"] = request.Subject;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TodoType))
+            {
+                body["todoType"] = request.TodoType;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1794,6 +1802,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["toDueTime"] = request.ToDueTime;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TodoType))
+            {
+                body["todoType"] = request.TodoType;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1880,6 +1892,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToDueTime))
             {
                 body["toDueTime"] = request.ToDueTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TodoType))
+            {
+                body["todoType"] = request.TodoType;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1982,6 +1998,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["roleTypes"] = request.RoleTypes;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TodoType))
+            {
+                body["todoType"] = request.TodoType;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2044,6 +2064,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleTypes))
             {
                 body["roleTypes"] = request.RoleTypes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TodoType))
+            {
+                body["todoType"] = request.TodoType;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
