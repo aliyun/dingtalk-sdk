@@ -598,6 +598,7 @@ class CreateTodoTaskRequest(TeaModel):
         priority: int = None,
         source_id: str = None,
         subject: str = None,
+        todo_type: str = None,
         operator_id: str = None,
     ):
         self.action_list = action_list
@@ -615,6 +616,7 @@ class CreateTodoTaskRequest(TeaModel):
         self.source_id = source_id
         # This parameter is required.
         self.subject = subject
+        self.todo_type = todo_type
         self.operator_id = operator_id
 
     def validate(self):
@@ -669,6 +671,8 @@ class CreateTodoTaskRequest(TeaModel):
             result['sourceId'] = self.source_id
         if self.subject is not None:
             result['subject'] = self.subject
+        if self.todo_type is not None:
+            result['todoType'] = self.todo_type
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -711,6 +715,8 @@ class CreateTodoTaskRequest(TeaModel):
             self.source_id = m.get('sourceId')
         if m.get('subject') is not None:
             self.subject = m.get('subject')
+        if m.get('todoType') is not None:
+            self.todo_type = m.get('todoType')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
@@ -3231,6 +3237,7 @@ class QueryOrgTodoByUserRequest(TeaModel):
         role_types: List[List[str]] = None,
         subject: str = None,
         to_due_time: int = None,
+        todo_type: str = None,
     ):
         self.from_due_time = from_due_time
         self.is_done = is_done
@@ -3241,6 +3248,7 @@ class QueryOrgTodoByUserRequest(TeaModel):
         self.role_types = role_types
         self.subject = subject
         self.to_due_time = to_due_time
+        self.todo_type = todo_type
 
     def validate(self):
         pass
@@ -3269,6 +3277,8 @@ class QueryOrgTodoByUserRequest(TeaModel):
             result['subject'] = self.subject
         if self.to_due_time is not None:
             result['toDueTime'] = self.to_due_time
+        if self.todo_type is not None:
+            result['todoType'] = self.todo_type
         return result
 
     def from_map(self, m: dict = None):
@@ -3291,6 +3301,8 @@ class QueryOrgTodoByUserRequest(TeaModel):
             self.subject = m.get('subject')
         if m.get('toDueTime') is not None:
             self.to_due_time = m.get('toDueTime')
+        if m.get('todoType') is not None:
+            self.todo_type = m.get('todoType')
         return self
 
 
@@ -3342,6 +3354,7 @@ class QueryOrgTodoByUserResponseBodyTodoCards(TeaModel):
         source_id: str = None,
         subject: str = None,
         task_id: str = None,
+        todo_type: str = None,
     ):
         self.biz_tag = biz_tag
         self.created_time = created_time
@@ -3355,6 +3368,7 @@ class QueryOrgTodoByUserResponseBodyTodoCards(TeaModel):
         self.source_id = source_id
         self.subject = subject
         self.task_id = task_id
+        self.todo_type = todo_type
 
     def validate(self):
         if self.detail_url:
@@ -3390,6 +3404,8 @@ class QueryOrgTodoByUserResponseBodyTodoCards(TeaModel):
             result['subject'] = self.subject
         if self.task_id is not None:
             result['taskId'] = self.task_id
+        if self.todo_type is not None:
+            result['todoType'] = self.todo_type
         return result
 
     def from_map(self, m: dict = None):
@@ -3419,6 +3435,8 @@ class QueryOrgTodoByUserResponseBodyTodoCards(TeaModel):
             self.subject = m.get('subject')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
+        if m.get('todoType') is not None:
+            self.todo_type = m.get('todoType')
         return self
 
 
@@ -3550,10 +3568,12 @@ class QueryOrgTodoTasksRequest(TeaModel):
         is_done: bool = None,
         next_token: str = None,
         role_types: List[List[str]] = None,
+        todo_type: str = None,
     ):
         self.is_done = is_done
         self.next_token = next_token
         self.role_types = role_types
+        self.todo_type = todo_type
 
     def validate(self):
         pass
@@ -3570,6 +3590,8 @@ class QueryOrgTodoTasksRequest(TeaModel):
             result['nextToken'] = self.next_token
         if self.role_types is not None:
             result['roleTypes'] = self.role_types
+        if self.todo_type is not None:
+            result['todoType'] = self.todo_type
         return result
 
     def from_map(self, m: dict = None):
@@ -3580,6 +3602,8 @@ class QueryOrgTodoTasksRequest(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('roleTypes') is not None:
             self.role_types = m.get('roleTypes')
+        if m.get('todoType') is not None:
+            self.todo_type = m.get('todoType')
         return self
 
 
@@ -3630,6 +3654,7 @@ class QueryOrgTodoTasksResponseBodyTodoCards(TeaModel):
         source_id: str = None,
         subject: str = None,
         task_id: str = None,
+        todo_type: str = None,
     ):
         self.biz_tag = biz_tag
         self.created_time = created_time
@@ -3642,6 +3667,7 @@ class QueryOrgTodoTasksResponseBodyTodoCards(TeaModel):
         self.source_id = source_id
         self.subject = subject
         self.task_id = task_id
+        self.todo_type = todo_type
 
     def validate(self):
         if self.detail_url:
@@ -3675,6 +3701,8 @@ class QueryOrgTodoTasksResponseBodyTodoCards(TeaModel):
             result['subject'] = self.subject
         if self.task_id is not None:
             result['taskId'] = self.task_id
+        if self.todo_type is not None:
+            result['todoType'] = self.todo_type
         return result
 
     def from_map(self, m: dict = None):
@@ -3702,6 +3730,8 @@ class QueryOrgTodoTasksResponseBodyTodoCards(TeaModel):
             self.subject = m.get('subject')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
+        if m.get('todoType') is not None:
+            self.todo_type = m.get('todoType')
         return self
 
 

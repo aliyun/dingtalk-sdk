@@ -533,9 +533,13 @@ class DataMarketIsvServiceRequest(TeaModel):
 class DataMarketIsvServiceResponseBody(TeaModel):
     def __init__(
         self,
+        code: str = None,
         data: str = None,
+        msg: str = None,
     ):
+        self.code = code
         self.data = data
+        self.msg = msg
 
     def validate(self):
         pass
@@ -546,14 +550,22 @@ class DataMarketIsvServiceResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.code is not None:
+            result['code'] = self.code
         if self.data is not None:
             result['data'] = self.data
+        if self.msg is not None:
+            result['msg'] = self.msg
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
         if m.get('data') is not None:
             self.data = m.get('data')
+        if m.get('msg') is not None:
+            self.msg = m.get('msg')
         return self
 
 
@@ -667,9 +679,17 @@ class DataMarketServiceRequest(TeaModel):
 class DataMarketServiceResponseBody(TeaModel):
     def __init__(
         self,
+        code: str = None,
         data: str = None,
+        msg: str = None,
+        total_quota: int = None,
+        used_quota: int = None,
     ):
+        self.code = code
         self.data = data
+        self.msg = msg
+        self.total_quota = total_quota
+        self.used_quota = used_quota
 
     def validate(self):
         pass
@@ -680,14 +700,30 @@ class DataMarketServiceResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.code is not None:
+            result['code'] = self.code
         if self.data is not None:
             result['data'] = self.data
+        if self.msg is not None:
+            result['msg'] = self.msg
+        if self.total_quota is not None:
+            result['totalQuota'] = self.total_quota
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
         if m.get('data') is not None:
             self.data = m.get('data')
+        if m.get('msg') is not None:
+            self.msg = m.get('msg')
+        if m.get('totalQuota') is not None:
+            self.total_quota = m.get('totalQuota')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
         return self
 
 

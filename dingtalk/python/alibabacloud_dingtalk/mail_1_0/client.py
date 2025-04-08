@@ -396,6 +396,232 @@ class Client(OpenApiClient):
         headers = dingtalkmail__1__0_models.CreateUserHeaders()
         return await self.create_user_with_options_async(request, headers, runtime)
 
+    def delete_mail_folder_with_options(
+        self,
+        email: str,
+        id: str,
+        headers: dingtalkmail__1__0_models.DeleteMailFolderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.DeleteMailFolderResponse:
+        """
+        @summary 删除文件夹
+        
+        @param headers: DeleteMailFolderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteMailFolderResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='DeleteMailFolder',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/mailFolders/{id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.DeleteMailFolderResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_mail_folder_with_options_async(
+        self,
+        email: str,
+        id: str,
+        headers: dingtalkmail__1__0_models.DeleteMailFolderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.DeleteMailFolderResponse:
+        """
+        @summary 删除文件夹
+        
+        @param headers: DeleteMailFolderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteMailFolderResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='DeleteMailFolder',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/mailFolders/{id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.DeleteMailFolderResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_mail_folder(
+        self,
+        email: str,
+        id: str,
+    ) -> dingtalkmail__1__0_models.DeleteMailFolderResponse:
+        """
+        @summary 删除文件夹
+        
+        @return: DeleteMailFolderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.DeleteMailFolderHeaders()
+        return self.delete_mail_folder_with_options(email, id, headers, runtime)
+
+    async def delete_mail_folder_async(
+        self,
+        email: str,
+        id: str,
+    ) -> dingtalkmail__1__0_models.DeleteMailFolderResponse:
+        """
+        @summary 删除文件夹
+        
+        @return: DeleteMailFolderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.DeleteMailFolderHeaders()
+        return await self.delete_mail_folder_with_options_async(email, id, headers, runtime)
+
+    def delete_messages_with_options(
+        self,
+        email: str,
+        request: dingtalkmail__1__0_models.DeleteMessagesRequest,
+        headers: dingtalkmail__1__0_models.DeleteMessagesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.DeleteMessagesResponse:
+        """
+        @summary 批量删除邮件
+        
+        @param request: DeleteMessagesRequest
+        @param headers: DeleteMessagesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteMessagesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.delete_type):
+            body['deleteType'] = request.delete_type
+        if not UtilClient.is_unset(request.ids):
+            body['ids'] = request.ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteMessages',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/messages/batchDelete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.DeleteMessagesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_messages_with_options_async(
+        self,
+        email: str,
+        request: dingtalkmail__1__0_models.DeleteMessagesRequest,
+        headers: dingtalkmail__1__0_models.DeleteMessagesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.DeleteMessagesResponse:
+        """
+        @summary 批量删除邮件
+        
+        @param request: DeleteMessagesRequest
+        @param headers: DeleteMessagesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteMessagesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.delete_type):
+            body['deleteType'] = request.delete_type
+        if not UtilClient.is_unset(request.ids):
+            body['ids'] = request.ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteMessages',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/messages/batchDelete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.DeleteMessagesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_messages(
+        self,
+        email: str,
+        request: dingtalkmail__1__0_models.DeleteMessagesRequest,
+    ) -> dingtalkmail__1__0_models.DeleteMessagesResponse:
+        """
+        @summary 批量删除邮件
+        
+        @param request: DeleteMessagesRequest
+        @return: DeleteMessagesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.DeleteMessagesHeaders()
+        return self.delete_messages_with_options(email, request, headers, runtime)
+
+    async def delete_messages_async(
+        self,
+        email: str,
+        request: dingtalkmail__1__0_models.DeleteMessagesRequest,
+    ) -> dingtalkmail__1__0_models.DeleteMessagesResponse:
+        """
+        @summary 批量删除邮件
+        
+        @param request: DeleteMessagesRequest
+        @return: DeleteMessagesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.DeleteMessagesHeaders()
+        return await self.delete_messages_with_options_async(email, request, headers, runtime)
+
     def get_message_with_options(
         self,
         email: str,
@@ -766,6 +992,128 @@ class Client(OpenApiClient):
         headers = dingtalkmail__1__0_models.ListMessagesHeaders()
         return await self.list_messages_with_options_async(email, folder_id, request, headers, runtime)
 
+    def move_mail_folder_with_options(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.MoveMailFolderRequest,
+        headers: dingtalkmail__1__0_models.MoveMailFolderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.MoveMailFolderResponse:
+        """
+        @summary 移动文件夹
+        
+        @param request: MoveMailFolderRequest
+        @param headers: MoveMailFolderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MoveMailFolderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.destination_folder_id):
+            body['destinationFolderId'] = request.destination_folder_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='MoveMailFolder',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/mailFolders/{id}/move',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.MoveMailFolderResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def move_mail_folder_with_options_async(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.MoveMailFolderRequest,
+        headers: dingtalkmail__1__0_models.MoveMailFolderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.MoveMailFolderResponse:
+        """
+        @summary 移动文件夹
+        
+        @param request: MoveMailFolderRequest
+        @param headers: MoveMailFolderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MoveMailFolderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.destination_folder_id):
+            body['destinationFolderId'] = request.destination_folder_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='MoveMailFolder',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/mailFolders/{id}/move',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.MoveMailFolderResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def move_mail_folder(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.MoveMailFolderRequest,
+    ) -> dingtalkmail__1__0_models.MoveMailFolderResponse:
+        """
+        @summary 移动文件夹
+        
+        @param request: MoveMailFolderRequest
+        @return: MoveMailFolderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.MoveMailFolderHeaders()
+        return self.move_mail_folder_with_options(email, id, request, headers, runtime)
+
+    async def move_mail_folder_async(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.MoveMailFolderRequest,
+    ) -> dingtalkmail__1__0_models.MoveMailFolderResponse:
+        """
+        @summary 移动文件夹
+        
+        @param request: MoveMailFolderRequest
+        @return: MoveMailFolderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.MoveMailFolderHeaders()
+        return await self.move_mail_folder_with_options_async(email, id, request, headers, runtime)
+
     def send_message_with_options(
         self,
         email: str,
@@ -887,3 +1235,247 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmail__1__0_models.SendMessageHeaders()
         return await self.send_message_with_options_async(email, id, request, headers, runtime)
+
+    def update_mail_folder_with_options(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.UpdateMailFolderRequest,
+        headers: dingtalkmail__1__0_models.UpdateMailFolderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.UpdateMailFolderResponse:
+        """
+        @summary 修改文件夹信息
+        
+        @param request: UpdateMailFolderRequest
+        @param headers: UpdateMailFolderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMailFolderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.display_name):
+            body['displayName'] = request.display_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateMailFolder',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/mailFolders/{id}/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.UpdateMailFolderResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_mail_folder_with_options_async(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.UpdateMailFolderRequest,
+        headers: dingtalkmail__1__0_models.UpdateMailFolderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.UpdateMailFolderResponse:
+        """
+        @summary 修改文件夹信息
+        
+        @param request: UpdateMailFolderRequest
+        @param headers: UpdateMailFolderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMailFolderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.display_name):
+            body['displayName'] = request.display_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateMailFolder',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/mailFolders/{id}/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.UpdateMailFolderResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_mail_folder(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.UpdateMailFolderRequest,
+    ) -> dingtalkmail__1__0_models.UpdateMailFolderResponse:
+        """
+        @summary 修改文件夹信息
+        
+        @param request: UpdateMailFolderRequest
+        @return: UpdateMailFolderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.UpdateMailFolderHeaders()
+        return self.update_mail_folder_with_options(email, id, request, headers, runtime)
+
+    async def update_mail_folder_async(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.UpdateMailFolderRequest,
+    ) -> dingtalkmail__1__0_models.UpdateMailFolderResponse:
+        """
+        @summary 修改文件夹信息
+        
+        @param request: UpdateMailFolderRequest
+        @return: UpdateMailFolderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.UpdateMailFolderHeaders()
+        return await self.update_mail_folder_with_options_async(email, id, request, headers, runtime)
+
+    def update_message_with_options(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.UpdateMessageRequest,
+        headers: dingtalkmail__1__0_models.UpdateMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.UpdateMessageResponse:
+        """
+        @summary 修改草稿
+        
+        @param request: UpdateMessageRequest
+        @param headers: UpdateMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.message):
+            body['message'] = request.message
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateMessage',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/messages/{id}/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.UpdateMessageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_message_with_options_async(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.UpdateMessageRequest,
+        headers: dingtalkmail__1__0_models.UpdateMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.UpdateMessageResponse:
+        """
+        @summary 修改草稿
+        
+        @param request: UpdateMessageRequest
+        @param headers: UpdateMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.message):
+            body['message'] = request.message
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateMessage',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/messages/{id}/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.UpdateMessageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_message(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.UpdateMessageRequest,
+    ) -> dingtalkmail__1__0_models.UpdateMessageResponse:
+        """
+        @summary 修改草稿
+        
+        @param request: UpdateMessageRequest
+        @return: UpdateMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.UpdateMessageHeaders()
+        return self.update_message_with_options(email, id, request, headers, runtime)
+
+    async def update_message_async(
+        self,
+        email: str,
+        id: str,
+        request: dingtalkmail__1__0_models.UpdateMessageRequest,
+    ) -> dingtalkmail__1__0_models.UpdateMessageResponse:
+        """
+        @summary 修改草稿
+        
+        @param request: UpdateMessageRequest
+        @return: UpdateMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.UpdateMessageHeaders()
+        return await self.update_message_with_options_async(email, id, request, headers, runtime)

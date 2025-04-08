@@ -6656,6 +6656,254 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.GetPartnerTypeByParentIdHeaders()
         return await self.get_partner_type_by_parent_id_with_options_async(parent_id, headers, runtime)
 
+    def get_private_store_capacity_usage_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageRequest,
+        headers: dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageResponse:
+        """
+        @summary 获取专属存储容量信息
+        
+        @param request: GetPrivateStoreCapacityUsageRequest
+        @param headers: GetPrivateStoreCapacityUsageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivateStoreCapacityUsageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetPrivateStoreCapacityUsage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/capacityUsages/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_private_store_capacity_usage_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageRequest,
+        headers: dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageResponse:
+        """
+        @summary 获取专属存储容量信息
+        
+        @param request: GetPrivateStoreCapacityUsageRequest
+        @param headers: GetPrivateStoreCapacityUsageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivateStoreCapacityUsageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetPrivateStoreCapacityUsage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/capacityUsages/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_private_store_capacity_usage(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageResponse:
+        """
+        @summary 获取专属存储容量信息
+        
+        @param request: GetPrivateStoreCapacityUsageRequest
+        @return: GetPrivateStoreCapacityUsageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageHeaders()
+        return self.get_private_store_capacity_usage_with_options(request, headers, runtime)
+
+    async def get_private_store_capacity_usage_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageResponse:
+        """
+        @summary 获取专属存储容量信息
+        
+        @param request: GetPrivateStoreCapacityUsageRequest
+        @return: GetPrivateStoreCapacityUsageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPrivateStoreCapacityUsageHeaders()
+        return await self.get_private_store_capacity_usage_with_options_async(request, headers, runtime)
+
+    def get_private_store_file_infos_by_page_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageResponse:
+        """
+        @summary 分页获取专属存储文件信息
+        
+        @param request: GetPrivateStoreFileInfosByPageRequest
+        @param headers: GetPrivateStoreFileInfosByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivateStoreFileInfosByPageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_create_time):
+            body['fileCreateTime'] = request.file_create_time
+        if not UtilClient.is_unset(request.file_status):
+            body['fileStatus'] = request.file_status
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetPrivateStoreFileInfosByPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/fileInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_private_store_file_infos_by_page_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageResponse:
+        """
+        @summary 分页获取专属存储文件信息
+        
+        @param request: GetPrivateStoreFileInfosByPageRequest
+        @param headers: GetPrivateStoreFileInfosByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivateStoreFileInfosByPageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_create_time):
+            body['fileCreateTime'] = request.file_create_time
+        if not UtilClient.is_unset(request.file_status):
+            body['fileStatus'] = request.file_status
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetPrivateStoreFileInfosByPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/fileInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_private_store_file_infos_by_page(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageResponse:
+        """
+        @summary 分页获取专属存储文件信息
+        
+        @param request: GetPrivateStoreFileInfosByPageRequest
+        @return: GetPrivateStoreFileInfosByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageHeaders()
+        return self.get_private_store_file_infos_by_page_with_options(request, headers, runtime)
+
+    async def get_private_store_file_infos_by_page_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageResponse:
+        """
+        @summary 分页获取专属存储文件信息
+        
+        @param request: GetPrivateStoreFileInfosByPageRequest
+        @return: GetPrivateStoreFileInfosByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPrivateStoreFileInfosByPageHeaders()
+        return await self.get_private_store_file_infos_by_page_with_options_async(request, headers, runtime)
+
     def get_private_store_file_path_with_options(
         self,
         request: dingtalkexclusive__1__0_models.GetPrivateStoreFilePathRequest,

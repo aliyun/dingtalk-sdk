@@ -4369,6 +4369,151 @@ class SyncInterviewInfoToAIInterviewAssistantHeaders(TeaModel):
         return self
 
 
+class SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList(TeaModel):
+    def __init__(
+        self,
+        history_interview_content: str = None,
+        interviewer_user_id: str = None,
+    ):
+        self.history_interview_content = history_interview_content
+        self.interviewer_user_id = interviewer_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.history_interview_content is not None:
+            result['historyInterviewContent'] = self.history_interview_content
+        if self.interviewer_user_id is not None:
+            result['interviewerUserId'] = self.interviewer_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('historyInterviewContent') is not None:
+            self.history_interview_content = m.get('historyInterviewContent')
+        if m.get('interviewerUserId') is not None:
+            self.interviewer_user_id = m.get('interviewerUserId')
+        return self
+
+
+class SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList(TeaModel):
+    def __init__(
+        self,
+        ai_interview_history_evaluation_content_list: List[SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList] = None,
+        can_view_user_id_list: List[str] = None,
+        history_interview_id: str = None,
+        history_interview_rounds: str = None,
+    ):
+        self.ai_interview_history_evaluation_content_list = ai_interview_history_evaluation_content_list
+        self.can_view_user_id_list = can_view_user_id_list
+        self.history_interview_id = history_interview_id
+        self.history_interview_rounds = history_interview_rounds
+
+    def validate(self):
+        if self.ai_interview_history_evaluation_content_list:
+            for k in self.ai_interview_history_evaluation_content_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['aiInterviewHistoryEvaluationContentList'] = []
+        if self.ai_interview_history_evaluation_content_list is not None:
+            for k in self.ai_interview_history_evaluation_content_list:
+                result['aiInterviewHistoryEvaluationContentList'].append(k.to_map() if k else None)
+        if self.can_view_user_id_list is not None:
+            result['canViewUserIdList'] = self.can_view_user_id_list
+        if self.history_interview_id is not None:
+            result['historyInterviewId'] = self.history_interview_id
+        if self.history_interview_rounds is not None:
+            result['historyInterviewRounds'] = self.history_interview_rounds
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.ai_interview_history_evaluation_content_list = []
+        if m.get('aiInterviewHistoryEvaluationContentList') is not None:
+            for k in m.get('aiInterviewHistoryEvaluationContentList'):
+                temp_model = SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList()
+                self.ai_interview_history_evaluation_content_list.append(temp_model.from_map(k))
+        if m.get('canViewUserIdList') is not None:
+            self.can_view_user_id_list = m.get('canViewUserIdList')
+        if m.get('historyInterviewId') is not None:
+            self.history_interview_id = m.get('historyInterviewId')
+        if m.get('historyInterviewRounds') is not None:
+            self.history_interview_rounds = m.get('historyInterviewRounds')
+        return self
+
+
+class SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList(TeaModel):
+    def __init__(
+        self,
+        biz_candidate_id: str = None,
+        history_interview_info_volist: List[SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList] = None,
+        name: str = None,
+        phone: str = None,
+        resume_content: str = None,
+    ):
+        self.biz_candidate_id = biz_candidate_id
+        self.history_interview_info_volist = history_interview_info_volist
+        self.name = name
+        self.phone = phone
+        self.resume_content = resume_content
+
+    def validate(self):
+        if self.history_interview_info_volist:
+            for k in self.history_interview_info_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_candidate_id is not None:
+            result['bizCandidateId'] = self.biz_candidate_id
+        result['historyInterviewInfoVOList'] = []
+        if self.history_interview_info_volist is not None:
+            for k in self.history_interview_info_volist:
+                result['historyInterviewInfoVOList'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.phone is not None:
+            result['phone'] = self.phone
+        if self.resume_content is not None:
+            result['resumeContent'] = self.resume_content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCandidateId') is not None:
+            self.biz_candidate_id = m.get('bizCandidateId')
+        self.history_interview_info_volist = []
+        if m.get('historyInterviewInfoVOList') is not None:
+            for k in m.get('historyInterviewInfoVOList'):
+                temp_model = SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList()
+                self.history_interview_info_volist.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('phone') is not None:
+            self.phone = m.get('phone')
+        if m.get('resumeContent') is not None:
+            self.resume_content = m.get('resumeContent')
+        return self
+
+
 class SyncInterviewInfoToAIInterviewAssistantRequestConferenceInfoVOConferenceBookerInfoVO(TeaModel):
     def __init__(
         self,
@@ -4446,122 +4591,6 @@ class SyncInterviewInfoToAIInterviewAssistantRequestConferenceInfoVO(TeaModel):
             self.schedule_conference_id = m.get('scheduleConferenceId')
         if m.get('scheduleConferenceUrl') is not None:
             self.schedule_conference_url = m.get('scheduleConferenceUrl')
-        return self
-
-
-class SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList(TeaModel):
-    def __init__(
-        self,
-        can_view_user_id_list: List[str] = None,
-        evaluation: str = None,
-        history_interview_id: str = None,
-        history_interview_result: str = None,
-        interview_rounds: str = None,
-        interviewer_name: str = None,
-    ):
-        self.can_view_user_id_list = can_view_user_id_list
-        self.evaluation = evaluation
-        self.history_interview_id = history_interview_id
-        self.history_interview_result = history_interview_result
-        self.interview_rounds = interview_rounds
-        self.interviewer_name = interviewer_name
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.can_view_user_id_list is not None:
-            result['canViewUserIdList'] = self.can_view_user_id_list
-        if self.evaluation is not None:
-            result['evaluation'] = self.evaluation
-        if self.history_interview_id is not None:
-            result['historyInterviewId'] = self.history_interview_id
-        if self.history_interview_result is not None:
-            result['historyInterviewResult'] = self.history_interview_result
-        if self.interview_rounds is not None:
-            result['interviewRounds'] = self.interview_rounds
-        if self.interviewer_name is not None:
-            result['interviewerName'] = self.interviewer_name
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('canViewUserIdList') is not None:
-            self.can_view_user_id_list = m.get('canViewUserIdList')
-        if m.get('evaluation') is not None:
-            self.evaluation = m.get('evaluation')
-        if m.get('historyInterviewId') is not None:
-            self.history_interview_id = m.get('historyInterviewId')
-        if m.get('historyInterviewResult') is not None:
-            self.history_interview_result = m.get('historyInterviewResult')
-        if m.get('interviewRounds') is not None:
-            self.interview_rounds = m.get('interviewRounds')
-        if m.get('interviewerName') is not None:
-            self.interviewer_name = m.get('interviewerName')
-        return self
-
-
-class SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList(TeaModel):
-    def __init__(
-        self,
-        biz_interviewee_id: str = None,
-        history_interview_info_volist: List[SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList] = None,
-        name: str = None,
-        phone: str = None,
-        resume_content: str = None,
-    ):
-        self.biz_interviewee_id = biz_interviewee_id
-        self.history_interview_info_volist = history_interview_info_volist
-        self.name = name
-        self.phone = phone
-        self.resume_content = resume_content
-
-    def validate(self):
-        if self.history_interview_info_volist:
-            for k in self.history_interview_info_volist:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.biz_interviewee_id is not None:
-            result['bizIntervieweeId'] = self.biz_interviewee_id
-        result['historyInterviewInfoVOList'] = []
-        if self.history_interview_info_volist is not None:
-            for k in self.history_interview_info_volist:
-                result['historyInterviewInfoVOList'].append(k.to_map() if k else None)
-        if self.name is not None:
-            result['name'] = self.name
-        if self.phone is not None:
-            result['phone'] = self.phone
-        if self.resume_content is not None:
-            result['resumeContent'] = self.resume_content
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('bizIntervieweeId') is not None:
-            self.biz_interviewee_id = m.get('bizIntervieweeId')
-        self.history_interview_info_volist = []
-        if m.get('historyInterviewInfoVOList') is not None:
-            for k in m.get('historyInterviewInfoVOList'):
-                temp_model = SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList()
-                self.history_interview_info_volist.append(temp_model.from_map(k))
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('phone') is not None:
-            self.phone = m.get('phone')
-        if m.get('resumeContent') is not None:
-            self.resume_content = m.get('resumeContent')
         return self
 
 
@@ -4711,33 +4740,33 @@ class SyncInterviewInfoToAIInterviewAssistantRequestJobContentVO(TeaModel):
 class SyncInterviewInfoToAIInterviewAssistantRequest(TeaModel):
     def __init__(
         self,
+        candidate_info_volist: List[SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList] = None,
         conference_info_vo: SyncInterviewInfoToAIInterviewAssistantRequestConferenceInfoVO = None,
         interview_end_time: int = None,
         interview_id: str = None,
         interview_start_time: int = None,
         interview_type: str = None,
-        interviewee_info_volist: List[SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList] = None,
         interviewer_info_volist: List[SyncInterviewInfoToAIInterviewAssistantRequestInterviewerInfoVOList] = None,
         isv_id: str = None,
         job_content_vo: SyncInterviewInfoToAIInterviewAssistantRequestJobContentVO = None,
     ):
+        self.candidate_info_volist = candidate_info_volist
         self.conference_info_vo = conference_info_vo
         self.interview_end_time = interview_end_time
         self.interview_id = interview_id
         self.interview_start_time = interview_start_time
         self.interview_type = interview_type
-        self.interviewee_info_volist = interviewee_info_volist
         self.interviewer_info_volist = interviewer_info_volist
         self.isv_id = isv_id
         self.job_content_vo = job_content_vo
 
     def validate(self):
-        if self.conference_info_vo:
-            self.conference_info_vo.validate()
-        if self.interviewee_info_volist:
-            for k in self.interviewee_info_volist:
+        if self.candidate_info_volist:
+            for k in self.candidate_info_volist:
                 if k:
                     k.validate()
+        if self.conference_info_vo:
+            self.conference_info_vo.validate()
         if self.interviewer_info_volist:
             for k in self.interviewer_info_volist:
                 if k:
@@ -4751,6 +4780,10 @@ class SyncInterviewInfoToAIInterviewAssistantRequest(TeaModel):
             return _map
 
         result = dict()
+        result['candidateInfoVOList'] = []
+        if self.candidate_info_volist is not None:
+            for k in self.candidate_info_volist:
+                result['candidateInfoVOList'].append(k.to_map() if k else None)
         if self.conference_info_vo is not None:
             result['conferenceInfoVO'] = self.conference_info_vo.to_map()
         if self.interview_end_time is not None:
@@ -4761,10 +4794,6 @@ class SyncInterviewInfoToAIInterviewAssistantRequest(TeaModel):
             result['interviewStartTime'] = self.interview_start_time
         if self.interview_type is not None:
             result['interviewType'] = self.interview_type
-        result['intervieweeInfoVOList'] = []
-        if self.interviewee_info_volist is not None:
-            for k in self.interviewee_info_volist:
-                result['intervieweeInfoVOList'].append(k.to_map() if k else None)
         result['interviewerInfoVOList'] = []
         if self.interviewer_info_volist is not None:
             for k in self.interviewer_info_volist:
@@ -4777,6 +4806,11 @@ class SyncInterviewInfoToAIInterviewAssistantRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.candidate_info_volist = []
+        if m.get('candidateInfoVOList') is not None:
+            for k in m.get('candidateInfoVOList'):
+                temp_model = SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList()
+                self.candidate_info_volist.append(temp_model.from_map(k))
         if m.get('conferenceInfoVO') is not None:
             temp_model = SyncInterviewInfoToAIInterviewAssistantRequestConferenceInfoVO()
             self.conference_info_vo = temp_model.from_map(m['conferenceInfoVO'])
@@ -4788,11 +4822,6 @@ class SyncInterviewInfoToAIInterviewAssistantRequest(TeaModel):
             self.interview_start_time = m.get('interviewStartTime')
         if m.get('interviewType') is not None:
             self.interview_type = m.get('interviewType')
-        self.interviewee_info_volist = []
-        if m.get('intervieweeInfoVOList') is not None:
-            for k in m.get('intervieweeInfoVOList'):
-                temp_model = SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList()
-                self.interviewee_info_volist.append(temp_model.from_map(k))
         self.interviewer_info_volist = []
         if m.get('interviewerInfoVOList') is not None:
             for k in m.get('interviewerInfoVOList'):

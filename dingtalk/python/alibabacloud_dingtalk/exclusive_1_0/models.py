@@ -10439,6 +10439,367 @@ class GetPartnerTypeByParentIdResponse(TeaModel):
         return self
 
 
+class GetPrivateStoreCapacityUsageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPrivateStoreCapacityUsageRequest(TeaModel):
+    def __init__(
+        self,
+        target_corp_id: str = None,
+    ):
+        # This parameter is required.
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class GetPrivateStoreCapacityUsageResponseBody(TeaModel):
+    def __init__(
+        self,
+        used_size: int = None,
+    ):
+        self.used_size = used_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.used_size is not None:
+            result['usedSize'] = self.used_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('usedSize') is not None:
+            self.used_size = m.get('usedSize')
+        return self
+
+
+class GetPrivateStoreCapacityUsageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetPrivateStoreCapacityUsageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetPrivateStoreCapacityUsageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetPrivateStoreFileInfosByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPrivateStoreFileInfosByPageRequest(TeaModel):
+    def __init__(
+        self,
+        file_create_time: int = None,
+        file_status: str = None,
+        max_results: int = None,
+        next_token: str = None,
+        order: str = None,
+        target_corp_id: str = None,
+    ):
+        # This parameter is required.
+        self.file_create_time = file_create_time
+        self.file_status = file_status
+        self.max_results = max_results
+        self.next_token = next_token
+        # This parameter is required.
+        self.order = order
+        # This parameter is required.
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_create_time is not None:
+            result['fileCreateTime'] = self.file_create_time
+        if self.file_status is not None:
+            result['fileStatus'] = self.file_status
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.order is not None:
+            result['order'] = self.order
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileCreateTime') is not None:
+            self.file_create_time = m.get('fileCreateTime')
+        if m.get('fileStatus') is not None:
+            self.file_status = m.get('fileStatus')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class GetPrivateStoreFileInfosByPageResponseBodyFileInfos(TeaModel):
+    def __init__(
+        self,
+        dentry_id: int = None,
+        file_create_time: int = None,
+        file_name: str = None,
+        file_size: int = None,
+        space_id: int = None,
+        status: str = None,
+    ):
+        self.dentry_id = dentry_id
+        self.file_create_time = file_create_time
+        self.file_name = file_name
+        self.file_size = file_size
+        self.space_id = space_id
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_id is not None:
+            result['dentryId'] = self.dentry_id
+        if self.file_create_time is not None:
+            result['fileCreateTime'] = self.file_create_time
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryId') is not None:
+            self.dentry_id = m.get('dentryId')
+        if m.get('fileCreateTime') is not None:
+            self.file_create_time = m.get('fileCreateTime')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class GetPrivateStoreFileInfosByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        file_infos: List[GetPrivateStoreFileInfosByPageResponseBodyFileInfos] = None,
+        next_token: str = None,
+    ):
+        self.file_infos = file_infos
+        self.next_token = next_token
+
+    def validate(self):
+        if self.file_infos:
+            for k in self.file_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['fileInfos'] = []
+        if self.file_infos is not None:
+            for k in self.file_infos:
+                result['fileInfos'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.file_infos = []
+        if m.get('fileInfos') is not None:
+            for k in m.get('fileInfos'):
+                temp_model = GetPrivateStoreFileInfosByPageResponseBodyFileInfos()
+                self.file_infos.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetPrivateStoreFileInfosByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetPrivateStoreFileInfosByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetPrivateStoreFileInfosByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetPrivateStoreFilePathHeaders(TeaModel):
     def __init__(
         self,

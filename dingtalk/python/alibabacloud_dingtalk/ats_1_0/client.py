@@ -2412,6 +2412,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.candidate_info_volist):
+            body['candidateInfoVOList'] = request.candidate_info_volist
         if not UtilClient.is_unset(request.conference_info_vo):
             body['conferenceInfoVO'] = request.conference_info_vo
         if not UtilClient.is_unset(request.interview_end_time):
@@ -2422,8 +2424,6 @@ class Client(OpenApiClient):
             body['interviewStartTime'] = request.interview_start_time
         if not UtilClient.is_unset(request.interview_type):
             body['interviewType'] = request.interview_type
-        if not UtilClient.is_unset(request.interviewee_info_volist):
-            body['intervieweeInfoVOList'] = request.interviewee_info_volist
         if not UtilClient.is_unset(request.interviewer_info_volist):
             body['interviewerInfoVOList'] = request.interviewer_info_volist
         if not UtilClient.is_unset(request.isv_id):
@@ -2471,6 +2471,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.candidate_info_volist):
+            body['candidateInfoVOList'] = request.candidate_info_volist
         if not UtilClient.is_unset(request.conference_info_vo):
             body['conferenceInfoVO'] = request.conference_info_vo
         if not UtilClient.is_unset(request.interview_end_time):
@@ -2481,8 +2483,6 @@ class Client(OpenApiClient):
             body['interviewStartTime'] = request.interview_start_time
         if not UtilClient.is_unset(request.interview_type):
             body['interviewType'] = request.interview_type
-        if not UtilClient.is_unset(request.interviewee_info_volist):
-            body['intervieweeInfoVOList'] = request.interviewee_info_volist
         if not UtilClient.is_unset(request.interviewer_info_volist):
             body['interviewerInfoVOList'] = request.interviewer_info_volist
         if not UtilClient.is_unset(request.isv_id):

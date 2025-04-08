@@ -346,6 +346,8 @@ class Client(OpenApiClient):
             body['sourceId'] = request.source_id
         if not UtilClient.is_unset(request.subject):
             body['subject'] = request.subject
+        if not UtilClient.is_unset(request.todo_type):
+            body['todoType'] = request.todo_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -420,6 +422,8 @@ class Client(OpenApiClient):
             body['sourceId'] = request.source_id
         if not UtilClient.is_unset(request.subject):
             body['subject'] = request.subject
+        if not UtilClient.is_unset(request.todo_type):
+            body['todoType'] = request.todo_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1379,6 +1383,8 @@ class Client(OpenApiClient):
             body['subject'] = request.subject
         if not UtilClient.is_unset(request.to_due_time):
             body['toDueTime'] = request.to_due_time
+        if not UtilClient.is_unset(request.todo_type):
+            body['todoType'] = request.todo_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1439,6 +1445,8 @@ class Client(OpenApiClient):
             body['subject'] = request.subject
         if not UtilClient.is_unset(request.to_due_time):
             body['toDueTime'] = request.to_due_time
+        if not UtilClient.is_unset(request.todo_type):
+            body['todoType'] = request.todo_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1517,6 +1525,8 @@ class Client(OpenApiClient):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.role_types):
             body['roleTypes'] = request.role_types
+        if not UtilClient.is_unset(request.todo_type):
+            body['todoType'] = request.todo_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1565,6 +1575,8 @@ class Client(OpenApiClient):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.role_types):
             body['roleTypes'] = request.role_types
+        if not UtilClient.is_unset(request.todo_type):
+            body['todoType'] = request.todo_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
