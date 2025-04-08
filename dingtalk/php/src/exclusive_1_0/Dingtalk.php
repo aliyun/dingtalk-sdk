@@ -162,6 +162,12 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutsideAuditGroupMessageB
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutsideAuditGroupMessageByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreCapacityUsageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreCapacityUsageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreCapacityUsageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFileInfosByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFileInfosByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFileInfosByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFilePathHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFilePathRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFilePathResponse;
@@ -3824,6 +3830,135 @@ class Dingtalk extends OpenApiClient
         $headers = new GetPartnerTypeByParentIdHeaders([]);
 
         return $this->getPartnerTypeByParentIdWithOptions($parentId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取专属存储容量信息
+     *  *
+     * @param GetPrivateStoreCapacityUsageRequest $request GetPrivateStoreCapacityUsageRequest
+     * @param GetPrivateStoreCapacityUsageHeaders $headers GetPrivateStoreCapacityUsageHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetPrivateStoreCapacityUsageResponse GetPrivateStoreCapacityUsageResponse
+     */
+    public function getPrivateStoreCapacityUsageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $query['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetPrivateStoreCapacityUsage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/privateStores/capacityUsages/infos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetPrivateStoreCapacityUsageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取专属存储容量信息
+     *  *
+     * @param GetPrivateStoreCapacityUsageRequest $request GetPrivateStoreCapacityUsageRequest
+     *
+     * @return GetPrivateStoreCapacityUsageResponse GetPrivateStoreCapacityUsageResponse
+     */
+    public function getPrivateStoreCapacityUsage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPrivateStoreCapacityUsageHeaders([]);
+
+        return $this->getPrivateStoreCapacityUsageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页获取专属存储文件信息
+     *  *
+     * @param GetPrivateStoreFileInfosByPageRequest $request GetPrivateStoreFileInfosByPageRequest
+     * @param GetPrivateStoreFileInfosByPageHeaders $headers GetPrivateStoreFileInfosByPageHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetPrivateStoreFileInfosByPageResponse GetPrivateStoreFileInfosByPageResponse
+     */
+    public function getPrivateStoreFileInfosByPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileCreateTime)) {
+            $body['fileCreateTime'] = $request->fileCreateTime;
+        }
+        if (!Utils::isUnset($request->fileStatus)) {
+            $body['fileStatus'] = $request->fileStatus;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->order)) {
+            $body['order'] = $request->order;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetPrivateStoreFileInfosByPage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/privateStores/fileInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetPrivateStoreFileInfosByPageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页获取专属存储文件信息
+     *  *
+     * @param GetPrivateStoreFileInfosByPageRequest $request GetPrivateStoreFileInfosByPageRequest
+     *
+     * @return GetPrivateStoreFileInfosByPageResponse GetPrivateStoreFileInfosByPageResponse
+     */
+    public function getPrivateStoreFileInfosByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPrivateStoreFileInfosByPageHeaders([]);
+
+        return $this->getPrivateStoreFileInfosByPageWithOptions($request, $headers, $runtime);
     }
 
     /**

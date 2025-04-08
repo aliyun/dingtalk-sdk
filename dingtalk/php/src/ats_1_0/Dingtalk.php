@@ -1355,6 +1355,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->candidateInfoVOList)) {
+            $body['candidateInfoVOList'] = $request->candidateInfoVOList;
+        }
         if (!Utils::isUnset($request->conferenceInfoVO)) {
             $body['conferenceInfoVO'] = $request->conferenceInfoVO;
         }
@@ -1369,9 +1372,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->interviewType)) {
             $body['interviewType'] = $request->interviewType;
-        }
-        if (!Utils::isUnset($request->intervieweeInfoVOList)) {
-            $body['intervieweeInfoVOList'] = $request->intervieweeInfoVOList;
         }
         if (!Utils::isUnset($request->interviewerInfoVOList)) {
             $body['interviewerInfoVOList'] = $request->interviewerInfoVOList;

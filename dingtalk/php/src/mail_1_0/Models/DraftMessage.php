@@ -41,6 +41,8 @@ class DraftMessage extends Model
     /**
      * @description This parameter is required.
      *
+     * @example 由RFC5322定义的邮件头集合
+     *
      * @var mixed[]
      */
     public $internetMessageHeaders;
@@ -90,6 +92,8 @@ class DraftMessage extends Model
 
     /**
      * @description This parameter is required.
+     *
+     * @example 一般取邮件正文的前一段
      *
      * @var Stream
      */

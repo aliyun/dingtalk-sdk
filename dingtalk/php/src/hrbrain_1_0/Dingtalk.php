@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteAwardRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteAwardRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteAwardRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteDeptInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteDeptInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteDeptInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteDimissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteDimissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteDimissionResponse;
@@ -38,9 +41,15 @@ use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeletePunDetailResponse
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteRegistHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteRegistRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteRegistResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteRegularHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteRegularRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteRegularResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeletetLabelBaseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeletetLabelBaseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeletetLabelBaseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteTrainingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteTrainingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteTrainingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteTransferEvalHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteTransferEvalRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteTransferEvalResponse;
@@ -89,6 +98,12 @@ use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportPunDetailResponse
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportRegistHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportRegistRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportRegistResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportRegularHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportRegularRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportRegularResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportTrainingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportTrainingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportTrainingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportTransferEvalHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportTransferEvalRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportTransferEvalResponse;
@@ -176,6 +191,63 @@ class Dingtalk extends OpenApiClient
         $headers = new HrbrainDeleteAwardRecordsHeaders([]);
 
         return $this->hrbrainDeleteAwardRecordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除组织架构
+     *  *
+     * @param HrbrainDeleteDeptInfoRequest $request HrbrainDeleteDeptInfoRequest
+     * @param HrbrainDeleteDeptInfoHeaders $headers HrbrainDeleteDeptInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainDeleteDeptInfoResponse HrbrainDeleteDeptInfoResponse
+     */
+    public function hrbrainDeleteDeptInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->params)) {
+            $body['params'] = $request->params;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainDeleteDeptInfo',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/deptInfos/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainDeleteDeptInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除组织架构
+     *  *
+     * @param HrbrainDeleteDeptInfoRequest $request HrbrainDeleteDeptInfoRequest
+     *
+     * @return HrbrainDeleteDeptInfoResponse HrbrainDeleteDeptInfoResponse
+     */
+    public function hrbrainDeleteDeptInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainDeleteDeptInfoHeaders([]);
+
+        return $this->hrbrainDeleteDeptInfoWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -746,6 +818,120 @@ class Dingtalk extends OpenApiClient
         $headers = new HrbrainDeleteRegistHeaders([]);
 
         return $this->hrbrainDeleteRegistWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除转正记录
+     *  *
+     * @param HrbrainDeleteRegularRequest $request HrbrainDeleteRegularRequest
+     * @param HrbrainDeleteRegularHeaders $headers HrbrainDeleteRegularHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainDeleteRegularResponse HrbrainDeleteRegularResponse
+     */
+    public function hrbrainDeleteRegularWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->params)) {
+            $body['params'] = $request->params;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainDeleteRegular',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/regulars/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainDeleteRegularResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除转正记录
+     *  *
+     * @param HrbrainDeleteRegularRequest $request HrbrainDeleteRegularRequest
+     *
+     * @return HrbrainDeleteRegularResponse HrbrainDeleteRegularResponse
+     */
+    public function hrbrainDeleteRegular($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainDeleteRegularHeaders([]);
+
+        return $this->hrbrainDeleteRegularWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除培训学习记录
+     *  *
+     * @param HrbrainDeleteTrainingRequest $request HrbrainDeleteTrainingRequest
+     * @param HrbrainDeleteTrainingHeaders $headers HrbrainDeleteTrainingHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainDeleteTrainingResponse HrbrainDeleteTrainingResponse
+     */
+    public function hrbrainDeleteTrainingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->params)) {
+            $body['params'] = $request->params;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainDeleteTraining',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/trainings/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainDeleteTrainingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除培训学习记录
+     *  *
+     * @param HrbrainDeleteTrainingRequest $request HrbrainDeleteTrainingRequest
+     *
+     * @return HrbrainDeleteTrainingResponse HrbrainDeleteTrainingResponse
+     */
+    public function hrbrainDeleteTraining($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainDeleteTrainingHeaders([]);
+
+        return $this->hrbrainDeleteTrainingWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1729,6 +1915,122 @@ class Dingtalk extends OpenApiClient
         $headers = new HrbrainImportRegistHeaders([]);
 
         return $this->hrbrainImportRegistWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 集成转正记录
+     *  *
+     * @param HrbrainImportRegularRequest $request HrbrainImportRegularRequest
+     * @param HrbrainImportRegularHeaders $headers HrbrainImportRegularHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainImportRegularResponse HrbrainImportRegularResponse
+     */
+    public function hrbrainImportRegularWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainImportRegular',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/regulars/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainImportRegularResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 集成转正记录
+     *  *
+     * @param HrbrainImportRegularRequest $request HrbrainImportRegularRequest
+     *
+     * @return HrbrainImportRegularResponse HrbrainImportRegularResponse
+     */
+    public function hrbrainImportRegular($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainImportRegularHeaders([]);
+
+        return $this->hrbrainImportRegularWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 集成培训学习记录
+     *  *
+     * @param HrbrainImportTrainingRequest $request HrbrainImportTrainingRequest
+     * @param HrbrainImportTrainingHeaders $headers HrbrainImportTrainingHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainImportTrainingResponse HrbrainImportTrainingResponse
+     */
+    public function hrbrainImportTrainingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainImportTraining',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/trainings/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainImportTrainingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 集成培训学习记录
+     *  *
+     * @param HrbrainImportTrainingRequest $request HrbrainImportTrainingRequest
+     *
+     * @return HrbrainImportTrainingResponse HrbrainImportTrainingResponse
+     */
+    public function hrbrainImportTraining($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainImportTrainingHeaders([]);
+
+        return $this->hrbrainImportTrainingWithOptions($request, $headers, $runtime);
     }
 
     /**

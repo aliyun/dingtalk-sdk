@@ -4,15 +4,15 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncInterviewInfoToAIInterviewAssistantRequest;
 
-use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncInterviewInfoToAIInterviewAssistantRequest\intervieweeInfoVOList\historyInterviewInfoVOList;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncInterviewInfoToAIInterviewAssistantRequest\candidateInfoVOList\historyInterviewInfoVOList;
 use AlibabaCloud\Tea\Model;
 
-class intervieweeInfoVOList extends Model
+class candidateInfoVOList extends Model
 {
     /**
      * @var string
      */
-    public $bizIntervieweeId;
+    public $bizCandidateId;
 
     /**
      * @var historyInterviewInfoVOList[]
@@ -34,7 +34,7 @@ class intervieweeInfoVOList extends Model
      */
     public $resumeContent;
     protected $_name = [
-        'bizIntervieweeId' => 'bizIntervieweeId',
+        'bizCandidateId' => 'bizCandidateId',
         'historyInterviewInfoVOList' => 'historyInterviewInfoVOList',
         'name' => 'name',
         'phone' => 'phone',
@@ -46,8 +46,8 @@ class intervieweeInfoVOList extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->bizIntervieweeId) {
-            $res['bizIntervieweeId'] = $this->bizIntervieweeId;
+        if (null !== $this->bizCandidateId) {
+            $res['bizCandidateId'] = $this->bizCandidateId;
         }
         if (null !== $this->historyInterviewInfoVOList) {
             $res['historyInterviewInfoVOList'] = [];
@@ -74,13 +74,13 @@ class intervieweeInfoVOList extends Model
     /**
      * @param array $map
      *
-     * @return intervieweeInfoVOList
+     * @return candidateInfoVOList
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['bizIntervieweeId'])) {
-            $model->bizIntervieweeId = $map['bizIntervieweeId'];
+        if (isset($map['bizCandidateId'])) {
+            $model->bizCandidateId = $map['bizCandidateId'];
         }
         if (isset($map['historyInterviewInfoVOList'])) {
             if (!empty($map['historyInterviewInfoVOList'])) {

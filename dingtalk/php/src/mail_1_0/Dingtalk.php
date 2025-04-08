@@ -14,6 +14,11 @@ use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\CreateMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\CreateUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\CreateUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\CreateUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\DeleteMailFolderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\DeleteMailFolderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\DeleteMessagesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\DeleteMessagesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\DeleteMessagesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\GetMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\GetMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\GetMessageResponse;
@@ -23,9 +28,18 @@ use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\ListMailFoldersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\ListMessagesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\ListMessagesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\ListMessagesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\MoveMailFolderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\MoveMailFolderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\MoveMailFolderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\SendMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\SendMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\SendMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\UpdateMailFolderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\UpdateMailFolderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\UpdateMailFolderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\UpdateMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\UpdateMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\UpdateMessageResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -237,6 +251,121 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除文件夹
+     *  *
+     * @param string                  $email
+     * @param string                  $id
+     * @param DeleteMailFolderHeaders $headers DeleteMailFolderHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteMailFolderResponse DeleteMailFolderResponse
+     */
+    public function deleteMailFolderWithOptions($email, $id, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'DeleteMailFolder',
+            'version' => 'mail_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/mail/users/' . $email . '/mailFolders/' . $id . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteMailFolderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除文件夹
+     *  *
+     * @param string $email
+     * @param string $id
+     *
+     * @return DeleteMailFolderResponse DeleteMailFolderResponse
+     */
+    public function deleteMailFolder($email, $id)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteMailFolderHeaders([]);
+
+        return $this->deleteMailFolderWithOptions($email, $id, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量删除邮件
+     *  *
+     * @param string                $email
+     * @param DeleteMessagesRequest $request DeleteMessagesRequest
+     * @param DeleteMessagesHeaders $headers DeleteMessagesHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteMessagesResponse DeleteMessagesResponse
+     */
+    public function deleteMessagesWithOptions($email, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deleteType)) {
+            $body['deleteType'] = $request->deleteType;
+        }
+        if (!Utils::isUnset($request->ids)) {
+            $body['ids'] = $request->ids;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteMessages',
+            'version' => 'mail_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/mail/users/' . $email . '/messages/batchDelete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteMessagesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量删除邮件
+     *  *
+     * @param string                $email
+     * @param DeleteMessagesRequest $request DeleteMessagesRequest
+     *
+     * @return DeleteMessagesResponse DeleteMessagesResponse
+     */
+    public function deleteMessages($email, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteMessagesHeaders([]);
+
+        return $this->deleteMessagesWithOptions($email, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取邮件
      *  *
      * @param string            $email
@@ -424,6 +553,67 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 移动文件夹
+     *  *
+     * @param string                $email
+     * @param string                $id
+     * @param MoveMailFolderRequest $request MoveMailFolderRequest
+     * @param MoveMailFolderHeaders $headers MoveMailFolderHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return MoveMailFolderResponse MoveMailFolderResponse
+     */
+    public function moveMailFolderWithOptions($email, $id, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->destinationFolderId)) {
+            $body['destinationFolderId'] = $request->destinationFolderId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'MoveMailFolder',
+            'version' => 'mail_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/mail/users/' . $email . '/mailFolders/' . $id . '/move',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return MoveMailFolderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 移动文件夹
+     *  *
+     * @param string                $email
+     * @param string                $id
+     * @param MoveMailFolderRequest $request MoveMailFolderRequest
+     *
+     * @return MoveMailFolderResponse MoveMailFolderResponse
+     */
+    public function moveMailFolder($email, $id, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MoveMailFolderHeaders([]);
+
+        return $this->moveMailFolderWithOptions($email, $id, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 发送邮件
      *  *
      * @param string             $email
@@ -482,5 +672,127 @@ class Dingtalk extends OpenApiClient
         $headers = new SendMessageHeaders([]);
 
         return $this->sendMessageWithOptions($email, $id, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改文件夹信息
+     *  *
+     * @param string                  $email
+     * @param string                  $id
+     * @param UpdateMailFolderRequest $request UpdateMailFolderRequest
+     * @param UpdateMailFolderHeaders $headers UpdateMailFolderHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateMailFolderResponse UpdateMailFolderResponse
+     */
+    public function updateMailFolderWithOptions($email, $id, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->displayName)) {
+            $body['displayName'] = $request->displayName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateMailFolder',
+            'version' => 'mail_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/mail/users/' . $email . '/mailFolders/' . $id . '/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateMailFolderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改文件夹信息
+     *  *
+     * @param string                  $email
+     * @param string                  $id
+     * @param UpdateMailFolderRequest $request UpdateMailFolderRequest
+     *
+     * @return UpdateMailFolderResponse UpdateMailFolderResponse
+     */
+    public function updateMailFolder($email, $id, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateMailFolderHeaders([]);
+
+        return $this->updateMailFolderWithOptions($email, $id, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改草稿
+     *  *
+     * @param string               $email
+     * @param string               $id
+     * @param UpdateMessageRequest $request UpdateMessageRequest
+     * @param UpdateMessageHeaders $headers UpdateMessageHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateMessageResponse UpdateMessageResponse
+     */
+    public function updateMessageWithOptions($email, $id, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->message)) {
+            $body['message'] = $request->message;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateMessage',
+            'version' => 'mail_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/mail/users/' . $email . '/messages/' . $id . '/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改草稿
+     *  *
+     * @param string               $email
+     * @param string               $id
+     * @param UpdateMessageRequest $request UpdateMessageRequest
+     *
+     * @return UpdateMessageResponse UpdateMessageResponse
+     */
+    public function updateMessage($email, $id, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateMessageHeaders([]);
+
+        return $this->updateMessageWithOptions($email, $id, $request, $headers, $runtime);
     }
 }

@@ -285,6 +285,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->subject)) {
             $body['subject'] = $request->subject;
         }
+        if (!Utils::isUnset($request->todoType)) {
+            $body['todoType'] = $request->todoType;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -817,6 +820,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->toDueTime)) {
             $body['toDueTime'] = $request->toDueTime;
         }
+        if (!Utils::isUnset($request->todoType)) {
+            $body['todoType'] = $request->todoType;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -881,6 +887,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->roleTypes)) {
             $body['roleTypes'] = $request->roleTypes;
+        }
+        if (!Utils::isUnset($request->todoType)) {
+            $body['todoType'] = $request->todoType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

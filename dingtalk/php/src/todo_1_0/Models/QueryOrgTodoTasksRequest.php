@@ -22,10 +22,18 @@ class QueryOrgTodoTasksRequest extends Model
      * @var string[][]
      */
     public $roleTypes;
+
+    /**
+     * @example TODO
+     *
+     * @var string
+     */
+    public $todoType;
     protected $_name = [
         'isDone' => 'isDone',
         'nextToken' => 'nextToken',
         'roleTypes' => 'roleTypes',
+        'todoType' => 'todoType',
     ];
 
     public function validate() {}
@@ -41,6 +49,9 @@ class QueryOrgTodoTasksRequest extends Model
         }
         if (null !== $this->roleTypes) {
             $res['roleTypes'] = $this->roleTypes;
+        }
+        if (null !== $this->todoType) {
+            $res['todoType'] = $this->todoType;
         }
 
         return $res;
@@ -64,6 +75,9 @@ class QueryOrgTodoTasksRequest extends Model
             if (!empty($map['roleTypes'])) {
                 $model->roleTypes = $map['roleTypes'];
             }
+        }
+        if (isset($map['todoType'])) {
+            $model->todoType = $map['todoType'];
         }
 
         return $model;

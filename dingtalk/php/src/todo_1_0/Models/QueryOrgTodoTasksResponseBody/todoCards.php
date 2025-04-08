@@ -63,6 +63,13 @@ class todoCards extends Model
      * @var string
      */
     public $taskId;
+
+    /**
+     * @example TODO
+     *
+     * @var string
+     */
+    public $todoType;
     protected $_name = [
         'bizTag' => 'bizTag',
         'createdTime' => 'createdTime',
@@ -75,6 +82,7 @@ class todoCards extends Model
         'sourceId' => 'sourceId',
         'subject' => 'subject',
         'taskId' => 'taskId',
+        'todoType' => 'todoType',
     ];
 
     public function validate() {}
@@ -114,6 +122,9 @@ class todoCards extends Model
         }
         if (null !== $this->taskId) {
             $res['taskId'] = $this->taskId;
+        }
+        if (null !== $this->todoType) {
+            $res['todoType'] = $this->todoType;
         }
 
         return $res;
@@ -159,6 +170,9 @@ class todoCards extends Model
         }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];
+        }
+        if (isset($map['todoType'])) {
+            $model->todoType = $map['todoType'];
         }
 
         return $model;

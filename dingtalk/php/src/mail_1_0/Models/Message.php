@@ -34,6 +34,8 @@ class Message extends Model
     /**
      * @description This parameter is required.
      *
+     * @example conversationid
+     *
      * @var Stream
      */
     public $conversationId;
@@ -57,6 +59,8 @@ class Message extends Model
     /**
      * @description This parameter is required.
      *
+     * @example false
+     *
      * @var bool
      */
     public $hasAttachments;
@@ -64,12 +68,16 @@ class Message extends Model
     /**
      * @description This parameter is required.
      *
+     * @example mailid
+     *
      * @var Stream
      */
     public $id;
 
     /**
      * @description This parameter is required.
+     *
+     * @example 由RFC5322定义的邮件头集合
      *
      * @var mixed[]
      */
@@ -87,12 +95,16 @@ class Message extends Model
     /**
      * @description This parameter is required.
      *
+     * @example false
+     *
      * @var bool
      */
     public $isForwarded;
 
     /**
      * @description This parameter is required.
+     *
+     * @example false
      *
      * @var bool
      */
@@ -110,12 +122,16 @@ class Message extends Model
     /**
      * @description This parameter is required.
      *
+     * @example false
+     *
      * @var bool
      */
     public $isReplied;
 
     /**
      * @description This parameter is required.
+     *
+     * @example 2024-10-01T00:00:00Z
      *
      * @var Stream
      */
@@ -133,6 +149,8 @@ class Message extends Model
     /**
      * @description This parameter is required.
      *
+     * @example 2024-10-01T00:00:00Z
+     *
      * @var Stream
      */
     public $receivedDateTime;
@@ -146,6 +164,8 @@ class Message extends Model
 
     /**
      * @description This parameter is required.
+     *
+     * @example 2024-10-01T00:00:00Z
      *
      * @var Stream
      */
@@ -162,6 +182,8 @@ class Message extends Model
 
     /**
      * @description This parameter is required.
+     *
+     * @example 一般取邮件正文的前一段
      *
      * @var Stream
      */

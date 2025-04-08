@@ -85,6 +85,13 @@ class CreateTodoTaskRequest extends Model
     public $subject;
 
     /**
+     * @example TODO
+     *
+     * @var string
+     */
+    public $todoType;
+
+    /**
      * @var string
      */
     public $operatorId;
@@ -103,6 +110,7 @@ class CreateTodoTaskRequest extends Model
         'priority' => 'priority',
         'sourceId' => 'sourceId',
         'subject' => 'subject',
+        'todoType' => 'todoType',
         'operatorId' => 'operatorId',
     ];
 
@@ -164,6 +172,9 @@ class CreateTodoTaskRequest extends Model
         }
         if (null !== $this->subject) {
             $res['subject'] = $this->subject;
+        }
+        if (null !== $this->todoType) {
+            $res['todoType'] = $this->todoType;
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
@@ -237,6 +248,9 @@ class CreateTodoTaskRequest extends Model
         }
         if (isset($map['subject'])) {
             $model->subject = $map['subject'];
+        }
+        if (isset($map['todoType'])) {
+            $model->todoType = $map['todoType'];
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];

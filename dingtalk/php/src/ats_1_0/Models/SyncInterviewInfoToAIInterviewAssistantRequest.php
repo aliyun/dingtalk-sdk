@@ -4,14 +4,19 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncInterviewInfoToAIInterviewAssistantRequest\candidateInfoVOList;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncInterviewInfoToAIInterviewAssistantRequest\conferenceInfoVO;
-use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncInterviewInfoToAIInterviewAssistantRequest\intervieweeInfoVOList;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncInterviewInfoToAIInterviewAssistantRequest\interviewerInfoVOList;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncInterviewInfoToAIInterviewAssistantRequest\jobContentVO;
 use AlibabaCloud\Tea\Model;
 
 class SyncInterviewInfoToAIInterviewAssistantRequest extends Model
 {
+    /**
+     * @var candidateInfoVOList[]
+     */
+    public $candidateInfoVOList;
+
     /**
      * @var conferenceInfoVO
      */
@@ -38,11 +43,6 @@ class SyncInterviewInfoToAIInterviewAssistantRequest extends Model
     public $interviewType;
 
     /**
-     * @var intervieweeInfoVOList[]
-     */
-    public $intervieweeInfoVOList;
-
-    /**
      * @var interviewerInfoVOList[]
      */
     public $interviewerInfoVOList;
@@ -59,12 +59,12 @@ class SyncInterviewInfoToAIInterviewAssistantRequest extends Model
      */
     public $jobContentVO;
     protected $_name = [
+        'candidateInfoVOList' => 'candidateInfoVOList',
         'conferenceInfoVO' => 'conferenceInfoVO',
         'interviewEndTime' => 'interviewEndTime',
         'interviewId' => 'interviewId',
         'interviewStartTime' => 'interviewStartTime',
         'interviewType' => 'interviewType',
-        'intervieweeInfoVOList' => 'intervieweeInfoVOList',
         'interviewerInfoVOList' => 'interviewerInfoVOList',
         'isvId' => 'isvId',
         'jobContentVO' => 'jobContentVO',
@@ -75,6 +75,15 @@ class SyncInterviewInfoToAIInterviewAssistantRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->candidateInfoVOList) {
+            $res['candidateInfoVOList'] = [];
+            if (null !== $this->candidateInfoVOList && \is_array($this->candidateInfoVOList)) {
+                $n = 0;
+                foreach ($this->candidateInfoVOList as $item) {
+                    $res['candidateInfoVOList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->conferenceInfoVO) {
             $res['conferenceInfoVO'] = null !== $this->conferenceInfoVO ? $this->conferenceInfoVO->toMap() : null;
         }
@@ -89,15 +98,6 @@ class SyncInterviewInfoToAIInterviewAssistantRequest extends Model
         }
         if (null !== $this->interviewType) {
             $res['interviewType'] = $this->interviewType;
-        }
-        if (null !== $this->intervieweeInfoVOList) {
-            $res['intervieweeInfoVOList'] = [];
-            if (null !== $this->intervieweeInfoVOList && \is_array($this->intervieweeInfoVOList)) {
-                $n = 0;
-                foreach ($this->intervieweeInfoVOList as $item) {
-                    $res['intervieweeInfoVOList'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
         }
         if (null !== $this->interviewerInfoVOList) {
             $res['interviewerInfoVOList'] = [];
@@ -126,6 +126,15 @@ class SyncInterviewInfoToAIInterviewAssistantRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['candidateInfoVOList'])) {
+            if (!empty($map['candidateInfoVOList'])) {
+                $model->candidateInfoVOList = [];
+                $n = 0;
+                foreach ($map['candidateInfoVOList'] as $item) {
+                    $model->candidateInfoVOList[$n++] = null !== $item ? candidateInfoVOList::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['conferenceInfoVO'])) {
             $model->conferenceInfoVO = conferenceInfoVO::fromMap($map['conferenceInfoVO']);
         }
@@ -140,15 +149,6 @@ class SyncInterviewInfoToAIInterviewAssistantRequest extends Model
         }
         if (isset($map['interviewType'])) {
             $model->interviewType = $map['interviewType'];
-        }
-        if (isset($map['intervieweeInfoVOList'])) {
-            if (!empty($map['intervieweeInfoVOList'])) {
-                $model->intervieweeInfoVOList = [];
-                $n = 0;
-                foreach ($map['intervieweeInfoVOList'] as $item) {
-                    $model->intervieweeInfoVOList[$n++] = null !== $item ? intervieweeInfoVOList::fromMap($item) : $item;
-                }
-            }
         }
         if (isset($map['interviewerInfoVOList'])) {
             if (!empty($map['interviewerInfoVOList'])) {
