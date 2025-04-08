@@ -31,6 +31,13 @@ public class QueryOrgTodoByUserRequest extends TeaModel {
     @NameInMap("toDueTime")
     public Long toDueTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>TODO</p>
+     */
+    @NameInMap("todoType")
+    public String todoType;
+
     public static QueryOrgTodoByUserRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryOrgTodoByUserRequest self = new QueryOrgTodoByUserRequest();
         return TeaModel.build(map, self);
@@ -106,6 +113,14 @@ public class QueryOrgTodoByUserRequest extends TeaModel {
     }
     public Long getToDueTime() {
         return this.toDueTime;
+    }
+
+    public QueryOrgTodoByUserRequest setTodoType(String todoType) {
+        this.todoType = todoType;
+        return this;
+    }
+    public String getTodoType() {
+        return this.todoType;
     }
 
 }

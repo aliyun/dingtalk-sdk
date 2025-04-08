@@ -116,6 +116,13 @@ public class QueryOrgTodoByUserResponseBody extends TeaModel {
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>TODO</p>
+         */
+        @NameInMap("todoType")
+        public String todoType;
+
         public static QueryOrgTodoByUserResponseBodyTodoCards build(java.util.Map<String, ?> map) throws Exception {
             QueryOrgTodoByUserResponseBodyTodoCards self = new QueryOrgTodoByUserResponseBodyTodoCards();
             return TeaModel.build(map, self);
@@ -215,6 +222,14 @@ public class QueryOrgTodoByUserResponseBody extends TeaModel {
         }
         public String getTaskId() {
             return this.taskId;
+        }
+
+        public QueryOrgTodoByUserResponseBodyTodoCards setTodoType(String todoType) {
+            this.todoType = todoType;
+            return this;
+        }
+        public String getTodoType() {
+            return this.todoType;
         }
 
     }

@@ -49,6 +49,13 @@ public class CreateTodoTaskRequest extends TeaModel {
     @NameInMap("subject")
     public String subject;
 
+    /**
+     * <strong>example:</strong>
+     * <p>TODO</p>
+     */
+    @NameInMap("todoType")
+    public String todoType;
+
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -167,6 +174,14 @@ public class CreateTodoTaskRequest extends TeaModel {
     }
     public String getSubject() {
         return this.subject;
+    }
+
+    public CreateTodoTaskRequest setTodoType(String todoType) {
+        this.todoType = todoType;
+        return this;
+    }
+    public String getTodoType() {
+        return this.todoType;
     }
 
     public CreateTodoTaskRequest setOperatorId(String operatorId) {

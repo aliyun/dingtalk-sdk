@@ -4,6 +4,9 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncInterviewInfoToAIInterviewAssistantRequest extends TeaModel {
+    @NameInMap("candidateInfoVOList")
+    public java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList> candidateInfoVOList;
+
     @NameInMap("conferenceInfoVO")
     public SyncInterviewInfoToAIInterviewAssistantRequestConferenceInfoVO conferenceInfoVO;
 
@@ -18,9 +21,6 @@ public class SyncInterviewInfoToAIInterviewAssistantRequest extends TeaModel {
 
     @NameInMap("interviewType")
     public String interviewType;
-
-    @NameInMap("intervieweeInfoVOList")
-    public java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList> intervieweeInfoVOList;
 
     @NameInMap("interviewerInfoVOList")
     public java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestInterviewerInfoVOList> interviewerInfoVOList;
@@ -38,6 +38,14 @@ public class SyncInterviewInfoToAIInterviewAssistantRequest extends TeaModel {
     public static SyncInterviewInfoToAIInterviewAssistantRequest build(java.util.Map<String, ?> map) throws Exception {
         SyncInterviewInfoToAIInterviewAssistantRequest self = new SyncInterviewInfoToAIInterviewAssistantRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SyncInterviewInfoToAIInterviewAssistantRequest setCandidateInfoVOList(java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList> candidateInfoVOList) {
+        this.candidateInfoVOList = candidateInfoVOList;
+        return this;
+    }
+    public java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList> getCandidateInfoVOList() {
+        return this.candidateInfoVOList;
     }
 
     public SyncInterviewInfoToAIInterviewAssistantRequest setConferenceInfoVO(SyncInterviewInfoToAIInterviewAssistantRequestConferenceInfoVO conferenceInfoVO) {
@@ -80,14 +88,6 @@ public class SyncInterviewInfoToAIInterviewAssistantRequest extends TeaModel {
         return this.interviewType;
     }
 
-    public SyncInterviewInfoToAIInterviewAssistantRequest setIntervieweeInfoVOList(java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList> intervieweeInfoVOList) {
-        this.intervieweeInfoVOList = intervieweeInfoVOList;
-        return this;
-    }
-    public java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList> getIntervieweeInfoVOList() {
-        return this.intervieweeInfoVOList;
-    }
-
     public SyncInterviewInfoToAIInterviewAssistantRequest setInterviewerInfoVOList(java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestInterviewerInfoVOList> interviewerInfoVOList) {
         this.interviewerInfoVOList = interviewerInfoVOList;
         return this;
@@ -110,6 +110,151 @@ public class SyncInterviewInfoToAIInterviewAssistantRequest extends TeaModel {
     }
     public SyncInterviewInfoToAIInterviewAssistantRequestJobContentVO getJobContentVO() {
         return this.jobContentVO;
+    }
+
+    public static class SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList extends TeaModel {
+        @NameInMap("historyInterviewContent")
+        public String historyInterviewContent;
+
+        @NameInMap("interviewerUserId")
+        public String interviewerUserId;
+
+        public static SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList build(java.util.Map<String, ?> map) throws Exception {
+            SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList self = new SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList();
+            return TeaModel.build(map, self);
+        }
+
+        public SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList setHistoryInterviewContent(String historyInterviewContent) {
+            this.historyInterviewContent = historyInterviewContent;
+            return this;
+        }
+        public String getHistoryInterviewContent() {
+            return this.historyInterviewContent;
+        }
+
+        public SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList setInterviewerUserId(String interviewerUserId) {
+            this.interviewerUserId = interviewerUserId;
+            return this;
+        }
+        public String getInterviewerUserId() {
+            return this.interviewerUserId;
+        }
+
+    }
+
+    public static class SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList extends TeaModel {
+        @NameInMap("aiInterviewHistoryEvaluationContentList")
+        public java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList> aiInterviewHistoryEvaluationContentList;
+
+        @NameInMap("canViewUserIdList")
+        public java.util.List<String> canViewUserIdList;
+
+        @NameInMap("historyInterviewId")
+        public String historyInterviewId;
+
+        @NameInMap("historyInterviewRounds")
+        public String historyInterviewRounds;
+
+        public static SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList build(java.util.Map<String, ?> map) throws Exception {
+            SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList self = new SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList();
+            return TeaModel.build(map, self);
+        }
+
+        public SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList setAiInterviewHistoryEvaluationContentList(java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList> aiInterviewHistoryEvaluationContentList) {
+            this.aiInterviewHistoryEvaluationContentList = aiInterviewHistoryEvaluationContentList;
+            return this;
+        }
+        public java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOListAiInterviewHistoryEvaluationContentList> getAiInterviewHistoryEvaluationContentList() {
+            return this.aiInterviewHistoryEvaluationContentList;
+        }
+
+        public SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList setCanViewUserIdList(java.util.List<String> canViewUserIdList) {
+            this.canViewUserIdList = canViewUserIdList;
+            return this;
+        }
+        public java.util.List<String> getCanViewUserIdList() {
+            return this.canViewUserIdList;
+        }
+
+        public SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList setHistoryInterviewId(String historyInterviewId) {
+            this.historyInterviewId = historyInterviewId;
+            return this;
+        }
+        public String getHistoryInterviewId() {
+            return this.historyInterviewId;
+        }
+
+        public SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList setHistoryInterviewRounds(String historyInterviewRounds) {
+            this.historyInterviewRounds = historyInterviewRounds;
+            return this;
+        }
+        public String getHistoryInterviewRounds() {
+            return this.historyInterviewRounds;
+        }
+
+    }
+
+    public static class SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList extends TeaModel {
+        @NameInMap("bizCandidateId")
+        public String bizCandidateId;
+
+        @NameInMap("historyInterviewInfoVOList")
+        public java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList> historyInterviewInfoVOList;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("phone")
+        public String phone;
+
+        @NameInMap("resumeContent")
+        public String resumeContent;
+
+        public static SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList build(java.util.Map<String, ?> map) throws Exception {
+            SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList self = new SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList();
+            return TeaModel.build(map, self);
+        }
+
+        public SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList setBizCandidateId(String bizCandidateId) {
+            this.bizCandidateId = bizCandidateId;
+            return this;
+        }
+        public String getBizCandidateId() {
+            return this.bizCandidateId;
+        }
+
+        public SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList setHistoryInterviewInfoVOList(java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList> historyInterviewInfoVOList) {
+            this.historyInterviewInfoVOList = historyInterviewInfoVOList;
+            return this;
+        }
+        public java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOListHistoryInterviewInfoVOList> getHistoryInterviewInfoVOList() {
+            return this.historyInterviewInfoVOList;
+        }
+
+        public SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList setPhone(String phone) {
+            this.phone = phone;
+            return this;
+        }
+        public String getPhone() {
+            return this.phone;
+        }
+
+        public SyncInterviewInfoToAIInterviewAssistantRequestCandidateInfoVOList setResumeContent(String resumeContent) {
+            this.resumeContent = resumeContent;
+            return this;
+        }
+        public String getResumeContent() {
+            return this.resumeContent;
+        }
+
     }
 
     public static class SyncInterviewInfoToAIInterviewAssistantRequestConferenceInfoVOConferenceBookerInfoVO extends TeaModel {
@@ -190,143 +335,6 @@ public class SyncInterviewInfoToAIInterviewAssistantRequest extends TeaModel {
         }
         public String getScheduleConferenceUrl() {
             return this.scheduleConferenceUrl;
-        }
-
-    }
-
-    public static class SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList extends TeaModel {
-        @NameInMap("canViewUserIdList")
-        public java.util.List<String> canViewUserIdList;
-
-        @NameInMap("evaluation")
-        public String evaluation;
-
-        @NameInMap("historyInterviewId")
-        public String historyInterviewId;
-
-        @NameInMap("historyInterviewResult")
-        public String historyInterviewResult;
-
-        @NameInMap("interviewRounds")
-        public String interviewRounds;
-
-        @NameInMap("interviewerName")
-        public String interviewerName;
-
-        public static SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList build(java.util.Map<String, ?> map) throws Exception {
-            SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList self = new SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList();
-            return TeaModel.build(map, self);
-        }
-
-        public SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList setCanViewUserIdList(java.util.List<String> canViewUserIdList) {
-            this.canViewUserIdList = canViewUserIdList;
-            return this;
-        }
-        public java.util.List<String> getCanViewUserIdList() {
-            return this.canViewUserIdList;
-        }
-
-        public SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList setEvaluation(String evaluation) {
-            this.evaluation = evaluation;
-            return this;
-        }
-        public String getEvaluation() {
-            return this.evaluation;
-        }
-
-        public SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList setHistoryInterviewId(String historyInterviewId) {
-            this.historyInterviewId = historyInterviewId;
-            return this;
-        }
-        public String getHistoryInterviewId() {
-            return this.historyInterviewId;
-        }
-
-        public SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList setHistoryInterviewResult(String historyInterviewResult) {
-            this.historyInterviewResult = historyInterviewResult;
-            return this;
-        }
-        public String getHistoryInterviewResult() {
-            return this.historyInterviewResult;
-        }
-
-        public SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList setInterviewRounds(String interviewRounds) {
-            this.interviewRounds = interviewRounds;
-            return this;
-        }
-        public String getInterviewRounds() {
-            return this.interviewRounds;
-        }
-
-        public SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList setInterviewerName(String interviewerName) {
-            this.interviewerName = interviewerName;
-            return this;
-        }
-        public String getInterviewerName() {
-            return this.interviewerName;
-        }
-
-    }
-
-    public static class SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList extends TeaModel {
-        @NameInMap("bizIntervieweeId")
-        public String bizIntervieweeId;
-
-        @NameInMap("historyInterviewInfoVOList")
-        public java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList> historyInterviewInfoVOList;
-
-        @NameInMap("name")
-        public String name;
-
-        @NameInMap("phone")
-        public String phone;
-
-        @NameInMap("resumeContent")
-        public String resumeContent;
-
-        public static SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList build(java.util.Map<String, ?> map) throws Exception {
-            SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList self = new SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList();
-            return TeaModel.build(map, self);
-        }
-
-        public SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList setBizIntervieweeId(String bizIntervieweeId) {
-            this.bizIntervieweeId = bizIntervieweeId;
-            return this;
-        }
-        public String getBizIntervieweeId() {
-            return this.bizIntervieweeId;
-        }
-
-        public SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList setHistoryInterviewInfoVOList(java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList> historyInterviewInfoVOList) {
-            this.historyInterviewInfoVOList = historyInterviewInfoVOList;
-            return this;
-        }
-        public java.util.List<SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOListHistoryInterviewInfoVOList> getHistoryInterviewInfoVOList() {
-            return this.historyInterviewInfoVOList;
-        }
-
-        public SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList setPhone(String phone) {
-            this.phone = phone;
-            return this;
-        }
-        public String getPhone() {
-            return this.phone;
-        }
-
-        public SyncInterviewInfoToAIInterviewAssistantRequestIntervieweeInfoVOList setResumeContent(String resumeContent) {
-            this.resumeContent = resumeContent;
-            return this;
-        }
-        public String getResumeContent() {
-            return this.resumeContent;
         }
 
     }

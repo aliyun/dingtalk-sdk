@@ -13,6 +13,13 @@ public class QueryOrgTodoTasksRequest extends TeaModel {
     @NameInMap("roleTypes")
     public java.util.List<java.util.List<String>> roleTypes;
 
+    /**
+     * <strong>example:</strong>
+     * <p>TODO</p>
+     */
+    @NameInMap("todoType")
+    public String todoType;
+
     public static QueryOrgTodoTasksRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryOrgTodoTasksRequest self = new QueryOrgTodoTasksRequest();
         return TeaModel.build(map, self);
@@ -40,6 +47,14 @@ public class QueryOrgTodoTasksRequest extends TeaModel {
     }
     public java.util.List<java.util.List<String>> getRoleTypes() {
         return this.roleTypes;
+    }
+
+    public QueryOrgTodoTasksRequest setTodoType(String todoType) {
+        this.todoType = todoType;
+        return this;
+    }
+    public String getTodoType() {
+        return this.todoType;
     }
 
 }

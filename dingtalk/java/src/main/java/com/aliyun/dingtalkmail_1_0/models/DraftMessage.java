@@ -30,6 +30,9 @@ public class DraftMessage extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>由RFC5322定义的邮件头集合</p>
      */
     @NameInMap("internetMessageHeaders")
     public java.util.Map<String, ?> internetMessageHeaders;
@@ -78,6 +81,9 @@ public class DraftMessage extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>一般取邮件正文的前一段</p>
      */
     @NameInMap("summary")
     public java.io.InputStream summary;

@@ -1321,6 +1321,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SyncInterviewInfoToAIInterviewAssistantResponse syncInterviewInfoToAIInterviewAssistantWithOptions(SyncInterviewInfoToAIInterviewAssistantRequest request, SyncInterviewInfoToAIInterviewAssistantHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.candidateInfoVOList)) {
+            body.put("candidateInfoVOList", request.candidateInfoVOList);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.conferenceInfoVO)) {
             body.put("conferenceInfoVO", request.conferenceInfoVO);
         }
@@ -1339,10 +1343,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.interviewType)) {
             body.put("interviewType", request.interviewType);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.intervieweeInfoVOList)) {
-            body.put("intervieweeInfoVOList", request.intervieweeInfoVOList);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.interviewerInfoVOList)) {

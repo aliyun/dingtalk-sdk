@@ -243,6 +243,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("subject", request.subject);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.todoType)) {
+            body.put("todoType", request.todoType);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -746,6 +750,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("toDueTime", request.toDueTime);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.todoType)) {
+            body.put("todoType", request.todoType);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -808,6 +816,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.roleTypes)) {
             body.put("roleTypes", request.roleTypes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.todoType)) {
+            body.put("todoType", request.todoType);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

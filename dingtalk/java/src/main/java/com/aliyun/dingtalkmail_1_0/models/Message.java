@@ -24,6 +24,9 @@ public class Message extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>conversationid</p>
      */
     @NameInMap("conversationId")
     public java.io.InputStream conversationId;
@@ -45,18 +48,27 @@ public class Message extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false</p>
      */
     @NameInMap("hasAttachments")
     public Boolean hasAttachments;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>mailid</p>
      */
     @NameInMap("id")
     public java.io.InputStream id;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>由RFC5322定义的邮件头集合</p>
      */
     @NameInMap("internetMessageHeaders")
     public java.util.Map<String, ?> internetMessageHeaders;
@@ -72,12 +84,18 @@ public class Message extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false</p>
      */
     @NameInMap("isForwarded")
     public Boolean isForwarded;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false</p>
      */
     @NameInMap("isRead")
     public Boolean isRead;
@@ -93,12 +111,18 @@ public class Message extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false</p>
      */
     @NameInMap("isReplied")
     public Boolean isReplied;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2024-10-01T00:00:00Z</p>
      */
     @NameInMap("lastModifiedDateTime")
     public java.io.InputStream lastModifiedDateTime;
@@ -114,6 +138,9 @@ public class Message extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2024-10-01T00:00:00Z</p>
      */
     @NameInMap("receivedDateTime")
     public java.io.InputStream receivedDateTime;
@@ -126,6 +153,9 @@ public class Message extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2024-10-01T00:00:00Z</p>
      */
     @NameInMap("sentDateTime")
     public java.io.InputStream sentDateTime;
@@ -141,6 +171,9 @@ public class Message extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>一般取邮件正文的前一段</p>
      */
     @NameInMap("summary")
     public java.io.InputStream summary;

@@ -208,6 +208,112 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>删除文件夹</p>
+     * 
+     * @param headers DeleteMailFolderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteMailFolderResponse
+     */
+    public DeleteMailFolderResponse deleteMailFolderWithOptions(String email, String id, DeleteMailFolderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteMailFolder"),
+            new TeaPair("version", "mail_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/mail/users/" + email + "/mailFolders/" + id + ""),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteMailFolderResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除文件夹</p>
+     * @return DeleteMailFolderResponse
+     */
+    public DeleteMailFolderResponse deleteMailFolder(String email, String id) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteMailFolderHeaders headers = new DeleteMailFolderHeaders();
+        return this.deleteMailFolderWithOptions(email, id, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量删除邮件</p>
+     * 
+     * @param request DeleteMessagesRequest
+     * @param headers DeleteMessagesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteMessagesResponse
+     */
+    public DeleteMessagesResponse deleteMessagesWithOptions(String email, DeleteMessagesRequest request, DeleteMessagesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deleteType)) {
+            body.put("deleteType", request.deleteType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ids)) {
+            body.put("ids", request.ids);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteMessages"),
+            new TeaPair("version", "mail_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/mail/users/" + email + "/messages/batchDelete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteMessagesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量删除邮件</p>
+     * 
+     * @param request DeleteMessagesRequest
+     * @return DeleteMessagesResponse
+     */
+    public DeleteMessagesResponse deleteMessages(String email, DeleteMessagesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteMessagesHeaders headers = new DeleteMessagesHeaders();
+        return this.deleteMessagesWithOptions(email, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取邮件</p>
      * 
      * @param request GetMessageRequest
@@ -384,6 +490,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>移动文件夹</p>
+     * 
+     * @param request MoveMailFolderRequest
+     * @param headers MoveMailFolderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MoveMailFolderResponse
+     */
+    public MoveMailFolderResponse moveMailFolderWithOptions(String email, String id, MoveMailFolderRequest request, MoveMailFolderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.destinationFolderId)) {
+            body.put("destinationFolderId", request.destinationFolderId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "MoveMailFolder"),
+            new TeaPair("version", "mail_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/mail/users/" + email + "/mailFolders/" + id + "/move"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new MoveMailFolderResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>移动文件夹</p>
+     * 
+     * @param request MoveMailFolderRequest
+     * @return MoveMailFolderResponse
+     */
+    public MoveMailFolderResponse moveMailFolder(String email, String id, MoveMailFolderRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        MoveMailFolderHeaders headers = new MoveMailFolderHeaders();
+        return this.moveMailFolderWithOptions(email, id, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>发送邮件</p>
      * 
      * @param request SendMessageRequest
@@ -436,5 +598,117 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendMessageHeaders headers = new SendMessageHeaders();
         return this.sendMessageWithOptions(email, id, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改文件夹信息</p>
+     * 
+     * @param request UpdateMailFolderRequest
+     * @param headers UpdateMailFolderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateMailFolderResponse
+     */
+    public UpdateMailFolderResponse updateMailFolderWithOptions(String email, String id, UpdateMailFolderRequest request, UpdateMailFolderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.displayName)) {
+            body.put("displayName", request.displayName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateMailFolder"),
+            new TeaPair("version", "mail_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/mail/users/" + email + "/mailFolders/" + id + "/update"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateMailFolderResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改文件夹信息</p>
+     * 
+     * @param request UpdateMailFolderRequest
+     * @return UpdateMailFolderResponse
+     */
+    public UpdateMailFolderResponse updateMailFolder(String email, String id, UpdateMailFolderRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateMailFolderHeaders headers = new UpdateMailFolderHeaders();
+        return this.updateMailFolderWithOptions(email, id, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改草稿</p>
+     * 
+     * @param request UpdateMessageRequest
+     * @param headers UpdateMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateMessageResponse
+     */
+    public UpdateMessageResponse updateMessageWithOptions(String email, String id, UpdateMessageRequest request, UpdateMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.message)) {
+            body.put("message", request.message);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateMessage"),
+            new TeaPair("version", "mail_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/mail/users/" + email + "/messages/" + id + "/update"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateMessageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改草稿</p>
+     * 
+     * @param request UpdateMessageRequest
+     * @return UpdateMessageResponse
+     */
+    public UpdateMessageResponse updateMessage(String email, String id, UpdateMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateMessageHeaders headers = new UpdateMessageHeaders();
+        return this.updateMessageWithOptions(email, id, request, headers, runtime);
     }
 }

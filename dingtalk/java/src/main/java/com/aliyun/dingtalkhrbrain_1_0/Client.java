@@ -76,6 +76,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>删除组织架构</p>
+     * 
+     * @param request HrbrainDeleteDeptInfoRequest
+     * @param headers HrbrainDeleteDeptInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainDeleteDeptInfoResponse
+     */
+    public HrbrainDeleteDeptInfoResponse hrbrainDeleteDeptInfoWithOptions(HrbrainDeleteDeptInfoRequest request, HrbrainDeleteDeptInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.params)) {
+            body.put("params", request.params);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainDeleteDeptInfo"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/datas/deptInfos/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainDeleteDeptInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除组织架构</p>
+     * 
+     * @param request HrbrainDeleteDeptInfoRequest
+     * @return HrbrainDeleteDeptInfoResponse
+     */
+    public HrbrainDeleteDeptInfoResponse hrbrainDeleteDeptInfo(HrbrainDeleteDeptInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainDeleteDeptInfoHeaders headers = new HrbrainDeleteDeptInfoHeaders();
+        return this.hrbrainDeleteDeptInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>删除离职记录</p>
      * 
      * @param request HrbrainDeleteDimissionRequest
@@ -632,6 +688,118 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainDeleteRegistHeaders headers = new HrbrainDeleteRegistHeaders();
         return this.hrbrainDeleteRegistWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除转正记录</p>
+     * 
+     * @param request HrbrainDeleteRegularRequest
+     * @param headers HrbrainDeleteRegularHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainDeleteRegularResponse
+     */
+    public HrbrainDeleteRegularResponse hrbrainDeleteRegularWithOptions(HrbrainDeleteRegularRequest request, HrbrainDeleteRegularHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.params)) {
+            body.put("params", request.params);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainDeleteRegular"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/datas/regulars/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainDeleteRegularResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除转正记录</p>
+     * 
+     * @param request HrbrainDeleteRegularRequest
+     * @return HrbrainDeleteRegularResponse
+     */
+    public HrbrainDeleteRegularResponse hrbrainDeleteRegular(HrbrainDeleteRegularRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainDeleteRegularHeaders headers = new HrbrainDeleteRegularHeaders();
+        return this.hrbrainDeleteRegularWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除培训学习记录</p>
+     * 
+     * @param request HrbrainDeleteTrainingRequest
+     * @param headers HrbrainDeleteTrainingHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainDeleteTrainingResponse
+     */
+    public HrbrainDeleteTrainingResponse hrbrainDeleteTrainingWithOptions(HrbrainDeleteTrainingRequest request, HrbrainDeleteTrainingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.params)) {
+            body.put("params", request.params);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainDeleteTraining"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/datas/trainings/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainDeleteTrainingResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除培训学习记录</p>
+     * 
+     * @param request HrbrainDeleteTrainingRequest
+     * @return HrbrainDeleteTrainingResponse
+     */
+    public HrbrainDeleteTrainingResponse hrbrainDeleteTraining(HrbrainDeleteTrainingRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainDeleteTrainingHeaders headers = new HrbrainDeleteTrainingHeaders();
+        return this.hrbrainDeleteTrainingWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1598,6 +1766,120 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportRegistHeaders headers = new HrbrainImportRegistHeaders();
         return this.hrbrainImportRegistWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>集成转正记录</p>
+     * 
+     * @param request HrbrainImportRegularRequest
+     * @param headers HrbrainImportRegularHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportRegularResponse
+     */
+    public HrbrainImportRegularResponse hrbrainImportRegularWithOptions(HrbrainImportRegularRequest request, HrbrainImportRegularHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.teautil.Common.toArray(request.body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainImportRegular"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/datas/regulars/import"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportRegularResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>集成转正记录</p>
+     * 
+     * @param request HrbrainImportRegularRequest
+     * @return HrbrainImportRegularResponse
+     */
+    public HrbrainImportRegularResponse hrbrainImportRegular(HrbrainImportRegularRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainImportRegularHeaders headers = new HrbrainImportRegularHeaders();
+        return this.hrbrainImportRegularWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>集成培训学习记录</p>
+     * 
+     * @param request HrbrainImportTrainingRequest
+     * @param headers HrbrainImportTrainingHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportTrainingResponse
+     */
+    public HrbrainImportTrainingResponse hrbrainImportTrainingWithOptions(HrbrainImportTrainingRequest request, HrbrainImportTrainingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.teautil.Common.toArray(request.body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainImportTraining"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/datas/trainings/import"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportTrainingResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>集成培训学习记录</p>
+     * 
+     * @param request HrbrainImportTrainingRequest
+     * @return HrbrainImportTrainingResponse
+     */
+    public HrbrainImportTrainingResponse hrbrainImportTraining(HrbrainImportTrainingRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainImportTrainingHeaders headers = new HrbrainImportTrainingHeaders();
+        return this.hrbrainImportTrainingWithOptions(request, headers, runtime);
     }
 
     /**
