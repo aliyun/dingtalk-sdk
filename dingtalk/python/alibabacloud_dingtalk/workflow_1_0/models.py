@@ -16517,6 +16517,33 @@ class PremiumSaveIntegratedTaskRequestFeatureConfig(TeaModel):
         return self
 
 
+class PremiumSaveIntegratedTaskRequestTaskConfig(TeaModel):
+    def __init__(
+        self,
+        disable_send_card: bool = None,
+    ):
+        self.disable_send_card = disable_send_card
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.disable_send_card is not None:
+            result['disableSendCard'] = self.disable_send_card
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('disableSendCard') is not None:
+            self.disable_send_card = m.get('disableSendCard')
+        return self
+
+
 class PremiumSaveIntegratedTaskRequestTasks(TeaModel):
     def __init__(
         self,
@@ -16562,18 +16589,22 @@ class PremiumSaveIntegratedTaskRequest(TeaModel):
         activity_id: str = None,
         feature_config: PremiumSaveIntegratedTaskRequestFeatureConfig = None,
         process_instance_id: str = None,
+        task_config: PremiumSaveIntegratedTaskRequestTaskConfig = None,
         tasks: List[PremiumSaveIntegratedTaskRequestTasks] = None,
     ):
         self.activity_id = activity_id
         self.feature_config = feature_config
         # This parameter is required.
         self.process_instance_id = process_instance_id
+        self.task_config = task_config
         # This parameter is required.
         self.tasks = tasks
 
     def validate(self):
         if self.feature_config:
             self.feature_config.validate()
+        if self.task_config:
+            self.task_config.validate()
         if self.tasks:
             for k in self.tasks:
                 if k:
@@ -16591,6 +16622,8 @@ class PremiumSaveIntegratedTaskRequest(TeaModel):
             result['featureConfig'] = self.feature_config.to_map()
         if self.process_instance_id is not None:
             result['processInstanceId'] = self.process_instance_id
+        if self.task_config is not None:
+            result['taskConfig'] = self.task_config.to_map()
         result['tasks'] = []
         if self.tasks is not None:
             for k in self.tasks:
@@ -16606,6 +16639,9 @@ class PremiumSaveIntegratedTaskRequest(TeaModel):
             self.feature_config = temp_model.from_map(m['featureConfig'])
         if m.get('processInstanceId') is not None:
             self.process_instance_id = m.get('processInstanceId')
+        if m.get('taskConfig') is not None:
+            temp_model = PremiumSaveIntegratedTaskRequestTaskConfig()
+            self.task_config = temp_model.from_map(m['taskConfig'])
         self.tasks = []
         if m.get('tasks') is not None:
             for k in m.get('tasks'):
@@ -17576,6 +17612,45 @@ class ProcessForecastRequest(TeaModel):
         return self
 
 
+class ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners(TeaModel):
+    def __init__(
+        self,
+        avatar: str = None,
+        name: str = None,
+        user_id: str = None,
+    ):
+        self.avatar = avatar
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar is not None:
+            result['avatar'] = self.avatar
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatar') is not None:
+            self.avatar = m.get('avatar')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
 class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals(TeaModel):
     def __init__(
         self,
@@ -17772,6 +17847,7 @@ class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor(TeaMod
 class ProcessForecastResponseBodyResultWorkflowActivityRules(TeaModel):
     def __init__(
         self,
+        activity_actioners: List[ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners] = None,
         activity_id: str = None,
         activity_name: str = None,
         activity_type: str = None,
@@ -17779,6 +17855,7 @@ class ProcessForecastResponseBodyResultWorkflowActivityRules(TeaModel):
         prev_activity_id: str = None,
         workflow_actor: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor = None,
     ):
+        self.activity_actioners = activity_actioners
         self.activity_id = activity_id
         self.activity_name = activity_name
         self.activity_type = activity_type
@@ -17787,6 +17864,10 @@ class ProcessForecastResponseBodyResultWorkflowActivityRules(TeaModel):
         self.workflow_actor = workflow_actor
 
     def validate(self):
+        if self.activity_actioners:
+            for k in self.activity_actioners:
+                if k:
+                    k.validate()
         if self.workflow_actor:
             self.workflow_actor.validate()
 
@@ -17796,6 +17877,10 @@ class ProcessForecastResponseBodyResultWorkflowActivityRules(TeaModel):
             return _map
 
         result = dict()
+        result['activityActioners'] = []
+        if self.activity_actioners is not None:
+            for k in self.activity_actioners:
+                result['activityActioners'].append(k.to_map() if k else None)
         if self.activity_id is not None:
             result['activityId'] = self.activity_id
         if self.activity_name is not None:
@@ -17812,6 +17897,11 @@ class ProcessForecastResponseBodyResultWorkflowActivityRules(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.activity_actioners = []
+        if m.get('activityActioners') is not None:
+            for k in m.get('activityActioners'):
+                temp_model = ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners()
+                self.activity_actioners.append(temp_model.from_map(k))
         if m.get('activityId') is not None:
             self.activity_id = m.get('activityId')
         if m.get('activityName') is not None:

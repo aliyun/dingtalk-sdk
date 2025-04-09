@@ -266,6 +266,266 @@ class Client(OpenApiClient):
         headers = dingtalkassistant__1__0_models.AddToOrgSkillRepositoryHeaders()
         return await self.add_to_org_skill_repository_with_options_async(request, headers, runtime)
 
+    def assistant_me_response_with_options(
+        self,
+        assistant_id: str,
+        request: dingtalkassistant__1__0_models.AssistantMeResponseRequest,
+        headers: dingtalkassistant__1__0_models.AssistantMeResponseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.AssistantMeResponseResponse:
+        """
+        @summary 助理响应接口-委托权限
+        
+        @param request: AssistantMeResponseRequest
+        @param headers: AssistantMeResponseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AssistantMeResponseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.input):
+            body['input'] = request.input
+        if not UtilClient.is_unset(request.instructions):
+            body['instructions'] = request.instructions
+        if not UtilClient.is_unset(request.metadata):
+            body['metadata'] = request.metadata
+        if not UtilClient.is_unset(request.stream):
+            body['stream'] = request.stream
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AssistantMeResponse',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/{assistant_id}/me/compatible-mode/responses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.AssistantMeResponseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def assistant_me_response_with_options_async(
+        self,
+        assistant_id: str,
+        request: dingtalkassistant__1__0_models.AssistantMeResponseRequest,
+        headers: dingtalkassistant__1__0_models.AssistantMeResponseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.AssistantMeResponseResponse:
+        """
+        @summary 助理响应接口-委托权限
+        
+        @param request: AssistantMeResponseRequest
+        @param headers: AssistantMeResponseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AssistantMeResponseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.input):
+            body['input'] = request.input
+        if not UtilClient.is_unset(request.instructions):
+            body['instructions'] = request.instructions
+        if not UtilClient.is_unset(request.metadata):
+            body['metadata'] = request.metadata
+        if not UtilClient.is_unset(request.stream):
+            body['stream'] = request.stream
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AssistantMeResponse',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/{assistant_id}/me/compatible-mode/responses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.AssistantMeResponseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def assistant_me_response(
+        self,
+        assistant_id: str,
+        request: dingtalkassistant__1__0_models.AssistantMeResponseRequest,
+    ) -> dingtalkassistant__1__0_models.AssistantMeResponseResponse:
+        """
+        @summary 助理响应接口-委托权限
+        
+        @param request: AssistantMeResponseRequest
+        @return: AssistantMeResponseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.AssistantMeResponseHeaders()
+        return self.assistant_me_response_with_options(assistant_id, request, headers, runtime)
+
+    async def assistant_me_response_async(
+        self,
+        assistant_id: str,
+        request: dingtalkassistant__1__0_models.AssistantMeResponseRequest,
+    ) -> dingtalkassistant__1__0_models.AssistantMeResponseResponse:
+        """
+        @summary 助理响应接口-委托权限
+        
+        @param request: AssistantMeResponseRequest
+        @return: AssistantMeResponseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.AssistantMeResponseHeaders()
+        return await self.assistant_me_response_with_options_async(assistant_id, request, headers, runtime)
+
+    def assistant_response_with_options(
+        self,
+        assistant_id: str,
+        request: dingtalkassistant__1__0_models.AssistantResponseRequest,
+        headers: dingtalkassistant__1__0_models.AssistantResponseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.AssistantResponseResponse:
+        """
+        @summary 助理响应接口-应用权限
+        
+        @param request: AssistantResponseRequest
+        @param headers: AssistantResponseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AssistantResponseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.input):
+            body['input'] = request.input
+        if not UtilClient.is_unset(request.instructions):
+            body['instructions'] = request.instructions
+        if not UtilClient.is_unset(request.metadata):
+            body['metadata'] = request.metadata
+        if not UtilClient.is_unset(request.stream):
+            body['stream'] = request.stream
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AssistantResponse',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/{assistant_id}/compatible-mode/responses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.AssistantResponseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def assistant_response_with_options_async(
+        self,
+        assistant_id: str,
+        request: dingtalkassistant__1__0_models.AssistantResponseRequest,
+        headers: dingtalkassistant__1__0_models.AssistantResponseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.AssistantResponseResponse:
+        """
+        @summary 助理响应接口-应用权限
+        
+        @param request: AssistantResponseRequest
+        @param headers: AssistantResponseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AssistantResponseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.input):
+            body['input'] = request.input
+        if not UtilClient.is_unset(request.instructions):
+            body['instructions'] = request.instructions
+        if not UtilClient.is_unset(request.metadata):
+            body['metadata'] = request.metadata
+        if not UtilClient.is_unset(request.stream):
+            body['stream'] = request.stream
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AssistantResponse',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/{assistant_id}/compatible-mode/responses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.AssistantResponseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def assistant_response(
+        self,
+        assistant_id: str,
+        request: dingtalkassistant__1__0_models.AssistantResponseRequest,
+    ) -> dingtalkassistant__1__0_models.AssistantResponseResponse:
+        """
+        @summary 助理响应接口-应用权限
+        
+        @param request: AssistantResponseRequest
+        @return: AssistantResponseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.AssistantResponseHeaders()
+        return self.assistant_response_with_options(assistant_id, request, headers, runtime)
+
+    async def assistant_response_async(
+        self,
+        assistant_id: str,
+        request: dingtalkassistant__1__0_models.AssistantResponseRequest,
+    ) -> dingtalkassistant__1__0_models.AssistantResponseResponse:
+        """
+        @summary 助理响应接口-应用权限
+        
+        @param request: AssistantResponseRequest
+        @return: AssistantResponseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.AssistantResponseHeaders()
+        return await self.assistant_response_with_options_async(assistant_id, request, headers, runtime)
+
     def batch_get_aicredits_record_with_options(
         self,
         request: dingtalkassistant__1__0_models.BatchGetAICreditsRecordRequest,

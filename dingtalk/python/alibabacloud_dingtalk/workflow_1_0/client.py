@@ -7402,6 +7402,8 @@ class Client(OpenApiClient):
             body['featureConfig'] = request.feature_config
         if not UtilClient.is_unset(request.process_instance_id):
             body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.task_config):
+            body['taskConfig'] = request.task_config
         if not UtilClient.is_unset(request.tasks):
             body['tasks'] = request.tasks
         real_headers = {}
@@ -7451,6 +7453,8 @@ class Client(OpenApiClient):
             body['featureConfig'] = request.feature_config
         if not UtilClient.is_unset(request.process_instance_id):
             body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.task_config):
+            body['taskConfig'] = request.task_config
         if not UtilClient.is_unset(request.tasks):
             body['tasks'] = request.tasks
         real_headers = {}

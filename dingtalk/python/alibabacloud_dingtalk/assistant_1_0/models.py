@@ -330,6 +330,584 @@ class AddToOrgSkillRepositoryResponse(TeaModel):
         return self
 
 
+class AssistantMeResponseHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AssistantMeResponseRequest(TeaModel):
+    def __init__(
+        self,
+        input: str = None,
+        instructions: str = None,
+        metadata: Dict[str, Any] = None,
+        stream: bool = None,
+    ):
+        # This parameter is required.
+        self.input = input
+        self.instructions = instructions
+        self.metadata = metadata
+        self.stream = stream
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.input is not None:
+            result['input'] = self.input
+        if self.instructions is not None:
+            result['instructions'] = self.instructions
+        if self.metadata is not None:
+            result['metadata'] = self.metadata
+        if self.stream is not None:
+            result['stream'] = self.stream
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('input') is not None:
+            self.input = m.get('input')
+        if m.get('instructions') is not None:
+            self.instructions = m.get('instructions')
+        if m.get('metadata') is not None:
+            self.metadata = m.get('metadata')
+        if m.get('stream') is not None:
+            self.stream = m.get('stream')
+        return self
+
+
+class AssistantMeResponseResponseBodyOutputContent(TeaModel):
+    def __init__(
+        self,
+        annotations: List[Any] = None,
+        text: str = None,
+        type: str = None,
+    ):
+        self.annotations = annotations
+        self.text = text
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.annotations is not None:
+            result['annotations'] = self.annotations
+        if self.text is not None:
+            result['text'] = self.text
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('annotations') is not None:
+            self.annotations = m.get('annotations')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class AssistantMeResponseResponseBodyOutput(TeaModel):
+    def __init__(
+        self,
+        content: List[AssistantMeResponseResponseBodyOutputContent] = None,
+        id: str = None,
+        role: str = None,
+        type: str = None,
+    ):
+        self.content = content
+        self.id = id
+        self.role = role
+        self.type = type
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.id is not None:
+            result['id'] = self.id
+        if self.role is not None:
+            result['role'] = self.role
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = AssistantMeResponseResponseBodyOutputContent()
+                self.content.append(temp_model.from_map(k))
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class AssistantMeResponseResponseBody(TeaModel):
+    def __init__(
+        self,
+        created_at: int = None,
+        error: str = None,
+        id: str = None,
+        metadata: Dict[str, Any] = None,
+        model: str = None,
+        object: str = None,
+        output: List[AssistantMeResponseResponseBodyOutput] = None,
+        status: str = None,
+    ):
+        self.created_at = created_at
+        self.error = error
+        self.id = id
+        self.metadata = metadata
+        self.model = model
+        self.object = object
+        self.output = output
+        self.status = status
+
+    def validate(self):
+        if self.output:
+            for k in self.output:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created_at is not None:
+            result['created_at'] = self.created_at
+        if self.error is not None:
+            result['error'] = self.error
+        if self.id is not None:
+            result['id'] = self.id
+        if self.metadata is not None:
+            result['metadata'] = self.metadata
+        if self.model is not None:
+            result['model'] = self.model
+        if self.object is not None:
+            result['object'] = self.object
+        result['output'] = []
+        if self.output is not None:
+            for k in self.output:
+                result['output'].append(k.to_map() if k else None)
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created_at') is not None:
+            self.created_at = m.get('created_at')
+        if m.get('error') is not None:
+            self.error = m.get('error')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('metadata') is not None:
+            self.metadata = m.get('metadata')
+        if m.get('model') is not None:
+            self.model = m.get('model')
+        if m.get('object') is not None:
+            self.object = m.get('object')
+        self.output = []
+        if m.get('output') is not None:
+            for k in m.get('output'):
+                temp_model = AssistantMeResponseResponseBodyOutput()
+                self.output.append(temp_model.from_map(k))
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class AssistantMeResponseResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AssistantMeResponseResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AssistantMeResponseResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AssistantResponseHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AssistantResponseRequest(TeaModel):
+    def __init__(
+        self,
+        input: str = None,
+        instructions: str = None,
+        metadata: Dict[str, Any] = None,
+        stream: bool = None,
+    ):
+        # This parameter is required.
+        self.input = input
+        self.instructions = instructions
+        self.metadata = metadata
+        self.stream = stream
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.input is not None:
+            result['input'] = self.input
+        if self.instructions is not None:
+            result['instructions'] = self.instructions
+        if self.metadata is not None:
+            result['metadata'] = self.metadata
+        if self.stream is not None:
+            result['stream'] = self.stream
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('input') is not None:
+            self.input = m.get('input')
+        if m.get('instructions') is not None:
+            self.instructions = m.get('instructions')
+        if m.get('metadata') is not None:
+            self.metadata = m.get('metadata')
+        if m.get('stream') is not None:
+            self.stream = m.get('stream')
+        return self
+
+
+class AssistantResponseResponseBodyOutputContent(TeaModel):
+    def __init__(
+        self,
+        annotations: List[Any] = None,
+        text: str = None,
+        type: str = None,
+    ):
+        self.annotations = annotations
+        self.text = text
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.annotations is not None:
+            result['annotations'] = self.annotations
+        if self.text is not None:
+            result['text'] = self.text
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('annotations') is not None:
+            self.annotations = m.get('annotations')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class AssistantResponseResponseBodyOutput(TeaModel):
+    def __init__(
+        self,
+        content: List[AssistantResponseResponseBodyOutputContent] = None,
+        id: str = None,
+        role: str = None,
+        type: str = None,
+    ):
+        self.content = content
+        self.id = id
+        self.role = role
+        self.type = type
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.id is not None:
+            result['id'] = self.id
+        if self.role is not None:
+            result['role'] = self.role
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = AssistantResponseResponseBodyOutputContent()
+                self.content.append(temp_model.from_map(k))
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class AssistantResponseResponseBody(TeaModel):
+    def __init__(
+        self,
+        created_at: int = None,
+        error: str = None,
+        id: str = None,
+        metadata: Dict[str, Any] = None,
+        model: str = None,
+        object: str = None,
+        output: List[AssistantResponseResponseBodyOutput] = None,
+        status: str = None,
+    ):
+        self.created_at = created_at
+        self.error = error
+        self.id = id
+        self.metadata = metadata
+        self.model = model
+        self.object = object
+        self.output = output
+        self.status = status
+
+    def validate(self):
+        if self.output:
+            for k in self.output:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created_at is not None:
+            result['created_at'] = self.created_at
+        if self.error is not None:
+            result['error'] = self.error
+        if self.id is not None:
+            result['id'] = self.id
+        if self.metadata is not None:
+            result['metadata'] = self.metadata
+        if self.model is not None:
+            result['model'] = self.model
+        if self.object is not None:
+            result['object'] = self.object
+        result['output'] = []
+        if self.output is not None:
+            for k in self.output:
+                result['output'].append(k.to_map() if k else None)
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created_at') is not None:
+            self.created_at = m.get('created_at')
+        if m.get('error') is not None:
+            self.error = m.get('error')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('metadata') is not None:
+            self.metadata = m.get('metadata')
+        if m.get('model') is not None:
+            self.model = m.get('model')
+        if m.get('object') is not None:
+            self.object = m.get('object')
+        self.output = []
+        if m.get('output') is not None:
+            for k in m.get('output'):
+                temp_model = AssistantResponseResponseBodyOutput()
+                self.output.append(temp_model.from_map(k))
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class AssistantResponseResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AssistantResponseResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AssistantResponseResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchGetAICreditsRecordHeaders(TeaModel):
     def __init__(
         self,
