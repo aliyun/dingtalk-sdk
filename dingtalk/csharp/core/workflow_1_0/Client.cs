@@ -9982,6 +9982,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 body["processInstanceId"] = request.ProcessInstanceId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskConfig))
+            {
+                body["taskConfig"] = request.TaskConfig;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tasks))
             {
                 body["tasks"] = request.Tasks;
@@ -10048,6 +10052,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
             {
                 body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskConfig))
+            {
+                body["taskConfig"] = request.TaskConfig;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tasks))
             {

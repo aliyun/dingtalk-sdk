@@ -109,6 +109,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public string ProcessInstanceId { get; set; }
 
+        [NameInMap("taskConfig")]
+        [Validation(Required=false)]
+        public PremiumSaveIntegratedTaskRequestTaskConfig TaskConfig { get; set; }
+        public class PremiumSaveIntegratedTaskRequestTaskConfig : TeaModel {
+            [NameInMap("disableSendCard")]
+            [Validation(Required=false)]
+            public bool? DisableSendCard { get; set; }
+
+        }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>

@@ -67,6 +67,24 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public List<ProcessForecastResponseBodyResultWorkflowActivityRules> WorkflowActivityRules { get; set; }
             public class ProcessForecastResponseBodyResultWorkflowActivityRules : TeaModel {
+                [NameInMap("activityActioners")]
+                [Validation(Required=false)]
+                public List<ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners> ActivityActioners { get; set; }
+                public class ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners : TeaModel {
+                    [NameInMap("avatar")]
+                    [Validation(Required=false)]
+                    public string Avatar { get; set; }
+
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
+                    public string Name { get; set; }
+
+                    [NameInMap("userId")]
+                    [Validation(Required=false)]
+                    public string UserId { get; set; }
+
+                }
+
                 /// <summary>
                 /// <b>Example:</b>
                 /// <para>1918_5cd3</para>
