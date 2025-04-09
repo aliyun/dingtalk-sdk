@@ -4,11 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastResponseBody\result;
 
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastResponseBody\result\workflowActivityRules\activityActioners;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastResponseBody\result\workflowActivityRules\workflowActor;
 use AlibabaCloud\Tea\Model;
 
 class workflowActivityRules extends Model
 {
+    /**
+     * @var activityActioners[]
+     */
+    public $activityActioners;
+
     /**
      * @example 1918_5cd3
      *
@@ -49,6 +55,7 @@ class workflowActivityRules extends Model
      */
     public $workflowActor;
     protected $_name = [
+        'activityActioners' => 'activityActioners',
         'activityId' => 'activityId',
         'activityName' => 'activityName',
         'activityType' => 'activityType',
@@ -62,6 +69,15 @@ class workflowActivityRules extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->activityActioners) {
+            $res['activityActioners'] = [];
+            if (null !== $this->activityActioners && \is_array($this->activityActioners)) {
+                $n = 0;
+                foreach ($this->activityActioners as $item) {
+                    $res['activityActioners'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->activityId) {
             $res['activityId'] = $this->activityId;
         }
@@ -92,6 +108,15 @@ class workflowActivityRules extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['activityActioners'])) {
+            if (!empty($map['activityActioners'])) {
+                $model->activityActioners = [];
+                $n = 0;
+                foreach ($map['activityActioners'] as $item) {
+                    $model->activityActioners[$n++] = null !== $item ? activityActioners::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['activityId'])) {
             $model->activityId = $map['activityId'];
         }

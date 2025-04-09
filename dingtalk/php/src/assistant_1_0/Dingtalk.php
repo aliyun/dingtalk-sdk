@@ -11,6 +11,12 @@ use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddDomainWordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddToOrgSkillRepositoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddToOrgSkillRepositoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddToOrgSkillRepositoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AssistantMeResponseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AssistantMeResponseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AssistantMeResponseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AssistantResponseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AssistantResponseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AssistantResponseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\BatchGetAICreditsRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\BatchGetAICreditsRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\BatchGetAICreditsRecordResponse;
@@ -243,6 +249,142 @@ class Dingtalk extends OpenApiClient
         $headers = new AddToOrgSkillRepositoryHeaders([]);
 
         return $this->addToOrgSkillRepositoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 助理响应接口-委托权限
+     *  *
+     * @param string                     $assistantId
+     * @param AssistantMeResponseRequest $request     AssistantMeResponseRequest
+     * @param AssistantMeResponseHeaders $headers     AssistantMeResponseHeaders
+     * @param RuntimeOptions             $runtime     runtime options for this request RuntimeOptions
+     *
+     * @return AssistantMeResponseResponse AssistantMeResponseResponse
+     */
+    public function assistantMeResponseWithOptions($assistantId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->input)) {
+            $body['input'] = $request->input;
+        }
+        if (!Utils::isUnset($request->instructions)) {
+            $body['instructions'] = $request->instructions;
+        }
+        if (!Utils::isUnset($request->metadata)) {
+            $body['metadata'] = $request->metadata;
+        }
+        if (!Utils::isUnset($request->stream)) {
+            $body['stream'] = $request->stream;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AssistantMeResponse',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/' . $assistantId . '/me/compatible-mode/responses',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AssistantMeResponseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 助理响应接口-委托权限
+     *  *
+     * @param string                     $assistantId
+     * @param AssistantMeResponseRequest $request     AssistantMeResponseRequest
+     *
+     * @return AssistantMeResponseResponse AssistantMeResponseResponse
+     */
+    public function assistantMeResponse($assistantId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AssistantMeResponseHeaders([]);
+
+        return $this->assistantMeResponseWithOptions($assistantId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 助理响应接口-应用权限
+     *  *
+     * @param string                   $assistantId
+     * @param AssistantResponseRequest $request     AssistantResponseRequest
+     * @param AssistantResponseHeaders $headers     AssistantResponseHeaders
+     * @param RuntimeOptions           $runtime     runtime options for this request RuntimeOptions
+     *
+     * @return AssistantResponseResponse AssistantResponseResponse
+     */
+    public function assistantResponseWithOptions($assistantId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->input)) {
+            $body['input'] = $request->input;
+        }
+        if (!Utils::isUnset($request->instructions)) {
+            $body['instructions'] = $request->instructions;
+        }
+        if (!Utils::isUnset($request->metadata)) {
+            $body['metadata'] = $request->metadata;
+        }
+        if (!Utils::isUnset($request->stream)) {
+            $body['stream'] = $request->stream;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AssistantResponse',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/' . $assistantId . '/compatible-mode/responses',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AssistantResponseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 助理响应接口-应用权限
+     *  *
+     * @param string                   $assistantId
+     * @param AssistantResponseRequest $request     AssistantResponseRequest
+     *
+     * @return AssistantResponseResponse AssistantResponseResponse
+     */
+    public function assistantResponse($assistantId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AssistantResponseHeaders([]);
+
+        return $this->assistantResponseWithOptions($assistantId, $request, $headers, $runtime);
     }
 
     /**

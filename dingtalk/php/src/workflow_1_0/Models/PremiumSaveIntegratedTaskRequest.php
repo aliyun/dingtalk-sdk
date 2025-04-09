@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedTaskRequest\featureConfig;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedTaskRequest\taskConfig;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedTaskRequest\tasks;
 use AlibabaCloud\Tea\Model;
 
@@ -32,6 +33,11 @@ class PremiumSaveIntegratedTaskRequest extends Model
     public $processInstanceId;
 
     /**
+     * @var taskConfig
+     */
+    public $taskConfig;
+
+    /**
      * @description This parameter is required.
      *
      * @var tasks[]
@@ -41,6 +47,7 @@ class PremiumSaveIntegratedTaskRequest extends Model
         'activityId' => 'activityId',
         'featureConfig' => 'featureConfig',
         'processInstanceId' => 'processInstanceId',
+        'taskConfig' => 'taskConfig',
         'tasks' => 'tasks',
     ];
 
@@ -57,6 +64,9 @@ class PremiumSaveIntegratedTaskRequest extends Model
         }
         if (null !== $this->processInstanceId) {
             $res['processInstanceId'] = $this->processInstanceId;
+        }
+        if (null !== $this->taskConfig) {
+            $res['taskConfig'] = null !== $this->taskConfig ? $this->taskConfig->toMap() : null;
         }
         if (null !== $this->tasks) {
             $res['tasks'] = [];
@@ -87,6 +97,9 @@ class PremiumSaveIntegratedTaskRequest extends Model
         }
         if (isset($map['processInstanceId'])) {
             $model->processInstanceId = $map['processInstanceId'];
+        }
+        if (isset($map['taskConfig'])) {
+            $model->taskConfig = taskConfig::fromMap($map['taskConfig']);
         }
         if (isset($map['tasks'])) {
             if (!empty($map['tasks'])) {

@@ -4099,6 +4099,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->processInstanceId)) {
             $body['processInstanceId'] = $request->processInstanceId;
         }
+        if (!Utils::isUnset($request->taskConfig)) {
+            $body['taskConfig'] = $request->taskConfig;
+        }
         if (!Utils::isUnset($request->tasks)) {
             $body['tasks'] = $request->tasks;
         }
