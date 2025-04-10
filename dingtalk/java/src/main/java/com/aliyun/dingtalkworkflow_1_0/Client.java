@@ -3926,6 +3926,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("processInstanceId", request.processInstanceId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.taskConfig)) {
+            body.put("taskConfig", request.taskConfig);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.tasks)) {
             body.put("tasks", request.tasks);
         }

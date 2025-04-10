@@ -20,6 +20,47 @@ public class ProcessForecastResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners extends TeaModel {
+        @NameInMap("avatar")
+        public String avatar;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("userId")
+        public String userId;
+
+        public static ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners build(java.util.Map<String, ?> map) throws Exception {
+            ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners self = new ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners();
+            return TeaModel.build(map, self);
+        }
+
+        public ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners setAvatar(String avatar) {
+            this.avatar = avatar;
+            return this;
+        }
+        public String getAvatar() {
+            return this.avatar;
+        }
+
+        public ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+    }
+
     public static class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals extends TeaModel {
         @NameInMap("userName")
         public String userName;
@@ -250,6 +291,9 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowActivityRules extends TeaModel {
+        @NameInMap("activityActioners")
+        public java.util.List<ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners> activityActioners;
+
         /**
          * <strong>example:</strong>
          * <p>1918_5cd3</p>
@@ -291,6 +335,14 @@ public class ProcessForecastResponseBody extends TeaModel {
         public static ProcessForecastResponseBodyResultWorkflowActivityRules build(java.util.Map<String, ?> map) throws Exception {
             ProcessForecastResponseBodyResultWorkflowActivityRules self = new ProcessForecastResponseBodyResultWorkflowActivityRules();
             return TeaModel.build(map, self);
+        }
+
+        public ProcessForecastResponseBodyResultWorkflowActivityRules setActivityActioners(java.util.List<ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners> activityActioners) {
+            this.activityActioners = activityActioners;
+            return this;
+        }
+        public java.util.List<ProcessForecastResponseBodyResultWorkflowActivityRulesActivityActioners> getActivityActioners() {
+            return this.activityActioners;
         }
 
         public ProcessForecastResponseBodyResultWorkflowActivityRules setActivityId(String activityId) {

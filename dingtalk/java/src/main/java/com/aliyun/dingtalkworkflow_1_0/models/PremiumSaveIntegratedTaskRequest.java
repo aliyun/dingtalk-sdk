@@ -23,6 +23,9 @@ public class PremiumSaveIntegratedTaskRequest extends TeaModel {
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
+    @NameInMap("taskConfig")
+    public PremiumSaveIntegratedTaskRequestTaskConfig taskConfig;
+
     /**
      * <p>This parameter is required.</p>
      */
@@ -56,6 +59,14 @@ public class PremiumSaveIntegratedTaskRequest extends TeaModel {
     }
     public String getProcessInstanceId() {
         return this.processInstanceId;
+    }
+
+    public PremiumSaveIntegratedTaskRequest setTaskConfig(PremiumSaveIntegratedTaskRequestTaskConfig taskConfig) {
+        this.taskConfig = taskConfig;
+        return this;
+    }
+    public PremiumSaveIntegratedTaskRequestTaskConfig getTaskConfig() {
+        return this.taskConfig;
     }
 
     public PremiumSaveIntegratedTaskRequest setTasks(java.util.List<PremiumSaveIntegratedTaskRequestTasks> tasks) {
@@ -228,6 +239,25 @@ public class PremiumSaveIntegratedTaskRequest extends TeaModel {
         }
         public java.util.List<PremiumSaveIntegratedTaskRequestFeatureConfigFeatures> getFeatures() {
             return this.features;
+        }
+
+    }
+
+    public static class PremiumSaveIntegratedTaskRequestTaskConfig extends TeaModel {
+        @NameInMap("disableSendCard")
+        public Boolean disableSendCard;
+
+        public static PremiumSaveIntegratedTaskRequestTaskConfig build(java.util.Map<String, ?> map) throws Exception {
+            PremiumSaveIntegratedTaskRequestTaskConfig self = new PremiumSaveIntegratedTaskRequestTaskConfig();
+            return TeaModel.build(map, self);
+        }
+
+        public PremiumSaveIntegratedTaskRequestTaskConfig setDisableSendCard(Boolean disableSendCard) {
+            this.disableSendCard = disableSendCard;
+            return this;
+        }
+        public Boolean getDisableSendCard() {
+            return this.disableSendCard;
         }
 
     }
