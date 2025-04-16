@@ -1714,6 +1714,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>更新文档中的块元素</p>
+     * 
+     * @param request DocBlocksModifyRequest
+     * @param headers DocBlocksModifyHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DocBlocksModifyResponse
+     */
+    public DocBlocksModifyResponse docBlocksModifyWithOptions(String documentId, String blockId, DocBlocksModifyRequest request, DocBlocksModifyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.element)) {
+            body.put("element", request.element);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DocBlocksModify"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/suites/documents/" + documentId + "/blocks/" + blockId + ""),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DocBlocksModifyResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新文档中的块元素</p>
+     * 
+     * @param request DocBlocksModifyRequest
+     * @return DocBlocksModifyResponse
+     */
+    public DocBlocksModifyResponse docBlocksModify(String documentId, String blockId, DocBlocksModifyRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DocBlocksModifyHeaders headers = new DocBlocksModifyHeaders();
+        return this.docBlocksModifyWithOptions(documentId, blockId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询指定Block元素</p>
      * 
      * @param request DocBlocksQueryRequest
@@ -3056,6 +3118,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InsertColumnsBeforeHeaders headers = new InsertColumnsBeforeHeaders();
         return this.insertColumnsBeforeWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>插入整段内容</p>
+     * 
+     * @param request InsertContentRequest
+     * @param headers InsertContentHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InsertContentResponse
+     */
+    public InsertContentResponse insertContentWithOptions(String documentId, InsertContentRequest request, InsertContentHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "InsertContent"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/suites/documents/" + documentId + "/content"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new InsertContentResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>插入整段内容</p>
+     * 
+     * @param request InsertContentRequest
+     * @return InsertContentResponse
+     */
+    public InsertContentResponse insertContent(String documentId, InsertContentRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        InsertContentHeaders headers = new InsertContentHeaders();
+        return this.insertContentWithOptions(documentId, request, headers, runtime);
     }
 
     /**

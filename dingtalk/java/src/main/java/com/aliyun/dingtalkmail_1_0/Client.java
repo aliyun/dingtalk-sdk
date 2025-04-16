@@ -314,7 +314,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>获取邮件</p>
+     * <p>获取邮件元数据</p>
      * 
      * @param request GetMessageRequest
      * @param headers GetMessageHeaders
@@ -357,7 +357,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>获取邮件</p>
+     * <p>获取邮件元数据</p>
      * 
      * @param request GetMessageRequest
      * @return GetMessageResponse

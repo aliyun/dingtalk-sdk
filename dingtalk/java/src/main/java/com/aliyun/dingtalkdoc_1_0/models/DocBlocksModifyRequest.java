@@ -3,15 +3,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class BatchOperateRequest extends TeaModel {
+public class DocBlocksModifyRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
-     * <p>requests</p>
+     * <p>element</p>
      */
-    @NameInMap("requests")
-    public java.util.List<?> requests;
+    @NameInMap("element")
+    public java.util.Map<String, ?> element;
 
     /**
      * <p>This parameter is required.</p>
@@ -22,20 +22,20 @@ public class BatchOperateRequest extends TeaModel {
     @NameInMap("operatorId")
     public String operatorId;
 
-    public static BatchOperateRequest build(java.util.Map<String, ?> map) throws Exception {
-        BatchOperateRequest self = new BatchOperateRequest();
+    public static DocBlocksModifyRequest build(java.util.Map<String, ?> map) throws Exception {
+        DocBlocksModifyRequest self = new DocBlocksModifyRequest();
         return TeaModel.build(map, self);
     }
 
-    public BatchOperateRequest setRequests(java.util.List<?> requests) {
-        this.requests = requests;
+    public DocBlocksModifyRequest setElement(java.util.Map<String, ?> element) {
+        this.element = element;
         return this;
     }
-    public java.util.List<?> getRequests() {
-        return this.requests;
+    public java.util.Map<String, ?> getElement() {
+        return this.element;
     }
 
-    public BatchOperateRequest setOperatorId(String operatorId) {
+    public DocBlocksModifyRequest setOperatorId(String operatorId) {
         this.operatorId = operatorId;
         return this;
     }

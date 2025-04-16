@@ -3037,7 +3037,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>修改企业账号加入其他组织后电话是否可见</p>
+     * <p>授权其他组织查看本组织的企业账号信息</p>
      * 
      * @param request OrgAccountMobileVisibleInOtherOrgRequest
      * @param headers OrgAccountMobileVisibleInOtherOrgHeaders
@@ -3047,6 +3047,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public OrgAccountMobileVisibleInOtherOrgResponse orgAccountMobileVisibleInOtherOrgWithOptions(OrgAccountMobileVisibleInOtherOrgRequest request, OrgAccountMobileVisibleInOtherOrgHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fields)) {
+            body.put("fields", request.fields);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.optUserId)) {
             body.put("optUserId", request.optUserId);
         }
@@ -3084,7 +3088,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>修改企业账号加入其他组织后电话是否可见</p>
+     * <p>授权其他组织查看本组织的企业账号信息</p>
      * 
      * @param request OrgAccountMobileVisibleInOtherOrgRequest
      * @return OrgAccountMobileVisibleInOtherOrgResponse

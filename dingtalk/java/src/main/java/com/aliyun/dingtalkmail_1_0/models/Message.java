@@ -13,12 +13,6 @@ public class Message extends TeaModel {
     /**
      * <p>This parameter is required.</p>
      */
-    @NameInMap("body")
-    public MessageBody body;
-
-    /**
-     * <p>This parameter is required.</p>
-     */
     @NameInMap("ccRecipients")
     public java.util.List<Recipient> ccRecipients;
 
@@ -203,14 +197,6 @@ public class Message extends TeaModel {
         return this.bccRecipients;
     }
 
-    public Message setBody(MessageBody body) {
-        this.body = body;
-        return this;
-    }
-    public MessageBody getBody() {
-        return this.body;
-    }
-
     public Message setCcRecipients(java.util.List<Recipient> ccRecipients) {
         this.ccRecipients = ccRecipients;
         return this;
@@ -377,42 +363,6 @@ public class Message extends TeaModel {
     }
     public java.util.List<Recipient> getToRecipients() {
         return this.toRecipients;
-    }
-
-    public static class MessageBody extends TeaModel {
-        /**
-         * <p>This parameter is required.</p>
-         */
-        @NameInMap("bodyHtml")
-        public java.io.InputStream bodyHtml;
-
-        /**
-         * <p>This parameter is required.</p>
-         */
-        @NameInMap("bodyText")
-        public java.io.InputStream bodyText;
-
-        public static MessageBody build(java.util.Map<String, ?> map) throws Exception {
-            MessageBody self = new MessageBody();
-            return TeaModel.build(map, self);
-        }
-
-        public MessageBody setBodyHtml(java.io.InputStream bodyHtml) {
-            this.bodyHtml = bodyHtml;
-            return this;
-        }
-        public java.io.InputStream getBodyHtml() {
-            return this.bodyHtml;
-        }
-
-        public MessageBody setBodyText(java.io.InputStream bodyText) {
-            this.bodyText = bodyText;
-            return this;
-        }
-        public java.io.InputStream getBodyText() {
-            return this.bodyText;
-        }
-
     }
 
 }

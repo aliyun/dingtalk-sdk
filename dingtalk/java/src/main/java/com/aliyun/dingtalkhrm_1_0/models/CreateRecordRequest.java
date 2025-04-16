@@ -20,6 +20,9 @@ public class CreateRecordRequest extends TeaModel {
     @NameInMap("groupList")
     public java.util.List<CreateRecordRequestGroupList> groupList;
 
+    @NameInMap("outerId")
+    public String outerId;
+
     /**
      * <strong>example:</strong>
      * <p>xxx员工劳动合同电子签署</p>
@@ -112,6 +115,14 @@ public class CreateRecordRequest extends TeaModel {
     }
     public java.util.List<CreateRecordRequestGroupList> getGroupList() {
         return this.groupList;
+    }
+
+    public CreateRecordRequest setOuterId(String outerId) {
+        this.outerId = outerId;
+        return this;
+    }
+    public String getOuterId() {
+        return this.outerId;
     }
 
     public CreateRecordRequest setRemark(String remark) {

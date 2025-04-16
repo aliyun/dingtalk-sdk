@@ -136,7 +136,7 @@ public class CreatePaymentOrderRequest extends TeaModel {
         return this.userId;
     }
 
-    public static class CreatePaymentOrderRequestPayeeAccountDTOBankDTO extends TeaModel {
+    public static class CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO extends TeaModel {
         /**
          * <strong>example:</strong>
          * <p>钉钉中国</p>
@@ -186,12 +186,12 @@ public class CreatePaymentOrderRequest extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        public static CreatePaymentOrderRequestPayeeAccountDTOBankDTO build(java.util.Map<String, ?> map) throws Exception {
-            CreatePaymentOrderRequestPayeeAccountDTOBankDTO self = new CreatePaymentOrderRequestPayeeAccountDTOBankDTO();
+        public static CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO build(java.util.Map<String, ?> map) throws Exception {
+            CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO self = new CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO();
             return TeaModel.build(map, self);
         }
 
-        public CreatePaymentOrderRequestPayeeAccountDTOBankDTO setAccountName(String accountName) {
+        public CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO setAccountName(String accountName) {
             this.accountName = accountName;
             return this;
         }
@@ -199,7 +199,7 @@ public class CreatePaymentOrderRequest extends TeaModel {
             return this.accountName;
         }
 
-        public CreatePaymentOrderRequestPayeeAccountDTOBankDTO setBankBranchCode(String bankBranchCode) {
+        public CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO setBankBranchCode(String bankBranchCode) {
             this.bankBranchCode = bankBranchCode;
             return this;
         }
@@ -207,7 +207,7 @@ public class CreatePaymentOrderRequest extends TeaModel {
             return this.bankBranchCode;
         }
 
-        public CreatePaymentOrderRequestPayeeAccountDTOBankDTO setBankBranchName(String bankBranchName) {
+        public CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO setBankBranchName(String bankBranchName) {
             this.bankBranchName = bankBranchName;
             return this;
         }
@@ -215,7 +215,7 @@ public class CreatePaymentOrderRequest extends TeaModel {
             return this.bankBranchName;
         }
 
-        public CreatePaymentOrderRequestPayeeAccountDTOBankDTO setBankCardNo(String bankCardNo) {
+        public CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO setBankCardNo(String bankCardNo) {
             this.bankCardNo = bankCardNo;
             return this;
         }
@@ -223,7 +223,7 @@ public class CreatePaymentOrderRequest extends TeaModel {
             return this.bankCardNo;
         }
 
-        public CreatePaymentOrderRequestPayeeAccountDTOBankDTO setBankCode(String bankCode) {
+        public CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO setBankCode(String bankCode) {
             this.bankCode = bankCode;
             return this;
         }
@@ -231,7 +231,7 @@ public class CreatePaymentOrderRequest extends TeaModel {
             return this.bankCode;
         }
 
-        public CreatePaymentOrderRequestPayeeAccountDTOBankDTO setBankName(String bankName) {
+        public CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO setBankName(String bankName) {
             this.bankName = bankName;
             return this;
         }
@@ -239,7 +239,7 @@ public class CreatePaymentOrderRequest extends TeaModel {
             return this.bankName;
         }
 
-        public CreatePaymentOrderRequestPayeeAccountDTOBankDTO setType(String type) {
+        public CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO setType(String type) {
             this.type = type;
             return this;
         }
@@ -250,20 +250,20 @@ public class CreatePaymentOrderRequest extends TeaModel {
     }
 
     public static class CreatePaymentOrderRequestPayeeAccountDTO extends TeaModel {
-        @NameInMap("bankDTO")
-        public CreatePaymentOrderRequestPayeeAccountDTOBankDTO bankDTO;
+        @NameInMap("bankOpenDTO")
+        public CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO bankOpenDTO;
 
         public static CreatePaymentOrderRequestPayeeAccountDTO build(java.util.Map<String, ?> map) throws Exception {
             CreatePaymentOrderRequestPayeeAccountDTO self = new CreatePaymentOrderRequestPayeeAccountDTO();
             return TeaModel.build(map, self);
         }
 
-        public CreatePaymentOrderRequestPayeeAccountDTO setBankDTO(CreatePaymentOrderRequestPayeeAccountDTOBankDTO bankDTO) {
-            this.bankDTO = bankDTO;
+        public CreatePaymentOrderRequestPayeeAccountDTO setBankOpenDTO(CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO bankOpenDTO) {
+            this.bankOpenDTO = bankOpenDTO;
             return this;
         }
-        public CreatePaymentOrderRequestPayeeAccountDTOBankDTO getBankDTO() {
-            return this.bankDTO;
+        public CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO getBankOpenDTO() {
+            return this.bankOpenDTO;
         }
 
     }
