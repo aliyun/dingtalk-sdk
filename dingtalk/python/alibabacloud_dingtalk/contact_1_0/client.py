@@ -5887,7 +5887,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgResponse:
         """
-        @summary 修改企业账号加入其他组织后电话是否可见
+        @summary 授权其他组织查看本组织的企业账号信息
         
         @param request: OrgAccountMobileVisibleInOtherOrgRequest
         @param headers: OrgAccountMobileVisibleInOtherOrgHeaders
@@ -5896,6 +5896,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.fields):
+            body['fields'] = request.fields
         if not UtilClient.is_unset(request.opt_user_id):
             body['optUserId'] = request.opt_user_id
         if not UtilClient.is_unset(request.to_corp_ids):
@@ -5932,7 +5934,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgResponse:
         """
-        @summary 修改企业账号加入其他组织后电话是否可见
+        @summary 授权其他组织查看本组织的企业账号信息
         
         @param request: OrgAccountMobileVisibleInOtherOrgRequest
         @param headers: OrgAccountMobileVisibleInOtherOrgHeaders
@@ -5941,6 +5943,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.fields):
+            body['fields'] = request.fields
         if not UtilClient.is_unset(request.opt_user_id):
             body['optUserId'] = request.opt_user_id
         if not UtilClient.is_unset(request.to_corp_ids):
@@ -5975,7 +5979,7 @@ class Client(OpenApiClient):
         request: dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgRequest,
     ) -> dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgResponse:
         """
-        @summary 修改企业账号加入其他组织后电话是否可见
+        @summary 授权其他组织查看本组织的企业账号信息
         
         @param request: OrgAccountMobileVisibleInOtherOrgRequest
         @return: OrgAccountMobileVisibleInOtherOrgResponse
@@ -5989,7 +5993,7 @@ class Client(OpenApiClient):
         request: dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgRequest,
     ) -> dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgResponse:
         """
-        @summary 修改企业账号加入其他组织后电话是否可见
+        @summary 授权其他组织查看本组织的企业账号信息
         
         @param request: OrgAccountMobileVisibleInOtherOrgRequest
         @return: OrgAccountMobileVisibleInOtherOrgResponse

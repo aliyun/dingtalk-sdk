@@ -1091,6 +1091,7 @@ class CreateRecordRequest(TeaModel):
         dept_id: int = None,
         field_list: List[CreateRecordRequestFieldList] = None,
         group_list: List[CreateRecordRequestGroupList] = None,
+        outer_id: str = None,
         remark: str = None,
         sign_last_legal_entity_name: str = None,
         sign_legal_entity_name: str = None,
@@ -1103,6 +1104,7 @@ class CreateRecordRequest(TeaModel):
         self.dept_id = dept_id
         self.field_list = field_list
         self.group_list = group_list
+        self.outer_id = outer_id
         self.remark = remark
         self.sign_last_legal_entity_name = sign_last_legal_entity_name
         self.sign_legal_entity_name = sign_legal_entity_name
@@ -1149,6 +1151,8 @@ class CreateRecordRequest(TeaModel):
         if self.group_list is not None:
             for k in self.group_list:
                 result['groupList'].append(k.to_map() if k else None)
+        if self.outer_id is not None:
+            result['outerId'] = self.outer_id
         if self.remark is not None:
             result['remark'] = self.remark
         if self.sign_last_legal_entity_name is not None:
@@ -1184,6 +1188,8 @@ class CreateRecordRequest(TeaModel):
             for k in m.get('groupList'):
                 temp_model = CreateRecordRequestGroupList()
                 self.group_list.append(temp_model.from_map(k))
+        if m.get('outerId') is not None:
+            self.outer_id = m.get('outerId')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
         if m.get('signLastLegalEntityName') is not None:
@@ -3807,6 +3813,226 @@ class GetSignRecordByUserIdResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSignRecordByUserIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetUserSignedRecordsByOuterIdRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[str] = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        return self
+
+
+class GetUserSignedRecordsByOuterIdResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        remark: str = None,
+        sign_expire_time: str = None,
+        sign_file_name: str = None,
+        sign_file_url: str = None,
+        sign_finish_time: str = None,
+        sign_legal_entity_name: str = None,
+        sign_record_id: str = None,
+        sign_start_time: str = None,
+        sign_status: str = None,
+        sign_status_remarks: str = None,
+        sign_template_type: str = None,
+        sign_user_id: str = None,
+        sign_user_name: str = None,
+        sign_way: str = None,
+    ):
+        self.corp_id = corp_id
+        self.remark = remark
+        self.sign_expire_time = sign_expire_time
+        self.sign_file_name = sign_file_name
+        self.sign_file_url = sign_file_url
+        self.sign_finish_time = sign_finish_time
+        self.sign_legal_entity_name = sign_legal_entity_name
+        self.sign_record_id = sign_record_id
+        self.sign_start_time = sign_start_time
+        self.sign_status = sign_status
+        self.sign_status_remarks = sign_status_remarks
+        self.sign_template_type = sign_template_type
+        self.sign_user_id = sign_user_id
+        self.sign_user_name = sign_user_name
+        self.sign_way = sign_way
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.sign_expire_time is not None:
+            result['signExpireTime'] = self.sign_expire_time
+        if self.sign_file_name is not None:
+            result['signFileName'] = self.sign_file_name
+        if self.sign_file_url is not None:
+            result['signFileUrl'] = self.sign_file_url
+        if self.sign_finish_time is not None:
+            result['signFinishTime'] = self.sign_finish_time
+        if self.sign_legal_entity_name is not None:
+            result['signLegalEntityName'] = self.sign_legal_entity_name
+        if self.sign_record_id is not None:
+            result['signRecordId'] = self.sign_record_id
+        if self.sign_start_time is not None:
+            result['signStartTime'] = self.sign_start_time
+        if self.sign_status is not None:
+            result['signStatus'] = self.sign_status
+        if self.sign_status_remarks is not None:
+            result['signStatusRemarks'] = self.sign_status_remarks
+        if self.sign_template_type is not None:
+            result['signTemplateType'] = self.sign_template_type
+        if self.sign_user_id is not None:
+            result['signUserId'] = self.sign_user_id
+        if self.sign_user_name is not None:
+            result['signUserName'] = self.sign_user_name
+        if self.sign_way is not None:
+            result['signWay'] = self.sign_way
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('signExpireTime') is not None:
+            self.sign_expire_time = m.get('signExpireTime')
+        if m.get('signFileName') is not None:
+            self.sign_file_name = m.get('signFileName')
+        if m.get('signFileUrl') is not None:
+            self.sign_file_url = m.get('signFileUrl')
+        if m.get('signFinishTime') is not None:
+            self.sign_finish_time = m.get('signFinishTime')
+        if m.get('signLegalEntityName') is not None:
+            self.sign_legal_entity_name = m.get('signLegalEntityName')
+        if m.get('signRecordId') is not None:
+            self.sign_record_id = m.get('signRecordId')
+        if m.get('signStartTime') is not None:
+            self.sign_start_time = m.get('signStartTime')
+        if m.get('signStatus') is not None:
+            self.sign_status = m.get('signStatus')
+        if m.get('signStatusRemarks') is not None:
+            self.sign_status_remarks = m.get('signStatusRemarks')
+        if m.get('signTemplateType') is not None:
+            self.sign_template_type = m.get('signTemplateType')
+        if m.get('signUserId') is not None:
+            self.sign_user_id = m.get('signUserId')
+        if m.get('signUserName') is not None:
+            self.sign_user_name = m.get('signUserName')
+        if m.get('signWay') is not None:
+            self.sign_way = m.get('signWay')
+        return self
+
+
+class GetUserSignedRecordsByOuterIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetUserSignedRecordsByOuterIdResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetUserSignedRecordsByOuterIdResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetUserSignedRecordsByOuterIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetUserSignedRecordsByOuterIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetUserSignedRecordsByOuterIdResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

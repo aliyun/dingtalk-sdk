@@ -9044,9 +9044,11 @@ class OrgAccountMobileVisibleInOtherOrgHeaders(TeaModel):
 class OrgAccountMobileVisibleInOtherOrgRequest(TeaModel):
     def __init__(
         self,
+        fields: List[str] = None,
         opt_user_id: str = None,
         to_corp_ids: List[str] = None,
     ):
+        self.fields = fields
         # This parameter is required.
         self.opt_user_id = opt_user_id
         # This parameter is required.
@@ -9061,6 +9063,8 @@ class OrgAccountMobileVisibleInOtherOrgRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.fields is not None:
+            result['fields'] = self.fields
         if self.opt_user_id is not None:
             result['optUserId'] = self.opt_user_id
         if self.to_corp_ids is not None:
@@ -9069,6 +9073,8 @@ class OrgAccountMobileVisibleInOtherOrgRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('fields') is not None:
+            self.fields = m.get('fields')
         if m.get('optUserId') is not None:
             self.opt_user_id = m.get('optUserId')
         if m.get('toCorpIds') is not None:

@@ -1713,7 +1713,7 @@ class CreatePaymentOrderHeaders(TeaModel):
         return self
 
 
-class CreatePaymentOrderRequestPayeeAccountDTOBankDTO(TeaModel):
+class CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO(TeaModel):
     def __init__(
         self,
         account_name: str = None,
@@ -1779,13 +1779,13 @@ class CreatePaymentOrderRequestPayeeAccountDTOBankDTO(TeaModel):
 class CreatePaymentOrderRequestPayeeAccountDTO(TeaModel):
     def __init__(
         self,
-        bank_dto: CreatePaymentOrderRequestPayeeAccountDTOBankDTO = None,
+        bank_open_dto: CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO = None,
     ):
-        self.bank_dto = bank_dto
+        self.bank_open_dto = bank_open_dto
 
     def validate(self):
-        if self.bank_dto:
-            self.bank_dto.validate()
+        if self.bank_open_dto:
+            self.bank_open_dto.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1793,15 +1793,15 @@ class CreatePaymentOrderRequestPayeeAccountDTO(TeaModel):
             return _map
 
         result = dict()
-        if self.bank_dto is not None:
-            result['bankDTO'] = self.bank_dto.to_map()
+        if self.bank_open_dto is not None:
+            result['bankOpenDTO'] = self.bank_open_dto.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('bankDTO') is not None:
-            temp_model = CreatePaymentOrderRequestPayeeAccountDTOBankDTO()
-            self.bank_dto = temp_model.from_map(m['bankDTO'])
+        if m.get('bankOpenDTO') is not None:
+            temp_model = CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO()
+            self.bank_open_dto = temp_model.from_map(m['bankOpenDTO'])
         return self
 
 

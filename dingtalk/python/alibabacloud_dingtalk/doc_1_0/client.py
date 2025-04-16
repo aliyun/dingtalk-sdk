@@ -3492,6 +3492,136 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.DocAppendTextHeaders()
         return await self.doc_append_text_with_options_async(doc_key, block_id, request, headers, runtime)
 
+    def doc_blocks_modify_with_options(
+        self,
+        document_id: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocBlocksModifyRequest,
+        headers: dingtalkdoc__1__0_models.DocBlocksModifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocBlocksModifyResponse:
+        """
+        @summary 更新文档中的块元素
+        
+        @param request: DocBlocksModifyRequest
+        @param headers: DocBlocksModifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocBlocksModifyResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.element):
+            body['element'] = request.element
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocBlocksModify',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/blocks/{block_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocBlocksModifyResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_blocks_modify_with_options_async(
+        self,
+        document_id: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocBlocksModifyRequest,
+        headers: dingtalkdoc__1__0_models.DocBlocksModifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocBlocksModifyResponse:
+        """
+        @summary 更新文档中的块元素
+        
+        @param request: DocBlocksModifyRequest
+        @param headers: DocBlocksModifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocBlocksModifyResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.element):
+            body['element'] = request.element
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocBlocksModify',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/blocks/{block_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocBlocksModifyResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_blocks_modify(
+        self,
+        document_id: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocBlocksModifyRequest,
+    ) -> dingtalkdoc__1__0_models.DocBlocksModifyResponse:
+        """
+        @summary 更新文档中的块元素
+        
+        @param request: DocBlocksModifyRequest
+        @return: DocBlocksModifyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocBlocksModifyHeaders()
+        return self.doc_blocks_modify_with_options(document_id, block_id, request, headers, runtime)
+
+    async def doc_blocks_modify_async(
+        self,
+        document_id: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocBlocksModifyRequest,
+    ) -> dingtalkdoc__1__0_models.DocBlocksModifyResponse:
+        """
+        @summary 更新文档中的块元素
+        
+        @param request: DocBlocksModifyRequest
+        @return: DocBlocksModifyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocBlocksModifyHeaders()
+        return await self.doc_blocks_modify_with_options_async(document_id, block_id, request, headers, runtime)
+
     def doc_blocks_query_with_options(
         self,
         doc_key: str,
@@ -6221,6 +6351,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.InsertColumnsBeforeHeaders()
         return await self.insert_columns_before_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def insert_content_with_options(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.InsertContentRequest,
+        headers: dingtalkdoc__1__0_models.InsertContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.InsertContentResponse:
+        """
+        @summary 插入整段内容
+        
+        @param request: InsertContentRequest
+        @param headers: InsertContentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertContentResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InsertContent',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/content',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.InsertContentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def insert_content_with_options_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.InsertContentRequest,
+        headers: dingtalkdoc__1__0_models.InsertContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.InsertContentResponse:
+        """
+        @summary 插入整段内容
+        
+        @param request: InsertContentRequest
+        @param headers: InsertContentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertContentResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InsertContent',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/content',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.InsertContentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def insert_content(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.InsertContentRequest,
+    ) -> dingtalkdoc__1__0_models.InsertContentResponse:
+        """
+        @summary 插入整段内容
+        
+        @param request: InsertContentRequest
+        @return: InsertContentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.InsertContentHeaders()
+        return self.insert_content_with_options(document_id, request, headers, runtime)
+
+    async def insert_content_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.InsertContentRequest,
+    ) -> dingtalkdoc__1__0_models.InsertContentResponse:
+        """
+        @summary 插入整段内容
+        
+        @param request: InsertContentRequest
+        @return: InsertContentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.InsertContentHeaders()
+        return await self.insert_content_with_options_async(document_id, request, headers, runtime)
 
     def insert_dropdown_lists_with_options(
         self,

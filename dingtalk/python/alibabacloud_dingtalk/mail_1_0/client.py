@@ -631,7 +631,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmail__1__0_models.GetMessageResponse:
         """
-        @summary 获取邮件
+        @summary 获取邮件元数据
         
         @param request: GetMessageRequest
         @param headers: GetMessageHeaders
@@ -676,7 +676,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmail__1__0_models.GetMessageResponse:
         """
-        @summary 获取邮件
+        @summary 获取邮件元数据
         
         @param request: GetMessageRequest
         @param headers: GetMessageHeaders
@@ -719,7 +719,7 @@ class Client(OpenApiClient):
         request: dingtalkmail__1__0_models.GetMessageRequest,
     ) -> dingtalkmail__1__0_models.GetMessageResponse:
         """
-        @summary 获取邮件
+        @summary 获取邮件元数据
         
         @param request: GetMessageRequest
         @return: GetMessageResponse
@@ -735,7 +735,7 @@ class Client(OpenApiClient):
         request: dingtalkmail__1__0_models.GetMessageRequest,
     ) -> dingtalkmail__1__0_models.GetMessageResponse:
         """
-        @summary 获取邮件
+        @summary 获取邮件元数据
         
         @param request: GetMessageRequest
         @return: GetMessageResponse

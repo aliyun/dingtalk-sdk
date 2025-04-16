@@ -1501,16 +1501,16 @@ class BatchOperateHeaders(TeaModel):
         return self
 
 
-class BatchOperateRequestRequests(TeaModel):
+class BatchOperateRequest(TeaModel):
     def __init__(
         self,
-        body: Any = None,
-        method: str = None,
-        path: str = None,
+        requests: List[Any] = None,
+        operator_id: str = None,
     ):
-        self.body = body
-        self.method = method
-        self.path = path
+        # This parameter is required.
+        self.requests = requests
+        # This parameter is required.
+        self.operator_id = operator_id
 
     def validate(self):
         pass
@@ -1521,63 +1521,16 @@ class BatchOperateRequestRequests(TeaModel):
             return _map
 
         result = dict()
-        if self.body is not None:
-            result['body'] = self.body
-        if self.method is not None:
-            result['method'] = self.method
-        if self.path is not None:
-            result['path'] = self.path
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('body') is not None:
-            self.body = m.get('body')
-        if m.get('method') is not None:
-            self.method = m.get('method')
-        if m.get('path') is not None:
-            self.path = m.get('path')
-        return self
-
-
-class BatchOperateRequest(TeaModel):
-    def __init__(
-        self,
-        requests: List[BatchOperateRequestRequests] = None,
-        operator_id: str = None,
-    ):
-        # This parameter is required.
-        self.requests = requests
-        # This parameter is required.
-        self.operator_id = operator_id
-
-    def validate(self):
-        if self.requests:
-            for k in self.requests:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['requests'] = []
         if self.requests is not None:
-            for k in self.requests:
-                result['requests'].append(k.to_map() if k else None)
+            result['requests'] = self.requests
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.requests = []
         if m.get('requests') is not None:
-            for k in m.get('requests'):
-                temp_model = BatchOperateRequestRequests()
-                self.requests.append(temp_model.from_map(k))
+            self.requests = m.get('requests')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
@@ -4741,6 +4694,177 @@ class DocAppendTextResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DocAppendTextResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DocBlocksModifyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DocBlocksModifyRequest(TeaModel):
+    def __init__(
+        self,
+        element: Dict[str, Any] = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.element = element
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.element is not None:
+            result['element'] = self.element
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('element') is not None:
+            self.element = m.get('element')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class DocBlocksModifyResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        result: List[Any] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DocBlocksModifyResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: DocBlocksModifyResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = DocBlocksModifyResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DocBlocksModifyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DocBlocksModifyResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DocBlocksModifyResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -9258,6 +9382,148 @@ class InsertColumnsBeforeResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = InsertColumnsBeforeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class InsertContentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InsertContentRequest(TeaModel):
+    def __init__(
+        self,
+        content: Dict[str, Any] = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.content = content
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class InsertContentResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: Dict[str, Any] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class InsertContentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: InsertContentResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = InsertContentResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

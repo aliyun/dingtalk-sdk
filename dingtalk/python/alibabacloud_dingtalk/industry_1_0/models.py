@@ -4718,6 +4718,292 @@ class ChatAITextSentimentAnalysisResponse(TeaModel):
         return self
 
 
+class ChatAiQueryLogsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatAiQueryLogsRequest(TeaModel):
+    def __init__(
+        self,
+        app_id: int = None,
+        end_time: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        scence_id: int = None,
+        start_time: int = None,
+    ):
+        # This parameter is required.
+        self.app_id = app_id
+        self.end_time = end_time
+        # This parameter is required.
+        self.page_number = page_number
+        # This parameter is required.
+        self.page_size = page_size
+        self.scence_id = scence_id
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.scence_id is not None:
+            result['scenceId'] = self.scence_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('scenceId') is not None:
+            self.scence_id = m.get('scenceId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class ChatAiQueryLogsResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        app_name: str = None,
+        extend_info: str = None,
+        feedback_state: int = None,
+        feedback_state_desc: str = None,
+        question: str = None,
+        question_time: int = None,
+        response: str = None,
+        runtime: int = None,
+        scene: str = None,
+        session_type: str = None,
+        user_id: str = None,
+        user_name: str = None,
+    ):
+        self.app_name = app_name
+        self.extend_info = extend_info
+        self.feedback_state = feedback_state
+        self.feedback_state_desc = feedback_state_desc
+        self.question = question
+        self.question_time = question_time
+        self.response = response
+        self.runtime = runtime
+        self.scene = scene
+        self.session_type = session_type
+        self.user_id = user_id
+        self.user_name = user_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.extend_info is not None:
+            result['extendInfo'] = self.extend_info
+        if self.feedback_state is not None:
+            result['feedbackState'] = self.feedback_state
+        if self.feedback_state_desc is not None:
+            result['feedbackStateDesc'] = self.feedback_state_desc
+        if self.question is not None:
+            result['question'] = self.question
+        if self.question_time is not None:
+            result['questionTime'] = self.question_time
+        if self.response is not None:
+            result['response'] = self.response
+        if self.runtime is not None:
+            result['runtime'] = self.runtime
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.session_type is not None:
+            result['sessionType'] = self.session_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('extendInfo') is not None:
+            self.extend_info = m.get('extendInfo')
+        if m.get('feedbackState') is not None:
+            self.feedback_state = m.get('feedbackState')
+        if m.get('feedbackStateDesc') is not None:
+            self.feedback_state_desc = m.get('feedbackStateDesc')
+        if m.get('question') is not None:
+            self.question = m.get('question')
+        if m.get('questionTime') is not None:
+            self.question_time = m.get('questionTime')
+        if m.get('response') is not None:
+            self.response = m.get('response')
+        if m.get('runtime') is not None:
+            self.runtime = m.get('runtime')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('sessionType') is not None:
+            self.session_type = m.get('sessionType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class ChatAiQueryLogsResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[ChatAiQueryLogsResponseBodyData] = None,
+        page_number: int = None,
+        page_size: int = None,
+        total: int = None,
+        total_page: int = None,
+    ):
+        self.data = data
+        self.page_number = page_number
+        self.page_size = page_size
+        self.total = total
+        self.total_page = total_page
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total is not None:
+            result['total'] = self.total
+        if self.total_page is not None:
+            result['totalPage'] = self.total_page
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = ChatAiQueryLogsResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        if m.get('totalPage') is not None:
+            self.total_page = m.get('totalPage')
+        return self
+
+
+class ChatAiQueryLogsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatAiQueryLogsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatAiQueryLogsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ChatAiTravelListHeaders(TeaModel):
     def __init__(
         self,

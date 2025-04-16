@@ -219,46 +219,10 @@ class DraftMessage(TeaModel):
         return self
 
 
-class MessageBody(TeaModel):
-    def __init__(
-        self,
-        body_html: BinaryIO = None,
-        body_text: BinaryIO = None,
-    ):
-        # This parameter is required.
-        self.body_html = body_html
-        # This parameter is required.
-        self.body_text = body_text
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.body_html is not None:
-            result['bodyHtml'] = self.body_html
-        if self.body_text is not None:
-            result['bodyText'] = self.body_text
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('bodyHtml') is not None:
-            self.body_html = m.get('bodyHtml')
-        if m.get('bodyText') is not None:
-            self.body_text = m.get('bodyText')
-        return self
-
-
 class Message(TeaModel):
     def __init__(
         self,
         bcc_recipients: List[Recipient] = None,
-        body: MessageBody = None,
         cc_recipients: List[Recipient] = None,
         conversation_id: BinaryIO = None,
         folder_id: BinaryIO = None,
@@ -283,8 +247,6 @@ class Message(TeaModel):
     ):
         # This parameter is required.
         self.bcc_recipients = bcc_recipients
-        # This parameter is required.
-        self.body = body
         # This parameter is required.
         self.cc_recipients = cc_recipients
         # This parameter is required.
@@ -333,8 +295,6 @@ class Message(TeaModel):
             for k in self.bcc_recipients:
                 if k:
                     k.validate()
-        if self.body:
-            self.body.validate()
         if self.cc_recipients:
             for k in self.cc_recipients:
                 if k:
@@ -358,8 +318,6 @@ class Message(TeaModel):
         if self.bcc_recipients is not None:
             for k in self.bcc_recipients:
                 result['bccRecipients'].append(k.to_map() if k else None)
-        if self.body is not None:
-            result['body'] = self.body.to_map()
         result['ccRecipients'] = []
         if self.cc_recipients is not None:
             for k in self.cc_recipients:
@@ -415,9 +373,6 @@ class Message(TeaModel):
             for k in m.get('bccRecipients'):
                 temp_model = Recipient()
                 self.bcc_recipients.append(temp_model.from_map(k))
-        if m.get('body') is not None:
-            temp_model = MessageBody()
-            self.body = temp_model.from_map(m['body'])
         self.cc_recipients = []
         if m.get('ccRecipients') is not None:
             for k in m.get('ccRecipients'):
