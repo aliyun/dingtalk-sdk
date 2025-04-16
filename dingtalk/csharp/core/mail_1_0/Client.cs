@@ -790,7 +790,7 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取邮件</para>
+        /// <para>获取邮件元数据</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -845,7 +845,7 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取邮件</para>
+        /// <para>获取邮件元数据</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -900,7 +900,7 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取邮件</para>
+        /// <para>获取邮件元数据</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -919,7 +919,7 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取邮件</para>
+        /// <para>获取邮件元数据</para>
         /// </summary>
         /// 
         /// <param name="request">

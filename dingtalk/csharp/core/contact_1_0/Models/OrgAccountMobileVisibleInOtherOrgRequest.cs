@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class OrgAccountMobileVisibleInOtherOrgRequest : TeaModel {
+        [NameInMap("fields")]
+        [Validation(Required=false)]
+        public List<string> Fields { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>

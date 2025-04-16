@@ -8,16 +8,16 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
-    public class BatchOperateRequest : TeaModel {
+    public class InsertContentRequest : TeaModel {
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>requests</para>
+        /// <para>content</para>
         /// </summary>
-        [NameInMap("requests")]
+        [NameInMap("content")]
         [Validation(Required=false)]
-        public List<object> Requests { get; set; }
+        public Dictionary<string, object> Content { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>

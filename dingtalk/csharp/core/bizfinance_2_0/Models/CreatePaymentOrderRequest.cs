@@ -37,10 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public CreatePaymentOrderRequestPayeeAccountDTO PayeeAccountDTO { get; set; }
         public class CreatePaymentOrderRequestPayeeAccountDTO : TeaModel {
-            [NameInMap("bankDTO")]
+            [NameInMap("bankOpenDTO")]
             [Validation(Required=false)]
-            public CreatePaymentOrderRequestPayeeAccountDTOBankDTO BankDTO { get; set; }
-            public class CreatePaymentOrderRequestPayeeAccountDTOBankDTO : TeaModel {
+            public CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO BankOpenDTO { get; set; }
+            public class CreatePaymentOrderRequestPayeeAccountDTOBankOpenDTO : TeaModel {
                 /// <summary>
                 /// <b>Example:</b>
                 /// <para>钉钉中国</para>

@@ -463,6 +463,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             {
                 body["groupList"] = request.GroupList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterId))
+            {
+                body["outerId"] = request.OuterId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
             {
                 body["remark"] = request.Remark;
@@ -557,6 +561,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupList))
             {
                 body["groupList"] = request.GroupList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterId))
+            {
+                body["outerId"] = request.OuterId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
             {
@@ -2329,6 +2337,126 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetSignRecordByUserIdHeaders headers = new GetSignRecordByUserIdHeaders();
             return await GetSignRecordByUserIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定outerId的电子签署记录详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserSignedRecordsByOuterIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserSignedRecordsByOuterIdResponse
+        /// </returns>
+        public GetUserSignedRecordsByOuterIdResponse GetUserSignedRecordsByOuterIdWithOptions(GetUserSignedRecordsByOuterIdRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUserSignedRecordsByOuterId",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/outerIds/records/query",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUserSignedRecordsByOuterIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定outerId的电子签署记录详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserSignedRecordsByOuterIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserSignedRecordsByOuterIdResponse
+        /// </returns>
+        public async Task<GetUserSignedRecordsByOuterIdResponse> GetUserSignedRecordsByOuterIdWithOptionsAsync(GetUserSignedRecordsByOuterIdRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUserSignedRecordsByOuterId",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/outerIds/records/query",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUserSignedRecordsByOuterIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定outerId的电子签署记录详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserSignedRecordsByOuterIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserSignedRecordsByOuterIdResponse
+        /// </returns>
+        public GetUserSignedRecordsByOuterIdResponse GetUserSignedRecordsByOuterId(GetUserSignedRecordsByOuterIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return GetUserSignedRecordsByOuterIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定outerId的电子签署记录详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserSignedRecordsByOuterIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserSignedRecordsByOuterIdResponse
+        /// </returns>
+        public async Task<GetUserSignedRecordsByOuterIdResponse> GetUserSignedRecordsByOuterIdAsync(GetUserSignedRecordsByOuterIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await GetUserSignedRecordsByOuterIdWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

@@ -7752,7 +7752,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>修改企业账号加入其他组织后电话是否可见</para>
+        /// <para>授权其他组织查看本组织的企业账号信息</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -7772,6 +7772,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Fields))
+            {
+                body["fields"] = request.Fields;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUserId))
             {
                 body["optUserId"] = request.OptUserId;
@@ -7811,7 +7815,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>修改企业账号加入其他组织后电话是否可见</para>
+        /// <para>授权其他组织查看本组织的企业账号信息</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -7831,6 +7835,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Fields))
+            {
+                body["fields"] = request.Fields;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUserId))
             {
                 body["optUserId"] = request.OptUserId;
@@ -7870,7 +7878,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>修改企业账号加入其他组织后电话是否可见</para>
+        /// <para>授权其他组织查看本组织的企业账号信息</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -7889,7 +7897,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>修改企业账号加入其他组织后电话是否可见</para>
+        /// <para>授权其他组织查看本组织的企业账号信息</para>
         /// </summary>
         /// 
         /// <param name="request">

@@ -19,29 +19,6 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
-        [NameInMap("body")]
-        [Validation(Required=false)]
-        public MessageBody Body { get; set; }
-        public class MessageBody : TeaModel {
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// </summary>
-            [NameInMap("bodyHtml")]
-            [Validation(Required=false)]
-            public Stream BodyHtml { get; set; }
-
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// </summary>
-            [NameInMap("bodyText")]
-            [Validation(Required=false)]
-            public Stream BodyText { get; set; }
-
-        }
-
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
         [NameInMap("ccRecipients")]
         [Validation(Required=false)]
         public List<Recipient> CcRecipients { get; set; }
