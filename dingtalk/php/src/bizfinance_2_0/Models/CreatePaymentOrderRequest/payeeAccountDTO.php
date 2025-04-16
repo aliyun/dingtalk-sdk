@@ -4,17 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderRequest;
 
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderRequest\payeeAccountDTO\bankDTO;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderRequest\payeeAccountDTO\bankOpenDTO;
 use AlibabaCloud\Tea\Model;
 
 class payeeAccountDTO extends Model
 {
     /**
-     * @var bankDTO
+     * @var bankOpenDTO
      */
-    public $bankDTO;
+    public $bankOpenDTO;
     protected $_name = [
-        'bankDTO' => 'bankDTO',
+        'bankOpenDTO' => 'bankOpenDTO',
     ];
 
     public function validate() {}
@@ -22,8 +22,8 @@ class payeeAccountDTO extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->bankDTO) {
-            $res['bankDTO'] = null !== $this->bankDTO ? $this->bankDTO->toMap() : null;
+        if (null !== $this->bankOpenDTO) {
+            $res['bankOpenDTO'] = null !== $this->bankOpenDTO ? $this->bankOpenDTO->toMap() : null;
         }
 
         return $res;
@@ -37,8 +37,8 @@ class payeeAccountDTO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['bankDTO'])) {
-            $model->bankDTO = bankDTO::fromMap($map['bankDTO']);
+        if (isset($map['bankOpenDTO'])) {
+            $model->bankOpenDTO = bankOpenDTO::fromMap($map['bankOpenDTO']);
         }
 
         return $model;

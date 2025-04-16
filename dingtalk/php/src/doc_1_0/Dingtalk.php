@@ -86,6 +86,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendParagraphResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendTextHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendTextRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendTextResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocBlocksModifyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocBlocksModifyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocBlocksModifyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocBlocksQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocBlocksQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocBlocksQueryResponse;
@@ -151,6 +154,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertColumnsBeforeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertColumnsBeforeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertColumnsBeforeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertContentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertContentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertContentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertDropdownListsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertDropdownListsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertDropdownListsResponse;
@@ -2007,6 +2013,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新文档中的块元素
+     *  *
+     * @param string                 $documentId
+     * @param string                 $blockId
+     * @param DocBlocksModifyRequest $request    DocBlocksModifyRequest
+     * @param DocBlocksModifyHeaders $headers    DocBlocksModifyHeaders
+     * @param RuntimeOptions         $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return DocBlocksModifyResponse DocBlocksModifyResponse
+     */
+    public function docBlocksModifyWithOptions($documentId, $blockId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->element)) {
+            $body['element'] = $request->element;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DocBlocksModify',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $documentId . '/blocks/' . $blockId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DocBlocksModifyResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新文档中的块元素
+     *  *
+     * @param string                 $documentId
+     * @param string                 $blockId
+     * @param DocBlocksModifyRequest $request    DocBlocksModifyRequest
+     *
+     * @return DocBlocksModifyResponse DocBlocksModifyResponse
+     */
+    public function docBlocksModify($documentId, $blockId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocBlocksModifyHeaders([]);
+
+        return $this->docBlocksModifyWithOptions($documentId, $blockId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询指定Block元素
      *  *
      * @param string                $docKey
@@ -3398,6 +3470,70 @@ class Dingtalk extends OpenApiClient
         $headers = new InsertColumnsBeforeHeaders([]);
 
         return $this->insertColumnsBeforeWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 插入整段内容
+     *  *
+     * @param string               $documentId
+     * @param InsertContentRequest $request    InsertContentRequest
+     * @param InsertContentHeaders $headers    InsertContentHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return InsertContentResponse InsertContentResponse
+     */
+    public function insertContentWithOptions($documentId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'InsertContent',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/suites/documents/' . $documentId . '/content',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return InsertContentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 插入整段内容
+     *  *
+     * @param string               $documentId
+     * @param InsertContentRequest $request    InsertContentRequest
+     *
+     * @return InsertContentResponse InsertContentResponse
+     */
+    public function insertContent($documentId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InsertContentHeaders([]);
+
+        return $this->insertContentWithOptions($documentId, $request, $headers, $runtime);
     }
 
     /**

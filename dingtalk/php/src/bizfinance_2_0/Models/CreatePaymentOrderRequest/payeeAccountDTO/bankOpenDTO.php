@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderReq
 
 use AlibabaCloud\Tea\Model;
 
-class bankDTO extends Model
+class bankOpenDTO extends Model
 {
     /**
      * @example 钉钉中国
@@ -99,7 +99,7 @@ class bankDTO extends Model
     /**
      * @param array $map
      *
-     * @return bankDTO
+     * @return bankOpenDTO
      */
     public static function fromMap($map = [])
     {

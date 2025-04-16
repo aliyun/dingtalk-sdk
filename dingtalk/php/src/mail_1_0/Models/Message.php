@@ -4,7 +4,6 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vmail_1_0\Models\Message\body;
 use AlibabaCloud\Tea\Model;
 use GuzzleHttp\Psr7\Stream;
 
@@ -16,13 +15,6 @@ class Message extends Model
      * @var Recipient[]
      */
     public $bccRecipients;
-
-    /**
-     * @description This parameter is required.
-     *
-     * @var body
-     */
-    public $body;
 
     /**
      * @description This parameter is required.
@@ -204,7 +196,6 @@ class Message extends Model
     public $toRecipients;
     protected $_name = [
         'bccRecipients' => 'bccRecipients',
-        'body' => 'body',
         'ccRecipients' => 'ccRecipients',
         'conversationId' => 'conversationId',
         'folderId' => 'folderId',
@@ -241,9 +232,6 @@ class Message extends Model
                     $res['bccRecipients'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->body) {
-            $res['body'] = null !== $this->body ? $this->body->toMap() : null;
         }
         if (null !== $this->ccRecipients) {
             $res['ccRecipients'] = [];
@@ -340,9 +328,6 @@ class Message extends Model
                     $model->bccRecipients[$n++] = null !== $item ? Recipient::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['body'])) {
-            $model->body = body::fromMap($map['body']);
         }
         if (isset($map['ccRecipients'])) {
             if (!empty($map['ccRecipients'])) {

@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class OrgAccountMobileVisibleInOtherOrgRequest extends Model
 {
     /**
+     * @var string[]
+     */
+    public $fields;
+
+    /**
      * @description This parameter is required.
      *
      * @var string
@@ -22,6 +27,7 @@ class OrgAccountMobileVisibleInOtherOrgRequest extends Model
      */
     public $toCorpIds;
     protected $_name = [
+        'fields' => 'fields',
         'optUserId' => 'optUserId',
         'toCorpIds' => 'toCorpIds',
     ];
@@ -31,6 +37,9 @@ class OrgAccountMobileVisibleInOtherOrgRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->fields) {
+            $res['fields'] = $this->fields;
+        }
         if (null !== $this->optUserId) {
             $res['optUserId'] = $this->optUserId;
         }
@@ -49,6 +58,11 @@ class OrgAccountMobileVisibleInOtherOrgRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['fields'])) {
+            if (!empty($map['fields'])) {
+                $model->fields = $map['fields'];
+            }
+        }
         if (isset($map['optUserId'])) {
             $model->optUserId = $map['optUserId'];
         }

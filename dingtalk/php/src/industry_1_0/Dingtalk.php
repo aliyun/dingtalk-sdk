@@ -78,6 +78,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIListDatasetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIQueryDatasetPermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIQueryDatasetPermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIQueryDatasetPermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiQueryLogsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiQueryLogsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiQueryLogsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIRemoveDatasetPermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIRemoveDatasetPermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIRemoveDatasetPermissionResponse;
@@ -2231,6 +2234,78 @@ class Dingtalk extends OpenApiClient
         $headers = new ChatAITextSentimentAnalysisHeaders([]);
 
         return $this->chatAITextSentimentAnalysisWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取ChatAI问答日志
+     *  *
+     * @param ChatAiQueryLogsRequest $request ChatAiQueryLogsRequest
+     * @param ChatAiQueryLogsHeaders $headers ChatAiQueryLogsHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatAiQueryLogsResponse ChatAiQueryLogsResponse
+     */
+    public function chatAiQueryLogsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appId)) {
+            $query['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->scenceId)) {
+            $query['scenceId'] = $request->scenceId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ChatAiQueryLogs',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/chatai/logs/lists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ChatAiQueryLogsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取ChatAI问答日志
+     *  *
+     * @param ChatAiQueryLogsRequest $request ChatAiQueryLogsRequest
+     *
+     * @return ChatAiQueryLogsResponse ChatAiQueryLogsResponse
+     */
+    public function chatAiQueryLogs($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatAiQueryLogsHeaders([]);
+
+        return $this->chatAiQueryLogsWithOptions($request, $headers, $runtime);
     }
 
     /**

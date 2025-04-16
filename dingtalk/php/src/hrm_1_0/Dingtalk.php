@@ -42,6 +42,8 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetUserSignedRecordsByOuterIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetUserSignedRecordsByOuterIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmAuthResourcesQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmAuthResourcesQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmAuthResourcesQueryResponse;
@@ -368,6 +370,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->groupList)) {
             $body['groupList'] = $request->groupList;
+        }
+        if (!Utils::isUnset($request->outerId)) {
+            $body['outerId'] = $request->outerId;
         }
         if (!Utils::isUnset($request->remark)) {
             $body['remark'] = $request->remark;
@@ -1079,6 +1084,52 @@ class Dingtalk extends OpenApiClient
         $headers = new GetSignRecordByUserIdHeaders([]);
 
         return $this->getSignRecordByUserIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询指定outerId的电子签署记录详情
+     *  *
+     * @param GetUserSignedRecordsByOuterIdRequest $request GetUserSignedRecordsByOuterIdRequest
+     * @param string[]                             $headers map
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetUserSignedRecordsByOuterIdResponse GetUserSignedRecordsByOuterIdResponse
+     */
+    public function getUserSignedRecordsByOuterIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'body' => $request->body,
+        ]);
+        $params = new Params([
+            'action' => 'GetUserSignedRecordsByOuterId',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/masters/signCenters/outerIds/records/query',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetUserSignedRecordsByOuterIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询指定outerId的电子签署记录详情
+     *  *
+     * @param GetUserSignedRecordsByOuterIdRequest $request GetUserSignedRecordsByOuterIdRequest
+     *
+     * @return GetUserSignedRecordsByOuterIdResponse GetUserSignedRecordsByOuterIdResponse
+     */
+    public function getUserSignedRecordsByOuterId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->getUserSignedRecordsByOuterIdWithOptions($request, $headers, $runtime);
     }
 
     /**

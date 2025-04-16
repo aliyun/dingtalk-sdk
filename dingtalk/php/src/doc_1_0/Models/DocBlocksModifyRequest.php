@@ -6,16 +6,16 @@ namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class BatchOperateRequest extends Model
+class DocBlocksModifyRequest extends Model
 {
     /**
      * @description This parameter is required.
      *
-     * @example requests
+     * @example element
      *
      * @var mixed[]
      */
-    public $requests;
+    public $element;
 
     /**
      * @description This parameter is required.
@@ -26,7 +26,7 @@ class BatchOperateRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'requests' => 'requests',
+        'element' => 'element',
         'operatorId' => 'operatorId',
     ];
 
@@ -35,8 +35,8 @@ class BatchOperateRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->requests) {
-            $res['requests'] = $this->requests;
+        if (null !== $this->element) {
+            $res['element'] = $this->element;
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
@@ -48,15 +48,13 @@ class BatchOperateRequest extends Model
     /**
      * @param array $map
      *
-     * @return BatchOperateRequest
+     * @return DocBlocksModifyRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['requests'])) {
-            if (!empty($map['requests'])) {
-                $model->requests = $map['requests'];
-            }
+        if (isset($map['element'])) {
+            $model->element = $map['element'];
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];

@@ -34,6 +34,11 @@ class CreateRecordRequest extends Model
     public $groupList;
 
     /**
+     * @var string
+     */
+    public $outerId;
+
+    /**
      * @example xxx员工劳动合同电子签署
      *
      * @var string
@@ -94,6 +99,7 @@ class CreateRecordRequest extends Model
         'deptId' => 'deptId',
         'fieldList' => 'fieldList',
         'groupList' => 'groupList',
+        'outerId' => 'outerId',
         'remark' => 'remark',
         'signLastLegalEntityName' => 'signLastLegalEntityName',
         'signLegalEntityName' => 'signLegalEntityName',
@@ -137,6 +143,9 @@ class CreateRecordRequest extends Model
                     $res['groupList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->outerId) {
+            $res['outerId'] = $this->outerId;
         }
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
@@ -200,6 +209,9 @@ class CreateRecordRequest extends Model
                     $model->groupList[$n++] = null !== $item ? groupList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['outerId'])) {
+            $model->outerId = $map['outerId'];
         }
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];

@@ -366,7 +366,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 获取邮件
+     * @summary 获取邮件元数据
      *  *
      * @param string            $email
      * @param string            $id
@@ -410,7 +410,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 获取邮件
+     * @summary 获取邮件元数据
      *  *
      * @param string            $email
      * @param string            $id

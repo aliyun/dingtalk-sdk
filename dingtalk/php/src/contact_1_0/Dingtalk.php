@@ -3286,7 +3286,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 修改企业账号加入其他组织后电话是否可见
+     * @summary 授权其他组织查看本组织的企业账号信息
      *  *
      * @param OrgAccountMobileVisibleInOtherOrgRequest $request OrgAccountMobileVisibleInOtherOrgRequest
      * @param OrgAccountMobileVisibleInOtherOrgHeaders $headers OrgAccountMobileVisibleInOtherOrgHeaders
@@ -3298,6 +3298,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->fields)) {
+            $body['fields'] = $request->fields;
+        }
         if (!Utils::isUnset($request->optUserId)) {
             $body['optUserId'] = $request->optUserId;
         }
@@ -3331,7 +3334,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 修改企业账号加入其他组织后电话是否可见
+     * @summary 授权其他组织查看本组织的企业账号信息
      *  *
      * @param OrgAccountMobileVisibleInOtherOrgRequest $request OrgAccountMobileVisibleInOtherOrgRequest
      *
