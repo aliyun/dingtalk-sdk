@@ -2630,6 +2630,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取资源下载信息</p>
+     * 
+     * @param request GetResourceDownloadInfoRequest
+     * @param headers GetResourceDownloadInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetResourceDownloadInfoResponse
+     */
+    public GetResourceDownloadInfoResponse getResourceDownloadInfoWithOptions(String docId, String resourceId, GetResourceDownloadInfoRequest request, GetResourceDownloadInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetResourceDownloadInfo"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/docs/resources/" + docId + "/" + resourceId + "/downloadInfo"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetResourceDownloadInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取资源下载信息</p>
+     * 
+     * @param request GetResourceDownloadInfoRequest
+     * @return GetResourceDownloadInfoResponse
+     */
+    public GetResourceDownloadInfoResponse getResourceDownloadInfo(String docId, String resourceId, GetResourceDownloadInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetResourceDownloadInfoHeaders headers = new GetResourceDownloadInfoHeaders();
+        return this.getResourceDownloadInfoWithOptions(docId, resourceId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取上传信息</p>
      * 
      * @param request GetResourceUploadInfoRequest

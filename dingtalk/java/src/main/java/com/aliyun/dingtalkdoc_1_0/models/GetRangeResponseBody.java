@@ -7,6 +7,9 @@ public class GetRangeResponseBody extends TeaModel {
     @NameInMap("backgroundColors")
     public java.util.List<java.util.List<GetRangeResponseBodyBackgroundColors>> backgroundColors;
 
+    @NameInMap("complexValues")
+    public java.util.List<java.util.List<?>> complexValues;
+
     @NameInMap("displayValues")
     public java.util.List<java.util.List<String>> displayValues;
 
@@ -21,6 +24,9 @@ public class GetRangeResponseBody extends TeaModel {
 
     @NameInMap("horizontalAlignments")
     public java.util.List<java.util.List<String>> horizontalAlignments;
+
+    @NameInMap("hyperlinks")
+    public java.util.List<java.util.List<GetRangeResponseBodyHyperlinks>> hyperlinks;
 
     @NameInMap("values")
     public java.util.List<java.util.List<?>> values;
@@ -39,6 +45,14 @@ public class GetRangeResponseBody extends TeaModel {
     }
     public java.util.List<java.util.List<GetRangeResponseBodyBackgroundColors>> getBackgroundColors() {
         return this.backgroundColors;
+    }
+
+    public GetRangeResponseBody setComplexValues(java.util.List<java.util.List<?>> complexValues) {
+        this.complexValues = complexValues;
+        return this;
+    }
+    public java.util.List<java.util.List<?>> getComplexValues() {
+        return this.complexValues;
     }
 
     public GetRangeResponseBody setDisplayValues(java.util.List<java.util.List<String>> displayValues) {
@@ -79,6 +93,14 @@ public class GetRangeResponseBody extends TeaModel {
     }
     public java.util.List<java.util.List<String>> getHorizontalAlignments() {
         return this.horizontalAlignments;
+    }
+
+    public GetRangeResponseBody setHyperlinks(java.util.List<java.util.List<GetRangeResponseBodyHyperlinks>> hyperlinks) {
+        this.hyperlinks = hyperlinks;
+        return this;
+    }
+    public java.util.List<java.util.List<GetRangeResponseBodyHyperlinks>> getHyperlinks() {
+        return this.hyperlinks;
     }
 
     public GetRangeResponseBody setValues(java.util.List<java.util.List<?>> values) {
@@ -161,6 +183,47 @@ public class GetRangeResponseBody extends TeaModel {
         }
         public String getHexString() {
             return this.hexString;
+        }
+
+    }
+
+    public static class GetRangeResponseBodyHyperlinks extends TeaModel {
+        @NameInMap("type")
+        public String type;
+
+        @NameInMap("link")
+        public String link;
+
+        @NameInMap("text")
+        public String text;
+
+        public static GetRangeResponseBodyHyperlinks build(java.util.Map<String, ?> map) throws Exception {
+            GetRangeResponseBodyHyperlinks self = new GetRangeResponseBodyHyperlinks();
+            return TeaModel.build(map, self);
+        }
+
+        public GetRangeResponseBodyHyperlinks setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+        public GetRangeResponseBodyHyperlinks setLink(String link) {
+            this.link = link;
+            return this;
+        }
+        public String getLink() {
+            return this.link;
+        }
+
+        public GetRangeResponseBodyHyperlinks setText(String text) {
+            this.text = text;
+            return this;
+        }
+        public String getText() {
+            return this.text;
         }
 
     }

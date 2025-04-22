@@ -824,6 +824,110 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>新增用户事件跟踪日志</p>
+     * 
+     * @param request AddTraceEventRequest
+     * @param headers AddTraceEventHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddTraceEventResponse
+     */
+    public AddTraceEventResponse addTraceEventWithOptions(AddTraceEventRequest request, AddTraceEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionKey)) {
+            body.put("actionKey", request.actionKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.actionTime)) {
+            body.put("actionTime", request.actionTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            body.put("bizCode", request.bizCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizReq)) {
+            body.put("bizReq", request.bizReq);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizResp)) {
+            body.put("bizResp", request.bizResp);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceId)) {
+            body.put("deviceId", request.deviceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.eventId)) {
+            body.put("eventId", request.eventId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.eventType)) {
+            body.put("eventType", request.eventType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.eventUnit)) {
+            body.put("eventUnit", request.eventUnit);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.eventValue)) {
+            body.put("eventValue", request.eventValue);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extend)) {
+            body.put("extend", request.extend);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.platform)) {
+            body.put("platform", request.platform);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddTraceEvent"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/sns/users/events/traceLogs"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddTraceEventResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>新增用户事件跟踪日志</p>
+     * 
+     * @param request AddTraceEventRequest
+     * @return AddTraceEventResponse
+     */
+    public AddTraceEventResponse addTraceEvent(AddTraceEventRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddTraceEventHeaders headers = new AddTraceEventHeaders();
+        return this.addTraceEventWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>修改课程</p>
      * 
      * @param request AdjustCourseRequest
@@ -13050,6 +13154,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         StartCoursePrepareHeaders headers = new StartCoursePrepareHeaders();
         return this.startCoursePrepareWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI体育-上报数据</p>
+     * 
+     * @param request SubmitAiSportDataRequest
+     * @param headers SubmitAiSportDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SubmitAiSportDataResponse
+     */
+    public SubmitAiSportDataResponse submitAiSportDataWithOptions(SubmitAiSportDataRequest request, SubmitAiSportDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
+            body.put("data", request.data);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dataType)) {
+            body.put("dataType", request.dataType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateType)) {
+            body.put("operateType", request.operateType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SubmitAiSportData"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/aiSports/data/submit"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SubmitAiSportDataResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI体育-上报数据</p>
+     * 
+     * @param request SubmitAiSportDataRequest
+     * @return SubmitAiSportDataResponse
+     */
+    public SubmitAiSportDataResponse submitAiSportData(SubmitAiSportDataRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SubmitAiSportDataHeaders headers = new SubmitAiSportDataHeaders();
+        return this.submitAiSportDataWithOptions(request, headers, runtime);
     }
 
     /**

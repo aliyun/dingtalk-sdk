@@ -33,8 +33,8 @@ public class SendPersonalMessageRequest extends TeaModel {
      * <strong>example:</strong>
      * <p>1662055829854977</p>
      */
-    @NameInMap("receiverUid")
-    public String receiverUid;
+    @NameInMap("receiverUserId")
+    public String receiverUserId;
 
     public static SendPersonalMessageRequest build(java.util.Map<String, ?> map) throws Exception {
         SendPersonalMessageRequest self = new SendPersonalMessageRequest();
@@ -65,12 +65,12 @@ public class SendPersonalMessageRequest extends TeaModel {
         return this.openConversationId;
     }
 
-    public SendPersonalMessageRequest setReceiverUid(String receiverUid) {
-        this.receiverUid = receiverUid;
+    public SendPersonalMessageRequest setReceiverUserId(String receiverUserId) {
+        this.receiverUserId = receiverUserId;
         return this;
     }
-    public String getReceiverUid() {
-        return this.receiverUid;
+    public String getReceiverUserId() {
+        return this.receiverUserId;
     }
 
 }
