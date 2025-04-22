@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddEvaluatePerformanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddTraceEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddTraceEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddTraceEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AdjustCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AdjustCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AdjustCourseResponse;
@@ -550,6 +553,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubmitAiSportDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubmitAiSportDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubmitAiSportDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubscribeUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubscribeUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubscribeUniversityCourseGroupResponse;
@@ -1366,6 +1372,99 @@ class Dingtalk extends OpenApiClient
         $headers = new AddSchoolConfigHeaders([]);
 
         return $this->addSchoolConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 新增用户事件跟踪日志
+     *  *
+     * @param AddTraceEventRequest $request AddTraceEventRequest
+     * @param AddTraceEventHeaders $headers AddTraceEventHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddTraceEventResponse AddTraceEventResponse
+     */
+    public function addTraceEventWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionKey)) {
+            $body['actionKey'] = $request->actionKey;
+        }
+        if (!Utils::isUnset($request->actionTime)) {
+            $body['actionTime'] = $request->actionTime;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->bizReq)) {
+            $body['bizReq'] = $request->bizReq;
+        }
+        if (!Utils::isUnset($request->bizResp)) {
+            $body['bizResp'] = $request->bizResp;
+        }
+        if (!Utils::isUnset($request->deviceId)) {
+            $body['deviceId'] = $request->deviceId;
+        }
+        if (!Utils::isUnset($request->eventId)) {
+            $body['eventId'] = $request->eventId;
+        }
+        if (!Utils::isUnset($request->eventType)) {
+            $body['eventType'] = $request->eventType;
+        }
+        if (!Utils::isUnset($request->eventUnit)) {
+            $body['eventUnit'] = $request->eventUnit;
+        }
+        if (!Utils::isUnset($request->eventValue)) {
+            $body['eventValue'] = $request->eventValue;
+        }
+        if (!Utils::isUnset($request->extend)) {
+            $body['extend'] = $request->extend;
+        }
+        if (!Utils::isUnset($request->platform)) {
+            $body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AddTraceEvent',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/sns/users/events/traceLogs',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AddTraceEventResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 新增用户事件跟踪日志
+     *  *
+     * @param AddTraceEventRequest $request AddTraceEventRequest
+     *
+     * @return AddTraceEventResponse AddTraceEventResponse
+     */
+    public function addTraceEvent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddTraceEventHeaders([]);
+
+        return $this->addTraceEventWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -13156,6 +13255,69 @@ class Dingtalk extends OpenApiClient
         $headers = new StartCoursePrepareHeaders([]);
 
         return $this->startCoursePrepareWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary AI体育-上报数据
+     *  *
+     * @param SubmitAiSportDataRequest $request SubmitAiSportDataRequest
+     * @param SubmitAiSportDataHeaders $headers SubmitAiSportDataHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SubmitAiSportDataResponse SubmitAiSportDataResponse
+     */
+    public function submitAiSportDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->dataType)) {
+            $body['dataType'] = $request->dataType;
+        }
+        if (!Utils::isUnset($request->operateType)) {
+            $body['operateType'] = $request->operateType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SubmitAiSportData',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/aiSports/data/submit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SubmitAiSportDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary AI体育-上报数据
+     *  *
+     * @param SubmitAiSportDataRequest $request SubmitAiSportDataRequest
+     *
+     * @return SubmitAiSportDataResponse SubmitAiSportDataResponse
+     */
+    public function submitAiSportData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubmitAiSportDataHeaders([]);
+
+        return $this->submitAiSportDataWithOptions($request, $headers, $runtime);
     }
 
     /**

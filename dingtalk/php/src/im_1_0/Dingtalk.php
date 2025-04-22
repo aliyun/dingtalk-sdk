@@ -221,6 +221,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReadPersonalMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReadPersonalMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReadPersonalMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallPersonalMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallPersonalMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallPersonalMessageResponse;
@@ -314,6 +317,12 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpgradeToExternalGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpgradeToExternalGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpgradeToExternalGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpgradeToServiceGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpgradeToServiceGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpgradeToServiceGroupResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -4963,6 +4972,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 用户身份设置消息状态为已读
+     *  *
+     * @param ReadPersonalMessageRequest $request ReadPersonalMessageRequest
+     * @param ReadPersonalMessageHeaders $headers ReadPersonalMessageHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ReadPersonalMessageResponse ReadPersonalMessageResponse
+     */
+    public function readPersonalMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingOpenConversationMessageIdArray)) {
+            $body['dingOpenConversationMessageIdArray'] = $request->dingOpenConversationMessageIdArray;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ReadPersonalMessage',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/me/messages/readStatuses/set',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ReadPersonalMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 用户身份设置消息状态为已读
+     *  *
+     * @param ReadPersonalMessageRequest $request ReadPersonalMessageRequest
+     *
+     * @return ReadPersonalMessageResponse ReadPersonalMessageResponse
+     */
+    public function readPersonalMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ReadPersonalMessageHeaders([]);
+
+        return $this->readPersonalMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 用户身份撤回消息
      *  *
      * @param RecallPersonalMessageRequest $request RecallPersonalMessageRequest
@@ -5419,8 +5485,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->openConversationId)) {
             $body['openConversationId'] = $request->openConversationId;
         }
-        if (!Utils::isUnset($request->receiverUid)) {
-            $body['receiverUid'] = $request->receiverUid;
+        if (!Utils::isUnset($request->receiverUserId)) {
+            $body['receiverUserId'] = $request->receiverUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -6916,6 +6982,126 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateUnfurlingRegisterStatusHeaders([]);
 
         return $this->updateUnfurlingRegisterStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 升级群为外部群
+     *  *
+     * @param UpgradeToExternalGroupRequest $request UpgradeToExternalGroupRequest
+     * @param UpgradeToExternalGroupHeaders $headers UpgradeToExternalGroupHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpgradeToExternalGroupResponse UpgradeToExternalGroupResponse
+     */
+    public function upgradeToExternalGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpgradeToExternalGroup',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/chats/sceneGroups/upgradeToExternalGroup',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpgradeToExternalGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 升级群为外部群
+     *  *
+     * @param UpgradeToExternalGroupRequest $request UpgradeToExternalGroupRequest
+     *
+     * @return UpgradeToExternalGroupResponse UpgradeToExternalGroupResponse
+     */
+    public function upgradeToExternalGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpgradeToExternalGroupHeaders([]);
+
+        return $this->upgradeToExternalGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 升级为B2C群
+     *  *
+     * @param UpgradeToServiceGroupRequest $request UpgradeToServiceGroupRequest
+     * @param UpgradeToServiceGroupHeaders $headers UpgradeToServiceGroupHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpgradeToServiceGroupResponse UpgradeToServiceGroupResponse
+     */
+    public function upgradeToServiceGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpgradeToServiceGroup',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/chats/sceneGroups/upgradeToServiceGroup',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpgradeToServiceGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 升级为B2C群
+     *  *
+     * @param UpgradeToServiceGroupRequest $request UpgradeToServiceGroupRequest
+     *
+     * @return UpgradeToServiceGroupResponse UpgradeToServiceGroupResponse
+     */
+    public function upgradeToServiceGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpgradeToServiceGroupHeaders([]);
+
+        return $this->upgradeToServiceGroupWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -14,6 +14,11 @@ class GetRangeResponseBody extends Model
     public $backgroundColors;
 
     /**
+     * @var mixed[][]
+     */
+    public $complexValues;
+
+    /**
      * @var string[][]
      */
     public $displayValues;
@@ -39,6 +44,11 @@ class GetRangeResponseBody extends Model
     public $horizontalAlignments;
 
     /**
+     * @var undefined[][]
+     */
+    public $hyperlinks;
+
+    /**
      * @var mixed[][]
      */
     public $values;
@@ -49,11 +59,13 @@ class GetRangeResponseBody extends Model
     public $verticalAlignments;
     protected $_name = [
         'backgroundColors' => 'backgroundColors',
+        'complexValues' => 'complexValues',
         'displayValues' => 'displayValues',
         'fontSizes' => 'fontSizes',
         'fontWeights' => 'fontWeights',
         'formulas' => 'formulas',
         'horizontalAlignments' => 'horizontalAlignments',
+        'hyperlinks' => 'hyperlinks',
         'values' => 'values',
         'verticalAlignments' => 'verticalAlignments',
     ];
@@ -65,6 +77,9 @@ class GetRangeResponseBody extends Model
         $res = [];
         if (null !== $this->backgroundColors) {
             $res['backgroundColors'] = $this->backgroundColors;
+        }
+        if (null !== $this->complexValues) {
+            $res['complexValues'] = $this->complexValues;
         }
         if (null !== $this->displayValues) {
             $res['displayValues'] = $this->displayValues;
@@ -80,6 +95,9 @@ class GetRangeResponseBody extends Model
         }
         if (null !== $this->horizontalAlignments) {
             $res['horizontalAlignments'] = $this->horizontalAlignments;
+        }
+        if (null !== $this->hyperlinks) {
+            $res['hyperlinks'] = $this->hyperlinks;
         }
         if (null !== $this->values) {
             $res['values'] = $this->values;
@@ -102,6 +120,11 @@ class GetRangeResponseBody extends Model
         if (isset($map['backgroundColors'])) {
             if (!empty($map['backgroundColors'])) {
                 $model->backgroundColors = $map['backgroundColors'];
+            }
+        }
+        if (isset($map['complexValues'])) {
+            if (!empty($map['complexValues'])) {
+                $model->complexValues = $map['complexValues'];
             }
         }
         if (isset($map['displayValues'])) {
@@ -127,6 +150,11 @@ class GetRangeResponseBody extends Model
         if (isset($map['horizontalAlignments'])) {
             if (!empty($map['horizontalAlignments'])) {
                 $model->horizontalAlignments = $map['horizontalAlignments'];
+            }
+        }
+        if (isset($map['hyperlinks'])) {
+            if (!empty($map['hyperlinks'])) {
+                $model->hyperlinks = $map['hyperlinks'];
             }
         }
         if (isset($map['values'])) {

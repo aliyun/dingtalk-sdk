@@ -38,12 +38,12 @@ class SendPersonalMessageRequest extends Model
      *
      * @var string
      */
-    public $receiverUid;
+    public $receiverUserId;
     protected $_name = [
         'content' => 'content',
         'msgType' => 'msgType',
         'openConversationId' => 'openConversationId',
-        'receiverUid' => 'receiverUid',
+        'receiverUserId' => 'receiverUserId',
     ];
 
     public function validate() {}
@@ -60,8 +60,8 @@ class SendPersonalMessageRequest extends Model
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
         }
-        if (null !== $this->receiverUid) {
-            $res['receiverUid'] = $this->receiverUid;
+        if (null !== $this->receiverUserId) {
+            $res['receiverUserId'] = $this->receiverUserId;
         }
 
         return $res;
@@ -84,8 +84,8 @@ class SendPersonalMessageRequest extends Model
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
         }
-        if (isset($map['receiverUid'])) {
-            $model->receiverUid = $map['receiverUid'];
+        if (isset($map['receiverUserId'])) {
+            $model->receiverUserId = $map['receiverUserId'];
         }
 
         return $model;

@@ -131,6 +131,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRecentOpenDocsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetResourceDownloadInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetResourceDownloadInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetResourceDownloadInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetResourceUploadInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetResourceUploadInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetResourceUploadInfoResponse;
@@ -2958,6 +2961,67 @@ class Dingtalk extends OpenApiClient
         $headers = new GetRelatedWorkspacesHeaders([]);
 
         return $this->getRelatedWorkspacesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取资源下载信息
+     *  *
+     * @param string                         $docId
+     * @param string                         $resourceId
+     * @param GetResourceDownloadInfoRequest $request    GetResourceDownloadInfoRequest
+     * @param GetResourceDownloadInfoHeaders $headers    GetResourceDownloadInfoHeaders
+     * @param RuntimeOptions                 $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return GetResourceDownloadInfoResponse GetResourceDownloadInfoResponse
+     */
+    public function getResourceDownloadInfoWithOptions($docId, $resourceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetResourceDownloadInfo',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/docs/resources/' . $docId . '/' . $resourceId . '/downloadInfo',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetResourceDownloadInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取资源下载信息
+     *  *
+     * @param string                         $docId
+     * @param string                         $resourceId
+     * @param GetResourceDownloadInfoRequest $request    GetResourceDownloadInfoRequest
+     *
+     * @return GetResourceDownloadInfoResponse GetResourceDownloadInfoResponse
+     */
+    public function getResourceDownloadInfo($docId, $resourceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetResourceDownloadInfoHeaders([]);
+
+        return $this->getResourceDownloadInfoWithOptions($docId, $resourceId, $request, $headers, $runtime);
     }
 
     /**
