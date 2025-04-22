@@ -8924,6 +8924,120 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.QueryUserViewGroupLastMessageTimeHeaders()
         return await self.query_user_view_group_last_message_time_with_options_async(request, headers, runtime)
 
+    def read_personal_message_with_options(
+        self,
+        request: dingtalkim__1__0_models.ReadPersonalMessageRequest,
+        headers: dingtalkim__1__0_models.ReadPersonalMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ReadPersonalMessageResponse:
+        """
+        @summary 用户身份设置消息状态为已读
+        
+        @param request: ReadPersonalMessageRequest
+        @param headers: ReadPersonalMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ReadPersonalMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_open_conversation_message_id_array):
+            body['dingOpenConversationMessageIdArray'] = request.ding_open_conversation_message_id_array
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ReadPersonalMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/messages/readStatuses/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ReadPersonalMessageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def read_personal_message_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.ReadPersonalMessageRequest,
+        headers: dingtalkim__1__0_models.ReadPersonalMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ReadPersonalMessageResponse:
+        """
+        @summary 用户身份设置消息状态为已读
+        
+        @param request: ReadPersonalMessageRequest
+        @param headers: ReadPersonalMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ReadPersonalMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_open_conversation_message_id_array):
+            body['dingOpenConversationMessageIdArray'] = request.ding_open_conversation_message_id_array
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ReadPersonalMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/messages/readStatuses/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ReadPersonalMessageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def read_personal_message(
+        self,
+        request: dingtalkim__1__0_models.ReadPersonalMessageRequest,
+    ) -> dingtalkim__1__0_models.ReadPersonalMessageResponse:
+        """
+        @summary 用户身份设置消息状态为已读
+        
+        @param request: ReadPersonalMessageRequest
+        @return: ReadPersonalMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ReadPersonalMessageHeaders()
+        return self.read_personal_message_with_options(request, headers, runtime)
+
+    async def read_personal_message_async(
+        self,
+        request: dingtalkim__1__0_models.ReadPersonalMessageRequest,
+    ) -> dingtalkim__1__0_models.ReadPersonalMessageResponse:
+        """
+        @summary 用户身份设置消息状态为已读
+        
+        @param request: ReadPersonalMessageRequest
+        @return: ReadPersonalMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ReadPersonalMessageHeaders()
+        return await self.read_personal_message_with_options_async(request, headers, runtime)
+
     def recall_personal_message_with_options(
         self,
         request: dingtalkim__1__0_models.RecallPersonalMessageRequest,
@@ -9754,8 +9868,8 @@ class Client(OpenApiClient):
             body['msgType'] = request.msg_type
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
-        if not UtilClient.is_unset(request.receiver_uid):
-            body['receiverUid'] = request.receiver_uid
+        if not UtilClient.is_unset(request.receiver_user_id):
+            body['receiverUserId'] = request.receiver_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -9803,8 +9917,8 @@ class Client(OpenApiClient):
             body['msgType'] = request.msg_type
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
-        if not UtilClient.is_unset(request.receiver_uid):
-            body['receiverUid'] = request.receiver_uid
+        if not UtilClient.is_unset(request.receiver_user_id):
+            body['receiverUserId'] = request.receiver_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -12595,6 +12709,242 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusHeaders()
         return await self.update_unfurling_register_status_with_options_async(request, headers, runtime)
+
+    def upgrade_to_external_group_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpgradeToExternalGroupRequest,
+        headers: dingtalkim__1__0_models.UpgradeToExternalGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpgradeToExternalGroupResponse:
+        """
+        @summary 升级群为外部群
+        
+        @param request: UpgradeToExternalGroupRequest
+        @param headers: UpgradeToExternalGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpgradeToExternalGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpgradeToExternalGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/upgradeToExternalGroup',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpgradeToExternalGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def upgrade_to_external_group_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpgradeToExternalGroupRequest,
+        headers: dingtalkim__1__0_models.UpgradeToExternalGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpgradeToExternalGroupResponse:
+        """
+        @summary 升级群为外部群
+        
+        @param request: UpgradeToExternalGroupRequest
+        @param headers: UpgradeToExternalGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpgradeToExternalGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpgradeToExternalGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/upgradeToExternalGroup',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpgradeToExternalGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def upgrade_to_external_group(
+        self,
+        request: dingtalkim__1__0_models.UpgradeToExternalGroupRequest,
+    ) -> dingtalkim__1__0_models.UpgradeToExternalGroupResponse:
+        """
+        @summary 升级群为外部群
+        
+        @param request: UpgradeToExternalGroupRequest
+        @return: UpgradeToExternalGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpgradeToExternalGroupHeaders()
+        return self.upgrade_to_external_group_with_options(request, headers, runtime)
+
+    async def upgrade_to_external_group_async(
+        self,
+        request: dingtalkim__1__0_models.UpgradeToExternalGroupRequest,
+    ) -> dingtalkim__1__0_models.UpgradeToExternalGroupResponse:
+        """
+        @summary 升级群为外部群
+        
+        @param request: UpgradeToExternalGroupRequest
+        @return: UpgradeToExternalGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpgradeToExternalGroupHeaders()
+        return await self.upgrade_to_external_group_with_options_async(request, headers, runtime)
+
+    def upgrade_to_service_group_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpgradeToServiceGroupRequest,
+        headers: dingtalkim__1__0_models.UpgradeToServiceGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpgradeToServiceGroupResponse:
+        """
+        @summary 升级为B2C群
+        
+        @param request: UpgradeToServiceGroupRequest
+        @param headers: UpgradeToServiceGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpgradeToServiceGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpgradeToServiceGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/upgradeToServiceGroup',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpgradeToServiceGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def upgrade_to_service_group_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpgradeToServiceGroupRequest,
+        headers: dingtalkim__1__0_models.UpgradeToServiceGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpgradeToServiceGroupResponse:
+        """
+        @summary 升级为B2C群
+        
+        @param request: UpgradeToServiceGroupRequest
+        @param headers: UpgradeToServiceGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpgradeToServiceGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpgradeToServiceGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/upgradeToServiceGroup',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpgradeToServiceGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def upgrade_to_service_group(
+        self,
+        request: dingtalkim__1__0_models.UpgradeToServiceGroupRequest,
+    ) -> dingtalkim__1__0_models.UpgradeToServiceGroupResponse:
+        """
+        @summary 升级为B2C群
+        
+        @param request: UpgradeToServiceGroupRequest
+        @return: UpgradeToServiceGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpgradeToServiceGroupHeaders()
+        return self.upgrade_to_service_group_with_options(request, headers, runtime)
+
+    async def upgrade_to_service_group_async(
+        self,
+        request: dingtalkim__1__0_models.UpgradeToServiceGroupRequest,
+    ) -> dingtalkim__1__0_models.UpgradeToServiceGroupResponse:
+        """
+        @summary 升级为B2C群
+        
+        @param request: UpgradeToServiceGroupRequest
+        @return: UpgradeToServiceGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpgradeToServiceGroupHeaders()
+        return await self.upgrade_to_service_group_with_options_async(request, headers, runtime)
 
     def add_group_member_with_options(
         self,

@@ -6788,30 +6788,78 @@ class GetRangeResponseBodyBackgroundColors(TeaModel):
         return self
 
 
+class GetRangeResponseBodyHyperlinks(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        link: str = None,
+        text: str = None,
+    ):
+        self.type = type
+        self.link = link
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.link is not None:
+            result['link'] = self.link
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('link') is not None:
+            self.link = m.get('link')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
 class GetRangeResponseBody(TeaModel):
     def __init__(
         self,
         background_colors: List[List[GetRangeResponseBodyBackgroundColors]] = None,
+        complex_values: List[List[Any]] = None,
         display_values: List[List[str]] = None,
         font_sizes: List[List[int]] = None,
         font_weights: List[List[str]] = None,
         formulas: List[List[str]] = None,
         horizontal_alignments: List[List[str]] = None,
+        hyperlinks: List[List[GetRangeResponseBodyHyperlinks]] = None,
         values: List[List[Any]] = None,
         vertical_alignments: List[List[str]] = None,
     ):
         self.background_colors = background_colors
+        self.complex_values = complex_values
         self.display_values = display_values
         self.font_sizes = font_sizes
         self.font_weights = font_weights
         self.formulas = formulas
         self.horizontal_alignments = horizontal_alignments
+        self.hyperlinks = hyperlinks
         self.values = values
         self.vertical_alignments = vertical_alignments
 
     def validate(self):
         if self.background_colors:
             for k in self.background_colors:
+                for k1 in k:
+                    if k1:
+                        k1.validate()
+        if self.hyperlinks:
+            for k in self.hyperlinks:
                 for k1 in k:
                     if k1:
                         k1.validate()
@@ -6829,6 +6877,8 @@ class GetRangeResponseBody(TeaModel):
                 for k1 in k:
                     l1.append(k1.to_map() if k1 else None)
                 result['backgroundColors'].append(l1)
+        if self.complex_values is not None:
+            result['complexValues'] = self.complex_values
         if self.display_values is not None:
             result['displayValues'] = self.display_values
         if self.font_sizes is not None:
@@ -6839,6 +6889,13 @@ class GetRangeResponseBody(TeaModel):
             result['formulas'] = self.formulas
         if self.horizontal_alignments is not None:
             result['horizontalAlignments'] = self.horizontal_alignments
+        result['hyperlinks'] = []
+        if self.hyperlinks is not None:
+            for k in self.hyperlinks:
+                l1 = []
+                for k1 in k:
+                    l1.append(k1.to_map() if k1 else None)
+                result['hyperlinks'].append(l1)
         if self.values is not None:
             result['values'] = self.values
         if self.vertical_alignments is not None:
@@ -6855,6 +6912,8 @@ class GetRangeResponseBody(TeaModel):
                     temp_model = GetRangeResponseBodyBackgroundColors()
                     l1.append(temp_model.from_map(k1))
                 self.background_colors.append(l1)
+        if m.get('complexValues') is not None:
+            self.complex_values = m.get('complexValues')
         if m.get('displayValues') is not None:
             self.display_values = m.get('displayValues')
         if m.get('fontSizes') is not None:
@@ -6865,6 +6924,14 @@ class GetRangeResponseBody(TeaModel):
             self.formulas = m.get('formulas')
         if m.get('horizontalAlignments') is not None:
             self.horizontal_alignments = m.get('horizontalAlignments')
+        self.hyperlinks = []
+        if m.get('hyperlinks') is not None:
+            for k in m.get('hyperlinks'):
+                l1 = []
+                for k1 in k:
+                    temp_model = GetRangeResponseBodyHyperlinks()
+                    l1.append(temp_model.from_map(k1))
+                self.hyperlinks.append(l1)
         if m.get('values') is not None:
             self.values = m.get('values')
         if m.get('verticalAlignments') is not None:
@@ -7802,6 +7869,170 @@ class GetRelatedWorkspacesResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetRelatedWorkspacesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetResourceDownloadInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetResourceDownloadInfoRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetResourceDownloadInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        download_url: str = None,
+    ):
+        self.download_url = download_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        return self
+
+
+class GetResourceDownloadInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetResourceDownloadInfoResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetResourceDownloadInfoResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetResourceDownloadInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetResourceDownloadInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetResourceDownloadInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

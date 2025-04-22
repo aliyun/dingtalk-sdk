@@ -2302,6 +2302,216 @@ class AddSchoolConfigResponse(TeaModel):
         return self
 
 
+class AddTraceEventHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddTraceEventRequest(TeaModel):
+    def __init__(
+        self,
+        action_key: str = None,
+        action_time: str = None,
+        biz_code: str = None,
+        biz_req: str = None,
+        biz_resp: str = None,
+        device_id: str = None,
+        event_id: str = None,
+        event_type: str = None,
+        event_unit: str = None,
+        event_value: str = None,
+        extend: str = None,
+        platform: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.action_key = action_key
+        # This parameter is required.
+        self.action_time = action_time
+        # This parameter is required.
+        self.biz_code = biz_code
+        self.biz_req = biz_req
+        self.biz_resp = biz_resp
+        self.device_id = device_id
+        # This parameter is required.
+        self.event_id = event_id
+        self.event_type = event_type
+        self.event_unit = event_unit
+        self.event_value = event_value
+        self.extend = extend
+        self.platform = platform
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_key is not None:
+            result['actionKey'] = self.action_key
+        if self.action_time is not None:
+            result['actionTime'] = self.action_time
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.biz_req is not None:
+            result['bizReq'] = self.biz_req
+        if self.biz_resp is not None:
+            result['bizResp'] = self.biz_resp
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.event_id is not None:
+            result['eventId'] = self.event_id
+        if self.event_type is not None:
+            result['eventType'] = self.event_type
+        if self.event_unit is not None:
+            result['eventUnit'] = self.event_unit
+        if self.event_value is not None:
+            result['eventValue'] = self.event_value
+        if self.extend is not None:
+            result['extend'] = self.extend
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionKey') is not None:
+            self.action_key = m.get('actionKey')
+        if m.get('actionTime') is not None:
+            self.action_time = m.get('actionTime')
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('bizReq') is not None:
+            self.biz_req = m.get('bizReq')
+        if m.get('bizResp') is not None:
+            self.biz_resp = m.get('bizResp')
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('eventId') is not None:
+            self.event_id = m.get('eventId')
+        if m.get('eventType') is not None:
+            self.event_type = m.get('eventType')
+        if m.get('eventUnit') is not None:
+            self.event_unit = m.get('eventUnit')
+        if m.get('eventValue') is not None:
+            self.event_value = m.get('eventValue')
+        if m.get('extend') is not None:
+            self.extend = m.get('extend')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class AddTraceEventResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddTraceEventResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddTraceEventResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddTraceEventResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AdjustCourseHeaders(TeaModel):
     def __init__(
         self,
@@ -40454,6 +40664,146 @@ class StartCoursePrepareResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = StartCoursePrepareResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SubmitAiSportDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SubmitAiSportDataRequest(TeaModel):
+    def __init__(
+        self,
+        data: Dict[str, str] = None,
+        data_type: str = None,
+        operate_type: str = None,
+    ):
+        self.data = data
+        self.data_type = data_type
+        self.operate_type = operate_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.data_type is not None:
+            result['dataType'] = self.data_type
+        if self.operate_type is not None:
+            result['operateType'] = self.operate_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('dataType') is not None:
+            self.data_type = m.get('dataType')
+        if m.get('operateType') is not None:
+            self.operate_type = m.get('operateType')
+        return self
+
+
+class SubmitAiSportDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SubmitAiSportDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SubmitAiSportDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SubmitAiSportDataResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

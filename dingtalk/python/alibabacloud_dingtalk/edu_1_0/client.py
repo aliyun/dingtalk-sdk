@@ -1352,6 +1352,168 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.AddSchoolConfigHeaders()
         return await self.add_school_config_with_options_async(request, headers, runtime)
 
+    def add_trace_event_with_options(
+        self,
+        request: dingtalkedu__1__0_models.AddTraceEventRequest,
+        headers: dingtalkedu__1__0_models.AddTraceEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddTraceEventResponse:
+        """
+        @summary 新增用户事件跟踪日志
+        
+        @param request: AddTraceEventRequest
+        @param headers: AddTraceEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddTraceEventResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_key):
+            body['actionKey'] = request.action_key
+        if not UtilClient.is_unset(request.action_time):
+            body['actionTime'] = request.action_time
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.biz_req):
+            body['bizReq'] = request.biz_req
+        if not UtilClient.is_unset(request.biz_resp):
+            body['bizResp'] = request.biz_resp
+        if not UtilClient.is_unset(request.device_id):
+            body['deviceId'] = request.device_id
+        if not UtilClient.is_unset(request.event_id):
+            body['eventId'] = request.event_id
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.event_unit):
+            body['eventUnit'] = request.event_unit
+        if not UtilClient.is_unset(request.event_value):
+            body['eventValue'] = request.event_value
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddTraceEvent',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/sns/users/events/traceLogs',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddTraceEventResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_trace_event_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.AddTraceEventRequest,
+        headers: dingtalkedu__1__0_models.AddTraceEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddTraceEventResponse:
+        """
+        @summary 新增用户事件跟踪日志
+        
+        @param request: AddTraceEventRequest
+        @param headers: AddTraceEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddTraceEventResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_key):
+            body['actionKey'] = request.action_key
+        if not UtilClient.is_unset(request.action_time):
+            body['actionTime'] = request.action_time
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.biz_req):
+            body['bizReq'] = request.biz_req
+        if not UtilClient.is_unset(request.biz_resp):
+            body['bizResp'] = request.biz_resp
+        if not UtilClient.is_unset(request.device_id):
+            body['deviceId'] = request.device_id
+        if not UtilClient.is_unset(request.event_id):
+            body['eventId'] = request.event_id
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.event_unit):
+            body['eventUnit'] = request.event_unit
+        if not UtilClient.is_unset(request.event_value):
+            body['eventValue'] = request.event_value
+        if not UtilClient.is_unset(request.extend):
+            body['extend'] = request.extend
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddTraceEvent',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/sns/users/events/traceLogs',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddTraceEventResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_trace_event(
+        self,
+        request: dingtalkedu__1__0_models.AddTraceEventRequest,
+    ) -> dingtalkedu__1__0_models.AddTraceEventResponse:
+        """
+        @summary 新增用户事件跟踪日志
+        
+        @param request: AddTraceEventRequest
+        @return: AddTraceEventResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddTraceEventHeaders()
+        return self.add_trace_event_with_options(request, headers, runtime)
+
+    async def add_trace_event_async(
+        self,
+        request: dingtalkedu__1__0_models.AddTraceEventRequest,
+    ) -> dingtalkedu__1__0_models.AddTraceEventResponse:
+        """
+        @summary 新增用户事件跟踪日志
+        
+        @param request: AddTraceEventRequest
+        @return: AddTraceEventResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddTraceEventHeaders()
+        return await self.add_trace_event_with_options_async(request, headers, runtime)
+
     def adjust_course_with_options(
         self,
         request: dingtalkedu__1__0_models.AdjustCourseRequest,
@@ -23615,6 +23777,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.StartCoursePrepareHeaders()
         return await self.start_course_prepare_with_options_async(request, headers, runtime)
+
+    def submit_ai_sport_data_with_options(
+        self,
+        request: dingtalkedu__1__0_models.SubmitAiSportDataRequest,
+        headers: dingtalkedu__1__0_models.SubmitAiSportDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SubmitAiSportDataResponse:
+        """
+        @summary AI体育-上报数据
+        
+        @param request: SubmitAiSportDataRequest
+        @param headers: SubmitAiSportDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitAiSportDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.data_type):
+            body['dataType'] = request.data_type
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitAiSportData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/aiSports/data/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SubmitAiSportDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def submit_ai_sport_data_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.SubmitAiSportDataRequest,
+        headers: dingtalkedu__1__0_models.SubmitAiSportDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SubmitAiSportDataResponse:
+        """
+        @summary AI体育-上报数据
+        
+        @param request: SubmitAiSportDataRequest
+        @param headers: SubmitAiSportDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitAiSportDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.data_type):
+            body['dataType'] = request.data_type
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitAiSportData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/aiSports/data/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SubmitAiSportDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def submit_ai_sport_data(
+        self,
+        request: dingtalkedu__1__0_models.SubmitAiSportDataRequest,
+    ) -> dingtalkedu__1__0_models.SubmitAiSportDataResponse:
+        """
+        @summary AI体育-上报数据
+        
+        @param request: SubmitAiSportDataRequest
+        @return: SubmitAiSportDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SubmitAiSportDataHeaders()
+        return self.submit_ai_sport_data_with_options(request, headers, runtime)
+
+    async def submit_ai_sport_data_async(
+        self,
+        request: dingtalkedu__1__0_models.SubmitAiSportDataRequest,
+    ) -> dingtalkedu__1__0_models.SubmitAiSportDataResponse:
+        """
+        @summary AI体育-上报数据
+        
+        @param request: SubmitAiSportDataRequest
+        @return: SubmitAiSportDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SubmitAiSportDataHeaders()
+        return await self.submit_ai_sport_data_with_options_async(request, headers, runtime)
 
     def subscribe_university_course_group_with_options(
         self,

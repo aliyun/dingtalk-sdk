@@ -5354,6 +5354,128 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.GetRelatedWorkspacesHeaders()
         return await self.get_related_workspaces_with_options_async(request, headers, runtime)
 
+    def get_resource_download_info_with_options(
+        self,
+        doc_id: str,
+        resource_id: str,
+        request: dingtalkdoc__1__0_models.GetResourceDownloadInfoRequest,
+        headers: dingtalkdoc__1__0_models.GetResourceDownloadInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetResourceDownloadInfoResponse:
+        """
+        @summary 获取资源下载信息
+        
+        @param request: GetResourceDownloadInfoRequest
+        @param headers: GetResourceDownloadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetResourceDownloadInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetResourceDownloadInfo',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/resources/{doc_id}/{resource_id}/downloadInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetResourceDownloadInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_resource_download_info_with_options_async(
+        self,
+        doc_id: str,
+        resource_id: str,
+        request: dingtalkdoc__1__0_models.GetResourceDownloadInfoRequest,
+        headers: dingtalkdoc__1__0_models.GetResourceDownloadInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetResourceDownloadInfoResponse:
+        """
+        @summary 获取资源下载信息
+        
+        @param request: GetResourceDownloadInfoRequest
+        @param headers: GetResourceDownloadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetResourceDownloadInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetResourceDownloadInfo',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/resources/{doc_id}/{resource_id}/downloadInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetResourceDownloadInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_resource_download_info(
+        self,
+        doc_id: str,
+        resource_id: str,
+        request: dingtalkdoc__1__0_models.GetResourceDownloadInfoRequest,
+    ) -> dingtalkdoc__1__0_models.GetResourceDownloadInfoResponse:
+        """
+        @summary 获取资源下载信息
+        
+        @param request: GetResourceDownloadInfoRequest
+        @return: GetResourceDownloadInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetResourceDownloadInfoHeaders()
+        return self.get_resource_download_info_with_options(doc_id, resource_id, request, headers, runtime)
+
+    async def get_resource_download_info_async(
+        self,
+        doc_id: str,
+        resource_id: str,
+        request: dingtalkdoc__1__0_models.GetResourceDownloadInfoRequest,
+    ) -> dingtalkdoc__1__0_models.GetResourceDownloadInfoResponse:
+        """
+        @summary 获取资源下载信息
+        
+        @param request: GetResourceDownloadInfoRequest
+        @return: GetResourceDownloadInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetResourceDownloadInfoHeaders()
+        return await self.get_resource_download_info_with_options_async(doc_id, resource_id, request, headers, runtime)
+
     def get_resource_upload_info_with_options(
         self,
         doc_id: str,
