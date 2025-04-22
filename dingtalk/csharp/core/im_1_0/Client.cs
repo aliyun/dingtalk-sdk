@@ -12026,6 +12026,154 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>用户身份设置消息状态为已读</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReadPersonalMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReadPersonalMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReadPersonalMessageResponse
+        /// </returns>
+        public ReadPersonalMessageResponse ReadPersonalMessageWithOptions(ReadPersonalMessageRequest request, ReadPersonalMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOpenConversationMessageIdArray))
+            {
+                body["dingOpenConversationMessageIdArray"] = request.DingOpenConversationMessageIdArray;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ReadPersonalMessage",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/me/messages/readStatuses/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ReadPersonalMessageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户身份设置消息状态为已读</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReadPersonalMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReadPersonalMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReadPersonalMessageResponse
+        /// </returns>
+        public async Task<ReadPersonalMessageResponse> ReadPersonalMessageWithOptionsAsync(ReadPersonalMessageRequest request, ReadPersonalMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOpenConversationMessageIdArray))
+            {
+                body["dingOpenConversationMessageIdArray"] = request.DingOpenConversationMessageIdArray;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ReadPersonalMessage",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/me/messages/readStatuses/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ReadPersonalMessageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户身份设置消息状态为已读</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReadPersonalMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReadPersonalMessageResponse
+        /// </returns>
+        public ReadPersonalMessageResponse ReadPersonalMessage(ReadPersonalMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ReadPersonalMessageHeaders headers = new ReadPersonalMessageHeaders();
+            return ReadPersonalMessageWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户身份设置消息状态为已读</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReadPersonalMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReadPersonalMessageResponse
+        /// </returns>
+        public async Task<ReadPersonalMessageResponse> ReadPersonalMessageAsync(ReadPersonalMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ReadPersonalMessageHeaders headers = new ReadPersonalMessageHeaders();
+            return await ReadPersonalMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>用户身份撤回消息</para>
         /// </summary>
         /// 
@@ -13194,9 +13342,9 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["openConversationId"] = request.OpenConversationId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUid))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserId))
             {
-                body["receiverUid"] = request.ReceiverUid;
+                body["receiverUserId"] = request.ReceiverUserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -13261,9 +13409,9 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["openConversationId"] = request.OpenConversationId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUid))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserId))
             {
-                body["receiverUid"] = request.ReceiverUid;
+                body["receiverUserId"] = request.ReceiverUserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -17126,6 +17274,318 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateUnfurlingRegisterStatusHeaders headers = new UpdateUnfurlingRegisterStatusHeaders();
             return await UpdateUnfurlingRegisterStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>升级群为外部群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpgradeToExternalGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpgradeToExternalGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpgradeToExternalGroupResponse
+        /// </returns>
+        public UpgradeToExternalGroupResponse UpgradeToExternalGroupWithOptions(UpgradeToExternalGroupRequest request, UpgradeToExternalGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpgradeToExternalGroup",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/upgradeToExternalGroup",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpgradeToExternalGroupResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>升级群为外部群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpgradeToExternalGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpgradeToExternalGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpgradeToExternalGroupResponse
+        /// </returns>
+        public async Task<UpgradeToExternalGroupResponse> UpgradeToExternalGroupWithOptionsAsync(UpgradeToExternalGroupRequest request, UpgradeToExternalGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpgradeToExternalGroup",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/upgradeToExternalGroup",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpgradeToExternalGroupResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>升级群为外部群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpgradeToExternalGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpgradeToExternalGroupResponse
+        /// </returns>
+        public UpgradeToExternalGroupResponse UpgradeToExternalGroup(UpgradeToExternalGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpgradeToExternalGroupHeaders headers = new UpgradeToExternalGroupHeaders();
+            return UpgradeToExternalGroupWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>升级群为外部群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpgradeToExternalGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpgradeToExternalGroupResponse
+        /// </returns>
+        public async Task<UpgradeToExternalGroupResponse> UpgradeToExternalGroupAsync(UpgradeToExternalGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpgradeToExternalGroupHeaders headers = new UpgradeToExternalGroupHeaders();
+            return await UpgradeToExternalGroupWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>升级为B2C群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpgradeToServiceGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpgradeToServiceGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpgradeToServiceGroupResponse
+        /// </returns>
+        public UpgradeToServiceGroupResponse UpgradeToServiceGroupWithOptions(UpgradeToServiceGroupRequest request, UpgradeToServiceGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpgradeToServiceGroup",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/upgradeToServiceGroup",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpgradeToServiceGroupResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>升级为B2C群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpgradeToServiceGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpgradeToServiceGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpgradeToServiceGroupResponse
+        /// </returns>
+        public async Task<UpgradeToServiceGroupResponse> UpgradeToServiceGroupWithOptionsAsync(UpgradeToServiceGroupRequest request, UpgradeToServiceGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpgradeToServiceGroup",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/upgradeToServiceGroup",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpgradeToServiceGroupResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>升级为B2C群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpgradeToServiceGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpgradeToServiceGroupResponse
+        /// </returns>
+        public UpgradeToServiceGroupResponse UpgradeToServiceGroup(UpgradeToServiceGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpgradeToServiceGroupHeaders headers = new UpgradeToServiceGroupHeaders();
+            return UpgradeToServiceGroupWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>升级为B2C群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpgradeToServiceGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpgradeToServiceGroupResponse
+        /// </returns>
+        public async Task<UpgradeToServiceGroupResponse> UpgradeToServiceGroupAsync(UpgradeToServiceGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpgradeToServiceGroupHeaders headers = new UpgradeToServiceGroupHeaders();
+            return await UpgradeToServiceGroupWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

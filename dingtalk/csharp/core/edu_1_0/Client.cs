@@ -1962,6 +1962,250 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>新增用户事件跟踪日志</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddTraceEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddTraceEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddTraceEventResponse
+        /// </returns>
+        public AddTraceEventResponse AddTraceEventWithOptions(AddTraceEventRequest request, AddTraceEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionKey))
+            {
+                body["actionKey"] = request.ActionKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionTime))
+            {
+                body["actionTime"] = request.ActionTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizReq))
+            {
+                body["bizReq"] = request.BizReq;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizResp))
+            {
+                body["bizResp"] = request.BizResp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceId))
+            {
+                body["deviceId"] = request.DeviceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventId))
+            {
+                body["eventId"] = request.EventId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventType))
+            {
+                body["eventType"] = request.EventType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventUnit))
+            {
+                body["eventUnit"] = request.EventUnit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventValue))
+            {
+                body["eventValue"] = request.EventValue;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extend))
+            {
+                body["extend"] = request.Extend;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Platform))
+            {
+                body["platform"] = request.Platform;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddTraceEvent",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/sns/users/events/traceLogs",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddTraceEventResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增用户事件跟踪日志</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddTraceEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddTraceEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddTraceEventResponse
+        /// </returns>
+        public async Task<AddTraceEventResponse> AddTraceEventWithOptionsAsync(AddTraceEventRequest request, AddTraceEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionKey))
+            {
+                body["actionKey"] = request.ActionKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionTime))
+            {
+                body["actionTime"] = request.ActionTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizReq))
+            {
+                body["bizReq"] = request.BizReq;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizResp))
+            {
+                body["bizResp"] = request.BizResp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceId))
+            {
+                body["deviceId"] = request.DeviceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventId))
+            {
+                body["eventId"] = request.EventId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventType))
+            {
+                body["eventType"] = request.EventType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventUnit))
+            {
+                body["eventUnit"] = request.EventUnit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventValue))
+            {
+                body["eventValue"] = request.EventValue;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extend))
+            {
+                body["extend"] = request.Extend;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Platform))
+            {
+                body["platform"] = request.Platform;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddTraceEvent",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/sns/users/events/traceLogs",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddTraceEventResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增用户事件跟踪日志</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddTraceEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddTraceEventResponse
+        /// </returns>
+        public AddTraceEventResponse AddTraceEvent(AddTraceEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddTraceEventHeaders headers = new AddTraceEventHeaders();
+            return AddTraceEventWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增用户事件跟踪日志</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddTraceEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddTraceEventResponse
+        /// </returns>
+        public async Task<AddTraceEventResponse> AddTraceEventAsync(AddTraceEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddTraceEventHeaders headers = new AddTraceEventHeaders();
+            return await AddTraceEventWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>修改课程</para>
         /// </summary>
         /// 
@@ -32590,6 +32834,170 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             StartCoursePrepareHeaders headers = new StartCoursePrepareHeaders();
             return await StartCoursePrepareWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>AI体育-上报数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitAiSportDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubmitAiSportDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitAiSportDataResponse
+        /// </returns>
+        public SubmitAiSportDataResponse SubmitAiSportDataWithOptions(SubmitAiSportDataRequest request, SubmitAiSportDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataType))
+            {
+                body["dataType"] = request.DataType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateType))
+            {
+                body["operateType"] = request.OperateType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SubmitAiSportData",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/aiSports/data/submit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SubmitAiSportDataResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>AI体育-上报数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitAiSportDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubmitAiSportDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitAiSportDataResponse
+        /// </returns>
+        public async Task<SubmitAiSportDataResponse> SubmitAiSportDataWithOptionsAsync(SubmitAiSportDataRequest request, SubmitAiSportDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataType))
+            {
+                body["dataType"] = request.DataType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateType))
+            {
+                body["operateType"] = request.OperateType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SubmitAiSportData",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/aiSports/data/submit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SubmitAiSportDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>AI体育-上报数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitAiSportDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitAiSportDataResponse
+        /// </returns>
+        public SubmitAiSportDataResponse SubmitAiSportData(SubmitAiSportDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SubmitAiSportDataHeaders headers = new SubmitAiSportDataHeaders();
+            return SubmitAiSportDataWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>AI体育-上报数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitAiSportDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitAiSportDataResponse
+        /// </returns>
+        public async Task<SubmitAiSportDataResponse> SubmitAiSportDataAsync(SubmitAiSportDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SubmitAiSportDataHeaders headers = new SubmitAiSportDataHeaders();
+            return await SubmitAiSportDataWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

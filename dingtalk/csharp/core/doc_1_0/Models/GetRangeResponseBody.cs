@@ -47,6 +47,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         }
 
+        [NameInMap("complexValues")]
+        [Validation(Required=false)]
+        public List<List<object>> ComplexValues { get; set; }
+
         [NameInMap("displayValues")]
         [Validation(Required=false)]
         public List<List<string>> DisplayValues { get; set; }
@@ -66,6 +70,24 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [NameInMap("horizontalAlignments")]
         [Validation(Required=false)]
         public List<List<string>> HorizontalAlignments { get; set; }
+
+        [NameInMap("hyperlinks")]
+        [Validation(Required=false)]
+        public List<List<GetRangeResponseBodyHyperlinks>> Hyperlinks { get; set; }
+        public class GetRangeResponseBodyHyperlinks : TeaModel {
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+
+            [NameInMap("link")]
+            [Validation(Required=false)]
+            public string Link { get; set; }
+
+            [NameInMap("text")]
+            [Validation(Required=false)]
+            public string Text { get; set; }
+
+        }
 
         [NameInMap("values")]
         [Validation(Required=false)]

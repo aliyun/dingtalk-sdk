@@ -41,9 +41,9 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         /// <b>Example:</b>
         /// <para>1662055829854977</para>
         /// </summary>
-        [NameInMap("receiverUid")]
+        [NameInMap("receiverUserId")]
         [Validation(Required=false)]
-        public string ReceiverUid { get; set; }
+        public string ReceiverUserId { get; set; }
 
     }
 

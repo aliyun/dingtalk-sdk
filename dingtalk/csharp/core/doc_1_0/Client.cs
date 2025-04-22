@@ -6762,6 +6762,154 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取资源下载信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetResourceDownloadInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetResourceDownloadInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetResourceDownloadInfoResponse
+        /// </returns>
+        public GetResourceDownloadInfoResponse GetResourceDownloadInfoWithOptions(string docId, string resourceId, GetResourceDownloadInfoRequest request, GetResourceDownloadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetResourceDownloadInfo",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/docs/resources/" + docId + "/" + resourceId + "/downloadInfo",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetResourceDownloadInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取资源下载信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetResourceDownloadInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetResourceDownloadInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetResourceDownloadInfoResponse
+        /// </returns>
+        public async Task<GetResourceDownloadInfoResponse> GetResourceDownloadInfoWithOptionsAsync(string docId, string resourceId, GetResourceDownloadInfoRequest request, GetResourceDownloadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetResourceDownloadInfo",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/docs/resources/" + docId + "/" + resourceId + "/downloadInfo",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetResourceDownloadInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取资源下载信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetResourceDownloadInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetResourceDownloadInfoResponse
+        /// </returns>
+        public GetResourceDownloadInfoResponse GetResourceDownloadInfo(string docId, string resourceId, GetResourceDownloadInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetResourceDownloadInfoHeaders headers = new GetResourceDownloadInfoHeaders();
+            return GetResourceDownloadInfoWithOptions(docId, resourceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取资源下载信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetResourceDownloadInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetResourceDownloadInfoResponse
+        /// </returns>
+        public async Task<GetResourceDownloadInfoResponse> GetResourceDownloadInfoAsync(string docId, string resourceId, GetResourceDownloadInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetResourceDownloadInfoHeaders headers = new GetResourceDownloadInfoHeaders();
+            return await GetResourceDownloadInfoWithOptionsAsync(docId, resourceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取上传信息</para>
         /// </summary>
         /// 
