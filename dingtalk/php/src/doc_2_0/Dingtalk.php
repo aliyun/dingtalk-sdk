@@ -131,6 +131,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDocContentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDocContentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDocContentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryGetContentJobHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryGetContentJobRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryGetContentJobResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryItemByUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryItemByUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryItemByUrlResponse;
@@ -163,6 +166,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchTemplatesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ShareUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ShareUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ShareUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SubmitGetContentJobHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SubmitGetContentJobRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SubmitGetContentJobResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamTemplatesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamTemplatesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamTemplatesResponse;
@@ -2827,6 +2833,68 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询文档内容获取任务状态
+     *  *
+     * @param string                    $dentryUuid
+     * @param QueryGetContentJobRequest $request    QueryGetContentJobRequest
+     * @param QueryGetContentJobHeaders $headers    QueryGetContentJobHeaders
+     * @param RuntimeOptions            $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return QueryGetContentJobResponse QueryGetContentJobResponse
+     */
+    public function queryGetContentJobWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $query['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryGetContentJob',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/contents/' . $dentryUuid . '/jobStatuses',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryGetContentJobResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询文档内容获取任务状态
+     *  *
+     * @param string                    $dentryUuid
+     * @param QueryGetContentJobRequest $request    QueryGetContentJobRequest
+     *
+     * @return QueryGetContentJobResponse QueryGetContentJobResponse
+     */
+    public function queryGetContentJob($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGetContentJobHeaders([]);
+
+        return $this->queryGetContentJobWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 根据链接查询节点或知识库信息
      *  *
      * @param QueryItemByUrlRequest $request QueryItemByUrlRequest
@@ -3517,6 +3585,68 @@ class Dingtalk extends OpenApiClient
         $headers = new ShareUrlHeaders([]);
 
         return $this->shareUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 提交文档内容获取任务
+     *  *
+     * @param string                     $dentryUuid
+     * @param SubmitGetContentJobRequest $request    SubmitGetContentJobRequest
+     * @param SubmitGetContentJobHeaders $headers    SubmitGetContentJobHeaders
+     * @param RuntimeOptions             $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return SubmitGetContentJobResponse SubmitGetContentJobResponse
+     */
+    public function submitGetContentJobWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->targetFormat)) {
+            $query['targetFormat'] = $request->targetFormat;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'SubmitGetContentJob',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/contents/' . $dentryUuid . '/jobs',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SubmitGetContentJobResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 提交文档内容获取任务
+     *  *
+     * @param string                     $dentryUuid
+     * @param SubmitGetContentJobRequest $request    SubmitGetContentJobRequest
+     *
+     * @return SubmitGetContentJobResponse SubmitGetContentJobResponse
+     */
+    public function submitGetContentJob($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubmitGetContentJobHeaders([]);
+
+        return $this->submitGetContentJobWithOptions($dentryUuid, $request, $headers, $runtime);
     }
 
     /**

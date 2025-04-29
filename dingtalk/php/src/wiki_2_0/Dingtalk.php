@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\AddTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\AddWorkspaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\AddWorkspaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\AddWorkspaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\AddWorkspacesManagerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\AddWorkspacesManagerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\AddWorkspacesManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\DeleteTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\DeleteTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\DeleteTeamResponse;
@@ -44,6 +47,9 @@ use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\HandOverWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListNodesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListNodesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListNodesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListOrgWorkspacesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListOrgWorkspacesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListOrgWorkspacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListTeamsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListTeamsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListTeamsResponse;
@@ -201,6 +207,71 @@ class Dingtalk extends OpenApiClient
         $headers = new AddWorkspaceHeaders([]);
 
         return $this->addWorkspaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 添加知识库管理员
+     *  *
+     * @param AddWorkspacesManagerRequest $request AddWorkspacesManagerRequest
+     * @param AddWorkspacesManagerHeaders $headers AddWorkspacesManagerHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddWorkspacesManagerResponse AddWorkspacesManagerResponse
+     */
+    public function addWorkspacesManagerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->workspaceId)) {
+            $query['workspaceId'] = $request->workspaceId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AddWorkspacesManager',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/workspaces/managers',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AddWorkspacesManagerResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 添加知识库管理员
+     *  *
+     * @param AddWorkspacesManagerRequest $request AddWorkspacesManagerRequest
+     *
+     * @return AddWorkspacesManagerResponse AddWorkspacesManagerResponse
+     */
+    public function addWorkspacesManager($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddWorkspacesManagerHeaders([]);
+
+        return $this->addWorkspacesManagerWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -892,6 +963,72 @@ class Dingtalk extends OpenApiClient
         $headers = new ListNodesHeaders([]);
 
         return $this->listNodesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取组织所有知识库列表
+     *  *
+     * @param ListOrgWorkspacesRequest $request ListOrgWorkspacesRequest
+     * @param ListOrgWorkspacesHeaders $headers ListOrgWorkspacesHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListOrgWorkspacesResponse ListOrgWorkspacesResponse
+     */
+    public function listOrgWorkspacesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $query['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ListOrgWorkspaces',
+            'version' => 'wiki_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/wiki/org/workspaces',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListOrgWorkspacesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取组织所有知识库列表
+     *  *
+     * @param ListOrgWorkspacesRequest $request ListOrgWorkspacesRequest
+     *
+     * @return ListOrgWorkspacesResponse ListOrgWorkspacesResponse
+     */
+    public function listOrgWorkspaces($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListOrgWorkspacesHeaders([]);
+
+        return $this->listOrgWorkspacesWithOptions($request, $headers, $runtime);
     }
 
     /**

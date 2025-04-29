@@ -72,6 +72,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAttendeesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAttendeesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCalendarsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCategoriesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListCategoriesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesRequest;
@@ -542,6 +544,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->cardInstances)) {
             $body['cardInstances'] = $request->cardInstances;
         }
+        if (!Utils::isUnset($request->categories)) {
+            $body['categories'] = $request->categories;
+        }
         if (!Utils::isUnset($request->description)) {
             $body['description'] = $request->description;
         }
@@ -550,6 +555,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->extra)) {
             $body['extra'] = $request->extra;
+        }
+        if (!Utils::isUnset($request->freeBusyStatus)) {
+            $body['freeBusyStatus'] = $request->freeBusyStatus;
         }
         if (!Utils::isUnset($request->isAllDay)) {
             $body['isAllDay'] = $request->isAllDay;
@@ -1757,6 +1765,60 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取会议类型列表
+     *  *
+     * @param string                $userId
+     * @param ListCategoriesHeaders $headers ListCategoriesHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListCategoriesResponse ListCategoriesResponse
+     */
+    public function listCategoriesWithOptions($userId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'ListCategories',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/categories',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListCategoriesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取会议类型列表
+     *  *
+     * @param string $userId
+     *
+     * @return ListCategoriesResponse ListCategoriesResponse
+     */
+    public function listCategories($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListCategoriesHeaders([]);
+
+        return $this->listCategoriesWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询日程列表
      *  *
      * @param string            $userId
@@ -2223,6 +2285,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->cardInstances)) {
             $body['cardInstances'] = $request->cardInstances;
         }
+        if (!Utils::isUnset($request->categories)) {
+            $body['categories'] = $request->categories;
+        }
         if (!Utils::isUnset($request->description)) {
             $body['description'] = $request->description;
         }
@@ -2231,6 +2296,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->extra)) {
             $body['extra'] = $request->extra;
+        }
+        if (!Utils::isUnset($request->freeBusyStatus)) {
+            $body['freeBusyStatus'] = $request->freeBusyStatus;
         }
         if (!Utils::isUnset($request->id)) {
             $body['id'] = $request->id;

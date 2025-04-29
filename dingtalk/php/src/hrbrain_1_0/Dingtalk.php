@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteAwardRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteAwardRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteAwardRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteCustomHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteCustomRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteCustomResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteDeptInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteDeptInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteDeptInfoResponse;
@@ -59,6 +62,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteWorkExpResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportAwardDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportAwardDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportAwardDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportCustomHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportCustomRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportCustomResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportDeptInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportDeptInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportDeptInfoResponse;
@@ -191,6 +197,66 @@ class Dingtalk extends OpenApiClient
         $headers = new HrbrainDeleteAwardRecordsHeaders([]);
 
         return $this->hrbrainDeleteAwardRecordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除自定义模型记录
+     *  *
+     * @param HrbrainDeleteCustomRequest $request HrbrainDeleteCustomRequest
+     * @param HrbrainDeleteCustomHeaders $headers HrbrainDeleteCustomHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainDeleteCustomResponse HrbrainDeleteCustomResponse
+     */
+    public function hrbrainDeleteCustomWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->modelCode)) {
+            $body['modelCode'] = $request->modelCode;
+        }
+        if (!Utils::isUnset($request->params)) {
+            $body['params'] = $request->params;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainDeleteCustom',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/customModels/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainDeleteCustomResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除自定义模型记录
+     *  *
+     * @param HrbrainDeleteCustomRequest $request HrbrainDeleteCustomRequest
+     *
+     * @return HrbrainDeleteCustomResponse HrbrainDeleteCustomResponse
+     */
+    public function hrbrainDeleteCustom($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainDeleteCustomHeaders([]);
+
+        return $this->hrbrainDeleteCustomWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1161,6 +1227,67 @@ class Dingtalk extends OpenApiClient
         $headers = new HrbrainImportAwardDetailHeaders([]);
 
         return $this->hrbrainImportAwardDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 集成自定义模型记录
+     *  *
+     * @param HrbrainImportCustomRequest $request HrbrainImportCustomRequest
+     * @param HrbrainImportCustomHeaders $headers HrbrainImportCustomHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainImportCustomResponse HrbrainImportCustomResponse
+     */
+    public function hrbrainImportCustomWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->modelCode)) {
+            $query['modelCode'] = $request->modelCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainImportCustom',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/customModels/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainImportCustomResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 集成自定义模型记录
+     *  *
+     * @param HrbrainImportCustomRequest $request HrbrainImportCustomRequest
+     *
+     * @return HrbrainImportCustomResponse HrbrainImportCustomResponse
+     */
+    public function hrbrainImportCustom($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainImportCustomHeaders([]);
+
+        return $this->hrbrainImportCustomWithOptions($request, $headers, $runtime);
     }
 
     /**

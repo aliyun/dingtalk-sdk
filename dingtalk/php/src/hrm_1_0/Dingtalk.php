@@ -42,6 +42,7 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetUserSignedRecordsByOuterIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetUserSignedRecordsByOuterIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetUserSignedRecordsByOuterIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmAuthResourcesQueryHeaders;
@@ -1090,7 +1091,7 @@ class Dingtalk extends OpenApiClient
      * @summary 查询指定outerId的电子签署记录详情
      *  *
      * @param GetUserSignedRecordsByOuterIdRequest $request GetUserSignedRecordsByOuterIdRequest
-     * @param string[]                             $headers map
+     * @param GetUserSignedRecordsByOuterIdHeaders $headers GetUserSignedRecordsByOuterIdHeaders
      * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
      * @return GetUserSignedRecordsByOuterIdResponse GetUserSignedRecordsByOuterIdResponse
@@ -1098,8 +1099,15 @@ class Dingtalk extends OpenApiClient
     public function getUserSignedRecordsByOuterIdWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
         $req = new OpenApiRequest([
-            'headers' => $headers,
+            'headers' => $realHeaders,
             'body' => $request->body,
         ]);
         $params = new Params([
@@ -1108,7 +1116,7 @@ class Dingtalk extends OpenApiClient
             'protocol' => 'HTTP',
             'pathname' => '/v1.0/hrm/masters/signCenters/outerIds/records/query',
             'method' => 'POST',
-            'authType' => 'Anonymous',
+            'authType' => 'AK',
             'style' => 'ROA',
             'reqBodyType' => 'none',
             'bodyType' => 'json',
@@ -1127,7 +1135,7 @@ class Dingtalk extends OpenApiClient
     public function getUserSignedRecordsByOuterId($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = [];
+        $headers = new GetUserSignedRecordsByOuterIdHeaders([]);
 
         return $this->getUserSignedRecordsByOuterIdWithOptions($request, $headers, $runtime);
     }

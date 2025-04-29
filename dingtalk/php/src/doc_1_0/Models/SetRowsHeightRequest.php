@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class SetRowsHeightRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $height;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $row;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $rowCount;

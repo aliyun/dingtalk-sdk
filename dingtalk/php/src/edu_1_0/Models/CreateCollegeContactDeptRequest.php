@@ -42,6 +42,13 @@ class CreateCollegeContactDeptRequest extends Model
     public $deptCode;
 
     /**
+     * @example 234567
+     *
+     * @var int
+     */
+    public $deptId;
+
+    /**
      * @var int[]
      */
     public $deptPermits;
@@ -158,6 +165,7 @@ class CreateCollegeContactDeptRequest extends Model
         'code' => 'code',
         'createDeptGroup' => 'createDeptGroup',
         'deptCode' => 'deptCode',
+        'deptId' => 'deptId',
         'deptPermits' => 'deptPermits',
         'deptType' => 'deptType',
         'empApplyJoinDept' => 'empApplyJoinDept',
@@ -197,6 +205,9 @@ class CreateCollegeContactDeptRequest extends Model
         }
         if (null !== $this->deptCode) {
             $res['deptCode'] = $this->deptCode;
+        }
+        if (null !== $this->deptId) {
+            $res['deptId'] = $this->deptId;
         }
         if (null !== $this->deptPermits) {
             $res['deptPermits'] = $this->deptPermits;
@@ -278,6 +289,9 @@ class CreateCollegeContactDeptRequest extends Model
         }
         if (isset($map['deptCode'])) {
             $model->deptCode = $map['deptCode'];
+        }
+        if (isset($map['deptId'])) {
+            $model->deptId = $map['deptId'];
         }
         if (isset($map['deptPermits'])) {
             if (!empty($map['deptPermits'])) {

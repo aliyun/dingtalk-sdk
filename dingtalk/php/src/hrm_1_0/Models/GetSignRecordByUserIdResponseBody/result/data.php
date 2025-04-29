@@ -16,6 +16,13 @@ class data extends Model
     public $corpId;
 
     /**
+     * @example CONTRACT_123456
+     *
+     * @var string
+     */
+    public $outerId;
+
+    /**
      * @example 劳动合同电子签签署备注
      *
      * @var string
@@ -114,6 +121,7 @@ class data extends Model
     public $signWay;
     protected $_name = [
         'corpId' => 'corpId',
+        'outerId' => 'outerId',
         'remark' => 'remark',
         'signExpireTime' => 'signExpireTime',
         'signFileName' => 'signFileName',
@@ -137,6 +145,9 @@ class data extends Model
         $res = [];
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->outerId) {
+            $res['outerId'] = $this->outerId;
         }
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
@@ -194,6 +205,9 @@ class data extends Model
         $model = new self();
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['outerId'])) {
+            $model->outerId = $map['outerId'];
         }
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];

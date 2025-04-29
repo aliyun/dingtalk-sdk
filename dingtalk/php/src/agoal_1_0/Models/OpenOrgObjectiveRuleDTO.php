@@ -11,6 +11,15 @@ class OpenOrgObjectiveRuleDTO extends Model
     /**
      * @description This parameter is required.
      *
+     * @example OKR / PBC
+     *
+     * @var string
+     */
+    public $objectiveCategory;
+
+    /**
+     * @description This parameter is required.
+     *
      * @example 6444f5e9a4261c6e699dxxxx
      *
      * @var string
@@ -26,6 +35,7 @@ class OpenOrgObjectiveRuleDTO extends Model
      */
     public $objectiveRuleName;
     protected $_name = [
+        'objectiveCategory' => 'objectiveCategory',
         'objectiveRuleId' => 'objectiveRuleId',
         'objectiveRuleName' => 'objectiveRuleName',
     ];
@@ -35,6 +45,9 @@ class OpenOrgObjectiveRuleDTO extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->objectiveCategory) {
+            $res['objectiveCategory'] = $this->objectiveCategory;
+        }
         if (null !== $this->objectiveRuleId) {
             $res['objectiveRuleId'] = $this->objectiveRuleId;
         }
@@ -53,6 +66,9 @@ class OpenOrgObjectiveRuleDTO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['objectiveCategory'])) {
+            $model->objectiveCategory = $map['objectiveCategory'];
+        }
         if (isset($map['objectiveRuleId'])) {
             $model->objectiveRuleId = $map['objectiveRuleId'];
         }

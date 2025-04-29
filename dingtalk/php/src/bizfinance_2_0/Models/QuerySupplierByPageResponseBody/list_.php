@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageResponseBody\list_\customFormDataList;
 use AlibabaCloud\Tea\Model;
 
 class list_ extends Model
@@ -25,6 +26,11 @@ class list_ extends Model
      * @var int
      */
     public $createTime;
+
+    /**
+     * @var customFormDataList[]
+     */
+    public $customFormDataList;
 
     /**
      * @description This parameter is required.
@@ -60,6 +66,7 @@ class list_ extends Model
     protected $_name = [
         'code' => 'code',
         'createTime' => 'createTime',
+        'customFormDataList' => 'customFormDataList',
         'description' => 'description',
         'name' => 'name',
         'status' => 'status',
@@ -76,6 +83,15 @@ class list_ extends Model
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
+        }
+        if (null !== $this->customFormDataList) {
+            $res['customFormDataList'] = [];
+            if (null !== $this->customFormDataList && \is_array($this->customFormDataList)) {
+                $n = 0;
+                foreach ($this->customFormDataList as $item) {
+                    $res['customFormDataList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
@@ -106,6 +122,15 @@ class list_ extends Model
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
+        }
+        if (isset($map['customFormDataList'])) {
+            if (!empty($map['customFormDataList'])) {
+                $model->customFormDataList = [];
+                $n = 0;
+                foreach ($map['customFormDataList'] as $item) {
+                    $model->customFormDataList[$n++] = null !== $item ? customFormDataList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];

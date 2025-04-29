@@ -137,6 +137,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->aliDocHighLight)) {
+            $body['aliDocHighLight'] = $request->aliDocHighLight;
+        }
         if (!Utils::isUnset($request->approveReason)) {
             $body['approveReason'] = $request->approveReason;
         }

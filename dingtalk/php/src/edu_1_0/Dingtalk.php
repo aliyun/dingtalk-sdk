@@ -415,6 +415,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ProvidePointResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PublishSchoolReportHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PublishSchoolReportRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PublishSchoolReportResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PushClassGroupCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PushClassGroupCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PushClassGroupCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleResponse;
@@ -562,6 +565,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubscribeUniversityCourseGroupResp
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UnsubscribeUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UnsubscribeUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UnsubscribeUniversityCourseGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateClassGroupCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateClassGroupCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateClassGroupCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateClassHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateClassRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateClassResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeAlumniUserInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeAlumniUserInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeAlumniUserInfoResponse;
@@ -586,6 +595,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEvaluatePerformanceCountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEvaluatePerformanceCountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEvaluatePerformanceCountResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateGuardianHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateGuardianRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateGuardianResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdatePhysicalClassroomHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdatePhysicalClassroomRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdatePhysicalClassroomResponse;
@@ -595,6 +607,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateStudentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateStudentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateStudentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupResponse;
@@ -3372,6 +3387,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->deptCode)) {
             $body['deptCode'] = $request->deptCode;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
         }
         if (!Utils::isUnset($request->deptPermits)) {
             $body['deptPermits'] = $request->deptPermits;
@@ -10309,6 +10327,81 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 推送班级群卡片消息
+     *  *
+     * @param PushClassGroupCardRequest $request PushClassGroupCardRequest
+     * @param PushClassGroupCardHeaders $headers PushClassGroupCardHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PushClassGroupCardResponse PushClassGroupCardResponse
+     */
+    public function pushClassGroupCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->groupTypeList)) {
+            $body['groupTypeList'] = $request->groupTypeList;
+        }
+        if (!Utils::isUnset($request->privateCardData)) {
+            $body['privateCardData'] = $request->privateCardData;
+        }
+        if (!Utils::isUnset($request->publicCardData)) {
+            $body['publicCardData'] = $request->publicCardData;
+        }
+        if (!Utils::isUnset($request->senderUserId)) {
+            $body['senderUserId'] = $request->senderUserId;
+        }
+        if (!Utils::isUnset($request->studentUserIds)) {
+            $body['studentUserIds'] = $request->studentUserIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'PushClassGroupCard',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/classes/groups/cards/messages/push',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return PushClassGroupCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 推送班级群卡片消息
+     *  *
+     * @param PushClassGroupCardRequest $request PushClassGroupCardRequest
+     *
+     * @return PushClassGroupCardResponse PushClassGroupCardResponse
+     */
+    public function pushClassGroupCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PushClassGroupCardHeaders([]);
+
+        return $this->pushClassGroupCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 错题本-查询错题本
      *  *
      * @param QueryHeaders   $headers QueryHeaders
@@ -13451,6 +13544,147 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改班级信息
+     *  *
+     * @param UpdateClassRequest $request UpdateClassRequest
+     * @param UpdateClassHeaders $headers UpdateClassHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateClassResponse UpdateClassResponse
+     */
+    public function updateClassWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->gradeLevel)) {
+            $body['gradeLevel'] = $request->gradeLevel;
+        }
+        if (!Utils::isUnset($request->openClass)) {
+            $body['openClass'] = $request->openClass;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->superId)) {
+            $body['superId'] = $request->superId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateClass',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/classes/infos',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateClassResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改班级信息
+     *  *
+     * @param UpdateClassRequest $request UpdateClassRequest
+     *
+     * @return UpdateClassResponse UpdateClassResponse
+     */
+    public function updateClass($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateClassHeaders([]);
+
+        return $this->updateClassWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新班级群卡片消息
+     *  *
+     * @param UpdateClassGroupCardRequest $request UpdateClassGroupCardRequest
+     * @param UpdateClassGroupCardHeaders $headers UpdateClassGroupCardHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateClassGroupCardResponse UpdateClassGroupCardResponse
+     */
+    public function updateClassGroupCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCardId)) {
+            $body['bizCardId'] = $request->bizCardId;
+        }
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->groupTypeList)) {
+            $body['groupTypeList'] = $request->groupTypeList;
+        }
+        if (!Utils::isUnset($request->isFinalUpdate)) {
+            $body['isFinalUpdate'] = $request->isFinalUpdate;
+        }
+        if (!Utils::isUnset($request->privateCardData)) {
+            $body['privateCardData'] = $request->privateCardData;
+        }
+        if (!Utils::isUnset($request->publicCardData)) {
+            $body['publicCardData'] = $request->publicCardData;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateClassGroupCard',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/classes/groups/cards/messages',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateClassGroupCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新班级群卡片消息
+     *  *
+     * @param UpdateClassGroupCardRequest $request UpdateClassGroupCardRequest
+     *
+     * @return UpdateClassGroupCardResponse UpdateClassGroupCardResponse
+     */
+    public function updateClassGroupCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateClassGroupCardHeaders([]);
+
+        return $this->updateClassGroupCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 高校校友会更新校友信息
      *  *
      * @param UpdateCollegeAlumniUserInfoRequest $request UpdateCollegeAlumniUserInfoRequest
@@ -14193,6 +14427,78 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新家长信息
+     *  *
+     * @param UpdateGuardianRequest $request UpdateGuardianRequest
+     * @param UpdateGuardianHeaders $headers UpdateGuardianHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateGuardianResponse UpdateGuardianResponse
+     */
+    public function updateGuardianWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->relation)) {
+            $body['relation'] = $request->relation;
+        }
+        if (!Utils::isUnset($request->stuId)) {
+            $body['stuId'] = $request->stuId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateGuardian',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/guardians/infos',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateGuardianResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新家长信息
+     *  *
+     * @param UpdateGuardianRequest $request UpdateGuardianRequest
+     *
+     * @return UpdateGuardianResponse UpdateGuardianResponse
+     */
+    public function updateGuardian($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateGuardianHeaders([]);
+
+        return $this->updateGuardianWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 添加物理教室信息
      *  *
      * @param UpdatePhysicalClassroomRequest $request UpdatePhysicalClassroomRequest
@@ -14411,6 +14717,78 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateRemoteClassDeviceHeaders([]);
 
         return $this->updateRemoteClassDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改学生信息
+     *  *
+     * @param UpdateStudentRequest $request UpdateStudentRequest
+     * @param UpdateStudentHeaders $headers UpdateStudentHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateStudentResponse UpdateStudentResponse
+     */
+    public function updateStudentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->studentNo)) {
+            $body['studentNo'] = $request->studentNo;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateStudent',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/students/infos',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateStudentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改学生信息
+     *  *
+     * @param UpdateStudentRequest $request UpdateStudentRequest
+     *
+     * @return UpdateStudentResponse UpdateStudentResponse
+     */
+    public function updateStudent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateStudentHeaders([]);
+
+        return $this->updateStudentWithOptions($request, $headers, $runtime);
     }
 
     /**

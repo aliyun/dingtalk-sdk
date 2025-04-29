@@ -6,6 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\attendees;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\cardInstances;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\categories;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\onlineMeetingInfo;
@@ -29,6 +30,11 @@ class PatchEventRequest extends Model
     public $cardInstances;
 
     /**
+     * @var categories[]
+     */
+    public $categories;
+
+    /**
      * @var string
      */
     public $description;
@@ -42,6 +48,11 @@ class PatchEventRequest extends Model
      * @var string[]
      */
     public $extra;
+
+    /**
+     * @var string
+     */
+    public $freeBusyStatus;
 
     /**
      * @description This parameter is required.
@@ -97,9 +108,11 @@ class PatchEventRequest extends Model
     protected $_name = [
         'attendees' => 'attendees',
         'cardInstances' => 'cardInstances',
+        'categories' => 'categories',
         'description' => 'description',
         'end' => 'end',
         'extra' => 'extra',
+        'freeBusyStatus' => 'freeBusyStatus',
         'id' => 'id',
         'isAllDay' => 'isAllDay',
         'location' => 'location',
@@ -135,6 +148,15 @@ class PatchEventRequest extends Model
                 }
             }
         }
+        if (null !== $this->categories) {
+            $res['categories'] = [];
+            if (null !== $this->categories && \is_array($this->categories)) {
+                $n = 0;
+                foreach ($this->categories as $item) {
+                    $res['categories'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
@@ -143,6 +165,9 @@ class PatchEventRequest extends Model
         }
         if (null !== $this->extra) {
             $res['extra'] = $this->extra;
+        }
+        if (null !== $this->freeBusyStatus) {
+            $res['freeBusyStatus'] = $this->freeBusyStatus;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
@@ -216,6 +241,15 @@ class PatchEventRequest extends Model
                 }
             }
         }
+        if (isset($map['categories'])) {
+            if (!empty($map['categories'])) {
+                $model->categories = [];
+                $n = 0;
+                foreach ($map['categories'] as $item) {
+                    $model->categories[$n++] = null !== $item ? categories::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }
@@ -224,6 +258,9 @@ class PatchEventRequest extends Model
         }
         if (isset($map['extra'])) {
             $model->extra = $map['extra'];
+        }
+        if (isset($map['freeBusyStatus'])) {
+            $model->freeBusyStatus = $map['freeBusyStatus'];
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];

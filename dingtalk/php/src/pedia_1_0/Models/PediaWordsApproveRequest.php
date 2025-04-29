@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsApproveRequest extends Model
 {
     /**
+     * @var bool
+     */
+    public $aliDocHighLight;
+
+    /**
      * @example 拒绝
      *
      * @var string
@@ -56,6 +61,7 @@ class PediaWordsApproveRequest extends Model
      */
     public $uuid;
     protected $_name = [
+        'aliDocHighLight' => 'aliDocHighLight',
         'approveReason' => 'approveReason',
         'approveStatus' => 'approveStatus',
         'imHighLight' => 'imHighLight',
@@ -69,6 +75,9 @@ class PediaWordsApproveRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->aliDocHighLight) {
+            $res['aliDocHighLight'] = $this->aliDocHighLight;
+        }
         if (null !== $this->approveReason) {
             $res['approveReason'] = $this->approveReason;
         }
@@ -99,6 +108,9 @@ class PediaWordsApproveRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['aliDocHighLight'])) {
+            $model->aliDocHighLight = $map['aliDocHighLight'];
+        }
         if (isset($map['approveReason'])) {
             $model->approveReason = $map['approveReason'];
         }
