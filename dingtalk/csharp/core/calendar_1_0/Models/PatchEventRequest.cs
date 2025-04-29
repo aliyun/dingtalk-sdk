@@ -41,6 +41,20 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("categories")]
+        [Validation(Required=false)]
+        public List<PatchEventRequestCategories> Categories { get; set; }
+        public class PatchEventRequestCategories : TeaModel {
+            [NameInMap("categoryId")]
+            [Validation(Required=false)]
+            public string CategoryId { get; set; }
+
+            [NameInMap("displayName")]
+            [Validation(Required=false)]
+            public string DisplayName { get; set; }
+
+        }
+
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
@@ -66,6 +80,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [NameInMap("extra")]
         [Validation(Required=false)]
         public Dictionary<string, string> Extra { get; set; }
+
+        [NameInMap("freeBusyStatus")]
+        [Validation(Required=false)]
+        public string FreeBusyStatus { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>

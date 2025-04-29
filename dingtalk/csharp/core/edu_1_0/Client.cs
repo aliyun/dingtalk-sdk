@@ -7154,6 +7154,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             {
                 body["deptCode"] = request.DeptCode;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPermits))
             {
                 body["deptPermits"] = request.DeptPermits;
@@ -7296,6 +7300,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCode))
             {
                 body["deptCode"] = request.DeptCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPermits))
             {
@@ -25170,6 +25178,202 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>推送班级群卡片消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushClassGroupCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// PushClassGroupCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushClassGroupCardResponse
+        /// </returns>
+        public PushClassGroupCardResponse PushClassGroupCardWithOptions(PushClassGroupCardRequest request, PushClassGroupCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassId))
+            {
+                body["classId"] = request.ClassId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTypeList))
+            {
+                body["groupTypeList"] = request.GroupTypeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateCardData))
+            {
+                body["privateCardData"] = request.PrivateCardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublicCardData))
+            {
+                body["publicCardData"] = request.PublicCardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                body["senderUserId"] = request.SenderUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentUserIds))
+            {
+                body["studentUserIds"] = request.StudentUserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushClassGroupCard",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/classes/groups/cards/messages/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushClassGroupCardResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>推送班级群卡片消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushClassGroupCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// PushClassGroupCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushClassGroupCardResponse
+        /// </returns>
+        public async Task<PushClassGroupCardResponse> PushClassGroupCardWithOptionsAsync(PushClassGroupCardRequest request, PushClassGroupCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassId))
+            {
+                body["classId"] = request.ClassId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTypeList))
+            {
+                body["groupTypeList"] = request.GroupTypeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateCardData))
+            {
+                body["privateCardData"] = request.PrivateCardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublicCardData))
+            {
+                body["publicCardData"] = request.PublicCardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                body["senderUserId"] = request.SenderUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentUserIds))
+            {
+                body["studentUserIds"] = request.StudentUserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushClassGroupCard",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/classes/groups/cards/messages/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushClassGroupCardResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>推送班级群卡片消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushClassGroupCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushClassGroupCardResponse
+        /// </returns>
+        public PushClassGroupCardResponse PushClassGroupCard(PushClassGroupCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PushClassGroupCardHeaders headers = new PushClassGroupCardHeaders();
+            return PushClassGroupCardWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>推送班级群卡片消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushClassGroupCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushClassGroupCardResponse
+        /// </returns>
+        public async Task<PushClassGroupCardResponse> PushClassGroupCardAsync(PushClassGroupCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PushClassGroupCardHeaders headers = new PushClassGroupCardHeaders();
+            return await PushClassGroupCardWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>错题本-查询错题本</para>
         /// </summary>
         /// 
@@ -33338,6 +33542,374 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>修改班级信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClassRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateClassHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClassResponse
+        /// </returns>
+        public UpdateClassResponse UpdateClassWithOptions(UpdateClassRequest request, UpdateClassHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GradeLevel))
+            {
+                body["gradeLevel"] = request.GradeLevel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenClass))
+            {
+                body["openClass"] = request.OpenClass;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuperId))
+            {
+                body["superId"] = request.SuperId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateClass",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/classes/infos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateClassResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改班级信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClassRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateClassHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClassResponse
+        /// </returns>
+        public async Task<UpdateClassResponse> UpdateClassWithOptionsAsync(UpdateClassRequest request, UpdateClassHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GradeLevel))
+            {
+                body["gradeLevel"] = request.GradeLevel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenClass))
+            {
+                body["openClass"] = request.OpenClass;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuperId))
+            {
+                body["superId"] = request.SuperId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateClass",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/classes/infos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateClassResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改班级信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClassRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClassResponse
+        /// </returns>
+        public UpdateClassResponse UpdateClass(UpdateClassRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateClassHeaders headers = new UpdateClassHeaders();
+            return UpdateClassWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改班级信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClassRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClassResponse
+        /// </returns>
+        public async Task<UpdateClassResponse> UpdateClassAsync(UpdateClassRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateClassHeaders headers = new UpdateClassHeaders();
+            return await UpdateClassWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新班级群卡片消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClassGroupCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateClassGroupCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClassGroupCardResponse
+        /// </returns>
+        public UpdateClassGroupCardResponse UpdateClassGroupCardWithOptions(UpdateClassGroupCardRequest request, UpdateClassGroupCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCardId))
+            {
+                body["bizCardId"] = request.BizCardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassId))
+            {
+                body["classId"] = request.ClassId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTypeList))
+            {
+                body["groupTypeList"] = request.GroupTypeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsFinalUpdate))
+            {
+                body["isFinalUpdate"] = request.IsFinalUpdate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateCardData))
+            {
+                body["privateCardData"] = request.PrivateCardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublicCardData))
+            {
+                body["publicCardData"] = request.PublicCardData;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateClassGroupCard",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/classes/groups/cards/messages",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateClassGroupCardResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新班级群卡片消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClassGroupCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateClassGroupCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClassGroupCardResponse
+        /// </returns>
+        public async Task<UpdateClassGroupCardResponse> UpdateClassGroupCardWithOptionsAsync(UpdateClassGroupCardRequest request, UpdateClassGroupCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCardId))
+            {
+                body["bizCardId"] = request.BizCardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassId))
+            {
+                body["classId"] = request.ClassId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTypeList))
+            {
+                body["groupTypeList"] = request.GroupTypeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsFinalUpdate))
+            {
+                body["isFinalUpdate"] = request.IsFinalUpdate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateCardData))
+            {
+                body["privateCardData"] = request.PrivateCardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublicCardData))
+            {
+                body["publicCardData"] = request.PublicCardData;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateClassGroupCard",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/classes/groups/cards/messages",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateClassGroupCardResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新班级群卡片消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClassGroupCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClassGroupCardResponse
+        /// </returns>
+        public UpdateClassGroupCardResponse UpdateClassGroupCard(UpdateClassGroupCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateClassGroupCardHeaders headers = new UpdateClassGroupCardHeaders();
+            return UpdateClassGroupCardWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新班级群卡片消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClassGroupCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClassGroupCardResponse
+        /// </returns>
+        public async Task<UpdateClassGroupCardResponse> UpdateClassGroupCardAsync(UpdateClassGroupCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateClassGroupCardHeaders headers = new UpdateClassGroupCardHeaders();
+            return await UpdateClassGroupCardWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>高校校友会更新校友信息</para>
         /// </summary>
         /// 
@@ -35278,6 +35850,194 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>更新家长信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateGuardianRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateGuardianHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateGuardianResponse
+        /// </returns>
+        public UpdateGuardianResponse UpdateGuardianWithOptions(UpdateGuardianRequest request, UpdateGuardianHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassId))
+            {
+                body["classId"] = request.ClassId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Relation))
+            {
+                body["relation"] = request.Relation;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StuId))
+            {
+                body["stuId"] = request.StuId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateGuardian",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/guardians/infos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateGuardianResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新家长信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateGuardianRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateGuardianHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateGuardianResponse
+        /// </returns>
+        public async Task<UpdateGuardianResponse> UpdateGuardianWithOptionsAsync(UpdateGuardianRequest request, UpdateGuardianHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassId))
+            {
+                body["classId"] = request.ClassId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Relation))
+            {
+                body["relation"] = request.Relation;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StuId))
+            {
+                body["stuId"] = request.StuId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateGuardian",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/guardians/infos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateGuardianResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新家长信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateGuardianRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateGuardianResponse
+        /// </returns>
+        public UpdateGuardianResponse UpdateGuardian(UpdateGuardianRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateGuardianHeaders headers = new UpdateGuardianHeaders();
+            return UpdateGuardianWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新家长信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateGuardianRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateGuardianResponse
+        /// </returns>
+        public async Task<UpdateGuardianResponse> UpdateGuardianAsync(UpdateGuardianRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateGuardianHeaders headers = new UpdateGuardianHeaders();
+            return await UpdateGuardianWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>添加物理教室信息</para>
         /// </summary>
         /// 
@@ -35850,6 +36610,194 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateRemoteClassDeviceHeaders headers = new UpdateRemoteClassDeviceHeaders();
             return await UpdateRemoteClassDeviceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateStudentRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateStudentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateStudentResponse
+        /// </returns>
+        public UpdateStudentResponse UpdateStudentWithOptions(UpdateStudentRequest request, UpdateStudentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassId))
+            {
+                body["classId"] = request.ClassId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentNo))
+            {
+                body["studentNo"] = request.StudentNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateStudent",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/students/infos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateStudentResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateStudentRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateStudentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateStudentResponse
+        /// </returns>
+        public async Task<UpdateStudentResponse> UpdateStudentWithOptionsAsync(UpdateStudentRequest request, UpdateStudentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassId))
+            {
+                body["classId"] = request.ClassId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentNo))
+            {
+                body["studentNo"] = request.StudentNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateStudent",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/students/infos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateStudentResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateStudentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateStudentResponse
+        /// </returns>
+        public UpdateStudentResponse UpdateStudent(UpdateStudentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateStudentHeaders headers = new UpdateStudentHeaders();
+            return UpdateStudentWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateStudentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateStudentResponse
+        /// </returns>
+        public async Task<UpdateStudentResponse> UpdateStudentAsync(UpdateStudentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateStudentHeaders headers = new UpdateStudentHeaders();
+            return await UpdateStudentWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

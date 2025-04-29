@@ -974,6 +974,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["cardInstances"] = request.CardInstances;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Categories))
+            {
+                body["categories"] = request.Categories;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
@@ -985,6 +989,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
             {
                 body["extra"] = request.Extra;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeBusyStatus))
+            {
+                body["freeBusyStatus"] = request.FreeBusyStatus;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
             {
@@ -1085,6 +1093,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["cardInstances"] = request.CardInstances;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Categories))
+            {
+                body["categories"] = request.Categories;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
@@ -1096,6 +1108,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
             {
                 body["extra"] = request.Extra;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeBusyStatus))
+            {
+                body["freeBusyStatus"] = request.FreeBusyStatus;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
             {
@@ -3914,6 +3930,134 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取会议类型列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// ListCategoriesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListCategoriesResponse
+        /// </returns>
+        public ListCategoriesResponse ListCategoriesWithOptions(string userId, ListCategoriesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListCategories",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/categories",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListCategoriesResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取会议类型列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// ListCategoriesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListCategoriesResponse
+        /// </returns>
+        public async Task<ListCategoriesResponse> ListCategoriesWithOptionsAsync(string userId, ListCategoriesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListCategories",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/categories",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListCategoriesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取会议类型列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// ListCategoriesResponse
+        /// </returns>
+        public ListCategoriesResponse ListCategories(string userId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListCategoriesHeaders headers = new ListCategoriesHeaders();
+            return ListCategoriesWithOptions(userId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取会议类型列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// ListCategoriesResponse
+        /// </returns>
+        public async Task<ListCategoriesResponse> ListCategoriesAsync(string userId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListCategoriesHeaders headers = new ListCategoriesHeaders();
+            return await ListCategoriesWithOptionsAsync(userId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询日程列表</para>
         /// </summary>
         /// 
@@ -5030,6 +5174,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["cardInstances"] = request.CardInstances;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Categories))
+            {
+                body["categories"] = request.Categories;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
@@ -5041,6 +5189,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
             {
                 body["extra"] = request.Extra;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeBusyStatus))
+            {
+                body["freeBusyStatus"] = request.FreeBusyStatus;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
             {
@@ -5145,6 +5297,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["cardInstances"] = request.CardInstances;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Categories))
+            {
+                body["categories"] = request.Categories;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
@@ -5156,6 +5312,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
             {
                 body["extra"] = request.Extra;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeBusyStatus))
+            {
+                body["freeBusyStatus"] = request.FreeBusyStatus;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
             {

@@ -49,6 +49,20 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("categories")]
+        [Validation(Required=false)]
+        public List<PatchEventResponseBodyCategories> Categories { get; set; }
+        public class PatchEventResponseBodyCategories : TeaModel {
+            [NameInMap("categoryId")]
+            [Validation(Required=false)]
+            public string CategoryId { get; set; }
+
+            [NameInMap("displayName")]
+            [Validation(Required=false)]
+            public string DisplayName { get; set; }
+
+        }
+
         /// <summary>
         /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
         /// </summary>

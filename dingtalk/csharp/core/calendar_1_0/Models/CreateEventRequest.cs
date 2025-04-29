@@ -37,10 +37,27 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("categories")]
+        [Validation(Required=false)]
+        public List<CreateEventRequestCategories> Categories { get; set; }
+        public class CreateEventRequestCategories : TeaModel {
+            [NameInMap("categoryId")]
+            [Validation(Required=false)]
+            public string CategoryId { get; set; }
+
+            [NameInMap("displayName")]
+            [Validation(Required=false)]
+            public string DisplayName { get; set; }
+
+        }
+
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
         [NameInMap("end")]
         [Validation(Required=false)]
         public CreateEventRequestEnd End { get; set; }
@@ -74,6 +91,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [NameInMap("extra")]
         [Validation(Required=false)]
         public Dictionary<string, string> Extra { get; set; }
+
+        [NameInMap("freeBusyStatus")]
+        [Validation(Required=false)]
+        public string FreeBusyStatus { get; set; }
 
         [NameInMap("isAllDay")]
         [Validation(Required=false)]

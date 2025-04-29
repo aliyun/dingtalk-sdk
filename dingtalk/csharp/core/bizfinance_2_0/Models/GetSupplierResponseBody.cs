@@ -33,6 +33,36 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public long? CreateTime { get; set; }
 
+        [NameInMap("customFormDataList")]
+        [Validation(Required=false)]
+        public List<GetSupplierResponseBodyCustomFormDataList> CustomFormDataList { get; set; }
+        public class GetSupplierResponseBodyCustomFormDataList : TeaModel {
+            [NameInMap("bizAlias")]
+            [Validation(Required=false)]
+            public string BizAlias { get; set; }
+
+            [NameInMap("componentType")]
+            [Validation(Required=false)]
+            public string ComponentType { get; set; }
+
+            [NameInMap("extValue")]
+            [Validation(Required=false)]
+            public string ExtValue { get; set; }
+
+            [NameInMap("id")]
+            [Validation(Required=false)]
+            public string Id { get; set; }
+
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
+            [NameInMap("value")]
+            [Validation(Required=false)]
+            public string Value { get; set; }
+
+        }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 

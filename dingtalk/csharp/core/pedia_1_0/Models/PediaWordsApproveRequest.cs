@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkpedia_1_0.Models
 {
     public class PediaWordsApproveRequest : TeaModel {
+        [NameInMap("aliDocHighLight")]
+        [Validation(Required=false)]
+        public bool? AliDocHighLight { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>拒绝</para>

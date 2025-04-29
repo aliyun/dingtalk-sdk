@@ -41,6 +41,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public string DeptCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>234567</para>
+        /// </summary>
+        [NameInMap("deptId")]
+        [Validation(Required=false)]
+        public long? DeptId { get; set; }
+
         [NameInMap("deptPermits")]
         [Validation(Required=false)]
         public List<long?> DeptPermits { get; set; }

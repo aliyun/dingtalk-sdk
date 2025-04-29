@@ -2348,7 +2348,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         /// GetUserSignedRecordsByOuterIdRequest
         /// </param>
         /// <param name="headers">
-        /// map
+        /// GetUserSignedRecordsByOuterIdHeaders
         /// </param>
         /// <param name="runtime">
         /// runtime options for this request RuntimeOptions
@@ -2357,12 +2357,21 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         /// <returns>
         /// GetUserSignedRecordsByOuterIdResponse
         /// </returns>
-        public GetUserSignedRecordsByOuterIdResponse GetUserSignedRecordsByOuterIdWithOptions(GetUserSignedRecordsByOuterIdRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetUserSignedRecordsByOuterIdResponse GetUserSignedRecordsByOuterIdWithOptions(GetUserSignedRecordsByOuterIdRequest request, GetUserSignedRecordsByOuterIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
-                Headers = headers,
+                Headers = realHeaders,
                 Body = request.Body,
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
@@ -2372,7 +2381,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Protocol = "HTTP",
                 Pathname = "/v1.0/hrm/masters/signCenters/outerIds/records/query",
                 Method = "POST",
-                AuthType = "Anonymous",
+                AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
                 BodyType = "json",
@@ -2389,7 +2398,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         /// GetUserSignedRecordsByOuterIdRequest
         /// </param>
         /// <param name="headers">
-        /// map
+        /// GetUserSignedRecordsByOuterIdHeaders
         /// </param>
         /// <param name="runtime">
         /// runtime options for this request RuntimeOptions
@@ -2398,12 +2407,21 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         /// <returns>
         /// GetUserSignedRecordsByOuterIdResponse
         /// </returns>
-        public async Task<GetUserSignedRecordsByOuterIdResponse> GetUserSignedRecordsByOuterIdWithOptionsAsync(GetUserSignedRecordsByOuterIdRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetUserSignedRecordsByOuterIdResponse> GetUserSignedRecordsByOuterIdWithOptionsAsync(GetUserSignedRecordsByOuterIdRequest request, GetUserSignedRecordsByOuterIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
-                Headers = headers,
+                Headers = realHeaders,
                 Body = request.Body,
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
@@ -2413,7 +2431,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Protocol = "HTTP",
                 Pathname = "/v1.0/hrm/masters/signCenters/outerIds/records/query",
                 Method = "POST",
-                AuthType = "Anonymous",
+                AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
                 BodyType = "json",
@@ -2436,7 +2454,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         public GetUserSignedRecordsByOuterIdResponse GetUserSignedRecordsByOuterId(GetUserSignedRecordsByOuterIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            GetUserSignedRecordsByOuterIdHeaders headers = new GetUserSignedRecordsByOuterIdHeaders();
             return GetUserSignedRecordsByOuterIdWithOptions(request, headers, runtime);
         }
 
@@ -2455,7 +2473,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         public async Task<GetUserSignedRecordsByOuterIdResponse> GetUserSignedRecordsByOuterIdAsync(GetUserSignedRecordsByOuterIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            GetUserSignedRecordsByOuterIdHeaders headers = new GetUserSignedRecordsByOuterIdHeaders();
             return await GetUserSignedRecordsByOuterIdWithOptionsAsync(request, headers, runtime);
         }
 

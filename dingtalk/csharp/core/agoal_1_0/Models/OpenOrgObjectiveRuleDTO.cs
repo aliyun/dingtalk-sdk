@@ -13,6 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
+        /// <para>OKR / PBC</para>
+        /// </summary>
+        [NameInMap("objectiveCategory")]
+        [Validation(Required=false)]
+        public string ObjectiveCategory { get; set; }
+
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
         /// <para>6444f5e9a4261c6e699dxxxx</para>
         /// </summary>
         [NameInMap("objectiveRuleId")]

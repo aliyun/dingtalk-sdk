@@ -27,6 +27,14 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 
                 /// <summary>
                 /// <b>Example:</b>
+                /// <para>CONTRACT_123456</para>
+                /// </summary>
+                [NameInMap("outerId")]
+                [Validation(Required=false)]
+                public string OuterId { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
                 /// <para>劳动合同电子签签署备注</para>
                 /// </summary>
                 [NameInMap("remark")]

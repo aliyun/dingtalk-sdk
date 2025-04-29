@@ -262,6 +262,10 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AliDocHighLight))
+            {
+                body["aliDocHighLight"] = request.AliDocHighLight;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApproveReason))
             {
                 body["approveReason"] = request.ApproveReason;
@@ -337,6 +341,10 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AliDocHighLight))
+            {
+                body["aliDocHighLight"] = request.AliDocHighLight;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApproveReason))
             {
                 body["approveReason"] = request.ApproveReason;
