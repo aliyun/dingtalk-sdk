@@ -31,6 +31,13 @@ public class CreateCollegeContactDeptRequest extends TeaModel {
     @NameInMap("deptCode")
     public String deptCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>234567</p>
+     */
+    @NameInMap("deptId")
+    public Long deptId;
+
     @NameInMap("deptPermits")
     public java.util.List<Long> deptPermits;
 
@@ -164,6 +171,14 @@ public class CreateCollegeContactDeptRequest extends TeaModel {
     }
     public String getDeptCode() {
         return this.deptCode;
+    }
+
+    public CreateCollegeContactDeptRequest setDeptId(Long deptId) {
+        this.deptId = deptId;
+        return this;
+    }
+    public Long getDeptId() {
+        return this.deptId;
     }
 
     public CreateCollegeContactDeptRequest setDeptPermits(java.util.List<Long> deptPermits) {

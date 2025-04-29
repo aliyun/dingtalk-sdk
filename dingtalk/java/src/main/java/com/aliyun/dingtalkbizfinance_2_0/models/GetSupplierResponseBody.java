@@ -25,6 +25,9 @@ public class GetSupplierResponseBody extends TeaModel {
     @NameInMap("createTime")
     public Long createTime;
 
+    @NameInMap("customFormDataList")
+    public java.util.List<GetSupplierResponseBodyCustomFormDataList> customFormDataList;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -84,6 +87,14 @@ public class GetSupplierResponseBody extends TeaModel {
         return this.createTime;
     }
 
+    public GetSupplierResponseBody setCustomFormDataList(java.util.List<GetSupplierResponseBodyCustomFormDataList> customFormDataList) {
+        this.customFormDataList = customFormDataList;
+        return this;
+    }
+    public java.util.List<GetSupplierResponseBodyCustomFormDataList> getCustomFormDataList() {
+        return this.customFormDataList;
+    }
+
     public GetSupplierResponseBody setDescription(String description) {
         this.description = description;
         return this;
@@ -114,6 +125,80 @@ public class GetSupplierResponseBody extends TeaModel {
     }
     public String getUserDefineCode() {
         return this.userDefineCode;
+    }
+
+    public static class GetSupplierResponseBodyCustomFormDataList extends TeaModel {
+        @NameInMap("bizAlias")
+        public String bizAlias;
+
+        @NameInMap("componentType")
+        public String componentType;
+
+        @NameInMap("extValue")
+        public String extValue;
+
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("value")
+        public String value;
+
+        public static GetSupplierResponseBodyCustomFormDataList build(java.util.Map<String, ?> map) throws Exception {
+            GetSupplierResponseBodyCustomFormDataList self = new GetSupplierResponseBodyCustomFormDataList();
+            return TeaModel.build(map, self);
+        }
+
+        public GetSupplierResponseBodyCustomFormDataList setBizAlias(String bizAlias) {
+            this.bizAlias = bizAlias;
+            return this;
+        }
+        public String getBizAlias() {
+            return this.bizAlias;
+        }
+
+        public GetSupplierResponseBodyCustomFormDataList setComponentType(String componentType) {
+            this.componentType = componentType;
+            return this;
+        }
+        public String getComponentType() {
+            return this.componentType;
+        }
+
+        public GetSupplierResponseBodyCustomFormDataList setExtValue(String extValue) {
+            this.extValue = extValue;
+            return this;
+        }
+        public String getExtValue() {
+            return this.extValue;
+        }
+
+        public GetSupplierResponseBodyCustomFormDataList setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public GetSupplierResponseBodyCustomFormDataList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public GetSupplierResponseBodyCustomFormDataList setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
     }
 
 }

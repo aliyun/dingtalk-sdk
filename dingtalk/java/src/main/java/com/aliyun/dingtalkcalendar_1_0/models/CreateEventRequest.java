@@ -10,14 +10,23 @@ public class CreateEventRequest extends TeaModel {
     @NameInMap("cardInstances")
     public java.util.List<CreateEventRequestCardInstances> cardInstances;
 
+    @NameInMap("categories")
+    public java.util.List<CreateEventRequestCategories> categories;
+
     @NameInMap("description")
     public String description;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("end")
     public CreateEventRequestEnd end;
 
     @NameInMap("extra")
     public java.util.Map<String, String> extra;
+
+    @NameInMap("freeBusyStatus")
+    public String freeBusyStatus;
 
     @NameInMap("isAllDay")
     public Boolean isAllDay;
@@ -73,6 +82,14 @@ public class CreateEventRequest extends TeaModel {
         return this.cardInstances;
     }
 
+    public CreateEventRequest setCategories(java.util.List<CreateEventRequestCategories> categories) {
+        this.categories = categories;
+        return this;
+    }
+    public java.util.List<CreateEventRequestCategories> getCategories() {
+        return this.categories;
+    }
+
     public CreateEventRequest setDescription(String description) {
         this.description = description;
         return this;
@@ -95,6 +112,14 @@ public class CreateEventRequest extends TeaModel {
     }
     public java.util.Map<String, String> getExtra() {
         return this.extra;
+    }
+
+    public CreateEventRequest setFreeBusyStatus(String freeBusyStatus) {
+        this.freeBusyStatus = freeBusyStatus;
+        return this;
+    }
+    public String getFreeBusyStatus() {
+        return this.freeBusyStatus;
     }
 
     public CreateEventRequest setIsAllDay(Boolean isAllDay) {
@@ -225,6 +250,36 @@ public class CreateEventRequest extends TeaModel {
         }
         public String getScenario() {
             return this.scenario;
+        }
+
+    }
+
+    public static class CreateEventRequestCategories extends TeaModel {
+        @NameInMap("categoryId")
+        public String categoryId;
+
+        @NameInMap("displayName")
+        public String displayName;
+
+        public static CreateEventRequestCategories build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventRequestCategories self = new CreateEventRequestCategories();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventRequestCategories setCategoryId(String categoryId) {
+            this.categoryId = categoryId;
+            return this;
+        }
+        public String getCategoryId() {
+            return this.categoryId;
+        }
+
+        public CreateEventRequestCategories setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
         }
 
     }

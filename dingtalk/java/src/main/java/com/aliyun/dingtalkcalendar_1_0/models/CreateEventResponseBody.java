@@ -10,6 +10,9 @@ public class CreateEventResponseBody extends TeaModel {
     @NameInMap("cardInstances")
     public java.util.List<CreateEventResponseBodyCardInstances> cardInstances;
 
+    @NameInMap("categories")
+    public java.util.List<CreateEventResponseBodyCategories> categories;
+
     /**
      * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
      */
@@ -83,6 +86,14 @@ public class CreateEventResponseBody extends TeaModel {
     }
     public java.util.List<CreateEventResponseBodyCardInstances> getCardInstances() {
         return this.cardInstances;
+    }
+
+    public CreateEventResponseBody setCategories(java.util.List<CreateEventResponseBodyCategories> categories) {
+        this.categories = categories;
+        return this;
+    }
+    public java.util.List<CreateEventResponseBodyCategories> getCategories() {
+        return this.categories;
     }
 
     public CreateEventResponseBody setCreateTime(String createTime) {
@@ -294,6 +305,36 @@ public class CreateEventResponseBody extends TeaModel {
         }
         public String getScenario() {
             return this.scenario;
+        }
+
+    }
+
+    public static class CreateEventResponseBodyCategories extends TeaModel {
+        @NameInMap("categoryId")
+        public String categoryId;
+
+        @NameInMap("displayName")
+        public String displayName;
+
+        public static CreateEventResponseBodyCategories build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventResponseBodyCategories self = new CreateEventResponseBodyCategories();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventResponseBodyCategories setCategoryId(String categoryId) {
+            this.categoryId = categoryId;
+            return this;
+        }
+        public String getCategoryId() {
+            return this.categoryId;
+        }
+
+        public CreateEventResponseBodyCategories setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
         }
 
     }

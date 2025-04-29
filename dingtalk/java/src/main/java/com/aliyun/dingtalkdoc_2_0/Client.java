@@ -2608,6 +2608,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询文档内容获取任务状态</p>
+     * 
+     * @param request QueryGetContentJobRequest
+     * @param headers QueryGetContentJobHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryGetContentJobResponse
+     */
+    public QueryGetContentJobResponse queryGetContentJobWithOptions(String dentryUuid, QueryGetContentJobRequest request, QueryGetContentJobHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            query.put("taskId", request.taskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryGetContentJob"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/contents/" + dentryUuid + "/jobStatuses"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryGetContentJobResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询文档内容获取任务状态</p>
+     * 
+     * @param request QueryGetContentJobRequest
+     * @return QueryGetContentJobResponse
+     */
+    public QueryGetContentJobResponse queryGetContentJob(String dentryUuid, QueryGetContentJobRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryGetContentJobHeaders headers = new QueryGetContentJobHeaders();
+        return this.queryGetContentJobWithOptions(dentryUuid, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>根据链接查询节点或知识库信息</p>
      * 
      * @param request QueryItemByUrlRequest
@@ -3292,6 +3352,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ShareUrlHeaders headers = new ShareUrlHeaders();
         return this.shareUrlWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>提交文档内容获取任务</p>
+     * 
+     * @param request SubmitGetContentJobRequest
+     * @param headers SubmitGetContentJobHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SubmitGetContentJobResponse
+     */
+    public SubmitGetContentJobResponse submitGetContentJobWithOptions(String dentryUuid, SubmitGetContentJobRequest request, SubmitGetContentJobHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetFormat)) {
+            query.put("targetFormat", request.targetFormat);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SubmitGetContentJob"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/contents/" + dentryUuid + "/jobs"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SubmitGetContentJobResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>提交文档内容获取任务</p>
+     * 
+     * @param request SubmitGetContentJobRequest
+     * @return SubmitGetContentJobResponse
+     */
+    public SubmitGetContentJobResponse submitGetContentJob(String dentryUuid, SubmitGetContentJobRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SubmitGetContentJobHeaders headers = new SubmitGetContentJobHeaders();
+        return this.submitGetContentJobWithOptions(dentryUuid, request, headers, runtime);
     }
 
     /**

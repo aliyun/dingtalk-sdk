@@ -41,6 +41,13 @@ public class GetUserSignedRecordsByOuterIdResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>CONTRACT_123456</p>
+         */
+        @NameInMap("outerId")
+        public String outerId;
+
+        /**
+         * <strong>example:</strong>
          * <p>测试</p>
          */
         @NameInMap("remark")
@@ -148,6 +155,14 @@ public class GetUserSignedRecordsByOuterIdResponseBody extends TeaModel {
         }
         public String getCorpId() {
             return this.corpId;
+        }
+
+        public GetUserSignedRecordsByOuterIdResponseBodyResult setOuterId(String outerId) {
+            this.outerId = outerId;
+            return this;
+        }
+        public String getOuterId() {
+            return this.outerId;
         }
 
         public GetUserSignedRecordsByOuterIdResponseBodyResult setRemark(String remark) {

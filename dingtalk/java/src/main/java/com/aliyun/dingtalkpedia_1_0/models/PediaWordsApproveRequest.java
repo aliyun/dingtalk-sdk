@@ -4,6 +4,9 @@ package com.aliyun.dingtalkpedia_1_0.models;
 import com.aliyun.tea.*;
 
 public class PediaWordsApproveRequest extends TeaModel {
+    @NameInMap("aliDocHighLight")
+    public Boolean aliDocHighLight;
+
     /**
      * <strong>example:</strong>
      * <p>拒绝</p>
@@ -53,6 +56,14 @@ public class PediaWordsApproveRequest extends TeaModel {
     public static PediaWordsApproveRequest build(java.util.Map<String, ?> map) throws Exception {
         PediaWordsApproveRequest self = new PediaWordsApproveRequest();
         return TeaModel.build(map, self);
+    }
+
+    public PediaWordsApproveRequest setAliDocHighLight(Boolean aliDocHighLight) {
+        this.aliDocHighLight = aliDocHighLight;
+        return this;
+    }
+    public Boolean getAliDocHighLight() {
+        return this.aliDocHighLight;
     }
 
     public PediaWordsApproveRequest setApproveReason(String approveReason) {

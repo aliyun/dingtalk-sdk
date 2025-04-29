@@ -8,6 +8,15 @@ public class OpenOrgObjectiveRuleDTO extends TeaModel {
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
+     * <p>OKR / PBC</p>
+     */
+    @NameInMap("objectiveCategory")
+    public String objectiveCategory;
+
+    /**
+     * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
      * <p>6444f5e9a4261c6e699dxxxx</p>
      */
     @NameInMap("objectiveRuleId")
@@ -25,6 +34,14 @@ public class OpenOrgObjectiveRuleDTO extends TeaModel {
     public static OpenOrgObjectiveRuleDTO build(java.util.Map<String, ?> map) throws Exception {
         OpenOrgObjectiveRuleDTO self = new OpenOrgObjectiveRuleDTO();
         return TeaModel.build(map, self);
+    }
+
+    public OpenOrgObjectiveRuleDTO setObjectiveCategory(String objectiveCategory) {
+        this.objectiveCategory = objectiveCategory;
+        return this;
+    }
+    public String getObjectiveCategory() {
+        return this.objectiveCategory;
     }
 
     public OpenOrgObjectiveRuleDTO setObjectiveRuleId(String objectiveRuleId) {

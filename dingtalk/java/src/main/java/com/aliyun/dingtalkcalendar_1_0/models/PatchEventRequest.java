@@ -10,6 +10,9 @@ public class PatchEventRequest extends TeaModel {
     @NameInMap("cardInstances")
     public java.util.List<PatchEventRequestCardInstances> cardInstances;
 
+    @NameInMap("categories")
+    public java.util.List<PatchEventRequestCategories> categories;
+
     @NameInMap("description")
     public String description;
 
@@ -18,6 +21,9 @@ public class PatchEventRequest extends TeaModel {
 
     @NameInMap("extra")
     public java.util.Map<String, String> extra;
+
+    @NameInMap("freeBusyStatus")
+    public String freeBusyStatus;
 
     /**
      * <p>This parameter is required.</p>
@@ -73,6 +79,14 @@ public class PatchEventRequest extends TeaModel {
         return this.cardInstances;
     }
 
+    public PatchEventRequest setCategories(java.util.List<PatchEventRequestCategories> categories) {
+        this.categories = categories;
+        return this;
+    }
+    public java.util.List<PatchEventRequestCategories> getCategories() {
+        return this.categories;
+    }
+
     public PatchEventRequest setDescription(String description) {
         this.description = description;
         return this;
@@ -95,6 +109,14 @@ public class PatchEventRequest extends TeaModel {
     }
     public java.util.Map<String, String> getExtra() {
         return this.extra;
+    }
+
+    public PatchEventRequest setFreeBusyStatus(String freeBusyStatus) {
+        this.freeBusyStatus = freeBusyStatus;
+        return this;
+    }
+    public String getFreeBusyStatus() {
+        return this.freeBusyStatus;
     }
 
     public PatchEventRequest setId(String id) {
@@ -244,6 +266,36 @@ public class PatchEventRequest extends TeaModel {
         }
         public String getScenario() {
             return this.scenario;
+        }
+
+    }
+
+    public static class PatchEventRequestCategories extends TeaModel {
+        @NameInMap("categoryId")
+        public String categoryId;
+
+        @NameInMap("displayName")
+        public String displayName;
+
+        public static PatchEventRequestCategories build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventRequestCategories self = new PatchEventRequestCategories();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventRequestCategories setCategoryId(String categoryId) {
+            this.categoryId = categoryId;
+            return this;
+        }
+        public String getCategoryId() {
+            return this.categoryId;
+        }
+
+        public PatchEventRequestCategories setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
         }
 
     }
