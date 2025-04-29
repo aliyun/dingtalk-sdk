@@ -1723,20 +1723,25 @@ class Client(OpenApiClient):
     def get_user_signed_records_by_outer_id_with_options(
         self,
         request: dingtalkhrm__1__0_models.GetUserSignedRecordsByOuterIdRequest,
-        headers: Dict[str, str],
+        headers: dingtalkhrm__1__0_models.GetUserSignedRecordsByOuterIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrm__1__0_models.GetUserSignedRecordsByOuterIdResponse:
         """
         @summary 查询指定outerId的电子签署记录详情
         
         @param request: GetUserSignedRecordsByOuterIdRequest
-        @param headers: map
+        @param headers: GetUserSignedRecordsByOuterIdHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetUserSignedRecordsByOuterIdResponse
         """
         UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=headers,
+            headers=real_headers,
             body=request.body
         )
         params = open_api_models.Params(
@@ -1745,7 +1750,7 @@ class Client(OpenApiClient):
             protocol='HTTP',
             pathname=f'/v1.0/hrm/masters/signCenters/outerIds/records/query',
             method='POST',
-            auth_type='Anonymous',
+            auth_type='AK',
             style='ROA',
             req_body_type='none',
             body_type='json'
@@ -1758,20 +1763,25 @@ class Client(OpenApiClient):
     async def get_user_signed_records_by_outer_id_with_options_async(
         self,
         request: dingtalkhrm__1__0_models.GetUserSignedRecordsByOuterIdRequest,
-        headers: Dict[str, str],
+        headers: dingtalkhrm__1__0_models.GetUserSignedRecordsByOuterIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrm__1__0_models.GetUserSignedRecordsByOuterIdResponse:
         """
         @summary 查询指定outerId的电子签署记录详情
         
         @param request: GetUserSignedRecordsByOuterIdRequest
-        @param headers: map
+        @param headers: GetUserSignedRecordsByOuterIdHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetUserSignedRecordsByOuterIdResponse
         """
         UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=headers,
+            headers=real_headers,
             body=request.body
         )
         params = open_api_models.Params(
@@ -1780,7 +1790,7 @@ class Client(OpenApiClient):
             protocol='HTTP',
             pathname=f'/v1.0/hrm/masters/signCenters/outerIds/records/query',
             method='POST',
-            auth_type='Anonymous',
+            auth_type='AK',
             style='ROA',
             req_body_type='none',
             body_type='json'
@@ -1801,7 +1811,7 @@ class Client(OpenApiClient):
         @return: GetUserSignedRecordsByOuterIdResponse
         """
         runtime = util_models.RuntimeOptions()
-        headers = {}
+        headers = dingtalkhrm__1__0_models.GetUserSignedRecordsByOuterIdHeaders()
         return self.get_user_signed_records_by_outer_id_with_options(request, headers, runtime)
 
     async def get_user_signed_records_by_outer_id_async(
@@ -1815,7 +1825,7 @@ class Client(OpenApiClient):
         @return: GetUserSignedRecordsByOuterIdResponse
         """
         runtime = util_models.RuntimeOptions()
-        headers = {}
+        headers = dingtalkhrm__1__0_models.GetUserSignedRecordsByOuterIdHeaders()
         return await self.get_user_signed_records_by_outer_id_with_options_async(request, headers, runtime)
 
     def hrm_auth_resources_query_with_options(

@@ -3210,12 +3210,70 @@ class GetSupplierRequest(TeaModel):
         return self
 
 
+class GetSupplierResponseBodyCustomFormDataList(TeaModel):
+    def __init__(
+        self,
+        biz_alias: str = None,
+        component_type: str = None,
+        ext_value: str = None,
+        id: str = None,
+        name: str = None,
+        value: str = None,
+    ):
+        self.biz_alias = biz_alias
+        self.component_type = component_type
+        self.ext_value = ext_value
+        self.id = id
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
 class GetSupplierResponseBody(TeaModel):
     def __init__(
         self,
         accountant_book_id_list: List[str] = None,
         code: str = None,
         create_time: int = None,
+        custom_form_data_list: List[GetSupplierResponseBodyCustomFormDataList] = None,
         description: str = None,
         name: str = None,
         status: str = None,
@@ -3226,6 +3284,7 @@ class GetSupplierResponseBody(TeaModel):
         self.code = code
         # This parameter is required.
         self.create_time = create_time
+        self.custom_form_data_list = custom_form_data_list
         # This parameter is required.
         self.description = description
         # This parameter is required.
@@ -3235,7 +3294,10 @@ class GetSupplierResponseBody(TeaModel):
         self.user_define_code = user_define_code
 
     def validate(self):
-        pass
+        if self.custom_form_data_list:
+            for k in self.custom_form_data_list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3249,6 +3311,10 @@ class GetSupplierResponseBody(TeaModel):
             result['code'] = self.code
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        result['customFormDataList'] = []
+        if self.custom_form_data_list is not None:
+            for k in self.custom_form_data_list:
+                result['customFormDataList'].append(k.to_map() if k else None)
         if self.description is not None:
             result['description'] = self.description
         if self.name is not None:
@@ -3267,6 +3333,11 @@ class GetSupplierResponseBody(TeaModel):
             self.code = m.get('code')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        self.custom_form_data_list = []
+        if m.get('customFormDataList') is not None:
+            for k in m.get('customFormDataList'):
+                temp_model = GetSupplierResponseBodyCustomFormDataList()
+                self.custom_form_data_list.append(temp_model.from_map(k))
         if m.get('description') is not None:
             self.description = m.get('description')
         if m.get('name') is not None:
@@ -8567,11 +8638,69 @@ class QuerySupplierByPageRequest(TeaModel):
         return self
 
 
+class QuerySupplierByPageResponseBodyListCustomFormDataList(TeaModel):
+    def __init__(
+        self,
+        biz_alias: str = None,
+        component_type: str = None,
+        ext_value: str = None,
+        id: str = None,
+        name: str = None,
+        value: str = None,
+    ):
+        self.biz_alias = biz_alias
+        self.component_type = component_type
+        self.ext_value = ext_value
+        self.id = id
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
 class QuerySupplierByPageResponseBodyList(TeaModel):
     def __init__(
         self,
         code: str = None,
         create_time: int = None,
+        custom_form_data_list: List[QuerySupplierByPageResponseBodyListCustomFormDataList] = None,
         description: str = None,
         name: str = None,
         status: str = None,
@@ -8581,6 +8710,7 @@ class QuerySupplierByPageResponseBodyList(TeaModel):
         self.code = code
         # This parameter is required.
         self.create_time = create_time
+        self.custom_form_data_list = custom_form_data_list
         # This parameter is required.
         self.description = description
         # This parameter is required.
@@ -8590,7 +8720,10 @@ class QuerySupplierByPageResponseBodyList(TeaModel):
         self.user_define_code = user_define_code
 
     def validate(self):
-        pass
+        if self.custom_form_data_list:
+            for k in self.custom_form_data_list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -8602,6 +8735,10 @@ class QuerySupplierByPageResponseBodyList(TeaModel):
             result['code'] = self.code
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        result['customFormDataList'] = []
+        if self.custom_form_data_list is not None:
+            for k in self.custom_form_data_list:
+                result['customFormDataList'].append(k.to_map() if k else None)
         if self.description is not None:
             result['description'] = self.description
         if self.name is not None:
@@ -8618,6 +8755,11 @@ class QuerySupplierByPageResponseBodyList(TeaModel):
             self.code = m.get('code')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        self.custom_form_data_list = []
+        if m.get('customFormDataList') is not None:
+            for k in m.get('customFormDataList'):
+                temp_model = QuerySupplierByPageResponseBodyListCustomFormDataList()
+                self.custom_form_data_list.append(temp_model.from_map(k))
         if m.get('description') is not None:
             self.description = m.get('description')
         if m.get('name') is not None:

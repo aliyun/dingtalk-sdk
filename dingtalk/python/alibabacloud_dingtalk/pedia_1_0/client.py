@@ -188,6 +188,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.ali_doc_high_light):
+            body['aliDocHighLight'] = request.ali_doc_high_light
         if not UtilClient.is_unset(request.approve_reason):
             body['approveReason'] = request.approve_reason
         if not UtilClient.is_unset(request.approve_status):
@@ -241,6 +243,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.ali_doc_high_light):
+            body['aliDocHighLight'] = request.ali_doc_high_light
         if not UtilClient.is_unset(request.approve_reason):
             body['approveReason'] = request.approve_reason
         if not UtilClient.is_unset(request.approve_status):

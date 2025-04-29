@@ -278,6 +278,132 @@ class Client(OpenApiClient):
         headers = dingtalkwiki__2__0_models.AddWorkspaceHeaders()
         return await self.add_workspace_with_options_async(request, headers, runtime)
 
+    def add_workspaces_manager_with_options(
+        self,
+        request: dingtalkwiki__2__0_models.AddWorkspacesManagerRequest,
+        headers: dingtalkwiki__2__0_models.AddWorkspacesManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwiki__2__0_models.AddWorkspacesManagerResponse:
+        """
+        @summary 添加知识库管理员
+        
+        @param request: AddWorkspacesManagerRequest
+        @param headers: AddWorkspacesManagerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddWorkspacesManagerResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.workspace_id):
+            query['workspaceId'] = request.workspace_id
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddWorkspacesManager',
+            version='wiki_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/wiki/workspaces/managers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwiki__2__0_models.AddWorkspacesManagerResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_workspaces_manager_with_options_async(
+        self,
+        request: dingtalkwiki__2__0_models.AddWorkspacesManagerRequest,
+        headers: dingtalkwiki__2__0_models.AddWorkspacesManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwiki__2__0_models.AddWorkspacesManagerResponse:
+        """
+        @summary 添加知识库管理员
+        
+        @param request: AddWorkspacesManagerRequest
+        @param headers: AddWorkspacesManagerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddWorkspacesManagerResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.workspace_id):
+            query['workspaceId'] = request.workspace_id
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddWorkspacesManager',
+            version='wiki_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/wiki/workspaces/managers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwiki__2__0_models.AddWorkspacesManagerResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_workspaces_manager(
+        self,
+        request: dingtalkwiki__2__0_models.AddWorkspacesManagerRequest,
+    ) -> dingtalkwiki__2__0_models.AddWorkspacesManagerResponse:
+        """
+        @summary 添加知识库管理员
+        
+        @param request: AddWorkspacesManagerRequest
+        @return: AddWorkspacesManagerResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwiki__2__0_models.AddWorkspacesManagerHeaders()
+        return self.add_workspaces_manager_with_options(request, headers, runtime)
+
+    async def add_workspaces_manager_async(
+        self,
+        request: dingtalkwiki__2__0_models.AddWorkspacesManagerRequest,
+    ) -> dingtalkwiki__2__0_models.AddWorkspacesManagerResponse:
+        """
+        @summary 添加知识库管理员
+        
+        @param request: AddWorkspacesManagerRequest
+        @return: AddWorkspacesManagerResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwiki__2__0_models.AddWorkspacesManagerHeaders()
+        return await self.add_workspaces_manager_with_options_async(request, headers, runtime)
+
     def delete_team_with_options(
         self,
         team_id: str,
@@ -1627,6 +1753,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwiki__2__0_models.ListNodesHeaders()
         return await self.list_nodes_with_options_async(request, headers, runtime)
+
+    def list_org_workspaces_with_options(
+        self,
+        request: dingtalkwiki__2__0_models.ListOrgWorkspacesRequest,
+        headers: dingtalkwiki__2__0_models.ListOrgWorkspacesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwiki__2__0_models.ListOrgWorkspacesResponse:
+        """
+        @summary 获取组织所有知识库列表
+        
+        @param request: ListOrgWorkspacesRequest
+        @param headers: ListOrgWorkspacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListOrgWorkspacesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListOrgWorkspaces',
+            version='wiki_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/wiki/org/workspaces',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwiki__2__0_models.ListOrgWorkspacesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_org_workspaces_with_options_async(
+        self,
+        request: dingtalkwiki__2__0_models.ListOrgWorkspacesRequest,
+        headers: dingtalkwiki__2__0_models.ListOrgWorkspacesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwiki__2__0_models.ListOrgWorkspacesResponse:
+        """
+        @summary 获取组织所有知识库列表
+        
+        @param request: ListOrgWorkspacesRequest
+        @param headers: ListOrgWorkspacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListOrgWorkspacesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListOrgWorkspaces',
+            version='wiki_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/wiki/org/workspaces',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwiki__2__0_models.ListOrgWorkspacesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_org_workspaces(
+        self,
+        request: dingtalkwiki__2__0_models.ListOrgWorkspacesRequest,
+    ) -> dingtalkwiki__2__0_models.ListOrgWorkspacesResponse:
+        """
+        @summary 获取组织所有知识库列表
+        
+        @param request: ListOrgWorkspacesRequest
+        @return: ListOrgWorkspacesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwiki__2__0_models.ListOrgWorkspacesHeaders()
+        return self.list_org_workspaces_with_options(request, headers, runtime)
+
+    async def list_org_workspaces_async(
+        self,
+        request: dingtalkwiki__2__0_models.ListOrgWorkspacesRequest,
+    ) -> dingtalkwiki__2__0_models.ListOrgWorkspacesResponse:
+        """
+        @summary 获取组织所有知识库列表
+        
+        @param request: ListOrgWorkspacesRequest
+        @return: ListOrgWorkspacesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwiki__2__0_models.ListOrgWorkspacesHeaders()
+        return await self.list_org_workspaces_with_options_async(request, headers, runtime)
 
     def list_teams_with_options(
         self,

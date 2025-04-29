@@ -398,6 +398,7 @@ class PediaWordsApproveHeaders(TeaModel):
 class PediaWordsApproveRequest(TeaModel):
     def __init__(
         self,
+        ali_doc_high_light: bool = None,
         approve_reason: str = None,
         approve_status: str = None,
         im_high_light: bool = None,
@@ -405,6 +406,7 @@ class PediaWordsApproveRequest(TeaModel):
         user_id: str = None,
         uuid: int = None,
     ):
+        self.ali_doc_high_light = ali_doc_high_light
         self.approve_reason = approve_reason
         # This parameter is required.
         self.approve_status = approve_status
@@ -426,6 +428,8 @@ class PediaWordsApproveRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.ali_doc_high_light is not None:
+            result['aliDocHighLight'] = self.ali_doc_high_light
         if self.approve_reason is not None:
             result['approveReason'] = self.approve_reason
         if self.approve_status is not None:
@@ -442,6 +446,8 @@ class PediaWordsApproveRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('aliDocHighLight') is not None:
+            self.ali_doc_high_light = m.get('aliDocHighLight')
         if m.get('approveReason') is not None:
             self.approve_reason = m.get('approveReason')
         if m.get('approveStatus') is not None:

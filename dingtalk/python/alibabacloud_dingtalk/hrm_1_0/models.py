@@ -3587,6 +3587,7 @@ class GetSignRecordByUserIdResponseBodyResultData(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
+        outer_id: str = None,
         remark: str = None,
         sign_expire_time: int = None,
         sign_file_name: str = None,
@@ -3603,6 +3604,7 @@ class GetSignRecordByUserIdResponseBodyResultData(TeaModel):
         sign_way: str = None,
     ):
         self.corp_id = corp_id
+        self.outer_id = outer_id
         self.remark = remark
         self.sign_expire_time = sign_expire_time
         self.sign_file_name = sign_file_name
@@ -3629,6 +3631,8 @@ class GetSignRecordByUserIdResponseBodyResultData(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.outer_id is not None:
+            result['outerId'] = self.outer_id
         if self.remark is not None:
             result['remark'] = self.remark
         if self.sign_expire_time is not None:
@@ -3663,6 +3667,8 @@ class GetSignRecordByUserIdResponseBodyResultData(TeaModel):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('outerId') is not None:
+            self.outer_id = m.get('outerId')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
         if m.get('signExpireTime') is not None:
@@ -3817,6 +3823,39 @@ class GetSignRecordByUserIdResponse(TeaModel):
         return self
 
 
+class GetUserSignedRecordsByOuterIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
 class GetUserSignedRecordsByOuterIdRequest(TeaModel):
     def __init__(
         self,
@@ -3848,6 +3887,7 @@ class GetUserSignedRecordsByOuterIdResponseBodyResult(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
+        outer_id: str = None,
         remark: str = None,
         sign_expire_time: str = None,
         sign_file_name: str = None,
@@ -3864,6 +3904,7 @@ class GetUserSignedRecordsByOuterIdResponseBodyResult(TeaModel):
         sign_way: str = None,
     ):
         self.corp_id = corp_id
+        self.outer_id = outer_id
         self.remark = remark
         self.sign_expire_time = sign_expire_time
         self.sign_file_name = sign_file_name
@@ -3890,6 +3931,8 @@ class GetUserSignedRecordsByOuterIdResponseBodyResult(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.outer_id is not None:
+            result['outerId'] = self.outer_id
         if self.remark is not None:
             result['remark'] = self.remark
         if self.sign_expire_time is not None:
@@ -3924,6 +3967,8 @@ class GetUserSignedRecordsByOuterIdResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('outerId') is not None:
+            self.outer_id = m.get('outerId')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
         if m.get('signExpireTime') is not None:

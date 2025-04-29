@@ -427,9 +427,12 @@ class OpenAgoalLatestProgressDTO(TeaModel):
 class OpenOrgObjectiveRuleDTO(TeaModel):
     def __init__(
         self,
+        objective_category: str = None,
         objective_rule_id: str = None,
         objective_rule_name: str = None,
     ):
+        # This parameter is required.
+        self.objective_category = objective_category
         # This parameter is required.
         self.objective_rule_id = objective_rule_id
         # This parameter is required.
@@ -444,6 +447,8 @@ class OpenOrgObjectiveRuleDTO(TeaModel):
             return _map
 
         result = dict()
+        if self.objective_category is not None:
+            result['objectiveCategory'] = self.objective_category
         if self.objective_rule_id is not None:
             result['objectiveRuleId'] = self.objective_rule_id
         if self.objective_rule_name is not None:
@@ -452,6 +457,8 @@ class OpenOrgObjectiveRuleDTO(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('objectiveCategory') is not None:
+            self.objective_category = m.get('objectiveCategory')
         if m.get('objectiveRuleId') is not None:
             self.objective_rule_id = m.get('objectiveRuleId')
         if m.get('objectiveRuleName') is not None:

@@ -4994,6 +4994,8 @@ class Client(OpenApiClient):
             body['createDeptGroup'] = request.create_dept_group
         if not UtilClient.is_unset(request.dept_code):
             body['deptCode'] = request.dept_code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
         if not UtilClient.is_unset(request.dept_permits):
             body['deptPermits'] = request.dept_permits
         if not UtilClient.is_unset(request.dept_type):
@@ -5081,6 +5083,8 @@ class Client(OpenApiClient):
             body['createDeptGroup'] = request.create_dept_group
         if not UtilClient.is_unset(request.dept_code):
             body['deptCode'] = request.dept_code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
         if not UtilClient.is_unset(request.dept_permits):
             body['deptPermits'] = request.dept_permits
         if not UtilClient.is_unset(request.dept_type):
@@ -18148,6 +18152,144 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.PublishSchoolReportHeaders()
         return await self.publish_school_report_with_options_async(request, headers, runtime)
 
+    def push_class_group_card_with_options(
+        self,
+        request: dingtalkedu__1__0_models.PushClassGroupCardRequest,
+        headers: dingtalkedu__1__0_models.PushClassGroupCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PushClassGroupCardResponse:
+        """
+        @summary 推送班级群卡片消息
+        
+        @param request: PushClassGroupCardRequest
+        @param headers: PushClassGroupCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushClassGroupCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.group_type_list):
+            body['groupTypeList'] = request.group_type_list
+        if not UtilClient.is_unset(request.private_card_data):
+            body['privateCardData'] = request.private_card_data
+        if not UtilClient.is_unset(request.public_card_data):
+            body['publicCardData'] = request.public_card_data
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
+        if not UtilClient.is_unset(request.student_user_ids):
+            body['studentUserIds'] = request.student_user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PushClassGroupCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/classes/groups/cards/messages/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PushClassGroupCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def push_class_group_card_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.PushClassGroupCardRequest,
+        headers: dingtalkedu__1__0_models.PushClassGroupCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PushClassGroupCardResponse:
+        """
+        @summary 推送班级群卡片消息
+        
+        @param request: PushClassGroupCardRequest
+        @param headers: PushClassGroupCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushClassGroupCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.group_type_list):
+            body['groupTypeList'] = request.group_type_list
+        if not UtilClient.is_unset(request.private_card_data):
+            body['privateCardData'] = request.private_card_data
+        if not UtilClient.is_unset(request.public_card_data):
+            body['publicCardData'] = request.public_card_data
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
+        if not UtilClient.is_unset(request.student_user_ids):
+            body['studentUserIds'] = request.student_user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PushClassGroupCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/classes/groups/cards/messages/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PushClassGroupCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def push_class_group_card(
+        self,
+        request: dingtalkedu__1__0_models.PushClassGroupCardRequest,
+    ) -> dingtalkedu__1__0_models.PushClassGroupCardResponse:
+        """
+        @summary 推送班级群卡片消息
+        
+        @param request: PushClassGroupCardRequest
+        @return: PushClassGroupCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PushClassGroupCardHeaders()
+        return self.push_class_group_card_with_options(request, headers, runtime)
+
+    async def push_class_group_card_async(
+        self,
+        request: dingtalkedu__1__0_models.PushClassGroupCardRequest,
+    ) -> dingtalkedu__1__0_models.PushClassGroupCardResponse:
+        """
+        @summary 推送班级群卡片消息
+        
+        @param request: PushClassGroupCardRequest
+        @return: PushClassGroupCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PushClassGroupCardHeaders()
+        return await self.push_class_group_card_with_options_async(request, headers, runtime)
+
     def query_with_options(
         self,
         headers: dingtalkedu__1__0_models.QueryHeaders,
@@ -24152,6 +24294,270 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.UnsubscribeUniversityCourseGroupHeaders()
         return await self.unsubscribe_university_course_group_with_options_async(request, headers, runtime)
 
+    def update_class_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateClassRequest,
+        headers: dingtalkedu__1__0_models.UpdateClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateClassResponse:
+        """
+        @summary 修改班级信息
+        
+        @param request: UpdateClassRequest
+        @param headers: UpdateClassHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateClassResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.grade_level):
+            body['gradeLevel'] = request.grade_level
+        if not UtilClient.is_unset(request.open_class):
+            body['openClass'] = request.open_class
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.super_id):
+            body['superId'] = request.super_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/classes/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateClassResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_class_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateClassRequest,
+        headers: dingtalkedu__1__0_models.UpdateClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateClassResponse:
+        """
+        @summary 修改班级信息
+        
+        @param request: UpdateClassRequest
+        @param headers: UpdateClassHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateClassResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.grade_level):
+            body['gradeLevel'] = request.grade_level
+        if not UtilClient.is_unset(request.open_class):
+            body['openClass'] = request.open_class
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.super_id):
+            body['superId'] = request.super_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/classes/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateClassResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_class(
+        self,
+        request: dingtalkedu__1__0_models.UpdateClassRequest,
+    ) -> dingtalkedu__1__0_models.UpdateClassResponse:
+        """
+        @summary 修改班级信息
+        
+        @param request: UpdateClassRequest
+        @return: UpdateClassResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateClassHeaders()
+        return self.update_class_with_options(request, headers, runtime)
+
+    async def update_class_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateClassRequest,
+    ) -> dingtalkedu__1__0_models.UpdateClassResponse:
+        """
+        @summary 修改班级信息
+        
+        @param request: UpdateClassRequest
+        @return: UpdateClassResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateClassHeaders()
+        return await self.update_class_with_options_async(request, headers, runtime)
+
+    def update_class_group_card_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateClassGroupCardRequest,
+        headers: dingtalkedu__1__0_models.UpdateClassGroupCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateClassGroupCardResponse:
+        """
+        @summary 更新班级群卡片消息
+        
+        @param request: UpdateClassGroupCardRequest
+        @param headers: UpdateClassGroupCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateClassGroupCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_card_id):
+            body['bizCardId'] = request.biz_card_id
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.group_type_list):
+            body['groupTypeList'] = request.group_type_list
+        if not UtilClient.is_unset(request.is_final_update):
+            body['isFinalUpdate'] = request.is_final_update
+        if not UtilClient.is_unset(request.private_card_data):
+            body['privateCardData'] = request.private_card_data
+        if not UtilClient.is_unset(request.public_card_data):
+            body['publicCardData'] = request.public_card_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateClassGroupCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/classes/groups/cards/messages',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateClassGroupCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_class_group_card_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateClassGroupCardRequest,
+        headers: dingtalkedu__1__0_models.UpdateClassGroupCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateClassGroupCardResponse:
+        """
+        @summary 更新班级群卡片消息
+        
+        @param request: UpdateClassGroupCardRequest
+        @param headers: UpdateClassGroupCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateClassGroupCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_card_id):
+            body['bizCardId'] = request.biz_card_id
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.group_type_list):
+            body['groupTypeList'] = request.group_type_list
+        if not UtilClient.is_unset(request.is_final_update):
+            body['isFinalUpdate'] = request.is_final_update
+        if not UtilClient.is_unset(request.private_card_data):
+            body['privateCardData'] = request.private_card_data
+        if not UtilClient.is_unset(request.public_card_data):
+            body['publicCardData'] = request.public_card_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateClassGroupCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/classes/groups/cards/messages',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateClassGroupCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_class_group_card(
+        self,
+        request: dingtalkedu__1__0_models.UpdateClassGroupCardRequest,
+    ) -> dingtalkedu__1__0_models.UpdateClassGroupCardResponse:
+        """
+        @summary 更新班级群卡片消息
+        
+        @param request: UpdateClassGroupCardRequest
+        @return: UpdateClassGroupCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateClassGroupCardHeaders()
+        return self.update_class_group_card_with_options(request, headers, runtime)
+
+    async def update_class_group_card_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateClassGroupCardRequest,
+    ) -> dingtalkedu__1__0_models.UpdateClassGroupCardResponse:
+        """
+        @summary 更新班级群卡片消息
+        
+        @param request: UpdateClassGroupCardRequest
+        @return: UpdateClassGroupCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateClassGroupCardHeaders()
+        return await self.update_class_group_card_with_options_async(request, headers, runtime)
+
     def update_college_alumni_user_info_with_options(
         self,
         request: dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoRequest,
@@ -25448,6 +25854,140 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountHeaders()
         return await self.update_evaluate_performance_count_with_options_async(request, headers, runtime)
 
+    def update_guardian_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateGuardianRequest,
+        headers: dingtalkedu__1__0_models.UpdateGuardianHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateGuardianResponse:
+        """
+        @summary 更新家长信息
+        
+        @param request: UpdateGuardianRequest
+        @param headers: UpdateGuardianHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGuardianResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.relation):
+            body['relation'] = request.relation
+        if not UtilClient.is_unset(request.stu_id):
+            body['stuId'] = request.stu_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateGuardian',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/guardians/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateGuardianResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_guardian_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateGuardianRequest,
+        headers: dingtalkedu__1__0_models.UpdateGuardianHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateGuardianResponse:
+        """
+        @summary 更新家长信息
+        
+        @param request: UpdateGuardianRequest
+        @param headers: UpdateGuardianHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGuardianResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.relation):
+            body['relation'] = request.relation
+        if not UtilClient.is_unset(request.stu_id):
+            body['stuId'] = request.stu_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateGuardian',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/guardians/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateGuardianResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_guardian(
+        self,
+        request: dingtalkedu__1__0_models.UpdateGuardianRequest,
+    ) -> dingtalkedu__1__0_models.UpdateGuardianResponse:
+        """
+        @summary 更新家长信息
+        
+        @param request: UpdateGuardianRequest
+        @return: UpdateGuardianResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateGuardianHeaders()
+        return self.update_guardian_with_options(request, headers, runtime)
+
+    async def update_guardian_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateGuardianRequest,
+    ) -> dingtalkedu__1__0_models.UpdateGuardianResponse:
+        """
+        @summary 更新家长信息
+        
+        @param request: UpdateGuardianRequest
+        @return: UpdateGuardianResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateGuardianHeaders()
+        return await self.update_guardian_with_options_async(request, headers, runtime)
+
     def update_physical_classroom_with_options(
         self,
         request: dingtalkedu__1__0_models.UpdatePhysicalClassroomRequest,
@@ -25857,6 +26397,140 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.UpdateRemoteClassDeviceHeaders()
         return await self.update_remote_class_device_with_options_async(request, headers, runtime)
+
+    def update_student_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateStudentRequest,
+        headers: dingtalkedu__1__0_models.UpdateStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateStudentResponse:
+        """
+        @summary 修改学生信息
+        
+        @param request: UpdateStudentRequest
+        @param headers: UpdateStudentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateStudentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.student_no):
+            body['studentNo'] = request.student_no
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateStudent',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/students/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateStudentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_student_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateStudentRequest,
+        headers: dingtalkedu__1__0_models.UpdateStudentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateStudentResponse:
+        """
+        @summary 修改学生信息
+        
+        @param request: UpdateStudentRequest
+        @param headers: UpdateStudentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateStudentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.student_no):
+            body['studentNo'] = request.student_no
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateStudent',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/students/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateStudentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_student(
+        self,
+        request: dingtalkedu__1__0_models.UpdateStudentRequest,
+    ) -> dingtalkedu__1__0_models.UpdateStudentResponse:
+        """
+        @summary 修改学生信息
+        
+        @param request: UpdateStudentRequest
+        @return: UpdateStudentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateStudentHeaders()
+        return self.update_student_with_options(request, headers, runtime)
+
+    async def update_student_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateStudentRequest,
+    ) -> dingtalkedu__1__0_models.UpdateStudentResponse:
+        """
+        @summary 修改学生信息
+        
+        @param request: UpdateStudentRequest
+        @return: UpdateStudentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateStudentHeaders()
+        return await self.update_student_with_options_async(request, headers, runtime)
 
     def update_university_course_group_with_options(
         self,

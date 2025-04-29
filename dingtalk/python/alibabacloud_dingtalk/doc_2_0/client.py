@@ -5166,6 +5166,128 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.QueryDocContentHeaders()
         return await self.query_doc_content_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def query_get_content_job_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.QueryGetContentJobRequest,
+        headers: dingtalkdoc__2__0_models.QueryGetContentJobHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.QueryGetContentJobResponse:
+        """
+        @summary 查询文档内容获取任务状态
+        
+        @param request: QueryGetContentJobRequest
+        @param headers: QueryGetContentJobHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGetContentJobResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryGetContentJob',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/contents/{dentry_uuid}/jobStatuses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.QueryGetContentJobResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_get_content_job_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.QueryGetContentJobRequest,
+        headers: dingtalkdoc__2__0_models.QueryGetContentJobHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.QueryGetContentJobResponse:
+        """
+        @summary 查询文档内容获取任务状态
+        
+        @param request: QueryGetContentJobRequest
+        @param headers: QueryGetContentJobHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGetContentJobResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryGetContentJob',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/contents/{dentry_uuid}/jobStatuses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.QueryGetContentJobResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_get_content_job(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.QueryGetContentJobRequest,
+    ) -> dingtalkdoc__2__0_models.QueryGetContentJobResponse:
+        """
+        @summary 查询文档内容获取任务状态
+        
+        @param request: QueryGetContentJobRequest
+        @return: QueryGetContentJobResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.QueryGetContentJobHeaders()
+        return self.query_get_content_job_with_options(dentry_uuid, request, headers, runtime)
+
+    async def query_get_content_job_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.QueryGetContentJobRequest,
+    ) -> dingtalkdoc__2__0_models.QueryGetContentJobResponse:
+        """
+        @summary 查询文档内容获取任务状态
+        
+        @param request: QueryGetContentJobRequest
+        @return: QueryGetContentJobResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.QueryGetContentJobHeaders()
+        return await self.query_get_content_job_with_options_async(dentry_uuid, request, headers, runtime)
+
     def query_item_by_url_with_options(
         self,
         request: dingtalkdoc__2__0_models.QueryItemByUrlRequest,
@@ -6509,6 +6631,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__2__0_models.ShareUrlHeaders()
         return await self.share_url_with_options_async(request, headers, runtime)
+
+    def submit_get_content_job_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.SubmitGetContentJobRequest,
+        headers: dingtalkdoc__2__0_models.SubmitGetContentJobHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.SubmitGetContentJobResponse:
+        """
+        @summary 提交文档内容获取任务
+        
+        @param request: SubmitGetContentJobRequest
+        @param headers: SubmitGetContentJobHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitGetContentJobResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SubmitGetContentJob',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/contents/{dentry_uuid}/jobs',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.SubmitGetContentJobResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def submit_get_content_job_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.SubmitGetContentJobRequest,
+        headers: dingtalkdoc__2__0_models.SubmitGetContentJobHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.SubmitGetContentJobResponse:
+        """
+        @summary 提交文档内容获取任务
+        
+        @param request: SubmitGetContentJobRequest
+        @param headers: SubmitGetContentJobHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitGetContentJobResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SubmitGetContentJob',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/contents/{dentry_uuid}/jobs',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.SubmitGetContentJobResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def submit_get_content_job(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.SubmitGetContentJobRequest,
+    ) -> dingtalkdoc__2__0_models.SubmitGetContentJobResponse:
+        """
+        @summary 提交文档内容获取任务
+        
+        @param request: SubmitGetContentJobRequest
+        @return: SubmitGetContentJobResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.SubmitGetContentJobHeaders()
+        return self.submit_get_content_job_with_options(dentry_uuid, request, headers, runtime)
+
+    async def submit_get_content_job_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.SubmitGetContentJobRequest,
+    ) -> dingtalkdoc__2__0_models.SubmitGetContentJobResponse:
+        """
+        @summary 提交文档内容获取任务
+        
+        @param request: SubmitGetContentJobRequest
+        @return: SubmitGetContentJobResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.SubmitGetContentJobHeaders()
+        return await self.submit_get_content_job_with_options_async(dentry_uuid, request, headers, runtime)
 
     def team_templates_with_options(
         self,

@@ -140,6 +140,124 @@ class Client(OpenApiClient):
         headers = dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsHeaders()
         return await self.hrbrain_delete_award_records_with_options_async(request, headers, runtime)
 
+    def hrbrain_delete_custom_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteCustomRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteCustomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteCustomResponse:
+        """
+        @summary 删除自定义模型记录
+        
+        @param request: HrbrainDeleteCustomRequest
+        @param headers: HrbrainDeleteCustomHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteCustomResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.model_code):
+            body['modelCode'] = request.model_code
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteCustom',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/customModels/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteCustomResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_custom_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteCustomRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteCustomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteCustomResponse:
+        """
+        @summary 删除自定义模型记录
+        
+        @param request: HrbrainDeleteCustomRequest
+        @param headers: HrbrainDeleteCustomHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteCustomResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.model_code):
+            body['modelCode'] = request.model_code
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteCustom',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/customModels/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteCustomResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_custom(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteCustomRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteCustomResponse:
+        """
+        @summary 删除自定义模型记录
+        
+        @param request: HrbrainDeleteCustomRequest
+        @return: HrbrainDeleteCustomResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteCustomHeaders()
+        return self.hrbrain_delete_custom_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_custom_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteCustomRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteCustomResponse:
+        """
+        @summary 删除自定义模型记录
+        
+        @param request: HrbrainDeleteCustomRequest
+        @return: HrbrainDeleteCustomResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteCustomHeaders()
+        return await self.hrbrain_delete_custom_with_options_async(request, headers, runtime)
+
     def hrbrain_delete_dept_info_with_options(
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainDeleteDeptInfoRequest,
@@ -2079,6 +2197,126 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailHeaders()
         return await self.hrbrain_import_award_detail_with_options_async(request, headers, runtime)
+
+    def hrbrain_import_custom_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainImportCustomRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainImportCustomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainImportCustomResponse:
+        """
+        @summary 集成自定义模型记录
+        
+        @param request: HrbrainImportCustomRequest
+        @param headers: HrbrainImportCustomHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportCustomResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.model_code):
+            query['modelCode'] = request.model_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainImportCustom',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/customModels/import',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainImportCustomResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_import_custom_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainImportCustomRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainImportCustomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainImportCustomResponse:
+        """
+        @summary 集成自定义模型记录
+        
+        @param request: HrbrainImportCustomRequest
+        @param headers: HrbrainImportCustomHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportCustomResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.model_code):
+            query['modelCode'] = request.model_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainImportCustom',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/customModels/import',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainImportCustomResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_import_custom(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainImportCustomRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainImportCustomResponse:
+        """
+        @summary 集成自定义模型记录
+        
+        @param request: HrbrainImportCustomRequest
+        @return: HrbrainImportCustomResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainImportCustomHeaders()
+        return self.hrbrain_import_custom_with_options(request, headers, runtime)
+
+    async def hrbrain_import_custom_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainImportCustomRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainImportCustomResponse:
+        """
+        @summary 集成自定义模型记录
+        
+        @param request: HrbrainImportCustomRequest
+        @return: HrbrainImportCustomResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainImportCustomHeaders()
+        return await self.hrbrain_import_custom_with_options_async(request, headers, runtime)
 
     def hrbrain_import_dept_info_with_options(
         self,

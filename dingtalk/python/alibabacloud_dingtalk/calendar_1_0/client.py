@@ -802,12 +802,16 @@ class Client(OpenApiClient):
             body['attendees'] = request.attendees
         if not UtilClient.is_unset(request.card_instances):
             body['cardInstances'] = request.card_instances
+        if not UtilClient.is_unset(request.categories):
+            body['categories'] = request.categories
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.end):
             body['end'] = request.end
         if not UtilClient.is_unset(request.extra):
             body['extra'] = request.extra
+        if not UtilClient.is_unset(request.free_busy_status):
+            body['freeBusyStatus'] = request.free_busy_status
         if not UtilClient.is_unset(request.is_all_day):
             body['isAllDay'] = request.is_all_day
         if not UtilClient.is_unset(request.location):
@@ -875,12 +879,16 @@ class Client(OpenApiClient):
             body['attendees'] = request.attendees
         if not UtilClient.is_unset(request.card_instances):
             body['cardInstances'] = request.card_instances
+        if not UtilClient.is_unset(request.categories):
+            body['categories'] = request.categories
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.end):
             body['end'] = request.end
         if not UtilClient.is_unset(request.extra):
             body['extra'] = request.extra
+        if not UtilClient.is_unset(request.free_busy_status):
+            body['freeBusyStatus'] = request.free_busy_status
         if not UtilClient.is_unset(request.is_all_day):
             body['isAllDay'] = request.is_all_day
         if not UtilClient.is_unset(request.location):
@@ -3148,6 +3156,110 @@ class Client(OpenApiClient):
         headers = dingtalkcalendar__1__0_models.ListCalendarsHeaders()
         return await self.list_calendars_with_options_async(user_id, headers, runtime)
 
+    def list_categories_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkcalendar__1__0_models.ListCategoriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ListCategoriesResponse:
+        """
+        @summary 获取会议类型列表
+        
+        @param headers: ListCategoriesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCategoriesResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListCategories',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/categories',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ListCategoriesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_categories_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkcalendar__1__0_models.ListCategoriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ListCategoriesResponse:
+        """
+        @summary 获取会议类型列表
+        
+        @param headers: ListCategoriesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCategoriesResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListCategories',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/categories',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ListCategoriesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_categories(
+        self,
+        user_id: str,
+    ) -> dingtalkcalendar__1__0_models.ListCategoriesResponse:
+        """
+        @summary 获取会议类型列表
+        
+        @return: ListCategoriesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ListCategoriesHeaders()
+        return self.list_categories_with_options(user_id, headers, runtime)
+
+    async def list_categories_async(
+        self,
+        user_id: str,
+    ) -> dingtalkcalendar__1__0_models.ListCategoriesResponse:
+        """
+        @summary 获取会议类型列表
+        
+        @return: ListCategoriesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ListCategoriesHeaders()
+        return await self.list_categories_with_options_async(user_id, headers, runtime)
+
     def list_events_with_options(
         self,
         user_id: str,
@@ -4011,12 +4123,16 @@ class Client(OpenApiClient):
             body['attendees'] = request.attendees
         if not UtilClient.is_unset(request.card_instances):
             body['cardInstances'] = request.card_instances
+        if not UtilClient.is_unset(request.categories):
+            body['categories'] = request.categories
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.end):
             body['end'] = request.end
         if not UtilClient.is_unset(request.extra):
             body['extra'] = request.extra
+        if not UtilClient.is_unset(request.free_busy_status):
+            body['freeBusyStatus'] = request.free_busy_status
         if not UtilClient.is_unset(request.id):
             body['id'] = request.id
         if not UtilClient.is_unset(request.is_all_day):
@@ -4087,12 +4203,16 @@ class Client(OpenApiClient):
             body['attendees'] = request.attendees
         if not UtilClient.is_unset(request.card_instances):
             body['cardInstances'] = request.card_instances
+        if not UtilClient.is_unset(request.categories):
+            body['categories'] = request.categories
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.end):
             body['end'] = request.end
         if not UtilClient.is_unset(request.extra):
             body['extra'] = request.extra
+        if not UtilClient.is_unset(request.free_busy_status):
+            body['freeBusyStatus'] = request.free_busy_status
         if not UtilClient.is_unset(request.id):
             body['id'] = request.id
         if not UtilClient.is_unset(request.is_all_day):

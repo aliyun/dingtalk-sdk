@@ -1023,6 +1023,39 @@ class CreateEventRequestCardInstances(TeaModel):
         return self
 
 
+class CreateEventRequestCategories(TeaModel):
+    def __init__(
+        self,
+        category_id: str = None,
+        display_name: str = None,
+    ):
+        self.category_id = category_id
+        self.display_name = display_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_id is not None:
+            result['categoryId'] = self.category_id
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryId') is not None:
+            self.category_id = m.get('categoryId')
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        return self
+
+
 class CreateEventRequestEnd(TeaModel):
     def __init__(
         self,
@@ -1388,9 +1421,11 @@ class CreateEventRequest(TeaModel):
         self,
         attendees: List[CreateEventRequestAttendees] = None,
         card_instances: List[CreateEventRequestCardInstances] = None,
+        categories: List[CreateEventRequestCategories] = None,
         description: str = None,
         end: CreateEventRequestEnd = None,
         extra: Dict[str, str] = None,
+        free_busy_status: str = None,
         is_all_day: bool = None,
         location: CreateEventRequestLocation = None,
         online_meeting_info: CreateEventRequestOnlineMeetingInfo = None,
@@ -1403,9 +1438,12 @@ class CreateEventRequest(TeaModel):
     ):
         self.attendees = attendees
         self.card_instances = card_instances
+        self.categories = categories
         self.description = description
+        # This parameter is required.
         self.end = end
         self.extra = extra
+        self.free_busy_status = free_busy_status
         self.is_all_day = is_all_day
         self.location = location
         self.online_meeting_info = online_meeting_info
@@ -1425,6 +1463,10 @@ class CreateEventRequest(TeaModel):
                     k.validate()
         if self.card_instances:
             for k in self.card_instances:
+                if k:
+                    k.validate()
+        if self.categories:
+            for k in self.categories:
                 if k:
                     k.validate()
         if self.end:
@@ -1462,12 +1504,18 @@ class CreateEventRequest(TeaModel):
         if self.card_instances is not None:
             for k in self.card_instances:
                 result['cardInstances'].append(k.to_map() if k else None)
+        result['categories'] = []
+        if self.categories is not None:
+            for k in self.categories:
+                result['categories'].append(k.to_map() if k else None)
         if self.description is not None:
             result['description'] = self.description
         if self.end is not None:
             result['end'] = self.end.to_map()
         if self.extra is not None:
             result['extra'] = self.extra
+        if self.free_busy_status is not None:
+            result['freeBusyStatus'] = self.free_busy_status
         if self.is_all_day is not None:
             result['isAllDay'] = self.is_all_day
         if self.location is not None:
@@ -1504,6 +1552,11 @@ class CreateEventRequest(TeaModel):
             for k in m.get('cardInstances'):
                 temp_model = CreateEventRequestCardInstances()
                 self.card_instances.append(temp_model.from_map(k))
+        self.categories = []
+        if m.get('categories') is not None:
+            for k in m.get('categories'):
+                temp_model = CreateEventRequestCategories()
+                self.categories.append(temp_model.from_map(k))
         if m.get('description') is not None:
             self.description = m.get('description')
         if m.get('end') is not None:
@@ -1511,6 +1564,8 @@ class CreateEventRequest(TeaModel):
             self.end = temp_model.from_map(m['end'])
         if m.get('extra') is not None:
             self.extra = m.get('extra')
+        if m.get('freeBusyStatus') is not None:
+            self.free_busy_status = m.get('freeBusyStatus')
         if m.get('isAllDay') is not None:
             self.is_all_day = m.get('isAllDay')
         if m.get('location') is not None:
@@ -1624,6 +1679,39 @@ class CreateEventResponseBodyCardInstances(TeaModel):
             self.out_track_id = m.get('outTrackId')
         if m.get('scenario') is not None:
             self.scenario = m.get('scenario')
+        return self
+
+
+class CreateEventResponseBodyCategories(TeaModel):
+    def __init__(
+        self,
+        category_id: str = None,
+        display_name: str = None,
+    ):
+        self.category_id = category_id
+        self.display_name = display_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_id is not None:
+            result['categoryId'] = self.category_id
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryId') is not None:
+            self.category_id = m.get('categoryId')
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
         return self
 
 
@@ -2055,6 +2143,7 @@ class CreateEventResponseBody(TeaModel):
         self,
         attendees: List[CreateEventResponseBodyAttendees] = None,
         card_instances: List[CreateEventResponseBodyCardInstances] = None,
+        categories: List[CreateEventResponseBodyCategories] = None,
         create_time: str = None,
         description: str = None,
         end: CreateEventResponseBodyEnd = None,
@@ -2073,6 +2162,7 @@ class CreateEventResponseBody(TeaModel):
     ):
         self.attendees = attendees
         self.card_instances = card_instances
+        self.categories = categories
         # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.description = description
@@ -2099,6 +2189,10 @@ class CreateEventResponseBody(TeaModel):
                     k.validate()
         if self.card_instances:
             for k in self.card_instances:
+                if k:
+                    k.validate()
+        if self.categories:
+            for k in self.categories:
                 if k:
                     k.validate()
         if self.end:
@@ -2138,6 +2232,10 @@ class CreateEventResponseBody(TeaModel):
         if self.card_instances is not None:
             for k in self.card_instances:
                 result['cardInstances'].append(k.to_map() if k else None)
+        result['categories'] = []
+        if self.categories is not None:
+            for k in self.categories:
+                result['categories'].append(k.to_map() if k else None)
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.description is not None:
@@ -2186,6 +2284,11 @@ class CreateEventResponseBody(TeaModel):
             for k in m.get('cardInstances'):
                 temp_model = CreateEventResponseBodyCardInstances()
                 self.card_instances.append(temp_model.from_map(k))
+        self.categories = []
+        if m.get('categories') is not None:
+            for k in m.get('categories'):
+                temp_model = CreateEventResponseBodyCategories()
+                self.categories.append(temp_model.from_map(k))
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('description') is not None:
@@ -7502,6 +7605,154 @@ class ListCalendarsResponse(TeaModel):
         return self
 
 
+class ListCategoriesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_client_token: str = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_client_token = x_client_token
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_client_token is not None:
+            result['x-client-token'] = self.x_client_token
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-client-token') is not None:
+            self.x_client_token = m.get('x-client-token')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListCategoriesResponseBodyCategories(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+        open_category_id: str = None,
+    ):
+        self.display_name = display_name
+        self.open_category_id = open_category_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        if self.open_category_id is not None:
+            result['openCategoryId'] = self.open_category_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        if m.get('openCategoryId') is not None:
+            self.open_category_id = m.get('openCategoryId')
+        return self
+
+
+class ListCategoriesResponseBody(TeaModel):
+    def __init__(
+        self,
+        categories: List[ListCategoriesResponseBodyCategories] = None,
+    ):
+        self.categories = categories
+
+    def validate(self):
+        if self.categories:
+            for k in self.categories:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['categories'] = []
+        if self.categories is not None:
+            for k in self.categories:
+                result['categories'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.categories = []
+        if m.get('categories') is not None:
+            for k in m.get('categories'):
+                temp_model = ListCategoriesResponseBodyCategories()
+                self.categories.append(temp_model.from_map(k))
+        return self
+
+
+class ListCategoriesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListCategoriesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListCategoriesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListEventsHeaders(TeaModel):
     def __init__(
         self,
@@ -12303,6 +12554,39 @@ class PatchEventRequestCardInstances(TeaModel):
         return self
 
 
+class PatchEventRequestCategories(TeaModel):
+    def __init__(
+        self,
+        category_id: str = None,
+        display_name: str = None,
+    ):
+        self.category_id = category_id
+        self.display_name = display_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_id is not None:
+            result['categoryId'] = self.category_id
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryId') is not None:
+            self.category_id = m.get('categoryId')
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        return self
+
+
 class PatchEventRequestEnd(TeaModel):
     def __init__(
         self,
@@ -12670,9 +12954,11 @@ class PatchEventRequest(TeaModel):
         self,
         attendees: List[PatchEventRequestAttendees] = None,
         card_instances: List[PatchEventRequestCardInstances] = None,
+        categories: List[PatchEventRequestCategories] = None,
         description: str = None,
         end: PatchEventRequestEnd = None,
         extra: Dict[str, str] = None,
+        free_busy_status: str = None,
         id: str = None,
         is_all_day: bool = None,
         location: PatchEventRequestLocation = None,
@@ -12686,9 +12972,11 @@ class PatchEventRequest(TeaModel):
     ):
         self.attendees = attendees
         self.card_instances = card_instances
+        self.categories = categories
         self.description = description
         self.end = end
         self.extra = extra
+        self.free_busy_status = free_busy_status
         # This parameter is required.
         self.id = id
         self.is_all_day = is_all_day
@@ -12708,6 +12996,10 @@ class PatchEventRequest(TeaModel):
                     k.validate()
         if self.card_instances:
             for k in self.card_instances:
+                if k:
+                    k.validate()
+        if self.categories:
+            for k in self.categories:
                 if k:
                     k.validate()
         if self.end:
@@ -12745,12 +13037,18 @@ class PatchEventRequest(TeaModel):
         if self.card_instances is not None:
             for k in self.card_instances:
                 result['cardInstances'].append(k.to_map() if k else None)
+        result['categories'] = []
+        if self.categories is not None:
+            for k in self.categories:
+                result['categories'].append(k.to_map() if k else None)
         if self.description is not None:
             result['description'] = self.description
         if self.end is not None:
             result['end'] = self.end.to_map()
         if self.extra is not None:
             result['extra'] = self.extra
+        if self.free_busy_status is not None:
+            result['freeBusyStatus'] = self.free_busy_status
         if self.id is not None:
             result['id'] = self.id
         if self.is_all_day is not None:
@@ -12789,6 +13087,11 @@ class PatchEventRequest(TeaModel):
             for k in m.get('cardInstances'):
                 temp_model = PatchEventRequestCardInstances()
                 self.card_instances.append(temp_model.from_map(k))
+        self.categories = []
+        if m.get('categories') is not None:
+            for k in m.get('categories'):
+                temp_model = PatchEventRequestCategories()
+                self.categories.append(temp_model.from_map(k))
         if m.get('description') is not None:
             self.description = m.get('description')
         if m.get('end') is not None:
@@ -12796,6 +13099,8 @@ class PatchEventRequest(TeaModel):
             self.end = temp_model.from_map(m['end'])
         if m.get('extra') is not None:
             self.extra = m.get('extra')
+        if m.get('freeBusyStatus') is not None:
+            self.free_busy_status = m.get('freeBusyStatus')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('isAllDay') is not None:
@@ -12911,6 +13216,39 @@ class PatchEventResponseBodyCardInstances(TeaModel):
             self.out_track_id = m.get('outTrackId')
         if m.get('scenario') is not None:
             self.scenario = m.get('scenario')
+        return self
+
+
+class PatchEventResponseBodyCategories(TeaModel):
+    def __init__(
+        self,
+        category_id: str = None,
+        display_name: str = None,
+    ):
+        self.category_id = category_id
+        self.display_name = display_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_id is not None:
+            result['categoryId'] = self.category_id
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryId') is not None:
+            self.category_id = m.get('categoryId')
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
         return self
 
 
@@ -13344,6 +13682,7 @@ class PatchEventResponseBody(TeaModel):
         self,
         attendees: List[PatchEventResponseBodyAttendees] = None,
         card_instances: List[PatchEventResponseBodyCardInstances] = None,
+        categories: List[PatchEventResponseBodyCategories] = None,
         create_time: str = None,
         description: str = None,
         end: PatchEventResponseBodyEnd = None,
@@ -13362,6 +13701,7 @@ class PatchEventResponseBody(TeaModel):
     ):
         self.attendees = attendees
         self.card_instances = card_instances
+        self.categories = categories
         # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.description = description
@@ -13388,6 +13728,10 @@ class PatchEventResponseBody(TeaModel):
                     k.validate()
         if self.card_instances:
             for k in self.card_instances:
+                if k:
+                    k.validate()
+        if self.categories:
+            for k in self.categories:
                 if k:
                     k.validate()
         if self.end:
@@ -13427,6 +13771,10 @@ class PatchEventResponseBody(TeaModel):
         if self.card_instances is not None:
             for k in self.card_instances:
                 result['cardInstances'].append(k.to_map() if k else None)
+        result['categories'] = []
+        if self.categories is not None:
+            for k in self.categories:
+                result['categories'].append(k.to_map() if k else None)
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.description is not None:
@@ -13475,6 +13823,11 @@ class PatchEventResponseBody(TeaModel):
             for k in m.get('cardInstances'):
                 temp_model = PatchEventResponseBodyCardInstances()
                 self.card_instances.append(temp_model.from_map(k))
+        self.categories = []
+        if m.get('categories') is not None:
+            for k in m.get('categories'):
+                temp_model = PatchEventResponseBodyCategories()
+                self.categories.append(temp_model.from_map(k))
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('description') is not None:

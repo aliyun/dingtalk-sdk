@@ -3874,6 +3874,124 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.DocDeleteBlockHeaders()
         return await self.doc_delete_block_with_options_async(doc_key, block_id, request, headers, runtime)
 
+    def doc_export_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__1__0_models.DocExportRequest,
+        headers: dingtalkdoc__1__0_models.DocExportHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocExportResponse:
+        """
+        @summary 文档内容导出
+        
+        @param request: DocExportRequest
+        @param headers: DocExportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocExportResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocExport',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/{dentry_uuid}/export',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocExportResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_export_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__1__0_models.DocExportRequest,
+        headers: dingtalkdoc__1__0_models.DocExportHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocExportResponse:
+        """
+        @summary 文档内容导出
+        
+        @param request: DocExportRequest
+        @param headers: DocExportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocExportResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocExport',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/{dentry_uuid}/export',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocExportResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_export(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__1__0_models.DocExportRequest,
+    ) -> dingtalkdoc__1__0_models.DocExportResponse:
+        """
+        @summary 文档内容导出
+        
+        @param request: DocExportRequest
+        @return: DocExportResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocExportHeaders()
+        return self.doc_export_with_options(dentry_uuid, request, headers, runtime)
+
+    async def doc_export_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__1__0_models.DocExportRequest,
+    ) -> dingtalkdoc__1__0_models.DocExportResponse:
+        """
+        @summary 文档内容导出
+        
+        @param request: DocExportRequest
+        @return: DocExportResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocExportHeaders()
+        return await self.doc_export_with_options_async(dentry_uuid, request, headers, runtime)
+
     def doc_export_snapshot_with_options(
         self,
         document_id: str,

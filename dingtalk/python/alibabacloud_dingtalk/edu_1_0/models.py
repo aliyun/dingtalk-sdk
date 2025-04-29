@@ -8761,6 +8761,7 @@ class CreateCollegeContactDeptRequest(TeaModel):
         code: str = None,
         create_dept_group: bool = None,
         dept_code: str = None,
+        dept_id: int = None,
         dept_permits: List[int] = None,
         dept_type: str = None,
         emp_apply_join_dept: bool = None,
@@ -8785,6 +8786,7 @@ class CreateCollegeContactDeptRequest(TeaModel):
         self.code = code
         self.create_dept_group = create_dept_group
         self.dept_code = dept_code
+        self.dept_id = dept_id
         self.dept_permits = dept_permits
         # This parameter is required.
         self.dept_type = dept_type
@@ -8830,6 +8832,8 @@ class CreateCollegeContactDeptRequest(TeaModel):
             result['createDeptGroup'] = self.create_dept_group
         if self.dept_code is not None:
             result['deptCode'] = self.dept_code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
         if self.dept_permits is not None:
             result['deptPermits'] = self.dept_permits
         if self.dept_type is not None:
@@ -8880,6 +8884,8 @@ class CreateCollegeContactDeptRequest(TeaModel):
             self.create_dept_group = m.get('createDeptGroup')
         if m.get('deptCode') is not None:
             self.dept_code = m.get('deptCode')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
         if m.get('deptPermits') is not None:
             self.dept_permits = m.get('deptPermits')
         if m.get('deptType') is not None:
@@ -29846,6 +29852,181 @@ class PublishSchoolReportResponse(TeaModel):
         return self
 
 
+class PushClassGroupCardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PushClassGroupCardRequest(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        class_id: int = None,
+        group_type_list: List[str] = None,
+        private_card_data: Dict[str, dict] = None,
+        public_card_data: Dict[str, str] = None,
+        sender_user_id: str = None,
+        student_user_ids: List[str] = None,
+    ):
+        # This parameter is required.
+        self.biz_code = biz_code
+        # This parameter is required.
+        self.class_id = class_id
+        self.group_type_list = group_type_list
+        self.private_card_data = private_card_data
+        # This parameter is required.
+        self.public_card_data = public_card_data
+        # This parameter is required.
+        self.sender_user_id = sender_user_id
+        # This parameter is required.
+        self.student_user_ids = student_user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.group_type_list is not None:
+            result['groupTypeList'] = self.group_type_list
+        if self.private_card_data is not None:
+            result['privateCardData'] = self.private_card_data
+        if self.public_card_data is not None:
+            result['publicCardData'] = self.public_card_data
+        if self.sender_user_id is not None:
+            result['senderUserId'] = self.sender_user_id
+        if self.student_user_ids is not None:
+            result['studentUserIds'] = self.student_user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('groupTypeList') is not None:
+            self.group_type_list = m.get('groupTypeList')
+        if m.get('privateCardData') is not None:
+            self.private_card_data = m.get('privateCardData')
+        if m.get('publicCardData') is not None:
+            self.public_card_data = m.get('publicCardData')
+        if m.get('senderUserId') is not None:
+            self.sender_user_id = m.get('senderUserId')
+        if m.get('studentUserIds') is not None:
+            self.student_user_ids = m.get('studentUserIds')
+        return self
+
+
+class PushClassGroupCardResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PushClassGroupCardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PushClassGroupCardResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PushClassGroupCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryHeaders(TeaModel):
     def __init__(
         self,
@@ -41093,6 +41274,410 @@ class UnsubscribeUniversityCourseGroupResponse(TeaModel):
         return self
 
 
+class UpdateClassHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateClassRequestOpenClass(TeaModel):
+    def __init__(
+        self,
+        class_level: int = None,
+        nick: str = None,
+        only_use_nick: str = None,
+    ):
+        # This parameter is required.
+        self.class_level = class_level
+        # This parameter is required.
+        self.nick = nick
+        # This parameter is required.
+        self.only_use_nick = only_use_nick
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_level is not None:
+            result['classLevel'] = self.class_level
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.only_use_nick is not None:
+            result['onlyUseNick'] = self.only_use_nick
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classLevel') is not None:
+            self.class_level = m.get('classLevel')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('onlyUseNick') is not None:
+            self.only_use_nick = m.get('onlyUseNick')
+        return self
+
+
+class UpdateClassRequest(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        grade_level: int = None,
+        open_class: UpdateClassRequestOpenClass = None,
+        operator: str = None,
+        super_id: int = None,
+    ):
+        # This parameter is required.
+        self.dept_id = dept_id
+        # This parameter is required.
+        self.grade_level = grade_level
+        # This parameter is required.
+        self.open_class = open_class
+        # This parameter is required.
+        self.operator = operator
+        # This parameter is required.
+        self.super_id = super_id
+
+    def validate(self):
+        if self.open_class:
+            self.open_class.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.grade_level is not None:
+            result['gradeLevel'] = self.grade_level
+        if self.open_class is not None:
+            result['openClass'] = self.open_class.to_map()
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.super_id is not None:
+            result['superId'] = self.super_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('gradeLevel') is not None:
+            self.grade_level = m.get('gradeLevel')
+        if m.get('openClass') is not None:
+            temp_model = UpdateClassRequestOpenClass()
+            self.open_class = temp_model.from_map(m['openClass'])
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('superId') is not None:
+            self.super_id = m.get('superId')
+        return self
+
+
+class UpdateClassResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+    ):
+        self.dept_id = dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        return self
+
+
+class UpdateClassResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateClassResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateClassResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateClassResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateClassResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateClassResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateClassGroupCardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateClassGroupCardRequest(TeaModel):
+    def __init__(
+        self,
+        biz_card_id: str = None,
+        class_id: int = None,
+        group_type_list: List[str] = None,
+        is_final_update: bool = None,
+        private_card_data: Dict[str, dict] = None,
+        public_card_data: Dict[str, str] = None,
+    ):
+        # This parameter is required.
+        self.biz_card_id = biz_card_id
+        # This parameter is required.
+        self.class_id = class_id
+        # This parameter is required.
+        self.group_type_list = group_type_list
+        # This parameter is required.
+        self.is_final_update = is_final_update
+        self.private_card_data = private_card_data
+        self.public_card_data = public_card_data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_card_id is not None:
+            result['bizCardId'] = self.biz_card_id
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.group_type_list is not None:
+            result['groupTypeList'] = self.group_type_list
+        if self.is_final_update is not None:
+            result['isFinalUpdate'] = self.is_final_update
+        if self.private_card_data is not None:
+            result['privateCardData'] = self.private_card_data
+        if self.public_card_data is not None:
+            result['publicCardData'] = self.public_card_data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCardId') is not None:
+            self.biz_card_id = m.get('bizCardId')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('groupTypeList') is not None:
+            self.group_type_list = m.get('groupTypeList')
+        if m.get('isFinalUpdate') is not None:
+            self.is_final_update = m.get('isFinalUpdate')
+        if m.get('privateCardData') is not None:
+            self.private_card_data = m.get('privateCardData')
+        if m.get('publicCardData') is not None:
+            self.public_card_data = m.get('publicCardData')
+        return self
+
+
+class UpdateClassGroupCardResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateClassGroupCardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateClassGroupCardResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateClassGroupCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateCollegeAlumniUserInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -43452,6 +44037,211 @@ class UpdateEvaluatePerformanceCountResponse(TeaModel):
         return self
 
 
+class UpdateGuardianHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateGuardianRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        class_id: int = None,
+        operator: str = None,
+        relation: str = None,
+        stu_id: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.class_id = class_id
+        # This parameter is required.
+        self.operator = operator
+        # This parameter is required.
+        self.relation = relation
+        # This parameter is required.
+        self.stu_id = stu_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.relation is not None:
+            result['relation'] = self.relation
+        if self.stu_id is not None:
+            result['stuId'] = self.stu_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('relation') is not None:
+            self.relation = m.get('relation')
+        if m.get('stuId') is not None:
+            self.stu_id = m.get('stuId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateGuardianResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        user_id: str = None,
+    ):
+        self.biz_id = biz_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateGuardianResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateGuardianResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateGuardianResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateGuardianResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateGuardianResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateGuardianResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdatePhysicalClassroomHeaders(TeaModel):
     def __init__(
         self,
@@ -44025,6 +44815,170 @@ class UpdateRemoteClassDeviceResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateRemoteClassDeviceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateStudentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateStudentRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        class_id: int = None,
+        name: str = None,
+        operator: str = None,
+        student_no: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.class_id = class_id
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.operator = operator
+        # This parameter is required.
+        self.student_no = student_no
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.student_no is not None:
+            result['studentNo'] = self.student_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('studentNo') is not None:
+            self.student_no = m.get('studentNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateStudentResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateStudentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateStudentResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateStudentResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
