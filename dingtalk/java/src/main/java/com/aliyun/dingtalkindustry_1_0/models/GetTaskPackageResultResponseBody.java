@@ -140,6 +140,9 @@ public class GetTaskPackageResultResponseBody extends TeaModel {
         @NameInMap("desc")
         public String desc;
 
+        @NameInMap("formName")
+        public String formName;
+
         @NameInMap("id")
         public Long id;
 
@@ -148,6 +151,9 @@ public class GetTaskPackageResultResponseBody extends TeaModel {
 
         @NameInMap("name")
         public String name;
+
+        @NameInMap("rawData")
+        public String rawData;
 
         @NameInMap("summary")
         public String summary;
@@ -192,6 +198,14 @@ public class GetTaskPackageResultResponseBody extends TeaModel {
             return this.desc;
         }
 
+        public GetTaskPackageResultResponseBodyTasksResult setFormName(String formName) {
+            this.formName = formName;
+            return this;
+        }
+        public String getFormName() {
+            return this.formName;
+        }
+
         public GetTaskPackageResultResponseBodyTasksResult setId(Long id) {
             this.id = id;
             return this;
@@ -214,6 +228,14 @@ public class GetTaskPackageResultResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public GetTaskPackageResultResponseBodyTasksResult setRawData(String rawData) {
+            this.rawData = rawData;
+            return this;
+        }
+        public String getRawData() {
+            return this.rawData;
         }
 
         public GetTaskPackageResultResponseBodyTasksResult setSummary(String summary) {

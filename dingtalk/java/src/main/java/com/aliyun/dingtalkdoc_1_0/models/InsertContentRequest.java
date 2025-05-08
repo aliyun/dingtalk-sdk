@@ -14,6 +14,20 @@ public class InsertContentRequest extends TeaModel {
     public java.util.Map<String, ?> content;
 
     /**
+     * <strong>example:</strong>
+     * <p>index</p>
+     */
+    @NameInMap("index")
+    public Integer index;
+
+    /**
+     * <strong>example:</strong>
+     * <p>path</p>
+     */
+    @NameInMap("path")
+    public java.util.List<Integer> path;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -33,6 +47,22 @@ public class InsertContentRequest extends TeaModel {
     }
     public java.util.Map<String, ?> getContent() {
         return this.content;
+    }
+
+    public InsertContentRequest setIndex(Integer index) {
+        this.index = index;
+        return this;
+    }
+    public Integer getIndex() {
+        return this.index;
+    }
+
+    public InsertContentRequest setPath(java.util.List<Integer> path) {
+        this.path = path;
+        return this;
+    }
+    public java.util.List<Integer> getPath() {
+        return this.path;
     }
 
     public InsertContentRequest setOperatorId(String operatorId) {

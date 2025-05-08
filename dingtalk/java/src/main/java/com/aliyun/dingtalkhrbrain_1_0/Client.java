@@ -2119,6 +2119,120 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询人才档案附件照片</p>
+     * 
+     * @param request HrbrainTalentProfileAttachmentQueryRequest
+     * @param headers HrbrainTalentProfileAttachmentQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainTalentProfileAttachmentQueryResponse
+     */
+    public HrbrainTalentProfileAttachmentQueryResponse hrbrainTalentProfileAttachmentQueryWithOptions(HrbrainTalentProfileAttachmentQueryRequest request, HrbrainTalentProfileAttachmentQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
+            query.put("dingCorpId", request.dingCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", request.body)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainTalentProfileAttachmentQuery"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/profiles/attachmentPhotos/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainTalentProfileAttachmentQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询人才档案附件照片</p>
+     * 
+     * @param request HrbrainTalentProfileAttachmentQueryRequest
+     * @return HrbrainTalentProfileAttachmentQueryResponse
+     */
+    public HrbrainTalentProfileAttachmentQueryResponse hrbrainTalentProfileAttachmentQuery(HrbrainTalentProfileAttachmentQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainTalentProfileAttachmentQueryHeaders headers = new HrbrainTalentProfileAttachmentQueryHeaders();
+        return this.hrbrainTalentProfileAttachmentQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询人才档案基础数据</p>
+     * 
+     * @param request HrbrainTalentProfileBasicQueryRequest
+     * @param headers HrbrainTalentProfileBasicQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainTalentProfileBasicQueryResponse
+     */
+    public HrbrainTalentProfileBasicQueryResponse hrbrainTalentProfileBasicQueryWithOptions(HrbrainTalentProfileBasicQueryRequest request, HrbrainTalentProfileBasicQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
+            query.put("dingCorpId", request.dingCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", request.body)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainTalentProfileBasicQuery"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/profiles/basicData/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainTalentProfileBasicQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询人才档案基础数据</p>
+     * 
+     * @param request HrbrainTalentProfileBasicQueryRequest
+     * @return HrbrainTalentProfileBasicQueryResponse
+     */
+    public HrbrainTalentProfileBasicQueryResponse hrbrainTalentProfileBasicQuery(HrbrainTalentProfileBasicQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainTalentProfileBasicQueryHeaders headers = new HrbrainTalentProfileBasicQueryHeaders();
+        return this.hrbrainTalentProfileBasicQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>人员标签查询</p>
      * 
      * @param request StaffLabelRecordsQueryRequest
