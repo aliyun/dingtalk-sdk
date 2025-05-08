@@ -1272,6 +1272,162 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>批量修改企业员工对外职位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchUpdateExternalTitleRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchUpdateExternalTitleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchUpdateExternalTitleResponse
+        /// </returns>
+        public BatchUpdateExternalTitleResponse BatchUpdateExternalTitleWithOptions(BatchUpdateExternalTitleRequest request, BatchUpdateExternalTitleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateTitleModelList))
+            {
+                body["updateTitleModelList"] = request.UpdateTitleModelList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchUpdateExternalTitle",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/externalTitles",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchUpdateExternalTitleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量修改企业员工对外职位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchUpdateExternalTitleRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchUpdateExternalTitleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchUpdateExternalTitleResponse
+        /// </returns>
+        public async Task<BatchUpdateExternalTitleResponse> BatchUpdateExternalTitleWithOptionsAsync(BatchUpdateExternalTitleRequest request, BatchUpdateExternalTitleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateTitleModelList))
+            {
+                body["updateTitleModelList"] = request.UpdateTitleModelList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchUpdateExternalTitle",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/externalTitles",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchUpdateExternalTitleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量修改企业员工对外职位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchUpdateExternalTitleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchUpdateExternalTitleResponse
+        /// </returns>
+        public BatchUpdateExternalTitleResponse BatchUpdateExternalTitle(BatchUpdateExternalTitleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchUpdateExternalTitleHeaders headers = new BatchUpdateExternalTitleHeaders();
+            return BatchUpdateExternalTitleWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量修改企业员工对外职位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchUpdateExternalTitleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchUpdateExternalTitleResponse
+        /// </returns>
+        public async Task<BatchUpdateExternalTitleResponse> BatchUpdateExternalTitleAsync(BatchUpdateExternalTitleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchUpdateExternalTitleHeaders headers = new BatchUpdateExternalTitleHeaders();
+            return await BatchUpdateExternalTitleWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>修改钉钉号</para>
         /// </summary>
         /// 

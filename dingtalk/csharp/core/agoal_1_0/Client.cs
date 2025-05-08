@@ -218,6 +218,282 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>创建业务实体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalEntityCreateRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalEntityCreateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalEntityCreateResponse
+        /// </returns>
+        public AgoalEntityCreateResponse AgoalEntityCreateWithOptions(AgoalEntityCreateRequest request, AgoalEntityCreateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalEntityCreate",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/entities",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalEntityCreateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建业务实体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalEntityCreateRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalEntityCreateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalEntityCreateResponse
+        /// </returns>
+        public async Task<AgoalEntityCreateResponse> AgoalEntityCreateWithOptionsAsync(AgoalEntityCreateRequest request, AgoalEntityCreateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalEntityCreate",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/entities",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalEntityCreateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建业务实体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalEntityCreateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalEntityCreateResponse
+        /// </returns>
+        public AgoalEntityCreateResponse AgoalEntityCreate(AgoalEntityCreateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalEntityCreateHeaders headers = new AgoalEntityCreateHeaders();
+            return AgoalEntityCreateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建业务实体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalEntityCreateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalEntityCreateResponse
+        /// </returns>
+        public async Task<AgoalEntityCreateResponse> AgoalEntityCreateAsync(AgoalEntityCreateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalEntityCreateHeaders headers = new AgoalEntityCreateHeaders();
+            return await AgoalEntityCreateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新业务实体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalEntityUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalEntityUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalEntityUpdateResponse
+        /// </returns>
+        public AgoalEntityUpdateResponse AgoalEntityUpdateWithOptions(AgoalEntityUpdateRequest request, AgoalEntityUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalEntityUpdate",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/entities",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalEntityUpdateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新业务实体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalEntityUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalEntityUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalEntityUpdateResponse
+        /// </returns>
+        public async Task<AgoalEntityUpdateResponse> AgoalEntityUpdateWithOptionsAsync(AgoalEntityUpdateRequest request, AgoalEntityUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalEntityUpdate",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/entities",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalEntityUpdateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新业务实体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalEntityUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalEntityUpdateResponse
+        /// </returns>
+        public AgoalEntityUpdateResponse AgoalEntityUpdate(AgoalEntityUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalEntityUpdateHeaders headers = new AgoalEntityUpdateHeaders();
+            return AgoalEntityUpdateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新业务实体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalEntityUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalEntityUpdateResponse
+        /// </returns>
+        public async Task<AgoalEntityUpdateResponse> AgoalEntityUpdateAsync(AgoalEntityUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalEntityUpdateHeaders headers = new AgoalEntityUpdateHeaders();
+            return await AgoalEntityUpdateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>更新 Agoal 字段值</para>
         /// </summary>
         /// 
@@ -1126,6 +1402,282 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             AgoalOrgObjectiveRuleListHeaders headers = new AgoalOrgObjectiveRuleListHeaders();
             return await AgoalOrgObjectiveRuleListWithOptionsAsync(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建考核任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalPerfTaskCreateRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalPerfTaskCreateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalPerfTaskCreateResponse
+        /// </returns>
+        public AgoalPerfTaskCreateResponse AgoalPerfTaskCreateWithOptions(AgoalPerfTaskCreateRequest request, AgoalPerfTaskCreateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalPerfTaskCreate",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/perfTasks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalPerfTaskCreateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建考核任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalPerfTaskCreateRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalPerfTaskCreateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalPerfTaskCreateResponse
+        /// </returns>
+        public async Task<AgoalPerfTaskCreateResponse> AgoalPerfTaskCreateWithOptionsAsync(AgoalPerfTaskCreateRequest request, AgoalPerfTaskCreateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalPerfTaskCreate",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/perfTasks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalPerfTaskCreateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建考核任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalPerfTaskCreateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalPerfTaskCreateResponse
+        /// </returns>
+        public AgoalPerfTaskCreateResponse AgoalPerfTaskCreate(AgoalPerfTaskCreateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalPerfTaskCreateHeaders headers = new AgoalPerfTaskCreateHeaders();
+            return AgoalPerfTaskCreateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建考核任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalPerfTaskCreateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalPerfTaskCreateResponse
+        /// </returns>
+        public async Task<AgoalPerfTaskCreateResponse> AgoalPerfTaskCreateAsync(AgoalPerfTaskCreateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalPerfTaskCreateHeaders headers = new AgoalPerfTaskCreateHeaders();
+            return await AgoalPerfTaskCreateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新考核任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalPerfTaskUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalPerfTaskUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalPerfTaskUpdateResponse
+        /// </returns>
+        public AgoalPerfTaskUpdateResponse AgoalPerfTaskUpdateWithOptions(AgoalPerfTaskUpdateRequest request, AgoalPerfTaskUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalPerfTaskUpdate",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/perfTasks",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalPerfTaskUpdateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新考核任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalPerfTaskUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalPerfTaskUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalPerfTaskUpdateResponse
+        /// </returns>
+        public async Task<AgoalPerfTaskUpdateResponse> AgoalPerfTaskUpdateWithOptionsAsync(AgoalPerfTaskUpdateRequest request, AgoalPerfTaskUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalPerfTaskUpdate",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/perfTasks",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalPerfTaskUpdateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新考核任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalPerfTaskUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalPerfTaskUpdateResponse
+        /// </returns>
+        public AgoalPerfTaskUpdateResponse AgoalPerfTaskUpdate(AgoalPerfTaskUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalPerfTaskUpdateHeaders headers = new AgoalPerfTaskUpdateHeaders();
+            return AgoalPerfTaskUpdateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新考核任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalPerfTaskUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalPerfTaskUpdateResponse
+        /// </returns>
+        public async Task<AgoalPerfTaskUpdateResponse> AgoalPerfTaskUpdateAsync(AgoalPerfTaskUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalPerfTaskUpdateHeaders headers = new AgoalPerfTaskUpdateHeaders();
+            return await AgoalPerfTaskUpdateWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

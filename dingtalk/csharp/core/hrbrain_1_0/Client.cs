@@ -5560,6 +5560,306 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询人才档案附件照片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentProfileAttachmentQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainTalentProfileAttachmentQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentProfileAttachmentQueryResponse
+        /// </returns>
+        public HrbrainTalentProfileAttachmentQueryResponse HrbrainTalentProfileAttachmentQueryWithOptions(HrbrainTalentProfileAttachmentQueryRequest request, HrbrainTalentProfileAttachmentQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            {
+                query["dingCorpId"] = request.DingCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainTalentProfileAttachmentQuery",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/profiles/attachmentPhotos/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainTalentProfileAttachmentQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人才档案附件照片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentProfileAttachmentQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainTalentProfileAttachmentQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentProfileAttachmentQueryResponse
+        /// </returns>
+        public async Task<HrbrainTalentProfileAttachmentQueryResponse> HrbrainTalentProfileAttachmentQueryWithOptionsAsync(HrbrainTalentProfileAttachmentQueryRequest request, HrbrainTalentProfileAttachmentQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            {
+                query["dingCorpId"] = request.DingCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainTalentProfileAttachmentQuery",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/profiles/attachmentPhotos/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainTalentProfileAttachmentQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人才档案附件照片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentProfileAttachmentQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentProfileAttachmentQueryResponse
+        /// </returns>
+        public HrbrainTalentProfileAttachmentQueryResponse HrbrainTalentProfileAttachmentQuery(HrbrainTalentProfileAttachmentQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainTalentProfileAttachmentQueryHeaders headers = new HrbrainTalentProfileAttachmentQueryHeaders();
+            return HrbrainTalentProfileAttachmentQueryWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人才档案附件照片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentProfileAttachmentQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentProfileAttachmentQueryResponse
+        /// </returns>
+        public async Task<HrbrainTalentProfileAttachmentQueryResponse> HrbrainTalentProfileAttachmentQueryAsync(HrbrainTalentProfileAttachmentQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainTalentProfileAttachmentQueryHeaders headers = new HrbrainTalentProfileAttachmentQueryHeaders();
+            return await HrbrainTalentProfileAttachmentQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人才档案基础数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentProfileBasicQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainTalentProfileBasicQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentProfileBasicQueryResponse
+        /// </returns>
+        public HrbrainTalentProfileBasicQueryResponse HrbrainTalentProfileBasicQueryWithOptions(HrbrainTalentProfileBasicQueryRequest request, HrbrainTalentProfileBasicQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            {
+                query["dingCorpId"] = request.DingCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainTalentProfileBasicQuery",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/profiles/basicData/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainTalentProfileBasicQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人才档案基础数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentProfileBasicQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainTalentProfileBasicQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentProfileBasicQueryResponse
+        /// </returns>
+        public async Task<HrbrainTalentProfileBasicQueryResponse> HrbrainTalentProfileBasicQueryWithOptionsAsync(HrbrainTalentProfileBasicQueryRequest request, HrbrainTalentProfileBasicQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            {
+                query["dingCorpId"] = request.DingCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainTalentProfileBasicQuery",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/profiles/basicData/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainTalentProfileBasicQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人才档案基础数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentProfileBasicQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentProfileBasicQueryResponse
+        /// </returns>
+        public HrbrainTalentProfileBasicQueryResponse HrbrainTalentProfileBasicQuery(HrbrainTalentProfileBasicQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainTalentProfileBasicQueryHeaders headers = new HrbrainTalentProfileBasicQueryHeaders();
+            return HrbrainTalentProfileBasicQueryWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人才档案基础数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentProfileBasicQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentProfileBasicQueryResponse
+        /// </returns>
+        public async Task<HrbrainTalentProfileBasicQueryResponse> HrbrainTalentProfileBasicQueryAsync(HrbrainTalentProfileBasicQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainTalentProfileBasicQueryHeaders headers = new HrbrainTalentProfileBasicQueryHeaders();
+            return await HrbrainTalentProfileBasicQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>人员标签查询</para>
         /// </summary>
         /// 

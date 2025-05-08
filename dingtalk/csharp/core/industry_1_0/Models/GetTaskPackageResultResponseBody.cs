@@ -37,6 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public string Desc { get; set; }
 
+                [NameInMap("formName")]
+                [Validation(Required=false)]
+                public string FormName { get; set; }
+
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public long? Id { get; set; }
@@ -82,6 +86,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+
+                [NameInMap("rawData")]
+                [Validation(Required=false)]
+                public string RawData { get; set; }
 
                 [NameInMap("summary")]
                 [Validation(Required=false)]
