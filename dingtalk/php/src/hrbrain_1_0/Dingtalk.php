@@ -116,6 +116,12 @@ use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportTransferEvalRespo
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportWorkExpHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportWorkExpRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportWorkExpResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileAttachmentQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileAttachmentQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileAttachmentQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileBasicQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileBasicQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileBasicQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\StaffLabelRecordsQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\StaffLabelRecordsQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\StaffLabelRecordsQueryResponse;
@@ -2274,6 +2280,122 @@ class Dingtalk extends OpenApiClient
         $headers = new HrbrainImportWorkExpHeaders([]);
 
         return $this->hrbrainImportWorkExpWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询人才档案附件照片
+     *  *
+     * @param HrbrainTalentProfileAttachmentQueryRequest $request HrbrainTalentProfileAttachmentQueryRequest
+     * @param HrbrainTalentProfileAttachmentQueryHeaders $headers HrbrainTalentProfileAttachmentQueryHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainTalentProfileAttachmentQueryResponse HrbrainTalentProfileAttachmentQueryResponse
+     */
+    public function hrbrainTalentProfileAttachmentQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingCorpId)) {
+            $query['dingCorpId'] = $request->dingCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => $request->body,
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainTalentProfileAttachmentQuery',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/profiles/attachmentPhotos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainTalentProfileAttachmentQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询人才档案附件照片
+     *  *
+     * @param HrbrainTalentProfileAttachmentQueryRequest $request HrbrainTalentProfileAttachmentQueryRequest
+     *
+     * @return HrbrainTalentProfileAttachmentQueryResponse HrbrainTalentProfileAttachmentQueryResponse
+     */
+    public function hrbrainTalentProfileAttachmentQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainTalentProfileAttachmentQueryHeaders([]);
+
+        return $this->hrbrainTalentProfileAttachmentQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询人才档案基础数据
+     *  *
+     * @param HrbrainTalentProfileBasicQueryRequest $request HrbrainTalentProfileBasicQueryRequest
+     * @param HrbrainTalentProfileBasicQueryHeaders $headers HrbrainTalentProfileBasicQueryHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainTalentProfileBasicQueryResponse HrbrainTalentProfileBasicQueryResponse
+     */
+    public function hrbrainTalentProfileBasicQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingCorpId)) {
+            $query['dingCorpId'] = $request->dingCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => $request->body,
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainTalentProfileBasicQuery',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/profiles/basicData/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainTalentProfileBasicQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询人才档案基础数据
+     *  *
+     * @param HrbrainTalentProfileBasicQueryRequest $request HrbrainTalentProfileBasicQueryRequest
+     *
+     * @return HrbrainTalentProfileBasicQueryResponse HrbrainTalentProfileBasicQueryResponse
+     */
+    public function hrbrainTalentProfileBasicQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainTalentProfileBasicQueryHeaders([]);
+
+        return $this->hrbrainTalentProfileBasicQueryWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -18,6 +18,20 @@ class InsertContentRequest extends Model
     public $content;
 
     /**
+     * @example index
+     *
+     * @var int
+     */
+    public $index;
+
+    /**
+     * @example path
+     *
+     * @var int[]
+     */
+    public $path;
+
+    /**
      * @description This parameter is required.
      *
      * @example union_id
@@ -27,6 +41,8 @@ class InsertContentRequest extends Model
     public $operatorId;
     protected $_name = [
         'content' => 'content',
+        'index' => 'index',
+        'path' => 'path',
         'operatorId' => 'operatorId',
     ];
 
@@ -37,6 +53,12 @@ class InsertContentRequest extends Model
         $res = [];
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->index) {
+            $res['index'] = $this->index;
+        }
+        if (null !== $this->path) {
+            $res['path'] = $this->path;
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
@@ -55,6 +77,14 @@ class InsertContentRequest extends Model
         $model = new self();
         if (isset($map['content'])) {
             $model->content = $map['content'];
+        }
+        if (isset($map['index'])) {
+            $model->index = $map['index'];
+        }
+        if (isset($map['path'])) {
+            if (!empty($map['path'])) {
+                $model->path = $map['path'];
+            }
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];

@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AnnualCertificationAuditRespon
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchUpdateExternalTitleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchUpdateExternalTitleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchUpdateExternalTitleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeDingTalkIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeDingTalkIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeDingTalkIdResponse;
@@ -728,6 +731,66 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchApproveUnionApplyHeaders([]);
 
         return $this->batchApproveUnionApplyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量修改企业员工对外职位信息
+     *  *
+     * @param BatchUpdateExternalTitleRequest $request BatchUpdateExternalTitleRequest
+     * @param BatchUpdateExternalTitleHeaders $headers BatchUpdateExternalTitleHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchUpdateExternalTitleResponse BatchUpdateExternalTitleResponse
+     */
+    public function batchUpdateExternalTitleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->updateTitleModelList)) {
+            $body['updateTitleModelList'] = $request->updateTitleModelList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'BatchUpdateExternalTitle',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/externalTitles',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return BatchUpdateExternalTitleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量修改企业员工对外职位信息
+     *  *
+     * @param BatchUpdateExternalTitleRequest $request BatchUpdateExternalTitleRequest
+     *
+     * @return BatchUpdateExternalTitleResponse BatchUpdateExternalTitleResponse
+     */
+    public function batchUpdateExternalTitle($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchUpdateExternalTitleHeaders([]);
+
+        return $this->batchUpdateExternalTitleWithOptions($request, $headers, $runtime);
     }
 
     /**

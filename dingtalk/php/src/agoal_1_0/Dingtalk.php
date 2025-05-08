@@ -8,6 +8,12 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalEntityCreateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalEntityCreateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalEntityCreateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalEntityUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalEntityUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalEntityUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateResponse;
@@ -26,6 +32,12 @@ use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveRuleListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveRuleListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPerfTaskCreateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPerfTaskCreateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPerfTaskCreateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPerfTaskUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPerfTaskUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPerfTaskUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPeriodListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPeriodListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPeriodListResponse;
@@ -131,6 +143,112 @@ class Dingtalk extends OpenApiClient
         $headers = new AgoalCreateProgressHeaders([]);
 
         return $this->agoalCreateProgressWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建业务实体
+     *  *
+     * @param AgoalEntityCreateRequest $request AgoalEntityCreateRequest
+     * @param AgoalEntityCreateHeaders $headers AgoalEntityCreateHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalEntityCreateResponse AgoalEntityCreateResponse
+     */
+    public function agoalEntityCreateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action' => 'AgoalEntityCreate',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/entities',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalEntityCreateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建业务实体
+     *  *
+     * @param AgoalEntityCreateRequest $request AgoalEntityCreateRequest
+     *
+     * @return AgoalEntityCreateResponse AgoalEntityCreateResponse
+     */
+    public function agoalEntityCreate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalEntityCreateHeaders([]);
+
+        return $this->agoalEntityCreateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新业务实体
+     *  *
+     * @param AgoalEntityUpdateRequest $request AgoalEntityUpdateRequest
+     * @param AgoalEntityUpdateHeaders $headers AgoalEntityUpdateHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalEntityUpdateResponse AgoalEntityUpdateResponse
+     */
+    public function agoalEntityUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action' => 'AgoalEntityUpdate',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/entities',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalEntityUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新业务实体
+     *  *
+     * @param AgoalEntityUpdateRequest $request AgoalEntityUpdateRequest
+     *
+     * @return AgoalEntityUpdateResponse AgoalEntityUpdateResponse
+     */
+    public function agoalEntityUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalEntityUpdateHeaders([]);
+
+        return $this->agoalEntityUpdateWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -484,6 +602,112 @@ class Dingtalk extends OpenApiClient
         $headers = new AgoalOrgObjectiveRuleListHeaders([]);
 
         return $this->agoalOrgObjectiveRuleListWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 创建考核任务
+     *  *
+     * @param AgoalPerfTaskCreateRequest $request AgoalPerfTaskCreateRequest
+     * @param AgoalPerfTaskCreateHeaders $headers AgoalPerfTaskCreateHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalPerfTaskCreateResponse AgoalPerfTaskCreateResponse
+     */
+    public function agoalPerfTaskCreateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action' => 'AgoalPerfTaskCreate',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/perfTasks',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalPerfTaskCreateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建考核任务
+     *  *
+     * @param AgoalPerfTaskCreateRequest $request AgoalPerfTaskCreateRequest
+     *
+     * @return AgoalPerfTaskCreateResponse AgoalPerfTaskCreateResponse
+     */
+    public function agoalPerfTaskCreate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalPerfTaskCreateHeaders([]);
+
+        return $this->agoalPerfTaskCreateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新考核任务
+     *  *
+     * @param AgoalPerfTaskUpdateRequest $request AgoalPerfTaskUpdateRequest
+     * @param AgoalPerfTaskUpdateHeaders $headers AgoalPerfTaskUpdateHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalPerfTaskUpdateResponse AgoalPerfTaskUpdateResponse
+     */
+    public function agoalPerfTaskUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action' => 'AgoalPerfTaskUpdate',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/perfTasks',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalPerfTaskUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新考核任务
+     *  *
+     * @param AgoalPerfTaskUpdateRequest $request AgoalPerfTaskUpdateRequest
+     *
+     * @return AgoalPerfTaskUpdateResponse AgoalPerfTaskUpdateResponse
+     */
+    public function agoalPerfTaskUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalPerfTaskUpdateHeaders([]);
+
+        return $this->agoalPerfTaskUpdateWithOptions($request, $headers, $runtime);
     }
 
     /**

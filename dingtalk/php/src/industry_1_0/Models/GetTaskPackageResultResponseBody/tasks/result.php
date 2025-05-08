@@ -30,6 +30,11 @@ class result extends Model
     public $desc;
 
     /**
+     * @var string
+     */
+    public $formName;
+
+    /**
      * @var int
      */
     public $id;
@@ -47,6 +52,11 @@ class result extends Model
     /**
      * @var string
      */
+    public $rawData;
+
+    /**
+     * @var string
+     */
     public $summary;
 
     /**
@@ -58,9 +68,11 @@ class result extends Model
         'audioTextFormatted' => 'audioTextFormatted',
         'date' => 'date',
         'desc' => 'desc',
+        'formName' => 'formName',
         'id' => 'id',
         'items' => 'items',
         'name' => 'name',
+        'rawData' => 'rawData',
         'summary' => 'summary',
         'total' => 'total',
     ];
@@ -82,6 +94,9 @@ class result extends Model
         if (null !== $this->desc) {
             $res['desc'] = $this->desc;
         }
+        if (null !== $this->formName) {
+            $res['formName'] = $this->formName;
+        }
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
@@ -96,6 +111,9 @@ class result extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->rawData) {
+            $res['rawData'] = $this->rawData;
         }
         if (null !== $this->summary) {
             $res['summary'] = $this->summary;
@@ -127,6 +145,9 @@ class result extends Model
         if (isset($map['desc'])) {
             $model->desc = $map['desc'];
         }
+        if (isset($map['formName'])) {
+            $model->formName = $map['formName'];
+        }
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }
@@ -141,6 +162,9 @@ class result extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['rawData'])) {
+            $model->rawData = $map['rawData'];
         }
         if (isset($map['summary'])) {
             $model->summary = $map['summary'];
