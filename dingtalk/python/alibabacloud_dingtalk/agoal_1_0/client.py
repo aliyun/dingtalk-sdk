@@ -160,6 +160,222 @@ class Client(OpenApiClient):
         headers = dingtalkagoal__1__0_models.AgoalCreateProgressHeaders()
         return await self.agoal_create_progress_with_options_async(request, headers, runtime)
 
+    def agoal_entity_create_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalEntityCreateRequest,
+        headers: dingtalkagoal__1__0_models.AgoalEntityCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalEntityCreateResponse:
+        """
+        @summary 创建业务实体
+        
+        @param request: AgoalEntityCreateRequest
+        @param headers: AgoalEntityCreateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalEntityCreateResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='AgoalEntityCreate',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/entities',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalEntityCreateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_entity_create_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalEntityCreateRequest,
+        headers: dingtalkagoal__1__0_models.AgoalEntityCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalEntityCreateResponse:
+        """
+        @summary 创建业务实体
+        
+        @param request: AgoalEntityCreateRequest
+        @param headers: AgoalEntityCreateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalEntityCreateResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='AgoalEntityCreate',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/entities',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalEntityCreateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_entity_create(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalEntityCreateRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalEntityCreateResponse:
+        """
+        @summary 创建业务实体
+        
+        @param request: AgoalEntityCreateRequest
+        @return: AgoalEntityCreateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalEntityCreateHeaders()
+        return self.agoal_entity_create_with_options(request, headers, runtime)
+
+    async def agoal_entity_create_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalEntityCreateRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalEntityCreateResponse:
+        """
+        @summary 创建业务实体
+        
+        @param request: AgoalEntityCreateRequest
+        @return: AgoalEntityCreateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalEntityCreateHeaders()
+        return await self.agoal_entity_create_with_options_async(request, headers, runtime)
+
+    def agoal_entity_update_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalEntityUpdateRequest,
+        headers: dingtalkagoal__1__0_models.AgoalEntityUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalEntityUpdateResponse:
+        """
+        @summary 更新业务实体
+        
+        @param request: AgoalEntityUpdateRequest
+        @param headers: AgoalEntityUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalEntityUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='AgoalEntityUpdate',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/entities',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalEntityUpdateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_entity_update_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalEntityUpdateRequest,
+        headers: dingtalkagoal__1__0_models.AgoalEntityUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalEntityUpdateResponse:
+        """
+        @summary 更新业务实体
+        
+        @param request: AgoalEntityUpdateRequest
+        @param headers: AgoalEntityUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalEntityUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='AgoalEntityUpdate',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/entities',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalEntityUpdateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_entity_update(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalEntityUpdateRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalEntityUpdateResponse:
+        """
+        @summary 更新业务实体
+        
+        @param request: AgoalEntityUpdateRequest
+        @return: AgoalEntityUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalEntityUpdateHeaders()
+        return self.agoal_entity_update_with_options(request, headers, runtime)
+
+    async def agoal_entity_update_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalEntityUpdateRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalEntityUpdateResponse:
+        """
+        @summary 更新业务实体
+        
+        @param request: AgoalEntityUpdateRequest
+        @return: AgoalEntityUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalEntityUpdateHeaders()
+        return await self.agoal_entity_update_with_options_async(request, headers, runtime)
+
     def agoal_field_update_with_options(
         self,
         tmp_req: dingtalkagoal__1__0_models.AgoalFieldUpdateRequest,
@@ -849,6 +1065,222 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkagoal__1__0_models.AgoalOrgObjectiveRuleListHeaders()
         return await self.agoal_org_objective_rule_list_with_options_async(headers, runtime)
+
+    def agoal_perf_task_create_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalPerfTaskCreateRequest,
+        headers: dingtalkagoal__1__0_models.AgoalPerfTaskCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalPerfTaskCreateResponse:
+        """
+        @summary 创建考核任务
+        
+        @param request: AgoalPerfTaskCreateRequest
+        @param headers: AgoalPerfTaskCreateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalPerfTaskCreateResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='AgoalPerfTaskCreate',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/perfTasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalPerfTaskCreateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_perf_task_create_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalPerfTaskCreateRequest,
+        headers: dingtalkagoal__1__0_models.AgoalPerfTaskCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalPerfTaskCreateResponse:
+        """
+        @summary 创建考核任务
+        
+        @param request: AgoalPerfTaskCreateRequest
+        @param headers: AgoalPerfTaskCreateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalPerfTaskCreateResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='AgoalPerfTaskCreate',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/perfTasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalPerfTaskCreateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_perf_task_create(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalPerfTaskCreateRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalPerfTaskCreateResponse:
+        """
+        @summary 创建考核任务
+        
+        @param request: AgoalPerfTaskCreateRequest
+        @return: AgoalPerfTaskCreateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalPerfTaskCreateHeaders()
+        return self.agoal_perf_task_create_with_options(request, headers, runtime)
+
+    async def agoal_perf_task_create_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalPerfTaskCreateRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalPerfTaskCreateResponse:
+        """
+        @summary 创建考核任务
+        
+        @param request: AgoalPerfTaskCreateRequest
+        @return: AgoalPerfTaskCreateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalPerfTaskCreateHeaders()
+        return await self.agoal_perf_task_create_with_options_async(request, headers, runtime)
+
+    def agoal_perf_task_update_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalPerfTaskUpdateRequest,
+        headers: dingtalkagoal__1__0_models.AgoalPerfTaskUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalPerfTaskUpdateResponse:
+        """
+        @summary 更新考核任务
+        
+        @param request: AgoalPerfTaskUpdateRequest
+        @param headers: AgoalPerfTaskUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalPerfTaskUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='AgoalPerfTaskUpdate',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/perfTasks',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalPerfTaskUpdateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_perf_task_update_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalPerfTaskUpdateRequest,
+        headers: dingtalkagoal__1__0_models.AgoalPerfTaskUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalPerfTaskUpdateResponse:
+        """
+        @summary 更新考核任务
+        
+        @param request: AgoalPerfTaskUpdateRequest
+        @param headers: AgoalPerfTaskUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalPerfTaskUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='AgoalPerfTaskUpdate',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/perfTasks',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalPerfTaskUpdateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_perf_task_update(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalPerfTaskUpdateRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalPerfTaskUpdateResponse:
+        """
+        @summary 更新考核任务
+        
+        @param request: AgoalPerfTaskUpdateRequest
+        @return: AgoalPerfTaskUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalPerfTaskUpdateHeaders()
+        return self.agoal_perf_task_update_with_options(request, headers, runtime)
+
+    async def agoal_perf_task_update_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalPerfTaskUpdateRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalPerfTaskUpdateResponse:
+        """
+        @summary 更新考核任务
+        
+        @param request: AgoalPerfTaskUpdateRequest
+        @return: AgoalPerfTaskUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalPerfTaskUpdateHeaders()
+        return await self.agoal_perf_task_update_with_options_async(request, headers, runtime)
 
     def agoal_period_list_with_options(
         self,

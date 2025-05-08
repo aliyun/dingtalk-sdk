@@ -1292,6 +1292,311 @@ class BatchApproveUnionApplyResponse(TeaModel):
         return self
 
 
+class BatchUpdateExternalTitleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchUpdateExternalTitleRequestUpdateTitleModelList(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+        user_id: str = None,
+    ):
+        self.title = title
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchUpdateExternalTitleRequest(TeaModel):
+    def __init__(
+        self,
+        operator_user_id: str = None,
+        update_title_model_list: List[BatchUpdateExternalTitleRequestUpdateTitleModelList] = None,
+    ):
+        self.operator_user_id = operator_user_id
+        self.update_title_model_list = update_title_model_list
+
+    def validate(self):
+        if self.update_title_model_list:
+            for k in self.update_title_model_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        result['updateTitleModelList'] = []
+        if self.update_title_model_list is not None:
+            for k in self.update_title_model_list:
+                result['updateTitleModelList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        self.update_title_model_list = []
+        if m.get('updateTitleModelList') is not None:
+            for k in m.get('updateTitleModelList'):
+                temp_model = BatchUpdateExternalTitleRequestUpdateTitleModelList()
+                self.update_title_model_list.append(temp_model.from_map(k))
+        return self
+
+
+class BatchUpdateExternalTitleResponseBodyResultFailedList(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+        user_id: str = None,
+    ):
+        self.title = title
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchUpdateExternalTitleResponseBodyResultModifyList(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+        user_id: str = None,
+    ):
+        self.title = title
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchUpdateExternalTitleResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        failed_list: List[BatchUpdateExternalTitleResponseBodyResultFailedList] = None,
+        modify_list: List[BatchUpdateExternalTitleResponseBodyResultModifyList] = None,
+        modify_user: str = None,
+    ):
+        self.failed_list = failed_list
+        self.modify_list = modify_list
+        self.modify_user = modify_user
+
+    def validate(self):
+        if self.failed_list:
+            for k in self.failed_list:
+                if k:
+                    k.validate()
+        if self.modify_list:
+            for k in self.modify_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['failedList'] = []
+        if self.failed_list is not None:
+            for k in self.failed_list:
+                result['failedList'].append(k.to_map() if k else None)
+        result['modifyList'] = []
+        if self.modify_list is not None:
+            for k in self.modify_list:
+                result['modifyList'].append(k.to_map() if k else None)
+        if self.modify_user is not None:
+            result['modifyUser'] = self.modify_user
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.failed_list = []
+        if m.get('failedList') is not None:
+            for k in m.get('failedList'):
+                temp_model = BatchUpdateExternalTitleResponseBodyResultFailedList()
+                self.failed_list.append(temp_model.from_map(k))
+        self.modify_list = []
+        if m.get('modifyList') is not None:
+            for k in m.get('modifyList'):
+                temp_model = BatchUpdateExternalTitleResponseBodyResultModifyList()
+                self.modify_list.append(temp_model.from_map(k))
+        if m.get('modifyUser') is not None:
+            self.modify_user = m.get('modifyUser')
+        return self
+
+
+class BatchUpdateExternalTitleResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: BatchUpdateExternalTitleResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = BatchUpdateExternalTitleResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchUpdateExternalTitleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchUpdateExternalTitleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchUpdateExternalTitleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ChangeDingTalkIdHeaders(TeaModel):
     def __init__(
         self,

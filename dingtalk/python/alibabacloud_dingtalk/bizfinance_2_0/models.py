@@ -7756,6 +7756,231 @@ class QueryPaymentStatusResponse(TeaModel):
         return self
 
 
+class QueryProductByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryProductByPageRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        # This parameter is required.
+        self.page_number = page_number
+        # This parameter is required.
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class QueryProductByPageResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        create_time: int = None,
+        description: str = None,
+        information: str = None,
+        name: str = None,
+        specification: str = None,
+        status: str = None,
+        unit: str = None,
+        user_define_code: str = None,
+    ):
+        self.code = code
+        self.create_time = create_time
+        self.description = description
+        self.information = information
+        self.name = name
+        self.specification = specification
+        self.status = status
+        self.unit = unit
+        self.user_define_code = user_define_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.description is not None:
+            result['description'] = self.description
+        if self.information is not None:
+            result['information'] = self.information
+        if self.name is not None:
+            result['name'] = self.name
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.status is not None:
+            result['status'] = self.status
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.user_define_code is not None:
+            result['userDefineCode'] = self.user_define_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('information') is not None:
+            self.information = m.get('information')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('userDefineCode') is not None:
+            self.user_define_code = m.get('userDefineCode')
+        return self
+
+
+class QueryProductByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[QueryProductByPageResponseBodyList] = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryProductByPageResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryProductByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryProductByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryProductByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryProjectByPageHeaders(TeaModel):
     def __init__(
         self,

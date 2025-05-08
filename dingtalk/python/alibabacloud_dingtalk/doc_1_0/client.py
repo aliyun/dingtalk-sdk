@@ -6614,6 +6614,10 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.index):
+            body['index'] = request.index
+        if not UtilClient.is_unset(request.path):
+            body['path'] = request.path
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -6662,6 +6666,10 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.index):
+            body['index'] = request.index
+        if not UtilClient.is_unset(request.path):
+            body['path'] = request.path
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

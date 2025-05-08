@@ -1,7 +1,174 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import List, Dict, Any
+from typing import Dict, Any, List
+
+
+class Meta(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        alias: str = None,
+        category: str = None,
+        code: str = None,
+        force_active: bool = None,
+        force_required: bool = None,
+        required: bool = None,
+        scheme: Dict[str, Any] = None,
+        title: str = None,
+        type: str = None,
+    ):
+        self.active = active
+        self.alias = alias
+        self.category = category
+        self.code = code
+        self.force_active = force_active
+        self.force_required = force_required
+        self.required = required
+        self.scheme = scheme
+        self.title = title
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.alias is not None:
+            result['alias'] = self.alias
+        if self.category is not None:
+            result['category'] = self.category
+        if self.code is not None:
+            result['code'] = self.code
+        if self.force_active is not None:
+            result['forceActive'] = self.force_active
+        if self.force_required is not None:
+            result['forceRequired'] = self.force_required
+        if self.required is not None:
+            result['required'] = self.required
+        if self.scheme is not None:
+            result['scheme'] = self.scheme
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('alias') is not None:
+            self.alias = m.get('alias')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('forceActive') is not None:
+            self.force_active = m.get('forceActive')
+        if m.get('forceRequired') is not None:
+            self.force_required = m.get('forceRequired')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('scheme') is not None:
+            self.scheme = m.get('scheme')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class Entity(TeaModel):
+    def __init__(
+        self,
+        children: List['Entity'] = None,
+        data: Dict[str, Any] = None,
+        id: str = None,
+        is_deleted: str = None,
+        link_source_id: str = None,
+        link_source_type: str = None,
+        metas: List[Meta] = None,
+        type: str = None,
+    ):
+        self.children = children
+        self.data = data
+        self.id = id
+        self.is_deleted = is_deleted
+        self.link_source_id = link_source_id
+        self.link_source_type = link_source_type
+        self.metas = metas
+        self.type = type
+
+    def validate(self):
+        if self.children:
+            for k in self.children:
+                if k:
+                    k.validate()
+        if self.metas:
+            for k in self.metas:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['children'] = []
+        if self.children is not None:
+            for k in self.children:
+                result['children'].append(k.to_map() if k else None)
+        if self.data is not None:
+            result['data'] = self.data
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.link_source_id is not None:
+            result['linkSourceId'] = self.link_source_id
+        if self.link_source_type is not None:
+            result['linkSourceType'] = self.link_source_type
+        result['metas'] = []
+        if self.metas is not None:
+            for k in self.metas:
+                result['metas'].append(k.to_map() if k else None)
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.children = []
+        if m.get('children') is not None:
+            for k in m.get('children'):
+                temp_model = Entity()
+                self.children.append(temp_model.from_map(k))
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('linkSourceId') is not None:
+            self.link_source_id = m.get('linkSourceId')
+        if m.get('linkSourceType') is not None:
+            self.link_source_type = m.get('linkSourceType')
+        self.metas = []
+        if m.get('metas') is not None:
+            for k in m.get('metas'):
+                temp_model = Meta()
+                self.metas.append(temp_model.from_map(k))
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
 
 
 class OpenAgoalAlignDTO(TeaModel):
@@ -1167,6 +1334,57 @@ class OpenUserSubAdminDTO(TeaModel):
         return self
 
 
+class PerfTask(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        is_deleted: str = None,
+        status: str = None,
+        title: str = None,
+        user_id: str = None,
+    ):
+        self.id = id
+        self.is_deleted = is_deleted
+        self.status = status
+        self.title = title
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
 class AgoalCreateProgressHeaders(TeaModel):
     def __init__(
         self,
@@ -1336,6 +1554,290 @@ class AgoalCreateProgressResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AgoalCreateProgressResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AgoalEntityCreateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalEntityCreateRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[Entity] = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = Entity()
+                self.body.append(temp_model.from_map(k))
+        return self
+
+
+class AgoalEntityCreateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalEntityCreateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalEntityCreateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalEntityCreateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AgoalEntityUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalEntityUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[Entity] = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = Entity()
+                self.body.append(temp_model.from_map(k))
+        return self
+
+
+class AgoalEntityUpdateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalEntityUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalEntityUpdateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalEntityUpdateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2295,6 +2797,290 @@ class AgoalOrgObjectiveRuleListResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AgoalOrgObjectiveRuleListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AgoalPerfTaskCreateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalPerfTaskCreateRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[PerfTask] = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = PerfTask()
+                self.body.append(temp_model.from_map(k))
+        return self
+
+
+class AgoalPerfTaskCreateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalPerfTaskCreateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalPerfTaskCreateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalPerfTaskCreateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AgoalPerfTaskUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalPerfTaskUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[PerfTask] = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = PerfTask()
+                self.body.append(temp_model.from_map(k))
+        return self
+
+
+class AgoalPerfTaskUpdateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalPerfTaskUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalPerfTaskUpdateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalPerfTaskUpdateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

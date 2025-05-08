@@ -7795,6 +7795,563 @@ class HrbrainImportWorkExpResponse(TeaModel):
         return self
 
 
+class HrbrainTalentProfileAttachmentQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainTalentProfileAttachmentQueryRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[str] = None,
+        ding_corp_id: str = None,
+    ):
+        self.body = body
+        self.ding_corp_id = ding_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        return self
+
+
+class HrbrainTalentProfileAttachmentQueryResponseBodyContentStaffAttachmentInfoListAttachmentInfoList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        url: str = None,
+    ):
+        self.name = name
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class HrbrainTalentProfileAttachmentQueryResponseBodyContentStaffAttachmentInfoList(TeaModel):
+    def __init__(
+        self,
+        attachment_info_list: List[HrbrainTalentProfileAttachmentQueryResponseBodyContentStaffAttachmentInfoListAttachmentInfoList] = None,
+        work_no: str = None,
+    ):
+        self.attachment_info_list = attachment_info_list
+        self.work_no = work_no
+
+    def validate(self):
+        if self.attachment_info_list:
+            for k in self.attachment_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachmentInfoList'] = []
+        if self.attachment_info_list is not None:
+            for k in self.attachment_info_list:
+                result['attachmentInfoList'].append(k.to_map() if k else None)
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachment_info_list = []
+        if m.get('attachmentInfoList') is not None:
+            for k in m.get('attachmentInfoList'):
+                temp_model = HrbrainTalentProfileAttachmentQueryResponseBodyContentStaffAttachmentInfoListAttachmentInfoList()
+                self.attachment_info_list.append(temp_model.from_map(k))
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
+        return self
+
+
+class HrbrainTalentProfileAttachmentQueryResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        staff_attachment_info_list: List[HrbrainTalentProfileAttachmentQueryResponseBodyContentStaffAttachmentInfoList] = None,
+    ):
+        self.staff_attachment_info_list = staff_attachment_info_list
+
+    def validate(self):
+        if self.staff_attachment_info_list:
+            for k in self.staff_attachment_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['staffAttachmentInfoList'] = []
+        if self.staff_attachment_info_list is not None:
+            for k in self.staff_attachment_info_list:
+                result['staffAttachmentInfoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.staff_attachment_info_list = []
+        if m.get('staffAttachmentInfoList') is not None:
+            for k in m.get('staffAttachmentInfoList'):
+                temp_model = HrbrainTalentProfileAttachmentQueryResponseBodyContentStaffAttachmentInfoList()
+                self.staff_attachment_info_list.append(temp_model.from_map(k))
+        return self
+
+
+class HrbrainTalentProfileAttachmentQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: HrbrainTalentProfileAttachmentQueryResponseBodyContent = None,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = HrbrainTalentProfileAttachmentQueryResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainTalentProfileAttachmentQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainTalentProfileAttachmentQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainTalentProfileAttachmentQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainTalentProfileBasicQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainTalentProfileBasicQueryRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[str] = None,
+        ding_corp_id: str = None,
+    ):
+        self.body = body
+        self.ding_corp_id = ding_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        return self
+
+
+class HrbrainTalentProfileBasicQueryResponseBodyContentProfileBaseInfoList(TeaModel):
+    def __init__(
+        self,
+        age: str = None,
+        birthday: str = None,
+        dept_name: str = None,
+        dept_no: str = None,
+        gender: str = None,
+        job_level: str = None,
+        jobcode: str = None,
+        name: str = None,
+        position: str = None,
+        seniority_years: str = None,
+        super_name: str = None,
+        super_work_no: str = None,
+        work_no: str = None,
+        work_place: str = None,
+    ):
+        self.age = age
+        self.birthday = birthday
+        self.dept_name = dept_name
+        self.dept_no = dept_no
+        self.gender = gender
+        self.job_level = job_level
+        self.jobcode = jobcode
+        self.name = name
+        self.position = position
+        self.seniority_years = seniority_years
+        self.super_name = super_name
+        self.super_work_no = super_work_no
+        self.work_no = work_no
+        self.work_place = work_place
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.age is not None:
+            result['age'] = self.age
+        if self.birthday is not None:
+            result['birthday'] = self.birthday
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.dept_no is not None:
+            result['deptNo'] = self.dept_no
+        if self.gender is not None:
+            result['gender'] = self.gender
+        if self.job_level is not None:
+            result['jobLevel'] = self.job_level
+        if self.jobcode is not None:
+            result['jobcode'] = self.jobcode
+        if self.name is not None:
+            result['name'] = self.name
+        if self.position is not None:
+            result['position'] = self.position
+        if self.seniority_years is not None:
+            result['seniorityYears'] = self.seniority_years
+        if self.super_name is not None:
+            result['superName'] = self.super_name
+        if self.super_work_no is not None:
+            result['superWorkNo'] = self.super_work_no
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
+        if self.work_place is not None:
+            result['workPlace'] = self.work_place
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('age') is not None:
+            self.age = m.get('age')
+        if m.get('birthday') is not None:
+            self.birthday = m.get('birthday')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('deptNo') is not None:
+            self.dept_no = m.get('deptNo')
+        if m.get('gender') is not None:
+            self.gender = m.get('gender')
+        if m.get('jobLevel') is not None:
+            self.job_level = m.get('jobLevel')
+        if m.get('jobcode') is not None:
+            self.jobcode = m.get('jobcode')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('position') is not None:
+            self.position = m.get('position')
+        if m.get('seniorityYears') is not None:
+            self.seniority_years = m.get('seniorityYears')
+        if m.get('superName') is not None:
+            self.super_name = m.get('superName')
+        if m.get('superWorkNo') is not None:
+            self.super_work_no = m.get('superWorkNo')
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
+        if m.get('workPlace') is not None:
+            self.work_place = m.get('workPlace')
+        return self
+
+
+class HrbrainTalentProfileBasicQueryResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        profile_base_info_list: List[HrbrainTalentProfileBasicQueryResponseBodyContentProfileBaseInfoList] = None,
+    ):
+        self.profile_base_info_list = profile_base_info_list
+
+    def validate(self):
+        if self.profile_base_info_list:
+            for k in self.profile_base_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['profileBaseInfoList'] = []
+        if self.profile_base_info_list is not None:
+            for k in self.profile_base_info_list:
+                result['profileBaseInfoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.profile_base_info_list = []
+        if m.get('profileBaseInfoList') is not None:
+            for k in m.get('profileBaseInfoList'):
+                temp_model = HrbrainTalentProfileBasicQueryResponseBodyContentProfileBaseInfoList()
+                self.profile_base_info_list.append(temp_model.from_map(k))
+        return self
+
+
+class HrbrainTalentProfileBasicQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: HrbrainTalentProfileBasicQueryResponseBodyContent = None,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = HrbrainTalentProfileBasicQueryResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainTalentProfileBasicQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainTalentProfileBasicQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainTalentProfileBasicQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class StaffLabelRecordsQueryHeaders(TeaModel):
     def __init__(
         self,

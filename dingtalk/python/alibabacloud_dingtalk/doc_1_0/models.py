@@ -9817,10 +9817,14 @@ class InsertContentRequest(TeaModel):
     def __init__(
         self,
         content: Dict[str, Any] = None,
+        index: int = None,
+        path: List[int] = None,
         operator_id: str = None,
     ):
         # This parameter is required.
         self.content = content
+        self.index = index
+        self.path = path
         # This parameter is required.
         self.operator_id = operator_id
 
@@ -9835,6 +9839,10 @@ class InsertContentRequest(TeaModel):
         result = dict()
         if self.content is not None:
             result['content'] = self.content
+        if self.index is not None:
+            result['index'] = self.index
+        if self.path is not None:
+            result['path'] = self.path
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -9843,6 +9851,10 @@ class InsertContentRequest(TeaModel):
         m = m or dict()
         if m.get('content') is not None:
             self.content = m.get('content')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('path') is not None:
+            self.path = m.get('path')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self

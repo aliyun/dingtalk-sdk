@@ -4150,6 +4150,124 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryPaymentStatusHeaders()
         return await self.query_payment_status_with_options_async(request, headers, runtime)
 
+    def query_product_by_page_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryProductByPageRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryProductByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryProductByPageResponse:
+        """
+        @summary 批量获取商品信息
+        
+        @param request: QueryProductByPageRequest
+        @param headers: QueryProductByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryProductByPageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryProductByPage',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/products/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryProductByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_product_by_page_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryProductByPageRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryProductByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryProductByPageResponse:
+        """
+        @summary 批量获取商品信息
+        
+        @param request: QueryProductByPageRequest
+        @param headers: QueryProductByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryProductByPageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryProductByPage',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/products/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryProductByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_product_by_page(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryProductByPageRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryProductByPageResponse:
+        """
+        @summary 批量获取商品信息
+        
+        @param request: QueryProductByPageRequest
+        @return: QueryProductByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryProductByPageHeaders()
+        return self.query_product_by_page_with_options(request, headers, runtime)
+
+    async def query_product_by_page_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryProductByPageRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryProductByPageResponse:
+        """
+        @summary 批量获取商品信息
+        
+        @param request: QueryProductByPageRequest
+        @return: QueryProductByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryProductByPageHeaders()
+        return await self.query_product_by_page_with_options_async(request, headers, runtime)
+
     def query_project_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QueryProjectByPageRequest,

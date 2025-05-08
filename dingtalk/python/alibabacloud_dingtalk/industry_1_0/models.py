@@ -17635,9 +17635,11 @@ class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
         audio_text_formatted: str = None,
         date: str = None,
         desc: str = None,
+        form_name: str = None,
         id: int = None,
         items: List[GetTaskPackageResultResponseBodyTasksResultItems] = None,
         name: str = None,
+        raw_data: str = None,
         summary: str = None,
         total: int = None,
     ):
@@ -17645,9 +17647,11 @@ class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
         self.audio_text_formatted = audio_text_formatted
         self.date = date
         self.desc = desc
+        self.form_name = form_name
         self.id = id
         self.items = items
         self.name = name
+        self.raw_data = raw_data
         self.summary = summary
         self.total = total
 
@@ -17671,6 +17675,8 @@ class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
             result['date'] = self.date
         if self.desc is not None:
             result['desc'] = self.desc
+        if self.form_name is not None:
+            result['formName'] = self.form_name
         if self.id is not None:
             result['id'] = self.id
         result['items'] = []
@@ -17679,6 +17685,8 @@ class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
                 result['items'].append(k.to_map() if k else None)
         if self.name is not None:
             result['name'] = self.name
+        if self.raw_data is not None:
+            result['rawData'] = self.raw_data
         if self.summary is not None:
             result['summary'] = self.summary
         if self.total is not None:
@@ -17695,6 +17703,8 @@ class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
             self.date = m.get('date')
         if m.get('desc') is not None:
             self.desc = m.get('desc')
+        if m.get('formName') is not None:
+            self.form_name = m.get('formName')
         if m.get('id') is not None:
             self.id = m.get('id')
         self.items = []
@@ -17704,6 +17714,8 @@ class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
                 self.items.append(temp_model.from_map(k))
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('rawData') is not None:
+            self.raw_data = m.get('rawData')
         if m.get('summary') is not None:
             self.summary = m.get('summary')
         if m.get('total') is not None:

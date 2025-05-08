@@ -4290,6 +4290,238 @@ class Client(OpenApiClient):
         headers = dingtalkhrbrain__1__0_models.HrbrainImportWorkExpHeaders()
         return await self.hrbrain_import_work_exp_with_options_async(request, headers, runtime)
 
+    def hrbrain_talent_profile_attachment_query_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryResponse:
+        """
+        @summary 查询人才档案附件照片
+        
+        @param request: HrbrainTalentProfileAttachmentQueryRequest
+        @param headers: HrbrainTalentProfileAttachmentQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainTalentProfileAttachmentQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_corp_id):
+            query['dingCorpId'] = request.ding_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=request.body
+        )
+        params = open_api_models.Params(
+            action='HrbrainTalentProfileAttachmentQuery',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/profiles/attachmentPhotos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_talent_profile_attachment_query_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryResponse:
+        """
+        @summary 查询人才档案附件照片
+        
+        @param request: HrbrainTalentProfileAttachmentQueryRequest
+        @param headers: HrbrainTalentProfileAttachmentQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainTalentProfileAttachmentQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_corp_id):
+            query['dingCorpId'] = request.ding_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=request.body
+        )
+        params = open_api_models.Params(
+            action='HrbrainTalentProfileAttachmentQuery',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/profiles/attachmentPhotos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_talent_profile_attachment_query(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryResponse:
+        """
+        @summary 查询人才档案附件照片
+        
+        @param request: HrbrainTalentProfileAttachmentQueryRequest
+        @return: HrbrainTalentProfileAttachmentQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryHeaders()
+        return self.hrbrain_talent_profile_attachment_query_with_options(request, headers, runtime)
+
+    async def hrbrain_talent_profile_attachment_query_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryResponse:
+        """
+        @summary 查询人才档案附件照片
+        
+        @param request: HrbrainTalentProfileAttachmentQueryRequest
+        @return: HrbrainTalentProfileAttachmentQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryHeaders()
+        return await self.hrbrain_talent_profile_attachment_query_with_options_async(request, headers, runtime)
+
+    def hrbrain_talent_profile_basic_query_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryResponse:
+        """
+        @summary 查询人才档案基础数据
+        
+        @param request: HrbrainTalentProfileBasicQueryRequest
+        @param headers: HrbrainTalentProfileBasicQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainTalentProfileBasicQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_corp_id):
+            query['dingCorpId'] = request.ding_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=request.body
+        )
+        params = open_api_models.Params(
+            action='HrbrainTalentProfileBasicQuery',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/profiles/basicData/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_talent_profile_basic_query_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryResponse:
+        """
+        @summary 查询人才档案基础数据
+        
+        @param request: HrbrainTalentProfileBasicQueryRequest
+        @param headers: HrbrainTalentProfileBasicQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainTalentProfileBasicQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_corp_id):
+            query['dingCorpId'] = request.ding_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=request.body
+        )
+        params = open_api_models.Params(
+            action='HrbrainTalentProfileBasicQuery',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/profiles/basicData/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_talent_profile_basic_query(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryResponse:
+        """
+        @summary 查询人才档案基础数据
+        
+        @param request: HrbrainTalentProfileBasicQueryRequest
+        @return: HrbrainTalentProfileBasicQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryHeaders()
+        return self.hrbrain_talent_profile_basic_query_with_options(request, headers, runtime)
+
+    async def hrbrain_talent_profile_basic_query_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryResponse:
+        """
+        @summary 查询人才档案基础数据
+        
+        @param request: HrbrainTalentProfileBasicQueryRequest
+        @return: HrbrainTalentProfileBasicQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryHeaders()
+        return await self.hrbrain_talent_profile_basic_query_with_options_async(request, headers, runtime)
+
     def staff_label_records_query_with_options(
         self,
         request: dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryRequest,
