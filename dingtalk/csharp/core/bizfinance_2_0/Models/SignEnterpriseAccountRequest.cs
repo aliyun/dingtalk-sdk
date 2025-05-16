@@ -49,6 +49,22 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 
         /// <summary>
         /// <b>Example:</b>
+        /// <para>XXX</para>
+        /// </summary>
+        [NameInMap("feeItemCode")]
+        [Validation(Required=false)]
+        public string FeeItemCode { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>XXXX</para>
+        /// </summary>
+        [NameInMap("issueNo")]
+        [Validation(Required=false)]
+        public string IssueNo { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
         /// <para>123</para>
         /// </summary>
         [NameInMap("operator")]

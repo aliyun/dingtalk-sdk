@@ -6624,6 +6624,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             {
                 query["channelType"] = request.ChannelType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeeItemCode))
+            {
+                query["feeItemCode"] = request.FeeItemCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IssueNo))
+            {
+                query["issueNo"] = request.IssueNo;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
                 query["operator"] = request.Operator;
@@ -6698,6 +6706,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelType))
             {
                 query["channelType"] = request.ChannelType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeeItemCode))
+            {
+                query["feeItemCode"] = request.FeeItemCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IssueNo))
+            {
+                query["issueNo"] = request.IssueNo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {

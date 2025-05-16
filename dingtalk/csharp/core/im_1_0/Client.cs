@@ -5446,6 +5446,162 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取单聊会话的OpenConversationId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSingleChatOpenConversationIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSingleChatOpenConversationIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSingleChatOpenConversationIdResponse
+        /// </returns>
+        public GetSingleChatOpenConversationIdResponse GetSingleChatOpenConversationIdWithOptions(GetSingleChatOpenConversationIdRequest request, GetSingleChatOpenConversationIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId1))
+            {
+                body["userId1"] = request.UserId1;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId2))
+            {
+                body["userId2"] = request.UserId2;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSingleChatOpenConversationId",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/privateChats/openConversationId/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSingleChatOpenConversationIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取单聊会话的OpenConversationId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSingleChatOpenConversationIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSingleChatOpenConversationIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSingleChatOpenConversationIdResponse
+        /// </returns>
+        public async Task<GetSingleChatOpenConversationIdResponse> GetSingleChatOpenConversationIdWithOptionsAsync(GetSingleChatOpenConversationIdRequest request, GetSingleChatOpenConversationIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId1))
+            {
+                body["userId1"] = request.UserId1;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId2))
+            {
+                body["userId2"] = request.UserId2;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSingleChatOpenConversationId",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/privateChats/openConversationId/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSingleChatOpenConversationIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取单聊会话的OpenConversationId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSingleChatOpenConversationIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSingleChatOpenConversationIdResponse
+        /// </returns>
+        public GetSingleChatOpenConversationIdResponse GetSingleChatOpenConversationId(GetSingleChatOpenConversationIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSingleChatOpenConversationIdHeaders headers = new GetSingleChatOpenConversationIdHeaders();
+            return GetSingleChatOpenConversationIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取单聊会话的OpenConversationId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSingleChatOpenConversationIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSingleChatOpenConversationIdResponse
+        /// </returns>
+        public async Task<GetSingleChatOpenConversationIdResponse> GetSingleChatOpenConversationIdAsync(GetSingleChatOpenConversationIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSingleChatOpenConversationIdHeaders headers = new GetSingleChatOpenConversationIdHeaders();
+            return await GetSingleChatOpenConversationIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询群信息（超管接口）</para>
         /// </summary>
         /// 
@@ -6702,6 +6858,414 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GroupManageReduceHeaders headers = new GroupManageReduceHeaders();
             return await GroupManageReduceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>导入群聊会话</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ImportGroupChatRequest
+        /// </param>
+        /// <param name="headers">
+        /// ImportGroupChatHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ImportGroupChatResponse
+        /// </returns>
+        public ImportGroupChatResponse ImportGroupChatWithOptions(ImportGroupChatRequest request, ImportGroupChatHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AdminIds))
+            {
+                body["adminIds"] = request.AdminIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateAt))
+            {
+                body["createAt"] = request.CreateAt;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
+            {
+                body["icon"] = request.Icon;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImportUuid))
+            {
+                body["importUuid"] = request.ImportUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Owner))
+            {
+                body["owner"] = request.Owner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserList))
+            {
+                body["userList"] = request.UserList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ImportGroupChat",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groupChats/import",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ImportGroupChatResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>导入群聊会话</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ImportGroupChatRequest
+        /// </param>
+        /// <param name="headers">
+        /// ImportGroupChatHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ImportGroupChatResponse
+        /// </returns>
+        public async Task<ImportGroupChatResponse> ImportGroupChatWithOptionsAsync(ImportGroupChatRequest request, ImportGroupChatHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AdminIds))
+            {
+                body["adminIds"] = request.AdminIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateAt))
+            {
+                body["createAt"] = request.CreateAt;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
+            {
+                body["icon"] = request.Icon;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImportUuid))
+            {
+                body["importUuid"] = request.ImportUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Owner))
+            {
+                body["owner"] = request.Owner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserList))
+            {
+                body["userList"] = request.UserList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ImportGroupChat",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groupChats/import",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ImportGroupChatResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>导入群聊会话</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ImportGroupChatRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ImportGroupChatResponse
+        /// </returns>
+        public ImportGroupChatResponse ImportGroupChat(ImportGroupChatRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ImportGroupChatHeaders headers = new ImportGroupChatHeaders();
+            return ImportGroupChatWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>导入群聊会话</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ImportGroupChatRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ImportGroupChatResponse
+        /// </returns>
+        public async Task<ImportGroupChatResponse> ImportGroupChatAsync(ImportGroupChatRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ImportGroupChatHeaders headers = new ImportGroupChatHeaders();
+            return await ImportGroupChatWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>导入消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ImportMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// ImportMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ImportMessageResponse
+        /// </returns>
+        public ImportMessageResponse ImportMessageWithOptions(ImportMessageRequest request, ImportMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateTime))
+            {
+                body["createTime"] = request.CreateTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImportUuid))
+            {
+                body["importUuid"] = request.ImportUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgReadStatusSetting))
+            {
+                body["msgReadStatusSetting"] = request.MsgReadStatusSetting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgType))
+            {
+                body["msgType"] = request.MsgType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Receivers))
+            {
+                body["receivers"] = request.Receivers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderId))
+            {
+                body["senderId"] = request.SenderId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ImportMessage",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/messages/import",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ImportMessageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>导入消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ImportMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// ImportMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ImportMessageResponse
+        /// </returns>
+        public async Task<ImportMessageResponse> ImportMessageWithOptionsAsync(ImportMessageRequest request, ImportMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateTime))
+            {
+                body["createTime"] = request.CreateTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImportUuid))
+            {
+                body["importUuid"] = request.ImportUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgReadStatusSetting))
+            {
+                body["msgReadStatusSetting"] = request.MsgReadStatusSetting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgType))
+            {
+                body["msgType"] = request.MsgType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Receivers))
+            {
+                body["receivers"] = request.Receivers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderId))
+            {
+                body["senderId"] = request.SenderId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ImportMessage",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/messages/import",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ImportMessageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>导入消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ImportMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ImportMessageResponse
+        /// </returns>
+        public ImportMessageResponse ImportMessage(ImportMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ImportMessageHeaders headers = new ImportMessageHeaders();
+            return ImportMessageWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>导入消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ImportMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ImportMessageResponse
+        /// </returns>
+        public async Task<ImportMessageResponse> ImportMessageAsync(ImportMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ImportMessageHeaders headers = new ImportMessageHeaders();
+            return await ImportMessageWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
