@@ -2627,6 +2627,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("channelType", request.channelType);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.feeItemCode)) {
+            query.put("feeItemCode", request.feeItemCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.issueNo)) {
+            query.put("issueNo", request.issueNo);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
             query.put("operator", request.operator);
         }

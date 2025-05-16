@@ -40,6 +40,20 @@ public class SignEnterpriseAccountRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>XXX</p>
+     */
+    @NameInMap("feeItemCode")
+    public String feeItemCode;
+
+    /**
+     * <strong>example:</strong>
+     * <p>XXXX</p>
+     */
+    @NameInMap("issueNo")
+    public String issueNo;
+
+    /**
+     * <strong>example:</strong>
      * <p>123</p>
      */
     @NameInMap("operator")
@@ -87,6 +101,22 @@ public class SignEnterpriseAccountRequest extends TeaModel {
     }
     public String getChannelType() {
         return this.channelType;
+    }
+
+    public SignEnterpriseAccountRequest setFeeItemCode(String feeItemCode) {
+        this.feeItemCode = feeItemCode;
+        return this;
+    }
+    public String getFeeItemCode() {
+        return this.feeItemCode;
+    }
+
+    public SignEnterpriseAccountRequest setIssueNo(String issueNo) {
+        this.issueNo = issueNo;
+        return this;
+    }
+    public String getIssueNo() {
+        return this.issueNo;
     }
 
     public SignEnterpriseAccountRequest setOperator(String operator) {
