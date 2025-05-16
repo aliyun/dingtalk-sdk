@@ -9463,6 +9463,8 @@ class SignEnterpriseAccountRequest(TeaModel):
         bank_card_no: str = None,
         bank_open_id: str = None,
         channel_type: str = None,
+        fee_item_code: str = None,
+        issue_no: str = None,
         operator: str = None,
         sign_operate_type: str = None,
     ):
@@ -9470,6 +9472,8 @@ class SignEnterpriseAccountRequest(TeaModel):
         self.bank_card_no = bank_card_no
         self.bank_open_id = bank_open_id
         self.channel_type = channel_type
+        self.fee_item_code = fee_item_code
+        self.issue_no = issue_no
         self.operator = operator
         self.sign_operate_type = sign_operate_type
 
@@ -9490,6 +9494,10 @@ class SignEnterpriseAccountRequest(TeaModel):
             result['bankOpenId'] = self.bank_open_id
         if self.channel_type is not None:
             result['channelType'] = self.channel_type
+        if self.fee_item_code is not None:
+            result['feeItemCode'] = self.fee_item_code
+        if self.issue_no is not None:
+            result['issueNo'] = self.issue_no
         if self.operator is not None:
             result['operator'] = self.operator
         if self.sign_operate_type is not None:
@@ -9506,6 +9514,10 @@ class SignEnterpriseAccountRequest(TeaModel):
             self.bank_open_id = m.get('bankOpenId')
         if m.get('channelType') is not None:
             self.channel_type = m.get('channelType')
+        if m.get('feeItemCode') is not None:
+            self.fee_item_code = m.get('feeItemCode')
+        if m.get('issueNo') is not None:
+            self.issue_no = m.get('issueNo')
         if m.get('operator') is not None:
             self.operator = m.get('operator')
         if m.get('signOperateType') is not None:

@@ -4892,6 +4892,10 @@ class Client(OpenApiClient):
             query['bankOpenId'] = request.bank_open_id
         if not UtilClient.is_unset(request.channel_type):
             query['channelType'] = request.channel_type
+        if not UtilClient.is_unset(request.fee_item_code):
+            query['feeItemCode'] = request.fee_item_code
+        if not UtilClient.is_unset(request.issue_no):
+            query['issueNo'] = request.issue_no
         if not UtilClient.is_unset(request.operator):
             query['operator'] = request.operator
         if not UtilClient.is_unset(request.sign_operate_type):
@@ -4945,6 +4949,10 @@ class Client(OpenApiClient):
             query['bankOpenId'] = request.bank_open_id
         if not UtilClient.is_unset(request.channel_type):
             query['channelType'] = request.channel_type
+        if not UtilClient.is_unset(request.fee_item_code):
+            query['feeItemCode'] = request.fee_item_code
+        if not UtilClient.is_unset(request.issue_no):
+            query['issueNo'] = request.issue_no
         if not UtilClient.is_unset(request.operator):
             query['operator'] = request.operator
         if not UtilClient.is_unset(request.sign_operate_type):

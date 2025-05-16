@@ -4038,6 +4038,124 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.GetSceneGroupTemplateMessageOpenStatusHeaders()
         return await self.get_scene_group_template_message_open_status_with_options_async(template_id, headers, runtime)
 
+    def get_single_chat_open_conversation_id_with_options(
+        self,
+        request: dingtalkim__1__0_models.GetSingleChatOpenConversationIdRequest,
+        headers: dingtalkim__1__0_models.GetSingleChatOpenConversationIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetSingleChatOpenConversationIdResponse:
+        """
+        @summary 获取单聊会话的OpenConversationId
+        
+        @param request: GetSingleChatOpenConversationIdRequest
+        @param headers: GetSingleChatOpenConversationIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSingleChatOpenConversationIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id_1):
+            body['userId1'] = request.user_id_1
+        if not UtilClient.is_unset(request.user_id_2):
+            body['userId2'] = request.user_id_2
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetSingleChatOpenConversationId',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/privateChats/openConversationId/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetSingleChatOpenConversationIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_single_chat_open_conversation_id_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.GetSingleChatOpenConversationIdRequest,
+        headers: dingtalkim__1__0_models.GetSingleChatOpenConversationIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetSingleChatOpenConversationIdResponse:
+        """
+        @summary 获取单聊会话的OpenConversationId
+        
+        @param request: GetSingleChatOpenConversationIdRequest
+        @param headers: GetSingleChatOpenConversationIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSingleChatOpenConversationIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id_1):
+            body['userId1'] = request.user_id_1
+        if not UtilClient.is_unset(request.user_id_2):
+            body['userId2'] = request.user_id_2
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetSingleChatOpenConversationId',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/privateChats/openConversationId/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetSingleChatOpenConversationIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_single_chat_open_conversation_id(
+        self,
+        request: dingtalkim__1__0_models.GetSingleChatOpenConversationIdRequest,
+    ) -> dingtalkim__1__0_models.GetSingleChatOpenConversationIdResponse:
+        """
+        @summary 获取单聊会话的OpenConversationId
+        
+        @param request: GetSingleChatOpenConversationIdRequest
+        @return: GetSingleChatOpenConversationIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetSingleChatOpenConversationIdHeaders()
+        return self.get_single_chat_open_conversation_id_with_options(request, headers, runtime)
+
+    async def get_single_chat_open_conversation_id_async(
+        self,
+        request: dingtalkim__1__0_models.GetSingleChatOpenConversationIdRequest,
+    ) -> dingtalkim__1__0_models.GetSingleChatOpenConversationIdResponse:
+        """
+        @summary 获取单聊会话的OpenConversationId
+        
+        @param request: GetSingleChatOpenConversationIdRequest
+        @return: GetSingleChatOpenConversationIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetSingleChatOpenConversationIdHeaders()
+        return await self.get_single_chat_open_conversation_id_with_options_async(request, headers, runtime)
+
     def get_super_admin_open_scene_group_info_with_options(
         self,
         request: dingtalkim__1__0_models.GetSuperAdminOpenSceneGroupInfoRequest,
@@ -4947,6 +5065,290 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupManageReduceHeaders()
         return await self.group_manage_reduce_with_options_async(request, headers, runtime)
+
+    def import_group_chat_with_options(
+        self,
+        request: dingtalkim__1__0_models.ImportGroupChatRequest,
+        headers: dingtalkim__1__0_models.ImportGroupChatHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ImportGroupChatResponse:
+        """
+        @summary 导入群聊会话
+        
+        @param request: ImportGroupChatRequest
+        @param headers: ImportGroupChatHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ImportGroupChatResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.admin_ids):
+            body['adminIds'] = request.admin_ids
+        if not UtilClient.is_unset(request.create_at):
+            body['createAt'] = request.create_at
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.import_uuid):
+            body['importUuid'] = request.import_uuid
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_list):
+            body['userList'] = request.user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ImportGroupChat',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groupChats/import',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ImportGroupChatResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def import_group_chat_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.ImportGroupChatRequest,
+        headers: dingtalkim__1__0_models.ImportGroupChatHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ImportGroupChatResponse:
+        """
+        @summary 导入群聊会话
+        
+        @param request: ImportGroupChatRequest
+        @param headers: ImportGroupChatHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ImportGroupChatResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.admin_ids):
+            body['adminIds'] = request.admin_ids
+        if not UtilClient.is_unset(request.create_at):
+            body['createAt'] = request.create_at
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.import_uuid):
+            body['importUuid'] = request.import_uuid
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_list):
+            body['userList'] = request.user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ImportGroupChat',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groupChats/import',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ImportGroupChatResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def import_group_chat(
+        self,
+        request: dingtalkim__1__0_models.ImportGroupChatRequest,
+    ) -> dingtalkim__1__0_models.ImportGroupChatResponse:
+        """
+        @summary 导入群聊会话
+        
+        @param request: ImportGroupChatRequest
+        @return: ImportGroupChatResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ImportGroupChatHeaders()
+        return self.import_group_chat_with_options(request, headers, runtime)
+
+    async def import_group_chat_async(
+        self,
+        request: dingtalkim__1__0_models.ImportGroupChatRequest,
+    ) -> dingtalkim__1__0_models.ImportGroupChatResponse:
+        """
+        @summary 导入群聊会话
+        
+        @param request: ImportGroupChatRequest
+        @return: ImportGroupChatResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ImportGroupChatHeaders()
+        return await self.import_group_chat_with_options_async(request, headers, runtime)
+
+    def import_message_with_options(
+        self,
+        request: dingtalkim__1__0_models.ImportMessageRequest,
+        headers: dingtalkim__1__0_models.ImportMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ImportMessageResponse:
+        """
+        @summary 导入消息
+        
+        @param request: ImportMessageRequest
+        @param headers: ImportMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ImportMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.create_time):
+            body['createTime'] = request.create_time
+        if not UtilClient.is_unset(request.import_uuid):
+            body['importUuid'] = request.import_uuid
+        if not UtilClient.is_unset(request.msg_read_status_setting):
+            body['msgReadStatusSetting'] = request.msg_read_status_setting
+        if not UtilClient.is_unset(request.msg_type):
+            body['msgType'] = request.msg_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.receivers):
+            body['receivers'] = request.receivers
+        if not UtilClient.is_unset(request.sender_id):
+            body['senderId'] = request.sender_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ImportMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/messages/import',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ImportMessageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def import_message_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.ImportMessageRequest,
+        headers: dingtalkim__1__0_models.ImportMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ImportMessageResponse:
+        """
+        @summary 导入消息
+        
+        @param request: ImportMessageRequest
+        @param headers: ImportMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ImportMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.create_time):
+            body['createTime'] = request.create_time
+        if not UtilClient.is_unset(request.import_uuid):
+            body['importUuid'] = request.import_uuid
+        if not UtilClient.is_unset(request.msg_read_status_setting):
+            body['msgReadStatusSetting'] = request.msg_read_status_setting
+        if not UtilClient.is_unset(request.msg_type):
+            body['msgType'] = request.msg_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.receivers):
+            body['receivers'] = request.receivers
+        if not UtilClient.is_unset(request.sender_id):
+            body['senderId'] = request.sender_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ImportMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/messages/import',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ImportMessageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def import_message(
+        self,
+        request: dingtalkim__1__0_models.ImportMessageRequest,
+    ) -> dingtalkim__1__0_models.ImportMessageResponse:
+        """
+        @summary 导入消息
+        
+        @param request: ImportMessageRequest
+        @return: ImportMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ImportMessageHeaders()
+        return self.import_message_with_options(request, headers, runtime)
+
+    async def import_message_async(
+        self,
+        request: dingtalkim__1__0_models.ImportMessageRequest,
+    ) -> dingtalkim__1__0_models.ImportMessageResponse:
+        """
+        @summary 导入消息
+        
+        @param request: ImportMessageRequest
+        @return: ImportMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ImportMessageHeaders()
+        return await self.import_message_with_options_async(request, headers, runtime)
 
     def install_robot_to_org_with_options(
         self,
