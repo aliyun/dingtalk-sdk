@@ -2714,6 +2714,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->channelType)) {
             $query['channelType'] = $request->channelType;
         }
+        if (!Utils::isUnset($request->feeItemCode)) {
+            $query['feeItemCode'] = $request->feeItemCode;
+        }
+        if (!Utils::isUnset($request->issueNo)) {
+            $query['issueNo'] = $request->issueNo;
+        }
         if (!Utils::isUnset($request->operator)) {
             $query['operator'] = $request->operator;
         }

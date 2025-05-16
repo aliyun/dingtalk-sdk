@@ -102,6 +102,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupTemplateMessageOpenStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupTemplateMessageOpenStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSingleChatOpenConversationIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSingleChatOpenConversationIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSingleChatOpenConversationIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSuperAdminOpenSceneGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSuperAdminOpenSceneGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSuperAdminOpenSceneGroupInfoResponse;
@@ -123,6 +126,12 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageReduceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageReduceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupManageReduceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ImportGroupChatHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ImportGroupChatRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ImportGroupChatResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ImportMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ImportMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ImportMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InstallRobotToOrgHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InstallRobotToOrgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InstallRobotToOrgResponse;
@@ -2441,6 +2450,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取单聊会话的OpenConversationId
+     *  *
+     * @param GetSingleChatOpenConversationIdRequest $request GetSingleChatOpenConversationIdRequest
+     * @param GetSingleChatOpenConversationIdHeaders $headers GetSingleChatOpenConversationIdHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetSingleChatOpenConversationIdResponse GetSingleChatOpenConversationIdResponse
+     */
+    public function getSingleChatOpenConversationIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId1)) {
+            $body['userId1'] = $request->userId1;
+        }
+        if (!Utils::isUnset($request->userId2)) {
+            $body['userId2'] = $request->userId2;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetSingleChatOpenConversationId',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/privateChats/openConversationId/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetSingleChatOpenConversationIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取单聊会话的OpenConversationId
+     *  *
+     * @param GetSingleChatOpenConversationIdRequest $request GetSingleChatOpenConversationIdRequest
+     *
+     * @return GetSingleChatOpenConversationIdResponse GetSingleChatOpenConversationIdResponse
+     */
+    public function getSingleChatOpenConversationId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSingleChatOpenConversationIdHeaders([]);
+
+        return $this->getSingleChatOpenConversationIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询群信息（超管接口）
      *  *
      * @param GetSuperAdminOpenSceneGroupInfoRequest $request GetSuperAdminOpenSceneGroupInfoRequest
@@ -2921,6 +2990,162 @@ class Dingtalk extends OpenApiClient
         $headers = new GroupManageReduceHeaders([]);
 
         return $this->groupManageReduceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 导入群聊会话
+     *  *
+     * @param ImportGroupChatRequest $request ImportGroupChatRequest
+     * @param ImportGroupChatHeaders $headers ImportGroupChatHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ImportGroupChatResponse ImportGroupChatResponse
+     */
+    public function importGroupChatWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->adminIds)) {
+            $body['adminIds'] = $request->adminIds;
+        }
+        if (!Utils::isUnset($request->createAt)) {
+            $body['createAt'] = $request->createAt;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->importUuid)) {
+            $body['importUuid'] = $request->importUuid;
+        }
+        if (!Utils::isUnset($request->owner)) {
+            $body['owner'] = $request->owner;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userList)) {
+            $body['userList'] = $request->userList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ImportGroupChat',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/groupChats/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ImportGroupChatResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 导入群聊会话
+     *  *
+     * @param ImportGroupChatRequest $request ImportGroupChatRequest
+     *
+     * @return ImportGroupChatResponse ImportGroupChatResponse
+     */
+    public function importGroupChat($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ImportGroupChatHeaders([]);
+
+        return $this->importGroupChatWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 导入消息
+     *  *
+     * @param ImportMessageRequest $request ImportMessageRequest
+     * @param ImportMessageHeaders $headers ImportMessageHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ImportMessageResponse ImportMessageResponse
+     */
+    public function importMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->createTime)) {
+            $body['createTime'] = $request->createTime;
+        }
+        if (!Utils::isUnset($request->importUuid)) {
+            $body['importUuid'] = $request->importUuid;
+        }
+        if (!Utils::isUnset($request->msgReadStatusSetting)) {
+            $body['msgReadStatusSetting'] = $request->msgReadStatusSetting;
+        }
+        if (!Utils::isUnset($request->msgType)) {
+            $body['msgType'] = $request->msgType;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->receivers)) {
+            $body['receivers'] = $request->receivers;
+        }
+        if (!Utils::isUnset($request->senderId)) {
+            $body['senderId'] = $request->senderId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ImportMessage',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/messages/import',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ImportMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 导入消息
+     *  *
+     * @param ImportMessageRequest $request ImportMessageRequest
+     *
+     * @return ImportMessageResponse ImportMessageResponse
+     */
+    public function importMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ImportMessageHeaders([]);
+
+        return $this->importMessageWithOptions($request, $headers, $runtime);
     }
 
     /**

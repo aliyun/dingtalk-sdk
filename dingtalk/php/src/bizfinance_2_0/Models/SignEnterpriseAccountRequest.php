@@ -37,6 +37,20 @@ class SignEnterpriseAccountRequest extends Model
     public $channelType;
 
     /**
+     * @example XXX
+     *
+     * @var string
+     */
+    public $feeItemCode;
+
+    /**
+     * @example XXXX
+     *
+     * @var string
+     */
+    public $issueNo;
+
+    /**
      * @example 123
      *
      * @var string
@@ -54,6 +68,8 @@ class SignEnterpriseAccountRequest extends Model
         'bankCardNo' => 'bankCardNo',
         'bankOpenId' => 'bankOpenId',
         'channelType' => 'channelType',
+        'feeItemCode' => 'feeItemCode',
+        'issueNo' => 'issueNo',
         'operator' => 'operator',
         'signOperateType' => 'signOperateType',
     ];
@@ -74,6 +90,12 @@ class SignEnterpriseAccountRequest extends Model
         }
         if (null !== $this->channelType) {
             $res['channelType'] = $this->channelType;
+        }
+        if (null !== $this->feeItemCode) {
+            $res['feeItemCode'] = $this->feeItemCode;
+        }
+        if (null !== $this->issueNo) {
+            $res['issueNo'] = $this->issueNo;
         }
         if (null !== $this->operator) {
             $res['operator'] = $this->operator;
@@ -104,6 +126,12 @@ class SignEnterpriseAccountRequest extends Model
         }
         if (isset($map['channelType'])) {
             $model->channelType = $map['channelType'];
+        }
+        if (isset($map['feeItemCode'])) {
+            $model->feeItemCode = $map['feeItemCode'];
+        }
+        if (isset($map['issueNo'])) {
+            $model->issueNo = $map['issueNo'];
         }
         if (isset($map['operator'])) {
             $model->operator = $map['operator'];
