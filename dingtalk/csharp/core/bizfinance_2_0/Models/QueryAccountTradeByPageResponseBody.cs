@@ -9,6 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 {
     public class QueryAccountTradeByPageResponseBody : TeaModel {
+        [NameInMap("hasMore")]
+        [Validation(Required=false)]
+        public bool? HasMore { get; set; }
+
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public long? NextToken { get; set; }
+
         [NameInMap("result")]
         [Validation(Required=false)]
         public List<QueryAccountTradeByPageResponseBodyResult> Result { get; set; }

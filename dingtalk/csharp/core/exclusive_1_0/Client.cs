@@ -758,6 +758,178 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>业务融合群业务事件变更</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessEventUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// BusinessEventUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessEventUpdateResponse
+        /// </returns>
+        public BusinessEventUpdateResponse BusinessEventUpdateWithOptions(BusinessEventUpdateRequest request, BusinessEventUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessData))
+            {
+                body["businessData"] = request.BusinessData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventType))
+            {
+                body["eventType"] = request.EventType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateByKey))
+            {
+                body["updateByKey"] = request.UpdateByKey;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BusinessEventUpdate",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/businessGroups/events",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BusinessEventUpdateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>业务融合群业务事件变更</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessEventUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// BusinessEventUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessEventUpdateResponse
+        /// </returns>
+        public async Task<BusinessEventUpdateResponse> BusinessEventUpdateWithOptionsAsync(BusinessEventUpdateRequest request, BusinessEventUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessData))
+            {
+                body["businessData"] = request.BusinessData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventType))
+            {
+                body["eventType"] = request.EventType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateByKey))
+            {
+                body["updateByKey"] = request.UpdateByKey;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BusinessEventUpdate",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/businessGroups/events",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BusinessEventUpdateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>业务融合群业务事件变更</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessEventUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessEventUpdateResponse
+        /// </returns>
+        public BusinessEventUpdateResponse BusinessEventUpdate(BusinessEventUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BusinessEventUpdateHeaders headers = new BusinessEventUpdateHeaders();
+            return BusinessEventUpdateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>业务融合群业务事件变更</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessEventUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessEventUpdateResponse
+        /// </returns>
+        public async Task<BusinessEventUpdateResponse> BusinessEventUpdateAsync(BusinessEventUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BusinessEventUpdateHeaders headers = new BusinessEventUpdateHeaders();
+            return await BusinessEventUpdateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>检测安全管控功能命中状态</para>
         /// </summary>
         /// 

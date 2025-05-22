@@ -2218,6 +2218,162 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>通过委托权限方式导出文档内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocExportByDelegatedPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// DocExportByDelegatedPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocExportByDelegatedPermissionResponse
+        /// </returns>
+        public DocExportByDelegatedPermissionResponse DocExportByDelegatedPermissionWithOptions(string dentryUuid, DocExportByDelegatedPermissionRequest request, DocExportByDelegatedPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GenerateCp))
+            {
+                query["generateCp"] = request.GenerateCp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetFormat))
+            {
+                query["targetFormat"] = request.TargetFormat;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DocExportByDelegatedPermission",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/me/dentries/" + dentryUuid + "/export",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DocExportByDelegatedPermissionResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过委托权限方式导出文档内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocExportByDelegatedPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// DocExportByDelegatedPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocExportByDelegatedPermissionResponse
+        /// </returns>
+        public async Task<DocExportByDelegatedPermissionResponse> DocExportByDelegatedPermissionWithOptionsAsync(string dentryUuid, DocExportByDelegatedPermissionRequest request, DocExportByDelegatedPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GenerateCp))
+            {
+                query["generateCp"] = request.GenerateCp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetFormat))
+            {
+                query["targetFormat"] = request.TargetFormat;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DocExportByDelegatedPermission",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/me/dentries/" + dentryUuid + "/export",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DocExportByDelegatedPermissionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过委托权限方式导出文档内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocExportByDelegatedPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocExportByDelegatedPermissionResponse
+        /// </returns>
+        public DocExportByDelegatedPermissionResponse DocExportByDelegatedPermission(string dentryUuid, DocExportByDelegatedPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DocExportByDelegatedPermissionHeaders headers = new DocExportByDelegatedPermissionHeaders();
+            return DocExportByDelegatedPermissionWithOptions(dentryUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过委托权限方式导出文档内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocExportByDelegatedPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocExportByDelegatedPermissionResponse
+        /// </returns>
+        public async Task<DocExportByDelegatedPermissionResponse> DocExportByDelegatedPermissionAsync(string dentryUuid, DocExportByDelegatedPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DocExportByDelegatedPermissionHeaders headers = new DocExportByDelegatedPermissionHeaders();
+            return await DocExportByDelegatedPermissionWithOptionsAsync(dentryUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>导出文档</para>
         /// </summary>
         /// 

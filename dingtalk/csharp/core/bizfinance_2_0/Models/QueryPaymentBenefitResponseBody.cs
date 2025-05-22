@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public string RequestId { get; set; }
 
+        [NameInMap("status")]
+        [Validation(Required=false)]
+        public string Status { get; set; }
+
     }
 
 }
