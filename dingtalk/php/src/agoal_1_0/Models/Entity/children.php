@@ -2,18 +2,13 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\Entity;
 
-use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\Entity\children;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\Meta;
 use AlibabaCloud\Tea\Model;
 
-class Entity extends Model
+class children extends Model
 {
-    /**
-     * @var children[]
-     */
-    public $children;
-
     /**
      * @example {"title": "123"}
      *
@@ -61,7 +56,6 @@ class Entity extends Model
      */
     public $type;
     protected $_name = [
-        'children' => 'children',
         'data' => 'data',
         'id' => 'id',
         'isDeleted' => 'isDeleted',
@@ -76,15 +70,6 @@ class Entity extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->children) {
-            $res['children'] = [];
-            if (null !== $this->children && \is_array($this->children)) {
-                $n = 0;
-                foreach ($this->children as $item) {
-                    $res['children'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
         if (null !== $this->data) {
             $res['data'] = $this->data;
         }
@@ -119,20 +104,11 @@ class Entity extends Model
     /**
      * @param array $map
      *
-     * @return Entity
+     * @return children
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['children'])) {
-            if (!empty($map['children'])) {
-                $model->children = [];
-                $n = 0;
-                foreach ($map['children'] as $item) {
-                    $model->children[$n++] = null !== $item ? children::fromMap($item) : $item;
-                }
-            }
-        }
         if (isset($map['data'])) {
             $model->data = $map['data'];
         }

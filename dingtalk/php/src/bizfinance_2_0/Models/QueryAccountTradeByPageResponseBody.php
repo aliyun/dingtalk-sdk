@@ -10,6 +10,16 @@ use AlibabaCloud\Tea\Model;
 class QueryAccountTradeByPageResponseBody extends Model
 {
     /**
+     * @var bool
+     */
+    public $hasMore;
+
+    /**
+     * @var int
+     */
+    public $nextToken;
+
+    /**
      * @var result[]
      */
     public $result;
@@ -19,6 +29,8 @@ class QueryAccountTradeByPageResponseBody extends Model
      */
     public $totalCount;
     protected $_name = [
+        'hasMore' => 'hasMore',
+        'nextToken' => 'nextToken',
         'result' => 'result',
         'totalCount' => 'totalCount',
     ];
@@ -28,6 +40,12 @@ class QueryAccountTradeByPageResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
         if (null !== $this->result) {
             $res['result'] = [];
             if (null !== $this->result && \is_array($this->result)) {
@@ -52,6 +70,12 @@ class QueryAccountTradeByPageResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
         if (isset($map['result'])) {
             if (!empty($map['result'])) {
                 $model->result = [];

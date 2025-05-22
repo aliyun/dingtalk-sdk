@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DeleteTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocContentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocContentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocContentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocExportByDelegatedPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocExportByDelegatedPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocExportByDelegatedPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ExportDocHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ExportDocRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ExportDocResponse;
@@ -1058,6 +1061,68 @@ class Dingtalk extends OpenApiClient
         $headers = new DocContentHeaders([]);
 
         return $this->docContentWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过委托权限方式导出文档内容
+     *  *
+     * @param string                                $dentryUuid
+     * @param DocExportByDelegatedPermissionRequest $request    DocExportByDelegatedPermissionRequest
+     * @param DocExportByDelegatedPermissionHeaders $headers    DocExportByDelegatedPermissionHeaders
+     * @param RuntimeOptions                        $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return DocExportByDelegatedPermissionResponse DocExportByDelegatedPermissionResponse
+     */
+    public function docExportByDelegatedPermissionWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->generateCp)) {
+            $query['generateCp'] = $request->generateCp;
+        }
+        if (!Utils::isUnset($request->targetFormat)) {
+            $query['targetFormat'] = $request->targetFormat;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DocExportByDelegatedPermission',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/me/dentries/' . $dentryUuid . '/export',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DocExportByDelegatedPermissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过委托权限方式导出文档内容
+     *  *
+     * @param string                                $dentryUuid
+     * @param DocExportByDelegatedPermissionRequest $request    DocExportByDelegatedPermissionRequest
+     *
+     * @return DocExportByDelegatedPermissionResponse DocExportByDelegatedPermissionResponse
+     */
+    public function docExportByDelegatedPermission($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocExportByDelegatedPermissionHeaders([]);
+
+        return $this->docExportByDelegatedPermissionWithOptions($dentryUuid, $request, $headers, $runtime);
     }
 
     /**

@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ApproveProcessCallbackRespon
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BusinessEventUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BusinessEventUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BusinessEventUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CheckControlHitStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CheckControlHitStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CheckControlHitStatusResponse;
@@ -682,6 +685,72 @@ class Dingtalk extends OpenApiClient
         $headers = new BanOrOpenGroupWordsHeaders([]);
 
         return $this->banOrOpenGroupWordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 业务融合群业务事件变更
+     *  *
+     * @param BusinessEventUpdateRequest $request BusinessEventUpdateRequest
+     * @param BusinessEventUpdateHeaders $headers BusinessEventUpdateHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BusinessEventUpdateResponse BusinessEventUpdateResponse
+     */
+    public function businessEventUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->businessData)) {
+            $body['businessData'] = $request->businessData;
+        }
+        if (!Utils::isUnset($request->eventType)) {
+            $body['eventType'] = $request->eventType;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->updateByKey)) {
+            $body['updateByKey'] = $request->updateByKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'BusinessEventUpdate',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/businessGroups/events',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return BusinessEventUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 业务融合群业务事件变更
+     *  *
+     * @param BusinessEventUpdateRequest $request BusinessEventUpdateRequest
+     *
+     * @return BusinessEventUpdateResponse BusinessEventUpdateResponse
+     */
+    public function businessEventUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BusinessEventUpdateHeaders([]);
+
+        return $this->businessEventUpdateWithOptions($request, $headers, $runtime);
     }
 
     /**
