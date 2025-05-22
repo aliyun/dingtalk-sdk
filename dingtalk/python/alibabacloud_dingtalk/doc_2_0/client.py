@@ -1672,6 +1672,128 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.DocContentHeaders()
         return await self.doc_content_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def doc_export_by_delegated_permission_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.DocExportByDelegatedPermissionRequest,
+        headers: dingtalkdoc__2__0_models.DocExportByDelegatedPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.DocExportByDelegatedPermissionResponse:
+        """
+        @summary 通过委托权限方式导出文档内容
+        
+        @param request: DocExportByDelegatedPermissionRequest
+        @param headers: DocExportByDelegatedPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocExportByDelegatedPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.generate_cp):
+            query['generateCp'] = request.generate_cp
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocExportByDelegatedPermission',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/dentries/{dentry_uuid}/export',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.DocExportByDelegatedPermissionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_export_by_delegated_permission_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.DocExportByDelegatedPermissionRequest,
+        headers: dingtalkdoc__2__0_models.DocExportByDelegatedPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.DocExportByDelegatedPermissionResponse:
+        """
+        @summary 通过委托权限方式导出文档内容
+        
+        @param request: DocExportByDelegatedPermissionRequest
+        @param headers: DocExportByDelegatedPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocExportByDelegatedPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.generate_cp):
+            query['generateCp'] = request.generate_cp
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocExportByDelegatedPermission',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/dentries/{dentry_uuid}/export',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.DocExportByDelegatedPermissionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_export_by_delegated_permission(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.DocExportByDelegatedPermissionRequest,
+    ) -> dingtalkdoc__2__0_models.DocExportByDelegatedPermissionResponse:
+        """
+        @summary 通过委托权限方式导出文档内容
+        
+        @param request: DocExportByDelegatedPermissionRequest
+        @return: DocExportByDelegatedPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.DocExportByDelegatedPermissionHeaders()
+        return self.doc_export_by_delegated_permission_with_options(dentry_uuid, request, headers, runtime)
+
+    async def doc_export_by_delegated_permission_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.DocExportByDelegatedPermissionRequest,
+    ) -> dingtalkdoc__2__0_models.DocExportByDelegatedPermissionResponse:
+        """
+        @summary 通过委托权限方式导出文档内容
+        
+        @param request: DocExportByDelegatedPermissionRequest
+        @return: DocExportByDelegatedPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.DocExportByDelegatedPermissionHeaders()
+        return await self.doc_export_by_delegated_permission_with_options_async(dentry_uuid, request, headers, runtime)
+
     def export_doc_with_options(
         self,
         request: dingtalkdoc__2__0_models.ExportDocRequest,

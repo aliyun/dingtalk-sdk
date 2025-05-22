@@ -4609,9 +4609,13 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
 class QueryAccountTradeByPageResponseBody(TeaModel):
     def __init__(
         self,
+        has_more: bool = None,
+        next_token: int = None,
         result: List[QueryAccountTradeByPageResponseBodyResult] = None,
         total_count: int = None,
     ):
+        self.has_more = has_more
+        self.next_token = next_token
         self.result = result
         self.total_count = total_count
 
@@ -4627,6 +4631,10 @@ class QueryAccountTradeByPageResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         result['result'] = []
         if self.result is not None:
             for k in self.result:
@@ -4637,6 +4645,10 @@ class QueryAccountTradeByPageResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         self.result = []
         if m.get('result') is not None:
             for k in m.get('result'):
@@ -6504,10 +6516,12 @@ class QueryPaymentBenefitResponseBody(TeaModel):
         benefit_map: Dict[str, BenefitMapValue] = None,
         corp_id: str = None,
         request_id: str = None,
+        status: str = None,
     ):
         self.benefit_map = benefit_map
         self.corp_id = corp_id
         self.request_id = request_id
+        self.status = status
 
     def validate(self):
         if self.benefit_map:
@@ -6529,6 +6543,8 @@ class QueryPaymentBenefitResponseBody(TeaModel):
             result['corpId'] = self.corp_id
         if self.request_id is not None:
             result['requestId'] = self.request_id
+        if self.status is not None:
+            result['status'] = self.status
         return result
 
     def from_map(self, m: dict = None):
@@ -6542,6 +6558,8 @@ class QueryPaymentBenefitResponseBody(TeaModel):
             self.corp_id = m.get('corpId')
         if m.get('requestId') is not None:
             self.request_id = m.get('requestId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
         return self
 
 

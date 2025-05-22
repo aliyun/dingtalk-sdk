@@ -85,10 +85,81 @@ class Meta(TeaModel):
         return self
 
 
+class EntityChildren(TeaModel):
+    def __init__(
+        self,
+        data: Dict[str, Any] = None,
+        id: str = None,
+        is_deleted: str = None,
+        link_source_id: str = None,
+        link_source_type: str = None,
+        metas: List[Meta] = None,
+        type: str = None,
+    ):
+        self.data = data
+        self.id = id
+        self.is_deleted = is_deleted
+        self.link_source_id = link_source_id
+        self.link_source_type = link_source_type
+        self.metas = metas
+        self.type = type
+
+    def validate(self):
+        if self.metas:
+            for k in self.metas:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.link_source_id is not None:
+            result['linkSourceId'] = self.link_source_id
+        if self.link_source_type is not None:
+            result['linkSourceType'] = self.link_source_type
+        result['metas'] = []
+        if self.metas is not None:
+            for k in self.metas:
+                result['metas'].append(k.to_map() if k else None)
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('linkSourceId') is not None:
+            self.link_source_id = m.get('linkSourceId')
+        if m.get('linkSourceType') is not None:
+            self.link_source_type = m.get('linkSourceType')
+        self.metas = []
+        if m.get('metas') is not None:
+            for k in m.get('metas'):
+                temp_model = Meta()
+                self.metas.append(temp_model.from_map(k))
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
 class Entity(TeaModel):
     def __init__(
         self,
-        children: List['Entity'] = None,
+        children: List[EntityChildren] = None,
         data: Dict[str, Any] = None,
         id: str = None,
         is_deleted: str = None,
@@ -149,7 +220,7 @@ class Entity(TeaModel):
         self.children = []
         if m.get('children') is not None:
             for k in m.get('children'):
-                temp_model = Entity()
+                temp_model = EntityChildren()
                 self.children.append(temp_model.from_map(k))
         if m.get('data') is not None:
             self.data = m.get('data')

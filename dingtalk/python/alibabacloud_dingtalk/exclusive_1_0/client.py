@@ -550,6 +550,132 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.BanOrOpenGroupWordsHeaders()
         return await self.ban_or_open_group_words_with_options_async(request, headers, runtime)
 
+    def business_event_update_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.BusinessEventUpdateRequest,
+        headers: dingtalkexclusive__1__0_models.BusinessEventUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.BusinessEventUpdateResponse:
+        """
+        @summary 业务融合群业务事件变更
+        
+        @param request: BusinessEventUpdateRequest
+        @param headers: BusinessEventUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BusinessEventUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.business_data):
+            body['businessData'] = request.business_data
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.update_by_key):
+            body['updateByKey'] = request.update_by_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BusinessEventUpdate',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/businessGroups/events',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.BusinessEventUpdateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def business_event_update_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.BusinessEventUpdateRequest,
+        headers: dingtalkexclusive__1__0_models.BusinessEventUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.BusinessEventUpdateResponse:
+        """
+        @summary 业务融合群业务事件变更
+        
+        @param request: BusinessEventUpdateRequest
+        @param headers: BusinessEventUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BusinessEventUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.business_data):
+            body['businessData'] = request.business_data
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.update_by_key):
+            body['updateByKey'] = request.update_by_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BusinessEventUpdate',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/businessGroups/events',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.BusinessEventUpdateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def business_event_update(
+        self,
+        request: dingtalkexclusive__1__0_models.BusinessEventUpdateRequest,
+    ) -> dingtalkexclusive__1__0_models.BusinessEventUpdateResponse:
+        """
+        @summary 业务融合群业务事件变更
+        
+        @param request: BusinessEventUpdateRequest
+        @return: BusinessEventUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.BusinessEventUpdateHeaders()
+        return self.business_event_update_with_options(request, headers, runtime)
+
+    async def business_event_update_async(
+        self,
+        request: dingtalkexclusive__1__0_models.BusinessEventUpdateRequest,
+    ) -> dingtalkexclusive__1__0_models.BusinessEventUpdateResponse:
+        """
+        @summary 业务融合群业务事件变更
+        
+        @param request: BusinessEventUpdateRequest
+        @return: BusinessEventUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.BusinessEventUpdateHeaders()
+        return await self.business_event_update_with_options_async(request, headers, runtime)
+
     def check_control_hit_status_with_options(
         self,
         request: dingtalkexclusive__1__0_models.CheckControlHitStatusRequest,
