@@ -4,6 +4,12 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAccountTradeByPageResponseBody extends TeaModel {
+    @NameInMap("hasMore")
+    public Boolean hasMore;
+
+    @NameInMap("nextToken")
+    public Long nextToken;
+
     @NameInMap("result")
     public java.util.List<QueryAccountTradeByPageResponseBodyResult> result;
 
@@ -13,6 +19,22 @@ public class QueryAccountTradeByPageResponseBody extends TeaModel {
     public static QueryAccountTradeByPageResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryAccountTradeByPageResponseBody self = new QueryAccountTradeByPageResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public QueryAccountTradeByPageResponseBody setHasMore(Boolean hasMore) {
+        this.hasMore = hasMore;
+        return this;
+    }
+    public Boolean getHasMore() {
+        return this.hasMore;
+    }
+
+    public QueryAccountTradeByPageResponseBody setNextToken(Long nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public Long getNextToken() {
+        return this.nextToken;
     }
 
     public QueryAccountTradeByPageResponseBody setResult(java.util.List<QueryAccountTradeByPageResponseBodyResult> result) {

@@ -13,6 +13,9 @@ public class QueryPaymentBenefitResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    @NameInMap("status")
+    public String status;
+
     public static QueryPaymentBenefitResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryPaymentBenefitResponseBody self = new QueryPaymentBenefitResponseBody();
         return TeaModel.build(map, self);
@@ -40,6 +43,14 @@ public class QueryPaymentBenefitResponseBody extends TeaModel {
     }
     public String getRequestId() {
         return this.requestId;
+    }
+
+    public QueryPaymentBenefitResponseBody setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+    public String getStatus() {
+        return this.status;
     }
 
 }
