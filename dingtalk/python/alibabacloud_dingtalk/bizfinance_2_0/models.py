@@ -3027,12 +3027,12 @@ class GetReceiptHeaders(TeaModel):
 class GetReceiptRequest(TeaModel):
     def __init__(
         self,
+        business_id: str = None,
         code: str = None,
         model_id: str = None,
     ):
-        # This parameter is required.
+        self.business_id = business_id
         self.code = code
-        # This parameter is required.
         self.model_id = model_id
 
     def validate(self):
@@ -3044,6 +3044,8 @@ class GetReceiptRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
         if self.code is not None:
             result['code'] = self.code
         if self.model_id is not None:
@@ -3052,6 +3054,8 @@ class GetReceiptRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
         if m.get('code') is not None:
             self.code = m.get('code')
         if m.get('modelId') is not None:

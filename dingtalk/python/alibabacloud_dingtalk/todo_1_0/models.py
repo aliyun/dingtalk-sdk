@@ -558,8 +558,12 @@ class CreateTodoTaskRequestNotifyConfigs(TeaModel):
     def __init__(
         self,
         ding_notify: str = None,
+        send_assistant_chat: str = None,
+        send_todo_apn: str = None,
     ):
         self.ding_notify = ding_notify
+        self.send_assistant_chat = send_assistant_chat
+        self.send_todo_apn = send_todo_apn
 
     def validate(self):
         pass
@@ -572,12 +576,53 @@ class CreateTodoTaskRequestNotifyConfigs(TeaModel):
         result = dict()
         if self.ding_notify is not None:
             result['dingNotify'] = self.ding_notify
+        if self.send_assistant_chat is not None:
+            result['sendAssistantChat'] = self.send_assistant_chat
+        if self.send_todo_apn is not None:
+            result['sendTodoApn'] = self.send_todo_apn
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('dingNotify') is not None:
             self.ding_notify = m.get('dingNotify')
+        if m.get('sendAssistantChat') is not None:
+            self.send_assistant_chat = m.get('sendAssistantChat')
+        if m.get('sendTodoApn') is not None:
+            self.send_todo_apn = m.get('sendTodoApn')
+        return self
+
+
+class CreateTodoTaskRequestRemindNotifyConfigs(TeaModel):
+    def __init__(
+        self,
+        ding_notify: str = None,
+        send_todo_apn: str = None,
+    ):
+        self.ding_notify = ding_notify
+        self.send_todo_apn = send_todo_apn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_notify is not None:
+            result['dingNotify'] = self.ding_notify
+        if self.send_todo_apn is not None:
+            result['sendTodoApn'] = self.send_todo_apn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingNotify') is not None:
+            self.ding_notify = m.get('dingNotify')
+        if m.get('sendTodoApn') is not None:
+            self.send_todo_apn = m.get('sendTodoApn')
         return self
 
 
@@ -596,6 +641,8 @@ class CreateTodoTaskRequest(TeaModel):
         notify_configs: CreateTodoTaskRequestNotifyConfigs = None,
         participant_ids: List[str] = None,
         priority: int = None,
+        remind_notify_configs: CreateTodoTaskRequestRemindNotifyConfigs = None,
+        reminder_time_stamp: int = None,
         source_id: str = None,
         subject: str = None,
         todo_type: str = None,
@@ -613,6 +660,8 @@ class CreateTodoTaskRequest(TeaModel):
         self.notify_configs = notify_configs
         self.participant_ids = participant_ids
         self.priority = priority
+        self.remind_notify_configs = remind_notify_configs
+        self.reminder_time_stamp = reminder_time_stamp
         self.source_id = source_id
         # This parameter is required.
         self.subject = subject
@@ -632,6 +681,8 @@ class CreateTodoTaskRequest(TeaModel):
             self.detail_url.validate()
         if self.notify_configs:
             self.notify_configs.validate()
+        if self.remind_notify_configs:
+            self.remind_notify_configs.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -667,6 +718,10 @@ class CreateTodoTaskRequest(TeaModel):
             result['participantIds'] = self.participant_ids
         if self.priority is not None:
             result['priority'] = self.priority
+        if self.remind_notify_configs is not None:
+            result['remindNotifyConfigs'] = self.remind_notify_configs.to_map()
+        if self.reminder_time_stamp is not None:
+            result['reminderTimeStamp'] = self.reminder_time_stamp
         if self.source_id is not None:
             result['sourceId'] = self.source_id
         if self.subject is not None:
@@ -711,6 +766,11 @@ class CreateTodoTaskRequest(TeaModel):
             self.participant_ids = m.get('participantIds')
         if m.get('priority') is not None:
             self.priority = m.get('priority')
+        if m.get('remindNotifyConfigs') is not None:
+            temp_model = CreateTodoTaskRequestRemindNotifyConfigs()
+            self.remind_notify_configs = temp_model.from_map(m['remindNotifyConfigs'])
+        if m.get('reminderTimeStamp') is not None:
+            self.reminder_time_stamp = m.get('reminderTimeStamp')
         if m.get('sourceId') is not None:
             self.source_id = m.get('sourceId')
         if m.get('subject') is not None:

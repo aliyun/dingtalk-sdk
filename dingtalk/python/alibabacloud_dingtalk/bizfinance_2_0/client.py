@@ -1926,6 +1926,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.business_id):
+            query['businessId'] = request.business_id
         if not UtilClient.is_unset(request.code):
             query['code'] = request.code
         if not UtilClient.is_unset(request.model_id):
@@ -1971,6 +1973,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.business_id):
+            query['businessId'] = request.business_id
         if not UtilClient.is_unset(request.code):
             query['code'] = request.code
         if not UtilClient.is_unset(request.model_id):

@@ -5945,6 +5945,202 @@ class GetCidsByBotCodeResponse(TeaModel):
         return self
 
 
+class GetClassTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetClassTagRequest(TeaModel):
+    def __init__(
+        self,
+        entity_id: str = None,
+        tag_code: str = None,
+    ):
+        # This parameter is required.
+        self.entity_id = entity_id
+        # This parameter is required.
+        self.tag_code = tag_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.entity_id is not None:
+            result['entityId'] = self.entity_id
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('entityId') is not None:
+            self.entity_id = m.get('entityId')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        return self
+
+
+class GetClassTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        creator_name: str = None,
+        data_type: int = None,
+        description: str = None,
+        inner_download: str = None,
+        inner_transfer: str = None,
+        modifier_name: str = None,
+        name: str = None,
+        out_op: str = None,
+        rank: int = None,
+        status: int = None,
+        update_time: int = None,
+    ):
+        self.creator_name = creator_name
+        self.data_type = data_type
+        self.description = description
+        self.inner_download = inner_download
+        self.inner_transfer = inner_transfer
+        self.modifier_name = modifier_name
+        self.name = name
+        self.out_op = out_op
+        self.rank = rank
+        self.status = status
+        self.update_time = update_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_name is not None:
+            result['creatorName'] = self.creator_name
+        if self.data_type is not None:
+            result['dataType'] = self.data_type
+        if self.description is not None:
+            result['description'] = self.description
+        if self.inner_download is not None:
+            result['innerDownload'] = self.inner_download
+        if self.inner_transfer is not None:
+            result['innerTransfer'] = self.inner_transfer
+        if self.modifier_name is not None:
+            result['modifierName'] = self.modifier_name
+        if self.name is not None:
+            result['name'] = self.name
+        if self.out_op is not None:
+            result['outOp'] = self.out_op
+        if self.rank is not None:
+            result['rank'] = self.rank
+        if self.status is not None:
+            result['status'] = self.status
+        if self.update_time is not None:
+            result['updateTime'] = self.update_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorName') is not None:
+            self.creator_name = m.get('creatorName')
+        if m.get('dataType') is not None:
+            self.data_type = m.get('dataType')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('innerDownload') is not None:
+            self.inner_download = m.get('innerDownload')
+        if m.get('innerTransfer') is not None:
+            self.inner_transfer = m.get('innerTransfer')
+        if m.get('modifierName') is not None:
+            self.modifier_name = m.get('modifierName')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('outOp') is not None:
+            self.out_op = m.get('outOp')
+        if m.get('rank') is not None:
+            self.rank = m.get('rank')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('updateTime') is not None:
+            self.update_time = m.get('updateTime')
+        return self
+
+
+class GetClassTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetClassTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetClassTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetCommentListHeaders(TeaModel):
     def __init__(
         self,
@@ -26884,6 +27080,140 @@ class UpdateStorageModeResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateStorageModeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTrustedDeviceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTrustedDeviceRequest(TeaModel):
+    def __init__(
+        self,
+        status: int = None,
+        title: str = None,
+    ):
+        self.status = status
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class UpdateTrustedDeviceResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateTrustedDeviceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateTrustedDeviceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateTrustedDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

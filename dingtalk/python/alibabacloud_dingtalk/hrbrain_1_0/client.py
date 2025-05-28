@@ -2082,6 +2082,254 @@ class Client(OpenApiClient):
         headers = dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseHeaders()
         return await self.hrbrain_deletet_label_base_with_options_async(request, headers, runtime)
 
+    def hrbrain_emp_pool_query_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryResponse:
+        """
+        @summary 人才池信息查询
+        
+        @param request: HrbrainEmpPoolQueryRequest
+        @param headers: HrbrainEmpPoolQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainEmpPoolQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.labels):
+            body['labels'] = request.labels
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainEmpPoolQuery',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/empPools/infos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_emp_pool_query_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryResponse:
+        """
+        @summary 人才池信息查询
+        
+        @param request: HrbrainEmpPoolQueryRequest
+        @param headers: HrbrainEmpPoolQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainEmpPoolQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.labels):
+            body['labels'] = request.labels
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainEmpPoolQuery',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/empPools/infos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_emp_pool_query(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryResponse:
+        """
+        @summary 人才池信息查询
+        
+        @param request: HrbrainEmpPoolQueryRequest
+        @return: HrbrainEmpPoolQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryHeaders()
+        return self.hrbrain_emp_pool_query_with_options(request, headers, runtime)
+
+    async def hrbrain_emp_pool_query_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryResponse:
+        """
+        @summary 人才池信息查询
+        
+        @param request: HrbrainEmpPoolQueryRequest
+        @return: HrbrainEmpPoolQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainEmpPoolQueryHeaders()
+        return await self.hrbrain_emp_pool_query_with_options_async(request, headers, runtime)
+
+    def hrbrain_emp_pool_user_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserResponse:
+        """
+        @summary 人才池人员查询
+        
+        @param request: HrbrainEmpPoolUserRequest
+        @param headers: HrbrainEmpPoolUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainEmpPoolUserResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.pool_code):
+            body['poolCode'] = request.pool_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainEmpPoolUser',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/empPools/users/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_emp_pool_user_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserResponse:
+        """
+        @summary 人才池人员查询
+        
+        @param request: HrbrainEmpPoolUserRequest
+        @param headers: HrbrainEmpPoolUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainEmpPoolUserResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.pool_code):
+            body['poolCode'] = request.pool_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainEmpPoolUser',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/empPools/users/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_emp_pool_user(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserResponse:
+        """
+        @summary 人才池人员查询
+        
+        @param request: HrbrainEmpPoolUserRequest
+        @return: HrbrainEmpPoolUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserHeaders()
+        return self.hrbrain_emp_pool_user_with_options(request, headers, runtime)
+
+    async def hrbrain_emp_pool_user_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserResponse:
+        """
+        @summary 人才池人员查询
+        
+        @param request: HrbrainEmpPoolUserRequest
+        @return: HrbrainEmpPoolUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainEmpPoolUserHeaders()
+        return await self.hrbrain_emp_pool_user_with_options_async(request, headers, runtime)
+
     def hrbrain_import_award_detail_with_options(
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailRequest,

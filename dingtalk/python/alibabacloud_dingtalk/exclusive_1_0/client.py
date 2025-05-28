@@ -4112,6 +4112,124 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.GetCidsByBotCodeHeaders()
         return await self.get_cids_by_bot_code_with_options_async(request, headers, runtime)
 
+    def get_class_tag_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetClassTagRequest,
+        headers: dingtalkexclusive__1__0_models.GetClassTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetClassTagResponse:
+        """
+        @summary 获取密级标签
+        
+        @param request: GetClassTagRequest
+        @param headers: GetClassTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetClassTagResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.entity_id):
+            query['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.tag_code):
+            query['tagCode'] = request.tag_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetClassTag',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/classes/entities/tags',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetClassTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_class_tag_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetClassTagRequest,
+        headers: dingtalkexclusive__1__0_models.GetClassTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetClassTagResponse:
+        """
+        @summary 获取密级标签
+        
+        @param request: GetClassTagRequest
+        @param headers: GetClassTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetClassTagResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.entity_id):
+            query['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.tag_code):
+            query['tagCode'] = request.tag_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetClassTag',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/classes/entities/tags',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetClassTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_class_tag(
+        self,
+        request: dingtalkexclusive__1__0_models.GetClassTagRequest,
+    ) -> dingtalkexclusive__1__0_models.GetClassTagResponse:
+        """
+        @summary 获取密级标签
+        
+        @param request: GetClassTagRequest
+        @return: GetClassTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetClassTagHeaders()
+        return self.get_class_tag_with_options(request, headers, runtime)
+
+    async def get_class_tag_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetClassTagRequest,
+    ) -> dingtalkexclusive__1__0_models.GetClassTagResponse:
+        """
+        @summary 获取密级标签
+        
+        @param request: GetClassTagRequest
+        @return: GetClassTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetClassTagHeaders()
+        return await self.get_class_tag_with_options_async(request, headers, runtime)
+
     def get_comment_list_with_options(
         self,
         publisher_id: str,
@@ -16079,6 +16197,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.UpdateStorageModeHeaders()
         return await self.update_storage_mode_with_options_async(request, headers, runtime)
+
+    def update_trusted_device_with_options(
+        self,
+        device_id: str,
+        request: dingtalkexclusive__1__0_models.UpdateTrustedDeviceRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateTrustedDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateTrustedDeviceResponse:
+        """
+        @summary 通过设备编号修改设备信息。
+        
+        @param request: UpdateTrustedDeviceRequest
+        @param headers: UpdateTrustedDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTrustedDeviceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateTrustedDevice',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/trustedDevices/{device_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateTrustedDeviceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_trusted_device_with_options_async(
+        self,
+        device_id: str,
+        request: dingtalkexclusive__1__0_models.UpdateTrustedDeviceRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateTrustedDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateTrustedDeviceResponse:
+        """
+        @summary 通过设备编号修改设备信息。
+        
+        @param request: UpdateTrustedDeviceRequest
+        @param headers: UpdateTrustedDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTrustedDeviceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateTrustedDevice',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/trustedDevices/{device_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateTrustedDeviceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_trusted_device(
+        self,
+        device_id: str,
+        request: dingtalkexclusive__1__0_models.UpdateTrustedDeviceRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateTrustedDeviceResponse:
+        """
+        @summary 通过设备编号修改设备信息。
+        
+        @param request: UpdateTrustedDeviceRequest
+        @return: UpdateTrustedDeviceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateTrustedDeviceHeaders()
+        return self.update_trusted_device_with_options(device_id, request, headers, runtime)
+
+    async def update_trusted_device_async(
+        self,
+        device_id: str,
+        request: dingtalkexclusive__1__0_models.UpdateTrustedDeviceRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateTrustedDeviceResponse:
+        """
+        @summary 通过设备编号修改设备信息。
+        
+        @param request: UpdateTrustedDeviceRequest
+        @return: UpdateTrustedDeviceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateTrustedDeviceHeaders()
+        return await self.update_trusted_device_with_options_async(device_id, request, headers, runtime)
 
     def update_voice_msg_ctrl_status_with_options(
         self,

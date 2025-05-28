@@ -342,6 +342,10 @@ class Client(OpenApiClient):
             body['participantIds'] = request.participant_ids
         if not UtilClient.is_unset(request.priority):
             body['priority'] = request.priority
+        if not UtilClient.is_unset(request.remind_notify_configs):
+            body['remindNotifyConfigs'] = request.remind_notify_configs
+        if not UtilClient.is_unset(request.reminder_time_stamp):
+            body['reminderTimeStamp'] = request.reminder_time_stamp
         if not UtilClient.is_unset(request.source_id):
             body['sourceId'] = request.source_id
         if not UtilClient.is_unset(request.subject):
@@ -418,6 +422,10 @@ class Client(OpenApiClient):
             body['participantIds'] = request.participant_ids
         if not UtilClient.is_unset(request.priority):
             body['priority'] = request.priority
+        if not UtilClient.is_unset(request.remind_notify_configs):
+            body['remindNotifyConfigs'] = request.remind_notify_configs
+        if not UtilClient.is_unset(request.reminder_time_stamp):
+            body['reminderTimeStamp'] = request.reminder_time_stamp
         if not UtilClient.is_unset(request.source_id):
             body['sourceId'] = request.source_id
         if not UtilClient.is_unset(request.subject):
