@@ -279,6 +279,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->priority)) {
             $body['priority'] = $request->priority;
         }
+        if (!Utils::isUnset($request->remindNotifyConfigs)) {
+            $body['remindNotifyConfigs'] = $request->remindNotifyConfigs;
+        }
+        if (!Utils::isUnset($request->reminderTimeStamp)) {
+            $body['reminderTimeStamp'] = $request->reminderTimeStamp;
+        }
         if (!Utils::isUnset($request->sourceId)) {
             $body['sourceId'] = $request->sourceId;
         }

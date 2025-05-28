@@ -59,6 +59,12 @@ use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteTransferEvalRespo
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteWorkExpHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteWorkExpRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteWorkExpResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainEmpPoolQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainEmpPoolQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainEmpPoolQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainEmpPoolUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainEmpPoolUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainEmpPoolUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportAwardDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportAwardDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportAwardDetailResponse;
@@ -1175,6 +1181,135 @@ class Dingtalk extends OpenApiClient
         $headers = new HrbrainDeletetLabelBaseHeaders([]);
 
         return $this->hrbrainDeletetLabelBaseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才池信息查询
+     *  *
+     * @param HrbrainEmpPoolQueryRequest $request HrbrainEmpPoolQueryRequest
+     * @param HrbrainEmpPoolQueryHeaders $headers HrbrainEmpPoolQueryHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainEmpPoolQueryResponse HrbrainEmpPoolQueryResponse
+     */
+    public function hrbrainEmpPoolQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->keyword)) {
+            $body['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->labels)) {
+            $body['labels'] = $request->labels;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainEmpPoolQuery',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/empPools/infos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainEmpPoolQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才池信息查询
+     *  *
+     * @param HrbrainEmpPoolQueryRequest $request HrbrainEmpPoolQueryRequest
+     *
+     * @return HrbrainEmpPoolQueryResponse HrbrainEmpPoolQueryResponse
+     */
+    public function hrbrainEmpPoolQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainEmpPoolQueryHeaders([]);
+
+        return $this->hrbrainEmpPoolQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才池人员查询
+     *  *
+     * @param HrbrainEmpPoolUserRequest $request HrbrainEmpPoolUserRequest
+     * @param HrbrainEmpPoolUserHeaders $headers HrbrainEmpPoolUserHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainEmpPoolUserResponse HrbrainEmpPoolUserResponse
+     */
+    public function hrbrainEmpPoolUserWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->poolCode)) {
+            $body['poolCode'] = $request->poolCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainEmpPoolUser',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/datas/empPools/users/lists/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainEmpPoolUserResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才池人员查询
+     *  *
+     * @param HrbrainEmpPoolUserRequest $request HrbrainEmpPoolUserRequest
+     *
+     * @return HrbrainEmpPoolUserResponse HrbrainEmpPoolUserResponse
+     */
+    public function hrbrainEmpPoolUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainEmpPoolUserHeaders([]);
+
+        return $this->hrbrainEmpPoolUserWithOptions($request, $headers, $runtime);
     }
 
     /**

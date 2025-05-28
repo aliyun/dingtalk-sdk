@@ -102,6 +102,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCalenderSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCidsByBotCodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCidsByBotCodeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCidsByBotCodeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetClassTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetClassTagRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetClassTagResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListResponse;
@@ -385,6 +388,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRoleVisibilityResponse
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateStorageModeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateStorageModeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateStorageModeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateTrustedDeviceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateTrustedDeviceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateTrustedDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateVoiceMsgCtrlStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateVoiceMsgCtrlStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateVoiceMsgCtrlStatusResponse;
@@ -2526,6 +2532,66 @@ class Dingtalk extends OpenApiClient
         $headers = new GetCidsByBotCodeHeaders([]);
 
         return $this->getCidsByBotCodeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取密级标签
+     *  *
+     * @param GetClassTagRequest $request GetClassTagRequest
+     * @param GetClassTagHeaders $headers GetClassTagHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetClassTagResponse GetClassTagResponse
+     */
+    public function getClassTagWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->entityId)) {
+            $query['entityId'] = $request->entityId;
+        }
+        if (!Utils::isUnset($request->tagCode)) {
+            $query['tagCode'] = $request->tagCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetClassTag',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/classes/entities/tags',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetClassTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取密级标签
+     *  *
+     * @param GetClassTagRequest $request GetClassTagRequest
+     *
+     * @return GetClassTagResponse GetClassTagResponse
+     */
+    public function getClassTag($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetClassTagHeaders([]);
+
+        return $this->getClassTagWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -8782,6 +8848,68 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateStorageModeHeaders([]);
 
         return $this->updateStorageModeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过设备编号修改设备信息。
+     *  *
+     * @param string                     $deviceId
+     * @param UpdateTrustedDeviceRequest $request  UpdateTrustedDeviceRequest
+     * @param UpdateTrustedDeviceHeaders $headers  UpdateTrustedDeviceHeaders
+     * @param RuntimeOptions             $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return UpdateTrustedDeviceResponse UpdateTrustedDeviceResponse
+     */
+    public function updateTrustedDeviceWithOptions($deviceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateTrustedDevice',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/trustedDevices/' . $deviceId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateTrustedDeviceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过设备编号修改设备信息。
+     *  *
+     * @param string                     $deviceId
+     * @param UpdateTrustedDeviceRequest $request  UpdateTrustedDeviceRequest
+     *
+     * @return UpdateTrustedDeviceResponse UpdateTrustedDeviceResponse
+     */
+    public function updateTrustedDevice($deviceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateTrustedDeviceHeaders([]);
+
+        return $this->updateTrustedDeviceWithOptions($deviceId, $request, $headers, $runtime);
     }
 
     /**

@@ -1164,6 +1164,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->businessId)) {
+            $query['businessId'] = $request->businessId;
+        }
         if (!Utils::isUnset($request->code)) {
             $query['code'] = $request->code;
         }

@@ -8,6 +8,7 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\actionList;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\contentFieldList;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\detailUrl;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\notifyConfigs;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest\remindNotifyConfigs;
 use AlibabaCloud\Tea\Model;
 
 class CreateTodoTaskRequest extends Model
@@ -73,6 +74,16 @@ class CreateTodoTaskRequest extends Model
     public $priority;
 
     /**
+     * @var remindNotifyConfigs
+     */
+    public $remindNotifyConfigs;
+
+    /**
+     * @var int
+     */
+    public $reminderTimeStamp;
+
+    /**
      * @var string
      */
     public $sourceId;
@@ -108,6 +119,8 @@ class CreateTodoTaskRequest extends Model
         'notifyConfigs' => 'notifyConfigs',
         'participantIds' => 'participantIds',
         'priority' => 'priority',
+        'remindNotifyConfigs' => 'remindNotifyConfigs',
+        'reminderTimeStamp' => 'reminderTimeStamp',
         'sourceId' => 'sourceId',
         'subject' => 'subject',
         'todoType' => 'todoType',
@@ -166,6 +179,12 @@ class CreateTodoTaskRequest extends Model
         }
         if (null !== $this->priority) {
             $res['priority'] = $this->priority;
+        }
+        if (null !== $this->remindNotifyConfigs) {
+            $res['remindNotifyConfigs'] = null !== $this->remindNotifyConfigs ? $this->remindNotifyConfigs->toMap() : null;
+        }
+        if (null !== $this->reminderTimeStamp) {
+            $res['reminderTimeStamp'] = $this->reminderTimeStamp;
         }
         if (null !== $this->sourceId) {
             $res['sourceId'] = $this->sourceId;
@@ -242,6 +261,12 @@ class CreateTodoTaskRequest extends Model
         }
         if (isset($map['priority'])) {
             $model->priority = $map['priority'];
+        }
+        if (isset($map['remindNotifyConfigs'])) {
+            $model->remindNotifyConfigs = remindNotifyConfigs::fromMap($map['remindNotifyConfigs']);
+        }
+        if (isset($map['reminderTimeStamp'])) {
+            $model->reminderTimeStamp = $map['reminderTimeStamp'];
         }
         if (isset($map['sourceId'])) {
             $model->sourceId = $map['sourceId'];
