@@ -2158,6 +2158,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取密级标签</p>
+     * 
+     * @param request GetClassTagRequest
+     * @param headers GetClassTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetClassTagResponse
+     */
+    public GetClassTagResponse getClassTagWithOptions(GetClassTagRequest request, GetClassTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.entityId)) {
+            query.put("entityId", request.entityId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagCode)) {
+            query.put("tagCode", request.tagCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetClassTag"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/classes/entities/tags"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetClassTagResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取密级标签</p>
+     * 
+     * @param request GetClassTagRequest
+     * @return GetClassTagResponse
+     */
+    public GetClassTagResponse getClassTag(GetClassTagRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetClassTagHeaders headers = new GetClassTagHeaders();
+        return this.getClassTagWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取发布号的评论列表</p>
      * 
      * @param request GetCommentListRequest
@@ -8527,6 +8587,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateStorageModeHeaders headers = new UpdateStorageModeHeaders();
         return this.updateStorageModeWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>通过设备编号修改设备信息。</p>
+     * 
+     * @param request UpdateTrustedDeviceRequest
+     * @param headers UpdateTrustedDeviceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateTrustedDeviceResponse
+     */
+    public UpdateTrustedDeviceResponse updateTrustedDeviceWithOptions(String deviceId, UpdateTrustedDeviceRequest request, UpdateTrustedDeviceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTrustedDevice"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/trustedDevices/" + deviceId + ""),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTrustedDeviceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>通过设备编号修改设备信息。</p>
+     * 
+     * @param request UpdateTrustedDeviceRequest
+     * @return UpdateTrustedDeviceResponse
+     */
+    public UpdateTrustedDeviceResponse updateTrustedDevice(String deviceId, UpdateTrustedDeviceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateTrustedDeviceHeaders headers = new UpdateTrustedDeviceHeaders();
+        return this.updateTrustedDeviceWithOptions(deviceId, request, headers, runtime);
     }
 
     /**

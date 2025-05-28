@@ -235,6 +235,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("priority", request.priority);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.remindNotifyConfigs)) {
+            body.put("remindNotifyConfigs", request.remindNotifyConfigs);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reminderTimeStamp)) {
+            body.put("reminderTimeStamp", request.reminderTimeStamp);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.sourceId)) {
             body.put("sourceId", request.sourceId);
         }

@@ -1045,6 +1045,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public GetReceiptResponse getReceiptWithOptions(GetReceiptRequest request, GetReceiptHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.businessId)) {
+            query.put("businessId", request.businessId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.code)) {
             query.put("code", request.code);
         }
