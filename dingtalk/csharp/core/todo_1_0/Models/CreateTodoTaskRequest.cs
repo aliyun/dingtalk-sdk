@@ -113,6 +113,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public string DingNotify { get; set; }
 
+            [NameInMap("sendAssistantChat")]
+            [Validation(Required=false)]
+            public string SendAssistantChat { get; set; }
+
+            [NameInMap("sendTodoApn")]
+            [Validation(Required=false)]
+            public string SendTodoApn { get; set; }
+
         }
 
         [NameInMap("participantIds")]
@@ -122,6 +130,24 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [NameInMap("priority")]
         [Validation(Required=false)]
         public int? Priority { get; set; }
+
+        [NameInMap("remindNotifyConfigs")]
+        [Validation(Required=false)]
+        public CreateTodoTaskRequestRemindNotifyConfigs RemindNotifyConfigs { get; set; }
+        public class CreateTodoTaskRequestRemindNotifyConfigs : TeaModel {
+            [NameInMap("dingNotify")]
+            [Validation(Required=false)]
+            public string DingNotify { get; set; }
+
+            [NameInMap("sendTodoApn")]
+            [Validation(Required=false)]
+            public string SendTodoApn { get; set; }
+
+        }
+
+        [NameInMap("reminderTimeStamp")]
+        [Validation(Required=false)]
+        public long? ReminderTimeStamp { get; set; }
 
         [NameInMap("sourceId")]
         [Validation(Required=false)]

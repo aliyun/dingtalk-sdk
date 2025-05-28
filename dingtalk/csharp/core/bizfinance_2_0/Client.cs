@@ -2620,6 +2620,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessId))
+            {
+                query["businessId"] = request.BusinessId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
             {
                 query["code"] = request.Code;
@@ -2679,6 +2683,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessId))
+            {
+                query["businessId"] = request.BusinessId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
             {
                 query["code"] = request.Code;
