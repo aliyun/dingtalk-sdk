@@ -67,6 +67,9 @@ public class GroupUpdateRequest extends TeaModel {
     @NameInMap("enableOutsideApply")
     public Boolean enableOutsideApply;
 
+    @NameInMap("enableOutsideCameraCheck")
+    public Boolean enableOutsideCameraCheck;
+
     /**
      * <strong>example:</strong>
      * <p>true</p>
@@ -276,6 +279,14 @@ public class GroupUpdateRequest extends TeaModel {
     }
     public Boolean getEnableOutsideApply() {
         return this.enableOutsideApply;
+    }
+
+    public GroupUpdateRequest setEnableOutsideCameraCheck(Boolean enableOutsideCameraCheck) {
+        this.enableOutsideCameraCheck = enableOutsideCameraCheck;
+        return this;
+    }
+    public Boolean getEnableOutsideCameraCheck() {
+        return this.enableOutsideCameraCheck;
     }
 
     public GroupUpdateRequest setEnableOutsideCheck(Boolean enableOutsideCheck) {

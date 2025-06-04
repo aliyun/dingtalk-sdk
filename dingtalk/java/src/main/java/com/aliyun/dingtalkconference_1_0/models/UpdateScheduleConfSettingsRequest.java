@@ -380,7 +380,7 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
 
         /**
          * <strong>example:</strong>
-         * <p>-1：未开启 1：开启 6：超过6人自动开启静音</p>
+         * <p>-1：开启 0：未开启 6：超过6人自动开启静音</p>
          */
         @NameInMap("muteOnJoin")
         public Integer muteOnJoin;

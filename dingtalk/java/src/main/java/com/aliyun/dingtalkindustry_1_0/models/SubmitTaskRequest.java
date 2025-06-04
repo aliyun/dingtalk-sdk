@@ -21,6 +21,9 @@ public class SubmitTaskRequest extends TeaModel {
     @NameInMap("data")
     public java.util.List<SubmitTaskRequestData> data;
 
+    @NameInMap("unionId")
+    public String unionId;
+
     public static SubmitTaskRequest build(java.util.Map<String, ?> map) throws Exception {
         SubmitTaskRequest self = new SubmitTaskRequest();
         return TeaModel.build(map, self);
@@ -48,6 +51,14 @@ public class SubmitTaskRequest extends TeaModel {
     }
     public java.util.List<SubmitTaskRequestData> getData() {
         return this.data;
+    }
+
+    public SubmitTaskRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
     public static class SubmitTaskRequestData extends TeaModel {

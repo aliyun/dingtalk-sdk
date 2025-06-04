@@ -2207,6 +2207,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("enableOutsideApply", request.enableOutsideApply);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.enableOutsideCameraCheck)) {
+            body.put("enableOutsideCameraCheck", request.enableOutsideCameraCheck);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.enableOutsideCheck)) {
             body.put("enableOutsideCheck", request.enableOutsideCheck);
         }
