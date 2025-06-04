@@ -47,7 +47,7 @@ class scheduleConfSettingModel extends Model
     public $moziConfVirtualExtraSetting;
 
     /**
-     * @example -1：未开启 1：开启 6：超过6人自动开启静音
+     * @example -1：开启 0：未开启 6：超过6人自动开启静音
      *
      * @var int
      */

@@ -75,6 +75,11 @@ class GroupUpdateRequest extends Model
     public $enableOutsideApply;
 
     /**
+     * @var bool
+     */
+    public $enableOutsideCameraCheck;
+
+    /**
      * @example true
      *
      * @var bool
@@ -235,6 +240,7 @@ class GroupUpdateRequest extends Model
         'enableFaceStrictMode' => 'enableFaceStrictMode',
         'enableOutSideUpdateNormalCheck' => 'enableOutSideUpdateNormalCheck',
         'enableOutsideApply' => 'enableOutsideApply',
+        'enableOutsideCameraCheck' => 'enableOutsideCameraCheck',
         'enableOutsideCheck' => 'enableOutsideCheck',
         'enableOutsideRemark' => 'enableOutsideRemark',
         'enableTrimDistance' => 'enableTrimDistance',
@@ -292,6 +298,9 @@ class GroupUpdateRequest extends Model
         }
         if (null !== $this->enableOutsideApply) {
             $res['enableOutsideApply'] = $this->enableOutsideApply;
+        }
+        if (null !== $this->enableOutsideCameraCheck) {
+            $res['enableOutsideCameraCheck'] = $this->enableOutsideCameraCheck;
         }
         if (null !== $this->enableOutsideCheck) {
             $res['enableOutsideCheck'] = $this->enableOutsideCheck;
@@ -415,6 +424,9 @@ class GroupUpdateRequest extends Model
         }
         if (isset($map['enableOutsideApply'])) {
             $model->enableOutsideApply = $map['enableOutsideApply'];
+        }
+        if (isset($map['enableOutsideCameraCheck'])) {
+            $model->enableOutsideCameraCheck = $map['enableOutsideCameraCheck'];
         }
         if (isset($map['enableOutsideCheck'])) {
             $model->enableOutsideCheck = $map['enableOutsideCheck'];

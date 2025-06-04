@@ -2260,6 +2260,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->enableOutsideApply)) {
             $body['enableOutsideApply'] = $request->enableOutsideApply;
         }
+        if (!Utils::isUnset($request->enableOutsideCameraCheck)) {
+            $body['enableOutsideCameraCheck'] = $request->enableOutsideCameraCheck;
+        }
         if (!Utils::isUnset($request->enableOutsideCheck)) {
             $body['enableOutsideCheck'] = $request->enableOutsideCheck;
         }

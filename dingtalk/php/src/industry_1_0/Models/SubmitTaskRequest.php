@@ -27,10 +27,16 @@ class SubmitTaskRequest extends Model
      * @var data[]
      */
     public $data;
+
+    /**
+     * @var string
+     */
+    public $unionId;
     protected $_name = [
         'appId' => 'appId',
         'bizCode' => 'bizCode',
         'data' => 'data',
+        'unionId' => 'unionId',
     ];
 
     public function validate() {}
@@ -52,6 +58,9 @@ class SubmitTaskRequest extends Model
                     $res['data'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -79,6 +88,9 @@ class SubmitTaskRequest extends Model
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;
