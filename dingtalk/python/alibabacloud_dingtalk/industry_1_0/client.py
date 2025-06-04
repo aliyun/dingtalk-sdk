@@ -17696,6 +17696,8 @@ class Client(OpenApiClient):
             body['bizCode'] = request.biz_code
         if not UtilClient.is_unset(request.data):
             body['data'] = request.data
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -17743,6 +17745,8 @@ class Client(OpenApiClient):
             body['bizCode'] = request.biz_code
         if not UtilClient.is_unset(request.data):
             body['data'] = request.data
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -9238,6 +9238,7 @@ class GroupUpdateRequest(TeaModel):
         enable_face_strict_mode: bool = None,
         enable_out_side_update_normal_check: bool = None,
         enable_outside_apply: bool = None,
+        enable_outside_camera_check: bool = None,
         enable_outside_check: bool = None,
         enable_outside_remark: bool = None,
         enable_trim_distance: bool = None,
@@ -9272,6 +9273,7 @@ class GroupUpdateRequest(TeaModel):
         self.enable_face_strict_mode = enable_face_strict_mode
         self.enable_out_side_update_normal_check = enable_out_side_update_normal_check
         self.enable_outside_apply = enable_outside_apply
+        self.enable_outside_camera_check = enable_outside_camera_check
         self.enable_outside_check = enable_outside_check
         self.enable_outside_remark = enable_outside_remark
         self.enable_trim_distance = enable_trim_distance
@@ -9334,6 +9336,8 @@ class GroupUpdateRequest(TeaModel):
             result['enableOutSideUpdateNormalCheck'] = self.enable_out_side_update_normal_check
         if self.enable_outside_apply is not None:
             result['enableOutsideApply'] = self.enable_outside_apply
+        if self.enable_outside_camera_check is not None:
+            result['enableOutsideCameraCheck'] = self.enable_outside_camera_check
         if self.enable_outside_check is not None:
             result['enableOutsideCheck'] = self.enable_outside_check
         if self.enable_outside_remark is not None:
@@ -9408,6 +9412,8 @@ class GroupUpdateRequest(TeaModel):
             self.enable_out_side_update_normal_check = m.get('enableOutSideUpdateNormalCheck')
         if m.get('enableOutsideApply') is not None:
             self.enable_outside_apply = m.get('enableOutsideApply')
+        if m.get('enableOutsideCameraCheck') is not None:
+            self.enable_outside_camera_check = m.get('enableOutsideCameraCheck')
         if m.get('enableOutsideCheck') is not None:
             self.enable_outside_check = m.get('enableOutsideCheck')
         if m.get('enableOutsideRemark') is not None:

@@ -29446,10 +29446,12 @@ class SubmitTaskRequest(TeaModel):
         app_id: int = None,
         biz_code: str = None,
         data: List[SubmitTaskRequestData] = None,
+        union_id: str = None,
     ):
         self.app_id = app_id
         self.biz_code = biz_code
         self.data = data
+        self.union_id = union_id
 
     def validate(self):
         if self.data:
@@ -29471,6 +29473,8 @@ class SubmitTaskRequest(TeaModel):
         if self.data is not None:
             for k in self.data:
                 result['data'].append(k.to_map() if k else None)
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
         return result
 
     def from_map(self, m: dict = None):
@@ -29484,6 +29488,8 @@ class SubmitTaskRequest(TeaModel):
             for k in m.get('data'):
                 temp_model = SubmitTaskRequestData()
                 self.data.append(temp_model.from_map(k))
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
         return self
 
 

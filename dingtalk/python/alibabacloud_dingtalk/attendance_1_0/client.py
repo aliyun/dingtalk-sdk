@@ -3947,6 +3947,8 @@ class Client(OpenApiClient):
             body['enableOutSideUpdateNormalCheck'] = request.enable_out_side_update_normal_check
         if not UtilClient.is_unset(request.enable_outside_apply):
             body['enableOutsideApply'] = request.enable_outside_apply
+        if not UtilClient.is_unset(request.enable_outside_camera_check):
+            body['enableOutsideCameraCheck'] = request.enable_outside_camera_check
         if not UtilClient.is_unset(request.enable_outside_check):
             body['enableOutsideCheck'] = request.enable_outside_check
         if not UtilClient.is_unset(request.enable_outside_remark):
@@ -4056,6 +4058,8 @@ class Client(OpenApiClient):
             body['enableOutSideUpdateNormalCheck'] = request.enable_out_side_update_normal_check
         if not UtilClient.is_unset(request.enable_outside_apply):
             body['enableOutsideApply'] = request.enable_outside_apply
+        if not UtilClient.is_unset(request.enable_outside_camera_check):
+            body['enableOutsideCameraCheck'] = request.enable_outside_camera_check
         if not UtilClient.is_unset(request.enable_outside_check):
             body['enableOutsideCheck'] = request.enable_outside_check
         if not UtilClient.is_unset(request.enable_outside_remark):
