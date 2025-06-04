@@ -203,7 +203,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
-            /// <para>-1：未开启 1：开启 6：超过6人自动开启静音</para>
+            /// <para>-1：开启 0：未开启 6：超过6人自动开启静音</para>
             /// </summary>
             [NameInMap("muteOnJoin")]
             [Validation(Required=false)]

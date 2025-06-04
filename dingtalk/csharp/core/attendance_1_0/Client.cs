@@ -5427,6 +5427,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["enableOutsideApply"] = request.EnableOutsideApply;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideCameraCheck))
+            {
+                body["enableOutsideCameraCheck"] = request.EnableOutsideCameraCheck;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideCheck))
             {
                 body["enableOutsideCheck"] = request.EnableOutsideCheck;
@@ -5611,6 +5615,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideApply))
             {
                 body["enableOutsideApply"] = request.EnableOutsideApply;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideCameraCheck))
+            {
+                body["enableOutsideCameraCheck"] = request.EnableOutsideCameraCheck;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableOutsideCheck))
             {

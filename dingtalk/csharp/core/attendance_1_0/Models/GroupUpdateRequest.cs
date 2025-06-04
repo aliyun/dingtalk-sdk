@@ -81,6 +81,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public bool? EnableOutsideApply { get; set; }
 
+        [NameInMap("enableOutsideCameraCheck")]
+        [Validation(Required=false)]
+        public bool? EnableOutsideCameraCheck { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>true</para>
