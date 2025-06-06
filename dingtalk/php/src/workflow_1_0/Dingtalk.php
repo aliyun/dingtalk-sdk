@@ -113,6 +113,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PagesExportInstancesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumAddApproveDentryAuthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumAddApproveDentryAuthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumAddApproveDentryAuthResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumAppendTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumAppendTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumAppendTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumBatchExecuteProcessInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumBatchExecuteProcessInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumBatchExecuteProcessInstancesResponse;
@@ -2515,6 +2518,84 @@ class Dingtalk extends OpenApiClient
         $headers = new PremiumAddApproveDentryAuthHeaders([]);
 
         return $this->premiumAddApproveDentryAuthWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 加签OA审批任务(OA高级版专享)
+     *  *
+     * @param PremiumAppendTaskRequest $request PremiumAppendTaskRequest
+     * @param PremiumAppendTaskHeaders $headers PremiumAppendTaskHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumAppendTaskResponse PremiumAppendTaskResponse
+     */
+    public function premiumAppendTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->activateType)) {
+            $body['activateType'] = $request->activateType;
+        }
+        if (!Utils::isUnset($request->agreeAll)) {
+            $body['agreeAll'] = $request->agreeAll;
+        }
+        if (!Utils::isUnset($request->appenderUserIds)) {
+            $body['appenderUserIds'] = $request->appenderUserIds;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            $body['operateUserId'] = $request->operateUserId;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'PremiumAppendTask',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/tasks/append',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return PremiumAppendTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 加签OA审批任务(OA高级版专享)
+     *  *
+     * @param PremiumAppendTaskRequest $request PremiumAppendTaskRequest
+     *
+     * @return PremiumAppendTaskResponse PremiumAppendTaskResponse
+     */
+    public function premiumAppendTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumAppendTaskHeaders([]);
+
+        return $this->premiumAppendTaskWithOptions($request, $headers, $runtime);
     }
 
     /**

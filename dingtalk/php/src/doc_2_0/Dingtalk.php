@@ -47,6 +47,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocContentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocExportByDelegatedPermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocExportByDelegatedPermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocExportByDelegatedPermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocUpdateContentWithDelegatedPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocUpdateContentWithDelegatedPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocUpdateContentWithDelegatedPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ExportDocHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ExportDocRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ExportDocResponse;
@@ -1123,6 +1126,68 @@ class Dingtalk extends OpenApiClient
         $headers = new DocExportByDelegatedPermissionHeaders([]);
 
         return $this->docExportByDelegatedPermissionWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 以委托权限方式覆写全文
+     *  *
+     * @param string                                         $docKey
+     * @param DocUpdateContentWithDelegatedPermissionRequest $request DocUpdateContentWithDelegatedPermissionRequest
+     * @param DocUpdateContentWithDelegatedPermissionHeaders $headers DocUpdateContentWithDelegatedPermissionHeaders
+     * @param RuntimeOptions                                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DocUpdateContentWithDelegatedPermissionResponse DocUpdateContentWithDelegatedPermissionResponse
+     */
+    public function docUpdateContentWithDelegatedPermissionWithOptions($docKey, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->dataType)) {
+            $body['dataType'] = $request->dataType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DocUpdateContentWithDelegatedPermission',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/me/doc/suites/documents/' . $docKey . '/overwriteContent',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DocUpdateContentWithDelegatedPermissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 以委托权限方式覆写全文
+     *  *
+     * @param string                                         $docKey
+     * @param DocUpdateContentWithDelegatedPermissionRequest $request DocUpdateContentWithDelegatedPermissionRequest
+     *
+     * @return DocUpdateContentWithDelegatedPermissionResponse DocUpdateContentWithDelegatedPermissionResponse
+     */
+    public function docUpdateContentWithDelegatedPermission($docKey, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocUpdateContentWithDelegatedPermissionHeaders([]);
+
+        return $this->docUpdateContentWithDelegatedPermissionWithOptions($docKey, $request, $headers, $runtime);
     }
 
     /**
