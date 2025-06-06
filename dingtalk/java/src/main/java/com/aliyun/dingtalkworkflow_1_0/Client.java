@@ -2304,6 +2304,90 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>加签OA审批任务(OA高级版专享)</p>
+     * 
+     * @param request PremiumAppendTaskRequest
+     * @param headers PremiumAppendTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumAppendTaskResponse
+     */
+    public PremiumAppendTaskResponse premiumAppendTaskWithOptions(PremiumAppendTaskRequest request, PremiumAppendTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.activateType)) {
+            body.put("activateType", request.activateType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.agreeAll)) {
+            body.put("agreeAll", request.agreeAll);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appenderUserIds)) {
+            body.put("appenderUserIds", request.appenderUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
+            body.put("operateUserId", request.operateUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processInstanceId)) {
+            body.put("processInstanceId", request.processInstanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("taskId", request.taskId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumAppendTask"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/tasks/append"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumAppendTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>加签OA审批任务(OA高级版专享)</p>
+     * 
+     * @param request PremiumAppendTaskRequest
+     * @return PremiumAppendTaskResponse
+     */
+    public PremiumAppendTaskResponse premiumAppendTask(PremiumAppendTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumAppendTaskHeaders headers = new PremiumAppendTaskHeaders();
+        return this.premiumAppendTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>批量同意或拒绝审批任务(OA高级版专享接口)</p>
      * 
      * @param request PremiumBatchExecuteProcessInstancesRequest

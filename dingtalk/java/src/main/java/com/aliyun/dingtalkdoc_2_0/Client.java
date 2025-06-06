@@ -940,6 +940,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>以委托权限方式覆写全文</p>
+     * 
+     * @param request DocUpdateContentWithDelegatedPermissionRequest
+     * @param headers DocUpdateContentWithDelegatedPermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DocUpdateContentWithDelegatedPermissionResponse
+     */
+    public DocUpdateContentWithDelegatedPermissionResponse docUpdateContentWithDelegatedPermissionWithOptions(String docKey, DocUpdateContentWithDelegatedPermissionRequest request, DocUpdateContentWithDelegatedPermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dataType)) {
+            body.put("dataType", request.dataType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DocUpdateContentWithDelegatedPermission"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/me/doc/suites/documents/" + docKey + "/overwriteContent"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DocUpdateContentWithDelegatedPermissionResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>以委托权限方式覆写全文</p>
+     * 
+     * @param request DocUpdateContentWithDelegatedPermissionRequest
+     * @return DocUpdateContentWithDelegatedPermissionResponse
+     */
+    public DocUpdateContentWithDelegatedPermissionResponse docUpdateContentWithDelegatedPermission(String docKey, DocUpdateContentWithDelegatedPermissionRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DocUpdateContentWithDelegatedPermissionHeaders headers = new DocUpdateContentWithDelegatedPermissionHeaders();
+        return this.docUpdateContentWithDelegatedPermissionWithOptions(docKey, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>导出文档</p>
      * 
      * @param request ExportDocRequest
