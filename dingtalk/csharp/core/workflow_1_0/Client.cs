@@ -5886,6 +5886,210 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>加签OA审批任务(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumAppendTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// PremiumAppendTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumAppendTaskResponse
+        /// </returns>
+        public PremiumAppendTaskResponse PremiumAppendTaskWithOptions(PremiumAppendTaskRequest request, PremiumAppendTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActivateType))
+            {
+                body["activateType"] = request.ActivateType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgreeAll))
+            {
+                body["agreeAll"] = request.AgreeAll;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppenderUserIds))
+            {
+                body["appenderUserIds"] = request.AppenderUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PremiumAppendTask",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/tasks/append",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PremiumAppendTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>加签OA审批任务(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumAppendTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// PremiumAppendTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumAppendTaskResponse
+        /// </returns>
+        public async Task<PremiumAppendTaskResponse> PremiumAppendTaskWithOptionsAsync(PremiumAppendTaskRequest request, PremiumAppendTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActivateType))
+            {
+                body["activateType"] = request.ActivateType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgreeAll))
+            {
+                body["agreeAll"] = request.AgreeAll;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppenderUserIds))
+            {
+                body["appenderUserIds"] = request.AppenderUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PremiumAppendTask",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/tasks/append",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PremiumAppendTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>加签OA审批任务(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumAppendTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumAppendTaskResponse
+        /// </returns>
+        public PremiumAppendTaskResponse PremiumAppendTask(PremiumAppendTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PremiumAppendTaskHeaders headers = new PremiumAppendTaskHeaders();
+            return PremiumAppendTaskWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>加签OA审批任务(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumAppendTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumAppendTaskResponse
+        /// </returns>
+        public async Task<PremiumAppendTaskResponse> PremiumAppendTaskAsync(PremiumAppendTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PremiumAppendTaskHeaders headers = new PremiumAppendTaskHeaders();
+            return await PremiumAppendTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>批量同意或拒绝审批任务(OA高级版专享接口)</para>
         /// </summary>
         /// 

@@ -2374,6 +2374,162 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>以委托权限方式覆写全文</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocUpdateContentWithDelegatedPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// DocUpdateContentWithDelegatedPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocUpdateContentWithDelegatedPermissionResponse
+        /// </returns>
+        public DocUpdateContentWithDelegatedPermissionResponse DocUpdateContentWithDelegatedPermissionWithOptions(string docKey, DocUpdateContentWithDelegatedPermissionRequest request, DocUpdateContentWithDelegatedPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataType))
+            {
+                body["dataType"] = request.DataType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DocUpdateContentWithDelegatedPermission",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/me/doc/suites/documents/" + docKey + "/overwriteContent",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DocUpdateContentWithDelegatedPermissionResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以委托权限方式覆写全文</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocUpdateContentWithDelegatedPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// DocUpdateContentWithDelegatedPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocUpdateContentWithDelegatedPermissionResponse
+        /// </returns>
+        public async Task<DocUpdateContentWithDelegatedPermissionResponse> DocUpdateContentWithDelegatedPermissionWithOptionsAsync(string docKey, DocUpdateContentWithDelegatedPermissionRequest request, DocUpdateContentWithDelegatedPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataType))
+            {
+                body["dataType"] = request.DataType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DocUpdateContentWithDelegatedPermission",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/me/doc/suites/documents/" + docKey + "/overwriteContent",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DocUpdateContentWithDelegatedPermissionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以委托权限方式覆写全文</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocUpdateContentWithDelegatedPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocUpdateContentWithDelegatedPermissionResponse
+        /// </returns>
+        public DocUpdateContentWithDelegatedPermissionResponse DocUpdateContentWithDelegatedPermission(string docKey, DocUpdateContentWithDelegatedPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DocUpdateContentWithDelegatedPermissionHeaders headers = new DocUpdateContentWithDelegatedPermissionHeaders();
+            return DocUpdateContentWithDelegatedPermissionWithOptions(docKey, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以委托权限方式覆写全文</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocUpdateContentWithDelegatedPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocUpdateContentWithDelegatedPermissionResponse
+        /// </returns>
+        public async Task<DocUpdateContentWithDelegatedPermissionResponse> DocUpdateContentWithDelegatedPermissionAsync(string docKey, DocUpdateContentWithDelegatedPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DocUpdateContentWithDelegatedPermissionHeaders headers = new DocUpdateContentWithDelegatedPermissionHeaders();
+            return await DocUpdateContentWithDelegatedPermissionWithOptionsAsync(docKey, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>导出文档</para>
         /// </summary>
         /// 
