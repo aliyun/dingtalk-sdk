@@ -9233,6 +9233,182 @@ class PremiumAddApproveDentryAuthResponse(TeaModel):
         return self
 
 
+class PremiumAppendTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumAppendTaskRequest(TeaModel):
+    def __init__(
+        self,
+        activate_type: str = None,
+        agree_all: bool = None,
+        appender_user_ids: List[str] = None,
+        operate_user_id: str = None,
+        process_instance_id: str = None,
+        remark: str = None,
+        task_id: int = None,
+        type: str = None,
+    ):
+        # This parameter is required.
+        self.activate_type = activate_type
+        self.agree_all = agree_all
+        # This parameter is required.
+        self.appender_user_ids = appender_user_ids
+        # This parameter is required.
+        self.operate_user_id = operate_user_id
+        # This parameter is required.
+        self.process_instance_id = process_instance_id
+        self.remark = remark
+        # This parameter is required.
+        self.task_id = task_id
+        # This parameter is required.
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activate_type is not None:
+            result['activateType'] = self.activate_type
+        if self.agree_all is not None:
+            result['agreeAll'] = self.agree_all
+        if self.appender_user_ids is not None:
+            result['appenderUserIds'] = self.appender_user_ids
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activateType') is not None:
+            self.activate_type = m.get('activateType')
+        if m.get('agreeAll') is not None:
+            self.agree_all = m.get('agreeAll')
+        if m.get('appenderUserIds') is not None:
+            self.appender_user_ids = m.get('appenderUserIds')
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class PremiumAppendTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class PremiumAppendTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumAppendTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumAppendTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PremiumBatchExecuteProcessInstancesHeaders(TeaModel):
     def __init__(
         self,

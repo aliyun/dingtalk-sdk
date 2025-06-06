@@ -1794,6 +1794,128 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.DocExportByDelegatedPermissionHeaders()
         return await self.doc_export_by_delegated_permission_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def doc_update_content_with_delegated_permission_with_options(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionRequest,
+        headers: dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionResponse:
+        """
+        @summary 以委托权限方式覆写全文
+        
+        @param request: DocUpdateContentWithDelegatedPermissionRequest
+        @param headers: DocUpdateContentWithDelegatedPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocUpdateContentWithDelegatedPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.data_type):
+            body['dataType'] = request.data_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocUpdateContentWithDelegatedPermission',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/me/doc/suites/documents/{doc_key}/overwriteContent',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_update_content_with_delegated_permission_with_options_async(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionRequest,
+        headers: dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionResponse:
+        """
+        @summary 以委托权限方式覆写全文
+        
+        @param request: DocUpdateContentWithDelegatedPermissionRequest
+        @param headers: DocUpdateContentWithDelegatedPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocUpdateContentWithDelegatedPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.data_type):
+            body['dataType'] = request.data_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocUpdateContentWithDelegatedPermission',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/me/doc/suites/documents/{doc_key}/overwriteContent',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_update_content_with_delegated_permission(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionRequest,
+    ) -> dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionResponse:
+        """
+        @summary 以委托权限方式覆写全文
+        
+        @param request: DocUpdateContentWithDelegatedPermissionRequest
+        @return: DocUpdateContentWithDelegatedPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionHeaders()
+        return self.doc_update_content_with_delegated_permission_with_options(doc_key, request, headers, runtime)
+
+    async def doc_update_content_with_delegated_permission_async(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionRequest,
+    ) -> dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionResponse:
+        """
+        @summary 以委托权限方式覆写全文
+        
+        @param request: DocUpdateContentWithDelegatedPermissionRequest
+        @return: DocUpdateContentWithDelegatedPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.DocUpdateContentWithDelegatedPermissionHeaders()
+        return await self.doc_update_content_with_delegated_permission_with_options_async(doc_key, request, headers, runtime)
+
     def export_doc_with_options(
         self,
         request: dingtalkdoc__2__0_models.ExportDocRequest,

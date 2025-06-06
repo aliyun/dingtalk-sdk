@@ -4388,6 +4388,148 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthHeaders()
         return await self.premium_add_approve_dentry_auth_with_options_async(request, headers, runtime)
 
+    def premium_append_task_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumAppendTaskRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumAppendTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumAppendTaskResponse:
+        """
+        @summary 加签OA审批任务(OA高级版专享)
+        
+        @param request: PremiumAppendTaskRequest
+        @param headers: PremiumAppendTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumAppendTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.activate_type):
+            body['activateType'] = request.activate_type
+        if not UtilClient.is_unset(request.agree_all):
+            body['agreeAll'] = request.agree_all
+        if not UtilClient.is_unset(request.appender_user_ids):
+            body['appenderUserIds'] = request.appender_user_ids
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumAppendTask',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/tasks/append',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumAppendTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_append_task_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumAppendTaskRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumAppendTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumAppendTaskResponse:
+        """
+        @summary 加签OA审批任务(OA高级版专享)
+        
+        @param request: PremiumAppendTaskRequest
+        @param headers: PremiumAppendTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumAppendTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.activate_type):
+            body['activateType'] = request.activate_type
+        if not UtilClient.is_unset(request.agree_all):
+            body['agreeAll'] = request.agree_all
+        if not UtilClient.is_unset(request.appender_user_ids):
+            body['appenderUserIds'] = request.appender_user_ids
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumAppendTask',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/tasks/append',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumAppendTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_append_task(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumAppendTaskRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumAppendTaskResponse:
+        """
+        @summary 加签OA审批任务(OA高级版专享)
+        
+        @param request: PremiumAppendTaskRequest
+        @return: PremiumAppendTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumAppendTaskHeaders()
+        return self.premium_append_task_with_options(request, headers, runtime)
+
+    async def premium_append_task_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumAppendTaskRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumAppendTaskResponse:
+        """
+        @summary 加签OA审批任务(OA高级版专享)
+        
+        @param request: PremiumAppendTaskRequest
+        @return: PremiumAppendTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumAppendTaskHeaders()
+        return await self.premium_append_task_with_options_async(request, headers, runtime)
+
     def premium_batch_execute_process_instances_with_options(
         self,
         request: dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesRequest,
