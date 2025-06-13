@@ -9634,6 +9634,146 @@ class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList(TeaModel):
         return self
 
 
+class QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList(TeaModel):
+    def __init__(
+        self,
+        area_unit: str = None,
+        car_no: str = None,
+        city: str = None,
+        cross_city_flg: str = None,
+        district: str = None,
+        lease_end: int = None,
+        lease_start: int = None,
+        project: str = None,
+        project_no: str = None,
+        property_certificate_number: str = None,
+        province: str = None,
+        real_estate_detailed_address: str = None,
+        span_region_manage_no: str = None,
+    ):
+        self.area_unit = area_unit
+        self.car_no = car_no
+        self.city = city
+        self.cross_city_flg = cross_city_flg
+        self.district = district
+        self.lease_end = lease_end
+        self.lease_start = lease_start
+        self.project = project
+        self.project_no = project_no
+        self.property_certificate_number = property_certificate_number
+        self.province = province
+        self.real_estate_detailed_address = real_estate_detailed_address
+        self.span_region_manage_no = span_region_manage_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.area_unit is not None:
+            result['areaUnit'] = self.area_unit
+        if self.car_no is not None:
+            result['carNo'] = self.car_no
+        if self.city is not None:
+            result['city'] = self.city
+        if self.cross_city_flg is not None:
+            result['crossCityFlg'] = self.cross_city_flg
+        if self.district is not None:
+            result['district'] = self.district
+        if self.lease_end is not None:
+            result['leaseEnd'] = self.lease_end
+        if self.lease_start is not None:
+            result['leaseStart'] = self.lease_start
+        if self.project is not None:
+            result['project'] = self.project
+        if self.project_no is not None:
+            result['projectNo'] = self.project_no
+        if self.property_certificate_number is not None:
+            result['propertyCertificateNumber'] = self.property_certificate_number
+        if self.province is not None:
+            result['province'] = self.province
+        if self.real_estate_detailed_address is not None:
+            result['realEstateDetailedAddress'] = self.real_estate_detailed_address
+        if self.span_region_manage_no is not None:
+            result['spanRegionManageNo'] = self.span_region_manage_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('areaUnit') is not None:
+            self.area_unit = m.get('areaUnit')
+        if m.get('carNo') is not None:
+            self.car_no = m.get('carNo')
+        if m.get('city') is not None:
+            self.city = m.get('city')
+        if m.get('crossCityFlg') is not None:
+            self.cross_city_flg = m.get('crossCityFlg')
+        if m.get('district') is not None:
+            self.district = m.get('district')
+        if m.get('leaseEnd') is not None:
+            self.lease_end = m.get('leaseEnd')
+        if m.get('leaseStart') is not None:
+            self.lease_start = m.get('leaseStart')
+        if m.get('project') is not None:
+            self.project = m.get('project')
+        if m.get('projectNo') is not None:
+            self.project_no = m.get('projectNo')
+        if m.get('propertyCertificateNumber') is not None:
+            self.property_certificate_number = m.get('propertyCertificateNumber')
+        if m.get('province') is not None:
+            self.province = m.get('province')
+        if m.get('realEstateDetailedAddress') is not None:
+            self.real_estate_detailed_address = m.get('realEstateDetailedAddress')
+        if m.get('spanRegionManageNo') is not None:
+            self.span_region_manage_no = m.get('spanRegionManageNo')
+        return self
+
+
+class QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo(TeaModel):
+    def __init__(
+        self,
+        special_biz_code: str = None,
+        specific_business_info_list: List[QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList] = None,
+    ):
+        self.special_biz_code = special_biz_code
+        self.specific_business_info_list = specific_business_info_list
+
+    def validate(self):
+        if self.specific_business_info_list:
+            for k in self.specific_business_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.special_biz_code is not None:
+            result['specialBizCode'] = self.special_biz_code
+        result['specificBusinessInfoList'] = []
+        if self.specific_business_info_list is not None:
+            for k in self.specific_business_info_list:
+                result['specificBusinessInfoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('specialBizCode') is not None:
+            self.special_biz_code = m.get('specialBizCode')
+        self.specific_business_info_list = []
+        if m.get('specificBusinessInfoList') is not None:
+            for k in m.get('specificBusinessInfoList'):
+                temp_model = QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList()
+                self.specific_business_info_list.append(temp_model.from_map(k))
+        return self
+
+
 class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
     def __init__(
         self,
@@ -9665,6 +9805,7 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
         show_seller_account_in_remark: bool = None,
         show_seller_contact_in_remark: bool = None,
         source: str = None,
+        specific_business_info: QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo = None,
         status: str = None,
         title: str = None,
     ):
@@ -9696,6 +9837,7 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
         self.show_seller_account_in_remark = show_seller_account_in_remark
         self.show_seller_contact_in_remark = show_seller_contact_in_remark
         self.source = source
+        self.specific_business_info = specific_business_info
         self.status = status
         self.title = title
 
@@ -9708,6 +9850,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             for k in self.product_info_list:
                 if k:
                     k.validate()
+        if self.specific_business_info:
+            self.specific_business_info.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -9773,6 +9917,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             result['showSellerContactInRemark'] = self.show_seller_contact_in_remark
         if self.source is not None:
             result['source'] = self.source
+        if self.specific_business_info is not None:
+            result['specificBusinessInfo'] = self.specific_business_info.to_map()
         if self.status is not None:
             result['status'] = self.status
         if self.title is not None:
@@ -9842,6 +9988,9 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             self.show_seller_contact_in_remark = m.get('showSellerContactInRemark')
         if m.get('source') is not None:
             self.source = m.get('source')
+        if m.get('specificBusinessInfo') is not None:
+            temp_model = QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo()
+            self.specific_business_info = temp_model.from_map(m['specificBusinessInfo'])
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('title') is not None:

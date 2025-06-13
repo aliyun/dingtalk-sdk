@@ -883,28 +883,16 @@ class GetTaskFromShanhuiDocRequest(TeaModel):
         return self
 
 
-class GetTaskFromShanhuiDocResponseBodyResultItems(TeaModel):
+class GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList(TeaModel):
     def __init__(
         self,
-        create_time: int = None,
-        deadline: int = None,
-        deleted: bool = None,
-        priority: int = None,
-        task_key: str = None,
-        task_status: str = None,
-        task_type: str = None,
-        title: str = None,
-        update_time: int = None,
+        executor_id: str = None,
+        status_stage: int = None,
+        sub_task_key: str = None,
     ):
-        self.create_time = create_time
-        self.deadline = deadline
-        self.deleted = deleted
-        self.priority = priority
-        self.task_key = task_key
-        self.task_status = task_status
-        self.task_type = task_type
-        self.title = title
-        self.update_time = update_time
+        self.executor_id = executor_id
+        self.status_stage = status_stage
+        self.sub_task_key = sub_task_key
 
     def validate(self):
         pass
@@ -915,12 +903,76 @@ class GetTaskFromShanhuiDocResponseBodyResultItems(TeaModel):
             return _map
 
         result = dict()
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        if self.status_stage is not None:
+            result['statusStage'] = self.status_stage
+        if self.sub_task_key is not None:
+            result['subTaskKey'] = self.sub_task_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        if m.get('statusStage') is not None:
+            self.status_stage = m.get('statusStage')
+        if m.get('subTaskKey') is not None:
+            self.sub_task_key = m.get('subTaskKey')
+        return self
+
+
+class GetTaskFromShanhuiDocResponseBodyResultItems(TeaModel):
+    def __init__(
+        self,
+        create_time: int = None,
+        creator_id: str = None,
+        deadline: int = None,
+        deleted: bool = None,
+        executor_list: List[GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList] = None,
+        priority: int = None,
+        task_key: str = None,
+        task_status: str = None,
+        task_type: str = None,
+        title: str = None,
+        update_time: int = None,
+    ):
+        self.create_time = create_time
+        self.creator_id = creator_id
+        self.deadline = deadline
+        self.deleted = deleted
+        self.executor_list = executor_list
+        self.priority = priority
+        self.task_key = task_key
+        self.task_status = task_status
+        self.task_type = task_type
+        self.title = title
+        self.update_time = update_time
+
+    def validate(self):
+        if self.executor_list:
+            for k in self.executor_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
         if self.deadline is not None:
             result['deadline'] = self.deadline
         if self.deleted is not None:
             result['deleted'] = self.deleted
+        result['executorList'] = []
+        if self.executor_list is not None:
+            for k in self.executor_list:
+                result['executorList'].append(k.to_map() if k else None)
         if self.priority is not None:
             result['priority'] = self.priority
         if self.task_key is not None:
@@ -939,10 +991,17 @@ class GetTaskFromShanhuiDocResponseBodyResultItems(TeaModel):
         m = m or dict()
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
         if m.get('deadline') is not None:
             self.deadline = m.get('deadline')
         if m.get('deleted') is not None:
             self.deleted = m.get('deleted')
+        self.executor_list = []
+        if m.get('executorList') is not None:
+            for k in m.get('executorList'):
+                temp_model = GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList()
+                self.executor_list.append(temp_model.from_map(k))
         if m.get('priority') is not None:
             self.priority = m.get('priority')
         if m.get('taskKey') is not None:

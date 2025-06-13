@@ -274,6 +274,144 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.CheckEsignFileHeaders()
         return await self.check_esign_file_with_options_async(request, headers, runtime)
 
+    def contract_ai_review_result_notify_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.ContractAiReviewResultNotifyRequest,
+        headers: dingtalkcontract__1__0_models.ContractAiReviewResultNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.ContractAiReviewResultNotifyResponse:
+        """
+        @summary ai合同审查结果回调
+        
+        @param request: ContractAiReviewResultNotifyRequest
+        @param headers: ContractAiReviewResultNotifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ContractAiReviewResultNotifyResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.annotations):
+            body['annotations'] = request.annotations
+        if not UtilClient.is_unset(request.contract_ai_review_corp_id):
+            body['contractAiReviewCorpId'] = request.contract_ai_review_corp_id
+        if not UtilClient.is_unset(request.contract_ai_review_id):
+            body['contractAiReviewId'] = request.contract_ai_review_id
+        if not UtilClient.is_unset(request.error_code):
+            body['errorCode'] = request.error_code
+        if not UtilClient.is_unset(request.error_msg):
+            body['errorMsg'] = request.error_msg
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.success):
+            body['success'] = request.success
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ContractAiReviewResultNotify',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/aiReviews/results/notify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.ContractAiReviewResultNotifyResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def contract_ai_review_result_notify_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.ContractAiReviewResultNotifyRequest,
+        headers: dingtalkcontract__1__0_models.ContractAiReviewResultNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.ContractAiReviewResultNotifyResponse:
+        """
+        @summary ai合同审查结果回调
+        
+        @param request: ContractAiReviewResultNotifyRequest
+        @param headers: ContractAiReviewResultNotifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ContractAiReviewResultNotifyResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.annotations):
+            body['annotations'] = request.annotations
+        if not UtilClient.is_unset(request.contract_ai_review_corp_id):
+            body['contractAiReviewCorpId'] = request.contract_ai_review_corp_id
+        if not UtilClient.is_unset(request.contract_ai_review_id):
+            body['contractAiReviewId'] = request.contract_ai_review_id
+        if not UtilClient.is_unset(request.error_code):
+            body['errorCode'] = request.error_code
+        if not UtilClient.is_unset(request.error_msg):
+            body['errorMsg'] = request.error_msg
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.success):
+            body['success'] = request.success
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ContractAiReviewResultNotify',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/aiReviews/results/notify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.ContractAiReviewResultNotifyResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def contract_ai_review_result_notify(
+        self,
+        request: dingtalkcontract__1__0_models.ContractAiReviewResultNotifyRequest,
+    ) -> dingtalkcontract__1__0_models.ContractAiReviewResultNotifyResponse:
+        """
+        @summary ai合同审查结果回调
+        
+        @param request: ContractAiReviewResultNotifyRequest
+        @return: ContractAiReviewResultNotifyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.ContractAiReviewResultNotifyHeaders()
+        return self.contract_ai_review_result_notify_with_options(request, headers, runtime)
+
+    async def contract_ai_review_result_notify_async(
+        self,
+        request: dingtalkcontract__1__0_models.ContractAiReviewResultNotifyRequest,
+    ) -> dingtalkcontract__1__0_models.ContractAiReviewResultNotifyResponse:
+        """
+        @summary ai合同审查结果回调
+        
+        @param request: ContractAiReviewResultNotifyRequest
+        @return: ContractAiReviewResultNotifyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.ContractAiReviewResultNotifyHeaders()
+        return await self.contract_ai_review_result_notify_with_options_async(request, headers, runtime)
+
     def contract_benefit_consume_with_options(
         self,
         request: dingtalkcontract__1__0_models.ContractBenefitConsumeRequest,

@@ -953,6 +953,7 @@ class OpenAgoalObjectiveDimensionDTO(TeaModel):
         field_config: List[OpenAgoalFieldMetaDTO] = None,
         field_value_map: Dict[str, Any] = None,
         title: str = None,
+        weight: float = None,
     ):
         # This parameter is required.
         self.children = children
@@ -964,6 +965,8 @@ class OpenAgoalObjectiveDimensionDTO(TeaModel):
         self.field_value_map = field_value_map
         # This parameter is required.
         self.title = title
+        # This parameter is required.
+        self.weight = weight
 
     def validate(self):
         if self.children:
@@ -995,6 +998,8 @@ class OpenAgoalObjectiveDimensionDTO(TeaModel):
             result['fieldValueMap'] = self.field_value_map
         if self.title is not None:
             result['title'] = self.title
+        if self.weight is not None:
+            result['weight'] = self.weight
         return result
 
     def from_map(self, m: dict = None):
@@ -1015,6 +1020,8 @@ class OpenAgoalObjectiveDimensionDTO(TeaModel):
             self.field_value_map = m.get('fieldValueMap')
         if m.get('title') is not None:
             self.title = m.get('title')
+        if m.get('weight') is not None:
+            self.weight = m.get('weight')
         return self
 
 

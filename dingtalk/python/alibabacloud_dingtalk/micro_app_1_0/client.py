@@ -2318,6 +2318,128 @@ class Client(OpenApiClient):
         headers = dingtalkmicro_app__1__0_models.GetUserAppDevAccessHeaders()
         return await self.get_user_app_dev_access_with_options_async(user_id, headers, runtime)
 
+    def is_org_micro_app_visible_by_user_id_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdRequest,
+        headers: dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdResponse:
+        """
+        @summary 判断人员是否在应用的可见范围内
+        
+        @param request: IsOrgMicroAppVisibleByUserIdRequest
+        @param headers: IsOrgMicroAppVisibleByUserIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IsOrgMicroAppVisibleByUserIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='IsOrgMicroAppVisibleByUserId',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/visibleScopes/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def is_org_micro_app_visible_by_user_id_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdRequest,
+        headers: dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdResponse:
+        """
+        @summary 判断人员是否在应用的可见范围内
+        
+        @param request: IsOrgMicroAppVisibleByUserIdRequest
+        @param headers: IsOrgMicroAppVisibleByUserIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IsOrgMicroAppVisibleByUserIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='IsOrgMicroAppVisibleByUserId',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/visibleScopes/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def is_org_micro_app_visible_by_user_id(
+        self,
+        request: dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdRequest,
+    ) -> dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdResponse:
+        """
+        @summary 判断人员是否在应用的可见范围内
+        
+        @param request: IsOrgMicroAppVisibleByUserIdRequest
+        @return: IsOrgMicroAppVisibleByUserIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdHeaders()
+        return self.is_org_micro_app_visible_by_user_id_with_options(request, headers, runtime)
+
+    async def is_org_micro_app_visible_by_user_id_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdRequest,
+    ) -> dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdResponse:
+        """
+        @summary 判断人员是否在应用的可见范围内
+        
+        @param request: IsOrgMicroAppVisibleByUserIdRequest
+        @return: IsOrgMicroAppVisibleByUserIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdHeaders()
+        return await self.is_org_micro_app_visible_by_user_id_with_options_async(request, headers, runtime)
+
     def list_all_app_with_options(
         self,
         headers: dingtalkmicro_app__1__0_models.ListAllAppHeaders,
