@@ -1163,7 +1163,7 @@ class Dingtalk extends OpenApiClient
             'action' => 'DocUpdateContentWithDelegatedPermission',
             'version' => 'doc_2.0',
             'protocol' => 'HTTP',
-            'pathname' => '/v2.0/me/doc/suites/documents/' . $docKey . '/overwriteContent',
+            'pathname' => '/v2.0/doc/me/suites/documents/' . $docKey . '/overwriteContent',
             'method' => 'POST',
             'authType' => 'AK',
             'style' => 'ROA',

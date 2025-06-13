@@ -50,6 +50,9 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppUserAccessHeaders
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppUserAccessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetUserAppDevAccessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetUserAppDevAccessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\IsOrgMicroAppVisibleByUserIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\IsOrgMicroAppVisibleByUserIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\IsOrgMicroAppVisibleByUserIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllInnerAppsHeaders;
@@ -1298,6 +1301,69 @@ class Dingtalk extends OpenApiClient
         $headers = new GetUserAppDevAccessHeaders([]);
 
         return $this->getUserAppDevAccessWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 判断人员是否在应用的可见范围内
+     *  *
+     * @param IsOrgMicroAppVisibleByUserIdRequest $request IsOrgMicroAppVisibleByUserIdRequest
+     * @param IsOrgMicroAppVisibleByUserIdHeaders $headers IsOrgMicroAppVisibleByUserIdHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return IsOrgMicroAppVisibleByUserIdResponse IsOrgMicroAppVisibleByUserIdResponse
+     */
+    public function isOrgMicroAppVisibleByUserIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->id)) {
+            $body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'IsOrgMicroAppVisibleByUserId',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/visibleScopes/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return IsOrgMicroAppVisibleByUserIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 判断人员是否在应用的可见范围内
+     *  *
+     * @param IsOrgMicroAppVisibleByUserIdRequest $request IsOrgMicroAppVisibleByUserIdRequest
+     *
+     * @return IsOrgMicroAppVisibleByUserIdResponse IsOrgMicroAppVisibleByUserIdResponse
+     */
+    public function isOrgMicroAppVisibleByUserId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IsOrgMicroAppVisibleByUserIdHeaders([]);
+
+        return $this->isOrgMicroAppVisibleByUserIdWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -7,6 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptDetailFor
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptDetailForInvoiceResponseBody\result\creator;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptDetailForInvoiceResponseBody\result\customer;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptDetailForInvoiceResponseBody\result\productInfoList;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptDetailForInvoiceResponseBody\result\specificBusinessInfo;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
@@ -194,6 +195,11 @@ class result extends Model
     public $source;
 
     /**
+     * @var specificBusinessInfo
+     */
+    public $specificBusinessInfo;
+
+    /**
      * @example agree
      *
      * @var string
@@ -235,6 +241,7 @@ class result extends Model
         'showSellerAccountInRemark' => 'showSellerAccountInRemark',
         'showSellerContactInRemark' => 'showSellerContactInRemark',
         'source' => 'source',
+        'specificBusinessInfo' => 'specificBusinessInfo',
         'status' => 'status',
         'title' => 'title',
     ];
@@ -333,6 +340,9 @@ class result extends Model
         }
         if (null !== $this->source) {
             $res['source'] = $this->source;
+        }
+        if (null !== $this->specificBusinessInfo) {
+            $res['specificBusinessInfo'] = null !== $this->specificBusinessInfo ? $this->specificBusinessInfo->toMap() : null;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -441,6 +451,9 @@ class result extends Model
         }
         if (isset($map['source'])) {
             $model->source = $map['source'];
+        }
+        if (isset($map['specificBusinessInfo'])) {
+            $model->specificBusinessInfo = specificBusinessInfo::fromMap($map['specificBusinessInfo']);
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

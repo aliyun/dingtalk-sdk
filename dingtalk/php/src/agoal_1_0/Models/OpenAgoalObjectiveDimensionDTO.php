@@ -46,12 +46,22 @@ class OpenAgoalObjectiveDimensionDTO extends Model
      * @var string
      */
     public $title;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @example 100
+     *
+     * @var float
+     */
+    public $weight;
     protected $_name = [
         'children' => 'children',
         'dimensionId' => 'dimensionId',
         'fieldConfig' => 'fieldConfig',
         'fieldValueMap' => 'fieldValueMap',
         'title' => 'title',
+        'weight' => 'weight',
     ];
 
     public function validate() {}
@@ -85,6 +95,9 @@ class OpenAgoalObjectiveDimensionDTO extends Model
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
+        }
+        if (null !== $this->weight) {
+            $res['weight'] = $this->weight;
         }
 
         return $res;
@@ -124,6 +137,9 @@ class OpenAgoalObjectiveDimensionDTO extends Model
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
+        }
+        if (isset($map['weight'])) {
+            $model->weight = $map['weight'];
         }
 
         return $model;

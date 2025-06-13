@@ -88,6 +88,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vlive_1_0\\": "src/live_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vmail_1_0\\": "src/mail_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vmanufacturing_1_0\\": "src/manufacturing_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vmeter_1_0\\": "src/meter_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vmicro_app_1_0\\": "src/micro_app_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vminiapp_1_0\\": "src/miniapp_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vminutes_1_0\\": "src/minutes_1_0/",

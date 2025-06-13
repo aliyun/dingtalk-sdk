@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetTaskFromShanhuiDocResponseBody\result;
 
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetTaskFromShanhuiDocResponseBody\result\items\executorList;
 use AlibabaCloud\Tea\Model;
 
 class items extends Model
@@ -14,6 +15,11 @@ class items extends Model
     public $createTime;
 
     /**
+     * @var string
+     */
+    public $creatorId;
+
+    /**
      * @var int
      */
     public $deadline;
@@ -22,6 +28,11 @@ class items extends Model
      * @var bool
      */
     public $deleted;
+
+    /**
+     * @var executorList[]
+     */
+    public $executorList;
 
     /**
      * @var int
@@ -54,8 +65,10 @@ class items extends Model
     public $updateTime;
     protected $_name = [
         'createTime' => 'createTime',
+        'creatorId' => 'creatorId',
         'deadline' => 'deadline',
         'deleted' => 'deleted',
+        'executorList' => 'executorList',
         'priority' => 'priority',
         'taskKey' => 'taskKey',
         'taskStatus' => 'taskStatus',
@@ -72,11 +85,23 @@ class items extends Model
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
         }
+        if (null !== $this->creatorId) {
+            $res['creatorId'] = $this->creatorId;
+        }
         if (null !== $this->deadline) {
             $res['deadline'] = $this->deadline;
         }
         if (null !== $this->deleted) {
             $res['deleted'] = $this->deleted;
+        }
+        if (null !== $this->executorList) {
+            $res['executorList'] = [];
+            if (null !== $this->executorList && \is_array($this->executorList)) {
+                $n = 0;
+                foreach ($this->executorList as $item) {
+                    $res['executorList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->priority) {
             $res['priority'] = $this->priority;
@@ -111,11 +136,23 @@ class items extends Model
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
         }
+        if (isset($map['creatorId'])) {
+            $model->creatorId = $map['creatorId'];
+        }
         if (isset($map['deadline'])) {
             $model->deadline = $map['deadline'];
         }
         if (isset($map['deleted'])) {
             $model->deleted = $map['deleted'];
+        }
+        if (isset($map['executorList'])) {
+            if (!empty($map['executorList'])) {
+                $model->executorList = [];
+                $n = 0;
+                foreach ($map['executorList'] as $item) {
+                    $model->executorList[$n++] = null !== $item ? executorList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['priority'])) {
             $model->priority = $map['priority'];

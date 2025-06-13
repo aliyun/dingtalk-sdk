@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CancelReviewOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CheckEsignFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CheckEsignFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CheckEsignFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractAiReviewResultNotifyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractAiReviewResultNotifyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractAiReviewResultNotifyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeResponse;
@@ -227,6 +230,81 @@ class Dingtalk extends OpenApiClient
         $headers = new CheckEsignFileHeaders([]);
 
         return $this->checkEsignFileWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary ai合同审查结果回调
+     *  *
+     * @param ContractAiReviewResultNotifyRequest $request ContractAiReviewResultNotifyRequest
+     * @param ContractAiReviewResultNotifyHeaders $headers ContractAiReviewResultNotifyHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ContractAiReviewResultNotifyResponse ContractAiReviewResultNotifyResponse
+     */
+    public function contractAiReviewResultNotifyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->annotations)) {
+            $body['annotations'] = $request->annotations;
+        }
+        if (!Utils::isUnset($request->contractAiReviewCorpId)) {
+            $body['contractAiReviewCorpId'] = $request->contractAiReviewCorpId;
+        }
+        if (!Utils::isUnset($request->contractAiReviewId)) {
+            $body['contractAiReviewId'] = $request->contractAiReviewId;
+        }
+        if (!Utils::isUnset($request->errorCode)) {
+            $body['errorCode'] = $request->errorCode;
+        }
+        if (!Utils::isUnset($request->errorMsg)) {
+            $body['errorMsg'] = $request->errorMsg;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->success)) {
+            $body['success'] = $request->success;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ContractAiReviewResultNotify',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/aiReviews/results/notify',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ContractAiReviewResultNotifyResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary ai合同审查结果回调
+     *  *
+     * @param ContractAiReviewResultNotifyRequest $request ContractAiReviewResultNotifyRequest
+     *
+     * @return ContractAiReviewResultNotifyResponse ContractAiReviewResultNotifyResponse
+     */
+    public function contractAiReviewResultNotify($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ContractAiReviewResultNotifyHeaders([]);
+
+        return $this->contractAiReviewResultNotifyWithOptions($request, $headers, $runtime);
     }
 
     /**
