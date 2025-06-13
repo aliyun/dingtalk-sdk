@@ -31,15 +31,62 @@ public class GetTaskFromShanhuiDocResponseBody extends TeaModel {
         return this.success;
     }
 
+    public static class GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList extends TeaModel {
+        @NameInMap("executorId")
+        public String executorId;
+
+        @NameInMap("statusStage")
+        public Integer statusStage;
+
+        @NameInMap("subTaskKey")
+        public String subTaskKey;
+
+        public static GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList build(java.util.Map<String, ?> map) throws Exception {
+            GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList self = new GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList();
+            return TeaModel.build(map, self);
+        }
+
+        public GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList setExecutorId(String executorId) {
+            this.executorId = executorId;
+            return this;
+        }
+        public String getExecutorId() {
+            return this.executorId;
+        }
+
+        public GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList setStatusStage(Integer statusStage) {
+            this.statusStage = statusStage;
+            return this;
+        }
+        public Integer getStatusStage() {
+            return this.statusStage;
+        }
+
+        public GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList setSubTaskKey(String subTaskKey) {
+            this.subTaskKey = subTaskKey;
+            return this;
+        }
+        public String getSubTaskKey() {
+            return this.subTaskKey;
+        }
+
+    }
+
     public static class GetTaskFromShanhuiDocResponseBodyResultItems extends TeaModel {
         @NameInMap("createTime")
         public Long createTime;
+
+        @NameInMap("creatorId")
+        public String creatorId;
 
         @NameInMap("deadline")
         public Long deadline;
 
         @NameInMap("deleted")
         public Boolean deleted;
+
+        @NameInMap("executorList")
+        public java.util.List<GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList> executorList;
 
         @NameInMap("priority")
         public Long priority;
@@ -72,6 +119,14 @@ public class GetTaskFromShanhuiDocResponseBody extends TeaModel {
             return this.createTime;
         }
 
+        public GetTaskFromShanhuiDocResponseBodyResultItems setCreatorId(String creatorId) {
+            this.creatorId = creatorId;
+            return this;
+        }
+        public String getCreatorId() {
+            return this.creatorId;
+        }
+
         public GetTaskFromShanhuiDocResponseBodyResultItems setDeadline(Long deadline) {
             this.deadline = deadline;
             return this;
@@ -86,6 +141,14 @@ public class GetTaskFromShanhuiDocResponseBody extends TeaModel {
         }
         public Boolean getDeleted() {
             return this.deleted;
+        }
+
+        public GetTaskFromShanhuiDocResponseBodyResultItems setExecutorList(java.util.List<GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList> executorList) {
+            this.executorList = executorList;
+            return this;
+        }
+        public java.util.List<GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList> getExecutorList() {
+            return this.executorList;
         }
 
         public GetTaskFromShanhuiDocResponseBodyResultItems setPriority(Long priority) {

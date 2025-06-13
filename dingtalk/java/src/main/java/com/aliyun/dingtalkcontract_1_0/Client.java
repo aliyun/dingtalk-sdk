@@ -152,6 +152,86 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>ai合同审查结果回调</p>
+     * 
+     * @param request ContractAiReviewResultNotifyRequest
+     * @param headers ContractAiReviewResultNotifyHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ContractAiReviewResultNotifyResponse
+     */
+    public ContractAiReviewResultNotifyResponse contractAiReviewResultNotifyWithOptions(ContractAiReviewResultNotifyRequest request, ContractAiReviewResultNotifyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.annotations)) {
+            body.put("annotations", request.annotations);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contractAiReviewCorpId)) {
+            body.put("contractAiReviewCorpId", request.contractAiReviewCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contractAiReviewId)) {
+            body.put("contractAiReviewId", request.contractAiReviewId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.errorCode)) {
+            body.put("errorCode", request.errorCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.errorMsg)) {
+            body.put("errorMsg", request.errorMsg);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.success)) {
+            body.put("success", request.success);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ContractAiReviewResultNotify"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/aiReviews/results/notify"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ContractAiReviewResultNotifyResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>ai合同审查结果回调</p>
+     * 
+     * @param request ContractAiReviewResultNotifyRequest
+     * @return ContractAiReviewResultNotifyResponse
+     */
+    public ContractAiReviewResultNotifyResponse contractAiReviewResultNotify(ContractAiReviewResultNotifyRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ContractAiReviewResultNotifyHeaders headers = new ContractAiReviewResultNotifyHeaders();
+        return this.contractAiReviewResultNotifyWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>合同权益核销</p>
      * 
      * @param request ContractBenefitConsumeRequest

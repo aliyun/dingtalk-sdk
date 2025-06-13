@@ -40,6 +40,15 @@ public class OpenAgoalObjectiveDimensionDTO extends TeaModel {
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
+    @NameInMap("weight")
+    public Double weight;
+
     public static OpenAgoalObjectiveDimensionDTO build(java.util.Map<String, ?> map) throws Exception {
         OpenAgoalObjectiveDimensionDTO self = new OpenAgoalObjectiveDimensionDTO();
         return TeaModel.build(map, self);
@@ -83,6 +92,14 @@ public class OpenAgoalObjectiveDimensionDTO extends TeaModel {
     }
     public String getTitle() {
         return this.title;
+    }
+
+    public OpenAgoalObjectiveDimensionDTO setWeight(Double weight) {
+        this.weight = weight;
+        return this;
+    }
+    public Double getWeight() {
+        return this.weight;
     }
 
 }

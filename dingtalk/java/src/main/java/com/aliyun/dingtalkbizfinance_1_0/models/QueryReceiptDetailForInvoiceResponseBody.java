@@ -295,6 +295,191 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
 
     }
 
+    public static class QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList extends TeaModel {
+        @NameInMap("areaUnit")
+        public String areaUnit;
+
+        @NameInMap("carNo")
+        public String carNo;
+
+        @NameInMap("city")
+        public String city;
+
+        @NameInMap("crossCityFlg")
+        public String crossCityFlg;
+
+        @NameInMap("district")
+        public String district;
+
+        @NameInMap("leaseEnd")
+        public Long leaseEnd;
+
+        @NameInMap("leaseStart")
+        public Long leaseStart;
+
+        @NameInMap("project")
+        public String project;
+
+        @NameInMap("projectNo")
+        public String projectNo;
+
+        @NameInMap("propertyCertificateNumber")
+        public String propertyCertificateNumber;
+
+        @NameInMap("province")
+        public String province;
+
+        @NameInMap("realEstateDetailedAddress")
+        public String realEstateDetailedAddress;
+
+        @NameInMap("spanRegionManageNo")
+        public String spanRegionManageNo;
+
+        public static QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList build(java.util.Map<String, ?> map) throws Exception {
+            QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList self = new QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setAreaUnit(String areaUnit) {
+            this.areaUnit = areaUnit;
+            return this;
+        }
+        public String getAreaUnit() {
+            return this.areaUnit;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setCarNo(String carNo) {
+            this.carNo = carNo;
+            return this;
+        }
+        public String getCarNo() {
+            return this.carNo;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setCity(String city) {
+            this.city = city;
+            return this;
+        }
+        public String getCity() {
+            return this.city;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setCrossCityFlg(String crossCityFlg) {
+            this.crossCityFlg = crossCityFlg;
+            return this;
+        }
+        public String getCrossCityFlg() {
+            return this.crossCityFlg;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setDistrict(String district) {
+            this.district = district;
+            return this;
+        }
+        public String getDistrict() {
+            return this.district;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setLeaseEnd(Long leaseEnd) {
+            this.leaseEnd = leaseEnd;
+            return this;
+        }
+        public Long getLeaseEnd() {
+            return this.leaseEnd;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setLeaseStart(Long leaseStart) {
+            this.leaseStart = leaseStart;
+            return this;
+        }
+        public Long getLeaseStart() {
+            return this.leaseStart;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setProject(String project) {
+            this.project = project;
+            return this;
+        }
+        public String getProject() {
+            return this.project;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setProjectNo(String projectNo) {
+            this.projectNo = projectNo;
+            return this;
+        }
+        public String getProjectNo() {
+            return this.projectNo;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setPropertyCertificateNumber(String propertyCertificateNumber) {
+            this.propertyCertificateNumber = propertyCertificateNumber;
+            return this;
+        }
+        public String getPropertyCertificateNumber() {
+            return this.propertyCertificateNumber;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setProvince(String province) {
+            this.province = province;
+            return this;
+        }
+        public String getProvince() {
+            return this.province;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setRealEstateDetailedAddress(String realEstateDetailedAddress) {
+            this.realEstateDetailedAddress = realEstateDetailedAddress;
+            return this;
+        }
+        public String getRealEstateDetailedAddress() {
+            return this.realEstateDetailedAddress;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList setSpanRegionManageNo(String spanRegionManageNo) {
+            this.spanRegionManageNo = spanRegionManageNo;
+            return this;
+        }
+        public String getSpanRegionManageNo() {
+            return this.spanRegionManageNo;
+        }
+
+    }
+
+    public static class QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>lease</p>
+         */
+        @NameInMap("specialBizCode")
+        public String specialBizCode;
+
+        @NameInMap("specificBusinessInfoList")
+        public java.util.List<QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList> specificBusinessInfoList;
+
+        public static QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo build(java.util.Map<String, ?> map) throws Exception {
+            QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo self = new QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo setSpecialBizCode(String specialBizCode) {
+            this.specialBizCode = specialBizCode;
+            return this;
+        }
+        public String getSpecialBizCode() {
+            return this.specialBizCode;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo setSpecificBusinessInfoList(java.util.List<QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList> specificBusinessInfoList) {
+            this.specificBusinessInfoList = specificBusinessInfoList;
+            return this;
+        }
+        public java.util.List<QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList> getSpecificBusinessInfoList() {
+            return this.specificBusinessInfoList;
+        }
+
+    }
+
     public static class QueryReceiptDetailForInvoiceResponseBodyResult extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -463,6 +648,9 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
          */
         @NameInMap("source")
         public String source;
+
+        @NameInMap("specificBusinessInfo")
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo specificBusinessInfo;
 
         /**
          * <strong>example:</strong>
@@ -705,6 +893,14 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
         }
         public String getSource() {
             return this.source;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResult setSpecificBusinessInfo(QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo specificBusinessInfo) {
+            this.specificBusinessInfo = specificBusinessInfo;
+            return this;
+        }
+        public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo getSpecificBusinessInfo() {
+            return this.specificBusinessInfo;
         }
 
         public QueryReceiptDetailForInvoiceResponseBodyResult setStatus(String status) {

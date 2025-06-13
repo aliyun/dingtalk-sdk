@@ -975,7 +975,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("action", "DocUpdateContentWithDelegatedPermission"),
             new TeaPair("version", "doc_2.0"),
             new TeaPair("protocol", "HTTP"),
-            new TeaPair("pathname", "/v2.0/me/doc/suites/documents/" + docKey + "/overwriteContent"),
+            new TeaPair("pathname", "/v2.0/doc/me/suites/documents/" + docKey + "/overwriteContent"),
             new TeaPair("method", "POST"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
