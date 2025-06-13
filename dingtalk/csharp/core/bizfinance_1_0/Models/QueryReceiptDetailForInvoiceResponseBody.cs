@@ -347,6 +347,78 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string Source { get; set; }
 
+            [NameInMap("specificBusinessInfo")]
+            [Validation(Required=false)]
+            public QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo SpecificBusinessInfo { get; set; }
+            public class QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfo : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>lease</para>
+                /// </summary>
+                [NameInMap("specialBizCode")]
+                [Validation(Required=false)]
+                public string SpecialBizCode { get; set; }
+
+                [NameInMap("specificBusinessInfoList")]
+                [Validation(Required=false)]
+                public List<QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList> SpecificBusinessInfoList { get; set; }
+                public class QueryReceiptDetailForInvoiceResponseBodyResultSpecificBusinessInfoSpecificBusinessInfoList : TeaModel {
+                    [NameInMap("areaUnit")]
+                    [Validation(Required=false)]
+                    public string AreaUnit { get; set; }
+
+                    [NameInMap("carNo")]
+                    [Validation(Required=false)]
+                    public string CarNo { get; set; }
+
+                    [NameInMap("city")]
+                    [Validation(Required=false)]
+                    public string City { get; set; }
+
+                    [NameInMap("crossCityFlg")]
+                    [Validation(Required=false)]
+                    public string CrossCityFlg { get; set; }
+
+                    [NameInMap("district")]
+                    [Validation(Required=false)]
+                    public string District { get; set; }
+
+                    [NameInMap("leaseEnd")]
+                    [Validation(Required=false)]
+                    public long? LeaseEnd { get; set; }
+
+                    [NameInMap("leaseStart")]
+                    [Validation(Required=false)]
+                    public long? LeaseStart { get; set; }
+
+                    [NameInMap("project")]
+                    [Validation(Required=false)]
+                    public string Project { get; set; }
+
+                    [NameInMap("projectNo")]
+                    [Validation(Required=false)]
+                    public string ProjectNo { get; set; }
+
+                    [NameInMap("propertyCertificateNumber")]
+                    [Validation(Required=false)]
+                    public string PropertyCertificateNumber { get; set; }
+
+                    [NameInMap("province")]
+                    [Validation(Required=false)]
+                    public string Province { get; set; }
+
+                    [NameInMap("realEstateDetailedAddress")]
+                    [Validation(Required=false)]
+                    public string RealEstateDetailedAddress { get; set; }
+
+                    [NameInMap("spanRegionManageNo")]
+                    [Validation(Required=false)]
+                    public string SpanRegionManageNo { get; set; }
+
+                }
+
+            }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>agree</para>

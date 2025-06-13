@@ -2961,6 +2961,170 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>判断人员是否在应用的可见范围内</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IsOrgMicroAppVisibleByUserIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// IsOrgMicroAppVisibleByUserIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IsOrgMicroAppVisibleByUserIdResponse
+        /// </returns>
+        public IsOrgMicroAppVisibleByUserIdResponse IsOrgMicroAppVisibleByUserIdWithOptions(IsOrgMicroAppVisibleByUserIdRequest request, IsOrgMicroAppVisibleByUserIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "IsOrgMicroAppVisibleByUserId",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/visibleScopes/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<IsOrgMicroAppVisibleByUserIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>判断人员是否在应用的可见范围内</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IsOrgMicroAppVisibleByUserIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// IsOrgMicroAppVisibleByUserIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IsOrgMicroAppVisibleByUserIdResponse
+        /// </returns>
+        public async Task<IsOrgMicroAppVisibleByUserIdResponse> IsOrgMicroAppVisibleByUserIdWithOptionsAsync(IsOrgMicroAppVisibleByUserIdRequest request, IsOrgMicroAppVisibleByUserIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "IsOrgMicroAppVisibleByUserId",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/visibleScopes/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<IsOrgMicroAppVisibleByUserIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>判断人员是否在应用的可见范围内</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IsOrgMicroAppVisibleByUserIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IsOrgMicroAppVisibleByUserIdResponse
+        /// </returns>
+        public IsOrgMicroAppVisibleByUserIdResponse IsOrgMicroAppVisibleByUserId(IsOrgMicroAppVisibleByUserIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IsOrgMicroAppVisibleByUserIdHeaders headers = new IsOrgMicroAppVisibleByUserIdHeaders();
+            return IsOrgMicroAppVisibleByUserIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>判断人员是否在应用的可见范围内</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IsOrgMicroAppVisibleByUserIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IsOrgMicroAppVisibleByUserIdResponse
+        /// </returns>
+        public async Task<IsOrgMicroAppVisibleByUserIdResponse> IsOrgMicroAppVisibleByUserIdAsync(IsOrgMicroAppVisibleByUserIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IsOrgMicroAppVisibleByUserIdHeaders headers = new IsOrgMicroAppVisibleByUserIdHeaders();
+            return await IsOrgMicroAppVisibleByUserIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取企业所有应用列表</para>
         /// </summary>
         /// 

@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0.Models
                 [Validation(Required=false)]
                 public long? CreateTime { get; set; }
 
+                [NameInMap("creatorId")]
+                [Validation(Required=false)]
+                public string CreatorId { get; set; }
+
                 [NameInMap("deadline")]
                 [Validation(Required=false)]
                 public long? Deadline { get; set; }
@@ -32,6 +36,24 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0.Models
                 [NameInMap("deleted")]
                 [Validation(Required=false)]
                 public bool? Deleted { get; set; }
+
+                [NameInMap("executorList")]
+                [Validation(Required=false)]
+                public List<GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList> ExecutorList { get; set; }
+                public class GetTaskFromShanhuiDocResponseBodyResultItemsExecutorList : TeaModel {
+                    [NameInMap("executorId")]
+                    [Validation(Required=false)]
+                    public string ExecutorId { get; set; }
+
+                    [NameInMap("statusStage")]
+                    [Validation(Required=false)]
+                    public int? StatusStage { get; set; }
+
+                    [NameInMap("subTaskKey")]
+                    [Validation(Required=false)]
+                    public string SubTaskKey { get; set; }
+
+                }
 
                 [NameInMap("priority")]
                 [Validation(Required=false)]

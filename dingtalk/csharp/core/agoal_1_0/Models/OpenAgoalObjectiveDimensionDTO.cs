@@ -50,6 +50,16 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
         [Validation(Required=false)]
         public string Title { get; set; }
 
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>100</para>
+        /// </summary>
+        [NameInMap("weight")]
+        [Validation(Required=false)]
+        public double? Weight { get; set; }
+
     }
 
 }

@@ -366,6 +366,202 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>ai合同审查结果回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ContractAiReviewResultNotifyRequest
+        /// </param>
+        /// <param name="headers">
+        /// ContractAiReviewResultNotifyHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ContractAiReviewResultNotifyResponse
+        /// </returns>
+        public ContractAiReviewResultNotifyResponse ContractAiReviewResultNotifyWithOptions(ContractAiReviewResultNotifyRequest request, ContractAiReviewResultNotifyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Annotations))
+            {
+                body["annotations"] = request.Annotations;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractAiReviewCorpId))
+            {
+                body["contractAiReviewCorpId"] = request.ContractAiReviewCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractAiReviewId))
+            {
+                body["contractAiReviewId"] = request.ContractAiReviewId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ErrorCode))
+            {
+                body["errorCode"] = request.ErrorCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ErrorMsg))
+            {
+                body["errorMsg"] = request.ErrorMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Success))
+            {
+                body["success"] = request.Success;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ContractAiReviewResultNotify",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/aiReviews/results/notify",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ContractAiReviewResultNotifyResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ai合同审查结果回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ContractAiReviewResultNotifyRequest
+        /// </param>
+        /// <param name="headers">
+        /// ContractAiReviewResultNotifyHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ContractAiReviewResultNotifyResponse
+        /// </returns>
+        public async Task<ContractAiReviewResultNotifyResponse> ContractAiReviewResultNotifyWithOptionsAsync(ContractAiReviewResultNotifyRequest request, ContractAiReviewResultNotifyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Annotations))
+            {
+                body["annotations"] = request.Annotations;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractAiReviewCorpId))
+            {
+                body["contractAiReviewCorpId"] = request.ContractAiReviewCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractAiReviewId))
+            {
+                body["contractAiReviewId"] = request.ContractAiReviewId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ErrorCode))
+            {
+                body["errorCode"] = request.ErrorCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ErrorMsg))
+            {
+                body["errorMsg"] = request.ErrorMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Success))
+            {
+                body["success"] = request.Success;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ContractAiReviewResultNotify",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/aiReviews/results/notify",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ContractAiReviewResultNotifyResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ai合同审查结果回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ContractAiReviewResultNotifyRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ContractAiReviewResultNotifyResponse
+        /// </returns>
+        public ContractAiReviewResultNotifyResponse ContractAiReviewResultNotify(ContractAiReviewResultNotifyRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ContractAiReviewResultNotifyHeaders headers = new ContractAiReviewResultNotifyHeaders();
+            return ContractAiReviewResultNotifyWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ai合同审查结果回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ContractAiReviewResultNotifyRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ContractAiReviewResultNotifyResponse
+        /// </returns>
+        public async Task<ContractAiReviewResultNotifyResponse> ContractAiReviewResultNotifyAsync(ContractAiReviewResultNotifyRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ContractAiReviewResultNotifyHeaders headers = new ContractAiReviewResultNotifyHeaders();
+            return await ContractAiReviewResultNotifyWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>合同权益核销</para>
         /// </summary>
         /// 
