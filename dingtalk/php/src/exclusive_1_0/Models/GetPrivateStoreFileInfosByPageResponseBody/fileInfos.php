@@ -24,6 +24,11 @@ class fileInfos extends Model
     public $fileName;
 
     /**
+     * @var string
+     */
+    public $filePath;
+
+    /**
      * @var int
      */
     public $fileSize;
@@ -41,6 +46,7 @@ class fileInfos extends Model
         'dentryId' => 'dentryId',
         'fileCreateTime' => 'fileCreateTime',
         'fileName' => 'fileName',
+        'filePath' => 'filePath',
         'fileSize' => 'fileSize',
         'spaceId' => 'spaceId',
         'status' => 'status',
@@ -59,6 +65,9 @@ class fileInfos extends Model
         }
         if (null !== $this->fileName) {
             $res['fileName'] = $this->fileName;
+        }
+        if (null !== $this->filePath) {
+            $res['filePath'] = $this->filePath;
         }
         if (null !== $this->fileSize) {
             $res['fileSize'] = $this->fileSize;
@@ -89,6 +98,9 @@ class fileInfos extends Model
         }
         if (isset($map['fileName'])) {
             $model->fileName = $map['fileName'];
+        }
+        if (isset($map['filePath'])) {
+            $model->filePath = $map['filePath'];
         }
         if (isset($map['fileSize'])) {
             $model->fileSize = $map['fileSize'];
