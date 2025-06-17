@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string FileName { get; set; }
 
+            [NameInMap("filePath")]
+            [Validation(Required=false)]
+            public string FilePath { get; set; }
+
             [NameInMap("fileSize")]
             [Validation(Required=false)]
             public long? FileSize { get; set; }
