@@ -11019,6 +11019,7 @@ class GetPrivateStoreFileInfosByPageResponseBodyFileInfos(TeaModel):
         dentry_id: int = None,
         file_create_time: int = None,
         file_name: str = None,
+        file_path: str = None,
         file_size: int = None,
         space_id: int = None,
         status: str = None,
@@ -11026,6 +11027,7 @@ class GetPrivateStoreFileInfosByPageResponseBodyFileInfos(TeaModel):
         self.dentry_id = dentry_id
         self.file_create_time = file_create_time
         self.file_name = file_name
+        self.file_path = file_path
         self.file_size = file_size
         self.space_id = space_id
         self.status = status
@@ -11045,6 +11047,8 @@ class GetPrivateStoreFileInfosByPageResponseBodyFileInfos(TeaModel):
             result['fileCreateTime'] = self.file_create_time
         if self.file_name is not None:
             result['fileName'] = self.file_name
+        if self.file_path is not None:
+            result['filePath'] = self.file_path
         if self.file_size is not None:
             result['fileSize'] = self.file_size
         if self.space_id is not None:
@@ -11061,6 +11065,8 @@ class GetPrivateStoreFileInfosByPageResponseBodyFileInfos(TeaModel):
             self.file_create_time = m.get('fileCreateTime')
         if m.get('fileName') is not None:
             self.file_name = m.get('fileName')
+        if m.get('filePath') is not None:
+            self.file_path = m.get('filePath')
         if m.get('fileSize') is not None:
             self.file_size = m.get('fileSize')
         if m.get('spaceId') is not None:
