@@ -41,6 +41,9 @@ public class GetPrivateStoreFileInfosByPageResponseBody extends TeaModel {
         @NameInMap("fileName")
         public String fileName;
 
+        @NameInMap("filePath")
+        public String filePath;
+
         @NameInMap("fileSize")
         public Long fileSize;
 
@@ -77,6 +80,14 @@ public class GetPrivateStoreFileInfosByPageResponseBody extends TeaModel {
         }
         public String getFileName() {
             return this.fileName;
+        }
+
+        public GetPrivateStoreFileInfosByPageResponseBodyFileInfos setFilePath(String filePath) {
+            this.filePath = filePath;
+            return this;
+        }
+        public String getFilePath() {
+            return this.filePath;
         }
 
         public GetPrivateStoreFileInfosByPageResponseBodyFileInfos setFileSize(Long fileSize) {
