@@ -287,6 +287,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxCloseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxOpenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxOpenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxOpenResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateClientServiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateClientServiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateClientServiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarResponse;
@@ -6340,6 +6343,75 @@ class Dingtalk extends OpenApiClient
         $headers = new TopboxOpenHeaders([]);
 
         return $this->topboxOpenWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新钉内用户C端展示的头像和名称（互通群、钉内两人群）
+     *  *
+     * @param UpdateClientServiceRequest $request UpdateClientServiceRequest
+     * @param UpdateClientServiceHeaders $headers UpdateClientServiceHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateClientServiceResponse UpdateClientServiceResponse
+     */
+    public function updateClientServiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->avatarUrl)) {
+            $body['avatarUrl'] = $request->avatarUrl;
+        }
+        if (!Utils::isUnset($request->resetAvatar)) {
+            $body['resetAvatar'] = $request->resetAvatar;
+        }
+        if (!Utils::isUnset($request->resetUserName)) {
+            $body['resetUserName'] = $request->resetUserName;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        if (!Utils::isUnset($request->userName)) {
+            $body['userName'] = $request->userName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateClientService',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/interconnections/clientServices/avatarAndName',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateClientServiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新钉内用户C端展示的头像和名称（互通群、钉内两人群）
+     *  *
+     * @param UpdateClientServiceRequest $request UpdateClientServiceRequest
+     *
+     * @return UpdateClientServiceResponse UpdateClientServiceResponse
+     */
+    public function updateClientService($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateClientServiceHeaders([]);
+
+        return $this->updateClientServiceWithOptions($request, $headers, $runtime);
     }
 
     /**

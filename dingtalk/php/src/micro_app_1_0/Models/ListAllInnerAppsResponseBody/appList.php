@@ -4,6 +4,8 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllInnerAppsResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllInnerAppsResponseBody\appList\coolAppInfo;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllInnerAppsResponseBody\appList\robotInfo;
 use AlibabaCloud\Tea\Model;
 
 class appList extends Model
@@ -34,6 +36,11 @@ class appList extends Model
      * @var int
      */
     public $appStatus;
+
+    /**
+     * @var coolAppInfo[]
+     */
+    public $coolAppInfo;
 
     /**
      * @example desc
@@ -85,10 +92,16 @@ class appList extends Model
      * @var string
      */
     public $pcHomepageLink;
+
+    /**
+     * @var robotInfo
+     */
+    public $robotInfo;
     protected $_name = [
         'agentId' => 'agentId',
         'appId' => 'appId',
         'appStatus' => 'appStatus',
+        'coolAppInfo' => 'coolAppInfo',
         'desc' => 'desc',
         'developType' => 'developType',
         'homepageLink' => 'homepageLink',
@@ -96,6 +109,7 @@ class appList extends Model
         'name' => 'name',
         'ompLink' => 'ompLink',
         'pcHomepageLink' => 'pcHomepageLink',
+        'robotInfo' => 'robotInfo',
     ];
 
     public function validate() {}
@@ -111,6 +125,15 @@ class appList extends Model
         }
         if (null !== $this->appStatus) {
             $res['appStatus'] = $this->appStatus;
+        }
+        if (null !== $this->coolAppInfo) {
+            $res['coolAppInfo'] = [];
+            if (null !== $this->coolAppInfo && \is_array($this->coolAppInfo)) {
+                $n = 0;
+                foreach ($this->coolAppInfo as $item) {
+                    $res['coolAppInfo'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->desc) {
             $res['desc'] = $this->desc;
@@ -133,6 +156,9 @@ class appList extends Model
         if (null !== $this->pcHomepageLink) {
             $res['pcHomepageLink'] = $this->pcHomepageLink;
         }
+        if (null !== $this->robotInfo) {
+            $res['robotInfo'] = null !== $this->robotInfo ? $this->robotInfo->toMap() : null;
+        }
 
         return $res;
     }
@@ -154,6 +180,15 @@ class appList extends Model
         if (isset($map['appStatus'])) {
             $model->appStatus = $map['appStatus'];
         }
+        if (isset($map['coolAppInfo'])) {
+            if (!empty($map['coolAppInfo'])) {
+                $model->coolAppInfo = [];
+                $n = 0;
+                foreach ($map['coolAppInfo'] as $item) {
+                    $model->coolAppInfo[$n++] = null !== $item ? coolAppInfo::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['desc'])) {
             $model->desc = $map['desc'];
         }
@@ -174,6 +209,9 @@ class appList extends Model
         }
         if (isset($map['pcHomepageLink'])) {
             $model->pcHomepageLink = $map['pcHomepageLink'];
+        }
+        if (isset($map['robotInfo'])) {
+            $model->robotInfo = robotInfo::fromMap($map['robotInfo']);
         }
 
         return $model;

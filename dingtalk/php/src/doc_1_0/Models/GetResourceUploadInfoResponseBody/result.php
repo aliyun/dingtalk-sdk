@@ -16,9 +16,15 @@ class result extends Model
     /**
      * @var string
      */
+    public $resourceUrl;
+
+    /**
+     * @var string
+     */
     public $uploadUrl;
     protected $_name = [
         'resourceId' => 'resourceId',
+        'resourceUrl' => 'resourceUrl',
         'uploadUrl' => 'uploadUrl',
     ];
 
@@ -29,6 +35,9 @@ class result extends Model
         $res = [];
         if (null !== $this->resourceId) {
             $res['resourceId'] = $this->resourceId;
+        }
+        if (null !== $this->resourceUrl) {
+            $res['resourceUrl'] = $this->resourceUrl;
         }
         if (null !== $this->uploadUrl) {
             $res['uploadUrl'] = $this->uploadUrl;
@@ -47,6 +56,9 @@ class result extends Model
         $model = new self();
         if (isset($map['resourceId'])) {
             $model->resourceId = $map['resourceId'];
+        }
+        if (isset($map['resourceUrl'])) {
+            $model->resourceUrl = $map['resourceUrl'];
         }
         if (isset($map['uploadUrl'])) {
             $model->uploadUrl = $map['uploadUrl'];

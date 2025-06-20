@@ -176,6 +176,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumQueryTodoTasksByManage
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRedirectTasksByManagerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRedirectTasksByManagerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRedirectTasksByManagerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRevertTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRevertTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRevertTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveFormHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveFormInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveFormInstanceRequest;
@@ -3874,6 +3877,78 @@ class Dingtalk extends OpenApiClient
         $headers = new PremiumRedirectTasksByManagerHeaders([]);
 
         return $this->premiumRedirectTasksByManagerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 退回OA审批任务(OA高级版专享)
+     *  *
+     * @param PremiumRevertTaskRequest $request PremiumRevertTaskRequest
+     * @param PremiumRevertTaskHeaders $headers PremiumRevertTaskHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumRevertTaskResponse PremiumRevertTaskResponse
+     */
+    public function premiumRevertTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operateUserId)) {
+            $body['operateUserId'] = $request->operateUserId;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->revertAction)) {
+            $body['revertAction'] = $request->revertAction;
+        }
+        if (!Utils::isUnset($request->targetActivityId)) {
+            $body['targetActivityId'] = $request->targetActivityId;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'PremiumRevertTask',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/premium/tasks/revert',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return PremiumRevertTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 退回OA审批任务(OA高级版专享)
+     *  *
+     * @param PremiumRevertTaskRequest $request PremiumRevertTaskRequest
+     *
+     * @return PremiumRevertTaskResponse PremiumRevertTaskResponse
+     */
+    public function premiumRevertTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumRevertTaskHeaders([]);
+
+        return $this->premiumRevertTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
