@@ -6994,6 +6994,140 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerHeaders()
         return await self.premium_redirect_tasks_by_manager_with_options_async(request, headers, runtime)
 
+    def premium_revert_task_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumRevertTaskRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumRevertTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumRevertTaskResponse:
+        """
+        @summary 退回OA审批任务(OA高级版专享)
+        
+        @param request: PremiumRevertTaskRequest
+        @param headers: PremiumRevertTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumRevertTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.revert_action):
+            body['revertAction'] = request.revert_action
+        if not UtilClient.is_unset(request.target_activity_id):
+            body['targetActivityId'] = request.target_activity_id
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumRevertTask',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/tasks/revert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumRevertTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_revert_task_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumRevertTaskRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumRevertTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumRevertTaskResponse:
+        """
+        @summary 退回OA审批任务(OA高级版专享)
+        
+        @param request: PremiumRevertTaskRequest
+        @param headers: PremiumRevertTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumRevertTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.revert_action):
+            body['revertAction'] = request.revert_action
+        if not UtilClient.is_unset(request.target_activity_id):
+            body['targetActivityId'] = request.target_activity_id
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumRevertTask',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/tasks/revert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumRevertTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_revert_task(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumRevertTaskRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumRevertTaskResponse:
+        """
+        @summary 退回OA审批任务(OA高级版专享)
+        
+        @param request: PremiumRevertTaskRequest
+        @return: PremiumRevertTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumRevertTaskHeaders()
+        return self.premium_revert_task_with_options(request, headers, runtime)
+
+    async def premium_revert_task_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumRevertTaskRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumRevertTaskResponse:
+        """
+        @summary 退回OA审批任务(OA高级版专享)
+        
+        @param request: PremiumRevertTaskRequest
+        @return: PremiumRevertTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumRevertTaskHeaders()
+        return await self.premium_revert_task_with_options_async(request, headers, runtime)
+
     def premium_save_form_with_options(
         self,
         request: dingtalkworkflow__1__0_models.PremiumSaveFormRequest,

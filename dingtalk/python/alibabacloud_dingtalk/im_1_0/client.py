@@ -11462,6 +11462,136 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.TopboxOpenHeaders()
         return await self.topbox_open_with_options_async(request, headers, runtime)
 
+    def update_client_service_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateClientServiceRequest,
+        headers: dingtalkim__1__0_models.UpdateClientServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateClientServiceResponse:
+        """
+        @summary 更新钉内用户C端展示的头像和名称（互通群、钉内两人群）
+        
+        @param request: UpdateClientServiceRequest
+        @param headers: UpdateClientServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateClientServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.avatar_url):
+            body['avatarUrl'] = request.avatar_url
+        if not UtilClient.is_unset(request.reset_avatar):
+            body['resetAvatar'] = request.reset_avatar
+        if not UtilClient.is_unset(request.reset_user_name):
+            body['resetUserName'] = request.reset_user_name
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateClientService',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/clientServices/avatarAndName',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateClientServiceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_client_service_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateClientServiceRequest,
+        headers: dingtalkim__1__0_models.UpdateClientServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateClientServiceResponse:
+        """
+        @summary 更新钉内用户C端展示的头像和名称（互通群、钉内两人群）
+        
+        @param request: UpdateClientServiceRequest
+        @param headers: UpdateClientServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateClientServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.avatar_url):
+            body['avatarUrl'] = request.avatar_url
+        if not UtilClient.is_unset(request.reset_avatar):
+            body['resetAvatar'] = request.reset_avatar
+        if not UtilClient.is_unset(request.reset_user_name):
+            body['resetUserName'] = request.reset_user_name
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        if not UtilClient.is_unset(request.user_name):
+            body['userName'] = request.user_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateClientService',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/clientServices/avatarAndName',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateClientServiceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_client_service(
+        self,
+        request: dingtalkim__1__0_models.UpdateClientServiceRequest,
+    ) -> dingtalkim__1__0_models.UpdateClientServiceResponse:
+        """
+        @summary 更新钉内用户C端展示的头像和名称（互通群、钉内两人群）
+        
+        @param request: UpdateClientServiceRequest
+        @return: UpdateClientServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateClientServiceHeaders()
+        return self.update_client_service_with_options(request, headers, runtime)
+
+    async def update_client_service_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateClientServiceRequest,
+    ) -> dingtalkim__1__0_models.UpdateClientServiceResponse:
+        """
+        @summary 更新钉内用户C端展示的头像和名称（互通群、钉内两人群）
+        
+        @param request: UpdateClientServiceRequest
+        @return: UpdateClientServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateClientServiceHeaders()
+        return await self.update_client_service_with_options_async(request, headers, runtime)
+
     def update_group_avatar_with_options(
         self,
         request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,

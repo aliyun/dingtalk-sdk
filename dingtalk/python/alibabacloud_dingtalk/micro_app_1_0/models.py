@@ -3043,12 +3043,79 @@ class ListAllInnerAppsHeaders(TeaModel):
         return self
 
 
+class ListAllInnerAppsResponseBodyAppListCoolAppInfo(TeaModel):
+    def __init__(
+        self,
+        cool_app_code: str = None,
+        name: str = None,
+    ):
+        self.cool_app_code = cool_app_code
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class ListAllInnerAppsResponseBodyAppListRobotInfo(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        robot_code: str = None,
+    ):
+        self.name = name
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
 class ListAllInnerAppsResponseBodyAppList(TeaModel):
     def __init__(
         self,
         agent_id: int = None,
         app_id: int = None,
         app_status: int = None,
+        cool_app_info: List[ListAllInnerAppsResponseBodyAppListCoolAppInfo] = None,
         desc: str = None,
         develop_type: int = None,
         homepage_link: str = None,
@@ -3056,6 +3123,7 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
         name: str = None,
         omp_link: str = None,
         pc_homepage_link: str = None,
+        robot_info: ListAllInnerAppsResponseBodyAppListRobotInfo = None,
     ):
         # This parameter is required.
         self.agent_id = agent_id
@@ -3063,6 +3131,7 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
         self.app_id = app_id
         # This parameter is required.
         self.app_status = app_status
+        self.cool_app_info = cool_app_info
         self.desc = desc
         # This parameter is required.
         self.develop_type = develop_type
@@ -3071,9 +3140,15 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
         self.name = name
         self.omp_link = omp_link
         self.pc_homepage_link = pc_homepage_link
+        self.robot_info = robot_info
 
     def validate(self):
-        pass
+        if self.cool_app_info:
+            for k in self.cool_app_info:
+                if k:
+                    k.validate()
+        if self.robot_info:
+            self.robot_info.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3087,6 +3162,10 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
             result['appId'] = self.app_id
         if self.app_status is not None:
             result['appStatus'] = self.app_status
+        result['coolAppInfo'] = []
+        if self.cool_app_info is not None:
+            for k in self.cool_app_info:
+                result['coolAppInfo'].append(k.to_map() if k else None)
         if self.desc is not None:
             result['desc'] = self.desc
         if self.develop_type is not None:
@@ -3101,6 +3180,8 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
             result['ompLink'] = self.omp_link
         if self.pc_homepage_link is not None:
             result['pcHomepageLink'] = self.pc_homepage_link
+        if self.robot_info is not None:
+            result['robotInfo'] = self.robot_info.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -3111,6 +3192,11 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
             self.app_id = m.get('appId')
         if m.get('appStatus') is not None:
             self.app_status = m.get('appStatus')
+        self.cool_app_info = []
+        if m.get('coolAppInfo') is not None:
+            for k in m.get('coolAppInfo'):
+                temp_model = ListAllInnerAppsResponseBodyAppListCoolAppInfo()
+                self.cool_app_info.append(temp_model.from_map(k))
         if m.get('desc') is not None:
             self.desc = m.get('desc')
         if m.get('developType') is not None:
@@ -3125,6 +3211,9 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
             self.omp_link = m.get('ompLink')
         if m.get('pcHomepageLink') is not None:
             self.pc_homepage_link = m.get('pcHomepageLink')
+        if m.get('robotInfo') is not None:
+            temp_model = ListAllInnerAppsResponseBodyAppListRobotInfo()
+            self.robot_info = temp_model.from_map(m['robotInfo'])
         return self
 
 

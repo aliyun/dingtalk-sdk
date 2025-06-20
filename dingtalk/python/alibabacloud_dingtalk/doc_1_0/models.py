@@ -8286,9 +8286,11 @@ class GetResourceUploadInfoResponseBodyResult(TeaModel):
     def __init__(
         self,
         resource_id: str = None,
+        resource_url: str = None,
         upload_url: str = None,
     ):
         self.resource_id = resource_id
+        self.resource_url = resource_url
         self.upload_url = upload_url
 
     def validate(self):
@@ -8302,6 +8304,8 @@ class GetResourceUploadInfoResponseBodyResult(TeaModel):
         result = dict()
         if self.resource_id is not None:
             result['resourceId'] = self.resource_id
+        if self.resource_url is not None:
+            result['resourceUrl'] = self.resource_url
         if self.upload_url is not None:
             result['uploadUrl'] = self.upload_url
         return result
@@ -8310,6 +8314,8 @@ class GetResourceUploadInfoResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('resourceId') is not None:
             self.resource_id = m.get('resourceId')
+        if m.get('resourceUrl') is not None:
+            self.resource_url = m.get('resourceUrl')
         if m.get('uploadUrl') is not None:
             self.upload_url = m.get('uploadUrl')
         return self
