@@ -35,6 +35,9 @@ public class GetResourceUploadInfoResponseBody extends TeaModel {
         @NameInMap("resourceId")
         public String resourceId;
 
+        @NameInMap("resourceUrl")
+        public String resourceUrl;
+
         @NameInMap("uploadUrl")
         public String uploadUrl;
 
@@ -49,6 +52,14 @@ public class GetResourceUploadInfoResponseBody extends TeaModel {
         }
         public String getResourceId() {
             return this.resourceId;
+        }
+
+        public GetResourceUploadInfoResponseBodyResult setResourceUrl(String resourceUrl) {
+            this.resourceUrl = resourceUrl;
+            return this;
+        }
+        public String getResourceUrl() {
+            return this.resourceUrl;
         }
 
         public GetResourceUploadInfoResponseBodyResult setUploadUrl(String uploadUrl) {

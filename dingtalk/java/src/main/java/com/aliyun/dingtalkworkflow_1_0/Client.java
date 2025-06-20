@@ -3692,6 +3692,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>退回OA审批任务(OA高级版专享)</p>
+     * 
+     * @param request PremiumRevertTaskRequest
+     * @param headers PremiumRevertTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumRevertTaskResponse
+     */
+    public PremiumRevertTaskResponse premiumRevertTaskWithOptions(PremiumRevertTaskRequest request, PremiumRevertTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
+            body.put("operateUserId", request.operateUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processInstanceId)) {
+            body.put("processInstanceId", request.processInstanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.revertAction)) {
+            body.put("revertAction", request.revertAction);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetActivityId)) {
+            body.put("targetActivityId", request.targetActivityId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("taskId", request.taskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumRevertTask"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/tasks/revert"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumRevertTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>退回OA审批任务(OA高级版专享)</p>
+     * 
+     * @param request PremiumRevertTaskRequest
+     * @return PremiumRevertTaskResponse
+     */
+    public PremiumRevertTaskResponse premiumRevertTask(PremiumRevertTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumRevertTaskHeaders headers = new PremiumRevertTaskHeaders();
+        return this.premiumRevertTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建或更新数据表单模板(OA高级版专享)</p>
      * 
      * @param request PremiumSaveFormRequest

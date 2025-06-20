@@ -20,6 +20,66 @@ public class ListAllInnerAppsResponseBody extends TeaModel {
         return this.appList;
     }
 
+    public static class ListAllInnerAppsResponseBodyAppListCoolAppInfo extends TeaModel {
+        @NameInMap("coolAppCode")
+        public String coolAppCode;
+
+        @NameInMap("name")
+        public String name;
+
+        public static ListAllInnerAppsResponseBodyAppListCoolAppInfo build(java.util.Map<String, ?> map) throws Exception {
+            ListAllInnerAppsResponseBodyAppListCoolAppInfo self = new ListAllInnerAppsResponseBodyAppListCoolAppInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllInnerAppsResponseBodyAppListCoolAppInfo setCoolAppCode(String coolAppCode) {
+            this.coolAppCode = coolAppCode;
+            return this;
+        }
+        public String getCoolAppCode() {
+            return this.coolAppCode;
+        }
+
+        public ListAllInnerAppsResponseBodyAppListCoolAppInfo setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
+    public static class ListAllInnerAppsResponseBodyAppListRobotInfo extends TeaModel {
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("robotCode")
+        public String robotCode;
+
+        public static ListAllInnerAppsResponseBodyAppListRobotInfo build(java.util.Map<String, ?> map) throws Exception {
+            ListAllInnerAppsResponseBodyAppListRobotInfo self = new ListAllInnerAppsResponseBodyAppListRobotInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllInnerAppsResponseBodyAppListRobotInfo setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListAllInnerAppsResponseBodyAppListRobotInfo setRobotCode(String robotCode) {
+            this.robotCode = robotCode;
+            return this;
+        }
+        public String getRobotCode() {
+            return this.robotCode;
+        }
+
+    }
+
     public static class ListAllInnerAppsResponseBodyAppList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
@@ -47,6 +107,9 @@ public class ListAllInnerAppsResponseBody extends TeaModel {
          */
         @NameInMap("appStatus")
         public Integer appStatus;
+
+        @NameInMap("coolAppInfo")
+        public java.util.List<ListAllInnerAppsResponseBodyAppListCoolAppInfo> coolAppInfo;
 
         /**
          * <strong>example:</strong>
@@ -99,6 +162,9 @@ public class ListAllInnerAppsResponseBody extends TeaModel {
         @NameInMap("pcHomepageLink")
         public String pcHomepageLink;
 
+        @NameInMap("robotInfo")
+        public ListAllInnerAppsResponseBodyAppListRobotInfo robotInfo;
+
         public static ListAllInnerAppsResponseBodyAppList build(java.util.Map<String, ?> map) throws Exception {
             ListAllInnerAppsResponseBodyAppList self = new ListAllInnerAppsResponseBodyAppList();
             return TeaModel.build(map, self);
@@ -126,6 +192,14 @@ public class ListAllInnerAppsResponseBody extends TeaModel {
         }
         public Integer getAppStatus() {
             return this.appStatus;
+        }
+
+        public ListAllInnerAppsResponseBodyAppList setCoolAppInfo(java.util.List<ListAllInnerAppsResponseBodyAppListCoolAppInfo> coolAppInfo) {
+            this.coolAppInfo = coolAppInfo;
+            return this;
+        }
+        public java.util.List<ListAllInnerAppsResponseBodyAppListCoolAppInfo> getCoolAppInfo() {
+            return this.coolAppInfo;
         }
 
         public ListAllInnerAppsResponseBodyAppList setDesc(String desc) {
@@ -182,6 +256,14 @@ public class ListAllInnerAppsResponseBody extends TeaModel {
         }
         public String getPcHomepageLink() {
             return this.pcHomepageLink;
+        }
+
+        public ListAllInnerAppsResponseBodyAppList setRobotInfo(ListAllInnerAppsResponseBodyAppListRobotInfo robotInfo) {
+            this.robotInfo = robotInfo;
+            return this;
+        }
+        public ListAllInnerAppsResponseBodyAppListRobotInfo getRobotInfo() {
+            return this.robotInfo;
         }
 
     }

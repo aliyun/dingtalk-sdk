@@ -6164,6 +6164,78 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>更新钉内用户C端展示的头像和名称（互通群、钉内两人群）</p>
+     * 
+     * @param request UpdateClientServiceRequest
+     * @param headers UpdateClientServiceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateClientServiceResponse
+     */
+    public UpdateClientServiceResponse updateClientServiceWithOptions(UpdateClientServiceRequest request, UpdateClientServiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.avatarUrl)) {
+            body.put("avatarUrl", request.avatarUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.resetAvatar)) {
+            body.put("resetAvatar", request.resetAvatar);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.resetUserName)) {
+            body.put("resetUserName", request.resetUserName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userName)) {
+            body.put("userName", request.userName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateClientService"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/interconnections/clientServices/avatarAndName"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateClientServiceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新钉内用户C端展示的头像和名称（互通群、钉内两人群）</p>
+     * 
+     * @param request UpdateClientServiceRequest
+     * @return UpdateClientServiceResponse
+     */
+    public UpdateClientServiceResponse updateClientService(UpdateClientServiceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateClientServiceHeaders headers = new UpdateClientServiceHeaders();
+        return this.updateClientServiceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>修改群头像</p>
      * 
      * @param request UpdateGroupAvatarRequest
