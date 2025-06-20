@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             [Validation(Required=false)]
             public string ResourceId { get; set; }
 
+            [NameInMap("resourceUrl")]
+            [Validation(Required=false)]
+            public string ResourceUrl { get; set; }
+
             [NameInMap("uploadUrl")]
             [Validation(Required=false)]
             public string UploadUrl { get; set; }

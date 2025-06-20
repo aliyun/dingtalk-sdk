@@ -43,6 +43,20 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             [Validation(Required=false)]
             public int? AppStatus { get; set; }
 
+            [NameInMap("coolAppInfo")]
+            [Validation(Required=false)]
+            public List<ListAllInnerAppsResponseBodyAppListCoolAppInfo> CoolAppInfo { get; set; }
+            public class ListAllInnerAppsResponseBodyAppListCoolAppInfo : TeaModel {
+                [NameInMap("coolAppCode")]
+                [Validation(Required=false)]
+                public string CoolAppCode { get; set; }
+
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+            }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>desc</para>
@@ -100,6 +114,20 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             [NameInMap("pcHomepageLink")]
             [Validation(Required=false)]
             public string PcHomepageLink { get; set; }
+
+            [NameInMap("robotInfo")]
+            [Validation(Required=false)]
+            public ListAllInnerAppsResponseBodyAppListRobotInfo RobotInfo { get; set; }
+            public class ListAllInnerAppsResponseBodyAppListRobotInfo : TeaModel {
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+                [NameInMap("robotCode")]
+                [Validation(Required=false)]
+                public string RobotCode { get; set; }
+
+            }
 
         }
 

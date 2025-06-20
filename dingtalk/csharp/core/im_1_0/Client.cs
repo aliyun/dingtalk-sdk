@@ -15582,6 +15582,186 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>更新钉内用户C端展示的头像和名称（互通群、钉内两人群）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClientServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateClientServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClientServiceResponse
+        /// </returns>
+        public UpdateClientServiceResponse UpdateClientServiceWithOptions(UpdateClientServiceRequest request, UpdateClientServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AvatarUrl))
+            {
+                body["avatarUrl"] = request.AvatarUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResetAvatar))
+            {
+                body["resetAvatar"] = request.ResetAvatar;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResetUserName))
+            {
+                body["resetUserName"] = request.ResetUserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
+            {
+                body["userName"] = request.UserName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateClientService",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/interconnections/clientServices/avatarAndName",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateClientServiceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新钉内用户C端展示的头像和名称（互通群、钉内两人群）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClientServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateClientServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClientServiceResponse
+        /// </returns>
+        public async Task<UpdateClientServiceResponse> UpdateClientServiceWithOptionsAsync(UpdateClientServiceRequest request, UpdateClientServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AvatarUrl))
+            {
+                body["avatarUrl"] = request.AvatarUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResetAvatar))
+            {
+                body["resetAvatar"] = request.ResetAvatar;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResetUserName))
+            {
+                body["resetUserName"] = request.ResetUserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
+            {
+                body["userName"] = request.UserName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateClientService",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/interconnections/clientServices/avatarAndName",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateClientServiceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新钉内用户C端展示的头像和名称（互通群、钉内两人群）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClientServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClientServiceResponse
+        /// </returns>
+        public UpdateClientServiceResponse UpdateClientService(UpdateClientServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateClientServiceHeaders headers = new UpdateClientServiceHeaders();
+            return UpdateClientServiceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新钉内用户C端展示的头像和名称（互通群、钉内两人群）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateClientServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateClientServiceResponse
+        /// </returns>
+        public async Task<UpdateClientServiceResponse> UpdateClientServiceAsync(UpdateClientServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateClientServiceHeaders headers = new UpdateClientServiceHeaders();
+            return await UpdateClientServiceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>修改群头像</para>
         /// </summary>
         /// 

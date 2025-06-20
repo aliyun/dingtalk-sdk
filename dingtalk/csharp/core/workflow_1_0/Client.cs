@@ -9418,6 +9418,194 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>退回OA审批任务(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumRevertTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// PremiumRevertTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumRevertTaskResponse
+        /// </returns>
+        public PremiumRevertTaskResponse PremiumRevertTaskWithOptions(PremiumRevertTaskRequest request, PremiumRevertTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RevertAction))
+            {
+                body["revertAction"] = request.RevertAction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetActivityId))
+            {
+                body["targetActivityId"] = request.TargetActivityId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PremiumRevertTask",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/tasks/revert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PremiumRevertTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>退回OA审批任务(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumRevertTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// PremiumRevertTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumRevertTaskResponse
+        /// </returns>
+        public async Task<PremiumRevertTaskResponse> PremiumRevertTaskWithOptionsAsync(PremiumRevertTaskRequest request, PremiumRevertTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RevertAction))
+            {
+                body["revertAction"] = request.RevertAction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetActivityId))
+            {
+                body["targetActivityId"] = request.TargetActivityId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PremiumRevertTask",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/tasks/revert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PremiumRevertTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>退回OA审批任务(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumRevertTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumRevertTaskResponse
+        /// </returns>
+        public PremiumRevertTaskResponse PremiumRevertTask(PremiumRevertTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PremiumRevertTaskHeaders headers = new PremiumRevertTaskHeaders();
+            return PremiumRevertTaskWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>退回OA审批任务(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumRevertTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumRevertTaskResponse
+        /// </returns>
+        public async Task<PremiumRevertTaskResponse> PremiumRevertTaskAsync(PremiumRevertTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PremiumRevertTaskHeaders headers = new PremiumRevertTaskHeaders();
+            return await PremiumRevertTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建或更新数据表单模板(OA高级版专享)</para>
         /// </summary>
         /// 
