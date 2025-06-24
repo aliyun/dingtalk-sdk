@@ -2013,6 +2013,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("forbidHideOutSideAddress", request.forbidHideOutSideAddress);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.freeCheckDemandWorkMinutes)) {
+            body.put("freeCheckDemandWorkMinutes", request.freeCheckDemandWorkMinutes);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.freeCheckSetting)) {
             body.put("freeCheckSetting", request.freeCheckSetting);
         }
@@ -2173,6 +2177,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.adjustmentSettingId)) {
             body.put("adjustmentSettingId", request.adjustmentSettingId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.defaultClassId)) {
+            body.put("defaultClassId", request.defaultClassId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.disableCheckWhenRest)) {

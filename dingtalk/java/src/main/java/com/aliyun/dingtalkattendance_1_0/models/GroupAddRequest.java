@@ -125,6 +125,9 @@ public class GroupAddRequest extends TeaModel {
     @NameInMap("forbidHideOutSideAddress")
     public Boolean forbidHideOutSideAddress;
 
+    @NameInMap("freeCheckDemandWorkMinutes")
+    public Integer freeCheckDemandWorkMinutes;
+
     @NameInMap("freeCheckSetting")
     public GroupAddRequestFreeCheckSetting freeCheckSetting;
 
@@ -427,6 +430,14 @@ public class GroupAddRequest extends TeaModel {
     }
     public Boolean getForbidHideOutSideAddress() {
         return this.forbidHideOutSideAddress;
+    }
+
+    public GroupAddRequest setFreeCheckDemandWorkMinutes(Integer freeCheckDemandWorkMinutes) {
+        this.freeCheckDemandWorkMinutes = freeCheckDemandWorkMinutes;
+        return this;
+    }
+    public Integer getFreeCheckDemandWorkMinutes() {
+        return this.freeCheckDemandWorkMinutes;
     }
 
     public GroupAddRequest setFreeCheckSetting(GroupAddRequestFreeCheckSetting freeCheckSetting) {

@@ -11,6 +11,9 @@ public class GroupUpdateRequest extends TeaModel {
     @NameInMap("adjustmentSettingId")
     public Long adjustmentSettingId;
 
+    @NameInMap("defaultClassId")
+    public Long defaultClassId;
+
     /**
      * <strong>example:</strong>
      * <p>true</p>
@@ -215,6 +218,14 @@ public class GroupUpdateRequest extends TeaModel {
     }
     public Long getAdjustmentSettingId() {
         return this.adjustmentSettingId;
+    }
+
+    public GroupUpdateRequest setDefaultClassId(Long defaultClassId) {
+        this.defaultClassId = defaultClassId;
+        return this;
+    }
+    public Long getDefaultClassId() {
+        return this.defaultClassId;
     }
 
     public GroupUpdateRequest setDisableCheckWhenRest(Boolean disableCheckWhenRest) {
