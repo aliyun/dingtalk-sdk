@@ -142,6 +142,11 @@ class GroupAddRequest extends Model
     public $forbidHideOutSideAddress;
 
     /**
+     * @var int
+     */
+    public $freeCheckDemandWorkMinutes;
+
+    /**
      * @var freeCheckSetting
      */
     public $freeCheckSetting;
@@ -328,6 +333,7 @@ class GroupAddRequest extends Model
         'enablePositionBle' => 'enablePositionBle',
         'enableTrimDistance' => 'enableTrimDistance',
         'forbidHideOutSideAddress' => 'forbidHideOutSideAddress',
+        'freeCheckDemandWorkMinutes' => 'freeCheckDemandWorkMinutes',
         'freeCheckSetting' => 'freeCheckSetting',
         'freeCheckTypeId' => 'freeCheckTypeId',
         'freecheckDayStartMinOffset' => 'freecheckDayStartMinOffset',
@@ -423,6 +429,9 @@ class GroupAddRequest extends Model
         }
         if (null !== $this->forbidHideOutSideAddress) {
             $res['forbidHideOutSideAddress'] = $this->forbidHideOutSideAddress;
+        }
+        if (null !== $this->freeCheckDemandWorkMinutes) {
+            $res['freeCheckDemandWorkMinutes'] = $this->freeCheckDemandWorkMinutes;
         }
         if (null !== $this->freeCheckSetting) {
             $res['freeCheckSetting'] = null !== $this->freeCheckSetting ? $this->freeCheckSetting->toMap() : null;
@@ -600,6 +609,9 @@ class GroupAddRequest extends Model
         }
         if (isset($map['forbidHideOutSideAddress'])) {
             $model->forbidHideOutSideAddress = $map['forbidHideOutSideAddress'];
+        }
+        if (isset($map['freeCheckDemandWorkMinutes'])) {
+            $model->freeCheckDemandWorkMinutes = $map['freeCheckDemandWorkMinutes'];
         }
         if (isset($map['freeCheckSetting'])) {
             $model->freeCheckSetting = freeCheckSetting::fromMap($map['freeCheckSetting']);

@@ -215,6 +215,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountSNSMessageRespo
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SetUserVersionToFreeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SetUserVersionToFreeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SetUserVersionToFreeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\TwoPhaseCommitInventoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\TwoPhaseCommitInventoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\TwoPhaseCommitInventoryResponse;
@@ -4712,6 +4715,63 @@ class Dingtalk extends OpenApiClient
         $headers = new ServiceWindowMessageBatchPushHeaders([]);
 
         return $this->serviceWindowMessageBatchPushWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 设置用户版本为免费版
+     *  *
+     * @param SetUserVersionToFreeRequest $request SetUserVersionToFreeRequest
+     * @param SetUserVersionToFreeHeaders $headers SetUserVersionToFreeHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SetUserVersionToFreeResponse SetUserVersionToFreeResponse
+     */
+    public function setUserVersionToFreeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SetUserVersionToFree',
+            'version' => 'crm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/crm/versions/set',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SetUserVersionToFreeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置用户版本为免费版
+     *  *
+     * @param SetUserVersionToFreeRequest $request SetUserVersionToFreeRequest
+     *
+     * @return SetUserVersionToFreeResponse SetUserVersionToFreeResponse
+     */
+    public function setUserVersionToFree($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetUserVersionToFreeHeaders([]);
+
+        return $this->setUserVersionToFreeWithOptions($request, $headers, $runtime);
     }
 
     /**

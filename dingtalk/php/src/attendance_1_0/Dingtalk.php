@@ -2099,6 +2099,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->forbidHideOutSideAddress)) {
             $body['forbidHideOutSideAddress'] = $request->forbidHideOutSideAddress;
         }
+        if (!Utils::isUnset($request->freeCheckDemandWorkMinutes)) {
+            $body['freeCheckDemandWorkMinutes'] = $request->freeCheckDemandWorkMinutes;
+        }
         if (!Utils::isUnset($request->freeCheckSetting)) {
             $body['freeCheckSetting'] = $request->freeCheckSetting;
         }
@@ -2235,6 +2238,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->adjustmentSettingId)) {
             $body['adjustmentSettingId'] = $request->adjustmentSettingId;
+        }
+        if (!Utils::isUnset($request->defaultClassId)) {
+            $body['defaultClassId'] = $request->defaultClassId;
         }
         if (!Utils::isUnset($request->disableCheckWhenRest)) {
             $body['disableCheckWhenRest'] = $request->disableCheckWhenRest;

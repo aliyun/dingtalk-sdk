@@ -19,6 +19,11 @@ class GroupUpdateRequest extends Model
     public $adjustmentSettingId;
 
     /**
+     * @var int
+     */
+    public $defaultClassId;
+
+    /**
      * @example true
      *
      * @var bool
@@ -232,6 +237,7 @@ class GroupUpdateRequest extends Model
     public $opUserId;
     protected $_name = [
         'adjustmentSettingId' => 'adjustmentSettingId',
+        'defaultClassId' => 'defaultClassId',
         'disableCheckWhenRest' => 'disableCheckWhenRest',
         'disableCheckWithoutSchedule' => 'disableCheckWithoutSchedule',
         'enableCameraCheck' => 'enableCameraCheck',
@@ -274,6 +280,9 @@ class GroupUpdateRequest extends Model
         $res = [];
         if (null !== $this->adjustmentSettingId) {
             $res['adjustmentSettingId'] = $this->adjustmentSettingId;
+        }
+        if (null !== $this->defaultClassId) {
+            $res['defaultClassId'] = $this->defaultClassId;
         }
         if (null !== $this->disableCheckWhenRest) {
             $res['disableCheckWhenRest'] = $this->disableCheckWhenRest;
@@ -400,6 +409,9 @@ class GroupUpdateRequest extends Model
         $model = new self();
         if (isset($map['adjustmentSettingId'])) {
             $model->adjustmentSettingId = $map['adjustmentSettingId'];
+        }
+        if (isset($map['defaultClassId'])) {
+            $model->defaultClassId = $map['defaultClassId'];
         }
         if (isset($map['disableCheckWhenRest'])) {
             $model->disableCheckWhenRest = $map['disableCheckWhenRest'];
