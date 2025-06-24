@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public long? AdjustmentSettingId { get; set; }
 
+        [NameInMap("defaultClassId")]
+        [Validation(Required=false)]
+        public long? DefaultClassId { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>true</para>

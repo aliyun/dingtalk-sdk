@@ -4963,6 +4963,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["forbidHideOutSideAddress"] = request.ForbidHideOutSideAddress;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckDemandWorkMinutes))
+            {
+                body["freeCheckDemandWorkMinutes"] = request.FreeCheckDemandWorkMinutes;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting))
             {
                 body["freeCheckSetting"] = request.FreeCheckSetting;
@@ -5196,6 +5200,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["forbidHideOutSideAddress"] = request.ForbidHideOutSideAddress;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckDemandWorkMinutes))
+            {
+                body["freeCheckDemandWorkMinutes"] = request.FreeCheckDemandWorkMinutes;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckSetting))
             {
                 body["freeCheckSetting"] = request.FreeCheckSetting;
@@ -5395,6 +5403,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["adjustmentSettingId"] = request.AdjustmentSettingId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DefaultClassId))
+            {
+                body["defaultClassId"] = request.DefaultClassId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableCheckWhenRest))
             {
                 body["disableCheckWhenRest"] = request.DisableCheckWhenRest;
@@ -5583,6 +5595,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AdjustmentSettingId))
             {
                 body["adjustmentSettingId"] = request.AdjustmentSettingId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DefaultClassId))
+            {
+                body["defaultClassId"] = request.DefaultClassId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableCheckWhenRest))
             {

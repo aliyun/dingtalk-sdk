@@ -11584,6 +11584,154 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>设置用户版本为免费版</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetUserVersionToFreeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetUserVersionToFreeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetUserVersionToFreeResponse
+        /// </returns>
+        public SetUserVersionToFreeResponse SetUserVersionToFreeWithOptions(SetUserVersionToFreeRequest request, SetUserVersionToFreeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetUserVersionToFree",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/versions/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetUserVersionToFreeResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置用户版本为免费版</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetUserVersionToFreeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetUserVersionToFreeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetUserVersionToFreeResponse
+        /// </returns>
+        public async Task<SetUserVersionToFreeResponse> SetUserVersionToFreeWithOptionsAsync(SetUserVersionToFreeRequest request, SetUserVersionToFreeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetUserVersionToFree",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/versions/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetUserVersionToFreeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置用户版本为免费版</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetUserVersionToFreeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetUserVersionToFreeResponse
+        /// </returns>
+        public SetUserVersionToFreeResponse SetUserVersionToFree(SetUserVersionToFreeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetUserVersionToFreeHeaders headers = new SetUserVersionToFreeHeaders();
+            return SetUserVersionToFreeWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置用户版本为免费版</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetUserVersionToFreeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetUserVersionToFreeResponse
+        /// </returns>
+        public async Task<SetUserVersionToFreeResponse> SetUserVersionToFreeAsync(SetUserVersionToFreeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetUserVersionToFreeHeaders headers = new SetUserVersionToFreeHeaders();
+            return await SetUserVersionToFreeWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>二阶段提交权益库存结果</para>
         /// </summary>
         /// 

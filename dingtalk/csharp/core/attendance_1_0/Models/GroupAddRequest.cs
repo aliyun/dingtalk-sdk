@@ -159,6 +159,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public bool? ForbidHideOutSideAddress { get; set; }
 
+        [NameInMap("freeCheckDemandWorkMinutes")]
+        [Validation(Required=false)]
+        public int? FreeCheckDemandWorkMinutes { get; set; }
+
         [NameInMap("freeCheckSetting")]
         [Validation(Required=false)]
         public GroupAddRequestFreeCheckSetting FreeCheckSetting { get; set; }
