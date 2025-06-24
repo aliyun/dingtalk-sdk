@@ -8618,6 +8618,7 @@ class GroupAddRequest(TeaModel):
         enable_position_ble: bool = None,
         enable_trim_distance: bool = None,
         forbid_hide_out_side_address: bool = None,
+        free_check_demand_work_minutes: int = None,
         free_check_setting: GroupAddRequestFreeCheckSetting = None,
         free_check_type_id: int = None,
         freecheck_day_start_min_offset: int = None,
@@ -8664,6 +8665,7 @@ class GroupAddRequest(TeaModel):
         self.enable_position_ble = enable_position_ble
         self.enable_trim_distance = enable_trim_distance
         self.forbid_hide_out_side_address = forbid_hide_out_side_address
+        self.free_check_demand_work_minutes = free_check_demand_work_minutes
         self.free_check_setting = free_check_setting
         self.free_check_type_id = free_check_type_id
         self.freecheck_day_start_min_offset = freecheck_day_start_min_offset
@@ -8765,6 +8767,8 @@ class GroupAddRequest(TeaModel):
             result['enableTrimDistance'] = self.enable_trim_distance
         if self.forbid_hide_out_side_address is not None:
             result['forbidHideOutSideAddress'] = self.forbid_hide_out_side_address
+        if self.free_check_demand_work_minutes is not None:
+            result['freeCheckDemandWorkMinutes'] = self.free_check_demand_work_minutes
         if self.free_check_setting is not None:
             result['freeCheckSetting'] = self.free_check_setting.to_map()
         if self.free_check_type_id is not None:
@@ -8870,6 +8874,8 @@ class GroupAddRequest(TeaModel):
             self.enable_trim_distance = m.get('enableTrimDistance')
         if m.get('forbidHideOutSideAddress') is not None:
             self.forbid_hide_out_side_address = m.get('forbidHideOutSideAddress')
+        if m.get('freeCheckDemandWorkMinutes') is not None:
+            self.free_check_demand_work_minutes = m.get('freeCheckDemandWorkMinutes')
         if m.get('freeCheckSetting') is not None:
             temp_model = GroupAddRequestFreeCheckSetting()
             self.free_check_setting = temp_model.from_map(m['freeCheckSetting'])
@@ -9230,6 +9236,7 @@ class GroupUpdateRequest(TeaModel):
     def __init__(
         self,
         adjustment_setting_id: int = None,
+        default_class_id: int = None,
         disable_check_when_rest: bool = None,
         disable_check_without_schedule: bool = None,
         enable_camera_check: bool = None,
@@ -9265,6 +9272,7 @@ class GroupUpdateRequest(TeaModel):
         op_user_id: str = None,
     ):
         self.adjustment_setting_id = adjustment_setting_id
+        self.default_class_id = default_class_id
         self.disable_check_when_rest = disable_check_when_rest
         self.disable_check_without_schedule = disable_check_without_schedule
         self.enable_camera_check = enable_camera_check
@@ -9320,6 +9328,8 @@ class GroupUpdateRequest(TeaModel):
         result = dict()
         if self.adjustment_setting_id is not None:
             result['adjustmentSettingId'] = self.adjustment_setting_id
+        if self.default_class_id is not None:
+            result['defaultClassId'] = self.default_class_id
         if self.disable_check_when_rest is not None:
             result['disableCheckWhenRest'] = self.disable_check_when_rest
         if self.disable_check_without_schedule is not None:
@@ -9396,6 +9406,8 @@ class GroupUpdateRequest(TeaModel):
         m = m or dict()
         if m.get('adjustmentSettingId') is not None:
             self.adjustment_setting_id = m.get('adjustmentSettingId')
+        if m.get('defaultClassId') is not None:
+            self.default_class_id = m.get('defaultClassId')
         if m.get('disableCheckWhenRest') is not None:
             self.disable_check_when_rest = m.get('disableCheckWhenRest')
         if m.get('disableCheckWithoutSchedule') is not None:

@@ -3673,6 +3673,8 @@ class Client(OpenApiClient):
             body['enableTrimDistance'] = request.enable_trim_distance
         if not UtilClient.is_unset(request.forbid_hide_out_side_address):
             body['forbidHideOutSideAddress'] = request.forbid_hide_out_side_address
+        if not UtilClient.is_unset(request.free_check_demand_work_minutes):
+            body['freeCheckDemandWorkMinutes'] = request.free_check_demand_work_minutes
         if not UtilClient.is_unset(request.free_check_setting):
             body['freeCheckSetting'] = request.free_check_setting
         if not UtilClient.is_unset(request.free_check_type_id):
@@ -3806,6 +3808,8 @@ class Client(OpenApiClient):
             body['enableTrimDistance'] = request.enable_trim_distance
         if not UtilClient.is_unset(request.forbid_hide_out_side_address):
             body['forbidHideOutSideAddress'] = request.forbid_hide_out_side_address
+        if not UtilClient.is_unset(request.free_check_demand_work_minutes):
+            body['freeCheckDemandWorkMinutes'] = request.free_check_demand_work_minutes
         if not UtilClient.is_unset(request.free_check_setting):
             body['freeCheckSetting'] = request.free_check_setting
         if not UtilClient.is_unset(request.free_check_type_id):
@@ -3931,6 +3935,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.adjustment_setting_id):
             body['adjustmentSettingId'] = request.adjustment_setting_id
+        if not UtilClient.is_unset(request.default_class_id):
+            body['defaultClassId'] = request.default_class_id
         if not UtilClient.is_unset(request.disable_check_when_rest):
             body['disableCheckWhenRest'] = request.disable_check_when_rest
         if not UtilClient.is_unset(request.disable_check_without_schedule):
@@ -4042,6 +4048,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.adjustment_setting_id):
             body['adjustmentSettingId'] = request.adjustment_setting_id
+        if not UtilClient.is_unset(request.default_class_id):
+            body['defaultClassId'] = request.default_class_id
         if not UtilClient.is_unset(request.disable_check_when_rest):
             body['disableCheckWhenRest'] = request.disable_check_when_rest
         if not UtilClient.is_unset(request.disable_check_without_schedule):

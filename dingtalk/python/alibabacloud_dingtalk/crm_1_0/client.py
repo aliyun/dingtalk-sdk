@@ -8652,6 +8652,120 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders()
         return await self.service_window_message_batch_push_with_options_async(request, headers, runtime)
 
+    def set_user_version_to_free_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.SetUserVersionToFreeRequest,
+        headers: dingtalkcrm__1__0_models.SetUserVersionToFreeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.SetUserVersionToFreeResponse:
+        """
+        @summary 设置用户版本为免费版
+        
+        @param request: SetUserVersionToFreeRequest
+        @param headers: SetUserVersionToFreeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetUserVersionToFreeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetUserVersionToFree',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/versions/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.SetUserVersionToFreeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_user_version_to_free_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.SetUserVersionToFreeRequest,
+        headers: dingtalkcrm__1__0_models.SetUserVersionToFreeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.SetUserVersionToFreeResponse:
+        """
+        @summary 设置用户版本为免费版
+        
+        @param request: SetUserVersionToFreeRequest
+        @param headers: SetUserVersionToFreeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetUserVersionToFreeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetUserVersionToFree',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/versions/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.SetUserVersionToFreeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_user_version_to_free(
+        self,
+        request: dingtalkcrm__1__0_models.SetUserVersionToFreeRequest,
+    ) -> dingtalkcrm__1__0_models.SetUserVersionToFreeResponse:
+        """
+        @summary 设置用户版本为免费版
+        
+        @param request: SetUserVersionToFreeRequest
+        @return: SetUserVersionToFreeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.SetUserVersionToFreeHeaders()
+        return self.set_user_version_to_free_with_options(request, headers, runtime)
+
+    async def set_user_version_to_free_async(
+        self,
+        request: dingtalkcrm__1__0_models.SetUserVersionToFreeRequest,
+    ) -> dingtalkcrm__1__0_models.SetUserVersionToFreeResponse:
+        """
+        @summary 设置用户版本为免费版
+        
+        @param request: SetUserVersionToFreeRequest
+        @return: SetUserVersionToFreeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.SetUserVersionToFreeHeaders()
+        return await self.set_user_version_to_free_with_options_async(request, headers, runtime)
+
     def two_phase_commit_inventory_with_options(
         self,
         request: dingtalkcrm__1__0_models.TwoPhaseCommitInventoryRequest,
