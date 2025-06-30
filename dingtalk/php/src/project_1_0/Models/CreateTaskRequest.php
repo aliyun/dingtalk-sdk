@@ -38,6 +38,11 @@ class CreateTaskRequest extends Model
     public $executorId;
 
     /**
+     * @var string[]
+     */
+    public $involveMembers;
+
+    /**
      * @example 我是一条任务备注
      *
      * @var string
@@ -79,6 +84,13 @@ class CreateTaskRequest extends Model
      *
      * @var string
      */
+    public $sprintId;
+
+    /**
+     * @example 62c25e3b376exxxxxx
+     *
+     * @var string
+     */
     public $stageId;
 
     /**
@@ -87,6 +99,25 @@ class CreateTaskRequest extends Model
      * @var string
      */
     public $startDate;
+
+    /**
+     * @example 1
+     *
+     * @var string
+     */
+    public $storyPoint;
+
+    /**
+     * @var string[]
+     */
+    public $tagIds;
+
+    /**
+     * @example 62c25e3b376exxxxxx
+     *
+     * @var string
+     */
+    public $tasklistId;
 
     /**
      * @example members
@@ -99,13 +130,18 @@ class CreateTaskRequest extends Model
         'customfields' => 'customfields',
         'dueDate' => 'dueDate',
         'executorId' => 'executorId',
+        'involveMembers' => 'involveMembers',
         'note' => 'note',
         'parentTaskId' => 'parentTaskId',
         'priority' => 'priority',
         'projectId' => 'projectId',
         'scenariofieldconfigId' => 'scenariofieldconfigId',
+        'sprintId' => 'sprintId',
         'stageId' => 'stageId',
         'startDate' => 'startDate',
+        'storyPoint' => 'storyPoint',
+        'tagIds' => 'tagIds',
+        'tasklistId' => 'tasklistId',
         'visible' => 'visible',
     ];
 
@@ -132,6 +168,9 @@ class CreateTaskRequest extends Model
         if (null !== $this->executorId) {
             $res['executorId'] = $this->executorId;
         }
+        if (null !== $this->involveMembers) {
+            $res['involveMembers'] = $this->involveMembers;
+        }
         if (null !== $this->note) {
             $res['note'] = $this->note;
         }
@@ -147,11 +186,23 @@ class CreateTaskRequest extends Model
         if (null !== $this->scenariofieldconfigId) {
             $res['scenariofieldconfigId'] = $this->scenariofieldconfigId;
         }
+        if (null !== $this->sprintId) {
+            $res['sprintId'] = $this->sprintId;
+        }
         if (null !== $this->stageId) {
             $res['stageId'] = $this->stageId;
         }
         if (null !== $this->startDate) {
             $res['startDate'] = $this->startDate;
+        }
+        if (null !== $this->storyPoint) {
+            $res['storyPoint'] = $this->storyPoint;
+        }
+        if (null !== $this->tagIds) {
+            $res['tagIds'] = $this->tagIds;
+        }
+        if (null !== $this->tasklistId) {
+            $res['tasklistId'] = $this->tasklistId;
         }
         if (null !== $this->visible) {
             $res['visible'] = $this->visible;
@@ -186,6 +237,11 @@ class CreateTaskRequest extends Model
         if (isset($map['executorId'])) {
             $model->executorId = $map['executorId'];
         }
+        if (isset($map['involveMembers'])) {
+            if (!empty($map['involveMembers'])) {
+                $model->involveMembers = $map['involveMembers'];
+            }
+        }
         if (isset($map['note'])) {
             $model->note = $map['note'];
         }
@@ -201,11 +257,25 @@ class CreateTaskRequest extends Model
         if (isset($map['scenariofieldconfigId'])) {
             $model->scenariofieldconfigId = $map['scenariofieldconfigId'];
         }
+        if (isset($map['sprintId'])) {
+            $model->sprintId = $map['sprintId'];
+        }
         if (isset($map['stageId'])) {
             $model->stageId = $map['stageId'];
         }
         if (isset($map['startDate'])) {
             $model->startDate = $map['startDate'];
+        }
+        if (isset($map['storyPoint'])) {
+            $model->storyPoint = $map['storyPoint'];
+        }
+        if (isset($map['tagIds'])) {
+            if (!empty($map['tagIds'])) {
+                $model->tagIds = $map['tagIds'];
+            }
+        }
+        if (isset($map['tasklistId'])) {
+            $model->tasklistId = $map['tasklistId'];
         }
         if (isset($map['visible'])) {
             $model->visible = $map['visible'];

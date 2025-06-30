@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsResponse
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryCreateMinutesListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryCreateMinutesListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryCreateMinutesListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesPlayInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesPlayInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesPlayInfoResponse;
@@ -168,6 +171,69 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteMinutesHeaders([]);
 
         return $this->deleteMinutesWithOptions($taskUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询自己创建的闪记列表
+     *  *
+     * @param QueryCreateMinutesListRequest $request QueryCreateMinutesListRequest
+     * @param QueryCreateMinutesListHeaders $headers QueryCreateMinutesListHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryCreateMinutesListResponse QueryCreateMinutesListResponse
+     */
+    public function queryCreateMinutesListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryCreateMinutesList',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/createLists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryCreateMinutesListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询自己创建的闪记列表
+     *  *
+     * @param QueryCreateMinutesListRequest $request QueryCreateMinutesListRequest
+     *
+     * @return QueryCreateMinutesListResponse QueryCreateMinutesListResponse
+     */
+    public function queryCreateMinutesList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCreateMinutesListHeaders([]);
+
+        return $this->queryCreateMinutesListWithOptions($request, $headers, $runtime);
     }
 
     /**

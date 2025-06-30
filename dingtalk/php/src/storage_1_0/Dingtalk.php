@@ -14,6 +14,10 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\AddSpaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\BatchQueryRolesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\BatchQueryRolesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\BatchQueryRolesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\BatchQueryRolesShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ClearRecycleBinHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ClearRecycleBinRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\ClearRecycleBinResponse;
@@ -361,6 +365,73 @@ class Dingtalk extends OpenApiClient
         $headers = new AddSpaceHeaders([]);
 
         return $this->addSpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取权限列表
+     *  *
+     * @param string                 $spaceId
+     * @param BatchQueryRolesRequest $tmpReq  BatchQueryRolesRequest
+     * @param BatchQueryRolesHeaders $headers BatchQueryRolesHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchQueryRolesResponse BatchQueryRolesResponse
+     */
+    public function batchQueryRolesWithOptions($spaceId, $tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new BatchQueryRolesShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->dentryIdList)) {
+            $request->dentryIdListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->dentryIdList, 'dentryIdList', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->dentryIdListShrink)) {
+            $query['dentryIdList'] = $request->dentryIdListShrink;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'BatchQueryRoles',
+            'version' => 'storage_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/storage/spaces/' . $spaceId . '/dentries/permissions/roles/batchQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return BatchQueryRolesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取权限列表
+     *  *
+     * @param string                 $spaceId
+     * @param BatchQueryRolesRequest $request BatchQueryRolesRequest
+     *
+     * @return BatchQueryRolesResponse BatchQueryRolesResponse
+     */
+    public function batchQueryRoles($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchQueryRolesHeaders([]);
+
+        return $this->batchQueryRolesWithOptions($spaceId, $request, $headers, $runtime);
     }
 
     /**

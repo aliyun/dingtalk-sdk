@@ -68,6 +68,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\OrderBillingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAlipayUserIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAlipayUserIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAlipayUserIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageResponse;
@@ -106,6 +109,8 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileRespo
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPermissionUserIdsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPermissionUserIdsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProductByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProductByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProductByPageResponse;
@@ -1596,6 +1601,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据staffId批量查询返回支付宝userId
+     *  *
+     * @param QueryAlipayUserIdRequest $request QueryAlipayUserIdRequest
+     * @param QueryAlipayUserIdHeaders $headers QueryAlipayUserIdHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryAlipayUserIdResponse QueryAlipayUserIdResponse
+     */
+    public function queryAlipayUserIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dingUserIds)) {
+            $body['dingUserIds'] = $request->dingUserIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryAlipayUserId',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/consumption/aliPay/getUserId',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryAlipayUserIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据staffId批量查询返回支付宝userId
+     *  *
+     * @param QueryAlipayUserIdRequest $request QueryAlipayUserIdRequest
+     *
+     * @return QueryAlipayUserIdResponse QueryAlipayUserIdResponse
+     */
+    public function queryAlipayUserId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAlipayUserIdHeaders([]);
+
+        return $this->queryAlipayUserIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 批量获取费用类别
      *  *
      * @param QueryCategoryByPageRequest $request QueryCategoryByPageRequest
@@ -2315,6 +2377,54 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryPaymentStatusHeaders([]);
 
         return $this->queryPaymentStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询对应权限点的人员staffId
+     *  *
+     * @param QueryPermissionUserIdsHeaders $headers QueryPermissionUserIdsHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryPermissionUserIdsResponse QueryPermissionUserIdsResponse
+     */
+    public function queryPermissionUserIdsWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'QueryPermissionUserIds',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/consumption/permission/getUserIds',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryPermissionUserIdsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询对应权限点的人员staffId
+     *  *
+     * @return QueryPermissionUserIdsResponse QueryPermissionUserIdsResponse
+     */
+    public function queryPermissionUserIds()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPermissionUserIdsHeaders([]);
+
+        return $this->queryPermissionUserIdsWithOptions($headers, $runtime);
     }
 
     /**

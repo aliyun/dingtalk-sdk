@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class outOrgUserList extends Model
 {
     /**
+     * @var int
+     */
+    public $firstWatchTime;
+
+    /**
      * @example 张三
      *
      * @var string
@@ -36,6 +41,7 @@ class outOrgUserList extends Model
      */
     public $watchProgressMs;
     protected $_name = [
+        'firstWatchTime' => 'firstWatchTime',
         'name' => 'name',
         'watchLiveTime' => 'watchLiveTime',
         'watchPlaybackTime' => 'watchPlaybackTime',
@@ -47,6 +53,9 @@ class outOrgUserList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->firstWatchTime) {
+            $res['firstWatchTime'] = $this->firstWatchTime;
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
@@ -71,6 +80,9 @@ class outOrgUserList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['firstWatchTime'])) {
+            $model->firstWatchTime = $map['firstWatchTime'];
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }

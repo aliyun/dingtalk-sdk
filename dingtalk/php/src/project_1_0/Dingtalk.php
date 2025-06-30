@@ -610,11 +610,26 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->endDate)) {
+            $body['endDate'] = $request->endDate;
+        }
         if (!Utils::isUnset($request->name)) {
             $body['name'] = $request->name;
         }
+        if (!Utils::isUnset($request->programId)) {
+            $body['programId'] = $request->programId;
+        }
+        if (!Utils::isUnset($request->startDate)) {
+            $body['startDate'] = $request->startDate;
+        }
         if (!Utils::isUnset($request->templateId)) {
             $body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->visibility)) {
+            $body['visibility'] = $request->visibility;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -754,6 +769,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->executorId)) {
             $body['executorId'] = $request->executorId;
         }
+        if (!Utils::isUnset($request->involveMembers)) {
+            $body['involveMembers'] = $request->involveMembers;
+        }
         if (!Utils::isUnset($request->note)) {
             $body['note'] = $request->note;
         }
@@ -769,11 +787,23 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->scenariofieldconfigId)) {
             $body['scenariofieldconfigId'] = $request->scenariofieldconfigId;
         }
+        if (!Utils::isUnset($request->sprintId)) {
+            $body['sprintId'] = $request->sprintId;
+        }
         if (!Utils::isUnset($request->stageId)) {
             $body['stageId'] = $request->stageId;
         }
         if (!Utils::isUnset($request->startDate)) {
             $body['startDate'] = $request->startDate;
+        }
+        if (!Utils::isUnset($request->storyPoint)) {
+            $body['storyPoint'] = $request->storyPoint;
+        }
+        if (!Utils::isUnset($request->tagIds)) {
+            $body['tagIds'] = $request->tagIds;
+        }
+        if (!Utils::isUnset($request->tasklistId)) {
+            $body['tasklistId'] = $request->tasklistId;
         }
         if (!Utils::isUnset($request->visible)) {
             $body['visible'] = $request->visible;

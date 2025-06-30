@@ -5,9 +5,18 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vyida_2_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\BatchAddOrUpdateRoleMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\BatchAddOrUpdateRoleMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\BatchAddOrUpdateRoleMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\BatchDeleteRoleMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\BatchDeleteRoleMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\BatchDeleteRoleMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CreateOrUpdateFormDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CreateOrUpdateFormDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CreateOrUpdateFormDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\DeleteMatrixDataByRowIdsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\DeleteMatrixDataByRowIdsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\DeleteMatrixDataByRowIdsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetFormComponentAliasListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetFormComponentAliasListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetFormComponentAliasListResponse;
@@ -23,6 +32,15 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetInstanceIdListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetMatrixDetailByIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetMatrixDetailByIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetMatrixDetailByIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetRoleDetailByIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetRoleDetailByIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetRoleDetailByIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\SaveAndUpdateMatrixDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\SaveAndUpdateMatrixDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\SaveAndUpdateMatrixDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\SaveFormDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\SaveFormDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\SaveFormDataResponse;
@@ -59,6 +77,156 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 批量新增/更新角色成员
+     *  *
+     * @param BatchAddOrUpdateRoleMembersRequest $request BatchAddOrUpdateRoleMembersRequest
+     * @param BatchAddOrUpdateRoleMembersHeaders $headers BatchAddOrUpdateRoleMembersHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchAddOrUpdateRoleMembersResponse BatchAddOrUpdateRoleMembersResponse
+     */
+    public function batchAddOrUpdateRoleMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->membersInfo)) {
+            $body['membersInfo'] = $request->membersInfo;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->roleUuid)) {
+            $body['roleUuid'] = $request->roleUuid;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $body['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'BatchAddOrUpdateRoleMembers',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/resources/roles/upsert',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return BatchAddOrUpdateRoleMembersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量新增/更新角色成员
+     *  *
+     * @param BatchAddOrUpdateRoleMembersRequest $request BatchAddOrUpdateRoleMembersRequest
+     *
+     * @return BatchAddOrUpdateRoleMembersResponse BatchAddOrUpdateRoleMembersResponse
+     */
+    public function batchAddOrUpdateRoleMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchAddOrUpdateRoleMembersHeaders([]);
+
+        return $this->batchAddOrUpdateRoleMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量删除角色成员
+     *  *
+     * @param BatchDeleteRoleMembersRequest $request BatchDeleteRoleMembersRequest
+     * @param BatchDeleteRoleMembersHeaders $headers BatchDeleteRoleMembersHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchDeleteRoleMembersResponse BatchDeleteRoleMembersResponse
+     */
+    public function batchDeleteRoleMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->memberIds)) {
+            $body['memberIds'] = $request->memberIds;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->roleUuid)) {
+            $body['roleUuid'] = $request->roleUuid;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $body['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'BatchDeleteRoleMembers',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/resources/roles/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return BatchDeleteRoleMembersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量删除角色成员
+     *  *
+     * @param BatchDeleteRoleMembersRequest $request BatchDeleteRoleMembersRequest
+     *
+     * @return BatchDeleteRoleMembersResponse BatchDeleteRoleMembersResponse
+     */
+    public function batchDeleteRoleMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchDeleteRoleMembersHeaders([]);
+
+        return $this->batchDeleteRoleMembersWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -137,6 +305,75 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateOrUpdateFormDataHeaders([]);
 
         return $this->createOrUpdateFormDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量删除矩阵明细数据
+     *  *
+     * @param DeleteMatrixDataByRowIdsRequest $request DeleteMatrixDataByRowIdsRequest
+     * @param DeleteMatrixDataByRowIdsHeaders $headers DeleteMatrixDataByRowIdsHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteMatrixDataByRowIdsResponse DeleteMatrixDataByRowIdsResponse
+     */
+    public function deleteMatrixDataByRowIdsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->matrixId)) {
+            $body['matrixId'] = $request->matrixId;
+        }
+        if (!Utils::isUnset($request->rowIds)) {
+            $body['rowIds'] = $request->rowIds;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $body['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteMatrixDataByRowIds',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/resources/matrices/remove',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteMatrixDataByRowIdsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量删除矩阵明细数据
+     *  *
+     * @param DeleteMatrixDataByRowIdsRequest $request DeleteMatrixDataByRowIdsRequest
+     *
+     * @return DeleteMatrixDataByRowIdsResponse DeleteMatrixDataByRowIdsResponse
+     */
+    public function deleteMatrixDataByRowIds($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteMatrixDataByRowIdsHeaders([]);
+
+        return $this->deleteMatrixDataByRowIdsWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -572,6 +809,219 @@ class Dingtalk extends OpenApiClient
         $headers = new GetInstancesHeaders([]);
 
         return $this->getInstancesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取权限矩阵数据详情
+     *  *
+     * @param GetMatrixDetailByIdRequest $request GetMatrixDetailByIdRequest
+     * @param GetMatrixDetailByIdHeaders $headers GetMatrixDetailByIdHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetMatrixDetailByIdResponse GetMatrixDetailByIdResponse
+     */
+    public function getMatrixDetailByIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->matrixId)) {
+            $query['matrixId'] = $request->matrixId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $query['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetMatrixDetailById',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/resources/matrices',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetMatrixDetailByIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取权限矩阵数据详情
+     *  *
+     * @param GetMatrixDetailByIdRequest $request GetMatrixDetailByIdRequest
+     *
+     * @return GetMatrixDetailByIdResponse GetMatrixDetailByIdResponse
+     */
+    public function getMatrixDetailById($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMatrixDetailByIdHeaders([]);
+
+        return $this->getMatrixDetailByIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取角色详情和成员列表
+     *  *
+     * @param GetRoleDetailByIdRequest $request GetRoleDetailByIdRequest
+     * @param GetRoleDetailByIdHeaders $headers GetRoleDetailByIdHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetRoleDetailByIdResponse GetRoleDetailByIdResponse
+     */
+    public function getRoleDetailByIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->roleUuid)) {
+            $query['roleUuid'] = $request->roleUuid;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $query['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetRoleDetailById',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/resources/roles',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetRoleDetailByIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取角色详情和成员列表
+     *  *
+     * @param GetRoleDetailByIdRequest $request GetRoleDetailByIdRequest
+     *
+     * @return GetRoleDetailByIdResponse GetRoleDetailByIdResponse
+     */
+    public function getRoleDetailById($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRoleDetailByIdHeaders([]);
+
+        return $this->getRoleDetailByIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改/新增矩阵明细数据
+     *  *
+     * @param SaveAndUpdateMatrixDataRequest $request SaveAndUpdateMatrixDataRequest
+     * @param SaveAndUpdateMatrixDataHeaders $headers SaveAndUpdateMatrixDataHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SaveAndUpdateMatrixDataResponse SaveAndUpdateMatrixDataResponse
+     */
+    public function saveAndUpdateMatrixDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->dataJson)) {
+            $body['dataJson'] = $request->dataJson;
+        }
+        if (!Utils::isUnset($request->matrixId)) {
+            $body['matrixId'] = $request->matrixId;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $body['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SaveAndUpdateMatrixData',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/resources/matrices/upsert',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SaveAndUpdateMatrixDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改/新增矩阵明细数据
+     *  *
+     * @param SaveAndUpdateMatrixDataRequest $request SaveAndUpdateMatrixDataRequest
+     *
+     * @return SaveAndUpdateMatrixDataResponse SaveAndUpdateMatrixDataResponse
+     */
+    public function saveAndUpdateMatrixData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveAndUpdateMatrixDataHeaders([]);
+
+        return $this->saveAndUpdateMatrixDataWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -16,6 +16,11 @@ class orgUsesList extends Model
     public $deptName;
 
     /**
+     * @var int
+     */
+    public $firstWatchTime;
+
+    /**
      * @example 李四
      *
      * @var string
@@ -58,6 +63,7 @@ class orgUsesList extends Model
     public $watchProgressMs;
     protected $_name = [
         'deptName' => 'deptName',
+        'firstWatchTime' => 'firstWatchTime',
         'name' => 'name',
         'unionId' => 'unionId',
         'userId' => 'userId',
@@ -73,6 +79,9 @@ class orgUsesList extends Model
         $res = [];
         if (null !== $this->deptName) {
             $res['deptName'] = $this->deptName;
+        }
+        if (null !== $this->firstWatchTime) {
+            $res['firstWatchTime'] = $this->firstWatchTime;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -106,6 +115,9 @@ class orgUsesList extends Model
         $model = new self();
         if (isset($map['deptName'])) {
             $model->deptName = $map['deptName'];
+        }
+        if (isset($map['firstWatchTime'])) {
+            $model->firstWatchTime = $map['firstWatchTime'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

@@ -76,11 +76,37 @@ class result extends Model
     public $projectId;
 
     /**
+     * @example 62c25e3b376exxxxxx
+     *
+     * @var string
+     */
+    public $sprintId;
+
+    /**
+     * @example 1
+     *
+     * @var string
+     */
+    public $storyPoint;
+
+    /**
+     * @var string[]
+     */
+    public $tagIds;
+
+    /**
      * @example 62a697c053c2ef5xxxxxx
      *
      * @var string
      */
     public $taskId;
+
+    /**
+     * @example 62c25e3b376exxxxxx
+     *
+     * @var string
+     */
+    public $tasklistId;
 
     /**
      * @example 2021-08-13T07:36:50.318Z
@@ -99,7 +125,11 @@ class result extends Model
         'note' => 'note',
         'priority' => 'priority',
         'projectId' => 'projectId',
+        'sprintId' => 'sprintId',
+        'storyPoint' => 'storyPoint',
+        'tagIds' => 'tagIds',
         'taskId' => 'taskId',
+        'tasklistId' => 'tasklistId',
         'updated' => 'updated',
     ];
 
@@ -144,8 +174,20 @@ class result extends Model
         if (null !== $this->projectId) {
             $res['projectId'] = $this->projectId;
         }
+        if (null !== $this->sprintId) {
+            $res['sprintId'] = $this->sprintId;
+        }
+        if (null !== $this->storyPoint) {
+            $res['storyPoint'] = $this->storyPoint;
+        }
+        if (null !== $this->tagIds) {
+            $res['tagIds'] = $this->tagIds;
+        }
         if (null !== $this->taskId) {
             $res['taskId'] = $this->taskId;
+        }
+        if (null !== $this->tasklistId) {
+            $res['tasklistId'] = $this->tasklistId;
         }
         if (null !== $this->updated) {
             $res['updated'] = $this->updated;
@@ -200,8 +242,22 @@ class result extends Model
         if (isset($map['projectId'])) {
             $model->projectId = $map['projectId'];
         }
+        if (isset($map['sprintId'])) {
+            $model->sprintId = $map['sprintId'];
+        }
+        if (isset($map['storyPoint'])) {
+            $model->storyPoint = $map['storyPoint'];
+        }
+        if (isset($map['tagIds'])) {
+            if (!empty($map['tagIds'])) {
+                $model->tagIds = $map['tagIds'];
+            }
+        }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];
+        }
+        if (isset($map['tasklistId'])) {
+            $model->tasklistId = $map['tasklistId'];
         }
         if (isset($map['updated'])) {
             $model->updated = $map['updated'];
