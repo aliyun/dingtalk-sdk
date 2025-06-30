@@ -803,10 +803,20 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.program_id):
+            body['programId'] = request.program_id
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
         if not UtilClient.is_unset(request.template_id):
             body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.visibility):
+            body['visibility'] = request.visibility
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -849,10 +859,20 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.program_id):
+            body['programId'] = request.program_id
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
         if not UtilClient.is_unset(request.template_id):
             body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.visibility):
+            body['visibility'] = request.visibility
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1067,6 +1087,8 @@ class Client(OpenApiClient):
             body['dueDate'] = request.due_date
         if not UtilClient.is_unset(request.executor_id):
             body['executorId'] = request.executor_id
+        if not UtilClient.is_unset(request.involve_members):
+            body['involveMembers'] = request.involve_members
         if not UtilClient.is_unset(request.note):
             body['note'] = request.note
         if not UtilClient.is_unset(request.parent_task_id):
@@ -1077,10 +1099,18 @@ class Client(OpenApiClient):
             body['projectId'] = request.project_id
         if not UtilClient.is_unset(request.scenariofieldconfig_id):
             body['scenariofieldconfigId'] = request.scenariofieldconfig_id
+        if not UtilClient.is_unset(request.sprint_id):
+            body['sprintId'] = request.sprint_id
         if not UtilClient.is_unset(request.stage_id):
             body['stageId'] = request.stage_id
         if not UtilClient.is_unset(request.start_date):
             body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.story_point):
+            body['storyPoint'] = request.story_point
+        if not UtilClient.is_unset(request.tag_ids):
+            body['tagIds'] = request.tag_ids
+        if not UtilClient.is_unset(request.tasklist_id):
+            body['tasklistId'] = request.tasklist_id
         if not UtilClient.is_unset(request.visible):
             body['visible'] = request.visible
         real_headers = {}
@@ -1133,6 +1163,8 @@ class Client(OpenApiClient):
             body['dueDate'] = request.due_date
         if not UtilClient.is_unset(request.executor_id):
             body['executorId'] = request.executor_id
+        if not UtilClient.is_unset(request.involve_members):
+            body['involveMembers'] = request.involve_members
         if not UtilClient.is_unset(request.note):
             body['note'] = request.note
         if not UtilClient.is_unset(request.parent_task_id):
@@ -1143,10 +1175,18 @@ class Client(OpenApiClient):
             body['projectId'] = request.project_id
         if not UtilClient.is_unset(request.scenariofieldconfig_id):
             body['scenariofieldconfigId'] = request.scenariofieldconfig_id
+        if not UtilClient.is_unset(request.sprint_id):
+            body['sprintId'] = request.sprint_id
         if not UtilClient.is_unset(request.stage_id):
             body['stageId'] = request.stage_id
         if not UtilClient.is_unset(request.start_date):
             body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.story_point):
+            body['storyPoint'] = request.story_point
+        if not UtilClient.is_unset(request.tag_ids):
+            body['tagIds'] = request.tag_ids
+        if not UtilClient.is_unset(request.tasklist_id):
+            body['tasklistId'] = request.tasklist_id
         if not UtilClient.is_unset(request.visible):
             body['visible'] = request.visible
         real_headers = {}

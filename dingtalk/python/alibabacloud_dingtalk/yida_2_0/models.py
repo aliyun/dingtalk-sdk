@@ -4,6 +4,344 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class BatchAddOrUpdateRoleMembersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchAddOrUpdateRoleMembersRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        members_info: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        role_uuid: str = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        # This parameter is required.
+        self.members_info = members_info
+        self.page_number = page_number
+        self.page_size = page_size
+        # This parameter is required.
+        self.role_uuid = role_uuid
+        # This parameter is required.
+        self.token = token
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.members_info is not None:
+            result['membersInfo'] = self.members_info
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.role_uuid is not None:
+            result['roleUuid'] = self.role_uuid
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('membersInfo') is not None:
+            self.members_info = m.get('membersInfo')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('roleUuid') is not None:
+            self.role_uuid = m.get('roleUuid')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchAddOrUpdateRoleMembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchAddOrUpdateRoleMembersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchAddOrUpdateRoleMembersResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchAddOrUpdateRoleMembersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchDeleteRoleMembersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchDeleteRoleMembersRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        member_ids: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        role_uuid: str = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        # This parameter is required.
+        self.member_ids = member_ids
+        self.page_number = page_number
+        self.page_size = page_size
+        # This parameter is required.
+        self.role_uuid = role_uuid
+        # This parameter is required.
+        self.token = token
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.member_ids is not None:
+            result['memberIds'] = self.member_ids
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.role_uuid is not None:
+            result['roleUuid'] = self.role_uuid
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('memberIds') is not None:
+            self.member_ids = m.get('memberIds')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('roleUuid') is not None:
+            self.role_uuid = m.get('roleUuid')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchDeleteRoleMembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchDeleteRoleMembersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchDeleteRoleMembersResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchDeleteRoleMembersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateOrUpdateFormDataHeaders(TeaModel):
     def __init__(
         self,
@@ -176,6 +514,163 @@ class CreateOrUpdateFormDataResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateOrUpdateFormDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteMatrixDataByRowIdsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteMatrixDataByRowIdsRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        matrix_id: str = None,
+        row_ids: str = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        # This parameter is required.
+        self.matrix_id = matrix_id
+        # This parameter is required.
+        self.row_ids = row_ids
+        # This parameter is required.
+        self.token = token
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.matrix_id is not None:
+            result['matrixId'] = self.matrix_id
+        if self.row_ids is not None:
+            result['rowIds'] = self.row_ids
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('matrixId') is not None:
+            self.matrix_id = m.get('matrixId')
+        if m.get('rowIds') is not None:
+            self.row_ids = m.get('rowIds')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class DeleteMatrixDataByRowIdsResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteMatrixDataByRowIdsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteMatrixDataByRowIdsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteMatrixDataByRowIdsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1809,6 +2304,920 @@ class GetInstancesResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetInstancesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetMatrixDetailByIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetMatrixDetailByIdRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        matrix_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        # This parameter is required.
+        self.matrix_id = matrix_id
+        self.page_number = page_number
+        self.page_size = page_size
+        # This parameter is required.
+        self.token = token
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.matrix_id is not None:
+            result['matrixId'] = self.matrix_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('matrixId') is not None:
+            self.matrix_id = m.get('matrixId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetMatrixDetailByIdResponseBodyResultDescription(TeaModel):
+    def __init__(
+        self,
+        en_us: str = None,
+        type: str = None,
+        zh_cn: str = None,
+    ):
+        self.en_us = en_us
+        self.type = type
+        self.zh_cn = zh_cn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.en_us is not None:
+            result['en_US'] = self.en_us
+        if self.type is not None:
+            result['type'] = self.type
+        if self.zh_cn is not None:
+            result['zh_CN'] = self.zh_cn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('en_US') is not None:
+            self.en_us = m.get('en_US')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('zh_CN') is not None:
+            self.zh_cn = m.get('zh_CN')
+        return self
+
+
+class GetMatrixDetailByIdResponseBodyResultMatrixData(TeaModel):
+    def __init__(
+        self,
+        current_page: int = None,
+        data: Any = None,
+        total_count: int = None,
+    ):
+        self.current_page = current_page
+        self.data = data
+        self.total_count = total_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        if self.data is not None:
+            result['data'] = self.data
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetMatrixDetailByIdResponseBodyResultMatrixTableConditionColumn(TeaModel):
+    def __init__(
+        self,
+        column_id: str = None,
+        component_type: str = None,
+        name: str = None,
+    ):
+        self.column_id = column_id
+        self.component_type = component_type
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column_id is not None:
+            result['columnId'] = self.column_id
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('columnId') is not None:
+            self.column_id = m.get('columnId')
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetMatrixDetailByIdResponseBodyResultMatrixTableResultColumn(TeaModel):
+    def __init__(
+        self,
+        column_id: str = None,
+        component_type: str = None,
+        name: str = None,
+    ):
+        self.column_id = column_id
+        self.component_type = component_type
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column_id is not None:
+            result['columnId'] = self.column_id
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('columnId') is not None:
+            self.column_id = m.get('columnId')
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetMatrixDetailByIdResponseBodyResultMatrixTable(TeaModel):
+    def __init__(
+        self,
+        condition_column: List[GetMatrixDetailByIdResponseBodyResultMatrixTableConditionColumn] = None,
+        result_column: List[GetMatrixDetailByIdResponseBodyResultMatrixTableResultColumn] = None,
+    ):
+        self.condition_column = condition_column
+        self.result_column = result_column
+
+    def validate(self):
+        if self.condition_column:
+            for k in self.condition_column:
+                if k:
+                    k.validate()
+        if self.result_column:
+            for k in self.result_column:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['conditionColumn'] = []
+        if self.condition_column is not None:
+            for k in self.condition_column:
+                result['conditionColumn'].append(k.to_map() if k else None)
+        result['resultColumn'] = []
+        if self.result_column is not None:
+            for k in self.result_column:
+                result['resultColumn'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.condition_column = []
+        if m.get('conditionColumn') is not None:
+            for k in m.get('conditionColumn'):
+                temp_model = GetMatrixDetailByIdResponseBodyResultMatrixTableConditionColumn()
+                self.condition_column.append(temp_model.from_map(k))
+        self.result_column = []
+        if m.get('resultColumn') is not None:
+            for k in m.get('resultColumn'):
+                temp_model = GetMatrixDetailByIdResponseBodyResultMatrixTableResultColumn()
+                self.result_column.append(temp_model.from_map(k))
+        return self
+
+
+class GetMatrixDetailByIdResponseBodyResultName(TeaModel):
+    def __init__(
+        self,
+        en_us: str = None,
+        type: str = None,
+        zh_cn: str = None,
+    ):
+        self.en_us = en_us
+        self.type = type
+        self.zh_cn = zh_cn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.en_us is not None:
+            result['en_US'] = self.en_us
+        if self.type is not None:
+            result['type'] = self.type
+        if self.zh_cn is not None:
+            result['zh_CN'] = self.zh_cn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('en_US') is not None:
+            self.en_us = m.get('en_US')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('zh_CN') is not None:
+            self.zh_cn = m.get('zh_CN')
+        return self
+
+
+class GetMatrixDetailByIdResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        description: GetMatrixDetailByIdResponseBodyResultDescription = None,
+        matrix_data: GetMatrixDetailByIdResponseBodyResultMatrixData = None,
+        matrix_id: str = None,
+        matrix_table: GetMatrixDetailByIdResponseBodyResultMatrixTable = None,
+        name: GetMatrixDetailByIdResponseBodyResultName = None,
+        row_total_count: int = None,
+    ):
+        self.description = description
+        self.matrix_data = matrix_data
+        self.matrix_id = matrix_id
+        self.matrix_table = matrix_table
+        self.name = name
+        self.row_total_count = row_total_count
+
+    def validate(self):
+        if self.description:
+            self.description.validate()
+        if self.matrix_data:
+            self.matrix_data.validate()
+        if self.matrix_table:
+            self.matrix_table.validate()
+        if self.name:
+            self.name.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description.to_map()
+        if self.matrix_data is not None:
+            result['matrixData'] = self.matrix_data.to_map()
+        if self.matrix_id is not None:
+            result['matrixId'] = self.matrix_id
+        if self.matrix_table is not None:
+            result['matrixTable'] = self.matrix_table.to_map()
+        if self.name is not None:
+            result['name'] = self.name.to_map()
+        if self.row_total_count is not None:
+            result['rowTotalCount'] = self.row_total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            temp_model = GetMatrixDetailByIdResponseBodyResultDescription()
+            self.description = temp_model.from_map(m['description'])
+        if m.get('matrixData') is not None:
+            temp_model = GetMatrixDetailByIdResponseBodyResultMatrixData()
+            self.matrix_data = temp_model.from_map(m['matrixData'])
+        if m.get('matrixId') is not None:
+            self.matrix_id = m.get('matrixId')
+        if m.get('matrixTable') is not None:
+            temp_model = GetMatrixDetailByIdResponseBodyResultMatrixTable()
+            self.matrix_table = temp_model.from_map(m['matrixTable'])
+        if m.get('name') is not None:
+            temp_model = GetMatrixDetailByIdResponseBodyResultName()
+            self.name = temp_model.from_map(m['name'])
+        if m.get('rowTotalCount') is not None:
+            self.row_total_count = m.get('rowTotalCount')
+        return self
+
+
+class GetMatrixDetailByIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetMatrixDetailByIdResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetMatrixDetailByIdResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetMatrixDetailByIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetMatrixDetailByIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetMatrixDetailByIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetRoleDetailByIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetRoleDetailByIdRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        role_uuid: str = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        self.page_number = page_number
+        self.page_size = page_size
+        # This parameter is required.
+        self.role_uuid = role_uuid
+        # This parameter is required.
+        self.token = token
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.role_uuid is not None:
+            result['roleUuid'] = self.role_uuid
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('roleUuid') is not None:
+            self.role_uuid = m.get('roleUuid')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetRoleDetailByIdResponseBodyResultMembers(TeaModel):
+    def __init__(
+        self,
+        current_page: int = None,
+        data: Any = None,
+        total_count: int = None,
+    ):
+        self.current_page = current_page
+        self.data = data
+        self.total_count = total_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        if self.data is not None:
+            result['data'] = self.data
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetRoleDetailByIdResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        can_modify_owners: Any = None,
+        description: str = None,
+        member_total_count: int = None,
+        members: GetRoleDetailByIdResponseBodyResultMembers = None,
+        name: str = None,
+        parent_uuid: str = None,
+        role_uuid: str = None,
+    ):
+        self.can_modify_owners = can_modify_owners
+        self.description = description
+        self.member_total_count = member_total_count
+        self.members = members
+        self.name = name
+        self.parent_uuid = parent_uuid
+        self.role_uuid = role_uuid
+
+    def validate(self):
+        if self.members:
+            self.members.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.can_modify_owners is not None:
+            result['canModifyOwners'] = self.can_modify_owners
+        if self.description is not None:
+            result['description'] = self.description
+        if self.member_total_count is not None:
+            result['memberTotalCount'] = self.member_total_count
+        if self.members is not None:
+            result['members'] = self.members.to_map()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.parent_uuid is not None:
+            result['parentUuid'] = self.parent_uuid
+        if self.role_uuid is not None:
+            result['roleUuid'] = self.role_uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('canModifyOwners') is not None:
+            self.can_modify_owners = m.get('canModifyOwners')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('memberTotalCount') is not None:
+            self.member_total_count = m.get('memberTotalCount')
+        if m.get('members') is not None:
+            temp_model = GetRoleDetailByIdResponseBodyResultMembers()
+            self.members = temp_model.from_map(m['members'])
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('parentUuid') is not None:
+            self.parent_uuid = m.get('parentUuid')
+        if m.get('roleUuid') is not None:
+            self.role_uuid = m.get('roleUuid')
+        return self
+
+
+class GetRoleDetailByIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetRoleDetailByIdResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetRoleDetailByIdResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetRoleDetailByIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetRoleDetailByIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetRoleDetailByIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SaveAndUpdateMatrixDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SaveAndUpdateMatrixDataRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        data_json: str = None,
+        matrix_id: str = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        # This parameter is required.
+        self.data_json = data_json
+        # This parameter is required.
+        self.matrix_id = matrix_id
+        # This parameter is required.
+        self.token = token
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.data_json is not None:
+            result['dataJson'] = self.data_json
+        if self.matrix_id is not None:
+            result['matrixId'] = self.matrix_id
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('dataJson') is not None:
+            self.data_json = m.get('dataJson')
+        if m.get('matrixId') is not None:
+            self.matrix_id = m.get('matrixId')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SaveAndUpdateMatrixDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SaveAndUpdateMatrixDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SaveAndUpdateMatrixDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SaveAndUpdateMatrixDataResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

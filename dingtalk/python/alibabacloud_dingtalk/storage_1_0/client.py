@@ -420,6 +420,136 @@ class Client(OpenApiClient):
         headers = dingtalkstorage__1__0_models.AddSpaceHeaders()
         return await self.add_space_with_options_async(request, headers, runtime)
 
+    def batch_query_roles_with_options(
+        self,
+        space_id: str,
+        tmp_req: dingtalkstorage__1__0_models.BatchQueryRolesRequest,
+        headers: dingtalkstorage__1__0_models.BatchQueryRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.BatchQueryRolesResponse:
+        """
+        @summary 获取权限列表
+        
+        @param tmp_req: BatchQueryRolesRequest
+        @param headers: BatchQueryRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryRolesResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkstorage__1__0_models.BatchQueryRolesShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.dentry_id_list):
+            request.dentry_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.dentry_id_list, 'dentryIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.dentry_id_list_shrink):
+            query['dentryIdList'] = request.dentry_id_list_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryRoles',
+            version='storage_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/storage/spaces/{space_id}/dentries/permissions/roles/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.BatchQueryRolesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_query_roles_with_options_async(
+        self,
+        space_id: str,
+        tmp_req: dingtalkstorage__1__0_models.BatchQueryRolesRequest,
+        headers: dingtalkstorage__1__0_models.BatchQueryRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.BatchQueryRolesResponse:
+        """
+        @summary 获取权限列表
+        
+        @param tmp_req: BatchQueryRolesRequest
+        @param headers: BatchQueryRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryRolesResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkstorage__1__0_models.BatchQueryRolesShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.dentry_id_list):
+            request.dentry_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.dentry_id_list, 'dentryIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.dentry_id_list_shrink):
+            query['dentryIdList'] = request.dentry_id_list_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryRoles',
+            version='storage_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/storage/spaces/{space_id}/dentries/permissions/roles/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.BatchQueryRolesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_query_roles(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.BatchQueryRolesRequest,
+    ) -> dingtalkstorage__1__0_models.BatchQueryRolesResponse:
+        """
+        @summary 获取权限列表
+        
+        @param request: BatchQueryRolesRequest
+        @return: BatchQueryRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.BatchQueryRolesHeaders()
+        return self.batch_query_roles_with_options(space_id, request, headers, runtime)
+
+    async def batch_query_roles_async(
+        self,
+        space_id: str,
+        request: dingtalkstorage__1__0_models.BatchQueryRolesRequest,
+    ) -> dingtalkstorage__1__0_models.BatchQueryRolesResponse:
+        """
+        @summary 获取权限列表
+        
+        @param request: BatchQueryRolesRequest
+        @return: BatchQueryRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.BatchQueryRolesHeaders()
+        return await self.batch_query_roles_with_options_async(space_id, request, headers, runtime)
+
     def clear_recycle_bin_with_options(
         self,
         recycle_bin_id: str,

@@ -4892,6 +4892,7 @@ class QueryLiveWatchUserListResponseBodyResultOrgUsesList(TeaModel):
     def __init__(
         self,
         dept_name: str = None,
+        first_watch_time: int = None,
         name: str = None,
         union_id: str = None,
         user_id: str = None,
@@ -4900,6 +4901,7 @@ class QueryLiveWatchUserListResponseBodyResultOrgUsesList(TeaModel):
         watch_progress_ms: int = None,
     ):
         self.dept_name = dept_name
+        self.first_watch_time = first_watch_time
         self.name = name
         self.union_id = union_id
         self.user_id = user_id
@@ -4918,6 +4920,8 @@ class QueryLiveWatchUserListResponseBodyResultOrgUsesList(TeaModel):
         result = dict()
         if self.dept_name is not None:
             result['deptName'] = self.dept_name
+        if self.first_watch_time is not None:
+            result['firstWatchTime'] = self.first_watch_time
         if self.name is not None:
             result['name'] = self.name
         if self.union_id is not None:
@@ -4936,6 +4940,8 @@ class QueryLiveWatchUserListResponseBodyResultOrgUsesList(TeaModel):
         m = m or dict()
         if m.get('deptName') is not None:
             self.dept_name = m.get('deptName')
+        if m.get('firstWatchTime') is not None:
+            self.first_watch_time = m.get('firstWatchTime')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('unionId') is not None:
@@ -4954,11 +4960,13 @@ class QueryLiveWatchUserListResponseBodyResultOrgUsesList(TeaModel):
 class QueryLiveWatchUserListResponseBodyResultOutOrgUserList(TeaModel):
     def __init__(
         self,
+        first_watch_time: int = None,
         name: str = None,
         watch_live_time: int = None,
         watch_playback_time: int = None,
         watch_progress_ms: int = None,
     ):
+        self.first_watch_time = first_watch_time
         self.name = name
         self.watch_live_time = watch_live_time
         self.watch_playback_time = watch_playback_time
@@ -4973,6 +4981,8 @@ class QueryLiveWatchUserListResponseBodyResultOutOrgUserList(TeaModel):
             return _map
 
         result = dict()
+        if self.first_watch_time is not None:
+            result['firstWatchTime'] = self.first_watch_time
         if self.name is not None:
             result['name'] = self.name
         if self.watch_live_time is not None:
@@ -4985,6 +4995,8 @@ class QueryLiveWatchUserListResponseBodyResultOutOrgUserList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('firstWatchTime') is not None:
+            self.first_watch_time = m.get('firstWatchTime')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('watchLiveTime') is not None:

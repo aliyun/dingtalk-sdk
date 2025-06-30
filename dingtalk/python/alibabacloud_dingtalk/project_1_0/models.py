@@ -1550,13 +1550,23 @@ class CreateProjectByTemplateHeaders(TeaModel):
 class CreateProjectByTemplateRequest(TeaModel):
     def __init__(
         self,
+        description: str = None,
+        end_date: str = None,
         name: str = None,
+        program_id: str = None,
+        start_date: str = None,
         template_id: str = None,
+        visibility: str = None,
     ):
+        self.description = description
+        self.end_date = end_date
         # This parameter is required.
         self.name = name
+        self.program_id = program_id
+        self.start_date = start_date
         # This parameter is required.
         self.template_id = template_id
+        self.visibility = visibility
 
     def validate(self):
         pass
@@ -1567,18 +1577,38 @@ class CreateProjectByTemplateRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
         if self.name is not None:
             result['name'] = self.name
+        if self.program_id is not None:
+            result['programId'] = self.program_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
         if self.template_id is not None:
             result['templateId'] = self.template_id
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('programId') is not None:
+            self.program_id = m.get('programId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
         if m.get('templateId') is not None:
             self.template_id = m.get('templateId')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
         return self
 
 
@@ -1586,14 +1616,24 @@ class CreateProjectByTemplateResponseBodyResult(TeaModel):
     def __init__(
         self,
         created: str = None,
+        description: str = None,
+        end_date: str = None,
         id: str = None,
         logo: str = None,
         name: str = None,
+        program_id: str = None,
+        start_date: str = None,
+        visibility: str = None,
     ):
         self.created = created
+        self.description = description
+        self.end_date = end_date
         self.id = id
         self.logo = logo
         self.name = name
+        self.program_id = program_id
+        self.start_date = start_date
+        self.visibility = visibility
 
     def validate(self):
         pass
@@ -1606,24 +1646,44 @@ class CreateProjectByTemplateResponseBodyResult(TeaModel):
         result = dict()
         if self.created is not None:
             result['created'] = self.created
+        if self.description is not None:
+            result['description'] = self.description
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
         if self.id is not None:
             result['id'] = self.id
         if self.logo is not None:
             result['logo'] = self.logo
         if self.name is not None:
             result['name'] = self.name
+        if self.program_id is not None:
+            result['programId'] = self.program_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('created') is not None:
             self.created = m.get('created')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('logo') is not None:
             self.logo = m.get('logo')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('programId') is not None:
+            self.program_id = m.get('programId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
         return self
 
 
@@ -2123,13 +2183,18 @@ class CreateTaskRequest(TeaModel):
         customfields: List[CreateTaskRequestCustomfields] = None,
         due_date: str = None,
         executor_id: str = None,
+        involve_members: List[str] = None,
         note: str = None,
         parent_task_id: str = None,
         priority: int = None,
         project_id: str = None,
         scenariofieldconfig_id: str = None,
+        sprint_id: str = None,
         stage_id: str = None,
         start_date: str = None,
+        story_point: str = None,
+        tag_ids: List[str] = None,
+        tasklist_id: str = None,
         visible: str = None,
     ):
         # This parameter is required.
@@ -2137,14 +2202,19 @@ class CreateTaskRequest(TeaModel):
         self.customfields = customfields
         self.due_date = due_date
         self.executor_id = executor_id
+        self.involve_members = involve_members
         self.note = note
         self.parent_task_id = parent_task_id
         self.priority = priority
         # This parameter is required.
         self.project_id = project_id
         self.scenariofieldconfig_id = scenariofieldconfig_id
+        self.sprint_id = sprint_id
         self.stage_id = stage_id
         self.start_date = start_date
+        self.story_point = story_point
+        self.tag_ids = tag_ids
+        self.tasklist_id = tasklist_id
         self.visible = visible
 
     def validate(self):
@@ -2169,6 +2239,8 @@ class CreateTaskRequest(TeaModel):
             result['dueDate'] = self.due_date
         if self.executor_id is not None:
             result['executorId'] = self.executor_id
+        if self.involve_members is not None:
+            result['involveMembers'] = self.involve_members
         if self.note is not None:
             result['note'] = self.note
         if self.parent_task_id is not None:
@@ -2179,10 +2251,18 @@ class CreateTaskRequest(TeaModel):
             result['projectId'] = self.project_id
         if self.scenariofieldconfig_id is not None:
             result['scenariofieldconfigId'] = self.scenariofieldconfig_id
+        if self.sprint_id is not None:
+            result['sprintId'] = self.sprint_id
         if self.stage_id is not None:
             result['stageId'] = self.stage_id
         if self.start_date is not None:
             result['startDate'] = self.start_date
+        if self.story_point is not None:
+            result['storyPoint'] = self.story_point
+        if self.tag_ids is not None:
+            result['tagIds'] = self.tag_ids
+        if self.tasklist_id is not None:
+            result['tasklistId'] = self.tasklist_id
         if self.visible is not None:
             result['visible'] = self.visible
         return result
@@ -2200,6 +2280,8 @@ class CreateTaskRequest(TeaModel):
             self.due_date = m.get('dueDate')
         if m.get('executorId') is not None:
             self.executor_id = m.get('executorId')
+        if m.get('involveMembers') is not None:
+            self.involve_members = m.get('involveMembers')
         if m.get('note') is not None:
             self.note = m.get('note')
         if m.get('parentTaskId') is not None:
@@ -2210,10 +2292,18 @@ class CreateTaskRequest(TeaModel):
             self.project_id = m.get('projectId')
         if m.get('scenariofieldconfigId') is not None:
             self.scenariofieldconfig_id = m.get('scenariofieldconfigId')
+        if m.get('sprintId') is not None:
+            self.sprint_id = m.get('sprintId')
         if m.get('stageId') is not None:
             self.stage_id = m.get('stageId')
         if m.get('startDate') is not None:
             self.start_date = m.get('startDate')
+        if m.get('storyPoint') is not None:
+            self.story_point = m.get('storyPoint')
+        if m.get('tagIds') is not None:
+            self.tag_ids = m.get('tagIds')
+        if m.get('tasklistId') is not None:
+            self.tasklist_id = m.get('tasklistId')
         if m.get('visible') is not None:
             self.visible = m.get('visible')
         return self
@@ -2312,7 +2402,11 @@ class CreateTaskResponseBodyResult(TeaModel):
         note: str = None,
         priority: int = None,
         project_id: str = None,
+        sprint_id: str = None,
+        story_point: str = None,
+        tag_ids: List[str] = None,
         task_id: str = None,
+        tasklist_id: str = None,
         updated: str = None,
     ):
         self.content = content
@@ -2325,7 +2419,11 @@ class CreateTaskResponseBodyResult(TeaModel):
         self.note = note
         self.priority = priority
         self.project_id = project_id
+        self.sprint_id = sprint_id
+        self.story_point = story_point
+        self.tag_ids = tag_ids
         self.task_id = task_id
+        self.tasklist_id = tasklist_id
         self.updated = updated
 
     def validate(self):
@@ -2362,8 +2460,16 @@ class CreateTaskResponseBodyResult(TeaModel):
             result['priority'] = self.priority
         if self.project_id is not None:
             result['projectId'] = self.project_id
+        if self.sprint_id is not None:
+            result['sprintId'] = self.sprint_id
+        if self.story_point is not None:
+            result['storyPoint'] = self.story_point
+        if self.tag_ids is not None:
+            result['tagIds'] = self.tag_ids
         if self.task_id is not None:
             result['taskId'] = self.task_id
+        if self.tasklist_id is not None:
+            result['tasklistId'] = self.tasklist_id
         if self.updated is not None:
             result['updated'] = self.updated
         return result
@@ -2393,8 +2499,16 @@ class CreateTaskResponseBodyResult(TeaModel):
             self.priority = m.get('priority')
         if m.get('projectId') is not None:
             self.project_id = m.get('projectId')
+        if m.get('sprintId') is not None:
+            self.sprint_id = m.get('sprintId')
+        if m.get('storyPoint') is not None:
+            self.story_point = m.get('storyPoint')
+        if m.get('tagIds') is not None:
+            self.tag_ids = m.get('tagIds')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
+        if m.get('tasklistId') is not None:
+            self.tasklist_id = m.get('tasklistId')
         if m.get('updated') is not None:
             self.updated = m.get('updated')
         return self

@@ -4704,6 +4704,175 @@ class QueryAccountTradeByPageResponse(TeaModel):
         return self
 
 
+class QueryAlipayUserIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryAlipayUserIdRequest(TeaModel):
+    def __init__(
+        self,
+        ding_user_ids: List[str] = None,
+    ):
+        self.ding_user_ids = ding_user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_user_ids is not None:
+            result['dingUserIds'] = self.ding_user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingUserIds') is not None:
+            self.ding_user_ids = m.get('dingUserIds')
+        return self
+
+
+class QueryAlipayUserIdResponseBodyAlipayBizUserList(TeaModel):
+    def __init__(
+        self,
+        alipay_user_id: str = None,
+        ding_user_id: str = None,
+    ):
+        self.alipay_user_id = alipay_user_id
+        self.ding_user_id = ding_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alipay_user_id is not None:
+            result['alipayUserId'] = self.alipay_user_id
+        if self.ding_user_id is not None:
+            result['dingUserId'] = self.ding_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alipayUserId') is not None:
+            self.alipay_user_id = m.get('alipayUserId')
+        if m.get('dingUserId') is not None:
+            self.ding_user_id = m.get('dingUserId')
+        return self
+
+
+class QueryAlipayUserIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        alipay_biz_user_list: List[QueryAlipayUserIdResponseBodyAlipayBizUserList] = None,
+    ):
+        self.alipay_biz_user_list = alipay_biz_user_list
+
+    def validate(self):
+        if self.alipay_biz_user_list:
+            for k in self.alipay_biz_user_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['alipayBizUserList'] = []
+        if self.alipay_biz_user_list is not None:
+            for k in self.alipay_biz_user_list:
+                result['alipayBizUserList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.alipay_biz_user_list = []
+        if m.get('alipayBizUserList') is not None:
+            for k in m.get('alipayBizUserList'):
+                temp_model = QueryAlipayUserIdResponseBodyAlipayBizUserList()
+                self.alipay_biz_user_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryAlipayUserIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryAlipayUserIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryAlipayUserIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCategoryByPageHeaders(TeaModel):
     def __init__(
         self,
@@ -7774,6 +7943,107 @@ class QueryPaymentStatusResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryPaymentStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryPermissionUserIdsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryPermissionUserIdsResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_user_ids: List[str] = None,
+    ):
+        self.ding_user_ids = ding_user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_user_ids is not None:
+            result['dingUserIds'] = self.ding_user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingUserIds') is not None:
+            self.ding_user_ids = m.get('dingUserIds')
+        return self
+
+
+class QueryPermissionUserIdsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryPermissionUserIdsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryPermissionUserIdsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

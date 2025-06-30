@@ -2730,6 +2730,120 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryAccountTradeByPageHeaders()
         return await self.query_account_trade_by_page_with_options_async(request, headers, runtime)
 
+    def query_alipay_user_id_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAlipayUserIdRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryAlipayUserIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryAlipayUserIdResponse:
+        """
+        @summary 根据staffId批量查询返回支付宝userId
+        
+        @param request: QueryAlipayUserIdRequest
+        @param headers: QueryAlipayUserIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAlipayUserIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_user_ids):
+            body['dingUserIds'] = request.ding_user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryAlipayUserId',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/consumption/aliPay/getUserId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryAlipayUserIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_alipay_user_id_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAlipayUserIdRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryAlipayUserIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryAlipayUserIdResponse:
+        """
+        @summary 根据staffId批量查询返回支付宝userId
+        
+        @param request: QueryAlipayUserIdRequest
+        @param headers: QueryAlipayUserIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAlipayUserIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ding_user_ids):
+            body['dingUserIds'] = request.ding_user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryAlipayUserId',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/consumption/aliPay/getUserId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryAlipayUserIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_alipay_user_id(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAlipayUserIdRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryAlipayUserIdResponse:
+        """
+        @summary 根据staffId批量查询返回支付宝userId
+        
+        @param request: QueryAlipayUserIdRequest
+        @return: QueryAlipayUserIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryAlipayUserIdHeaders()
+        return self.query_alipay_user_id_with_options(request, headers, runtime)
+
+    async def query_alipay_user_id_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAlipayUserIdRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryAlipayUserIdResponse:
+        """
+        @summary 根据staffId批量查询返回支付宝userId
+        
+        @param request: QueryAlipayUserIdRequest
+        @return: QueryAlipayUserIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryAlipayUserIdHeaders()
+        return await self.query_alipay_user_id_with_options_async(request, headers, runtime)
+
     def query_category_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QueryCategoryByPageRequest,
@@ -4153,6 +4267,98 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__2__0_models.QueryPaymentStatusHeaders()
         return await self.query_payment_status_with_options_async(request, headers, runtime)
+
+    def query_permission_user_ids_with_options(
+        self,
+        headers: dingtalkbizfinance__2__0_models.QueryPermissionUserIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryPermissionUserIdsResponse:
+        """
+        @summary 查询对应权限点的人员staffId
+        
+        @param headers: QueryPermissionUserIdsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPermissionUserIdsResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryPermissionUserIds',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/consumption/permission/getUserIds',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryPermissionUserIdsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_permission_user_ids_with_options_async(
+        self,
+        headers: dingtalkbizfinance__2__0_models.QueryPermissionUserIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryPermissionUserIdsResponse:
+        """
+        @summary 查询对应权限点的人员staffId
+        
+        @param headers: QueryPermissionUserIdsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPermissionUserIdsResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryPermissionUserIds',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/consumption/permission/getUserIds',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryPermissionUserIdsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_permission_user_ids(self) -> dingtalkbizfinance__2__0_models.QueryPermissionUserIdsResponse:
+        """
+        @summary 查询对应权限点的人员staffId
+        
+        @return: QueryPermissionUserIdsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryPermissionUserIdsHeaders()
+        return self.query_permission_user_ids_with_options(headers, runtime)
+
+    async def query_permission_user_ids_async(self) -> dingtalkbizfinance__2__0_models.QueryPermissionUserIdsResponse:
+        """
+        @summary 查询对应权限点的人员staffId
+        
+        @return: QueryPermissionUserIdsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryPermissionUserIdsHeaders()
+        return await self.query_permission_user_ids_with_options_async(headers, runtime)
 
     def query_product_by_page_with_options(
         self,

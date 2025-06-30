@@ -26,6 +26,282 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def batch_add_or_update_role_members_with_options(
+        self,
+        request: dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersRequest,
+        headers: dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersResponse:
+        """
+        @summary 批量新增/更新角色成员
+        
+        @param request: BatchAddOrUpdateRoleMembersRequest
+        @param headers: BatchAddOrUpdateRoleMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchAddOrUpdateRoleMembersResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.members_info):
+            body['membersInfo'] = request.members_info
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.role_uuid):
+            body['roleUuid'] = request.role_uuid
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchAddOrUpdateRoleMembers',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/roles/upsert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_add_or_update_role_members_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersRequest,
+        headers: dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersResponse:
+        """
+        @summary 批量新增/更新角色成员
+        
+        @param request: BatchAddOrUpdateRoleMembersRequest
+        @param headers: BatchAddOrUpdateRoleMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchAddOrUpdateRoleMembersResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.members_info):
+            body['membersInfo'] = request.members_info
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.role_uuid):
+            body['roleUuid'] = request.role_uuid
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchAddOrUpdateRoleMembers',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/roles/upsert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_add_or_update_role_members(
+        self,
+        request: dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersRequest,
+    ) -> dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersResponse:
+        """
+        @summary 批量新增/更新角色成员
+        
+        @param request: BatchAddOrUpdateRoleMembersRequest
+        @return: BatchAddOrUpdateRoleMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersHeaders()
+        return self.batch_add_or_update_role_members_with_options(request, headers, runtime)
+
+    async def batch_add_or_update_role_members_async(
+        self,
+        request: dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersRequest,
+    ) -> dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersResponse:
+        """
+        @summary 批量新增/更新角色成员
+        
+        @param request: BatchAddOrUpdateRoleMembersRequest
+        @return: BatchAddOrUpdateRoleMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.BatchAddOrUpdateRoleMembersHeaders()
+        return await self.batch_add_or_update_role_members_with_options_async(request, headers, runtime)
+
+    def batch_delete_role_members_with_options(
+        self,
+        request: dingtalkyida__2__0_models.BatchDeleteRoleMembersRequest,
+        headers: dingtalkyida__2__0_models.BatchDeleteRoleMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.BatchDeleteRoleMembersResponse:
+        """
+        @summary 批量删除角色成员
+        
+        @param request: BatchDeleteRoleMembersRequest
+        @param headers: BatchDeleteRoleMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchDeleteRoleMembersResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.member_ids):
+            body['memberIds'] = request.member_ids
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.role_uuid):
+            body['roleUuid'] = request.role_uuid
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchDeleteRoleMembers',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/roles/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.BatchDeleteRoleMembersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_delete_role_members_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.BatchDeleteRoleMembersRequest,
+        headers: dingtalkyida__2__0_models.BatchDeleteRoleMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.BatchDeleteRoleMembersResponse:
+        """
+        @summary 批量删除角色成员
+        
+        @param request: BatchDeleteRoleMembersRequest
+        @param headers: BatchDeleteRoleMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchDeleteRoleMembersResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.member_ids):
+            body['memberIds'] = request.member_ids
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.role_uuid):
+            body['roleUuid'] = request.role_uuid
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchDeleteRoleMembers',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/roles/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.BatchDeleteRoleMembersResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_delete_role_members(
+        self,
+        request: dingtalkyida__2__0_models.BatchDeleteRoleMembersRequest,
+    ) -> dingtalkyida__2__0_models.BatchDeleteRoleMembersResponse:
+        """
+        @summary 批量删除角色成员
+        
+        @param request: BatchDeleteRoleMembersRequest
+        @return: BatchDeleteRoleMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.BatchDeleteRoleMembersHeaders()
+        return self.batch_delete_role_members_with_options(request, headers, runtime)
+
+    async def batch_delete_role_members_async(
+        self,
+        request: dingtalkyida__2__0_models.BatchDeleteRoleMembersRequest,
+    ) -> dingtalkyida__2__0_models.BatchDeleteRoleMembersResponse:
+        """
+        @summary 批量删除角色成员
+        
+        @param request: BatchDeleteRoleMembersRequest
+        @return: BatchDeleteRoleMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.BatchDeleteRoleMembersHeaders()
+        return await self.batch_delete_role_members_with_options_async(request, headers, runtime)
+
     def create_or_update_form_data_with_options(
         self,
         request: dingtalkyida__2__0_models.CreateOrUpdateFormDataRequest,
@@ -167,6 +443,136 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__2__0_models.CreateOrUpdateFormDataHeaders()
         return await self.create_or_update_form_data_with_options_async(request, headers, runtime)
+
+    def delete_matrix_data_by_row_ids_with_options(
+        self,
+        request: dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsRequest,
+        headers: dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsResponse:
+        """
+        @summary 批量删除矩阵明细数据
+        
+        @param request: DeleteMatrixDataByRowIdsRequest
+        @param headers: DeleteMatrixDataByRowIdsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteMatrixDataByRowIdsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.matrix_id):
+            body['matrixId'] = request.matrix_id
+        if not UtilClient.is_unset(request.row_ids):
+            body['rowIds'] = request.row_ids
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteMatrixDataByRowIds',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/matrices/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_matrix_data_by_row_ids_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsRequest,
+        headers: dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsResponse:
+        """
+        @summary 批量删除矩阵明细数据
+        
+        @param request: DeleteMatrixDataByRowIdsRequest
+        @param headers: DeleteMatrixDataByRowIdsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteMatrixDataByRowIdsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.matrix_id):
+            body['matrixId'] = request.matrix_id
+        if not UtilClient.is_unset(request.row_ids):
+            body['rowIds'] = request.row_ids
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteMatrixDataByRowIds',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/matrices/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_matrix_data_by_row_ids(
+        self,
+        request: dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsRequest,
+    ) -> dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsResponse:
+        """
+        @summary 批量删除矩阵明细数据
+        
+        @param request: DeleteMatrixDataByRowIdsRequest
+        @return: DeleteMatrixDataByRowIdsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsHeaders()
+        return self.delete_matrix_data_by_row_ids_with_options(request, headers, runtime)
+
+    async def delete_matrix_data_by_row_ids_async(
+        self,
+        request: dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsRequest,
+    ) -> dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsResponse:
+        """
+        @summary 批量删除矩阵明细数据
+        
+        @param request: DeleteMatrixDataByRowIdsRequest
+        @return: DeleteMatrixDataByRowIdsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsHeaders()
+        return await self.delete_matrix_data_by_row_ids_with_options_async(request, headers, runtime)
 
     def get_form_component_alias_list_with_options(
         self,
@@ -945,6 +1351,404 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__2__0_models.GetInstancesHeaders()
         return await self.get_instances_with_options_async(request, headers, runtime)
+
+    def get_matrix_detail_by_id_with_options(
+        self,
+        request: dingtalkyida__2__0_models.GetMatrixDetailByIdRequest,
+        headers: dingtalkyida__2__0_models.GetMatrixDetailByIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.GetMatrixDetailByIdResponse:
+        """
+        @summary 获取权限矩阵数据详情
+        
+        @param request: GetMatrixDetailByIdRequest
+        @param headers: GetMatrixDetailByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMatrixDetailByIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.matrix_id):
+            query['matrixId'] = request.matrix_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetMatrixDetailById',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/matrices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.GetMatrixDetailByIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_matrix_detail_by_id_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.GetMatrixDetailByIdRequest,
+        headers: dingtalkyida__2__0_models.GetMatrixDetailByIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.GetMatrixDetailByIdResponse:
+        """
+        @summary 获取权限矩阵数据详情
+        
+        @param request: GetMatrixDetailByIdRequest
+        @param headers: GetMatrixDetailByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMatrixDetailByIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.matrix_id):
+            query['matrixId'] = request.matrix_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetMatrixDetailById',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/matrices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.GetMatrixDetailByIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_matrix_detail_by_id(
+        self,
+        request: dingtalkyida__2__0_models.GetMatrixDetailByIdRequest,
+    ) -> dingtalkyida__2__0_models.GetMatrixDetailByIdResponse:
+        """
+        @summary 获取权限矩阵数据详情
+        
+        @param request: GetMatrixDetailByIdRequest
+        @return: GetMatrixDetailByIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.GetMatrixDetailByIdHeaders()
+        return self.get_matrix_detail_by_id_with_options(request, headers, runtime)
+
+    async def get_matrix_detail_by_id_async(
+        self,
+        request: dingtalkyida__2__0_models.GetMatrixDetailByIdRequest,
+    ) -> dingtalkyida__2__0_models.GetMatrixDetailByIdResponse:
+        """
+        @summary 获取权限矩阵数据详情
+        
+        @param request: GetMatrixDetailByIdRequest
+        @return: GetMatrixDetailByIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.GetMatrixDetailByIdHeaders()
+        return await self.get_matrix_detail_by_id_with_options_async(request, headers, runtime)
+
+    def get_role_detail_by_id_with_options(
+        self,
+        request: dingtalkyida__2__0_models.GetRoleDetailByIdRequest,
+        headers: dingtalkyida__2__0_models.GetRoleDetailByIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.GetRoleDetailByIdResponse:
+        """
+        @summary 获取角色详情和成员列表
+        
+        @param request: GetRoleDetailByIdRequest
+        @param headers: GetRoleDetailByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRoleDetailByIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.role_uuid):
+            query['roleUuid'] = request.role_uuid
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetRoleDetailById',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.GetRoleDetailByIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_role_detail_by_id_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.GetRoleDetailByIdRequest,
+        headers: dingtalkyida__2__0_models.GetRoleDetailByIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.GetRoleDetailByIdResponse:
+        """
+        @summary 获取角色详情和成员列表
+        
+        @param request: GetRoleDetailByIdRequest
+        @param headers: GetRoleDetailByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRoleDetailByIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.role_uuid):
+            query['roleUuid'] = request.role_uuid
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetRoleDetailById',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.GetRoleDetailByIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_role_detail_by_id(
+        self,
+        request: dingtalkyida__2__0_models.GetRoleDetailByIdRequest,
+    ) -> dingtalkyida__2__0_models.GetRoleDetailByIdResponse:
+        """
+        @summary 获取角色详情和成员列表
+        
+        @param request: GetRoleDetailByIdRequest
+        @return: GetRoleDetailByIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.GetRoleDetailByIdHeaders()
+        return self.get_role_detail_by_id_with_options(request, headers, runtime)
+
+    async def get_role_detail_by_id_async(
+        self,
+        request: dingtalkyida__2__0_models.GetRoleDetailByIdRequest,
+    ) -> dingtalkyida__2__0_models.GetRoleDetailByIdResponse:
+        """
+        @summary 获取角色详情和成员列表
+        
+        @param request: GetRoleDetailByIdRequest
+        @return: GetRoleDetailByIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.GetRoleDetailByIdHeaders()
+        return await self.get_role_detail_by_id_with_options_async(request, headers, runtime)
+
+    def save_and_update_matrix_data_with_options(
+        self,
+        request: dingtalkyida__2__0_models.SaveAndUpdateMatrixDataRequest,
+        headers: dingtalkyida__2__0_models.SaveAndUpdateMatrixDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.SaveAndUpdateMatrixDataResponse:
+        """
+        @summary 修改/新增矩阵明细数据
+        
+        @param request: SaveAndUpdateMatrixDataRequest
+        @param headers: SaveAndUpdateMatrixDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveAndUpdateMatrixDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.data_json):
+            body['dataJson'] = request.data_json
+        if not UtilClient.is_unset(request.matrix_id):
+            body['matrixId'] = request.matrix_id
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveAndUpdateMatrixData',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/matrices/upsert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.SaveAndUpdateMatrixDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def save_and_update_matrix_data_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.SaveAndUpdateMatrixDataRequest,
+        headers: dingtalkyida__2__0_models.SaveAndUpdateMatrixDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.SaveAndUpdateMatrixDataResponse:
+        """
+        @summary 修改/新增矩阵明细数据
+        
+        @param request: SaveAndUpdateMatrixDataRequest
+        @param headers: SaveAndUpdateMatrixDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveAndUpdateMatrixDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.data_json):
+            body['dataJson'] = request.data_json
+        if not UtilClient.is_unset(request.matrix_id):
+            body['matrixId'] = request.matrix_id
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveAndUpdateMatrixData',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/matrices/upsert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.SaveAndUpdateMatrixDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def save_and_update_matrix_data(
+        self,
+        request: dingtalkyida__2__0_models.SaveAndUpdateMatrixDataRequest,
+    ) -> dingtalkyida__2__0_models.SaveAndUpdateMatrixDataResponse:
+        """
+        @summary 修改/新增矩阵明细数据
+        
+        @param request: SaveAndUpdateMatrixDataRequest
+        @return: SaveAndUpdateMatrixDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.SaveAndUpdateMatrixDataHeaders()
+        return self.save_and_update_matrix_data_with_options(request, headers, runtime)
+
+    async def save_and_update_matrix_data_async(
+        self,
+        request: dingtalkyida__2__0_models.SaveAndUpdateMatrixDataRequest,
+    ) -> dingtalkyida__2__0_models.SaveAndUpdateMatrixDataResponse:
+        """
+        @summary 修改/新增矩阵明细数据
+        
+        @param request: SaveAndUpdateMatrixDataRequest
+        @return: SaveAndUpdateMatrixDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.SaveAndUpdateMatrixDataHeaders()
+        return await self.save_and_update_matrix_data_with_options_async(request, headers, runtime)
 
     def save_form_data_with_options(
         self,
