@@ -119,11 +119,39 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>62c25e3b376exxxxxx</para>
+            /// </summary>
+            [NameInMap("sprintId")]
+            [Validation(Required=false)]
+            public string SprintId { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
+            [NameInMap("storyPoint")]
+            [Validation(Required=false)]
+            public string StoryPoint { get; set; }
+
+            [NameInMap("tagIds")]
+            [Validation(Required=false)]
+            public List<string> TagIds { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>62a697c053c2ef5xxxxxx</para>
             /// </summary>
             [NameInMap("taskId")]
             [Validation(Required=false)]
             public string TaskId { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>62c25e3b376exxxxxx</para>
+            /// </summary>
+            [NameInMap("tasklistId")]
+            [Validation(Required=false)]
+            public string TasklistId { get; set; }
 
             /// <summary>
             /// <b>Example:</b>

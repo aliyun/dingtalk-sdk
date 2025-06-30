@@ -30,6 +30,398 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>批量新增/更新角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchAddOrUpdateRoleMembersRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchAddOrUpdateRoleMembersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchAddOrUpdateRoleMembersResponse
+        /// </returns>
+        public BatchAddOrUpdateRoleMembersResponse BatchAddOrUpdateRoleMembersWithOptions(BatchAddOrUpdateRoleMembersRequest request, BatchAddOrUpdateRoleMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MembersInfo))
+            {
+                body["membersInfo"] = request.MembersInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleUuid))
+            {
+                body["roleUuid"] = request.RoleUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                body["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchAddOrUpdateRoleMembers",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/roles/upsert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchAddOrUpdateRoleMembersResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量新增/更新角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchAddOrUpdateRoleMembersRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchAddOrUpdateRoleMembersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchAddOrUpdateRoleMembersResponse
+        /// </returns>
+        public async Task<BatchAddOrUpdateRoleMembersResponse> BatchAddOrUpdateRoleMembersWithOptionsAsync(BatchAddOrUpdateRoleMembersRequest request, BatchAddOrUpdateRoleMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MembersInfo))
+            {
+                body["membersInfo"] = request.MembersInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleUuid))
+            {
+                body["roleUuid"] = request.RoleUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                body["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchAddOrUpdateRoleMembers",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/roles/upsert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchAddOrUpdateRoleMembersResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量新增/更新角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchAddOrUpdateRoleMembersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchAddOrUpdateRoleMembersResponse
+        /// </returns>
+        public BatchAddOrUpdateRoleMembersResponse BatchAddOrUpdateRoleMembers(BatchAddOrUpdateRoleMembersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchAddOrUpdateRoleMembersHeaders headers = new BatchAddOrUpdateRoleMembersHeaders();
+            return BatchAddOrUpdateRoleMembersWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量新增/更新角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchAddOrUpdateRoleMembersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchAddOrUpdateRoleMembersResponse
+        /// </returns>
+        public async Task<BatchAddOrUpdateRoleMembersResponse> BatchAddOrUpdateRoleMembersAsync(BatchAddOrUpdateRoleMembersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchAddOrUpdateRoleMembersHeaders headers = new BatchAddOrUpdateRoleMembersHeaders();
+            return await BatchAddOrUpdateRoleMembersWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量删除角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchDeleteRoleMembersRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchDeleteRoleMembersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchDeleteRoleMembersResponse
+        /// </returns>
+        public BatchDeleteRoleMembersResponse BatchDeleteRoleMembersWithOptions(BatchDeleteRoleMembersRequest request, BatchDeleteRoleMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MemberIds))
+            {
+                body["memberIds"] = request.MemberIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleUuid))
+            {
+                body["roleUuid"] = request.RoleUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                body["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchDeleteRoleMembers",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/roles/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchDeleteRoleMembersResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量删除角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchDeleteRoleMembersRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchDeleteRoleMembersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchDeleteRoleMembersResponse
+        /// </returns>
+        public async Task<BatchDeleteRoleMembersResponse> BatchDeleteRoleMembersWithOptionsAsync(BatchDeleteRoleMembersRequest request, BatchDeleteRoleMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MemberIds))
+            {
+                body["memberIds"] = request.MemberIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleUuid))
+            {
+                body["roleUuid"] = request.RoleUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                body["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchDeleteRoleMembers",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/roles/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchDeleteRoleMembersResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量删除角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchDeleteRoleMembersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchDeleteRoleMembersResponse
+        /// </returns>
+        public BatchDeleteRoleMembersResponse BatchDeleteRoleMembers(BatchDeleteRoleMembersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchDeleteRoleMembersHeaders headers = new BatchDeleteRoleMembersHeaders();
+            return BatchDeleteRoleMembersWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量删除角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchDeleteRoleMembersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchDeleteRoleMembersResponse
+        /// </returns>
+        public async Task<BatchDeleteRoleMembersResponse> BatchDeleteRoleMembersAsync(BatchDeleteRoleMembersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchDeleteRoleMembersHeaders headers = new BatchDeleteRoleMembersHeaders();
+            return await BatchDeleteRoleMembersWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>新增或更新表单实例</para>
         /// </summary>
         /// 
@@ -230,6 +622,186 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateOrUpdateFormDataHeaders headers = new CreateOrUpdateFormDataHeaders();
             return await CreateOrUpdateFormDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量删除矩阵明细数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMatrixDataByRowIdsRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteMatrixDataByRowIdsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMatrixDataByRowIdsResponse
+        /// </returns>
+        public DeleteMatrixDataByRowIdsResponse DeleteMatrixDataByRowIdsWithOptions(DeleteMatrixDataByRowIdsRequest request, DeleteMatrixDataByRowIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MatrixId))
+            {
+                body["matrixId"] = request.MatrixId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowIds))
+            {
+                body["rowIds"] = request.RowIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                body["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteMatrixDataByRowIds",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/matrices/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteMatrixDataByRowIdsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量删除矩阵明细数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMatrixDataByRowIdsRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteMatrixDataByRowIdsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMatrixDataByRowIdsResponse
+        /// </returns>
+        public async Task<DeleteMatrixDataByRowIdsResponse> DeleteMatrixDataByRowIdsWithOptionsAsync(DeleteMatrixDataByRowIdsRequest request, DeleteMatrixDataByRowIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MatrixId))
+            {
+                body["matrixId"] = request.MatrixId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowIds))
+            {
+                body["rowIds"] = request.RowIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                body["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteMatrixDataByRowIds",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/matrices/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteMatrixDataByRowIdsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量删除矩阵明细数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMatrixDataByRowIdsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMatrixDataByRowIdsResponse
+        /// </returns>
+        public DeleteMatrixDataByRowIdsResponse DeleteMatrixDataByRowIds(DeleteMatrixDataByRowIdsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteMatrixDataByRowIdsHeaders headers = new DeleteMatrixDataByRowIdsHeaders();
+            return DeleteMatrixDataByRowIdsWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量删除矩阵明细数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMatrixDataByRowIdsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMatrixDataByRowIdsResponse
+        /// </returns>
+        public async Task<DeleteMatrixDataByRowIdsResponse> DeleteMatrixDataByRowIdsAsync(DeleteMatrixDataByRowIdsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteMatrixDataByRowIdsHeaders headers = new DeleteMatrixDataByRowIdsHeaders();
+            return await DeleteMatrixDataByRowIdsWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -1346,6 +1918,562 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetInstancesHeaders headers = new GetInstancesHeaders();
             return await GetInstancesWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取权限矩阵数据详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetMatrixDetailByIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetMatrixDetailByIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetMatrixDetailByIdResponse
+        /// </returns>
+        public GetMatrixDetailByIdResponse GetMatrixDetailByIdWithOptions(GetMatrixDetailByIdRequest request, GetMatrixDetailByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MatrixId))
+            {
+                query["matrixId"] = request.MatrixId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMatrixDetailById",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/matrices",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMatrixDetailByIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取权限矩阵数据详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetMatrixDetailByIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetMatrixDetailByIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetMatrixDetailByIdResponse
+        /// </returns>
+        public async Task<GetMatrixDetailByIdResponse> GetMatrixDetailByIdWithOptionsAsync(GetMatrixDetailByIdRequest request, GetMatrixDetailByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MatrixId))
+            {
+                query["matrixId"] = request.MatrixId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMatrixDetailById",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/matrices",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMatrixDetailByIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取权限矩阵数据详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetMatrixDetailByIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetMatrixDetailByIdResponse
+        /// </returns>
+        public GetMatrixDetailByIdResponse GetMatrixDetailById(GetMatrixDetailByIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMatrixDetailByIdHeaders headers = new GetMatrixDetailByIdHeaders();
+            return GetMatrixDetailByIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取权限矩阵数据详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetMatrixDetailByIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetMatrixDetailByIdResponse
+        /// </returns>
+        public async Task<GetMatrixDetailByIdResponse> GetMatrixDetailByIdAsync(GetMatrixDetailByIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMatrixDetailByIdHeaders headers = new GetMatrixDetailByIdHeaders();
+            return await GetMatrixDetailByIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取角色详情和成员列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetRoleDetailByIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetRoleDetailByIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetRoleDetailByIdResponse
+        /// </returns>
+        public GetRoleDetailByIdResponse GetRoleDetailByIdWithOptions(GetRoleDetailByIdRequest request, GetRoleDetailByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleUuid))
+            {
+                query["roleUuid"] = request.RoleUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRoleDetailById",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/roles",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRoleDetailByIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取角色详情和成员列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetRoleDetailByIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetRoleDetailByIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetRoleDetailByIdResponse
+        /// </returns>
+        public async Task<GetRoleDetailByIdResponse> GetRoleDetailByIdWithOptionsAsync(GetRoleDetailByIdRequest request, GetRoleDetailByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleUuid))
+            {
+                query["roleUuid"] = request.RoleUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRoleDetailById",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/roles",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRoleDetailByIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取角色详情和成员列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetRoleDetailByIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetRoleDetailByIdResponse
+        /// </returns>
+        public GetRoleDetailByIdResponse GetRoleDetailById(GetRoleDetailByIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetRoleDetailByIdHeaders headers = new GetRoleDetailByIdHeaders();
+            return GetRoleDetailByIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取角色详情和成员列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetRoleDetailByIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetRoleDetailByIdResponse
+        /// </returns>
+        public async Task<GetRoleDetailByIdResponse> GetRoleDetailByIdAsync(GetRoleDetailByIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetRoleDetailByIdHeaders headers = new GetRoleDetailByIdHeaders();
+            return await GetRoleDetailByIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改/新增矩阵明细数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveAndUpdateMatrixDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveAndUpdateMatrixDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveAndUpdateMatrixDataResponse
+        /// </returns>
+        public SaveAndUpdateMatrixDataResponse SaveAndUpdateMatrixDataWithOptions(SaveAndUpdateMatrixDataRequest request, SaveAndUpdateMatrixDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataJson))
+            {
+                body["dataJson"] = request.DataJson;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MatrixId))
+            {
+                body["matrixId"] = request.MatrixId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                body["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveAndUpdateMatrixData",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/matrices/upsert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveAndUpdateMatrixDataResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改/新增矩阵明细数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveAndUpdateMatrixDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveAndUpdateMatrixDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveAndUpdateMatrixDataResponse
+        /// </returns>
+        public async Task<SaveAndUpdateMatrixDataResponse> SaveAndUpdateMatrixDataWithOptionsAsync(SaveAndUpdateMatrixDataRequest request, SaveAndUpdateMatrixDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataJson))
+            {
+                body["dataJson"] = request.DataJson;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MatrixId))
+            {
+                body["matrixId"] = request.MatrixId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                body["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveAndUpdateMatrixData",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/matrices/upsert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveAndUpdateMatrixDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改/新增矩阵明细数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveAndUpdateMatrixDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveAndUpdateMatrixDataResponse
+        /// </returns>
+        public SaveAndUpdateMatrixDataResponse SaveAndUpdateMatrixData(SaveAndUpdateMatrixDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveAndUpdateMatrixDataHeaders headers = new SaveAndUpdateMatrixDataHeaders();
+            return SaveAndUpdateMatrixDataWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改/新增矩阵明细数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveAndUpdateMatrixDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveAndUpdateMatrixDataResponse
+        /// </returns>
+        public async Task<SaveAndUpdateMatrixDataResponse> SaveAndUpdateMatrixDataAsync(SaveAndUpdateMatrixDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveAndUpdateMatrixDataHeaders headers = new SaveAndUpdateMatrixDataHeaders();
+            return await SaveAndUpdateMatrixDataWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

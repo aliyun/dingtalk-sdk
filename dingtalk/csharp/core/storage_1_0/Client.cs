@@ -534,6 +534,174 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取权限列表</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// BatchQueryRolesRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchQueryRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryRolesResponse
+        /// </returns>
+        public BatchQueryRolesResponse BatchQueryRolesWithOptions(string spaceId, BatchQueryRolesRequest tmpReq, BatchQueryRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            BatchQueryRolesShrinkRequest request = new BatchQueryRolesShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.DentryIdList))
+            {
+                request.DentryIdListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.DentryIdList, "dentryIdList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryIdListShrink))
+            {
+                query["dentryIdList"] = request.DentryIdListShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchQueryRoles",
+                Version = "storage_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/storage/spaces/" + spaceId + "/dentries/permissions/roles/batchQuery",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchQueryRolesResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取权限列表</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// BatchQueryRolesRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchQueryRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryRolesResponse
+        /// </returns>
+        public async Task<BatchQueryRolesResponse> BatchQueryRolesWithOptionsAsync(string spaceId, BatchQueryRolesRequest tmpReq, BatchQueryRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            BatchQueryRolesShrinkRequest request = new BatchQueryRolesShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.DentryIdList))
+            {
+                request.DentryIdListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.DentryIdList, "dentryIdList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryIdListShrink))
+            {
+                query["dentryIdList"] = request.DentryIdListShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchQueryRoles",
+                Version = "storage_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/storage/spaces/" + spaceId + "/dentries/permissions/roles/batchQuery",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchQueryRolesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取权限列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchQueryRolesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryRolesResponse
+        /// </returns>
+        public BatchQueryRolesResponse BatchQueryRoles(string spaceId, BatchQueryRolesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchQueryRolesHeaders headers = new BatchQueryRolesHeaders();
+            return BatchQueryRolesWithOptions(spaceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取权限列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchQueryRolesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryRolesResponse
+        /// </returns>
+        public async Task<BatchQueryRolesResponse> BatchQueryRolesAsync(string spaceId, BatchQueryRolesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchQueryRolesHeaders headers = new BatchQueryRolesHeaders();
+            return await BatchQueryRolesWithOptionsAsync(spaceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>清空回收站</para>
         /// </summary>
         /// 

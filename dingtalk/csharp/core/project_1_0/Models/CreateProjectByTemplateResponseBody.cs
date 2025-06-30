@@ -23,6 +23,22 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>这是项目描述</para>
+            /// </summary>
+            [NameInMap("description")]
+            [Validation(Required=false)]
+            public string Description { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2021-08-13T07:36:50.318Z</para>
+            /// </summary>
+            [NameInMap("endDate")]
+            [Validation(Required=false)]
+            public string EndDate { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>62e7a1e721d20b5aexxx</para>
             /// </summary>
             [NameInMap("id")]
@@ -44,6 +60,30 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>578cae9dbf83e5xxxx</para>
+            /// </summary>
+            [NameInMap("programId")]
+            [Validation(Required=false)]
+            public string ProgramId { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2021-08-13T07:36:50.318Z</para>
+            /// </summary>
+            [NameInMap("startDate")]
+            [Validation(Required=false)]
+            public string StartDate { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>project</para>
+            /// </summary>
+            [NameInMap("visibility")]
+            [Validation(Required=false)]
+            public string Visibility { get; set; }
 
         }
 

@@ -3760,6 +3760,154 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>根据staffId批量查询返回支付宝userId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAlipayUserIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAlipayUserIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAlipayUserIdResponse
+        /// </returns>
+        public QueryAlipayUserIdResponse QueryAlipayUserIdWithOptions(QueryAlipayUserIdRequest request, QueryAlipayUserIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUserIds))
+            {
+                body["dingUserIds"] = request.DingUserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryAlipayUserId",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/consumption/aliPay/getUserId",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryAlipayUserIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据staffId批量查询返回支付宝userId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAlipayUserIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAlipayUserIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAlipayUserIdResponse
+        /// </returns>
+        public async Task<QueryAlipayUserIdResponse> QueryAlipayUserIdWithOptionsAsync(QueryAlipayUserIdRequest request, QueryAlipayUserIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUserIds))
+            {
+                body["dingUserIds"] = request.DingUserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryAlipayUserId",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/consumption/aliPay/getUserId",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryAlipayUserIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据staffId批量查询返回支付宝userId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAlipayUserIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAlipayUserIdResponse
+        /// </returns>
+        public QueryAlipayUserIdResponse QueryAlipayUserId(QueryAlipayUserIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryAlipayUserIdHeaders headers = new QueryAlipayUserIdHeaders();
+            return QueryAlipayUserIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据staffId批量查询返回支付宝userId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAlipayUserIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAlipayUserIdResponse
+        /// </returns>
+        public async Task<QueryAlipayUserIdResponse> QueryAlipayUserIdAsync(QueryAlipayUserIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryAlipayUserIdHeaders headers = new QueryAlipayUserIdHeaders();
+            return await QueryAlipayUserIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>批量获取费用类别</para>
         /// </summary>
         /// 
@@ -5620,6 +5768,126 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryPaymentStatusHeaders headers = new QueryPaymentStatusHeaders();
             return await QueryPaymentStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询对应权限点的人员staffId</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryPermissionUserIdsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPermissionUserIdsResponse
+        /// </returns>
+        public QueryPermissionUserIdsResponse QueryPermissionUserIdsWithOptions(QueryPermissionUserIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPermissionUserIds",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/consumption/permission/getUserIds",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPermissionUserIdsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询对应权限点的人员staffId</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryPermissionUserIdsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPermissionUserIdsResponse
+        /// </returns>
+        public async Task<QueryPermissionUserIdsResponse> QueryPermissionUserIdsWithOptionsAsync(QueryPermissionUserIdsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPermissionUserIds",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/consumption/permission/getUserIds",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPermissionUserIdsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询对应权限点的人员staffId</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryPermissionUserIdsResponse
+        /// </returns>
+        public QueryPermissionUserIdsResponse QueryPermissionUserIds()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPermissionUserIdsHeaders headers = new QueryPermissionUserIdsHeaders();
+            return QueryPermissionUserIdsWithOptions(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询对应权限点的人员staffId</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryPermissionUserIdsResponse
+        /// </returns>
+        public async Task<QueryPermissionUserIdsResponse> QueryPermissionUserIdsAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPermissionUserIdsHeaders headers = new QueryPermissionUserIdsHeaders();
+            return await QueryPermissionUserIdsWithOptionsAsync(headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

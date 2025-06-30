@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
                 [Validation(Required=false)]
                 public string DeptName { get; set; }
 
+                [NameInMap("firstWatchTime")]
+                [Validation(Required=false)]
+                public long? FirstWatchTime { get; set; }
+
                 /// <summary>
                 /// <b>Example:</b>
                 /// <para>李四</para>
@@ -79,6 +83,10 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
             [Validation(Required=false)]
             public List<QueryLiveWatchUserListResponseBodyResultOutOrgUserList> OutOrgUserList { get; set; }
             public class QueryLiveWatchUserListResponseBodyResultOutOrgUserList : TeaModel {
+                [NameInMap("firstWatchTime")]
+                [Validation(Required=false)]
+                public long? FirstWatchTime { get; set; }
+
                 /// <summary>
                 /// <b>Example:</b>
                 /// <para>张三</para>

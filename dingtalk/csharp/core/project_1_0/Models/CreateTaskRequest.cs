@@ -79,6 +79,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public string ExecutorId { get; set; }
 
+        [NameInMap("involveMembers")]
+        [Validation(Required=false)]
+        public List<string> InvolveMembers { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>我是一条任务备注</para>
@@ -125,6 +129,14 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         /// <b>Example:</b>
         /// <para>62c25e3b376exxxxxx</para>
         /// </summary>
+        [NameInMap("sprintId")]
+        [Validation(Required=false)]
+        public string SprintId { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>62c25e3b376exxxxxx</para>
+        /// </summary>
         [NameInMap("stageId")]
         [Validation(Required=false)]
         public string StageId { get; set; }
@@ -136,6 +148,26 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [NameInMap("startDate")]
         [Validation(Required=false)]
         public string StartDate { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
+        [NameInMap("storyPoint")]
+        [Validation(Required=false)]
+        public string StoryPoint { get; set; }
+
+        [NameInMap("tagIds")]
+        [Validation(Required=false)]
+        public List<string> TagIds { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>62c25e3b376exxxxxx</para>
+        /// </summary>
+        [NameInMap("tasklistId")]
+        [Validation(Required=false)]
+        public string TasklistId { get; set; }
 
         /// <summary>
         /// <b>Example:</b>

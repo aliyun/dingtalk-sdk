@@ -10,6 +10,22 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class CreateProjectByTemplateRequest : TeaModel {
         /// <summary>
+        /// <b>Example:</b>
+        /// <para>这是项目描述</para>
+        /// </summary>
+        [NameInMap("description")]
+        [Validation(Required=false)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>2021-08-13T07:36:50.318Z</para>
+        /// </summary>
+        [NameInMap("endDate")]
+        [Validation(Required=false)]
+        public string EndDate { get; set; }
+
+        /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
@@ -20,6 +36,22 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public string Name { get; set; }
 
         /// <summary>
+        /// <b>Example:</b>
+        /// <para>578cae9dbf83e5xxxx</para>
+        /// </summary>
+        [NameInMap("programId")]
+        [Validation(Required=false)]
+        public string ProgramId { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>2021-08-13T07:36:50.318Z</para>
+        /// </summary>
+        [NameInMap("startDate")]
+        [Validation(Required=false)]
+        public string StartDate { get; set; }
+
+        /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
@@ -28,6 +60,14 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [NameInMap("templateId")]
         [Validation(Required=false)]
         public string TemplateId { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>project</para>
+        /// </summary>
+        [NameInMap("visibility")]
+        [Validation(Required=false)]
+        public string Visibility { get; set; }
 
     }
 
