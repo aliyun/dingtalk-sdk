@@ -107,6 +107,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vresident_1_0\\": "src/resident_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vrobot_1_0\\": "src/robot_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vrooms_1_0\\": "src/rooms_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vsalary_1_0\\": "src/salary_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vsearch_1_0\\": "src/search_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vservice_group_1_0\\": "src/service_group_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vsmart_device_1_0\\": "src/smart_device_1_0/",

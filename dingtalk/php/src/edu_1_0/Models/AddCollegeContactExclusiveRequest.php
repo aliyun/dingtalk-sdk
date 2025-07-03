@@ -85,8 +85,6 @@ class AddCollegeContactExclusiveRequest extends Model
     public $hiredDate;
 
     /**
-     * @description This parameter is required.
-     *
      * @var string
      */
     public $initPassword;
@@ -99,8 +97,6 @@ class AddCollegeContactExclusiveRequest extends Model
     public $jobNumber;
 
     /**
-     * @description This parameter is required.
-     *
      * @example studentNo
      *
      * @var string

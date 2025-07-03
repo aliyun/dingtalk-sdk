@@ -4,11 +4,27 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchRequest;
 
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchRequest\dentryRequest\createTimeRange;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchRequest\dentryRequest\visitTimeRange;
 use AlibabaCloud\Tea\Model;
 
 class dentryRequest extends Model
 {
+    /**
+     * @var createTimeRange
+     */
+    public $createTimeRange;
+
+    /**
+     * @var string[]
+     */
+    public $createUsers;
+
+    /**
+     * @var string[]
+     */
+    public $editors;
+
     /**
      * @description This parameter is required.
      *
@@ -53,6 +69,9 @@ class dentryRequest extends Model
      */
     public $visitTimeRange;
     protected $_name = [
+        'createTimeRange' => 'createTimeRange',
+        'createUsers' => 'createUsers',
+        'editors' => 'editors',
         'maxResults' => 'maxResults',
         'nextToken' => 'nextToken',
         'searchField' => 'searchField',
@@ -68,6 +87,15 @@ class dentryRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->createTimeRange) {
+            $res['createTimeRange'] = null !== $this->createTimeRange ? $this->createTimeRange->toMap() : null;
+        }
+        if (null !== $this->createUsers) {
+            $res['createUsers'] = $this->createUsers;
+        }
+        if (null !== $this->editors) {
+            $res['editors'] = $this->editors;
+        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
         }
@@ -104,6 +132,19 @@ class dentryRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['createTimeRange'])) {
+            $model->createTimeRange = createTimeRange::fromMap($map['createTimeRange']);
+        }
+        if (isset($map['createUsers'])) {
+            if (!empty($map['createUsers'])) {
+                $model->createUsers = $map['createUsers'];
+            }
+        }
+        if (isset($map['editors'])) {
+            if (!empty($map['editors'])) {
+                $model->editors = $map['editors'];
+            }
+        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
         }
