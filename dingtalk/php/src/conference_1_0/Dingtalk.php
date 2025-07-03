@@ -112,6 +112,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConfSettingsRe
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryUserOnGoingConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryUserOnGoingConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryUserOnGoingConferenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\SetSubtitleEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\SetSubtitleEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\SetSubtitleEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartCloudRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartCloudRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartCloudRecordResponse;
@@ -2410,6 +2413,65 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryUserOnGoingConferenceHeaders([]);
 
         return $this->queryUserOnGoingConferenceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 设置会议字幕事件订阅
+     *  *
+     * @param string                  $conferenceId
+     * @param SetSubtitleEventRequest $request      SetSubtitleEventRequest
+     * @param SetSubtitleEventHeaders $headers      SetSubtitleEventHeaders
+     * @param RuntimeOptions          $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return SetSubtitleEventResponse SetSubtitleEventResponse
+     */
+    public function setSubtitleEventWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->enable)) {
+            $body['enable'] = $request->enable;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SetSubtitleEvent',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/subtitleEvents',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SetSubtitleEventResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置会议字幕事件订阅
+     *  *
+     * @param string                  $conferenceId
+     * @param SetSubtitleEventRequest $request      SetSubtitleEventRequest
+     *
+     * @return SetSubtitleEventResponse SetSubtitleEventResponse
+     */
+    public function setSubtitleEvent($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetSubtitleEventHeaders([]);
+
+        return $this->setSubtitleEventWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**
