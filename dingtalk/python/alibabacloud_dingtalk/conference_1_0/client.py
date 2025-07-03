@@ -4424,6 +4424,124 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.QueryUserOnGoingConferenceHeaders()
         return await self.query_user_on_going_conference_with_options_async(request, headers, runtime)
 
+    def set_subtitle_event_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.SetSubtitleEventRequest,
+        headers: dingtalkconference__1__0_models.SetSubtitleEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.SetSubtitleEventResponse:
+        """
+        @summary 设置会议字幕事件订阅
+        
+        @param request: SetSubtitleEventRequest
+        @param headers: SetSubtitleEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetSubtitleEventResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.enable):
+            body['enable'] = request.enable
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetSubtitleEvent',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/subtitleEvents',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.SetSubtitleEventResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_subtitle_event_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.SetSubtitleEventRequest,
+        headers: dingtalkconference__1__0_models.SetSubtitleEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.SetSubtitleEventResponse:
+        """
+        @summary 设置会议字幕事件订阅
+        
+        @param request: SetSubtitleEventRequest
+        @param headers: SetSubtitleEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetSubtitleEventResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.enable):
+            body['enable'] = request.enable
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetSubtitleEvent',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/subtitleEvents',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.SetSubtitleEventResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_subtitle_event(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.SetSubtitleEventRequest,
+    ) -> dingtalkconference__1__0_models.SetSubtitleEventResponse:
+        """
+        @summary 设置会议字幕事件订阅
+        
+        @param request: SetSubtitleEventRequest
+        @return: SetSubtitleEventResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.SetSubtitleEventHeaders()
+        return self.set_subtitle_event_with_options(conference_id, request, headers, runtime)
+
+    async def set_subtitle_event_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.SetSubtitleEventRequest,
+    ) -> dingtalkconference__1__0_models.SetSubtitleEventResponse:
+        """
+        @summary 设置会议字幕事件订阅
+        
+        @param request: SetSubtitleEventRequest
+        @return: SetSubtitleEventResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.SetSubtitleEventHeaders()
+        return await self.set_subtitle_event_with_options_async(conference_id, request, headers, runtime)
+
     def start_cloud_record_with_options(
         self,
         conference_id: str,
