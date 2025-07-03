@@ -13,6 +13,28 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public SearchRequestDentryRequest DentryRequest { get; set; }
         public class SearchRequestDentryRequest : TeaModel {
+            [NameInMap("createTimeRange")]
+            [Validation(Required=false)]
+            public SearchRequestDentryRequestCreateTimeRange CreateTimeRange { get; set; }
+            public class SearchRequestDentryRequestCreateTimeRange : TeaModel {
+                [NameInMap("end")]
+                [Validation(Required=false)]
+                public long? End { get; set; }
+
+                [NameInMap("start")]
+                [Validation(Required=false)]
+                public long? Start { get; set; }
+
+            }
+
+            [NameInMap("createUsers")]
+            [Validation(Required=false)]
+            public List<string> CreateUsers { get; set; }
+
+            [NameInMap("editors")]
+            [Validation(Required=false)]
+            public List<string> Editors { get; set; }
+
             /// <summary>
             /// <para>This parameter is required.</para>
             /// </summary>

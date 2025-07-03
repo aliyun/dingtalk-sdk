@@ -153,9 +153,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public long? HiredDate { get; set; }
 
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
         [NameInMap("initPassword")]
         [Validation(Required=false)]
         public string InitPassword { get; set; }
@@ -169,8 +166,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string JobNumber { get; set; }
 
         /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
         /// <b>Example:</b>
         /// <para>studentNo</para>
         /// </summary>
