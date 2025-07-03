@@ -5738,6 +5738,154 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>设置会议字幕事件订阅</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetSubtitleEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetSubtitleEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetSubtitleEventResponse
+        /// </returns>
+        public SetSubtitleEventResponse SetSubtitleEventWithOptions(string conferenceId, SetSubtitleEventRequest request, SetSubtitleEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Enable))
+            {
+                body["enable"] = request.Enable;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetSubtitleEvent",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/" + conferenceId + "/subtitleEvents",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetSubtitleEventResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会议字幕事件订阅</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetSubtitleEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetSubtitleEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetSubtitleEventResponse
+        /// </returns>
+        public async Task<SetSubtitleEventResponse> SetSubtitleEventWithOptionsAsync(string conferenceId, SetSubtitleEventRequest request, SetSubtitleEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Enable))
+            {
+                body["enable"] = request.Enable;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetSubtitleEvent",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/" + conferenceId + "/subtitleEvents",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetSubtitleEventResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会议字幕事件订阅</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetSubtitleEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetSubtitleEventResponse
+        /// </returns>
+        public SetSubtitleEventResponse SetSubtitleEvent(string conferenceId, SetSubtitleEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetSubtitleEventHeaders headers = new SetSubtitleEventHeaders();
+            return SetSubtitleEventWithOptions(conferenceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会议字幕事件订阅</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetSubtitleEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetSubtitleEventResponse
+        /// </returns>
+        public async Task<SetSubtitleEventResponse> SetSubtitleEventAsync(string conferenceId, SetSubtitleEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetSubtitleEventHeaders headers = new SetSubtitleEventHeaders();
+            return await SetSubtitleEventWithOptionsAsync(conferenceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>开启云录制</para>
         /// </summary>
         /// 
