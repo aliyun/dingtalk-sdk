@@ -11524,6 +11524,39 @@ class SearchHeaders(TeaModel):
         return self
 
 
+class SearchRequestDentryRequestCreateTimeRange(TeaModel):
+    def __init__(
+        self,
+        end: int = None,
+        start: int = None,
+    ):
+        self.end = end
+        self.start = start
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end is not None:
+            result['end'] = self.end
+        if self.start is not None:
+            result['start'] = self.start
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('end') is not None:
+            self.end = m.get('end')
+        if m.get('start') is not None:
+            self.start = m.get('start')
+        return self
+
+
 class SearchRequestDentryRequestVisitTimeRange(TeaModel):
     def __init__(
         self,
@@ -11560,6 +11593,9 @@ class SearchRequestDentryRequestVisitTimeRange(TeaModel):
 class SearchRequestDentryRequest(TeaModel):
     def __init__(
         self,
+        create_time_range: SearchRequestDentryRequestCreateTimeRange = None,
+        create_users: List[str] = None,
+        editors: List[str] = None,
         max_results: int = None,
         next_token: str = None,
         search_field: int = None,
@@ -11569,6 +11605,9 @@ class SearchRequestDentryRequest(TeaModel):
         summary_length: int = None,
         visit_time_range: SearchRequestDentryRequestVisitTimeRange = None,
     ):
+        self.create_time_range = create_time_range
+        self.create_users = create_users
+        self.editors = editors
         # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
@@ -11580,6 +11619,8 @@ class SearchRequestDentryRequest(TeaModel):
         self.visit_time_range = visit_time_range
 
     def validate(self):
+        if self.create_time_range:
+            self.create_time_range.validate()
         if self.visit_time_range:
             self.visit_time_range.validate()
 
@@ -11589,6 +11630,12 @@ class SearchRequestDentryRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.create_time_range is not None:
+            result['createTimeRange'] = self.create_time_range.to_map()
+        if self.create_users is not None:
+            result['createUsers'] = self.create_users
+        if self.editors is not None:
+            result['editors'] = self.editors
         if self.max_results is not None:
             result['maxResults'] = self.max_results
         if self.next_token is not None:
@@ -11609,6 +11656,13 @@ class SearchRequestDentryRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('createTimeRange') is not None:
+            temp_model = SearchRequestDentryRequestCreateTimeRange()
+            self.create_time_range = temp_model.from_map(m['createTimeRange'])
+        if m.get('createUsers') is not None:
+            self.create_users = m.get('createUsers')
+        if m.get('editors') is not None:
+            self.editors = m.get('editors')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:

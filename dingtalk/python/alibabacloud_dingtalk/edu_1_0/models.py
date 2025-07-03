@@ -874,10 +874,8 @@ class AddCollegeContactExclusiveRequest(TeaModel):
         self.exclusive_account_type = exclusive_account_type
         self.extension = extension
         self.hired_date = hired_date
-        # This parameter is required.
         self.init_password = init_password
         self.job_number = job_number
-        # This parameter is required.
         self.login_id_type = login_id_type
         # This parameter is required.
         self.main_dept_id = main_dept_id
