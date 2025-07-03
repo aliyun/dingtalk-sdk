@@ -30,6 +30,20 @@ public class CreateProjectByTemplateResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>这是项目描述</p>
+         */
+        @NameInMap("description")
+        public String description;
+
+        /**
+         * <strong>example:</strong>
+         * <p>2021-08-13T07:36:50.318Z</p>
+         */
+        @NameInMap("endDate")
+        public String endDate;
+
+        /**
+         * <strong>example:</strong>
          * <p>62e7a1e721d20b5aexxx</p>
          */
         @NameInMap("id")
@@ -49,6 +63,27 @@ public class CreateProjectByTemplateResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>578cae9dbf83e5xxxx</p>
+         */
+        @NameInMap("programId")
+        public String programId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>2021-08-13T07:36:50.318Z</p>
+         */
+        @NameInMap("startDate")
+        public String startDate;
+
+        /**
+         * <strong>example:</strong>
+         * <p>project</p>
+         */
+        @NameInMap("visibility")
+        public String visibility;
+
         public static CreateProjectByTemplateResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             CreateProjectByTemplateResponseBodyResult self = new CreateProjectByTemplateResponseBodyResult();
             return TeaModel.build(map, self);
@@ -60,6 +95,22 @@ public class CreateProjectByTemplateResponseBody extends TeaModel {
         }
         public String getCreated() {
             return this.created;
+        }
+
+        public CreateProjectByTemplateResponseBodyResult setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+        public String getDescription() {
+            return this.description;
+        }
+
+        public CreateProjectByTemplateResponseBodyResult setEndDate(String endDate) {
+            this.endDate = endDate;
+            return this;
+        }
+        public String getEndDate() {
+            return this.endDate;
         }
 
         public CreateProjectByTemplateResponseBodyResult setId(String id) {
@@ -84,6 +135,30 @@ public class CreateProjectByTemplateResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public CreateProjectByTemplateResponseBodyResult setProgramId(String programId) {
+            this.programId = programId;
+            return this;
+        }
+        public String getProgramId() {
+            return this.programId;
+        }
+
+        public CreateProjectByTemplateResponseBodyResult setStartDate(String startDate) {
+            this.startDate = startDate;
+            return this;
+        }
+        public String getStartDate() {
+            return this.startDate;
+        }
+
+        public CreateProjectByTemplateResponseBodyResult setVisibility(String visibility) {
+            this.visibility = visibility;
+            return this;
+        }
+        public String getVisibility() {
+            return this.visibility;
         }
 
     }

@@ -5,6 +5,20 @@ import com.aliyun.tea.*;
 
 public class CreateProjectByTemplateRequest extends TeaModel {
     /**
+     * <strong>example:</strong>
+     * <p>这是项目描述</p>
+     */
+    @NameInMap("description")
+    public String description;
+
+    /**
+     * <strong>example:</strong>
+     * <p>2021-08-13T07:36:50.318Z</p>
+     */
+    @NameInMap("endDate")
+    public String endDate;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -12,6 +26,20 @@ public class CreateProjectByTemplateRequest extends TeaModel {
      */
     @NameInMap("name")
     public String name;
+
+    /**
+     * <strong>example:</strong>
+     * <p>578cae9dbf83e5xxxx</p>
+     */
+    @NameInMap("programId")
+    public String programId;
+
+    /**
+     * <strong>example:</strong>
+     * <p>2021-08-13T07:36:50.318Z</p>
+     */
+    @NameInMap("startDate")
+    public String startDate;
 
     /**
      * <p>This parameter is required.</p>
@@ -22,9 +50,32 @@ public class CreateProjectByTemplateRequest extends TeaModel {
     @NameInMap("templateId")
     public String templateId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>project</p>
+     */
+    @NameInMap("visibility")
+    public String visibility;
+
     public static CreateProjectByTemplateRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateProjectByTemplateRequest self = new CreateProjectByTemplateRequest();
         return TeaModel.build(map, self);
+    }
+
+    public CreateProjectByTemplateRequest setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+    public String getDescription() {
+        return this.description;
+    }
+
+    public CreateProjectByTemplateRequest setEndDate(String endDate) {
+        this.endDate = endDate;
+        return this;
+    }
+    public String getEndDate() {
+        return this.endDate;
     }
 
     public CreateProjectByTemplateRequest setName(String name) {
@@ -35,12 +86,36 @@ public class CreateProjectByTemplateRequest extends TeaModel {
         return this.name;
     }
 
+    public CreateProjectByTemplateRequest setProgramId(String programId) {
+        this.programId = programId;
+        return this;
+    }
+    public String getProgramId() {
+        return this.programId;
+    }
+
+    public CreateProjectByTemplateRequest setStartDate(String startDate) {
+        this.startDate = startDate;
+        return this;
+    }
+    public String getStartDate() {
+        return this.startDate;
+    }
+
     public CreateProjectByTemplateRequest setTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
     }
     public String getTemplateId() {
         return this.templateId;
+    }
+
+    public CreateProjectByTemplateRequest setVisibility(String visibility) {
+        this.visibility = visibility;
+        return this;
+    }
+    public String getVisibility() {
+        return this.visibility;
     }
 
 }

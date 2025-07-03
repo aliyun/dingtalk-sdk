@@ -1507,6 +1507,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>根据staffId批量查询返回支付宝userId</p>
+     * 
+     * @param request QueryAlipayUserIdRequest
+     * @param headers QueryAlipayUserIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryAlipayUserIdResponse
+     */
+    public QueryAlipayUserIdResponse queryAlipayUserIdWithOptions(QueryAlipayUserIdRequest request, QueryAlipayUserIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingUserIds)) {
+            body.put("dingUserIds", request.dingUserIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryAlipayUserId"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/consumption/aliPay/getUserId"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryAlipayUserIdResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据staffId批量查询返回支付宝userId</p>
+     * 
+     * @param request QueryAlipayUserIdRequest
+     * @return QueryAlipayUserIdResponse
+     */
+    public QueryAlipayUserIdResponse queryAlipayUserId(QueryAlipayUserIdRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryAlipayUserIdHeaders headers = new QueryAlipayUserIdHeaders();
+        return this.queryAlipayUserIdWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>批量获取费用类别</p>
      * 
      * @param request QueryCategoryByPageRequest
@@ -2219,6 +2275,52 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryPaymentStatusHeaders headers = new QueryPaymentStatusHeaders();
         return this.queryPaymentStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询对应权限点的人员staffId</p>
+     * 
+     * @param headers QueryPermissionUserIdsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryPermissionUserIdsResponse
+     */
+    public QueryPermissionUserIdsResponse queryPermissionUserIdsWithOptions(QueryPermissionUserIdsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryPermissionUserIds"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/consumption/permission/getUserIds"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryPermissionUserIdsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询对应权限点的人员staffId</p>
+     * @return QueryPermissionUserIdsResponse
+     */
+    public QueryPermissionUserIdsResponse queryPermissionUserIds() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryPermissionUserIdsHeaders headers = new QueryPermissionUserIdsHeaders();
+        return this.queryPermissionUserIdsWithOptions(headers, runtime);
     }
 
     /**

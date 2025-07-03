@@ -62,6 +62,36 @@ public class SearchRequest extends TeaModel {
         return this.spaceRequest;
     }
 
+    public static class SearchRequestDentryRequestCreateTimeRange extends TeaModel {
+        @NameInMap("end")
+        public Long end;
+
+        @NameInMap("start")
+        public Long start;
+
+        public static SearchRequestDentryRequestCreateTimeRange build(java.util.Map<String, ?> map) throws Exception {
+            SearchRequestDentryRequestCreateTimeRange self = new SearchRequestDentryRequestCreateTimeRange();
+            return TeaModel.build(map, self);
+        }
+
+        public SearchRequestDentryRequestCreateTimeRange setEnd(Long end) {
+            this.end = end;
+            return this;
+        }
+        public Long getEnd() {
+            return this.end;
+        }
+
+        public SearchRequestDentryRequestCreateTimeRange setStart(Long start) {
+            this.start = start;
+            return this;
+        }
+        public Long getStart() {
+            return this.start;
+        }
+
+    }
+
     public static class SearchRequestDentryRequestVisitTimeRange extends TeaModel {
         @NameInMap("end")
         public Long end;
@@ -93,6 +123,15 @@ public class SearchRequest extends TeaModel {
     }
 
     public static class SearchRequestDentryRequest extends TeaModel {
+        @NameInMap("createTimeRange")
+        public SearchRequestDentryRequestCreateTimeRange createTimeRange;
+
+        @NameInMap("createUsers")
+        public java.util.List<String> createUsers;
+
+        @NameInMap("editors")
+        public java.util.List<String> editors;
+
         /**
          * <p>This parameter is required.</p>
          */
@@ -127,6 +166,30 @@ public class SearchRequest extends TeaModel {
         public static SearchRequestDentryRequest build(java.util.Map<String, ?> map) throws Exception {
             SearchRequestDentryRequest self = new SearchRequestDentryRequest();
             return TeaModel.build(map, self);
+        }
+
+        public SearchRequestDentryRequest setCreateTimeRange(SearchRequestDentryRequestCreateTimeRange createTimeRange) {
+            this.createTimeRange = createTimeRange;
+            return this;
+        }
+        public SearchRequestDentryRequestCreateTimeRange getCreateTimeRange() {
+            return this.createTimeRange;
+        }
+
+        public SearchRequestDentryRequest setCreateUsers(java.util.List<String> createUsers) {
+            this.createUsers = createUsers;
+            return this;
+        }
+        public java.util.List<String> getCreateUsers() {
+            return this.createUsers;
+        }
+
+        public SearchRequestDentryRequest setEditors(java.util.List<String> editors) {
+            this.editors = editors;
+            return this;
+        }
+        public java.util.List<String> getEditors() {
+            return this.editors;
         }
 
         public SearchRequestDentryRequest setMaxResults(Integer maxResults) {

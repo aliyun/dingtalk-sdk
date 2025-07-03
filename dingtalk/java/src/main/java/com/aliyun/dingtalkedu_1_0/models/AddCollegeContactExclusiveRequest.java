@@ -67,9 +67,6 @@ public class AddCollegeContactExclusiveRequest extends TeaModel {
     @NameInMap("hiredDate")
     public Long hiredDate;
 
-    /**
-     * <p>This parameter is required.</p>
-     */
     @NameInMap("initPassword")
     public String initPassword;
 
@@ -81,8 +78,6 @@ public class AddCollegeContactExclusiveRequest extends TeaModel {
     public String jobNumber;
 
     /**
-     * <p>This parameter is required.</p>
-     * 
      * <strong>example:</strong>
      * <p>studentNo</p>
      */

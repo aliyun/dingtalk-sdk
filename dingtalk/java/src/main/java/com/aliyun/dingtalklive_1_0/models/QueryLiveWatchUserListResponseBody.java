@@ -28,6 +28,9 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
         @NameInMap("deptName")
         public String deptName;
 
+        @NameInMap("firstWatchTime")
+        public Long firstWatchTime;
+
         /**
          * <strong>example:</strong>
          * <p>李四</p>
@@ -83,6 +86,14 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
             return this.deptName;
         }
 
+        public QueryLiveWatchUserListResponseBodyResultOrgUsesList setFirstWatchTime(Long firstWatchTime) {
+            this.firstWatchTime = firstWatchTime;
+            return this;
+        }
+        public Long getFirstWatchTime() {
+            return this.firstWatchTime;
+        }
+
         public QueryLiveWatchUserListResponseBodyResultOrgUsesList setName(String name) {
             this.name = name;
             return this;
@@ -134,6 +145,9 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
     }
 
     public static class QueryLiveWatchUserListResponseBodyResultOutOrgUserList extends TeaModel {
+        @NameInMap("firstWatchTime")
+        public Long firstWatchTime;
+
         /**
          * <strong>example:</strong>
          * <p>张三</p>
@@ -165,6 +179,14 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
         public static QueryLiveWatchUserListResponseBodyResultOutOrgUserList build(java.util.Map<String, ?> map) throws Exception {
             QueryLiveWatchUserListResponseBodyResultOutOrgUserList self = new QueryLiveWatchUserListResponseBodyResultOutOrgUserList();
             return TeaModel.build(map, self);
+        }
+
+        public QueryLiveWatchUserListResponseBodyResultOutOrgUserList setFirstWatchTime(Long firstWatchTime) {
+            this.firstWatchTime = firstWatchTime;
+            return this;
+        }
+        public Long getFirstWatchTime() {
+            return this.firstWatchTime;
         }
 
         public QueryLiveWatchUserListResponseBodyResultOutOrgUserList setName(String name) {

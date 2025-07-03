@@ -20,6 +20,166 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>批量新增/更新角色成员</p>
+     * 
+     * @param request BatchAddOrUpdateRoleMembersRequest
+     * @param headers BatchAddOrUpdateRoleMembersHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchAddOrUpdateRoleMembersResponse
+     */
+    public BatchAddOrUpdateRoleMembersResponse batchAddOrUpdateRoleMembersWithOptions(BatchAddOrUpdateRoleMembersRequest request, BatchAddOrUpdateRoleMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.membersInfo)) {
+            body.put("membersInfo", request.membersInfo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleUuid)) {
+            body.put("roleUuid", request.roleUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.token)) {
+            body.put("token", request.token);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchAddOrUpdateRoleMembers"),
+            new TeaPair("version", "yida_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/yida/forms/resources/roles/upsert"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchAddOrUpdateRoleMembersResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量新增/更新角色成员</p>
+     * 
+     * @param request BatchAddOrUpdateRoleMembersRequest
+     * @return BatchAddOrUpdateRoleMembersResponse
+     */
+    public BatchAddOrUpdateRoleMembersResponse batchAddOrUpdateRoleMembers(BatchAddOrUpdateRoleMembersRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        BatchAddOrUpdateRoleMembersHeaders headers = new BatchAddOrUpdateRoleMembersHeaders();
+        return this.batchAddOrUpdateRoleMembersWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量删除角色成员</p>
+     * 
+     * @param request BatchDeleteRoleMembersRequest
+     * @param headers BatchDeleteRoleMembersHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchDeleteRoleMembersResponse
+     */
+    public BatchDeleteRoleMembersResponse batchDeleteRoleMembersWithOptions(BatchDeleteRoleMembersRequest request, BatchDeleteRoleMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.memberIds)) {
+            body.put("memberIds", request.memberIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleUuid)) {
+            body.put("roleUuid", request.roleUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.token)) {
+            body.put("token", request.token);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchDeleteRoleMembers"),
+            new TeaPair("version", "yida_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/yida/forms/resources/roles/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchDeleteRoleMembersResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量删除角色成员</p>
+     * 
+     * @param request BatchDeleteRoleMembersRequest
+     * @return BatchDeleteRoleMembersResponse
+     */
+    public BatchDeleteRoleMembersResponse batchDeleteRoleMembers(BatchDeleteRoleMembersRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        BatchDeleteRoleMembersHeaders headers = new BatchDeleteRoleMembersHeaders();
+        return this.batchDeleteRoleMembersWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>新增或更新表单实例</p>
      * 
      * @param request CreateOrUpdateFormDataRequest
@@ -100,6 +260,78 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateOrUpdateFormDataHeaders headers = new CreateOrUpdateFormDataHeaders();
         return this.createOrUpdateFormDataWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量删除矩阵明细数据</p>
+     * 
+     * @param request DeleteMatrixDataByRowIdsRequest
+     * @param headers DeleteMatrixDataByRowIdsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteMatrixDataByRowIdsResponse
+     */
+    public DeleteMatrixDataByRowIdsResponse deleteMatrixDataByRowIdsWithOptions(DeleteMatrixDataByRowIdsRequest request, DeleteMatrixDataByRowIdsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.matrixId)) {
+            body.put("matrixId", request.matrixId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.rowIds)) {
+            body.put("rowIds", request.rowIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.token)) {
+            body.put("token", request.token);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteMatrixDataByRowIds"),
+            new TeaPair("version", "yida_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/yida/forms/resources/matrices/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteMatrixDataByRowIdsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量删除矩阵明细数据</p>
+     * 
+     * @param request DeleteMatrixDataByRowIdsRequest
+     * @return DeleteMatrixDataByRowIdsResponse
+     */
+    public DeleteMatrixDataByRowIdsResponse deleteMatrixDataByRowIds(DeleteMatrixDataByRowIdsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteMatrixDataByRowIdsHeaders headers = new DeleteMatrixDataByRowIdsHeaders();
+        return this.deleteMatrixDataByRowIdsWithOptions(request, headers, runtime);
     }
 
     /**
@@ -568,6 +800,230 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetInstancesHeaders headers = new GetInstancesHeaders();
         return this.getInstancesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取权限矩阵数据详情</p>
+     * 
+     * @param request GetMatrixDetailByIdRequest
+     * @param headers GetMatrixDetailByIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetMatrixDetailByIdResponse
+     */
+    public GetMatrixDetailByIdResponse getMatrixDetailByIdWithOptions(GetMatrixDetailByIdRequest request, GetMatrixDetailByIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.matrixId)) {
+            query.put("matrixId", request.matrixId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.token)) {
+            query.put("token", request.token);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetMatrixDetailById"),
+            new TeaPair("version", "yida_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/yida/forms/resources/matrices"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetMatrixDetailByIdResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取权限矩阵数据详情</p>
+     * 
+     * @param request GetMatrixDetailByIdRequest
+     * @return GetMatrixDetailByIdResponse
+     */
+    public GetMatrixDetailByIdResponse getMatrixDetailById(GetMatrixDetailByIdRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetMatrixDetailByIdHeaders headers = new GetMatrixDetailByIdHeaders();
+        return this.getMatrixDetailByIdWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取角色详情和成员列表</p>
+     * 
+     * @param request GetRoleDetailByIdRequest
+     * @param headers GetRoleDetailByIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetRoleDetailByIdResponse
+     */
+    public GetRoleDetailByIdResponse getRoleDetailByIdWithOptions(GetRoleDetailByIdRequest request, GetRoleDetailByIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleUuid)) {
+            query.put("roleUuid", request.roleUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.token)) {
+            query.put("token", request.token);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetRoleDetailById"),
+            new TeaPair("version", "yida_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/yida/forms/resources/roles"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetRoleDetailByIdResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取角色详情和成员列表</p>
+     * 
+     * @param request GetRoleDetailByIdRequest
+     * @return GetRoleDetailByIdResponse
+     */
+    public GetRoleDetailByIdResponse getRoleDetailById(GetRoleDetailByIdRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetRoleDetailByIdHeaders headers = new GetRoleDetailByIdHeaders();
+        return this.getRoleDetailByIdWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改/新增矩阵明细数据</p>
+     * 
+     * @param request SaveAndUpdateMatrixDataRequest
+     * @param headers SaveAndUpdateMatrixDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SaveAndUpdateMatrixDataResponse
+     */
+    public SaveAndUpdateMatrixDataResponse saveAndUpdateMatrixDataWithOptions(SaveAndUpdateMatrixDataRequest request, SaveAndUpdateMatrixDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dataJson)) {
+            body.put("dataJson", request.dataJson);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.matrixId)) {
+            body.put("matrixId", request.matrixId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.token)) {
+            body.put("token", request.token);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SaveAndUpdateMatrixData"),
+            new TeaPair("version", "yida_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/yida/forms/resources/matrices/upsert"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SaveAndUpdateMatrixDataResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改/新增矩阵明细数据</p>
+     * 
+     * @param request SaveAndUpdateMatrixDataRequest
+     * @return SaveAndUpdateMatrixDataResponse
+     */
+    public SaveAndUpdateMatrixDataResponse saveAndUpdateMatrixData(SaveAndUpdateMatrixDataRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SaveAndUpdateMatrixDataHeaders headers = new SaveAndUpdateMatrixDataHeaders();
+        return this.saveAndUpdateMatrixDataWithOptions(request, headers, runtime);
     }
 
     /**

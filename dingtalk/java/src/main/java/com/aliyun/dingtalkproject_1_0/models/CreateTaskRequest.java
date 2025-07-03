@@ -30,6 +30,9 @@ public class CreateTaskRequest extends TeaModel {
     @NameInMap("executorId")
     public String executorId;
 
+    @NameInMap("involveMembers")
+    public java.util.List<String> involveMembers;
+
     /**
      * <strong>example:</strong>
      * <p>我是一条任务备注</p>
@@ -71,6 +74,13 @@ public class CreateTaskRequest extends TeaModel {
      * <strong>example:</strong>
      * <p>62c25e3b376exxxxxx</p>
      */
+    @NameInMap("sprintId")
+    public String sprintId;
+
+    /**
+     * <strong>example:</strong>
+     * <p>62c25e3b376exxxxxx</p>
+     */
     @NameInMap("stageId")
     public String stageId;
 
@@ -80,6 +90,23 @@ public class CreateTaskRequest extends TeaModel {
      */
     @NameInMap("startDate")
     public String startDate;
+
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
+    @NameInMap("storyPoint")
+    public String storyPoint;
+
+    @NameInMap("tagIds")
+    public java.util.List<String> tagIds;
+
+    /**
+     * <strong>example:</strong>
+     * <p>62c25e3b376exxxxxx</p>
+     */
+    @NameInMap("tasklistId")
+    public String tasklistId;
 
     /**
      * <strong>example:</strong>
@@ -125,6 +152,14 @@ public class CreateTaskRequest extends TeaModel {
         return this.executorId;
     }
 
+    public CreateTaskRequest setInvolveMembers(java.util.List<String> involveMembers) {
+        this.involveMembers = involveMembers;
+        return this;
+    }
+    public java.util.List<String> getInvolveMembers() {
+        return this.involveMembers;
+    }
+
     public CreateTaskRequest setNote(String note) {
         this.note = note;
         return this;
@@ -165,6 +200,14 @@ public class CreateTaskRequest extends TeaModel {
         return this.scenariofieldconfigId;
     }
 
+    public CreateTaskRequest setSprintId(String sprintId) {
+        this.sprintId = sprintId;
+        return this;
+    }
+    public String getSprintId() {
+        return this.sprintId;
+    }
+
     public CreateTaskRequest setStageId(String stageId) {
         this.stageId = stageId;
         return this;
@@ -179,6 +222,30 @@ public class CreateTaskRequest extends TeaModel {
     }
     public String getStartDate() {
         return this.startDate;
+    }
+
+    public CreateTaskRequest setStoryPoint(String storyPoint) {
+        this.storyPoint = storyPoint;
+        return this;
+    }
+    public String getStoryPoint() {
+        return this.storyPoint;
+    }
+
+    public CreateTaskRequest setTagIds(java.util.List<String> tagIds) {
+        this.tagIds = tagIds;
+        return this;
+    }
+    public java.util.List<String> getTagIds() {
+        return this.tagIds;
+    }
+
+    public CreateTaskRequest setTasklistId(String tasklistId) {
+        this.tasklistId = tasklistId;
+        return this;
+    }
+    public String getTasklistId() {
+        return this.tasklistId;
     }
 
     public CreateTaskRequest setVisible(String visible) {

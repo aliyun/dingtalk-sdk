@@ -164,10 +164,34 @@ public class CreateTaskResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>62c25e3b376exxxxxx</p>
+         */
+        @NameInMap("sprintId")
+        public String sprintId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
+        @NameInMap("storyPoint")
+        public String storyPoint;
+
+        @NameInMap("tagIds")
+        public java.util.List<String> tagIds;
+
+        /**
+         * <strong>example:</strong>
          * <p>62a697c053c2ef5xxxxxx</p>
          */
         @NameInMap("taskId")
         public String taskId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3b376exxxxxx</p>
+         */
+        @NameInMap("tasklistId")
+        public String tasklistId;
 
         /**
          * <strong>example:</strong>
@@ -261,12 +285,44 @@ public class CreateTaskResponseBody extends TeaModel {
             return this.projectId;
         }
 
+        public CreateTaskResponseBodyResult setSprintId(String sprintId) {
+            this.sprintId = sprintId;
+            return this;
+        }
+        public String getSprintId() {
+            return this.sprintId;
+        }
+
+        public CreateTaskResponseBodyResult setStoryPoint(String storyPoint) {
+            this.storyPoint = storyPoint;
+            return this;
+        }
+        public String getStoryPoint() {
+            return this.storyPoint;
+        }
+
+        public CreateTaskResponseBodyResult setTagIds(java.util.List<String> tagIds) {
+            this.tagIds = tagIds;
+            return this;
+        }
+        public java.util.List<String> getTagIds() {
+            return this.tagIds;
+        }
+
         public CreateTaskResponseBodyResult setTaskId(String taskId) {
             this.taskId = taskId;
             return this;
         }
         public String getTaskId() {
             return this.taskId;
+        }
+
+        public CreateTaskResponseBodyResult setTasklistId(String tasklistId) {
+            this.tasklistId = tasklistId;
+            return this;
+        }
+        public String getTasklistId() {
+            return this.tasklistId;
         }
 
         public CreateTaskResponseBodyResult setUpdated(String updated) {

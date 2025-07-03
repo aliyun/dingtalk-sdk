@@ -420,12 +420,32 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateProjectByTemplateResponse createProjectByTemplateWithOptions(String userId, CreateProjectByTemplateRequest request, CreateProjectByTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endDate)) {
+            body.put("endDate", request.endDate);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.programId)) {
+            body.put("programId", request.programId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startDate)) {
+            body.put("startDate", request.startDate);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
             body.put("templateId", request.templateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.visibility)) {
+            body.put("visibility", request.visibility);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -564,6 +584,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("executorId", request.executorId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.involveMembers)) {
+            body.put("involveMembers", request.involveMembers);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.note)) {
             body.put("note", request.note);
         }
@@ -584,12 +608,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("scenariofieldconfigId", request.scenariofieldconfigId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.sprintId)) {
+            body.put("sprintId", request.sprintId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.stageId)) {
             body.put("stageId", request.stageId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.startDate)) {
             body.put("startDate", request.startDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.storyPoint)) {
+            body.put("storyPoint", request.storyPoint);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagIds)) {
+            body.put("tagIds", request.tagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tasklistId)) {
+            body.put("tasklistId", request.tasklistId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.visible)) {
