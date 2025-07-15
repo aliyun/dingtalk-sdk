@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddFinanceEnterpriseAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddFinanceEnterpriseAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddFinanceEnterpriseAccountResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddRetentionRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddRetentionRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddRetentionRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BankGatewayInvokeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BankGatewayInvokeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BankGatewayInvokeResponse;
@@ -261,6 +264,66 @@ class Dingtalk extends OpenApiClient
         $headers = new AddFinanceEnterpriseAccountHeaders([]);
 
         return $this->addFinanceEnterpriseAccountWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 留资上报
+     *  *
+     * @param AddRetentionRecordRequest $request AddRetentionRecordRequest
+     * @param AddRetentionRecordHeaders $headers AddRetentionRecordHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddRetentionRecordResponse AddRetentionRecordResponse
+     */
+    public function addRetentionRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->mobile)) {
+            $query['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->stateCode)) {
+            $query['stateCode'] = $request->stateCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'AddRetentionRecord',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/retentionRecord',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AddRetentionRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 留资上报
+     *  *
+     * @param AddRetentionRecordRequest $request AddRetentionRecordRequest
+     *
+     * @return AddRetentionRecordResponse AddRetentionRecordResponse
+     */
+    public function addRetentionRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddRetentionRecordHeaders([]);
+
+        return $this->addRetentionRecordWithOptions($request, $headers, $runtime);
     }
 
     /**

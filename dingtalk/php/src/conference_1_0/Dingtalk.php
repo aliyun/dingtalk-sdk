@@ -88,6 +88,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryFlashMinutesSummaryRes
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesAudioHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesAudioRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesAudioResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesMeetingResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesMeetingResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesMeetingResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesSummaryResponse;
@@ -1926,6 +1929,65 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMinutesAudioHeaders([]);
 
         return $this->queryMinutesAudioWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询闪记会后结果
+     *  *
+     * @param string                           $conferenceId
+     * @param QueryMinutesMeetingResultRequest $request      QueryMinutesMeetingResultRequest
+     * @param QueryMinutesMeetingResultHeaders $headers      QueryMinutesMeetingResultHeaders
+     * @param RuntimeOptions                   $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return QueryMinutesMeetingResultResponse QueryMinutesMeetingResultResponse
+     */
+    public function queryMinutesMeetingResultWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryMinutesMeetingResult',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/meetingResult',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryMinutesMeetingResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询闪记会后结果
+     *  *
+     * @param string                           $conferenceId
+     * @param QueryMinutesMeetingResultRequest $request      QueryMinutesMeetingResultRequest
+     *
+     * @return QueryMinutesMeetingResultResponse QueryMinutesMeetingResultResponse
+     */
+    public function queryMinutesMeetingResult($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMinutesMeetingResultHeaders([]);
+
+        return $this->queryMinutesMeetingResultWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**

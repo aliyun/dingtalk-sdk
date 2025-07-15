@@ -53,6 +53,12 @@ use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalUserObjectiveListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalUserSubAdminListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalUserSubAdminListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalUserSubAdminListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetDeptScoreCardIndicatorHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetDeptScoreCardIndicatorRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetDeptScoreCardIndicatorResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetIndicatorDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetIndicatorDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetIndicatorDetailResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -1010,5 +1016,122 @@ class Dingtalk extends OpenApiClient
         $headers = new AgoalUserSubAdminListHeaders([]);
 
         return $this->agoalUserSubAdminListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取部门下的维度和指标id
+     *  *
+     * @param GetDeptScoreCardIndicatorRequest $request GetDeptScoreCardIndicatorRequest
+     * @param GetDeptScoreCardIndicatorHeaders $headers GetDeptScoreCardIndicatorHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetDeptScoreCardIndicatorResponse GetDeptScoreCardIndicatorResponse
+     */
+    public function getDeptScoreCardIndicatorWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingTeamId)) {
+            $query['dingTeamId'] = $request->dingTeamId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetDeptScoreCardIndicator',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/scorecards/departments/indicators',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetDeptScoreCardIndicatorResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取部门下的维度和指标id
+     *  *
+     * @param GetDeptScoreCardIndicatorRequest $request GetDeptScoreCardIndicatorRequest
+     *
+     * @return GetDeptScoreCardIndicatorResponse GetDeptScoreCardIndicatorResponse
+     */
+    public function getDeptScoreCardIndicator($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDeptScoreCardIndicatorHeaders([]);
+
+        return $this->getDeptScoreCardIndicatorWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取指标详情
+     *  *
+     * @param GetIndicatorDetailRequest $request GetIndicatorDetailRequest
+     * @param GetIndicatorDetailHeaders $headers GetIndicatorDetailHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetIndicatorDetailResponse GetIndicatorDetailResponse
+     */
+    public function getIndicatorDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->indicatorId)) {
+            $query['indicatorId'] = $request->indicatorId;
+        }
+        if (!Utils::isUnset($request->monthNum)) {
+            $query['monthNum'] = $request->monthNum;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetIndicatorDetail',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/scorecards/indicators/details',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetIndicatorDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取指标详情
+     *  *
+     * @param GetIndicatorDetailRequest $request GetIndicatorDetailRequest
+     *
+     * @return GetIndicatorDetailResponse GetIndicatorDetailResponse
+     */
+    public function getIndicatorDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetIndicatorDetailHeaders([]);
+
+        return $this->getIndicatorDetailWithOptions($request, $headers, $runtime);
     }
 }

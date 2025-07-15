@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CategoryTemplatesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDocHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDocRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDocResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceAsyncHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceAsyncRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceAsyncResponse;
@@ -29,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateDentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateShortcutHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateShortcutRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateShortcutResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateSpaceResponse;
@@ -77,6 +83,8 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSpaceDirectoriesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetStarInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetStarInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetStarInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTaskInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTaskInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamResponse;
@@ -92,9 +100,15 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetWorkspacePermissionScopesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetWorkspacePermissionScopesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetWorkspacePermissionScopesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\HandoverTeamWithoutAuthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\HandoverTeamWithoutAuthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\HandoverTeamWithoutAuthResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\HandoveryWorkspaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\HandoveryWorkspaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\HandoveryWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsResponse;
@@ -544,6 +558,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 复制文档
+     *  *
+     * @param CopyDocRequest $request CopyDocRequest
+     * @param CopyDocHeaders $headers CopyDocHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CopyDocResponse CopyDocResponse
+     */
+    public function copyDocWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CopyDoc',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/dentries/copy',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CopyDocResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 复制文档
+     *  *
+     * @param CopyDocRequest $request CopyDocRequest
+     *
+     * @return CopyDocResponse CopyDocResponse
+     */
+    public function copyDoc($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CopyDocHeaders([]);
+
+        return $this->copyDocWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 拷贝知识库
      *  *
      * @param CopyWorkspaceRequest $request CopyWorkspaceRequest
@@ -726,6 +797,63 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateDentryHeaders([]);
 
         return $this->createDentryWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建快捷方式
+     *  *
+     * @param CreateShortcutRequest $request CreateShortcutRequest
+     * @param CreateShortcutHeaders $headers CreateShortcutHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateShortcutResponse CreateShortcutResponse
+     */
+    public function createShortcutWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateShortcut',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/resource/shortcut/create',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateShortcutResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建快捷方式
+     *  *
+     * @param CreateShortcutRequest $request CreateShortcutRequest
+     *
+     * @return CreateShortcutResponse CreateShortcutResponse
+     */
+    public function createShortcut($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateShortcutHeaders([]);
+
+        return $this->createShortcutWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1736,6 +1864,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取任务信息
+     *  *
+     * @param string             $taskId
+     * @param GetTaskInfoHeaders $headers GetTaskInfoHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetTaskInfoResponse GetTaskInfoResponse
+     */
+    public function getTaskInfoWithOptions($taskId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'GetTaskInfo',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/task/info/' . $taskId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetTaskInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取任务信息
+     *  *
+     * @param string $taskId
+     *
+     * @return GetTaskInfoResponse GetTaskInfoResponse
+     */
+    public function getTaskInfo($taskId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTaskInfoHeaders([]);
+
+        return $this->getTaskInfoWithOptions($taskId, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询小组详情
      *  *
      * @param string         $teamId
@@ -2037,6 +2216,65 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取知识库权限范围
+     *  *
+     * @param string                              $workspaceId
+     * @param GetWorkspacePermissionScopesRequest $request     GetWorkspacePermissionScopesRequest
+     * @param GetWorkspacePermissionScopesHeaders $headers     GetWorkspacePermissionScopesHeaders
+     * @param RuntimeOptions                      $runtime     runtime options for this request RuntimeOptions
+     *
+     * @return GetWorkspacePermissionScopesResponse GetWorkspacePermissionScopesResponse
+     */
+    public function getWorkspacePermissionScopesWithOptions($workspaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetWorkspacePermissionScopes',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/workspaces/' . $workspaceId . '/members',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetWorkspacePermissionScopesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取知识库权限范围
+     *  *
+     * @param string                              $workspaceId
+     * @param GetWorkspacePermissionScopesRequest $request     GetWorkspacePermissionScopesRequest
+     *
+     * @return GetWorkspacePermissionScopesResponse GetWorkspacePermissionScopesResponse
+     */
+    public function getWorkspacePermissionScopes($workspaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetWorkspacePermissionScopesHeaders([]);
+
+        return $this->getWorkspacePermissionScopesWithOptions($workspaceId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 以超级管理员身份转交小组
      *  *
      * @param HandoverTeamWithoutAuthRequest $request HandoverTeamWithoutAuthRequest
@@ -2091,6 +2329,63 @@ class Dingtalk extends OpenApiClient
         $headers = new HandoverTeamWithoutAuthHeaders([]);
 
         return $this->handoverTeamWithoutAuthWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 知识库转交所有者
+     *  *
+     * @param HandoveryWorkspaceRequest $request HandoveryWorkspaceRequest
+     * @param HandoveryWorkspaceHeaders $headers HandoveryWorkspaceHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HandoveryWorkspaceResponse HandoveryWorkspaceResponse
+     */
+    public function handoveryWorkspaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HandoveryWorkspace',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/dentries/workspace/handover',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HandoveryWorkspaceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 知识库转交所有者
+     *  *
+     * @param HandoveryWorkspaceRequest $request HandoveryWorkspaceRequest
+     *
+     * @return HandoveryWorkspaceResponse HandoveryWorkspaceResponse
+     */
+    public function handoveryWorkspace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HandoveryWorkspaceHeaders([]);
+
+        return $this->handoveryWorkspaceWithOptions($request, $headers, $runtime);
     }
 
     /**

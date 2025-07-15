@@ -56,6 +56,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignUserVerifyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\FinishReviewOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\FinishReviewOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\FinishReviewOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\OpenEsignFreeTrailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\OpenEsignFreeTrailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\OpenEsignFreeTrailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionResponse;
@@ -1301,6 +1304,66 @@ class Dingtalk extends OpenApiClient
         $headers = new FinishReviewOrderHeaders([]);
 
         return $this->finishReviewOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 开通电子签免费试用
+     *  *
+     * @param OpenEsignFreeTrailRequest $request OpenEsignFreeTrailRequest
+     * @param OpenEsignFreeTrailHeaders $headers OpenEsignFreeTrailHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenEsignFreeTrailResponse OpenEsignFreeTrailResponse
+     */
+    public function openEsignFreeTrailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'OpenEsignFreeTrail',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/openEsignFreeTrail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return OpenEsignFreeTrailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 开通电子签免费试用
+     *  *
+     * @param OpenEsignFreeTrailRequest $request OpenEsignFreeTrailRequest
+     *
+     * @return OpenEsignFreeTrailResponse OpenEsignFreeTrailResponse
+     */
+    public function openEsignFreeTrail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenEsignFreeTrailHeaders([]);
+
+        return $this->openEsignFreeTrailWithOptions($request, $headers, $runtime);
     }
 
     /**

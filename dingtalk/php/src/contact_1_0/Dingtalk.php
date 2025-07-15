@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeDingTalkIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainAdminHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainAdminRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainAdminResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CourseFinishCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CourseFinishCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CourseFinishCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateCooperateOrgResponse;
@@ -914,6 +917,75 @@ class Dingtalk extends OpenApiClient
         $headers = new ChangeMainAdminHeaders([]);
 
         return $this->changeMainAdminWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 考证上钉-isv-证书颁发接口
+     *  *
+     * @param CourseFinishCourseRequest $request CourseFinishCourseRequest
+     * @param CourseFinishCourseHeaders $headers CourseFinishCourseHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CourseFinishCourseResponse CourseFinishCourseResponse
+     */
+    public function courseFinishCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->certId)) {
+            $body['certId'] = $request->certId;
+        }
+        if (!Utils::isUnset($request->certMediaBase64)) {
+            $body['certMediaBase64'] = $request->certMediaBase64;
+        }
+        if (!Utils::isUnset($request->courseId)) {
+            $body['courseId'] = $request->courseId;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CourseFinishCourse',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/course/finishCourse',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CourseFinishCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 考证上钉-isv-证书颁发接口
+     *  *
+     * @param CourseFinishCourseRequest $request CourseFinishCourseRequest
+     *
+     * @return CourseFinishCourseResponse CourseFinishCourseResponse
+     */
+    public function courseFinishCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CourseFinishCourseHeaders([]);
+
+        return $this->courseFinishCourseWithOptions($request, $headers, $runtime);
     }
 
     /**

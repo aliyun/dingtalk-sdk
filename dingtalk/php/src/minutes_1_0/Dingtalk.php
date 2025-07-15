@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsResponse
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryCreateMinutesListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryCreateMinutesListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryCreateMinutesListResponse;
@@ -171,6 +174,66 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteMinutesHeaders([]);
 
         return $this->deleteMinutesWithOptions($taskUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询闪记摘要
+     *  *
+     * @param OpenQueryMinutesSummaryRequest $request OpenQueryMinutesSummaryRequest
+     * @param OpenQueryMinutesSummaryHeaders $headers OpenQueryMinutesSummaryHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenQueryMinutesSummaryResponse OpenQueryMinutesSummaryResponse
+     */
+    public function openQueryMinutesSummaryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->taskUuid)) {
+            $query['taskUuid'] = $request->taskUuid;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'OpenQueryMinutesSummary',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/queryMinutes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return OpenQueryMinutesSummaryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询闪记摘要
+     *  *
+     * @param OpenQueryMinutesSummaryRequest $request OpenQueryMinutesSummaryRequest
+     *
+     * @return OpenQueryMinutesSummaryResponse OpenQueryMinutesSummaryResponse
+     */
+    public function openQueryMinutesSummary($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenQueryMinutesSummaryHeaders([]);
+
+        return $this->openQueryMinutesSummaryWithOptions($request, $headers, $runtime);
     }
 
     /**

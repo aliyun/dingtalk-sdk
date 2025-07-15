@@ -192,8 +192,6 @@ class GroupAddRequest extends Model
     public $managerList;
 
     /**
-     * @description This parameter is required.
-     *
      * @var members[]
      */
     public $members;

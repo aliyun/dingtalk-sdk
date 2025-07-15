@@ -14,8 +14,16 @@ class SetUserVersionToFreeRequest extends Model
      * @var string
      */
     public $operatorUserId;
+
+    /**
+     * @example other
+     *
+     * @var string
+     */
+    public $version;
     protected $_name = [
         'operatorUserId' => 'operatorUserId',
+        'version' => 'version',
     ];
 
     public function validate() {}
@@ -25,6 +33,9 @@ class SetUserVersionToFreeRequest extends Model
         $res = [];
         if (null !== $this->operatorUserId) {
             $res['operatorUserId'] = $this->operatorUserId;
+        }
+        if (null !== $this->version) {
+            $res['version'] = $this->version;
         }
 
         return $res;
@@ -40,6 +51,9 @@ class SetUserVersionToFreeRequest extends Model
         $model = new self();
         if (isset($map['operatorUserId'])) {
             $model->operatorUserId = $map['operatorUserId'];
+        }
+        if (isset($map['version'])) {
+            $model->version = $map['version'];
         }
 
         return $model;
