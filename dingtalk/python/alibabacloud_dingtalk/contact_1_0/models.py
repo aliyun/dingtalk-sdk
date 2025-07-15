@@ -1841,6 +1841,159 @@ class ChangeMainAdminResponse(TeaModel):
         return self
 
 
+class CourseFinishCourseHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CourseFinishCourseRequest(TeaModel):
+    def __init__(
+        self,
+        cert_id: str = None,
+        cert_media_base_64: str = None,
+        course_id: str = None,
+        status: str = None,
+        user_id: str = None,
+    ):
+        self.cert_id = cert_id
+        self.cert_media_base_64 = cert_media_base_64
+        self.course_id = course_id
+        self.status = status
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cert_id is not None:
+            result['certId'] = self.cert_id
+        if self.cert_media_base_64 is not None:
+            result['certMediaBase64'] = self.cert_media_base_64
+        if self.course_id is not None:
+            result['courseId'] = self.course_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('certId') is not None:
+            self.cert_id = m.get('certId')
+        if m.get('certMediaBase64') is not None:
+            self.cert_media_base_64 = m.get('certMediaBase64')
+        if m.get('courseId') is not None:
+            self.course_id = m.get('courseId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CourseFinishCourseResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # This parameter is required.
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class CourseFinishCourseResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CourseFinishCourseResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CourseFinishCourseResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateCooperateOrgHeaders(TeaModel):
     def __init__(
         self,

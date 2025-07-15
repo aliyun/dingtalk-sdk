@@ -1328,6 +1328,84 @@ class OpenAgoalProgressDTO(TeaModel):
         return self
 
 
+class OpenScoreCardDimensionDTODimensionList(TeaModel):
+    def __init__(
+        self,
+        dimension_id: str = None,
+        indicator_id_list: List[str] = None,
+    ):
+        # This parameter is required.
+        self.dimension_id = dimension_id
+        # This parameter is required.
+        self.indicator_id_list = indicator_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dimension_id is not None:
+            result['dimensionId'] = self.dimension_id
+        if self.indicator_id_list is not None:
+            result['indicatorIdList'] = self.indicator_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dimensionId') is not None:
+            self.dimension_id = m.get('dimensionId')
+        if m.get('indicatorIdList') is not None:
+            self.indicator_id_list = m.get('indicatorIdList')
+        return self
+
+
+class OpenScoreCardDimensionDTO(TeaModel):
+    def __init__(
+        self,
+        dimension_list: List[OpenScoreCardDimensionDTODimensionList] = None,
+        score_card_id: str = None,
+    ):
+        # This parameter is required.
+        self.dimension_list = dimension_list
+        # This parameter is required.
+        self.score_card_id = score_card_id
+
+    def validate(self):
+        if self.dimension_list:
+            for k in self.dimension_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['dimensionList'] = []
+        if self.dimension_list is not None:
+            for k in self.dimension_list:
+                result['dimensionList'].append(k.to_map() if k else None)
+        if self.score_card_id is not None:
+            result['scoreCardId'] = self.score_card_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.dimension_list = []
+        if m.get('dimensionList') is not None:
+            for k in m.get('dimensionList'):
+                temp_model = OpenScoreCardDimensionDTODimensionList()
+                self.dimension_list.append(temp_model.from_map(k))
+        if m.get('scoreCardId') is not None:
+            self.score_card_id = m.get('scoreCardId')
+        return self
+
+
 class OpenUserAdminDTO(TeaModel):
     def __init__(
         self,
@@ -3976,6 +4054,294 @@ class AgoalUserSubAdminListResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AgoalUserSubAdminListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetDeptScoreCardIndicatorHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetDeptScoreCardIndicatorRequest(TeaModel):
+    def __init__(
+        self,
+        ding_team_id: str = None,
+    ):
+        self.ding_team_id = ding_team_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_team_id is not None:
+            result['dingTeamId'] = self.ding_team_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingTeamId') is not None:
+            self.ding_team_id = m.get('dingTeamId')
+        return self
+
+
+class GetDeptScoreCardIndicatorResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: OpenScoreCardDimensionDTO = None,
+        request_id: str = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = OpenScoreCardDimensionDTO()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetDeptScoreCardIndicatorResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetDeptScoreCardIndicatorResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetDeptScoreCardIndicatorResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetIndicatorDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetIndicatorDetailRequest(TeaModel):
+    def __init__(
+        self,
+        indicator_id: str = None,
+        month_num: int = None,
+    ):
+        self.indicator_id = indicator_id
+        self.month_num = month_num
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.indicator_id is not None:
+            result['indicatorId'] = self.indicator_id
+        if self.month_num is not None:
+            result['monthNum'] = self.month_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('indicatorId') is not None:
+            self.indicator_id = m.get('indicatorId')
+        if m.get('monthNum') is not None:
+            self.month_num = m.get('monthNum')
+        return self
+
+
+class GetIndicatorDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[str] = None,
+        request_id: str = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetIndicatorDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetIndicatorDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetIndicatorDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

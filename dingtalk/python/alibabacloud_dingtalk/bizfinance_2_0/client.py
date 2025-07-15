@@ -188,6 +188,124 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.AddFinanceEnterpriseAccountHeaders()
         return await self.add_finance_enterprise_account_with_options_async(request, headers, runtime)
 
+    def add_retention_record_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.AddRetentionRecordRequest,
+        headers: dingtalkbizfinance__2__0_models.AddRetentionRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.AddRetentionRecordResponse:
+        """
+        @summary 留资上报
+        
+        @param request: AddRetentionRecordRequest
+        @param headers: AddRetentionRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRetentionRecordResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.state_code):
+            query['stateCode'] = request.state_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AddRetentionRecord',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/retentionRecord',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.AddRetentionRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_retention_record_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.AddRetentionRecordRequest,
+        headers: dingtalkbizfinance__2__0_models.AddRetentionRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.AddRetentionRecordResponse:
+        """
+        @summary 留资上报
+        
+        @param request: AddRetentionRecordRequest
+        @param headers: AddRetentionRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRetentionRecordResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.state_code):
+            query['stateCode'] = request.state_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AddRetentionRecord',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/retentionRecord',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.AddRetentionRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_retention_record(
+        self,
+        request: dingtalkbizfinance__2__0_models.AddRetentionRecordRequest,
+    ) -> dingtalkbizfinance__2__0_models.AddRetentionRecordResponse:
+        """
+        @summary 留资上报
+        
+        @param request: AddRetentionRecordRequest
+        @return: AddRetentionRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.AddRetentionRecordHeaders()
+        return self.add_retention_record_with_options(request, headers, runtime)
+
+    async def add_retention_record_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.AddRetentionRecordRequest,
+    ) -> dingtalkbizfinance__2__0_models.AddRetentionRecordResponse:
+        """
+        @summary 留资上报
+        
+        @param request: AddRetentionRecordRequest
+        @return: AddRetentionRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.AddRetentionRecordHeaders()
+        return await self.add_retention_record_with_options_async(request, headers, runtime)
+
     def bank_gateway_invoke_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.BankGatewayInvokeRequest,

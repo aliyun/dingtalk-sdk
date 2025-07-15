@@ -1865,3 +1865,235 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkagoal__1__0_models.AgoalUserSubAdminListHeaders()
         return await self.agoal_user_sub_admin_list_with_options_async(request, headers, runtime)
+
+    def get_dept_score_card_indicator_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorRequest,
+        headers: dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorResponse:
+        """
+        @summary 获取部门下的维度和指标id
+        
+        @param request: GetDeptScoreCardIndicatorRequest
+        @param headers: GetDeptScoreCardIndicatorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDeptScoreCardIndicatorResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_team_id):
+            query['dingTeamId'] = request.ding_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDeptScoreCardIndicator',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/scorecards/departments/indicators',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_dept_score_card_indicator_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorRequest,
+        headers: dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorResponse:
+        """
+        @summary 获取部门下的维度和指标id
+        
+        @param request: GetDeptScoreCardIndicatorRequest
+        @param headers: GetDeptScoreCardIndicatorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDeptScoreCardIndicatorResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_team_id):
+            query['dingTeamId'] = request.ding_team_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDeptScoreCardIndicator',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/scorecards/departments/indicators',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_dept_score_card_indicator(
+        self,
+        request: dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorRequest,
+    ) -> dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorResponse:
+        """
+        @summary 获取部门下的维度和指标id
+        
+        @param request: GetDeptScoreCardIndicatorRequest
+        @return: GetDeptScoreCardIndicatorResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorHeaders()
+        return self.get_dept_score_card_indicator_with_options(request, headers, runtime)
+
+    async def get_dept_score_card_indicator_async(
+        self,
+        request: dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorRequest,
+    ) -> dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorResponse:
+        """
+        @summary 获取部门下的维度和指标id
+        
+        @param request: GetDeptScoreCardIndicatorRequest
+        @return: GetDeptScoreCardIndicatorResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.GetDeptScoreCardIndicatorHeaders()
+        return await self.get_dept_score_card_indicator_with_options_async(request, headers, runtime)
+
+    def get_indicator_detail_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.GetIndicatorDetailRequest,
+        headers: dingtalkagoal__1__0_models.GetIndicatorDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.GetIndicatorDetailResponse:
+        """
+        @summary 获取指标详情
+        
+        @param request: GetIndicatorDetailRequest
+        @param headers: GetIndicatorDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetIndicatorDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.indicator_id):
+            query['indicatorId'] = request.indicator_id
+        if not UtilClient.is_unset(request.month_num):
+            query['monthNum'] = request.month_num
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetIndicatorDetail',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/scorecards/indicators/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.GetIndicatorDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_indicator_detail_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.GetIndicatorDetailRequest,
+        headers: dingtalkagoal__1__0_models.GetIndicatorDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.GetIndicatorDetailResponse:
+        """
+        @summary 获取指标详情
+        
+        @param request: GetIndicatorDetailRequest
+        @param headers: GetIndicatorDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetIndicatorDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.indicator_id):
+            query['indicatorId'] = request.indicator_id
+        if not UtilClient.is_unset(request.month_num):
+            query['monthNum'] = request.month_num
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetIndicatorDetail',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/scorecards/indicators/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.GetIndicatorDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_indicator_detail(
+        self,
+        request: dingtalkagoal__1__0_models.GetIndicatorDetailRequest,
+    ) -> dingtalkagoal__1__0_models.GetIndicatorDetailResponse:
+        """
+        @summary 获取指标详情
+        
+        @param request: GetIndicatorDetailRequest
+        @return: GetIndicatorDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.GetIndicatorDetailHeaders()
+        return self.get_indicator_detail_with_options(request, headers, runtime)
+
+    async def get_indicator_detail_async(
+        self,
+        request: dingtalkagoal__1__0_models.GetIndicatorDetailRequest,
+    ) -> dingtalkagoal__1__0_models.GetIndicatorDetailResponse:
+        """
+        @summary 获取指标详情
+        
+        @param request: GetIndicatorDetailRequest
+        @return: GetIndicatorDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.GetIndicatorDetailHeaders()
+        return await self.get_indicator_detail_with_options_async(request, headers, runtime)

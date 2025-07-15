@@ -8670,6 +8670,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
             body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.version):
+            body['version'] = request.version
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -8713,6 +8715,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
             body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.version):
+            body['version'] = request.version
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

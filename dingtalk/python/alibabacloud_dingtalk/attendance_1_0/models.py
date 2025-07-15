@@ -8450,11 +8450,8 @@ class GroupAddRequestMembers(TeaModel):
         type: str = None,
         user_id: str = None,
     ):
-        # This parameter is required.
         self.role = role
-        # This parameter is required.
         self.type = type
-        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -8674,7 +8671,6 @@ class GroupAddRequest(TeaModel):
         # This parameter is required.
         self.group_name = group_name
         self.manager_list = manager_list
-        # This parameter is required.
         self.members = members
         self.modify_member = modify_member
         self.offset = offset

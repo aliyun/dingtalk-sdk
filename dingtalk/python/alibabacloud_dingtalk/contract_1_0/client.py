@@ -2272,6 +2272,124 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.FinishReviewOrderHeaders()
         return await self.finish_review_order_with_options_async(request, headers, runtime)
 
+    def open_esign_free_trail_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.OpenEsignFreeTrailRequest,
+        headers: dingtalkcontract__1__0_models.OpenEsignFreeTrailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.OpenEsignFreeTrailResponse:
+        """
+        @summary 开通电子签免费试用
+        
+        @param request: OpenEsignFreeTrailRequest
+        @param headers: OpenEsignFreeTrailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenEsignFreeTrailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenEsignFreeTrail',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/openEsignFreeTrail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.OpenEsignFreeTrailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def open_esign_free_trail_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.OpenEsignFreeTrailRequest,
+        headers: dingtalkcontract__1__0_models.OpenEsignFreeTrailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.OpenEsignFreeTrailResponse:
+        """
+        @summary 开通电子签免费试用
+        
+        @param request: OpenEsignFreeTrailRequest
+        @param headers: OpenEsignFreeTrailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenEsignFreeTrailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenEsignFreeTrail',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/openEsignFreeTrail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.OpenEsignFreeTrailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def open_esign_free_trail(
+        self,
+        request: dingtalkcontract__1__0_models.OpenEsignFreeTrailRequest,
+    ) -> dingtalkcontract__1__0_models.OpenEsignFreeTrailResponse:
+        """
+        @summary 开通电子签免费试用
+        
+        @param request: OpenEsignFreeTrailRequest
+        @return: OpenEsignFreeTrailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.OpenEsignFreeTrailHeaders()
+        return self.open_esign_free_trail_with_options(request, headers, runtime)
+
+    async def open_esign_free_trail_async(
+        self,
+        request: dingtalkcontract__1__0_models.OpenEsignFreeTrailRequest,
+    ) -> dingtalkcontract__1__0_models.OpenEsignFreeTrailResponse:
+        """
+        @summary 开通电子签免费试用
+        
+        @param request: OpenEsignFreeTrailRequest
+        @return: OpenEsignFreeTrailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.OpenEsignFreeTrailHeaders()
+        return await self.open_esign_free_trail_with_options_async(request, headers, runtime)
+
     def query_advanced_contract_version_with_options(
         self,
         request: dingtalkcontract__1__0_models.QueryAdvancedContractVersionRequest,

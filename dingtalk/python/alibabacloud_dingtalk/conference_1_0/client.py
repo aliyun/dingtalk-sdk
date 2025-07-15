@@ -3464,6 +3464,124 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.QueryMinutesAudioHeaders()
         return await self.query_minutes_audio_with_options_async(conference_id, request, headers, runtime)
 
+    def query_minutes_meeting_result_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryMinutesMeetingResultRequest,
+        headers: dingtalkconference__1__0_models.QueryMinutesMeetingResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryMinutesMeetingResultResponse:
+        """
+        @summary 查询闪记会后结果
+        
+        @param request: QueryMinutesMeetingResultRequest
+        @param headers: QueryMinutesMeetingResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMinutesMeetingResultResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryMinutesMeetingResult',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/minutes/meetingResult',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryMinutesMeetingResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_minutes_meeting_result_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryMinutesMeetingResultRequest,
+        headers: dingtalkconference__1__0_models.QueryMinutesMeetingResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryMinutesMeetingResultResponse:
+        """
+        @summary 查询闪记会后结果
+        
+        @param request: QueryMinutesMeetingResultRequest
+        @param headers: QueryMinutesMeetingResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMinutesMeetingResultResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryMinutesMeetingResult',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/minutes/meetingResult',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryMinutesMeetingResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_minutes_meeting_result(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryMinutesMeetingResultRequest,
+    ) -> dingtalkconference__1__0_models.QueryMinutesMeetingResultResponse:
+        """
+        @summary 查询闪记会后结果
+        
+        @param request: QueryMinutesMeetingResultRequest
+        @return: QueryMinutesMeetingResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryMinutesMeetingResultHeaders()
+        return self.query_minutes_meeting_result_with_options(conference_id, request, headers, runtime)
+
+    async def query_minutes_meeting_result_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryMinutesMeetingResultRequest,
+    ) -> dingtalkconference__1__0_models.QueryMinutesMeetingResultResponse:
+        """
+        @summary 查询闪记会后结果
+        
+        @param request: QueryMinutesMeetingResultRequest
+        @return: QueryMinutesMeetingResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryMinutesMeetingResultHeaders()
+        return await self.query_minutes_meeting_result_with_options_async(conference_id, request, headers, runtime)
+
     def query_minutes_summary_with_options(
         self,
         conference_id: str,

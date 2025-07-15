@@ -664,6 +664,120 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.CopyDentryHeaders()
         return await self.copy_dentry_with_options_async(space_id, dentry_id, request, headers, runtime)
 
+    def copy_doc_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.CopyDocRequest,
+        headers: dingtalkdoc__2__0_models.CopyDocHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CopyDocResponse:
+        """
+        @summary 复制文档
+        
+        @param request: CopyDocRequest
+        @param headers: CopyDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyDocResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyDoc',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/copy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CopyDocResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def copy_doc_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.CopyDocRequest,
+        headers: dingtalkdoc__2__0_models.CopyDocHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CopyDocResponse:
+        """
+        @summary 复制文档
+        
+        @param request: CopyDocRequest
+        @param headers: CopyDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyDocResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyDoc',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/copy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CopyDocResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def copy_doc(
+        self,
+        request: dingtalkdoc__2__0_models.CopyDocRequest,
+    ) -> dingtalkdoc__2__0_models.CopyDocResponse:
+        """
+        @summary 复制文档
+        
+        @param request: CopyDocRequest
+        @return: CopyDocResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CopyDocHeaders()
+        return self.copy_doc_with_options(request, headers, runtime)
+
+    async def copy_doc_async(
+        self,
+        request: dingtalkdoc__2__0_models.CopyDocRequest,
+    ) -> dingtalkdoc__2__0_models.CopyDocResponse:
+        """
+        @summary 复制文档
+        
+        @param request: CopyDocRequest
+        @return: CopyDocResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CopyDocHeaders()
+        return await self.copy_doc_with_options_async(request, headers, runtime)
+
     def copy_workspace_with_options(
         self,
         request: dingtalkdoc__2__0_models.CopyWorkspaceRequest,
@@ -1025,6 +1139,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__2__0_models.CreateDentryHeaders()
         return await self.create_dentry_with_options_async(space_id, request, headers, runtime)
+
+    def create_shortcut_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.CreateShortcutRequest,
+        headers: dingtalkdoc__2__0_models.CreateShortcutHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CreateShortcutResponse:
+        """
+        @summary 创建快捷方式
+        
+        @param request: CreateShortcutRequest
+        @param headers: CreateShortcutHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateShortcutResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateShortcut',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/resource/shortcut/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CreateShortcutResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_shortcut_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.CreateShortcutRequest,
+        headers: dingtalkdoc__2__0_models.CreateShortcutHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CreateShortcutResponse:
+        """
+        @summary 创建快捷方式
+        
+        @param request: CreateShortcutRequest
+        @param headers: CreateShortcutHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateShortcutResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateShortcut',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/resource/shortcut/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CreateShortcutResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_shortcut(
+        self,
+        request: dingtalkdoc__2__0_models.CreateShortcutRequest,
+    ) -> dingtalkdoc__2__0_models.CreateShortcutResponse:
+        """
+        @summary 创建快捷方式
+        
+        @param request: CreateShortcutRequest
+        @return: CreateShortcutResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CreateShortcutHeaders()
+        return self.create_shortcut_with_options(request, headers, runtime)
+
+    async def create_shortcut_async(
+        self,
+        request: dingtalkdoc__2__0_models.CreateShortcutRequest,
+    ) -> dingtalkdoc__2__0_models.CreateShortcutResponse:
+        """
+        @summary 创建快捷方式
+        
+        @param request: CreateShortcutRequest
+        @return: CreateShortcutResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CreateShortcutHeaders()
+        return await self.create_shortcut_with_options_async(request, headers, runtime)
 
     def create_space_with_options(
         self,
@@ -2994,6 +3222,106 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.GetStarInfoHeaders()
         return await self.get_star_info_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def get_task_info_with_options(
+        self,
+        task_id: str,
+        headers: dingtalkdoc__2__0_models.GetTaskInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetTaskInfoResponse:
+        """
+        @summary 获取任务信息
+        
+        @param headers: GetTaskInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTaskInfoResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetTaskInfo',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/task/info/{task_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetTaskInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_task_info_with_options_async(
+        self,
+        task_id: str,
+        headers: dingtalkdoc__2__0_models.GetTaskInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetTaskInfoResponse:
+        """
+        @summary 获取任务信息
+        
+        @param headers: GetTaskInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTaskInfoResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetTaskInfo',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/task/info/{task_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetTaskInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_task_info(
+        self,
+        task_id: str,
+    ) -> dingtalkdoc__2__0_models.GetTaskInfoResponse:
+        """
+        @summary 获取任务信息
+        
+        @return: GetTaskInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetTaskInfoHeaders()
+        return self.get_task_info_with_options(task_id, headers, runtime)
+
+    async def get_task_info_async(
+        self,
+        task_id: str,
+    ) -> dingtalkdoc__2__0_models.GetTaskInfoResponse:
+        """
+        @summary 获取任务信息
+        
+        @return: GetTaskInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetTaskInfoHeaders()
+        return await self.get_task_info_with_options_async(task_id, headers, runtime)
+
     def get_team_with_options(
         self,
         team_id: str,
@@ -3588,6 +3916,124 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.GetUuidByDentryIdHeaders()
         return await self.get_uuid_by_dentry_id_with_options_async(dentry_id, request, headers, runtime)
 
+    def get_workspace_permission_scopes_with_options(
+        self,
+        workspace_id: str,
+        request: dingtalkdoc__2__0_models.GetWorkspacePermissionScopesRequest,
+        headers: dingtalkdoc__2__0_models.GetWorkspacePermissionScopesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetWorkspacePermissionScopesResponse:
+        """
+        @summary 获取知识库权限范围
+        
+        @param request: GetWorkspacePermissionScopesRequest
+        @param headers: GetWorkspacePermissionScopesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetWorkspacePermissionScopesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetWorkspacePermissionScopes',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/workspaces/{workspace_id}/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetWorkspacePermissionScopesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_workspace_permission_scopes_with_options_async(
+        self,
+        workspace_id: str,
+        request: dingtalkdoc__2__0_models.GetWorkspacePermissionScopesRequest,
+        headers: dingtalkdoc__2__0_models.GetWorkspacePermissionScopesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetWorkspacePermissionScopesResponse:
+        """
+        @summary 获取知识库权限范围
+        
+        @param request: GetWorkspacePermissionScopesRequest
+        @param headers: GetWorkspacePermissionScopesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetWorkspacePermissionScopesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetWorkspacePermissionScopes',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/workspaces/{workspace_id}/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetWorkspacePermissionScopesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_workspace_permission_scopes(
+        self,
+        workspace_id: str,
+        request: dingtalkdoc__2__0_models.GetWorkspacePermissionScopesRequest,
+    ) -> dingtalkdoc__2__0_models.GetWorkspacePermissionScopesResponse:
+        """
+        @summary 获取知识库权限范围
+        
+        @param request: GetWorkspacePermissionScopesRequest
+        @return: GetWorkspacePermissionScopesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetWorkspacePermissionScopesHeaders()
+        return self.get_workspace_permission_scopes_with_options(workspace_id, request, headers, runtime)
+
+    async def get_workspace_permission_scopes_async(
+        self,
+        workspace_id: str,
+        request: dingtalkdoc__2__0_models.GetWorkspacePermissionScopesRequest,
+    ) -> dingtalkdoc__2__0_models.GetWorkspacePermissionScopesResponse:
+        """
+        @summary 获取知识库权限范围
+        
+        @param request: GetWorkspacePermissionScopesRequest
+        @return: GetWorkspacePermissionScopesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetWorkspacePermissionScopesHeaders()
+        return await self.get_workspace_permission_scopes_with_options_async(workspace_id, request, headers, runtime)
+
     def handover_team_without_auth_with_options(
         self,
         request: dingtalkdoc__2__0_models.HandoverTeamWithoutAuthRequest,
@@ -3701,6 +4147,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__2__0_models.HandoverTeamWithoutAuthHeaders()
         return await self.handover_team_without_auth_with_options_async(request, headers, runtime)
+
+    def handovery_workspace_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.HandoveryWorkspaceRequest,
+        headers: dingtalkdoc__2__0_models.HandoveryWorkspaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.HandoveryWorkspaceResponse:
+        """
+        @summary 知识库转交所有者
+        
+        @param request: HandoveryWorkspaceRequest
+        @param headers: HandoveryWorkspaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HandoveryWorkspaceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HandoveryWorkspace',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/workspace/handover',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.HandoveryWorkspaceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def handovery_workspace_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.HandoveryWorkspaceRequest,
+        headers: dingtalkdoc__2__0_models.HandoveryWorkspaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.HandoveryWorkspaceResponse:
+        """
+        @summary 知识库转交所有者
+        
+        @param request: HandoveryWorkspaceRequest
+        @param headers: HandoveryWorkspaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HandoveryWorkspaceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HandoveryWorkspace',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/workspace/handover',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.HandoveryWorkspaceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def handovery_workspace(
+        self,
+        request: dingtalkdoc__2__0_models.HandoveryWorkspaceRequest,
+    ) -> dingtalkdoc__2__0_models.HandoveryWorkspaceResponse:
+        """
+        @summary 知识库转交所有者
+        
+        @param request: HandoveryWorkspaceRequest
+        @return: HandoveryWorkspaceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.HandoveryWorkspaceHeaders()
+        return self.handovery_workspace_with_options(request, headers, runtime)
+
+    async def handovery_workspace_async(
+        self,
+        request: dingtalkdoc__2__0_models.HandoveryWorkspaceRequest,
+    ) -> dingtalkdoc__2__0_models.HandoveryWorkspaceResponse:
+        """
+        @summary 知识库转交所有者
+        
+        @param request: HandoveryWorkspaceRequest
+        @return: HandoveryWorkspaceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.HandoveryWorkspaceHeaders()
+        return await self.handovery_workspace_with_options_async(request, headers, runtime)
 
     def list_feeds_with_options(
         self,

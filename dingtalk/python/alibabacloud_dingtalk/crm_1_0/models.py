@@ -22909,8 +22909,10 @@ class QueryGlobalInfoResponseBodyResult(TeaModel):
     def __init__(
         self,
         oem_enable: bool = None,
+        t_2t_3coexist: bool = None,
     ):
         self.oem_enable = oem_enable
+        self.t_2t_3coexist = t_2t_3coexist
 
     def validate(self):
         pass
@@ -22923,12 +22925,16 @@ class QueryGlobalInfoResponseBodyResult(TeaModel):
         result = dict()
         if self.oem_enable is not None:
             result['oemEnable'] = self.oem_enable
+        if self.t_2t_3coexist is not None:
+            result['t2t3Coexist'] = self.t_2t_3coexist
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('oemEnable') is not None:
             self.oem_enable = m.get('oemEnable')
+        if m.get('t2t3Coexist') is not None:
+            self.t_2t_3coexist = m.get('t2t3Coexist')
         return self
 
 
@@ -25486,8 +25492,10 @@ class SetUserVersionToFreeRequest(TeaModel):
     def __init__(
         self,
         operator_user_id: str = None,
+        version: str = None,
     ):
         self.operator_user_id = operator_user_id
+        self.version = version
 
     def validate(self):
         pass
@@ -25500,12 +25508,16 @@ class SetUserVersionToFreeRequest(TeaModel):
         result = dict()
         if self.operator_user_id is not None:
             result['operatorUserId'] = self.operator_user_id
+        if self.version is not None:
+            result['version'] = self.version
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('operatorUserId') is not None:
             self.operator_user_id = m.get('operatorUserId')
+        if m.get('version') is not None:
+            self.version = m.get('version')
         return self
 
 
