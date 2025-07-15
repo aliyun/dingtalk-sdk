@@ -1748,6 +1748,186 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>考证上钉-isv-证书颁发接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CourseFinishCourseRequest
+        /// </param>
+        /// <param name="headers">
+        /// CourseFinishCourseHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CourseFinishCourseResponse
+        /// </returns>
+        public CourseFinishCourseResponse CourseFinishCourseWithOptions(CourseFinishCourseRequest request, CourseFinishCourseHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CertId))
+            {
+                body["certId"] = request.CertId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CertMediaBase64))
+            {
+                body["certMediaBase64"] = request.CertMediaBase64;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CourseId))
+            {
+                body["courseId"] = request.CourseId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CourseFinishCourse",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/course/finishCourse",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CourseFinishCourseResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>考证上钉-isv-证书颁发接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CourseFinishCourseRequest
+        /// </param>
+        /// <param name="headers">
+        /// CourseFinishCourseHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CourseFinishCourseResponse
+        /// </returns>
+        public async Task<CourseFinishCourseResponse> CourseFinishCourseWithOptionsAsync(CourseFinishCourseRequest request, CourseFinishCourseHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CertId))
+            {
+                body["certId"] = request.CertId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CertMediaBase64))
+            {
+                body["certMediaBase64"] = request.CertMediaBase64;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CourseId))
+            {
+                body["courseId"] = request.CourseId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CourseFinishCourse",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/course/finishCourse",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CourseFinishCourseResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>考证上钉-isv-证书颁发接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CourseFinishCourseRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CourseFinishCourseResponse
+        /// </returns>
+        public CourseFinishCourseResponse CourseFinishCourse(CourseFinishCourseRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CourseFinishCourseHeaders headers = new CourseFinishCourseHeaders();
+            return CourseFinishCourseWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>考证上钉-isv-证书颁发接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CourseFinishCourseRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CourseFinishCourseResponse
+        /// </returns>
+        public async Task<CourseFinishCourseResponse> CourseFinishCourseAsync(CourseFinishCourseRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CourseFinishCourseHeaders headers = new CourseFinishCourseHeaders();
+            return await CourseFinishCourseWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建合作空间</para>
         /// </summary>
         /// 

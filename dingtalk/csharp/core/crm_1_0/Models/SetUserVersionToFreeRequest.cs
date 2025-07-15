@@ -17,6 +17,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string OperatorUserId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>other</para>
+        /// </summary>
+        [NameInMap("version")]
+        [Validation(Required=false)]
+        public string Version { get; set; }
+
     }
 
 }

@@ -237,16 +237,11 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public List<string> ManagerList { get; set; }
 
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]
         public List<GroupAddRequestMembers> Members { get; set; }
         public class GroupAddRequestMembers : TeaModel {
             /// <summary>
-            /// <para>This parameter is required.</para>
-            /// 
             /// <b>Example:</b>
             /// <para>Attendance</para>
             /// </summary>
@@ -255,8 +250,6 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             public string Role { get; set; }
 
             /// <summary>
-            /// <para>This parameter is required.</para>
-            /// 
             /// <b>Example:</b>
             /// <para>StaffMember</para>
             /// </summary>
@@ -265,8 +258,6 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             public string Type { get; set; }
 
             /// <summary>
-            /// <para>This parameter is required.</para>
-            /// 
             /// <b>Example:</b>
             /// <para>1212jfkd</para>
             /// </summary>

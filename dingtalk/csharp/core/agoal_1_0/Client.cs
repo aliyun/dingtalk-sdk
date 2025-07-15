@@ -2460,5 +2460,309 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return await AgoalUserSubAdminListWithOptionsAsync(request, headers, runtime);
         }
 
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门下的维度和指标id</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDeptScoreCardIndicatorRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDeptScoreCardIndicatorHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDeptScoreCardIndicatorResponse
+        /// </returns>
+        public GetDeptScoreCardIndicatorResponse GetDeptScoreCardIndicatorWithOptions(GetDeptScoreCardIndicatorRequest request, GetDeptScoreCardIndicatorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTeamId))
+            {
+                query["dingTeamId"] = request.DingTeamId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDeptScoreCardIndicator",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/scorecards/departments/indicators",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDeptScoreCardIndicatorResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门下的维度和指标id</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDeptScoreCardIndicatorRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDeptScoreCardIndicatorHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDeptScoreCardIndicatorResponse
+        /// </returns>
+        public async Task<GetDeptScoreCardIndicatorResponse> GetDeptScoreCardIndicatorWithOptionsAsync(GetDeptScoreCardIndicatorRequest request, GetDeptScoreCardIndicatorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTeamId))
+            {
+                query["dingTeamId"] = request.DingTeamId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDeptScoreCardIndicator",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/scorecards/departments/indicators",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDeptScoreCardIndicatorResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门下的维度和指标id</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDeptScoreCardIndicatorRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDeptScoreCardIndicatorResponse
+        /// </returns>
+        public GetDeptScoreCardIndicatorResponse GetDeptScoreCardIndicator(GetDeptScoreCardIndicatorRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDeptScoreCardIndicatorHeaders headers = new GetDeptScoreCardIndicatorHeaders();
+            return GetDeptScoreCardIndicatorWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门下的维度和指标id</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDeptScoreCardIndicatorRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDeptScoreCardIndicatorResponse
+        /// </returns>
+        public async Task<GetDeptScoreCardIndicatorResponse> GetDeptScoreCardIndicatorAsync(GetDeptScoreCardIndicatorRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDeptScoreCardIndicatorHeaders headers = new GetDeptScoreCardIndicatorHeaders();
+            return await GetDeptScoreCardIndicatorWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指标详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetIndicatorDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetIndicatorDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetIndicatorDetailResponse
+        /// </returns>
+        public GetIndicatorDetailResponse GetIndicatorDetailWithOptions(GetIndicatorDetailRequest request, GetIndicatorDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IndicatorId))
+            {
+                query["indicatorId"] = request.IndicatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MonthNum))
+            {
+                query["monthNum"] = request.MonthNum;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetIndicatorDetail",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/scorecards/indicators/details",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetIndicatorDetailResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指标详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetIndicatorDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetIndicatorDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetIndicatorDetailResponse
+        /// </returns>
+        public async Task<GetIndicatorDetailResponse> GetIndicatorDetailWithOptionsAsync(GetIndicatorDetailRequest request, GetIndicatorDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IndicatorId))
+            {
+                query["indicatorId"] = request.IndicatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MonthNum))
+            {
+                query["monthNum"] = request.MonthNum;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetIndicatorDetail",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/scorecards/indicators/details",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetIndicatorDetailResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指标详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetIndicatorDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetIndicatorDetailResponse
+        /// </returns>
+        public GetIndicatorDetailResponse GetIndicatorDetail(GetIndicatorDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetIndicatorDetailHeaders headers = new GetIndicatorDetailHeaders();
+            return GetIndicatorDetailWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指标详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetIndicatorDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetIndicatorDetailResponse
+        /// </returns>
+        public async Task<GetIndicatorDetailResponse> GetIndicatorDetailAsync(GetIndicatorDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetIndicatorDetailHeaders headers = new GetIndicatorDetailHeaders();
+            return await GetIndicatorDetailWithOptionsAsync(request, headers, runtime);
+        }
+
     }
 }

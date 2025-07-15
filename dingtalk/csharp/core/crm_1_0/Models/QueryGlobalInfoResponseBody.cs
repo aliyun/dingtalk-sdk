@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public bool? OemEnable { get; set; }
 
+            [NameInMap("t2t3Coexist")]
+            [Validation(Required=false)]
+            public bool? T2t3Coexist { get; set; }
+
         }
 
     }
