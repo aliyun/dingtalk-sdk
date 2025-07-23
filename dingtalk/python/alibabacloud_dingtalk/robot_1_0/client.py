@@ -1876,6 +1876,124 @@ class Client(OpenApiClient):
         headers = dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoHeaders()
         return await self.query_bot_instance_in_group_info_with_options_async(request, headers, runtime)
 
+    def query_robot_ding_read_status_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotDingReadStatusRequest,
+        headers: dingtalkrobot__1__0_models.QueryRobotDingReadStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.QueryRobotDingReadStatusResponse:
+        """
+        @summary 查询机器人DING已读未读状态
+        
+        @param request: QueryRobotDingReadStatusRequest
+        @param headers: QueryRobotDingReadStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRobotDingReadStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_ding_id):
+            body['openDingId'] = request.open_ding_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryRobotDingReadStatus',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/ding/readStatuses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.QueryRobotDingReadStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_robot_ding_read_status_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotDingReadStatusRequest,
+        headers: dingtalkrobot__1__0_models.QueryRobotDingReadStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.QueryRobotDingReadStatusResponse:
+        """
+        @summary 查询机器人DING已读未读状态
+        
+        @param request: QueryRobotDingReadStatusRequest
+        @param headers: QueryRobotDingReadStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRobotDingReadStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_ding_id):
+            body['openDingId'] = request.open_ding_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryRobotDingReadStatus',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/ding/readStatuses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.QueryRobotDingReadStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_robot_ding_read_status(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotDingReadStatusRequest,
+    ) -> dingtalkrobot__1__0_models.QueryRobotDingReadStatusResponse:
+        """
+        @summary 查询机器人DING已读未读状态
+        
+        @param request: QueryRobotDingReadStatusRequest
+        @return: QueryRobotDingReadStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.QueryRobotDingReadStatusHeaders()
+        return self.query_robot_ding_read_status_with_options(request, headers, runtime)
+
+    async def query_robot_ding_read_status_async(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotDingReadStatusRequest,
+    ) -> dingtalkrobot__1__0_models.QueryRobotDingReadStatusResponse:
+        """
+        @summary 查询机器人DING已读未读状态
+        
+        @param request: QueryRobotDingReadStatusRequest
+        @return: QueryRobotDingReadStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.QueryRobotDingReadStatusHeaders()
+        return await self.query_robot_ding_read_status_with_options_async(request, headers, runtime)
+
     def query_robot_plugin_with_options(
         self,
         request: dingtalkrobot__1__0_models.QueryRobotPluginRequest,
