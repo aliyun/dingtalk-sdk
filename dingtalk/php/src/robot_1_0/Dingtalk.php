@@ -50,6 +50,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\PrivateChatSendResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryBotInstanceInGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryBotInstanceInGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryBotInstanceInGroupInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotDingReadStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotDingReadStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotDingReadStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginResponse;
@@ -1049,6 +1052,66 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryBotInstanceInGroupInfoHeaders([]);
 
         return $this->queryBotInstanceInGroupInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询机器人DING已读未读状态
+     *  *
+     * @param QueryRobotDingReadStatusRequest $request QueryRobotDingReadStatusRequest
+     * @param QueryRobotDingReadStatusHeaders $headers QueryRobotDingReadStatusHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryRobotDingReadStatusResponse QueryRobotDingReadStatusResponse
+     */
+    public function queryRobotDingReadStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openDingId)) {
+            $body['openDingId'] = $request->openDingId;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            $body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryRobotDingReadStatus',
+            'version' => 'robot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/robot/ding/readStatuses/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryRobotDingReadStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询机器人DING已读未读状态
+     *  *
+     * @param QueryRobotDingReadStatusRequest $request QueryRobotDingReadStatusRequest
+     *
+     * @return QueryRobotDingReadStatusResponse QueryRobotDingReadStatusResponse
+     */
+    public function queryRobotDingReadStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryRobotDingReadStatusHeaders([]);
+
+        return $this->queryRobotDingReadStatusWithOptions($request, $headers, $runtime);
     }
 
     /**
