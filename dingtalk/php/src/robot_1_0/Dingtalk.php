@@ -74,6 +74,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SetRobotPluginResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateRobotStreamAwayAutoReplyTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateRobotStreamAwayAutoReplyTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateRobotStreamAwayAutoReplyTemplateResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -1556,5 +1559,68 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateInstalledRobotHeaders([]);
 
         return $this->updateInstalledRobotWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 设置机器人STREAM模式下离线自动回复模版
+     *  *
+     * @param UpdateRobotStreamAwayAutoReplyTemplateRequest $request UpdateRobotStreamAwayAutoReplyTemplateRequest
+     * @param UpdateRobotStreamAwayAutoReplyTemplateHeaders $headers UpdateRobotStreamAwayAutoReplyTemplateHeaders
+     * @param RuntimeOptions                                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateRobotStreamAwayAutoReplyTemplateResponse UpdateRobotStreamAwayAutoReplyTemplateResponse
+     */
+    public function updateRobotStreamAwayAutoReplyTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cardData)) {
+            $body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->cardTemplateId)) {
+            $body['cardTemplateId'] = $request->cardTemplateId;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            $body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateRobotStreamAwayAutoReplyTemplate',
+            'version' => 'robot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/robot/stream/away/template/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateRobotStreamAwayAutoReplyTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置机器人STREAM模式下离线自动回复模版
+     *  *
+     * @param UpdateRobotStreamAwayAutoReplyTemplateRequest $request UpdateRobotStreamAwayAutoReplyTemplateRequest
+     *
+     * @return UpdateRobotStreamAwayAutoReplyTemplateResponse UpdateRobotStreamAwayAutoReplyTemplateResponse
+     */
+    public function updateRobotStreamAwayAutoReplyTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRobotStreamAwayAutoReplyTemplateHeaders([]);
+
+        return $this->updateRobotStreamAwayAutoReplyTemplateWithOptions($request, $headers, $runtime);
     }
 }

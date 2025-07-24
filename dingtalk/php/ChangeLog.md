@@ -1,3 +1,6 @@
+2025-07-24 Version: 2.1.66
+- Generated php robot_1.0 for dingtalk.
+
 2025-07-23 Version: 2.1.65
 - Generated php robot_1.0 for dingtalk.
 
