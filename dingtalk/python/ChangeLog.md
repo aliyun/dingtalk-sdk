@@ -1,3 +1,6 @@
+2025-07-24 Version: 2.2.25
+- Generated python robot_1.0 for dingtalk.
+
 2025-07-23 Version: 2.2.24
 - Generated python robot_1.0 for dingtalk.
 
