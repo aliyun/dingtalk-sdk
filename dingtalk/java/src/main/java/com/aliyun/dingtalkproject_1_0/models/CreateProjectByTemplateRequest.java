@@ -36,19 +36,31 @@ public class CreateProjectByTemplateRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>通过名称填写项目集</p>
+     */
+    @NameInMap("programName")
+    public String programName;
+
+    /**
+     * <strong>example:</strong>
      * <p>2021-08-13T07:36:50.318Z</p>
      */
     @NameInMap("startDate")
     public String startDate;
 
     /**
-     * <p>This parameter is required.</p>
-     * 
      * <strong>example:</strong>
      * <p>578cae9dbf83e5xxxx</p>
      */
     @NameInMap("templateId")
     public String templateId;
+
+    /**
+     * <strong>example:</strong>
+     * <p>通过名称填写项目模板</p>
+     */
+    @NameInMap("templateName")
+    public String templateName;
 
     /**
      * <strong>example:</strong>
@@ -94,6 +106,14 @@ public class CreateProjectByTemplateRequest extends TeaModel {
         return this.programId;
     }
 
+    public CreateProjectByTemplateRequest setProgramName(String programName) {
+        this.programName = programName;
+        return this;
+    }
+    public String getProgramName() {
+        return this.programName;
+    }
+
     public CreateProjectByTemplateRequest setStartDate(String startDate) {
         this.startDate = startDate;
         return this;
@@ -108,6 +128,14 @@ public class CreateProjectByTemplateRequest extends TeaModel {
     }
     public String getTemplateId() {
         return this.templateId;
+    }
+
+    public CreateProjectByTemplateRequest setTemplateName(String templateName) {
+        this.templateName = templateName;
+        return this;
+    }
+    public String getTemplateName() {
+        return this.templateName;
     }
 
     public CreateProjectByTemplateRequest setVisibility(String visibility) {

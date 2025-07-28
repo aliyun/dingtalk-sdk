@@ -436,12 +436,20 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("programId", request.programId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.programName)) {
+            body.put("programName", request.programName);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.startDate)) {
             body.put("startDate", request.startDate);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
             body.put("templateId", request.templateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateName)) {
+            body.put("templateName", request.templateName);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.visibility)) {
@@ -600,8 +608,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("priority", request.priority);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.priorityName)) {
+            body.put("priorityName", request.priorityName);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.projectId)) {
             body.put("projectId", request.projectId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.projectName)) {
+            body.put("projectName", request.projectName);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.scenariofieldconfigId)) {
@@ -628,8 +644,20 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("tagIds", request.tagIds);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.tagNames)) {
+            body.put("tagNames", request.tagNames);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskflowstatusId)) {
+            body.put("taskflowstatusId", request.taskflowstatusId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.tasklistId)) {
             body.put("tasklistId", request.tasklistId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tfsName)) {
+            body.put("tfsName", request.tfsName);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.visible)) {

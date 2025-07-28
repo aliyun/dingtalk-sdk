@@ -352,6 +352,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>复制文档</p>
+     * 
+     * @param request CopyDocRequest
+     * @param headers CopyDocHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CopyDocResponse
+     */
+    public CopyDocResponse copyDocWithOptions(CopyDocRequest request, CopyDocHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.param)) {
+            body.put("param", request.param);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CopyDoc"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/dentries/copy"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CopyDocResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>复制文档</p>
+     * 
+     * @param request CopyDocRequest
+     * @return CopyDocResponse
+     */
+    public CopyDocResponse copyDoc(CopyDocRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CopyDocHeaders headers = new CopyDocHeaders();
+        return this.copyDocWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>拷贝知识库</p>
      * 
      * @param request CopyWorkspaceRequest
@@ -532,6 +588,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateDentryHeaders headers = new CreateDentryHeaders();
         return this.createDentryWithOptions(spaceId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建快捷方式</p>
+     * 
+     * @param request CreateShortcutRequest
+     * @param headers CreateShortcutHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateShortcutResponse
+     */
+    public CreateShortcutResponse createShortcutWithOptions(CreateShortcutRequest request, CreateShortcutHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.param)) {
+            body.put("param", request.param);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateShortcut"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/resource/shortcut/create"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateShortcutResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建快捷方式</p>
+     * 
+     * @param request CreateShortcutRequest
+     * @return CreateShortcutResponse
+     */
+    public CreateShortcutResponse createShortcut(CreateShortcutRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateShortcutHeaders headers = new CreateShortcutHeaders();
+        return this.createShortcutWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1528,6 +1640,52 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取任务信息</p>
+     * 
+     * @param headers GetTaskInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetTaskInfoResponse
+     */
+    public GetTaskInfoResponse getTaskInfoWithOptions(String taskId, GetTaskInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetTaskInfo"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/task/info/" + taskId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetTaskInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取任务信息</p>
+     * @return GetTaskInfoResponse
+     */
+    public GetTaskInfoResponse getTaskInfo(String taskId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetTaskInfoHeaders headers = new GetTaskInfoHeaders();
+        return this.getTaskInfoWithOptions(taskId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询小组详情</p>
      * 
      * @param request GetTeamRequest
@@ -1824,6 +1982,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取知识库权限范围</p>
+     * 
+     * @param request GetWorkspacePermissionScopesRequest
+     * @param headers GetWorkspacePermissionScopesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetWorkspacePermissionScopesResponse
+     */
+    public GetWorkspacePermissionScopesResponse getWorkspacePermissionScopesWithOptions(String workspaceId, GetWorkspacePermissionScopesRequest request, GetWorkspacePermissionScopesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetWorkspacePermissionScopes"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/workspaces/" + workspaceId + "/members"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetWorkspacePermissionScopesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取知识库权限范围</p>
+     * 
+     * @param request GetWorkspacePermissionScopesRequest
+     * @return GetWorkspacePermissionScopesResponse
+     */
+    public GetWorkspacePermissionScopesResponse getWorkspacePermissionScopes(String workspaceId, GetWorkspacePermissionScopesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetWorkspacePermissionScopesHeaders headers = new GetWorkspacePermissionScopesHeaders();
+        return this.getWorkspacePermissionScopesWithOptions(workspaceId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>以超级管理员身份转交小组</p>
      * 
      * @param request HandoverTeamWithoutAuthRequest
@@ -1876,6 +2090,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HandoverTeamWithoutAuthHeaders headers = new HandoverTeamWithoutAuthHeaders();
         return this.handoverTeamWithoutAuthWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>知识库转交所有者</p>
+     * 
+     * @param request HandoveryWorkspaceRequest
+     * @param headers HandoveryWorkspaceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HandoveryWorkspaceResponse
+     */
+    public HandoveryWorkspaceResponse handoveryWorkspaceWithOptions(HandoveryWorkspaceRequest request, HandoveryWorkspaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.param)) {
+            body.put("param", request.param);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HandoveryWorkspace"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/dentries/workspace/handover"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HandoveryWorkspaceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>知识库转交所有者</p>
+     * 
+     * @param request HandoveryWorkspaceRequest
+     * @return HandoveryWorkspaceResponse
+     */
+    public HandoveryWorkspaceResponse handoveryWorkspace(HandoveryWorkspaceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HandoveryWorkspaceHeaders headers = new HandoveryWorkspaceHeaders();
+        return this.handoveryWorkspaceWithOptions(request, headers, runtime);
     }
 
     /**

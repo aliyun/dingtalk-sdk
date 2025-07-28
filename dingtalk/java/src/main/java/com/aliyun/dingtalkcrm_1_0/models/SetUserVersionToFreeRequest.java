@@ -11,6 +11,13 @@ public class SetUserVersionToFreeRequest extends TeaModel {
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>other</p>
+     */
+    @NameInMap("version")
+    public String version;
+
     public static SetUserVersionToFreeRequest build(java.util.Map<String, ?> map) throws Exception {
         SetUserVersionToFreeRequest self = new SetUserVersionToFreeRequest();
         return TeaModel.build(map, self);
@@ -22,6 +29,14 @@ public class SetUserVersionToFreeRequest extends TeaModel {
     }
     public String getOperatorUserId() {
         return this.operatorUserId;
+    }
+
+    public SetUserVersionToFreeRequest setVersion(String version) {
+        this.version = version;
+        return this;
+    }
+    public String getVersion() {
+        return this.version;
     }
 
 }

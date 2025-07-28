@@ -55,13 +55,25 @@ public class CreateTaskRequest extends TeaModel {
     public Integer priority;
 
     /**
-     * <p>This parameter is required.</p>
-     * 
+     * <strong>example:</strong>
+     * <p>通过名称填写优先级</p>
+     */
+    @NameInMap("priorityName")
+    public String priorityName;
+
+    /**
      * <strong>example:</strong>
      * <p>62c25e3b376exxxxxx</p>
      */
     @NameInMap("projectId")
     public String projectId;
+
+    /**
+     * <strong>example:</strong>
+     * <p>通过名称填写所属项目</p>
+     */
+    @NameInMap("projectName")
+    public String projectName;
 
     /**
      * <strong>example:</strong>
@@ -101,12 +113,29 @@ public class CreateTaskRequest extends TeaModel {
     @NameInMap("tagIds")
     public java.util.List<String> tagIds;
 
+    @NameInMap("tagNames")
+    public java.util.List<String> tagNames;
+
+    /**
+     * <strong>example:</strong>
+     * <p>62c25e3b376exxxxxx</p>
+     */
+    @NameInMap("taskflowstatusId")
+    public String taskflowstatusId;
+
     /**
      * <strong>example:</strong>
      * <p>62c25e3b376exxxxxx</p>
      */
     @NameInMap("tasklistId")
     public String tasklistId;
+
+    /**
+     * <strong>example:</strong>
+     * <p>通过名称填写任务状态</p>
+     */
+    @NameInMap("tfsName")
+    public String tfsName;
 
     /**
      * <strong>example:</strong>
@@ -184,12 +213,28 @@ public class CreateTaskRequest extends TeaModel {
         return this.priority;
     }
 
+    public CreateTaskRequest setPriorityName(String priorityName) {
+        this.priorityName = priorityName;
+        return this;
+    }
+    public String getPriorityName() {
+        return this.priorityName;
+    }
+
     public CreateTaskRequest setProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
     public String getProjectId() {
         return this.projectId;
+    }
+
+    public CreateTaskRequest setProjectName(String projectName) {
+        this.projectName = projectName;
+        return this;
+    }
+    public String getProjectName() {
+        return this.projectName;
     }
 
     public CreateTaskRequest setScenariofieldconfigId(String scenariofieldconfigId) {
@@ -240,12 +285,36 @@ public class CreateTaskRequest extends TeaModel {
         return this.tagIds;
     }
 
+    public CreateTaskRequest setTagNames(java.util.List<String> tagNames) {
+        this.tagNames = tagNames;
+        return this;
+    }
+    public java.util.List<String> getTagNames() {
+        return this.tagNames;
+    }
+
+    public CreateTaskRequest setTaskflowstatusId(String taskflowstatusId) {
+        this.taskflowstatusId = taskflowstatusId;
+        return this;
+    }
+    public String getTaskflowstatusId() {
+        return this.taskflowstatusId;
+    }
+
     public CreateTaskRequest setTasklistId(String tasklistId) {
         this.tasklistId = tasklistId;
         return this;
     }
     public String getTasklistId() {
         return this.tasklistId;
+    }
+
+    public CreateTaskRequest setTfsName(String tfsName) {
+        this.tfsName = tfsName;
+        return this;
+    }
+    public String getTfsName() {
+        return this.tfsName;
     }
 
     public CreateTaskRequest setVisible(String visible) {
@@ -304,6 +373,13 @@ public class CreateTaskRequest extends TeaModel {
     public static class CreateTaskRequestCustomfields extends TeaModel {
         /**
          * <strong>example:</strong>
+         * <p>自定义字段别名</p>
+         */
+        @NameInMap("customfieldAlias")
+        public String customfieldAlias;
+
+        /**
+         * <strong>example:</strong>
          * <p>62fb0bxxxxxxx</p>
          */
         @NameInMap("customfieldId")
@@ -322,6 +398,14 @@ public class CreateTaskRequest extends TeaModel {
         public static CreateTaskRequestCustomfields build(java.util.Map<String, ?> map) throws Exception {
             CreateTaskRequestCustomfields self = new CreateTaskRequestCustomfields();
             return TeaModel.build(map, self);
+        }
+
+        public CreateTaskRequestCustomfields setCustomfieldAlias(String customfieldAlias) {
+            this.customfieldAlias = customfieldAlias;
+            return this;
+        }
+        public String getCustomfieldAlias() {
+            return this.customfieldAlias;
         }
 
         public CreateTaskRequestCustomfields setCustomfieldId(String customfieldId) {

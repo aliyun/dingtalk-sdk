@@ -167,9 +167,6 @@ public class GroupAddRequest extends TeaModel {
     @NameInMap("managerList")
     public java.util.List<String> managerList;
 
-    /**
-     * <p>This parameter is required.</p>
-     */
     @NameInMap("members")
     public java.util.List<GroupAddRequestMembers> members;
 
@@ -741,8 +738,6 @@ public class GroupAddRequest extends TeaModel {
 
     public static class GroupAddRequestMembers extends TeaModel {
         /**
-         * <p>This parameter is required.</p>
-         * 
          * <strong>example:</strong>
          * <p>Attendance</p>
          */
@@ -750,8 +745,6 @@ public class GroupAddRequest extends TeaModel {
         public String role;
 
         /**
-         * <p>This parameter is required.</p>
-         * 
          * <strong>example:</strong>
          * <p>StaffMember</p>
          */
@@ -759,8 +752,6 @@ public class GroupAddRequest extends TeaModel {
         public String type;
 
         /**
-         * <p>This parameter is required.</p>
-         * 
          * <strong>example:</strong>
          * <p>1212jfkd</p>
          */

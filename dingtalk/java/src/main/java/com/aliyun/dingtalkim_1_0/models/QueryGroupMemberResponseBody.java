@@ -42,11 +42,27 @@ public class QueryGroupMemberResponseBody extends TeaModel {
 
     public static class QueryGroupMemberResponseBodyGroupMembers extends TeaModel {
         /**
+         * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1000000</p>
+         */
+        @NameInMap("appUid")
+        public Long appUid;
+
+        /**
          * <strong>example:</strong>
          * <p>http://****.png</p>
          */
         @NameInMap("groupMemberAvatar")
         public String groupMemberAvatar;
+
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
+        @NameInMap("groupMemberAvatarMediaId")
+        public String groupMemberAvatarMediaId;
 
         /**
          * <strong>example:</strong>
@@ -80,9 +96,26 @@ public class QueryGroupMemberResponseBody extends TeaModel {
         @NameInMap("groupMemberType")
         public Integer groupMemberType;
 
+        /**
+         * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
+        @NameInMap("groupMemberTypeV2")
+        public Integer groupMemberTypeV2;
+
         public static QueryGroupMemberResponseBodyGroupMembers build(java.util.Map<String, ?> map) throws Exception {
             QueryGroupMemberResponseBodyGroupMembers self = new QueryGroupMemberResponseBodyGroupMembers();
             return TeaModel.build(map, self);
+        }
+
+        public QueryGroupMemberResponseBodyGroupMembers setAppUid(Long appUid) {
+            this.appUid = appUid;
+            return this;
+        }
+        public Long getAppUid() {
+            return this.appUid;
         }
 
         public QueryGroupMemberResponseBodyGroupMembers setGroupMemberAvatar(String groupMemberAvatar) {
@@ -91,6 +124,14 @@ public class QueryGroupMemberResponseBody extends TeaModel {
         }
         public String getGroupMemberAvatar() {
             return this.groupMemberAvatar;
+        }
+
+        public QueryGroupMemberResponseBodyGroupMembers setGroupMemberAvatarMediaId(String groupMemberAvatarMediaId) {
+            this.groupMemberAvatarMediaId = groupMemberAvatarMediaId;
+            return this;
+        }
+        public String getGroupMemberAvatarMediaId() {
+            return this.groupMemberAvatarMediaId;
         }
 
         public QueryGroupMemberResponseBodyGroupMembers setGroupMemberDynamics(String groupMemberDynamics) {
@@ -123,6 +164,14 @@ public class QueryGroupMemberResponseBody extends TeaModel {
         }
         public Integer getGroupMemberType() {
             return this.groupMemberType;
+        }
+
+        public QueryGroupMemberResponseBodyGroupMembers setGroupMemberTypeV2(Integer groupMemberTypeV2) {
+            this.groupMemberTypeV2 = groupMemberTypeV2;
+            return this;
+        }
+        public Integer getGroupMemberTypeV2() {
+            return this.groupMemberTypeV2;
         }
 
     }

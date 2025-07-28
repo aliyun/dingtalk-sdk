@@ -12,15 +12,14 @@ public class UpdateCustomfieldValueRequest extends TeaModel {
     public String customFieldId;
 
     /**
+     * <p>This parameter is required.</p>
+     * 
      * <strong>example:</strong>
      * <p>自定义字段-文本</p>
      */
     @NameInMap("customFieldName")
     public String customFieldName;
 
-    /**
-     * <p>This parameter is required.</p>
-     */
     @NameInMap("value")
     public java.util.List<UpdateCustomfieldValueRequestValue> value;
 
@@ -54,9 +53,13 @@ public class UpdateCustomfieldValueRequest extends TeaModel {
     }
 
     public static class UpdateCustomfieldValueRequestValue extends TeaModel {
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("thumbUrl")
+        public String thumbUrl;
+
         /**
-         * <p>This parameter is required.</p>
-         * 
          * <strong>example:</strong>
          * <p>我是具体显示值</p>
          */
@@ -66,6 +69,22 @@ public class UpdateCustomfieldValueRequest extends TeaModel {
         public static UpdateCustomfieldValueRequestValue build(java.util.Map<String, ?> map) throws Exception {
             UpdateCustomfieldValueRequestValue self = new UpdateCustomfieldValueRequestValue();
             return TeaModel.build(map, self);
+        }
+
+        public UpdateCustomfieldValueRequestValue setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public UpdateCustomfieldValueRequestValue setThumbUrl(String thumbUrl) {
+            this.thumbUrl = thumbUrl;
+            return this;
+        }
+        public String getThumbUrl() {
+            return this.thumbUrl;
         }
 
         public UpdateCustomfieldValueRequestValue setTitle(String title) {

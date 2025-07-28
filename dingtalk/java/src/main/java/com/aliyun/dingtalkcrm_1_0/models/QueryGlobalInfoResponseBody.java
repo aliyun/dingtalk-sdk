@@ -24,6 +24,9 @@ public class QueryGlobalInfoResponseBody extends TeaModel {
         @NameInMap("oemEnable")
         public Boolean oemEnable;
 
+        @NameInMap("t2t3Coexist")
+        public Boolean t2t3Coexist;
+
         public static QueryGlobalInfoResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryGlobalInfoResponseBodyResult self = new QueryGlobalInfoResponseBodyResult();
             return TeaModel.build(map, self);
@@ -35,6 +38,14 @@ public class QueryGlobalInfoResponseBody extends TeaModel {
         }
         public Boolean getOemEnable() {
             return this.oemEnable;
+        }
+
+        public QueryGlobalInfoResponseBodyResult setT2t3Coexist(Boolean t2t3Coexist) {
+            this.t2t3Coexist = t2t3Coexist;
+            return this;
+        }
+        public Boolean getT2t3Coexist() {
+            return this.t2t3Coexist;
         }
 
     }

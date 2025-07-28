@@ -65,6 +65,9 @@ public class GetCheckinRecordByUserResponseBody extends TeaModel {
         @NameInMap("checkinTime")
         public Long checkinTime;
 
+        @NameInMap("checkinType")
+        public String checkinType;
+
         @NameInMap("customDataList")
         public java.util.List<GetCheckinRecordByUserResponseBodyResultPageListCustomDataList> customDataList;
 
@@ -103,6 +106,14 @@ public class GetCheckinRecordByUserResponseBody extends TeaModel {
         }
         public Long getCheckinTime() {
             return this.checkinTime;
+        }
+
+        public GetCheckinRecordByUserResponseBodyResultPageList setCheckinType(String checkinType) {
+            this.checkinType = checkinType;
+            return this;
+        }
+        public String getCheckinType() {
+            return this.checkinType;
         }
 
         public GetCheckinRecordByUserResponseBodyResultPageList setCustomDataList(java.util.List<GetCheckinRecordByUserResponseBodyResultPageListCustomDataList> customDataList) {
