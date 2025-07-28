@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 [Validation(Required=false)]
                 public long? CheckinTime { get; set; }
 
+                [NameInMap("checkinType")]
+                [Validation(Required=false)]
+                public string CheckinType { get; set; }
+
                 [NameInMap("customDataList")]
                 [Validation(Required=false)]
                 public List<GetCheckinRecordByUserResponseBodyResultPageListCustomDataList> CustomDataList { get; set; }

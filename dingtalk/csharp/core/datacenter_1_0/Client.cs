@@ -7626,6 +7626,154 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>教育组织上下游授权信息查询服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryEduUnionAuthServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryEduUnionAuthServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryEduUnionAuthServiceResponse
+        /// </returns>
+        public QueryEduUnionAuthServiceResponse QueryEduUnionAuthServiceWithOptions(QueryEduUnionAuthServiceRequest request, QueryEduUnionAuthServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ds))
+            {
+                query["ds"] = request.Ds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryEduUnionAuthService",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/eduUnionAuthService",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryEduUnionAuthServiceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>教育组织上下游授权信息查询服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryEduUnionAuthServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryEduUnionAuthServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryEduUnionAuthServiceResponse
+        /// </returns>
+        public async Task<QueryEduUnionAuthServiceResponse> QueryEduUnionAuthServiceWithOptionsAsync(QueryEduUnionAuthServiceRequest request, QueryEduUnionAuthServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ds))
+            {
+                query["ds"] = request.Ds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryEduUnionAuthService",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/eduUnionAuthService",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryEduUnionAuthServiceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>教育组织上下游授权信息查询服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryEduUnionAuthServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryEduUnionAuthServiceResponse
+        /// </returns>
+        public QueryEduUnionAuthServiceResponse QueryEduUnionAuthService(QueryEduUnionAuthServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryEduUnionAuthServiceHeaders headers = new QueryEduUnionAuthServiceHeaders();
+            return QueryEduUnionAuthServiceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>教育组织上下游授权信息查询服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryEduUnionAuthServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryEduUnionAuthServiceResponse
+        /// </returns>
+        public async Task<QueryEduUnionAuthServiceResponse> QueryEduUnionAuthServiceAsync(QueryEduUnionAuthServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryEduUnionAuthServiceHeaders headers = new QueryEduUnionAuthServiceHeaders();
+            return await QueryEduUnionAuthServiceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取企业员工类型统计数据</para>
         /// </summary>
         /// 

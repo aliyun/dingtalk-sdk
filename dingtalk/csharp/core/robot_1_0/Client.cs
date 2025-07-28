@@ -2530,6 +2530,162 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询机器人DING已读未读状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryRobotDingReadStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryRobotDingReadStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryRobotDingReadStatusResponse
+        /// </returns>
+        public QueryRobotDingReadStatusResponse QueryRobotDingReadStatusWithOptions(QueryRobotDingReadStatusRequest request, QueryRobotDingReadStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDingId))
+            {
+                body["openDingId"] = request.OpenDingId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryRobotDingReadStatus",
+                Version = "robot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/robot/ding/readStatuses/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryRobotDingReadStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询机器人DING已读未读状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryRobotDingReadStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryRobotDingReadStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryRobotDingReadStatusResponse
+        /// </returns>
+        public async Task<QueryRobotDingReadStatusResponse> QueryRobotDingReadStatusWithOptionsAsync(QueryRobotDingReadStatusRequest request, QueryRobotDingReadStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDingId))
+            {
+                body["openDingId"] = request.OpenDingId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryRobotDingReadStatus",
+                Version = "robot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/robot/ding/readStatuses/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryRobotDingReadStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询机器人DING已读未读状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryRobotDingReadStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryRobotDingReadStatusResponse
+        /// </returns>
+        public QueryRobotDingReadStatusResponse QueryRobotDingReadStatus(QueryRobotDingReadStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryRobotDingReadStatusHeaders headers = new QueryRobotDingReadStatusHeaders();
+            return QueryRobotDingReadStatusWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询机器人DING已读未读状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryRobotDingReadStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryRobotDingReadStatusResponse
+        /// </returns>
+        public async Task<QueryRobotDingReadStatusResponse> QueryRobotDingReadStatusAsync(QueryRobotDingReadStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryRobotDingReadStatusHeaders headers = new QueryRobotDingReadStatusHeaders();
+            return await QueryRobotDingReadStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询单聊机器人快捷入口</para>
         /// </summary>
         /// 

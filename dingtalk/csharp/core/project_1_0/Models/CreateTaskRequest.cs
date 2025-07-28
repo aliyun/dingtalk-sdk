@@ -25,6 +25,14 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public class CreateTaskRequestCustomfields : TeaModel {
             /// <summary>
             /// <b>Example:</b>
+            /// <para>自定义字段别名</para>
+            /// </summary>
+            [NameInMap("customfieldAlias")]
+            [Validation(Required=false)]
+            public string CustomfieldAlias { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>62fb0bxxxxxxx</para>
             /// </summary>
             [NameInMap("customfieldId")]
@@ -108,14 +116,28 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public int? Priority { get; set; }
 
         /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
+        /// <b>Example:</b>
+        /// <para>通过名称填写优先级</para>
+        /// </summary>
+        [NameInMap("priorityName")]
+        [Validation(Required=false)]
+        public string PriorityName { get; set; }
+
+        /// <summary>
         /// <b>Example:</b>
         /// <para>62c25e3b376exxxxxx</para>
         /// </summary>
         [NameInMap("projectId")]
         [Validation(Required=false)]
         public string ProjectId { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>通过名称填写所属项目</para>
+        /// </summary>
+        [NameInMap("projectName")]
+        [Validation(Required=false)]
+        public string ProjectName { get; set; }
 
         /// <summary>
         /// <b>Example:</b>
@@ -161,6 +183,18 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public List<string> TagIds { get; set; }
 
+        [NameInMap("tagNames")]
+        [Validation(Required=false)]
+        public List<string> TagNames { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>62c25e3b376exxxxxx</para>
+        /// </summary>
+        [NameInMap("taskflowstatusId")]
+        [Validation(Required=false)]
+        public string TaskflowstatusId { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>62c25e3b376exxxxxx</para>
@@ -168,6 +202,14 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [NameInMap("tasklistId")]
         [Validation(Required=false)]
         public string TasklistId { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>通过名称填写任务状态</para>
+        /// </summary>
+        [NameInMap("tfsName")]
+        [Validation(Required=false)]
+        public string TfsName { get; set; }
 
         /// <summary>
         /// <b>Example:</b>

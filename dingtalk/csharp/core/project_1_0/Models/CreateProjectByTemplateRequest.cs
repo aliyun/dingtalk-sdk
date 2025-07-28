@@ -45,6 +45,14 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 
         /// <summary>
         /// <b>Example:</b>
+        /// <para>通过名称填写项目集</para>
+        /// </summary>
+        [NameInMap("programName")]
+        [Validation(Required=false)]
+        public string ProgramName { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
         /// <para>2021-08-13T07:36:50.318Z</para>
         /// </summary>
         [NameInMap("startDate")]
@@ -52,14 +60,20 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public string StartDate { get; set; }
 
         /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
         /// <b>Example:</b>
         /// <para>578cae9dbf83e5xxxx</para>
         /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]
         public string TemplateId { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>通过名称填写项目模板</para>
+        /// </summary>
+        [NameInMap("templateName")]
+        [Validation(Required=false)]
+        public string TemplateName { get; set; }
 
         /// <summary>
         /// <b>Example:</b>

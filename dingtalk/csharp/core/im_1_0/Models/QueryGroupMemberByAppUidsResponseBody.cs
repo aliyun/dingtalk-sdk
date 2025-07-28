@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
-    public class QueryGroupMemberResponseBody : TeaModel {
+    public class QueryGroupMemberByAppUidsResponseBody : TeaModel {
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("groupMembers")]
         [Validation(Required=false)]
-        public List<QueryGroupMemberResponseBodyGroupMembers> GroupMembers { get; set; }
-        public class QueryGroupMemberResponseBodyGroupMembers : TeaModel {
+        public List<QueryGroupMemberByAppUidsResponseBodyGroupMembers> GroupMembers { get; set; }
+        public class QueryGroupMemberByAppUidsResponseBodyGroupMembers : TeaModel {
             /// <summary>
             /// <para>This parameter is required.</para>
             /// 
@@ -89,16 +89,6 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             public int? GroupMemberTypeV2 { get; set; }
 
         }
-
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
-        /// <b>Example:</b>
-        /// <para>14da****2760</para>
-        /// </summary>
-        [NameInMap("openConversationId")]
-        [Validation(Required=false)]
-        public string OpenConversationId { get; set; }
 
     }
 

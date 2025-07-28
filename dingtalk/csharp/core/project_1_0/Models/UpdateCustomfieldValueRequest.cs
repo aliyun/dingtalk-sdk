@@ -18,6 +18,8 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public string CustomFieldId { get; set; }
 
         /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
         /// <b>Example:</b>
         /// <para>自定义字段-文本</para>
         /// </summary>
@@ -25,16 +27,19 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public string CustomFieldName { get; set; }
 
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
         [NameInMap("value")]
         [Validation(Required=false)]
         public List<UpdateCustomfieldValueRequestValue> Value { get; set; }
         public class UpdateCustomfieldValueRequestValue : TeaModel {
+            [NameInMap("id")]
+            [Validation(Required=false)]
+            public string Id { get; set; }
+
+            [NameInMap("thumbUrl")]
+            [Validation(Required=false)]
+            public string ThumbUrl { get; set; }
+
             /// <summary>
-            /// <para>This parameter is required.</para>
-            /// 
             /// <b>Example:</b>
             /// <para>我是具体显示值</para>
             /// </summary>
