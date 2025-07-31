@@ -2663,6 +2663,396 @@ class DeleteKnowledgeResponse(TeaModel):
         return self
 
 
+class DeployAssistantHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeployAssistantRequestActionActionAuthInfo(TeaModel):
+    def __init__(
+        self,
+        auth_config: str = None,
+        authentication_type: str = None,
+    ):
+        self.auth_config = auth_config
+        self.authentication_type = authentication_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_config is not None:
+            result['authConfig'] = self.auth_config
+        if self.authentication_type is not None:
+            result['authenticationType'] = self.authentication_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authConfig') is not None:
+            self.auth_config = m.get('authConfig')
+        if m.get('authenticationType') is not None:
+            self.authentication_type = m.get('authenticationType')
+        return self
+
+
+class DeployAssistantRequestAction(TeaModel):
+    def __init__(
+        self,
+        action_auth_info: DeployAssistantRequestActionActionAuthInfo = None,
+        action_name: str = None,
+        description: str = None,
+        schema: str = None,
+    ):
+        self.action_auth_info = action_auth_info
+        self.action_name = action_name
+        self.description = description
+        self.schema = schema
+
+    def validate(self):
+        if self.action_auth_info:
+            self.action_auth_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_auth_info is not None:
+            result['actionAuthInfo'] = self.action_auth_info.to_map()
+        if self.action_name is not None:
+            result['actionName'] = self.action_name
+        if self.description is not None:
+            result['description'] = self.description
+        if self.schema is not None:
+            result['schema'] = self.schema
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionAuthInfo') is not None:
+            temp_model = DeployAssistantRequestActionActionAuthInfo()
+            self.action_auth_info = temp_model.from_map(m['actionAuthInfo'])
+        if m.get('actionName') is not None:
+            self.action_name = m.get('actionName')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('schema') is not None:
+            self.schema = m.get('schema')
+        return self
+
+
+class DeployAssistantRequestAppScopes(TeaModel):
+    def __init__(
+        self,
+        dept_visible_scopes: str = None,
+        dynamic_group_scopes: str = None,
+        is_hidden: bool = None,
+        role_visible_scopes: str = None,
+        user_visible_scopes: str = None,
+    ):
+        self.dept_visible_scopes = dept_visible_scopes
+        self.dynamic_group_scopes = dynamic_group_scopes
+        self.is_hidden = is_hidden
+        self.role_visible_scopes = role_visible_scopes
+        self.user_visible_scopes = user_visible_scopes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_visible_scopes is not None:
+            result['deptVisibleScopes'] = self.dept_visible_scopes
+        if self.dynamic_group_scopes is not None:
+            result['dynamicGroupScopes'] = self.dynamic_group_scopes
+        if self.is_hidden is not None:
+            result['isHidden'] = self.is_hidden
+        if self.role_visible_scopes is not None:
+            result['roleVisibleScopes'] = self.role_visible_scopes
+        if self.user_visible_scopes is not None:
+            result['userVisibleScopes'] = self.user_visible_scopes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptVisibleScopes') is not None:
+            self.dept_visible_scopes = m.get('deptVisibleScopes')
+        if m.get('dynamicGroupScopes') is not None:
+            self.dynamic_group_scopes = m.get('dynamicGroupScopes')
+        if m.get('isHidden') is not None:
+            self.is_hidden = m.get('isHidden')
+        if m.get('roleVisibleScopes') is not None:
+            self.role_visible_scopes = m.get('roleVisibleScopes')
+        if m.get('userVisibleScopes') is not None:
+            self.user_visible_scopes = m.get('userVisibleScopes')
+        return self
+
+
+class DeployAssistantRequestFallback(TeaModel):
+    def __init__(
+        self,
+        action_type: str = None,
+        default_msg: str = None,
+    ):
+        self.action_type = action_type
+        self.default_msg = default_msg
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_type is not None:
+            result['actionType'] = self.action_type
+        if self.default_msg is not None:
+            result['defaultMsg'] = self.default_msg
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionType') is not None:
+            self.action_type = m.get('actionType')
+        if m.get('defaultMsg') is not None:
+            self.default_msg = m.get('defaultMsg')
+        return self
+
+
+class DeployAssistantRequest(TeaModel):
+    def __init__(
+        self,
+        action: DeployAssistantRequestAction = None,
+        ai_assistant_id: str = None,
+        app_scopes: DeployAssistantRequestAppScopes = None,
+        description: str = None,
+        fallback: DeployAssistantRequestFallback = None,
+        icon: str = None,
+        instructions: str = None,
+        is_public: int = None,
+        name: str = None,
+        operate_user_id: str = None,
+        recommend_prompts: List[str] = None,
+        share_recipient: str = None,
+        tone_style: str = None,
+        uuid: str = None,
+        welcome_content: str = None,
+        welcome_title: str = None,
+    ):
+        self.action = action
+        self.ai_assistant_id = ai_assistant_id
+        self.app_scopes = app_scopes
+        self.description = description
+        self.fallback = fallback
+        self.icon = icon
+        self.instructions = instructions
+        self.is_public = is_public
+        self.name = name
+        self.operate_user_id = operate_user_id
+        self.recommend_prompts = recommend_prompts
+        self.share_recipient = share_recipient
+        self.tone_style = tone_style
+        self.uuid = uuid
+        self.welcome_content = welcome_content
+        self.welcome_title = welcome_title
+
+    def validate(self):
+        if self.action:
+            self.action.validate()
+        if self.app_scopes:
+            self.app_scopes.validate()
+        if self.fallback:
+            self.fallback.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action.to_map()
+        if self.ai_assistant_id is not None:
+            result['aiAssistantId'] = self.ai_assistant_id
+        if self.app_scopes is not None:
+            result['appScopes'] = self.app_scopes.to_map()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.fallback is not None:
+            result['fallback'] = self.fallback.to_map()
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.instructions is not None:
+            result['instructions'] = self.instructions
+        if self.is_public is not None:
+            result['isPublic'] = self.is_public
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        if self.recommend_prompts is not None:
+            result['recommendPrompts'] = self.recommend_prompts
+        if self.share_recipient is not None:
+            result['shareRecipient'] = self.share_recipient
+        if self.tone_style is not None:
+            result['toneStyle'] = self.tone_style
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        if self.welcome_content is not None:
+            result['welcomeContent'] = self.welcome_content
+        if self.welcome_title is not None:
+            result['welcomeTitle'] = self.welcome_title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            temp_model = DeployAssistantRequestAction()
+            self.action = temp_model.from_map(m['action'])
+        if m.get('aiAssistantId') is not None:
+            self.ai_assistant_id = m.get('aiAssistantId')
+        if m.get('appScopes') is not None:
+            temp_model = DeployAssistantRequestAppScopes()
+            self.app_scopes = temp_model.from_map(m['appScopes'])
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('fallback') is not None:
+            temp_model = DeployAssistantRequestFallback()
+            self.fallback = temp_model.from_map(m['fallback'])
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('instructions') is not None:
+            self.instructions = m.get('instructions')
+        if m.get('isPublic') is not None:
+            self.is_public = m.get('isPublic')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        if m.get('recommendPrompts') is not None:
+            self.recommend_prompts = m.get('recommendPrompts')
+        if m.get('shareRecipient') is not None:
+            self.share_recipient = m.get('shareRecipient')
+        if m.get('toneStyle') is not None:
+            self.tone_style = m.get('toneStyle')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        if m.get('welcomeContent') is not None:
+            self.welcome_content = m.get('welcomeContent')
+        if m.get('welcomeTitle') is not None:
+            self.welcome_title = m.get('welcomeTitle')
+        return self
+
+
+class DeployAssistantResponseBody(TeaModel):
+    def __init__(
+        self,
+        assistant_id: str = None,
+    ):
+        self.assistant_id = assistant_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.assistant_id is not None:
+            result['assistantId'] = self.assistant_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('assistantId') is not None:
+            self.assistant_id = m.get('assistantId')
+        return self
+
+
+class DeployAssistantResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeployAssistantResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeployAssistantResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetAskDetailHeaders(TeaModel):
     def __init__(
         self,

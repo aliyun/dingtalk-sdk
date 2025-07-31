@@ -294,6 +294,140 @@ class Client(OpenApiClient):
         headers = dingtalkvip_member__1__0_models.InvalidRedeemVipMemberByBizRequestIdHeaders()
         return await self.invalid_redeem_vip_member_by_biz_request_id_with_options_async(request, headers, runtime)
 
+    def pre_check_redeem_vip_member_with_options(
+        self,
+        request: dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberRequest,
+        headers: dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberResponse:
+        """
+        @summary 直充会员预校验是否满足条件
+        
+        @param request: PreCheckRedeemVipMemberRequest
+        @param headers: PreCheckRedeemVipMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PreCheckRedeemVipMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_request_id):
+            body['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.dingtalk_id):
+            body['dingtalkId'] = request.dingtalk_id
+        if not UtilClient.is_unset(request.duration):
+            body['duration'] = request.duration
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PreCheckRedeemVipMember',
+            version='vipMember_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/vipMember/users/preCheckRedeemVip',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def pre_check_redeem_vip_member_with_options_async(
+        self,
+        request: dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberRequest,
+        headers: dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberResponse:
+        """
+        @summary 直充会员预校验是否满足条件
+        
+        @param request: PreCheckRedeemVipMemberRequest
+        @param headers: PreCheckRedeemVipMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PreCheckRedeemVipMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_request_id):
+            body['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.channel):
+            body['channel'] = request.channel
+        if not UtilClient.is_unset(request.dingtalk_id):
+            body['dingtalkId'] = request.dingtalk_id
+        if not UtilClient.is_unset(request.duration):
+            body['duration'] = request.duration
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PreCheckRedeemVipMember',
+            version='vipMember_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/vipMember/users/preCheckRedeemVip',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def pre_check_redeem_vip_member(
+        self,
+        request: dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberRequest,
+    ) -> dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberResponse:
+        """
+        @summary 直充会员预校验是否满足条件
+        
+        @param request: PreCheckRedeemVipMemberRequest
+        @return: PreCheckRedeemVipMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberHeaders()
+        return self.pre_check_redeem_vip_member_with_options(request, headers, runtime)
+
+    async def pre_check_redeem_vip_member_async(
+        self,
+        request: dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberRequest,
+    ) -> dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberResponse:
+        """
+        @summary 直充会员预校验是否满足条件
+        
+        @param request: PreCheckRedeemVipMemberRequest
+        @return: PreCheckRedeemVipMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkvip_member__1__0_models.PreCheckRedeemVipMemberHeaders()
+        return await self.pre_check_redeem_vip_member_with_options_async(request, headers, runtime)
+
     def query_redeem_vip_member_with_options(
         self,
         request: dingtalkvip_member__1__0_models.QueryRedeemVipMemberRequest,

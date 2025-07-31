@@ -10664,6 +10664,120 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.DigitalStoreNodeInfoHeaders()
         return await self.digital_store_node_info_with_options_async(request, headers, runtime)
 
+    def digital_store_query_conversation_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreQueryConversationRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreQueryConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreQueryConversationResponse:
+        """
+        @summary 通过门店Code获取门店群信息
+        
+        @param request: DigitalStoreQueryConversationRequest
+        @param headers: DigitalStoreQueryConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DigitalStoreQueryConversationResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.store_code):
+            query['storeCode'] = request.store_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreQueryConversation',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/conversation/queryByStoreCode',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreQueryConversationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def digital_store_query_conversation_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreQueryConversationRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreQueryConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreQueryConversationResponse:
+        """
+        @summary 通过门店Code获取门店群信息
+        
+        @param request: DigitalStoreQueryConversationRequest
+        @param headers: DigitalStoreQueryConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DigitalStoreQueryConversationResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.store_code):
+            query['storeCode'] = request.store_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreQueryConversation',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/conversation/queryByStoreCode',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreQueryConversationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def digital_store_query_conversation(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreQueryConversationRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreQueryConversationResponse:
+        """
+        @summary 通过门店Code获取门店群信息
+        
+        @param request: DigitalStoreQueryConversationRequest
+        @return: DigitalStoreQueryConversationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreQueryConversationHeaders()
+        return self.digital_store_query_conversation_with_options(request, headers, runtime)
+
+    async def digital_store_query_conversation_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreQueryConversationRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreQueryConversationResponse:
+        """
+        @summary 通过门店Code获取门店群信息
+        
+        @param request: DigitalStoreQueryConversationRequest
+        @return: DigitalStoreQueryConversationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreQueryConversationHeaders()
+        return await self.digital_store_query_conversation_with_options_async(request, headers, runtime)
+
     def digital_store_rights_info_with_options(
         self,
         headers: dingtalkindustry__1__0_models.DigitalStoreRightsInfoHeaders,

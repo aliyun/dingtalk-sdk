@@ -428,7 +428,6 @@ class CreateTodoTaskRequestActionList(TeaModel):
         self,
         action_key: str = None,
         action_type: int = None,
-        button_style_type: int = None,
         param: CreateTodoTaskRequestActionListParam = None,
         pc_url: str = None,
         title: str = None,
@@ -436,7 +435,6 @@ class CreateTodoTaskRequestActionList(TeaModel):
     ):
         self.action_key = action_key
         self.action_type = action_type
-        self.button_style_type = button_style_type
         self.param = param
         self.pc_url = pc_url
         self.title = title
@@ -456,8 +454,6 @@ class CreateTodoTaskRequestActionList(TeaModel):
             result['actionKey'] = self.action_key
         if self.action_type is not None:
             result['actionType'] = self.action_type
-        if self.button_style_type is not None:
-            result['buttonStyleType'] = self.button_style_type
         if self.param is not None:
             result['param'] = self.param.to_map()
         if self.pc_url is not None:
@@ -474,8 +470,6 @@ class CreateTodoTaskRequestActionList(TeaModel):
             self.action_key = m.get('actionKey')
         if m.get('actionType') is not None:
             self.action_type = m.get('actionType')
-        if m.get('buttonStyleType') is not None:
-            self.button_style_type = m.get('buttonStyleType')
         if m.get('param') is not None:
             temp_model = CreateTodoTaskRequestActionListParam()
             self.param = temp_model.from_map(m['param'])
@@ -645,6 +639,7 @@ class CreateTodoTaskRequest(TeaModel):
         reminder_time_stamp: int = None,
         source_id: str = None,
         subject: str = None,
+        third_extension: Dict[str, Any] = None,
         todo_type: str = None,
         operator_id: str = None,
     ):
@@ -665,6 +660,7 @@ class CreateTodoTaskRequest(TeaModel):
         self.source_id = source_id
         # This parameter is required.
         self.subject = subject
+        self.third_extension = third_extension
         self.todo_type = todo_type
         self.operator_id = operator_id
 
@@ -726,6 +722,8 @@ class CreateTodoTaskRequest(TeaModel):
             result['sourceId'] = self.source_id
         if self.subject is not None:
             result['subject'] = self.subject
+        if self.third_extension is not None:
+            result['thirdExtension'] = self.third_extension
         if self.todo_type is not None:
             result['todoType'] = self.todo_type
         if self.operator_id is not None:
@@ -775,6 +773,8 @@ class CreateTodoTaskRequest(TeaModel):
             self.source_id = m.get('sourceId')
         if m.get('subject') is not None:
             self.subject = m.get('subject')
+        if m.get('thirdExtension') is not None:
+            self.third_extension = m.get('thirdExtension')
         if m.get('todoType') is not None:
             self.todo_type = m.get('todoType')
         if m.get('operatorId') is not None:

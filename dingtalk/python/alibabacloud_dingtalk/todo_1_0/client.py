@@ -350,6 +350,8 @@ class Client(OpenApiClient):
             body['sourceId'] = request.source_id
         if not UtilClient.is_unset(request.subject):
             body['subject'] = request.subject
+        if not UtilClient.is_unset(request.third_extension):
+            body['thirdExtension'] = request.third_extension
         if not UtilClient.is_unset(request.todo_type):
             body['todoType'] = request.todo_type
         real_headers = {}
@@ -430,6 +432,8 @@ class Client(OpenApiClient):
             body['sourceId'] = request.source_id
         if not UtilClient.is_unset(request.subject):
             body['subject'] = request.subject
+        if not UtilClient.is_unset(request.third_extension):
+            body['thirdExtension'] = request.third_extension
         if not UtilClient.is_unset(request.todo_type):
             body['todoType'] = request.todo_type
         real_headers = {}
