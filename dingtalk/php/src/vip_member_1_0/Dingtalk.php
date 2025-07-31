@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vvip_member_1_0\Models\DirectRedeemVipMemberByMobi
 use AlibabaCloud\SDK\Dingtalk\Vvip_member_1_0\Models\InvalidRedeemVipMemberByBizRequestIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vvip_member_1_0\Models\InvalidRedeemVipMemberByBizRequestIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vvip_member_1_0\Models\InvalidRedeemVipMemberByBizRequestIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vvip_member_1_0\Models\PreCheckRedeemVipMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vvip_member_1_0\Models\PreCheckRedeemVipMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vvip_member_1_0\Models\PreCheckRedeemVipMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vvip_member_1_0\Models\QueryRedeemVipMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vvip_member_1_0\Models\QueryRedeemVipMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vvip_member_1_0\Models\QueryRedeemVipMemberResponse;
@@ -179,6 +182,78 @@ class Dingtalk extends OpenApiClient
         $headers = new InvalidRedeemVipMemberByBizRequestIdHeaders([]);
 
         return $this->invalidRedeemVipMemberByBizRequestIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 直充会员预校验是否满足条件
+     *  *
+     * @param PreCheckRedeemVipMemberRequest $request PreCheckRedeemVipMemberRequest
+     * @param PreCheckRedeemVipMemberHeaders $headers PreCheckRedeemVipMemberHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PreCheckRedeemVipMemberResponse PreCheckRedeemVipMemberResponse
+     */
+    public function preCheckRedeemVipMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizRequestId)) {
+            $body['bizRequestId'] = $request->bizRequestId;
+        }
+        if (!Utils::isUnset($request->channel)) {
+            $body['channel'] = $request->channel;
+        }
+        if (!Utils::isUnset($request->dingtalkId)) {
+            $body['dingtalkId'] = $request->dingtalkId;
+        }
+        if (!Utils::isUnset($request->duration)) {
+            $body['duration'] = $request->duration;
+        }
+        if (!Utils::isUnset($request->mobile)) {
+            $body['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            $body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'PreCheckRedeemVipMember',
+            'version' => 'vipMember_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/vipMember/users/preCheckRedeemVip',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return PreCheckRedeemVipMemberResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 直充会员预校验是否满足条件
+     *  *
+     * @param PreCheckRedeemVipMemberRequest $request PreCheckRedeemVipMemberRequest
+     *
+     * @return PreCheckRedeemVipMemberResponse PreCheckRedeemVipMemberResponse
+     */
+    public function preCheckRedeemVipMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PreCheckRedeemVipMemberHeaders([]);
+
+        return $this->preCheckRedeemVipMemberWithOptions($request, $headers, $runtime);
     }
 
     /**

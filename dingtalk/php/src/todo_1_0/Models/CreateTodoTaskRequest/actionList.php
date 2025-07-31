@@ -20,11 +20,6 @@ class actionList extends Model
     public $actionType;
 
     /**
-     * @var int
-     */
-    public $buttonStyleType;
-
-    /**
      * @var param
      */
     public $param;
@@ -46,7 +41,6 @@ class actionList extends Model
     protected $_name = [
         'actionKey' => 'actionKey',
         'actionType' => 'actionType',
-        'buttonStyleType' => 'buttonStyleType',
         'param' => 'param',
         'pcUrl' => 'pcUrl',
         'title' => 'title',
@@ -63,9 +57,6 @@ class actionList extends Model
         }
         if (null !== $this->actionType) {
             $res['actionType'] = $this->actionType;
-        }
-        if (null !== $this->buttonStyleType) {
-            $res['buttonStyleType'] = $this->buttonStyleType;
         }
         if (null !== $this->param) {
             $res['param'] = null !== $this->param ? $this->param->toMap() : null;
@@ -96,9 +87,6 @@ class actionList extends Model
         }
         if (isset($map['actionType'])) {
             $model->actionType = $map['actionType'];
-        }
-        if (isset($map['buttonStyleType'])) {
-            $model->buttonStyleType = $map['buttonStyleType'];
         }
         if (isset($map['param'])) {
             $model->param = param::fromMap($map['param']);

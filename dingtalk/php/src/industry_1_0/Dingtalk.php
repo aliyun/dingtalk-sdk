@@ -268,6 +268,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DIgitalStoreMessagePushShrink
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreNodeInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreNodeInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreNodeInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreQueryConversationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreQueryConversationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreQueryConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreRightsInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreRightsInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreRolesHeaders;
@@ -6025,6 +6028,63 @@ class Dingtalk extends OpenApiClient
         $headers = new DigitalStoreNodeInfoHeaders([]);
 
         return $this->digitalStoreNodeInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过门店Code获取门店群信息
+     *  *
+     * @param DigitalStoreQueryConversationRequest $request DigitalStoreQueryConversationRequest
+     * @param DigitalStoreQueryConversationHeaders $headers DigitalStoreQueryConversationHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DigitalStoreQueryConversationResponse DigitalStoreQueryConversationResponse
+     */
+    public function digitalStoreQueryConversationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->storeCode)) {
+            $query['storeCode'] = $request->storeCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DigitalStoreQueryConversation',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/digitalStores/conversation/queryByStoreCode',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DigitalStoreQueryConversationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过门店Code获取门店群信息
+     *  *
+     * @param DigitalStoreQueryConversationRequest $request DigitalStoreQueryConversationRequest
+     *
+     * @return DigitalStoreQueryConversationResponse DigitalStoreQueryConversationResponse
+     */
+    public function digitalStoreQueryConversation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreQueryConversationHeaders([]);
+
+        return $this->digitalStoreQueryConversationWithOptions($request, $headers, $runtime);
     }
 
     /**

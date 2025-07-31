@@ -291,6 +291,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->subject)) {
             $body['subject'] = $request->subject;
         }
+        if (!Utils::isUnset($request->thirdExtension)) {
+            $body['thirdExtension'] = $request->thirdExtension;
+        }
         if (!Utils::isUnset($request->todoType)) {
             $body['todoType'] = $request->todoType;
         }

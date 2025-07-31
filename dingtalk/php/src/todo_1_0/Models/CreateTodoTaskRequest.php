@@ -96,6 +96,11 @@ class CreateTodoTaskRequest extends Model
     public $subject;
 
     /**
+     * @var mixed[]
+     */
+    public $thirdExtension;
+
+    /**
      * @example TODO
      *
      * @var string
@@ -123,6 +128,7 @@ class CreateTodoTaskRequest extends Model
         'reminderTimeStamp' => 'reminderTimeStamp',
         'sourceId' => 'sourceId',
         'subject' => 'subject',
+        'thirdExtension' => 'thirdExtension',
         'todoType' => 'todoType',
         'operatorId' => 'operatorId',
     ];
@@ -191,6 +197,9 @@ class CreateTodoTaskRequest extends Model
         }
         if (null !== $this->subject) {
             $res['subject'] = $this->subject;
+        }
+        if (null !== $this->thirdExtension) {
+            $res['thirdExtension'] = $this->thirdExtension;
         }
         if (null !== $this->todoType) {
             $res['todoType'] = $this->todoType;
@@ -273,6 +282,9 @@ class CreateTodoTaskRequest extends Model
         }
         if (isset($map['subject'])) {
             $model->subject = $map['subject'];
+        }
+        if (isset($map['thirdExtension'])) {
+            $model->thirdExtension = $map['thirdExtension'];
         }
         if (isset($map['todoType'])) {
             $model->todoType = $map['todoType'];

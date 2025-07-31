@@ -45,6 +45,9 @@ use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeleteDomainWordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeleteKnowledgeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeleteKnowledgeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeleteKnowledgeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeployAssistantHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeployAssistantRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeployAssistantResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAskDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAskDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAskDetailResponse;
@@ -1009,6 +1012,108 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteKnowledgeHeaders([]);
 
         return $this->deleteKnowledgeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 一键部署AI助理
+     *  *
+     * @param DeployAssistantRequest $request DeployAssistantRequest
+     * @param DeployAssistantHeaders $headers DeployAssistantHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeployAssistantResponse DeployAssistantResponse
+     */
+    public function deployAssistantWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            $body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->aiAssistantId)) {
+            $body['aiAssistantId'] = $request->aiAssistantId;
+        }
+        if (!Utils::isUnset($request->appScopes)) {
+            $body['appScopes'] = $request->appScopes;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->fallback)) {
+            $body['fallback'] = $request->fallback;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->instructions)) {
+            $body['instructions'] = $request->instructions;
+        }
+        if (!Utils::isUnset($request->isPublic)) {
+            $body['isPublic'] = $request->isPublic;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            $body['operateUserId'] = $request->operateUserId;
+        }
+        if (!Utils::isUnset($request->recommendPrompts)) {
+            $body['recommendPrompts'] = $request->recommendPrompts;
+        }
+        if (!Utils::isUnset($request->shareRecipient)) {
+            $body['shareRecipient'] = $request->shareRecipient;
+        }
+        if (!Utils::isUnset($request->toneStyle)) {
+            $body['toneStyle'] = $request->toneStyle;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            $body['uuid'] = $request->uuid;
+        }
+        if (!Utils::isUnset($request->welcomeContent)) {
+            $body['welcomeContent'] = $request->welcomeContent;
+        }
+        if (!Utils::isUnset($request->welcomeTitle)) {
+            $body['welcomeTitle'] = $request->welcomeTitle;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeployAssistant',
+            'version' => 'assistant_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/assistant/deploy',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeployAssistantResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 一键部署AI助理
+     *  *
+     * @param DeployAssistantRequest $request DeployAssistantRequest
+     *
+     * @return DeployAssistantResponse DeployAssistantResponse
+     */
+    public function deployAssistant($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeployAssistantHeaders([]);
+
+        return $this->deployAssistantWithOptions($request, $headers, $runtime);
     }
 
     /**
