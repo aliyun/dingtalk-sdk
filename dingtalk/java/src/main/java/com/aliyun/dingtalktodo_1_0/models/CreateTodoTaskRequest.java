@@ -55,6 +55,9 @@ public class CreateTodoTaskRequest extends TeaModel {
     @NameInMap("subject")
     public String subject;
 
+    @NameInMap("thirdExtension")
+    public java.util.Map<String, ?> thirdExtension;
+
     /**
      * <strong>example:</strong>
      * <p>TODO</p>
@@ -198,6 +201,14 @@ public class CreateTodoTaskRequest extends TeaModel {
         return this.subject;
     }
 
+    public CreateTodoTaskRequest setThirdExtension(java.util.Map<String, ?> thirdExtension) {
+        this.thirdExtension = thirdExtension;
+        return this;
+    }
+    public java.util.Map<String, ?> getThirdExtension() {
+        return this.thirdExtension;
+    }
+
     public CreateTodoTaskRequest setTodoType(String todoType) {
         this.todoType = todoType;
         return this;
@@ -251,9 +262,6 @@ public class CreateTodoTaskRequest extends TeaModel {
         @NameInMap("actionType")
         public Integer actionType;
 
-        @NameInMap("buttonStyleType")
-        public Integer buttonStyleType;
-
         @NameInMap("param")
         public CreateTodoTaskRequestActionListParam param;
 
@@ -285,14 +293,6 @@ public class CreateTodoTaskRequest extends TeaModel {
         }
         public Integer getActionType() {
             return this.actionType;
-        }
-
-        public CreateTodoTaskRequestActionList setButtonStyleType(Integer buttonStyleType) {
-            this.buttonStyleType = buttonStyleType;
-            return this;
-        }
-        public Integer getButtonStyleType() {
-            return this.buttonStyleType;
         }
 
         public CreateTodoTaskRequestActionList setParam(CreateTodoTaskRequestActionListParam param) {

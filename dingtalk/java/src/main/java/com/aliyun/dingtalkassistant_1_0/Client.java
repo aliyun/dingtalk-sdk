@@ -900,6 +900,122 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>一键部署AI助理</p>
+     * 
+     * @param request DeployAssistantRequest
+     * @param headers DeployAssistantHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeployAssistantResponse
+     */
+    public DeployAssistantResponse deployAssistantWithOptions(DeployAssistantRequest request, DeployAssistantHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.action)) {
+            body.put("action", request.action);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.aiAssistantId)) {
+            body.put("aiAssistantId", request.aiAssistantId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appScopes)) {
+            body.put("appScopes", request.appScopes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fallback)) {
+            body.put("fallback", request.fallback);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.icon)) {
+            body.put("icon", request.icon);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.instructions)) {
+            body.put("instructions", request.instructions);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isPublic)) {
+            body.put("isPublic", request.isPublic);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
+            body.put("operateUserId", request.operateUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.recommendPrompts)) {
+            body.put("recommendPrompts", request.recommendPrompts);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.shareRecipient)) {
+            body.put("shareRecipient", request.shareRecipient);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.toneStyle)) {
+            body.put("toneStyle", request.toneStyle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            body.put("uuid", request.uuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.welcomeContent)) {
+            body.put("welcomeContent", request.welcomeContent);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.welcomeTitle)) {
+            body.put("welcomeTitle", request.welcomeTitle);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeployAssistant"),
+            new TeaPair("version", "assistant_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/assistant/deploy"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeployAssistantResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>一键部署AI助理</p>
+     * 
+     * @param request DeployAssistantRequest
+     * @return DeployAssistantResponse
+     */
+    public DeployAssistantResponse deployAssistant(DeployAssistantRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeployAssistantHeaders headers = new DeployAssistantHeaders();
+        return this.deployAssistantWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取助理问答明细</p>
      * 
      * @param request GetAskDetailRequest

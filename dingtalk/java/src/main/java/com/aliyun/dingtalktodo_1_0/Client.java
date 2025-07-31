@@ -251,6 +251,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("subject", request.subject);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.thirdExtension)) {
+            body.put("thirdExtension", request.thirdExtension);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.todoType)) {
             body.put("todoType", request.todoType);
         }
