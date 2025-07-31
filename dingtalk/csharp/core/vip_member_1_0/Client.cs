@@ -406,6 +406,194 @@ namespace AlibabaCloud.SDK.Dingtalkvip_member_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>直充会员预校验是否满足条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PreCheckRedeemVipMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// PreCheckRedeemVipMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PreCheckRedeemVipMemberResponse
+        /// </returns>
+        public PreCheckRedeemVipMemberResponse PreCheckRedeemVipMemberWithOptions(PreCheckRedeemVipMemberRequest request, PreCheckRedeemVipMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizRequestId))
+            {
+                body["bizRequestId"] = request.BizRequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
+            {
+                body["channel"] = request.Channel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingtalkId))
+            {
+                body["dingtalkId"] = request.DingtalkId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Duration))
+            {
+                body["duration"] = request.Duration;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                body["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PreCheckRedeemVipMember",
+                Version = "vipMember_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/vipMember/users/preCheckRedeemVip",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PreCheckRedeemVipMemberResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>直充会员预校验是否满足条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PreCheckRedeemVipMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// PreCheckRedeemVipMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PreCheckRedeemVipMemberResponse
+        /// </returns>
+        public async Task<PreCheckRedeemVipMemberResponse> PreCheckRedeemVipMemberWithOptionsAsync(PreCheckRedeemVipMemberRequest request, PreCheckRedeemVipMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizRequestId))
+            {
+                body["bizRequestId"] = request.BizRequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
+            {
+                body["channel"] = request.Channel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingtalkId))
+            {
+                body["dingtalkId"] = request.DingtalkId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Duration))
+            {
+                body["duration"] = request.Duration;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                body["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PreCheckRedeemVipMember",
+                Version = "vipMember_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/vipMember/users/preCheckRedeemVip",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PreCheckRedeemVipMemberResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>直充会员预校验是否满足条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PreCheckRedeemVipMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PreCheckRedeemVipMemberResponse
+        /// </returns>
+        public PreCheckRedeemVipMemberResponse PreCheckRedeemVipMember(PreCheckRedeemVipMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PreCheckRedeemVipMemberHeaders headers = new PreCheckRedeemVipMemberHeaders();
+            return PreCheckRedeemVipMemberWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>直充会员预校验是否满足条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PreCheckRedeemVipMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PreCheckRedeemVipMemberResponse
+        /// </returns>
+        public async Task<PreCheckRedeemVipMemberResponse> PreCheckRedeemVipMemberAsync(PreCheckRedeemVipMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PreCheckRedeemVipMemberHeaders headers = new PreCheckRedeemVipMemberHeaders();
+            return await PreCheckRedeemVipMemberWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询365会员直充信息</para>
         /// </summary>
         /// 

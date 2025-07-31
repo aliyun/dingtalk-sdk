@@ -495,6 +495,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["subject"] = request.Subject;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ThirdExtension))
+            {
+                body["thirdExtension"] = request.ThirdExtension;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TodoType))
             {
                 body["todoType"] = request.TodoType;
@@ -619,6 +623,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
             {
                 body["subject"] = request.Subject;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ThirdExtension))
+            {
+                body["thirdExtension"] = request.ThirdExtension;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TodoType))
             {

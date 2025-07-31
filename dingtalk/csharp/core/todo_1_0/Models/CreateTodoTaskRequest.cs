@@ -21,10 +21,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public int? ActionType { get; set; }
 
-            [NameInMap("buttonStyleType")]
-            [Validation(Required=false)]
-            public int? ButtonStyleType { get; set; }
-
             [NameInMap("param")]
             [Validation(Required=false)]
             public CreateTodoTaskRequestActionListParam Param { get; set; }
@@ -159,6 +155,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [NameInMap("subject")]
         [Validation(Required=false)]
         public string Subject { get; set; }
+
+        [NameInMap("thirdExtension")]
+        [Validation(Required=false)]
+        public Dictionary<string, object> ThirdExtension { get; set; }
 
         /// <summary>
         /// <b>Example:</b>

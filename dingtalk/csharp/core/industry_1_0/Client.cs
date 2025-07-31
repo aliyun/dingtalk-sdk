@@ -14342,6 +14342,154 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>通过门店Code获取门店群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreQueryConversationRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreQueryConversationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreQueryConversationResponse
+        /// </returns>
+        public DigitalStoreQueryConversationResponse DigitalStoreQueryConversationWithOptions(DigitalStoreQueryConversationRequest request, DigitalStoreQueryConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StoreCode))
+            {
+                query["storeCode"] = request.StoreCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DigitalStoreQueryConversation",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/digitalStores/conversation/queryByStoreCode",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DigitalStoreQueryConversationResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过门店Code获取门店群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreQueryConversationRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreQueryConversationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreQueryConversationResponse
+        /// </returns>
+        public async Task<DigitalStoreQueryConversationResponse> DigitalStoreQueryConversationWithOptionsAsync(DigitalStoreQueryConversationRequest request, DigitalStoreQueryConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StoreCode))
+            {
+                query["storeCode"] = request.StoreCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DigitalStoreQueryConversation",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/digitalStores/conversation/queryByStoreCode",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DigitalStoreQueryConversationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过门店Code获取门店群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreQueryConversationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreQueryConversationResponse
+        /// </returns>
+        public DigitalStoreQueryConversationResponse DigitalStoreQueryConversation(DigitalStoreQueryConversationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreQueryConversationHeaders headers = new DigitalStoreQueryConversationHeaders();
+            return DigitalStoreQueryConversationWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过门店Code获取门店群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreQueryConversationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreQueryConversationResponse
+        /// </returns>
+        public async Task<DigitalStoreQueryConversationResponse> DigitalStoreQueryConversationAsync(DigitalStoreQueryConversationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DigitalStoreQueryConversationHeaders headers = new DigitalStoreQueryConversationHeaders();
+            return await DigitalStoreQueryConversationWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>门店通权益信息查询</para>
         /// </summary>
         /// 

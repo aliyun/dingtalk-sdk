@@ -2278,6 +2278,274 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>一键部署AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeployAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeployAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeployAssistantResponse
+        /// </returns>
+        public DeployAssistantResponse DeployAssistantWithOptions(DeployAssistantRequest request, DeployAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AiAssistantId))
+            {
+                body["aiAssistantId"] = request.AiAssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppScopes))
+            {
+                body["appScopes"] = request.AppScopes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Fallback))
+            {
+                body["fallback"] = request.Fallback;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
+            {
+                body["icon"] = request.Icon;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Instructions))
+            {
+                body["instructions"] = request.Instructions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsPublic))
+            {
+                body["isPublic"] = request.IsPublic;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecommendPrompts))
+            {
+                body["recommendPrompts"] = request.RecommendPrompts;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareRecipient))
+            {
+                body["shareRecipient"] = request.ShareRecipient;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToneStyle))
+            {
+                body["toneStyle"] = request.ToneStyle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WelcomeContent))
+            {
+                body["welcomeContent"] = request.WelcomeContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WelcomeTitle))
+            {
+                body["welcomeTitle"] = request.WelcomeTitle;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeployAssistant",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/deploy",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeployAssistantResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>一键部署AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeployAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeployAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeployAssistantResponse
+        /// </returns>
+        public async Task<DeployAssistantResponse> DeployAssistantWithOptionsAsync(DeployAssistantRequest request, DeployAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AiAssistantId))
+            {
+                body["aiAssistantId"] = request.AiAssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppScopes))
+            {
+                body["appScopes"] = request.AppScopes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Fallback))
+            {
+                body["fallback"] = request.Fallback;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
+            {
+                body["icon"] = request.Icon;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Instructions))
+            {
+                body["instructions"] = request.Instructions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsPublic))
+            {
+                body["isPublic"] = request.IsPublic;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecommendPrompts))
+            {
+                body["recommendPrompts"] = request.RecommendPrompts;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareRecipient))
+            {
+                body["shareRecipient"] = request.ShareRecipient;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToneStyle))
+            {
+                body["toneStyle"] = request.ToneStyle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WelcomeContent))
+            {
+                body["welcomeContent"] = request.WelcomeContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WelcomeTitle))
+            {
+                body["welcomeTitle"] = request.WelcomeTitle;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeployAssistant",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/deploy",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeployAssistantResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>一键部署AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeployAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeployAssistantResponse
+        /// </returns>
+        public DeployAssistantResponse DeployAssistant(DeployAssistantRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeployAssistantHeaders headers = new DeployAssistantHeaders();
+            return DeployAssistantWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>一键部署AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeployAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeployAssistantResponse
+        /// </returns>
+        public async Task<DeployAssistantResponse> DeployAssistantAsync(DeployAssistantRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeployAssistantHeaders headers = new DeployAssistantHeaders();
+            return await DeployAssistantWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取助理问答明细</para>
         /// </summary>
         /// 
