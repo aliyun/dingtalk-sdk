@@ -702,6 +702,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("platform", request.platform);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.serialNumber)) {
+            body.put("serialNumber", request.serialNumber);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.status)) {
             body.put("status", request.status);
         }
@@ -3792,6 +3796,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("platform", request.platform);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.serialNumber)) {
+            query.put("serialNumber", request.serialNumber);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
             query.put("startTime", request.startTime);
         }
@@ -4290,6 +4298,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.platform)) {
             body.put("platform", request.platform);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.serialNumber)) {
+            body.put("serialNumber", request.serialNumber);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.status)) {

@@ -41,6 +41,13 @@ public class GetPublicDevicesRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>11-22-33-44</p>
+     */
+    @NameInMap("serialNumber")
+    public String serialNumber;
+
+    /**
+     * <strong>example:</strong>
      * <p>1671767361000</p>
      */
     @NameInMap("startTime")
@@ -96,6 +103,14 @@ public class GetPublicDevicesRequest extends TeaModel {
     }
     public String getPlatform() {
         return this.platform;
+    }
+
+    public GetPublicDevicesRequest setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+        return this;
+    }
+    public String getSerialNumber() {
+        return this.serialNumber;
     }
 
     public GetPublicDevicesRequest setStartTime(Long startTime) {

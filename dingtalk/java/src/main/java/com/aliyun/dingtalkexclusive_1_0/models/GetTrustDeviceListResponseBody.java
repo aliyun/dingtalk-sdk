@@ -87,6 +87,9 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         @NameInMap("platform")
         public String platform;
 
+        @NameInMap("serialNumber")
+        public String serialNumber;
+
         /**
          * <strong>example:</strong>
          * <p>2</p>
@@ -94,6 +97,10 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>设备标题</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -157,6 +164,14 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         }
         public String getPlatform() {
             return this.platform;
+        }
+
+        public GetTrustDeviceListResponseBodyData setSerialNumber(String serialNumber) {
+            this.serialNumber = serialNumber;
+            return this;
+        }
+        public String getSerialNumber() {
+            return this.serialNumber;
         }
 
         public GetTrustDeviceListResponseBodyData setStatus(Integer status) {

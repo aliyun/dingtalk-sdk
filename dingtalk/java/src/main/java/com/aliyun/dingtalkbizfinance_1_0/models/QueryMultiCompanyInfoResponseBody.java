@@ -99,6 +99,12 @@ public class QueryMultiCompanyInfoResponseBody extends TeaModel {
         @NameInMap("accountantBookId")
         public String accountantBookId;
 
+        @NameInMap("accountantEnableDate")
+        public String accountantEnableDate;
+
+        @NameInMap("accountingStandard")
+        public String accountingStandard;
+
         @NameInMap("advancedSettingList")
         public java.util.List<QueryMultiCompanyInfoResponseBodyListAdvancedSettingList> advancedSettingList;
 
@@ -162,6 +168,22 @@ public class QueryMultiCompanyInfoResponseBody extends TeaModel {
         }
         public String getAccountantBookId() {
             return this.accountantBookId;
+        }
+
+        public QueryMultiCompanyInfoResponseBodyList setAccountantEnableDate(String accountantEnableDate) {
+            this.accountantEnableDate = accountantEnableDate;
+            return this;
+        }
+        public String getAccountantEnableDate() {
+            return this.accountantEnableDate;
+        }
+
+        public QueryMultiCompanyInfoResponseBodyList setAccountingStandard(String accountingStandard) {
+            this.accountingStandard = accountingStandard;
+            return this;
+        }
+        public String getAccountingStandard() {
+            return this.accountingStandard;
         }
 
         public QueryMultiCompanyInfoResponseBodyList setAdvancedSettingList(java.util.List<QueryMultiCompanyInfoResponseBodyListAdvancedSettingList> advancedSettingList) {

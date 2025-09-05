@@ -326,6 +326,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询闪记基本信息</p>
+     * 
+     * @param request QueryMinutesBasicInfoRequest
+     * @param headers QueryMinutesBasicInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMinutesBasicInfoResponse
+     */
+    public QueryMinutesBasicInfoResponse queryMinutesBasicInfoWithOptions(QueryMinutesBasicInfoRequest request, QueryMinutesBasicInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskUuid)) {
+            query.put("taskUuid", request.taskUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryMinutesBasicInfo"),
+            new TeaPair("version", "minutes_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/minutes/flashMinutes/queryMinutesBasicInfo"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryMinutesBasicInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询闪记基本信息</p>
+     * 
+     * @param request QueryMinutesBasicInfoRequest
+     * @return QueryMinutesBasicInfoResponse
+     */
+    public QueryMinutesBasicInfoResponse queryMinutesBasicInfo(QueryMinutesBasicInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryMinutesBasicInfoHeaders headers = new QueryMinutesBasicInfoHeaders();
+        return this.queryMinutesBasicInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询闪记媒体播放信息</p>
      * 
      * @param request QueryMinutesPlayInfoRequest

@@ -892,6 +892,84 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>新差旅-同步发票</p>
+     * 
+     * @param tmpReq SyncTripInvoiceRequest
+     * @param headers SyncTripInvoiceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncTripInvoiceResponse
+     */
+    public SyncTripInvoiceResponse syncTripInvoiceWithOptions(SyncTripInvoiceRequest tmpReq, SyncTripInvoiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        SyncTripInvoiceShrinkRequest request = new SyncTripInvoiceShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.invoiceDetailList)) {
+            request.invoiceDetailListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.invoiceDetailList, "invoiceDetailList", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.channelOrderNo)) {
+            query.put("channelOrderNo", request.channelOrderNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.channelType)) {
+            query.put("channelType", request.channelType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.customerCorpId)) {
+            query.put("customerCorpId", request.customerCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dingUserId)) {
+            query.put("dingUserId", request.dingUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceDetailListShrink)) {
+            query.put("invoiceDetailList", request.invoiceDetailListShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SyncTripInvoice"),
+            new TeaPair("version", "trip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/trip/tripInvoices/sync"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SyncTripInvoiceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>新差旅-同步发票</p>
+     * 
+     * @param request SyncTripInvoiceRequest
+     * @return SyncTripInvoiceResponse
+     */
+    public SyncTripInvoiceResponse syncTripInvoice(SyncTripInvoiceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SyncTripInvoiceHeaders headers = new SyncTripInvoiceHeaders();
+        return this.syncTripInvoiceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>同步出行订单变更事件</p>
      * 
      * @param request SyncTripOrderRequest
@@ -942,12 +1020,36 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("gmtRefund", request.gmtRefund);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.hasInvoice)) {
+            body.put("hasInvoice", request.hasInvoice);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceApplyRole)) {
+            body.put("invoiceApplyRole", request.invoiceApplyRole);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceApplyType)) {
+            body.put("invoiceApplyType", request.invoiceApplyType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.invoiceApplyUrl)) {
             body.put("invoiceApplyUrl", request.invoiceApplyUrl);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceParty)) {
+            body.put("invoiceParty", request.invoiceParty);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceType)) {
+            body.put("invoiceType", request.invoiceType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.journeyBizNo)) {
             body.put("journeyBizNo", request.journeyBizNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.journeySubmitUserId)) {
+            body.put("journeySubmitUserId", request.journeySubmitUserId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.orderDetails)) {
@@ -956,6 +1058,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.orderNo)) {
             body.put("orderNo", request.orderNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderPaymentType)) {
+            body.put("orderPaymentType", request.orderPaymentType);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.orderUrl)) {

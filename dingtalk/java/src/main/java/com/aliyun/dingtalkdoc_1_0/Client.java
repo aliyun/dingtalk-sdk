@@ -1586,6 +1586,194 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>分享文档通知内容</p>
+     * 
+     * @param request DeliverNoticeCardRequest
+     * @param headers DeliverNoticeCardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeliverNoticeCardResponse
+     */
+    public DeliverNoticeCardResponse deliverNoticeCardWithOptions(DeliverNoticeCardRequest request, DeliverNoticeCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.atUnionIds)) {
+            body.put("atUnionIds", request.atUnionIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.btnActionStr)) {
+            body.put("btnActionStr", request.btnActionStr);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.detailMobileUrl)) {
+            body.put("detailMobileUrl", request.detailMobileUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.detailPcUrl)) {
+            body.put("detailPcUrl", request.detailPcUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.lastMessageI18n)) {
+            body.put("lastMessageI18n", request.lastMessageI18n);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverId)) {
+            body.put("receiverId", request.receiverId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverType)) {
+            body.put("receiverType", request.receiverType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeliverNoticeCard"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/notice_cards/deliver"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeliverNoticeCardResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分享文档通知内容</p>
+     * 
+     * @param request DeliverNoticeCardRequest
+     * @return DeliverNoticeCardResponse
+     */
+    public DeliverNoticeCardResponse deliverNoticeCard(DeliverNoticeCardRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeliverNoticeCardHeaders headers = new DeliverNoticeCardHeaders();
+        return this.deliverNoticeCardWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分享文档通用内容</p>
+     * 
+     * @param request DeliverUnifyCardRequest
+     * @param headers DeliverUnifyCardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeliverUnifyCardResponse
+     */
+    public DeliverUnifyCardResponse deliverUnifyCardWithOptions(DeliverUnifyCardRequest request, DeliverUnifyCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.atUnionIds)) {
+            body.put("atUnionIds", request.atUnionIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            body.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
+            body.put("cardData", request.cardData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dynamicDataConfig)) {
+            body.put("dynamicDataConfig", request.dynamicDataConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.lastMessageI18n)) {
+            body.put("lastMessageI18n", request.lastMessageI18n);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverId)) {
+            body.put("receiverId", request.receiverId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiverType)) {
+            body.put("receiverType", request.receiverType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userPrivateData)) {
+            body.put("userPrivateData", request.userPrivateData);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeliverUnifyCard"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/unify_cards/deliver"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeliverUnifyCardResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分享文档通用内容</p>
+     * 
+     * @param request DeliverUnifyCardRequest
+     * @return DeliverUnifyCardResponse
+     */
+    public DeliverUnifyCardResponse deliverUnifyCard(DeliverUnifyCardRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeliverUnifyCardHeaders headers = new DeliverUnifyCardHeaders();
+        return this.deliverUnifyCardWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>追加指定段落元素</p>
      * 
      * @param request DocAppendParagraphRequest

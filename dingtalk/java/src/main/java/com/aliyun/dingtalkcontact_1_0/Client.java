@@ -3284,6 +3284,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>根据orgId获取企业信息</p>
+     * 
+     * @param tmpReq OrgInfoRequest
+     * @param headers OrgInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OrgInfoResponse
+     */
+    public OrgInfoResponse orgInfoWithOptions(OrgInfoRequest tmpReq, OrgInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        OrgInfoShrinkRequest request = new OrgInfoShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.orgIds)) {
+            request.orgIdsShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.orgIds, "orgIds", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.orgIdsShrink)) {
+            query.put("orgIds", request.orgIdsShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OrgInfo"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/org/info"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OrgInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据orgId获取企业信息</p>
+     * 
+     * @param request OrgInfoRequest
+     * @return OrgInfoResponse
+     */
+    public OrgInfoResponse orgInfo(OrgInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        OrgInfoHeaders headers = new OrgInfoHeaders();
+        return this.orgInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>给员工推送事件唤起核身组件</p>
      * 
      * @param request PushVerifyEventRequest
@@ -5338,5 +5400,67 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateUserOwnnessHeaders headers = new UpdateUserOwnnessHeaders();
         return this.updateUserOwnnessWithOptions(userId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>用户个人信息接口</p>
+     * 
+     * @param tmpReq UserProfileRequest
+     * @param headers UserProfileHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UserProfileResponse
+     */
+    public UserProfileResponse userProfileWithOptions(UserProfileRequest tmpReq, UserProfileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        UserProfileShrinkRequest request = new UserProfileShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.uids)) {
+            request.uidsShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.uids, "uids", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.uidsShrink)) {
+            query.put("uids", request.uidsShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UserProfile"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/user/profile"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UserProfileResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>用户个人信息接口</p>
+     * 
+     * @param request UserProfileRequest
+     * @return UserProfileResponse
+     */
+    public UserProfileResponse userProfile(UserProfileRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UserProfileHeaders headers = new UserProfileHeaders();
+        return this.userProfileWithOptions(request, headers, runtime);
     }
 }

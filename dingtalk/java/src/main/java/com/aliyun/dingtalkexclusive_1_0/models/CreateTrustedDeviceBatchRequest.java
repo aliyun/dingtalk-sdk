@@ -69,6 +69,9 @@ public class CreateTrustedDeviceBatchRequest extends TeaModel {
         @NameInMap("macAddress")
         public String macAddress;
 
+        @NameInMap("serialNumber")
+        public String serialNumber;
+
         @NameInMap("title")
         public String title;
 
@@ -83,6 +86,14 @@ public class CreateTrustedDeviceBatchRequest extends TeaModel {
         }
         public String getMacAddress() {
             return this.macAddress;
+        }
+
+        public CreateTrustedDeviceBatchRequestDetailList setSerialNumber(String serialNumber) {
+            this.serialNumber = serialNumber;
+            return this;
+        }
+        public String getSerialNumber() {
+            return this.serialNumber;
         }
 
         public CreateTrustedDeviceBatchRequestDetailList setTitle(String title) {

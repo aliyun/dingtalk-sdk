@@ -209,6 +209,9 @@ public class GetPublicDevicesResponseBody extends TeaModel {
         @NameInMap("platform")
         public String platform;
 
+        @NameInMap("serialNumber")
+        public String serialNumber;
+
         /**
          * <strong>example:</strong>
          * <p>这是标题</p>
@@ -283,6 +286,14 @@ public class GetPublicDevicesResponseBody extends TeaModel {
         }
         public String getPlatform() {
             return this.platform;
+        }
+
+        public GetPublicDevicesResponseBodyData setSerialNumber(String serialNumber) {
+            this.serialNumber = serialNumber;
+            return this;
+        }
+        public String getSerialNumber() {
+            return this.serialNumber;
         }
 
         public GetPublicDevicesResponseBodyData setTitle(String title) {

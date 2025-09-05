@@ -66,6 +66,9 @@ public class QueryRedeemVipMemberResponseBody extends TeaModel {
         @NameInMap("duration")
         public Long duration;
 
+        @NameInMap("expireDate")
+        public String expireDate;
+
         @NameInMap("nick")
         public String nick;
 
@@ -104,6 +107,14 @@ public class QueryRedeemVipMemberResponseBody extends TeaModel {
         }
         public Long getDuration() {
             return this.duration;
+        }
+
+        public QueryRedeemVipMemberResponseBodyQueryResults setExpireDate(String expireDate) {
+            this.expireDate = expireDate;
+            return this;
+        }
+        public String getExpireDate() {
+            return this.expireDate;
         }
 
         public QueryRedeemVipMemberResponseBodyQueryResults setNick(String nick) {

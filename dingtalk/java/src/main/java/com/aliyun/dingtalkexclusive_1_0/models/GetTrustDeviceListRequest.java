@@ -60,6 +60,9 @@ public class GetTrustDeviceListRequest extends TeaModel {
     @NameInMap("platform")
     public String platform;
 
+    @NameInMap("serialNumber")
+    public String serialNumber;
+
     @NameInMap("status")
     public Integer status;
 
@@ -133,6 +136,14 @@ public class GetTrustDeviceListRequest extends TeaModel {
     }
     public String getPlatform() {
         return this.platform;
+    }
+
+    public GetTrustDeviceListRequest setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+        return this;
+    }
+    public String getSerialNumber() {
+        return this.serialNumber;
     }
 
     public GetTrustDeviceListRequest setStatus(Integer status) {

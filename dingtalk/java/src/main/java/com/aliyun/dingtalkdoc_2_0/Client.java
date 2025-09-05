@@ -2694,6 +2694,118 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>文档定稿</p>
+     * 
+     * @param request LockDocRequest
+     * @param headers LockDocHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return LockDocResponse
+     */
+    public LockDocResponse lockDocWithOptions(LockDocRequest request, LockDocHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.param)) {
+            body.put("param", request.param);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "LockDoc"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/dentries/lock"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new LockDocResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>文档定稿</p>
+     * 
+     * @param request LockDocRequest
+     * @return LockDocResponse
+     */
+    public LockDocResponse lockDoc(LockDocRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        LockDocHeaders headers = new LockDocHeaders();
+        return this.lockDocWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>通过委托授权文档定稿</p>
+     * 
+     * @param request LockDocByDelegatedPermissionRequest
+     * @param headers LockDocByDelegatedPermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return LockDocByDelegatedPermissionResponse
+     */
+    public LockDocByDelegatedPermissionResponse lockDocByDelegatedPermissionWithOptions(LockDocByDelegatedPermissionRequest request, LockDocByDelegatedPermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.param)) {
+            body.put("param", request.param);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "LockDocByDelegatedPermission"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/me/dentries/lock"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new LockDocByDelegatedPermissionResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>通过委托授权文档定稿</p>
+     * 
+     * @param request LockDocByDelegatedPermissionRequest
+     * @return LockDocByDelegatedPermissionResponse
+     */
+    public LockDocByDelegatedPermissionResponse lockDocByDelegatedPermission(LockDocByDelegatedPermissionRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        LockDocByDelegatedPermissionHeaders headers = new LockDocByDelegatedPermissionHeaders();
+        return this.lockDocByDelegatedPermissionWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>标记星标</p>
      * 
      * @param request MarkStarRequest
@@ -3930,6 +4042,118 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         TemplateCategoriesHeaders headers = new TemplateCategoriesHeaders();
         return this.templateCategoriesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>取消文档定稿</p>
+     * 
+     * @param request UnlockDocRequest
+     * @param headers UnlockDocHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UnlockDocResponse
+     */
+    public UnlockDocResponse unlockDocWithOptions(UnlockDocRequest request, UnlockDocHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.param)) {
+            body.put("param", request.param);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UnlockDoc"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/dentries/unlock"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UnlockDocResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>取消文档定稿</p>
+     * 
+     * @param request UnlockDocRequest
+     * @return UnlockDocResponse
+     */
+    public UnlockDocResponse unlockDoc(UnlockDocRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UnlockDocHeaders headers = new UnlockDocHeaders();
+        return this.unlockDocWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>通过委托授权取消文档定稿</p>
+     * 
+     * @param request UnlockDocByDelegatedPermissionRequest
+     * @param headers UnlockDocByDelegatedPermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UnlockDocByDelegatedPermissionResponse
+     */
+    public UnlockDocByDelegatedPermissionResponse unlockDocByDelegatedPermissionWithOptions(UnlockDocByDelegatedPermissionRequest request, UnlockDocByDelegatedPermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.param)) {
+            body.put("param", request.param);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UnlockDocByDelegatedPermission"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/me/dentries/unlock"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UnlockDocByDelegatedPermissionResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>通过委托授权取消文档定稿</p>
+     * 
+     * @param request UnlockDocByDelegatedPermissionRequest
+     * @return UnlockDocByDelegatedPermissionResponse
+     */
+    public UnlockDocByDelegatedPermissionResponse unlockDocByDelegatedPermission(UnlockDocByDelegatedPermissionRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UnlockDocByDelegatedPermissionHeaders headers = new UnlockDocByDelegatedPermissionHeaders();
+        return this.unlockDocByDelegatedPermissionWithOptions(request, headers, runtime);
     }
 
     /**

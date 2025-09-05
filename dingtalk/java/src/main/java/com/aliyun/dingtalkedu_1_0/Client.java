@@ -7198,6 +7198,86 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取调用大模型的taskId</p>
+     * 
+     * @param request GenerateTaskIdRequest
+     * @param headers GenerateTaskIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GenerateTaskIdResponse
+     */
+    public GenerateTaskIdResponse generateTaskIdWithOptions(GenerateTaskIdRequest request, GenerateTaskIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxTokens)) {
+            body.put("maxTokens", request.maxTokens);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.model)) {
+            body.put("model", request.model);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.prompt)) {
+            body.put("prompt", request.prompt);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.scene)) {
+            body.put("scene", request.scene);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.temperature)) {
+            body.put("temperature", request.temperature);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.topP)) {
+            body.put("top_p", request.topP);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GenerateTaskId"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/ai/models/taskId/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GenerateTaskIdResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取调用大模型的taskId</p>
+     * 
+     * @param request GenerateTaskIdRequest
+     * @return GenerateTaskIdResponse
+     */
+    public GenerateTaskIdResponse generateTaskId(GenerateTaskIdRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GenerateTaskIdHeaders headers = new GenerateTaskIdHeaders();
+        return this.generateTaskIdWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取绑定孩子信息</p>
      * 
      * @param request GetBindChildInfoRequest
@@ -10898,6 +10978,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryKitOpenRecordHeaders headers = new QueryKitOpenRecordHeaders();
         return this.queryKitOpenRecordWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取大模型的返回值</p>
+     * 
+     * @param request QueryModelResultByTaskIdRequest
+     * @param headers QueryModelResultByTaskIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryModelResultByTaskIdResponse
+     */
+    public QueryModelResultByTaskIdResponse queryModelResultByTaskIdWithOptions(QueryModelResultByTaskIdRequest request, QueryModelResultByTaskIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("taskId", request.taskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryModelResultByTaskId"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/ai/models/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryModelResultByTaskIdResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取大模型的返回值</p>
+     * 
+     * @param request QueryModelResultByTaskIdRequest
+     * @return QueryModelResultByTaskIdResponse
+     */
+    public QueryModelResultByTaskIdResponse queryModelResultByTaskId(QueryModelResultByTaskIdRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryModelResultByTaskIdHeaders headers = new QueryModelResultByTaskIdHeaders();
+        return this.queryModelResultByTaskIdWithOptions(request, headers, runtime);
     }
 
     /**

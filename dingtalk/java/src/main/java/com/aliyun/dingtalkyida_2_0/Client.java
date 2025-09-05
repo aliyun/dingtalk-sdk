@@ -1607,4 +1607,96 @@ public class Client extends com.aliyun.teaopenapi.Client {
         UpdateFormDataHeaders headers = new UpdateFormDataHeaders();
         return this.updateFormDataWithOptions(request, headers, runtime);
     }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新宜搭子表单</p>
+     * 
+     * @param request UpdateSubTableRequest
+     * @param headers UpdateSubTableHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateSubTableResponse
+     */
+    public UpdateSubTableResponse updateSubTableWithOptions(UpdateSubTableRequest request, UpdateSubTableHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
+            body.put("appType", request.appType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.formInstanceId)) {
+            body.put("formInstanceId", request.formInstanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.language)) {
+            body.put("language", request.language);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.noExecuteExpression)) {
+            body.put("noExecuteExpression", request.noExecuteExpression);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.systemToken)) {
+            body.put("systemToken", request.systemToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tableFieldIds)) {
+            body.put("tableFieldIds", request.tableFieldIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.updateFormDataJson)) {
+            body.put("updateFormDataJson", request.updateFormDataJson);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.useAlias)) {
+            body.put("useAlias", request.useAlias);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.useLatestFormSchemaVersion)) {
+            body.put("useLatestFormSchemaVersion", request.useLatestFormSchemaVersion);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateSubTable"),
+            new TeaPair("version", "yida_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/yida/forms/updateSubTable"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateSubTableResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新宜搭子表单</p>
+     * 
+     * @param request UpdateSubTableRequest
+     * @return UpdateSubTableResponse
+     */
+    public UpdateSubTableResponse updateSubTable(UpdateSubTableRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateSubTableHeaders headers = new UpdateSubTableHeaders();
+        return this.updateSubTableWithOptions(request, headers, runtime);
+    }
 }

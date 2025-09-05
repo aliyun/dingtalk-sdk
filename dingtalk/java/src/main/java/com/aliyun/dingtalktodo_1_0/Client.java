@@ -738,6 +738,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("maxResults", request.maxResults);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.needPersonalTodo)) {
+            body.put("needPersonalTodo", request.needPersonalTodo);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
             body.put("nextToken", request.nextToken);
         }

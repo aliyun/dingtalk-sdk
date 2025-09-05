@@ -152,6 +152,9 @@ public class GetTaskPackageResultResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
+        @NameInMap("parseText")
+        public String parseText;
+
         @NameInMap("rawData")
         public String rawData;
 
@@ -230,6 +233,14 @@ public class GetTaskPackageResultResponseBody extends TeaModel {
             return this.name;
         }
 
+        public GetTaskPackageResultResponseBodyTasksResult setParseText(String parseText) {
+            this.parseText = parseText;
+            return this;
+        }
+        public String getParseText() {
+            return this.parseText;
+        }
+
         public GetTaskPackageResultResponseBodyTasksResult setRawData(String rawData) {
             this.rawData = rawData;
             return this;
@@ -257,6 +268,9 @@ public class GetTaskPackageResultResponseBody extends TeaModel {
     }
 
     public static class GetTaskPackageResultResponseBodyTasks extends TeaModel {
+        @NameInMap("reportLink")
+        public String reportLink;
+
         @NameInMap("result")
         public GetTaskPackageResultResponseBodyTasksResult result;
 
@@ -272,6 +286,14 @@ public class GetTaskPackageResultResponseBody extends TeaModel {
         public static GetTaskPackageResultResponseBodyTasks build(java.util.Map<String, ?> map) throws Exception {
             GetTaskPackageResultResponseBodyTasks self = new GetTaskPackageResultResponseBodyTasks();
             return TeaModel.build(map, self);
+        }
+
+        public GetTaskPackageResultResponseBodyTasks setReportLink(String reportLink) {
+            this.reportLink = reportLink;
+            return this;
+        }
+        public String getReportLink() {
+            return this.reportLink;
         }
 
         public GetTaskPackageResultResponseBodyTasks setResult(GetTaskPackageResultResponseBodyTasksResult result) {

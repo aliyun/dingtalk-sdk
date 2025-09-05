@@ -20,6 +20,374 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>新增商品</p>
+     * 
+     * @param request AiRetailProductAddRequest
+     * @param headers AiRetailProductAddHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AiRetailProductAddResponse
+     */
+    public AiRetailProductAddResponse aiRetailProductAddWithOptions(AiRetailProductAddRequest request, AiRetailProductAddHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.attribute)) {
+            body.put("attribute", request.attribute);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.barcodes)) {
+            body.put("barcodes", request.barcodes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.brand)) {
+            body.put("brand", request.brand);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.category)) {
+            body.put("category", request.category);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.imageFileIds)) {
+            body.put("imageFileIds", request.imageFileIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.itemNumbers)) {
+            body.put("itemNumbers", request.itemNumbers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.price)) {
+            body.put("price", request.price);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productCode)) {
+            body.put("productCode", request.productCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productFab)) {
+            body.put("productFab", request.productFab);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productInfo)) {
+            body.put("productInfo", request.productInfo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productName)) {
+            body.put("productName", request.productName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AiRetailProductAdd"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/retail/product/add"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AiRetailProductAddResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>新增商品</p>
+     * 
+     * @param request AiRetailProductAddRequest
+     * @return AiRetailProductAddResponse
+     */
+    public AiRetailProductAddResponse aiRetailProductAdd(AiRetailProductAddRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AiRetailProductAddHeaders headers = new AiRetailProductAddHeaders();
+        return this.aiRetailProductAddWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除商品</p>
+     * 
+     * @param request AiRetailProductDeleteRequest
+     * @param headers AiRetailProductDeleteHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AiRetailProductDeleteResponse
+     */
+    public AiRetailProductDeleteResponse aiRetailProductDeleteWithOptions(AiRetailProductDeleteRequest request, AiRetailProductDeleteHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.productId)) {
+            body.put("productId", request.productId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AiRetailProductDelete"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/retail/product/delete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "boolean")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AiRetailProductDeleteResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除商品</p>
+     * 
+     * @param request AiRetailProductDeleteRequest
+     * @return AiRetailProductDeleteResponse
+     */
+    public AiRetailProductDeleteResponse aiRetailProductDelete(AiRetailProductDeleteRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AiRetailProductDeleteHeaders headers = new AiRetailProductDeleteHeaders();
+        return this.aiRetailProductDeleteWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>商品图片上传</p>
+     * 
+     * @param request AiRetailProductImgUploadRequest
+     * @param headers AiRetailProductImgUploadHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AiRetailProductImgUploadResponse
+     */
+    public AiRetailProductImgUploadResponse aiRetailProductImgUploadWithOptions(AiRetailProductImgUploadRequest request, AiRetailProductImgUploadHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            body.put("bizCode", request.bizCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AiRetailProductImgUpload"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/retail/product/image/upload"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AiRetailProductImgUploadResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>商品图片上传</p>
+     * 
+     * @param request AiRetailProductImgUploadRequest
+     * @return AiRetailProductImgUploadResponse
+     */
+    public AiRetailProductImgUploadResponse aiRetailProductImgUpload(AiRetailProductImgUploadRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AiRetailProductImgUploadHeaders headers = new AiRetailProductImgUploadHeaders();
+        return this.aiRetailProductImgUploadWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询商品</p>
+     * 
+     * @param request AiRetailProductQueryRequest
+     * @param headers AiRetailProductQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AiRetailProductQueryResponse
+     */
+    public AiRetailProductQueryResponse aiRetailProductQueryWithOptions(AiRetailProductQueryRequest request, AiRetailProductQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.productCode)) {
+            query.put("productCode", request.productCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productId)) {
+            query.put("productId", request.productId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AiRetailProductQuery"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/retail/product/query"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AiRetailProductQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询商品</p>
+     * 
+     * @param request AiRetailProductQueryRequest
+     * @return AiRetailProductQueryResponse
+     */
+    public AiRetailProductQueryResponse aiRetailProductQuery(AiRetailProductQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AiRetailProductQueryHeaders headers = new AiRetailProductQueryHeaders();
+        return this.aiRetailProductQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新商品</p>
+     * 
+     * @param request AiRetailProductUpdateRequest
+     * @param headers AiRetailProductUpdateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AiRetailProductUpdateResponse
+     */
+    public AiRetailProductUpdateResponse aiRetailProductUpdateWithOptions(AiRetailProductUpdateRequest request, AiRetailProductUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.attribute)) {
+            body.put("attribute", request.attribute);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.barcodes)) {
+            body.put("barcodes", request.barcodes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.brand)) {
+            body.put("brand", request.brand);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.category)) {
+            body.put("category", request.category);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.imageFileIds)) {
+            body.put("imageFileIds", request.imageFileIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.itemNumbers)) {
+            body.put("itemNumbers", request.itemNumbers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.price)) {
+            body.put("price", request.price);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productCode)) {
+            body.put("productCode", request.productCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productFab)) {
+            body.put("productFab", request.productFab);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productId)) {
+            body.put("productId", request.productId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productInfo)) {
+            body.put("productInfo", request.productInfo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productName)) {
+            body.put("productName", request.productName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AiRetailProductUpdate"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/retail/product/update"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "boolean")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AiRetailProductUpdateResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新商品</p>
+     * 
+     * @param request AiRetailProductUpdateRequest
+     * @return AiRetailProductUpdateResponse
+     */
+    public AiRetailProductUpdateResponse aiRetailProductUpdate(AiRetailProductUpdateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AiRetailProductUpdateHeaders headers = new AiRetailProductUpdateHeaders();
+        return this.aiRetailProductUpdateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>批量查询任务结果</p>
      * 
      * @param request BatchGetTaskResultRequest

@@ -75,8 +75,31 @@ public class SyncTripOrderRequest extends TeaModel {
     @NameInMap("gmtRefund")
     public String gmtRefund;
 
+    @NameInMap("hasInvoice")
+    public Boolean hasInvoice;
+
+    /**
+     * <strong>example:</strong>
+     * <p>亚朵酒店</p>
+     */
+    @NameInMap("invoiceApplyRole")
+    public String invoiceApplyRole;
+
+    /**
+     * <strong>example:</strong>
+     * <p>PLAIN</p>
+     */
+    @NameInMap("invoiceApplyType")
+    public String invoiceApplyType;
+
     @NameInMap("invoiceApplyUrl")
     public String invoiceApplyUrl;
+
+    @NameInMap("invoiceParty")
+    public Integer invoiceParty;
+
+    @NameInMap("invoiceType")
+    public Integer invoiceType;
 
     /**
      * <strong>example:</strong>
@@ -84,6 +107,13 @@ public class SyncTripOrderRequest extends TeaModel {
      */
     @NameInMap("journeyBizNo")
     public String journeyBizNo;
+
+    /**
+     * <strong>example:</strong>
+     * <p>0219514246531048123</p>
+     */
+    @NameInMap("journeySubmitUserId")
+    public String journeySubmitUserId;
 
     @NameInMap("orderDetails")
     public java.util.List<SyncTripOrderRequestOrderDetails> orderDetails;
@@ -96,6 +126,9 @@ public class SyncTripOrderRequest extends TeaModel {
      */
     @NameInMap("orderNo")
     public String orderNo;
+
+    @NameInMap("orderPaymentType")
+    public String orderPaymentType;
 
     /**
      * <p>This parameter is required.</p>
@@ -250,6 +283,30 @@ public class SyncTripOrderRequest extends TeaModel {
         return this.gmtRefund;
     }
 
+    public SyncTripOrderRequest setHasInvoice(Boolean hasInvoice) {
+        this.hasInvoice = hasInvoice;
+        return this;
+    }
+    public Boolean getHasInvoice() {
+        return this.hasInvoice;
+    }
+
+    public SyncTripOrderRequest setInvoiceApplyRole(String invoiceApplyRole) {
+        this.invoiceApplyRole = invoiceApplyRole;
+        return this;
+    }
+    public String getInvoiceApplyRole() {
+        return this.invoiceApplyRole;
+    }
+
+    public SyncTripOrderRequest setInvoiceApplyType(String invoiceApplyType) {
+        this.invoiceApplyType = invoiceApplyType;
+        return this;
+    }
+    public String getInvoiceApplyType() {
+        return this.invoiceApplyType;
+    }
+
     public SyncTripOrderRequest setInvoiceApplyUrl(String invoiceApplyUrl) {
         this.invoiceApplyUrl = invoiceApplyUrl;
         return this;
@@ -258,12 +315,36 @@ public class SyncTripOrderRequest extends TeaModel {
         return this.invoiceApplyUrl;
     }
 
+    public SyncTripOrderRequest setInvoiceParty(Integer invoiceParty) {
+        this.invoiceParty = invoiceParty;
+        return this;
+    }
+    public Integer getInvoiceParty() {
+        return this.invoiceParty;
+    }
+
+    public SyncTripOrderRequest setInvoiceType(Integer invoiceType) {
+        this.invoiceType = invoiceType;
+        return this;
+    }
+    public Integer getInvoiceType() {
+        return this.invoiceType;
+    }
+
     public SyncTripOrderRequest setJourneyBizNo(String journeyBizNo) {
         this.journeyBizNo = journeyBizNo;
         return this;
     }
     public String getJourneyBizNo() {
         return this.journeyBizNo;
+    }
+
+    public SyncTripOrderRequest setJourneySubmitUserId(String journeySubmitUserId) {
+        this.journeySubmitUserId = journeySubmitUserId;
+        return this;
+    }
+    public String getJourneySubmitUserId() {
+        return this.journeySubmitUserId;
     }
 
     public SyncTripOrderRequest setOrderDetails(java.util.List<SyncTripOrderRequestOrderDetails> orderDetails) {
@@ -280,6 +361,14 @@ public class SyncTripOrderRequest extends TeaModel {
     }
     public String getOrderNo() {
         return this.orderNo;
+    }
+
+    public SyncTripOrderRequest setOrderPaymentType(String orderPaymentType) {
+        this.orderPaymentType = orderPaymentType;
+        return this;
+    }
+    public String getOrderPaymentType() {
+        return this.orderPaymentType;
     }
 
     public SyncTripOrderRequest setOrderUrl(String orderUrl) {
@@ -492,6 +581,20 @@ public class SyncTripOrderRequest extends TeaModel {
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>350622200101152876</p>
+         */
+        @NameInMap("identityNumber")
+        public String identityNumber;
+
+        /**
+         * <strong>example:</strong>
+         * <p>CITIZEN_ID</p>
+         */
+        @NameInMap("identityType")
+        public String identityType;
+
         @NameInMap("name")
         public String name;
 
@@ -521,6 +624,22 @@ public class SyncTripOrderRequest extends TeaModel {
         }
         public String getCorpId() {
             return this.corpId;
+        }
+
+        public SyncTripOrderRequestOrderDetailsOpenConsumerInfo setIdentityNumber(String identityNumber) {
+            this.identityNumber = identityNumber;
+            return this;
+        }
+        public String getIdentityNumber() {
+            return this.identityNumber;
+        }
+
+        public SyncTripOrderRequestOrderDetailsOpenConsumerInfo setIdentityType(String identityType) {
+            this.identityType = identityType;
+            return this;
+        }
+        public String getIdentityType() {
+            return this.identityType;
         }
 
         public SyncTripOrderRequestOrderDetailsOpenConsumerInfo setName(String name) {
@@ -576,6 +695,13 @@ public class SyncTripOrderRequest extends TeaModel {
     public static class SyncTripOrderRequestOrderDetails extends TeaModel {
         /**
          * <strong>example:</strong>
+         * <p>首都机场</p>
+         */
+        @NameInMap("airport")
+        public String airport;
+
+        /**
+         * <strong>example:</strong>
          * <p>2022-05-20 12:20:00</p>
          */
         @NameInMap("arrivalTime")
@@ -629,6 +755,12 @@ public class SyncTripOrderRequest extends TeaModel {
          */
         @NameInMap("departTime")
         public String departTime;
+
+        @NameInMap("destinationAirport")
+        public String destinationAirport;
+
+        @NameInMap("destinationAirportCode")
+        public String destinationAirportCode;
 
         /**
          * <strong>example:</strong>
@@ -688,6 +820,15 @@ public class SyncTripOrderRequest extends TeaModel {
         @NameInMap("openConsumerInfo")
         public java.util.List<SyncTripOrderRequestOrderDetailsOpenConsumerInfo> openConsumerInfo;
 
+        @NameInMap("orderDetailStatus")
+        public String orderDetailStatus;
+
+        @NameInMap("originAirport")
+        public String originAirport;
+
+        @NameInMap("originAirportCode")
+        public String originAirportCode;
+
         /**
          * <strong>example:</strong>
          * <p>北京</p>
@@ -718,6 +859,9 @@ public class SyncTripOrderRequest extends TeaModel {
 
         @NameInMap("roomCount")
         public Integer roomCount;
+
+        @NameInMap("roundTripType")
+        public String roundTripType;
 
         /**
          * <strong>example:</strong>
@@ -778,6 +922,14 @@ public class SyncTripOrderRequest extends TeaModel {
         public static SyncTripOrderRequestOrderDetails build(java.util.Map<String, ?> map) throws Exception {
             SyncTripOrderRequestOrderDetails self = new SyncTripOrderRequestOrderDetails();
             return TeaModel.build(map, self);
+        }
+
+        public SyncTripOrderRequestOrderDetails setAirport(String airport) {
+            this.airport = airport;
+            return this;
+        }
+        public String getAirport() {
+            return this.airport;
         }
 
         public SyncTripOrderRequestOrderDetails setArrivalTime(String arrivalTime) {
@@ -842,6 +994,22 @@ public class SyncTripOrderRequest extends TeaModel {
         }
         public String getDepartTime() {
             return this.departTime;
+        }
+
+        public SyncTripOrderRequestOrderDetails setDestinationAirport(String destinationAirport) {
+            this.destinationAirport = destinationAirport;
+            return this;
+        }
+        public String getDestinationAirport() {
+            return this.destinationAirport;
+        }
+
+        public SyncTripOrderRequestOrderDetails setDestinationAirportCode(String destinationAirportCode) {
+            this.destinationAirportCode = destinationAirportCode;
+            return this;
+        }
+        public String getDestinationAirportCode() {
+            return this.destinationAirportCode;
         }
 
         public SyncTripOrderRequestOrderDetails setDestinationCity(String destinationCity) {
@@ -924,6 +1092,30 @@ public class SyncTripOrderRequest extends TeaModel {
             return this.openConsumerInfo;
         }
 
+        public SyncTripOrderRequestOrderDetails setOrderDetailStatus(String orderDetailStatus) {
+            this.orderDetailStatus = orderDetailStatus;
+            return this;
+        }
+        public String getOrderDetailStatus() {
+            return this.orderDetailStatus;
+        }
+
+        public SyncTripOrderRequestOrderDetails setOriginAirport(String originAirport) {
+            this.originAirport = originAirport;
+            return this;
+        }
+        public String getOriginAirport() {
+            return this.originAirport;
+        }
+
+        public SyncTripOrderRequestOrderDetails setOriginAirportCode(String originAirportCode) {
+            this.originAirportCode = originAirportCode;
+            return this;
+        }
+        public String getOriginAirportCode() {
+            return this.originAirportCode;
+        }
+
         public SyncTripOrderRequestOrderDetails setOriginCity(String originCity) {
             this.originCity = originCity;
             return this;
@@ -962,6 +1154,14 @@ public class SyncTripOrderRequest extends TeaModel {
         }
         public Integer getRoomCount() {
             return this.roomCount;
+        }
+
+        public SyncTripOrderRequestOrderDetails setRoundTripType(String roundTripType) {
+            this.roundTripType = roundTripType;
+            return this;
+        }
+        public String getRoundTripType() {
+            return this.roundTripType;
         }
 
         public SyncTripOrderRequestOrderDetails setSeatInfo(String seatInfo) {

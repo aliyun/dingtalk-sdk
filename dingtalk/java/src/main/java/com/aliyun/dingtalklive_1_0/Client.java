@@ -328,8 +328,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("coverUrl", request.coverUrl);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.enableLinkMic)) {
+            body.put("enableLinkMic", request.enableLinkMic);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.introduction)) {
             body.put("introduction", request.introduction);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isLandscape)) {
+            body.put("isLandscape", request.isLandscape);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.preEndTime)) {

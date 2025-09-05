@@ -21,21 +21,12 @@ public class HrbrainDeleteTrainingRequest extends TeaModel {
     }
 
     public static class HrbrainDeleteTrainingRequestParams extends TeaModel {
-        /**
-         * <p>This parameter is required.</p>
-         */
         @NameInMap("trainEndDate")
         public String trainEndDate;
 
-        /**
-         * <p>This parameter is required.</p>
-         */
         @NameInMap("trainName")
         public String trainName;
 
-        /**
-         * <p>This parameter is required.</p>
-         */
         @NameInMap("trainStartDate")
         public String trainStartDate;
 

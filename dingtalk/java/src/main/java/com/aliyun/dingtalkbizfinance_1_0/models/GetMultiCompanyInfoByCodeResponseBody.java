@@ -4,6 +4,12 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMultiCompanyInfoByCodeResponseBody extends TeaModel {
+    @NameInMap("accountantEnableDate")
+    public String accountantEnableDate;
+
+    @NameInMap("accountingStandard")
+    public String accountingStandard;
+
     @NameInMap("advancedSettingList")
     public java.util.List<GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList> advancedSettingList;
 
@@ -52,6 +58,22 @@ public class GetMultiCompanyInfoByCodeResponseBody extends TeaModel {
     public static GetMultiCompanyInfoByCodeResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetMultiCompanyInfoByCodeResponseBody self = new GetMultiCompanyInfoByCodeResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetMultiCompanyInfoByCodeResponseBody setAccountantEnableDate(String accountantEnableDate) {
+        this.accountantEnableDate = accountantEnableDate;
+        return this;
+    }
+    public String getAccountantEnableDate() {
+        return this.accountantEnableDate;
+    }
+
+    public GetMultiCompanyInfoByCodeResponseBody setAccountingStandard(String accountingStandard) {
+        this.accountingStandard = accountingStandard;
+        return this;
+    }
+    public String getAccountingStandard() {
+        return this.accountingStandard;
     }
 
     public GetMultiCompanyInfoByCodeResponseBody setAdvancedSettingList(java.util.List<GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList> advancedSettingList) {

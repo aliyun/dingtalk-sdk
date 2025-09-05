@@ -13,6 +13,9 @@ public class QueryOrgTodoByUserRequest extends TeaModel {
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    @NameInMap("needPersonalTodo")
+    public Boolean needPersonalTodo;
+
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -65,6 +68,14 @@ public class QueryOrgTodoByUserRequest extends TeaModel {
     }
     public Integer getMaxResults() {
         return this.maxResults;
+    }
+
+    public QueryOrgTodoByUserRequest setNeedPersonalTodo(Boolean needPersonalTodo) {
+        this.needPersonalTodo = needPersonalTodo;
+        return this;
+    }
+    public Boolean getNeedPersonalTodo() {
+        return this.needPersonalTodo;
     }
 
     public QueryOrgTodoByUserRequest setNextToken(String nextToken) {

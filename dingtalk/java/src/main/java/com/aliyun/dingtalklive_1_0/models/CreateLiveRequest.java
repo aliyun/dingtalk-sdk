@@ -13,10 +13,24 @@ public class CreateLiveRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("enableLinkMic")
+    public Boolean enableLinkMic;
+
+    /**
+     * <strong>example:</strong>
      * <p>测试直播简介</p>
      */
     @NameInMap("introduction")
     public String introduction;
+
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("isLandscape")
+    public Boolean isLandscape;
 
     /**
      * <p>This parameter is required.</p>
@@ -74,12 +88,28 @@ public class CreateLiveRequest extends TeaModel {
         return this.coverUrl;
     }
 
+    public CreateLiveRequest setEnableLinkMic(Boolean enableLinkMic) {
+        this.enableLinkMic = enableLinkMic;
+        return this;
+    }
+    public Boolean getEnableLinkMic() {
+        return this.enableLinkMic;
+    }
+
     public CreateLiveRequest setIntroduction(String introduction) {
         this.introduction = introduction;
         return this;
     }
     public String getIntroduction() {
         return this.introduction;
+    }
+
+    public CreateLiveRequest setIsLandscape(Boolean isLandscape) {
+        this.isLandscape = isLandscape;
+        return this;
+    }
+    public Boolean getIsLandscape() {
+        return this.isLandscape;
     }
 
     public CreateLiveRequest setPreEndTime(Long preEndTime) {

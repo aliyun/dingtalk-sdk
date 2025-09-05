@@ -29,6 +29,13 @@ public class CreateTrustedDeviceRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>11-22-33-44-55</p>
+     */
+    @NameInMap("serialNumber")
+    public String serialNumber;
+
+    /**
+     * <strong>example:</strong>
      * <p>2</p>
      */
     @NameInMap("status")
@@ -77,6 +84,14 @@ public class CreateTrustedDeviceRequest extends TeaModel {
     }
     public String getPlatform() {
         return this.platform;
+    }
+
+    public CreateTrustedDeviceRequest setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+        return this;
+    }
+    public String getSerialNumber() {
+        return this.serialNumber;
     }
 
     public CreateTrustedDeviceRequest setStatus(Integer status) {

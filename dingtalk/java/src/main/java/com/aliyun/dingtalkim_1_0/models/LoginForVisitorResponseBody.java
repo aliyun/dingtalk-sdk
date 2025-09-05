@@ -4,15 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class LoginForVisitorResponseBody extends TeaModel {
-    /**
-     * <p>This parameter is required.</p>
-     */
     @NameInMap("aimInfo")
     public LoginForVisitorResponseBodyAimInfo aimInfo;
 
-    /**
-     * <p>This parameter is required.</p>
-     */
     @NameInMap("aimToken")
     public LoginForVisitorResponseBodyAimToken aimToken;
 
@@ -189,27 +183,9 @@ public class LoginForVisitorResponseBody extends TeaModel {
     }
 
     public static class LoginForVisitorResponseBodyAimInfo extends TeaModel {
-        /**
-         * <p>This parameter is required.</p>
-         * 
-         * <strong>example:</strong>
-         * <p>app_123456</p>
-         */
-        @NameInMap("appId")
-        public String appId;
-
-        /**
-         * <p>This parameter is required.</p>
-         */
         @NameInMap("appKey")
-        public java.util.Map<String, String> appKey;
+        public java.util.Map<String, ?> appKey;
 
-        /**
-         * <p>This parameter is required.</p>
-         * 
-         * <strong>example:</strong>
-         * <p>dingtalk_app</p>
-         */
         @NameInMap("appName")
         public String appName;
 
@@ -218,19 +194,11 @@ public class LoginForVisitorResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public LoginForVisitorResponseBodyAimInfo setAppId(String appId) {
-            this.appId = appId;
-            return this;
-        }
-        public String getAppId() {
-            return this.appId;
-        }
-
-        public LoginForVisitorResponseBodyAimInfo setAppKey(java.util.Map<String, String> appKey) {
+        public LoginForVisitorResponseBodyAimInfo setAppKey(java.util.Map<String, ?> appKey) {
             this.appKey = appKey;
             return this;
         }
-        public java.util.Map<String, String> getAppKey() {
+        public java.util.Map<String, ?> getAppKey() {
             return this.appKey;
         }
 
@@ -245,39 +213,15 @@ public class LoginForVisitorResponseBody extends TeaModel {
     }
 
     public static class LoginForVisitorResponseBodyAimToken extends TeaModel {
-        /**
-         * <p>This parameter is required.</p>
-         * 
-         * <strong>example:</strong>
-         * <p>abc123xyz</p>
-         */
         @NameInMap("accessToken")
         public String accessToken;
 
-        /**
-         * <p>This parameter is required.</p>
-         * 
-         * <strong>example:</strong>
-         * <p>86400</p>
-         */
         @NameInMap("accessTokenExpiredTime")
         public Long accessTokenExpiredTime;
 
-        /**
-         * <p>This parameter is required.</p>
-         * 
-         * <strong>example:</strong>
-         * <p>1717027200000</p>
-         */
         @NameInMap("buildTime")
         public Long buildTime;
 
-        /**
-         * <p>This parameter is required.</p>
-         * 
-         * <strong>example:</strong>
-         * <p>refreshtoken_789</p>
-         */
         @NameInMap("refreshToken")
         public String refreshToken;
 
