@@ -62,6 +62,11 @@ class data extends Model
     public $platform;
 
     /**
+     * @var string
+     */
+    public $serialNumber;
+
+    /**
      * @example 这是标题
      *
      * @var string
@@ -76,6 +81,7 @@ class data extends Model
         'gmtModified' => 'gmtModified',
         'macAddress' => 'macAddress',
         'platform' => 'platform',
+        'serialNumber' => 'serialNumber',
         'title' => 'title',
     ];
 
@@ -125,6 +131,9 @@ class data extends Model
         }
         if (null !== $this->platform) {
             $res['platform'] = $this->platform;
+        }
+        if (null !== $this->serialNumber) {
+            $res['serialNumber'] = $this->serialNumber;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
@@ -182,6 +191,9 @@ class data extends Model
         }
         if (isset($map['platform'])) {
             $model->platform = $map['platform'];
+        }
+        if (isset($map['serialNumber'])) {
+            $model->serialNumber = $map['serialNumber'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];

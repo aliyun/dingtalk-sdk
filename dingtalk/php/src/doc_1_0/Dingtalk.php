@@ -80,6 +80,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceDocResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeliverNoticeCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeliverNoticeCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeliverNoticeCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeliverUnifyCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeliverUnifyCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeliverUnifyCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendParagraphHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendParagraphRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendParagraphResponse;
@@ -1881,6 +1887,178 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteWorkspaceMembersHeaders([]);
 
         return $this->deleteWorkspaceMembersWithOptions($workspaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分享文档通知内容
+     *  *
+     * @param DeliverNoticeCardRequest $request DeliverNoticeCardRequest
+     * @param DeliverNoticeCardHeaders $headers DeliverNoticeCardHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeliverNoticeCardResponse DeliverNoticeCardResponse
+     */
+    public function deliverNoticeCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->atUnionIds)) {
+            $body['atUnionIds'] = $request->atUnionIds;
+        }
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->btnActionStr)) {
+            $body['btnActionStr'] = $request->btnActionStr;
+        }
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->detailMobileUrl)) {
+            $body['detailMobileUrl'] = $request->detailMobileUrl;
+        }
+        if (!Utils::isUnset($request->detailPcUrl)) {
+            $body['detailPcUrl'] = $request->detailPcUrl;
+        }
+        if (!Utils::isUnset($request->lastMessageI18n)) {
+            $body['lastMessageI18n'] = $request->lastMessageI18n;
+        }
+        if (!Utils::isUnset($request->receiverId)) {
+            $body['receiverId'] = $request->receiverId;
+        }
+        if (!Utils::isUnset($request->receiverType)) {
+            $body['receiverType'] = $request->receiverType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeliverNoticeCard',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/notice_cards/deliver',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeliverNoticeCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分享文档通知内容
+     *  *
+     * @param DeliverNoticeCardRequest $request DeliverNoticeCardRequest
+     *
+     * @return DeliverNoticeCardResponse DeliverNoticeCardResponse
+     */
+    public function deliverNoticeCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeliverNoticeCardHeaders([]);
+
+        return $this->deliverNoticeCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分享文档通用内容
+     *  *
+     * @param DeliverUnifyCardRequest $request DeliverUnifyCardRequest
+     * @param DeliverUnifyCardHeaders $headers DeliverUnifyCardHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeliverUnifyCardResponse DeliverUnifyCardResponse
+     */
+    public function deliverUnifyCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->atUnionIds)) {
+            $body['atUnionIds'] = $request->atUnionIds;
+        }
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->cardData)) {
+            $body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->dynamicDataConfig)) {
+            $body['dynamicDataConfig'] = $request->dynamicDataConfig;
+        }
+        if (!Utils::isUnset($request->lastMessageI18n)) {
+            $body['lastMessageI18n'] = $request->lastMessageI18n;
+        }
+        if (!Utils::isUnset($request->receiverId)) {
+            $body['receiverId'] = $request->receiverId;
+        }
+        if (!Utils::isUnset($request->receiverType)) {
+            $body['receiverType'] = $request->receiverType;
+        }
+        if (!Utils::isUnset($request->userPrivateData)) {
+            $body['userPrivateData'] = $request->userPrivateData;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeliverUnifyCard',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/unify_cards/deliver',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeliverUnifyCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分享文档通用内容
+     *  *
+     * @param DeliverUnifyCardRequest $request DeliverUnifyCardRequest
+     *
+     * @return DeliverUnifyCardResponse DeliverUnifyCardResponse
+     */
+    public function deliverUnifyCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeliverUnifyCardHeaders([]);
+
+        return $this->deliverUnifyCardWithOptions($request, $headers, $runtime);
     }
 
     /**

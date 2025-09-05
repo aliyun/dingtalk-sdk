@@ -59,6 +59,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\StartInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateFormDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateFormDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateFormDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateSubTableHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateSubTableRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateSubTableResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -1553,5 +1556,89 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateFormDataHeaders([]);
 
         return $this->updateFormDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新宜搭子表单
+     *  *
+     * @param UpdateSubTableRequest $request UpdateSubTableRequest
+     * @param UpdateSubTableHeaders $headers UpdateSubTableHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateSubTableResponse UpdateSubTableResponse
+     */
+    public function updateSubTableWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            $body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->formInstanceId)) {
+            $body['formInstanceId'] = $request->formInstanceId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            $body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->noExecuteExpression)) {
+            $body['noExecuteExpression'] = $request->noExecuteExpression;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            $body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->tableFieldIds)) {
+            $body['tableFieldIds'] = $request->tableFieldIds;
+        }
+        if (!Utils::isUnset($request->updateFormDataJson)) {
+            $body['updateFormDataJson'] = $request->updateFormDataJson;
+        }
+        if (!Utils::isUnset($request->useAlias)) {
+            $body['useAlias'] = $request->useAlias;
+        }
+        if (!Utils::isUnset($request->useLatestFormSchemaVersion)) {
+            $body['useLatestFormSchemaVersion'] = $request->useLatestFormSchemaVersion;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateSubTable',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/updateSubTable',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'none',
+        ]);
+
+        return UpdateSubTableResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新宜搭子表单
+     *  *
+     * @param UpdateSubTableRequest $request UpdateSubTableRequest
+     *
+     * @return UpdateSubTableResponse UpdateSubTableResponse
+     */
+    public function updateSubTable($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateSubTableHeaders([]);
+
+        return $this->updateSubTableWithOptions($request, $headers, $runtime);
     }
 }

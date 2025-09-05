@@ -15,6 +15,16 @@ class list_ extends Model
     public $accountantBookId;
 
     /**
+     * @var string
+     */
+    public $accountantEnableDate;
+
+    /**
+     * @var string
+     */
+    public $accountingStandard;
+
+    /**
      * @var advancedSettingList[]
      */
     public $advancedSettingList;
@@ -69,6 +79,8 @@ class list_ extends Model
     public $taxNo;
     protected $_name = [
         'accountantBookId' => 'accountantBookId',
+        'accountantEnableDate' => 'accountantEnableDate',
+        'accountingStandard' => 'accountingStandard',
         'advancedSettingList' => 'advancedSettingList',
         'companyCode' => 'companyCode',
         'companyName' => 'companyName',
@@ -86,6 +98,12 @@ class list_ extends Model
         $res = [];
         if (null !== $this->accountantBookId) {
             $res['accountantBookId'] = $this->accountantBookId;
+        }
+        if (null !== $this->accountantEnableDate) {
+            $res['accountantEnableDate'] = $this->accountantEnableDate;
+        }
+        if (null !== $this->accountingStandard) {
+            $res['accountingStandard'] = $this->accountingStandard;
         }
         if (null !== $this->advancedSettingList) {
             $res['advancedSettingList'] = [];
@@ -131,6 +149,12 @@ class list_ extends Model
         $model = new self();
         if (isset($map['accountantBookId'])) {
             $model->accountantBookId = $map['accountantBookId'];
+        }
+        if (isset($map['accountantEnableDate'])) {
+            $model->accountantEnableDate = $map['accountantEnableDate'];
+        }
+        if (isset($map['accountingStandard'])) {
+            $model->accountingStandard = $map['accountingStandard'];
         }
         if (isset($map['advancedSettingList'])) {
             if (!empty($map['advancedSettingList'])) {

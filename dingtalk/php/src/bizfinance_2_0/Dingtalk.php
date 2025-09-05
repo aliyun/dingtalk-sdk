@@ -92,6 +92,8 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountByPag
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountSignUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountSignUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountSignUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseCodeOpenDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseCodeOpenDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailResponse;
@@ -2075,6 +2077,54 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryEnterpriseAccountSignUrlHeaders([]);
 
         return $this->queryEnterpriseAccountSignUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询组织的企业码开通情况
+     *  *
+     * @param QueryEnterpriseCodeOpenDetailHeaders $headers QueryEnterpriseCodeOpenDetailHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryEnterpriseCodeOpenDetailResponse QueryEnterpriseCodeOpenDetailResponse
+     */
+    public function queryEnterpriseCodeOpenDetailWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'QueryEnterpriseCodeOpenDetail',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/enterprisecode/getOpenDetail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryEnterpriseCodeOpenDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询组织的企业码开通情况
+     *  *
+     * @return QueryEnterpriseCodeOpenDetailResponse QueryEnterpriseCodeOpenDetailResponse
+     */
+    public function queryEnterpriseCodeOpenDetail()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryEnterpriseCodeOpenDetailHeaders([]);
+
+        return $this->queryEnterpriseCodeOpenDetailWithOptions($headers, $runtime);
     }
 
     /**

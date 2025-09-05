@@ -44,6 +44,13 @@ class GetPublicDevicesRequest extends Model
     public $platform;
 
     /**
+     * @example 11-22-33-44
+     *
+     * @var string
+     */
+    public $serialNumber;
+
+    /**
      * @example 1671767361000
      *
      * @var int
@@ -62,6 +69,7 @@ class GetPublicDevicesRequest extends Model
         'pageNumber' => 'pageNumber',
         'pageSize' => 'pageSize',
         'platform' => 'platform',
+        'serialNumber' => 'serialNumber',
         'startTime' => 'startTime',
         'title' => 'title',
     ];
@@ -85,6 +93,9 @@ class GetPublicDevicesRequest extends Model
         }
         if (null !== $this->platform) {
             $res['platform'] = $this->platform;
+        }
+        if (null !== $this->serialNumber) {
+            $res['serialNumber'] = $this->serialNumber;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
@@ -118,6 +129,9 @@ class GetPublicDevicesRequest extends Model
         }
         if (isset($map['platform'])) {
             $model->platform = $map['platform'];
+        }
+        if (isset($map['serialNumber'])) {
+            $model->serialNumber = $map['serialNumber'];
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];

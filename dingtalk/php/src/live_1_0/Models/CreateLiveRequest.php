@@ -16,11 +16,25 @@ class CreateLiveRequest extends Model
     public $coverUrl;
 
     /**
+     * @example true
+     *
+     * @var bool
+     */
+    public $enableLinkMic;
+
+    /**
      * @example 测试直播简介
      *
      * @var string
      */
     public $introduction;
+
+    /**
+     * @example true
+     *
+     * @var bool
+     */
+    public $isLandscape;
 
     /**
      * @description This parameter is required.
@@ -66,7 +80,9 @@ class CreateLiveRequest extends Model
     public $unionId;
     protected $_name = [
         'coverUrl' => 'coverUrl',
+        'enableLinkMic' => 'enableLinkMic',
         'introduction' => 'introduction',
+        'isLandscape' => 'isLandscape',
         'preEndTime' => 'preEndTime',
         'preStartTime' => 'preStartTime',
         'publicType' => 'publicType',
@@ -82,8 +98,14 @@ class CreateLiveRequest extends Model
         if (null !== $this->coverUrl) {
             $res['coverUrl'] = $this->coverUrl;
         }
+        if (null !== $this->enableLinkMic) {
+            $res['enableLinkMic'] = $this->enableLinkMic;
+        }
         if (null !== $this->introduction) {
             $res['introduction'] = $this->introduction;
+        }
+        if (null !== $this->isLandscape) {
+            $res['isLandscape'] = $this->isLandscape;
         }
         if (null !== $this->preEndTime) {
             $res['preEndTime'] = $this->preEndTime;
@@ -115,8 +137,14 @@ class CreateLiveRequest extends Model
         if (isset($map['coverUrl'])) {
             $model->coverUrl = $map['coverUrl'];
         }
+        if (isset($map['enableLinkMic'])) {
+            $model->enableLinkMic = $map['enableLinkMic'];
+        }
         if (isset($map['introduction'])) {
             $model->introduction = $map['introduction'];
+        }
+        if (isset($map['isLandscape'])) {
+            $model->isLandscape = $map['isLandscape'];
         }
         if (isset($map['preEndTime'])) {
             $model->preEndTime = $map['preEndTime'];

@@ -14,6 +14,20 @@ class openConsumerInfo extends Model
     public $corpId;
 
     /**
+     * @example 350622200101152876
+     *
+     * @var string
+     */
+    public $identityNumber;
+
+    /**
+     * @example CITIZEN_ID
+     *
+     * @var string
+     */
+    public $identityType;
+
+    /**
      * @var string
      */
     public $name;
@@ -44,6 +58,8 @@ class openConsumerInfo extends Model
     public $userId;
     protected $_name = [
         'corpId' => 'corpId',
+        'identityNumber' => 'identityNumber',
+        'identityType' => 'identityType',
         'name' => 'name',
         'staffFlag' => 'staffFlag',
         'status' => 'status',
@@ -59,6 +75,12 @@ class openConsumerInfo extends Model
         $res = [];
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->identityNumber) {
+            $res['identityNumber'] = $this->identityNumber;
+        }
+        if (null !== $this->identityType) {
+            $res['identityType'] = $this->identityType;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -92,6 +114,12 @@ class openConsumerInfo extends Model
         $model = new self();
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['identityNumber'])) {
+            $model->identityNumber = $map['identityNumber'];
+        }
+        if (isset($map['identityType'])) {
+            $model->identityType = $map['identityType'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

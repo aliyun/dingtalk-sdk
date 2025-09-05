@@ -153,6 +153,10 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisibleInOther
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisiblePermissonHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisiblePermissonRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisiblePermissonResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgInfoShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\PushVerifyEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\PushVerifyEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\PushVerifyEventResponse;
@@ -241,6 +245,10 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateTitleAuditStatusResponse
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserProfileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserProfileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserProfileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserProfileShrinkRequest;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -3537,6 +3545,68 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据orgId获取企业信息
+     *  *
+     * @param OrgInfoRequest $tmpReq  OrgInfoRequest
+     * @param OrgInfoHeaders $headers OrgInfoHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OrgInfoResponse OrgInfoResponse
+     */
+    public function orgInfoWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new OrgInfoShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->orgIds)) {
+            $request->orgIdsShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->orgIds, 'orgIds', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->orgIdsShrink)) {
+            $query['orgIds'] = $request->orgIdsShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'OrgInfo',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/org/info',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return OrgInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据orgId获取企业信息
+     *  *
+     * @param OrgInfoRequest $request OrgInfoRequest
+     *
+     * @return OrgInfoResponse OrgInfoResponse
+     */
+    public function orgInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OrgInfoHeaders([]);
+
+        return $this->orgInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 给员工推送事件唤起核身组件
      *  *
      * @param PushVerifyEventRequest $request PushVerifyEventRequest
@@ -5538,5 +5608,67 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateUserOwnnessHeaders([]);
 
         return $this->updateUserOwnnessWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 用户个人信息接口
+     *  *
+     * @param UserProfileRequest $tmpReq  UserProfileRequest
+     * @param UserProfileHeaders $headers UserProfileHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UserProfileResponse UserProfileResponse
+     */
+    public function userProfileWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new UserProfileShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->uids)) {
+            $request->uidsShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->uids, 'uids', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->uidsShrink)) {
+            $query['uids'] = $request->uidsShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'UserProfile',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/user/profile',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UserProfileResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 用户个人信息接口
+     *  *
+     * @param UserProfileRequest $request UserProfileRequest
+     *
+     * @return UserProfileResponse UserProfileResponse
+     */
+    public function userProfile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UserProfileHeaders([]);
+
+        return $this->userProfileWithOptions($request, $headers, $runtime);
     }
 }

@@ -11,6 +11,13 @@ use AlibabaCloud\Tea\Model;
 class orderDetails extends Model
 {
     /**
+     * @example 首都机场
+     *
+     * @var string
+     */
+    public $airport;
+
+    /**
      * @example 2022-05-20 12:20:00
      *
      * @var string
@@ -65,6 +72,16 @@ class orderDetails extends Model
      * @var string
      */
     public $departTime;
+
+    /**
+     * @var string
+     */
+    public $destinationAirport;
+
+    /**
+     * @var string
+     */
+    public $destinationAirportCode;
 
     /**
      * @example 杭州
@@ -131,6 +148,21 @@ class orderDetails extends Model
     public $openConsumerInfo;
 
     /**
+     * @var string
+     */
+    public $orderDetailStatus;
+
+    /**
+     * @var string
+     */
+    public $originAirport;
+
+    /**
+     * @var string
+     */
+    public $originAirportCode;
+
+    /**
      * @example 北京
      *
      * @var string
@@ -162,6 +194,11 @@ class orderDetails extends Model
      * @var int
      */
     public $roomCount;
+
+    /**
+     * @var string
+     */
+    public $roundTripType;
 
     /**
      * @example 经济舱/7车12A
@@ -219,6 +256,7 @@ class orderDetails extends Model
      */
     public $typeDescription;
     protected $_name = [
+        'airport' => 'airport',
         'arrivalTime' => 'arrivalTime',
         'carColor' => 'carColor',
         'carModel' => 'carModel',
@@ -227,6 +265,8 @@ class orderDetails extends Model
         'checkInTime' => 'checkInTime',
         'checkOutTime' => 'checkOutTime',
         'departTime' => 'departTime',
+        'destinationAirport' => 'destinationAirport',
+        'destinationAirportCode' => 'destinationAirportCode',
         'destinationCity' => 'destinationCity',
         'destinationCityCode' => 'destinationCityCode',
         'destinationStation' => 'destinationStation',
@@ -237,11 +277,15 @@ class orderDetails extends Model
         'hotelLocation' => 'hotelLocation',
         'hotelName' => 'hotelName',
         'openConsumerInfo' => 'openConsumerInfo',
+        'orderDetailStatus' => 'orderDetailStatus',
+        'originAirport' => 'originAirport',
+        'originAirportCode' => 'originAirportCode',
         'originCity' => 'originCity',
         'originCityCode' => 'originCityCode',
         'originStation' => 'originStation',
         'originTerminalBuilding' => 'originTerminalBuilding',
         'roomCount' => 'roomCount',
+        'roundTripType' => 'roundTripType',
         'seatInfo' => 'seatInfo',
         'serviceType' => 'serviceType',
         'subSupplyLogo' => 'subSupplyLogo',
@@ -257,6 +301,9 @@ class orderDetails extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->airport) {
+            $res['airport'] = $this->airport;
+        }
         if (null !== $this->arrivalTime) {
             $res['arrivalTime'] = $this->arrivalTime;
         }
@@ -280,6 +327,12 @@ class orderDetails extends Model
         }
         if (null !== $this->departTime) {
             $res['departTime'] = $this->departTime;
+        }
+        if (null !== $this->destinationAirport) {
+            $res['destinationAirport'] = $this->destinationAirport;
+        }
+        if (null !== $this->destinationAirportCode) {
+            $res['destinationAirportCode'] = $this->destinationAirportCode;
         }
         if (null !== $this->destinationCity) {
             $res['destinationCity'] = $this->destinationCity;
@@ -317,6 +370,15 @@ class orderDetails extends Model
                 }
             }
         }
+        if (null !== $this->orderDetailStatus) {
+            $res['orderDetailStatus'] = $this->orderDetailStatus;
+        }
+        if (null !== $this->originAirport) {
+            $res['originAirport'] = $this->originAirport;
+        }
+        if (null !== $this->originAirportCode) {
+            $res['originAirportCode'] = $this->originAirportCode;
+        }
         if (null !== $this->originCity) {
             $res['originCity'] = $this->originCity;
         }
@@ -331,6 +393,9 @@ class orderDetails extends Model
         }
         if (null !== $this->roomCount) {
             $res['roomCount'] = $this->roomCount;
+        }
+        if (null !== $this->roundTripType) {
+            $res['roundTripType'] = $this->roundTripType;
         }
         if (null !== $this->seatInfo) {
             $res['seatInfo'] = $this->seatInfo;
@@ -368,6 +433,9 @@ class orderDetails extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['airport'])) {
+            $model->airport = $map['airport'];
+        }
         if (isset($map['arrivalTime'])) {
             $model->arrivalTime = $map['arrivalTime'];
         }
@@ -391,6 +459,12 @@ class orderDetails extends Model
         }
         if (isset($map['departTime'])) {
             $model->departTime = $map['departTime'];
+        }
+        if (isset($map['destinationAirport'])) {
+            $model->destinationAirport = $map['destinationAirport'];
+        }
+        if (isset($map['destinationAirportCode'])) {
+            $model->destinationAirportCode = $map['destinationAirportCode'];
         }
         if (isset($map['destinationCity'])) {
             $model->destinationCity = $map['destinationCity'];
@@ -428,6 +502,15 @@ class orderDetails extends Model
                 }
             }
         }
+        if (isset($map['orderDetailStatus'])) {
+            $model->orderDetailStatus = $map['orderDetailStatus'];
+        }
+        if (isset($map['originAirport'])) {
+            $model->originAirport = $map['originAirport'];
+        }
+        if (isset($map['originAirportCode'])) {
+            $model->originAirportCode = $map['originAirportCode'];
+        }
         if (isset($map['originCity'])) {
             $model->originCity = $map['originCity'];
         }
@@ -442,6 +525,9 @@ class orderDetails extends Model
         }
         if (isset($map['roomCount'])) {
             $model->roomCount = $map['roomCount'];
+        }
+        if (isset($map['roundTripType'])) {
+            $model->roundTripType = $map['roundTripType'];
         }
         if (isset($map['seatInfo'])) {
             $model->seatInfo = $map['seatInfo'];

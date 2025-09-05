@@ -10,6 +10,16 @@ use AlibabaCloud\Tea\Model;
 class GetMultiCompanyInfoByCodeResponseBody extends Model
 {
     /**
+     * @var string
+     */
+    public $accountantEnableDate;
+
+    /**
+     * @var string
+     */
+    public $accountingStandard;
+
+    /**
      * @var advancedSettingList[]
      */
     public $advancedSettingList;
@@ -56,6 +66,8 @@ class GetMultiCompanyInfoByCodeResponseBody extends Model
      */
     public $taxNo;
     protected $_name = [
+        'accountantEnableDate' => 'accountantEnableDate',
+        'accountingStandard' => 'accountingStandard',
         'advancedSettingList' => 'advancedSettingList',
         'companyCode' => 'companyCode',
         'companyName' => 'companyName',
@@ -70,6 +82,12 @@ class GetMultiCompanyInfoByCodeResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->accountantEnableDate) {
+            $res['accountantEnableDate'] = $this->accountantEnableDate;
+        }
+        if (null !== $this->accountingStandard) {
+            $res['accountingStandard'] = $this->accountingStandard;
+        }
         if (null !== $this->advancedSettingList) {
             $res['advancedSettingList'] = [];
             if (null !== $this->advancedSettingList && \is_array($this->advancedSettingList)) {
@@ -109,6 +127,12 @@ class GetMultiCompanyInfoByCodeResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['accountantEnableDate'])) {
+            $model->accountantEnableDate = $map['accountantEnableDate'];
+        }
+        if (isset($map['accountingStandard'])) {
+            $model->accountingStandard = $map['accountingStandard'];
+        }
         if (isset($map['advancedSettingList'])) {
             if (!empty($map['advancedSettingList'])) {
                 $model->advancedSettingList = [];

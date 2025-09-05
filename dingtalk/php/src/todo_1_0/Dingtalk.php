@@ -811,6 +811,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->maxResults)) {
             $body['maxResults'] = $request->maxResults;
         }
+        if (!Utils::isUnset($request->needPersonalTodo)) {
+            $body['needPersonalTodo'] = $request->needPersonalTodo;
+        }
         if (!Utils::isUnset($request->nextToken)) {
             $body['nextToken'] = $request->nextToken;
         }

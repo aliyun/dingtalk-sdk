@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class params extends Model
 {
     /**
-     * @description This parameter is required.
-     *
      * @var string
      */
     public $trainEndDate;
 
     /**
-     * @description This parameter is required.
-     *
      * @var string
      */
     public $trainName;
 
     /**
-     * @description This parameter is required.
-     *
      * @var string
      */
     public $trainStartDate;

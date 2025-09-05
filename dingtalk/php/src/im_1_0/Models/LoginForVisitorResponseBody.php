@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class LoginForVisitorResponseBody extends Model
 {
     /**
-     * @description This parameter is required.
-     *
      * @var aimInfo
      */
     public $aimInfo;
 
     /**
-     * @description This parameter is required.
-     *
      * @var aimToken
      */
     public $aimToken;

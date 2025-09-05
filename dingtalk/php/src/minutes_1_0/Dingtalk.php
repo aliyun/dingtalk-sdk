@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryBizMinutesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryCreateMinutesListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryCreateMinutesListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryCreateMinutesListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesBasicInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesBasicInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesBasicInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesPlayInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesPlayInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesPlayInfoResponse;
@@ -366,6 +369,66 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryCreateMinutesListHeaders([]);
 
         return $this->queryCreateMinutesListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询闪记基本信息
+     *  *
+     * @param QueryMinutesBasicInfoRequest $request QueryMinutesBasicInfoRequest
+     * @param QueryMinutesBasicInfoHeaders $headers QueryMinutesBasicInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryMinutesBasicInfoResponse QueryMinutesBasicInfoResponse
+     */
+    public function queryMinutesBasicInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->taskUuid)) {
+            $query['taskUuid'] = $request->taskUuid;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryMinutesBasicInfo',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/queryMinutesBasicInfo',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryMinutesBasicInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询闪记基本信息
+     *  *
+     * @param QueryMinutesBasicInfoRequest $request QueryMinutesBasicInfoRequest
+     *
+     * @return QueryMinutesBasicInfoResponse QueryMinutesBasicInfoResponse
+     */
+    public function queryMinutesBasicInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMinutesBasicInfoHeaders([]);
+
+        return $this->queryMinutesBasicInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

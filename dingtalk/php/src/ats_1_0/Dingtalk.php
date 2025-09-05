@@ -38,12 +38,16 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetCandidateByPhoneNumberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetFileUploadInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetFileUploadInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetFileUploadInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetFlowByIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetFlowByIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetFlowIdByRelationEntityIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetFlowIdByRelationEntityIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetFlowIdByRelationEntityIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobInfoByJobIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobInfoByJobIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportJobDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportJobDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportJobDataResponse;
@@ -56,6 +60,12 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryInterviewsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ReportMessageStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ReportMessageStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ReportMessageStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ResumePostEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ResumePostEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ResumePostEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SearchFlowHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SearchFlowRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SearchFlowResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncChannelMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncChannelMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\SyncChannelMessageResponse;
@@ -872,6 +882,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据流程id获取流程详情
+     *  *
+     * @param string             $flowId
+     * @param GetFlowByIdHeaders $headers GetFlowByIdHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetFlowByIdResponse GetFlowByIdResponse
+     */
+    public function getFlowByIdWithOptions($flowId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'GetFlowById',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/flows/' . $flowId . '/info',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetFlowByIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据流程id获取流程详情
+     *  *
+     * @param string $flowId
+     *
+     * @return GetFlowByIdResponse GetFlowByIdResponse
+     */
+    public function getFlowById($flowId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFlowByIdHeaders([]);
+
+        return $this->getFlowByIdWithOptions($flowId, $headers, $runtime);
+    }
+
+    /**
      * @summary 根据招聘流程关联的实体标识获取招聘流程标识
      *  *
      * @param GetFlowIdByRelationEntityIdRequest $request GetFlowIdByRelationEntityIdRequest
@@ -991,6 +1052,57 @@ class Dingtalk extends OpenApiClient
         $headers = new GetJobAuthHeaders([]);
 
         return $this->getJobAuthWithOptions($jobId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据职位id获取职位信息
+     *  *
+     * @param string                   $jobId
+     * @param GetJobInfoByJobIdHeaders $headers GetJobInfoByJobIdHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetJobInfoByJobIdResponse GetJobInfoByJobIdResponse
+     */
+    public function getJobInfoByJobIdWithOptions($jobId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'GetJobInfoByJobId',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/jobs/' . $jobId . '/info',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetJobInfoByJobIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据职位id获取职位信息
+     *  *
+     * @param string $jobId
+     *
+     * @return GetJobInfoByJobIdResponse GetJobInfoByJobIdResponse
+     */
+    public function getJobInfoByJobId($jobId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetJobInfoByJobIdHeaders([]);
+
+        return $this->getJobInfoByJobIdWithOptions($jobId, $headers, $runtime);
     }
 
     /**
@@ -1263,6 +1375,152 @@ class Dingtalk extends OpenApiClient
         $headers = new ReportMessageStatusHeaders([]);
 
         return $this->reportMessageStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary isv推送给钉钉求职者投递简历的事件
+     *  *
+     * @param ResumePostEventRequest $request ResumePostEventRequest
+     * @param ResumePostEventHeaders $headers ResumePostEventHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ResumePostEventResponse ResumePostEventResponse
+     */
+    public function resumePostEventWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->candidateName)) {
+            $body['candidateName'] = $request->candidateName;
+        }
+        if (!Utils::isUnset($request->jobName)) {
+            $body['jobName'] = $request->jobName;
+        }
+        if (!Utils::isUnset($request->jobOwnerUserId)) {
+            $body['jobOwnerUserId'] = $request->jobOwnerUserId;
+        }
+        if (!Utils::isUnset($request->mobileResumeUrl)) {
+            $body['mobileResumeUrl'] = $request->mobileResumeUrl;
+        }
+        if (!Utils::isUnset($request->pcResumeUrl)) {
+            $body['pcResumeUrl'] = $request->pcResumeUrl;
+        }
+        if (!Utils::isUnset($request->resumeDesc)) {
+            $body['resumeDesc'] = $request->resumeDesc;
+        }
+        if (!Utils::isUnset($request->resumePostTime)) {
+            $body['resumePostTime'] = $request->resumePostTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ResumePostEvent',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/resumes/post/event',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ResumePostEventResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary isv推送给钉钉求职者投递简历的事件
+     *  *
+     * @param ResumePostEventRequest $request ResumePostEventRequest
+     *
+     * @return ResumePostEventResponse ResumePostEventResponse
+     */
+    public function resumePostEvent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ResumePostEventHeaders([]);
+
+        return $this->resumePostEventWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据搜索条件搜索流程
+     *  *
+     * @param SearchFlowRequest $request SearchFlowRequest
+     * @param SearchFlowHeaders $headers SearchFlowHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SearchFlowResponse SearchFlowResponse
+     */
+    public function searchFlowWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->cursor)) {
+            $body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->maxModifyTimeMills)) {
+            $body['maxModifyTimeMills'] = $request->maxModifyTimeMills;
+        }
+        if (!Utils::isUnset($request->minModifyTimeMills)) {
+            $body['minModifyTimeMills'] = $request->minModifyTimeMills;
+        }
+        if (!Utils::isUnset($request->size)) {
+            $body['size'] = $request->size;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SearchFlow',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/flows/search',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SearchFlowResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据搜索条件搜索流程
+     *  *
+     * @param SearchFlowRequest $request SearchFlowRequest
+     *
+     * @return SearchFlowResponse SearchFlowResponse
+     */
+    public function searchFlow($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchFlowHeaders([]);
+
+        return $this->searchFlowWithOptions($request, $headers, $runtime);
     }
 
     /**

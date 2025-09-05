@@ -38,6 +38,10 @@ use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncProjectResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripInvoiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripInvoiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripInvoiceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripInvoiceShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderResponse;
@@ -890,6 +894,80 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 新差旅-同步发票
+     *  *
+     * @param SyncTripInvoiceRequest $tmpReq  SyncTripInvoiceRequest
+     * @param SyncTripInvoiceHeaders $headers SyncTripInvoiceHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SyncTripInvoiceResponse SyncTripInvoiceResponse
+     */
+    public function syncTripInvoiceWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new SyncTripInvoiceShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->invoiceDetailList)) {
+            $request->invoiceDetailListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->invoiceDetailList, 'invoiceDetailList', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->channelOrderNo)) {
+            $query['channelOrderNo'] = $request->channelOrderNo;
+        }
+        if (!Utils::isUnset($request->channelType)) {
+            $query['channelType'] = $request->channelType;
+        }
+        if (!Utils::isUnset($request->customerCorpId)) {
+            $query['customerCorpId'] = $request->customerCorpId;
+        }
+        if (!Utils::isUnset($request->dingUserId)) {
+            $query['dingUserId'] = $request->dingUserId;
+        }
+        if (!Utils::isUnset($request->invoiceDetailListShrink)) {
+            $query['invoiceDetailList'] = $request->invoiceDetailListShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'SyncTripInvoice',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/tripInvoices/sync',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SyncTripInvoiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 新差旅-同步发票
+     *  *
+     * @param SyncTripInvoiceRequest $request SyncTripInvoiceRequest
+     *
+     * @return SyncTripInvoiceResponse SyncTripInvoiceResponse
+     */
+    public function syncTripInvoice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncTripInvoiceHeaders([]);
+
+        return $this->syncTripInvoiceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 同步出行订单变更事件
      *  *
      * @param SyncTripOrderRequest $request SyncTripOrderRequest
@@ -932,17 +1010,38 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->gmtRefund)) {
             $body['gmtRefund'] = $request->gmtRefund;
         }
+        if (!Utils::isUnset($request->hasInvoice)) {
+            $body['hasInvoice'] = $request->hasInvoice;
+        }
+        if (!Utils::isUnset($request->invoiceApplyRole)) {
+            $body['invoiceApplyRole'] = $request->invoiceApplyRole;
+        }
+        if (!Utils::isUnset($request->invoiceApplyType)) {
+            $body['invoiceApplyType'] = $request->invoiceApplyType;
+        }
         if (!Utils::isUnset($request->invoiceApplyUrl)) {
             $body['invoiceApplyUrl'] = $request->invoiceApplyUrl;
         }
+        if (!Utils::isUnset($request->invoiceParty)) {
+            $body['invoiceParty'] = $request->invoiceParty;
+        }
+        if (!Utils::isUnset($request->invoiceType)) {
+            $body['invoiceType'] = $request->invoiceType;
+        }
         if (!Utils::isUnset($request->journeyBizNo)) {
             $body['journeyBizNo'] = $request->journeyBizNo;
+        }
+        if (!Utils::isUnset($request->journeySubmitUserId)) {
+            $body['journeySubmitUserId'] = $request->journeySubmitUserId;
         }
         if (!Utils::isUnset($request->orderDetails)) {
             $body['orderDetails'] = $request->orderDetails;
         }
         if (!Utils::isUnset($request->orderNo)) {
             $body['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->orderPaymentType)) {
+            $body['orderPaymentType'] = $request->orderPaymentType;
         }
         if (!Utils::isUnset($request->orderUrl)) {
             $body['orderUrl'] = $request->orderUrl;

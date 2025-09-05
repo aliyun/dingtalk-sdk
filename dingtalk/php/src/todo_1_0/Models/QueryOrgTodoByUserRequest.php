@@ -24,6 +24,11 @@ class QueryOrgTodoByUserRequest extends Model
     public $maxResults;
 
     /**
+     * @var bool
+     */
+    public $needPersonalTodo;
+
+    /**
      * @var string
      */
     public $nextToken;
@@ -63,6 +68,7 @@ class QueryOrgTodoByUserRequest extends Model
         'fromDueTime' => 'fromDueTime',
         'isDone' => 'isDone',
         'maxResults' => 'maxResults',
+        'needPersonalTodo' => 'needPersonalTodo',
         'nextToken' => 'nextToken',
         'orderBy' => 'orderBy',
         'orderDirection' => 'orderDirection',
@@ -85,6 +91,9 @@ class QueryOrgTodoByUserRequest extends Model
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
+        }
+        if (null !== $this->needPersonalTodo) {
+            $res['needPersonalTodo'] = $this->needPersonalTodo;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
@@ -127,6 +136,9 @@ class QueryOrgTodoByUserRequest extends Model
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
+        }
+        if (isset($map['needPersonalTodo'])) {
+            $model->needPersonalTodo = $map['needPersonalTodo'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];

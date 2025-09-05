@@ -422,8 +422,14 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->coverUrl)) {
             $body['coverUrl'] = $request->coverUrl;
         }
+        if (!Utils::isUnset($request->enableLinkMic)) {
+            $body['enableLinkMic'] = $request->enableLinkMic;
+        }
         if (!Utils::isUnset($request->introduction)) {
             $body['introduction'] = $request->introduction;
+        }
+        if (!Utils::isUnset($request->isLandscape)) {
+            $body['isLandscape'] = $request->isLandscape;
         }
         if (!Utils::isUnset($request->preEndTime)) {
             $body['preEndTime'] = $request->preEndTime;

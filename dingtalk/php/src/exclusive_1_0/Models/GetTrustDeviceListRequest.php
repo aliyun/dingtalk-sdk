@@ -65,6 +65,11 @@ class GetTrustDeviceListRequest extends Model
     public $platform;
 
     /**
+     * @var string
+     */
+    public $serialNumber;
+
+    /**
      * @var int
      */
     public $status;
@@ -82,6 +87,7 @@ class GetTrustDeviceListRequest extends Model
         'pageNumber' => 'pageNumber',
         'pageSize' => 'pageSize',
         'platform' => 'platform',
+        'serialNumber' => 'serialNumber',
         'status' => 'status',
         'userIds' => 'userIds',
     ];
@@ -114,6 +120,9 @@ class GetTrustDeviceListRequest extends Model
         }
         if (null !== $this->platform) {
             $res['platform'] = $this->platform;
+        }
+        if (null !== $this->serialNumber) {
+            $res['serialNumber'] = $this->serialNumber;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -156,6 +165,9 @@ class GetTrustDeviceListRequest extends Model
         }
         if (isset($map['platform'])) {
             $model->platform = $map['platform'];
+        }
+        if (isset($map['serialNumber'])) {
+            $model->serialNumber = $map['serialNumber'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

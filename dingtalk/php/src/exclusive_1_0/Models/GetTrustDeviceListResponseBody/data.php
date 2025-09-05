@@ -45,6 +45,11 @@ class data extends Model
     public $platform;
 
     /**
+     * @var string
+     */
+    public $serialNumber;
+
+    /**
      * @example 2
      *
      * @var int
@@ -52,6 +57,8 @@ class data extends Model
     public $status;
 
     /**
+     * @example 设备标题
+     *
      * @var string
      */
     public $title;
@@ -71,6 +78,7 @@ class data extends Model
         'model' => 'model',
         'modifiedTime' => 'modifiedTime',
         'platform' => 'platform',
+        'serialNumber' => 'serialNumber',
         'status' => 'status',
         'title' => 'title',
         'userId' => 'userId',
@@ -98,6 +106,9 @@ class data extends Model
         }
         if (null !== $this->platform) {
             $res['platform'] = $this->platform;
+        }
+        if (null !== $this->serialNumber) {
+            $res['serialNumber'] = $this->serialNumber;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -137,6 +148,9 @@ class data extends Model
         }
         if (isset($map['platform'])) {
             $model->platform = $map['platform'];
+        }
+        if (isset($map['serialNumber'])) {
+            $model->serialNumber = $map['serialNumber'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

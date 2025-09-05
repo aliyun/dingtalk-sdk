@@ -9,37 +9,21 @@ use AlibabaCloud\Tea\Model;
 class aimToken extends Model
 {
     /**
-     * @description This parameter is required.
-     *
-     * @example abc123xyz
-     *
      * @var string
      */
     public $accessToken;
 
     /**
-     * @description This parameter is required.
-     *
-     * @example 86400
-     *
      * @var int
      */
     public $accessTokenExpiredTime;
 
     /**
-     * @description This parameter is required.
-     *
-     * @example 1717027200000
-     *
      * @var int
      */
     public $buildTime;
 
     /**
-     * @description This parameter is required.
-     *
-     * @example refreshtoken_789
-     *
      * @var string
      */
     public $refreshToken;

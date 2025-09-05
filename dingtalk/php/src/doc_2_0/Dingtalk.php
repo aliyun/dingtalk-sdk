@@ -136,6 +136,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListStarsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListTeamMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListTeamMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListTeamMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\LockDocByDelegatedPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\LockDocByDelegatedPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\LockDocByDelegatedPermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\LockDocHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\LockDocRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\LockDocResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MarkStarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MarkStarRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MarkStarResponse;
@@ -195,6 +201,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamTemplatesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TemplateCategoriesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TemplateCategoriesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TemplateCategoriesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnlockDocByDelegatedPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnlockDocByDelegatedPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnlockDocByDelegatedPermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnlockDocHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnlockDocRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnlockDocResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnmarkStarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnmarkStarRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnmarkStarResponse;
@@ -2941,6 +2953,120 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 文档定稿
+     *  *
+     * @param LockDocRequest $request LockDocRequest
+     * @param LockDocHeaders $headers LockDocHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
+     *
+     * @return LockDocResponse LockDocResponse
+     */
+    public function lockDocWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'LockDoc',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/dentries/lock',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return LockDocResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 文档定稿
+     *  *
+     * @param LockDocRequest $request LockDocRequest
+     *
+     * @return LockDocResponse LockDocResponse
+     */
+    public function lockDoc($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new LockDocHeaders([]);
+
+        return $this->lockDocWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过委托授权文档定稿
+     *  *
+     * @param LockDocByDelegatedPermissionRequest $request LockDocByDelegatedPermissionRequest
+     * @param LockDocByDelegatedPermissionHeaders $headers LockDocByDelegatedPermissionHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return LockDocByDelegatedPermissionResponse LockDocByDelegatedPermissionResponse
+     */
+    public function lockDocByDelegatedPermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'LockDocByDelegatedPermission',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/me/dentries/lock',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return LockDocByDelegatedPermissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过委托授权文档定稿
+     *  *
+     * @param LockDocByDelegatedPermissionRequest $request LockDocByDelegatedPermissionRequest
+     *
+     * @return LockDocByDelegatedPermissionResponse LockDocByDelegatedPermissionResponse
+     */
+    public function lockDocByDelegatedPermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new LockDocByDelegatedPermissionHeaders([]);
+
+        return $this->lockDocByDelegatedPermissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 标记星标
      *  *
      * @param string          $dentryUuid
@@ -4199,6 +4325,120 @@ class Dingtalk extends OpenApiClient
         $headers = new TemplateCategoriesHeaders([]);
 
         return $this->templateCategoriesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 取消文档定稿
+     *  *
+     * @param UnlockDocRequest $request UnlockDocRequest
+     * @param UnlockDocHeaders $headers UnlockDocHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UnlockDocResponse UnlockDocResponse
+     */
+    public function unlockDocWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UnlockDoc',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/dentries/unlock',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UnlockDocResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 取消文档定稿
+     *  *
+     * @param UnlockDocRequest $request UnlockDocRequest
+     *
+     * @return UnlockDocResponse UnlockDocResponse
+     */
+    public function unlockDoc($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UnlockDocHeaders([]);
+
+        return $this->unlockDocWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过委托授权取消文档定稿
+     *  *
+     * @param UnlockDocByDelegatedPermissionRequest $request UnlockDocByDelegatedPermissionRequest
+     * @param UnlockDocByDelegatedPermissionHeaders $headers UnlockDocByDelegatedPermissionHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UnlockDocByDelegatedPermissionResponse UnlockDocByDelegatedPermissionResponse
+     */
+    public function unlockDocByDelegatedPermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UnlockDocByDelegatedPermission',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/me/dentries/unlock',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UnlockDocByDelegatedPermissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过委托授权取消文档定稿
+     *  *
+     * @param UnlockDocByDelegatedPermissionRequest $request UnlockDocByDelegatedPermissionRequest
+     *
+     * @return UnlockDocByDelegatedPermissionResponse UnlockDocByDelegatedPermissionResponse
+     */
+    public function unlockDocByDelegatedPermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UnlockDocByDelegatedPermissionHeaders([]);
+
+        return $this->unlockDocByDelegatedPermissionWithOptions($request, $headers, $runtime);
     }
 
     /**

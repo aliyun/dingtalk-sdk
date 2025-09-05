@@ -281,6 +281,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EventTrackHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EventTrackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EventTrackResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GenerateTaskIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GenerateTaskIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GenerateTaskIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoResponse;
@@ -454,6 +457,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryKitOpenRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryKitOpenRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryKitOpenRecordResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryModelResultByTaskIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryModelResultByTaskIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryModelResultByTaskIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderResponse;
@@ -7434,6 +7440,81 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取调用大模型的taskId
+     *  *
+     * @param GenerateTaskIdRequest $request GenerateTaskIdRequest
+     * @param GenerateTaskIdHeaders $headers GenerateTaskIdHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GenerateTaskIdResponse GenerateTaskIdResponse
+     */
+    public function generateTaskIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxTokens)) {
+            $body['maxTokens'] = $request->maxTokens;
+        }
+        if (!Utils::isUnset($request->model)) {
+            $body['model'] = $request->model;
+        }
+        if (!Utils::isUnset($request->prompt)) {
+            $body['prompt'] = $request->prompt;
+        }
+        if (!Utils::isUnset($request->scene)) {
+            $body['scene'] = $request->scene;
+        }
+        if (!Utils::isUnset($request->temperature)) {
+            $body['temperature'] = $request->temperature;
+        }
+        if (!Utils::isUnset($request->topP)) {
+            $body['top_p'] = $request->topP;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GenerateTaskId',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/ai/models/taskId/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GenerateTaskIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取调用大模型的taskId
+     *  *
+     * @param GenerateTaskIdRequest $request GenerateTaskIdRequest
+     *
+     * @return GenerateTaskIdResponse GenerateTaskIdResponse
+     */
+    public function generateTaskId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GenerateTaskIdHeaders([]);
+
+        return $this->generateTaskIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取绑定孩子信息
      *  *
      * @param GetBindChildInfoRequest $request GetBindChildInfoRequest
@@ -11083,6 +11164,63 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryKitOpenRecordHeaders([]);
 
         return $this->queryKitOpenRecordWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取大模型的返回值
+     *  *
+     * @param QueryModelResultByTaskIdRequest $request QueryModelResultByTaskIdRequest
+     * @param QueryModelResultByTaskIdHeaders $headers QueryModelResultByTaskIdHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryModelResultByTaskIdResponse QueryModelResultByTaskIdResponse
+     */
+    public function queryModelResultByTaskIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryModelResultByTaskId',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/ai/models/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryModelResultByTaskIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取大模型的返回值
+     *  *
+     * @param QueryModelResultByTaskIdRequest $request QueryModelResultByTaskIdRequest
+     *
+     * @return QueryModelResultByTaskIdResponse QueryModelResultByTaskIdResponse
+     */
+    public function queryModelResultByTaskId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryModelResultByTaskIdHeaders([]);
+
+        return $this->queryModelResultByTaskIdWithOptions($request, $headers, $runtime);
     }
 
     /**

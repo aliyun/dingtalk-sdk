@@ -1081,6 +1081,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->platform)) {
             $body['platform'] = $request->platform;
         }
+        if (!Utils::isUnset($request->serialNumber)) {
+            $body['serialNumber'] = $request->serialNumber;
+        }
         if (!Utils::isUnset($request->status)) {
             $body['status'] = $request->status;
         }
@@ -4184,6 +4187,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->platform)) {
             $query['platform'] = $request->platform;
         }
+        if (!Utils::isUnset($request->serialNumber)) {
+            $query['serialNumber'] = $request->serialNumber;
+        }
         if (!Utils::isUnset($request->startTime)) {
             $query['startTime'] = $request->startTime;
         }
@@ -4665,6 +4671,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->platform)) {
             $body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->serialNumber)) {
+            $body['serialNumber'] = $request->serialNumber;
         }
         if (!Utils::isUnset($request->status)) {
             $body['status'] = $request->status;

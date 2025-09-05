@@ -5,6 +5,21 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductAddHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductAddRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductAddResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductDeleteHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductDeleteRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductDeleteResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductImgUploadHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductImgUploadRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductImgUploadResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BatchGetTaskResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BatchGetTaskResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BatchGetTaskResultResponse;
@@ -521,6 +536,357 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 新增商品
+     *  *
+     * @param AiRetailProductAddRequest $request AiRetailProductAddRequest
+     * @param AiRetailProductAddHeaders $headers AiRetailProductAddHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AiRetailProductAddResponse AiRetailProductAddResponse
+     */
+    public function aiRetailProductAddWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attribute)) {
+            $body['attribute'] = $request->attribute;
+        }
+        if (!Utils::isUnset($request->barcodes)) {
+            $body['barcodes'] = $request->barcodes;
+        }
+        if (!Utils::isUnset($request->brand)) {
+            $body['brand'] = $request->brand;
+        }
+        if (!Utils::isUnset($request->category)) {
+            $body['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->imageFileIds)) {
+            $body['imageFileIds'] = $request->imageFileIds;
+        }
+        if (!Utils::isUnset($request->itemNumbers)) {
+            $body['itemNumbers'] = $request->itemNumbers;
+        }
+        if (!Utils::isUnset($request->price)) {
+            $body['price'] = $request->price;
+        }
+        if (!Utils::isUnset($request->productCode)) {
+            $body['productCode'] = $request->productCode;
+        }
+        if (!Utils::isUnset($request->productFab)) {
+            $body['productFab'] = $request->productFab;
+        }
+        if (!Utils::isUnset($request->productInfo)) {
+            $body['productInfo'] = $request->productInfo;
+        }
+        if (!Utils::isUnset($request->productName)) {
+            $body['productName'] = $request->productName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AiRetailProductAdd',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/retail/product/add',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AiRetailProductAddResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 新增商品
+     *  *
+     * @param AiRetailProductAddRequest $request AiRetailProductAddRequest
+     *
+     * @return AiRetailProductAddResponse AiRetailProductAddResponse
+     */
+    public function aiRetailProductAdd($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AiRetailProductAddHeaders([]);
+
+        return $this->aiRetailProductAddWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除商品
+     *  *
+     * @param AiRetailProductDeleteRequest $request AiRetailProductDeleteRequest
+     * @param AiRetailProductDeleteHeaders $headers AiRetailProductDeleteHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AiRetailProductDeleteResponse AiRetailProductDeleteResponse
+     */
+    public function aiRetailProductDeleteWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->productId)) {
+            $body['productId'] = $request->productId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AiRetailProductDelete',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/retail/product/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'boolean',
+        ]);
+
+        return AiRetailProductDeleteResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除商品
+     *  *
+     * @param AiRetailProductDeleteRequest $request AiRetailProductDeleteRequest
+     *
+     * @return AiRetailProductDeleteResponse AiRetailProductDeleteResponse
+     */
+    public function aiRetailProductDelete($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AiRetailProductDeleteHeaders([]);
+
+        return $this->aiRetailProductDeleteWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 商品图片上传
+     *  *
+     * @param AiRetailProductImgUploadRequest $request AiRetailProductImgUploadRequest
+     * @param AiRetailProductImgUploadHeaders $headers AiRetailProductImgUploadHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AiRetailProductImgUploadResponse AiRetailProductImgUploadResponse
+     */
+    public function aiRetailProductImgUploadWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AiRetailProductImgUpload',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/retail/product/image/upload',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AiRetailProductImgUploadResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 商品图片上传
+     *  *
+     * @param AiRetailProductImgUploadRequest $request AiRetailProductImgUploadRequest
+     *
+     * @return AiRetailProductImgUploadResponse AiRetailProductImgUploadResponse
+     */
+    public function aiRetailProductImgUpload($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AiRetailProductImgUploadHeaders([]);
+
+        return $this->aiRetailProductImgUploadWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询商品
+     *  *
+     * @param AiRetailProductQueryRequest $request AiRetailProductQueryRequest
+     * @param AiRetailProductQueryHeaders $headers AiRetailProductQueryHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AiRetailProductQueryResponse AiRetailProductQueryResponse
+     */
+    public function aiRetailProductQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->productCode)) {
+            $query['productCode'] = $request->productCode;
+        }
+        if (!Utils::isUnset($request->productId)) {
+            $query['productId'] = $request->productId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'AiRetailProductQuery',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/retail/product/query',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AiRetailProductQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询商品
+     *  *
+     * @param AiRetailProductQueryRequest $request AiRetailProductQueryRequest
+     *
+     * @return AiRetailProductQueryResponse AiRetailProductQueryResponse
+     */
+    public function aiRetailProductQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AiRetailProductQueryHeaders([]);
+
+        return $this->aiRetailProductQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新商品
+     *  *
+     * @param AiRetailProductUpdateRequest $request AiRetailProductUpdateRequest
+     * @param AiRetailProductUpdateHeaders $headers AiRetailProductUpdateHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AiRetailProductUpdateResponse AiRetailProductUpdateResponse
+     */
+    public function aiRetailProductUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attribute)) {
+            $body['attribute'] = $request->attribute;
+        }
+        if (!Utils::isUnset($request->barcodes)) {
+            $body['barcodes'] = $request->barcodes;
+        }
+        if (!Utils::isUnset($request->brand)) {
+            $body['brand'] = $request->brand;
+        }
+        if (!Utils::isUnset($request->category)) {
+            $body['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->imageFileIds)) {
+            $body['imageFileIds'] = $request->imageFileIds;
+        }
+        if (!Utils::isUnset($request->itemNumbers)) {
+            $body['itemNumbers'] = $request->itemNumbers;
+        }
+        if (!Utils::isUnset($request->price)) {
+            $body['price'] = $request->price;
+        }
+        if (!Utils::isUnset($request->productCode)) {
+            $body['productCode'] = $request->productCode;
+        }
+        if (!Utils::isUnset($request->productFab)) {
+            $body['productFab'] = $request->productFab;
+        }
+        if (!Utils::isUnset($request->productId)) {
+            $body['productId'] = $request->productId;
+        }
+        if (!Utils::isUnset($request->productInfo)) {
+            $body['productInfo'] = $request->productInfo;
+        }
+        if (!Utils::isUnset($request->productName)) {
+            $body['productName'] = $request->productName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AiRetailProductUpdate',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/retail/product/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'boolean',
+        ]);
+
+        return AiRetailProductUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新商品
+     *  *
+     * @param AiRetailProductUpdateRequest $request AiRetailProductUpdateRequest
+     *
+     * @return AiRetailProductUpdateResponse AiRetailProductUpdateResponse
+     */
+    public function aiRetailProductUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AiRetailProductUpdateHeaders([]);
+
+        return $this->aiRetailProductUpdateWithOptions($request, $headers, $runtime);
     }
 
     /**

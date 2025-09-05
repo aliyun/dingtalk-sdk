@@ -9,31 +9,15 @@ use AlibabaCloud\Tea\Model;
 class aimInfo extends Model
 {
     /**
-     * @description This parameter is required.
-     *
-     * @example app_123456
-     *
-     * @var string
-     */
-    public $appId;
-
-    /**
-     * @description This parameter is required.
-     *
-     * @var string[]
+     * @var mixed[]
      */
     public $appKey;
 
     /**
-     * @description This parameter is required.
-     *
-     * @example dingtalk_app
-     *
      * @var string
      */
     public $appName;
     protected $_name = [
-        'appId' => 'appId',
         'appKey' => 'appKey',
         'appName' => 'appName',
     ];
@@ -43,9 +27,6 @@ class aimInfo extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->appId) {
-            $res['appId'] = $this->appId;
-        }
         if (null !== $this->appKey) {
             $res['appKey'] = $this->appKey;
         }
@@ -64,9 +45,6 @@ class aimInfo extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['appId'])) {
-            $model->appId = $map['appId'];
-        }
         if (isset($map['appKey'])) {
             $model->appKey = $map['appKey'];
         }

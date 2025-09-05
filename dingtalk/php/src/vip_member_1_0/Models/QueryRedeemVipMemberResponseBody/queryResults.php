@@ -31,12 +31,18 @@ class queryResults extends Model
     /**
      * @var string
      */
+    public $expireDate;
+
+    /**
+     * @var string
+     */
     public $nick;
     protected $_name = [
         'action' => 'action',
         'actionTime' => 'actionTime',
         'dingtalkId' => 'dingtalkId',
         'duration' => 'duration',
+        'expireDate' => 'expireDate',
         'nick' => 'nick',
     ];
 
@@ -56,6 +62,9 @@ class queryResults extends Model
         }
         if (null !== $this->duration) {
             $res['duration'] = $this->duration;
+        }
+        if (null !== $this->expireDate) {
+            $res['expireDate'] = $this->expireDate;
         }
         if (null !== $this->nick) {
             $res['nick'] = $this->nick;
@@ -83,6 +92,9 @@ class queryResults extends Model
         }
         if (isset($map['duration'])) {
             $model->duration = $map['duration'];
+        }
+        if (isset($map['expireDate'])) {
+            $model->expireDate = $map['expireDate'];
         }
         if (isset($map['nick'])) {
             $model->nick = $map['nick'];

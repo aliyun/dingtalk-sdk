@@ -52,6 +52,11 @@ class result extends Model
     /**
      * @var string
      */
+    public $parseText;
+
+    /**
+     * @var string
+     */
     public $rawData;
 
     /**
@@ -72,6 +77,7 @@ class result extends Model
         'id' => 'id',
         'items' => 'items',
         'name' => 'name',
+        'parseText' => 'parseText',
         'rawData' => 'rawData',
         'summary' => 'summary',
         'total' => 'total',
@@ -111,6 +117,9 @@ class result extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->parseText) {
+            $res['parseText'] = $this->parseText;
         }
         if (null !== $this->rawData) {
             $res['rawData'] = $this->rawData;
@@ -162,6 +171,9 @@ class result extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['parseText'])) {
+            $model->parseText = $map['parseText'];
         }
         if (isset($map['rawData'])) {
             $model->rawData = $map['rawData'];

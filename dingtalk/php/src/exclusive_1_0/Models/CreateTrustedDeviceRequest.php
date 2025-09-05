@@ -32,6 +32,13 @@ class CreateTrustedDeviceRequest extends Model
     public $platform;
 
     /**
+     * @example 11-22-33-44-55
+     *
+     * @var string
+     */
+    public $serialNumber;
+
+    /**
      * @example 2
      *
      * @var int
@@ -57,6 +64,7 @@ class CreateTrustedDeviceRequest extends Model
         'did' => 'did',
         'macAddress' => 'macAddress',
         'platform' => 'platform',
+        'serialNumber' => 'serialNumber',
         'status' => 'status',
         'title' => 'title',
         'userId' => 'userId',
@@ -75,6 +83,9 @@ class CreateTrustedDeviceRequest extends Model
         }
         if (null !== $this->platform) {
             $res['platform'] = $this->platform;
+        }
+        if (null !== $this->serialNumber) {
+            $res['serialNumber'] = $this->serialNumber;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -105,6 +116,9 @@ class CreateTrustedDeviceRequest extends Model
         }
         if (isset($map['platform'])) {
             $model->platform = $map['platform'];
+        }
+        if (isset($map['serialNumber'])) {
+            $model->serialNumber = $map['serialNumber'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

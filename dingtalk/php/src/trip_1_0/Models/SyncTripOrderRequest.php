@@ -83,9 +83,38 @@ class SyncTripOrderRequest extends Model
     public $gmtRefund;
 
     /**
+     * @var bool
+     */
+    public $hasInvoice;
+
+    /**
+     * @example 亚朵酒店
+     *
+     * @var string
+     */
+    public $invoiceApplyRole;
+
+    /**
+     * @example PLAIN
+     *
+     * @var string
+     */
+    public $invoiceApplyType;
+
+    /**
      * @var string
      */
     public $invoiceApplyUrl;
+
+    /**
+     * @var int
+     */
+    public $invoiceParty;
+
+    /**
+     * @var int
+     */
+    public $invoiceType;
 
     /**
      * @example 20220510170058192311
@@ -93,6 +122,13 @@ class SyncTripOrderRequest extends Model
      * @var string
      */
     public $journeyBizNo;
+
+    /**
+     * @example 0219514246531048123
+     *
+     * @var string
+     */
+    public $journeySubmitUserId;
 
     /**
      * @var orderDetails[]
@@ -107,6 +143,11 @@ class SyncTripOrderRequest extends Model
      * @var string
      */
     public $orderNo;
+
+    /**
+     * @var string
+     */
+    public $orderPaymentType;
 
     /**
      * @description This parameter is required.
@@ -196,10 +237,17 @@ class SyncTripOrderRequest extends Model
         'gmtOrder' => 'gmtOrder',
         'gmtPay' => 'gmtPay',
         'gmtRefund' => 'gmtRefund',
+        'hasInvoice' => 'hasInvoice',
+        'invoiceApplyRole' => 'invoiceApplyRole',
+        'invoiceApplyType' => 'invoiceApplyType',
         'invoiceApplyUrl' => 'invoiceApplyUrl',
+        'invoiceParty' => 'invoiceParty',
+        'invoiceType' => 'invoiceType',
         'journeyBizNo' => 'journeyBizNo',
+        'journeySubmitUserId' => 'journeySubmitUserId',
         'orderDetails' => 'orderDetails',
         'orderNo' => 'orderNo',
+        'orderPaymentType' => 'orderPaymentType',
         'orderUrl' => 'orderUrl',
         'processId' => 'processId',
         'realAmount' => 'realAmount',
@@ -249,11 +297,29 @@ class SyncTripOrderRequest extends Model
         if (null !== $this->gmtRefund) {
             $res['gmtRefund'] = $this->gmtRefund;
         }
+        if (null !== $this->hasInvoice) {
+            $res['hasInvoice'] = $this->hasInvoice;
+        }
+        if (null !== $this->invoiceApplyRole) {
+            $res['invoiceApplyRole'] = $this->invoiceApplyRole;
+        }
+        if (null !== $this->invoiceApplyType) {
+            $res['invoiceApplyType'] = $this->invoiceApplyType;
+        }
         if (null !== $this->invoiceApplyUrl) {
             $res['invoiceApplyUrl'] = $this->invoiceApplyUrl;
         }
+        if (null !== $this->invoiceParty) {
+            $res['invoiceParty'] = $this->invoiceParty;
+        }
+        if (null !== $this->invoiceType) {
+            $res['invoiceType'] = $this->invoiceType;
+        }
         if (null !== $this->journeyBizNo) {
             $res['journeyBizNo'] = $this->journeyBizNo;
+        }
+        if (null !== $this->journeySubmitUserId) {
+            $res['journeySubmitUserId'] = $this->journeySubmitUserId;
         }
         if (null !== $this->orderDetails) {
             $res['orderDetails'] = [];
@@ -266,6 +332,9 @@ class SyncTripOrderRequest extends Model
         }
         if (null !== $this->orderNo) {
             $res['orderNo'] = $this->orderNo;
+        }
+        if (null !== $this->orderPaymentType) {
+            $res['orderPaymentType'] = $this->orderPaymentType;
         }
         if (null !== $this->orderUrl) {
             $res['orderUrl'] = $this->orderUrl;
@@ -345,11 +414,29 @@ class SyncTripOrderRequest extends Model
         if (isset($map['gmtRefund'])) {
             $model->gmtRefund = $map['gmtRefund'];
         }
+        if (isset($map['hasInvoice'])) {
+            $model->hasInvoice = $map['hasInvoice'];
+        }
+        if (isset($map['invoiceApplyRole'])) {
+            $model->invoiceApplyRole = $map['invoiceApplyRole'];
+        }
+        if (isset($map['invoiceApplyType'])) {
+            $model->invoiceApplyType = $map['invoiceApplyType'];
+        }
         if (isset($map['invoiceApplyUrl'])) {
             $model->invoiceApplyUrl = $map['invoiceApplyUrl'];
         }
+        if (isset($map['invoiceParty'])) {
+            $model->invoiceParty = $map['invoiceParty'];
+        }
+        if (isset($map['invoiceType'])) {
+            $model->invoiceType = $map['invoiceType'];
+        }
         if (isset($map['journeyBizNo'])) {
             $model->journeyBizNo = $map['journeyBizNo'];
+        }
+        if (isset($map['journeySubmitUserId'])) {
+            $model->journeySubmitUserId = $map['journeySubmitUserId'];
         }
         if (isset($map['orderDetails'])) {
             if (!empty($map['orderDetails'])) {
@@ -362,6 +449,9 @@ class SyncTripOrderRequest extends Model
         }
         if (isset($map['orderNo'])) {
             $model->orderNo = $map['orderNo'];
+        }
+        if (isset($map['orderPaymentType'])) {
+            $model->orderPaymentType = $map['orderPaymentType'];
         }
         if (isset($map['orderUrl'])) {
             $model->orderUrl = $map['orderUrl'];

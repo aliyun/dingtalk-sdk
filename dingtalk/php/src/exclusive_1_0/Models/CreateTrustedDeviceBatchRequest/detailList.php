@@ -16,9 +16,15 @@ class detailList extends Model
     /**
      * @var string
      */
+    public $serialNumber;
+
+    /**
+     * @var string
+     */
     public $title;
     protected $_name = [
         'macAddress' => 'macAddress',
+        'serialNumber' => 'serialNumber',
         'title' => 'title',
     ];
 
@@ -29,6 +35,9 @@ class detailList extends Model
         $res = [];
         if (null !== $this->macAddress) {
             $res['macAddress'] = $this->macAddress;
+        }
+        if (null !== $this->serialNumber) {
+            $res['serialNumber'] = $this->serialNumber;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
@@ -47,6 +56,9 @@ class detailList extends Model
         $model = new self();
         if (isset($map['macAddress'])) {
             $model->macAddress = $map['macAddress'];
+        }
+        if (isset($map['serialNumber'])) {
+            $model->serialNumber = $map['serialNumber'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
