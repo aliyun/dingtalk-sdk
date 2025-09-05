@@ -2170,6 +2170,198 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>新差旅-同步发票</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// SyncTripInvoiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// SyncTripInvoiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncTripInvoiceResponse
+        /// </returns>
+        public SyncTripInvoiceResponse SyncTripInvoiceWithOptions(SyncTripInvoiceRequest tmpReq, SyncTripInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            SyncTripInvoiceShrinkRequest request = new SyncTripInvoiceShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.InvoiceDetailList))
+            {
+                request.InvoiceDetailListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.InvoiceDetailList, "invoiceDetailList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelOrderNo))
+            {
+                query["channelOrderNo"] = request.ChannelOrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelType))
+            {
+                query["channelType"] = request.ChannelType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerCorpId))
+            {
+                query["customerCorpId"] = request.CustomerCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUserId))
+            {
+                query["dingUserId"] = request.DingUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceDetailListShrink))
+            {
+                query["invoiceDetailList"] = request.InvoiceDetailListShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncTripInvoice",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/tripInvoices/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncTripInvoiceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新差旅-同步发票</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// SyncTripInvoiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// SyncTripInvoiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncTripInvoiceResponse
+        /// </returns>
+        public async Task<SyncTripInvoiceResponse> SyncTripInvoiceWithOptionsAsync(SyncTripInvoiceRequest tmpReq, SyncTripInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            SyncTripInvoiceShrinkRequest request = new SyncTripInvoiceShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.InvoiceDetailList))
+            {
+                request.InvoiceDetailListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.InvoiceDetailList, "invoiceDetailList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelOrderNo))
+            {
+                query["channelOrderNo"] = request.ChannelOrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelType))
+            {
+                query["channelType"] = request.ChannelType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerCorpId))
+            {
+                query["customerCorpId"] = request.CustomerCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUserId))
+            {
+                query["dingUserId"] = request.DingUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceDetailListShrink))
+            {
+                query["invoiceDetailList"] = request.InvoiceDetailListShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncTripInvoice",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/tripInvoices/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncTripInvoiceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新差旅-同步发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncTripInvoiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncTripInvoiceResponse
+        /// </returns>
+        public SyncTripInvoiceResponse SyncTripInvoice(SyncTripInvoiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncTripInvoiceHeaders headers = new SyncTripInvoiceHeaders();
+            return SyncTripInvoiceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新差旅-同步发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncTripInvoiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncTripInvoiceResponse
+        /// </returns>
+        public async Task<SyncTripInvoiceResponse> SyncTripInvoiceAsync(SyncTripInvoiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncTripInvoiceHeaders headers = new SyncTripInvoiceHeaders();
+            return await SyncTripInvoiceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>同步出行订单变更事件</para>
         /// </summary>
         /// 
@@ -2230,13 +2422,37 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             {
                 body["gmtRefund"] = request.GmtRefund;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HasInvoice))
+            {
+                body["hasInvoice"] = request.HasInvoice;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceApplyRole))
+            {
+                body["invoiceApplyRole"] = request.InvoiceApplyRole;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceApplyType))
+            {
+                body["invoiceApplyType"] = request.InvoiceApplyType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceApplyUrl))
             {
                 body["invoiceApplyUrl"] = request.InvoiceApplyUrl;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceParty))
+            {
+                body["invoiceParty"] = request.InvoiceParty;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceType))
+            {
+                body["invoiceType"] = request.InvoiceType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JourneyBizNo))
             {
                 body["journeyBizNo"] = request.JourneyBizNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JourneySubmitUserId))
+            {
+                body["journeySubmitUserId"] = request.JourneySubmitUserId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderDetails))
             {
@@ -2245,6 +2461,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
             {
                 body["orderNo"] = request.OrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderPaymentType))
+            {
+                body["orderPaymentType"] = request.OrderPaymentType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderUrl))
             {
@@ -2385,13 +2605,37 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             {
                 body["gmtRefund"] = request.GmtRefund;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HasInvoice))
+            {
+                body["hasInvoice"] = request.HasInvoice;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceApplyRole))
+            {
+                body["invoiceApplyRole"] = request.InvoiceApplyRole;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceApplyType))
+            {
+                body["invoiceApplyType"] = request.InvoiceApplyType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceApplyUrl))
             {
                 body["invoiceApplyUrl"] = request.InvoiceApplyUrl;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceParty))
+            {
+                body["invoiceParty"] = request.InvoiceParty;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceType))
+            {
+                body["invoiceType"] = request.InvoiceType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JourneyBizNo))
             {
                 body["journeyBizNo"] = request.JourneyBizNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JourneySubmitUserId))
+            {
+                body["journeySubmitUserId"] = request.JourneySubmitUserId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderDetails))
             {
@@ -2400,6 +2644,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
             {
                 body["orderNo"] = request.OrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderPaymentType))
+            {
+                body["orderPaymentType"] = request.OrderPaymentType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderUrl))
             {

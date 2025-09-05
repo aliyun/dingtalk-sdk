@@ -822,6 +822,162 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询闪记基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMinutesBasicInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMinutesBasicInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMinutesBasicInfoResponse
+        /// </returns>
+        public QueryMinutesBasicInfoResponse QueryMinutesBasicInfoWithOptions(QueryMinutesBasicInfoRequest request, QueryMinutesBasicInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUuid))
+            {
+                query["taskUuid"] = request.TaskUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMinutesBasicInfo",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/queryMinutesBasicInfo",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMinutesBasicInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询闪记基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMinutesBasicInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMinutesBasicInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMinutesBasicInfoResponse
+        /// </returns>
+        public async Task<QueryMinutesBasicInfoResponse> QueryMinutesBasicInfoWithOptionsAsync(QueryMinutesBasicInfoRequest request, QueryMinutesBasicInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUuid))
+            {
+                query["taskUuid"] = request.TaskUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMinutesBasicInfo",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/queryMinutesBasicInfo",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMinutesBasicInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询闪记基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMinutesBasicInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMinutesBasicInfoResponse
+        /// </returns>
+        public QueryMinutesBasicInfoResponse QueryMinutesBasicInfo(QueryMinutesBasicInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMinutesBasicInfoHeaders headers = new QueryMinutesBasicInfoHeaders();
+            return QueryMinutesBasicInfoWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询闪记基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMinutesBasicInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMinutesBasicInfoResponse
+        /// </returns>
+        public async Task<QueryMinutesBasicInfoResponse> QueryMinutesBasicInfoAsync(QueryMinutesBasicInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMinutesBasicInfoHeaders headers = new QueryMinutesBasicInfoHeaders();
+            return await QueryMinutesBasicInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询闪记媒体播放信息</para>
         /// </summary>
         /// 

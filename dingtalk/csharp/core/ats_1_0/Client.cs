@@ -2042,6 +2042,126 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>根据流程id获取流程详情</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetFlowByIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFlowByIdResponse
+        /// </returns>
+        public GetFlowByIdResponse GetFlowByIdWithOptions(string flowId, GetFlowByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFlowById",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/flows/" + flowId + "/info",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFlowByIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据流程id获取流程详情</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetFlowByIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFlowByIdResponse
+        /// </returns>
+        public async Task<GetFlowByIdResponse> GetFlowByIdWithOptionsAsync(string flowId, GetFlowByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFlowById",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/flows/" + flowId + "/info",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFlowByIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据流程id获取流程详情</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetFlowByIdResponse
+        /// </returns>
+        public GetFlowByIdResponse GetFlowById(string flowId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFlowByIdHeaders headers = new GetFlowByIdHeaders();
+            return GetFlowByIdWithOptions(flowId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据流程id获取流程详情</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetFlowByIdResponse
+        /// </returns>
+        public async Task<GetFlowByIdResponse> GetFlowByIdAsync(string flowId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFlowByIdHeaders headers = new GetFlowByIdHeaders();
+            return await GetFlowByIdWithOptionsAsync(flowId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>根据招聘流程关联的实体标识获取招聘流程标识</para>
         /// </summary>
         /// 
@@ -2350,6 +2470,126 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetJobAuthHeaders headers = new GetJobAuthHeaders();
             return await GetJobAuthWithOptionsAsync(jobId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据职位id获取职位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetJobInfoByJobIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetJobInfoByJobIdResponse
+        /// </returns>
+        public GetJobInfoByJobIdResponse GetJobInfoByJobIdWithOptions(string jobId, GetJobInfoByJobIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetJobInfoByJobId",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/jobs/" + jobId + "/info",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetJobInfoByJobIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据职位id获取职位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetJobInfoByJobIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetJobInfoByJobIdResponse
+        /// </returns>
+        public async Task<GetJobInfoByJobIdResponse> GetJobInfoByJobIdWithOptionsAsync(string jobId, GetJobInfoByJobIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetJobInfoByJobId",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/jobs/" + jobId + "/info",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetJobInfoByJobIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据职位id获取职位信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetJobInfoByJobIdResponse
+        /// </returns>
+        public GetJobInfoByJobIdResponse GetJobInfoByJobId(string jobId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetJobInfoByJobIdHeaders headers = new GetJobInfoByJobIdHeaders();
+            return GetJobInfoByJobIdWithOptions(jobId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据职位id获取职位信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetJobInfoByJobIdResponse
+        /// </returns>
+        public async Task<GetJobInfoByJobIdResponse> GetJobInfoByJobIdAsync(string jobId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetJobInfoByJobIdHeaders headers = new GetJobInfoByJobIdHeaders();
+            return await GetJobInfoByJobIdWithOptionsAsync(jobId, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -3056,6 +3296,386 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ReportMessageStatusHeaders headers = new ReportMessageStatusHeaders();
             return await ReportMessageStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv推送给钉钉求职者投递简历的事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ResumePostEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// ResumePostEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ResumePostEventResponse
+        /// </returns>
+        public ResumePostEventResponse ResumePostEventWithOptions(ResumePostEventRequest request, ResumePostEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CandidateName))
+            {
+                body["candidateName"] = request.CandidateName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobName))
+            {
+                body["jobName"] = request.JobName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobOwnerUserId))
+            {
+                body["jobOwnerUserId"] = request.JobOwnerUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MobileResumeUrl))
+            {
+                body["mobileResumeUrl"] = request.MobileResumeUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PcResumeUrl))
+            {
+                body["pcResumeUrl"] = request.PcResumeUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeDesc))
+            {
+                body["resumeDesc"] = request.ResumeDesc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumePostTime))
+            {
+                body["resumePostTime"] = request.ResumePostTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ResumePostEvent",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/resumes/post/event",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ResumePostEventResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv推送给钉钉求职者投递简历的事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ResumePostEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// ResumePostEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ResumePostEventResponse
+        /// </returns>
+        public async Task<ResumePostEventResponse> ResumePostEventWithOptionsAsync(ResumePostEventRequest request, ResumePostEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CandidateName))
+            {
+                body["candidateName"] = request.CandidateName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobName))
+            {
+                body["jobName"] = request.JobName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobOwnerUserId))
+            {
+                body["jobOwnerUserId"] = request.JobOwnerUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MobileResumeUrl))
+            {
+                body["mobileResumeUrl"] = request.MobileResumeUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PcResumeUrl))
+            {
+                body["pcResumeUrl"] = request.PcResumeUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeDesc))
+            {
+                body["resumeDesc"] = request.ResumeDesc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumePostTime))
+            {
+                body["resumePostTime"] = request.ResumePostTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ResumePostEvent",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/resumes/post/event",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ResumePostEventResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv推送给钉钉求职者投递简历的事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ResumePostEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ResumePostEventResponse
+        /// </returns>
+        public ResumePostEventResponse ResumePostEvent(ResumePostEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ResumePostEventHeaders headers = new ResumePostEventHeaders();
+            return ResumePostEventWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv推送给钉钉求职者投递简历的事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ResumePostEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ResumePostEventResponse
+        /// </returns>
+        public async Task<ResumePostEventResponse> ResumePostEventAsync(ResumePostEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ResumePostEventHeaders headers = new ResumePostEventHeaders();
+            return await ResumePostEventWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据搜索条件搜索流程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFlowRequest
+        /// </param>
+        /// <param name="headers">
+        /// SearchFlowHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFlowResponse
+        /// </returns>
+        public SearchFlowResponse SearchFlowWithOptions(SearchFlowRequest request, SearchFlowHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
+            {
+                body["cursor"] = request.Cursor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxModifyTimeMills))
+            {
+                body["maxModifyTimeMills"] = request.MaxModifyTimeMills;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MinModifyTimeMills))
+            {
+                body["minModifyTimeMills"] = request.MinModifyTimeMills;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Size))
+            {
+                body["size"] = request.Size;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SearchFlow",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/flows/search",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SearchFlowResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据搜索条件搜索流程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFlowRequest
+        /// </param>
+        /// <param name="headers">
+        /// SearchFlowHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFlowResponse
+        /// </returns>
+        public async Task<SearchFlowResponse> SearchFlowWithOptionsAsync(SearchFlowRequest request, SearchFlowHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
+            {
+                body["cursor"] = request.Cursor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxModifyTimeMills))
+            {
+                body["maxModifyTimeMills"] = request.MaxModifyTimeMills;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MinModifyTimeMills))
+            {
+                body["minModifyTimeMills"] = request.MinModifyTimeMills;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Size))
+            {
+                body["size"] = request.Size;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SearchFlow",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/flows/search",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SearchFlowResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据搜索条件搜索流程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFlowRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFlowResponse
+        /// </returns>
+        public SearchFlowResponse SearchFlow(SearchFlowRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SearchFlowHeaders headers = new SearchFlowHeaders();
+            return SearchFlowWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据搜索条件搜索流程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFlowRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFlowResponse
+        /// </returns>
+        public async Task<SearchFlowResponse> SearchFlowAsync(SearchFlowRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SearchFlowHeaders headers = new SearchFlowHeaders();
+            return await SearchFlowWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

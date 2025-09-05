@@ -786,9 +786,17 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 body["coverUrl"] = request.CoverUrl;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableLinkMic))
+            {
+                body["enableLinkMic"] = request.EnableLinkMic;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Introduction))
             {
                 body["introduction"] = request.Introduction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsLandscape))
+            {
+                body["isLandscape"] = request.IsLandscape;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreEndTime))
             {
@@ -865,9 +873,17 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 body["coverUrl"] = request.CoverUrl;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableLinkMic))
+            {
+                body["enableLinkMic"] = request.EnableLinkMic;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Introduction))
             {
                 body["introduction"] = request.Introduction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsLandscape))
+            {
+                body["isLandscape"] = request.IsLandscape;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreEndTime))
             {

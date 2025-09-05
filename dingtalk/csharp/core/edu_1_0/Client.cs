@@ -17698,6 +17698,202 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取调用大模型的taskId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GenerateTaskIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GenerateTaskIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GenerateTaskIdResponse
+        /// </returns>
+        public GenerateTaskIdResponse GenerateTaskIdWithOptions(GenerateTaskIdRequest request, GenerateTaskIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxTokens))
+            {
+                body["maxTokens"] = request.MaxTokens;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Model))
+            {
+                body["model"] = request.Model;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Prompt))
+            {
+                body["prompt"] = request.Prompt;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scene))
+            {
+                body["scene"] = request.Scene;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Temperature))
+            {
+                body["temperature"] = request.Temperature;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopP))
+            {
+                body["top_p"] = request.TopP;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GenerateTaskId",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/ai/models/taskId/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GenerateTaskIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取调用大模型的taskId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GenerateTaskIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GenerateTaskIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GenerateTaskIdResponse
+        /// </returns>
+        public async Task<GenerateTaskIdResponse> GenerateTaskIdWithOptionsAsync(GenerateTaskIdRequest request, GenerateTaskIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxTokens))
+            {
+                body["maxTokens"] = request.MaxTokens;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Model))
+            {
+                body["model"] = request.Model;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Prompt))
+            {
+                body["prompt"] = request.Prompt;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scene))
+            {
+                body["scene"] = request.Scene;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Temperature))
+            {
+                body["temperature"] = request.Temperature;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopP))
+            {
+                body["top_p"] = request.TopP;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GenerateTaskId",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/ai/models/taskId/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GenerateTaskIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取调用大模型的taskId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GenerateTaskIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GenerateTaskIdResponse
+        /// </returns>
+        public GenerateTaskIdResponse GenerateTaskId(GenerateTaskIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GenerateTaskIdHeaders headers = new GenerateTaskIdHeaders();
+            return GenerateTaskIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取调用大模型的taskId</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GenerateTaskIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GenerateTaskIdResponse
+        /// </returns>
+        public async Task<GenerateTaskIdResponse> GenerateTaskIdAsync(GenerateTaskIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GenerateTaskIdHeaders headers = new GenerateTaskIdHeaders();
+            return await GenerateTaskIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取绑定孩子信息</para>
         /// </summary>
         /// 
@@ -27142,6 +27338,154 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryKitOpenRecordHeaders headers = new QueryKitOpenRecordHeaders();
             return await QueryKitOpenRecordWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取大模型的返回值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryModelResultByTaskIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryModelResultByTaskIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryModelResultByTaskIdResponse
+        /// </returns>
+        public QueryModelResultByTaskIdResponse QueryModelResultByTaskIdWithOptions(QueryModelResultByTaskIdRequest request, QueryModelResultByTaskIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryModelResultByTaskId",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/ai/models/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryModelResultByTaskIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取大模型的返回值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryModelResultByTaskIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryModelResultByTaskIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryModelResultByTaskIdResponse
+        /// </returns>
+        public async Task<QueryModelResultByTaskIdResponse> QueryModelResultByTaskIdWithOptionsAsync(QueryModelResultByTaskIdRequest request, QueryModelResultByTaskIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryModelResultByTaskId",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/ai/models/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryModelResultByTaskIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取大模型的返回值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryModelResultByTaskIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryModelResultByTaskIdResponse
+        /// </returns>
+        public QueryModelResultByTaskIdResponse QueryModelResultByTaskId(QueryModelResultByTaskIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryModelResultByTaskIdHeaders headers = new QueryModelResultByTaskIdHeaders();
+            return QueryModelResultByTaskIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取大模型的返回值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryModelResultByTaskIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryModelResultByTaskIdResponse
+        /// </returns>
+        public async Task<QueryModelResultByTaskIdResponse> QueryModelResultByTaskIdAsync(QueryModelResultByTaskIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryModelResultByTaskIdHeaders headers = new QueryModelResultByTaskIdHeaders();
+            return await QueryModelResultByTaskIdWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

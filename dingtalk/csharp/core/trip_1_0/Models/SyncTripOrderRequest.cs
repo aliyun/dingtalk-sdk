@@ -112,9 +112,37 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public string GmtRefund { get; set; }
 
+        [NameInMap("hasInvoice")]
+        [Validation(Required=false)]
+        public bool? HasInvoice { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>亚朵酒店</para>
+        /// </summary>
+        [NameInMap("invoiceApplyRole")]
+        [Validation(Required=false)]
+        public string InvoiceApplyRole { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>PLAIN</para>
+        /// </summary>
+        [NameInMap("invoiceApplyType")]
+        [Validation(Required=false)]
+        public string InvoiceApplyType { get; set; }
+
         [NameInMap("invoiceApplyUrl")]
         [Validation(Required=false)]
         public string InvoiceApplyUrl { get; set; }
+
+        [NameInMap("invoiceParty")]
+        [Validation(Required=false)]
+        public int? InvoiceParty { get; set; }
+
+        [NameInMap("invoiceType")]
+        [Validation(Required=false)]
+        public int? InvoiceType { get; set; }
 
         /// <summary>
         /// <b>Example:</b>
@@ -124,10 +152,26 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public string JourneyBizNo { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>0219514246531048123</para>
+        /// </summary>
+        [NameInMap("journeySubmitUserId")]
+        [Validation(Required=false)]
+        public string JourneySubmitUserId { get; set; }
+
         [NameInMap("orderDetails")]
         [Validation(Required=false)]
         public List<SyncTripOrderRequestOrderDetails> OrderDetails { get; set; }
         public class SyncTripOrderRequestOrderDetails : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>首都机场</para>
+            /// </summary>
+            [NameInMap("airport")]
+            [Validation(Required=false)]
+            public string Airport { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>2022-05-20 12:20:00</para>
@@ -191,6 +235,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [NameInMap("departTime")]
             [Validation(Required=false)]
             public string DepartTime { get; set; }
+
+            [NameInMap("destinationAirport")]
+            [Validation(Required=false)]
+            public string DestinationAirport { get; set; }
+
+            [NameInMap("destinationAirportCode")]
+            [Validation(Required=false)]
+            public string DestinationAirportCode { get; set; }
 
             /// <summary>
             /// <b>Example:</b>
@@ -298,6 +350,22 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
                 [Validation(Required=false)]
                 public string CorpId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>350622200101152876</para>
+                /// </summary>
+                [NameInMap("identityNumber")]
+                [Validation(Required=false)]
+                public string IdentityNumber { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>CITIZEN_ID</para>
+                /// </summary>
+                [NameInMap("identityType")]
+                [Validation(Required=false)]
+                public string IdentityType { get; set; }
+
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
@@ -323,6 +391,18 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
                 public string UserId { get; set; }
 
             }
+
+            [NameInMap("orderDetailStatus")]
+            [Validation(Required=false)]
+            public string OrderDetailStatus { get; set; }
+
+            [NameInMap("originAirport")]
+            [Validation(Required=false)]
+            public string OriginAirport { get; set; }
+
+            [NameInMap("originAirportCode")]
+            [Validation(Required=false)]
+            public string OriginAirportCode { get; set; }
 
             /// <summary>
             /// <b>Example:</b>
@@ -359,6 +439,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [NameInMap("roomCount")]
             [Validation(Required=false)]
             public int? RoomCount { get; set; }
+
+            [NameInMap("roundTripType")]
+            [Validation(Required=false)]
+            public string RoundTripType { get; set; }
 
             /// <summary>
             /// <b>Example:</b>
@@ -435,6 +519,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [NameInMap("orderNo")]
         [Validation(Required=false)]
         public string OrderNo { get; set; }
+
+        [NameInMap("orderPaymentType")]
+        [Validation(Required=false)]
+        public string OrderPaymentType { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>

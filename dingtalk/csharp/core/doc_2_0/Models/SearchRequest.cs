@@ -87,8 +87,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         }
 
         /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
         /// <b>Example:</b>
         /// <para>测试搜索关键词</para>
         /// </summary>
@@ -96,9 +94,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public string Keyword { get; set; }
 
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }

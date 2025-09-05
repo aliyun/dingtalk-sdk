@@ -9,6 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class GetMultiCompanyInfoByCodeResponseBody : TeaModel {
+        [NameInMap("accountantEnableDate")]
+        [Validation(Required=false)]
+        public string AccountantEnableDate { get; set; }
+
+        [NameInMap("accountingStandard")]
+        [Validation(Required=false)]
+        public string AccountingStandard { get; set; }
+
         [NameInMap("advancedSettingList")]
         [Validation(Required=false)]
         public List<GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList> AdvancedSettingList { get; set; }

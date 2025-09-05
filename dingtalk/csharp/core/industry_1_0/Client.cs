@@ -30,6 +30,922 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>新增商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductAddRequest
+        /// </param>
+        /// <param name="headers">
+        /// AiRetailProductAddHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductAddResponse
+        /// </returns>
+        public AiRetailProductAddResponse AiRetailProductAddWithOptions(AiRetailProductAddRequest request, AiRetailProductAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attribute))
+            {
+                body["attribute"] = request.Attribute;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Barcodes))
+            {
+                body["barcodes"] = request.Barcodes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brand))
+            {
+                body["brand"] = request.Brand;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Category))
+            {
+                body["category"] = request.Category;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageFileIds))
+            {
+                body["imageFileIds"] = request.ImageFileIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemNumbers))
+            {
+                body["itemNumbers"] = request.ItemNumbers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Price))
+            {
+                body["price"] = request.Price;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductFab))
+            {
+                body["productFab"] = request.ProductFab;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductInfo))
+            {
+                body["productInfo"] = request.ProductInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AiRetailProductAdd",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/retail/product/add",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AiRetailProductAddResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductAddRequest
+        /// </param>
+        /// <param name="headers">
+        /// AiRetailProductAddHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductAddResponse
+        /// </returns>
+        public async Task<AiRetailProductAddResponse> AiRetailProductAddWithOptionsAsync(AiRetailProductAddRequest request, AiRetailProductAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attribute))
+            {
+                body["attribute"] = request.Attribute;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Barcodes))
+            {
+                body["barcodes"] = request.Barcodes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brand))
+            {
+                body["brand"] = request.Brand;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Category))
+            {
+                body["category"] = request.Category;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageFileIds))
+            {
+                body["imageFileIds"] = request.ImageFileIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemNumbers))
+            {
+                body["itemNumbers"] = request.ItemNumbers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Price))
+            {
+                body["price"] = request.Price;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductFab))
+            {
+                body["productFab"] = request.ProductFab;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductInfo))
+            {
+                body["productInfo"] = request.ProductInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AiRetailProductAdd",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/retail/product/add",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AiRetailProductAddResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductAddRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductAddResponse
+        /// </returns>
+        public AiRetailProductAddResponse AiRetailProductAdd(AiRetailProductAddRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AiRetailProductAddHeaders headers = new AiRetailProductAddHeaders();
+            return AiRetailProductAddWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductAddRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductAddResponse
+        /// </returns>
+        public async Task<AiRetailProductAddResponse> AiRetailProductAddAsync(AiRetailProductAddRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AiRetailProductAddHeaders headers = new AiRetailProductAddHeaders();
+            return await AiRetailProductAddWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// AiRetailProductDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductDeleteResponse
+        /// </returns>
+        public AiRetailProductDeleteResponse AiRetailProductDeleteWithOptions(AiRetailProductDeleteRequest request, AiRetailProductDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductId))
+            {
+                body["productId"] = request.ProductId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AiRetailProductDelete",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/retail/product/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "boolean",
+            };
+            return TeaModel.ToObject<AiRetailProductDeleteResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// AiRetailProductDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductDeleteResponse
+        /// </returns>
+        public async Task<AiRetailProductDeleteResponse> AiRetailProductDeleteWithOptionsAsync(AiRetailProductDeleteRequest request, AiRetailProductDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductId))
+            {
+                body["productId"] = request.ProductId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AiRetailProductDelete",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/retail/product/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "boolean",
+            };
+            return TeaModel.ToObject<AiRetailProductDeleteResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductDeleteResponse
+        /// </returns>
+        public AiRetailProductDeleteResponse AiRetailProductDelete(AiRetailProductDeleteRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AiRetailProductDeleteHeaders headers = new AiRetailProductDeleteHeaders();
+            return AiRetailProductDeleteWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductDeleteResponse
+        /// </returns>
+        public async Task<AiRetailProductDeleteResponse> AiRetailProductDeleteAsync(AiRetailProductDeleteRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AiRetailProductDeleteHeaders headers = new AiRetailProductDeleteHeaders();
+            return await AiRetailProductDeleteWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商品图片上传</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductImgUploadRequest
+        /// </param>
+        /// <param name="headers">
+        /// AiRetailProductImgUploadHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductImgUploadResponse
+        /// </returns>
+        public AiRetailProductImgUploadResponse AiRetailProductImgUploadWithOptions(AiRetailProductImgUploadRequest request, AiRetailProductImgUploadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AiRetailProductImgUpload",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/retail/product/image/upload",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AiRetailProductImgUploadResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商品图片上传</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductImgUploadRequest
+        /// </param>
+        /// <param name="headers">
+        /// AiRetailProductImgUploadHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductImgUploadResponse
+        /// </returns>
+        public async Task<AiRetailProductImgUploadResponse> AiRetailProductImgUploadWithOptionsAsync(AiRetailProductImgUploadRequest request, AiRetailProductImgUploadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AiRetailProductImgUpload",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/retail/product/image/upload",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AiRetailProductImgUploadResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商品图片上传</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductImgUploadRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductImgUploadResponse
+        /// </returns>
+        public AiRetailProductImgUploadResponse AiRetailProductImgUpload(AiRetailProductImgUploadRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AiRetailProductImgUploadHeaders headers = new AiRetailProductImgUploadHeaders();
+            return AiRetailProductImgUploadWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商品图片上传</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductImgUploadRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductImgUploadResponse
+        /// </returns>
+        public async Task<AiRetailProductImgUploadResponse> AiRetailProductImgUploadAsync(AiRetailProductImgUploadRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AiRetailProductImgUploadHeaders headers = new AiRetailProductImgUploadHeaders();
+            return await AiRetailProductImgUploadWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// AiRetailProductQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductQueryResponse
+        /// </returns>
+        public AiRetailProductQueryResponse AiRetailProductQueryWithOptions(AiRetailProductQueryRequest request, AiRetailProductQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                query["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductId))
+            {
+                query["productId"] = request.ProductId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AiRetailProductQuery",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/retail/product/query",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AiRetailProductQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// AiRetailProductQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductQueryResponse
+        /// </returns>
+        public async Task<AiRetailProductQueryResponse> AiRetailProductQueryWithOptionsAsync(AiRetailProductQueryRequest request, AiRetailProductQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                query["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductId))
+            {
+                query["productId"] = request.ProductId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AiRetailProductQuery",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/retail/product/query",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AiRetailProductQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductQueryResponse
+        /// </returns>
+        public AiRetailProductQueryResponse AiRetailProductQuery(AiRetailProductQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AiRetailProductQueryHeaders headers = new AiRetailProductQueryHeaders();
+            return AiRetailProductQueryWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductQueryResponse
+        /// </returns>
+        public async Task<AiRetailProductQueryResponse> AiRetailProductQueryAsync(AiRetailProductQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AiRetailProductQueryHeaders headers = new AiRetailProductQueryHeaders();
+            return await AiRetailProductQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// AiRetailProductUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductUpdateResponse
+        /// </returns>
+        public AiRetailProductUpdateResponse AiRetailProductUpdateWithOptions(AiRetailProductUpdateRequest request, AiRetailProductUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attribute))
+            {
+                body["attribute"] = request.Attribute;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Barcodes))
+            {
+                body["barcodes"] = request.Barcodes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brand))
+            {
+                body["brand"] = request.Brand;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Category))
+            {
+                body["category"] = request.Category;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageFileIds))
+            {
+                body["imageFileIds"] = request.ImageFileIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemNumbers))
+            {
+                body["itemNumbers"] = request.ItemNumbers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Price))
+            {
+                body["price"] = request.Price;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductFab))
+            {
+                body["productFab"] = request.ProductFab;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductId))
+            {
+                body["productId"] = request.ProductId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductInfo))
+            {
+                body["productInfo"] = request.ProductInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AiRetailProductUpdate",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/retail/product/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "boolean",
+            };
+            return TeaModel.ToObject<AiRetailProductUpdateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// AiRetailProductUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductUpdateResponse
+        /// </returns>
+        public async Task<AiRetailProductUpdateResponse> AiRetailProductUpdateWithOptionsAsync(AiRetailProductUpdateRequest request, AiRetailProductUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attribute))
+            {
+                body["attribute"] = request.Attribute;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Barcodes))
+            {
+                body["barcodes"] = request.Barcodes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brand))
+            {
+                body["brand"] = request.Brand;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Category))
+            {
+                body["category"] = request.Category;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageFileIds))
+            {
+                body["imageFileIds"] = request.ImageFileIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemNumbers))
+            {
+                body["itemNumbers"] = request.ItemNumbers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Price))
+            {
+                body["price"] = request.Price;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductFab))
+            {
+                body["productFab"] = request.ProductFab;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductId))
+            {
+                body["productId"] = request.ProductId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductInfo))
+            {
+                body["productInfo"] = request.ProductInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AiRetailProductUpdate",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/retail/product/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "boolean",
+            };
+            return TeaModel.ToObject<AiRetailProductUpdateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductUpdateResponse
+        /// </returns>
+        public AiRetailProductUpdateResponse AiRetailProductUpdate(AiRetailProductUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AiRetailProductUpdateHeaders headers = new AiRetailProductUpdateHeaders();
+            return AiRetailProductUpdateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新商品</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AiRetailProductUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AiRetailProductUpdateResponse
+        /// </returns>
+        public async Task<AiRetailProductUpdateResponse> AiRetailProductUpdateAsync(AiRetailProductUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AiRetailProductUpdateHeaders headers = new AiRetailProductUpdateHeaders();
+            return await AiRetailProductUpdateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>批量查询任务结果</para>
         /// </summary>
         /// 

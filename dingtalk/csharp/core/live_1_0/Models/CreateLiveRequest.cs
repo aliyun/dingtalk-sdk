@@ -19,11 +19,27 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 
         /// <summary>
         /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
+        [NameInMap("enableLinkMic")]
+        [Validation(Required=false)]
+        public bool? EnableLinkMic { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
         /// <para>测试直播简介</para>
         /// </summary>
         [NameInMap("introduction")]
         [Validation(Required=false)]
         public string Introduction { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
+        [NameInMap("isLandscape")]
+        [Validation(Required=false)]
+        public bool? IsLandscape { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>

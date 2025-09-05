@@ -8390,6 +8390,166 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>根据orgId获取企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// OrgInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// OrgInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgInfoResponse
+        /// </returns>
+        public OrgInfoResponse OrgInfoWithOptions(OrgInfoRequest tmpReq, OrgInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            OrgInfoShrinkRequest request = new OrgInfoShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.OrgIds))
+            {
+                request.OrgIdsShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.OrgIds, "orgIds", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgIdsShrink))
+            {
+                query["orgIds"] = request.OrgIdsShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OrgInfo",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/org/info",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OrgInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据orgId获取企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// OrgInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// OrgInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgInfoResponse
+        /// </returns>
+        public async Task<OrgInfoResponse> OrgInfoWithOptionsAsync(OrgInfoRequest tmpReq, OrgInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            OrgInfoShrinkRequest request = new OrgInfoShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.OrgIds))
+            {
+                request.OrgIdsShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.OrgIds, "orgIds", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgIdsShrink))
+            {
+                query["orgIds"] = request.OrgIdsShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OrgInfo",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/org/info",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OrgInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据orgId获取企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrgInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgInfoResponse
+        /// </returns>
+        public OrgInfoResponse OrgInfo(OrgInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OrgInfoHeaders headers = new OrgInfoHeaders();
+            return OrgInfoWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据orgId获取企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrgInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgInfoResponse
+        /// </returns>
+        public async Task<OrgInfoResponse> OrgInfoAsync(OrgInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OrgInfoHeaders headers = new OrgInfoHeaders();
+            return await OrgInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>给员工推送事件唤起核身组件</para>
         /// </summary>
         /// 
@@ -13566,6 +13726,166 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateUserOwnnessHeaders headers = new UpdateUserOwnnessHeaders();
             return await UpdateUserOwnnessWithOptionsAsync(userId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户个人信息接口</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// UserProfileRequest
+        /// </param>
+        /// <param name="headers">
+        /// UserProfileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UserProfileResponse
+        /// </returns>
+        public UserProfileResponse UserProfileWithOptions(UserProfileRequest tmpReq, UserProfileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            UserProfileShrinkRequest request = new UserProfileShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Uids))
+            {
+                request.UidsShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Uids, "uids", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UidsShrink))
+            {
+                query["uids"] = request.UidsShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UserProfile",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/user/profile",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UserProfileResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户个人信息接口</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// UserProfileRequest
+        /// </param>
+        /// <param name="headers">
+        /// UserProfileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UserProfileResponse
+        /// </returns>
+        public async Task<UserProfileResponse> UserProfileWithOptionsAsync(UserProfileRequest tmpReq, UserProfileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            UserProfileShrinkRequest request = new UserProfileShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Uids))
+            {
+                request.UidsShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Uids, "uids", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UidsShrink))
+            {
+                query["uids"] = request.UidsShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UserProfile",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/user/profile",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UserProfileResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户个人信息接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UserProfileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UserProfileResponse
+        /// </returns>
+        public UserProfileResponse UserProfile(UserProfileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UserProfileHeaders headers = new UserProfileHeaders();
+            return UserProfileWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户个人信息接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UserProfileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UserProfileResponse
+        /// </returns>
+        public async Task<UserProfileResponse> UserProfileAsync(UserProfileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UserProfileHeaders headers = new UserProfileHeaders();
+            return await UserProfileWithOptionsAsync(request, headers, runtime);
         }
 
     }

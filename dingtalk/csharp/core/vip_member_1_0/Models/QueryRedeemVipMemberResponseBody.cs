@@ -37,6 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalkvip_member_1_0.Models
             [Validation(Required=false)]
             public long? Duration { get; set; }
 
+            [NameInMap("expireDate")]
+            [Validation(Required=false)]
+            public string ExpireDate { get; set; }
+
             [NameInMap("nick")]
             [Validation(Required=false)]
             public string Nick { get; set; }

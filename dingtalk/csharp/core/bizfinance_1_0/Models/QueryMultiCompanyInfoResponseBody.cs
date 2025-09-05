@@ -17,6 +17,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string AccountantBookId { get; set; }
 
+            [NameInMap("accountantEnableDate")]
+            [Validation(Required=false)]
+            public string AccountantEnableDate { get; set; }
+
+            [NameInMap("accountingStandard")]
+            [Validation(Required=false)]
+            public string AccountingStandard { get; set; }
+
             [NameInMap("advancedSettingList")]
             [Validation(Required=false)]
             public List<QueryMultiCompanyInfoResponseBodyListAdvancedSettingList> AdvancedSettingList { get; set; }

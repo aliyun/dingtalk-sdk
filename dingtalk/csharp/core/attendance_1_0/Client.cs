@@ -8204,5 +8204,155 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             return await UpdateLeaveTypeWithOptionsAsync(request, headers, runtime);
         }
 
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量更新余额</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateVacationQuotaRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateVacationQuotaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateVacationQuotaResponse
+        /// </returns>
+        public UpdateVacationQuotaResponse UpdateVacationQuotaWithOptions(UpdateVacationQuotaRequest request, UpdateVacationQuotaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateVacationQuota",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/leaves/quota",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateVacationQuotaResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量更新余额</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateVacationQuotaRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateVacationQuotaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateVacationQuotaResponse
+        /// </returns>
+        public async Task<UpdateVacationQuotaResponse> UpdateVacationQuotaWithOptionsAsync(UpdateVacationQuotaRequest request, UpdateVacationQuotaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateVacationQuota",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/leaves/quota",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateVacationQuotaResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量更新余额</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateVacationQuotaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateVacationQuotaResponse
+        /// </returns>
+        public UpdateVacationQuotaResponse UpdateVacationQuota(UpdateVacationQuotaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateVacationQuotaHeaders headers = new UpdateVacationQuotaHeaders();
+            return UpdateVacationQuotaWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量更新余额</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateVacationQuotaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateVacationQuotaResponse
+        /// </returns>
+        public async Task<UpdateVacationQuotaResponse> UpdateVacationQuotaAsync(UpdateVacationQuotaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateVacationQuotaHeaders headers = new UpdateVacationQuotaHeaders();
+            return await UpdateVacationQuotaWithOptionsAsync(request, headers, runtime);
+        }
+
     }
 }

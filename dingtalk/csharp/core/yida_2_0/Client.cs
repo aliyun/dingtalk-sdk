@@ -3856,5 +3856,225 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await UpdateFormDataWithOptionsAsync(request, headers, runtime);
         }
 
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新宜搭子表单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSubTableRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateSubTableHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSubTableResponse
+        /// </returns>
+        public UpdateSubTableResponse UpdateSubTableWithOptions(UpdateSubTableRequest request, UpdateSubTableHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
+            {
+                body["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormInstanceId))
+            {
+                body["formInstanceId"] = request.FormInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                body["language"] = request.Language;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoExecuteExpression))
+            {
+                body["noExecuteExpression"] = request.NoExecuteExpression;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemToken))
+            {
+                body["systemToken"] = request.SystemToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TableFieldIds))
+            {
+                body["tableFieldIds"] = request.TableFieldIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateFormDataJson))
+            {
+                body["updateFormDataJson"] = request.UpdateFormDataJson;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseAlias))
+            {
+                body["useAlias"] = request.UseAlias;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseLatestFormSchemaVersion))
+            {
+                body["useLatestFormSchemaVersion"] = request.UseLatestFormSchemaVersion;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateSubTable",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/updateSubTable",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<UpdateSubTableResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新宜搭子表单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSubTableRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateSubTableHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSubTableResponse
+        /// </returns>
+        public async Task<UpdateSubTableResponse> UpdateSubTableWithOptionsAsync(UpdateSubTableRequest request, UpdateSubTableHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
+            {
+                body["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormInstanceId))
+            {
+                body["formInstanceId"] = request.FormInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                body["language"] = request.Language;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoExecuteExpression))
+            {
+                body["noExecuteExpression"] = request.NoExecuteExpression;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemToken))
+            {
+                body["systemToken"] = request.SystemToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TableFieldIds))
+            {
+                body["tableFieldIds"] = request.TableFieldIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateFormDataJson))
+            {
+                body["updateFormDataJson"] = request.UpdateFormDataJson;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseAlias))
+            {
+                body["useAlias"] = request.UseAlias;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseLatestFormSchemaVersion))
+            {
+                body["useLatestFormSchemaVersion"] = request.UseLatestFormSchemaVersion;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateSubTable",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/updateSubTable",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<UpdateSubTableResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新宜搭子表单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSubTableRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSubTableResponse
+        /// </returns>
+        public UpdateSubTableResponse UpdateSubTable(UpdateSubTableRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateSubTableHeaders headers = new UpdateSubTableHeaders();
+            return UpdateSubTableWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新宜搭子表单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSubTableRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSubTableResponse
+        /// </returns>
+        public async Task<UpdateSubTableResponse> UpdateSubTableAsync(UpdateSubTableRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateSubTableHeaders headers = new UpdateSubTableHeaders();
+            return await UpdateSubTableWithOptionsAsync(request, headers, runtime);
+        }
+
     }
 }

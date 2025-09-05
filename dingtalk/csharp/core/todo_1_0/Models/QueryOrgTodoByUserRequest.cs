@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
+        [NameInMap("needPersonalTodo")]
+        [Validation(Required=false)]
+        public bool? NeedPersonalTodo { get; set; }
+
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }

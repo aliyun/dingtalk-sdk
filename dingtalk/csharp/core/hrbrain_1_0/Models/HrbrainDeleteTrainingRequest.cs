@@ -13,23 +13,14 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
         [Validation(Required=false)]
         public List<HrbrainDeleteTrainingRequestParams> Params { get; set; }
         public class HrbrainDeleteTrainingRequestParams : TeaModel {
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// </summary>
             [NameInMap("trainEndDate")]
             [Validation(Required=false)]
             public string TrainEndDate { get; set; }
 
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// </summary>
             [NameInMap("trainName")]
             [Validation(Required=false)]
             public string TrainName { get; set; }
 
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// </summary>
             [NameInMap("trainStartDate")]
             [Validation(Required=false)]
             public string TrainStartDate { get; set; }

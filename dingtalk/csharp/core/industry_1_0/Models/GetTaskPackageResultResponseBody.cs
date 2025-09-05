@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public List<GetTaskPackageResultResponseBodyTasks> Tasks { get; set; }
         public class GetTaskPackageResultResponseBodyTasks : TeaModel {
+            [NameInMap("reportLink")]
+            [Validation(Required=false)]
+            public string ReportLink { get; set; }
+
             [NameInMap("result")]
             [Validation(Required=false)]
             public GetTaskPackageResultResponseBodyTasksResult Result { get; set; }
@@ -86,6 +90,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+
+                [NameInMap("parseText")]
+                [Validation(Required=false)]
+                public string ParseText { get; set; }
 
                 [NameInMap("rawData")]
                 [Validation(Required=false)]

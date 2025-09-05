@@ -9,85 +9,36 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class LoginForVisitorResponseBody : TeaModel {
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
         [NameInMap("aimInfo")]
         [Validation(Required=false)]
         public LoginForVisitorResponseBodyAimInfo AimInfo { get; set; }
         public class LoginForVisitorResponseBodyAimInfo : TeaModel {
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// 
-            /// <b>Example:</b>
-            /// <para>app_123456</para>
-            /// </summary>
-            [NameInMap("appId")]
-            [Validation(Required=false)]
-            public string AppId { get; set; }
-
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// </summary>
             [NameInMap("appKey")]
             [Validation(Required=false)]
-            public Dictionary<string, string> AppKey { get; set; }
+            public Dictionary<string, object> AppKey { get; set; }
 
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// 
-            /// <b>Example:</b>
-            /// <para>dingtalk_app</para>
-            /// </summary>
             [NameInMap("appName")]
             [Validation(Required=false)]
             public string AppName { get; set; }
 
         }
 
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
         [NameInMap("aimToken")]
         [Validation(Required=false)]
         public LoginForVisitorResponseBodyAimToken AimToken { get; set; }
         public class LoginForVisitorResponseBodyAimToken : TeaModel {
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// 
-            /// <b>Example:</b>
-            /// <para>abc123xyz</para>
-            /// </summary>
             [NameInMap("accessToken")]
             [Validation(Required=false)]
             public string AccessToken { get; set; }
 
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// 
-            /// <b>Example:</b>
-            /// <para>86400</para>
-            /// </summary>
             [NameInMap("accessTokenExpiredTime")]
             [Validation(Required=false)]
             public long? AccessTokenExpiredTime { get; set; }
 
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// 
-            /// <b>Example:</b>
-            /// <para>1717027200000</para>
-            /// </summary>
             [NameInMap("buildTime")]
             [Validation(Required=false)]
             public long? BuildTime { get; set; }
 
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// 
-            /// <b>Example:</b>
-            /// <para>refreshtoken_789</para>
-            /// </summary>
             [NameInMap("refreshToken")]
             [Validation(Required=false)]
             public string RefreshToken { get; set; }

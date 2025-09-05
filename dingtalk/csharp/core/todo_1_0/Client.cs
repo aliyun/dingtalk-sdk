@@ -1802,6 +1802,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["maxResults"] = request.MaxResults;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedPersonalTodo))
+            {
+                body["needPersonalTodo"] = request.NeedPersonalTodo;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 body["nextToken"] = request.NextToken;
@@ -1892,6 +1896,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedPersonalTodo))
+            {
+                body["needPersonalTodo"] = request.NeedPersonalTodo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {

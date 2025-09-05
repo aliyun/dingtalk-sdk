@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string MacAddress { get; set; }
 
+            [NameInMap("serialNumber")]
+            [Validation(Required=false)]
+            public string SerialNumber { get; set; }
+
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }

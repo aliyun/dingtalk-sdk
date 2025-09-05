@@ -56,6 +56,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string Platform { get; set; }
 
+            [NameInMap("serialNumber")]
+            [Validation(Required=false)]
+            public string SerialNumber { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>2</para>
@@ -64,6 +68,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public int? Status { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>设备标题</para>
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }

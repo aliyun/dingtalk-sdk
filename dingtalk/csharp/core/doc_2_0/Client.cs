@@ -6954,6 +6954,302 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LockDocRequest
+        /// </param>
+        /// <param name="headers">
+        /// LockDocHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// LockDocResponse
+        /// </returns>
+        public LockDocResponse LockDocWithOptions(LockDocRequest request, LockDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "LockDoc",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/dentries/lock",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<LockDocResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LockDocRequest
+        /// </param>
+        /// <param name="headers">
+        /// LockDocHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// LockDocResponse
+        /// </returns>
+        public async Task<LockDocResponse> LockDocWithOptionsAsync(LockDocRequest request, LockDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "LockDoc",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/dentries/lock",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<LockDocResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LockDocRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// LockDocResponse
+        /// </returns>
+        public LockDocResponse LockDoc(LockDocRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            LockDocHeaders headers = new LockDocHeaders();
+            return LockDocWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LockDocRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// LockDocResponse
+        /// </returns>
+        public async Task<LockDocResponse> LockDocAsync(LockDocRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            LockDocHeaders headers = new LockDocHeaders();
+            return await LockDocWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过委托授权文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LockDocByDelegatedPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// LockDocByDelegatedPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// LockDocByDelegatedPermissionResponse
+        /// </returns>
+        public LockDocByDelegatedPermissionResponse LockDocByDelegatedPermissionWithOptions(LockDocByDelegatedPermissionRequest request, LockDocByDelegatedPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "LockDocByDelegatedPermission",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/me/dentries/lock",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<LockDocByDelegatedPermissionResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过委托授权文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LockDocByDelegatedPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// LockDocByDelegatedPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// LockDocByDelegatedPermissionResponse
+        /// </returns>
+        public async Task<LockDocByDelegatedPermissionResponse> LockDocByDelegatedPermissionWithOptionsAsync(LockDocByDelegatedPermissionRequest request, LockDocByDelegatedPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "LockDocByDelegatedPermission",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/me/dentries/lock",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<LockDocByDelegatedPermissionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过委托授权文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LockDocByDelegatedPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// LockDocByDelegatedPermissionResponse
+        /// </returns>
+        public LockDocByDelegatedPermissionResponse LockDocByDelegatedPermission(LockDocByDelegatedPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            LockDocByDelegatedPermissionHeaders headers = new LockDocByDelegatedPermissionHeaders();
+            return LockDocByDelegatedPermissionWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过委托授权文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LockDocByDelegatedPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// LockDocByDelegatedPermissionResponse
+        /// </returns>
+        public async Task<LockDocByDelegatedPermissionResponse> LockDocByDelegatedPermissionAsync(LockDocByDelegatedPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            LockDocByDelegatedPermissionHeaders headers = new LockDocByDelegatedPermissionHeaders();
+            return await LockDocByDelegatedPermissionWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>标记星标</para>
         /// </summary>
         /// 
@@ -10142,6 +10438,302 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             TemplateCategoriesHeaders headers = new TemplateCategoriesHeaders();
             return await TemplateCategoriesWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnlockDocRequest
+        /// </param>
+        /// <param name="headers">
+        /// UnlockDocHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnlockDocResponse
+        /// </returns>
+        public UnlockDocResponse UnlockDocWithOptions(UnlockDocRequest request, UnlockDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UnlockDoc",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/dentries/unlock",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UnlockDocResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnlockDocRequest
+        /// </param>
+        /// <param name="headers">
+        /// UnlockDocHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnlockDocResponse
+        /// </returns>
+        public async Task<UnlockDocResponse> UnlockDocWithOptionsAsync(UnlockDocRequest request, UnlockDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UnlockDoc",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/dentries/unlock",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UnlockDocResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnlockDocRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnlockDocResponse
+        /// </returns>
+        public UnlockDocResponse UnlockDoc(UnlockDocRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UnlockDocHeaders headers = new UnlockDocHeaders();
+            return UnlockDocWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnlockDocRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnlockDocResponse
+        /// </returns>
+        public async Task<UnlockDocResponse> UnlockDocAsync(UnlockDocRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UnlockDocHeaders headers = new UnlockDocHeaders();
+            return await UnlockDocWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过委托授权取消文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnlockDocByDelegatedPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// UnlockDocByDelegatedPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnlockDocByDelegatedPermissionResponse
+        /// </returns>
+        public UnlockDocByDelegatedPermissionResponse UnlockDocByDelegatedPermissionWithOptions(UnlockDocByDelegatedPermissionRequest request, UnlockDocByDelegatedPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UnlockDocByDelegatedPermission",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/me/dentries/unlock",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UnlockDocByDelegatedPermissionResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过委托授权取消文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnlockDocByDelegatedPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// UnlockDocByDelegatedPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnlockDocByDelegatedPermissionResponse
+        /// </returns>
+        public async Task<UnlockDocByDelegatedPermissionResponse> UnlockDocByDelegatedPermissionWithOptionsAsync(UnlockDocByDelegatedPermissionRequest request, UnlockDocByDelegatedPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UnlockDocByDelegatedPermission",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/me/dentries/unlock",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UnlockDocByDelegatedPermissionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过委托授权取消文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnlockDocByDelegatedPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnlockDocByDelegatedPermissionResponse
+        /// </returns>
+        public UnlockDocByDelegatedPermissionResponse UnlockDocByDelegatedPermission(UnlockDocByDelegatedPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UnlockDocByDelegatedPermissionHeaders headers = new UnlockDocByDelegatedPermissionHeaders();
+            return UnlockDocByDelegatedPermissionWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过委托授权取消文档定稿</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnlockDocByDelegatedPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnlockDocByDelegatedPermissionResponse
+        /// </returns>
+        public async Task<UnlockDocByDelegatedPermissionResponse> UnlockDocByDelegatedPermissionAsync(UnlockDocByDelegatedPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UnlockDocByDelegatedPermissionHeaders headers = new UnlockDocByDelegatedPermissionHeaders();
+            return await UnlockDocByDelegatedPermissionWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

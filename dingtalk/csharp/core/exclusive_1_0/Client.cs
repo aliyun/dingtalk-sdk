@@ -1742,6 +1742,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["platform"] = request.Platform;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumber))
+            {
+                body["serialNumber"] = request.SerialNumber;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
             {
                 body["status"] = request.Status;
@@ -1816,6 +1820,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Platform))
             {
                 body["platform"] = request.Platform;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumber))
+            {
+                body["serialNumber"] = request.SerialNumber;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
             {
@@ -9662,6 +9670,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 query["platform"] = request.Platform;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumber))
+            {
+                query["serialNumber"] = request.SerialNumber;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
             {
                 query["startTime"] = request.StartTime;
@@ -9740,6 +9752,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Platform))
             {
                 query["platform"] = request.Platform;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumber))
+            {
+                query["serialNumber"] = request.SerialNumber;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
             {
@@ -10902,6 +10918,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["platform"] = request.Platform;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumber))
+            {
+                body["serialNumber"] = request.SerialNumber;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
             {
                 body["status"] = request.Status;
@@ -10992,6 +11012,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Platform))
             {
                 body["platform"] = request.Platform;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumber))
+            {
+                body["serialNumber"] = request.SerialNumber;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
             {

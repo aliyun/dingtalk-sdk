@@ -51,6 +51,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 
         /// <summary>
         /// <b>Example:</b>
+        /// <para>11-22-33-44</para>
+        /// </summary>
+        [NameInMap("serialNumber")]
+        [Validation(Required=false)]
+        public string SerialNumber { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
         /// <para>1671767361000</para>
         /// </summary>
         [NameInMap("startTime")]

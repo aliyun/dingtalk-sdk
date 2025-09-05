@@ -4992,6 +4992,126 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询组织的企业码开通情况</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryEnterpriseCodeOpenDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryEnterpriseCodeOpenDetailResponse
+        /// </returns>
+        public QueryEnterpriseCodeOpenDetailResponse QueryEnterpriseCodeOpenDetailWithOptions(QueryEnterpriseCodeOpenDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryEnterpriseCodeOpenDetail",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/enterprisecode/getOpenDetail",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryEnterpriseCodeOpenDetailResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织的企业码开通情况</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryEnterpriseCodeOpenDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryEnterpriseCodeOpenDetailResponse
+        /// </returns>
+        public async Task<QueryEnterpriseCodeOpenDetailResponse> QueryEnterpriseCodeOpenDetailWithOptionsAsync(QueryEnterpriseCodeOpenDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryEnterpriseCodeOpenDetail",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/enterprisecode/getOpenDetail",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryEnterpriseCodeOpenDetailResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织的企业码开通情况</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryEnterpriseCodeOpenDetailResponse
+        /// </returns>
+        public QueryEnterpriseCodeOpenDetailResponse QueryEnterpriseCodeOpenDetail()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryEnterpriseCodeOpenDetailHeaders headers = new QueryEnterpriseCodeOpenDetailHeaders();
+            return QueryEnterpriseCodeOpenDetailWithOptions(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织的企业码开通情况</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryEnterpriseCodeOpenDetailResponse
+        /// </returns>
+        public async Task<QueryEnterpriseCodeOpenDetailResponse> QueryEnterpriseCodeOpenDetailAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryEnterpriseCodeOpenDetailHeaders headers = new QueryEnterpriseCodeOpenDetailHeaders();
+            return await QueryEnterpriseCodeOpenDetailWithOptionsAsync(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询支付订单详情</para>
         /// </summary>
         /// 
