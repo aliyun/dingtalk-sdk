@@ -1383,6 +1383,8 @@ class Client(OpenApiClient):
             body['isDone'] = request.is_done
         if not UtilClient.is_unset(request.max_results):
             body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.need_personal_todo):
+            body['needPersonalTodo'] = request.need_personal_todo
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.order_by):
@@ -1445,6 +1447,8 @@ class Client(OpenApiClient):
             body['isDone'] = request.is_done
         if not UtilClient.is_unset(request.max_results):
             body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.need_personal_todo):
+            body['needPersonalTodo'] = request.need_personal_todo
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.order_by):

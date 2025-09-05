@@ -629,12 +629,14 @@ class QueryRedeemVipMemberResponseBodyQueryResults(TeaModel):
         action_time: str = None,
         dingtalk_id: str = None,
         duration: int = None,
+        expire_date: str = None,
         nick: str = None,
     ):
         self.action = action
         self.action_time = action_time
         self.dingtalk_id = dingtalk_id
         self.duration = duration
+        self.expire_date = expire_date
         self.nick = nick
 
     def validate(self):
@@ -654,6 +656,8 @@ class QueryRedeemVipMemberResponseBodyQueryResults(TeaModel):
             result['dingtalkId'] = self.dingtalk_id
         if self.duration is not None:
             result['duration'] = self.duration
+        if self.expire_date is not None:
+            result['expireDate'] = self.expire_date
         if self.nick is not None:
             result['nick'] = self.nick
         return result
@@ -668,6 +672,8 @@ class QueryRedeemVipMemberResponseBodyQueryResults(TeaModel):
             self.dingtalk_id = m.get('dingtalkId')
         if m.get('duration') is not None:
             self.duration = m.get('duration')
+        if m.get('expireDate') is not None:
+            self.expire_date = m.get('expireDate')
         if m.get('nick') is not None:
             self.nick = m.get('nick')
         return self

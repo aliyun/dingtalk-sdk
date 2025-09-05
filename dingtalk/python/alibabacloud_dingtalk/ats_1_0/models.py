@@ -2845,6 +2845,149 @@ class GetFileUploadInfoResponse(TeaModel):
         return self
 
 
+class GetFlowByIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFlowByIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        candidate_id: str = None,
+        candidate_name: str = None,
+        create_time: int = None,
+        current_status: str = None,
+        flow_id: str = None,
+        job_id: str = None,
+        source_name: str = None,
+        stat_id: str = None,
+    ):
+        self.candidate_id = candidate_id
+        self.candidate_name = candidate_name
+        self.create_time = create_time
+        self.current_status = current_status
+        self.flow_id = flow_id
+        self.job_id = job_id
+        self.source_name = source_name
+        self.stat_id = stat_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.candidate_id is not None:
+            result['candidateId'] = self.candidate_id
+        if self.candidate_name is not None:
+            result['candidateName'] = self.candidate_name
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.current_status is not None:
+            result['currentStatus'] = self.current_status
+        if self.flow_id is not None:
+            result['flowId'] = self.flow_id
+        if self.job_id is not None:
+            result['jobId'] = self.job_id
+        if self.source_name is not None:
+            result['sourceName'] = self.source_name
+        if self.stat_id is not None:
+            result['statId'] = self.stat_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('candidateId') is not None:
+            self.candidate_id = m.get('candidateId')
+        if m.get('candidateName') is not None:
+            self.candidate_name = m.get('candidateName')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('currentStatus') is not None:
+            self.current_status = m.get('currentStatus')
+        if m.get('flowId') is not None:
+            self.flow_id = m.get('flowId')
+        if m.get('jobId') is not None:
+            self.job_id = m.get('jobId')
+        if m.get('sourceName') is not None:
+            self.source_name = m.get('sourceName')
+        if m.get('statId') is not None:
+            self.stat_id = m.get('statId')
+        return self
+
+
+class GetFlowByIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetFlowByIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetFlowByIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetFlowIdByRelationEntityIdHeaders(TeaModel):
     def __init__(
         self,
@@ -3159,6 +3302,184 @@ class GetJobAuthResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetJobAuthResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetJobInfoByJobIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetJobInfoByJobIdResponseBodyJobOwners(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetJobInfoByJobIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        create_time: int = None,
+        head_count: int = None,
+        job_id: str = None,
+        job_owners: List[GetJobInfoByJobIdResponseBodyJobOwners] = None,
+        main_dept_id: int = None,
+        main_dept_name: str = None,
+        name: str = None,
+    ):
+        self.create_time = create_time
+        self.head_count = head_count
+        self.job_id = job_id
+        self.job_owners = job_owners
+        self.main_dept_id = main_dept_id
+        self.main_dept_name = main_dept_name
+        self.name = name
+
+    def validate(self):
+        if self.job_owners:
+            for k in self.job_owners:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.head_count is not None:
+            result['headCount'] = self.head_count
+        if self.job_id is not None:
+            result['jobId'] = self.job_id
+        result['jobOwners'] = []
+        if self.job_owners is not None:
+            for k in self.job_owners:
+                result['jobOwners'].append(k.to_map() if k else None)
+        if self.main_dept_id is not None:
+            result['mainDeptId'] = self.main_dept_id
+        if self.main_dept_name is not None:
+            result['mainDeptName'] = self.main_dept_name
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('headCount') is not None:
+            self.head_count = m.get('headCount')
+        if m.get('jobId') is not None:
+            self.job_id = m.get('jobId')
+        self.job_owners = []
+        if m.get('jobOwners') is not None:
+            for k in m.get('jobOwners'):
+                temp_model = GetJobInfoByJobIdResponseBodyJobOwners()
+                self.job_owners.append(temp_model.from_map(k))
+        if m.get('mainDeptId') is not None:
+            self.main_dept_id = m.get('mainDeptId')
+        if m.get('mainDeptName') is not None:
+            self.main_dept_name = m.get('mainDeptName')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetJobInfoByJobIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetJobInfoByJobIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetJobInfoByJobIdResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4168,6 +4489,349 @@ class ReportMessageStatusResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ReportMessageStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ResumePostEventHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ResumePostEventRequest(TeaModel):
+    def __init__(
+        self,
+        candidate_name: str = None,
+        job_name: str = None,
+        job_owner_user_id: str = None,
+        mobile_resume_url: str = None,
+        pc_resume_url: str = None,
+        resume_desc: str = None,
+        resume_post_time: int = None,
+    ):
+        # This parameter is required.
+        self.candidate_name = candidate_name
+        # This parameter is required.
+        self.job_name = job_name
+        # This parameter is required.
+        self.job_owner_user_id = job_owner_user_id
+        # This parameter is required.
+        self.mobile_resume_url = mobile_resume_url
+        # This parameter is required.
+        self.pc_resume_url = pc_resume_url
+        self.resume_desc = resume_desc
+        # This parameter is required.
+        self.resume_post_time = resume_post_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.candidate_name is not None:
+            result['candidateName'] = self.candidate_name
+        if self.job_name is not None:
+            result['jobName'] = self.job_name
+        if self.job_owner_user_id is not None:
+            result['jobOwnerUserId'] = self.job_owner_user_id
+        if self.mobile_resume_url is not None:
+            result['mobileResumeUrl'] = self.mobile_resume_url
+        if self.pc_resume_url is not None:
+            result['pcResumeUrl'] = self.pc_resume_url
+        if self.resume_desc is not None:
+            result['resumeDesc'] = self.resume_desc
+        if self.resume_post_time is not None:
+            result['resumePostTime'] = self.resume_post_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('candidateName') is not None:
+            self.candidate_name = m.get('candidateName')
+        if m.get('jobName') is not None:
+            self.job_name = m.get('jobName')
+        if m.get('jobOwnerUserId') is not None:
+            self.job_owner_user_id = m.get('jobOwnerUserId')
+        if m.get('mobileResumeUrl') is not None:
+            self.mobile_resume_url = m.get('mobileResumeUrl')
+        if m.get('pcResumeUrl') is not None:
+            self.pc_resume_url = m.get('pcResumeUrl')
+        if m.get('resumeDesc') is not None:
+            self.resume_desc = m.get('resumeDesc')
+        if m.get('resumePostTime') is not None:
+            self.resume_post_time = m.get('resumePostTime')
+        return self
+
+
+class ResumePostEventResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+    ):
+        self.biz_id = biz_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        return self
+
+
+class ResumePostEventResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ResumePostEventResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ResumePostEventResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchFlowHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchFlowRequest(TeaModel):
+    def __init__(
+        self,
+        cursor: str = None,
+        max_modify_time_mills: int = None,
+        min_modify_time_mills: int = None,
+        size: int = None,
+        op_user_id: str = None,
+    ):
+        self.cursor = cursor
+        # This parameter is required.
+        self.max_modify_time_mills = max_modify_time_mills
+        # This parameter is required.
+        self.min_modify_time_mills = min_modify_time_mills
+        self.size = size
+        # This parameter is required.
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.max_modify_time_mills is not None:
+            result['maxModifyTimeMills'] = self.max_modify_time_mills
+        if self.min_modify_time_mills is not None:
+            result['minModifyTimeMills'] = self.min_modify_time_mills
+        if self.size is not None:
+            result['size'] = self.size
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('maxModifyTimeMills') is not None:
+            self.max_modify_time_mills = m.get('maxModifyTimeMills')
+        if m.get('minModifyTimeMills') is not None:
+            self.min_modify_time_mills = m.get('minModifyTimeMills')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class SearchFlowResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[str] = None,
+        next_cursor: str = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+        self.next_cursor = next_cursor
+        self.total_count = total_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.list is not None:
+            result['list'] = self.list
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('list') is not None:
+            self.list = m.get('list')
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchFlowResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SearchFlowResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SearchFlowResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

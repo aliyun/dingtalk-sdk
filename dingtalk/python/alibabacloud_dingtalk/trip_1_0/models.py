@@ -2946,6 +2946,315 @@ class SyncSecretKeyResponse(TeaModel):
         return self
 
 
+class SyncTripInvoiceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncTripInvoiceRequestInvoiceDetailListTravelItineraryInfoList(TeaModel):
+    def __init__(
+        self,
+        travel_itinerary_url: str = None,
+    ):
+        self.travel_itinerary_url = travel_itinerary_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.travel_itinerary_url is not None:
+            result['travelItineraryUrl'] = self.travel_itinerary_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('travelItineraryUrl') is not None:
+            self.travel_itinerary_url = m.get('travelItineraryUrl')
+        return self
+
+
+class SyncTripInvoiceRequestInvoiceDetailList(TeaModel):
+    def __init__(
+        self,
+        fail_code: str = None,
+        fail_message: str = None,
+        invoice_result: bool = None,
+        ofd_invoice_url: str = None,
+        pdf_invoice_url: str = None,
+        travel_itinerary_info_list: List[SyncTripInvoiceRequestInvoiceDetailListTravelItineraryInfoList] = None,
+        xml_invoice_url: str = None,
+    ):
+        self.fail_code = fail_code
+        self.fail_message = fail_message
+        self.invoice_result = invoice_result
+        self.ofd_invoice_url = ofd_invoice_url
+        self.pdf_invoice_url = pdf_invoice_url
+        self.travel_itinerary_info_list = travel_itinerary_info_list
+        self.xml_invoice_url = xml_invoice_url
+
+    def validate(self):
+        if self.travel_itinerary_info_list:
+            for k in self.travel_itinerary_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fail_code is not None:
+            result['failCode'] = self.fail_code
+        if self.fail_message is not None:
+            result['failMessage'] = self.fail_message
+        if self.invoice_result is not None:
+            result['invoiceResult'] = self.invoice_result
+        if self.ofd_invoice_url is not None:
+            result['ofdInvoiceUrl'] = self.ofd_invoice_url
+        if self.pdf_invoice_url is not None:
+            result['pdfInvoiceUrl'] = self.pdf_invoice_url
+        result['travelItineraryInfoList'] = []
+        if self.travel_itinerary_info_list is not None:
+            for k in self.travel_itinerary_info_list:
+                result['travelItineraryInfoList'].append(k.to_map() if k else None)
+        if self.xml_invoice_url is not None:
+            result['xmlInvoiceUrl'] = self.xml_invoice_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('failCode') is not None:
+            self.fail_code = m.get('failCode')
+        if m.get('failMessage') is not None:
+            self.fail_message = m.get('failMessage')
+        if m.get('invoiceResult') is not None:
+            self.invoice_result = m.get('invoiceResult')
+        if m.get('ofdInvoiceUrl') is not None:
+            self.ofd_invoice_url = m.get('ofdInvoiceUrl')
+        if m.get('pdfInvoiceUrl') is not None:
+            self.pdf_invoice_url = m.get('pdfInvoiceUrl')
+        self.travel_itinerary_info_list = []
+        if m.get('travelItineraryInfoList') is not None:
+            for k in m.get('travelItineraryInfoList'):
+                temp_model = SyncTripInvoiceRequestInvoiceDetailListTravelItineraryInfoList()
+                self.travel_itinerary_info_list.append(temp_model.from_map(k))
+        if m.get('xmlInvoiceUrl') is not None:
+            self.xml_invoice_url = m.get('xmlInvoiceUrl')
+        return self
+
+
+class SyncTripInvoiceRequest(TeaModel):
+    def __init__(
+        self,
+        channel_order_no: str = None,
+        channel_type: str = None,
+        customer_corp_id: str = None,
+        ding_user_id: str = None,
+        invoice_detail_list: List[SyncTripInvoiceRequestInvoiceDetailList] = None,
+    ):
+        self.channel_order_no = channel_order_no
+        self.channel_type = channel_type
+        self.customer_corp_id = customer_corp_id
+        self.ding_user_id = ding_user_id
+        self.invoice_detail_list = invoice_detail_list
+
+    def validate(self):
+        if self.invoice_detail_list:
+            for k in self.invoice_detail_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel_order_no is not None:
+            result['channelOrderNo'] = self.channel_order_no
+        if self.channel_type is not None:
+            result['channelType'] = self.channel_type
+        if self.customer_corp_id is not None:
+            result['customerCorpId'] = self.customer_corp_id
+        if self.ding_user_id is not None:
+            result['dingUserId'] = self.ding_user_id
+        result['invoiceDetailList'] = []
+        if self.invoice_detail_list is not None:
+            for k in self.invoice_detail_list:
+                result['invoiceDetailList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channelOrderNo') is not None:
+            self.channel_order_no = m.get('channelOrderNo')
+        if m.get('channelType') is not None:
+            self.channel_type = m.get('channelType')
+        if m.get('customerCorpId') is not None:
+            self.customer_corp_id = m.get('customerCorpId')
+        if m.get('dingUserId') is not None:
+            self.ding_user_id = m.get('dingUserId')
+        self.invoice_detail_list = []
+        if m.get('invoiceDetailList') is not None:
+            for k in m.get('invoiceDetailList'):
+                temp_model = SyncTripInvoiceRequestInvoiceDetailList()
+                self.invoice_detail_list.append(temp_model.from_map(k))
+        return self
+
+
+class SyncTripInvoiceShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        channel_order_no: str = None,
+        channel_type: str = None,
+        customer_corp_id: str = None,
+        ding_user_id: str = None,
+        invoice_detail_list_shrink: str = None,
+    ):
+        self.channel_order_no = channel_order_no
+        self.channel_type = channel_type
+        self.customer_corp_id = customer_corp_id
+        self.ding_user_id = ding_user_id
+        self.invoice_detail_list_shrink = invoice_detail_list_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel_order_no is not None:
+            result['channelOrderNo'] = self.channel_order_no
+        if self.channel_type is not None:
+            result['channelType'] = self.channel_type
+        if self.customer_corp_id is not None:
+            result['customerCorpId'] = self.customer_corp_id
+        if self.ding_user_id is not None:
+            result['dingUserId'] = self.ding_user_id
+        if self.invoice_detail_list_shrink is not None:
+            result['invoiceDetailList'] = self.invoice_detail_list_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channelOrderNo') is not None:
+            self.channel_order_no = m.get('channelOrderNo')
+        if m.get('channelType') is not None:
+            self.channel_type = m.get('channelType')
+        if m.get('customerCorpId') is not None:
+            self.customer_corp_id = m.get('customerCorpId')
+        if m.get('dingUserId') is not None:
+            self.ding_user_id = m.get('dingUserId')
+        if m.get('invoiceDetailList') is not None:
+            self.invoice_detail_list_shrink = m.get('invoiceDetailList')
+        return self
+
+
+class SyncTripInvoiceResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: str = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SyncTripInvoiceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SyncTripInvoiceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SyncTripInvoiceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SyncTripOrderHeaders(TeaModel):
     def __init__(
         self,
@@ -3063,6 +3372,8 @@ class SyncTripOrderRequestOrderDetailsOpenConsumerInfo(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
+        identity_number: str = None,
+        identity_type: str = None,
         name: str = None,
         staff_flag: bool = None,
         status: str = None,
@@ -3071,6 +3382,8 @@ class SyncTripOrderRequestOrderDetailsOpenConsumerInfo(TeaModel):
         user_id: str = None,
     ):
         self.corp_id = corp_id
+        self.identity_number = identity_number
+        self.identity_type = identity_type
         self.name = name
         self.staff_flag = staff_flag
         self.status = status
@@ -3089,6 +3402,10 @@ class SyncTripOrderRequestOrderDetailsOpenConsumerInfo(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.identity_number is not None:
+            result['identityNumber'] = self.identity_number
+        if self.identity_type is not None:
+            result['identityType'] = self.identity_type
         if self.name is not None:
             result['name'] = self.name
         if self.staff_flag is not None:
@@ -3107,6 +3424,10 @@ class SyncTripOrderRequestOrderDetailsOpenConsumerInfo(TeaModel):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('identityNumber') is not None:
+            self.identity_number = m.get('identityNumber')
+        if m.get('identityType') is not None:
+            self.identity_type = m.get('identityType')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('staffFlag') is not None:
@@ -3125,6 +3446,7 @@ class SyncTripOrderRequestOrderDetailsOpenConsumerInfo(TeaModel):
 class SyncTripOrderRequestOrderDetails(TeaModel):
     def __init__(
         self,
+        airport: str = None,
         arrival_time: str = None,
         car_color: str = None,
         car_model: str = None,
@@ -3133,6 +3455,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         check_in_time: str = None,
         check_out_time: str = None,
         depart_time: str = None,
+        destination_airport: str = None,
+        destination_airport_code: str = None,
         destination_city: str = None,
         destination_city_code: str = None,
         destination_station: str = None,
@@ -3143,11 +3467,15 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         hotel_location: SyncTripOrderRequestOrderDetailsHotelLocation = None,
         hotel_name: str = None,
         open_consumer_info: List[SyncTripOrderRequestOrderDetailsOpenConsumerInfo] = None,
+        order_detail_status: str = None,
+        origin_airport: str = None,
+        origin_airport_code: str = None,
         origin_city: str = None,
         origin_city_code: str = None,
         origin_station: str = None,
         origin_terminal_building: str = None,
         room_count: int = None,
+        round_trip_type: str = None,
         seat_info: str = None,
         service_type: str = None,
         sub_supply_logo: str = None,
@@ -3157,6 +3485,7 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         transport_number: str = None,
         type_description: str = None,
     ):
+        self.airport = airport
         self.arrival_time = arrival_time
         self.car_color = car_color
         self.car_model = car_model
@@ -3165,6 +3494,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         self.check_in_time = check_in_time
         self.check_out_time = check_out_time
         self.depart_time = depart_time
+        self.destination_airport = destination_airport
+        self.destination_airport_code = destination_airport_code
         self.destination_city = destination_city
         self.destination_city_code = destination_city_code
         self.destination_station = destination_station
@@ -3175,11 +3506,15 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         self.hotel_location = hotel_location
         self.hotel_name = hotel_name
         self.open_consumer_info = open_consumer_info
+        self.order_detail_status = order_detail_status
+        self.origin_airport = origin_airport
+        self.origin_airport_code = origin_airport_code
         self.origin_city = origin_city
         self.origin_city_code = origin_city_code
         self.origin_station = origin_station
         self.origin_terminal_building = origin_terminal_building
         self.room_count = room_count
+        self.round_trip_type = round_trip_type
         self.seat_info = seat_info
         self.service_type = service_type
         self.sub_supply_logo = sub_supply_logo
@@ -3203,6 +3538,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             return _map
 
         result = dict()
+        if self.airport is not None:
+            result['airport'] = self.airport
         if self.arrival_time is not None:
             result['arrivalTime'] = self.arrival_time
         if self.car_color is not None:
@@ -3219,6 +3556,10 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             result['checkOutTime'] = self.check_out_time
         if self.depart_time is not None:
             result['departTime'] = self.depart_time
+        if self.destination_airport is not None:
+            result['destinationAirport'] = self.destination_airport
+        if self.destination_airport_code is not None:
+            result['destinationAirportCode'] = self.destination_airport_code
         if self.destination_city is not None:
             result['destinationCity'] = self.destination_city
         if self.destination_city_code is not None:
@@ -3241,6 +3582,12 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         if self.open_consumer_info is not None:
             for k in self.open_consumer_info:
                 result['openConsumerInfo'].append(k.to_map() if k else None)
+        if self.order_detail_status is not None:
+            result['orderDetailStatus'] = self.order_detail_status
+        if self.origin_airport is not None:
+            result['originAirport'] = self.origin_airport
+        if self.origin_airport_code is not None:
+            result['originAirportCode'] = self.origin_airport_code
         if self.origin_city is not None:
             result['originCity'] = self.origin_city
         if self.origin_city_code is not None:
@@ -3251,6 +3598,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             result['originTerminalBuilding'] = self.origin_terminal_building
         if self.room_count is not None:
             result['roomCount'] = self.room_count
+        if self.round_trip_type is not None:
+            result['roundTripType'] = self.round_trip_type
         if self.seat_info is not None:
             result['seatInfo'] = self.seat_info
         if self.service_type is not None:
@@ -3271,6 +3620,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('airport') is not None:
+            self.airport = m.get('airport')
         if m.get('arrivalTime') is not None:
             self.arrival_time = m.get('arrivalTime')
         if m.get('carColor') is not None:
@@ -3287,6 +3638,10 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             self.check_out_time = m.get('checkOutTime')
         if m.get('departTime') is not None:
             self.depart_time = m.get('departTime')
+        if m.get('destinationAirport') is not None:
+            self.destination_airport = m.get('destinationAirport')
+        if m.get('destinationAirportCode') is not None:
+            self.destination_airport_code = m.get('destinationAirportCode')
         if m.get('destinationCity') is not None:
             self.destination_city = m.get('destinationCity')
         if m.get('destinationCityCode') is not None:
@@ -3311,6 +3666,12 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             for k in m.get('openConsumerInfo'):
                 temp_model = SyncTripOrderRequestOrderDetailsOpenConsumerInfo()
                 self.open_consumer_info.append(temp_model.from_map(k))
+        if m.get('orderDetailStatus') is not None:
+            self.order_detail_status = m.get('orderDetailStatus')
+        if m.get('originAirport') is not None:
+            self.origin_airport = m.get('originAirport')
+        if m.get('originAirportCode') is not None:
+            self.origin_airport_code = m.get('originAirportCode')
         if m.get('originCity') is not None:
             self.origin_city = m.get('originCity')
         if m.get('originCityCode') is not None:
@@ -3321,6 +3682,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             self.origin_terminal_building = m.get('originTerminalBuilding')
         if m.get('roomCount') is not None:
             self.room_count = m.get('roomCount')
+        if m.get('roundTripType') is not None:
+            self.round_trip_type = m.get('roundTripType')
         if m.get('seatInfo') is not None:
             self.seat_info = m.get('seatInfo')
         if m.get('serviceType') is not None:
@@ -3353,10 +3716,17 @@ class SyncTripOrderRequest(TeaModel):
         gmt_order: str = None,
         gmt_pay: str = None,
         gmt_refund: str = None,
+        has_invoice: bool = None,
+        invoice_apply_role: str = None,
+        invoice_apply_type: str = None,
         invoice_apply_url: str = None,
+        invoice_party: int = None,
+        invoice_type: int = None,
         journey_biz_no: str = None,
+        journey_submit_user_id: str = None,
         order_details: List[SyncTripOrderRequestOrderDetails] = None,
         order_no: str = None,
+        order_payment_type: str = None,
         order_url: str = None,
         process_id: str = None,
         real_amount: str = None,
@@ -3384,11 +3754,18 @@ class SyncTripOrderRequest(TeaModel):
         self.gmt_order = gmt_order
         self.gmt_pay = gmt_pay
         self.gmt_refund = gmt_refund
+        self.has_invoice = has_invoice
+        self.invoice_apply_role = invoice_apply_role
+        self.invoice_apply_type = invoice_apply_type
         self.invoice_apply_url = invoice_apply_url
+        self.invoice_party = invoice_party
+        self.invoice_type = invoice_type
         self.journey_biz_no = journey_biz_no
+        self.journey_submit_user_id = journey_submit_user_id
         self.order_details = order_details
         # This parameter is required.
         self.order_no = order_no
+        self.order_payment_type = order_payment_type
         # This parameter is required.
         self.order_url = order_url
         self.process_id = process_id
@@ -3438,16 +3815,30 @@ class SyncTripOrderRequest(TeaModel):
             result['gmtPay'] = self.gmt_pay
         if self.gmt_refund is not None:
             result['gmtRefund'] = self.gmt_refund
+        if self.has_invoice is not None:
+            result['hasInvoice'] = self.has_invoice
+        if self.invoice_apply_role is not None:
+            result['invoiceApplyRole'] = self.invoice_apply_role
+        if self.invoice_apply_type is not None:
+            result['invoiceApplyType'] = self.invoice_apply_type
         if self.invoice_apply_url is not None:
             result['invoiceApplyUrl'] = self.invoice_apply_url
+        if self.invoice_party is not None:
+            result['invoiceParty'] = self.invoice_party
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
         if self.journey_biz_no is not None:
             result['journeyBizNo'] = self.journey_biz_no
+        if self.journey_submit_user_id is not None:
+            result['journeySubmitUserId'] = self.journey_submit_user_id
         result['orderDetails'] = []
         if self.order_details is not None:
             for k in self.order_details:
                 result['orderDetails'].append(k.to_map() if k else None)
         if self.order_no is not None:
             result['orderNo'] = self.order_no
+        if self.order_payment_type is not None:
+            result['orderPaymentType'] = self.order_payment_type
         if self.order_url is not None:
             result['orderUrl'] = self.order_url
         if self.process_id is not None:
@@ -3497,10 +3888,22 @@ class SyncTripOrderRequest(TeaModel):
             self.gmt_pay = m.get('gmtPay')
         if m.get('gmtRefund') is not None:
             self.gmt_refund = m.get('gmtRefund')
+        if m.get('hasInvoice') is not None:
+            self.has_invoice = m.get('hasInvoice')
+        if m.get('invoiceApplyRole') is not None:
+            self.invoice_apply_role = m.get('invoiceApplyRole')
+        if m.get('invoiceApplyType') is not None:
+            self.invoice_apply_type = m.get('invoiceApplyType')
         if m.get('invoiceApplyUrl') is not None:
             self.invoice_apply_url = m.get('invoiceApplyUrl')
+        if m.get('invoiceParty') is not None:
+            self.invoice_party = m.get('invoiceParty')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
         if m.get('journeyBizNo') is not None:
             self.journey_biz_no = m.get('journeyBizNo')
+        if m.get('journeySubmitUserId') is not None:
+            self.journey_submit_user_id = m.get('journeySubmitUserId')
         self.order_details = []
         if m.get('orderDetails') is not None:
             for k in m.get('orderDetails'):
@@ -3508,6 +3911,8 @@ class SyncTripOrderRequest(TeaModel):
                 self.order_details.append(temp_model.from_map(k))
         if m.get('orderNo') is not None:
             self.order_no = m.get('orderNo')
+        if m.get('orderPaymentType') is not None:
+            self.order_payment_type = m.get('orderPaymentType')
         if m.get('orderUrl') is not None:
             self.order_url = m.get('orderUrl')
         if m.get('processId') is not None:

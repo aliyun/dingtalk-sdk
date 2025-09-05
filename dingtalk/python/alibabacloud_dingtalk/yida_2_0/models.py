@@ -4919,3 +4919,156 @@ class UpdateFormDataResponse(TeaModel):
         return self
 
 
+class UpdateSubTableHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateSubTableRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        form_instance_id: str = None,
+        language: str = None,
+        no_execute_expression: bool = None,
+        system_token: str = None,
+        table_field_ids: str = None,
+        update_form_data_json: str = None,
+        use_alias: bool = None,
+        use_latest_form_schema_version: bool = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.app_type = app_type
+        # This parameter is required.
+        self.form_instance_id = form_instance_id
+        self.language = language
+        self.no_execute_expression = no_execute_expression
+        # This parameter is required.
+        self.system_token = system_token
+        # This parameter is required.
+        self.table_field_ids = table_field_ids
+        # This parameter is required.
+        self.update_form_data_json = update_form_data_json
+        self.use_alias = use_alias
+        self.use_latest_form_schema_version = use_latest_form_schema_version
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.form_instance_id is not None:
+            result['formInstanceId'] = self.form_instance_id
+        if self.language is not None:
+            result['language'] = self.language
+        if self.no_execute_expression is not None:
+            result['noExecuteExpression'] = self.no_execute_expression
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.table_field_ids is not None:
+            result['tableFieldIds'] = self.table_field_ids
+        if self.update_form_data_json is not None:
+            result['updateFormDataJson'] = self.update_form_data_json
+        if self.use_alias is not None:
+            result['useAlias'] = self.use_alias
+        if self.use_latest_form_schema_version is not None:
+            result['useLatestFormSchemaVersion'] = self.use_latest_form_schema_version
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('formInstanceId') is not None:
+            self.form_instance_id = m.get('formInstanceId')
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        if m.get('noExecuteExpression') is not None:
+            self.no_execute_expression = m.get('noExecuteExpression')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('tableFieldIds') is not None:
+            self.table_field_ids = m.get('tableFieldIds')
+        if m.get('updateFormDataJson') is not None:
+            self.update_form_data_json = m.get('updateFormDataJson')
+        if m.get('useAlias') is not None:
+            self.use_alias = m.get('useAlias')
+        if m.get('useLatestFormSchemaVersion') is not None:
+            self.use_latest_form_schema_version = m.get('useLatestFormSchemaVersion')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateSubTableResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        return self
+
+

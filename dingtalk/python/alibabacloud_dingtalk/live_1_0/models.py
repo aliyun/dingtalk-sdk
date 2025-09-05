@@ -737,7 +737,9 @@ class CreateLiveRequest(TeaModel):
     def __init__(
         self,
         cover_url: str = None,
+        enable_link_mic: bool = None,
         introduction: str = None,
+        is_landscape: bool = None,
         pre_end_time: int = None,
         pre_start_time: int = None,
         public_type: int = None,
@@ -745,7 +747,9 @@ class CreateLiveRequest(TeaModel):
         union_id: str = None,
     ):
         self.cover_url = cover_url
+        self.enable_link_mic = enable_link_mic
         self.introduction = introduction
+        self.is_landscape = is_landscape
         # This parameter is required.
         self.pre_end_time = pre_end_time
         # This parameter is required.
@@ -767,8 +771,12 @@ class CreateLiveRequest(TeaModel):
         result = dict()
         if self.cover_url is not None:
             result['coverUrl'] = self.cover_url
+        if self.enable_link_mic is not None:
+            result['enableLinkMic'] = self.enable_link_mic
         if self.introduction is not None:
             result['introduction'] = self.introduction
+        if self.is_landscape is not None:
+            result['isLandscape'] = self.is_landscape
         if self.pre_end_time is not None:
             result['preEndTime'] = self.pre_end_time
         if self.pre_start_time is not None:
@@ -785,8 +793,12 @@ class CreateLiveRequest(TeaModel):
         m = m or dict()
         if m.get('coverUrl') is not None:
             self.cover_url = m.get('coverUrl')
+        if m.get('enableLinkMic') is not None:
+            self.enable_link_mic = m.get('enableLinkMic')
         if m.get('introduction') is not None:
             self.introduction = m.get('introduction')
+        if m.get('isLandscape') is not None:
+            self.is_landscape = m.get('isLandscape')
         if m.get('preEndTime') is not None:
             self.pre_end_time = m.get('preEndTime')
         if m.get('preStartTime') is not None:

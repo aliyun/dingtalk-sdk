@@ -3666,6 +3666,98 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryEnterpriseAccountSignUrlHeaders()
         return await self.query_enterprise_account_sign_url_with_options_async(request, headers, runtime)
 
+    def query_enterprise_code_open_detail_with_options(
+        self,
+        headers: dingtalkbizfinance__2__0_models.QueryEnterpriseCodeOpenDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryEnterpriseCodeOpenDetailResponse:
+        """
+        @summary 查询组织的企业码开通情况
+        
+        @param headers: QueryEnterpriseCodeOpenDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryEnterpriseCodeOpenDetailResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryEnterpriseCodeOpenDetail',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/enterprisecode/getOpenDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryEnterpriseCodeOpenDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_enterprise_code_open_detail_with_options_async(
+        self,
+        headers: dingtalkbizfinance__2__0_models.QueryEnterpriseCodeOpenDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryEnterpriseCodeOpenDetailResponse:
+        """
+        @summary 查询组织的企业码开通情况
+        
+        @param headers: QueryEnterpriseCodeOpenDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryEnterpriseCodeOpenDetailResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryEnterpriseCodeOpenDetail',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/enterprisecode/getOpenDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryEnterpriseCodeOpenDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_enterprise_code_open_detail(self) -> dingtalkbizfinance__2__0_models.QueryEnterpriseCodeOpenDetailResponse:
+        """
+        @summary 查询组织的企业码开通情况
+        
+        @return: QueryEnterpriseCodeOpenDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryEnterpriseCodeOpenDetailHeaders()
+        return self.query_enterprise_code_open_detail_with_options(headers, runtime)
+
+    async def query_enterprise_code_open_detail_async(self) -> dingtalkbizfinance__2__0_models.QueryEnterpriseCodeOpenDetailResponse:
+        """
+        @summary 查询组织的企业码开通情况
+        
+        @return: QueryEnterpriseCodeOpenDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryEnterpriseCodeOpenDetailHeaders()
+        return await self.query_enterprise_code_open_detail_with_options_async(headers, runtime)
+
     def query_instance_payment_order_detail_with_options(
         self,
         instance_id: str,

@@ -628,6 +628,124 @@ class Client(OpenApiClient):
         headers = dingtalkminutes__1__0_models.QueryCreateMinutesListHeaders()
         return await self.query_create_minutes_list_with_options_async(request, headers, runtime)
 
+    def query_minutes_basic_info_with_options(
+        self,
+        request: dingtalkminutes__1__0_models.QueryMinutesBasicInfoRequest,
+        headers: dingtalkminutes__1__0_models.QueryMinutesBasicInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.QueryMinutesBasicInfoResponse:
+        """
+        @summary 查询闪记基本信息
+        
+        @param request: QueryMinutesBasicInfoRequest
+        @param headers: QueryMinutesBasicInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMinutesBasicInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_uuid):
+            query['taskUuid'] = request.task_uuid
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryMinutesBasicInfo',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/queryMinutesBasicInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.QueryMinutesBasicInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_minutes_basic_info_with_options_async(
+        self,
+        request: dingtalkminutes__1__0_models.QueryMinutesBasicInfoRequest,
+        headers: dingtalkminutes__1__0_models.QueryMinutesBasicInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.QueryMinutesBasicInfoResponse:
+        """
+        @summary 查询闪记基本信息
+        
+        @param request: QueryMinutesBasicInfoRequest
+        @param headers: QueryMinutesBasicInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMinutesBasicInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_uuid):
+            query['taskUuid'] = request.task_uuid
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryMinutesBasicInfo',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/queryMinutesBasicInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.QueryMinutesBasicInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_minutes_basic_info(
+        self,
+        request: dingtalkminutes__1__0_models.QueryMinutesBasicInfoRequest,
+    ) -> dingtalkminutes__1__0_models.QueryMinutesBasicInfoResponse:
+        """
+        @summary 查询闪记基本信息
+        
+        @param request: QueryMinutesBasicInfoRequest
+        @return: QueryMinutesBasicInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.QueryMinutesBasicInfoHeaders()
+        return self.query_minutes_basic_info_with_options(request, headers, runtime)
+
+    async def query_minutes_basic_info_async(
+        self,
+        request: dingtalkminutes__1__0_models.QueryMinutesBasicInfoRequest,
+    ) -> dingtalkminutes__1__0_models.QueryMinutesBasicInfoResponse:
+        """
+        @summary 查询闪记基本信息
+        
+        @param request: QueryMinutesBasicInfoRequest
+        @return: QueryMinutesBasicInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.QueryMinutesBasicInfoHeaders()
+        return await self.query_minutes_basic_info_with_options_async(request, headers, runtime)
+
     def query_minutes_play_info_with_options(
         self,
         task_uuid: str,

@@ -3291,6 +3291,7 @@ class QueryOrgTodoByUserRequest(TeaModel):
         from_due_time: int = None,
         is_done: bool = None,
         max_results: int = None,
+        need_personal_todo: bool = None,
         next_token: str = None,
         order_by: str = None,
         order_direction: str = None,
@@ -3302,6 +3303,7 @@ class QueryOrgTodoByUserRequest(TeaModel):
         self.from_due_time = from_due_time
         self.is_done = is_done
         self.max_results = max_results
+        self.need_personal_todo = need_personal_todo
         self.next_token = next_token
         self.order_by = order_by
         self.order_direction = order_direction
@@ -3325,6 +3327,8 @@ class QueryOrgTodoByUserRequest(TeaModel):
             result['isDone'] = self.is_done
         if self.max_results is not None:
             result['maxResults'] = self.max_results
+        if self.need_personal_todo is not None:
+            result['needPersonalTodo'] = self.need_personal_todo
         if self.next_token is not None:
             result['nextToken'] = self.next_token
         if self.order_by is not None:
@@ -3349,6 +3353,8 @@ class QueryOrgTodoByUserRequest(TeaModel):
             self.is_done = m.get('isDone')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
+        if m.get('needPersonalTodo') is not None:
+            self.need_personal_todo = m.get('needPersonalTodo')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
         if m.get('orderBy') is not None:

@@ -1496,6 +1496,106 @@ class Client(OpenApiClient):
         headers = dingtalkats__1__0_models.GetFileUploadInfoHeaders()
         return await self.get_file_upload_info_with_options_async(request, headers, runtime)
 
+    def get_flow_by_id_with_options(
+        self,
+        flow_id: str,
+        headers: dingtalkats__1__0_models.GetFlowByIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.GetFlowByIdResponse:
+        """
+        @summary 根据流程id获取流程详情
+        
+        @param headers: GetFlowByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFlowByIdResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetFlowById',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/{flow_id}/info',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.GetFlowByIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_flow_by_id_with_options_async(
+        self,
+        flow_id: str,
+        headers: dingtalkats__1__0_models.GetFlowByIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.GetFlowByIdResponse:
+        """
+        @summary 根据流程id获取流程详情
+        
+        @param headers: GetFlowByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFlowByIdResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetFlowById',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/{flow_id}/info',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.GetFlowByIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_flow_by_id(
+        self,
+        flow_id: str,
+    ) -> dingtalkats__1__0_models.GetFlowByIdResponse:
+        """
+        @summary 根据流程id获取流程详情
+        
+        @return: GetFlowByIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.GetFlowByIdHeaders()
+        return self.get_flow_by_id_with_options(flow_id, headers, runtime)
+
+    async def get_flow_by_id_async(
+        self,
+        flow_id: str,
+    ) -> dingtalkats__1__0_models.GetFlowByIdResponse:
+        """
+        @summary 根据流程id获取流程详情
+        
+        @return: GetFlowByIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.GetFlowByIdHeaders()
+        return await self.get_flow_by_id_with_options_async(flow_id, headers, runtime)
+
     def get_flow_id_by_relation_entity_id_with_options(
         self,
         request: dingtalkats__1__0_models.GetFlowIdByRelationEntityIdRequest,
@@ -1735,6 +1835,106 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkats__1__0_models.GetJobAuthHeaders()
         return await self.get_job_auth_with_options_async(job_id, request, headers, runtime)
+
+    def get_job_info_by_job_id_with_options(
+        self,
+        job_id: str,
+        headers: dingtalkats__1__0_models.GetJobInfoByJobIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.GetJobInfoByJobIdResponse:
+        """
+        @summary 根据职位id获取职位信息
+        
+        @param headers: GetJobInfoByJobIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetJobInfoByJobIdResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetJobInfoByJobId',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/jobs/{job_id}/info',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.GetJobInfoByJobIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_job_info_by_job_id_with_options_async(
+        self,
+        job_id: str,
+        headers: dingtalkats__1__0_models.GetJobInfoByJobIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.GetJobInfoByJobIdResponse:
+        """
+        @summary 根据职位id获取职位信息
+        
+        @param headers: GetJobInfoByJobIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetJobInfoByJobIdResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetJobInfoByJobId',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/jobs/{job_id}/info',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.GetJobInfoByJobIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_job_info_by_job_id(
+        self,
+        job_id: str,
+    ) -> dingtalkats__1__0_models.GetJobInfoByJobIdResponse:
+        """
+        @summary 根据职位id获取职位信息
+        
+        @return: GetJobInfoByJobIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.GetJobInfoByJobIdHeaders()
+        return self.get_job_info_by_job_id_with_options(job_id, headers, runtime)
+
+    async def get_job_info_by_job_id_async(
+        self,
+        job_id: str,
+    ) -> dingtalkats__1__0_models.GetJobInfoByJobIdResponse:
+        """
+        @summary 根据职位id获取职位信息
+        
+        @return: GetJobInfoByJobIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.GetJobInfoByJobIdHeaders()
+        return await self.get_job_info_by_job_id_with_options_async(job_id, headers, runtime)
 
     def import_job_data_with_options(
         self,
@@ -2253,6 +2453,278 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkats__1__0_models.ReportMessageStatusHeaders()
         return await self.report_message_status_with_options_async(request, headers, runtime)
+
+    def resume_post_event_with_options(
+        self,
+        request: dingtalkats__1__0_models.ResumePostEventRequest,
+        headers: dingtalkats__1__0_models.ResumePostEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ResumePostEventResponse:
+        """
+        @summary isv推送给钉钉求职者投递简历的事件
+        
+        @param request: ResumePostEventRequest
+        @param headers: ResumePostEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ResumePostEventResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.candidate_name):
+            body['candidateName'] = request.candidate_name
+        if not UtilClient.is_unset(request.job_name):
+            body['jobName'] = request.job_name
+        if not UtilClient.is_unset(request.job_owner_user_id):
+            body['jobOwnerUserId'] = request.job_owner_user_id
+        if not UtilClient.is_unset(request.mobile_resume_url):
+            body['mobileResumeUrl'] = request.mobile_resume_url
+        if not UtilClient.is_unset(request.pc_resume_url):
+            body['pcResumeUrl'] = request.pc_resume_url
+        if not UtilClient.is_unset(request.resume_desc):
+            body['resumeDesc'] = request.resume_desc
+        if not UtilClient.is_unset(request.resume_post_time):
+            body['resumePostTime'] = request.resume_post_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ResumePostEvent',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/resumes/post/event',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ResumePostEventResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def resume_post_event_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.ResumePostEventRequest,
+        headers: dingtalkats__1__0_models.ResumePostEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ResumePostEventResponse:
+        """
+        @summary isv推送给钉钉求职者投递简历的事件
+        
+        @param request: ResumePostEventRequest
+        @param headers: ResumePostEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ResumePostEventResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.candidate_name):
+            body['candidateName'] = request.candidate_name
+        if not UtilClient.is_unset(request.job_name):
+            body['jobName'] = request.job_name
+        if not UtilClient.is_unset(request.job_owner_user_id):
+            body['jobOwnerUserId'] = request.job_owner_user_id
+        if not UtilClient.is_unset(request.mobile_resume_url):
+            body['mobileResumeUrl'] = request.mobile_resume_url
+        if not UtilClient.is_unset(request.pc_resume_url):
+            body['pcResumeUrl'] = request.pc_resume_url
+        if not UtilClient.is_unset(request.resume_desc):
+            body['resumeDesc'] = request.resume_desc
+        if not UtilClient.is_unset(request.resume_post_time):
+            body['resumePostTime'] = request.resume_post_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ResumePostEvent',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/resumes/post/event',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ResumePostEventResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def resume_post_event(
+        self,
+        request: dingtalkats__1__0_models.ResumePostEventRequest,
+    ) -> dingtalkats__1__0_models.ResumePostEventResponse:
+        """
+        @summary isv推送给钉钉求职者投递简历的事件
+        
+        @param request: ResumePostEventRequest
+        @return: ResumePostEventResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.ResumePostEventHeaders()
+        return self.resume_post_event_with_options(request, headers, runtime)
+
+    async def resume_post_event_async(
+        self,
+        request: dingtalkats__1__0_models.ResumePostEventRequest,
+    ) -> dingtalkats__1__0_models.ResumePostEventResponse:
+        """
+        @summary isv推送给钉钉求职者投递简历的事件
+        
+        @param request: ResumePostEventRequest
+        @return: ResumePostEventResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.ResumePostEventHeaders()
+        return await self.resume_post_event_with_options_async(request, headers, runtime)
+
+    def search_flow_with_options(
+        self,
+        request: dingtalkats__1__0_models.SearchFlowRequest,
+        headers: dingtalkats__1__0_models.SearchFlowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.SearchFlowResponse:
+        """
+        @summary 根据搜索条件搜索流程
+        
+        @param request: SearchFlowRequest
+        @param headers: SearchFlowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFlowResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.max_modify_time_mills):
+            body['maxModifyTimeMills'] = request.max_modify_time_mills
+        if not UtilClient.is_unset(request.min_modify_time_mills):
+            body['minModifyTimeMills'] = request.min_modify_time_mills
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SearchFlow',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.SearchFlowResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def search_flow_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.SearchFlowRequest,
+        headers: dingtalkats__1__0_models.SearchFlowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.SearchFlowResponse:
+        """
+        @summary 根据搜索条件搜索流程
+        
+        @param request: SearchFlowRequest
+        @param headers: SearchFlowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFlowResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.max_modify_time_mills):
+            body['maxModifyTimeMills'] = request.max_modify_time_mills
+        if not UtilClient.is_unset(request.min_modify_time_mills):
+            body['minModifyTimeMills'] = request.min_modify_time_mills
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SearchFlow',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.SearchFlowResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def search_flow(
+        self,
+        request: dingtalkats__1__0_models.SearchFlowRequest,
+    ) -> dingtalkats__1__0_models.SearchFlowResponse:
+        """
+        @summary 根据搜索条件搜索流程
+        
+        @param request: SearchFlowRequest
+        @return: SearchFlowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.SearchFlowHeaders()
+        return self.search_flow_with_options(request, headers, runtime)
+
+    async def search_flow_async(
+        self,
+        request: dingtalkats__1__0_models.SearchFlowRequest,
+    ) -> dingtalkats__1__0_models.SearchFlowResponse:
+        """
+        @summary 根据搜索条件搜索流程
+        
+        @param request: SearchFlowRequest
+        @return: SearchFlowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.SearchFlowHeaders()
+        return await self.search_flow_with_options_async(request, headers, runtime)
 
     def sync_channel_message_with_options(
         self,

@@ -1288,6 +1288,8 @@ class Client(OpenApiClient):
             body['macAddress'] = request.mac_address
         if not UtilClient.is_unset(request.platform):
             body['platform'] = request.platform
+        if not UtilClient.is_unset(request.serial_number):
+            body['serialNumber'] = request.serial_number
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         if not UtilClient.is_unset(request.title):
@@ -1341,6 +1343,8 @@ class Client(OpenApiClient):
             body['macAddress'] = request.mac_address
         if not UtilClient.is_unset(request.platform):
             body['platform'] = request.platform
+        if not UtilClient.is_unset(request.serial_number):
+            body['serialNumber'] = request.serial_number
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         if not UtilClient.is_unset(request.title):
@@ -7292,6 +7296,8 @@ class Client(OpenApiClient):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.platform):
             query['platform'] = request.platform
+        if not UtilClient.is_unset(request.serial_number):
+            query['serialNumber'] = request.serial_number
         if not UtilClient.is_unset(request.start_time):
             query['startTime'] = request.start_time
         if not UtilClient.is_unset(request.title):
@@ -7347,6 +7353,8 @@ class Client(OpenApiClient):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.platform):
             query['platform'] = request.platform
+        if not UtilClient.is_unset(request.serial_number):
+            query['serialNumber'] = request.serial_number
         if not UtilClient.is_unset(request.start_time):
             query['startTime'] = request.start_time
         if not UtilClient.is_unset(request.title):
@@ -8196,6 +8204,8 @@ class Client(OpenApiClient):
             body['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.platform):
             body['platform'] = request.platform
+        if not UtilClient.is_unset(request.serial_number):
+            body['serialNumber'] = request.serial_number
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         if not UtilClient.is_unset(request.user_ids):
@@ -8257,6 +8267,8 @@ class Client(OpenApiClient):
             body['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.platform):
             body['platform'] = request.platform
+        if not UtilClient.is_unset(request.serial_number):
+            body['serialNumber'] = request.serial_number
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         if not UtilClient.is_unset(request.user_ids):

@@ -26,6 +26,664 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def ai_retail_product_add_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductAddRequest,
+        headers: dingtalkindustry__1__0_models.AiRetailProductAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductAddResponse:
+        """
+        @summary 新增商品
+        
+        @param request: AiRetailProductAddRequest
+        @param headers: AiRetailProductAddHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiRetailProductAddResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attribute):
+            body['attribute'] = request.attribute
+        if not UtilClient.is_unset(request.barcodes):
+            body['barcodes'] = request.barcodes
+        if not UtilClient.is_unset(request.brand):
+            body['brand'] = request.brand
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.image_file_ids):
+            body['imageFileIds'] = request.image_file_ids
+        if not UtilClient.is_unset(request.item_numbers):
+            body['itemNumbers'] = request.item_numbers
+        if not UtilClient.is_unset(request.price):
+            body['price'] = request.price
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_fab):
+            body['productFab'] = request.product_fab
+        if not UtilClient.is_unset(request.product_info):
+            body['productInfo'] = request.product_info
+        if not UtilClient.is_unset(request.product_name):
+            body['productName'] = request.product_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiRetailProductAdd',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/retail/product/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiRetailProductAddResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ai_retail_product_add_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductAddRequest,
+        headers: dingtalkindustry__1__0_models.AiRetailProductAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductAddResponse:
+        """
+        @summary 新增商品
+        
+        @param request: AiRetailProductAddRequest
+        @param headers: AiRetailProductAddHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiRetailProductAddResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attribute):
+            body['attribute'] = request.attribute
+        if not UtilClient.is_unset(request.barcodes):
+            body['barcodes'] = request.barcodes
+        if not UtilClient.is_unset(request.brand):
+            body['brand'] = request.brand
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.image_file_ids):
+            body['imageFileIds'] = request.image_file_ids
+        if not UtilClient.is_unset(request.item_numbers):
+            body['itemNumbers'] = request.item_numbers
+        if not UtilClient.is_unset(request.price):
+            body['price'] = request.price
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_fab):
+            body['productFab'] = request.product_fab
+        if not UtilClient.is_unset(request.product_info):
+            body['productInfo'] = request.product_info
+        if not UtilClient.is_unset(request.product_name):
+            body['productName'] = request.product_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiRetailProductAdd',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/retail/product/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiRetailProductAddResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ai_retail_product_add(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductAddRequest,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductAddResponse:
+        """
+        @summary 新增商品
+        
+        @param request: AiRetailProductAddRequest
+        @return: AiRetailProductAddResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiRetailProductAddHeaders()
+        return self.ai_retail_product_add_with_options(request, headers, runtime)
+
+    async def ai_retail_product_add_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductAddRequest,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductAddResponse:
+        """
+        @summary 新增商品
+        
+        @param request: AiRetailProductAddRequest
+        @return: AiRetailProductAddResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiRetailProductAddHeaders()
+        return await self.ai_retail_product_add_with_options_async(request, headers, runtime)
+
+    def ai_retail_product_delete_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductDeleteRequest,
+        headers: dingtalkindustry__1__0_models.AiRetailProductDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductDeleteResponse:
+        """
+        @summary 删除商品
+        
+        @param request: AiRetailProductDeleteRequest
+        @param headers: AiRetailProductDeleteHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiRetailProductDeleteResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.product_id):
+            body['productId'] = request.product_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiRetailProductDelete',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/retail/product/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='boolean'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiRetailProductDeleteResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ai_retail_product_delete_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductDeleteRequest,
+        headers: dingtalkindustry__1__0_models.AiRetailProductDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductDeleteResponse:
+        """
+        @summary 删除商品
+        
+        @param request: AiRetailProductDeleteRequest
+        @param headers: AiRetailProductDeleteHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiRetailProductDeleteResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.product_id):
+            body['productId'] = request.product_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiRetailProductDelete',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/retail/product/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='boolean'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiRetailProductDeleteResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ai_retail_product_delete(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductDeleteResponse:
+        """
+        @summary 删除商品
+        
+        @param request: AiRetailProductDeleteRequest
+        @return: AiRetailProductDeleteResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiRetailProductDeleteHeaders()
+        return self.ai_retail_product_delete_with_options(request, headers, runtime)
+
+    async def ai_retail_product_delete_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductDeleteResponse:
+        """
+        @summary 删除商品
+        
+        @param request: AiRetailProductDeleteRequest
+        @return: AiRetailProductDeleteResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiRetailProductDeleteHeaders()
+        return await self.ai_retail_product_delete_with_options_async(request, headers, runtime)
+
+    def ai_retail_product_img_upload_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductImgUploadRequest,
+        headers: dingtalkindustry__1__0_models.AiRetailProductImgUploadHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductImgUploadResponse:
+        """
+        @summary 商品图片上传
+        
+        @param request: AiRetailProductImgUploadRequest
+        @param headers: AiRetailProductImgUploadHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiRetailProductImgUploadResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiRetailProductImgUpload',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/retail/product/image/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiRetailProductImgUploadResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ai_retail_product_img_upload_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductImgUploadRequest,
+        headers: dingtalkindustry__1__0_models.AiRetailProductImgUploadHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductImgUploadResponse:
+        """
+        @summary 商品图片上传
+        
+        @param request: AiRetailProductImgUploadRequest
+        @param headers: AiRetailProductImgUploadHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiRetailProductImgUploadResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiRetailProductImgUpload',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/retail/product/image/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiRetailProductImgUploadResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ai_retail_product_img_upload(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductImgUploadRequest,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductImgUploadResponse:
+        """
+        @summary 商品图片上传
+        
+        @param request: AiRetailProductImgUploadRequest
+        @return: AiRetailProductImgUploadResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiRetailProductImgUploadHeaders()
+        return self.ai_retail_product_img_upload_with_options(request, headers, runtime)
+
+    async def ai_retail_product_img_upload_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductImgUploadRequest,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductImgUploadResponse:
+        """
+        @summary 商品图片上传
+        
+        @param request: AiRetailProductImgUploadRequest
+        @return: AiRetailProductImgUploadResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiRetailProductImgUploadHeaders()
+        return await self.ai_retail_product_img_upload_with_options_async(request, headers, runtime)
+
+    def ai_retail_product_query_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductQueryRequest,
+        headers: dingtalkindustry__1__0_models.AiRetailProductQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductQueryResponse:
+        """
+        @summary 查询商品
+        
+        @param request: AiRetailProductQueryRequest
+        @param headers: AiRetailProductQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiRetailProductQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.product_code):
+            query['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_id):
+            query['productId'] = request.product_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AiRetailProductQuery',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/retail/product/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiRetailProductQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ai_retail_product_query_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductQueryRequest,
+        headers: dingtalkindustry__1__0_models.AiRetailProductQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductQueryResponse:
+        """
+        @summary 查询商品
+        
+        @param request: AiRetailProductQueryRequest
+        @param headers: AiRetailProductQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiRetailProductQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.product_code):
+            query['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_id):
+            query['productId'] = request.product_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AiRetailProductQuery',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/retail/product/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiRetailProductQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ai_retail_product_query(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductQueryRequest,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductQueryResponse:
+        """
+        @summary 查询商品
+        
+        @param request: AiRetailProductQueryRequest
+        @return: AiRetailProductQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiRetailProductQueryHeaders()
+        return self.ai_retail_product_query_with_options(request, headers, runtime)
+
+    async def ai_retail_product_query_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductQueryRequest,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductQueryResponse:
+        """
+        @summary 查询商品
+        
+        @param request: AiRetailProductQueryRequest
+        @return: AiRetailProductQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiRetailProductQueryHeaders()
+        return await self.ai_retail_product_query_with_options_async(request, headers, runtime)
+
+    def ai_retail_product_update_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductUpdateRequest,
+        headers: dingtalkindustry__1__0_models.AiRetailProductUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductUpdateResponse:
+        """
+        @summary 更新商品
+        
+        @param request: AiRetailProductUpdateRequest
+        @param headers: AiRetailProductUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiRetailProductUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attribute):
+            body['attribute'] = request.attribute
+        if not UtilClient.is_unset(request.barcodes):
+            body['barcodes'] = request.barcodes
+        if not UtilClient.is_unset(request.brand):
+            body['brand'] = request.brand
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.image_file_ids):
+            body['imageFileIds'] = request.image_file_ids
+        if not UtilClient.is_unset(request.item_numbers):
+            body['itemNumbers'] = request.item_numbers
+        if not UtilClient.is_unset(request.price):
+            body['price'] = request.price
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_fab):
+            body['productFab'] = request.product_fab
+        if not UtilClient.is_unset(request.product_id):
+            body['productId'] = request.product_id
+        if not UtilClient.is_unset(request.product_info):
+            body['productInfo'] = request.product_info
+        if not UtilClient.is_unset(request.product_name):
+            body['productName'] = request.product_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiRetailProductUpdate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/retail/product/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='boolean'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiRetailProductUpdateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ai_retail_product_update_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductUpdateRequest,
+        headers: dingtalkindustry__1__0_models.AiRetailProductUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductUpdateResponse:
+        """
+        @summary 更新商品
+        
+        @param request: AiRetailProductUpdateRequest
+        @param headers: AiRetailProductUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiRetailProductUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attribute):
+            body['attribute'] = request.attribute
+        if not UtilClient.is_unset(request.barcodes):
+            body['barcodes'] = request.barcodes
+        if not UtilClient.is_unset(request.brand):
+            body['brand'] = request.brand
+        if not UtilClient.is_unset(request.category):
+            body['category'] = request.category
+        if not UtilClient.is_unset(request.image_file_ids):
+            body['imageFileIds'] = request.image_file_ids
+        if not UtilClient.is_unset(request.item_numbers):
+            body['itemNumbers'] = request.item_numbers
+        if not UtilClient.is_unset(request.price):
+            body['price'] = request.price
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.product_fab):
+            body['productFab'] = request.product_fab
+        if not UtilClient.is_unset(request.product_id):
+            body['productId'] = request.product_id
+        if not UtilClient.is_unset(request.product_info):
+            body['productInfo'] = request.product_info
+        if not UtilClient.is_unset(request.product_name):
+            body['productName'] = request.product_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiRetailProductUpdate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/retail/product/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='boolean'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiRetailProductUpdateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ai_retail_product_update(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductUpdateRequest,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductUpdateResponse:
+        """
+        @summary 更新商品
+        
+        @param request: AiRetailProductUpdateRequest
+        @return: AiRetailProductUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiRetailProductUpdateHeaders()
+        return self.ai_retail_product_update_with_options(request, headers, runtime)
+
+    async def ai_retail_product_update_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiRetailProductUpdateRequest,
+    ) -> dingtalkindustry__1__0_models.AiRetailProductUpdateResponse:
+        """
+        @summary 更新商品
+        
+        @param request: AiRetailProductUpdateRequest
+        @return: AiRetailProductUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiRetailProductUpdateHeaders()
+        return await self.ai_retail_product_update_with_options_async(request, headers, runtime)
+
     def batch_get_task_result_with_options(
         self,
         request: dingtalkindustry__1__0_models.BatchGetTaskResultRequest,

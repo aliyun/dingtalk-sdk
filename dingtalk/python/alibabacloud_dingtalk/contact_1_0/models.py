@@ -9737,6 +9737,202 @@ class OrgAccountMobileVisiblePermissonResponse(TeaModel):
         return self
 
 
+class OrgInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class OrgInfoRequest(TeaModel):
+    def __init__(
+        self,
+        org_ids: List[int] = None,
+    ):
+        self.org_ids = org_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.org_ids is not None:
+            result['orgIds'] = self.org_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('orgIds') is not None:
+            self.org_ids = m.get('orgIds')
+        return self
+
+
+class OrgInfoShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        org_ids_shrink: str = None,
+    ):
+        self.org_ids_shrink = org_ids_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.org_ids_shrink is not None:
+            result['orgIds'] = self.org_ids_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('orgIds') is not None:
+            self.org_ids_shrink = m.get('orgIds')
+        return self
+
+
+class OrgInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        name: str = None,
+    ):
+        self.id = id
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class OrgInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[OrgInfoResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = OrgInfoResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class OrgInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: OrgInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = OrgInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PushVerifyEventHeaders(TeaModel):
     def __init__(
         self,
@@ -14710,6 +14906,214 @@ class UpdateUserOwnnessResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateUserOwnnessResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UserProfileHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UserProfileRequest(TeaModel):
+    def __init__(
+        self,
+        uids: List[int] = None,
+    ):
+        self.uids = uids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.uids is not None:
+            result['uids'] = self.uids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('uids') is not None:
+            self.uids = m.get('uids')
+        return self
+
+
+class UserProfileShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        uids_shrink: str = None,
+    ):
+        self.uids_shrink = uids_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.uids_shrink is not None:
+            result['uids'] = self.uids_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('uids') is not None:
+            self.uids_shrink = m.get('uids')
+        return self
+
+
+class UserProfileResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        mobile: str = None,
+        nick: str = None,
+        org_ids: str = None,
+        state_code: str = None,
+    ):
+        self.mobile = mobile
+        self.nick = nick
+        self.org_ids = org_ids
+        self.state_code = state_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.org_ids is not None:
+            result['orgIds'] = self.org_ids
+        if self.state_code is not None:
+            result['stateCode'] = self.state_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('orgIds') is not None:
+            self.org_ids = m.get('orgIds')
+        if m.get('stateCode') is not None:
+            self.state_code = m.get('stateCode')
+        return self
+
+
+class UserProfileResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[UserProfileResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = UserProfileResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class UserProfileResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UserProfileResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UserProfileResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

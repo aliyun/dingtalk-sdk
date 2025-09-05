@@ -12582,6 +12582,144 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.EventTrackHeaders()
         return await self.event_track_with_options_async(request, headers, runtime)
 
+    def generate_task_id_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GenerateTaskIdRequest,
+        headers: dingtalkedu__1__0_models.GenerateTaskIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GenerateTaskIdResponse:
+        """
+        @summary 获取调用大模型的taskId
+        
+        @param request: GenerateTaskIdRequest
+        @param headers: GenerateTaskIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GenerateTaskIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_tokens):
+            body['maxTokens'] = request.max_tokens
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        if not UtilClient.is_unset(request.scene):
+            body['scene'] = request.scene
+        if not UtilClient.is_unset(request.temperature):
+            body['temperature'] = request.temperature
+        if not UtilClient.is_unset(request.top_p):
+            body['top_p'] = request.top_p
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GenerateTaskId',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/ai/models/taskId/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GenerateTaskIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def generate_task_id_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GenerateTaskIdRequest,
+        headers: dingtalkedu__1__0_models.GenerateTaskIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GenerateTaskIdResponse:
+        """
+        @summary 获取调用大模型的taskId
+        
+        @param request: GenerateTaskIdRequest
+        @param headers: GenerateTaskIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GenerateTaskIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_tokens):
+            body['maxTokens'] = request.max_tokens
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        if not UtilClient.is_unset(request.scene):
+            body['scene'] = request.scene
+        if not UtilClient.is_unset(request.temperature):
+            body['temperature'] = request.temperature
+        if not UtilClient.is_unset(request.top_p):
+            body['top_p'] = request.top_p
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GenerateTaskId',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/ai/models/taskId/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GenerateTaskIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def generate_task_id(
+        self,
+        request: dingtalkedu__1__0_models.GenerateTaskIdRequest,
+    ) -> dingtalkedu__1__0_models.GenerateTaskIdResponse:
+        """
+        @summary 获取调用大模型的taskId
+        
+        @param request: GenerateTaskIdRequest
+        @return: GenerateTaskIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GenerateTaskIdHeaders()
+        return self.generate_task_id_with_options(request, headers, runtime)
+
+    async def generate_task_id_async(
+        self,
+        request: dingtalkedu__1__0_models.GenerateTaskIdRequest,
+    ) -> dingtalkedu__1__0_models.GenerateTaskIdResponse:
+        """
+        @summary 获取调用大模型的taskId
+        
+        @param request: GenerateTaskIdRequest
+        @return: GenerateTaskIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GenerateTaskIdHeaders()
+        return await self.generate_task_id_with_options_async(request, headers, runtime)
+
     def get_bind_child_info_with_options(
         self,
         request: dingtalkedu__1__0_models.GetBindChildInfoRequest,
@@ -19613,6 +19751,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.QueryKitOpenRecordHeaders()
         return await self.query_kit_open_record_with_options_async(request, headers, runtime)
+
+    def query_model_result_by_task_id_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryModelResultByTaskIdRequest,
+        headers: dingtalkedu__1__0_models.QueryModelResultByTaskIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryModelResultByTaskIdResponse:
+        """
+        @summary 获取大模型的返回值
+        
+        @param request: QueryModelResultByTaskIdRequest
+        @param headers: QueryModelResultByTaskIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryModelResultByTaskIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryModelResultByTaskId',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/ai/models/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryModelResultByTaskIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_model_result_by_task_id_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryModelResultByTaskIdRequest,
+        headers: dingtalkedu__1__0_models.QueryModelResultByTaskIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryModelResultByTaskIdResponse:
+        """
+        @summary 获取大模型的返回值
+        
+        @param request: QueryModelResultByTaskIdRequest
+        @param headers: QueryModelResultByTaskIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryModelResultByTaskIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryModelResultByTaskId',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/ai/models/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryModelResultByTaskIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_model_result_by_task_id(
+        self,
+        request: dingtalkedu__1__0_models.QueryModelResultByTaskIdRequest,
+    ) -> dingtalkedu__1__0_models.QueryModelResultByTaskIdResponse:
+        """
+        @summary 获取大模型的返回值
+        
+        @param request: QueryModelResultByTaskIdRequest
+        @return: QueryModelResultByTaskIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryModelResultByTaskIdHeaders()
+        return self.query_model_result_by_task_id_with_options(request, headers, runtime)
+
+    async def query_model_result_by_task_id_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryModelResultByTaskIdRequest,
+    ) -> dingtalkedu__1__0_models.QueryModelResultByTaskIdResponse:
+        """
+        @summary 获取大模型的返回值
+        
+        @param request: QueryModelResultByTaskIdRequest
+        @return: QueryModelResultByTaskIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryModelResultByTaskIdHeaders()
+        return await self.query_model_result_by_task_id_with_options_async(request, headers, runtime)
 
     def query_order_with_options(
         self,

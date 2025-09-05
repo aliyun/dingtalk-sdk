@@ -3228,6 +3228,314 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.DeleteWorkspaceMembersHeaders()
         return await self.delete_workspace_members_with_options_async(workspace_id, request, headers, runtime)
 
+    def deliver_notice_card_with_options(
+        self,
+        request: dingtalkdoc__1__0_models.DeliverNoticeCardRequest,
+        headers: dingtalkdoc__1__0_models.DeliverNoticeCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeliverNoticeCardResponse:
+        """
+        @summary 分享文档通知内容
+        
+        @param request: DeliverNoticeCardRequest
+        @param headers: DeliverNoticeCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeliverNoticeCardResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.at_union_ids):
+            body['atUnionIds'] = request.at_union_ids
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.btn_action_str):
+            body['btnActionStr'] = request.btn_action_str
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.detail_mobile_url):
+            body['detailMobileUrl'] = request.detail_mobile_url
+        if not UtilClient.is_unset(request.detail_pc_url):
+            body['detailPcUrl'] = request.detail_pc_url
+        if not UtilClient.is_unset(request.last_message_i18n):
+            body['lastMessageI18n'] = request.last_message_i18n
+        if not UtilClient.is_unset(request.receiver_id):
+            body['receiverId'] = request.receiver_id
+        if not UtilClient.is_unset(request.receiver_type):
+            body['receiverType'] = request.receiver_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeliverNoticeCard',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/notice_cards/deliver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeliverNoticeCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def deliver_notice_card_with_options_async(
+        self,
+        request: dingtalkdoc__1__0_models.DeliverNoticeCardRequest,
+        headers: dingtalkdoc__1__0_models.DeliverNoticeCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeliverNoticeCardResponse:
+        """
+        @summary 分享文档通知内容
+        
+        @param request: DeliverNoticeCardRequest
+        @param headers: DeliverNoticeCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeliverNoticeCardResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.at_union_ids):
+            body['atUnionIds'] = request.at_union_ids
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.btn_action_str):
+            body['btnActionStr'] = request.btn_action_str
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.detail_mobile_url):
+            body['detailMobileUrl'] = request.detail_mobile_url
+        if not UtilClient.is_unset(request.detail_pc_url):
+            body['detailPcUrl'] = request.detail_pc_url
+        if not UtilClient.is_unset(request.last_message_i18n):
+            body['lastMessageI18n'] = request.last_message_i18n
+        if not UtilClient.is_unset(request.receiver_id):
+            body['receiverId'] = request.receiver_id
+        if not UtilClient.is_unset(request.receiver_type):
+            body['receiverType'] = request.receiver_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeliverNoticeCard',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/notice_cards/deliver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeliverNoticeCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def deliver_notice_card(
+        self,
+        request: dingtalkdoc__1__0_models.DeliverNoticeCardRequest,
+    ) -> dingtalkdoc__1__0_models.DeliverNoticeCardResponse:
+        """
+        @summary 分享文档通知内容
+        
+        @param request: DeliverNoticeCardRequest
+        @return: DeliverNoticeCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeliverNoticeCardHeaders()
+        return self.deliver_notice_card_with_options(request, headers, runtime)
+
+    async def deliver_notice_card_async(
+        self,
+        request: dingtalkdoc__1__0_models.DeliverNoticeCardRequest,
+    ) -> dingtalkdoc__1__0_models.DeliverNoticeCardResponse:
+        """
+        @summary 分享文档通知内容
+        
+        @param request: DeliverNoticeCardRequest
+        @return: DeliverNoticeCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeliverNoticeCardHeaders()
+        return await self.deliver_notice_card_with_options_async(request, headers, runtime)
+
+    def deliver_unify_card_with_options(
+        self,
+        request: dingtalkdoc__1__0_models.DeliverUnifyCardRequest,
+        headers: dingtalkdoc__1__0_models.DeliverUnifyCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeliverUnifyCardResponse:
+        """
+        @summary 分享文档通用内容
+        
+        @param request: DeliverUnifyCardRequest
+        @param headers: DeliverUnifyCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeliverUnifyCardResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.at_union_ids):
+            body['atUnionIds'] = request.at_union_ids
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.dynamic_data_config):
+            body['dynamicDataConfig'] = request.dynamic_data_config
+        if not UtilClient.is_unset(request.last_message_i18n):
+            body['lastMessageI18n'] = request.last_message_i18n
+        if not UtilClient.is_unset(request.receiver_id):
+            body['receiverId'] = request.receiver_id
+        if not UtilClient.is_unset(request.receiver_type):
+            body['receiverType'] = request.receiver_type
+        if not UtilClient.is_unset(request.user_private_data):
+            body['userPrivateData'] = request.user_private_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeliverUnifyCard',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/unify_cards/deliver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeliverUnifyCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def deliver_unify_card_with_options_async(
+        self,
+        request: dingtalkdoc__1__0_models.DeliverUnifyCardRequest,
+        headers: dingtalkdoc__1__0_models.DeliverUnifyCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeliverUnifyCardResponse:
+        """
+        @summary 分享文档通用内容
+        
+        @param request: DeliverUnifyCardRequest
+        @param headers: DeliverUnifyCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeliverUnifyCardResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.at_union_ids):
+            body['atUnionIds'] = request.at_union_ids
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.card_data):
+            body['cardData'] = request.card_data
+        if not UtilClient.is_unset(request.dynamic_data_config):
+            body['dynamicDataConfig'] = request.dynamic_data_config
+        if not UtilClient.is_unset(request.last_message_i18n):
+            body['lastMessageI18n'] = request.last_message_i18n
+        if not UtilClient.is_unset(request.receiver_id):
+            body['receiverId'] = request.receiver_id
+        if not UtilClient.is_unset(request.receiver_type):
+            body['receiverType'] = request.receiver_type
+        if not UtilClient.is_unset(request.user_private_data):
+            body['userPrivateData'] = request.user_private_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeliverUnifyCard',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/unify_cards/deliver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeliverUnifyCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def deliver_unify_card(
+        self,
+        request: dingtalkdoc__1__0_models.DeliverUnifyCardRequest,
+    ) -> dingtalkdoc__1__0_models.DeliverUnifyCardResponse:
+        """
+        @summary 分享文档通用内容
+        
+        @param request: DeliverUnifyCardRequest
+        @return: DeliverUnifyCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeliverUnifyCardHeaders()
+        return self.deliver_unify_card_with_options(request, headers, runtime)
+
+    async def deliver_unify_card_async(
+        self,
+        request: dingtalkdoc__1__0_models.DeliverUnifyCardRequest,
+    ) -> dingtalkdoc__1__0_models.DeliverUnifyCardResponse:
+        """
+        @summary 分享文档通用内容
+        
+        @param request: DeliverUnifyCardRequest
+        @return: DeliverUnifyCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeliverUnifyCardHeaders()
+        return await self.deliver_unify_card_with_options_async(request, headers, runtime)
+
     def doc_append_paragraph_with_options(
         self,
         doc_key: str,

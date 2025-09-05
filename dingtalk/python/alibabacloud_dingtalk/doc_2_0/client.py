@@ -5348,6 +5348,234 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.ListTeamMembersHeaders()
         return await self.list_team_members_with_options_async(team_id, request, headers, runtime)
 
+    def lock_doc_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.LockDocRequest,
+        headers: dingtalkdoc__2__0_models.LockDocHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.LockDocResponse:
+        """
+        @summary 文档定稿
+        
+        @param request: LockDocRequest
+        @param headers: LockDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LockDocResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LockDoc',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/lock',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.LockDocResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def lock_doc_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.LockDocRequest,
+        headers: dingtalkdoc__2__0_models.LockDocHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.LockDocResponse:
+        """
+        @summary 文档定稿
+        
+        @param request: LockDocRequest
+        @param headers: LockDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LockDocResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LockDoc',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/lock',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.LockDocResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def lock_doc(
+        self,
+        request: dingtalkdoc__2__0_models.LockDocRequest,
+    ) -> dingtalkdoc__2__0_models.LockDocResponse:
+        """
+        @summary 文档定稿
+        
+        @param request: LockDocRequest
+        @return: LockDocResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.LockDocHeaders()
+        return self.lock_doc_with_options(request, headers, runtime)
+
+    async def lock_doc_async(
+        self,
+        request: dingtalkdoc__2__0_models.LockDocRequest,
+    ) -> dingtalkdoc__2__0_models.LockDocResponse:
+        """
+        @summary 文档定稿
+        
+        @param request: LockDocRequest
+        @return: LockDocResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.LockDocHeaders()
+        return await self.lock_doc_with_options_async(request, headers, runtime)
+
+    def lock_doc_by_delegated_permission_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.LockDocByDelegatedPermissionRequest,
+        headers: dingtalkdoc__2__0_models.LockDocByDelegatedPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.LockDocByDelegatedPermissionResponse:
+        """
+        @summary 通过委托授权文档定稿
+        
+        @param request: LockDocByDelegatedPermissionRequest
+        @param headers: LockDocByDelegatedPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LockDocByDelegatedPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LockDocByDelegatedPermission',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/dentries/lock',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.LockDocByDelegatedPermissionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def lock_doc_by_delegated_permission_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.LockDocByDelegatedPermissionRequest,
+        headers: dingtalkdoc__2__0_models.LockDocByDelegatedPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.LockDocByDelegatedPermissionResponse:
+        """
+        @summary 通过委托授权文档定稿
+        
+        @param request: LockDocByDelegatedPermissionRequest
+        @param headers: LockDocByDelegatedPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LockDocByDelegatedPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LockDocByDelegatedPermission',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/dentries/lock',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.LockDocByDelegatedPermissionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def lock_doc_by_delegated_permission(
+        self,
+        request: dingtalkdoc__2__0_models.LockDocByDelegatedPermissionRequest,
+    ) -> dingtalkdoc__2__0_models.LockDocByDelegatedPermissionResponse:
+        """
+        @summary 通过委托授权文档定稿
+        
+        @param request: LockDocByDelegatedPermissionRequest
+        @return: LockDocByDelegatedPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.LockDocByDelegatedPermissionHeaders()
+        return self.lock_doc_by_delegated_permission_with_options(request, headers, runtime)
+
+    async def lock_doc_by_delegated_permission_async(
+        self,
+        request: dingtalkdoc__2__0_models.LockDocByDelegatedPermissionRequest,
+    ) -> dingtalkdoc__2__0_models.LockDocByDelegatedPermissionResponse:
+        """
+        @summary 通过委托授权文档定稿
+        
+        @param request: LockDocByDelegatedPermissionRequest
+        @return: LockDocByDelegatedPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.LockDocByDelegatedPermissionHeaders()
+        return await self.lock_doc_by_delegated_permission_with_options_async(request, headers, runtime)
+
     def mark_star_with_options(
         self,
         dentry_uuid: str,
@@ -7805,6 +8033,234 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__2__0_models.TemplateCategoriesHeaders()
         return await self.template_categories_with_options_async(request, headers, runtime)
+
+    def unlock_doc_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.UnlockDocRequest,
+        headers: dingtalkdoc__2__0_models.UnlockDocHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UnlockDocResponse:
+        """
+        @summary 取消文档定稿
+        
+        @param request: UnlockDocRequest
+        @param headers: UnlockDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnlockDocResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UnlockDoc',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/unlock',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UnlockDocResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def unlock_doc_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.UnlockDocRequest,
+        headers: dingtalkdoc__2__0_models.UnlockDocHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UnlockDocResponse:
+        """
+        @summary 取消文档定稿
+        
+        @param request: UnlockDocRequest
+        @param headers: UnlockDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnlockDocResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UnlockDoc',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/unlock',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UnlockDocResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def unlock_doc(
+        self,
+        request: dingtalkdoc__2__0_models.UnlockDocRequest,
+    ) -> dingtalkdoc__2__0_models.UnlockDocResponse:
+        """
+        @summary 取消文档定稿
+        
+        @param request: UnlockDocRequest
+        @return: UnlockDocResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UnlockDocHeaders()
+        return self.unlock_doc_with_options(request, headers, runtime)
+
+    async def unlock_doc_async(
+        self,
+        request: dingtalkdoc__2__0_models.UnlockDocRequest,
+    ) -> dingtalkdoc__2__0_models.UnlockDocResponse:
+        """
+        @summary 取消文档定稿
+        
+        @param request: UnlockDocRequest
+        @return: UnlockDocResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UnlockDocHeaders()
+        return await self.unlock_doc_with_options_async(request, headers, runtime)
+
+    def unlock_doc_by_delegated_permission_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionRequest,
+        headers: dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionResponse:
+        """
+        @summary 通过委托授权取消文档定稿
+        
+        @param request: UnlockDocByDelegatedPermissionRequest
+        @param headers: UnlockDocByDelegatedPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnlockDocByDelegatedPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UnlockDocByDelegatedPermission',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/dentries/unlock',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def unlock_doc_by_delegated_permission_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionRequest,
+        headers: dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionResponse:
+        """
+        @summary 通过委托授权取消文档定稿
+        
+        @param request: UnlockDocByDelegatedPermissionRequest
+        @param headers: UnlockDocByDelegatedPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnlockDocByDelegatedPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UnlockDocByDelegatedPermission',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/dentries/unlock',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def unlock_doc_by_delegated_permission(
+        self,
+        request: dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionRequest,
+    ) -> dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionResponse:
+        """
+        @summary 通过委托授权取消文档定稿
+        
+        @param request: UnlockDocByDelegatedPermissionRequest
+        @return: UnlockDocByDelegatedPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionHeaders()
+        return self.unlock_doc_by_delegated_permission_with_options(request, headers, runtime)
+
+    async def unlock_doc_by_delegated_permission_async(
+        self,
+        request: dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionRequest,
+    ) -> dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionResponse:
+        """
+        @summary 通过委托授权取消文档定稿
+        
+        @param request: UnlockDocByDelegatedPermissionRequest
+        @return: UnlockDocByDelegatedPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UnlockDocByDelegatedPermissionHeaders()
+        return await self.unlock_doc_by_delegated_permission_with_options_async(request, headers, runtime)
 
     def unmark_star_with_options(
         self,

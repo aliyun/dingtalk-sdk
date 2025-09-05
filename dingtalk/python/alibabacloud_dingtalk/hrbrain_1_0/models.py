@@ -2595,11 +2595,8 @@ class HrbrainDeleteTrainingRequestParams(TeaModel):
         train_start_date: str = None,
         work_no: str = None,
     ):
-        # This parameter is required.
         self.train_end_date = train_end_date
-        # This parameter is required.
         self.train_name = train_name
-        # This parameter is required.
         self.train_start_date = train_start_date
         # This parameter is required.
         self.work_no = work_no

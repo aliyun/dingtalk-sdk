@@ -4,6 +4,860 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class AiRetailProductAddHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AiRetailProductAddRequest(TeaModel):
+    def __init__(
+        self,
+        attribute: Dict[str, str] = None,
+        barcodes: List[str] = None,
+        brand: str = None,
+        category: str = None,
+        image_file_ids: List[str] = None,
+        item_numbers: List[str] = None,
+        price: float = None,
+        product_code: str = None,
+        product_fab: str = None,
+        product_info: str = None,
+        product_name: str = None,
+    ):
+        self.attribute = attribute
+        self.barcodes = barcodes
+        self.brand = brand
+        self.category = category
+        self.image_file_ids = image_file_ids
+        self.item_numbers = item_numbers
+        self.price = price
+        # This parameter is required.
+        self.product_code = product_code
+        self.product_fab = product_fab
+        self.product_info = product_info
+        self.product_name = product_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attribute is not None:
+            result['attribute'] = self.attribute
+        if self.barcodes is not None:
+            result['barcodes'] = self.barcodes
+        if self.brand is not None:
+            result['brand'] = self.brand
+        if self.category is not None:
+            result['category'] = self.category
+        if self.image_file_ids is not None:
+            result['imageFileIds'] = self.image_file_ids
+        if self.item_numbers is not None:
+            result['itemNumbers'] = self.item_numbers
+        if self.price is not None:
+            result['price'] = self.price
+        if self.product_code is not None:
+            result['productCode'] = self.product_code
+        if self.product_fab is not None:
+            result['productFab'] = self.product_fab
+        if self.product_info is not None:
+            result['productInfo'] = self.product_info
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attribute') is not None:
+            self.attribute = m.get('attribute')
+        if m.get('barcodes') is not None:
+            self.barcodes = m.get('barcodes')
+        if m.get('brand') is not None:
+            self.brand = m.get('brand')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('imageFileIds') is not None:
+            self.image_file_ids = m.get('imageFileIds')
+        if m.get('itemNumbers') is not None:
+            self.item_numbers = m.get('itemNumbers')
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('productCode') is not None:
+            self.product_code = m.get('productCode')
+        if m.get('productFab') is not None:
+            self.product_fab = m.get('productFab')
+        if m.get('productInfo') is not None:
+            self.product_info = m.get('productInfo')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        return self
+
+
+class AiRetailProductAddResponseBody(TeaModel):
+    def __init__(
+        self,
+        product_id: int = None,
+    ):
+        self.product_id = product_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.product_id is not None:
+            result['productId'] = self.product_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('productId') is not None:
+            self.product_id = m.get('productId')
+        return self
+
+
+class AiRetailProductAddResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AiRetailProductAddResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AiRetailProductAddResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AiRetailProductDeleteHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AiRetailProductDeleteRequest(TeaModel):
+    def __init__(
+        self,
+        product_id: int = None,
+    ):
+        # This parameter is required.
+        self.product_id = product_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.product_id is not None:
+            result['productId'] = self.product_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('productId') is not None:
+            self.product_id = m.get('productId')
+        return self
+
+
+class AiRetailProductDeleteResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: bool = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        return self
+
+
+class AiRetailProductImgUploadHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AiRetailProductImgUploadRequest(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+    ):
+        # This parameter is required.
+        self.biz_code = biz_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        return self
+
+
+class AiRetailProductImgUploadResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        oss_file_id: str = None,
+        oss_upload_url: str = None,
+    ):
+        self.oss_file_id = oss_file_id
+        self.oss_upload_url = oss_upload_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.oss_file_id is not None:
+            result['ossFileId'] = self.oss_file_id
+        if self.oss_upload_url is not None:
+            result['ossUploadUrl'] = self.oss_upload_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('ossFileId') is not None:
+            self.oss_file_id = m.get('ossFileId')
+        if m.get('ossUploadUrl') is not None:
+            self.oss_upload_url = m.get('ossUploadUrl')
+        return self
+
+
+class AiRetailProductImgUploadResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: AiRetailProductImgUploadResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = AiRetailProductImgUploadResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class AiRetailProductImgUploadResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AiRetailProductImgUploadResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AiRetailProductImgUploadResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AiRetailProductQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AiRetailProductQueryRequest(TeaModel):
+    def __init__(
+        self,
+        product_code: str = None,
+        product_id: int = None,
+    ):
+        self.product_code = product_code
+        self.product_id = product_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.product_code is not None:
+            result['productCode'] = self.product_code
+        if self.product_id is not None:
+            result['productId'] = self.product_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('productCode') is not None:
+            self.product_code = m.get('productCode')
+        if m.get('productId') is not None:
+            self.product_id = m.get('productId')
+        return self
+
+
+class AiRetailProductQueryResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        attribute: str = None,
+        barcodes: str = None,
+        brand: str = None,
+        category: str = None,
+        image_file_ids: str = None,
+        item_numbers: str = None,
+        price: float = None,
+        product_code: str = None,
+        product_fab: str = None,
+        product_id: int = None,
+        product_info: str = None,
+        product_name: str = None,
+    ):
+        self.attribute = attribute
+        self.barcodes = barcodes
+        self.brand = brand
+        self.category = category
+        self.image_file_ids = image_file_ids
+        self.item_numbers = item_numbers
+        self.price = price
+        self.product_code = product_code
+        self.product_fab = product_fab
+        self.product_id = product_id
+        self.product_info = product_info
+        self.product_name = product_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attribute is not None:
+            result['attribute'] = self.attribute
+        if self.barcodes is not None:
+            result['barcodes'] = self.barcodes
+        if self.brand is not None:
+            result['brand'] = self.brand
+        if self.category is not None:
+            result['category'] = self.category
+        if self.image_file_ids is not None:
+            result['imageFileIds'] = self.image_file_ids
+        if self.item_numbers is not None:
+            result['itemNumbers'] = self.item_numbers
+        if self.price is not None:
+            result['price'] = self.price
+        if self.product_code is not None:
+            result['productCode'] = self.product_code
+        if self.product_fab is not None:
+            result['productFab'] = self.product_fab
+        if self.product_id is not None:
+            result['productId'] = self.product_id
+        if self.product_info is not None:
+            result['productInfo'] = self.product_info
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attribute') is not None:
+            self.attribute = m.get('attribute')
+        if m.get('barcodes') is not None:
+            self.barcodes = m.get('barcodes')
+        if m.get('brand') is not None:
+            self.brand = m.get('brand')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('imageFileIds') is not None:
+            self.image_file_ids = m.get('imageFileIds')
+        if m.get('itemNumbers') is not None:
+            self.item_numbers = m.get('itemNumbers')
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('productCode') is not None:
+            self.product_code = m.get('productCode')
+        if m.get('productFab') is not None:
+            self.product_fab = m.get('productFab')
+        if m.get('productId') is not None:
+            self.product_id = m.get('productId')
+        if m.get('productInfo') is not None:
+            self.product_info = m.get('productInfo')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        return self
+
+
+class AiRetailProductQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[AiRetailProductQueryResponseBodyData] = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = AiRetailProductQueryResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        return self
+
+
+class AiRetailProductQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AiRetailProductQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AiRetailProductQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AiRetailProductUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AiRetailProductUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        attribute: Dict[str, str] = None,
+        barcodes: List[str] = None,
+        brand: str = None,
+        category: str = None,
+        image_file_ids: List[str] = None,
+        item_numbers: List[str] = None,
+        price: float = None,
+        product_code: str = None,
+        product_fab: str = None,
+        product_id: int = None,
+        product_info: str = None,
+        product_name: str = None,
+    ):
+        self.attribute = attribute
+        self.barcodes = barcodes
+        self.brand = brand
+        self.category = category
+        self.image_file_ids = image_file_ids
+        self.item_numbers = item_numbers
+        self.price = price
+        self.product_code = product_code
+        self.product_fab = product_fab
+        # This parameter is required.
+        self.product_id = product_id
+        self.product_info = product_info
+        self.product_name = product_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attribute is not None:
+            result['attribute'] = self.attribute
+        if self.barcodes is not None:
+            result['barcodes'] = self.barcodes
+        if self.brand is not None:
+            result['brand'] = self.brand
+        if self.category is not None:
+            result['category'] = self.category
+        if self.image_file_ids is not None:
+            result['imageFileIds'] = self.image_file_ids
+        if self.item_numbers is not None:
+            result['itemNumbers'] = self.item_numbers
+        if self.price is not None:
+            result['price'] = self.price
+        if self.product_code is not None:
+            result['productCode'] = self.product_code
+        if self.product_fab is not None:
+            result['productFab'] = self.product_fab
+        if self.product_id is not None:
+            result['productId'] = self.product_id
+        if self.product_info is not None:
+            result['productInfo'] = self.product_info
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attribute') is not None:
+            self.attribute = m.get('attribute')
+        if m.get('barcodes') is not None:
+            self.barcodes = m.get('barcodes')
+        if m.get('brand') is not None:
+            self.brand = m.get('brand')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('imageFileIds') is not None:
+            self.image_file_ids = m.get('imageFileIds')
+        if m.get('itemNumbers') is not None:
+            self.item_numbers = m.get('itemNumbers')
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('productCode') is not None:
+            self.product_code = m.get('productCode')
+        if m.get('productFab') is not None:
+            self.product_fab = m.get('productFab')
+        if m.get('productId') is not None:
+            self.product_id = m.get('productId')
+        if m.get('productInfo') is not None:
+            self.product_info = m.get('productInfo')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        return self
+
+
+class AiRetailProductUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: bool = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        return self
+
+
 class BatchGetTaskResultHeaders(TeaModel):
     def __init__(
         self,
@@ -17773,6 +18627,7 @@ class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
         id: int = None,
         items: List[GetTaskPackageResultResponseBodyTasksResultItems] = None,
         name: str = None,
+        parse_text: str = None,
         raw_data: str = None,
         summary: str = None,
         total: int = None,
@@ -17785,6 +18640,7 @@ class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
         self.id = id
         self.items = items
         self.name = name
+        self.parse_text = parse_text
         self.raw_data = raw_data
         self.summary = summary
         self.total = total
@@ -17819,6 +18675,8 @@ class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
                 result['items'].append(k.to_map() if k else None)
         if self.name is not None:
             result['name'] = self.name
+        if self.parse_text is not None:
+            result['parseText'] = self.parse_text
         if self.raw_data is not None:
             result['rawData'] = self.raw_data
         if self.summary is not None:
@@ -17848,6 +18706,8 @@ class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
                 self.items.append(temp_model.from_map(k))
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('parseText') is not None:
+            self.parse_text = m.get('parseText')
         if m.get('rawData') is not None:
             self.raw_data = m.get('rawData')
         if m.get('summary') is not None:
@@ -17860,11 +18720,13 @@ class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
 class GetTaskPackageResultResponseBodyTasks(TeaModel):
     def __init__(
         self,
+        report_link: str = None,
         result: GetTaskPackageResultResponseBodyTasksResult = None,
         status: str = None,
         status_info: str = None,
         task_id: str = None,
     ):
+        self.report_link = report_link
         self.result = result
         self.status = status
         self.status_info = status_info
@@ -17880,6 +18742,8 @@ class GetTaskPackageResultResponseBodyTasks(TeaModel):
             return _map
 
         result = dict()
+        if self.report_link is not None:
+            result['reportLink'] = self.report_link
         if self.result is not None:
             result['result'] = self.result.to_map()
         if self.status is not None:
@@ -17892,6 +18756,8 @@ class GetTaskPackageResultResponseBodyTasks(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('reportLink') is not None:
+            self.report_link = m.get('reportLink')
         if m.get('result') is not None:
             temp_model = GetTaskPackageResultResponseBodyTasksResult()
             self.result = temp_model.from_map(m['result'])

@@ -6358,6 +6358,128 @@ class Client(OpenApiClient):
         headers = dingtalkcontact__1__0_models.OrgAccountMobileVisiblePermissonHeaders()
         return await self.org_account_mobile_visible_permisson_with_options_async(request, headers, runtime)
 
+    def org_info_with_options(
+        self,
+        tmp_req: dingtalkcontact__1__0_models.OrgInfoRequest,
+        headers: dingtalkcontact__1__0_models.OrgInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.OrgInfoResponse:
+        """
+        @summary 根据orgId获取企业信息
+        
+        @param tmp_req: OrgInfoRequest
+        @param headers: OrgInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OrgInfoResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontact__1__0_models.OrgInfoShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.org_ids):
+            request.org_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.org_ids, 'orgIds', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.org_ids_shrink):
+            query['orgIds'] = request.org_ids_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OrgInfo',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/org/info',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.OrgInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def org_info_with_options_async(
+        self,
+        tmp_req: dingtalkcontact__1__0_models.OrgInfoRequest,
+        headers: dingtalkcontact__1__0_models.OrgInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.OrgInfoResponse:
+        """
+        @summary 根据orgId获取企业信息
+        
+        @param tmp_req: OrgInfoRequest
+        @param headers: OrgInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OrgInfoResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontact__1__0_models.OrgInfoShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.org_ids):
+            request.org_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.org_ids, 'orgIds', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.org_ids_shrink):
+            query['orgIds'] = request.org_ids_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OrgInfo',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/org/info',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.OrgInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def org_info(
+        self,
+        request: dingtalkcontact__1__0_models.OrgInfoRequest,
+    ) -> dingtalkcontact__1__0_models.OrgInfoResponse:
+        """
+        @summary 根据orgId获取企业信息
+        
+        @param request: OrgInfoRequest
+        @return: OrgInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.OrgInfoHeaders()
+        return self.org_info_with_options(request, headers, runtime)
+
+    async def org_info_async(
+        self,
+        request: dingtalkcontact__1__0_models.OrgInfoRequest,
+    ) -> dingtalkcontact__1__0_models.OrgInfoResponse:
+        """
+        @summary 根据orgId获取企业信息
+        
+        @param request: OrgInfoRequest
+        @return: OrgInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.OrgInfoHeaders()
+        return await self.org_info_with_options_async(request, headers, runtime)
+
     def push_verify_event_with_options(
         self,
         request: dingtalkcontact__1__0_models.PushVerifyEventRequest,
@@ -10161,3 +10283,125 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontact__1__0_models.UpdateUserOwnnessHeaders()
         return await self.update_user_ownness_with_options_async(user_id, request, headers, runtime)
+
+    def user_profile_with_options(
+        self,
+        tmp_req: dingtalkcontact__1__0_models.UserProfileRequest,
+        headers: dingtalkcontact__1__0_models.UserProfileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UserProfileResponse:
+        """
+        @summary 用户个人信息接口
+        
+        @param tmp_req: UserProfileRequest
+        @param headers: UserProfileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UserProfileResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontact__1__0_models.UserProfileShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.uids):
+            request.uids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.uids, 'uids', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.uids_shrink):
+            query['uids'] = request.uids_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UserProfile',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/user/profile',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UserProfileResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def user_profile_with_options_async(
+        self,
+        tmp_req: dingtalkcontact__1__0_models.UserProfileRequest,
+        headers: dingtalkcontact__1__0_models.UserProfileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UserProfileResponse:
+        """
+        @summary 用户个人信息接口
+        
+        @param tmp_req: UserProfileRequest
+        @param headers: UserProfileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UserProfileResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontact__1__0_models.UserProfileShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.uids):
+            request.uids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.uids, 'uids', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.uids_shrink):
+            query['uids'] = request.uids_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UserProfile',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/user/profile',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UserProfileResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def user_profile(
+        self,
+        request: dingtalkcontact__1__0_models.UserProfileRequest,
+    ) -> dingtalkcontact__1__0_models.UserProfileResponse:
+        """
+        @summary 用户个人信息接口
+        
+        @param request: UserProfileRequest
+        @return: UserProfileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UserProfileHeaders()
+        return self.user_profile_with_options(request, headers, runtime)
+
+    async def user_profile_async(
+        self,
+        request: dingtalkcontact__1__0_models.UserProfileRequest,
+    ) -> dingtalkcontact__1__0_models.UserProfileResponse:
+        """
+        @summary 用户个人信息接口
+        
+        @param request: UserProfileRequest
+        @return: UserProfileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UserProfileHeaders()
+        return await self.user_profile_with_options_async(request, headers, runtime)

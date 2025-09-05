@@ -5905,3 +5905,119 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkattendance__1__0_models.UpdateLeaveTypeHeaders()
         return await self.update_leave_type_with_options_async(request, headers, runtime)
+
+    def update_vacation_quota_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.UpdateVacationQuotaRequest,
+        headers: dingtalkattendance__1__0_models.UpdateVacationQuotaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.UpdateVacationQuotaResponse:
+        """
+        @summary 批量更新余额
+        
+        @param request: UpdateVacationQuotaRequest
+        @param headers: UpdateVacationQuotaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateVacationQuotaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='UpdateVacationQuota',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/quota',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.UpdateVacationQuotaResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_vacation_quota_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.UpdateVacationQuotaRequest,
+        headers: dingtalkattendance__1__0_models.UpdateVacationQuotaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.UpdateVacationQuotaResponse:
+        """
+        @summary 批量更新余额
+        
+        @param request: UpdateVacationQuotaRequest
+        @param headers: UpdateVacationQuotaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateVacationQuotaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='UpdateVacationQuota',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/quota',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.UpdateVacationQuotaResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_vacation_quota(
+        self,
+        request: dingtalkattendance__1__0_models.UpdateVacationQuotaRequest,
+    ) -> dingtalkattendance__1__0_models.UpdateVacationQuotaResponse:
+        """
+        @summary 批量更新余额
+        
+        @param request: UpdateVacationQuotaRequest
+        @return: UpdateVacationQuotaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.UpdateVacationQuotaHeaders()
+        return self.update_vacation_quota_with_options(request, headers, runtime)
+
+    async def update_vacation_quota_async(
+        self,
+        request: dingtalkattendance__1__0_models.UpdateVacationQuotaRequest,
+    ) -> dingtalkattendance__1__0_models.UpdateVacationQuotaResponse:
+        """
+        @summary 批量更新余额
+        
+        @param request: UpdateVacationQuotaRequest
+        @return: UpdateVacationQuotaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.UpdateVacationQuotaHeaders()
+        return await self.update_vacation_quota_with_options_async(request, headers, runtime)

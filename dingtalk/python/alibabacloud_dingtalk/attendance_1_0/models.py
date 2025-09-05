@@ -13229,3 +13229,305 @@ class UpdateLeaveTypeResponse(TeaModel):
         return self
 
 
+class UpdateVacationQuotaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateVacationQuotaRequestBody(TeaModel):
+    def __init__(
+        self,
+        action_type: str = None,
+        end_time: int = None,
+        leave_code: str = None,
+        quota_cycle: str = None,
+        quota_num_per_day: int = None,
+        quota_num_per_hour: int = None,
+        reason: str = None,
+        start_time: int = None,
+        user_id: str = None,
+    ):
+        self.action_type = action_type
+        self.end_time = end_time
+        # This parameter is required.
+        self.leave_code = leave_code
+        self.quota_cycle = quota_cycle
+        self.quota_num_per_day = quota_num_per_day
+        self.quota_num_per_hour = quota_num_per_hour
+        self.reason = reason
+        self.start_time = start_time
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_type is not None:
+            result['actionType'] = self.action_type
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.quota_cycle is not None:
+            result['quotaCycle'] = self.quota_cycle
+        if self.quota_num_per_day is not None:
+            result['quotaNumPerDay'] = self.quota_num_per_day
+        if self.quota_num_per_hour is not None:
+            result['quotaNumPerHour'] = self.quota_num_per_hour
+        if self.reason is not None:
+            result['reason'] = self.reason
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionType') is not None:
+            self.action_type = m.get('actionType')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('quotaCycle') is not None:
+            self.quota_cycle = m.get('quotaCycle')
+        if m.get('quotaNumPerDay') is not None:
+            self.quota_num_per_day = m.get('quotaNumPerDay')
+        if m.get('quotaNumPerHour') is not None:
+            self.quota_num_per_hour = m.get('quotaNumPerHour')
+        if m.get('reason') is not None:
+            self.reason = m.get('reason')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateVacationQuotaRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[UpdateVacationQuotaRequestBody] = None,
+        op_user_id: str = None,
+    ):
+        self.body = body
+        # This parameter is required.
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = UpdateVacationQuotaRequestBody()
+                self.body.append(temp_model.from_map(k))
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class UpdateVacationQuotaResponseBodyResultQuota(TeaModel):
+    def __init__(
+        self,
+        leave_code: str = None,
+        quota_cycle: str = None,
+        user_id: str = None,
+    ):
+        self.leave_code = leave_code
+        self.quota_cycle = quota_cycle
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.quota_cycle is not None:
+            result['quotaCycle'] = self.quota_cycle
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('quotaCycle') is not None:
+            self.quota_cycle = m.get('quotaCycle')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateVacationQuotaResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        quota: UpdateVacationQuotaResponseBodyResultQuota = None,
+        reason: str = None,
+    ):
+        self.quota = quota
+        self.reason = reason
+
+    def validate(self):
+        if self.quota:
+            self.quota.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.quota is not None:
+            result['quota'] = self.quota.to_map()
+        if self.reason is not None:
+            result['reason'] = self.reason
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('quota') is not None:
+            temp_model = UpdateVacationQuotaResponseBodyResultQuota()
+            self.quota = temp_model.from_map(m['quota'])
+        if m.get('reason') is not None:
+            self.reason = m.get('reason')
+        return self
+
+
+class UpdateVacationQuotaResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[UpdateVacationQuotaResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = UpdateVacationQuotaResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class UpdateVacationQuotaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateVacationQuotaResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateVacationQuotaResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

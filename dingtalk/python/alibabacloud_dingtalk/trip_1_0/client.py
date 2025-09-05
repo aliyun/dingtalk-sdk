@@ -1536,6 +1536,144 @@ class Client(OpenApiClient):
         headers = dingtalktrip__1__0_models.SyncSecretKeyHeaders()
         return await self.sync_secret_key_with_options_async(request, headers, runtime)
 
+    def sync_trip_invoice_with_options(
+        self,
+        tmp_req: dingtalktrip__1__0_models.SyncTripInvoiceRequest,
+        headers: dingtalktrip__1__0_models.SyncTripInvoiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncTripInvoiceResponse:
+        """
+        @summary 新差旅-同步发票
+        
+        @param tmp_req: SyncTripInvoiceRequest
+        @param headers: SyncTripInvoiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncTripInvoiceResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalktrip__1__0_models.SyncTripInvoiceShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.invoice_detail_list):
+            request.invoice_detail_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.invoice_detail_list, 'invoiceDetailList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.channel_order_no):
+            query['channelOrderNo'] = request.channel_order_no
+        if not UtilClient.is_unset(request.channel_type):
+            query['channelType'] = request.channel_type
+        if not UtilClient.is_unset(request.customer_corp_id):
+            query['customerCorpId'] = request.customer_corp_id
+        if not UtilClient.is_unset(request.ding_user_id):
+            query['dingUserId'] = request.ding_user_id
+        if not UtilClient.is_unset(request.invoice_detail_list_shrink):
+            query['invoiceDetailList'] = request.invoice_detail_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SyncTripInvoice',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/tripInvoices/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncTripInvoiceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_trip_invoice_with_options_async(
+        self,
+        tmp_req: dingtalktrip__1__0_models.SyncTripInvoiceRequest,
+        headers: dingtalktrip__1__0_models.SyncTripInvoiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncTripInvoiceResponse:
+        """
+        @summary 新差旅-同步发票
+        
+        @param tmp_req: SyncTripInvoiceRequest
+        @param headers: SyncTripInvoiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncTripInvoiceResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalktrip__1__0_models.SyncTripInvoiceShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.invoice_detail_list):
+            request.invoice_detail_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.invoice_detail_list, 'invoiceDetailList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.channel_order_no):
+            query['channelOrderNo'] = request.channel_order_no
+        if not UtilClient.is_unset(request.channel_type):
+            query['channelType'] = request.channel_type
+        if not UtilClient.is_unset(request.customer_corp_id):
+            query['customerCorpId'] = request.customer_corp_id
+        if not UtilClient.is_unset(request.ding_user_id):
+            query['dingUserId'] = request.ding_user_id
+        if not UtilClient.is_unset(request.invoice_detail_list_shrink):
+            query['invoiceDetailList'] = request.invoice_detail_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SyncTripInvoice',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/tripInvoices/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncTripInvoiceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_trip_invoice(
+        self,
+        request: dingtalktrip__1__0_models.SyncTripInvoiceRequest,
+    ) -> dingtalktrip__1__0_models.SyncTripInvoiceResponse:
+        """
+        @summary 新差旅-同步发票
+        
+        @param request: SyncTripInvoiceRequest
+        @return: SyncTripInvoiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncTripInvoiceHeaders()
+        return self.sync_trip_invoice_with_options(request, headers, runtime)
+
+    async def sync_trip_invoice_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncTripInvoiceRequest,
+    ) -> dingtalktrip__1__0_models.SyncTripInvoiceResponse:
+        """
+        @summary 新差旅-同步发票
+        
+        @param request: SyncTripInvoiceRequest
+        @return: SyncTripInvoiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncTripInvoiceHeaders()
+        return await self.sync_trip_invoice_with_options_async(request, headers, runtime)
+
     def sync_trip_order_with_options(
         self,
         request: dingtalktrip__1__0_models.SyncTripOrderRequest,
@@ -1572,14 +1710,28 @@ class Client(OpenApiClient):
             body['gmtPay'] = request.gmt_pay
         if not UtilClient.is_unset(request.gmt_refund):
             body['gmtRefund'] = request.gmt_refund
+        if not UtilClient.is_unset(request.has_invoice):
+            body['hasInvoice'] = request.has_invoice
+        if not UtilClient.is_unset(request.invoice_apply_role):
+            body['invoiceApplyRole'] = request.invoice_apply_role
+        if not UtilClient.is_unset(request.invoice_apply_type):
+            body['invoiceApplyType'] = request.invoice_apply_type
         if not UtilClient.is_unset(request.invoice_apply_url):
             body['invoiceApplyUrl'] = request.invoice_apply_url
+        if not UtilClient.is_unset(request.invoice_party):
+            body['invoiceParty'] = request.invoice_party
+        if not UtilClient.is_unset(request.invoice_type):
+            body['invoiceType'] = request.invoice_type
         if not UtilClient.is_unset(request.journey_biz_no):
             body['journeyBizNo'] = request.journey_biz_no
+        if not UtilClient.is_unset(request.journey_submit_user_id):
+            body['journeySubmitUserId'] = request.journey_submit_user_id
         if not UtilClient.is_unset(request.order_details):
             body['orderDetails'] = request.order_details
         if not UtilClient.is_unset(request.order_no):
             body['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.order_payment_type):
+            body['orderPaymentType'] = request.order_payment_type
         if not UtilClient.is_unset(request.order_url):
             body['orderUrl'] = request.order_url
         if not UtilClient.is_unset(request.process_id):
@@ -1665,14 +1817,28 @@ class Client(OpenApiClient):
             body['gmtPay'] = request.gmt_pay
         if not UtilClient.is_unset(request.gmt_refund):
             body['gmtRefund'] = request.gmt_refund
+        if not UtilClient.is_unset(request.has_invoice):
+            body['hasInvoice'] = request.has_invoice
+        if not UtilClient.is_unset(request.invoice_apply_role):
+            body['invoiceApplyRole'] = request.invoice_apply_role
+        if not UtilClient.is_unset(request.invoice_apply_type):
+            body['invoiceApplyType'] = request.invoice_apply_type
         if not UtilClient.is_unset(request.invoice_apply_url):
             body['invoiceApplyUrl'] = request.invoice_apply_url
+        if not UtilClient.is_unset(request.invoice_party):
+            body['invoiceParty'] = request.invoice_party
+        if not UtilClient.is_unset(request.invoice_type):
+            body['invoiceType'] = request.invoice_type
         if not UtilClient.is_unset(request.journey_biz_no):
             body['journeyBizNo'] = request.journey_biz_no
+        if not UtilClient.is_unset(request.journey_submit_user_id):
+            body['journeySubmitUserId'] = request.journey_submit_user_id
         if not UtilClient.is_unset(request.order_details):
             body['orderDetails'] = request.order_details
         if not UtilClient.is_unset(request.order_no):
             body['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.order_payment_type):
+            body['orderPaymentType'] = request.order_payment_type
         if not UtilClient.is_unset(request.order_url):
             body['orderUrl'] = request.order_url
         if not UtilClient.is_unset(request.process_id):

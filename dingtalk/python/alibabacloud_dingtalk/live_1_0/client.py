@@ -576,8 +576,12 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.cover_url):
             body['coverUrl'] = request.cover_url
+        if not UtilClient.is_unset(request.enable_link_mic):
+            body['enableLinkMic'] = request.enable_link_mic
         if not UtilClient.is_unset(request.introduction):
             body['introduction'] = request.introduction
+        if not UtilClient.is_unset(request.is_landscape):
+            body['isLandscape'] = request.is_landscape
         if not UtilClient.is_unset(request.pre_end_time):
             body['preEndTime'] = request.pre_end_time
         if not UtilClient.is_unset(request.pre_start_time):
@@ -631,8 +635,12 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.cover_url):
             body['coverUrl'] = request.cover_url
+        if not UtilClient.is_unset(request.enable_link_mic):
+            body['enableLinkMic'] = request.enable_link_mic
         if not UtilClient.is_unset(request.introduction):
             body['introduction'] = request.introduction
+        if not UtilClient.is_unset(request.is_landscape):
+            body['isLandscape'] = request.is_landscape
         if not UtilClient.is_unset(request.pre_end_time):
             body['preEndTime'] = request.pre_end_time
         if not UtilClient.is_unset(request.pre_start_time):

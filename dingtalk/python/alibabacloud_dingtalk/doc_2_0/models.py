@@ -10026,6 +10026,345 @@ class ListTeamMembersResponse(TeaModel):
         return self
 
 
+class LockDocHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class LockDocRequestParam(TeaModel):
+    def __init__(
+        self,
+        dentry_uuid: str = None,
+        name: str = None,
+        operator_uid: str = None,
+    ):
+        # This parameter is required.
+        self.dentry_uuid = dentry_uuid
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.operator_uid = operator_uid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operator_uid is not None:
+            result['operatorUid'] = self.operator_uid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operatorUid') is not None:
+            self.operator_uid = m.get('operatorUid')
+        return self
+
+
+class LockDocRequest(TeaModel):
+    def __init__(
+        self,
+        param: LockDocRequestParam = None,
+    ):
+        # This parameter is required.
+        self.param = param
+
+    def validate(self):
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('param') is not None:
+            temp_model = LockDocRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        return self
+
+
+class LockDocResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class LockDocResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: LockDocResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = LockDocResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class LockDocByDelegatedPermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class LockDocByDelegatedPermissionRequestParam(TeaModel):
+    def __init__(
+        self,
+        dentry_uuid: str = None,
+        name: str = None,
+    ):
+        # This parameter is required.
+        self.dentry_uuid = dentry_uuid
+        # This parameter is required.
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class LockDocByDelegatedPermissionRequest(TeaModel):
+    def __init__(
+        self,
+        param: LockDocByDelegatedPermissionRequestParam = None,
+    ):
+        # This parameter is required.
+        self.param = param
+
+    def validate(self):
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('param') is not None:
+            temp_model = LockDocByDelegatedPermissionRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        return self
+
+
+class LockDocByDelegatedPermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class LockDocByDelegatedPermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: LockDocByDelegatedPermissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = LockDocByDelegatedPermissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class MarkStarHeaders(TeaModel):
     def __init__(
         self,
@@ -12763,9 +13102,7 @@ class SearchRequest(TeaModel):
         space_request: SearchRequestSpaceRequest = None,
     ):
         self.dentry_request = dentry_request
-        # This parameter is required.
         self.keyword = keyword
-        # This parameter is required.
         self.operator_id = operator_id
         self.space_request = space_request
 
@@ -14522,6 +14859,331 @@ class TemplateCategoriesResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = TemplateCategoriesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UnlockDocHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UnlockDocRequestParam(TeaModel):
+    def __init__(
+        self,
+        dentry_uuid: str = None,
+        operator_uid: str = None,
+    ):
+        # This parameter is required.
+        self.dentry_uuid = dentry_uuid
+        # This parameter is required.
+        self.operator_uid = operator_uid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
+        if self.operator_uid is not None:
+            result['operatorUid'] = self.operator_uid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
+        if m.get('operatorUid') is not None:
+            self.operator_uid = m.get('operatorUid')
+        return self
+
+
+class UnlockDocRequest(TeaModel):
+    def __init__(
+        self,
+        param: UnlockDocRequestParam = None,
+    ):
+        # This parameter is required.
+        self.param = param
+
+    def validate(self):
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('param') is not None:
+            temp_model = UnlockDocRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        return self
+
+
+class UnlockDocResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UnlockDocResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UnlockDocResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UnlockDocResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UnlockDocByDelegatedPermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UnlockDocByDelegatedPermissionRequestParam(TeaModel):
+    def __init__(
+        self,
+        dentry_uuid: str = None,
+    ):
+        # This parameter is required.
+        self.dentry_uuid = dentry_uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
+        return self
+
+
+class UnlockDocByDelegatedPermissionRequest(TeaModel):
+    def __init__(
+        self,
+        param: UnlockDocByDelegatedPermissionRequestParam = None,
+    ):
+        # This parameter is required.
+        self.param = param
+
+    def validate(self):
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('param') is not None:
+            temp_model = UnlockDocByDelegatedPermissionRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        return self
+
+
+class UnlockDocByDelegatedPermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UnlockDocByDelegatedPermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UnlockDocByDelegatedPermissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UnlockDocByDelegatedPermissionResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

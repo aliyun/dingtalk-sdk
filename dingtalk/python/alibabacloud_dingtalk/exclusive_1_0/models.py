@@ -1795,6 +1795,7 @@ class CreateTrustedDeviceRequest(TeaModel):
         did: str = None,
         mac_address: str = None,
         platform: str = None,
+        serial_number: str = None,
         status: int = None,
         title: str = None,
         user_id: str = None,
@@ -1803,6 +1804,7 @@ class CreateTrustedDeviceRequest(TeaModel):
         self.mac_address = mac_address
         # This parameter is required.
         self.platform = platform
+        self.serial_number = serial_number
         self.status = status
         self.title = title
         # This parameter is required.
@@ -1823,6 +1825,8 @@ class CreateTrustedDeviceRequest(TeaModel):
             result['macAddress'] = self.mac_address
         if self.platform is not None:
             result['platform'] = self.platform
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
         if self.status is not None:
             result['status'] = self.status
         if self.title is not None:
@@ -1839,6 +1843,8 @@ class CreateTrustedDeviceRequest(TeaModel):
             self.mac_address = m.get('macAddress')
         if m.get('platform') is not None:
             self.platform = m.get('platform')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('title') is not None:
@@ -1954,9 +1960,11 @@ class CreateTrustedDeviceBatchRequestDetailList(TeaModel):
     def __init__(
         self,
         mac_address: str = None,
+        serial_number: str = None,
         title: str = None,
     ):
         self.mac_address = mac_address
+        self.serial_number = serial_number
         self.title = title
 
     def validate(self):
@@ -1970,6 +1978,8 @@ class CreateTrustedDeviceBatchRequestDetailList(TeaModel):
         result = dict()
         if self.mac_address is not None:
             result['macAddress'] = self.mac_address
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
         if self.title is not None:
             result['title'] = self.title
         return result
@@ -1978,6 +1988,8 @@ class CreateTrustedDeviceBatchRequestDetailList(TeaModel):
         m = m or dict()
         if m.get('macAddress') is not None:
             self.mac_address = m.get('macAddress')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
         if m.get('title') is not None:
             self.title = m.get('title')
         return self
@@ -11335,6 +11347,7 @@ class GetPublicDevicesRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
         platform: str = None,
+        serial_number: str = None,
         start_time: int = None,
         title: str = None,
     ):
@@ -11343,6 +11356,7 @@ class GetPublicDevicesRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.platform = platform
+        self.serial_number = serial_number
         self.start_time = start_time
         self.title = title
 
@@ -11365,6 +11379,8 @@ class GetPublicDevicesRequest(TeaModel):
             result['pageSize'] = self.page_size
         if self.platform is not None:
             result['platform'] = self.platform
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
         if self.start_time is not None:
             result['startTime'] = self.start_time
         if self.title is not None:
@@ -11383,6 +11399,8 @@ class GetPublicDevicesRequest(TeaModel):
             self.page_size = m.get('pageSize')
         if m.get('platform') is not None:
             self.platform = m.get('platform')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
         if m.get('title') is not None:
@@ -11500,6 +11518,7 @@ class GetPublicDevicesResponseBodyData(TeaModel):
         gmt_modified: int = None,
         mac_address: str = None,
         platform: str = None,
+        serial_number: str = None,
         title: str = None,
     ):
         self.device_depts = device_depts
@@ -11510,6 +11529,7 @@ class GetPublicDevicesResponseBodyData(TeaModel):
         self.gmt_modified = gmt_modified
         self.mac_address = mac_address
         self.platform = platform
+        self.serial_number = serial_number
         self.title = title
 
     def validate(self):
@@ -11554,6 +11574,8 @@ class GetPublicDevicesResponseBodyData(TeaModel):
             result['macAddress'] = self.mac_address
         if self.platform is not None:
             result['platform'] = self.platform
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
         if self.title is not None:
             result['title'] = self.title
         return result
@@ -11585,6 +11607,8 @@ class GetPublicDevicesResponseBodyData(TeaModel):
             self.mac_address = m.get('macAddress')
         if m.get('platform') is not None:
             self.platform = m.get('platform')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
         if m.get('title') is not None:
             self.title = m.get('title')
         return self
@@ -13119,6 +13143,7 @@ class GetTrustDeviceListRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
         platform: str = None,
+        serial_number: str = None,
         status: int = None,
         user_ids: List[str] = None,
     ):
@@ -13130,6 +13155,7 @@ class GetTrustDeviceListRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.platform = platform
+        self.serial_number = serial_number
         self.status = status
         self.user_ids = user_ids
 
@@ -13158,6 +13184,8 @@ class GetTrustDeviceListRequest(TeaModel):
             result['pageSize'] = self.page_size
         if self.platform is not None:
             result['platform'] = self.platform
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
         if self.status is not None:
             result['status'] = self.status
         if self.user_ids is not None:
@@ -13182,6 +13210,8 @@ class GetTrustDeviceListRequest(TeaModel):
             self.page_size = m.get('pageSize')
         if m.get('platform') is not None:
             self.platform = m.get('platform')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('userIds') is not None:
@@ -13198,6 +13228,7 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         model: str = None,
         modified_time: int = None,
         platform: str = None,
+        serial_number: str = None,
         status: int = None,
         title: str = None,
         user_id: str = None,
@@ -13208,6 +13239,7 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         self.model = model
         self.modified_time = modified_time
         self.platform = platform
+        self.serial_number = serial_number
         self.status = status
         self.title = title
         # This parameter is required.
@@ -13234,6 +13266,8 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
             result['modifiedTime'] = self.modified_time
         if self.platform is not None:
             result['platform'] = self.platform
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
         if self.status is not None:
             result['status'] = self.status
         if self.title is not None:
@@ -13256,6 +13290,8 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
             self.modified_time = m.get('modifiedTime')
         if m.get('platform') is not None:
             self.platform = m.get('platform')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('title') is not None:

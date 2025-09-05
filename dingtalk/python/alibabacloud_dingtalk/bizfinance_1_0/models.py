@@ -5487,6 +5487,8 @@ class GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList(TeaModel):
 class GetMultiCompanyInfoByCodeResponseBody(TeaModel):
     def __init__(
         self,
+        accountant_enable_date: str = None,
+        accounting_standard: str = None,
         advanced_setting_list: List[GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList] = None,
         company_code: str = None,
         company_name: str = None,
@@ -5495,6 +5497,8 @@ class GetMultiCompanyInfoByCodeResponseBody(TeaModel):
         tax_nature: str = None,
         tax_no: str = None,
     ):
+        self.accountant_enable_date = accountant_enable_date
+        self.accounting_standard = accounting_standard
         self.advanced_setting_list = advanced_setting_list
         self.company_code = company_code
         self.company_name = company_name
@@ -5515,6 +5519,10 @@ class GetMultiCompanyInfoByCodeResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_enable_date is not None:
+            result['accountantEnableDate'] = self.accountant_enable_date
+        if self.accounting_standard is not None:
+            result['accountingStandard'] = self.accounting_standard
         result['advancedSettingList'] = []
         if self.advanced_setting_list is not None:
             for k in self.advanced_setting_list:
@@ -5535,6 +5543,10 @@ class GetMultiCompanyInfoByCodeResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantEnableDate') is not None:
+            self.accountant_enable_date = m.get('accountantEnableDate')
+        if m.get('accountingStandard') is not None:
+            self.accounting_standard = m.get('accountingStandard')
         self.advanced_setting_list = []
         if m.get('advancedSettingList') is not None:
             for k in m.get('advancedSettingList'):
@@ -8454,6 +8466,8 @@ class QueryMultiCompanyInfoResponseBodyList(TeaModel):
     def __init__(
         self,
         accountant_book_id: str = None,
+        accountant_enable_date: str = None,
+        accounting_standard: str = None,
         advanced_setting_list: List[QueryMultiCompanyInfoResponseBodyListAdvancedSettingList] = None,
         company_code: str = None,
         company_name: str = None,
@@ -8464,6 +8478,8 @@ class QueryMultiCompanyInfoResponseBodyList(TeaModel):
         tax_no: str = None,
     ):
         self.accountant_book_id = accountant_book_id
+        self.accountant_enable_date = accountant_enable_date
+        self.accounting_standard = accounting_standard
         self.advanced_setting_list = advanced_setting_list
         self.company_code = company_code
         self.company_name = company_name
@@ -8487,6 +8503,10 @@ class QueryMultiCompanyInfoResponseBodyList(TeaModel):
         result = dict()
         if self.accountant_book_id is not None:
             result['accountantBookId'] = self.accountant_book_id
+        if self.accountant_enable_date is not None:
+            result['accountantEnableDate'] = self.accountant_enable_date
+        if self.accounting_standard is not None:
+            result['accountingStandard'] = self.accounting_standard
         result['advancedSettingList'] = []
         if self.advanced_setting_list is not None:
             for k in self.advanced_setting_list:
@@ -8511,6 +8531,10 @@ class QueryMultiCompanyInfoResponseBodyList(TeaModel):
         m = m or dict()
         if m.get('accountantBookId') is not None:
             self.accountant_book_id = m.get('accountantBookId')
+        if m.get('accountantEnableDate') is not None:
+            self.accountant_enable_date = m.get('accountantEnableDate')
+        if m.get('accountingStandard') is not None:
+            self.accounting_standard = m.get('accountingStandard')
         self.advanced_setting_list = []
         if m.get('advancedSettingList') is not None:
             for k in m.get('advancedSettingList'):

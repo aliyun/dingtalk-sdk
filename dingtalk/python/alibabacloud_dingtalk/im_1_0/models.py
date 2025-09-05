@@ -8583,15 +8583,10 @@ class LoginForVisitorRequest(TeaModel):
 class LoginForVisitorResponseBodyAimInfo(TeaModel):
     def __init__(
         self,
-        app_id: str = None,
-        app_key: Dict[str, str] = None,
+        app_key: Dict[str, Any] = None,
         app_name: str = None,
     ):
-        # This parameter is required.
-        self.app_id = app_id
-        # This parameter is required.
         self.app_key = app_key
-        # This parameter is required.
         self.app_name = app_name
 
     def validate(self):
@@ -8603,8 +8598,6 @@ class LoginForVisitorResponseBodyAimInfo(TeaModel):
             return _map
 
         result = dict()
-        if self.app_id is not None:
-            result['appId'] = self.app_id
         if self.app_key is not None:
             result['appKey'] = self.app_key
         if self.app_name is not None:
@@ -8613,8 +8606,6 @@ class LoginForVisitorResponseBodyAimInfo(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('appId') is not None:
-            self.app_id = m.get('appId')
         if m.get('appKey') is not None:
             self.app_key = m.get('appKey')
         if m.get('appName') is not None:
@@ -8630,13 +8621,9 @@ class LoginForVisitorResponseBodyAimToken(TeaModel):
         build_time: int = None,
         refresh_token: str = None,
     ):
-        # This parameter is required.
         self.access_token = access_token
-        # This parameter is required.
         self.access_token_expired_time = access_token_expired_time
-        # This parameter is required.
         self.build_time = build_time
-        # This parameter is required.
         self.refresh_token = refresh_token
 
     def validate(self):
@@ -8686,9 +8673,7 @@ class LoginForVisitorResponseBody(TeaModel):
         visitor_cid: str = None,
         visitor_open_conversation_id: str = None,
     ):
-        # This parameter is required.
         self.aim_info = aim_info
-        # This parameter is required.
         self.aim_token = aim_token
         # This parameter is required.
         self.app_uid = app_uid
