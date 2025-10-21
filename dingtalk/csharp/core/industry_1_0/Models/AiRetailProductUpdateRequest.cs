@@ -25,6 +25,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string Category { get; set; }
 
+        [NameInMap("currency")]
+        [Validation(Required=false)]
+        public string Currency { get; set; }
+
+        [NameInMap("enable")]
+        [Validation(Required=false)]
+        public int? Enable { get; set; }
+
         [NameInMap("imageFileIds")]
         [Validation(Required=false)]
         public List<string> ImageFileIds { get; set; }

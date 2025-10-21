@@ -402,6 +402,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["appId"] = request.AppId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackType))
+            {
+                body["callbackType"] = request.CallbackType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackUrl))
             {
                 body["callbackUrl"] = request.CallbackUrl;
@@ -488,6 +492,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
             {
                 body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackType))
+            {
+                body["callbackType"] = request.CallbackType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackUrl))
             {
@@ -13050,6 +13058,162 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询群备注</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserGroupAliasTitleRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserGroupAliasTitleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserGroupAliasTitleResponse
+        /// </returns>
+        public QueryUserGroupAliasTitleResponse QueryUserGroupAliasTitleWithOptions(QueryUserGroupAliasTitleRequest request, QueryUserGroupAliasTitleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUserGroupAliasTitle",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groupAliasTitiles/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUserGroupAliasTitleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群备注</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserGroupAliasTitleRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserGroupAliasTitleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserGroupAliasTitleResponse
+        /// </returns>
+        public async Task<QueryUserGroupAliasTitleResponse> QueryUserGroupAliasTitleWithOptionsAsync(QueryUserGroupAliasTitleRequest request, QueryUserGroupAliasTitleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUserGroupAliasTitle",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groupAliasTitiles/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUserGroupAliasTitleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群备注</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserGroupAliasTitleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserGroupAliasTitleResponse
+        /// </returns>
+        public QueryUserGroupAliasTitleResponse QueryUserGroupAliasTitle(QueryUserGroupAliasTitleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUserGroupAliasTitleHeaders headers = new QueryUserGroupAliasTitleHeaders();
+            return QueryUserGroupAliasTitleWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群备注</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserGroupAliasTitleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserGroupAliasTitleResponse
+        /// </returns>
+        public async Task<QueryUserGroupAliasTitleResponse> QueryUserGroupAliasTitleAsync(QueryUserGroupAliasTitleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUserGroupAliasTitleHeaders headers = new QueryUserGroupAliasTitleHeaders();
+            return await QueryUserGroupAliasTitleWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询群主视角群LastMessage时间</para>
         /// </summary>
         /// 
@@ -18266,6 +18430,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["appId"] = request.AppId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackType))
+            {
+                body["callbackType"] = request.CallbackType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackUrl))
             {
                 body["callbackUrl"] = request.CallbackUrl;
@@ -18356,6 +18524,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
             {
                 body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackType))
+            {
+                body["callbackType"] = request.CallbackType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackUrl))
             {
@@ -18626,6 +18798,170 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateUnfurlingRegisterStatusHeaders headers = new UpdateUnfurlingRegisterStatusHeaders();
             return await UpdateUnfurlingRegisterStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新群备注</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateUserGroupAliasTitleRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateUserGroupAliasTitleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateUserGroupAliasTitleResponse
+        /// </returns>
+        public UpdateUserGroupAliasTitleResponse UpdateUserGroupAliasTitleWithOptions(UpdateUserGroupAliasTitleRequest request, UpdateUserGroupAliasTitleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateUserGroupAliasTitle",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groupAliasTitiles/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateUserGroupAliasTitleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新群备注</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateUserGroupAliasTitleRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateUserGroupAliasTitleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateUserGroupAliasTitleResponse
+        /// </returns>
+        public async Task<UpdateUserGroupAliasTitleResponse> UpdateUserGroupAliasTitleWithOptionsAsync(UpdateUserGroupAliasTitleRequest request, UpdateUserGroupAliasTitleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateUserGroupAliasTitle",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groupAliasTitiles/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateUserGroupAliasTitleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新群备注</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateUserGroupAliasTitleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateUserGroupAliasTitleResponse
+        /// </returns>
+        public UpdateUserGroupAliasTitleResponse UpdateUserGroupAliasTitle(UpdateUserGroupAliasTitleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateUserGroupAliasTitleHeaders headers = new UpdateUserGroupAliasTitleHeaders();
+            return UpdateUserGroupAliasTitleWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新群备注</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateUserGroupAliasTitleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateUserGroupAliasTitleResponse
+        /// </returns>
+        public async Task<UpdateUserGroupAliasTitleResponse> UpdateUserGroupAliasTitleAsync(UpdateUserGroupAliasTitleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateUserGroupAliasTitleHeaders headers = new UpdateUserGroupAliasTitleHeaders();
+            return await UpdateUserGroupAliasTitleWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
 {
     public class ListRecordsRequest : TeaModel {
+        [NameInMap("calcFields")]
+        [Validation(Required=false)]
+        public bool? CalcFields { get; set; }
+
         [NameInMap("filter")]
         [Validation(Required=false)]
         public ListRecordsRequestFilter Filter { get; set; }

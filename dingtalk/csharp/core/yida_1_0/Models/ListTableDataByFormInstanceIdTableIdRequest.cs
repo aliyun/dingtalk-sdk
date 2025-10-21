@@ -27,6 +27,14 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string FormUuid { get; set; }
 
         /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>false</c>
+        /// </summary>
+        [NameInMap("needRowId")]
+        [Validation(Required=false)]
+        public bool? NeedRowId { get; set; }
+
+        /// <summary>
         /// <b>Example:</b>
         /// <para>10</para>
         /// </summary>

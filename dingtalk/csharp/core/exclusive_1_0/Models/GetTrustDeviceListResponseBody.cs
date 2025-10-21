@@ -28,6 +28,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public long? CreateTime { get; set; }
 
+            [NameInMap("deviceUuid")]
+            [Validation(Required=false)]
+            public string DeviceUuid { get; set; }
+
             [NameInMap("id")]
             [Validation(Required=false)]
             public long? Id { get; set; }

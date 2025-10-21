@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
         [Validation(Required=false)]
         public int? StatusCode { get; set; }
 
+        [NameInMap("body")]
+        [Validation(Required=false)]
+        public UpdateSubTableResponseBody Body { get; set; }
+
     }
 
 }

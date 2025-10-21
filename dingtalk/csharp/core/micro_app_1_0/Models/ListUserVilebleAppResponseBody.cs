@@ -69,6 +69,24 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             [Validation(Required=false)]
             public string HomepageLink { get; set; }
 
+            [NameInMap("i18n")]
+            [Validation(Required=false)]
+            public List<ListUserVilebleAppResponseBodyAppListI18n> I18n { get; set; }
+            public class ListUserVilebleAppResponseBodyAppListI18n : TeaModel {
+                [NameInMap("desc")]
+                [Validation(Required=false)]
+                public string Desc { get; set; }
+
+                [NameInMap("i18n_key")]
+                [Validation(Required=false)]
+                public string I18nKey { get; set; }
+
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+            }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>icon</para>

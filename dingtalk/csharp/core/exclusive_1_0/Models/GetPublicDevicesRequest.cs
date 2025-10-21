@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetPublicDevicesRequest : TeaModel {
+        [NameInMap("deviceUuid")]
+        [Validation(Required=false)]
+        public string DeviceUuid { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>1671767361000</para>

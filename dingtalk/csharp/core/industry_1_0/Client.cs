@@ -66,6 +66,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             {
                 body["category"] = request.Category;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Currecy))
+            {
+                body["currecy"] = request.Currecy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Enable))
+            {
+                body["enable"] = request.Enable;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageFileIds))
             {
                 body["imageFileIds"] = request.ImageFileIds;
@@ -160,6 +168,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Category))
             {
                 body["category"] = request.Category;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Currecy))
+            {
+                body["currecy"] = request.Currecy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Enable))
+            {
+                body["enable"] = request.Enable;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageFileIds))
             {
@@ -746,6 +762,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             {
                 body["category"] = request.Category;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Currency))
+            {
+                body["currency"] = request.Currency;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Enable))
+            {
+                body["enable"] = request.Enable;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageFileIds))
             {
                 body["imageFileIds"] = request.ImageFileIds;
@@ -844,6 +868,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Category))
             {
                 body["category"] = request.Category;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Currency))
+            {
+                body["currency"] = request.Currency;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Enable))
+            {
+                body["enable"] = request.Enable;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageFileIds))
             {

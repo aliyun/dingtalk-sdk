@@ -9650,6 +9650,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUuid))
+            {
+                query["deviceUuid"] = request.DeviceUuid;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
                 query["endTime"] = request.EndTime;
@@ -9733,6 +9737,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUuid))
+            {
+                query["deviceUuid"] = request.DeviceUuid;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
                 query["endTime"] = request.EndTime;
@@ -10886,6 +10894,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUuid))
+            {
+                body["deviceUuid"] = request.DeviceUuid;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtCreateEnd))
             {
                 body["gmtCreateEnd"] = request.GmtCreateEnd;
@@ -10981,6 +10993,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUuid))
+            {
+                body["deviceUuid"] = request.DeviceUuid;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtCreateEnd))
             {
                 body["gmtCreateEnd"] = request.GmtCreateEnd;
@@ -17670,6 +17686,170 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SearchOrgInnerGroupInfoHeaders headers = new SearchOrgInnerGroupInfoHeaders();
             return await SearchOrgInnerGroupInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询企业全量内部群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchOrgInnerGroupInfoByCursorPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SearchOrgInnerGroupInfoByCursorPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchOrgInnerGroupInfoByCursorPageResponse
+        /// </returns>
+        public SearchOrgInnerGroupInfoByCursorPageResponse SearchOrgInnerGroupInfoByCursorPageWithOptions(SearchOrgInnerGroupInfoByCursorPageRequest request, SearchOrgInnerGroupInfoByCursorPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Count))
+            {
+                query["count"] = request.Count;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
+            {
+                query["cursor"] = request.Cursor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Forward))
+            {
+                query["forward"] = request.Forward;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SearchOrgInnerGroupInfoByCursorPage",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/securities/orgAllGroupInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SearchOrgInnerGroupInfoByCursorPageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询企业全量内部群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchOrgInnerGroupInfoByCursorPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SearchOrgInnerGroupInfoByCursorPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchOrgInnerGroupInfoByCursorPageResponse
+        /// </returns>
+        public async Task<SearchOrgInnerGroupInfoByCursorPageResponse> SearchOrgInnerGroupInfoByCursorPageWithOptionsAsync(SearchOrgInnerGroupInfoByCursorPageRequest request, SearchOrgInnerGroupInfoByCursorPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Count))
+            {
+                query["count"] = request.Count;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
+            {
+                query["cursor"] = request.Cursor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Forward))
+            {
+                query["forward"] = request.Forward;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SearchOrgInnerGroupInfoByCursorPage",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/securities/orgAllGroupInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SearchOrgInnerGroupInfoByCursorPageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询企业全量内部群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchOrgInnerGroupInfoByCursorPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchOrgInnerGroupInfoByCursorPageResponse
+        /// </returns>
+        public SearchOrgInnerGroupInfoByCursorPageResponse SearchOrgInnerGroupInfoByCursorPage(SearchOrgInnerGroupInfoByCursorPageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SearchOrgInnerGroupInfoByCursorPageHeaders headers = new SearchOrgInnerGroupInfoByCursorPageHeaders();
+            return SearchOrgInnerGroupInfoByCursorPageWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询企业全量内部群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchOrgInnerGroupInfoByCursorPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchOrgInnerGroupInfoByCursorPageResponse
+        /// </returns>
+        public async Task<SearchOrgInnerGroupInfoByCursorPageResponse> SearchOrgInnerGroupInfoByCursorPageAsync(SearchOrgInnerGroupInfoByCursorPageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SearchOrgInnerGroupInfoByCursorPageHeaders headers = new SearchOrgInnerGroupInfoByCursorPageHeaders();
+            return await SearchOrgInnerGroupInfoByCursorPageWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

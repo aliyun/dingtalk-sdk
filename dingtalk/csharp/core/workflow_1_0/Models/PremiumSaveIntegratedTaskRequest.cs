@@ -136,6 +136,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>1758643200000</para>
+            /// </summary>
+            [NameInMap("dueTimestamp")]
+            [Validation(Required=false)]
+            public long? DueTimestamp { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></para>
             /// </summary>
             [NameInMap("url")]

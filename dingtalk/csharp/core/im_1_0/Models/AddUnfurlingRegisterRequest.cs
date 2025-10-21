@@ -26,6 +26,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public string AppId { get; set; }
 
+        [NameInMap("callbackType")]
+        [Validation(Required=false)]
+        public int? CallbackType { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 

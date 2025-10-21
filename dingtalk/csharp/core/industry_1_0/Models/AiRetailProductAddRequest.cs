@@ -25,6 +25,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string Category { get; set; }
 
+        [NameInMap("currecy")]
+        [Validation(Required=false)]
+        public string Currecy { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
+        [NameInMap("enable")]
+        [Validation(Required=false)]
+        public int? Enable { get; set; }
+
         [NameInMap("imageFileIds")]
         [Validation(Required=false)]
         public List<string> ImageFileIds { get; set; }
@@ -61,6 +73,8 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public string ProductInfo { get; set; }
 
         /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
         /// <b>Example:</b>
         /// <para>办公室的电话是多少</para>
         /// </summary>

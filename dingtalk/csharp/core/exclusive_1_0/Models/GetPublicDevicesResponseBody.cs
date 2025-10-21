@@ -87,6 +87,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 
             }
 
+            [NameInMap("deviceUuid")]
+            [Validation(Required=false)]
+            public string DeviceUuid { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>1671767361000</para>
@@ -119,9 +123,21 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string Platform { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
+            [NameInMap("retryPermission")]
+            [Validation(Required=false)]
+            public string RetryPermission { get; set; }
+
             [NameInMap("serialNumber")]
             [Validation(Required=false)]
             public string SerialNumber { get; set; }
+
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public int? Status { get; set; }
 
             /// <summary>
             /// <b>Example:</b>

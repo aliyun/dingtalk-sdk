@@ -11618,6 +11618,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             {
                 query["formUuid"] = request.FormUuid;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedRowId))
+            {
+                query["needRowId"] = request.NeedRowId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -11696,6 +11700,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormUuid))
             {
                 query["formUuid"] = request.FormUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedRowId))
+            {
+                query["needRowId"] = request.NeedRowId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {

@@ -3942,7 +3942,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
-                BodyType = "none",
+                BodyType = "json",
             };
             return TeaModel.ToObject<UpdateSubTableResponse>(Execute(params_, req, runtime));
         }
@@ -4033,7 +4033,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
-                BodyType = "none",
+                BodyType = "json",
             };
             return TeaModel.ToObject<UpdateSubTableResponse>(await ExecuteAsync(params_, req, runtime));
         }
@@ -4074,6 +4074,218 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateSubTableHeaders headers = new UpdateSubTableHeaders();
             return await UpdateSubTableWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过指定rowId更新宜搭子表单数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSubTableByRowIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateSubTableByRowIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSubTableByRowIdResponse
+        /// </returns>
+        public UpdateSubTableByRowIdResponse UpdateSubTableByRowIdWithOptions(UpdateSubTableByRowIdRequest request, UpdateSubTableByRowIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
+            {
+                body["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormInstanceId))
+            {
+                body["formInstanceId"] = request.FormInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormUuid))
+            {
+                body["formUuid"] = request.FormUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemToken))
+            {
+                body["systemToken"] = request.SystemToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TableFieldId))
+            {
+                body["tableFieldId"] = request.TableFieldId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateSubTableDataJson))
+            {
+                body["updateSubTableDataJson"] = request.UpdateSubTableDataJson;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseAlias))
+            {
+                body["useAlias"] = request.UseAlias;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseLatestFormSchemaVersion))
+            {
+                body["useLatestFormSchemaVersion"] = request.UseLatestFormSchemaVersion;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateSubTableByRowId",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/updateSubTableByRowId",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateSubTableByRowIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过指定rowId更新宜搭子表单数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSubTableByRowIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateSubTableByRowIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSubTableByRowIdResponse
+        /// </returns>
+        public async Task<UpdateSubTableByRowIdResponse> UpdateSubTableByRowIdWithOptionsAsync(UpdateSubTableByRowIdRequest request, UpdateSubTableByRowIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
+            {
+                body["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormInstanceId))
+            {
+                body["formInstanceId"] = request.FormInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormUuid))
+            {
+                body["formUuid"] = request.FormUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemToken))
+            {
+                body["systemToken"] = request.SystemToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TableFieldId))
+            {
+                body["tableFieldId"] = request.TableFieldId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateSubTableDataJson))
+            {
+                body["updateSubTableDataJson"] = request.UpdateSubTableDataJson;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseAlias))
+            {
+                body["useAlias"] = request.UseAlias;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseLatestFormSchemaVersion))
+            {
+                body["useLatestFormSchemaVersion"] = request.UseLatestFormSchemaVersion;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateSubTableByRowId",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/updateSubTableByRowId",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateSubTableByRowIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过指定rowId更新宜搭子表单数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSubTableByRowIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSubTableByRowIdResponse
+        /// </returns>
+        public UpdateSubTableByRowIdResponse UpdateSubTableByRowId(UpdateSubTableByRowIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateSubTableByRowIdHeaders headers = new UpdateSubTableByRowIdHeaders();
+            return UpdateSubTableByRowIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过指定rowId更新宜搭子表单数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSubTableByRowIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSubTableByRowIdResponse
+        /// </returns>
+        public async Task<UpdateSubTableByRowIdResponse> UpdateSubTableByRowIdAsync(UpdateSubTableByRowIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateSubTableByRowIdHeaders headers = new UpdateSubTableByRowIdHeaders();
+            return await UpdateSubTableByRowIdWithOptionsAsync(request, headers, runtime);
         }
 
     }
