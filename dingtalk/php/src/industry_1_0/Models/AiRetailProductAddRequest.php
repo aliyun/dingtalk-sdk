@@ -29,6 +29,18 @@ class AiRetailProductAddRequest extends Model
     public $category;
 
     /**
+     * @var string
+     */
+    public $currecy;
+
+    /**
+     * @example 1
+     *
+     * @var int
+     */
+    public $enable;
+
+    /**
      * @var string[]
      */
     public $imageFileIds;
@@ -65,6 +77,8 @@ class AiRetailProductAddRequest extends Model
     public $productInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 办公室的电话是多少
      *
      * @var string
@@ -75,6 +89,8 @@ class AiRetailProductAddRequest extends Model
         'barcodes' => 'barcodes',
         'brand' => 'brand',
         'category' => 'category',
+        'currecy' => 'currecy',
+        'enable' => 'enable',
         'imageFileIds' => 'imageFileIds',
         'itemNumbers' => 'itemNumbers',
         'price' => 'price',
@@ -100,6 +116,12 @@ class AiRetailProductAddRequest extends Model
         }
         if (null !== $this->category) {
             $res['category'] = $this->category;
+        }
+        if (null !== $this->currecy) {
+            $res['currecy'] = $this->currecy;
+        }
+        if (null !== $this->enable) {
+            $res['enable'] = $this->enable;
         }
         if (null !== $this->imageFileIds) {
             $res['imageFileIds'] = $this->imageFileIds;
@@ -147,6 +169,12 @@ class AiRetailProductAddRequest extends Model
         }
         if (isset($map['category'])) {
             $model->category = $map['category'];
+        }
+        if (isset($map['currecy'])) {
+            $model->currecy = $map['currecy'];
+        }
+        if (isset($map['enable'])) {
+            $model->enable = $map['enable'];
         }
         if (isset($map['imageFileIds'])) {
             if (!empty($map['imageFileIds'])) {

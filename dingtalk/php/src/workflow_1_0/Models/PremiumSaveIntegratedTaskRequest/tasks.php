@@ -16,6 +16,13 @@ class tasks extends Model
     public $customData;
 
     /**
+     * @example 1758643200000
+     *
+     * @var int
+     */
+    public $dueTimestamp;
+
+    /**
      * @example https://www.dingtalk.com
      *
      * @var string
@@ -30,6 +37,7 @@ class tasks extends Model
     public $userId;
     protected $_name = [
         'customData' => 'customData',
+        'dueTimestamp' => 'dueTimestamp',
         'url' => 'url',
         'userId' => 'userId',
     ];
@@ -41,6 +49,9 @@ class tasks extends Model
         $res = [];
         if (null !== $this->customData) {
             $res['customData'] = $this->customData;
+        }
+        if (null !== $this->dueTimestamp) {
+            $res['dueTimestamp'] = $this->dueTimestamp;
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
@@ -62,6 +73,9 @@ class tasks extends Model
         $model = new self();
         if (isset($map['customData'])) {
             $model->customData = $map['customData'];
+        }
+        if (isset($map['dueTimestamp'])) {
+            $model->dueTimestamp = $map['dueTimestamp'];
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];

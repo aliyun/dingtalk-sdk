@@ -50,6 +50,8 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppUserAccessHeaders
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppUserAccessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetUserAppDevAccessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetUserAppDevAccessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetVersionInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetVersionInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\IsOrgMicroAppVisibleByUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\IsOrgMicroAppVisibleByUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\IsOrgMicroAppVisibleByUserIdResponse;
@@ -1301,6 +1303,59 @@ class Dingtalk extends OpenApiClient
         $headers = new GetUserAppDevAccessHeaders([]);
 
         return $this->getUserAppDevAccessWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取版本-仅用于测试
+     *  *
+     * @param GetVersionInfoRequest $request GetVersionInfoRequest
+     * @param string[]              $headers map
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetVersionInfoResponse GetVersionInfoResponse
+     */
+    public function getVersionInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unifiedAppId)) {
+            $query['unifiedAppId'] = $request->unifiedAppId;
+        }
+        if (!Utils::isUnset($request->versionId)) {
+            $query['versionId'] = $request->versionId;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetVersionInfo',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/getVersionInfo',
+            'method' => 'GET',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetVersionInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取版本-仅用于测试
+     *  *
+     * @param GetVersionInfoRequest $request GetVersionInfoRequest
+     *
+     * @return GetVersionInfoResponse GetVersionInfoResponse
+     */
+    public function getVersionInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->getVersionInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

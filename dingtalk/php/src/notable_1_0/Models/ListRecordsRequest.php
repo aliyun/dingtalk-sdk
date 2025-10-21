@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class ListRecordsRequest extends Model
 {
     /**
+     * @var bool
+     */
+    public $calcFields;
+
+    /**
      * @var filter
      */
     public $filter;
@@ -33,6 +38,7 @@ class ListRecordsRequest extends Model
      */
     public $operatorId;
     protected $_name = [
+        'calcFields' => 'calcFields',
         'filter' => 'filter',
         'maxResults' => 'maxResults',
         'nextToken' => 'nextToken',
@@ -44,6 +50,9 @@ class ListRecordsRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->calcFields) {
+            $res['calcFields'] = $this->calcFields;
+        }
         if (null !== $this->filter) {
             $res['filter'] = null !== $this->filter ? $this->filter->toMap() : null;
         }
@@ -68,6 +77,9 @@ class ListRecordsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['calcFields'])) {
+            $model->calcFields = $map['calcFields'];
+        }
         if (isset($map['filter'])) {
             $model->filter = filter::fromMap($map['filter']);
         }

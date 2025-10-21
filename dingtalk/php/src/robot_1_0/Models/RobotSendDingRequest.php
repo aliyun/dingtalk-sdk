@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class RobotSendDingRequest extends Model
 {
     /**
+     * @example Standard_Female_Voice
+     *
+     * @var string
+     */
+    public $callVoice;
+
+    /**
      * @description This parameter is required.
      *
      * @var string
@@ -38,6 +45,7 @@ class RobotSendDingRequest extends Model
      */
     public $robotCode;
     protected $_name = [
+        'callVoice' => 'callVoice',
         'content' => 'content',
         'receiverUserIdList' => 'receiverUserIdList',
         'remindType' => 'remindType',
@@ -49,6 +57,9 @@ class RobotSendDingRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->callVoice) {
+            $res['callVoice'] = $this->callVoice;
+        }
         if (null !== $this->content) {
             $res['content'] = $this->content;
         }
@@ -73,6 +84,9 @@ class RobotSendDingRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['callVoice'])) {
+            $model->callVoice = $map['callVoice'];
+        }
         if (isset($map['content'])) {
             $model->content = $map['content'];
         }

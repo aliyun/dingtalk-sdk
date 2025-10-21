@@ -563,6 +563,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->category)) {
             $body['category'] = $request->category;
         }
+        if (!Utils::isUnset($request->currecy)) {
+            $body['currecy'] = $request->currecy;
+        }
+        if (!Utils::isUnset($request->enable)) {
+            $body['enable'] = $request->enable;
+        }
         if (!Utils::isUnset($request->imageFileIds)) {
             $body['imageFileIds'] = $request->imageFileIds;
         }
@@ -823,6 +829,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->category)) {
             $body['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->currency)) {
+            $body['currency'] = $request->currency;
+        }
+        if (!Utils::isUnset($request->enable)) {
+            $body['enable'] = $request->enable;
         }
         if (!Utils::isUnset($request->imageFileIds)) {
             $body['imageFileIds'] = $request->imageFileIds;

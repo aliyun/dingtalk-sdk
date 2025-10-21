@@ -1304,6 +1304,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->callVoice)) {
+            $body['callVoice'] = $request->callVoice;
+        }
         if (!Utils::isUnset($request->content)) {
             $body['content'] = $request->content;
         }

@@ -239,6 +239,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnfurlingRegisterInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserGroupAliasTitleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserGroupAliasTitleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserGroupAliasTitleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeResponse;
@@ -341,6 +344,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUserGroupAliasTitleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUserGroupAliasTitleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUserGroupAliasTitleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpgradeToExternalGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpgradeToExternalGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpgradeToExternalGroupResponse;
@@ -517,6 +523,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->appId)) {
             $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->callbackType)) {
+            $body['callbackType'] = $request->callbackType;
         }
         if (!Utils::isUnset($request->callbackUrl)) {
             $body['callbackUrl'] = $request->callbackUrl;
@@ -5389,6 +5398,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询群备注
+     *  *
+     * @param QueryUserGroupAliasTitleRequest $request QueryUserGroupAliasTitleRequest
+     * @param QueryUserGroupAliasTitleHeaders $headers QueryUserGroupAliasTitleHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryUserGroupAliasTitleResponse QueryUserGroupAliasTitleResponse
+     */
+    public function queryUserGroupAliasTitleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryUserGroupAliasTitle',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/groupAliasTitiles/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryUserGroupAliasTitleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询群备注
+     *  *
+     * @param QueryUserGroupAliasTitleRequest $request QueryUserGroupAliasTitleRequest
+     *
+     * @return QueryUserGroupAliasTitleResponse QueryUserGroupAliasTitleResponse
+     */
+    public function queryUserGroupAliasTitle($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserGroupAliasTitleHeaders([]);
+
+        return $this->queryUserGroupAliasTitleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询群主视角群LastMessage时间
      *  *
      * @param QueryUserViewGroupLastMessageTimeRequest $request QueryUserViewGroupLastMessageTimeRequest
@@ -7396,6 +7465,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->appId)) {
             $body['appId'] = $request->appId;
         }
+        if (!Utils::isUnset($request->callbackType)) {
+            $body['callbackType'] = $request->callbackType;
+        }
         if (!Utils::isUnset($request->callbackUrl)) {
             $body['callbackUrl'] = $request->callbackUrl;
         }
@@ -7525,6 +7597,69 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateUnfurlingRegisterStatusHeaders([]);
 
         return $this->updateUnfurlingRegisterStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新群备注
+     *  *
+     * @param UpdateUserGroupAliasTitleRequest $request UpdateUserGroupAliasTitleRequest
+     * @param UpdateUserGroupAliasTitleHeaders $headers UpdateUserGroupAliasTitleHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateUserGroupAliasTitleResponse UpdateUserGroupAliasTitleResponse
+     */
+    public function updateUserGroupAliasTitleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateUserGroupAliasTitle',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/groupAliasTitiles/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateUserGroupAliasTitleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新群备注
+     *  *
+     * @param UpdateUserGroupAliasTitleRequest $request UpdateUserGroupAliasTitleRequest
+     *
+     * @return UpdateUserGroupAliasTitleResponse UpdateUserGroupAliasTitleResponse
+     */
+    public function updateUserGroupAliasTitle($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateUserGroupAliasTitleHeaders([]);
+
+        return $this->updateUserGroupAliasTitleWithOptions($request, $headers, $runtime);
     }
 
     /**

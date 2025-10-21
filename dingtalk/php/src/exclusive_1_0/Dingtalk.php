@@ -316,6 +316,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveStorageSwitchResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoByCursorPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoByCursorPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoByCursorPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoResponse;
@@ -4172,6 +4175,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->deviceUuid)) {
+            $query['deviceUuid'] = $request->deviceUuid;
+        }
         if (!Utils::isUnset($request->endTime)) {
             $query['endTime'] = $request->endTime;
         }
@@ -4648,6 +4654,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->deviceUuid)) {
+            $body['deviceUuid'] = $request->deviceUuid;
+        }
         if (!Utils::isUnset($request->gmtCreateEnd)) {
             $body['gmtCreateEnd'] = $request->gmtCreateEnd;
         }
@@ -7265,6 +7274,69 @@ class Dingtalk extends OpenApiClient
         $headers = new SearchOrgInnerGroupInfoHeaders([]);
 
         return $this->searchOrgInnerGroupInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业全量内部群信息
+     *  *
+     * @param SearchOrgInnerGroupInfoByCursorPageRequest $request SearchOrgInnerGroupInfoByCursorPageRequest
+     * @param SearchOrgInnerGroupInfoByCursorPageHeaders $headers SearchOrgInnerGroupInfoByCursorPageHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SearchOrgInnerGroupInfoByCursorPageResponse SearchOrgInnerGroupInfoByCursorPageResponse
+     */
+    public function searchOrgInnerGroupInfoByCursorPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->count)) {
+            $query['count'] = $request->count;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            $query['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->forward)) {
+            $query['forward'] = $request->forward;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'SearchOrgInnerGroupInfoByCursorPage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/securities/orgAllGroupInfos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SearchOrgInnerGroupInfoByCursorPageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业全量内部群信息
+     *  *
+     * @param SearchOrgInnerGroupInfoByCursorPageRequest $request SearchOrgInnerGroupInfoByCursorPageRequest
+     *
+     * @return SearchOrgInnerGroupInfoByCursorPageResponse SearchOrgInnerGroupInfoByCursorPageResponse
+     */
+    public function searchOrgInnerGroupInfoByCursorPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchOrgInnerGroupInfoByCursorPageHeaders([]);
+
+        return $this->searchOrgInnerGroupInfoByCursorPageWithOptions($request, $headers, $runtime);
     }
 
     /**

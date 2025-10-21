@@ -59,6 +59,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\StartInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateFormDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateFormDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateFormDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateSubTableByRowIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateSubTableByRowIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateSubTableByRowIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateSubTableHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateSubTableRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateSubTableResponse;
@@ -1621,7 +1624,7 @@ class Dingtalk extends OpenApiClient
             'authType' => 'AK',
             'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType' => 'none',
+            'bodyType' => 'json',
         ]);
 
         return UpdateSubTableResponse::fromMap($this->execute($params, $req, $runtime));
@@ -1640,5 +1643,86 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateSubTableHeaders([]);
 
         return $this->updateSubTableWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过指定rowId更新宜搭子表单数据
+     *  *
+     * @param UpdateSubTableByRowIdRequest $request UpdateSubTableByRowIdRequest
+     * @param UpdateSubTableByRowIdHeaders $headers UpdateSubTableByRowIdHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateSubTableByRowIdResponse UpdateSubTableByRowIdResponse
+     */
+    public function updateSubTableByRowIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            $body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->formInstanceId)) {
+            $body['formInstanceId'] = $request->formInstanceId;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            $body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            $body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->tableFieldId)) {
+            $body['tableFieldId'] = $request->tableFieldId;
+        }
+        if (!Utils::isUnset($request->updateSubTableDataJson)) {
+            $body['updateSubTableDataJson'] = $request->updateSubTableDataJson;
+        }
+        if (!Utils::isUnset($request->useAlias)) {
+            $body['useAlias'] = $request->useAlias;
+        }
+        if (!Utils::isUnset($request->useLatestFormSchemaVersion)) {
+            $body['useLatestFormSchemaVersion'] = $request->useLatestFormSchemaVersion;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateSubTableByRowId',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/updateSubTableByRowId',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateSubTableByRowIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过指定rowId更新宜搭子表单数据
+     *  *
+     * @param UpdateSubTableByRowIdRequest $request UpdateSubTableByRowIdRequest
+     *
+     * @return UpdateSubTableByRowIdResponse UpdateSubTableByRowIdResponse
+     */
+    public function updateSubTableByRowId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateSubTableByRowIdHeaders([]);
+
+        return $this->updateSubTableByRowIdWithOptions($request, $headers, $runtime);
     }
 }

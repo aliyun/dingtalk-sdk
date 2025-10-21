@@ -25,6 +25,11 @@ class AddUnfurlingRegisterRequest extends Model
     public $appId;
 
     /**
+     * @var int
+     */
+    public $callbackType;
+
+    /**
      * @description This parameter is required.
      *
      * @example https://xxx.xxx.com/api/dingtalk/link_unfurling
@@ -85,6 +90,7 @@ class AddUnfurlingRegisterRequest extends Model
     protected $_name = [
         'apiSecret' => 'apiSecret',
         'appId' => 'appId',
+        'callbackType' => 'callbackType',
         'callbackUrl' => 'callbackUrl',
         'cardTemplateId' => 'cardTemplateId',
         'domain' => 'domain',
@@ -104,6 +110,9 @@ class AddUnfurlingRegisterRequest extends Model
         }
         if (null !== $this->appId) {
             $res['appId'] = $this->appId;
+        }
+        if (null !== $this->callbackType) {
+            $res['callbackType'] = $this->callbackType;
         }
         if (null !== $this->callbackUrl) {
             $res['callbackUrl'] = $this->callbackUrl;
@@ -143,6 +152,9 @@ class AddUnfurlingRegisterRequest extends Model
         }
         if (isset($map['appId'])) {
             $model->appId = $map['appId'];
+        }
+        if (isset($map['callbackType'])) {
+            $model->callbackType = $map['callbackType'];
         }
         if (isset($map['callbackUrl'])) {
             $model->callbackUrl = $map['callbackUrl'];

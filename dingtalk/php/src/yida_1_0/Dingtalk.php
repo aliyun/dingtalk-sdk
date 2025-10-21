@@ -4813,6 +4813,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->formUuid)) {
             $query['formUuid'] = $request->formUuid;
         }
+        if (!Utils::isUnset($request->needRowId)) {
+            $query['needRowId'] = $request->needRowId;
+        }
         if (!Utils::isUnset($request->pageNumber)) {
             $query['pageNumber'] = $request->pageNumber;
         }

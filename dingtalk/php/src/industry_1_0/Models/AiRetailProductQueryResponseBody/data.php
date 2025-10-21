@@ -31,6 +31,16 @@ class data extends Model
     /**
      * @var string
      */
+    public $currency;
+
+    /**
+     * @var int
+     */
+    public $enable;
+
+    /**
+     * @var string
+     */
     public $imageFileIds;
 
     /**
@@ -72,6 +82,8 @@ class data extends Model
         'barcodes' => 'barcodes',
         'brand' => 'brand',
         'category' => 'category',
+        'currency' => 'currency',
+        'enable' => 'enable',
         'imageFileIds' => 'imageFileIds',
         'itemNumbers' => 'itemNumbers',
         'price' => 'price',
@@ -98,6 +110,12 @@ class data extends Model
         }
         if (null !== $this->category) {
             $res['category'] = $this->category;
+        }
+        if (null !== $this->currency) {
+            $res['currency'] = $this->currency;
+        }
+        if (null !== $this->enable) {
+            $res['enable'] = $this->enable;
         }
         if (null !== $this->imageFileIds) {
             $res['imageFileIds'] = $this->imageFileIds;
@@ -146,6 +164,12 @@ class data extends Model
         }
         if (isset($map['category'])) {
             $model->category = $map['category'];
+        }
+        if (isset($map['currency'])) {
+            $model->currency = $map['currency'];
+        }
+        if (isset($map['enable'])) {
+            $model->enable = $map['enable'];
         }
         if (isset($map['imageFileIds'])) {
             $model->imageFileIds = $map['imageFileIds'];

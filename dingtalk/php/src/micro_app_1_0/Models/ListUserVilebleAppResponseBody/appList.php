@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListUserVilebleAppResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListUserVilebleAppResponseBody\appList\i18n;
 use AlibabaCloud\Tea\Model;
 
 class appList extends Model
@@ -59,6 +60,11 @@ class appList extends Model
     public $homepageLink;
 
     /**
+     * @var i18n[]
+     */
+    public $i18n;
+
+    /**
      * @example icon
      *
      * @var string
@@ -99,6 +105,7 @@ class appList extends Model
         'desc' => 'desc',
         'developType' => 'developType',
         'homepageLink' => 'homepageLink',
+        'i18n' => 'i18n',
         'icon' => 'icon',
         'name' => 'name',
         'ompLink' => 'ompLink',
@@ -128,6 +135,15 @@ class appList extends Model
         }
         if (null !== $this->homepageLink) {
             $res['homepageLink'] = $this->homepageLink;
+        }
+        if (null !== $this->i18n) {
+            $res['i18n'] = [];
+            if (null !== $this->i18n && \is_array($this->i18n)) {
+                $n = 0;
+                foreach ($this->i18n as $item) {
+                    $res['i18n'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->icon) {
             $res['icon'] = $this->icon;
@@ -173,6 +189,15 @@ class appList extends Model
         }
         if (isset($map['homepageLink'])) {
             $model->homepageLink = $map['homepageLink'];
+        }
+        if (isset($map['i18n'])) {
+            if (!empty($map['i18n'])) {
+                $model->i18n = [];
+                $n = 0;
+                foreach ($map['i18n'] as $item) {
+                    $model->i18n[$n++] = null !== $item ? i18n::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['icon'])) {
             $model->icon = $map['icon'];

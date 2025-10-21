@@ -25,6 +25,11 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
     public $formUuid;
 
     /**
+     * @var bool
+     */
+    public $needRowId;
+
+    /**
      * @example 10
      *
      * @var int
@@ -67,6 +72,7 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
     protected $_name = [
         'appType' => 'appType',
         'formUuid' => 'formUuid',
+        'needRowId' => 'needRowId',
         'pageNumber' => 'pageNumber',
         'pageSize' => 'pageSize',
         'systemToken' => 'systemToken',
@@ -84,6 +90,9 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
         }
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
+        }
+        if (null !== $this->needRowId) {
+            $res['needRowId'] = $this->needRowId;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
@@ -117,6 +126,9 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
         }
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];
+        }
+        if (isset($map['needRowId'])) {
+            $model->needRowId = $map['needRowId'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];

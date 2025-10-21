@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetTrustDeviceListRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $deviceUuid;
+
+    /**
      * @example 1721718854814
      *
      * @var int
@@ -79,6 +84,7 @@ class GetTrustDeviceListRequest extends Model
      */
     public $userIds;
     protected $_name = [
+        'deviceUuid' => 'deviceUuid',
         'gmtCreateEnd' => 'gmtCreateEnd',
         'gmtCreateStart' => 'gmtCreateStart',
         'gmtModifiedEnd' => 'gmtModifiedEnd',
@@ -97,6 +103,9 @@ class GetTrustDeviceListRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->deviceUuid) {
+            $res['deviceUuid'] = $this->deviceUuid;
+        }
         if (null !== $this->gmtCreateEnd) {
             $res['gmtCreateEnd'] = $this->gmtCreateEnd;
         }
@@ -142,6 +151,9 @@ class GetTrustDeviceListRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['deviceUuid'])) {
+            $model->deviceUuid = $map['deviceUuid'];
+        }
         if (isset($map['gmtCreateEnd'])) {
             $model->gmtCreateEnd = $map['gmtCreateEnd'];
         }

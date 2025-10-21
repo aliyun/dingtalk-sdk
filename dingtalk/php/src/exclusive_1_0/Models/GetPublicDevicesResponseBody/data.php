@@ -34,6 +34,11 @@ class data extends Model
     public $deviceStaffs;
 
     /**
+     * @var string
+     */
+    public $deviceUuid;
+
+    /**
      * @example 1671767361000
      *
      * @var int
@@ -62,9 +67,21 @@ class data extends Model
     public $platform;
 
     /**
+     * @example 1
+     *
+     * @var string
+     */
+    public $retryPermission;
+
+    /**
      * @var string
      */
     public $serialNumber;
+
+    /**
+     * @var int
+     */
+    public $status;
 
     /**
      * @example 这是标题
@@ -77,11 +94,14 @@ class data extends Model
         'deviceRoles' => 'deviceRoles',
         'deviceScopeType' => 'deviceScopeType',
         'deviceStaffs' => 'deviceStaffs',
+        'deviceUuid' => 'deviceUuid',
         'gmtCreate' => 'gmtCreate',
         'gmtModified' => 'gmtModified',
         'macAddress' => 'macAddress',
         'platform' => 'platform',
+        'retryPermission' => 'retryPermission',
         'serialNumber' => 'serialNumber',
+        'status' => 'status',
         'title' => 'title',
     ];
 
@@ -120,6 +140,9 @@ class data extends Model
                 }
             }
         }
+        if (null !== $this->deviceUuid) {
+            $res['deviceUuid'] = $this->deviceUuid;
+        }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
         }
@@ -132,8 +155,14 @@ class data extends Model
         if (null !== $this->platform) {
             $res['platform'] = $this->platform;
         }
+        if (null !== $this->retryPermission) {
+            $res['retryPermission'] = $this->retryPermission;
+        }
         if (null !== $this->serialNumber) {
             $res['serialNumber'] = $this->serialNumber;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
@@ -180,6 +209,9 @@ class data extends Model
                 }
             }
         }
+        if (isset($map['deviceUuid'])) {
+            $model->deviceUuid = $map['deviceUuid'];
+        }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];
         }
@@ -192,8 +224,14 @@ class data extends Model
         if (isset($map['platform'])) {
             $model->platform = $map['platform'];
         }
+        if (isset($map['retryPermission'])) {
+            $model->retryPermission = $map['retryPermission'];
+        }
         if (isset($map['serialNumber'])) {
             $model->serialNumber = $map['serialNumber'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];

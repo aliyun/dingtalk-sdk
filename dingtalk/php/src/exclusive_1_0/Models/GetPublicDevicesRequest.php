@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetPublicDevicesRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $deviceUuid;
+
+    /**
      * @example 1671767361000
      *
      * @var int
@@ -64,6 +69,7 @@ class GetPublicDevicesRequest extends Model
      */
     public $title;
     protected $_name = [
+        'deviceUuid' => 'deviceUuid',
         'endTime' => 'endTime',
         'macAddress' => 'macAddress',
         'pageNumber' => 'pageNumber',
@@ -79,6 +85,9 @@ class GetPublicDevicesRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->deviceUuid) {
+            $res['deviceUuid'] = $this->deviceUuid;
+        }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
         }
@@ -115,6 +124,9 @@ class GetPublicDevicesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['deviceUuid'])) {
+            $model->deviceUuid = $map['deviceUuid'];
+        }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
         }

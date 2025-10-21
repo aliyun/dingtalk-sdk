@@ -22,6 +22,7 @@
     "psr-4": {
       "AlibabaCloud\\SDK\\Dingtalk\\Vactivity_1_0\\": "src/activity_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vagoal_1_0\\": "src/agoal_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vai_global_e_c_1_0\\": "src/ai_global_e_c_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vai_interaction_1_0\\": "src/ai_interaction_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vai_paa_s_1_0\\": "src/ai_paa_s_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Valgo_1_0\\": "src/algo_1_0/",
@@ -63,6 +64,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vdoc_2_0\\": "src/doc_2_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vdpaas_1_0\\": "src/dpaas_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vdrive_1_0\\": "src/drive_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vdvi_1_0\\": "src/dvi_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vedu_1_0\\": "src/edu_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vesign_1_0\\": "src/esign_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vesign_2_0\\": "src/esign_2_0/",
