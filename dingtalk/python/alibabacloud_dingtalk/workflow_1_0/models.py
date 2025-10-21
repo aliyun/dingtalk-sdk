@@ -2500,10 +2500,12 @@ class CreateIntegratedTaskRequestTasks(TeaModel):
     def __init__(
         self,
         custom_data: str = None,
+        due_timestamp: int = None,
         url: str = None,
         user_id: str = None,
     ):
         self.custom_data = custom_data
+        self.due_timestamp = due_timestamp
         self.url = url
         self.user_id = user_id
 
@@ -2518,6 +2520,8 @@ class CreateIntegratedTaskRequestTasks(TeaModel):
         result = dict()
         if self.custom_data is not None:
             result['customData'] = self.custom_data
+        if self.due_timestamp is not None:
+            result['dueTimestamp'] = self.due_timestamp
         if self.url is not None:
             result['url'] = self.url
         if self.user_id is not None:
@@ -2528,6 +2532,8 @@ class CreateIntegratedTaskRequestTasks(TeaModel):
         m = m or dict()
         if m.get('customData') is not None:
             self.custom_data = m.get('customData')
+        if m.get('dueTimestamp') is not None:
+            self.due_timestamp = m.get('dueTimestamp')
         if m.get('url') is not None:
             self.url = m.get('url')
         if m.get('userId') is not None:
@@ -16887,10 +16893,12 @@ class PremiumSaveIntegratedTaskRequestTasks(TeaModel):
     def __init__(
         self,
         custom_data: str = None,
+        due_timestamp: int = None,
         url: str = None,
         user_id: str = None,
     ):
         self.custom_data = custom_data
+        self.due_timestamp = due_timestamp
         self.url = url
         self.user_id = user_id
 
@@ -16905,6 +16913,8 @@ class PremiumSaveIntegratedTaskRequestTasks(TeaModel):
         result = dict()
         if self.custom_data is not None:
             result['customData'] = self.custom_data
+        if self.due_timestamp is not None:
+            result['dueTimestamp'] = self.due_timestamp
         if self.url is not None:
             result['url'] = self.url
         if self.user_id is not None:
@@ -16915,6 +16925,8 @@ class PremiumSaveIntegratedTaskRequestTasks(TeaModel):
         m = m or dict()
         if m.get('customData') is not None:
             self.custom_data = m.get('customData')
+        if m.get('dueTimestamp') is not None:
+            self.due_timestamp = m.get('dueTimestamp')
         if m.get('url') is not None:
             self.url = m.get('url')
         if m.get('userId') is not None:

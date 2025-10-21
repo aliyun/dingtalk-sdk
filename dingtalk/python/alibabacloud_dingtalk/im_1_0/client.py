@@ -298,6 +298,8 @@ class Client(OpenApiClient):
             body['apiSecret'] = request.api_secret
         if not UtilClient.is_unset(request.app_id):
             body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.callback_type):
+            body['callbackType'] = request.callback_type
         if not UtilClient.is_unset(request.callback_url):
             body['callbackUrl'] = request.callback_url
         if not UtilClient.is_unset(request.card_template_id):
@@ -357,6 +359,8 @@ class Client(OpenApiClient):
             body['apiSecret'] = request.api_secret
         if not UtilClient.is_unset(request.app_id):
             body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.callback_type):
+            body['callbackType'] = request.callback_type
         if not UtilClient.is_unset(request.callback_url):
             body['callbackUrl'] = request.callback_url
         if not UtilClient.is_unset(request.card_template_id):
@@ -9676,6 +9680,124 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.QueryUnfurlingRegisterInfoHeaders()
         return await self.query_unfurling_register_info_with_options_async(request, headers, runtime)
 
+    def query_user_group_alias_title_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryUserGroupAliasTitleRequest,
+        headers: dingtalkim__1__0_models.QueryUserGroupAliasTitleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryUserGroupAliasTitleResponse:
+        """
+        @summary 查询群备注
+        
+        @param request: QueryUserGroupAliasTitleRequest
+        @param headers: QueryUserGroupAliasTitleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserGroupAliasTitleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryUserGroupAliasTitle',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groupAliasTitiles/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryUserGroupAliasTitleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_user_group_alias_title_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryUserGroupAliasTitleRequest,
+        headers: dingtalkim__1__0_models.QueryUserGroupAliasTitleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryUserGroupAliasTitleResponse:
+        """
+        @summary 查询群备注
+        
+        @param request: QueryUserGroupAliasTitleRequest
+        @param headers: QueryUserGroupAliasTitleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserGroupAliasTitleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryUserGroupAliasTitle',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groupAliasTitiles/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryUserGroupAliasTitleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_user_group_alias_title(
+        self,
+        request: dingtalkim__1__0_models.QueryUserGroupAliasTitleRequest,
+    ) -> dingtalkim__1__0_models.QueryUserGroupAliasTitleResponse:
+        """
+        @summary 查询群备注
+        
+        @param request: QueryUserGroupAliasTitleRequest
+        @return: QueryUserGroupAliasTitleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryUserGroupAliasTitleHeaders()
+        return self.query_user_group_alias_title_with_options(request, headers, runtime)
+
+    async def query_user_group_alias_title_async(
+        self,
+        request: dingtalkim__1__0_models.QueryUserGroupAliasTitleRequest,
+    ) -> dingtalkim__1__0_models.QueryUserGroupAliasTitleResponse:
+        """
+        @summary 查询群备注
+        
+        @param request: QueryUserGroupAliasTitleRequest
+        @return: QueryUserGroupAliasTitleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryUserGroupAliasTitleHeaders()
+        return await self.query_user_group_alias_title_with_options_async(request, headers, runtime)
+
     def query_user_view_group_last_message_time_with_options(
         self,
         request: dingtalkim__1__0_models.QueryUserViewGroupLastMessageTimeRequest,
@@ -13450,6 +13572,8 @@ class Client(OpenApiClient):
             body['apiSecret'] = request.api_secret
         if not UtilClient.is_unset(request.app_id):
             body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.callback_type):
+            body['callbackType'] = request.callback_type
         if not UtilClient.is_unset(request.callback_url):
             body['callbackUrl'] = request.callback_url
         if not UtilClient.is_unset(request.card_template_id):
@@ -13511,6 +13635,8 @@ class Client(OpenApiClient):
             body['apiSecret'] = request.api_secret
         if not UtilClient.is_unset(request.app_id):
             body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.callback_type):
+            body['callbackType'] = request.callback_type
         if not UtilClient.is_unset(request.callback_url):
             body['callbackUrl'] = request.callback_url
         if not UtilClient.is_unset(request.card_template_id):
@@ -13705,6 +13831,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusHeaders()
         return await self.update_unfurling_register_status_with_options_async(request, headers, runtime)
+
+    def update_user_group_alias_title_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateUserGroupAliasTitleRequest,
+        headers: dingtalkim__1__0_models.UpdateUserGroupAliasTitleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateUserGroupAliasTitleResponse:
+        """
+        @summary 更新群备注
+        
+        @param request: UpdateUserGroupAliasTitleRequest
+        @param headers: UpdateUserGroupAliasTitleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateUserGroupAliasTitleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateUserGroupAliasTitle',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groupAliasTitiles/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateUserGroupAliasTitleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_user_group_alias_title_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateUserGroupAliasTitleRequest,
+        headers: dingtalkim__1__0_models.UpdateUserGroupAliasTitleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateUserGroupAliasTitleResponse:
+        """
+        @summary 更新群备注
+        
+        @param request: UpdateUserGroupAliasTitleRequest
+        @param headers: UpdateUserGroupAliasTitleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateUserGroupAliasTitleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateUserGroupAliasTitle',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groupAliasTitiles/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateUserGroupAliasTitleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_user_group_alias_title(
+        self,
+        request: dingtalkim__1__0_models.UpdateUserGroupAliasTitleRequest,
+    ) -> dingtalkim__1__0_models.UpdateUserGroupAliasTitleResponse:
+        """
+        @summary 更新群备注
+        
+        @param request: UpdateUserGroupAliasTitleRequest
+        @return: UpdateUserGroupAliasTitleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateUserGroupAliasTitleHeaders()
+        return self.update_user_group_alias_title_with_options(request, headers, runtime)
+
+    async def update_user_group_alias_title_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateUserGroupAliasTitleRequest,
+    ) -> dingtalkim__1__0_models.UpdateUserGroupAliasTitleResponse:
+        """
+        @summary 更新群备注
+        
+        @param request: UpdateUserGroupAliasTitleRequest
+        @return: UpdateUserGroupAliasTitleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateUserGroupAliasTitleHeaders()
+        return await self.update_user_group_alias_title_with_options_async(request, headers, runtime)
 
     def upgrade_to_external_group_with_options(
         self,

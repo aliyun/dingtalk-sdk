@@ -44,6 +44,8 @@ class AiRetailProductAddRequest(TeaModel):
         barcodes: List[str] = None,
         brand: str = None,
         category: str = None,
+        currecy: str = None,
+        enable: int = None,
         image_file_ids: List[str] = None,
         item_numbers: List[str] = None,
         price: float = None,
@@ -56,6 +58,8 @@ class AiRetailProductAddRequest(TeaModel):
         self.barcodes = barcodes
         self.brand = brand
         self.category = category
+        self.currecy = currecy
+        self.enable = enable
         self.image_file_ids = image_file_ids
         self.item_numbers = item_numbers
         self.price = price
@@ -63,6 +67,7 @@ class AiRetailProductAddRequest(TeaModel):
         self.product_code = product_code
         self.product_fab = product_fab
         self.product_info = product_info
+        # This parameter is required.
         self.product_name = product_name
 
     def validate(self):
@@ -82,6 +87,10 @@ class AiRetailProductAddRequest(TeaModel):
             result['brand'] = self.brand
         if self.category is not None:
             result['category'] = self.category
+        if self.currecy is not None:
+            result['currecy'] = self.currecy
+        if self.enable is not None:
+            result['enable'] = self.enable
         if self.image_file_ids is not None:
             result['imageFileIds'] = self.image_file_ids
         if self.item_numbers is not None:
@@ -108,6 +117,10 @@ class AiRetailProductAddRequest(TeaModel):
             self.brand = m.get('brand')
         if m.get('category') is not None:
             self.category = m.get('category')
+        if m.get('currecy') is not None:
+            self.currecy = m.get('currecy')
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
         if m.get('imageFileIds') is not None:
             self.image_file_ids = m.get('imageFileIds')
         if m.get('itemNumbers') is not None:
@@ -530,6 +543,8 @@ class AiRetailProductQueryResponseBodyData(TeaModel):
         barcodes: str = None,
         brand: str = None,
         category: str = None,
+        currency: str = None,
+        enable: int = None,
         image_file_ids: str = None,
         item_numbers: str = None,
         price: float = None,
@@ -543,6 +558,8 @@ class AiRetailProductQueryResponseBodyData(TeaModel):
         self.barcodes = barcodes
         self.brand = brand
         self.category = category
+        self.currency = currency
+        self.enable = enable
         self.image_file_ids = image_file_ids
         self.item_numbers = item_numbers
         self.price = price
@@ -569,6 +586,10 @@ class AiRetailProductQueryResponseBodyData(TeaModel):
             result['brand'] = self.brand
         if self.category is not None:
             result['category'] = self.category
+        if self.currency is not None:
+            result['currency'] = self.currency
+        if self.enable is not None:
+            result['enable'] = self.enable
         if self.image_file_ids is not None:
             result['imageFileIds'] = self.image_file_ids
         if self.item_numbers is not None:
@@ -597,6 +618,10 @@ class AiRetailProductQueryResponseBodyData(TeaModel):
             self.brand = m.get('brand')
         if m.get('category') is not None:
             self.category = m.get('category')
+        if m.get('currency') is not None:
+            self.currency = m.get('currency')
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
         if m.get('imageFileIds') is not None:
             self.image_file_ids = m.get('imageFileIds')
         if m.get('itemNumbers') is not None:
@@ -732,6 +757,8 @@ class AiRetailProductUpdateRequest(TeaModel):
         barcodes: List[str] = None,
         brand: str = None,
         category: str = None,
+        currency: str = None,
+        enable: int = None,
         image_file_ids: List[str] = None,
         item_numbers: List[str] = None,
         price: float = None,
@@ -745,6 +772,8 @@ class AiRetailProductUpdateRequest(TeaModel):
         self.barcodes = barcodes
         self.brand = brand
         self.category = category
+        self.currency = currency
+        self.enable = enable
         self.image_file_ids = image_file_ids
         self.item_numbers = item_numbers
         self.price = price
@@ -772,6 +801,10 @@ class AiRetailProductUpdateRequest(TeaModel):
             result['brand'] = self.brand
         if self.category is not None:
             result['category'] = self.category
+        if self.currency is not None:
+            result['currency'] = self.currency
+        if self.enable is not None:
+            result['enable'] = self.enable
         if self.image_file_ids is not None:
             result['imageFileIds'] = self.image_file_ids
         if self.item_numbers is not None:
@@ -800,6 +833,10 @@ class AiRetailProductUpdateRequest(TeaModel):
             self.brand = m.get('brand')
         if m.get('category') is not None:
             self.category = m.get('category')
+        if m.get('currency') is not None:
+            self.currency = m.get('currency')
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
         if m.get('imageFileIds') is not None:
             self.image_file_ids = m.get('imageFileIds')
         if m.get('itemNumbers') is not None:

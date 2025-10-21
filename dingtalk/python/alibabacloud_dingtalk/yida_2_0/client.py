@@ -2744,7 +2744,7 @@ class Client(OpenApiClient):
             auth_type='AK',
             style='ROA',
             req_body_type='none',
-            body_type='none'
+            body_type='json'
         )
         return TeaCore.from_map(
             dingtalkyida__2__0_models.UpdateSubTableResponse(),
@@ -2805,7 +2805,7 @@ class Client(OpenApiClient):
             auth_type='AK',
             style='ROA',
             req_body_type='none',
-            body_type='none'
+            body_type='json'
         )
         return TeaCore.from_map(
             dingtalkyida__2__0_models.UpdateSubTableResponse(),
@@ -2839,3 +2839,149 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__2__0_models.UpdateSubTableHeaders()
         return await self.update_sub_table_with_options_async(request, headers, runtime)
+
+    def update_sub_table_by_row_id_with_options(
+        self,
+        request: dingtalkyida__2__0_models.UpdateSubTableByRowIdRequest,
+        headers: dingtalkyida__2__0_models.UpdateSubTableByRowIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.UpdateSubTableByRowIdResponse:
+        """
+        @summary 通过指定rowId更新宜搭子表单数据
+        
+        @param request: UpdateSubTableByRowIdRequest
+        @param headers: UpdateSubTableByRowIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSubTableByRowIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_instance_id):
+            body['formInstanceId'] = request.form_instance_id
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.table_field_id):
+            body['tableFieldId'] = request.table_field_id
+        if not UtilClient.is_unset(request.update_sub_table_data_json):
+            body['updateSubTableDataJson'] = request.update_sub_table_data_json
+        if not UtilClient.is_unset(request.use_alias):
+            body['useAlias'] = request.use_alias
+        if not UtilClient.is_unset(request.use_latest_form_schema_version):
+            body['useLatestFormSchemaVersion'] = request.use_latest_form_schema_version
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateSubTableByRowId',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/updateSubTableByRowId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.UpdateSubTableByRowIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_sub_table_by_row_id_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.UpdateSubTableByRowIdRequest,
+        headers: dingtalkyida__2__0_models.UpdateSubTableByRowIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.UpdateSubTableByRowIdResponse:
+        """
+        @summary 通过指定rowId更新宜搭子表单数据
+        
+        @param request: UpdateSubTableByRowIdRequest
+        @param headers: UpdateSubTableByRowIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSubTableByRowIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.form_instance_id):
+            body['formInstanceId'] = request.form_instance_id
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.table_field_id):
+            body['tableFieldId'] = request.table_field_id
+        if not UtilClient.is_unset(request.update_sub_table_data_json):
+            body['updateSubTableDataJson'] = request.update_sub_table_data_json
+        if not UtilClient.is_unset(request.use_alias):
+            body['useAlias'] = request.use_alias
+        if not UtilClient.is_unset(request.use_latest_form_schema_version):
+            body['useLatestFormSchemaVersion'] = request.use_latest_form_schema_version
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateSubTableByRowId',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/updateSubTableByRowId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.UpdateSubTableByRowIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_sub_table_by_row_id(
+        self,
+        request: dingtalkyida__2__0_models.UpdateSubTableByRowIdRequest,
+    ) -> dingtalkyida__2__0_models.UpdateSubTableByRowIdResponse:
+        """
+        @summary 通过指定rowId更新宜搭子表单数据
+        
+        @param request: UpdateSubTableByRowIdRequest
+        @return: UpdateSubTableByRowIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.UpdateSubTableByRowIdHeaders()
+        return self.update_sub_table_by_row_id_with_options(request, headers, runtime)
+
+    async def update_sub_table_by_row_id_async(
+        self,
+        request: dingtalkyida__2__0_models.UpdateSubTableByRowIdRequest,
+    ) -> dingtalkyida__2__0_models.UpdateSubTableByRowIdResponse:
+        """
+        @summary 通过指定rowId更新宜搭子表单数据
+        
+        @param request: UpdateSubTableByRowIdRequest
+        @return: UpdateSubTableByRowIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.UpdateSubTableByRowIdHeaders()
+        return await self.update_sub_table_by_row_id_with_options_async(request, headers, runtime)

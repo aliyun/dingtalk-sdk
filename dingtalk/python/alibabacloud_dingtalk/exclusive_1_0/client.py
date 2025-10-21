@@ -7286,6 +7286,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.device_uuid):
+            query['deviceUuid'] = request.device_uuid
         if not UtilClient.is_unset(request.end_time):
             query['endTime'] = request.end_time
         if not UtilClient.is_unset(request.mac_address):
@@ -7343,6 +7345,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.device_uuid):
+            query['deviceUuid'] = request.device_uuid
         if not UtilClient.is_unset(request.end_time):
             query['endTime'] = request.end_time
         if not UtilClient.is_unset(request.mac_address):
@@ -8188,6 +8192,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.device_uuid):
+            body['deviceUuid'] = request.device_uuid
         if not UtilClient.is_unset(request.gmt_create_end):
             body['gmtCreateEnd'] = request.gmt_create_end
         if not UtilClient.is_unset(request.gmt_create_start):
@@ -8251,6 +8257,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.device_uuid):
+            body['deviceUuid'] = request.device_uuid
         if not UtilClient.is_unset(request.gmt_create_end):
             body['gmtCreateEnd'] = request.gmt_create_end
         if not UtilClient.is_unset(request.gmt_create_start):
@@ -13213,6 +13221,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoHeaders()
         return await self.search_org_inner_group_info_with_options_async(request, headers, runtime)
+
+    def search_org_inner_group_info_by_cursor_page_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageRequest,
+        headers: dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageResponse:
+        """
+        @summary 查询企业全量内部群信息
+        
+        @param request: SearchOrgInnerGroupInfoByCursorPageRequest
+        @param headers: SearchOrgInnerGroupInfoByCursorPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchOrgInnerGroupInfoByCursorPageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.count):
+            query['count'] = request.count
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.forward):
+            query['forward'] = request.forward
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SearchOrgInnerGroupInfoByCursorPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/securities/orgAllGroupInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def search_org_inner_group_info_by_cursor_page_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageRequest,
+        headers: dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageResponse:
+        """
+        @summary 查询企业全量内部群信息
+        
+        @param request: SearchOrgInnerGroupInfoByCursorPageRequest
+        @param headers: SearchOrgInnerGroupInfoByCursorPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchOrgInnerGroupInfoByCursorPageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.count):
+            query['count'] = request.count
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.forward):
+            query['forward'] = request.forward
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SearchOrgInnerGroupInfoByCursorPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/securities/orgAllGroupInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def search_org_inner_group_info_by_cursor_page(
+        self,
+        request: dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageRequest,
+    ) -> dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageResponse:
+        """
+        @summary 查询企业全量内部群信息
+        
+        @param request: SearchOrgInnerGroupInfoByCursorPageRequest
+        @return: SearchOrgInnerGroupInfoByCursorPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageHeaders()
+        return self.search_org_inner_group_info_by_cursor_page_with_options(request, headers, runtime)
+
+    async def search_org_inner_group_info_by_cursor_page_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageRequest,
+    ) -> dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageResponse:
+        """
+        @summary 查询企业全量内部群信息
+        
+        @param request: SearchOrgInnerGroupInfoByCursorPageRequest
+        @return: SearchOrgInnerGroupInfoByCursorPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoByCursorPageHeaders()
+        return await self.search_org_inner_group_info_by_cursor_page_with_options_async(request, headers, runtime)
 
     def send_app_ding_with_options(
         self,

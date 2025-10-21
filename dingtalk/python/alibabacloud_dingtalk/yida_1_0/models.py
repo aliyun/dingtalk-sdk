@@ -16311,6 +16311,7 @@ class ListTableDataByFormInstanceIdTableIdRequest(TeaModel):
         self,
         app_type: str = None,
         form_uuid: str = None,
+        need_row_id: bool = None,
         page_number: int = None,
         page_size: int = None,
         system_token: str = None,
@@ -16321,6 +16322,7 @@ class ListTableDataByFormInstanceIdTableIdRequest(TeaModel):
         self.app_type = app_type
         # This parameter is required.
         self.form_uuid = form_uuid
+        self.need_row_id = need_row_id
         self.page_number = page_number
         self.page_size = page_size
         # This parameter is required.
@@ -16343,6 +16345,8 @@ class ListTableDataByFormInstanceIdTableIdRequest(TeaModel):
             result['appType'] = self.app_type
         if self.form_uuid is not None:
             result['formUuid'] = self.form_uuid
+        if self.need_row_id is not None:
+            result['needRowId'] = self.need_row_id
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -16361,6 +16365,8 @@ class ListTableDataByFormInstanceIdTableIdRequest(TeaModel):
             self.app_type = m.get('appType')
         if m.get('formUuid') is not None:
             self.form_uuid = m.get('formUuid')
+        if m.get('needRowId') is not None:
+            self.need_row_id = m.get('needRowId')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:

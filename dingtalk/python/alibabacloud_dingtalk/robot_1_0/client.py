@@ -2360,6 +2360,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.call_voice):
+            body['callVoice'] = request.call_voice
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
         if not UtilClient.is_unset(request.receiver_user_id_list):
@@ -2409,6 +2411,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.call_voice):
+            body['callVoice'] = request.call_voice
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
         if not UtilClient.is_unset(request.receiver_user_id_list):

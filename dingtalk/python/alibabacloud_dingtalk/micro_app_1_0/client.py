@@ -2318,6 +2318,114 @@ class Client(OpenApiClient):
         headers = dingtalkmicro_app__1__0_models.GetUserAppDevAccessHeaders()
         return await self.get_user_app_dev_access_with_options_async(user_id, headers, runtime)
 
+    def get_version_info_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetVersionInfoRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetVersionInfoResponse:
+        """
+        @summary 获取版本-仅用于测试
+        
+        @param request: GetVersionInfoRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetVersionInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.unified_app_id):
+            query['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.version_id):
+            query['versionId'] = request.version_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetVersionInfo',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/getVersionInfo',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetVersionInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_version_info_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetVersionInfoRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetVersionInfoResponse:
+        """
+        @summary 获取版本-仅用于测试
+        
+        @param request: GetVersionInfoRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetVersionInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.unified_app_id):
+            query['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.version_id):
+            query['versionId'] = request.version_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetVersionInfo',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/getVersionInfo',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetVersionInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_version_info(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetVersionInfoRequest,
+    ) -> dingtalkmicro_app__1__0_models.GetVersionInfoResponse:
+        """
+        @summary 获取版本-仅用于测试
+        
+        @param request: GetVersionInfoRequest
+        @return: GetVersionInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.get_version_info_with_options(request, headers, runtime)
+
+    async def get_version_info_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetVersionInfoRequest,
+    ) -> dingtalkmicro_app__1__0_models.GetVersionInfoResponse:
+        """
+        @summary 获取版本-仅用于测试
+        
+        @param request: GetVersionInfoRequest
+        @return: GetVersionInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.get_version_info_with_options_async(request, headers, runtime)
+
     def is_org_micro_app_visible_by_user_id_with_options(
         self,
         request: dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdRequest,

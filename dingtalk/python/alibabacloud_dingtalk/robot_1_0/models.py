@@ -3077,11 +3077,13 @@ class RobotSendDingHeaders(TeaModel):
 class RobotSendDingRequest(TeaModel):
     def __init__(
         self,
+        call_voice: str = None,
         content: str = None,
         receiver_user_id_list: List[str] = None,
         remind_type: int = None,
         robot_code: str = None,
     ):
+        self.call_voice = call_voice
         # This parameter is required.
         self.content = content
         # This parameter is required.
@@ -3100,6 +3102,8 @@ class RobotSendDingRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.call_voice is not None:
+            result['callVoice'] = self.call_voice
         if self.content is not None:
             result['content'] = self.content
         if self.receiver_user_id_list is not None:
@@ -3112,6 +3116,8 @@ class RobotSendDingRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('callVoice') is not None:
+            self.call_voice = m.get('callVoice')
         if m.get('content') is not None:
             self.content = m.get('content')
         if m.get('receiverUserIdList') is not None:

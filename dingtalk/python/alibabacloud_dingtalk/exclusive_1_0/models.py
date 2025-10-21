@@ -11342,6 +11342,7 @@ class GetPublicDevicesHeaders(TeaModel):
 class GetPublicDevicesRequest(TeaModel):
     def __init__(
         self,
+        device_uuid: str = None,
         end_time: int = None,
         mac_address: str = None,
         page_number: int = None,
@@ -11351,6 +11352,7 @@ class GetPublicDevicesRequest(TeaModel):
         start_time: int = None,
         title: str = None,
     ):
+        self.device_uuid = device_uuid
         self.end_time = end_time
         self.mac_address = mac_address
         self.page_number = page_number
@@ -11369,6 +11371,8 @@ class GetPublicDevicesRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.device_uuid is not None:
+            result['deviceUuid'] = self.device_uuid
         if self.end_time is not None:
             result['endTime'] = self.end_time
         if self.mac_address is not None:
@@ -11389,6 +11393,8 @@ class GetPublicDevicesRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('deviceUuid') is not None:
+            self.device_uuid = m.get('deviceUuid')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
         if m.get('macAddress') is not None:
@@ -11514,22 +11520,28 @@ class GetPublicDevicesResponseBodyData(TeaModel):
         device_roles: List[GetPublicDevicesResponseBodyDataDeviceRoles] = None,
         device_scope_type: int = None,
         device_staffs: List[GetPublicDevicesResponseBodyDataDeviceStaffs] = None,
+        device_uuid: str = None,
         gmt_create: int = None,
         gmt_modified: int = None,
         mac_address: str = None,
         platform: str = None,
+        retry_permission: str = None,
         serial_number: str = None,
+        status: int = None,
         title: str = None,
     ):
         self.device_depts = device_depts
         self.device_roles = device_roles
         self.device_scope_type = device_scope_type
         self.device_staffs = device_staffs
+        self.device_uuid = device_uuid
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
         self.mac_address = mac_address
         self.platform = platform
+        self.retry_permission = retry_permission
         self.serial_number = serial_number
+        self.status = status
         self.title = title
 
     def validate(self):
@@ -11566,6 +11578,8 @@ class GetPublicDevicesResponseBodyData(TeaModel):
         if self.device_staffs is not None:
             for k in self.device_staffs:
                 result['deviceStaffs'].append(k.to_map() if k else None)
+        if self.device_uuid is not None:
+            result['deviceUuid'] = self.device_uuid
         if self.gmt_create is not None:
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
@@ -11574,8 +11588,12 @@ class GetPublicDevicesResponseBodyData(TeaModel):
             result['macAddress'] = self.mac_address
         if self.platform is not None:
             result['platform'] = self.platform
+        if self.retry_permission is not None:
+            result['retryPermission'] = self.retry_permission
         if self.serial_number is not None:
             result['serialNumber'] = self.serial_number
+        if self.status is not None:
+            result['status'] = self.status
         if self.title is not None:
             result['title'] = self.title
         return result
@@ -11599,6 +11617,8 @@ class GetPublicDevicesResponseBodyData(TeaModel):
             for k in m.get('deviceStaffs'):
                 temp_model = GetPublicDevicesResponseBodyDataDeviceStaffs()
                 self.device_staffs.append(temp_model.from_map(k))
+        if m.get('deviceUuid') is not None:
+            self.device_uuid = m.get('deviceUuid')
         if m.get('gmtCreate') is not None:
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
@@ -11607,8 +11627,12 @@ class GetPublicDevicesResponseBodyData(TeaModel):
             self.mac_address = m.get('macAddress')
         if m.get('platform') is not None:
             self.platform = m.get('platform')
+        if m.get('retryPermission') is not None:
+            self.retry_permission = m.get('retryPermission')
         if m.get('serialNumber') is not None:
             self.serial_number = m.get('serialNumber')
+        if m.get('status') is not None:
+            self.status = m.get('status')
         if m.get('title') is not None:
             self.title = m.get('title')
         return self
@@ -13135,6 +13159,7 @@ class GetTrustDeviceListHeaders(TeaModel):
 class GetTrustDeviceListRequest(TeaModel):
     def __init__(
         self,
+        device_uuid: str = None,
         gmt_create_end: int = None,
         gmt_create_start: int = None,
         gmt_modified_end: int = None,
@@ -13147,6 +13172,7 @@ class GetTrustDeviceListRequest(TeaModel):
         status: int = None,
         user_ids: List[str] = None,
     ):
+        self.device_uuid = device_uuid
         self.gmt_create_end = gmt_create_end
         self.gmt_create_start = gmt_create_start
         self.gmt_modified_end = gmt_modified_end
@@ -13168,6 +13194,8 @@ class GetTrustDeviceListRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.device_uuid is not None:
+            result['deviceUuid'] = self.device_uuid
         if self.gmt_create_end is not None:
             result['gmtCreateEnd'] = self.gmt_create_end
         if self.gmt_create_start is not None:
@@ -13194,6 +13222,8 @@ class GetTrustDeviceListRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('deviceUuid') is not None:
+            self.device_uuid = m.get('deviceUuid')
         if m.get('gmtCreateEnd') is not None:
             self.gmt_create_end = m.get('gmtCreateEnd')
         if m.get('gmtCreateStart') is not None:
@@ -13223,6 +13253,7 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
     def __init__(
         self,
         create_time: int = None,
+        device_uuid: str = None,
         id: int = None,
         mac_address: str = None,
         model: str = None,
@@ -13234,6 +13265,7 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         user_id: str = None,
     ):
         self.create_time = create_time
+        self.device_uuid = device_uuid
         self.id = id
         self.mac_address = mac_address
         self.model = model
@@ -13256,6 +13288,8 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         result = dict()
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.device_uuid is not None:
+            result['deviceUuid'] = self.device_uuid
         if self.id is not None:
             result['id'] = self.id
         if self.mac_address is not None:
@@ -13280,6 +13314,8 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         m = m or dict()
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('deviceUuid') is not None:
+            self.device_uuid = m.get('deviceUuid')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('macAddress') is not None:
@@ -22387,6 +22423,243 @@ class SearchOrgInnerGroupInfoResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SearchOrgInnerGroupInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchOrgInnerGroupInfoByCursorPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchOrgInnerGroupInfoByCursorPageRequest(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        cursor: int = None,
+        forward: bool = None,
+    ):
+        # This parameter is required.
+        self.count = count
+        # This parameter is required.
+        self.cursor = cursor
+        self.forward = forward
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.forward is not None:
+            result['forward'] = self.forward
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('forward') is not None:
+            self.forward = m.get('forward')
+        return self
+
+
+class SearchOrgInnerGroupInfoByCursorPageResponseBodyItems(TeaModel):
+    def __init__(
+        self,
+        group_create_time: int = None,
+        group_members_cnt: int = None,
+        group_name: str = None,
+        group_owner: str = None,
+        group_owner_user_id: str = None,
+        open_conversation_id: str = None,
+        status: int = None,
+        sync_to_dingpan: int = None,
+        used_quota: int = None,
+    ):
+        self.group_create_time = group_create_time
+        self.group_members_cnt = group_members_cnt
+        self.group_name = group_name
+        self.group_owner = group_owner
+        self.group_owner_user_id = group_owner_user_id
+        self.open_conversation_id = open_conversation_id
+        self.status = status
+        self.sync_to_dingpan = sync_to_dingpan
+        self.used_quota = used_quota
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_create_time is not None:
+            result['groupCreateTime'] = self.group_create_time
+        if self.group_members_cnt is not None:
+            result['groupMembersCnt'] = self.group_members_cnt
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.group_owner is not None:
+            result['groupOwner'] = self.group_owner
+        if self.group_owner_user_id is not None:
+            result['groupOwnerUserId'] = self.group_owner_user_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.sync_to_dingpan is not None:
+            result['syncToDingpan'] = self.sync_to_dingpan
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupCreateTime') is not None:
+            self.group_create_time = m.get('groupCreateTime')
+        if m.get('groupMembersCnt') is not None:
+            self.group_members_cnt = m.get('groupMembersCnt')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('groupOwner') is not None:
+            self.group_owner = m.get('groupOwner')
+        if m.get('groupOwnerUserId') is not None:
+            self.group_owner_user_id = m.get('groupOwnerUserId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('syncToDingpan') is not None:
+            self.sync_to_dingpan = m.get('syncToDingpan')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        return self
+
+
+class SearchOrgInnerGroupInfoByCursorPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_next: bool = None,
+        items: List[SearchOrgInnerGroupInfoByCursorPageResponseBodyItems] = None,
+        next_cursor: int = None,
+    ):
+        self.has_next = has_next
+        self.items = items
+        self.next_cursor = next_cursor
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_next is not None:
+            result['hasNext'] = self.has_next
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasNext') is not None:
+            self.has_next = m.get('hasNext')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = SearchOrgInnerGroupInfoByCursorPageResponseBodyItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        return self
+
+
+class SearchOrgInnerGroupInfoByCursorPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SearchOrgInnerGroupInfoByCursorPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SearchOrgInnerGroupInfoByCursorPageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

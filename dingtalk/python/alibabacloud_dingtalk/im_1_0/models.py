@@ -459,6 +459,7 @@ class AddUnfurlingRegisterRequest(TeaModel):
         self,
         api_secret: str = None,
         app_id: str = None,
+        callback_type: int = None,
         callback_url: str = None,
         card_template_id: str = None,
         domain: str = None,
@@ -471,6 +472,7 @@ class AddUnfurlingRegisterRequest(TeaModel):
         self.api_secret = api_secret
         # This parameter is required.
         self.app_id = app_id
+        self.callback_type = callback_type
         # This parameter is required.
         self.callback_url = callback_url
         # This parameter is required.
@@ -498,6 +500,8 @@ class AddUnfurlingRegisterRequest(TeaModel):
             result['apiSecret'] = self.api_secret
         if self.app_id is not None:
             result['appId'] = self.app_id
+        if self.callback_type is not None:
+            result['callbackType'] = self.callback_type
         if self.callback_url is not None:
             result['callbackUrl'] = self.callback_url
         if self.card_template_id is not None:
@@ -520,6 +524,8 @@ class AddUnfurlingRegisterRequest(TeaModel):
             self.api_secret = m.get('apiSecret')
         if m.get('appId') is not None:
             self.app_id = m.get('appId')
+        if m.get('callbackType') is not None:
+            self.callback_type = m.get('callbackType')
         if m.get('callbackUrl') is not None:
             self.callback_url = m.get('callbackUrl')
         if m.get('cardTemplateId') is not None:
@@ -14650,6 +14656,177 @@ class QueryUnfurlingRegisterInfoResponse(TeaModel):
         return self
 
 
+class QueryUserGroupAliasTitleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryUserGroupAliasTitleRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.open_conversation_id = open_conversation_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryUserGroupAliasTitleResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        title: str = None,
+    ):
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryUserGroupAliasTitleResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryUserGroupAliasTitleResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryUserGroupAliasTitleResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryUserGroupAliasTitleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryUserGroupAliasTitleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryUserGroupAliasTitleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryUserViewGroupLastMessageTimeHeaders(TeaModel):
     def __init__(
         self,
@@ -19654,6 +19831,7 @@ class UpdateUnfurlingRegisterRequest(TeaModel):
         self,
         api_secret: str = None,
         app_id: str = None,
+        callback_type: int = None,
         callback_url: str = None,
         card_template_id: str = None,
         domain: str = None,
@@ -19667,6 +19845,7 @@ class UpdateUnfurlingRegisterRequest(TeaModel):
         self.api_secret = api_secret
         # This parameter is required.
         self.app_id = app_id
+        self.callback_type = callback_type
         # This parameter is required.
         self.callback_url = callback_url
         # This parameter is required.
@@ -19696,6 +19875,8 @@ class UpdateUnfurlingRegisterRequest(TeaModel):
             result['apiSecret'] = self.api_secret
         if self.app_id is not None:
             result['appId'] = self.app_id
+        if self.callback_type is not None:
+            result['callbackType'] = self.callback_type
         if self.callback_url is not None:
             result['callbackUrl'] = self.callback_url
         if self.card_template_id is not None:
@@ -19720,6 +19901,8 @@ class UpdateUnfurlingRegisterRequest(TeaModel):
             self.api_secret = m.get('apiSecret')
         if m.get('appId') is not None:
             self.app_id = m.get('appId')
+        if m.get('callbackType') is not None:
+            self.callback_type = m.get('callbackType')
         if m.get('callbackUrl') is not None:
             self.callback_url = m.get('callbackUrl')
         if m.get('cardTemplateId') is not None:
@@ -19952,6 +20135,149 @@ class UpdateUnfurlingRegisterStatusResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateUnfurlingRegisterStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateUserGroupAliasTitleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateUserGroupAliasTitleRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        title: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.open_conversation_id = open_conversation_id
+        # This parameter is required.
+        self.title = title
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateUserGroupAliasTitleResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: str = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateUserGroupAliasTitleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateUserGroupAliasTitleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateUserGroupAliasTitleResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

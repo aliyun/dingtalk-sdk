@@ -2069,11 +2069,13 @@ class ListRecordsRequestFilter(TeaModel):
 class ListRecordsRequest(TeaModel):
     def __init__(
         self,
+        calc_fields: bool = None,
         filter: ListRecordsRequestFilter = None,
         max_results: int = None,
         next_token: str = None,
         operator_id: str = None,
     ):
+        self.calc_fields = calc_fields
         self.filter = filter
         self.max_results = max_results
         self.next_token = next_token
@@ -2090,6 +2092,8 @@ class ListRecordsRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.calc_fields is not None:
+            result['calcFields'] = self.calc_fields
         if self.filter is not None:
             result['filter'] = self.filter.to_map()
         if self.max_results is not None:
@@ -2102,6 +2106,8 @@ class ListRecordsRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('calcFields') is not None:
+            self.calc_fields = m.get('calcFields')
         if m.get('filter') is not None:
             temp_model = ListRecordsRequestFilter()
             self.filter = temp_model.from_map(m['filter'])

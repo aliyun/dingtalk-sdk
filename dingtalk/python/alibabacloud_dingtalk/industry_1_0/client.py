@@ -50,6 +50,10 @@ class Client(OpenApiClient):
             body['brand'] = request.brand
         if not UtilClient.is_unset(request.category):
             body['category'] = request.category
+        if not UtilClient.is_unset(request.currecy):
+            body['currecy'] = request.currecy
+        if not UtilClient.is_unset(request.enable):
+            body['enable'] = request.enable
         if not UtilClient.is_unset(request.image_file_ids):
             body['imageFileIds'] = request.image_file_ids
         if not UtilClient.is_unset(request.item_numbers):
@@ -113,6 +117,10 @@ class Client(OpenApiClient):
             body['brand'] = request.brand
         if not UtilClient.is_unset(request.category):
             body['category'] = request.category
+        if not UtilClient.is_unset(request.currecy):
+            body['currecy'] = request.currecy
+        if not UtilClient.is_unset(request.enable):
+            body['enable'] = request.enable
         if not UtilClient.is_unset(request.image_file_ids):
             body['imageFileIds'] = request.image_file_ids
         if not UtilClient.is_unset(request.item_numbers):
@@ -550,6 +558,10 @@ class Client(OpenApiClient):
             body['brand'] = request.brand
         if not UtilClient.is_unset(request.category):
             body['category'] = request.category
+        if not UtilClient.is_unset(request.currency):
+            body['currency'] = request.currency
+        if not UtilClient.is_unset(request.enable):
+            body['enable'] = request.enable
         if not UtilClient.is_unset(request.image_file_ids):
             body['imageFileIds'] = request.image_file_ids
         if not UtilClient.is_unset(request.item_numbers):
@@ -615,6 +627,10 @@ class Client(OpenApiClient):
             body['brand'] = request.brand
         if not UtilClient.is_unset(request.category):
             body['category'] = request.category
+        if not UtilClient.is_unset(request.currency):
+            body['currency'] = request.currency
+        if not UtilClient.is_unset(request.enable):
+            body['enable'] = request.enable
         if not UtilClient.is_unset(request.image_file_ids):
             body['imageFileIds'] = request.image_file_ids
         if not UtilClient.is_unset(request.item_numbers):
