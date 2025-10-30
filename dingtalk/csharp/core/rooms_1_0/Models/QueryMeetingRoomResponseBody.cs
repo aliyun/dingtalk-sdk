@@ -63,6 +63,14 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 
                 }
 
+                [NameInMap("approvalSwitch")]
+                [Validation(Required=false)]
+                public bool? ApprovalSwitch { get; set; }
+
+                [NameInMap("approvalType")]
+                [Validation(Required=false)]
+                public int? ApprovalType { get; set; }
+
                 /// <summary>
                 /// <b>Example:</b>
                 /// <para>60</para>

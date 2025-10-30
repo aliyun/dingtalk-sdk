@@ -4598,6 +4598,170 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询合同电子签相关信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryContractSignInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryContractSignInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryContractSignInfoResponse
+        /// </returns>
+        public QueryContractSignInfoResponse QueryContractSignInfoWithOptions(QueryContractSignInfoRequest request, QueryContractSignInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractBizId))
+            {
+                query["contractBizId"] = request.ContractBizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                query["staffId"] = request.StaffId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryContractSignInfo",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/queryContractSignInfo",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryContractSignInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询合同电子签相关信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryContractSignInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryContractSignInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryContractSignInfoResponse
+        /// </returns>
+        public async Task<QueryContractSignInfoResponse> QueryContractSignInfoWithOptionsAsync(QueryContractSignInfoRequest request, QueryContractSignInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractBizId))
+            {
+                query["contractBizId"] = request.ContractBizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                query["staffId"] = request.StaffId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryContractSignInfo",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/queryContractSignInfo",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryContractSignInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询合同电子签相关信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryContractSignInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryContractSignInfoResponse
+        /// </returns>
+        public QueryContractSignInfoResponse QueryContractSignInfo(QueryContractSignInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryContractSignInfoHeaders headers = new QueryContractSignInfoHeaders();
+            return QueryContractSignInfoWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询合同电子签相关信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryContractSignInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryContractSignInfoResponse
+        /// </returns>
+        public async Task<QueryContractSignInfoResponse> QueryContractSignInfoAsync(QueryContractSignInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryContractSignInfoHeaders headers = new QueryContractSignInfoHeaders();
+            return await QueryContractSignInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>发送合同相关卡片</para>
         /// </summary>
         /// 
@@ -4806,6 +4970,230 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SendContractCardHeaders headers = new SendContractCardHeaders();
             return await SendContractCardWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>同步签署事件</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// SyncSignEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// SyncSignEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncSignEventResponse
+        /// </returns>
+        public SyncSignEventResponse SyncSignEventWithOptions(SyncSignEventRequest tmpReq, SyncSignEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            SyncSignEventShrinkRequest request = new SyncSignEventShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.ExtInfo))
+            {
+                request.ExtInfoShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.ExtInfo, "extInfo", "json");
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.SealType))
+            {
+                request.SealTypeShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.SealType, "sealType", "json");
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.SignFileList))
+            {
+                request.SignFileListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.SignFileList, "signFileList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractBizId))
+            {
+                query["contractBizId"] = request.ContractBizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtInfoShrink))
+            {
+                query["extInfo"] = request.ExtInfoShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SealTypeShrink))
+            {
+                query["sealType"] = request.SealTypeShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignDate))
+            {
+                query["signDate"] = request.SignDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignFileListShrink))
+            {
+                query["signFileList"] = request.SignFileListShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                query["staffId"] = request.StaffId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncSignEvent",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/syncSignEvent",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncSignEventResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>同步签署事件</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// SyncSignEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// SyncSignEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncSignEventResponse
+        /// </returns>
+        public async Task<SyncSignEventResponse> SyncSignEventWithOptionsAsync(SyncSignEventRequest tmpReq, SyncSignEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            SyncSignEventShrinkRequest request = new SyncSignEventShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.ExtInfo))
+            {
+                request.ExtInfoShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.ExtInfo, "extInfo", "json");
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.SealType))
+            {
+                request.SealTypeShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.SealType, "sealType", "json");
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.SignFileList))
+            {
+                request.SignFileListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.SignFileList, "signFileList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractBizId))
+            {
+                query["contractBizId"] = request.ContractBizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtInfoShrink))
+            {
+                query["extInfo"] = request.ExtInfoShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SealTypeShrink))
+            {
+                query["sealType"] = request.SealTypeShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignDate))
+            {
+                query["signDate"] = request.SignDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignFileListShrink))
+            {
+                query["signFileList"] = request.SignFileListShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                query["staffId"] = request.StaffId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncSignEvent",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/syncSignEvent",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncSignEventResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>同步签署事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncSignEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncSignEventResponse
+        /// </returns>
+        public SyncSignEventResponse SyncSignEvent(SyncSignEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncSignEventHeaders headers = new SyncSignEventHeaders();
+            return SyncSignEventWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>同步签署事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncSignEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncSignEventResponse
+        /// </returns>
+        public async Task<SyncSignEventResponse> SyncSignEventAsync(SyncSignEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncSignEventHeaders headers = new SyncSignEventHeaders();
+            return await SyncSignEventWithOptionsAsync(request, headers, runtime);
         }
 
     }

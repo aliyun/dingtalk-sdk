@@ -908,5 +908,153 @@ namespace AlibabaCloud.SDK.Dingtalkai_global_e_c_1_0
             return await TiktokShopAuthCallbackWithOptionsAsync(request, headers, runtime);
         }
 
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>全渠道运营Tiktok的Webhook信息写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TiktokWebhookProcessRequest
+        /// </param>
+        /// <param name="headers">
+        /// TiktokWebhookProcessHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TiktokWebhookProcessResponse
+        /// </returns>
+        public TiktokWebhookProcessResponse TiktokWebhookProcessWithOptions(TiktokWebhookProcessRequest request, TiktokWebhookProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TiktokContentJsonString))
+            {
+                body["tiktokContentJsonString"] = request.TiktokContentJsonString;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TiktokWebhookProcess",
+                Version = "aiGlobalEC_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiGlobalEC/omniChannel/tiktok/webhook/process",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TiktokWebhookProcessResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>全渠道运营Tiktok的Webhook信息写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TiktokWebhookProcessRequest
+        /// </param>
+        /// <param name="headers">
+        /// TiktokWebhookProcessHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TiktokWebhookProcessResponse
+        /// </returns>
+        public async Task<TiktokWebhookProcessResponse> TiktokWebhookProcessWithOptionsAsync(TiktokWebhookProcessRequest request, TiktokWebhookProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TiktokContentJsonString))
+            {
+                body["tiktokContentJsonString"] = request.TiktokContentJsonString;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TiktokWebhookProcess",
+                Version = "aiGlobalEC_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiGlobalEC/omniChannel/tiktok/webhook/process",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TiktokWebhookProcessResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>全渠道运营Tiktok的Webhook信息写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TiktokWebhookProcessRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TiktokWebhookProcessResponse
+        /// </returns>
+        public TiktokWebhookProcessResponse TiktokWebhookProcess(TiktokWebhookProcessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TiktokWebhookProcessHeaders headers = new TiktokWebhookProcessHeaders();
+            return TiktokWebhookProcessWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>全渠道运营Tiktok的Webhook信息写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TiktokWebhookProcessRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TiktokWebhookProcessResponse
+        /// </returns>
+        public async Task<TiktokWebhookProcessResponse> TiktokWebhookProcessAsync(TiktokWebhookProcessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TiktokWebhookProcessHeaders headers = new TiktokWebhookProcessHeaders();
+            return await TiktokWebhookProcessWithOptionsAsync(request, headers, runtime);
+        }
+
     }
 }

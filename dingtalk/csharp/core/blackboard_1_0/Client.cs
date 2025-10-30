@@ -30,6 +30,162 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取公告详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetBlackboardRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetBlackboardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetBlackboardResponse
+        /// </returns>
+        public GetBlackboardResponse GetBlackboardWithOptions(GetBlackboardRequest request, GetBlackboardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlackboardId))
+            {
+                query["blackboardId"] = request.BlackboardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperationUserId))
+            {
+                query["operationUserId"] = request.OperationUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetBlackboard",
+                Version = "blackboard_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/blackboard/get_blackboard",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetBlackboardResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取公告详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetBlackboardRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetBlackboardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetBlackboardResponse
+        /// </returns>
+        public async Task<GetBlackboardResponse> GetBlackboardWithOptionsAsync(GetBlackboardRequest request, GetBlackboardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlackboardId))
+            {
+                query["blackboardId"] = request.BlackboardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperationUserId))
+            {
+                query["operationUserId"] = request.OperationUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetBlackboard",
+                Version = "blackboard_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/blackboard/get_blackboard",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetBlackboardResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取公告详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetBlackboardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetBlackboardResponse
+        /// </returns>
+        public GetBlackboardResponse GetBlackboard(GetBlackboardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetBlackboardHeaders headers = new GetBlackboardHeaders();
+            return GetBlackboardWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取公告详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetBlackboardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetBlackboardResponse
+        /// </returns>
+        public async Task<GetBlackboardResponse> GetBlackboardAsync(GetBlackboardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetBlackboardHeaders headers = new GetBlackboardHeaders();
+            return await GetBlackboardWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询公告已读未读人员列表</para>
         /// </summary>
         /// 

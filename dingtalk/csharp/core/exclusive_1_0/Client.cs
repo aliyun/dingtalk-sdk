@@ -18190,6 +18190,258 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>互动服务窗-群发消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendMessageResponse
+        /// </returns>
+        public SendMessageResponse SendMessageWithOptions(SendMessageRequest request, SendMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllowComment))
+            {
+                body["allow_comment"] = request.AllowComment;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CommentType))
+            {
+                body["comment_type"] = request.CommentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepIdList))
+            {
+                body["dep_id_list"] = request.DepIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsPreview))
+            {
+                body["is_preview"] = request.IsPreview;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsToAll))
+            {
+                body["is_to_all"] = request.IsToAll;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["media_id"] = request.MediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgBody))
+            {
+                body["msg_body"] = request.MsgBody;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgType))
+            {
+                body["msg_type"] = request.MsgType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleIds))
+            {
+                body["roleIds"] = request.RoleIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowHomepage))
+            {
+                body["show_homepage"] = request.ShowHomepage;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TextContent))
+            {
+                body["text_content"] = request.TextContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Unionid))
+            {
+                body["unionid"] = request.Unionid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseridList))
+            {
+                body["userid_list"] = request.UseridList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendMessage",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/follow/message/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendMessageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>互动服务窗-群发消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendMessageResponse
+        /// </returns>
+        public async Task<SendMessageResponse> SendMessageWithOptionsAsync(SendMessageRequest request, SendMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllowComment))
+            {
+                body["allow_comment"] = request.AllowComment;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CommentType))
+            {
+                body["comment_type"] = request.CommentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DepIdList))
+            {
+                body["dep_id_list"] = request.DepIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsPreview))
+            {
+                body["is_preview"] = request.IsPreview;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsToAll))
+            {
+                body["is_to_all"] = request.IsToAll;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["media_id"] = request.MediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgBody))
+            {
+                body["msg_body"] = request.MsgBody;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgType))
+            {
+                body["msg_type"] = request.MsgType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleIds))
+            {
+                body["roleIds"] = request.RoleIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowHomepage))
+            {
+                body["show_homepage"] = request.ShowHomepage;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TextContent))
+            {
+                body["text_content"] = request.TextContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Unionid))
+            {
+                body["unionid"] = request.Unionid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseridList))
+            {
+                body["userid_list"] = request.UseridList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendMessage",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/follow/message/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendMessageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>互动服务窗-群发消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendMessageResponse
+        /// </returns>
+        public SendMessageResponse SendMessage(SendMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendMessageHeaders headers = new SendMessageHeaders();
+            return SendMessageWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>互动服务窗-群发消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendMessageResponse
+        /// </returns>
+        public async Task<SendMessageResponse> SendMessageAsync(SendMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendMessageHeaders headers = new SendMessageHeaders();
+            return await SendMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>通过接口发送电话DING</para>
         /// </summary>
         /// 

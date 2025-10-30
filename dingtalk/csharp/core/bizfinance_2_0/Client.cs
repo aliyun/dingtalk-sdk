@@ -4524,6 +4524,166 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// QueryCorpScaleRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCorpScaleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCorpScaleResponse
+        /// </returns>
+        public QueryCorpScaleResponse QueryCorpScaleWithOptions(QueryCorpScaleRequest tmpReq, QueryCorpScaleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            QueryCorpScaleShrinkRequest request = new QueryCorpScaleShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.CorpNames))
+            {
+                request.CorpNamesShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.CorpNames, "corpNames", "simple");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpNamesShrink))
+            {
+                query["corpNames"] = request.CorpNamesShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCorpScale",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/queryCorpScale",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCorpScaleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// QueryCorpScaleRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCorpScaleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCorpScaleResponse
+        /// </returns>
+        public async Task<QueryCorpScaleResponse> QueryCorpScaleWithOptionsAsync(QueryCorpScaleRequest tmpReq, QueryCorpScaleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            QueryCorpScaleShrinkRequest request = new QueryCorpScaleShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.CorpNames))
+            {
+                request.CorpNamesShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.CorpNames, "corpNames", "simple");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpNamesShrink))
+            {
+                query["corpNames"] = request.CorpNamesShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCorpScale",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/queryCorpScale",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCorpScaleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCorpScaleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCorpScaleResponse
+        /// </returns>
+        public QueryCorpScaleResponse QueryCorpScale(QueryCorpScaleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryCorpScaleHeaders headers = new QueryCorpScaleHeaders();
+            return QueryCorpScaleWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCorpScaleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCorpScaleResponse
+        /// </returns>
+        public async Task<QueryCorpScaleResponse> QueryCorpScaleAsync(QueryCorpScaleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryCorpScaleHeaders headers = new QueryCorpScaleHeaders();
+            return await QueryCorpScaleWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>分页批量获取智能财务应用内维护的客户信息</para>
         /// </summary>
         /// 

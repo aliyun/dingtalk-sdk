@@ -141,6 +141,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public string ExclusiveAccountType { get; set; }
 
+        [NameInMap("exclusiveMobileVerifyStatus")]
+        [Validation(Required=false)]
+        public string ExclusiveMobileVerifyStatus { get; set; }
+
         [NameInMap("extension")]
         [Validation(Required=false)]
         public Dictionary<string, string> Extension { get; set; }

@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public long? GroupCreateTime { get; set; }
 
+            [NameInMap("groupLastActiveTime")]
+            [Validation(Required=false)]
+            public long? GroupLastActiveTime { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>10</para>

@@ -634,6 +634,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             {
                 body["exclusiveAccountType"] = request.ExclusiveAccountType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExclusiveMobileVerifyStatus))
+            {
+                body["exclusiveMobileVerifyStatus"] = request.ExclusiveMobileVerifyStatus;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
             {
                 body["extension"] = request.Extension;
@@ -796,6 +800,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExclusiveAccountType))
             {
                 body["exclusiveAccountType"] = request.ExclusiveAccountType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExclusiveMobileVerifyStatus))
+            {
+                body["exclusiveMobileVerifyStatus"] = request.ExclusiveMobileVerifyStatus;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
             {

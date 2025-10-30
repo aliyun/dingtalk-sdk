@@ -422,6 +422,422 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>撤销代理关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelAgentTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// CancelAgentTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelAgentTaskResponse
+        /// </returns>
+        public CancelAgentTaskResponse CancelAgentTaskWithOptions(CancelAgentTaskRequest request, CancelAgentTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentType))
+            {
+                query["agentType"] = request.AgentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentUuid))
+            {
+                query["agentUuid"] = request.AgentUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CancelAgentTask",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/agents/cancel",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CancelAgentTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>撤销代理关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelAgentTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// CancelAgentTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelAgentTaskResponse
+        /// </returns>
+        public async Task<CancelAgentTaskResponse> CancelAgentTaskWithOptionsAsync(CancelAgentTaskRequest request, CancelAgentTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentType))
+            {
+                query["agentType"] = request.AgentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentUuid))
+            {
+                query["agentUuid"] = request.AgentUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CancelAgentTask",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/agents/cancel",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CancelAgentTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>撤销代理关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelAgentTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelAgentTaskResponse
+        /// </returns>
+        public CancelAgentTaskResponse CancelAgentTask(CancelAgentTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CancelAgentTaskHeaders headers = new CancelAgentTaskHeaders();
+            return CancelAgentTaskWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>撤销代理关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelAgentTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelAgentTaskResponse
+        /// </returns>
+        public async Task<CancelAgentTaskResponse> CancelAgentTaskAsync(CancelAgentTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CancelAgentTaskHeaders headers = new CancelAgentTaskHeaders();
+            return await CancelAgentTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建代理关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAgentTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAgentTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAgentTaskResponse
+        /// </returns>
+        public CreateAgentTaskResponse CreateAgentTaskWithOptions(CreateAgentTaskRequest request, CreateAgentTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentCategory))
+            {
+                query["agentCategory"] = request.AgentCategory;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentRangeType))
+            {
+                query["agentRangeType"] = request.AgentRangeType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentRangeValue))
+            {
+                query["agentRangeValue"] = request.AgentRangeValue;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentType))
+            {
+                query["agentType"] = request.AgentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentUserId))
+            {
+                query["agentUserId"] = request.AgentUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTimestamp))
+            {
+                query["endTimestamp"] = request.EndTimestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedNoticePrincipal))
+            {
+                query["needNoticePrincipal"] = request.NeedNoticePrincipal;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrincipalUserId))
+            {
+                query["principalUserId"] = request.PrincipalUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTimestamp))
+            {
+                query["startTimestamp"] = request.StartTimestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateAgentTask",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/agents/insert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateAgentTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建代理关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAgentTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAgentTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAgentTaskResponse
+        /// </returns>
+        public async Task<CreateAgentTaskResponse> CreateAgentTaskWithOptionsAsync(CreateAgentTaskRequest request, CreateAgentTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentCategory))
+            {
+                query["agentCategory"] = request.AgentCategory;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentRangeType))
+            {
+                query["agentRangeType"] = request.AgentRangeType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentRangeValue))
+            {
+                query["agentRangeValue"] = request.AgentRangeValue;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentType))
+            {
+                query["agentType"] = request.AgentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentUserId))
+            {
+                query["agentUserId"] = request.AgentUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTimestamp))
+            {
+                query["endTimestamp"] = request.EndTimestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedNoticePrincipal))
+            {
+                query["needNoticePrincipal"] = request.NeedNoticePrincipal;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrincipalUserId))
+            {
+                query["principalUserId"] = request.PrincipalUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTimestamp))
+            {
+                query["startTimestamp"] = request.StartTimestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateAgentTask",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/agents/insert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateAgentTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建代理关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAgentTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAgentTaskResponse
+        /// </returns>
+        public CreateAgentTaskResponse CreateAgentTask(CreateAgentTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateAgentTaskHeaders headers = new CreateAgentTaskHeaders();
+            return CreateAgentTaskWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建代理关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAgentTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAgentTaskResponse
+        /// </returns>
+        public async Task<CreateAgentTaskResponse> CreateAgentTaskAsync(CreateAgentTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateAgentTaskHeaders headers = new CreateAgentTaskHeaders();
+            return await CreateAgentTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>新增或更新表单实例</para>
         /// </summary>
         /// 
@@ -802,6 +1218,210 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteMatrixDataByRowIdsHeaders headers = new DeleteMatrixDataByRowIdsHeaders();
             return await DeleteMatrixDataByRowIdsWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取代理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAgentTasksRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetAgentTasksHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAgentTasksResponse
+        /// </returns>
+        public GetAgentTasksResponse GetAgentTasksWithOptions(GetAgentTasksRequest request, GetAgentTasksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentUuid))
+            {
+                query["agentUuid"] = request.AgentUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keywords))
+            {
+                query["keywords"] = request.Keywords;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                query["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAgentTasks",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/agents",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAgentTasksResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取代理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAgentTasksRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetAgentTasksHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAgentTasksResponse
+        /// </returns>
+        public async Task<GetAgentTasksResponse> GetAgentTasksWithOptionsAsync(GetAgentTasksRequest request, GetAgentTasksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentUuid))
+            {
+                query["agentUuid"] = request.AgentUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keywords))
+            {
+                query["keywords"] = request.Keywords;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                query["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAgentTasks",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/agents",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAgentTasksResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取代理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAgentTasksRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAgentTasksResponse
+        /// </returns>
+        public GetAgentTasksResponse GetAgentTasks(GetAgentTasksRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAgentTasksHeaders headers = new GetAgentTasksHeaders();
+            return GetAgentTasksWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取代理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAgentTasksRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAgentTasksResponse
+        /// </returns>
+        public async Task<GetAgentTasksResponse> GetAgentTasksAsync(GetAgentTasksRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAgentTasksHeaders headers = new GetAgentTasksHeaders();
+            return await GetAgentTasksWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -3642,6 +4262,226 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             StartInstanceHeaders headers = new StartInstanceHeaders();
             return await StartInstanceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改代理信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAgentTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateAgentTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAgentTaskResponse
+        /// </returns>
+        public UpdateAgentTaskResponse UpdateAgentTaskWithOptions(UpdateAgentTaskRequest request, UpdateAgentTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentRangeType))
+            {
+                query["agentRangeType"] = request.AgentRangeType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentRangeValue))
+            {
+                query["agentRangeValue"] = request.AgentRangeValue;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentUserId))
+            {
+                query["agentUserId"] = request.AgentUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentUuid))
+            {
+                query["agentUuid"] = request.AgentUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTimestamp))
+            {
+                query["endTimestamp"] = request.EndTimestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedNoticePrincipal))
+            {
+                query["needNoticePrincipal"] = request.NeedNoticePrincipal;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTimestamp))
+            {
+                query["startTimestamp"] = request.StartTimestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateAgentTask",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/agents/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateAgentTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改代理信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAgentTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateAgentTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAgentTaskResponse
+        /// </returns>
+        public async Task<UpdateAgentTaskResponse> UpdateAgentTaskWithOptionsAsync(UpdateAgentTaskRequest request, UpdateAgentTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentRangeType))
+            {
+                query["agentRangeType"] = request.AgentRangeType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentRangeValue))
+            {
+                query["agentRangeValue"] = request.AgentRangeValue;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentUserId))
+            {
+                query["agentUserId"] = request.AgentUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentUuid))
+            {
+                query["agentUuid"] = request.AgentUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTimestamp))
+            {
+                query["endTimestamp"] = request.EndTimestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedNoticePrincipal))
+            {
+                query["needNoticePrincipal"] = request.NeedNoticePrincipal;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTimestamp))
+            {
+                query["startTimestamp"] = request.StartTimestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                query["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateAgentTask",
+                Version = "yida_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/yida/forms/resources/agents/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateAgentTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改代理信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAgentTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAgentTaskResponse
+        /// </returns>
+        public UpdateAgentTaskResponse UpdateAgentTask(UpdateAgentTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateAgentTaskHeaders headers = new UpdateAgentTaskHeaders();
+            return UpdateAgentTaskWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改代理信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAgentTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAgentTaskResponse
+        /// </returns>
+        public async Task<UpdateAgentTaskResponse> UpdateAgentTaskAsync(UpdateAgentTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateAgentTaskHeaders headers = new UpdateAgentTaskHeaders();
+            return await UpdateAgentTaskWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
