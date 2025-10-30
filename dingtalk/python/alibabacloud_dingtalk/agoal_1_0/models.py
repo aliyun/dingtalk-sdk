@@ -813,6 +813,7 @@ class OpenAgoalObjectiveDTO(TeaModel):
         objective_rule: OpenOrgObjectiveRuleDTO = None,
         period: OpenObjectiveRulePeriodDTO = None,
         progress: int = None,
+        related_users: OpenAgoalUserDTO = None,
         status: int = None,
         teams: List[OpenAgoalTeamDTO] = None,
         title: str = None,
@@ -834,6 +835,8 @@ class OpenAgoalObjectiveDTO(TeaModel):
         self.period = period
         # This parameter is required.
         self.progress = progress
+        # This parameter is required.
+        self.related_users = related_users
         # This parameter is required.
         self.status = status
         # This parameter is required.
@@ -860,6 +863,8 @@ class OpenAgoalObjectiveDTO(TeaModel):
             self.objective_rule.validate()
         if self.period:
             self.period.validate()
+        if self.related_users:
+            self.related_users.validate()
         if self.teams:
             for k in self.teams:
                 if k:
@@ -891,6 +896,8 @@ class OpenAgoalObjectiveDTO(TeaModel):
             result['period'] = self.period.to_map()
         if self.progress is not None:
             result['progress'] = self.progress
+        if self.related_users is not None:
+            result['relatedUsers'] = self.related_users.to_map()
         if self.status is not None:
             result['status'] = self.status
         result['teams'] = []
@@ -931,6 +938,9 @@ class OpenAgoalObjectiveDTO(TeaModel):
             self.period = temp_model.from_map(m['period'])
         if m.get('progress') is not None:
             self.progress = m.get('progress')
+        if m.get('relatedUsers') is not None:
+            temp_model = OpenAgoalUserDTO()
+            self.related_users = temp_model.from_map(m['relatedUsers'])
         if m.get('status') is not None:
             self.status = m.get('status')
         self.teams = []

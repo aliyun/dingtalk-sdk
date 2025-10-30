@@ -12918,6 +12918,120 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.GetTaskPackageResultHeaders()
         return await self.get_task_package_result_with_options_async(request, headers, runtime)
 
+    def get_task_queue_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.GetTaskQueueRequest,
+        headers: dingtalkindustry__1__0_models.GetTaskQueueHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.GetTaskQueueResponse:
+        """
+        @summary 查询任务队列情况
+        
+        @param request: GetTaskQueueRequest
+        @param headers: GetTaskQueueHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTaskQueueResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTaskQueue',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/taskQueue/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.GetTaskQueueResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_task_queue_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.GetTaskQueueRequest,
+        headers: dingtalkindustry__1__0_models.GetTaskQueueHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.GetTaskQueueResponse:
+        """
+        @summary 查询任务队列情况
+        
+        @param request: GetTaskQueueRequest
+        @param headers: GetTaskQueueHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTaskQueueResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTaskQueue',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/taskQueue/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.GetTaskQueueResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_task_queue(
+        self,
+        request: dingtalkindustry__1__0_models.GetTaskQueueRequest,
+    ) -> dingtalkindustry__1__0_models.GetTaskQueueResponse:
+        """
+        @summary 查询任务队列情况
+        
+        @param request: GetTaskQueueRequest
+        @return: GetTaskQueueResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.GetTaskQueueHeaders()
+        return self.get_task_queue_with_options(request, headers, runtime)
+
+    async def get_task_queue_async(
+        self,
+        request: dingtalkindustry__1__0_models.GetTaskQueueRequest,
+    ) -> dingtalkindustry__1__0_models.GetTaskQueueResponse:
+        """
+        @summary 查询任务队列情况
+        
+        @param request: GetTaskQueueRequest
+        @return: GetTaskQueueResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.GetTaskQueueHeaders()
+        return await self.get_task_queue_with_options_async(request, headers, runtime)
+
     def hospital_data_check_with_options(
         self,
         request: dingtalkindustry__1__0_models.HospitalDataCheckRequest,

@@ -667,3 +667,117 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_global_e_c__1__0_models.TiktokShopAuthCallbackHeaders()
         return await self.tiktok_shop_auth_callback_with_options_async(request, headers, runtime)
+
+    def tiktok_webhook_process_with_options(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessRequest,
+        headers: dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessResponse:
+        """
+        @summary 全渠道运营Tiktok的Webhook信息写入
+        
+        @param request: TiktokWebhookProcessRequest
+        @param headers: TiktokWebhookProcessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TiktokWebhookProcessResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tiktok_content_json_string):
+            body['tiktokContentJsonString'] = request.tiktok_content_json_string
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TiktokWebhookProcess',
+            version='aiGlobalEC_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiGlobalEC/omniChannel/tiktok/webhook/process',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def tiktok_webhook_process_with_options_async(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessRequest,
+        headers: dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessResponse:
+        """
+        @summary 全渠道运营Tiktok的Webhook信息写入
+        
+        @param request: TiktokWebhookProcessRequest
+        @param headers: TiktokWebhookProcessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TiktokWebhookProcessResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tiktok_content_json_string):
+            body['tiktokContentJsonString'] = request.tiktok_content_json_string
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TiktokWebhookProcess',
+            version='aiGlobalEC_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiGlobalEC/omniChannel/tiktok/webhook/process',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def tiktok_webhook_process(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessRequest,
+    ) -> dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessResponse:
+        """
+        @summary 全渠道运营Tiktok的Webhook信息写入
+        
+        @param request: TiktokWebhookProcessRequest
+        @return: TiktokWebhookProcessResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessHeaders()
+        return self.tiktok_webhook_process_with_options(request, headers, runtime)
+
+    async def tiktok_webhook_process_async(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessRequest,
+    ) -> dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessResponse:
+        """
+        @summary 全渠道运营Tiktok的Webhook信息写入
+        
+        @param request: TiktokWebhookProcessRequest
+        @return: TiktokWebhookProcessResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_global_e_c__1__0_models.TiktokWebhookProcessHeaders()
+        return await self.tiktok_webhook_process_with_options_async(request, headers, runtime)

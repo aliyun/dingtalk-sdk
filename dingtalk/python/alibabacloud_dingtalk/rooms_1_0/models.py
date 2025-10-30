@@ -2843,12 +2843,16 @@ class QueryMeetingRoomResponseBodyResultExtensionConfig(TeaModel):
     def __init__(
         self,
         advance_reservation: QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation = None,
+        approval_switch: bool = None,
+        approval_type: int = None,
         max_reservation_time_interval: int = None,
         min_reservation_time_interval: int = None,
         open_reservation: bool = None,
         reservation_close_detail: QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail = None,
     ):
         self.advance_reservation = advance_reservation
+        self.approval_switch = approval_switch
+        self.approval_type = approval_type
         self.max_reservation_time_interval = max_reservation_time_interval
         self.min_reservation_time_interval = min_reservation_time_interval
         self.open_reservation = open_reservation
@@ -2868,6 +2872,10 @@ class QueryMeetingRoomResponseBodyResultExtensionConfig(TeaModel):
         result = dict()
         if self.advance_reservation is not None:
             result['advanceReservation'] = self.advance_reservation.to_map()
+        if self.approval_switch is not None:
+            result['approvalSwitch'] = self.approval_switch
+        if self.approval_type is not None:
+            result['approvalType'] = self.approval_type
         if self.max_reservation_time_interval is not None:
             result['maxReservationTimeInterval'] = self.max_reservation_time_interval
         if self.min_reservation_time_interval is not None:
@@ -2883,6 +2891,10 @@ class QueryMeetingRoomResponseBodyResultExtensionConfig(TeaModel):
         if m.get('advanceReservation') is not None:
             temp_model = QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation()
             self.advance_reservation = temp_model.from_map(m['advanceReservation'])
+        if m.get('approvalSwitch') is not None:
+            self.approval_switch = m.get('approvalSwitch')
+        if m.get('approvalType') is not None:
+            self.approval_type = m.get('approvalType')
         if m.get('maxReservationTimeInterval') is not None:
             self.max_reservation_time_interval = m.get('maxReservationTimeInterval')
         if m.get('minReservationTimeInterval') is not None:

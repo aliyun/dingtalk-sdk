@@ -839,6 +839,7 @@ class AddCollegeContactExclusiveRequest(TeaModel):
         emp_type: str = None,
         exclusive_account: bool = None,
         exclusive_account_type: str = None,
+        exclusive_mobile_verify_status: str = None,
         extension: Dict[str, str] = None,
         hired_date: int = None,
         init_password: str = None,
@@ -872,6 +873,7 @@ class AddCollegeContactExclusiveRequest(TeaModel):
         self.exclusive_account = exclusive_account
         # This parameter is required.
         self.exclusive_account_type = exclusive_account_type
+        self.exclusive_mobile_verify_status = exclusive_mobile_verify_status
         self.extension = extension
         self.hired_date = hired_date
         self.init_password = init_password
@@ -938,6 +940,8 @@ class AddCollegeContactExclusiveRequest(TeaModel):
             result['exclusiveAccount'] = self.exclusive_account
         if self.exclusive_account_type is not None:
             result['exclusiveAccountType'] = self.exclusive_account_type
+        if self.exclusive_mobile_verify_status is not None:
+            result['exclusiveMobileVerifyStatus'] = self.exclusive_mobile_verify_status
         if self.extension is not None:
             result['extension'] = self.extension
         if self.hired_date is not None:
@@ -1007,6 +1011,8 @@ class AddCollegeContactExclusiveRequest(TeaModel):
             self.exclusive_account = m.get('exclusiveAccount')
         if m.get('exclusiveAccountType') is not None:
             self.exclusive_account_type = m.get('exclusiveAccountType')
+        if m.get('exclusiveMobileVerifyStatus') is not None:
+            self.exclusive_mobile_verify_status = m.get('exclusiveMobileVerifyStatus')
         if m.get('extension') is not None:
             self.extension = m.get('extension')
         if m.get('hiredDate') is not None:

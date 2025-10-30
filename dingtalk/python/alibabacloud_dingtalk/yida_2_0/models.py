@@ -342,6 +342,398 @@ class BatchDeleteRoleMembersResponse(TeaModel):
         return self
 
 
+class CancelAgentTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CancelAgentTaskRequest(TeaModel):
+    def __init__(
+        self,
+        agent_type: str = None,
+        agent_uuid: str = None,
+        corp_id: str = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        self.agent_type = agent_type
+        # This parameter is required.
+        self.agent_uuid = agent_uuid
+        # This parameter is required.
+        self.corp_id = corp_id
+        # This parameter is required.
+        self.token = token
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_type is not None:
+            result['agentType'] = self.agent_type
+        if self.agent_uuid is not None:
+            result['agentUuid'] = self.agent_uuid
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentType') is not None:
+            self.agent_type = m.get('agentType')
+        if m.get('agentUuid') is not None:
+            self.agent_uuid = m.get('agentUuid')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CancelAgentTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CancelAgentTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CancelAgentTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CancelAgentTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateAgentTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateAgentTaskRequest(TeaModel):
+    def __init__(
+        self,
+        agent_category: str = None,
+        agent_range_type: str = None,
+        agent_range_value: str = None,
+        agent_type: str = None,
+        agent_user_id: str = None,
+        corp_id: str = None,
+        end_timestamp: str = None,
+        need_notice_principal: str = None,
+        principal_user_id: str = None,
+        start_timestamp: str = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        self.agent_category = agent_category
+        self.agent_range_type = agent_range_type
+        self.agent_range_value = agent_range_value
+        # This parameter is required.
+        self.agent_type = agent_type
+        # This parameter is required.
+        self.agent_user_id = agent_user_id
+        # This parameter is required.
+        self.corp_id = corp_id
+        self.end_timestamp = end_timestamp
+        self.need_notice_principal = need_notice_principal
+        # This parameter is required.
+        self.principal_user_id = principal_user_id
+        self.start_timestamp = start_timestamp
+        # This parameter is required.
+        self.token = token
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_category is not None:
+            result['agentCategory'] = self.agent_category
+        if self.agent_range_type is not None:
+            result['agentRangeType'] = self.agent_range_type
+        if self.agent_range_value is not None:
+            result['agentRangeValue'] = self.agent_range_value
+        if self.agent_type is not None:
+            result['agentType'] = self.agent_type
+        if self.agent_user_id is not None:
+            result['agentUserId'] = self.agent_user_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.end_timestamp is not None:
+            result['endTimestamp'] = self.end_timestamp
+        if self.need_notice_principal is not None:
+            result['needNoticePrincipal'] = self.need_notice_principal
+        if self.principal_user_id is not None:
+            result['principalUserId'] = self.principal_user_id
+        if self.start_timestamp is not None:
+            result['startTimestamp'] = self.start_timestamp
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentCategory') is not None:
+            self.agent_category = m.get('agentCategory')
+        if m.get('agentRangeType') is not None:
+            self.agent_range_type = m.get('agentRangeType')
+        if m.get('agentRangeValue') is not None:
+            self.agent_range_value = m.get('agentRangeValue')
+        if m.get('agentType') is not None:
+            self.agent_type = m.get('agentType')
+        if m.get('agentUserId') is not None:
+            self.agent_user_id = m.get('agentUserId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('endTimestamp') is not None:
+            self.end_timestamp = m.get('endTimestamp')
+        if m.get('needNoticePrincipal') is not None:
+            self.need_notice_principal = m.get('needNoticePrincipal')
+        if m.get('principalUserId') is not None:
+            self.principal_user_id = m.get('principalUserId')
+        if m.get('startTimestamp') is not None:
+            self.start_timestamp = m.get('startTimestamp')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateAgentTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        result: str = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateAgentTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateAgentTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateAgentTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateOrUpdateFormDataHeaders(TeaModel):
     def __init__(
         self,
@@ -671,6 +1063,334 @@ class DeleteMatrixDataByRowIdsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteMatrixDataByRowIdsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetAgentTasksHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAgentTasksRequest(TeaModel):
+    def __init__(
+        self,
+        agent_uuid: str = None,
+        corp_id: str = None,
+        keywords: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        status: str = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        self.agent_uuid = agent_uuid
+        # This parameter is required.
+        self.corp_id = corp_id
+        self.keywords = keywords
+        self.page_number = page_number
+        self.page_size = page_size
+        self.status = status
+        # This parameter is required.
+        self.token = token
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_uuid is not None:
+            result['agentUuid'] = self.agent_uuid
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.keywords is not None:
+            result['keywords'] = self.keywords
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.status is not None:
+            result['status'] = self.status
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentUuid') is not None:
+            self.agent_uuid = m.get('agentUuid')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('keywords') is not None:
+            self.keywords = m.get('keywords')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetAgentTasksResponseBodyValues(TeaModel):
+    def __init__(
+        self,
+        agent_category: str = None,
+        agent_create_gmt: str = None,
+        agent_end_gmt: str = None,
+        agent_name: str = None,
+        agent_range_type: str = None,
+        agent_range_value: str = None,
+        agent_start_gmt: str = None,
+        agent_type: str = None,
+        agent_user_id: str = None,
+        agent_uuid: str = None,
+        creator: str = None,
+        creator_name: str = None,
+        modifier: str = None,
+        need_notice_principal: str = None,
+        principal_name: str = None,
+        principal_user_id: str = None,
+        status: str = None,
+    ):
+        self.agent_category = agent_category
+        self.agent_create_gmt = agent_create_gmt
+        self.agent_end_gmt = agent_end_gmt
+        self.agent_name = agent_name
+        self.agent_range_type = agent_range_type
+        self.agent_range_value = agent_range_value
+        self.agent_start_gmt = agent_start_gmt
+        self.agent_type = agent_type
+        self.agent_user_id = agent_user_id
+        self.agent_uuid = agent_uuid
+        self.creator = creator
+        self.creator_name = creator_name
+        self.modifier = modifier
+        self.need_notice_principal = need_notice_principal
+        self.principal_name = principal_name
+        self.principal_user_id = principal_user_id
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_category is not None:
+            result['agentCategory'] = self.agent_category
+        if self.agent_create_gmt is not None:
+            result['agentCreateGMT'] = self.agent_create_gmt
+        if self.agent_end_gmt is not None:
+            result['agentEndGMT'] = self.agent_end_gmt
+        if self.agent_name is not None:
+            result['agentName'] = self.agent_name
+        if self.agent_range_type is not None:
+            result['agentRangeType'] = self.agent_range_type
+        if self.agent_range_value is not None:
+            result['agentRangeValue'] = self.agent_range_value
+        if self.agent_start_gmt is not None:
+            result['agentStartGMT'] = self.agent_start_gmt
+        if self.agent_type is not None:
+            result['agentType'] = self.agent_type
+        if self.agent_user_id is not None:
+            result['agentUserId'] = self.agent_user_id
+        if self.agent_uuid is not None:
+            result['agentUuid'] = self.agent_uuid
+        if self.creator is not None:
+            result['creator'] = self.creator
+        if self.creator_name is not None:
+            result['creatorName'] = self.creator_name
+        if self.modifier is not None:
+            result['modifier'] = self.modifier
+        if self.need_notice_principal is not None:
+            result['needNoticePrincipal'] = self.need_notice_principal
+        if self.principal_name is not None:
+            result['principalName'] = self.principal_name
+        if self.principal_user_id is not None:
+            result['principalUserId'] = self.principal_user_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentCategory') is not None:
+            self.agent_category = m.get('agentCategory')
+        if m.get('agentCreateGMT') is not None:
+            self.agent_create_gmt = m.get('agentCreateGMT')
+        if m.get('agentEndGMT') is not None:
+            self.agent_end_gmt = m.get('agentEndGMT')
+        if m.get('agentName') is not None:
+            self.agent_name = m.get('agentName')
+        if m.get('agentRangeType') is not None:
+            self.agent_range_type = m.get('agentRangeType')
+        if m.get('agentRangeValue') is not None:
+            self.agent_range_value = m.get('agentRangeValue')
+        if m.get('agentStartGMT') is not None:
+            self.agent_start_gmt = m.get('agentStartGMT')
+        if m.get('agentType') is not None:
+            self.agent_type = m.get('agentType')
+        if m.get('agentUserId') is not None:
+            self.agent_user_id = m.get('agentUserId')
+        if m.get('agentUuid') is not None:
+            self.agent_uuid = m.get('agentUuid')
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
+        if m.get('creatorName') is not None:
+            self.creator_name = m.get('creatorName')
+        if m.get('modifier') is not None:
+            self.modifier = m.get('modifier')
+        if m.get('needNoticePrincipal') is not None:
+            self.need_notice_principal = m.get('needNoticePrincipal')
+        if m.get('principalName') is not None:
+            self.principal_name = m.get('principalName')
+        if m.get('principalUserId') is not None:
+            self.principal_user_id = m.get('principalUserId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class GetAgentTasksResponseBody(TeaModel):
+    def __init__(
+        self,
+        current_page: int = None,
+        limit: int = None,
+        start: int = None,
+        total_count: int = None,
+        values: List[GetAgentTasksResponseBodyValues] = None,
+    ):
+        self.current_page = current_page
+        self.limit = limit
+        self.start = start
+        self.total_count = total_count
+        self.values = values
+
+    def validate(self):
+        if self.values:
+            for k in self.values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        if self.limit is not None:
+            result['limit'] = self.limit
+        if self.start is not None:
+            result['start'] = self.start
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        result['values'] = []
+        if self.values is not None:
+            for k in self.values:
+                result['values'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        if m.get('limit') is not None:
+            self.limit = m.get('limit')
+        if m.get('start') is not None:
+            self.start = m.get('start')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        self.values = []
+        if m.get('values') is not None:
+            for k in m.get('values'):
+                temp_model = GetAgentTasksResponseBodyValues()
+                self.values.append(temp_model.from_map(k))
+        return self
+
+
+class GetAgentTasksResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetAgentTasksResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetAgentTasksResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4770,6 +5490,211 @@ class StartInstanceResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = StartInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateAgentTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateAgentTaskRequest(TeaModel):
+    def __init__(
+        self,
+        agent_range_type: str = None,
+        agent_range_value: str = None,
+        agent_user_id: str = None,
+        agent_uuid: str = None,
+        corp_id: str = None,
+        end_timestamp: str = None,
+        need_notice_principal: str = None,
+        start_timestamp: str = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        self.agent_range_type = agent_range_type
+        self.agent_range_value = agent_range_value
+        # This parameter is required.
+        self.agent_user_id = agent_user_id
+        # This parameter is required.
+        self.agent_uuid = agent_uuid
+        # This parameter is required.
+        self.corp_id = corp_id
+        self.end_timestamp = end_timestamp
+        self.need_notice_principal = need_notice_principal
+        self.start_timestamp = start_timestamp
+        # This parameter is required.
+        self.token = token
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_range_type is not None:
+            result['agentRangeType'] = self.agent_range_type
+        if self.agent_range_value is not None:
+            result['agentRangeValue'] = self.agent_range_value
+        if self.agent_user_id is not None:
+            result['agentUserId'] = self.agent_user_id
+        if self.agent_uuid is not None:
+            result['agentUuid'] = self.agent_uuid
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.end_timestamp is not None:
+            result['endTimestamp'] = self.end_timestamp
+        if self.need_notice_principal is not None:
+            result['needNoticePrincipal'] = self.need_notice_principal
+        if self.start_timestamp is not None:
+            result['startTimestamp'] = self.start_timestamp
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentRangeType') is not None:
+            self.agent_range_type = m.get('agentRangeType')
+        if m.get('agentRangeValue') is not None:
+            self.agent_range_value = m.get('agentRangeValue')
+        if m.get('agentUserId') is not None:
+            self.agent_user_id = m.get('agentUserId')
+        if m.get('agentUuid') is not None:
+            self.agent_uuid = m.get('agentUuid')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('endTimestamp') is not None:
+            self.end_timestamp = m.get('endTimestamp')
+        if m.get('needNoticePrincipal') is not None:
+            self.need_notice_principal = m.get('needNoticePrincipal')
+        if m.get('startTimestamp') is not None:
+            self.start_timestamp = m.get('startTimestamp')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateAgentTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateAgentTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateAgentTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateAgentTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

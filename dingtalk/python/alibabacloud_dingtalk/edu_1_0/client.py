@@ -454,6 +454,8 @@ class Client(OpenApiClient):
             body['exclusiveAccount'] = request.exclusive_account
         if not UtilClient.is_unset(request.exclusive_account_type):
             body['exclusiveAccountType'] = request.exclusive_account_type
+        if not UtilClient.is_unset(request.exclusive_mobile_verify_status):
+            body['exclusiveMobileVerifyStatus'] = request.exclusive_mobile_verify_status
         if not UtilClient.is_unset(request.extension):
             body['extension'] = request.extension
         if not UtilClient.is_unset(request.hired_date):
@@ -551,6 +553,8 @@ class Client(OpenApiClient):
             body['exclusiveAccount'] = request.exclusive_account
         if not UtilClient.is_unset(request.exclusive_account_type):
             body['exclusiveAccountType'] = request.exclusive_account_type
+        if not UtilClient.is_unset(request.exclusive_mobile_verify_status):
+            body['exclusiveMobileVerifyStatus'] = request.exclusive_mobile_verify_status
         if not UtilClient.is_unset(request.extension):
             body['extension'] = request.extension
         if not UtilClient.is_unset(request.hired_date):

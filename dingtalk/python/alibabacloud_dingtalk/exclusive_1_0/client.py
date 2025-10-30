@@ -13592,6 +13592,172 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.SendInvitationHeaders()
         return await self.send_invitation_with_options_async(request, headers, runtime)
 
+    def send_message_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SendMessageRequest,
+        headers: dingtalkexclusive__1__0_models.SendMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SendMessageResponse:
+        """
+        @summary 互动服务窗-群发消息
+        
+        @param request: SendMessageRequest
+        @param headers: SendMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.allow_comment):
+            body['allow_comment'] = request.allow_comment
+        if not UtilClient.is_unset(request.comment_type):
+            body['comment_type'] = request.comment_type
+        if not UtilClient.is_unset(request.dep_id_list):
+            body['dep_id_list'] = request.dep_id_list
+        if not UtilClient.is_unset(request.is_preview):
+            body['is_preview'] = request.is_preview
+        if not UtilClient.is_unset(request.is_to_all):
+            body['is_to_all'] = request.is_to_all
+        if not UtilClient.is_unset(request.media_id):
+            body['media_id'] = request.media_id
+        if not UtilClient.is_unset(request.msg_body):
+            body['msg_body'] = request.msg_body
+        if not UtilClient.is_unset(request.msg_type):
+            body['msg_type'] = request.msg_type
+        if not UtilClient.is_unset(request.role_ids):
+            body['roleIds'] = request.role_ids
+        if not UtilClient.is_unset(request.show_homepage):
+            body['show_homepage'] = request.show_homepage
+        if not UtilClient.is_unset(request.text_content):
+            body['text_content'] = request.text_content
+        if not UtilClient.is_unset(request.unionid):
+            body['unionid'] = request.unionid
+        if not UtilClient.is_unset(request.userid_list):
+            body['userid_list'] = request.userid_list
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendMessage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/follow/message/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SendMessageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_message_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SendMessageRequest,
+        headers: dingtalkexclusive__1__0_models.SendMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SendMessageResponse:
+        """
+        @summary 互动服务窗-群发消息
+        
+        @param request: SendMessageRequest
+        @param headers: SendMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.allow_comment):
+            body['allow_comment'] = request.allow_comment
+        if not UtilClient.is_unset(request.comment_type):
+            body['comment_type'] = request.comment_type
+        if not UtilClient.is_unset(request.dep_id_list):
+            body['dep_id_list'] = request.dep_id_list
+        if not UtilClient.is_unset(request.is_preview):
+            body['is_preview'] = request.is_preview
+        if not UtilClient.is_unset(request.is_to_all):
+            body['is_to_all'] = request.is_to_all
+        if not UtilClient.is_unset(request.media_id):
+            body['media_id'] = request.media_id
+        if not UtilClient.is_unset(request.msg_body):
+            body['msg_body'] = request.msg_body
+        if not UtilClient.is_unset(request.msg_type):
+            body['msg_type'] = request.msg_type
+        if not UtilClient.is_unset(request.role_ids):
+            body['roleIds'] = request.role_ids
+        if not UtilClient.is_unset(request.show_homepage):
+            body['show_homepage'] = request.show_homepage
+        if not UtilClient.is_unset(request.text_content):
+            body['text_content'] = request.text_content
+        if not UtilClient.is_unset(request.unionid):
+            body['unionid'] = request.unionid
+        if not UtilClient.is_unset(request.userid_list):
+            body['userid_list'] = request.userid_list
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendMessage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/follow/message/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SendMessageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_message(
+        self,
+        request: dingtalkexclusive__1__0_models.SendMessageRequest,
+    ) -> dingtalkexclusive__1__0_models.SendMessageResponse:
+        """
+        @summary 互动服务窗-群发消息
+        
+        @param request: SendMessageRequest
+        @return: SendMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SendMessageHeaders()
+        return self.send_message_with_options(request, headers, runtime)
+
+    async def send_message_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SendMessageRequest,
+    ) -> dingtalkexclusive__1__0_models.SendMessageResponse:
+        """
+        @summary 互动服务窗-群发消息
+        
+        @param request: SendMessageRequest
+        @return: SendMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SendMessageHeaders()
+        return await self.send_message_with_options_async(request, headers, runtime)
+
     def send_phone_ding_with_options(
         self,
         request: dingtalkexclusive__1__0_models.SendPhoneDingRequest,

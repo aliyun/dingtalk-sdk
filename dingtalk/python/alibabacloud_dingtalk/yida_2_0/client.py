@@ -302,6 +302,294 @@ class Client(OpenApiClient):
         headers = dingtalkyida__2__0_models.BatchDeleteRoleMembersHeaders()
         return await self.batch_delete_role_members_with_options_async(request, headers, runtime)
 
+    def cancel_agent_task_with_options(
+        self,
+        request: dingtalkyida__2__0_models.CancelAgentTaskRequest,
+        headers: dingtalkyida__2__0_models.CancelAgentTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.CancelAgentTaskResponse:
+        """
+        @summary 撤销代理关系
+        
+        @param request: CancelAgentTaskRequest
+        @param headers: CancelAgentTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CancelAgentTaskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_type):
+            query['agentType'] = request.agent_type
+        if not UtilClient.is_unset(request.agent_uuid):
+            query['agentUuid'] = request.agent_uuid
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CancelAgentTask',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/agents/cancel',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.CancelAgentTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def cancel_agent_task_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.CancelAgentTaskRequest,
+        headers: dingtalkyida__2__0_models.CancelAgentTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.CancelAgentTaskResponse:
+        """
+        @summary 撤销代理关系
+        
+        @param request: CancelAgentTaskRequest
+        @param headers: CancelAgentTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CancelAgentTaskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_type):
+            query['agentType'] = request.agent_type
+        if not UtilClient.is_unset(request.agent_uuid):
+            query['agentUuid'] = request.agent_uuid
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CancelAgentTask',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/agents/cancel',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.CancelAgentTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def cancel_agent_task(
+        self,
+        request: dingtalkyida__2__0_models.CancelAgentTaskRequest,
+    ) -> dingtalkyida__2__0_models.CancelAgentTaskResponse:
+        """
+        @summary 撤销代理关系
+        
+        @param request: CancelAgentTaskRequest
+        @return: CancelAgentTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.CancelAgentTaskHeaders()
+        return self.cancel_agent_task_with_options(request, headers, runtime)
+
+    async def cancel_agent_task_async(
+        self,
+        request: dingtalkyida__2__0_models.CancelAgentTaskRequest,
+    ) -> dingtalkyida__2__0_models.CancelAgentTaskResponse:
+        """
+        @summary 撤销代理关系
+        
+        @param request: CancelAgentTaskRequest
+        @return: CancelAgentTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.CancelAgentTaskHeaders()
+        return await self.cancel_agent_task_with_options_async(request, headers, runtime)
+
+    def create_agent_task_with_options(
+        self,
+        request: dingtalkyida__2__0_models.CreateAgentTaskRequest,
+        headers: dingtalkyida__2__0_models.CreateAgentTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.CreateAgentTaskResponse:
+        """
+        @summary 创建代理关系
+        
+        @param request: CreateAgentTaskRequest
+        @param headers: CreateAgentTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAgentTaskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_category):
+            query['agentCategory'] = request.agent_category
+        if not UtilClient.is_unset(request.agent_range_type):
+            query['agentRangeType'] = request.agent_range_type
+        if not UtilClient.is_unset(request.agent_range_value):
+            query['agentRangeValue'] = request.agent_range_value
+        if not UtilClient.is_unset(request.agent_type):
+            query['agentType'] = request.agent_type
+        if not UtilClient.is_unset(request.agent_user_id):
+            query['agentUserId'] = request.agent_user_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.end_timestamp):
+            query['endTimestamp'] = request.end_timestamp
+        if not UtilClient.is_unset(request.need_notice_principal):
+            query['needNoticePrincipal'] = request.need_notice_principal
+        if not UtilClient.is_unset(request.principal_user_id):
+            query['principalUserId'] = request.principal_user_id
+        if not UtilClient.is_unset(request.start_timestamp):
+            query['startTimestamp'] = request.start_timestamp
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CreateAgentTask',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/agents/insert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.CreateAgentTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_agent_task_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.CreateAgentTaskRequest,
+        headers: dingtalkyida__2__0_models.CreateAgentTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.CreateAgentTaskResponse:
+        """
+        @summary 创建代理关系
+        
+        @param request: CreateAgentTaskRequest
+        @param headers: CreateAgentTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAgentTaskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_category):
+            query['agentCategory'] = request.agent_category
+        if not UtilClient.is_unset(request.agent_range_type):
+            query['agentRangeType'] = request.agent_range_type
+        if not UtilClient.is_unset(request.agent_range_value):
+            query['agentRangeValue'] = request.agent_range_value
+        if not UtilClient.is_unset(request.agent_type):
+            query['agentType'] = request.agent_type
+        if not UtilClient.is_unset(request.agent_user_id):
+            query['agentUserId'] = request.agent_user_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.end_timestamp):
+            query['endTimestamp'] = request.end_timestamp
+        if not UtilClient.is_unset(request.need_notice_principal):
+            query['needNoticePrincipal'] = request.need_notice_principal
+        if not UtilClient.is_unset(request.principal_user_id):
+            query['principalUserId'] = request.principal_user_id
+        if not UtilClient.is_unset(request.start_timestamp):
+            query['startTimestamp'] = request.start_timestamp
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CreateAgentTask',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/agents/insert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.CreateAgentTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_agent_task(
+        self,
+        request: dingtalkyida__2__0_models.CreateAgentTaskRequest,
+    ) -> dingtalkyida__2__0_models.CreateAgentTaskResponse:
+        """
+        @summary 创建代理关系
+        
+        @param request: CreateAgentTaskRequest
+        @return: CreateAgentTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.CreateAgentTaskHeaders()
+        return self.create_agent_task_with_options(request, headers, runtime)
+
+    async def create_agent_task_async(
+        self,
+        request: dingtalkyida__2__0_models.CreateAgentTaskRequest,
+    ) -> dingtalkyida__2__0_models.CreateAgentTaskResponse:
+        """
+        @summary 创建代理关系
+        
+        @param request: CreateAgentTaskRequest
+        @return: CreateAgentTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.CreateAgentTaskHeaders()
+        return await self.create_agent_task_with_options_async(request, headers, runtime)
+
     def create_or_update_form_data_with_options(
         self,
         request: dingtalkyida__2__0_models.CreateOrUpdateFormDataRequest,
@@ -573,6 +861,148 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__2__0_models.DeleteMatrixDataByRowIdsHeaders()
         return await self.delete_matrix_data_by_row_ids_with_options_async(request, headers, runtime)
+
+    def get_agent_tasks_with_options(
+        self,
+        request: dingtalkyida__2__0_models.GetAgentTasksRequest,
+        headers: dingtalkyida__2__0_models.GetAgentTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.GetAgentTasksResponse:
+        """
+        @summary 获取代理列表
+        
+        @param request: GetAgentTasksRequest
+        @param headers: GetAgentTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAgentTasksResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_uuid):
+            query['agentUuid'] = request.agent_uuid
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.keywords):
+            query['keywords'] = request.keywords
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAgentTasks',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/agents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.GetAgentTasksResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_agent_tasks_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.GetAgentTasksRequest,
+        headers: dingtalkyida__2__0_models.GetAgentTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.GetAgentTasksResponse:
+        """
+        @summary 获取代理列表
+        
+        @param request: GetAgentTasksRequest
+        @param headers: GetAgentTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAgentTasksResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_uuid):
+            query['agentUuid'] = request.agent_uuid
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.keywords):
+            query['keywords'] = request.keywords
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAgentTasks',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/agents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.GetAgentTasksResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_agent_tasks(
+        self,
+        request: dingtalkyida__2__0_models.GetAgentTasksRequest,
+    ) -> dingtalkyida__2__0_models.GetAgentTasksResponse:
+        """
+        @summary 获取代理列表
+        
+        @param request: GetAgentTasksRequest
+        @return: GetAgentTasksResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.GetAgentTasksHeaders()
+        return self.get_agent_tasks_with_options(request, headers, runtime)
+
+    async def get_agent_tasks_async(
+        self,
+        request: dingtalkyida__2__0_models.GetAgentTasksRequest,
+    ) -> dingtalkyida__2__0_models.GetAgentTasksResponse:
+        """
+        @summary 获取代理列表
+        
+        @param request: GetAgentTasksRequest
+        @return: GetAgentTasksResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.GetAgentTasksHeaders()
+        return await self.get_agent_tasks_with_options_async(request, headers, runtime)
 
     def get_form_component_alias_list_with_options(
         self,
@@ -2543,6 +2973,156 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__2__0_models.StartInstanceHeaders()
         return await self.start_instance_with_options_async(request, headers, runtime)
+
+    def update_agent_task_with_options(
+        self,
+        request: dingtalkyida__2__0_models.UpdateAgentTaskRequest,
+        headers: dingtalkyida__2__0_models.UpdateAgentTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.UpdateAgentTaskResponse:
+        """
+        @summary 修改代理信息
+        
+        @param request: UpdateAgentTaskRequest
+        @param headers: UpdateAgentTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateAgentTaskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_range_type):
+            query['agentRangeType'] = request.agent_range_type
+        if not UtilClient.is_unset(request.agent_range_value):
+            query['agentRangeValue'] = request.agent_range_value
+        if not UtilClient.is_unset(request.agent_user_id):
+            query['agentUserId'] = request.agent_user_id
+        if not UtilClient.is_unset(request.agent_uuid):
+            query['agentUuid'] = request.agent_uuid
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.end_timestamp):
+            query['endTimestamp'] = request.end_timestamp
+        if not UtilClient.is_unset(request.need_notice_principal):
+            query['needNoticePrincipal'] = request.need_notice_principal
+        if not UtilClient.is_unset(request.start_timestamp):
+            query['startTimestamp'] = request.start_timestamp
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateAgentTask',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/agents/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.UpdateAgentTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_agent_task_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.UpdateAgentTaskRequest,
+        headers: dingtalkyida__2__0_models.UpdateAgentTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.UpdateAgentTaskResponse:
+        """
+        @summary 修改代理信息
+        
+        @param request: UpdateAgentTaskRequest
+        @param headers: UpdateAgentTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateAgentTaskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_range_type):
+            query['agentRangeType'] = request.agent_range_type
+        if not UtilClient.is_unset(request.agent_range_value):
+            query['agentRangeValue'] = request.agent_range_value
+        if not UtilClient.is_unset(request.agent_user_id):
+            query['agentUserId'] = request.agent_user_id
+        if not UtilClient.is_unset(request.agent_uuid):
+            query['agentUuid'] = request.agent_uuid
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.end_timestamp):
+            query['endTimestamp'] = request.end_timestamp
+        if not UtilClient.is_unset(request.need_notice_principal):
+            query['needNoticePrincipal'] = request.need_notice_principal
+        if not UtilClient.is_unset(request.start_timestamp):
+            query['startTimestamp'] = request.start_timestamp
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateAgentTask',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/forms/resources/agents/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.UpdateAgentTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_agent_task(
+        self,
+        request: dingtalkyida__2__0_models.UpdateAgentTaskRequest,
+    ) -> dingtalkyida__2__0_models.UpdateAgentTaskResponse:
+        """
+        @summary 修改代理信息
+        
+        @param request: UpdateAgentTaskRequest
+        @return: UpdateAgentTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.UpdateAgentTaskHeaders()
+        return self.update_agent_task_with_options(request, headers, runtime)
+
+    async def update_agent_task_async(
+        self,
+        request: dingtalkyida__2__0_models.UpdateAgentTaskRequest,
+    ) -> dingtalkyida__2__0_models.UpdateAgentTaskResponse:
+        """
+        @summary 修改代理信息
+        
+        @param request: UpdateAgentTaskRequest
+        @return: UpdateAgentTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.UpdateAgentTaskHeaders()
+        return await self.update_agent_task_with_options_async(request, headers, runtime)
 
     def update_form_data_with_options(
         self,

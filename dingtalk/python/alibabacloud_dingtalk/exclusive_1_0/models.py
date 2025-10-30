@@ -22505,6 +22505,7 @@ class SearchOrgInnerGroupInfoByCursorPageResponseBodyItems(TeaModel):
     def __init__(
         self,
         group_create_time: int = None,
+        group_last_active_time: int = None,
         group_members_cnt: int = None,
         group_name: str = None,
         group_owner: str = None,
@@ -22515,6 +22516,7 @@ class SearchOrgInnerGroupInfoByCursorPageResponseBodyItems(TeaModel):
         used_quota: int = None,
     ):
         self.group_create_time = group_create_time
+        self.group_last_active_time = group_last_active_time
         self.group_members_cnt = group_members_cnt
         self.group_name = group_name
         self.group_owner = group_owner
@@ -22535,6 +22537,8 @@ class SearchOrgInnerGroupInfoByCursorPageResponseBodyItems(TeaModel):
         result = dict()
         if self.group_create_time is not None:
             result['groupCreateTime'] = self.group_create_time
+        if self.group_last_active_time is not None:
+            result['groupLastActiveTime'] = self.group_last_active_time
         if self.group_members_cnt is not None:
             result['groupMembersCnt'] = self.group_members_cnt
         if self.group_name is not None:
@@ -22557,6 +22561,8 @@ class SearchOrgInnerGroupInfoByCursorPageResponseBodyItems(TeaModel):
         m = m or dict()
         if m.get('groupCreateTime') is not None:
             self.group_create_time = m.get('groupCreateTime')
+        if m.get('groupLastActiveTime') is not None:
+            self.group_last_active_time = m.get('groupLastActiveTime')
         if m.get('groupMembersCnt') is not None:
             self.group_members_cnt = m.get('groupMembersCnt')
         if m.get('groupName') is not None:
@@ -22884,6 +22890,455 @@ class SendInvitationResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('statusCode') is not None:
             self.status_code = m.get('statusCode')
+        return self
+
+
+class SendMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendMessageRequestMsgBodyActionCardButtonList(TeaModel):
+    def __init__(
+        self,
+        action_url: str = None,
+        title: str = None,
+    ):
+        self.action_url = action_url
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_url is not None:
+            result['action_url'] = self.action_url
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action_url') is not None:
+            self.action_url = m.get('action_url')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class SendMessageRequestMsgBodyActionCard(TeaModel):
+    def __init__(
+        self,
+        btn_orientation: str = None,
+        button_list: List[SendMessageRequestMsgBodyActionCardButtonList] = None,
+        markdown: str = None,
+        single_title: str = None,
+        single_url: str = None,
+        title: str = None,
+    ):
+        self.btn_orientation = btn_orientation
+        self.button_list = button_list
+        self.markdown = markdown
+        self.single_title = single_title
+        self.single_url = single_url
+        self.title = title
+
+    def validate(self):
+        if self.button_list:
+            for k in self.button_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.btn_orientation is not None:
+            result['btn_orientation'] = self.btn_orientation
+        result['button_list'] = []
+        if self.button_list is not None:
+            for k in self.button_list:
+                result['button_list'].append(k.to_map() if k else None)
+        if self.markdown is not None:
+            result['markdown'] = self.markdown
+        if self.single_title is not None:
+            result['single_title'] = self.single_title
+        if self.single_url is not None:
+            result['single_url'] = self.single_url
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('btn_orientation') is not None:
+            self.btn_orientation = m.get('btn_orientation')
+        self.button_list = []
+        if m.get('button_list') is not None:
+            for k in m.get('button_list'):
+                temp_model = SendMessageRequestMsgBodyActionCardButtonList()
+                self.button_list.append(temp_model.from_map(k))
+        if m.get('markdown') is not None:
+            self.markdown = m.get('markdown')
+        if m.get('single_title') is not None:
+            self.single_title = m.get('single_title')
+        if m.get('single_url') is not None:
+            self.single_url = m.get('single_url')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class SendMessageRequestMsgBodyLink(TeaModel):
+    def __init__(
+        self,
+        cover_image_media_id: str = None,
+        link_url: str = None,
+        open_type: int = None,
+        summary: str = None,
+        title: str = None,
+    ):
+        self.cover_image_media_id = cover_image_media_id
+        self.link_url = link_url
+        self.open_type = open_type
+        self.summary = summary
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cover_image_media_id is not None:
+            result['cover_image_media_id'] = self.cover_image_media_id
+        if self.link_url is not None:
+            result['link_url'] = self.link_url
+        if self.open_type is not None:
+            result['open_type'] = self.open_type
+        if self.summary is not None:
+            result['summary'] = self.summary
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cover_image_media_id') is not None:
+            self.cover_image_media_id = m.get('cover_image_media_id')
+        if m.get('link_url') is not None:
+            self.link_url = m.get('link_url')
+        if m.get('open_type') is not None:
+            self.open_type = m.get('open_type')
+        if m.get('summary') is not None:
+            self.summary = m.get('summary')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class SendMessageRequestMsgBodyMarkdown(TeaModel):
+    def __init__(
+        self,
+        text: str = None,
+        title: str = None,
+    ):
+        self.text = text
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class SendMessageRequestMsgBody(TeaModel):
+    def __init__(
+        self,
+        action_card: SendMessageRequestMsgBodyActionCard = None,
+        link: SendMessageRequestMsgBodyLink = None,
+        markdown: SendMessageRequestMsgBodyMarkdown = None,
+    ):
+        self.action_card = action_card
+        self.link = link
+        self.markdown = markdown
+
+    def validate(self):
+        if self.action_card:
+            self.action_card.validate()
+        if self.link:
+            self.link.validate()
+        if self.markdown:
+            self.markdown.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_card is not None:
+            result['action_card'] = self.action_card.to_map()
+        if self.link is not None:
+            result['link'] = self.link.to_map()
+        if self.markdown is not None:
+            result['markdown'] = self.markdown.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action_card') is not None:
+            temp_model = SendMessageRequestMsgBodyActionCard()
+            self.action_card = temp_model.from_map(m['action_card'])
+        if m.get('link') is not None:
+            temp_model = SendMessageRequestMsgBodyLink()
+            self.link = temp_model.from_map(m['link'])
+        if m.get('markdown') is not None:
+            temp_model = SendMessageRequestMsgBodyMarkdown()
+            self.markdown = temp_model.from_map(m['markdown'])
+        return self
+
+
+class SendMessageRequest(TeaModel):
+    def __init__(
+        self,
+        allow_comment: bool = None,
+        comment_type: int = None,
+        dep_id_list: List[int] = None,
+        is_preview: bool = None,
+        is_to_all: bool = None,
+        media_id: str = None,
+        msg_body: SendMessageRequestMsgBody = None,
+        msg_type: str = None,
+        role_ids: List[int] = None,
+        show_homepage: int = None,
+        text_content: str = None,
+        unionid: str = None,
+        userid_list: List[str] = None,
+        uuid: str = None,
+    ):
+        self.allow_comment = allow_comment
+        self.comment_type = comment_type
+        self.dep_id_list = dep_id_list
+        self.is_preview = is_preview
+        self.is_to_all = is_to_all
+        self.media_id = media_id
+        self.msg_body = msg_body
+        self.msg_type = msg_type
+        self.role_ids = role_ids
+        self.show_homepage = show_homepage
+        self.text_content = text_content
+        self.unionid = unionid
+        self.userid_list = userid_list
+        self.uuid = uuid
+
+    def validate(self):
+        if self.msg_body:
+            self.msg_body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.allow_comment is not None:
+            result['allow_comment'] = self.allow_comment
+        if self.comment_type is not None:
+            result['comment_type'] = self.comment_type
+        if self.dep_id_list is not None:
+            result['dep_id_list'] = self.dep_id_list
+        if self.is_preview is not None:
+            result['is_preview'] = self.is_preview
+        if self.is_to_all is not None:
+            result['is_to_all'] = self.is_to_all
+        if self.media_id is not None:
+            result['media_id'] = self.media_id
+        if self.msg_body is not None:
+            result['msg_body'] = self.msg_body.to_map()
+        if self.msg_type is not None:
+            result['msg_type'] = self.msg_type
+        if self.role_ids is not None:
+            result['roleIds'] = self.role_ids
+        if self.show_homepage is not None:
+            result['show_homepage'] = self.show_homepage
+        if self.text_content is not None:
+            result['text_content'] = self.text_content
+        if self.unionid is not None:
+            result['unionid'] = self.unionid
+        if self.userid_list is not None:
+            result['userid_list'] = self.userid_list
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allow_comment') is not None:
+            self.allow_comment = m.get('allow_comment')
+        if m.get('comment_type') is not None:
+            self.comment_type = m.get('comment_type')
+        if m.get('dep_id_list') is not None:
+            self.dep_id_list = m.get('dep_id_list')
+        if m.get('is_preview') is not None:
+            self.is_preview = m.get('is_preview')
+        if m.get('is_to_all') is not None:
+            self.is_to_all = m.get('is_to_all')
+        if m.get('media_id') is not None:
+            self.media_id = m.get('media_id')
+        if m.get('msg_body') is not None:
+            temp_model = SendMessageRequestMsgBody()
+            self.msg_body = temp_model.from_map(m['msg_body'])
+        if m.get('msg_type') is not None:
+            self.msg_type = m.get('msg_type')
+        if m.get('roleIds') is not None:
+            self.role_ids = m.get('roleIds')
+        if m.get('show_homepage') is not None:
+            self.show_homepage = m.get('show_homepage')
+        if m.get('text_content') is not None:
+            self.text_content = m.get('text_content')
+        if m.get('unionid') is not None:
+            self.unionid = m.get('unionid')
+        if m.get('userid_list') is not None:
+            self.userid_list = m.get('userid_list')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class SendMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        errmsg: str = None,
+        errorcode: str = None,
+        task_id: str = None,
+    ):
+        self.errmsg = errmsg
+        self.errorcode = errorcode
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.errmsg is not None:
+            result['errmsg'] = self.errmsg
+        if self.errorcode is not None:
+            result['errorcode'] = self.errorcode
+        if self.task_id is not None:
+            result['task_id'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errmsg') is not None:
+            self.errmsg = m.get('errmsg')
+        if m.get('errorcode') is not None:
+            self.errorcode = m.get('errorcode')
+        if m.get('task_id') is not None:
+            self.task_id = m.get('task_id')
+        return self
+
+
+class SendMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SendMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SendMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

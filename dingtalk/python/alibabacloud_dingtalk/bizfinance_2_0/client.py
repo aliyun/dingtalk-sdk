@@ -3312,6 +3312,128 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryCollectionOrderHeaders()
         return await self.query_collection_order_with_options_async(request, headers, runtime)
 
+    def query_corp_scale_with_options(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.QueryCorpScaleRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryCorpScaleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryCorpScaleResponse:
+        """
+        @summary 根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模
+        
+        @param tmp_req: QueryCorpScaleRequest
+        @param headers: QueryCorpScaleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCorpScaleResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.QueryCorpScaleShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.corp_names):
+            request.corp_names_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.corp_names, 'corpNames', 'simple')
+        query = {}
+        if not UtilClient.is_unset(request.corp_names_shrink):
+            query['corpNames'] = request.corp_names_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCorpScale',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/queryCorpScale',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryCorpScaleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_corp_scale_with_options_async(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.QueryCorpScaleRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryCorpScaleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryCorpScaleResponse:
+        """
+        @summary 根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模
+        
+        @param tmp_req: QueryCorpScaleRequest
+        @param headers: QueryCorpScaleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCorpScaleResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.QueryCorpScaleShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.corp_names):
+            request.corp_names_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.corp_names, 'corpNames', 'simple')
+        query = {}
+        if not UtilClient.is_unset(request.corp_names_shrink):
+            query['corpNames'] = request.corp_names_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCorpScale',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/queryCorpScale',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryCorpScaleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_corp_scale(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCorpScaleRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryCorpScaleResponse:
+        """
+        @summary 根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模
+        
+        @param request: QueryCorpScaleRequest
+        @return: QueryCorpScaleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryCorpScaleHeaders()
+        return self.query_corp_scale_with_options(request, headers, runtime)
+
+    async def query_corp_scale_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCorpScaleRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryCorpScaleResponse:
+        """
+        @summary 根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模
+        
+        @param request: QueryCorpScaleRequest
+        @return: QueryCorpScaleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryCorpScaleHeaders()
+        return await self.query_corp_scale_with_options_async(request, headers, runtime)
+
     def query_customer_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QueryCustomerByPageRequest,

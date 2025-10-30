@@ -7159,6 +7159,690 @@ class QueryContractReviewResultResponse(TeaModel):
         return self
 
 
+class QueryContractSignInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryContractSignInfoRequest(TeaModel):
+    def __init__(
+        self,
+        contract_biz_id: str = None,
+        corp_id: str = None,
+        staff_id: str = None,
+    ):
+        self.contract_biz_id = contract_biz_id
+        self.corp_id = corp_id
+        self.staff_id = staff_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_biz_id is not None:
+            result['contractBizId'] = self.contract_biz_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.staff_id is not None:
+            result['staffId'] = self.staff_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contractBizId') is not None:
+            self.contract_biz_id = m.get('contractBizId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('staffId') is not None:
+            self.staff_id = m.get('staffId')
+        return self
+
+
+class QueryContractSignInfoResponseBodyResultActualOriginator(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        staff_id: str = None,
+    ):
+        self.name = name
+        self.staff_id = staff_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.staff_id is not None:
+            result['staffId'] = self.staff_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('staffId') is not None:
+            self.staff_id = m.get('staffId')
+        return self
+
+
+class QueryContractSignInfoResponseBodyResultContractAttachmentFiles(TeaModel):
+    def __init__(
+        self,
+        file_download_url: str = None,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        space_id: int = None,
+    ):
+        self.file_download_url = file_download_url
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_download_url is not None:
+            result['fileDownloadUrl'] = self.file_download_url
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileDownloadUrl') is not None:
+            self.file_download_url = m.get('fileDownloadUrl')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class QueryContractSignInfoResponseBodyResultContractContentFiles(TeaModel):
+    def __init__(
+        self,
+        file_download_url: str = None,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        space_id: int = None,
+    ):
+        self.file_download_url = file_download_url
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_download_url is not None:
+            result['fileDownloadUrl'] = self.file_download_url
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileDownloadUrl') is not None:
+            self.file_download_url = m.get('fileDownloadUrl')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class QueryContractSignInfoResponseBodyResultOppositeParties(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        owner: str = None,
+        phone_number: str = None,
+        type: str = None,
+        unique_code: str = None,
+    ):
+        self.code = code
+        self.name = name
+        self.owner = owner
+        self.phone_number = phone_number
+        self.type = type
+        self.unique_code = unique_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.owner is not None:
+            result['owner'] = self.owner
+        if self.phone_number is not None:
+            result['phoneNumber'] = self.phone_number
+        if self.type is not None:
+            result['type'] = self.type
+        if self.unique_code is not None:
+            result['uniqueCode'] = self.unique_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('owner') is not None:
+            self.owner = m.get('owner')
+        if m.get('phoneNumber') is not None:
+            self.phone_number = m.get('phoneNumber')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('uniqueCode') is not None:
+            self.unique_code = m.get('uniqueCode')
+        return self
+
+
+class QueryContractSignInfoResponseBodyResultOurParties(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        owner: str = None,
+        phone_number: str = None,
+        type: str = None,
+        unique_code: str = None,
+    ):
+        self.code = code
+        self.name = name
+        self.owner = owner
+        self.phone_number = phone_number
+        self.type = type
+        self.unique_code = unique_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.owner is not None:
+            result['owner'] = self.owner
+        if self.phone_number is not None:
+            result['phoneNumber'] = self.phone_number
+        if self.type is not None:
+            result['type'] = self.type
+        if self.unique_code is not None:
+            result['uniqueCode'] = self.unique_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('owner') is not None:
+            self.owner = m.get('owner')
+        if m.get('phoneNumber') is not None:
+            self.phone_number = m.get('phoneNumber')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('uniqueCode') is not None:
+            self.unique_code = m.get('uniqueCode')
+        return self
+
+
+class QueryContractSignInfoResponseBodyResultSigners(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        staff_id: str = None,
+    ):
+        self.name = name
+        self.staff_id = staff_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.staff_id is not None:
+            result['staffId'] = self.staff_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('staffId') is not None:
+            self.staff_id = m.get('staffId')
+        return self
+
+
+class QueryContractSignInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        actual_originator: QueryContractSignInfoResponseBodyResultActualOriginator = None,
+        amount_type: str = None,
+        applicant_date: int = None,
+        approve_time: int = None,
+        biz_id: str = None,
+        contract_amount: str = None,
+        contract_amount_method: str = None,
+        contract_attachment_files: List[QueryContractSignInfoResponseBodyResultContractAttachmentFiles] = None,
+        contract_content_files: List[QueryContractSignInfoResponseBodyResultContractContentFiles] = None,
+        contract_end_date: int = None,
+        contract_id: int = None,
+        contract_name: str = None,
+        contract_no: str = None,
+        contract_remark: str = None,
+        contract_start_date: int = None,
+        contract_status: str = None,
+        contract_term_type: str = None,
+        currency_code: str = None,
+        dept_name: str = None,
+        directory_name: str = None,
+        effective_status: str = None,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        opposite_parties: List[QueryContractSignInfoResponseBodyResultOppositeParties] = None,
+        our_parties: List[QueryContractSignInfoResponseBodyResultOurParties] = None,
+        owner_name: str = None,
+        owner_staff_id: str = None,
+        process_instance_id: str = None,
+        signers: List[QueryContractSignInfoResponseBodyResultSigners] = None,
+    ):
+        self.actual_originator = actual_originator
+        self.amount_type = amount_type
+        self.applicant_date = applicant_date
+        self.approve_time = approve_time
+        self.biz_id = biz_id
+        self.contract_amount = contract_amount
+        self.contract_amount_method = contract_amount_method
+        self.contract_attachment_files = contract_attachment_files
+        self.contract_content_files = contract_content_files
+        self.contract_end_date = contract_end_date
+        self.contract_id = contract_id
+        self.contract_name = contract_name
+        self.contract_no = contract_no
+        self.contract_remark = contract_remark
+        self.contract_start_date = contract_start_date
+        self.contract_status = contract_status
+        self.contract_term_type = contract_term_type
+        self.currency_code = currency_code
+        self.dept_name = dept_name
+        self.directory_name = directory_name
+        self.effective_status = effective_status
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.opposite_parties = opposite_parties
+        self.our_parties = our_parties
+        self.owner_name = owner_name
+        self.owner_staff_id = owner_staff_id
+        self.process_instance_id = process_instance_id
+        self.signers = signers
+
+    def validate(self):
+        if self.actual_originator:
+            self.actual_originator.validate()
+        if self.contract_attachment_files:
+            for k in self.contract_attachment_files:
+                if k:
+                    k.validate()
+        if self.contract_content_files:
+            for k in self.contract_content_files:
+                if k:
+                    k.validate()
+        if self.opposite_parties:
+            for k in self.opposite_parties:
+                if k:
+                    k.validate()
+        if self.our_parties:
+            for k in self.our_parties:
+                if k:
+                    k.validate()
+        if self.signers:
+            for k in self.signers:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actual_originator is not None:
+            result['actualOriginator'] = self.actual_originator.to_map()
+        if self.amount_type is not None:
+            result['amountType'] = self.amount_type
+        if self.applicant_date is not None:
+            result['applicantDate'] = self.applicant_date
+        if self.approve_time is not None:
+            result['approveTime'] = self.approve_time
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.contract_amount is not None:
+            result['contractAmount'] = self.contract_amount
+        if self.contract_amount_method is not None:
+            result['contractAmountMethod'] = self.contract_amount_method
+        result['contractAttachmentFiles'] = []
+        if self.contract_attachment_files is not None:
+            for k in self.contract_attachment_files:
+                result['contractAttachmentFiles'].append(k.to_map() if k else None)
+        result['contractContentFiles'] = []
+        if self.contract_content_files is not None:
+            for k in self.contract_content_files:
+                result['contractContentFiles'].append(k.to_map() if k else None)
+        if self.contract_end_date is not None:
+            result['contractEndDate'] = self.contract_end_date
+        if self.contract_id is not None:
+            result['contractId'] = self.contract_id
+        if self.contract_name is not None:
+            result['contractName'] = self.contract_name
+        if self.contract_no is not None:
+            result['contractNo'] = self.contract_no
+        if self.contract_remark is not None:
+            result['contractRemark'] = self.contract_remark
+        if self.contract_start_date is not None:
+            result['contractStartDate'] = self.contract_start_date
+        if self.contract_status is not None:
+            result['contractStatus'] = self.contract_status
+        if self.contract_term_type is not None:
+            result['contractTermType'] = self.contract_term_type
+        if self.currency_code is not None:
+            result['currencyCode'] = self.currency_code
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.directory_name is not None:
+            result['directoryName'] = self.directory_name
+        if self.effective_status is not None:
+            result['effectiveStatus'] = self.effective_status
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        result['oppositeParties'] = []
+        if self.opposite_parties is not None:
+            for k in self.opposite_parties:
+                result['oppositeParties'].append(k.to_map() if k else None)
+        result['ourParties'] = []
+        if self.our_parties is not None:
+            for k in self.our_parties:
+                result['ourParties'].append(k.to_map() if k else None)
+        if self.owner_name is not None:
+            result['ownerName'] = self.owner_name
+        if self.owner_staff_id is not None:
+            result['ownerStaffId'] = self.owner_staff_id
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        result['signers'] = []
+        if self.signers is not None:
+            for k in self.signers:
+                result['signers'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actualOriginator') is not None:
+            temp_model = QueryContractSignInfoResponseBodyResultActualOriginator()
+            self.actual_originator = temp_model.from_map(m['actualOriginator'])
+        if m.get('amountType') is not None:
+            self.amount_type = m.get('amountType')
+        if m.get('applicantDate') is not None:
+            self.applicant_date = m.get('applicantDate')
+        if m.get('approveTime') is not None:
+            self.approve_time = m.get('approveTime')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('contractAmount') is not None:
+            self.contract_amount = m.get('contractAmount')
+        if m.get('contractAmountMethod') is not None:
+            self.contract_amount_method = m.get('contractAmountMethod')
+        self.contract_attachment_files = []
+        if m.get('contractAttachmentFiles') is not None:
+            for k in m.get('contractAttachmentFiles'):
+                temp_model = QueryContractSignInfoResponseBodyResultContractAttachmentFiles()
+                self.contract_attachment_files.append(temp_model.from_map(k))
+        self.contract_content_files = []
+        if m.get('contractContentFiles') is not None:
+            for k in m.get('contractContentFiles'):
+                temp_model = QueryContractSignInfoResponseBodyResultContractContentFiles()
+                self.contract_content_files.append(temp_model.from_map(k))
+        if m.get('contractEndDate') is not None:
+            self.contract_end_date = m.get('contractEndDate')
+        if m.get('contractId') is not None:
+            self.contract_id = m.get('contractId')
+        if m.get('contractName') is not None:
+            self.contract_name = m.get('contractName')
+        if m.get('contractNo') is not None:
+            self.contract_no = m.get('contractNo')
+        if m.get('contractRemark') is not None:
+            self.contract_remark = m.get('contractRemark')
+        if m.get('contractStartDate') is not None:
+            self.contract_start_date = m.get('contractStartDate')
+        if m.get('contractStatus') is not None:
+            self.contract_status = m.get('contractStatus')
+        if m.get('contractTermType') is not None:
+            self.contract_term_type = m.get('contractTermType')
+        if m.get('currencyCode') is not None:
+            self.currency_code = m.get('currencyCode')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('directoryName') is not None:
+            self.directory_name = m.get('directoryName')
+        if m.get('effectiveStatus') is not None:
+            self.effective_status = m.get('effectiveStatus')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        self.opposite_parties = []
+        if m.get('oppositeParties') is not None:
+            for k in m.get('oppositeParties'):
+                temp_model = QueryContractSignInfoResponseBodyResultOppositeParties()
+                self.opposite_parties.append(temp_model.from_map(k))
+        self.our_parties = []
+        if m.get('ourParties') is not None:
+            for k in m.get('ourParties'):
+                temp_model = QueryContractSignInfoResponseBodyResultOurParties()
+                self.our_parties.append(temp_model.from_map(k))
+        if m.get('ownerName') is not None:
+            self.owner_name = m.get('ownerName')
+        if m.get('ownerStaffId') is not None:
+            self.owner_staff_id = m.get('ownerStaffId')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        self.signers = []
+        if m.get('signers') is not None:
+            for k in m.get('signers'):
+                temp_model = QueryContractSignInfoResponseBodyResultSigners()
+                self.signers.append(temp_model.from_map(k))
+        return self
+
+
+class QueryContractSignInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryContractSignInfoResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryContractSignInfoResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryContractSignInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryContractSignInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryContractSignInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SendContractCardHeaders(TeaModel):
     def __init__(
         self,
@@ -7473,6 +8157,333 @@ class SendContractCardResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SendContractCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SyncSignEventHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncSignEventRequestSignFileList(TeaModel):
+    def __init__(
+        self,
+        file_download_url: str = None,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        space_id: str = None,
+    ):
+        self.file_download_url = file_download_url
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_download_url is not None:
+            result['fileDownloadUrl'] = self.file_download_url
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileDownloadUrl') is not None:
+            self.file_download_url = m.get('fileDownloadUrl')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class SyncSignEventRequest(TeaModel):
+    def __init__(
+        self,
+        contract_biz_id: str = None,
+        corp_id: str = None,
+        ext_info: Dict[str, str] = None,
+        seal_type: List[str] = None,
+        sign_date: int = None,
+        sign_file_list: List[SyncSignEventRequestSignFileList] = None,
+        staff_id: str = None,
+    ):
+        self.contract_biz_id = contract_biz_id
+        self.corp_id = corp_id
+        self.ext_info = ext_info
+        self.seal_type = seal_type
+        self.sign_date = sign_date
+        self.sign_file_list = sign_file_list
+        self.staff_id = staff_id
+
+    def validate(self):
+        if self.sign_file_list:
+            for k in self.sign_file_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_biz_id is not None:
+            result['contractBizId'] = self.contract_biz_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.ext_info is not None:
+            result['extInfo'] = self.ext_info
+        if self.seal_type is not None:
+            result['sealType'] = self.seal_type
+        if self.sign_date is not None:
+            result['signDate'] = self.sign_date
+        result['signFileList'] = []
+        if self.sign_file_list is not None:
+            for k in self.sign_file_list:
+                result['signFileList'].append(k.to_map() if k else None)
+        if self.staff_id is not None:
+            result['staffId'] = self.staff_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contractBizId') is not None:
+            self.contract_biz_id = m.get('contractBizId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('extInfo') is not None:
+            self.ext_info = m.get('extInfo')
+        if m.get('sealType') is not None:
+            self.seal_type = m.get('sealType')
+        if m.get('signDate') is not None:
+            self.sign_date = m.get('signDate')
+        self.sign_file_list = []
+        if m.get('signFileList') is not None:
+            for k in m.get('signFileList'):
+                temp_model = SyncSignEventRequestSignFileList()
+                self.sign_file_list.append(temp_model.from_map(k))
+        if m.get('staffId') is not None:
+            self.staff_id = m.get('staffId')
+        return self
+
+
+class SyncSignEventShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        contract_biz_id: str = None,
+        corp_id: str = None,
+        ext_info_shrink: str = None,
+        seal_type_shrink: str = None,
+        sign_date: int = None,
+        sign_file_list_shrink: str = None,
+        staff_id: str = None,
+    ):
+        self.contract_biz_id = contract_biz_id
+        self.corp_id = corp_id
+        self.ext_info_shrink = ext_info_shrink
+        self.seal_type_shrink = seal_type_shrink
+        self.sign_date = sign_date
+        self.sign_file_list_shrink = sign_file_list_shrink
+        self.staff_id = staff_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_biz_id is not None:
+            result['contractBizId'] = self.contract_biz_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.ext_info_shrink is not None:
+            result['extInfo'] = self.ext_info_shrink
+        if self.seal_type_shrink is not None:
+            result['sealType'] = self.seal_type_shrink
+        if self.sign_date is not None:
+            result['signDate'] = self.sign_date
+        if self.sign_file_list_shrink is not None:
+            result['signFileList'] = self.sign_file_list_shrink
+        if self.staff_id is not None:
+            result['staffId'] = self.staff_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contractBizId') is not None:
+            self.contract_biz_id = m.get('contractBizId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('extInfo') is not None:
+            self.ext_info_shrink = m.get('extInfo')
+        if m.get('sealType') is not None:
+            self.seal_type_shrink = m.get('sealType')
+        if m.get('signDate') is not None:
+            self.sign_date = m.get('signDate')
+        if m.get('signFileList') is not None:
+            self.sign_file_list_shrink = m.get('signFileList')
+        if m.get('staffId') is not None:
+            self.staff_id = m.get('staffId')
+        return self
+
+
+class SyncSignEventResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class SyncSignEventResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SyncSignEventResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SyncSignEventResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SyncSignEventResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SyncSignEventResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SyncSignEventResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

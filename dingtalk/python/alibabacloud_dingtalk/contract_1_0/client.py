@@ -3350,6 +3350,128 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.QueryContractReviewResultHeaders()
         return await self.query_contract_review_result_with_options_async(request, headers, runtime)
 
+    def query_contract_sign_info_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.QueryContractSignInfoRequest,
+        headers: dingtalkcontract__1__0_models.QueryContractSignInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QueryContractSignInfoResponse:
+        """
+        @summary 查询合同电子签相关信息
+        
+        @param request: QueryContractSignInfoRequest
+        @param headers: QueryContractSignInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryContractSignInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.contract_biz_id):
+            query['contractBizId'] = request.contract_biz_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.staff_id):
+            query['staffId'] = request.staff_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryContractSignInfo',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/queryContractSignInfo',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QueryContractSignInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_contract_sign_info_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.QueryContractSignInfoRequest,
+        headers: dingtalkcontract__1__0_models.QueryContractSignInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QueryContractSignInfoResponse:
+        """
+        @summary 查询合同电子签相关信息
+        
+        @param request: QueryContractSignInfoRequest
+        @param headers: QueryContractSignInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryContractSignInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.contract_biz_id):
+            query['contractBizId'] = request.contract_biz_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.staff_id):
+            query['staffId'] = request.staff_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryContractSignInfo',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/queryContractSignInfo',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QueryContractSignInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_contract_sign_info(
+        self,
+        request: dingtalkcontract__1__0_models.QueryContractSignInfoRequest,
+    ) -> dingtalkcontract__1__0_models.QueryContractSignInfoResponse:
+        """
+        @summary 查询合同电子签相关信息
+        
+        @param request: QueryContractSignInfoRequest
+        @return: QueryContractSignInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.QueryContractSignInfoHeaders()
+        return self.query_contract_sign_info_with_options(request, headers, runtime)
+
+    async def query_contract_sign_info_async(
+        self,
+        request: dingtalkcontract__1__0_models.QueryContractSignInfoRequest,
+    ) -> dingtalkcontract__1__0_models.QueryContractSignInfoResponse:
+        """
+        @summary 查询合同电子签相关信息
+        
+        @param request: QueryContractSignInfoRequest
+        @return: QueryContractSignInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.QueryContractSignInfoHeaders()
+        return await self.query_contract_sign_info_with_options_async(request, headers, runtime)
+
     def send_contract_card_with_options(
         self,
         request: dingtalkcontract__1__0_models.SendContractCardRequest,
@@ -3495,3 +3617,157 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.SendContractCardHeaders()
         return await self.send_contract_card_with_options_async(request, headers, runtime)
+
+    def sync_sign_event_with_options(
+        self,
+        tmp_req: dingtalkcontract__1__0_models.SyncSignEventRequest,
+        headers: dingtalkcontract__1__0_models.SyncSignEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.SyncSignEventResponse:
+        """
+        @summary 同步签署事件
+        
+        @param tmp_req: SyncSignEventRequest
+        @param headers: SyncSignEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncSignEventResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontract__1__0_models.SyncSignEventShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.ext_info):
+            request.ext_info_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.ext_info, 'extInfo', 'json')
+        if not UtilClient.is_unset(tmp_req.seal_type):
+            request.seal_type_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.seal_type, 'sealType', 'json')
+        if not UtilClient.is_unset(tmp_req.sign_file_list):
+            request.sign_file_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.sign_file_list, 'signFileList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.contract_biz_id):
+            query['contractBizId'] = request.contract_biz_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.ext_info_shrink):
+            query['extInfo'] = request.ext_info_shrink
+        if not UtilClient.is_unset(request.seal_type_shrink):
+            query['sealType'] = request.seal_type_shrink
+        if not UtilClient.is_unset(request.sign_date):
+            query['signDate'] = request.sign_date
+        if not UtilClient.is_unset(request.sign_file_list_shrink):
+            query['signFileList'] = request.sign_file_list_shrink
+        if not UtilClient.is_unset(request.staff_id):
+            query['staffId'] = request.staff_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SyncSignEvent',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/syncSignEvent',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.SyncSignEventResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_sign_event_with_options_async(
+        self,
+        tmp_req: dingtalkcontract__1__0_models.SyncSignEventRequest,
+        headers: dingtalkcontract__1__0_models.SyncSignEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.SyncSignEventResponse:
+        """
+        @summary 同步签署事件
+        
+        @param tmp_req: SyncSignEventRequest
+        @param headers: SyncSignEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncSignEventResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontract__1__0_models.SyncSignEventShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.ext_info):
+            request.ext_info_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.ext_info, 'extInfo', 'json')
+        if not UtilClient.is_unset(tmp_req.seal_type):
+            request.seal_type_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.seal_type, 'sealType', 'json')
+        if not UtilClient.is_unset(tmp_req.sign_file_list):
+            request.sign_file_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.sign_file_list, 'signFileList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.contract_biz_id):
+            query['contractBizId'] = request.contract_biz_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.ext_info_shrink):
+            query['extInfo'] = request.ext_info_shrink
+        if not UtilClient.is_unset(request.seal_type_shrink):
+            query['sealType'] = request.seal_type_shrink
+        if not UtilClient.is_unset(request.sign_date):
+            query['signDate'] = request.sign_date
+        if not UtilClient.is_unset(request.sign_file_list_shrink):
+            query['signFileList'] = request.sign_file_list_shrink
+        if not UtilClient.is_unset(request.staff_id):
+            query['staffId'] = request.staff_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SyncSignEvent',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/syncSignEvent',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.SyncSignEventResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_sign_event(
+        self,
+        request: dingtalkcontract__1__0_models.SyncSignEventRequest,
+    ) -> dingtalkcontract__1__0_models.SyncSignEventResponse:
+        """
+        @summary 同步签署事件
+        
+        @param request: SyncSignEventRequest
+        @return: SyncSignEventResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.SyncSignEventHeaders()
+        return self.sync_sign_event_with_options(request, headers, runtime)
+
+    async def sync_sign_event_async(
+        self,
+        request: dingtalkcontract__1__0_models.SyncSignEventRequest,
+    ) -> dingtalkcontract__1__0_models.SyncSignEventResponse:
+        """
+        @summary 同步签署事件
+        
+        @param request: SyncSignEventRequest
+        @return: SyncSignEventResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.SyncSignEventHeaders()
+        return await self.sync_sign_event_with_options_async(request, headers, runtime)
