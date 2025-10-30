@@ -242,6 +242,13 @@ public class CreateIntegratedTaskRequest extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>1758643200000</p>
+         */
+        @NameInMap("dueTimestamp")
+        public Long dueTimestamp;
+
+        /**
+         * <strong>example:</strong>
          * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
          */
         @NameInMap("url")
@@ -265,6 +272,14 @@ public class CreateIntegratedTaskRequest extends TeaModel {
         }
         public String getCustomData() {
             return this.customData;
+        }
+
+        public CreateIntegratedTaskRequestTasks setDueTimestamp(Long dueTimestamp) {
+            this.dueTimestamp = dueTimestamp;
+            return this;
+        }
+        public Long getDueTimestamp() {
+            return this.dueTimestamp;
         }
 
         public CreateIntegratedTaskRequestTasks setUrl(String url) {

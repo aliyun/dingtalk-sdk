@@ -286,6 +286,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("exclusiveAccountType", request.exclusiveAccountType);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.exclusiveMobileVerifyStatus)) {
+            body.put("exclusiveMobileVerifyStatus", request.exclusiveMobileVerifyStatus);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
             body.put("extension", request.extension);
         }

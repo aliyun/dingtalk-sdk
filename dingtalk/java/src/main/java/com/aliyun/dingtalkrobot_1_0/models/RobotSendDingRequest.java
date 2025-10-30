@@ -5,6 +5,13 @@ import com.aliyun.tea.*;
 
 public class RobotSendDingRequest extends TeaModel {
     /**
+     * <strong>example:</strong>
+     * <p>Standard_Female_Voice</p>
+     */
+    @NameInMap("callVoice")
+    public String callVoice;
+
+    /**
      * <p>This parameter is required.</p>
      */
     @NameInMap("content")
@@ -34,6 +41,14 @@ public class RobotSendDingRequest extends TeaModel {
     public static RobotSendDingRequest build(java.util.Map<String, ?> map) throws Exception {
         RobotSendDingRequest self = new RobotSendDingRequest();
         return TeaModel.build(map, self);
+    }
+
+    public RobotSendDingRequest setCallVoice(String callVoice) {
+        this.callVoice = callVoice;
+        return this;
+    }
+    public String getCallVoice() {
+        return this.callVoice;
     }
 
     public RobotSendDingRequest setContent(String content) {

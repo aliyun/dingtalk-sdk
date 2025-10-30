@@ -20,6 +20,13 @@ public class ListTableDataByFormInstanceIdTableIdRequest extends TeaModel {
     public String formUuid;
 
     /**
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
+    @NameInMap("needRowId")
+    public Boolean needRowId;
+
+    /**
      * <strong>example:</strong>
      * <p>10</p>
      */
@@ -79,6 +86,14 @@ public class ListTableDataByFormInstanceIdTableIdRequest extends TeaModel {
     }
     public String getFormUuid() {
         return this.formUuid;
+    }
+
+    public ListTableDataByFormInstanceIdTableIdRequest setNeedRowId(Boolean needRowId) {
+        this.needRowId = needRowId;
+        return this;
+    }
+    public Boolean getNeedRowId() {
+        return this.needRowId;
     }
 
     public ListTableDataByFormInstanceIdTableIdRequest setPageNumber(Integer pageNumber) {

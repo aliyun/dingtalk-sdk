@@ -3776,6 +3776,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public GetPublicDevicesResponse getPublicDevicesWithOptions(GetPublicDevicesRequest request, GetPublicDevicesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceUuid)) {
+            query.put("deviceUuid", request.deviceUuid);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
             query.put("endTime", request.endTime);
         }
@@ -4268,6 +4272,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public GetTrustDeviceListResponse getTrustDeviceListWithOptions(GetTrustDeviceListRequest request, GetTrustDeviceListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceUuid)) {
+            body.put("deviceUuid", request.deviceUuid);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.gmtCreateEnd)) {
             body.put("gmtCreateEnd", request.gmtCreateEnd);
         }
@@ -6940,6 +6948,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询企业全量内部群信息</p>
+     * 
+     * @param request SearchOrgInnerGroupInfoByCursorPageRequest
+     * @param headers SearchOrgInnerGroupInfoByCursorPageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SearchOrgInnerGroupInfoByCursorPageResponse
+     */
+    public SearchOrgInnerGroupInfoByCursorPageResponse searchOrgInnerGroupInfoByCursorPageWithOptions(SearchOrgInnerGroupInfoByCursorPageRequest request, SearchOrgInnerGroupInfoByCursorPageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.count)) {
+            query.put("count", request.count);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
+            query.put("cursor", request.cursor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.forward)) {
+            query.put("forward", request.forward);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SearchOrgInnerGroupInfoByCursorPage"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/securities/orgAllGroupInfos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SearchOrgInnerGroupInfoByCursorPageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业全量内部群信息</p>
+     * 
+     * @param request SearchOrgInnerGroupInfoByCursorPageRequest
+     * @return SearchOrgInnerGroupInfoByCursorPageResponse
+     */
+    public SearchOrgInnerGroupInfoByCursorPageResponse searchOrgInnerGroupInfoByCursorPage(SearchOrgInnerGroupInfoByCursorPageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SearchOrgInnerGroupInfoByCursorPageHeaders headers = new SearchOrgInnerGroupInfoByCursorPageHeaders();
+        return this.searchOrgInnerGroupInfoByCursorPageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>通过接口发送应用内DING</p>
      * 
      * @param request SendAppDingRequest
@@ -7068,6 +7140,114 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendInvitationHeaders headers = new SendInvitationHeaders();
         return this.sendInvitationWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>互动服务窗-群发消息</p>
+     * 
+     * @param request SendMessageRequest
+     * @param headers SendMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendMessageResponse
+     */
+    public SendMessageResponse sendMessageWithOptions(SendMessageRequest request, SendMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.allowComment)) {
+            body.put("allow_comment", request.allowComment);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.commentType)) {
+            body.put("comment_type", request.commentType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.depIdList)) {
+            body.put("dep_id_list", request.depIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isPreview)) {
+            body.put("is_preview", request.isPreview);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isToAll)) {
+            body.put("is_to_all", request.isToAll);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mediaId)) {
+            body.put("media_id", request.mediaId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgBody)) {
+            body.put("msg_body", request.msgBody);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgType)) {
+            body.put("msg_type", request.msgType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleIds)) {
+            body.put("roleIds", request.roleIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.showHomepage)) {
+            body.put("show_homepage", request.showHomepage);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.textContent)) {
+            body.put("text_content", request.textContent);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionid)) {
+            body.put("unionid", request.unionid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.useridList)) {
+            body.put("userid_list", request.useridList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            body.put("uuid", request.uuid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SendMessage"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/follow/message/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SendMessageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>互动服务窗-群发消息</p>
+     * 
+     * @param request SendMessageRequest
+     * @return SendMessageResponse
+     */
+    public SendMessageResponse sendMessage(SendMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SendMessageHeaders headers = new SendMessageHeaders();
+        return this.sendMessageWithOptions(request, headers, runtime);
     }
 
     /**

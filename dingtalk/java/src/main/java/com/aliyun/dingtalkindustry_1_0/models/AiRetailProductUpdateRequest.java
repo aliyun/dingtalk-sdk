@@ -16,6 +16,12 @@ public class AiRetailProductUpdateRequest extends TeaModel {
     @NameInMap("category")
     public String category;
 
+    @NameInMap("currency")
+    public String currency;
+
+    @NameInMap("enable")
+    public Integer enable;
+
     @NameInMap("imageFileIds")
     public java.util.List<String> imageFileIds;
 
@@ -90,6 +96,22 @@ public class AiRetailProductUpdateRequest extends TeaModel {
     }
     public String getCategory() {
         return this.category;
+    }
+
+    public AiRetailProductUpdateRequest setCurrency(String currency) {
+        this.currency = currency;
+        return this;
+    }
+    public String getCurrency() {
+        return this.currency;
+    }
+
+    public AiRetailProductUpdateRequest setEnable(Integer enable) {
+        this.enable = enable;
+        return this;
+    }
+    public Integer getEnable() {
+        return this.enable;
     }
 
     public AiRetailProductUpdateRequest setImageFileIds(java.util.List<String> imageFileIds) {

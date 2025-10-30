@@ -1836,6 +1836,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询合同电子签相关信息</p>
+     * 
+     * @param request QueryContractSignInfoRequest
+     * @param headers QueryContractSignInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryContractSignInfoResponse
+     */
+    public QueryContractSignInfoResponse queryContractSignInfoWithOptions(QueryContractSignInfoRequest request, QueryContractSignInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.contractBizId)) {
+            query.put("contractBizId", request.contractBizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.staffId)) {
+            query.put("staffId", request.staffId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryContractSignInfo"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/queryContractSignInfo"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryContractSignInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询合同电子签相关信息</p>
+     * 
+     * @param request QueryContractSignInfoRequest
+     * @return QueryContractSignInfoResponse
+     */
+    public QueryContractSignInfoResponse queryContractSignInfo(QueryContractSignInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryContractSignInfoHeaders headers = new QueryContractSignInfoHeaders();
+        return this.queryContractSignInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>发送合同相关卡片</p>
      * 
      * @param request SendContractCardRequest
@@ -1920,5 +1984,99 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendContractCardHeaders headers = new SendContractCardHeaders();
         return this.sendContractCardWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>同步签署事件</p>
+     * 
+     * @param tmpReq SyncSignEventRequest
+     * @param headers SyncSignEventHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncSignEventResponse
+     */
+    public SyncSignEventResponse syncSignEventWithOptions(SyncSignEventRequest tmpReq, SyncSignEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        SyncSignEventShrinkRequest request = new SyncSignEventShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.extInfo)) {
+            request.extInfoShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.extInfo, "extInfo", "json");
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.sealType)) {
+            request.sealTypeShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.sealType, "sealType", "json");
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.signFileList)) {
+            request.signFileListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.signFileList, "signFileList", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.contractBizId)) {
+            query.put("contractBizId", request.contractBizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extInfoShrink)) {
+            query.put("extInfo", request.extInfoShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sealTypeShrink)) {
+            query.put("sealType", request.sealTypeShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signDate)) {
+            query.put("signDate", request.signDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signFileListShrink)) {
+            query.put("signFileList", request.signFileListShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.staffId)) {
+            query.put("staffId", request.staffId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SyncSignEvent"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/syncSignEvent"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SyncSignEventResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>同步签署事件</p>
+     * 
+     * @param request SyncSignEventRequest
+     * @return SyncSignEventResponse
+     */
+    public SyncSignEventResponse syncSignEvent(SyncSignEventRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SyncSignEventHeaders headers = new SyncSignEventHeaders();
+        return this.syncSignEventWithOptions(request, headers, runtime);
     }
 }

@@ -1799,6 +1799,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模</p>
+     * 
+     * @param tmpReq QueryCorpScaleRequest
+     * @param headers QueryCorpScaleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryCorpScaleResponse
+     */
+    public QueryCorpScaleResponse queryCorpScaleWithOptions(QueryCorpScaleRequest tmpReq, QueryCorpScaleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        QueryCorpScaleShrinkRequest request = new QueryCorpScaleShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.corpNames)) {
+            request.corpNamesShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.corpNames, "corpNames", "simple");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpNamesShrink)) {
+            query.put("corpNames", request.corpNamesShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryCorpScale"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/queryCorpScale"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryCorpScaleResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模</p>
+     * 
+     * @param request QueryCorpScaleRequest
+     * @return QueryCorpScaleResponse
+     */
+    public QueryCorpScaleResponse queryCorpScale(QueryCorpScaleRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryCorpScaleHeaders headers = new QueryCorpScaleHeaders();
+        return this.queryCorpScaleWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>分页批量获取智能财务应用内维护的客户信息</p>
      * 
      * @param request QueryCustomerByPageRequest

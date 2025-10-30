@@ -4720,6 +4720,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("formUuid", request.formUuid);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.needRowId)) {
+            query.put("needRowId", request.needRowId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
             query.put("pageNumber", request.pageNumber);
         }

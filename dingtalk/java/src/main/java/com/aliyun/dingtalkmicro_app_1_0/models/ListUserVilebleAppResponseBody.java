@@ -20,6 +20,47 @@ public class ListUserVilebleAppResponseBody extends TeaModel {
         return this.appList;
     }
 
+    public static class ListUserVilebleAppResponseBodyAppListI18n extends TeaModel {
+        @NameInMap("desc")
+        public String desc;
+
+        @NameInMap("i18n_key")
+        public String i18nKey;
+
+        @NameInMap("name")
+        public String name;
+
+        public static ListUserVilebleAppResponseBodyAppListI18n build(java.util.Map<String, ?> map) throws Exception {
+            ListUserVilebleAppResponseBodyAppListI18n self = new ListUserVilebleAppResponseBodyAppListI18n();
+            return TeaModel.build(map, self);
+        }
+
+        public ListUserVilebleAppResponseBodyAppListI18n setDesc(String desc) {
+            this.desc = desc;
+            return this;
+        }
+        public String getDesc() {
+            return this.desc;
+        }
+
+        public ListUserVilebleAppResponseBodyAppListI18n setI18nKey(String i18nKey) {
+            this.i18nKey = i18nKey;
+            return this;
+        }
+        public String getI18nKey() {
+            return this.i18nKey;
+        }
+
+        public ListUserVilebleAppResponseBodyAppListI18n setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
     public static class ListUserVilebleAppResponseBodyAppList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
@@ -70,6 +111,9 @@ public class ListUserVilebleAppResponseBody extends TeaModel {
          */
         @NameInMap("homepageLink")
         public String homepageLink;
+
+        @NameInMap("i18n")
+        public java.util.List<ListUserVilebleAppResponseBodyAppListI18n> i18n;
 
         /**
          * <strong>example:</strong>
@@ -157,6 +201,14 @@ public class ListUserVilebleAppResponseBody extends TeaModel {
         }
         public String getHomepageLink() {
             return this.homepageLink;
+        }
+
+        public ListUserVilebleAppResponseBodyAppList setI18n(java.util.List<ListUserVilebleAppResponseBodyAppListI18n> i18n) {
+            this.i18n = i18n;
+            return this;
+        }
+        public java.util.List<ListUserVilebleAppResponseBodyAppListI18n> getI18n() {
+            return this.i18n;
         }
 
         public ListUserVilebleAppResponseBodyAppList setIcon(String icon) {

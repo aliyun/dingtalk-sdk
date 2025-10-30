@@ -46,6 +46,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("category", request.category);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.currecy)) {
+            body.put("currecy", request.currecy);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enable)) {
+            body.put("enable", request.enable);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.imageFileIds)) {
             body.put("imageFileIds", request.imageFileIds);
         }
@@ -312,6 +320,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.category)) {
             body.put("category", request.category);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.currency)) {
+            body.put("currency", request.currency);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enable)) {
+            body.put("enable", request.enable);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.imageFileIds)) {
@@ -6768,6 +6784,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetTaskPackageResultHeaders headers = new GetTaskPackageResultHeaders();
         return this.getTaskPackageResultWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询任务队列情况</p>
+     * 
+     * @param request GetTaskQueueRequest
+     * @param headers GetTaskQueueHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetTaskQueueResponse
+     */
+    public GetTaskQueueResponse getTaskQueueWithOptions(GetTaskQueueRequest request, GetTaskQueueHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            query.put("bizCode", request.bizCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetTaskQueue"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/ai/taskQueue/query"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetTaskQueueResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询任务队列情况</p>
+     * 
+     * @param request GetTaskQueueRequest
+     * @return GetTaskQueueResponse
+     */
+    public GetTaskQueueResponse getTaskQueue(GetTaskQueueRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetTaskQueueHeaders headers = new GetTaskQueueHeaders();
+        return this.getTaskQueueWithOptions(request, headers, runtime);
     }
 
     /**

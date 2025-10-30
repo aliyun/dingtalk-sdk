@@ -1246,6 +1246,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public RobotSendDingResponse robotSendDingWithOptions(RobotSendDingRequest request, RobotSendDingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.callVoice)) {
+            body.put("callVoice", request.callVoice);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.content)) {
             body.put("content", request.content);
         }

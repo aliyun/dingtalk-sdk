@@ -19,6 +19,9 @@ public class AddUnfurlingRegisterRequest extends TeaModel {
     @NameInMap("appId")
     public String appId;
 
+    @NameInMap("callbackType")
+    public Integer callbackType;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -96,6 +99,14 @@ public class AddUnfurlingRegisterRequest extends TeaModel {
     }
     public String getAppId() {
         return this.appId;
+    }
+
+    public AddUnfurlingRegisterRequest setCallbackType(Integer callbackType) {
+        this.callbackType = callbackType;
+        return this;
+    }
+    public Integer getCallbackType() {
+        return this.callbackType;
     }
 
     public AddUnfurlingRegisterRequest setCallbackUrl(String callbackUrl) {

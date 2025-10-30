@@ -64,6 +64,9 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         @NameInMap("createTime")
         public Long createTime;
 
+        @NameInMap("deviceUuid")
+        public String deviceUuid;
+
         @NameInMap("id")
         public Long id;
 
@@ -124,6 +127,14 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         }
         public Long getCreateTime() {
             return this.createTime;
+        }
+
+        public GetTrustDeviceListResponseBodyData setDeviceUuid(String deviceUuid) {
+            this.deviceUuid = deviceUuid;
+            return this;
+        }
+        public String getDeviceUuid() {
+            return this.deviceUuid;
         }
 
         public GetTrustDeviceListResponseBodyData setId(Long id) {

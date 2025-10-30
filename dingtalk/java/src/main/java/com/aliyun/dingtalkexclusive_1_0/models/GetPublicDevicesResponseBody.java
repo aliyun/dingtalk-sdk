@@ -181,6 +181,9 @@ public class GetPublicDevicesResponseBody extends TeaModel {
         @NameInMap("deviceStaffs")
         public java.util.List<GetPublicDevicesResponseBodyDataDeviceStaffs> deviceStaffs;
 
+        @NameInMap("deviceUuid")
+        public String deviceUuid;
+
         /**
          * <strong>example:</strong>
          * <p>1671767361000</p>
@@ -209,8 +212,18 @@ public class GetPublicDevicesResponseBody extends TeaModel {
         @NameInMap("platform")
         public String platform;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
+        @NameInMap("retryPermission")
+        public String retryPermission;
+
         @NameInMap("serialNumber")
         public String serialNumber;
+
+        @NameInMap("status")
+        public Integer status;
 
         /**
          * <strong>example:</strong>
@@ -256,6 +269,14 @@ public class GetPublicDevicesResponseBody extends TeaModel {
             return this.deviceStaffs;
         }
 
+        public GetPublicDevicesResponseBodyData setDeviceUuid(String deviceUuid) {
+            this.deviceUuid = deviceUuid;
+            return this;
+        }
+        public String getDeviceUuid() {
+            return this.deviceUuid;
+        }
+
         public GetPublicDevicesResponseBodyData setGmtCreate(Long gmtCreate) {
             this.gmtCreate = gmtCreate;
             return this;
@@ -288,12 +309,28 @@ public class GetPublicDevicesResponseBody extends TeaModel {
             return this.platform;
         }
 
+        public GetPublicDevicesResponseBodyData setRetryPermission(String retryPermission) {
+            this.retryPermission = retryPermission;
+            return this;
+        }
+        public String getRetryPermission() {
+            return this.retryPermission;
+        }
+
         public GetPublicDevicesResponseBodyData setSerialNumber(String serialNumber) {
             this.serialNumber = serialNumber;
             return this;
         }
         public String getSerialNumber() {
             return this.serialNumber;
+        }
+
+        public GetPublicDevicesResponseBodyData setStatus(Integer status) {
+            this.status = status;
+            return this;
+        }
+        public Integer getStatus() {
+            return this.status;
         }
 
         public GetPublicDevicesResponseBodyData setTitle(String title) {

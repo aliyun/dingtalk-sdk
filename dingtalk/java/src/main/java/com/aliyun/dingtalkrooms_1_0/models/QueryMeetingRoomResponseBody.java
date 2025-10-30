@@ -171,6 +171,12 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         @NameInMap("advanceReservation")
         public QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation advanceReservation;
 
+        @NameInMap("approvalSwitch")
+        public Boolean approvalSwitch;
+
+        @NameInMap("approvalType")
+        public Integer approvalType;
+
         /**
          * <strong>example:</strong>
          * <p>60</p>
@@ -202,6 +208,22 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         }
         public QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation getAdvanceReservation() {
             return this.advanceReservation;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfig setApprovalSwitch(Boolean approvalSwitch) {
+            this.approvalSwitch = approvalSwitch;
+            return this;
+        }
+        public Boolean getApprovalSwitch() {
+            return this.approvalSwitch;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfig setApprovalType(Integer approvalType) {
+            this.approvalType = approvalType;
+            return this;
+        }
+        public Integer getApprovalType() {
+            return this.approvalType;
         }
 
         public QueryMeetingRoomResponseBodyResultExtensionConfig setMaxReservationTimeInterval(Integer maxReservationTimeInterval) {

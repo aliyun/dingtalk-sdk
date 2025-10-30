@@ -16,6 +16,16 @@ public class AiRetailProductAddRequest extends TeaModel {
     @NameInMap("category")
     public String category;
 
+    @NameInMap("currecy")
+    public String currecy;
+
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
+    @NameInMap("enable")
+    public Integer enable;
+
     @NameInMap("imageFileIds")
     public java.util.List<String> imageFileIds;
 
@@ -46,6 +56,8 @@ public class AiRetailProductAddRequest extends TeaModel {
     public String productInfo;
 
     /**
+     * <p>This parameter is required.</p>
+     * 
      * <strong>example:</strong>
      * <p>办公室的电话是多少</p>
      */
@@ -87,6 +99,22 @@ public class AiRetailProductAddRequest extends TeaModel {
     }
     public String getCategory() {
         return this.category;
+    }
+
+    public AiRetailProductAddRequest setCurrecy(String currecy) {
+        this.currecy = currecy;
+        return this;
+    }
+    public String getCurrecy() {
+        return this.currecy;
+    }
+
+    public AiRetailProductAddRequest setEnable(Integer enable) {
+        this.enable = enable;
+        return this;
+    }
+    public Integer getEnable() {
+        return this.enable;
     }
 
     public AiRetailProductAddRequest setImageFileIds(java.util.List<String> imageFileIds) {

@@ -57,6 +57,9 @@ public class AddCollegeContactExclusiveRequest extends TeaModel {
     @NameInMap("exclusiveAccountType")
     public String exclusiveAccountType;
 
+    @NameInMap("exclusiveMobileVerifyStatus")
+    public String exclusiveMobileVerifyStatus;
+
     @NameInMap("extension")
     public java.util.Map<String, String> extension;
 
@@ -253,6 +256,14 @@ public class AddCollegeContactExclusiveRequest extends TeaModel {
     }
     public String getExclusiveAccountType() {
         return this.exclusiveAccountType;
+    }
+
+    public AddCollegeContactExclusiveRequest setExclusiveMobileVerifyStatus(String exclusiveMobileVerifyStatus) {
+        this.exclusiveMobileVerifyStatus = exclusiveMobileVerifyStatus;
+        return this;
+    }
+    public String getExclusiveMobileVerifyStatus() {
+        return this.exclusiveMobileVerifyStatus;
     }
 
     public AddCollegeContactExclusiveRequest setExtension(java.util.Map<String, String> extension) {

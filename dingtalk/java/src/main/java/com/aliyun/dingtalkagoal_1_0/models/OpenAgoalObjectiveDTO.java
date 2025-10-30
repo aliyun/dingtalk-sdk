@@ -60,6 +60,12 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     */
+    @NameInMap("relatedUsers")
+    public OpenAgoalUserDTO relatedUsers;
+
+    /**
+     * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
      * <p>1</p>
@@ -158,6 +164,14 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
     }
     public Integer getProgress() {
         return this.progress;
+    }
+
+    public OpenAgoalObjectiveDTO setRelatedUsers(OpenAgoalUserDTO relatedUsers) {
+        this.relatedUsers = relatedUsers;
+        return this;
+    }
+    public OpenAgoalUserDTO getRelatedUsers() {
+        return this.relatedUsers;
     }
 
     public OpenAgoalObjectiveDTO setStatus(Integer status) {

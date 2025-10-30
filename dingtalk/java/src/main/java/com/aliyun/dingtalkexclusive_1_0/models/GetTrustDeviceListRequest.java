@@ -4,6 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTrustDeviceListRequest extends TeaModel {
+    @NameInMap("deviceUuid")
+    public String deviceUuid;
+
     /**
      * <strong>example:</strong>
      * <p>1721718854814</p>
@@ -72,6 +75,14 @@ public class GetTrustDeviceListRequest extends TeaModel {
     public static GetTrustDeviceListRequest build(java.util.Map<String, ?> map) throws Exception {
         GetTrustDeviceListRequest self = new GetTrustDeviceListRequest();
         return TeaModel.build(map, self);
+    }
+
+    public GetTrustDeviceListRequest setDeviceUuid(String deviceUuid) {
+        this.deviceUuid = deviceUuid;
+        return this;
+    }
+    public String getDeviceUuid() {
+        return this.deviceUuid;
     }
 
     public GetTrustDeviceListRequest setGmtCreateEnd(Long gmtCreateEnd) {

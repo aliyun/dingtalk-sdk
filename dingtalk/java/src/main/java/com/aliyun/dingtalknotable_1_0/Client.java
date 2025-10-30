@@ -695,6 +695,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.calcFields)) {
+            body.put("calcFields", request.calcFields);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.filter)) {
             body.put("filter", request.filter);
         }

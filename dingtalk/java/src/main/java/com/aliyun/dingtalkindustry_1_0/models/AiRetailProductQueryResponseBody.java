@@ -33,6 +33,12 @@ public class AiRetailProductQueryResponseBody extends TeaModel {
         @NameInMap("category")
         public String category;
 
+        @NameInMap("currency")
+        public String currency;
+
+        @NameInMap("enable")
+        public Integer enable;
+
         @NameInMap("imageFileIds")
         public String imageFileIds;
 
@@ -92,6 +98,22 @@ public class AiRetailProductQueryResponseBody extends TeaModel {
         }
         public String getCategory() {
             return this.category;
+        }
+
+        public AiRetailProductQueryResponseBodyData setCurrency(String currency) {
+            this.currency = currency;
+            return this;
+        }
+        public String getCurrency() {
+            return this.currency;
+        }
+
+        public AiRetailProductQueryResponseBodyData setEnable(Integer enable) {
+            this.enable = enable;
+            return this;
+        }
+        public Integer getEnable() {
+            return this.enable;
         }
 
         public AiRetailProductQueryResponseBodyData setImageFileIds(String imageFileIds) {

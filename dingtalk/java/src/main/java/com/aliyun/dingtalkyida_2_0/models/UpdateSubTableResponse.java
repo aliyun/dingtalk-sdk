@@ -10,6 +10,9 @@ public class UpdateSubTableResponse extends TeaModel {
     @NameInMap("statusCode")
     public Integer statusCode;
 
+    @NameInMap("body")
+    public UpdateSubTableResponseBody body;
+
     public static UpdateSubTableResponse build(java.util.Map<String, ?> map) throws Exception {
         UpdateSubTableResponse self = new UpdateSubTableResponse();
         return TeaModel.build(map, self);
@@ -29,6 +32,14 @@ public class UpdateSubTableResponse extends TeaModel {
     }
     public Integer getStatusCode() {
         return this.statusCode;
+    }
+
+    public UpdateSubTableResponse setBody(UpdateSubTableResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public UpdateSubTableResponseBody getBody() {
+        return this.body;
     }
 
 }
