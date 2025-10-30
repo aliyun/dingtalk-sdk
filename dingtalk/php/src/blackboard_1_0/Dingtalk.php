@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\GetBlackboardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\GetBlackboardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\GetBlackboardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\QueryBlackboardReadUnReadHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\QueryBlackboardReadUnReadRequest;
 use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\QueryBlackboardReadUnReadResponse;
@@ -29,6 +32,66 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 获取公告详情
+     *  *
+     * @param GetBlackboardRequest $request GetBlackboardRequest
+     * @param GetBlackboardHeaders $headers GetBlackboardHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetBlackboardResponse GetBlackboardResponse
+     */
+    public function getBlackboardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->blackboardId)) {
+            $query['blackboardId'] = $request->blackboardId;
+        }
+        if (!Utils::isUnset($request->operationUserId)) {
+            $query['operationUserId'] = $request->operationUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetBlackboard',
+            'version' => 'blackboard_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/blackboard/get_blackboard',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetBlackboardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取公告详情
+     *  *
+     * @param GetBlackboardRequest $request GetBlackboardRequest
+     *
+     * @return GetBlackboardResponse GetBlackboardResponse
+     */
+    public function getBlackboard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetBlackboardHeaders([]);
+
+        return $this->getBlackboardWithOptions($request, $headers, $runtime);
     }
 
     /**

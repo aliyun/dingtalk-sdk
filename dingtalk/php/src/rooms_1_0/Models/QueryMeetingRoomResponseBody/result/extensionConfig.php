@@ -16,6 +16,16 @@ class extensionConfig extends Model
     public $advanceReservation;
 
     /**
+     * @var bool
+     */
+    public $approvalSwitch;
+
+    /**
+     * @var int
+     */
+    public $approvalType;
+
+    /**
      * @example 60
      *
      * @var int
@@ -40,6 +50,8 @@ class extensionConfig extends Model
     public $reservationCloseDetail;
     protected $_name = [
         'advanceReservation' => 'advanceReservation',
+        'approvalSwitch' => 'approvalSwitch',
+        'approvalType' => 'approvalType',
         'maxReservationTimeInterval' => 'maxReservationTimeInterval',
         'minReservationTimeInterval' => 'minReservationTimeInterval',
         'openReservation' => 'openReservation',
@@ -53,6 +65,12 @@ class extensionConfig extends Model
         $res = [];
         if (null !== $this->advanceReservation) {
             $res['advanceReservation'] = null !== $this->advanceReservation ? $this->advanceReservation->toMap() : null;
+        }
+        if (null !== $this->approvalSwitch) {
+            $res['approvalSwitch'] = $this->approvalSwitch;
+        }
+        if (null !== $this->approvalType) {
+            $res['approvalType'] = $this->approvalType;
         }
         if (null !== $this->maxReservationTimeInterval) {
             $res['maxReservationTimeInterval'] = $this->maxReservationTimeInterval;
@@ -80,6 +98,12 @@ class extensionConfig extends Model
         $model = new self();
         if (isset($map['advanceReservation'])) {
             $model->advanceReservation = advanceReservation::fromMap($map['advanceReservation']);
+        }
+        if (isset($map['approvalSwitch'])) {
+            $model->approvalSwitch = $map['approvalSwitch'];
+        }
+        if (isset($map['approvalType'])) {
+            $model->approvalType = $map['approvalType'];
         }
         if (isset($map['maxReservationTimeInterval'])) {
             $model->maxReservationTimeInterval = $map['maxReservationTimeInterval'];

@@ -83,6 +83,10 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionInfoListResp
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCorpScaleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCorpScaleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCorpScaleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCorpScaleShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCustomerByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCustomerByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCustomerByPageResponse;
@@ -1897,6 +1901,68 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryCollectionOrderHeaders([]);
 
         return $this->queryCollectionOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模
+     *  *
+     * @param QueryCorpScaleRequest $tmpReq  QueryCorpScaleRequest
+     * @param QueryCorpScaleHeaders $headers QueryCorpScaleHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryCorpScaleResponse QueryCorpScaleResponse
+     */
+    public function queryCorpScaleWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new QueryCorpScaleShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->corpNames)) {
+            $request->corpNamesShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->corpNames, 'corpNames', 'simple');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->corpNamesShrink)) {
+            $query['corpNames'] = $request->corpNamesShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryCorpScale',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/queryCorpScale',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryCorpScaleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据企业名称列表，查询是否在钉钉有组织，及组织的认证状态与规模
+     *  *
+     * @param QueryCorpScaleRequest $request QueryCorpScaleRequest
+     *
+     * @return QueryCorpScaleResponse QueryCorpScaleResponse
+     */
+    public function queryCorpScale($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCorpScaleHeaders([]);
+
+        return $this->queryCorpScaleWithOptions($request, $headers, $runtime);
     }
 
     /**

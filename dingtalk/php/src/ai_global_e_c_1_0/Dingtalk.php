@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\QueryNotableInfoResponse
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\TiktokShopAuthCallbackHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\TiktokShopAuthCallbackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\TiktokShopAuthCallbackResponse;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\TiktokWebhookProcessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\TiktokWebhookProcessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\TiktokWebhookProcessResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -376,5 +379,62 @@ class Dingtalk extends OpenApiClient
         $headers = new TiktokShopAuthCallbackHeaders([]);
 
         return $this->tiktokShopAuthCallbackWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 全渠道运营Tiktok的Webhook信息写入
+     *  *
+     * @param TiktokWebhookProcessRequest $request TiktokWebhookProcessRequest
+     * @param TiktokWebhookProcessHeaders $headers TiktokWebhookProcessHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TiktokWebhookProcessResponse TiktokWebhookProcessResponse
+     */
+    public function tiktokWebhookProcessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tiktokContentJsonString)) {
+            $body['tiktokContentJsonString'] = $request->tiktokContentJsonString;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'TiktokWebhookProcess',
+            'version' => 'aiGlobalEC_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiGlobalEC/omniChannel/tiktok/webhook/process',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TiktokWebhookProcessResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 全渠道运营Tiktok的Webhook信息写入
+     *  *
+     * @param TiktokWebhookProcessRequest $request TiktokWebhookProcessRequest
+     *
+     * @return TiktokWebhookProcessResponse TiktokWebhookProcessResponse
+     */
+    public function tiktokWebhookProcess($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TiktokWebhookProcessHeaders([]);
+
+        return $this->tiktokWebhookProcessWithOptions($request, $headers, $runtime);
     }
 }

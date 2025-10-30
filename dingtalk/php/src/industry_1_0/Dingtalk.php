@@ -320,6 +320,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsResp
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskPackageResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskPackageResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskPackageResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskQueueHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskQueueRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskQueueResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\HospitalDataCheckHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\HospitalDataCheckRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\HospitalDataCheckResponse;
@@ -7207,6 +7210,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetTaskPackageResultHeaders([]);
 
         return $this->getTaskPackageResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询任务队列情况
+     *  *
+     * @param GetTaskQueueRequest $request GetTaskQueueRequest
+     * @param GetTaskQueueHeaders $headers GetTaskQueueHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetTaskQueueResponse GetTaskQueueResponse
+     */
+    public function getTaskQueueWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $query['bizCode'] = $request->bizCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetTaskQueue',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/ai/taskQueue/query',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetTaskQueueResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询任务队列情况
+     *  *
+     * @param GetTaskQueueRequest $request GetTaskQueueRequest
+     *
+     * @return GetTaskQueueResponse GetTaskQueueResponse
+     */
+    public function getTaskQueue($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTaskQueueHeaders([]);
+
+        return $this->getTaskQueueWithOptions($request, $headers, $runtime);
     }
 
     /**

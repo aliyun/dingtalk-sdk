@@ -16,6 +16,11 @@ class items extends Model
     public $groupCreateTime;
 
     /**
+     * @var int
+     */
+    public $groupLastActiveTime;
+
+    /**
      * @example 10
      *
      * @var int
@@ -70,6 +75,7 @@ class items extends Model
     public $usedQuota;
     protected $_name = [
         'groupCreateTime' => 'groupCreateTime',
+        'groupLastActiveTime' => 'groupLastActiveTime',
         'groupMembersCnt' => 'groupMembersCnt',
         'groupName' => 'groupName',
         'groupOwner' => 'groupOwner',
@@ -87,6 +93,9 @@ class items extends Model
         $res = [];
         if (null !== $this->groupCreateTime) {
             $res['groupCreateTime'] = $this->groupCreateTime;
+        }
+        if (null !== $this->groupLastActiveTime) {
+            $res['groupLastActiveTime'] = $this->groupLastActiveTime;
         }
         if (null !== $this->groupMembersCnt) {
             $res['groupMembersCnt'] = $this->groupMembersCnt;
@@ -126,6 +135,9 @@ class items extends Model
         $model = new self();
         if (isset($map['groupCreateTime'])) {
             $model->groupCreateTime = $map['groupCreateTime'];
+        }
+        if (isset($map['groupLastActiveTime'])) {
+            $model->groupLastActiveTime = $map['groupLastActiveTime'];
         }
         if (isset($map['groupMembersCnt'])) {
             $model->groupMembersCnt = $map['groupMembersCnt'];

@@ -71,6 +71,13 @@ class OpenAgoalObjectiveDTO extends Model
     /**
      * @description This parameter is required.
      *
+     * @var OpenAgoalUserDTO
+     */
+    public $relatedUsers;
+
+    /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -110,6 +117,7 @@ class OpenAgoalObjectiveDTO extends Model
         'objectiveRule' => 'objectiveRule',
         'period' => 'period',
         'progress' => 'progress',
+        'relatedUsers' => 'relatedUsers',
         'status' => 'status',
         'teams' => 'teams',
         'title' => 'title',
@@ -156,6 +164,9 @@ class OpenAgoalObjectiveDTO extends Model
         }
         if (null !== $this->progress) {
             $res['progress'] = $this->progress;
+        }
+        if (null !== $this->relatedUsers) {
+            $res['relatedUsers'] = null !== $this->relatedUsers ? $this->relatedUsers->toMap() : null;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -222,6 +233,9 @@ class OpenAgoalObjectiveDTO extends Model
         }
         if (isset($map['progress'])) {
             $model->progress = $map['progress'];
+        }
+        if (isset($map['relatedUsers'])) {
+            $model->relatedUsers = OpenAgoalUserDTO::fromMap($map['relatedUsers']);
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

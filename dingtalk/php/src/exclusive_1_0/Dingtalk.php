@@ -328,6 +328,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendAppDingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendInvitationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendInvitationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendInvitationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingResponse;
@@ -7466,6 +7469,102 @@ class Dingtalk extends OpenApiClient
         $headers = new SendInvitationHeaders([]);
 
         return $this->sendInvitationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 互动服务窗-群发消息
+     *  *
+     * @param SendMessageRequest $request SendMessageRequest
+     * @param SendMessageHeaders $headers SendMessageHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SendMessageResponse SendMessageResponse
+     */
+    public function sendMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->allowComment)) {
+            $body['allow_comment'] = $request->allowComment;
+        }
+        if (!Utils::isUnset($request->commentType)) {
+            $body['comment_type'] = $request->commentType;
+        }
+        if (!Utils::isUnset($request->depIdList)) {
+            $body['dep_id_list'] = $request->depIdList;
+        }
+        if (!Utils::isUnset($request->isPreview)) {
+            $body['is_preview'] = $request->isPreview;
+        }
+        if (!Utils::isUnset($request->isToAll)) {
+            $body['is_to_all'] = $request->isToAll;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            $body['media_id'] = $request->mediaId;
+        }
+        if (!Utils::isUnset($request->msgBody)) {
+            $body['msg_body'] = $request->msgBody;
+        }
+        if (!Utils::isUnset($request->msgType)) {
+            $body['msg_type'] = $request->msgType;
+        }
+        if (!Utils::isUnset($request->roleIds)) {
+            $body['roleIds'] = $request->roleIds;
+        }
+        if (!Utils::isUnset($request->showHomepage)) {
+            $body['show_homepage'] = $request->showHomepage;
+        }
+        if (!Utils::isUnset($request->textContent)) {
+            $body['text_content'] = $request->textContent;
+        }
+        if (!Utils::isUnset($request->unionid)) {
+            $body['unionid'] = $request->unionid;
+        }
+        if (!Utils::isUnset($request->useridList)) {
+            $body['userid_list'] = $request->useridList;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            $body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SendMessage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/follow/message/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SendMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 互动服务窗-群发消息
+     *  *
+     * @param SendMessageRequest $request SendMessageRequest
+     *
+     * @return SendMessageResponse SendMessageResponse
+     */
+    public function sendMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendMessageHeaders([]);
+
+        return $this->sendMessageWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -73,6 +73,11 @@ class AddCollegeContactExclusiveRequest extends Model
     public $exclusiveAccountType;
 
     /**
+     * @var string
+     */
+    public $exclusiveMobileVerifyStatus;
+
+    /**
      * @var string[]
      */
     public $extension;
@@ -210,6 +215,7 @@ class AddCollegeContactExclusiveRequest extends Model
         'empType' => 'empType',
         'exclusiveAccount' => 'exclusiveAccount',
         'exclusiveAccountType' => 'exclusiveAccountType',
+        'exclusiveMobileVerifyStatus' => 'exclusiveMobileVerifyStatus',
         'extension' => 'extension',
         'hiredDate' => 'hiredDate',
         'initPassword' => 'initPassword',
@@ -280,6 +286,9 @@ class AddCollegeContactExclusiveRequest extends Model
         }
         if (null !== $this->exclusiveAccountType) {
             $res['exclusiveAccountType'] = $this->exclusiveAccountType;
+        }
+        if (null !== $this->exclusiveMobileVerifyStatus) {
+            $res['exclusiveMobileVerifyStatus'] = $this->exclusiveMobileVerifyStatus;
         }
         if (null !== $this->extension) {
             $res['extension'] = $this->extension;
@@ -396,6 +405,9 @@ class AddCollegeContactExclusiveRequest extends Model
         }
         if (isset($map['exclusiveAccountType'])) {
             $model->exclusiveAccountType = $map['exclusiveAccountType'];
+        }
+        if (isset($map['exclusiveMobileVerifyStatus'])) {
+            $model->exclusiveMobileVerifyStatus = $map['exclusiveMobileVerifyStatus'];
         }
         if (isset($map['extension'])) {
             $model->extension = $map['extension'];

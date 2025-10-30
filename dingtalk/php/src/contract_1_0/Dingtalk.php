@@ -83,9 +83,16 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractExtractResultRes
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractReviewResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractReviewResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractReviewResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractSignInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractSignInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractSignInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SyncSignEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SyncSignEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SyncSignEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SyncSignEventShrinkRequest;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -1859,6 +1866,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询合同电子签相关信息
+     *  *
+     * @param QueryContractSignInfoRequest $request QueryContractSignInfoRequest
+     * @param QueryContractSignInfoHeaders $headers QueryContractSignInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryContractSignInfoResponse QueryContractSignInfoResponse
+     */
+    public function queryContractSignInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->contractBizId)) {
+            $query['contractBizId'] = $request->contractBizId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->staffId)) {
+            $query['staffId'] = $request->staffId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryContractSignInfo',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/queryContractSignInfo',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryContractSignInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询合同电子签相关信息
+     *  *
+     * @param QueryContractSignInfoRequest $request QueryContractSignInfoRequest
+     *
+     * @return QueryContractSignInfoResponse QueryContractSignInfoResponse
+     */
+    public function queryContractSignInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryContractSignInfoHeaders([]);
+
+        return $this->queryContractSignInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 发送合同相关卡片
      *  *
      * @param SendContractCardRequest $request SendContractCardRequest
@@ -1937,5 +2007,91 @@ class Dingtalk extends OpenApiClient
         $headers = new SendContractCardHeaders([]);
 
         return $this->sendContractCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 同步签署事件
+     *  *
+     * @param SyncSignEventRequest $tmpReq  SyncSignEventRequest
+     * @param SyncSignEventHeaders $headers SyncSignEventHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SyncSignEventResponse SyncSignEventResponse
+     */
+    public function syncSignEventWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new SyncSignEventShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->extInfo)) {
+            $request->extInfoShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->extInfo, 'extInfo', 'json');
+        }
+        if (!Utils::isUnset($tmpReq->sealType)) {
+            $request->sealTypeShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->sealType, 'sealType', 'json');
+        }
+        if (!Utils::isUnset($tmpReq->signFileList)) {
+            $request->signFileListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->signFileList, 'signFileList', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->contractBizId)) {
+            $query['contractBizId'] = $request->contractBizId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->extInfoShrink)) {
+            $query['extInfo'] = $request->extInfoShrink;
+        }
+        if (!Utils::isUnset($request->sealTypeShrink)) {
+            $query['sealType'] = $request->sealTypeShrink;
+        }
+        if (!Utils::isUnset($request->signDate)) {
+            $query['signDate'] = $request->signDate;
+        }
+        if (!Utils::isUnset($request->signFileListShrink)) {
+            $query['signFileList'] = $request->signFileListShrink;
+        }
+        if (!Utils::isUnset($request->staffId)) {
+            $query['staffId'] = $request->staffId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'SyncSignEvent',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/syncSignEvent',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SyncSignEventResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 同步签署事件
+     *  *
+     * @param SyncSignEventRequest $request SyncSignEventRequest
+     *
+     * @return SyncSignEventResponse SyncSignEventResponse
+     */
+    public function syncSignEvent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncSignEventHeaders([]);
+
+        return $this->syncSignEventWithOptions($request, $headers, $runtime);
     }
 }

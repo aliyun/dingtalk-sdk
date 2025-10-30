@@ -907,6 +907,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->exclusiveAccountType)) {
             $body['exclusiveAccountType'] = $request->exclusiveAccountType;
         }
+        if (!Utils::isUnset($request->exclusiveMobileVerifyStatus)) {
+            $body['exclusiveMobileVerifyStatus'] = $request->exclusiveMobileVerifyStatus;
+        }
         if (!Utils::isUnset($request->extension)) {
             $body['extension'] = $request->extension;
         }

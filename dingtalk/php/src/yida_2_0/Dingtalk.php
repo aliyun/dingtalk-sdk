@@ -11,12 +11,21 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\BatchAddOrUpdateRoleMembersRespon
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\BatchDeleteRoleMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\BatchDeleteRoleMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\BatchDeleteRoleMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CancelAgentTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CancelAgentTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CancelAgentTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CreateAgentTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CreateAgentTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CreateAgentTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CreateOrUpdateFormDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CreateOrUpdateFormDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\CreateOrUpdateFormDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\DeleteMatrixDataByRowIdsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\DeleteMatrixDataByRowIdsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\DeleteMatrixDataByRowIdsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetAgentTasksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetAgentTasksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetAgentTasksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetFormComponentAliasListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetFormComponentAliasListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetFormComponentAliasListResponse;
@@ -56,6 +65,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\SearchFormDatasResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\StartInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\StartInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\StartInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateAgentTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateAgentTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateAgentTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateFormDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateFormDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\UpdateFormDataResponse;
@@ -236,6 +248,165 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 撤销代理关系
+     *  *
+     * @param CancelAgentTaskRequest $request CancelAgentTaskRequest
+     * @param CancelAgentTaskHeaders $headers CancelAgentTaskHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CancelAgentTaskResponse CancelAgentTaskResponse
+     */
+    public function cancelAgentTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->agentType)) {
+            $query['agentType'] = $request->agentType;
+        }
+        if (!Utils::isUnset($request->agentUuid)) {
+            $query['agentUuid'] = $request->agentUuid;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $query['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'CancelAgentTask',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/resources/agents/cancel',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CancelAgentTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 撤销代理关系
+     *  *
+     * @param CancelAgentTaskRequest $request CancelAgentTaskRequest
+     *
+     * @return CancelAgentTaskResponse CancelAgentTaskResponse
+     */
+    public function cancelAgentTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CancelAgentTaskHeaders([]);
+
+        return $this->cancelAgentTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建代理关系
+     *  *
+     * @param CreateAgentTaskRequest $request CreateAgentTaskRequest
+     * @param CreateAgentTaskHeaders $headers CreateAgentTaskHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateAgentTaskResponse CreateAgentTaskResponse
+     */
+    public function createAgentTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->agentCategory)) {
+            $query['agentCategory'] = $request->agentCategory;
+        }
+        if (!Utils::isUnset($request->agentRangeType)) {
+            $query['agentRangeType'] = $request->agentRangeType;
+        }
+        if (!Utils::isUnset($request->agentRangeValue)) {
+            $query['agentRangeValue'] = $request->agentRangeValue;
+        }
+        if (!Utils::isUnset($request->agentType)) {
+            $query['agentType'] = $request->agentType;
+        }
+        if (!Utils::isUnset($request->agentUserId)) {
+            $query['agentUserId'] = $request->agentUserId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->endTimestamp)) {
+            $query['endTimestamp'] = $request->endTimestamp;
+        }
+        if (!Utils::isUnset($request->needNoticePrincipal)) {
+            $query['needNoticePrincipal'] = $request->needNoticePrincipal;
+        }
+        if (!Utils::isUnset($request->principalUserId)) {
+            $query['principalUserId'] = $request->principalUserId;
+        }
+        if (!Utils::isUnset($request->startTimestamp)) {
+            $query['startTimestamp'] = $request->startTimestamp;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $query['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'CreateAgentTask',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/resources/agents/insert',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateAgentTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建代理关系
+     *  *
+     * @param CreateAgentTaskRequest $request CreateAgentTaskRequest
+     *
+     * @return CreateAgentTaskResponse CreateAgentTaskResponse
+     */
+    public function createAgentTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAgentTaskHeaders([]);
+
+        return $this->createAgentTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 新增或更新表单实例
      *  *
      * @param CreateOrUpdateFormDataRequest $request CreateOrUpdateFormDataRequest
@@ -380,6 +551,84 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteMatrixDataByRowIdsHeaders([]);
 
         return $this->deleteMatrixDataByRowIdsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取代理列表
+     *  *
+     * @param GetAgentTasksRequest $request GetAgentTasksRequest
+     * @param GetAgentTasksHeaders $headers GetAgentTasksHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetAgentTasksResponse GetAgentTasksResponse
+     */
+    public function getAgentTasksWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->agentUuid)) {
+            $query['agentUuid'] = $request->agentUuid;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->keywords)) {
+            $query['keywords'] = $request->keywords;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $query['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $query['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetAgentTasks',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/resources/agents',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetAgentTasksResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取代理列表
+     *  *
+     * @param GetAgentTasksRequest $request GetAgentTasksRequest
+     *
+     * @return GetAgentTasksResponse GetAgentTasksResponse
+     */
+    public function getAgentTasks($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAgentTasksHeaders([]);
+
+        return $this->getAgentTasksWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1478,6 +1727,90 @@ class Dingtalk extends OpenApiClient
         $headers = new StartInstanceHeaders([]);
 
         return $this->startInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改代理信息
+     *  *
+     * @param UpdateAgentTaskRequest $request UpdateAgentTaskRequest
+     * @param UpdateAgentTaskHeaders $headers UpdateAgentTaskHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateAgentTaskResponse UpdateAgentTaskResponse
+     */
+    public function updateAgentTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->agentRangeType)) {
+            $query['agentRangeType'] = $request->agentRangeType;
+        }
+        if (!Utils::isUnset($request->agentRangeValue)) {
+            $query['agentRangeValue'] = $request->agentRangeValue;
+        }
+        if (!Utils::isUnset($request->agentUserId)) {
+            $query['agentUserId'] = $request->agentUserId;
+        }
+        if (!Utils::isUnset($request->agentUuid)) {
+            $query['agentUuid'] = $request->agentUuid;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->endTimestamp)) {
+            $query['endTimestamp'] = $request->endTimestamp;
+        }
+        if (!Utils::isUnset($request->needNoticePrincipal)) {
+            $query['needNoticePrincipal'] = $request->needNoticePrincipal;
+        }
+        if (!Utils::isUnset($request->startTimestamp)) {
+            $query['startTimestamp'] = $request->startTimestamp;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $query['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateAgentTask',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/forms/resources/agents/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateAgentTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改代理信息
+     *  *
+     * @param UpdateAgentTaskRequest $request UpdateAgentTaskRequest
+     *
+     * @return UpdateAgentTaskResponse UpdateAgentTaskResponse
+     */
+    public function updateAgentTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateAgentTaskHeaders([]);
+
+        return $this->updateAgentTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
