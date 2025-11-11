@@ -254,6 +254,136 @@ class Client(OpenApiClient):
         headers = dingtalkai_global_e_c__1__0_models.GetLoginUserHeaders()
         return await self.get_login_user_with_options_async(request, headers, runtime)
 
+    def hho_call_back_with_options(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.HhoCallBackRequest,
+        headers: dingtalkai_global_e_c__1__0_models.HhoCallBackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_global_e_c__1__0_models.HhoCallBackResponse:
+        """
+        @summary 提供给HHO的异步回调接口
+        
+        @param request: HhoCallBackRequest
+        @param headers: HhoCallBackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HhoCallBackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.dt_notification_id):
+            body['dtNotificationId'] = request.dt_notification_id
+        if not UtilClient.is_unset(request.shop_id):
+            body['shopId'] = request.shop_id
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HhoCallBack',
+            version='aiGlobalEC_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiGlobalEC/hho/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_global_e_c__1__0_models.HhoCallBackResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hho_call_back_with_options_async(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.HhoCallBackRequest,
+        headers: dingtalkai_global_e_c__1__0_models.HhoCallBackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_global_e_c__1__0_models.HhoCallBackResponse:
+        """
+        @summary 提供给HHO的异步回调接口
+        
+        @param request: HhoCallBackRequest
+        @param headers: HhoCallBackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HhoCallBackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.dt_notification_id):
+            body['dtNotificationId'] = request.dt_notification_id
+        if not UtilClient.is_unset(request.shop_id):
+            body['shopId'] = request.shop_id
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HhoCallBack',
+            version='aiGlobalEC_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiGlobalEC/hho/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_global_e_c__1__0_models.HhoCallBackResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hho_call_back(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.HhoCallBackRequest,
+    ) -> dingtalkai_global_e_c__1__0_models.HhoCallBackResponse:
+        """
+        @summary 提供给HHO的异步回调接口
+        
+        @param request: HhoCallBackRequest
+        @return: HhoCallBackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_global_e_c__1__0_models.HhoCallBackHeaders()
+        return self.hho_call_back_with_options(request, headers, runtime)
+
+    async def hho_call_back_async(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.HhoCallBackRequest,
+    ) -> dingtalkai_global_e_c__1__0_models.HhoCallBackResponse:
+        """
+        @summary 提供给HHO的异步回调接口
+        
+        @param request: HhoCallBackRequest
+        @return: HhoCallBackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_global_e_c__1__0_models.HhoCallBackHeaders()
+        return await self.hho_call_back_with_options_async(request, headers, runtime)
+
     def launch_with_options(
         self,
         request: dingtalkai_global_e_c__1__0_models.LaunchRequest,
@@ -269,21 +399,6 @@ class Client(OpenApiClient):
         @return: LaunchResponse
         """
         UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.ding_agent_id):
-            query['dingAgentId'] = request.ding_agent_id
-        if not UtilClient.is_unset(request.ding_client_id):
-            query['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            query['dingIsvOrgId'] = request.ding_isv_org_id
-        if not UtilClient.is_unset(request.ding_org_id):
-            query['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_suite_key):
-            query['dingSuiteKey'] = request.ding_suite_key
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            query['dingTokenGrantType'] = request.ding_token_grant_type
-        if not UtilClient.is_unset(request.ding_uid):
-            query['dingUid'] = request.ding_uid
         body = {}
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
@@ -308,7 +423,6 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
@@ -342,21 +456,6 @@ class Client(OpenApiClient):
         @return: LaunchResponse
         """
         UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.ding_agent_id):
-            query['dingAgentId'] = request.ding_agent_id
-        if not UtilClient.is_unset(request.ding_client_id):
-            query['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.ding_isv_org_id):
-            query['dingIsvOrgId'] = request.ding_isv_org_id
-        if not UtilClient.is_unset(request.ding_org_id):
-            query['dingOrgId'] = request.ding_org_id
-        if not UtilClient.is_unset(request.ding_suite_key):
-            query['dingSuiteKey'] = request.ding_suite_key
-        if not UtilClient.is_unset(request.ding_token_grant_type):
-            query['dingTokenGrantType'] = request.ding_token_grant_type
-        if not UtilClient.is_unset(request.ding_uid):
-            query['dingUid'] = request.ding_uid
         body = {}
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
@@ -381,7 +480,6 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(

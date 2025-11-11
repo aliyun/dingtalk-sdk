@@ -366,6 +366,8 @@ class Client(OpenApiClient):
             body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):
             body['roomCapacity'] = request.room_capacity
+        if not UtilClient.is_unset(request.room_description):
+            body['roomDescription'] = request.room_description
         if not UtilClient.is_unset(request.room_label_ids):
             body['roomLabelIds'] = request.room_label_ids
         if not UtilClient.is_unset(request.room_location):
@@ -431,6 +433,8 @@ class Client(OpenApiClient):
             body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):
             body['roomCapacity'] = request.room_capacity
+        if not UtilClient.is_unset(request.room_description):
+            body['roomDescription'] = request.room_description
         if not UtilClient.is_unset(request.room_label_ids):
             body['roomLabelIds'] = request.room_label_ids
         if not UtilClient.is_unset(request.room_location):
@@ -2952,6 +2956,8 @@ class Client(OpenApiClient):
             body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):
             body['roomCapacity'] = request.room_capacity
+        if not UtilClient.is_unset(request.room_description):
+            body['roomDescription'] = request.room_description
         if not UtilClient.is_unset(request.room_id):
             body['roomId'] = request.room_id
         if not UtilClient.is_unset(request.room_label_ids):
@@ -3019,6 +3025,8 @@ class Client(OpenApiClient):
             body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):
             body['roomCapacity'] = request.room_capacity
+        if not UtilClient.is_unset(request.room_description):
+            body['roomDescription'] = request.room_description
         if not UtilClient.is_unset(request.room_id):
             body['roomId'] = request.room_id
         if not UtilClient.is_unset(request.room_label_ids):

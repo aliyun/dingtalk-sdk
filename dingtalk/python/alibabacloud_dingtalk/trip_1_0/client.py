@@ -1702,6 +1702,8 @@ class Client(OpenApiClient):
             body['discountAmount'] = request.discount_amount
         if not UtilClient.is_unset(request.endorse_flag):
             body['endorseFlag'] = request.endorse_flag
+        if not UtilClient.is_unset(request.enterprise_pay_amount):
+            body['enterprisePayAmount'] = request.enterprise_pay_amount
         if not UtilClient.is_unset(request.event):
             body['event'] = request.event
         if not UtilClient.is_unset(request.gmt_order):
@@ -1734,6 +1736,8 @@ class Client(OpenApiClient):
             body['orderPaymentType'] = request.order_payment_type
         if not UtilClient.is_unset(request.order_url):
             body['orderUrl'] = request.order_url
+        if not UtilClient.is_unset(request.personal_pay_amount):
+            body['personalPayAmount'] = request.personal_pay_amount
         if not UtilClient.is_unset(request.process_id):
             body['processId'] = request.process_id
         if not UtilClient.is_unset(request.real_amount):
@@ -1809,6 +1813,8 @@ class Client(OpenApiClient):
             body['discountAmount'] = request.discount_amount
         if not UtilClient.is_unset(request.endorse_flag):
             body['endorseFlag'] = request.endorse_flag
+        if not UtilClient.is_unset(request.enterprise_pay_amount):
+            body['enterprisePayAmount'] = request.enterprise_pay_amount
         if not UtilClient.is_unset(request.event):
             body['event'] = request.event
         if not UtilClient.is_unset(request.gmt_order):
@@ -1841,6 +1847,8 @@ class Client(OpenApiClient):
             body['orderPaymentType'] = request.order_payment_type
         if not UtilClient.is_unset(request.order_url):
             body['orderUrl'] = request.order_url
+        if not UtilClient.is_unset(request.personal_pay_amount):
+            body['personalPayAmount'] = request.personal_pay_amount
         if not UtilClient.is_unset(request.process_id):
             body['processId'] = request.process_id
         if not UtilClient.is_unset(request.real_amount):

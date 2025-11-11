@@ -700,6 +700,254 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.AiRetailProductUpdateHeaders()
         return await self.ai_retail_product_update_with_options_async(request, headers, runtime)
 
+    def ai_training_detail_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.AiTrainingDetailRequest,
+        headers: dingtalkindustry__1__0_models.AiTrainingDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiTrainingDetailResponse:
+        """
+        @summary AI练货记录详情
+        
+        @param request: AiTrainingDetailRequest
+        @param headers: AiTrainingDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiTrainingDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.record_id):
+            body['recordId'] = request.record_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiTrainingDetail',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/trainingDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiTrainingDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ai_training_detail_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiTrainingDetailRequest,
+        headers: dingtalkindustry__1__0_models.AiTrainingDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiTrainingDetailResponse:
+        """
+        @summary AI练货记录详情
+        
+        @param request: AiTrainingDetailRequest
+        @param headers: AiTrainingDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiTrainingDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.record_id):
+            body['recordId'] = request.record_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiTrainingDetail',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/trainingDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiTrainingDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ai_training_detail(
+        self,
+        request: dingtalkindustry__1__0_models.AiTrainingDetailRequest,
+    ) -> dingtalkindustry__1__0_models.AiTrainingDetailResponse:
+        """
+        @summary AI练货记录详情
+        
+        @param request: AiTrainingDetailRequest
+        @return: AiTrainingDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiTrainingDetailHeaders()
+        return self.ai_training_detail_with_options(request, headers, runtime)
+
+    async def ai_training_detail_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiTrainingDetailRequest,
+    ) -> dingtalkindustry__1__0_models.AiTrainingDetailResponse:
+        """
+        @summary AI练货记录详情
+        
+        @param request: AiTrainingDetailRequest
+        @return: AiTrainingDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiTrainingDetailHeaders()
+        return await self.ai_training_detail_with_options_async(request, headers, runtime)
+
+    def ai_training_record_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.AiTrainingRecordRequest,
+        headers: dingtalkindustry__1__0_models.AiTrainingRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiTrainingRecordResponse:
+        """
+        @summary AI练货记录
+        
+        @param request: AiTrainingRecordRequest
+        @param headers: AiTrainingRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiTrainingRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.direction):
+            body['direction'] = request.direction
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.last_id):
+            body['lastId'] = request.last_id
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiTrainingRecord',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/retail/trainingRecord',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiTrainingRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ai_training_record_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiTrainingRecordRequest,
+        headers: dingtalkindustry__1__0_models.AiTrainingRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.AiTrainingRecordResponse:
+        """
+        @summary AI练货记录
+        
+        @param request: AiTrainingRecordRequest
+        @param headers: AiTrainingRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiTrainingRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.direction):
+            body['direction'] = request.direction
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.last_id):
+            body['lastId'] = request.last_id
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiTrainingRecord',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/retail/trainingRecord',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.AiTrainingRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ai_training_record(
+        self,
+        request: dingtalkindustry__1__0_models.AiTrainingRecordRequest,
+    ) -> dingtalkindustry__1__0_models.AiTrainingRecordResponse:
+        """
+        @summary AI练货记录
+        
+        @param request: AiTrainingRecordRequest
+        @return: AiTrainingRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiTrainingRecordHeaders()
+        return self.ai_training_record_with_options(request, headers, runtime)
+
+    async def ai_training_record_async(
+        self,
+        request: dingtalkindustry__1__0_models.AiTrainingRecordRequest,
+    ) -> dingtalkindustry__1__0_models.AiTrainingRecordResponse:
+        """
+        @summary AI练货记录
+        
+        @param request: AiTrainingRecordRequest
+        @return: AiTrainingRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.AiTrainingRecordHeaders()
+        return await self.ai_training_record_with_options_async(request, headers, runtime)
+
     def batch_get_task_result_with_options(
         self,
         request: dingtalkindustry__1__0_models.BatchGetTaskResultRequest,
@@ -6197,6 +6445,246 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationHeaders()
         return await self.chat_memo_update_knowledge_graph_relation_with_options_async(request, headers, runtime)
+
+    def circle_post_detail_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CirclePostDetailRequest,
+        headers: dingtalkindustry__1__0_models.CirclePostDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CirclePostDetailResponse:
+        """
+        @summary 美搭发帖记录详情
+        
+        @param request: CirclePostDetailRequest
+        @param headers: CirclePostDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CirclePostDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.post_id):
+            body['postId'] = request.post_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CirclePostDetail',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/circle/postsDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CirclePostDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def circle_post_detail_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CirclePostDetailRequest,
+        headers: dingtalkindustry__1__0_models.CirclePostDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CirclePostDetailResponse:
+        """
+        @summary 美搭发帖记录详情
+        
+        @param request: CirclePostDetailRequest
+        @param headers: CirclePostDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CirclePostDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.post_id):
+            body['postId'] = request.post_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CirclePostDetail',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/circle/postsDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CirclePostDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def circle_post_detail(
+        self,
+        request: dingtalkindustry__1__0_models.CirclePostDetailRequest,
+    ) -> dingtalkindustry__1__0_models.CirclePostDetailResponse:
+        """
+        @summary 美搭发帖记录详情
+        
+        @param request: CirclePostDetailRequest
+        @return: CirclePostDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CirclePostDetailHeaders()
+        return self.circle_post_detail_with_options(request, headers, runtime)
+
+    async def circle_post_detail_async(
+        self,
+        request: dingtalkindustry__1__0_models.CirclePostDetailRequest,
+    ) -> dingtalkindustry__1__0_models.CirclePostDetailResponse:
+        """
+        @summary 美搭发帖记录详情
+        
+        @param request: CirclePostDetailRequest
+        @return: CirclePostDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CirclePostDetailHeaders()
+        return await self.circle_post_detail_with_options_async(request, headers, runtime)
+
+    def circle_post_record_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.CirclePostRecordRequest,
+        headers: dingtalkindustry__1__0_models.CirclePostRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CirclePostRecordResponse:
+        """
+        @summary 美搭发帖记录
+        
+        @param request: CirclePostRecordRequest
+        @param headers: CirclePostRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CirclePostRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.direction):
+            body['direction'] = request.direction
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CirclePostRecord',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/circle/postsRecord',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CirclePostRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def circle_post_record_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.CirclePostRecordRequest,
+        headers: dingtalkindustry__1__0_models.CirclePostRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.CirclePostRecordResponse:
+        """
+        @summary 美搭发帖记录
+        
+        @param request: CirclePostRecordRequest
+        @param headers: CirclePostRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CirclePostRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.direction):
+            body['direction'] = request.direction
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CirclePostRecord',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/circle/postsRecord',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.CirclePostRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def circle_post_record(
+        self,
+        request: dingtalkindustry__1__0_models.CirclePostRecordRequest,
+    ) -> dingtalkindustry__1__0_models.CirclePostRecordResponse:
+        """
+        @summary 美搭发帖记录
+        
+        @param request: CirclePostRecordRequest
+        @return: CirclePostRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CirclePostRecordHeaders()
+        return self.circle_post_record_with_options(request, headers, runtime)
+
+    async def circle_post_record_async(
+        self,
+        request: dingtalkindustry__1__0_models.CirclePostRecordRequest,
+    ) -> dingtalkindustry__1__0_models.CirclePostRecordResponse:
+        """
+        @summary 美搭发帖记录
+        
+        @param request: CirclePostRecordRequest
+        @return: CirclePostRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.CirclePostRecordHeaders()
+        return await self.circle_post_record_with_options_async(request, headers, runtime)
 
     def college_active_college_dept_group_with_options(
         self,

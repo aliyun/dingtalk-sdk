@@ -278,6 +278,10 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.task_id):
             query['taskId'] = request.task_id
         if not UtilClient.is_unset(request.union_id):
@@ -323,6 +327,10 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.task_id):
             query['taskId'] = request.task_id
         if not UtilClient.is_unset(request.union_id):

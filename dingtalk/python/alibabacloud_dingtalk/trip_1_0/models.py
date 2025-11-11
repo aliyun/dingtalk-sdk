@@ -3712,6 +3712,7 @@ class SyncTripOrderRequest(TeaModel):
         ding_user_id: str = None,
         discount_amount: str = None,
         endorse_flag: bool = None,
+        enterprise_pay_amount: str = None,
         event: SyncTripOrderRequestEvent = None,
         gmt_order: str = None,
         gmt_pay: str = None,
@@ -3728,6 +3729,7 @@ class SyncTripOrderRequest(TeaModel):
         order_no: str = None,
         order_payment_type: str = None,
         order_url: str = None,
+        personal_pay_amount: str = None,
         process_id: str = None,
         real_amount: str = None,
         refund_amount: str = None,
@@ -3748,6 +3750,7 @@ class SyncTripOrderRequest(TeaModel):
         self.ding_user_id = ding_user_id
         self.discount_amount = discount_amount
         self.endorse_flag = endorse_flag
+        self.enterprise_pay_amount = enterprise_pay_amount
         # This parameter is required.
         self.event = event
         # This parameter is required.
@@ -3768,6 +3771,7 @@ class SyncTripOrderRequest(TeaModel):
         self.order_payment_type = order_payment_type
         # This parameter is required.
         self.order_url = order_url
+        self.personal_pay_amount = personal_pay_amount
         self.process_id = process_id
         self.real_amount = real_amount
         self.refund_amount = refund_amount
@@ -3807,6 +3811,8 @@ class SyncTripOrderRequest(TeaModel):
             result['discountAmount'] = self.discount_amount
         if self.endorse_flag is not None:
             result['endorseFlag'] = self.endorse_flag
+        if self.enterprise_pay_amount is not None:
+            result['enterprisePayAmount'] = self.enterprise_pay_amount
         if self.event is not None:
             result['event'] = self.event.to_map()
         if self.gmt_order is not None:
@@ -3841,6 +3847,8 @@ class SyncTripOrderRequest(TeaModel):
             result['orderPaymentType'] = self.order_payment_type
         if self.order_url is not None:
             result['orderUrl'] = self.order_url
+        if self.personal_pay_amount is not None:
+            result['personalPayAmount'] = self.personal_pay_amount
         if self.process_id is not None:
             result['processId'] = self.process_id
         if self.real_amount is not None:
@@ -3879,6 +3887,8 @@ class SyncTripOrderRequest(TeaModel):
             self.discount_amount = m.get('discountAmount')
         if m.get('endorseFlag') is not None:
             self.endorse_flag = m.get('endorseFlag')
+        if m.get('enterprisePayAmount') is not None:
+            self.enterprise_pay_amount = m.get('enterprisePayAmount')
         if m.get('event') is not None:
             temp_model = SyncTripOrderRequestEvent()
             self.event = temp_model.from_map(m['event'])
@@ -3915,6 +3925,8 @@ class SyncTripOrderRequest(TeaModel):
             self.order_payment_type = m.get('orderPaymentType')
         if m.get('orderUrl') is not None:
             self.order_url = m.get('orderUrl')
+        if m.get('personalPayAmount') is not None:
+            self.personal_pay_amount = m.get('personalPayAmount')
         if m.get('processId') is not None:
             self.process_id = m.get('processId')
         if m.get('realAmount') is not None:

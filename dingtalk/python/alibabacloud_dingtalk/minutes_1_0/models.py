@@ -358,6 +358,196 @@ class DeleteMinutesResponse(TeaModel):
         return self
 
 
+class ExportMinutesTaskResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExportMinutesTaskResultRequestSummaryExportSetting(TeaModel):
+    def __init__(
+        self,
+        enable_bilingual: bool = None,
+        target_lang: str = None,
+    ):
+        self.enable_bilingual = enable_bilingual
+        self.target_lang = target_lang
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable_bilingual is not None:
+            result['enableBilingual'] = self.enable_bilingual
+        if self.target_lang is not None:
+            result['targetLang'] = self.target_lang
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enableBilingual') is not None:
+            self.enable_bilingual = m.get('enableBilingual')
+        if m.get('targetLang') is not None:
+            self.target_lang = m.get('targetLang')
+        return self
+
+
+class ExportMinutesTaskResultRequest(TeaModel):
+    def __init__(
+        self,
+        expire_time: int = None,
+        summary_export_setting: ExportMinutesTaskResultRequestSummaryExportSetting = None,
+        task_type: str = None,
+        task_uuid: str = None,
+        union_id: str = None,
+    ):
+        self.expire_time = expire_time
+        self.summary_export_setting = summary_export_setting
+        # This parameter is required.
+        self.task_type = task_type
+        # This parameter is required.
+        self.task_uuid = task_uuid
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        if self.summary_export_setting:
+            self.summary_export_setting.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.expire_time is not None:
+            result['expireTime'] = self.expire_time
+        if self.summary_export_setting is not None:
+            result['summaryExportSetting'] = self.summary_export_setting.to_map()
+        if self.task_type is not None:
+            result['taskType'] = self.task_type
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('expireTime') is not None:
+            self.expire_time = m.get('expireTime')
+        if m.get('summaryExportSetting') is not None:
+            temp_model = ExportMinutesTaskResultRequestSummaryExportSetting()
+            self.summary_export_setting = temp_model.from_map(m['summaryExportSetting'])
+        if m.get('taskType') is not None:
+            self.task_type = m.get('taskType')
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class ExportMinutesTaskResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        minutes_doc_url: str = None,
+    ):
+        self.minutes_doc_url = minutes_doc_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.minutes_doc_url is not None:
+            result['minutesDocUrl'] = self.minutes_doc_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('minutesDocUrl') is not None:
+            self.minutes_doc_url = m.get('minutesDocUrl')
+        return self
+
+
+class ExportMinutesTaskResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ExportMinutesTaskResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ExportMinutesTaskResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class OpenQueryMinutesSummaryHeaders(TeaModel):
     def __init__(
         self,

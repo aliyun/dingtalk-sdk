@@ -400,9 +400,13 @@ class QueryAsrTaskHeaders(TeaModel):
 class QueryAsrTaskRequest(TeaModel):
     def __init__(
         self,
+        max_results: int = None,
+        next_token: str = None,
         task_id: str = None,
         union_id: str = None,
     ):
+        self.max_results = max_results
+        self.next_token = next_token
         # This parameter is required.
         self.task_id = task_id
         self.union_id = union_id
@@ -416,6 +420,10 @@ class QueryAsrTaskRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         if self.task_id is not None:
             result['taskId'] = self.task_id
         if self.union_id is not None:
@@ -424,6 +432,10 @@ class QueryAsrTaskRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
         if m.get('unionId') is not None:
@@ -621,15 +633,13 @@ class QueryAsrTaskResponseBodyResult(TeaModel):
     def __init__(
         self,
         biz_key: str = None,
-        error_code: str = None,
-        error_message: str = None,
+        next_token: str = None,
         result_info: QueryAsrTaskResponseBodyResultResultInfo = None,
         task_id: str = None,
         task_status: str = None,
     ):
         self.biz_key = biz_key
-        self.error_code = error_code
-        self.error_message = error_message
+        self.next_token = next_token
         self.result_info = result_info
         self.task_id = task_id
         self.task_status = task_status
@@ -646,10 +656,8 @@ class QueryAsrTaskResponseBodyResult(TeaModel):
         result = dict()
         if self.biz_key is not None:
             result['bizKey'] = self.biz_key
-        if self.error_code is not None:
-            result['errorCode'] = self.error_code
-        if self.error_message is not None:
-            result['errorMessage'] = self.error_message
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
         if self.result_info is not None:
             result['resultInfo'] = self.result_info.to_map()
         if self.task_id is not None:
@@ -662,10 +670,8 @@ class QueryAsrTaskResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('bizKey') is not None:
             self.biz_key = m.get('bizKey')
-        if m.get('errorCode') is not None:
-            self.error_code = m.get('errorCode')
-        if m.get('errorMessage') is not None:
-            self.error_message = m.get('errorMessage')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
         if m.get('resultInfo') is not None:
             temp_model = QueryAsrTaskResponseBodyResultResultInfo()
             self.result_info = temp_model.from_map(m['resultInfo'])

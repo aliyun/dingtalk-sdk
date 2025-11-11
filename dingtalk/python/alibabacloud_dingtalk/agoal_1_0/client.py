@@ -498,6 +498,246 @@ class Client(OpenApiClient):
         headers = dingtalkagoal__1__0_models.AgoalFieldUpdateHeaders()
         return await self.agoal_field_update_with_options_async(request, headers, runtime)
 
+    def agoal_indicator_batch_query_with_options(
+        self,
+        tmp_req: dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryRequest,
+        headers: dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryResponse:
+        """
+        @summary 通过指标编码批量查询指标列表
+        
+        @param tmp_req: AgoalIndicatorBatchQueryRequest
+        @param headers: AgoalIndicatorBatchQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalIndicatorBatchQueryResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.code_list):
+            request.code_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.code_list, 'codeList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.code_list_shrink):
+            query['codeList'] = request.code_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalIndicatorBatchQuery',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/indicator/batch/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_indicator_batch_query_with_options_async(
+        self,
+        tmp_req: dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryRequest,
+        headers: dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryResponse:
+        """
+        @summary 通过指标编码批量查询指标列表
+        
+        @param tmp_req: AgoalIndicatorBatchQueryRequest
+        @param headers: AgoalIndicatorBatchQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalIndicatorBatchQueryResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.code_list):
+            request.code_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.code_list, 'codeList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.code_list_shrink):
+            query['codeList'] = request.code_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalIndicatorBatchQuery',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/indicator/batch/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_indicator_batch_query(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryResponse:
+        """
+        @summary 通过指标编码批量查询指标列表
+        
+        @param request: AgoalIndicatorBatchQueryRequest
+        @return: AgoalIndicatorBatchQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryHeaders()
+        return self.agoal_indicator_batch_query_with_options(request, headers, runtime)
+
+    async def agoal_indicator_batch_query_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryResponse:
+        """
+        @summary 通过指标编码批量查询指标列表
+        
+        @param request: AgoalIndicatorBatchQueryRequest
+        @return: AgoalIndicatorBatchQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryHeaders()
+        return await self.agoal_indicator_batch_query_with_options_async(request, headers, runtime)
+
+    def agoal_indicator_data_push_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalIndicatorDataPushRequest,
+        headers: dingtalkagoal__1__0_models.AgoalIndicatorDataPushHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalIndicatorDataPushResponse:
+        """
+        @summary 通过指标编码推送指标时间维度数据
+        
+        @param request: AgoalIndicatorDataPushRequest
+        @param headers: AgoalIndicatorDataPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalIndicatorDataPushResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AgoalIndicatorDataPush',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/indicator/data/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalIndicatorDataPushResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_indicator_data_push_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalIndicatorDataPushRequest,
+        headers: dingtalkagoal__1__0_models.AgoalIndicatorDataPushHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalIndicatorDataPushResponse:
+        """
+        @summary 通过指标编码推送指标时间维度数据
+        
+        @param request: AgoalIndicatorDataPushRequest
+        @param headers: AgoalIndicatorDataPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalIndicatorDataPushResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AgoalIndicatorDataPush',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/indicator/data/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalIndicatorDataPushResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_indicator_data_push(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalIndicatorDataPushRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalIndicatorDataPushResponse:
+        """
+        @summary 通过指标编码推送指标时间维度数据
+        
+        @param request: AgoalIndicatorDataPushRequest
+        @return: AgoalIndicatorDataPushResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalIndicatorDataPushHeaders()
+        return self.agoal_indicator_data_push_with_options(request, headers, runtime)
+
+    async def agoal_indicator_data_push_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalIndicatorDataPushRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalIndicatorDataPushResponse:
+        """
+        @summary 通过指标编码推送指标时间维度数据
+        
+        @param request: AgoalIndicatorDataPushRequest
+        @return: AgoalIndicatorDataPushResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalIndicatorDataPushHeaders()
+        return await self.agoal_indicator_data_push_with_options_async(request, headers, runtime)
+
     def agoal_objective_key_action_list_with_options(
         self,
         request: dingtalkagoal__1__0_models.AgoalObjectiveKeyActionListRequest,

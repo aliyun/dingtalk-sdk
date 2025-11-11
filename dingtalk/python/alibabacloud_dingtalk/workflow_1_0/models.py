@@ -12957,7 +12957,9 @@ class PremiumGetProcessInstancesResponseBodyResultList(TeaModel):
         attached_process_instance_ids: str = None,
         business_id: str = None,
         create_time: int = None,
+        create_time_in_mills: int = None,
         finish_time: int = None,
+        finish_time_in_mills: int = None,
         form_component_values: List[PremiumGetProcessInstancesResponseBodyResultListFormComponentValues] = None,
         main_process_instance_id: str = None,
         operation_records: List[PremiumGetProcessInstancesResponseBodyResultListOperationRecords] = None,
@@ -12976,7 +12978,11 @@ class PremiumGetProcessInstancesResponseBodyResultList(TeaModel):
         # This parameter is required.
         self.create_time = create_time
         # This parameter is required.
+        self.create_time_in_mills = create_time_in_mills
+        # This parameter is required.
         self.finish_time = finish_time
+        # This parameter is required.
+        self.finish_time_in_mills = finish_time_in_mills
         # This parameter is required.
         self.form_component_values = form_component_values
         # This parameter is required.
@@ -13022,8 +13028,12 @@ class PremiumGetProcessInstancesResponseBodyResultList(TeaModel):
             result['businessId'] = self.business_id
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.create_time_in_mills is not None:
+            result['createTimeInMills'] = self.create_time_in_mills
         if self.finish_time is not None:
             result['finishTime'] = self.finish_time
+        if self.finish_time_in_mills is not None:
+            result['finishTimeInMills'] = self.finish_time_in_mills
         result['formComponentValues'] = []
         if self.form_component_values is not None:
             for k in self.form_component_values:
@@ -13060,8 +13070,12 @@ class PremiumGetProcessInstancesResponseBodyResultList(TeaModel):
             self.business_id = m.get('businessId')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('createTimeInMills') is not None:
+            self.create_time_in_mills = m.get('createTimeInMills')
         if m.get('finishTime') is not None:
             self.finish_time = m.get('finishTime')
+        if m.get('finishTimeInMills') is not None:
+            self.finish_time_in_mills = m.get('finishTimeInMills')
         self.form_component_values = []
         if m.get('formComponentValues') is not None:
             for k in m.get('formComponentValues'):

@@ -539,6 +539,7 @@ class CreateMeetingRoomRequest(TeaModel):
         open_reservation: bool = None,
         reservation_authority: CreateMeetingRoomRequestReservationAuthority = None,
         room_capacity: int = None,
+        room_description: str = None,
         room_label_ids: List[int] = None,
         room_location: CreateMeetingRoomRequestRoomLocation = None,
         room_name: str = None,
@@ -553,6 +554,7 @@ class CreateMeetingRoomRequest(TeaModel):
         self.open_reservation = open_reservation
         self.reservation_authority = reservation_authority
         self.room_capacity = room_capacity
+        self.room_description = room_description
         self.room_label_ids = room_label_ids
         self.room_location = room_location
         # This parameter is required.
@@ -587,6 +589,8 @@ class CreateMeetingRoomRequest(TeaModel):
             result['reservationAuthority'] = self.reservation_authority.to_map()
         if self.room_capacity is not None:
             result['roomCapacity'] = self.room_capacity
+        if self.room_description is not None:
+            result['roomDescription'] = self.room_description
         if self.room_label_ids is not None:
             result['roomLabelIds'] = self.room_label_ids
         if self.room_location is not None:
@@ -616,6 +620,8 @@ class CreateMeetingRoomRequest(TeaModel):
             self.reservation_authority = temp_model.from_map(m['reservationAuthority'])
         if m.get('roomCapacity') is not None:
             self.room_capacity = m.get('roomCapacity')
+        if m.get('roomDescription') is not None:
+            self.room_description = m.get('roomDescription')
         if m.get('roomLabelIds') is not None:
             self.room_label_ids = m.get('roomLabelIds')
         if m.get('roomLocation') is not None:
@@ -3096,6 +3102,7 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         isv_room_id: str = None,
         reservation_authority: QueryMeetingRoomResponseBodyResultReservationAuthority = None,
         room_capacity: int = None,
+        room_description: str = None,
         room_group: QueryMeetingRoomResponseBodyResultRoomGroup = None,
         room_id: str = None,
         room_labels: List[QueryMeetingRoomResponseBodyResultRoomLabels] = None,
@@ -3113,6 +3120,7 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         self.isv_room_id = isv_room_id
         self.reservation_authority = reservation_authority
         self.room_capacity = room_capacity
+        self.room_description = room_description
         self.room_group = room_group
         self.room_id = room_id
         self.room_labels = room_labels
@@ -3157,6 +3165,8 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
             result['reservationAuthority'] = self.reservation_authority.to_map()
         if self.room_capacity is not None:
             result['roomCapacity'] = self.room_capacity
+        if self.room_description is not None:
+            result['roomDescription'] = self.room_description
         if self.room_group is not None:
             result['roomGroup'] = self.room_group.to_map()
         if self.room_id is not None:
@@ -3197,6 +3207,8 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
             self.reservation_authority = temp_model.from_map(m['reservationAuthority'])
         if m.get('roomCapacity') is not None:
             self.room_capacity = m.get('roomCapacity')
+        if m.get('roomDescription') is not None:
+            self.room_description = m.get('roomDescription')
         if m.get('roomGroup') is not None:
             temp_model = QueryMeetingRoomResponseBodyResultRoomGroup()
             self.room_group = temp_model.from_map(m['roomGroup'])
@@ -5351,6 +5363,7 @@ class UpdateMeetingRoomRequest(TeaModel):
         open_reservation: bool = None,
         reservation_authority: UpdateMeetingRoomRequestReservationAuthority = None,
         room_capacity: int = None,
+        room_description: str = None,
         room_id: str = None,
         room_label_ids: List[int] = None,
         room_location: UpdateMeetingRoomRequestRoomLocation = None,
@@ -5365,6 +5378,7 @@ class UpdateMeetingRoomRequest(TeaModel):
         self.open_reservation = open_reservation
         self.reservation_authority = reservation_authority
         self.room_capacity = room_capacity
+        self.room_description = room_description
         # This parameter is required.
         self.room_id = room_id
         self.room_label_ids = room_label_ids
@@ -5399,6 +5413,8 @@ class UpdateMeetingRoomRequest(TeaModel):
             result['reservationAuthority'] = self.reservation_authority.to_map()
         if self.room_capacity is not None:
             result['roomCapacity'] = self.room_capacity
+        if self.room_description is not None:
+            result['roomDescription'] = self.room_description
         if self.room_id is not None:
             result['roomId'] = self.room_id
         if self.room_label_ids is not None:
@@ -5430,6 +5446,8 @@ class UpdateMeetingRoomRequest(TeaModel):
             self.reservation_authority = temp_model.from_map(m['reservationAuthority'])
         if m.get('roomCapacity') is not None:
             self.room_capacity = m.get('roomCapacity')
+        if m.get('roomDescription') is not None:
+            self.room_description = m.get('roomDescription')
         if m.get('roomId') is not None:
             self.room_id = m.get('roomId')
         if m.get('roomLabelIds') is not None:

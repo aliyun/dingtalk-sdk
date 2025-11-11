@@ -813,7 +813,7 @@ class OpenAgoalObjectiveDTO(TeaModel):
         objective_rule: OpenOrgObjectiveRuleDTO = None,
         period: OpenObjectiveRulePeriodDTO = None,
         progress: int = None,
-        related_users: OpenAgoalUserDTO = None,
+        related_users: List[OpenAgoalUserDTO] = None,
         status: int = None,
         teams: List[OpenAgoalTeamDTO] = None,
         title: str = None,
@@ -864,7 +864,9 @@ class OpenAgoalObjectiveDTO(TeaModel):
         if self.period:
             self.period.validate()
         if self.related_users:
-            self.related_users.validate()
+            for k in self.related_users:
+                if k:
+                    k.validate()
         if self.teams:
             for k in self.teams:
                 if k:
@@ -896,8 +898,10 @@ class OpenAgoalObjectiveDTO(TeaModel):
             result['period'] = self.period.to_map()
         if self.progress is not None:
             result['progress'] = self.progress
+        result['relatedUsers'] = []
         if self.related_users is not None:
-            result['relatedUsers'] = self.related_users.to_map()
+            for k in self.related_users:
+                result['relatedUsers'].append(k.to_map() if k else None)
         if self.status is not None:
             result['status'] = self.status
         result['teams'] = []
@@ -938,9 +942,11 @@ class OpenAgoalObjectiveDTO(TeaModel):
             self.period = temp_model.from_map(m['period'])
         if m.get('progress') is not None:
             self.progress = m.get('progress')
+        self.related_users = []
         if m.get('relatedUsers') is not None:
-            temp_model = OpenAgoalUserDTO()
-            self.related_users = temp_model.from_map(m['relatedUsers'])
+            for k in m.get('relatedUsers'):
+                temp_model = OpenAgoalUserDTO()
+                self.related_users.append(temp_model.from_map(k))
         if m.get('status') is not None:
             self.status = m.get('status')
         self.teams = []
@@ -2221,6 +2227,407 @@ class AgoalFieldUpdateResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AgoalFieldUpdateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AgoalIndicatorBatchQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalIndicatorBatchQueryRequest(TeaModel):
+    def __init__(
+        self,
+        code_list: List[str] = None,
+    ):
+        self.code_list = code_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code_list is not None:
+            result['codeList'] = self.code_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('codeList') is not None:
+            self.code_list = m.get('codeList')
+        return self
+
+
+class AgoalIndicatorBatchQueryShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        code_list_shrink: str = None,
+    ):
+        self.code_list_shrink = code_list_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code_list_shrink is not None:
+            result['codeList'] = self.code_list_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('codeList') is not None:
+            self.code_list_shrink = m.get('codeList')
+        return self
+
+
+class AgoalIndicatorBatchQueryResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        description: str = None,
+        id: str = None,
+        title: str = None,
+    ):
+        self.code = code
+        self.description = description
+        self.id = id
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class AgoalIndicatorBatchQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[AgoalIndicatorBatchQueryResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = AgoalIndicatorBatchQueryResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalIndicatorBatchQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalIndicatorBatchQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalIndicatorBatchQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AgoalIndicatorDataPushHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalIndicatorDataPushRequestData(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+        period: str = None,
+        period_type: str = None,
+    ):
+        self.data = data
+        self.period = period
+        self.period_type = period_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.period is not None:
+            result['period'] = self.period
+        if self.period_type is not None:
+            result['periodType'] = self.period_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('period') is not None:
+            self.period = m.get('period')
+        if m.get('periodType') is not None:
+            self.period_type = m.get('periodType')
+        return self
+
+
+class AgoalIndicatorDataPushRequest(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        data: List[AgoalIndicatorDataPushRequestData] = None,
+    ):
+        self.code = code
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = AgoalIndicatorDataPushRequestData()
+                self.data.append(temp_model.from_map(k))
+        return self
+
+
+class AgoalIndicatorDataPushResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalIndicatorDataPushResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalIndicatorDataPushResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalIndicatorDataPushResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

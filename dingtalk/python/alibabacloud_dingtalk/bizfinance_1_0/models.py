@@ -972,6 +972,10 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         account_period: str = None,
         amount: str = None,
         amount_with_tax: str = None,
+        aviation_tax_rate: str = None,
+        caac_development_fund: str = None,
+        certification_date: str = None,
+        certification_period: str = None,
         check_code: str = None,
         check_time: str = None,
         domestic_or_intl: str = None,
@@ -981,8 +985,10 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         e_ticket_no: str = None,
         e_train_ticket_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList] = None,
         electronic_url: str = None,
+        fare: str = None,
         file_id: str = None,
         finance_type: str = None,
+        fuel_surcharge: str = None,
         fund_type: str = None,
         general_invoice_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
         gp_no: str = None,
@@ -1031,6 +1037,10 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.account_period = account_period
         self.amount = amount
         self.amount_with_tax = amount_with_tax
+        self.aviation_tax_rate = aviation_tax_rate
+        self.caac_development_fund = caac_development_fund
+        self.certification_date = certification_date
+        self.certification_period = certification_period
         self.check_code = check_code
         self.check_time = check_time
         self.domestic_or_intl = domestic_or_intl
@@ -1040,8 +1050,10 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.e_ticket_no = e_ticket_no
         self.e_train_ticket_detail_volist = e_train_ticket_detail_volist
         self.electronic_url = electronic_url
+        self.fare = fare
         self.file_id = file_id
         self.finance_type = finance_type
+        self.fuel_surcharge = fuel_surcharge
         self.fund_type = fund_type
         self.general_invoice_detail_volist = general_invoice_detail_volist
         self.gp_no = gp_no
@@ -1125,6 +1137,14 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['amount'] = self.amount
         if self.amount_with_tax is not None:
             result['amountWithTax'] = self.amount_with_tax
+        if self.aviation_tax_rate is not None:
+            result['aviationTaxRate'] = self.aviation_tax_rate
+        if self.caac_development_fund is not None:
+            result['caacDevelopmentFund'] = self.caac_development_fund
+        if self.certification_date is not None:
+            result['certificationDate'] = self.certification_date
+        if self.certification_period is not None:
+            result['certificationPeriod'] = self.certification_period
         if self.check_code is not None:
             result['checkCode'] = self.check_code
         if self.check_time is not None:
@@ -1147,10 +1167,14 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
                 result['eTrainTicketDetailVOList'].append(k.to_map() if k else None)
         if self.electronic_url is not None:
             result['electronicUrl'] = self.electronic_url
+        if self.fare is not None:
+            result['fare'] = self.fare
         if self.file_id is not None:
             result['fileId'] = self.file_id
         if self.finance_type is not None:
             result['financeType'] = self.finance_type
+        if self.fuel_surcharge is not None:
+            result['fuelSurcharge'] = self.fuel_surcharge
         if self.fund_type is not None:
             result['fundType'] = self.fund_type
         result['generalInvoiceDetailVOList'] = []
@@ -1257,6 +1281,14 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.amount = m.get('amount')
         if m.get('amountWithTax') is not None:
             self.amount_with_tax = m.get('amountWithTax')
+        if m.get('aviationTaxRate') is not None:
+            self.aviation_tax_rate = m.get('aviationTaxRate')
+        if m.get('caacDevelopmentFund') is not None:
+            self.caac_development_fund = m.get('caacDevelopmentFund')
+        if m.get('certificationDate') is not None:
+            self.certification_date = m.get('certificationDate')
+        if m.get('certificationPeriod') is not None:
+            self.certification_period = m.get('certificationPeriod')
         if m.get('checkCode') is not None:
             self.check_code = m.get('checkCode')
         if m.get('checkTime') is not None:
@@ -1281,10 +1313,14 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
                 self.e_train_ticket_detail_volist.append(temp_model.from_map(k))
         if m.get('electronicUrl') is not None:
             self.electronic_url = m.get('electronicUrl')
+        if m.get('fare') is not None:
+            self.fare = m.get('fare')
         if m.get('fileId') is not None:
             self.file_id = m.get('fileId')
         if m.get('financeType') is not None:
             self.finance_type = m.get('financeType')
+        if m.get('fuelSurcharge') is not None:
+            self.fuel_surcharge = m.get('fuelSurcharge')
         if m.get('fundType') is not None:
             self.fund_type = m.get('fundType')
         self.general_invoice_detail_volist = []
@@ -3973,6 +4009,7 @@ class GetFinanceAccountResponseBody(TeaModel):
         amount: str = None,
         bank_code: str = None,
         bank_name: str = None,
+        company_code: str = None,
         create_time: int = None,
         creator: str = None,
     ):
@@ -3988,6 +4025,7 @@ class GetFinanceAccountResponseBody(TeaModel):
         self.amount = amount
         self.bank_code = bank_code
         self.bank_name = bank_name
+        self.company_code = company_code
         # This parameter is required.
         self.create_time = create_time
         # This parameter is required.
@@ -4020,6 +4058,8 @@ class GetFinanceAccountResponseBody(TeaModel):
             result['bankCode'] = self.bank_code
         if self.bank_name is not None:
             result['bankName'] = self.bank_name
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
@@ -4046,6 +4086,8 @@ class GetFinanceAccountResponseBody(TeaModel):
             self.bank_code = m.get('bankCode')
         if m.get('bankName') is not None:
             self.bank_name = m.get('bankName')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:

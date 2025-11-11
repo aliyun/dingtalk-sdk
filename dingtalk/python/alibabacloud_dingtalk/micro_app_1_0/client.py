@@ -2732,6 +2732,98 @@ class Client(OpenApiClient):
         headers = dingtalkmicro_app__1__0_models.ListAllInnerAppsHeaders()
         return await self.list_all_inner_apps_with_options_async(headers, runtime)
 
+    def list_app_by_client_id_with_options(
+        self,
+        headers: dingtalkmicro_app__1__0_models.ListAppByClientIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListAppByClientIdResponse:
+        """
+        @summary 获取单个企业应用信息
+        
+        @param headers: ListAppByClientIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAppByClientIdResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListAppByClientId',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/app/detail',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListAppByClientIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_app_by_client_id_with_options_async(
+        self,
+        headers: dingtalkmicro_app__1__0_models.ListAppByClientIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListAppByClientIdResponse:
+        """
+        @summary 获取单个企业应用信息
+        
+        @param headers: ListAppByClientIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAppByClientIdResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListAppByClientId',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/app/detail',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListAppByClientIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_app_by_client_id(self) -> dingtalkmicro_app__1__0_models.ListAppByClientIdResponse:
+        """
+        @summary 获取单个企业应用信息
+        
+        @return: ListAppByClientIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListAppByClientIdHeaders()
+        return self.list_app_by_client_id_with_options(headers, runtime)
+
+    async def list_app_by_client_id_async(self) -> dingtalkmicro_app__1__0_models.ListAppByClientIdResponse:
+        """
+        @summary 获取单个企业应用信息
+        
+        @return: ListAppByClientIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListAppByClientIdHeaders()
+        return await self.list_app_by_client_id_with_options_async(headers, runtime)
+
     def list_app_role_scopes_with_options(
         self,
         agent_id: str,

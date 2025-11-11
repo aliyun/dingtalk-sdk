@@ -266,6 +266,140 @@ class Client(OpenApiClient):
         headers = dingtalkminutes__1__0_models.DeleteMinutesHeaders()
         return await self.delete_minutes_with_options_async(task_uuid, request, headers, runtime)
 
+    def export_minutes_task_result_with_options(
+        self,
+        request: dingtalkminutes__1__0_models.ExportMinutesTaskResultRequest,
+        headers: dingtalkminutes__1__0_models.ExportMinutesTaskResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.ExportMinutesTaskResultResponse:
+        """
+        @summary 导出闪记任务结果
+        
+        @param request: ExportMinutesTaskResultRequest
+        @param headers: ExportMinutesTaskResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExportMinutesTaskResultResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.expire_time):
+            body['expireTime'] = request.expire_time
+        if not UtilClient.is_unset(request.summary_export_setting):
+            body['summaryExportSetting'] = request.summary_export_setting
+        if not UtilClient.is_unset(request.task_type):
+            body['taskType'] = request.task_type
+        if not UtilClient.is_unset(request.task_uuid):
+            body['taskUuid'] = request.task_uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExportMinutesTaskResult',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/minutesTask/export',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.ExportMinutesTaskResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def export_minutes_task_result_with_options_async(
+        self,
+        request: dingtalkminutes__1__0_models.ExportMinutesTaskResultRequest,
+        headers: dingtalkminutes__1__0_models.ExportMinutesTaskResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.ExportMinutesTaskResultResponse:
+        """
+        @summary 导出闪记任务结果
+        
+        @param request: ExportMinutesTaskResultRequest
+        @param headers: ExportMinutesTaskResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExportMinutesTaskResultResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.expire_time):
+            body['expireTime'] = request.expire_time
+        if not UtilClient.is_unset(request.summary_export_setting):
+            body['summaryExportSetting'] = request.summary_export_setting
+        if not UtilClient.is_unset(request.task_type):
+            body['taskType'] = request.task_type
+        if not UtilClient.is_unset(request.task_uuid):
+            body['taskUuid'] = request.task_uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExportMinutesTaskResult',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/minutesTask/export',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.ExportMinutesTaskResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def export_minutes_task_result(
+        self,
+        request: dingtalkminutes__1__0_models.ExportMinutesTaskResultRequest,
+    ) -> dingtalkminutes__1__0_models.ExportMinutesTaskResultResponse:
+        """
+        @summary 导出闪记任务结果
+        
+        @param request: ExportMinutesTaskResultRequest
+        @return: ExportMinutesTaskResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.ExportMinutesTaskResultHeaders()
+        return self.export_minutes_task_result_with_options(request, headers, runtime)
+
+    async def export_minutes_task_result_async(
+        self,
+        request: dingtalkminutes__1__0_models.ExportMinutesTaskResultRequest,
+    ) -> dingtalkminutes__1__0_models.ExportMinutesTaskResultResponse:
+        """
+        @summary 导出闪记任务结果
+        
+        @param request: ExportMinutesTaskResultRequest
+        @return: ExportMinutesTaskResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.ExportMinutesTaskResultHeaders()
+        return await self.export_minutes_task_result_with_options_async(request, headers, runtime)
+
     def open_query_minutes_summary_with_options(
         self,
         request: dingtalkminutes__1__0_models.OpenQueryMinutesSummaryRequest,

@@ -895,6 +895,625 @@ class AiRetailProductUpdateResponse(TeaModel):
         return self
 
 
+class AiTrainingDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AiTrainingDetailRequest(TeaModel):
+    def __init__(
+        self,
+        record_id: int = None,
+    ):
+        self.record_id = record_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.record_id is not None:
+            result['recordId'] = self.record_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('recordId') is not None:
+            self.record_id = m.get('recordId')
+        return self
+
+
+class AiTrainingDetailResponseBodyResultProductInfoList(TeaModel):
+    def __init__(
+        self,
+        price: int = None,
+        product_code: str = None,
+        product_id: int = None,
+        product_name: str = None,
+    ):
+        self.price = price
+        self.product_code = product_code
+        self.product_id = product_id
+        self.product_name = product_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.price is not None:
+            result['price'] = self.price
+        if self.product_code is not None:
+            result['productCode'] = self.product_code
+        if self.product_id is not None:
+            result['productId'] = self.product_id
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('productCode') is not None:
+            self.product_code = m.get('productCode')
+        if m.get('productId') is not None:
+            self.product_id = m.get('productId')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        return self
+
+
+class AiTrainingDetailResponseBodyResultTaskInfo(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        task_id: int = None,
+        task_name: str = None,
+    ):
+        self.description = description
+        self.task_id = task_id
+        self.task_name = task_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.task_name is not None:
+            result['taskName'] = self.task_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('taskName') is not None:
+            self.task_name = m.get('taskName')
+        return self
+
+
+class AiTrainingDetailResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        admin_review: str = None,
+        ai_job_status: str = None,
+        creator: str = None,
+        feedback: int = None,
+        feedback_content: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+        id: int = None,
+        is_excellent: int = None,
+        product_info_list: List[AiTrainingDetailResponseBodyResultProductInfoList] = None,
+        product_name: str = None,
+        task_info: AiTrainingDetailResponseBodyResultTaskInfo = None,
+        training_ranking: int = None,
+        training_ranking_percent: int = None,
+        training_score: int = None,
+        user_id: str = None,
+        user_name: str = None,
+        video_download_url: str = None,
+    ):
+        self.admin_review = admin_review
+        self.ai_job_status = ai_job_status
+        self.creator = creator
+        self.feedback = feedback
+        self.feedback_content = feedback_content
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.id = id
+        self.is_excellent = is_excellent
+        self.product_info_list = product_info_list
+        self.product_name = product_name
+        self.task_info = task_info
+        self.training_ranking = training_ranking
+        self.training_ranking_percent = training_ranking_percent
+        self.training_score = training_score
+        self.user_id = user_id
+        self.user_name = user_name
+        self.video_download_url = video_download_url
+
+    def validate(self):
+        if self.product_info_list:
+            for k in self.product_info_list:
+                if k:
+                    k.validate()
+        if self.task_info:
+            self.task_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.admin_review is not None:
+            result['adminReview'] = self.admin_review
+        if self.ai_job_status is not None:
+            result['aiJobStatus'] = self.ai_job_status
+        if self.creator is not None:
+            result['creator'] = self.creator
+        if self.feedback is not None:
+            result['feedback'] = self.feedback
+        if self.feedback_content is not None:
+            result['feedbackContent'] = self.feedback_content
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_excellent is not None:
+            result['isExcellent'] = self.is_excellent
+        result['productInfoList'] = []
+        if self.product_info_list is not None:
+            for k in self.product_info_list:
+                result['productInfoList'].append(k.to_map() if k else None)
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        if self.task_info is not None:
+            result['taskInfo'] = self.task_info.to_map()
+        if self.training_ranking is not None:
+            result['trainingRanking'] = self.training_ranking
+        if self.training_ranking_percent is not None:
+            result['trainingRankingPercent'] = self.training_ranking_percent
+        if self.training_score is not None:
+            result['trainingScore'] = self.training_score
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        if self.video_download_url is not None:
+            result['videoDownloadUrl'] = self.video_download_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('adminReview') is not None:
+            self.admin_review = m.get('adminReview')
+        if m.get('aiJobStatus') is not None:
+            self.ai_job_status = m.get('aiJobStatus')
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
+        if m.get('feedback') is not None:
+            self.feedback = m.get('feedback')
+        if m.get('feedbackContent') is not None:
+            self.feedback_content = m.get('feedbackContent')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isExcellent') is not None:
+            self.is_excellent = m.get('isExcellent')
+        self.product_info_list = []
+        if m.get('productInfoList') is not None:
+            for k in m.get('productInfoList'):
+                temp_model = AiTrainingDetailResponseBodyResultProductInfoList()
+                self.product_info_list.append(temp_model.from_map(k))
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        if m.get('taskInfo') is not None:
+            temp_model = AiTrainingDetailResponseBodyResultTaskInfo()
+            self.task_info = temp_model.from_map(m['taskInfo'])
+        if m.get('trainingRanking') is not None:
+            self.training_ranking = m.get('trainingRanking')
+        if m.get('trainingRankingPercent') is not None:
+            self.training_ranking_percent = m.get('trainingRankingPercent')
+        if m.get('trainingScore') is not None:
+            self.training_score = m.get('trainingScore')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        if m.get('videoDownloadUrl') is not None:
+            self.video_download_url = m.get('videoDownloadUrl')
+        return self
+
+
+class AiTrainingDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: AiTrainingDetailResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = AiTrainingDetailResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AiTrainingDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AiTrainingDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AiTrainingDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AiTrainingRecordHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AiTrainingRecordRequest(TeaModel):
+    def __init__(
+        self,
+        direction: int = None,
+        end_time: int = None,
+        last_id: int = None,
+        size: int = None,
+        start_time: int = None,
+        task_id: int = None,
+    ):
+        self.direction = direction
+        self.end_time = end_time
+        self.last_id = last_id
+        self.size = size
+        self.start_time = start_time
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.direction is not None:
+            result['direction'] = self.direction
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.last_id is not None:
+            result['lastId'] = self.last_id
+        if self.size is not None:
+            result['size'] = self.size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('direction') is not None:
+            self.direction = m.get('direction')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('lastId') is not None:
+            self.last_id = m.get('lastId')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class AiTrainingRecordResponseBodyTrainingList(TeaModel):
+    def __init__(
+        self,
+        ai_job_status: str = None,
+        gmt_create: str = None,
+        id: int = None,
+        product_name: str = None,
+        training_ranking: int = None,
+        training_ranking_percent: int = None,
+        training_score: int = None,
+        user_id: str = None,
+        user_name: str = None,
+    ):
+        self.ai_job_status = ai_job_status
+        self.gmt_create = gmt_create
+        self.id = id
+        self.product_name = product_name
+        self.training_ranking = training_ranking
+        self.training_ranking_percent = training_ranking_percent
+        self.training_score = training_score
+        self.user_id = user_id
+        self.user_name = user_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ai_job_status is not None:
+            result['aiJobStatus'] = self.ai_job_status
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.id is not None:
+            result['id'] = self.id
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        if self.training_ranking is not None:
+            result['trainingRanking'] = self.training_ranking
+        if self.training_ranking_percent is not None:
+            result['trainingRankingPercent'] = self.training_ranking_percent
+        if self.training_score is not None:
+            result['trainingScore'] = self.training_score
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('aiJobStatus') is not None:
+            self.ai_job_status = m.get('aiJobStatus')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        if m.get('trainingRanking') is not None:
+            self.training_ranking = m.get('trainingRanking')
+        if m.get('trainingRankingPercent') is not None:
+            self.training_ranking_percent = m.get('trainingRankingPercent')
+        if m.get('trainingScore') is not None:
+            self.training_score = m.get('trainingScore')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class AiTrainingRecordResponseBody(TeaModel):
+    def __init__(
+        self,
+        direction: int = None,
+        has_more: bool = None,
+        last_id: int = None,
+        training_list: List[AiTrainingRecordResponseBodyTrainingList] = None,
+    ):
+        self.direction = direction
+        self.has_more = has_more
+        self.last_id = last_id
+        self.training_list = training_list
+
+    def validate(self):
+        if self.training_list:
+            for k in self.training_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.direction is not None:
+            result['direction'] = self.direction
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.last_id is not None:
+            result['lastId'] = self.last_id
+        result['trainingList'] = []
+        if self.training_list is not None:
+            for k in self.training_list:
+                result['trainingList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('direction') is not None:
+            self.direction = m.get('direction')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('lastId') is not None:
+            self.last_id = m.get('lastId')
+        self.training_list = []
+        if m.get('trainingList') is not None:
+            for k in m.get('trainingList'):
+                temp_model = AiTrainingRecordResponseBodyTrainingList()
+                self.training_list.append(temp_model.from_map(k))
+        return self
+
+
+class AiTrainingRecordResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AiTrainingRecordResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AiTrainingRecordResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchGetTaskResultHeaders(TeaModel):
     def __init__(
         self,
@@ -8886,6 +9505,606 @@ class ChatMemoUpdateKnowledgeGraphRelationResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ChatMemoUpdateKnowledgeGraphRelationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CirclePostDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CirclePostDetailRequest(TeaModel):
+    def __init__(
+        self,
+        post_id: int = None,
+    ):
+        self.post_id = post_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.post_id is not None:
+            result['postId'] = self.post_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('postId') is not None:
+            self.post_id = m.get('postId')
+        return self
+
+
+class CirclePostDetailResponseBodyResultProducts(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        price: int = None,
+        product_code: str = None,
+        product_name: str = None,
+    ):
+        self.id = id
+        self.price = price
+        self.product_code = product_code
+        self.product_name = product_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.price is not None:
+            result['price'] = self.price
+        if self.product_code is not None:
+            result['productCode'] = self.product_code
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('productCode') is not None:
+            self.product_code = m.get('productCode')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        return self
+
+
+class CirclePostDetailResponseBodyResultTagList(TeaModel):
+    def __init__(
+        self,
+        tag_color: str = None,
+        tag_id: int = None,
+        tag_name: str = None,
+    ):
+        self.tag_color = tag_color
+        self.tag_id = tag_id
+        self.tag_name = tag_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tag_color is not None:
+            result['tagColor'] = self.tag_color
+        if self.tag_id is not None:
+            result['tagId'] = self.tag_id
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tagColor') is not None:
+            self.tag_color = m.get('tagColor')
+        if m.get('tagId') is not None:
+            self.tag_id = m.get('tagId')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        return self
+
+
+class CirclePostDetailResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        dept_id: int = None,
+        dept_name: str = None,
+        dislike_count: int = None,
+        gmt_create: str = None,
+        like_count: int = None,
+        media_url_list: List[str] = None,
+        post_id: int = None,
+        post_type: str = None,
+        products: List[CirclePostDetailResponseBodyResultProducts] = None,
+        status: str = None,
+        tag_list: List[CirclePostDetailResponseBodyResultTagList] = None,
+        title: str = None,
+        user_id: str = None,
+        user_name: str = None,
+        view_count: int = None,
+    ):
+        self.content = content
+        self.dept_id = dept_id
+        self.dept_name = dept_name
+        self.dislike_count = dislike_count
+        self.gmt_create = gmt_create
+        self.like_count = like_count
+        self.media_url_list = media_url_list
+        self.post_id = post_id
+        self.post_type = post_type
+        self.products = products
+        self.status = status
+        self.tag_list = tag_list
+        self.title = title
+        self.user_id = user_id
+        self.user_name = user_name
+        self.view_count = view_count
+
+    def validate(self):
+        if self.products:
+            for k in self.products:
+                if k:
+                    k.validate()
+        if self.tag_list:
+            for k in self.tag_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.dislike_count is not None:
+            result['dislikeCount'] = self.dislike_count
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.like_count is not None:
+            result['likeCount'] = self.like_count
+        if self.media_url_list is not None:
+            result['mediaUrlList'] = self.media_url_list
+        if self.post_id is not None:
+            result['postId'] = self.post_id
+        if self.post_type is not None:
+            result['postType'] = self.post_type
+        result['products'] = []
+        if self.products is not None:
+            for k in self.products:
+                result['products'].append(k.to_map() if k else None)
+        if self.status is not None:
+            result['status'] = self.status
+        result['tagList'] = []
+        if self.tag_list is not None:
+            for k in self.tag_list:
+                result['tagList'].append(k.to_map() if k else None)
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        if self.view_count is not None:
+            result['viewCount'] = self.view_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('dislikeCount') is not None:
+            self.dislike_count = m.get('dislikeCount')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('likeCount') is not None:
+            self.like_count = m.get('likeCount')
+        if m.get('mediaUrlList') is not None:
+            self.media_url_list = m.get('mediaUrlList')
+        if m.get('postId') is not None:
+            self.post_id = m.get('postId')
+        if m.get('postType') is not None:
+            self.post_type = m.get('postType')
+        self.products = []
+        if m.get('products') is not None:
+            for k in m.get('products'):
+                temp_model = CirclePostDetailResponseBodyResultProducts()
+                self.products.append(temp_model.from_map(k))
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        self.tag_list = []
+        if m.get('tagList') is not None:
+            for k in m.get('tagList'):
+                temp_model = CirclePostDetailResponseBodyResultTagList()
+                self.tag_list.append(temp_model.from_map(k))
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        if m.get('viewCount') is not None:
+            self.view_count = m.get('viewCount')
+        return self
+
+
+class CirclePostDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CirclePostDetailResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CirclePostDetailResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CirclePostDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CirclePostDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CirclePostDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CirclePostRecordHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CirclePostRecordRequest(TeaModel):
+    def __init__(
+        self,
+        direction: int = None,
+        end_time: int = None,
+        size: int = None,
+        start_time: int = None,
+    ):
+        self.direction = direction
+        self.end_time = end_time
+        self.size = size
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.direction is not None:
+            result['direction'] = self.direction
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.size is not None:
+            result['size'] = self.size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('direction') is not None:
+            self.direction = m.get('direction')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class CirclePostRecordResponseBodyResultPostsList(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        gmt_create: str = None,
+        post_id: int = None,
+        title: str = None,
+        user_name: str = None,
+    ):
+        self.content = content
+        self.gmt_create = gmt_create
+        self.post_id = post_id
+        self.title = title
+        self.user_name = user_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.post_id is not None:
+            result['postId'] = self.post_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('postId') is not None:
+            self.post_id = m.get('postId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class CirclePostRecordResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        direction: int = None,
+        has_more: bool = None,
+        last_post_id: int = None,
+        posts_list: List[CirclePostRecordResponseBodyResultPostsList] = None,
+    ):
+        self.direction = direction
+        self.has_more = has_more
+        self.last_post_id = last_post_id
+        self.posts_list = posts_list
+
+    def validate(self):
+        if self.posts_list:
+            for k in self.posts_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.direction is not None:
+            result['direction'] = self.direction
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.last_post_id is not None:
+            result['lastPostId'] = self.last_post_id
+        result['postsList'] = []
+        if self.posts_list is not None:
+            for k in self.posts_list:
+                result['postsList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('direction') is not None:
+            self.direction = m.get('direction')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('lastPostId') is not None:
+            self.last_post_id = m.get('lastPostId')
+        self.posts_list = []
+        if m.get('postsList') is not None:
+            for k in m.get('postsList'):
+                temp_model = CirclePostRecordResponseBodyResultPostsList()
+                self.posts_list.append(temp_model.from_map(k))
+        return self
+
+
+class CirclePostRecordResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CirclePostRecordResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CirclePostRecordResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CirclePostRecordResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CirclePostRecordResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CirclePostRecordResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

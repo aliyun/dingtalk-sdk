@@ -354,6 +354,158 @@ class GetLoginUserResponse(TeaModel):
         return self
 
 
+class HhoCallBackHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HhoCallBackRequest(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+        dt_notification_id: str = None,
+        shop_id: str = None,
+        timestamp: str = None,
+        type: int = None,
+    ):
+        self.data = data
+        self.dt_notification_id = dt_notification_id
+        self.shop_id = shop_id
+        self.timestamp = timestamp
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        if self.dt_notification_id is not None:
+            result['dtNotificationId'] = self.dt_notification_id
+        if self.shop_id is not None:
+            result['shopId'] = self.shop_id
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('dtNotificationId') is not None:
+            self.dt_notification_id = m.get('dtNotificationId')
+        if m.get('shopId') is not None:
+            self.shop_id = m.get('shopId')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class HhoCallBackResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HhoCallBackResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HhoCallBackResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HhoCallBackResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class LaunchHeaders(TeaModel):
     def __init__(
         self,
@@ -484,13 +636,6 @@ class LaunchRequest(TeaModel):
         source_data: str = None,
         variants: List[LaunchRequestVariants] = None,
         video_urls: List[str] = None,
-        ding_agent_id: int = None,
-        ding_client_id: str = None,
-        ding_isv_org_id: int = None,
-        ding_org_id: int = None,
-        ding_suite_key: str = None,
-        ding_token_grant_type: int = None,
-        ding_uid: int = None,
     ):
         self.description = description
         self.image_urls = image_urls
@@ -500,13 +645,6 @@ class LaunchRequest(TeaModel):
         self.source_data = source_data
         self.variants = variants
         self.video_urls = video_urls
-        self.ding_agent_id = ding_agent_id
-        self.ding_client_id = ding_client_id
-        self.ding_isv_org_id = ding_isv_org_id
-        self.ding_org_id = ding_org_id
-        self.ding_suite_key = ding_suite_key
-        self.ding_token_grant_type = ding_token_grant_type
-        self.ding_uid = ding_uid
 
     def validate(self):
         if self.variants:
@@ -538,20 +676,6 @@ class LaunchRequest(TeaModel):
                 result['variants'].append(k.to_map() if k else None)
         if self.video_urls is not None:
             result['videoUrls'] = self.video_urls
-        if self.ding_agent_id is not None:
-            result['dingAgentId'] = self.ding_agent_id
-        if self.ding_client_id is not None:
-            result['dingClientId'] = self.ding_client_id
-        if self.ding_isv_org_id is not None:
-            result['dingIsvOrgId'] = self.ding_isv_org_id
-        if self.ding_org_id is not None:
-            result['dingOrgId'] = self.ding_org_id
-        if self.ding_suite_key is not None:
-            result['dingSuiteKey'] = self.ding_suite_key
-        if self.ding_token_grant_type is not None:
-            result['dingTokenGrantType'] = self.ding_token_grant_type
-        if self.ding_uid is not None:
-            result['dingUid'] = self.ding_uid
         return result
 
     def from_map(self, m: dict = None):
@@ -575,20 +699,6 @@ class LaunchRequest(TeaModel):
                 self.variants.append(temp_model.from_map(k))
         if m.get('videoUrls') is not None:
             self.video_urls = m.get('videoUrls')
-        if m.get('dingAgentId') is not None:
-            self.ding_agent_id = m.get('dingAgentId')
-        if m.get('dingClientId') is not None:
-            self.ding_client_id = m.get('dingClientId')
-        if m.get('dingIsvOrgId') is not None:
-            self.ding_isv_org_id = m.get('dingIsvOrgId')
-        if m.get('dingOrgId') is not None:
-            self.ding_org_id = m.get('dingOrgId')
-        if m.get('dingSuiteKey') is not None:
-            self.ding_suite_key = m.get('dingSuiteKey')
-        if m.get('dingTokenGrantType') is not None:
-            self.ding_token_grant_type = m.get('dingTokenGrantType')
-        if m.get('dingUid') is not None:
-            self.ding_uid = m.get('dingUid')
         return self
 
 
@@ -1031,11 +1141,13 @@ class TiktokWebhookProcessResponseBodyOmniChannelTiktokWebhookRsp(TeaModel):
 class TiktokWebhookProcessResponseBody(TeaModel):
     def __init__(
         self,
+        code: int = None,
         error_code: str = None,
         error_msg: str = None,
         omni_channel_tiktok_webhook_rsp: TiktokWebhookProcessResponseBodyOmniChannelTiktokWebhookRsp = None,
         success: str = None,
     ):
+        self.code = code
         self.error_code = error_code
         self.error_msg = error_msg
         self.omni_channel_tiktok_webhook_rsp = omni_channel_tiktok_webhook_rsp
@@ -1051,6 +1163,8 @@ class TiktokWebhookProcessResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.code is not None:
+            result['code'] = self.code
         if self.error_code is not None:
             result['errorCode'] = self.error_code
         if self.error_msg is not None:
@@ -1063,6 +1177,8 @@ class TiktokWebhookProcessResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
         if m.get('errorCode') is not None:
             self.error_code = m.get('errorCode')
         if m.get('errorMsg') is not None:
