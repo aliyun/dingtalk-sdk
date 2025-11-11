@@ -25,13 +25,9 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [Validation(Required=false)]
             public string BizKey { get; set; }
 
-            [NameInMap("errorCode")]
+            [NameInMap("nextToken")]
             [Validation(Required=false)]
-            public string ErrorCode { get; set; }
-
-            [NameInMap("errorMessage")]
-            [Validation(Required=false)]
-            public string ErrorMessage { get; set; }
+            public string NextToken { get; set; }
 
             [NameInMap("resultInfo")]
             [Validation(Required=false)]

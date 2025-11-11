@@ -654,6 +654,322 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>通过指标编码批量查询指标列表</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// AgoalIndicatorBatchQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalIndicatorBatchQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalIndicatorBatchQueryResponse
+        /// </returns>
+        public AgoalIndicatorBatchQueryResponse AgoalIndicatorBatchQueryWithOptions(AgoalIndicatorBatchQueryRequest tmpReq, AgoalIndicatorBatchQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            AgoalIndicatorBatchQueryShrinkRequest request = new AgoalIndicatorBatchQueryShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.CodeList))
+            {
+                request.CodeListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.CodeList, "codeList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CodeListShrink))
+            {
+                query["codeList"] = request.CodeListShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalIndicatorBatchQuery",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/indicator/batch/query",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalIndicatorBatchQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过指标编码批量查询指标列表</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// AgoalIndicatorBatchQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalIndicatorBatchQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalIndicatorBatchQueryResponse
+        /// </returns>
+        public async Task<AgoalIndicatorBatchQueryResponse> AgoalIndicatorBatchQueryWithOptionsAsync(AgoalIndicatorBatchQueryRequest tmpReq, AgoalIndicatorBatchQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            AgoalIndicatorBatchQueryShrinkRequest request = new AgoalIndicatorBatchQueryShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.CodeList))
+            {
+                request.CodeListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.CodeList, "codeList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CodeListShrink))
+            {
+                query["codeList"] = request.CodeListShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalIndicatorBatchQuery",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/indicator/batch/query",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalIndicatorBatchQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过指标编码批量查询指标列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalIndicatorBatchQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalIndicatorBatchQueryResponse
+        /// </returns>
+        public AgoalIndicatorBatchQueryResponse AgoalIndicatorBatchQuery(AgoalIndicatorBatchQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalIndicatorBatchQueryHeaders headers = new AgoalIndicatorBatchQueryHeaders();
+            return AgoalIndicatorBatchQueryWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过指标编码批量查询指标列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalIndicatorBatchQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalIndicatorBatchQueryResponse
+        /// </returns>
+        public async Task<AgoalIndicatorBatchQueryResponse> AgoalIndicatorBatchQueryAsync(AgoalIndicatorBatchQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalIndicatorBatchQueryHeaders headers = new AgoalIndicatorBatchQueryHeaders();
+            return await AgoalIndicatorBatchQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过指标编码推送指标时间维度数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalIndicatorDataPushRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalIndicatorDataPushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalIndicatorDataPushResponse
+        /// </returns>
+        public AgoalIndicatorDataPushResponse AgoalIndicatorDataPushWithOptions(AgoalIndicatorDataPushRequest request, AgoalIndicatorDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalIndicatorDataPush",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/indicator/data/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalIndicatorDataPushResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过指标编码推送指标时间维度数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalIndicatorDataPushRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalIndicatorDataPushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalIndicatorDataPushResponse
+        /// </returns>
+        public async Task<AgoalIndicatorDataPushResponse> AgoalIndicatorDataPushWithOptionsAsync(AgoalIndicatorDataPushRequest request, AgoalIndicatorDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalIndicatorDataPush",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/indicator/data/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalIndicatorDataPushResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过指标编码推送指标时间维度数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalIndicatorDataPushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalIndicatorDataPushResponse
+        /// </returns>
+        public AgoalIndicatorDataPushResponse AgoalIndicatorDataPush(AgoalIndicatorDataPushRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalIndicatorDataPushHeaders headers = new AgoalIndicatorDataPushHeaders();
+            return AgoalIndicatorDataPushWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过指标编码推送指标时间维度数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalIndicatorDataPushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalIndicatorDataPushResponse
+        /// </returns>
+        public async Task<AgoalIndicatorDataPushResponse> AgoalIndicatorDataPushAsync(AgoalIndicatorDataPushRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalIndicatorDataPushHeaders headers = new AgoalIndicatorDataPushHeaders();
+            return await AgoalIndicatorDataPushWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取Agoal指定目标或者关键结果关联的关键行动</para>
         /// </summary>
         /// 

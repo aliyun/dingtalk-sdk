@@ -9,6 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
 {
     public class QueryAsrTaskRequest : TeaModel {
+        [NameInMap("maxResults")]
+        [Validation(Required=false)]
+        public int? MaxResults { get; set; }
+
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>

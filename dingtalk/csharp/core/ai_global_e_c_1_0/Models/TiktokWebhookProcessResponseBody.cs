@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkai_global_e_c_1_0.Models
 {
     public class TiktokWebhookProcessResponseBody : TeaModel {
+        [NameInMap("code")]
+        [Validation(Required=false)]
+        public int? Code { get; set; }
+
         [NameInMap("errorCode")]
         [Validation(Required=false)]
         public string ErrorCode { get; set; }

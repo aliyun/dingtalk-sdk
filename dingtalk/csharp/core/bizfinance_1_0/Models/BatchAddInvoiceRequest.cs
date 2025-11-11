@@ -45,6 +45,22 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string AmountWithTax { get; set; }
 
+            [NameInMap("aviationTaxRate")]
+            [Validation(Required=false)]
+            public string AviationTaxRate { get; set; }
+
+            [NameInMap("caacDevelopmentFund")]
+            [Validation(Required=false)]
+            public string CaacDevelopmentFund { get; set; }
+
+            [NameInMap("certificationDate")]
+            [Validation(Required=false)]
+            public string CertificationDate { get; set; }
+
+            [NameInMap("certificationPeriod")]
+            [Validation(Required=false)]
+            public string CertificationPeriod { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>1111</para>
@@ -205,6 +221,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string ElectronicUrl { get; set; }
 
+            [NameInMap("fare")]
+            [Validation(Required=false)]
+            public string Fare { get; set; }
+
             [NameInMap("fileId")]
             [Validation(Required=false)]
             public string FileId { get; set; }
@@ -216,6 +236,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("financeType")]
             [Validation(Required=false)]
             public string FinanceType { get; set; }
+
+            [NameInMap("fuelSurcharge")]
+            [Validation(Required=false)]
+            public string FuelSurcharge { get; set; }
 
             /// <summary>
             /// <b>Example:</b>

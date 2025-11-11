@@ -61,11 +61,31 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 /// <para>This parameter is required.</para>
                 /// 
                 /// <b>Example:</b>
+                /// <para>1635165470201</para>
+                /// </summary>
+                [NameInMap("createTimeInMills")]
+                [Validation(Required=false)]
+                public long? CreateTimeInMills { get; set; }
+
+                /// <summary>
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
                 /// <para>1633795200000</para>
                 /// </summary>
                 [NameInMap("finishTime")]
                 [Validation(Required=false)]
                 public long? FinishTime { get; set; }
+
+                /// <summary>
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>1633795200000</para>
+                /// </summary>
+                [NameInMap("finishTimeInMills")]
+                [Validation(Required=false)]
+                public long? FinishTimeInMills { get; set; }
 
                 /// <summary>
                 /// <para>This parameter is required.</para>

@@ -58,6 +58,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         public bool? EndorseFlag { get; set; }
 
         /// <summary>
+        /// <b>Example:</b>
+        /// <para>100.00</para>
+        /// </summary>
+        [NameInMap("enterprisePayAmount")]
+        [Validation(Required=false)]
+        public string EnterprisePayAmount { get; set; }
+
+        /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("event")]
@@ -533,6 +541,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [NameInMap("orderUrl")]
         [Validation(Required=false)]
         public string OrderUrl { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>100.00</para>
+        /// </summary>
+        [NameInMap("personalPayAmount")]
+        [Validation(Required=false)]
+        public string PersonalPayAmount { get; set; }
 
         [NameInMap("processId")]
         [Validation(Required=false)]

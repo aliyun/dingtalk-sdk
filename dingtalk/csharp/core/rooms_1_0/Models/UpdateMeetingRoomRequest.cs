@@ -78,6 +78,14 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         public int? RoomCapacity { get; set; }
 
         /// <summary>
+        /// <b>Example:</b>
+        /// <para>此处添加对会议室的描述信息</para>
+        /// </summary>
+        [NameInMap("roomDescription")]
+        [Validation(Required=false)]
+        public string RoomDescription { get; set; }
+
+        /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>

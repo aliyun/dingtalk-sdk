@@ -76,7 +76,7 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
         /// </summary>
         [NameInMap("relatedUsers")]
         [Validation(Required=false)]
-        public OpenAgoalUserDTO RelatedUsers { get; set; }
+        public List<OpenAgoalUserDTO> RelatedUsers { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>

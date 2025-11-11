@@ -2406,6 +2406,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             {
                 body["endorseFlag"] = request.EndorseFlag;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnterprisePayAmount))
+            {
+                body["enterprisePayAmount"] = request.EnterprisePayAmount;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Event))
             {
                 body["event"] = request.Event;
@@ -2469,6 +2473,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderUrl))
             {
                 body["orderUrl"] = request.OrderUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PersonalPayAmount))
+            {
+                body["personalPayAmount"] = request.PersonalPayAmount;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessId))
             {
@@ -2589,6 +2597,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             {
                 body["endorseFlag"] = request.EndorseFlag;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnterprisePayAmount))
+            {
+                body["enterprisePayAmount"] = request.EnterprisePayAmount;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Event))
             {
                 body["event"] = request.Event;
@@ -2652,6 +2664,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderUrl))
             {
                 body["orderUrl"] = request.OrderUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PersonalPayAmount))
+            {
+                body["personalPayAmount"] = request.PersonalPayAmount;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessId))
             {

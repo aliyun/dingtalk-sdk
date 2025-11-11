@@ -338,6 +338,190 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>导出闪记任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExportMinutesTaskResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExportMinutesTaskResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExportMinutesTaskResultResponse
+        /// </returns>
+        public ExportMinutesTaskResultResponse ExportMinutesTaskResultWithOptions(ExportMinutesTaskResultRequest request, ExportMinutesTaskResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExpireTime))
+            {
+                body["expireTime"] = request.ExpireTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SummaryExportSetting))
+            {
+                body["summaryExportSetting"] = request.SummaryExportSetting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskType))
+            {
+                body["taskType"] = request.TaskType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUuid))
+            {
+                body["taskUuid"] = request.TaskUuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExportMinutesTaskResult",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/minutesTask/export",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExportMinutesTaskResultResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>导出闪记任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExportMinutesTaskResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExportMinutesTaskResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExportMinutesTaskResultResponse
+        /// </returns>
+        public async Task<ExportMinutesTaskResultResponse> ExportMinutesTaskResultWithOptionsAsync(ExportMinutesTaskResultRequest request, ExportMinutesTaskResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExpireTime))
+            {
+                body["expireTime"] = request.ExpireTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SummaryExportSetting))
+            {
+                body["summaryExportSetting"] = request.SummaryExportSetting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskType))
+            {
+                body["taskType"] = request.TaskType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUuid))
+            {
+                body["taskUuid"] = request.TaskUuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExportMinutesTaskResult",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/minutesTask/export",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExportMinutesTaskResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>导出闪记任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExportMinutesTaskResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExportMinutesTaskResultResponse
+        /// </returns>
+        public ExportMinutesTaskResultResponse ExportMinutesTaskResult(ExportMinutesTaskResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExportMinutesTaskResultHeaders headers = new ExportMinutesTaskResultHeaders();
+            return ExportMinutesTaskResultWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>导出闪记任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExportMinutesTaskResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExportMinutesTaskResultResponse
+        /// </returns>
+        public async Task<ExportMinutesTaskResultResponse> ExportMinutesTaskResultAsync(ExportMinutesTaskResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExportMinutesTaskResultHeaders headers = new ExportMinutesTaskResultHeaders();
+            return await ExportMinutesTaskResultWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询闪记摘要</para>
         /// </summary>
         /// 

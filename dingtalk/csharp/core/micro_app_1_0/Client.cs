@@ -3503,6 +3503,126 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取单个企业应用信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// ListAppByClientIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAppByClientIdResponse
+        /// </returns>
+        public ListAppByClientIdResponse ListAppByClientIdWithOptions(ListAppByClientIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListAppByClientId",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/app/detail",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListAppByClientIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取单个企业应用信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// ListAppByClientIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAppByClientIdResponse
+        /// </returns>
+        public async Task<ListAppByClientIdResponse> ListAppByClientIdWithOptionsAsync(ListAppByClientIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListAppByClientId",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/app/detail",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListAppByClientIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取单个企业应用信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// ListAppByClientIdResponse
+        /// </returns>
+        public ListAppByClientIdResponse ListAppByClientId()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListAppByClientIdHeaders headers = new ListAppByClientIdHeaders();
+            return ListAppByClientIdWithOptions(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取单个企业应用信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// ListAppByClientIdResponse
+        /// </returns>
+        public async Task<ListAppByClientIdResponse> ListAppByClientIdAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListAppByClientIdHeaders headers = new ListAppByClientIdHeaders();
+            return await ListAppByClientIdWithOptionsAsync(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取企业应用的角色完整信息</para>
         /// </summary>
         /// 

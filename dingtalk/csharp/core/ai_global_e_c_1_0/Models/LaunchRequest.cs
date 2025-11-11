@@ -69,34 +69,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_global_e_c_1_0.Models
         [Validation(Required=false)]
         public List<string> VideoUrls { get; set; }
 
-        [NameInMap("dingAgentId")]
-        [Validation(Required=false)]
-        public long? DingAgentId { get; set; }
-
-        [NameInMap("dingClientId")]
-        [Validation(Required=false)]
-        public string DingClientId { get; set; }
-
-        [NameInMap("dingIsvOrgId")]
-        [Validation(Required=false)]
-        public long? DingIsvOrgId { get; set; }
-
-        [NameInMap("dingOrgId")]
-        [Validation(Required=false)]
-        public long? DingOrgId { get; set; }
-
-        [NameInMap("dingSuiteKey")]
-        [Validation(Required=false)]
-        public string DingSuiteKey { get; set; }
-
-        [NameInMap("dingTokenGrantType")]
-        [Validation(Required=false)]
-        public int? DingTokenGrantType { get; set; }
-
-        [NameInMap("dingUid")]
-        [Validation(Required=false)]
-        public long? DingUid { get; set; }
-
     }
 
 }

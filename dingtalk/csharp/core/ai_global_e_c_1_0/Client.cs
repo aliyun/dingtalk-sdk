@@ -326,6 +326,186 @@ namespace AlibabaCloud.SDK.Dingtalkai_global_e_c_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>提供给HHO的异步回调接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HhoCallBackRequest
+        /// </param>
+        /// <param name="headers">
+        /// HhoCallBackHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HhoCallBackResponse
+        /// </returns>
+        public HhoCallBackResponse HhoCallBackWithOptions(HhoCallBackRequest request, HhoCallBackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DtNotificationId))
+            {
+                body["dtNotificationId"] = request.DtNotificationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShopId))
+            {
+                body["shopId"] = request.ShopId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Timestamp))
+            {
+                body["timestamp"] = request.Timestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HhoCallBack",
+                Version = "aiGlobalEC_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiGlobalEC/hho/callback",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HhoCallBackResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供给HHO的异步回调接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HhoCallBackRequest
+        /// </param>
+        /// <param name="headers">
+        /// HhoCallBackHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HhoCallBackResponse
+        /// </returns>
+        public async Task<HhoCallBackResponse> HhoCallBackWithOptionsAsync(HhoCallBackRequest request, HhoCallBackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DtNotificationId))
+            {
+                body["dtNotificationId"] = request.DtNotificationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShopId))
+            {
+                body["shopId"] = request.ShopId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Timestamp))
+            {
+                body["timestamp"] = request.Timestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HhoCallBack",
+                Version = "aiGlobalEC_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiGlobalEC/hho/callback",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HhoCallBackResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供给HHO的异步回调接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HhoCallBackRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HhoCallBackResponse
+        /// </returns>
+        public HhoCallBackResponse HhoCallBack(HhoCallBackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HhoCallBackHeaders headers = new HhoCallBackHeaders();
+            return HhoCallBackWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供给HHO的异步回调接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HhoCallBackRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HhoCallBackResponse
+        /// </returns>
+        public async Task<HhoCallBackResponse> HhoCallBackAsync(HhoCallBackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HhoCallBackHeaders headers = new HhoCallBackHeaders();
+            return await HhoCallBackWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>刊登的对外开放Api</para>
         /// </summary>
         /// 
@@ -345,35 +525,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_global_e_c_1_0
         public LaunchResponse LaunchWithOptions(LaunchRequest request, LaunchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingAgentId))
-            {
-                query["dingAgentId"] = request.DingAgentId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                query["dingClientId"] = request.DingClientId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
-            {
-                query["dingIsvOrgId"] = request.DingIsvOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOrgId))
-            {
-                query["dingOrgId"] = request.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingSuiteKey))
-            {
-                query["dingSuiteKey"] = request.DingSuiteKey;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
-            {
-                query["dingTokenGrantType"] = request.DingTokenGrantType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUid))
-            {
-                query["dingUid"] = request.DingUid;
-            }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
@@ -419,7 +570,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_global_e_c_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
@@ -458,35 +608,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_global_e_c_1_0
         public async Task<LaunchResponse> LaunchWithOptionsAsync(LaunchRequest request, LaunchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingAgentId))
-            {
-                query["dingAgentId"] = request.DingAgentId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                query["dingClientId"] = request.DingClientId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingIsvOrgId))
-            {
-                query["dingIsvOrgId"] = request.DingIsvOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingOrgId))
-            {
-                query["dingOrgId"] = request.DingOrgId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingSuiteKey))
-            {
-                query["dingSuiteKey"] = request.DingSuiteKey;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTokenGrantType))
-            {
-                query["dingTokenGrantType"] = request.DingTokenGrantType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUid))
-            {
-                query["dingUid"] = request.DingUid;
-            }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
@@ -532,7 +653,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_global_e_c_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
