@@ -8,9 +8,15 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateMinutesByUploadFileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateMinutesByUploadFileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateMinutesByUploadFileResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ExportMinutesTaskResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ExportMinutesTaskResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ExportMinutesTaskResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryResponse;
@@ -23,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryCreateMinutesListResponse
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesBasicInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesBasicInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesBasicInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesKeywordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesKeywordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesKeywordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesPlayInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesPlayInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesPlayInfoResponse;
@@ -35,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTextHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTextRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTextResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTodoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTodoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTodoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesResponse;
@@ -127,6 +139,80 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 从上传的媒体文件创建闪记
+     *  *
+     * @param CreateMinutesByUploadFileRequest $request CreateMinutesByUploadFileRequest
+     * @param CreateMinutesByUploadFileHeaders $headers CreateMinutesByUploadFileHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateMinutesByUploadFileResponse CreateMinutesByUploadFileResponse
+     */
+    public function createMinutesByUploadFileWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->creatorId)) {
+            $body['creatorId'] = $request->creatorId;
+        }
+        if (!Utils::isUnset($request->mediaFileUrl)) {
+            $body['mediaFileUrl'] = $request->mediaFileUrl;
+        }
+        if (!Utils::isUnset($request->mediaType)) {
+            $body['mediaType'] = $request->mediaType;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateMinutesByUploadFile',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/createMinutesByUploadFile',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateMinutesByUploadFileResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 从上传的媒体文件创建闪记
+     *  *
+     * @param CreateMinutesByUploadFileRequest $request CreateMinutesByUploadFileRequest
+     *
+     * @return CreateMinutesByUploadFileResponse CreateMinutesByUploadFileResponse
+     */
+    public function createMinutesByUploadFile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateMinutesByUploadFileHeaders([]);
+
+        return $this->createMinutesByUploadFileWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 删除闪记
      *  *
      * @param string               $taskUuid
@@ -183,6 +269,77 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteMinutesHeaders([]);
 
         return $this->deleteMinutesWithOptions($taskUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 导出闪记任务结果
+     *  *
+     * @param ExportMinutesTaskResultRequest $request ExportMinutesTaskResultRequest
+     * @param ExportMinutesTaskResultHeaders $headers ExportMinutesTaskResultHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ExportMinutesTaskResultResponse ExportMinutesTaskResultResponse
+     */
+    public function exportMinutesTaskResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->expireTime)) {
+            $body['expireTime'] = $request->expireTime;
+        }
+        if (!Utils::isUnset($request->summaryExportSetting)) {
+            $body['summaryExportSetting'] = $request->summaryExportSetting;
+        }
+        if (!Utils::isUnset($request->taskType)) {
+            $body['taskType'] = $request->taskType;
+        }
+        if (!Utils::isUnset($request->taskUuid)) {
+            $body['taskUuid'] = $request->taskUuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ExportMinutesTaskResult',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/minutesTask/export',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ExportMinutesTaskResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 导出闪记任务结果
+     *  *
+     * @param ExportMinutesTaskResultRequest $request ExportMinutesTaskResultRequest
+     *
+     * @return ExportMinutesTaskResultResponse ExportMinutesTaskResultResponse
+     */
+    public function exportMinutesTaskResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExportMinutesTaskResultHeaders([]);
+
+        return $this->exportMinutesTaskResultWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -429,6 +586,65 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMinutesBasicInfoHeaders([]);
 
         return $this->queryMinutesBasicInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询闪记关键字
+     *  *
+     * @param string                     $taskUuid
+     * @param QueryMinutesKeywordRequest $request  QueryMinutesKeywordRequest
+     * @param QueryMinutesKeywordHeaders $headers  QueryMinutesKeywordHeaders
+     * @param RuntimeOptions             $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return QueryMinutesKeywordResponse QueryMinutesKeywordResponse
+     */
+    public function queryMinutesKeywordWithOptions($taskUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryMinutesKeyword',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/' . $taskUuid . '/keywords',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryMinutesKeywordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询闪记关键字
+     *  *
+     * @param string                     $taskUuid
+     * @param QueryMinutesKeywordRequest $request  QueryMinutesKeywordRequest
+     *
+     * @return QueryMinutesKeywordResponse QueryMinutesKeywordResponse
+     */
+    public function queryMinutesKeyword($taskUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMinutesKeywordHeaders([]);
+
+        return $this->queryMinutesKeywordWithOptions($taskUuid, $request, $headers, $runtime);
     }
 
     /**
@@ -681,6 +897,65 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMinutesTextHeaders([]);
 
         return $this->queryMinutesTextWithOptions($taskUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询闪记待办
+     *  *
+     * @param string                  $taskUuid
+     * @param QueryMinutesTodoRequest $request  QueryMinutesTodoRequest
+     * @param QueryMinutesTodoHeaders $headers  QueryMinutesTodoHeaders
+     * @param RuntimeOptions          $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return QueryMinutesTodoResponse QueryMinutesTodoResponse
+     */
+    public function queryMinutesTodoWithOptions($taskUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryMinutesTodo',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/' . $taskUuid . '/todos',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryMinutesTodoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询闪记待办
+     *  *
+     * @param string                  $taskUuid
+     * @param QueryMinutesTodoRequest $request  QueryMinutesTodoRequest
+     *
+     * @return QueryMinutesTodoResponse QueryMinutesTodoResponse
+     */
+    public function queryMinutesTodo($taskUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMinutesTodoHeaders([]);
+
+        return $this->queryMinutesTodoWithOptions($taskUuid, $request, $headers, $runtime);
     }
 
     /**

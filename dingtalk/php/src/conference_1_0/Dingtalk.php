@@ -47,6 +47,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserLastMetricResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserMetricDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserMetricDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserMetricDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\InviteMcuHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\InviteMcuRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\InviteMcuResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\InviteUsersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\InviteUsersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\InviteUsersResponse;
@@ -1071,6 +1074,69 @@ class Dingtalk extends OpenApiClient
         $headers = new GetUserMetricDataHeaders([]);
 
         return $this->getUserMetricDataWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 邀请MCU入会
+     *  *
+     * @param InviteMcuRequest $request InviteMcuRequest
+     * @param InviteMcuHeaders $headers InviteMcuHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return InviteMcuResponse InviteMcuResponse
+     */
+    public function inviteMcuWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->mcuRoomCode)) {
+            $body['mcuRoomCode'] = $request->mcuRoomCode;
+        }
+        if (!Utils::isUnset($request->roomCode)) {
+            $body['roomCode'] = $request->roomCode;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'InviteMcu',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/mcus/invite',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return InviteMcuResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 邀请MCU入会
+     *  *
+     * @param InviteMcuRequest $request InviteMcuRequest
+     *
+     * @return InviteMcuResponse InviteMcuResponse
+     */
+    public function inviteMcu($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InviteMcuHeaders([]);
+
+        return $this->inviteMcuWithOptions($request, $headers, $runtime);
     }
 
     /**

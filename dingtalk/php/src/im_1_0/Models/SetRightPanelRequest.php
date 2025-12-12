@@ -10,6 +10,16 @@ use AlibabaCloud\Tea\Model;
 class SetRightPanelRequest extends Model
 {
     /**
+     * @var bool
+     */
+    public $forceExpand;
+
+    /**
+     * @var bool
+     */
+    public $isQtWnd;
+
+    /**
      * @description This parameter is required.
      *
      * @example ciddjxhgdDXSAAXXXXX
@@ -59,6 +69,8 @@ class SetRightPanelRequest extends Model
      */
     public $width;
     protected $_name = [
+        'forceExpand' => 'forceExpand',
+        'isQtWnd' => 'isQtWnd',
         'openConversationId' => 'openConversationId',
         'rightPanelClosePermitted' => 'rightPanelClosePermitted',
         'rightPanelOpenStatus' => 'rightPanelOpenStatus',
@@ -72,6 +84,12 @@ class SetRightPanelRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->forceExpand) {
+            $res['forceExpand'] = $this->forceExpand;
+        }
+        if (null !== $this->isQtWnd) {
+            $res['isQtWnd'] = $this->isQtWnd;
+        }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
         }
@@ -102,6 +120,12 @@ class SetRightPanelRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['forceExpand'])) {
+            $model->forceExpand = $map['forceExpand'];
+        }
+        if (isset($map['isQtWnd'])) {
+            $model->isQtWnd = $map['isQtWnd'];
+        }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
         }

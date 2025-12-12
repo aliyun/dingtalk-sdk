@@ -101,6 +101,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocBlocksQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocDeleteBlockHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocDeleteBlockRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocDeleteBlockResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocElementsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocElementsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocElementsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocExportHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocExportRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocExportResponse;
@@ -2389,6 +2392,74 @@ class Dingtalk extends OpenApiClient
         $headers = new DocDeleteBlockHeaders([]);
 
         return $this->docDeleteBlockWithOptions($docKey, $blockId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 文档元素查询
+     *  *
+     * @param string             $dentryUuid
+     * @param DocElementsRequest $request    DocElementsRequest
+     * @param DocElementsHeaders $headers    DocElementsHeaders
+     * @param RuntimeOptions     $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return DocElementsResponse DocElementsResponse
+     */
+    public function docElementsWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->cursor)) {
+            $query['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->elementType)) {
+            $query['elementType'] = $request->elementType;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->size)) {
+            $query['size'] = $request->size;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DocElements',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/' . $dentryUuid . '/elements/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DocElementsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 文档元素查询
+     *  *
+     * @param string             $dentryUuid
+     * @param DocElementsRequest $request    DocElementsRequest
+     *
+     * @return DocElementsResponse DocElementsResponse
+     */
+    public function docElements($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocElementsHeaders([]);
+
+        return $this->docElementsWithOptions($dentryUuid, $request, $headers, $runtime);
     }
 
     /**

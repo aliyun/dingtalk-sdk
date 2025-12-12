@@ -53,6 +53,13 @@ class SyncTripOrderRequest extends Model
     public $endorseFlag;
 
     /**
+     * @example 100.00
+     *
+     * @var string
+     */
+    public $enterprisePayAmount;
+
+    /**
      * @description This parameter is required.
      *
      * @var event
@@ -159,6 +166,13 @@ class SyncTripOrderRequest extends Model
     public $orderUrl;
 
     /**
+     * @example 100.00
+     *
+     * @var string
+     */
+    public $personalPayAmount;
+
+    /**
      * @var string
      */
     public $processId;
@@ -233,6 +247,7 @@ class SyncTripOrderRequest extends Model
         'dingUserId' => 'dingUserId',
         'discountAmount' => 'discountAmount',
         'endorseFlag' => 'endorseFlag',
+        'enterprisePayAmount' => 'enterprisePayAmount',
         'event' => 'event',
         'gmtOrder' => 'gmtOrder',
         'gmtPay' => 'gmtPay',
@@ -249,6 +264,7 @@ class SyncTripOrderRequest extends Model
         'orderNo' => 'orderNo',
         'orderPaymentType' => 'orderPaymentType',
         'orderUrl' => 'orderUrl',
+        'personalPayAmount' => 'personalPayAmount',
         'processId' => 'processId',
         'realAmount' => 'realAmount',
         'refundAmount' => 'refundAmount',
@@ -284,6 +300,9 @@ class SyncTripOrderRequest extends Model
         }
         if (null !== $this->endorseFlag) {
             $res['endorseFlag'] = $this->endorseFlag;
+        }
+        if (null !== $this->enterprisePayAmount) {
+            $res['enterprisePayAmount'] = $this->enterprisePayAmount;
         }
         if (null !== $this->event) {
             $res['event'] = null !== $this->event ? $this->event->toMap() : null;
@@ -338,6 +357,9 @@ class SyncTripOrderRequest extends Model
         }
         if (null !== $this->orderUrl) {
             $res['orderUrl'] = $this->orderUrl;
+        }
+        if (null !== $this->personalPayAmount) {
+            $res['personalPayAmount'] = $this->personalPayAmount;
         }
         if (null !== $this->processId) {
             $res['processId'] = $this->processId;
@@ -402,6 +424,9 @@ class SyncTripOrderRequest extends Model
         if (isset($map['endorseFlag'])) {
             $model->endorseFlag = $map['endorseFlag'];
         }
+        if (isset($map['enterprisePayAmount'])) {
+            $model->enterprisePayAmount = $map['enterprisePayAmount'];
+        }
         if (isset($map['event'])) {
             $model->event = event::fromMap($map['event']);
         }
@@ -455,6 +480,9 @@ class SyncTripOrderRequest extends Model
         }
         if (isset($map['orderUrl'])) {
             $model->orderUrl = $map['orderUrl'];
+        }
+        if (isset($map['personalPayAmount'])) {
+            $model->personalPayAmount = $map['personalPayAmount'];
         }
         if (isset($map['processId'])) {
             $model->processId = $map['processId'];

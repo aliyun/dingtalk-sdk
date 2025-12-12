@@ -20,6 +20,12 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiRetailProductUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiTrainingDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiTrainingDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiTrainingDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiTrainingRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiTrainingRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\AiTrainingRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BatchGetTaskResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BatchGetTaskResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BatchGetTaskResultResponse;
@@ -153,6 +159,12 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoUpdateKnowledgeGraphN
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoUpdateKnowledgeGraphRelationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoUpdateKnowledgeGraphRelationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoUpdateKnowledgeGraphRelationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CirclePostDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CirclePostDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CirclePostDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CirclePostRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CirclePostRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CirclePostRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupResponse;
@@ -593,6 +605,15 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->productName)) {
             $body['productName'] = $request->productName;
         }
+        if (!Utils::isUnset($request->tag1)) {
+            $body['tag1'] = $request->tag1;
+        }
+        if (!Utils::isUnset($request->tag2)) {
+            $body['tag2'] = $request->tag2;
+        }
+        if (!Utils::isUnset($request->tag3)) {
+            $body['tag3'] = $request->tag3;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -863,6 +884,15 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->productName)) {
             $body['productName'] = $request->productName;
         }
+        if (!Utils::isUnset($request->tag1)) {
+            $body['tag1'] = $request->tag1;
+        }
+        if (!Utils::isUnset($request->tag2)) {
+            $body['tag2'] = $request->tag2;
+        }
+        if (!Utils::isUnset($request->tag3)) {
+            $body['tag3'] = $request->tag3;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -902,6 +932,135 @@ class Dingtalk extends OpenApiClient
         $headers = new AiRetailProductUpdateHeaders([]);
 
         return $this->aiRetailProductUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary AI练货记录详情
+     *  *
+     * @param AiTrainingDetailRequest $request AiTrainingDetailRequest
+     * @param AiTrainingDetailHeaders $headers AiTrainingDetailHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AiTrainingDetailResponse AiTrainingDetailResponse
+     */
+    public function aiTrainingDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->recordId)) {
+            $body['recordId'] = $request->recordId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AiTrainingDetail',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/ai/trainingDetail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AiTrainingDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary AI练货记录详情
+     *  *
+     * @param AiTrainingDetailRequest $request AiTrainingDetailRequest
+     *
+     * @return AiTrainingDetailResponse AiTrainingDetailResponse
+     */
+    public function aiTrainingDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AiTrainingDetailHeaders([]);
+
+        return $this->aiTrainingDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary AI练货记录
+     *  *
+     * @param AiTrainingRecordRequest $request AiTrainingRecordRequest
+     * @param AiTrainingRecordHeaders $headers AiTrainingRecordHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AiTrainingRecordResponse AiTrainingRecordResponse
+     */
+    public function aiTrainingRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->direction)) {
+            $body['direction'] = $request->direction;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->lastId)) {
+            $body['lastId'] = $request->lastId;
+        }
+        if (!Utils::isUnset($request->size)) {
+            $body['size'] = $request->size;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AiTrainingRecord',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/ai/retail/trainingRecord',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AiTrainingRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary AI练货记录
+     *  *
+     * @param AiTrainingRecordRequest $request AiTrainingRecordRequest
+     *
+     * @return AiTrainingRecordResponse AiTrainingRecordResponse
+     */
+    public function aiTrainingRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AiTrainingRecordHeaders([]);
+
+        return $this->aiTrainingRecordWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3758,6 +3917,129 @@ class Dingtalk extends OpenApiClient
         $headers = new ChatMemoUpdateKnowledgeGraphRelationHeaders([]);
 
         return $this->chatMemoUpdateKnowledgeGraphRelationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 美搭发帖记录详情
+     *  *
+     * @param CirclePostDetailRequest $request CirclePostDetailRequest
+     * @param CirclePostDetailHeaders $headers CirclePostDetailHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CirclePostDetailResponse CirclePostDetailResponse
+     */
+    public function circlePostDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->postId)) {
+            $body['postId'] = $request->postId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CirclePostDetail',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/circle/postsDetail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CirclePostDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 美搭发帖记录详情
+     *  *
+     * @param CirclePostDetailRequest $request CirclePostDetailRequest
+     *
+     * @return CirclePostDetailResponse CirclePostDetailResponse
+     */
+    public function circlePostDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CirclePostDetailHeaders([]);
+
+        return $this->circlePostDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 美搭发帖记录
+     *  *
+     * @param CirclePostRecordRequest $request CirclePostRecordRequest
+     * @param CirclePostRecordHeaders $headers CirclePostRecordHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CirclePostRecordResponse CirclePostRecordResponse
+     */
+    public function circlePostRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->direction)) {
+            $body['direction'] = $request->direction;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->size)) {
+            $body['size'] = $request->size;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CirclePostRecord',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/circle/postsRecord',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CirclePostRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 美搭发帖记录
+     *  *
+     * @param CirclePostRecordRequest $request CirclePostRecordRequest
+     *
+     * @return CirclePostRecordResponse CirclePostRecordResponse
+     */
+    public function circlePostRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CirclePostRecordHeaders([]);
+
+        return $this->circlePostRecordWithOptions($request, $headers, $runtime);
     }
 
     /**

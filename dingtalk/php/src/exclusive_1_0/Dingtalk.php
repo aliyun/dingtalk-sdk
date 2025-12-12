@@ -66,6 +66,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExchangeMainAdminResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileEncryptCallbackHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileEncryptCallbackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileEncryptCallbackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileStorageActiveStorageResponse;
@@ -177,6 +180,12 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFileInfosByPa
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFilePathHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFilePathRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFilePathResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFileTaskInfosByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFileTaskInfosByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFileTaskInfosByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreTaskFileInfosByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreTaskFileInfosByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreTaskFileInfosByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublicDevicesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublicDevicesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublicDevicesResponse;
@@ -1770,6 +1779,66 @@ class Dingtalk extends OpenApiClient
         $headers = new ExclusiveCreateDingPortalHeaders([]);
 
         return $this->exclusiveCreateDingPortalWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 文件加密回调
+     *  *
+     * @param FileEncryptCallbackRequest $request FileEncryptCallbackRequest
+     * @param FileEncryptCallbackHeaders $headers FileEncryptCallbackHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return FileEncryptCallbackResponse FileEncryptCallbackResponse
+     */
+    public function fileEncryptCallbackWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            $body['timestamp'] = $request->timestamp;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'FileEncryptCallback',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/clientDecrypt/encrypt/callback',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return FileEncryptCallbackResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 文件加密回调
+     *  *
+     * @param FileEncryptCallbackRequest $request FileEncryptCallbackRequest
+     *
+     * @return FileEncryptCallbackResponse FileEncryptCallbackResponse
+     */
+    public function fileEncryptCallback($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FileEncryptCallbackHeaders([]);
+
+        return $this->fileEncryptCallbackWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -4046,6 +4115,12 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->contentType)) {
+            $body['contentType'] = $request->contentType;
+        }
+        if (!Utils::isUnset($request->deptIds)) {
+            $body['deptIds'] = $request->deptIds;
+        }
         if (!Utils::isUnset($request->fileCreateTime)) {
             $body['fileCreateTime'] = $request->fileCreateTime;
         }
@@ -4055,14 +4130,23 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->maxResults)) {
             $body['maxResults'] = $request->maxResults;
         }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
         if (!Utils::isUnset($request->nextToken)) {
             $body['nextToken'] = $request->nextToken;
         }
         if (!Utils::isUnset($request->order)) {
             $body['order'] = $request->order;
         }
+        if (!Utils::isUnset($request->sceneType)) {
+            $body['sceneType'] = $request->sceneType;
+        }
         if (!Utils::isUnset($request->targetCorpId)) {
             $body['targetCorpId'] = $request->targetCorpId;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -4163,6 +4247,132 @@ class Dingtalk extends OpenApiClient
         $headers = new GetPrivateStoreFilePathHeaders([]);
 
         return $this->getPrivateStoreFilePathWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页获取专属存储文件处理任务信息
+     *  *
+     * @param GetPrivateStoreFileTaskInfosByPageRequest $request GetPrivateStoreFileTaskInfosByPageRequest
+     * @param GetPrivateStoreFileTaskInfosByPageHeaders $headers GetPrivateStoreFileTaskInfosByPageHeaders
+     * @param RuntimeOptions                            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetPrivateStoreFileTaskInfosByPageResponse GetPrivateStoreFileTaskInfosByPageResponse
+     */
+    public function getPrivateStoreFileTaskInfosByPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->taskStatus)) {
+            $body['taskStatus'] = $request->taskStatus;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetPrivateStoreFileTaskInfosByPage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/privateStores/taskInfos/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetPrivateStoreFileTaskInfosByPageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页获取专属存储文件处理任务信息
+     *  *
+     * @param GetPrivateStoreFileTaskInfosByPageRequest $request GetPrivateStoreFileTaskInfosByPageRequest
+     *
+     * @return GetPrivateStoreFileTaskInfosByPageResponse GetPrivateStoreFileTaskInfosByPageResponse
+     */
+    public function getPrivateStoreFileTaskInfosByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPrivateStoreFileTaskInfosByPageHeaders([]);
+
+        return $this->getPrivateStoreFileTaskInfosByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页获取专属存储任务文件信息
+     *  *
+     * @param GetPrivateStoreTaskFileInfosByPageRequest $request GetPrivateStoreTaskFileInfosByPageRequest
+     * @param GetPrivateStoreTaskFileInfosByPageHeaders $headers GetPrivateStoreTaskFileInfosByPageHeaders
+     * @param RuntimeOptions                            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetPrivateStoreTaskFileInfosByPageResponse GetPrivateStoreTaskFileInfosByPageResponse
+     */
+    public function getPrivateStoreTaskFileInfosByPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetPrivateStoreTaskFileInfosByPage',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/privateStores/taskInfos/file/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetPrivateStoreTaskFileInfosByPageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页获取专属存储任务文件信息
+     *  *
+     * @param GetPrivateStoreTaskFileInfosByPageRequest $request GetPrivateStoreTaskFileInfosByPageRequest
+     *
+     * @return GetPrivateStoreTaskFileInfosByPageResponse GetPrivateStoreTaskFileInfosByPageResponse
+     */
+    public function getPrivateStoreTaskFileInfosByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPrivateStoreTaskFileInfosByPageHeaders([]);
+
+        return $this->getPrivateStoreTaskFileInfosByPageWithOptions($request, $headers, $runtime);
     }
 
     /**

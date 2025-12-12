@@ -73,6 +73,11 @@ class result extends Model
      * @var string
      */
     public $tradeType;
+
+    /**
+     * @var string
+     */
+    public $usage;
     protected $_name = [
         'balance' => 'balance',
         'detailId' => 'detailId',
@@ -87,6 +92,7 @@ class result extends Model
         'tradeNo' => 'tradeNo',
         'tradeTime' => 'tradeTime',
         'tradeType' => 'tradeType',
+        'usage' => 'usage',
     ];
 
     public function validate() {}
@@ -132,6 +138,9 @@ class result extends Model
         }
         if (null !== $this->tradeType) {
             $res['tradeType'] = $this->tradeType;
+        }
+        if (null !== $this->usage) {
+            $res['usage'] = $this->usage;
         }
 
         return $res;
@@ -183,6 +192,9 @@ class result extends Model
         }
         if (isset($map['tradeType'])) {
             $model->tradeType = $map['tradeType'];
+        }
+        if (isset($map['usage'])) {
+            $model->usage = $map['usage'];
         }
 
         return $model;

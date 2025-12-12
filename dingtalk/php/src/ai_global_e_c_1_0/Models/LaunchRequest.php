@@ -48,41 +48,6 @@ class LaunchRequest extends Model
      * @var string[]
      */
     public $videoUrls;
-
-    /**
-     * @var int
-     */
-    public $dingAgentId;
-
-    /**
-     * @var string
-     */
-    public $dingClientId;
-
-    /**
-     * @var int
-     */
-    public $dingIsvOrgId;
-
-    /**
-     * @var int
-     */
-    public $dingOrgId;
-
-    /**
-     * @var string
-     */
-    public $dingSuiteKey;
-
-    /**
-     * @var int
-     */
-    public $dingTokenGrantType;
-
-    /**
-     * @var int
-     */
-    public $dingUid;
     protected $_name = [
         'description' => 'description',
         'imageUrls' => 'imageUrls',
@@ -92,13 +57,6 @@ class LaunchRequest extends Model
         'sourceData' => 'sourceData',
         'variants' => 'variants',
         'videoUrls' => 'videoUrls',
-        'dingAgentId' => 'dingAgentId',
-        'dingClientId' => 'dingClientId',
-        'dingIsvOrgId' => 'dingIsvOrgId',
-        'dingOrgId' => 'dingOrgId',
-        'dingSuiteKey' => 'dingSuiteKey',
-        'dingTokenGrantType' => 'dingTokenGrantType',
-        'dingUid' => 'dingUid',
     ];
 
     public function validate() {}
@@ -135,27 +93,6 @@ class LaunchRequest extends Model
         }
         if (null !== $this->videoUrls) {
             $res['videoUrls'] = $this->videoUrls;
-        }
-        if (null !== $this->dingAgentId) {
-            $res['dingAgentId'] = $this->dingAgentId;
-        }
-        if (null !== $this->dingClientId) {
-            $res['dingClientId'] = $this->dingClientId;
-        }
-        if (null !== $this->dingIsvOrgId) {
-            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
-        }
-        if (null !== $this->dingOrgId) {
-            $res['dingOrgId'] = $this->dingOrgId;
-        }
-        if (null !== $this->dingSuiteKey) {
-            $res['dingSuiteKey'] = $this->dingSuiteKey;
-        }
-        if (null !== $this->dingTokenGrantType) {
-            $res['dingTokenGrantType'] = $this->dingTokenGrantType;
-        }
-        if (null !== $this->dingUid) {
-            $res['dingUid'] = $this->dingUid;
         }
 
         return $res;
@@ -206,27 +143,6 @@ class LaunchRequest extends Model
             if (!empty($map['videoUrls'])) {
                 $model->videoUrls = $map['videoUrls'];
             }
-        }
-        if (isset($map['dingAgentId'])) {
-            $model->dingAgentId = $map['dingAgentId'];
-        }
-        if (isset($map['dingClientId'])) {
-            $model->dingClientId = $map['dingClientId'];
-        }
-        if (isset($map['dingIsvOrgId'])) {
-            $model->dingIsvOrgId = $map['dingIsvOrgId'];
-        }
-        if (isset($map['dingOrgId'])) {
-            $model->dingOrgId = $map['dingOrgId'];
-        }
-        if (isset($map['dingSuiteKey'])) {
-            $model->dingSuiteKey = $map['dingSuiteKey'];
-        }
-        if (isset($map['dingTokenGrantType'])) {
-            $model->dingTokenGrantType = $map['dingTokenGrantType'];
-        }
-        if (isset($map['dingUid'])) {
-            $model->dingUid = $map['dingUid'];
         }
 
         return $model;

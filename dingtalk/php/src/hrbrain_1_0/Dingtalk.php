@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainBizDataQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainBizDataQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainBizDataQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteAwardRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteAwardRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainDeleteAwardRecordsResponse;
@@ -152,6 +155,69 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 业务数据开放
+     *  *
+     * @param HrbrainBizDataQueryRequest $request HrbrainBizDataQueryRequest
+     * @param HrbrainBizDataQueryHeaders $headers HrbrainBizDataQueryHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainBizDataQueryResponse HrbrainBizDataQueryResponse
+     */
+    public function hrbrainBizDataQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $query['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainBizDataQuery',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/bizData/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainBizDataQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 业务数据开放
+     *  *
+     * @param HrbrainBizDataQueryRequest $request HrbrainBizDataQueryRequest
+     *
+     * @return HrbrainBizDataQueryResponse HrbrainBizDataQueryResponse
+     */
+    public function hrbrainBizDataQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainBizDataQueryHeaders([]);
+
+        return $this->hrbrainBizDataQueryWithOptions($request, $headers, $runtime);
     }
 
     /**

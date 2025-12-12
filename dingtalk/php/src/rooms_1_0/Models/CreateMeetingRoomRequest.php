@@ -49,6 +49,13 @@ class CreateMeetingRoomRequest extends Model
     public $roomCapacity;
 
     /**
+     * @example 此处添加对会议室的描述信息
+     *
+     * @var string
+     */
+    public $roomDescription;
+
+    /**
      * @var int[]
      */
     public $roomLabelIds;
@@ -98,6 +105,7 @@ class CreateMeetingRoomRequest extends Model
         'openReservation' => 'openReservation',
         'reservationAuthority' => 'reservationAuthority',
         'roomCapacity' => 'roomCapacity',
+        'roomDescription' => 'roomDescription',
         'roomLabelIds' => 'roomLabelIds',
         'roomLocation' => 'roomLocation',
         'roomName' => 'roomName',
@@ -128,6 +136,9 @@ class CreateMeetingRoomRequest extends Model
         }
         if (null !== $this->roomCapacity) {
             $res['roomCapacity'] = $this->roomCapacity;
+        }
+        if (null !== $this->roomDescription) {
+            $res['roomDescription'] = $this->roomDescription;
         }
         if (null !== $this->roomLabelIds) {
             $res['roomLabelIds'] = $this->roomLabelIds;
@@ -176,6 +187,9 @@ class CreateMeetingRoomRequest extends Model
         }
         if (isset($map['roomCapacity'])) {
             $model->roomCapacity = $map['roomCapacity'];
+        }
+        if (isset($map['roomDescription'])) {
+            $model->roomDescription = $map['roomDescription'];
         }
         if (isset($map['roomLabelIds'])) {
             if (!empty($map['roomLabelIds'])) {

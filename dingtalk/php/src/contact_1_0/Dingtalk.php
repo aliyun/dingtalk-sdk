@@ -179,6 +179,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryUserManagementResourcesRe
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryVerifyResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryVerifyResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryVerifyResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\RecallTeamInviteHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\RecallTeamInviteRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\RecallTeamInviteResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentResponse;
@@ -4081,6 +4084,66 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryVerifyResultHeaders([]);
 
         return $this->queryVerifyResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 撤回已经发出的团队邀请
+     *  *
+     * @param RecallTeamInviteRequest $request RecallTeamInviteRequest
+     * @param RecallTeamInviteHeaders $headers RecallTeamInviteHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RecallTeamInviteResponse RecallTeamInviteResponse
+     */
+    public function recallTeamInviteWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->mobile)) {
+            $query['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->optUserId)) {
+            $query['optUserId'] = $request->optUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'RecallTeamInvite',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/invites/recall',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'none',
+        ]);
+
+        return RecallTeamInviteResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 撤回已经发出的团队邀请
+     *  *
+     * @param RecallTeamInviteRequest $request RecallTeamInviteRequest
+     *
+     * @return RecallTeamInviteResponse RecallTeamInviteResponse
+     */
+    public function recallTeamInvite($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RecallTeamInviteHeaders([]);
+
+        return $this->recallTeamInviteWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -11,9 +11,21 @@ use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\GetTravelProcessDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\PreCheckTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\PreCheckTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\PreCheckTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripFlightOrderByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripFlightOrderByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripFlightOrderByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripFlightOrderByPageShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripHotelOrderByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripHotelOrderByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripHotelOrderByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripHotelOrderByPageShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripProcessTemplatesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripProcessTemplatesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripProcessTemplatesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripTrainOrderByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripTrainOrderByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripTrainOrderByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripTrainOrderByPageShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoResponse;
@@ -192,6 +204,154 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 分页查询组织航班订单信息
+     *  *
+     * @param QueryTripFlightOrderByPageRequest $tmpReq  QueryTripFlightOrderByPageRequest
+     * @param QueryTripFlightOrderByPageHeaders $headers QueryTripFlightOrderByPageHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryTripFlightOrderByPageResponse QueryTripFlightOrderByPageResponse
+     */
+    public function queryTripFlightOrderByPageWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new QueryTripFlightOrderByPageShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->orderStatus)) {
+            $request->orderStatusShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->orderStatus, 'orderStatus', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->orderStatusShrink)) {
+            $query['orderStatus'] = $request->orderStatusShrink;
+        }
+        if (!Utils::isUnset($request->pageIndex)) {
+            $query['pageIndex'] = $request->pageIndex;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryTripFlightOrderByPage',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/flight/orders',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryTripFlightOrderByPageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页查询组织航班订单信息
+     *  *
+     * @param QueryTripFlightOrderByPageRequest $request QueryTripFlightOrderByPageRequest
+     *
+     * @return QueryTripFlightOrderByPageResponse QueryTripFlightOrderByPageResponse
+     */
+    public function queryTripFlightOrderByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTripFlightOrderByPageHeaders([]);
+
+        return $this->queryTripFlightOrderByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页查询组织酒店订单信息
+     *  *
+     * @param QueryTripHotelOrderByPageRequest $tmpReq  QueryTripHotelOrderByPageRequest
+     * @param QueryTripHotelOrderByPageHeaders $headers QueryTripHotelOrderByPageHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryTripHotelOrderByPageResponse QueryTripHotelOrderByPageResponse
+     */
+    public function queryTripHotelOrderByPageWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new QueryTripHotelOrderByPageShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->orderStatus)) {
+            $request->orderStatusShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->orderStatus, 'orderStatus', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->orderStatusShrink)) {
+            $query['orderStatus'] = $request->orderStatusShrink;
+        }
+        if (!Utils::isUnset($request->pageIndex)) {
+            $query['pageIndex'] = $request->pageIndex;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryTripHotelOrderByPage',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/hotel/orders',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryTripHotelOrderByPageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页查询组织酒店订单信息
+     *  *
+     * @param QueryTripHotelOrderByPageRequest $request QueryTripHotelOrderByPageRequest
+     *
+     * @return QueryTripHotelOrderByPageResponse QueryTripHotelOrderByPageResponse
+     */
+    public function queryTripHotelOrderByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTripHotelOrderByPageHeaders([]);
+
+        return $this->queryTripHotelOrderByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询审批套件详情
      *  *
      * @param QueryTripProcessTemplatesRequest $request QueryTripProcessTemplatesRequest
@@ -246,6 +406,80 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryTripProcessTemplatesHeaders([]);
 
         return $this->queryTripProcessTemplatesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页查询组织火车订单信息
+     *  *
+     * @param QueryTripTrainOrderByPageRequest $tmpReq  QueryTripTrainOrderByPageRequest
+     * @param QueryTripTrainOrderByPageHeaders $headers QueryTripTrainOrderByPageHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryTripTrainOrderByPageResponse QueryTripTrainOrderByPageResponse
+     */
+    public function queryTripTrainOrderByPageWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new QueryTripTrainOrderByPageShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->orderStatus)) {
+            $request->orderStatusShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->orderStatus, 'orderStatus', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->orderStatusShrink)) {
+            $query['orderStatus'] = $request->orderStatusShrink;
+        }
+        if (!Utils::isUnset($request->pageIndex)) {
+            $query['pageIndex'] = $request->pageIndex;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryTripTrainOrderByPage',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/train/orders',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryTripTrainOrderByPageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页查询组织火车订单信息
+     *  *
+     * @param QueryTripTrainOrderByPageRequest $request QueryTripTrainOrderByPageRequest
+     *
+     * @return QueryTripTrainOrderByPageResponse QueryTripTrainOrderByPageResponse
+     */
+    public function queryTripTrainOrderByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTripTrainOrderByPageHeaders([]);
+
+        return $this->queryTripTrainOrderByPageWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -998,6 +1232,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->endorseFlag)) {
             $body['endorseFlag'] = $request->endorseFlag;
         }
+        if (!Utils::isUnset($request->enterprisePayAmount)) {
+            $body['enterprisePayAmount'] = $request->enterprisePayAmount;
+        }
         if (!Utils::isUnset($request->event)) {
             $body['event'] = $request->event;
         }
@@ -1045,6 +1282,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->orderUrl)) {
             $body['orderUrl'] = $request->orderUrl;
+        }
+        if (!Utils::isUnset($request->personalPayAmount)) {
+            $body['personalPayAmount'] = $request->personalPayAmount;
         }
         if (!Utils::isUnset($request->processId)) {
             $body['processId'] = $request->processId;

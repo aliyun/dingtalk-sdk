@@ -77,6 +77,27 @@ class data extends Model
      * @var string
      */
     public $productName;
+
+    /**
+     * @example 热销
+     *
+     * @var string
+     */
+    public $tag1;
+
+    /**
+     * @example 新品
+     *
+     * @var string
+     */
+    public $tag2;
+
+    /**
+     * @example 尾款
+     *
+     * @var string
+     */
+    public $tag3;
     protected $_name = [
         'attribute' => 'attribute',
         'barcodes' => 'barcodes',
@@ -92,6 +113,9 @@ class data extends Model
         'productId' => 'productId',
         'productInfo' => 'productInfo',
         'productName' => 'productName',
+        'tag1' => 'tag1',
+        'tag2' => 'tag2',
+        'tag3' => 'tag3',
     ];
 
     public function validate() {}
@@ -140,6 +164,15 @@ class data extends Model
         }
         if (null !== $this->productName) {
             $res['productName'] = $this->productName;
+        }
+        if (null !== $this->tag1) {
+            $res['tag1'] = $this->tag1;
+        }
+        if (null !== $this->tag2) {
+            $res['tag2'] = $this->tag2;
+        }
+        if (null !== $this->tag3) {
+            $res['tag3'] = $this->tag3;
         }
 
         return $res;
@@ -194,6 +227,15 @@ class data extends Model
         }
         if (isset($map['productName'])) {
             $model->productName = $map['productName'];
+        }
+        if (isset($map['tag1'])) {
+            $model->tag1 = $map['tag1'];
+        }
+        if (isset($map['tag2'])) {
+            $model->tag2 = $map['tag2'];
+        }
+        if (isset($map['tag3'])) {
+            $model->tag3 = $map['tag3'];
         }
 
         return $model;

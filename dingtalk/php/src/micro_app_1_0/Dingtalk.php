@@ -59,6 +59,8 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllInnerAppsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllInnerAppsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAppByClientIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAppByClientIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAppRoleScopesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAppRoleScopesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAppRoleScopesResponse;
@@ -1515,6 +1517,54 @@ class Dingtalk extends OpenApiClient
         $headers = new ListAllInnerAppsHeaders([]);
 
         return $this->listAllInnerAppsWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 获取单个企业应用信息
+     *  *
+     * @param ListAppByClientIdHeaders $headers ListAppByClientIdHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListAppByClientIdResponse ListAppByClientIdResponse
+     */
+    public function listAppByClientIdWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'ListAppByClientId',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/app/detail',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListAppByClientIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取单个企业应用信息
+     *  *
+     * @return ListAppByClientIdResponse ListAppByClientIdResponse
+     */
+    public function listAppByClientId()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListAppByClientIdHeaders([]);
+
+        return $this->listAppByClientIdWithOptions($headers, $runtime);
     }
 
     /**

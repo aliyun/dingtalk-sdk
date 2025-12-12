@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\ConnectionOmniChannelTik
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\GetLoginUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\GetLoginUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\GetLoginUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\HhoCallBackHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\HhoCallBackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\HhoCallBackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\LaunchHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\LaunchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\LaunchResponse;
@@ -158,6 +161,75 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 提供给HHO的异步回调接口
+     *  *
+     * @param HhoCallBackRequest $request HhoCallBackRequest
+     * @param HhoCallBackHeaders $headers HhoCallBackHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HhoCallBackResponse HhoCallBackResponse
+     */
+    public function hhoCallBackWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->dtNotificationId)) {
+            $body['dtNotificationId'] = $request->dtNotificationId;
+        }
+        if (!Utils::isUnset($request->shopId)) {
+            $body['shopId'] = $request->shopId;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            $body['timestamp'] = $request->timestamp;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HhoCallBack',
+            'version' => 'aiGlobalEC_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiGlobalEC/hho/callback',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HhoCallBackResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 提供给HHO的异步回调接口
+     *  *
+     * @param HhoCallBackRequest $request HhoCallBackRequest
+     *
+     * @return HhoCallBackResponse HhoCallBackResponse
+     */
+    public function hhoCallBack($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HhoCallBackHeaders([]);
+
+        return $this->hhoCallBackWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 刊登的对外开放Api
      *  *
      * @param LaunchRequest  $request LaunchRequest
@@ -169,28 +241,6 @@ class Dingtalk extends OpenApiClient
     public function launchWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->dingAgentId)) {
-            $query['dingAgentId'] = $request->dingAgentId;
-        }
-        if (!Utils::isUnset($request->dingClientId)) {
-            $query['dingClientId'] = $request->dingClientId;
-        }
-        if (!Utils::isUnset($request->dingIsvOrgId)) {
-            $query['dingIsvOrgId'] = $request->dingIsvOrgId;
-        }
-        if (!Utils::isUnset($request->dingOrgId)) {
-            $query['dingOrgId'] = $request->dingOrgId;
-        }
-        if (!Utils::isUnset($request->dingSuiteKey)) {
-            $query['dingSuiteKey'] = $request->dingSuiteKey;
-        }
-        if (!Utils::isUnset($request->dingTokenGrantType)) {
-            $query['dingTokenGrantType'] = $request->dingTokenGrantType;
-        }
-        if (!Utils::isUnset($request->dingUid)) {
-            $query['dingUid'] = $request->dingUid;
-        }
         $body = [];
         if (!Utils::isUnset($request->description)) {
             $body['description'] = $request->description;
@@ -225,7 +275,6 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query' => OpenApiUtilClient::query($query),
             'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([

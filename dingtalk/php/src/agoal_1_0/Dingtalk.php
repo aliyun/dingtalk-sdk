@@ -18,9 +18,22 @@ use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalIndicatorBatchQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalIndicatorBatchQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalIndicatorBatchQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalIndicatorBatchQueryShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalIndicatorDataPushHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalIndicatorDataPushRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalIndicatorDataPushResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveProgressListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveProgressListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveProgressListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRuleListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRuleListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRuleListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRulePeriodListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRulePeriodListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRulePeriodListResponse;
@@ -32,6 +45,12 @@ use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveRuleListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveRuleListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgPerfDocQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgPerfDocQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgPerfDocQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgPerfPlanQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgPerfPlanQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgPerfPlanQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPerfTaskCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPerfTaskCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPerfTaskCreateResponse;
@@ -59,6 +78,12 @@ use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetDeptScoreCardIndicatorRespons
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetIndicatorDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetIndicatorDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetIndicatorDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetObjectiveDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetObjectiveDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetObjectiveDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetObjectiveRuleDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetObjectiveRuleDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\GetObjectiveRuleDetailResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -320,6 +345,128 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过指标编码批量查询指标列表
+     *  *
+     * @param AgoalIndicatorBatchQueryRequest $tmpReq  AgoalIndicatorBatchQueryRequest
+     * @param AgoalIndicatorBatchQueryHeaders $headers AgoalIndicatorBatchQueryHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalIndicatorBatchQueryResponse AgoalIndicatorBatchQueryResponse
+     */
+    public function agoalIndicatorBatchQueryWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new AgoalIndicatorBatchQueryShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->codeList)) {
+            $request->codeListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->codeList, 'codeList', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->codeListShrink)) {
+            $query['codeList'] = $request->codeListShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'AgoalIndicatorBatchQuery',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/indicator/batch/query',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalIndicatorBatchQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过指标编码批量查询指标列表
+     *  *
+     * @param AgoalIndicatorBatchQueryRequest $request AgoalIndicatorBatchQueryRequest
+     *
+     * @return AgoalIndicatorBatchQueryResponse AgoalIndicatorBatchQueryResponse
+     */
+    public function agoalIndicatorBatchQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalIndicatorBatchQueryHeaders([]);
+
+        return $this->agoalIndicatorBatchQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过指标编码推送指标时间维度数据
+     *  *
+     * @param AgoalIndicatorDataPushRequest $request AgoalIndicatorDataPushRequest
+     * @param AgoalIndicatorDataPushHeaders $headers AgoalIndicatorDataPushHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalIndicatorDataPushResponse AgoalIndicatorDataPushResponse
+     */
+    public function agoalIndicatorDataPushWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            $body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AgoalIndicatorDataPush',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/indicator/data/push',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalIndicatorDataPushResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过指标编码推送指标时间维度数据
+     *  *
+     * @param AgoalIndicatorDataPushRequest $request AgoalIndicatorDataPushRequest
+     *
+     * @return AgoalIndicatorDataPushResponse AgoalIndicatorDataPushResponse
+     */
+    public function agoalIndicatorDataPush($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalIndicatorDataPushHeaders([]);
+
+        return $this->agoalIndicatorDataPushWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取Agoal指定目标或者关键结果关联的关键行动
      *  *
      * @param AgoalObjectiveKeyActionListRequest $request AgoalObjectiveKeyActionListRequest
@@ -380,6 +527,129 @@ class Dingtalk extends OpenApiClient
         $headers = new AgoalObjectiveKeyActionListHeaders([]);
 
         return $this->agoalObjectiveKeyActionListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业下指定个人目标的所有进展
+     *  *
+     * @param AgoalObjectiveProgressListRequest $request AgoalObjectiveProgressListRequest
+     * @param AgoalObjectiveProgressListHeaders $headers AgoalObjectiveProgressListHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalObjectiveProgressListResponse AgoalObjectiveProgressListResponse
+     */
+    public function agoalObjectiveProgressListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->objectiveId)) {
+            $query['objectiveId'] = $request->objectiveId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'AgoalObjectiveProgressList',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/objectives/progresses/lists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalObjectiveProgressListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业下指定个人目标的所有进展
+     *  *
+     * @param AgoalObjectiveProgressListRequest $request AgoalObjectiveProgressListRequest
+     *
+     * @return AgoalObjectiveProgressListResponse AgoalObjectiveProgressListResponse
+     */
+    public function agoalObjectiveProgressList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalObjectiveProgressListHeaders([]);
+
+        return $this->agoalObjectiveProgressListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业下目标规则列表
+     *  *
+     * @param AgoalObjectiveRuleListRequest $request AgoalObjectiveRuleListRequest
+     * @param AgoalObjectiveRuleListHeaders $headers AgoalObjectiveRuleListHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalObjectiveRuleListResponse AgoalObjectiveRuleListResponse
+     */
+    public function agoalObjectiveRuleListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'AgoalObjectiveRuleList',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/objectiveRuleLists/query',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalObjectiveRuleListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业下目标规则列表
+     *  *
+     * @param AgoalObjectiveRuleListRequest $request AgoalObjectiveRuleListRequest
+     *
+     * @return AgoalObjectiveRuleListResponse AgoalObjectiveRuleListResponse
+     */
+    public function agoalObjectiveRuleList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalObjectiveRuleListHeaders([]);
+
+        return $this->agoalObjectiveRuleListWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -608,6 +878,129 @@ class Dingtalk extends OpenApiClient
         $headers = new AgoalOrgObjectiveRuleListHeaders([]);
 
         return $this->agoalOrgObjectiveRuleListWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 查询某个考核计划的部门得分
+     *  *
+     * @param AgoalOrgPerfDocQueryRequest $request AgoalOrgPerfDocQueryRequest
+     * @param AgoalOrgPerfDocQueryHeaders $headers AgoalOrgPerfDocQueryHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalOrgPerfDocQueryResponse AgoalOrgPerfDocQueryResponse
+     */
+    public function agoalOrgPerfDocQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->planId)) {
+            $query['planId'] = $request->planId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'AgoalOrgPerfDocQuery',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/org_perf/documents/query',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalOrgPerfDocQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询某个考核计划的部门得分
+     *  *
+     * @param AgoalOrgPerfDocQueryRequest $request AgoalOrgPerfDocQueryRequest
+     *
+     * @return AgoalOrgPerfDocQueryResponse AgoalOrgPerfDocQueryResponse
+     */
+    public function agoalOrgPerfDocQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalOrgPerfDocQueryHeaders([]);
+
+        return $this->agoalOrgPerfDocQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业下的所有考核计划
+     *  *
+     * @param AgoalOrgPerfPlanQueryRequest $request AgoalOrgPerfPlanQueryRequest
+     * @param AgoalOrgPerfPlanQueryHeaders $headers AgoalOrgPerfPlanQueryHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalOrgPerfPlanQueryResponse AgoalOrgPerfPlanQueryResponse
+     */
+    public function agoalOrgPerfPlanQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'AgoalOrgPerfPlanQuery',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/org_perf/plans/query',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalOrgPerfPlanQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业下的所有考核计划
+     *  *
+     * @param AgoalOrgPerfPlanQueryRequest $request AgoalOrgPerfPlanQueryRequest
+     *
+     * @return AgoalOrgPerfPlanQueryResponse AgoalOrgPerfPlanQueryResponse
+     */
+    public function agoalOrgPerfPlanQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalOrgPerfPlanQueryHeaders([]);
+
+        return $this->agoalOrgPerfPlanQueryWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1133,5 +1526,119 @@ class Dingtalk extends OpenApiClient
         $headers = new GetIndicatorDetailHeaders([]);
 
         return $this->getIndicatorDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业下个人目标详情
+     *  *
+     * @param GetObjectiveDetailRequest $request GetObjectiveDetailRequest
+     * @param GetObjectiveDetailHeaders $headers GetObjectiveDetailHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetObjectiveDetailResponse GetObjectiveDetailResponse
+     */
+    public function getObjectiveDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->objectiveId)) {
+            $query['objectiveId'] = $request->objectiveId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetObjectiveDetail',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/objectives/details',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetObjectiveDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业下个人目标详情
+     *  *
+     * @param GetObjectiveDetailRequest $request GetObjectiveDetailRequest
+     *
+     * @return GetObjectiveDetailResponse GetObjectiveDetailResponse
+     */
+    public function getObjectiveDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetObjectiveDetailHeaders([]);
+
+        return $this->getObjectiveDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业下单个目标规则详情
+     *  *
+     * @param GetObjectiveRuleDetailRequest $request GetObjectiveRuleDetailRequest
+     * @param GetObjectiveRuleDetailHeaders $headers GetObjectiveRuleDetailHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetObjectiveRuleDetailResponse GetObjectiveRuleDetailResponse
+     */
+    public function getObjectiveRuleDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->objectiveRuleId)) {
+            $query['objectiveRuleId'] = $request->objectiveRuleId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetObjectiveRuleDetail',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/objectiveRules/details',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetObjectiveRuleDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业下单个目标规则详情
+     *  *
+     * @param GetObjectiveRuleDetailRequest $request GetObjectiveRuleDetailRequest
+     *
+     * @return GetObjectiveRuleDetailResponse GetObjectiveRuleDetailResponse
+     */
+    public function getObjectiveRuleDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetObjectiveRuleDetailHeaders([]);
+
+        return $this->getObjectiveRuleDetailWithOptions($request, $headers, $runtime);
     }
 }

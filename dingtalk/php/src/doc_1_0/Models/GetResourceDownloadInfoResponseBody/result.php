@@ -12,8 +12,20 @@ class result extends Model
      * @var string
      */
     public $downloadUrl;
+
+    /**
+     * @var string
+     */
+    public $resourceName;
+
+    /**
+     * @var int
+     */
+    public $size;
     protected $_name = [
         'downloadUrl' => 'downloadUrl',
+        'resourceName' => 'resourceName',
+        'size' => 'size',
     ];
 
     public function validate() {}
@@ -23,6 +35,12 @@ class result extends Model
         $res = [];
         if (null !== $this->downloadUrl) {
             $res['downloadUrl'] = $this->downloadUrl;
+        }
+        if (null !== $this->resourceName) {
+            $res['resourceName'] = $this->resourceName;
+        }
+        if (null !== $this->size) {
+            $res['size'] = $this->size;
         }
 
         return $res;
@@ -38,6 +56,12 @@ class result extends Model
         $model = new self();
         if (isset($map['downloadUrl'])) {
             $model->downloadUrl = $map['downloadUrl'];
+        }
+        if (isset($map['resourceName'])) {
+            $model->resourceName = $map['resourceName'];
+        }
+        if (isset($map['size'])) {
+            $model->size = $map['size'];
         }
 
         return $model;

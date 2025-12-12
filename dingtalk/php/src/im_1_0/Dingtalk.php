@@ -6325,6 +6325,12 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->forceExpand)) {
+            $body['forceExpand'] = $request->forceExpand;
+        }
+        if (!Utils::isUnset($request->isQtWnd)) {
+            $body['isQtWnd'] = $request->isQtWnd;
+        }
         if (!Utils::isUnset($request->openConversationId)) {
             $body['openConversationId'] = $request->openConversationId;
         }

@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CopyLinkToWorkspaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CopyLinkToWorkspaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CopyLinkToWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingResponse;
@@ -37,6 +40,72 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 将闪会添加链接到知识库
+     *  *
+     * @param CopyLinkToWorkspaceRequest $request CopyLinkToWorkspaceRequest
+     * @param CopyLinkToWorkspaceHeaders $headers CopyLinkToWorkspaceHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CopyLinkToWorkspaceResponse CopyLinkToWorkspaceResponse
+     */
+    public function copyLinkToWorkspaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->parentNodeKey)) {
+            $body['parentNodeKey'] = $request->parentNodeKey;
+        }
+        if (!Utils::isUnset($request->shanhuiKey)) {
+            $body['shanhuiKey'] = $request->shanhuiKey;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->workspaceKey)) {
+            $body['workspaceKey'] = $request->workspaceKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CopyLinkToWorkspace',
+            'version' => 'flashmeeting_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmeeting/meetings/copyLinkToWorkspace',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CopyLinkToWorkspaceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 将闪会添加链接到知识库
+     *  *
+     * @param CopyLinkToWorkspaceRequest $request CopyLinkToWorkspaceRequest
+     *
+     * @return CopyLinkToWorkspaceResponse CopyLinkToWorkspaceResponse
+     */
+    public function copyLinkToWorkspace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CopyLinkToWorkspaceHeaders([]);
+
+        return $this->copyLinkToWorkspaceWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -66,6 +66,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\RemoveSuperUserMeetingRoomHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\RemoveSuperUserMeetingRoomRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\RemoveSuperUserMeetingRoomResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\SendCentralControlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\SendCentralControlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\SendCentralControlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\SetSuperUserMeetingRoomHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\SetSuperUserMeetingRoomRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\SetSuperUserMeetingRoomResponse;
@@ -305,6 +308,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->roomCapacity)) {
             $body['roomCapacity'] = $request->roomCapacity;
+        }
+        if (!Utils::isUnset($request->roomDescription)) {
+            $body['roomDescription'] = $request->roomDescription;
         }
         if (!Utils::isUnset($request->roomLabelIds)) {
             $body['roomLabelIds'] = $request->roomLabelIds;
@@ -1446,6 +1452,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 发送Rooms中控API信令
+     *  *
+     * @param SendCentralControlRequest $request SendCentralControlRequest
+     * @param SendCentralControlHeaders $headers SendCentralControlHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SendCentralControlResponse SendCentralControlResponse
+     */
+    public function sendCentralControlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->controlBody)) {
+            $body['controlBody'] = $request->controlBody;
+        }
+        if (!Utils::isUnset($request->roomId)) {
+            $body['roomId'] = $request->roomId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SendCentralControl',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/central/control',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SendCentralControlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 发送Rooms中控API信令
+     *  *
+     * @param SendCentralControlRequest $request SendCentralControlRequest
+     *
+     * @return SendCentralControlResponse SendCentralControlResponse
+     */
+    public function sendCentralControl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendCentralControlHeaders([]);
+
+        return $this->sendCentralControlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
      *  *
      * @param SetSuperUserMeetingRoomRequest $request SetSuperUserMeetingRoomRequest
@@ -1652,6 +1721,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->roomCapacity)) {
             $body['roomCapacity'] = $request->roomCapacity;
+        }
+        if (!Utils::isUnset($request->roomDescription)) {
+            $body['roomDescription'] = $request->roomDescription;
         }
         if (!Utils::isUnset($request->roomId)) {
             $body['roomId'] = $request->roomId;

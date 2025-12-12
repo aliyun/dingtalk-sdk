@@ -11,6 +11,27 @@ class OpenAgoalObjectiveDTO extends Model
     /**
      * @description This parameter is required.
      *
+     * @var string
+     */
+    public $approveStatus;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @var int
+     */
+    public $created;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @var string[]
+     */
+    public $downAlignObjectIds;
+
+    /**
+     * @description This parameter is required.
+     *
      * @var OpenAgoalUserDTO
      */
     public $executor;
@@ -71,7 +92,7 @@ class OpenAgoalObjectiveDTO extends Model
     /**
      * @description This parameter is required.
      *
-     * @var OpenAgoalUserDTO
+     * @var OpenAgoalUserDTO[]
      */
     public $relatedUsers;
 
@@ -103,12 +124,29 @@ class OpenAgoalObjectiveDTO extends Model
     /**
      * @description This parameter is required.
      *
+     * @var string[]
+     */
+    public $upAlignObjectIds;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @var int
+     */
+    public $updated;
+
+    /**
+     * @description This parameter is required.
+     *
      * @example 30
      *
      * @var float
      */
     public $weight;
     protected $_name = [
+        'approveStatus' => 'approveStatus',
+        'created' => 'created',
+        'downAlignObjectIds' => 'downAlignObjectIds',
         'executor' => 'executor',
         'keyActions' => 'keyActions',
         'keyResults' => 'keyResults',
@@ -121,6 +159,8 @@ class OpenAgoalObjectiveDTO extends Model
         'status' => 'status',
         'teams' => 'teams',
         'title' => 'title',
+        'upAlignObjectIds' => 'upAlignObjectIds',
+        'updated' => 'updated',
         'weight' => 'weight',
     ];
 
@@ -129,6 +169,15 @@ class OpenAgoalObjectiveDTO extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->approveStatus) {
+            $res['approveStatus'] = $this->approveStatus;
+        }
+        if (null !== $this->created) {
+            $res['created'] = $this->created;
+        }
+        if (null !== $this->downAlignObjectIds) {
+            $res['downAlignObjectIds'] = $this->downAlignObjectIds;
+        }
         if (null !== $this->executor) {
             $res['executor'] = null !== $this->executor ? $this->executor->toMap() : null;
         }
@@ -166,7 +215,13 @@ class OpenAgoalObjectiveDTO extends Model
             $res['progress'] = $this->progress;
         }
         if (null !== $this->relatedUsers) {
-            $res['relatedUsers'] = null !== $this->relatedUsers ? $this->relatedUsers->toMap() : null;
+            $res['relatedUsers'] = [];
+            if (null !== $this->relatedUsers && \is_array($this->relatedUsers)) {
+                $n = 0;
+                foreach ($this->relatedUsers as $item) {
+                    $res['relatedUsers'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -183,6 +238,12 @@ class OpenAgoalObjectiveDTO extends Model
         if (null !== $this->title) {
             $res['title'] = $this->title;
         }
+        if (null !== $this->upAlignObjectIds) {
+            $res['upAlignObjectIds'] = $this->upAlignObjectIds;
+        }
+        if (null !== $this->updated) {
+            $res['updated'] = $this->updated;
+        }
         if (null !== $this->weight) {
             $res['weight'] = $this->weight;
         }
@@ -198,6 +259,17 @@ class OpenAgoalObjectiveDTO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['approveStatus'])) {
+            $model->approveStatus = $map['approveStatus'];
+        }
+        if (isset($map['created'])) {
+            $model->created = $map['created'];
+        }
+        if (isset($map['downAlignObjectIds'])) {
+            if (!empty($map['downAlignObjectIds'])) {
+                $model->downAlignObjectIds = $map['downAlignObjectIds'];
+            }
+        }
         if (isset($map['executor'])) {
             $model->executor = OpenAgoalUserDTO::fromMap($map['executor']);
         }
@@ -235,7 +307,13 @@ class OpenAgoalObjectiveDTO extends Model
             $model->progress = $map['progress'];
         }
         if (isset($map['relatedUsers'])) {
-            $model->relatedUsers = OpenAgoalUserDTO::fromMap($map['relatedUsers']);
+            if (!empty($map['relatedUsers'])) {
+                $model->relatedUsers = [];
+                $n = 0;
+                foreach ($map['relatedUsers'] as $item) {
+                    $model->relatedUsers[$n++] = null !== $item ? OpenAgoalUserDTO::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
@@ -251,6 +329,14 @@ class OpenAgoalObjectiveDTO extends Model
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
+        }
+        if (isset($map['upAlignObjectIds'])) {
+            if (!empty($map['upAlignObjectIds'])) {
+                $model->upAlignObjectIds = $map['upAlignObjectIds'];
+            }
+        }
+        if (isset($map['updated'])) {
+            $model->updated = $map['updated'];
         }
         if (isset($map['weight'])) {
             $model->weight = $map['weight'];

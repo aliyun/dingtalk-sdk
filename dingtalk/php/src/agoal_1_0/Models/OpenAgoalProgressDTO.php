@@ -32,9 +32,23 @@ class OpenAgoalProgressDTO extends Model
     /**
      * @description This parameter is required.
      *
+     * @var OpenAgoalKeyResultDTO[]
+     */
+    public $keyResults;
+
+    /**
+     * @description This parameter is required.
+     *
      * @var OpenAgoalUserDTO
      */
     public $modifier;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @var int
+     */
+    public $progress;
 
     /**
      * @description This parameter is required.
@@ -53,7 +67,9 @@ class OpenAgoalProgressDTO extends Model
         'created' => 'created',
         'creator' => 'creator',
         'htmlContent' => 'htmlContent',
+        'keyResults' => 'keyResults',
         'modifier' => 'modifier',
+        'progress' => 'progress',
         'progressId' => 'progressId',
         'updated' => 'updated',
     ];
@@ -72,8 +88,20 @@ class OpenAgoalProgressDTO extends Model
         if (null !== $this->htmlContent) {
             $res['htmlContent'] = $this->htmlContent;
         }
+        if (null !== $this->keyResults) {
+            $res['keyResults'] = [];
+            if (null !== $this->keyResults && \is_array($this->keyResults)) {
+                $n = 0;
+                foreach ($this->keyResults as $item) {
+                    $res['keyResults'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->modifier) {
             $res['modifier'] = null !== $this->modifier ? $this->modifier->toMap() : null;
+        }
+        if (null !== $this->progress) {
+            $res['progress'] = $this->progress;
         }
         if (null !== $this->progressId) {
             $res['progressId'] = $this->progressId;
@@ -102,8 +130,20 @@ class OpenAgoalProgressDTO extends Model
         if (isset($map['htmlContent'])) {
             $model->htmlContent = $map['htmlContent'];
         }
+        if (isset($map['keyResults'])) {
+            if (!empty($map['keyResults'])) {
+                $model->keyResults = [];
+                $n = 0;
+                foreach ($map['keyResults'] as $item) {
+                    $model->keyResults[$n++] = null !== $item ? OpenAgoalKeyResultDTO::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['modifier'])) {
             $model->modifier = OpenAgoalUserDTO::fromMap($map['modifier']);
+        }
+        if (isset($map['progress'])) {
+            $model->progress = $map['progress'];
         }
         if (isset($map['progressId'])) {
             $model->progressId = $map['progressId'];

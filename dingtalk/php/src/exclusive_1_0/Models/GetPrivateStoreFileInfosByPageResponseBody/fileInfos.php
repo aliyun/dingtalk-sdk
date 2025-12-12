@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class fileInfos extends Model
 {
     /**
+     * @example eg:图片、文档、文本、压缩包、视频、音频
+     *
+     * @var string
+     */
+    public $contentTypeMcms;
+
+    /**
+     * @example staff123
+     *
+     * @var string
+     */
+    public $creatorStaffId;
+
+    /**
      * @var int
      */
     public $dentryId;
@@ -34,6 +48,13 @@ class fileInfos extends Model
     public $fileSize;
 
     /**
+     * @example eg:IM, 其他, 个人空间, 企业内共享
+     *
+     * @var string
+     */
+    public $sceneTypeMcms;
+
+    /**
      * @var int
      */
     public $spaceId;
@@ -43,11 +64,14 @@ class fileInfos extends Model
      */
     public $status;
     protected $_name = [
+        'contentTypeMcms' => 'contentTypeMcms',
+        'creatorStaffId' => 'creatorStaffId',
         'dentryId' => 'dentryId',
         'fileCreateTime' => 'fileCreateTime',
         'fileName' => 'fileName',
         'filePath' => 'filePath',
         'fileSize' => 'fileSize',
+        'sceneTypeMcms' => 'sceneTypeMcms',
         'spaceId' => 'spaceId',
         'status' => 'status',
     ];
@@ -57,6 +81,12 @@ class fileInfos extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->contentTypeMcms) {
+            $res['contentTypeMcms'] = $this->contentTypeMcms;
+        }
+        if (null !== $this->creatorStaffId) {
+            $res['creatorStaffId'] = $this->creatorStaffId;
+        }
         if (null !== $this->dentryId) {
             $res['dentryId'] = $this->dentryId;
         }
@@ -71,6 +101,9 @@ class fileInfos extends Model
         }
         if (null !== $this->fileSize) {
             $res['fileSize'] = $this->fileSize;
+        }
+        if (null !== $this->sceneTypeMcms) {
+            $res['sceneTypeMcms'] = $this->sceneTypeMcms;
         }
         if (null !== $this->spaceId) {
             $res['spaceId'] = $this->spaceId;
@@ -90,6 +123,12 @@ class fileInfos extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['contentTypeMcms'])) {
+            $model->contentTypeMcms = $map['contentTypeMcms'];
+        }
+        if (isset($map['creatorStaffId'])) {
+            $model->creatorStaffId = $map['creatorStaffId'];
+        }
         if (isset($map['dentryId'])) {
             $model->dentryId = $map['dentryId'];
         }
@@ -104,6 +143,9 @@ class fileInfos extends Model
         }
         if (isset($map['fileSize'])) {
             $model->fileSize = $map['fileSize'];
+        }
+        if (isset($map['sceneTypeMcms'])) {
+            $model->sceneTypeMcms = $map['sceneTypeMcms'];
         }
         if (isset($map['spaceId'])) {
             $model->spaceId = $map['spaceId'];

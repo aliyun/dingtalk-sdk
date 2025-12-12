@@ -5,15 +5,27 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vhrm_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddCustomRosterFieldHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddCustomRosterFieldRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddCustomRosterFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmLegalEntityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmLegalEntityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmLegalEntityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\CreateRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\CreateRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\CreateRecordResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeleteCustomRosterFieldHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeleteCustomRosterFieldRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeleteCustomRosterFieldResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeleteRosterFieldFormHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeleteRosterFieldFormRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeleteRosterFieldFormResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeviceMarketManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeviceMarketOrderManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryHeaders;
@@ -144,6 +156,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateRespon
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SendIsvCardMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SendIsvCardMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SendIsvCardMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SendRealAuthInviteMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SendRealAuthInviteMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SendRealAuthInviteMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitResponse;
@@ -156,6 +171,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncSolutionStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateCustomRosterFieldHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateCustomRosterFieldRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateCustomRosterFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateEmpDismissionInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateEmpDismissionInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateEmpDismissionInfoResponse;
@@ -171,6 +189,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmVersionRollBackStatusResp
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateRosterFieldFormHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateRosterFieldFormRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateRosterFieldFormResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UploadAttachmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UploadAttachmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UploadAttachmentResponse;
@@ -193,6 +214,99 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 添加自定义花名册字段
+     *  *
+     * @param AddCustomRosterFieldRequest $request AddCustomRosterFieldRequest
+     * @param AddCustomRosterFieldHeaders $headers AddCustomRosterFieldHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddCustomRosterFieldResponse AddCustomRosterFieldResponse
+     */
+    public function addCustomRosterFieldWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->editFromEmployeeFlag)) {
+            $body['editFromEmployeeFlag'] = $request->editFromEmployeeFlag;
+        }
+        if (!Utils::isUnset($request->fieldName)) {
+            $body['fieldName'] = $request->fieldName;
+        }
+        if (!Utils::isUnset($request->fieldType)) {
+            $body['fieldType'] = $request->fieldType;
+        }
+        if (!Utils::isUnset($request->groupId)) {
+            $body['groupId'] = $request->groupId;
+        }
+        if (!Utils::isUnset($request->hiddenFromEmployeeFlag)) {
+            $body['hiddenFromEmployeeFlag'] = $request->hiddenFromEmployeeFlag;
+        }
+        if (!Utils::isUnset($request->hint)) {
+            $body['hint'] = $request->hint;
+        }
+        if (!Utils::isUnset($request->noWatermark)) {
+            $body['noWatermark'] = $request->noWatermark;
+        }
+        if (!Utils::isUnset($request->numberDecimalPlace)) {
+            $body['numberDecimalPlace'] = $request->numberDecimalPlace;
+        }
+        if (!Utils::isUnset($request->numberFormatType)) {
+            $body['numberFormatType'] = $request->numberFormatType;
+        }
+        if (!Utils::isUnset($request->numberValueType)) {
+            $body['numberValueType'] = $request->numberValueType;
+        }
+        if (!Utils::isUnset($request->optionText)) {
+            $body['optionText'] = $request->optionText;
+        }
+        if (!Utils::isUnset($request->required)) {
+            $body['required'] = $request->required;
+        }
+        if (!Utils::isUnset($request->visibleByEmp)) {
+            $body['visibleByEmp'] = $request->visibleByEmp;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AddCustomRosterField',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/customRosterField/add',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AddCustomRosterFieldResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 添加自定义花名册字段
+     *  *
+     * @param AddCustomRosterFieldRequest $request AddCustomRosterFieldRequest
+     *
+     * @return AddCustomRosterFieldResponse AddCustomRosterFieldResponse
+     */
+    public function addCustomRosterField($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCustomRosterFieldHeaders([]);
+
+        return $this->addCustomRosterFieldWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -348,6 +462,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 新建花名册字段分组
+     *  *
+     * @param AddRosterFieldFormRequest $request AddRosterFieldFormRequest
+     * @param AddRosterFieldFormHeaders $headers AddRosterFieldFormHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddRosterFieldFormResponse AddRosterFieldFormResponse
+     */
+    public function addRosterFieldFormWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->detail)) {
+            $body['detail'] = $request->detail;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AddRosterFieldForm',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/rosterFieldForm/add',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AddRosterFieldFormResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 新建花名册字段分组
+     *  *
+     * @param AddRosterFieldFormRequest $request AddRosterFieldFormRequest
+     *
+     * @return AddRosterFieldFormResponse AddRosterFieldFormResponse
+     */
+    public function addRosterFieldForm($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddRosterFieldFormHeaders([]);
+
+        return $this->addRosterFieldFormWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建电子签签署记录
      *  *
      * @param CreateRecordRequest $request CreateRecordRequest
@@ -435,6 +609,126 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateRecordHeaders([]);
 
         return $this->createRecordWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除花名册自定义字段
+     *  *
+     * @param DeleteCustomRosterFieldRequest $request DeleteCustomRosterFieldRequest
+     * @param DeleteCustomRosterFieldHeaders $headers DeleteCustomRosterFieldHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteCustomRosterFieldResponse DeleteCustomRosterFieldResponse
+     */
+    public function deleteCustomRosterFieldWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fieldCode)) {
+            $body['fieldCode'] = $request->fieldCode;
+        }
+        if (!Utils::isUnset($request->groupId)) {
+            $body['groupId'] = $request->groupId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteCustomRosterField',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/customRosterField/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteCustomRosterFieldResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除花名册自定义字段
+     *  *
+     * @param DeleteCustomRosterFieldRequest $request DeleteCustomRosterFieldRequest
+     *
+     * @return DeleteCustomRosterFieldResponse DeleteCustomRosterFieldResponse
+     */
+    public function deleteCustomRosterField($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteCustomRosterFieldHeaders([]);
+
+        return $this->deleteCustomRosterFieldWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除花名册字段分组
+     *  *
+     * @param DeleteRosterFieldFormRequest $request DeleteRosterFieldFormRequest
+     * @param DeleteRosterFieldFormHeaders $headers DeleteRosterFieldFormHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteRosterFieldFormResponse DeleteRosterFieldFormResponse
+     */
+    public function deleteRosterFieldFormWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->formId)) {
+            $body['formId'] = $request->formId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteRosterFieldForm',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/rosterFieldForm/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteRosterFieldFormResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除花名册字段分组
+     *  *
+     * @param DeleteRosterFieldFormRequest $request DeleteRosterFieldFormRequest
+     *
+     * @return DeleteRosterFieldFormResponse DeleteRosterFieldFormResponse
+     */
+    public function deleteRosterFieldForm($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteRosterFieldFormHeaders([]);
+
+        return $this->deleteRosterFieldFormWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3272,6 +3566,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 发送实人认证邀请消息
+     *  *
+     * @param SendRealAuthInviteMessageRequest $request SendRealAuthInviteMessageRequest
+     * @param SendRealAuthInviteMessageHeaders $headers SendRealAuthInviteMessageHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SendRealAuthInviteMessageResponse SendRealAuthInviteMessageResponse
+     */
+    public function sendRealAuthInviteMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->inviterId)) {
+            $body['inviterId'] = $request->inviterId;
+        }
+        if (!Utils::isUnset($request->onWorkingEmpSearchVO)) {
+            $body['onWorkingEmpSearchVO'] = $request->onWorkingEmpSearchVO;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SendRealAuthInviteMessage',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/realAuth/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SendRealAuthInviteMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 发送实人认证邀请消息
+     *  *
+     * @param SendRealAuthInviteMessageRequest $request SendRealAuthInviteMessageRequest
+     *
+     * @return SendRealAuthInviteMessageResponse SendRealAuthInviteMessageResponse
+     */
+    public function sendRealAuthInviteMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendRealAuthInviteMessageHeaders([]);
+
+        return $this->sendRealAuthInviteMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 初始化解决方案任务
      *  *
      * @param SolutionTaskInitRequest $request SolutionTaskInitRequest
@@ -3596,6 +3950,153 @@ class Dingtalk extends OpenApiClient
         $headers = new SyncTaskTemplateHeaders([]);
 
         return $this->syncTaskTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新花名册自定义字段
+     *  *
+     * @param UpdateCustomRosterFieldRequest $request UpdateCustomRosterFieldRequest
+     * @param UpdateCustomRosterFieldHeaders $headers UpdateCustomRosterFieldHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateCustomRosterFieldResponse UpdateCustomRosterFieldResponse
+     */
+    public function updateCustomRosterFieldWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->contactClientFlag)) {
+            $body['contactClientFlag'] = $request->contactClientFlag;
+        }
+        if (!Utils::isUnset($request->contactFlag)) {
+            $body['contactFlag'] = $request->contactFlag;
+        }
+        if (!Utils::isUnset($request->contactSource)) {
+            $body['contactSource'] = $request->contactSource;
+        }
+        if (!Utils::isUnset($request->contactSystemFlag)) {
+            $body['contactSystemFlag'] = $request->contactSystemFlag;
+        }
+        if (!Utils::isUnset($request->deleted)) {
+            $body['deleted'] = $request->deleted;
+        }
+        if (!Utils::isUnset($request->derived)) {
+            $body['derived'] = $request->derived;
+        }
+        if (!Utils::isUnset($request->disabled)) {
+            $body['disabled'] = $request->disabled;
+        }
+        if (!Utils::isUnset($request->editFromEmployeeFlag)) {
+            $body['editFromEmployeeFlag'] = $request->editFromEmployeeFlag;
+        }
+        if (!Utils::isUnset($request->editableByHr)) {
+            $body['editableByHr'] = $request->editableByHr;
+        }
+        if (!Utils::isUnset($request->fieldCode)) {
+            $body['fieldCode'] = $request->fieldCode;
+        }
+        if (!Utils::isUnset($request->fieldName)) {
+            $body['fieldName'] = $request->fieldName;
+        }
+        if (!Utils::isUnset($request->fieldTip)) {
+            $body['fieldTip'] = $request->fieldTip;
+        }
+        if (!Utils::isUnset($request->fieldType)) {
+            $body['fieldType'] = $request->fieldType;
+        }
+        if (!Utils::isUnset($request->groupId)) {
+            $body['groupId'] = $request->groupId;
+        }
+        if (!Utils::isUnset($request->hiddenFromEmployeeFlag)) {
+            $body['hiddenFromEmployeeFlag'] = $request->hiddenFromEmployeeFlag;
+        }
+        if (!Utils::isUnset($request->hint)) {
+            $body['hint'] = $request->hint;
+        }
+        if (!Utils::isUnset($request->historyField)) {
+            $body['historyField'] = $request->historyField;
+        }
+        if (!Utils::isUnset($request->index)) {
+            $body['index'] = $request->index;
+        }
+        if (!Utils::isUnset($request->modifyOptions)) {
+            $body['modifyOptions'] = $request->modifyOptions;
+        }
+        if (!Utils::isUnset($request->noWatermark)) {
+            $body['noWatermark'] = $request->noWatermark;
+        }
+        if (!Utils::isUnset($request->numberDecimalPlace)) {
+            $body['numberDecimalPlace'] = $request->numberDecimalPlace;
+        }
+        if (!Utils::isUnset($request->numberFormatType)) {
+            $body['numberFormatType'] = $request->numberFormatType;
+        }
+        if (!Utils::isUnset($request->numberValueType)) {
+            $body['numberValueType'] = $request->numberValueType;
+        }
+        if (!Utils::isUnset($request->optionText)) {
+            $body['optionText'] = $request->optionText;
+        }
+        if (!Utils::isUnset($request->required)) {
+            $body['required'] = $request->required;
+        }
+        if (!Utils::isUnset($request->sourceFieldCode)) {
+            $body['sourceFieldCode'] = $request->sourceFieldCode;
+        }
+        if (!Utils::isUnset($request->systemFlag)) {
+            $body['systemFlag'] = $request->systemFlag;
+        }
+        if (!Utils::isUnset($request->textToSelectField)) {
+            $body['textToSelectField'] = $request->textToSelectField;
+        }
+        if (!Utils::isUnset($request->updateUserId)) {
+            $body['updateUserId'] = $request->updateUserId;
+        }
+        if (!Utils::isUnset($request->value)) {
+            $body['value'] = $request->value;
+        }
+        if (!Utils::isUnset($request->visibleByEmp)) {
+            $body['visibleByEmp'] = $request->visibleByEmp;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateCustomRosterField',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/customRosterField/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateCustomRosterFieldResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新花名册自定义字段
+     *  *
+     * @param UpdateCustomRosterFieldRequest $request UpdateCustomRosterFieldRequest
+     *
+     * @return UpdateCustomRosterFieldResponse UpdateCustomRosterFieldResponse
+     */
+    public function updateCustomRosterField($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCustomRosterFieldHeaders([]);
+
+        return $this->updateCustomRosterFieldWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3945,6 +4446,72 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateIsvCardMessageHeaders([]);
 
         return $this->updateIsvCardMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新花名册字段分组
+     *  *
+     * @param UpdateRosterFieldFormRequest $request UpdateRosterFieldFormRequest
+     * @param UpdateRosterFieldFormHeaders $headers UpdateRosterFieldFormHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateRosterFieldFormResponse UpdateRosterFieldFormResponse
+     */
+    public function updateRosterFieldFormWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->detail)) {
+            $body['detail'] = $request->detail;
+        }
+        if (!Utils::isUnset($request->formId)) {
+            $body['formId'] = $request->formId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateRosterFieldForm',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/rosterFieldForm/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateRosterFieldFormResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新花名册字段分组
+     *  *
+     * @param UpdateRosterFieldFormRequest $request UpdateRosterFieldFormRequest
+     *
+     * @return UpdateRosterFieldFormResponse UpdateRosterFieldFormResponse
+     */
+    public function updateRosterFieldForm($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRosterFieldFormHeaders([]);
+
+        return $this->updateRosterFieldFormWithOptions($request, $headers, $runtime);
     }
 
     /**

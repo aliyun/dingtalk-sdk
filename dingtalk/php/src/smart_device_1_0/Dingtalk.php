@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\AddDeviceVideoConferenceM
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateDeviceVideoConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateDeviceVideoConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateDeviceVideoConferenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateExportDeviceStatisticTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateExportDeviceStatisticTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateExportDeviceStatisticTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\ExtractFacialFeatureHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\ExtractFacialFeatureRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\ExtractFacialFeatureResponse;
@@ -28,6 +31,9 @@ use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\QueryDeviceVideoConferenc
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\TextToImageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\TextToImageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\TextToImageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\UpdateExportDeviceStatisticHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\UpdateExportDeviceStatisticRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\UpdateExportDeviceStatisticResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\VoiceCloneHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\VoiceCloneRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\VoiceCloneResponse;
@@ -169,6 +175,72 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateDeviceVideoConferenceHeaders([]);
 
         return $this->createDeviceVideoConferenceWithOptions($deviceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建导出设备数据任务
+     *  *
+     * @param CreateExportDeviceStatisticTaskRequest $request CreateExportDeviceStatisticTaskRequest
+     * @param CreateExportDeviceStatisticTaskHeaders $headers CreateExportDeviceStatisticTaskHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateExportDeviceStatisticTaskResponse CreateExportDeviceStatisticTaskResponse
+     */
+    public function createExportDeviceStatisticTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->aiSheetTemplateId)) {
+            $body['aiSheetTemplateId'] = $request->aiSheetTemplateId;
+        }
+        if (!Utils::isUnset($request->creatorCorpId)) {
+            $body['creatorCorpId'] = $request->creatorCorpId;
+        }
+        if (!Utils::isUnset($request->creatorUnionId)) {
+            $body['creatorUnionId'] = $request->creatorUnionId;
+        }
+        if (!Utils::isUnset($request->taskName)) {
+            $body['taskName'] = $request->taskName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateExportDeviceStatisticTask',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/statistic/create',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateExportDeviceStatisticTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建导出设备数据任务
+     *  *
+     * @param CreateExportDeviceStatisticTaskRequest $request CreateExportDeviceStatisticTaskRequest
+     *
+     * @return CreateExportDeviceStatisticTaskResponse CreateExportDeviceStatisticTaskResponse
+     */
+    public function createExportDeviceStatisticTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateExportDeviceStatisticTaskHeaders([]);
+
+        return $this->createExportDeviceStatisticTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -547,6 +619,72 @@ class Dingtalk extends OpenApiClient
         $headers = new TextToImageHeaders([]);
 
         return $this->textToImageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新导出设备数据
+     *  *
+     * @param UpdateExportDeviceStatisticRequest $request UpdateExportDeviceStatisticRequest
+     * @param UpdateExportDeviceStatisticHeaders $headers UpdateExportDeviceStatisticHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateExportDeviceStatisticResponse UpdateExportDeviceStatisticResponse
+     */
+    public function updateExportDeviceStatisticWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->creatorCorpId)) {
+            $body['creatorCorpId'] = $request->creatorCorpId;
+        }
+        if (!Utils::isUnset($request->creatorUnionId)) {
+            $body['creatorUnionId'] = $request->creatorUnionId;
+        }
+        if (!Utils::isUnset($request->records)) {
+            $body['records'] = $request->records;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateExportDeviceStatistic',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/statistic',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateExportDeviceStatisticResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新导出设备数据
+     *  *
+     * @param UpdateExportDeviceStatisticRequest $request UpdateExportDeviceStatisticRequest
+     *
+     * @return UpdateExportDeviceStatisticResponse UpdateExportDeviceStatisticResponse
+     */
+    public function updateExportDeviceStatistic($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateExportDeviceStatisticHeaders([]);
+
+        return $this->updateExportDeviceStatisticWithOptions($request, $headers, $runtime);
     }
 
     /**

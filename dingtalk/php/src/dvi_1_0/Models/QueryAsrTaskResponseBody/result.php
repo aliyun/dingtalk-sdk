@@ -17,12 +17,7 @@ class result extends Model
     /**
      * @var string
      */
-    public $errorCode;
-
-    /**
-     * @var string
-     */
-    public $errorMessage;
+    public $nextToken;
 
     /**
      * @var resultInfo
@@ -40,8 +35,7 @@ class result extends Model
     public $taskStatus;
     protected $_name = [
         'bizKey' => 'bizKey',
-        'errorCode' => 'errorCode',
-        'errorMessage' => 'errorMessage',
+        'nextToken' => 'nextToken',
         'resultInfo' => 'resultInfo',
         'taskId' => 'taskId',
         'taskStatus' => 'taskStatus',
@@ -55,11 +49,8 @@ class result extends Model
         if (null !== $this->bizKey) {
             $res['bizKey'] = $this->bizKey;
         }
-        if (null !== $this->errorCode) {
-            $res['errorCode'] = $this->errorCode;
-        }
-        if (null !== $this->errorMessage) {
-            $res['errorMessage'] = $this->errorMessage;
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
         }
         if (null !== $this->resultInfo) {
             $res['resultInfo'] = null !== $this->resultInfo ? $this->resultInfo->toMap() : null;
@@ -85,11 +76,8 @@ class result extends Model
         if (isset($map['bizKey'])) {
             $model->bizKey = $map['bizKey'];
         }
-        if (isset($map['errorCode'])) {
-            $model->errorCode = $map['errorCode'];
-        }
-        if (isset($map['errorMessage'])) {
-            $model->errorMessage = $map['errorMessage'];
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
         }
         if (isset($map['resultInfo'])) {
             $model->resultInfo = resultInfo::fromMap($map['resultInfo']);

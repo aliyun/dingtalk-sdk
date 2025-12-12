@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\OpenAgoalObjectiveDimensionDTO\children;
 use AlibabaCloud\Tea\Model;
 
 class OpenAgoalObjectiveDimensionDTO extends Model
@@ -11,7 +12,7 @@ class OpenAgoalObjectiveDimensionDTO extends Model
     /**
      * @description This parameter is required.
      *
-     * @var OpenAgoalObjectiveDimensionDTO[]
+     * @var children[]
      */
     public $children;
 
@@ -116,7 +117,7 @@ class OpenAgoalObjectiveDimensionDTO extends Model
                 $model->children = [];
                 $n = 0;
                 foreach ($map['children'] as $item) {
-                    $model->children[$n++] = null !== $item ? self::fromMap($item) : $item;
+                    $model->children[$n++] = null !== $item ? children::fromMap($item) : $item;
                 }
             }
         }

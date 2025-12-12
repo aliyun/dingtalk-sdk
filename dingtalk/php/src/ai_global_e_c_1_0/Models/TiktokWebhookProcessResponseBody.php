@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class TiktokWebhookProcessResponseBody extends Model
 {
     /**
+     * @var int
+     */
+    public $code;
+
+    /**
      * @var string
      */
     public $errorCode;
@@ -29,6 +34,7 @@ class TiktokWebhookProcessResponseBody extends Model
      */
     public $success;
     protected $_name = [
+        'code' => 'code',
         'errorCode' => 'errorCode',
         'errorMsg' => 'errorMsg',
         'omniChannelTiktokWebhookRsp' => 'omniChannelTiktokWebhookRsp',
@@ -40,6 +46,9 @@ class TiktokWebhookProcessResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->code) {
+            $res['code'] = $this->code;
+        }
         if (null !== $this->errorCode) {
             $res['errorCode'] = $this->errorCode;
         }
@@ -64,6 +73,9 @@ class TiktokWebhookProcessResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['code'])) {
+            $model->code = $map['code'];
+        }
         if (isset($map['errorCode'])) {
             $model->errorCode = $map['errorCode'];
         }

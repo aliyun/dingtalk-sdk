@@ -47,6 +47,13 @@ class UpdateMeetingRoomRequest extends Model
     public $roomCapacity;
 
     /**
+     * @example 此处添加对会议室的描述信息
+     *
+     * @var string
+     */
+    public $roomDescription;
+
+    /**
      * @description This parameter is required.
      *
      * @example 0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed
@@ -101,6 +108,7 @@ class UpdateMeetingRoomRequest extends Model
         'openReservation' => 'openReservation',
         'reservationAuthority' => 'reservationAuthority',
         'roomCapacity' => 'roomCapacity',
+        'roomDescription' => 'roomDescription',
         'roomId' => 'roomId',
         'roomLabelIds' => 'roomLabelIds',
         'roomLocation' => 'roomLocation',
@@ -132,6 +140,9 @@ class UpdateMeetingRoomRequest extends Model
         }
         if (null !== $this->roomCapacity) {
             $res['roomCapacity'] = $this->roomCapacity;
+        }
+        if (null !== $this->roomDescription) {
+            $res['roomDescription'] = $this->roomDescription;
         }
         if (null !== $this->roomId) {
             $res['roomId'] = $this->roomId;
@@ -183,6 +194,9 @@ class UpdateMeetingRoomRequest extends Model
         }
         if (isset($map['roomCapacity'])) {
             $model->roomCapacity = $map['roomCapacity'];
+        }
+        if (isset($map['roomDescription'])) {
+            $model->roomDescription = $map['roomDescription'];
         }
         if (isset($map['roomId'])) {
             $model->roomId = $map['roomId'];

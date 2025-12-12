@@ -41,11 +41,29 @@ class list_ extends Model
     /**
      * @description This parameter is required.
      *
+     * @example 1635165470201
+     *
+     * @var int
+     */
+    public $createTimeInMills;
+
+    /**
+     * @description This parameter is required.
+     *
      * @example 1633795200000
      *
      * @var int
      */
     public $finishTime;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @example 1633795200000
+     *
+     * @var int
+     */
+    public $finishTimeInMills;
 
     /**
      * @description This parameter is required.
@@ -130,7 +148,9 @@ class list_ extends Model
         'attachedProcessInstanceIds' => 'attachedProcessInstanceIds',
         'businessId' => 'businessId',
         'createTime' => 'createTime',
+        'createTimeInMills' => 'createTimeInMills',
         'finishTime' => 'finishTime',
+        'finishTimeInMills' => 'finishTimeInMills',
         'formComponentValues' => 'formComponentValues',
         'mainProcessInstanceId' => 'mainProcessInstanceId',
         'operationRecords' => 'operationRecords',
@@ -157,8 +177,14 @@ class list_ extends Model
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
         }
+        if (null !== $this->createTimeInMills) {
+            $res['createTimeInMills'] = $this->createTimeInMills;
+        }
         if (null !== $this->finishTime) {
             $res['finishTime'] = $this->finishTime;
+        }
+        if (null !== $this->finishTimeInMills) {
+            $res['finishTimeInMills'] = $this->finishTimeInMills;
         }
         if (null !== $this->formComponentValues) {
             $res['formComponentValues'] = [];
@@ -229,8 +255,14 @@ class list_ extends Model
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
         }
+        if (isset($map['createTimeInMills'])) {
+            $model->createTimeInMills = $map['createTimeInMills'];
+        }
         if (isset($map['finishTime'])) {
             $model->finishTime = $map['finishTime'];
+        }
+        if (isset($map['finishTimeInMills'])) {
+            $model->finishTimeInMills = $map['finishTimeInMills'];
         }
         if (isset($map['formComponentValues'])) {
             if (!empty($map['formComponentValues'])) {

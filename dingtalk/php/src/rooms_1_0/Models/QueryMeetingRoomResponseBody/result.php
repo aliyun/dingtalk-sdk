@@ -55,6 +55,13 @@ class result extends Model
     public $roomCapacity;
 
     /**
+     * @example 此处添加对会议室的描述信息
+     *
+     * @var string
+     */
+    public $roomDescription;
+
+    /**
      * @var roomGroup
      */
     public $roomGroup;
@@ -118,6 +125,7 @@ class result extends Model
         'isvRoomId' => 'isvRoomId',
         'reservationAuthority' => 'reservationAuthority',
         'roomCapacity' => 'roomCapacity',
+        'roomDescription' => 'roomDescription',
         'roomGroup' => 'roomGroup',
         'roomId' => 'roomId',
         'roomLabels' => 'roomLabels',
@@ -154,6 +162,9 @@ class result extends Model
         }
         if (null !== $this->roomCapacity) {
             $res['roomCapacity'] = $this->roomCapacity;
+        }
+        if (null !== $this->roomDescription) {
+            $res['roomDescription'] = $this->roomDescription;
         }
         if (null !== $this->roomGroup) {
             $res['roomGroup'] = null !== $this->roomGroup ? $this->roomGroup->toMap() : null;
@@ -222,6 +233,9 @@ class result extends Model
         }
         if (isset($map['roomCapacity'])) {
             $model->roomCapacity = $map['roomCapacity'];
+        }
+        if (isset($map['roomDescription'])) {
+            $model->roomDescription = $map['roomDescription'];
         }
         if (isset($map['roomGroup'])) {
             $model->roomGroup = roomGroup::fromMap($map['roomGroup']);

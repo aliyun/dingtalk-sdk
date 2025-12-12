@@ -36,6 +36,26 @@ class generalInvoiceVOList extends Model
     public $amountWithTax;
 
     /**
+     * @var string
+     */
+    public $aviationTaxRate;
+
+    /**
+     * @var string
+     */
+    public $caacDevelopmentFund;
+
+    /**
+     * @var string
+     */
+    public $certificationDate;
+
+    /**
+     * @var string
+     */
+    public $certificationPeriod;
+
+    /**
      * @example 1111
      *
      * @var string
@@ -93,6 +113,11 @@ class generalInvoiceVOList extends Model
     /**
      * @var string
      */
+    public $fare;
+
+    /**
+     * @var string
+     */
     public $fileId;
 
     /**
@@ -101,6 +126,11 @@ class generalInvoiceVOList extends Model
      * @var string
      */
     public $financeType;
+
+    /**
+     * @var string
+     */
+    public $fuelSurcharge;
 
     /**
      * @example RED
@@ -379,6 +409,10 @@ class generalInvoiceVOList extends Model
         'accountPeriod' => 'accountPeriod',
         'amount' => 'amount',
         'amountWithTax' => 'amountWithTax',
+        'aviationTaxRate' => 'aviationTaxRate',
+        'caacDevelopmentFund' => 'caacDevelopmentFund',
+        'certificationDate' => 'certificationDate',
+        'certificationPeriod' => 'certificationPeriod',
         'checkCode' => 'checkCode',
         'checkTime' => 'checkTime',
         'domesticOrIntl' => 'domesticOrIntl',
@@ -388,8 +422,10 @@ class generalInvoiceVOList extends Model
         'eTicketNo' => 'eTicketNo',
         'eTrainTicketDetailVOList' => 'eTrainTicketDetailVOList',
         'electronicUrl' => 'electronicUrl',
+        'fare' => 'fare',
         'fileId' => 'fileId',
         'financeType' => 'financeType',
+        'fuelSurcharge' => 'fuelSurcharge',
         'fundType' => 'fundType',
         'generalInvoiceDetailVOList' => 'generalInvoiceDetailVOList',
         'gpNo' => 'gpNo',
@@ -450,6 +486,18 @@ class generalInvoiceVOList extends Model
         if (null !== $this->amountWithTax) {
             $res['amountWithTax'] = $this->amountWithTax;
         }
+        if (null !== $this->aviationTaxRate) {
+            $res['aviationTaxRate'] = $this->aviationTaxRate;
+        }
+        if (null !== $this->caacDevelopmentFund) {
+            $res['caacDevelopmentFund'] = $this->caacDevelopmentFund;
+        }
+        if (null !== $this->certificationDate) {
+            $res['certificationDate'] = $this->certificationDate;
+        }
+        if (null !== $this->certificationPeriod) {
+            $res['certificationPeriod'] = $this->certificationPeriod;
+        }
         if (null !== $this->checkCode) {
             $res['checkCode'] = $this->checkCode;
         }
@@ -489,11 +537,17 @@ class generalInvoiceVOList extends Model
         if (null !== $this->electronicUrl) {
             $res['electronicUrl'] = $this->electronicUrl;
         }
+        if (null !== $this->fare) {
+            $res['fare'] = $this->fare;
+        }
         if (null !== $this->fileId) {
             $res['fileId'] = $this->fileId;
         }
         if (null !== $this->financeType) {
             $res['financeType'] = $this->financeType;
+        }
+        if (null !== $this->fuelSurcharge) {
+            $res['fuelSurcharge'] = $this->fuelSurcharge;
         }
         if (null !== $this->fundType) {
             $res['fundType'] = $this->fundType;
@@ -672,6 +726,18 @@ class generalInvoiceVOList extends Model
         if (isset($map['amountWithTax'])) {
             $model->amountWithTax = $map['amountWithTax'];
         }
+        if (isset($map['aviationTaxRate'])) {
+            $model->aviationTaxRate = $map['aviationTaxRate'];
+        }
+        if (isset($map['caacDevelopmentFund'])) {
+            $model->caacDevelopmentFund = $map['caacDevelopmentFund'];
+        }
+        if (isset($map['certificationDate'])) {
+            $model->certificationDate = $map['certificationDate'];
+        }
+        if (isset($map['certificationPeriod'])) {
+            $model->certificationPeriod = $map['certificationPeriod'];
+        }
         if (isset($map['checkCode'])) {
             $model->checkCode = $map['checkCode'];
         }
@@ -711,11 +777,17 @@ class generalInvoiceVOList extends Model
         if (isset($map['electronicUrl'])) {
             $model->electronicUrl = $map['electronicUrl'];
         }
+        if (isset($map['fare'])) {
+            $model->fare = $map['fare'];
+        }
         if (isset($map['fileId'])) {
             $model->fileId = $map['fileId'];
         }
         if (isset($map['financeType'])) {
             $model->financeType = $map['financeType'];
+        }
+        if (isset($map['fuelSurcharge'])) {
+            $model->fuelSurcharge = $map['fuelSurcharge'];
         }
         if (isset($map['fundType'])) {
             $model->fundType = $map['fundType'];

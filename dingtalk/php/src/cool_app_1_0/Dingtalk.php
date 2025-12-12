@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcool_app_1_0\Models\InstallCoolAppToGroupResponse
 use AlibabaCloud\SDK\Dingtalk\Vcool_app_1_0\Models\QueryCoolAppShortcutOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcool_app_1_0\Models\QueryCoolAppShortcutOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcool_app_1_0\Models\QueryCoolAppShortcutOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcool_app_1_0\Models\QueryInstalledCoolAppsInConversationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcool_app_1_0\Models\QueryInstalledCoolAppsInConversationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcool_app_1_0\Models\QueryInstalledCoolAppsInConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcool_app_1_0\Models\UninstallCoolAppFromGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcool_app_1_0\Models\UninstallCoolAppFromGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcool_app_1_0\Models\UninstallCoolAppFromGroupResponse;
@@ -230,6 +233,63 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryCoolAppShortcutOrderHeaders([]);
 
         return $this->queryCoolAppShortcutOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询会话内已安装的酷应用
+     *  *
+     * @param QueryInstalledCoolAppsInConversationRequest $request QueryInstalledCoolAppsInConversationRequest
+     * @param QueryInstalledCoolAppsInConversationHeaders $headers QueryInstalledCoolAppsInConversationHeaders
+     * @param RuntimeOptions                              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryInstalledCoolAppsInConversationResponse QueryInstalledCoolAppsInConversationResponse
+     */
+    public function queryInstalledCoolAppsInConversationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryInstalledCoolAppsInConversation',
+            'version' => 'coolApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/coolApp/installedInConversation/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryInstalledCoolAppsInConversationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询会话内已安装的酷应用
+     *  *
+     * @param QueryInstalledCoolAppsInConversationRequest $request QueryInstalledCoolAppsInConversationRequest
+     *
+     * @return QueryInstalledCoolAppsInConversationResponse QueryInstalledCoolAppsInConversationResponse
+     */
+    public function queryInstalledCoolAppsInConversation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryInstalledCoolAppsInConversationHeaders([]);
+
+        return $this->queryInstalledCoolAppsInConversationWithOptions($request, $headers, $runtime);
     }
 
     /**

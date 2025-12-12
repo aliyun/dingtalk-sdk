@@ -46,6 +46,13 @@ class SearchFormDatasRequest extends Model
     public $dynamicOrder;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
@@ -122,6 +129,7 @@ class SearchFormDatasRequest extends Model
         'createToTimeGMT' => 'createToTimeGMT',
         'currentPage' => 'currentPage',
         'dynamicOrder' => 'dynamicOrder',
+        'env' => 'env',
         'formUuid' => 'formUuid',
         'language' => 'language',
         'logicOperator' => 'logicOperator',
@@ -153,6 +161,9 @@ class SearchFormDatasRequest extends Model
         }
         if (null !== $this->dynamicOrder) {
             $res['dynamicOrder'] = $this->dynamicOrder;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
@@ -210,6 +221,9 @@ class SearchFormDatasRequest extends Model
         }
         if (isset($map['dynamicOrder'])) {
             $model->dynamicOrder = $map['dynamicOrder'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];
