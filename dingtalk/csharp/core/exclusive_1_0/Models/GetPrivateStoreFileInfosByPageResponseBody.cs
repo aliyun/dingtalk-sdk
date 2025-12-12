@@ -13,6 +13,22 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public List<GetPrivateStoreFileInfosByPageResponseBodyFileInfos> FileInfos { get; set; }
         public class GetPrivateStoreFileInfosByPageResponseBodyFileInfos : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>eg:图片、文档、文本、压缩包、视频、音频</para>
+            /// </summary>
+            [NameInMap("contentTypeMcms")]
+            [Validation(Required=false)]
+            public string ContentTypeMcms { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>staff123</para>
+            /// </summary>
+            [NameInMap("creatorStaffId")]
+            [Validation(Required=false)]
+            public string CreatorStaffId { get; set; }
+
             [NameInMap("dentryId")]
             [Validation(Required=false)]
             public long? DentryId { get; set; }
@@ -32,6 +48,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [NameInMap("fileSize")]
             [Validation(Required=false)]
             public long? FileSize { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>eg:IM, 其他, 个人空间, 企业内共享</para>
+            /// </summary>
+            [NameInMap("sceneTypeMcms")]
+            [Validation(Required=false)]
+            public string SceneTypeMcms { get; set; }
 
             [NameInMap("spaceId")]
             [Validation(Required=false)]

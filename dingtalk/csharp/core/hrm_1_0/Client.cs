@@ -31,6 +31,250 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>添加自定义花名册字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCustomRosterFieldRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddCustomRosterFieldHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCustomRosterFieldResponse
+        /// </returns>
+        public AddCustomRosterFieldResponse AddCustomRosterFieldWithOptions(AddCustomRosterFieldRequest request, AddCustomRosterFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditFromEmployeeFlag))
+            {
+                body["editFromEmployeeFlag"] = request.EditFromEmployeeFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldName))
+            {
+                body["fieldName"] = request.FieldName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldType))
+            {
+                body["fieldType"] = request.FieldType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                body["groupId"] = request.GroupId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiddenFromEmployeeFlag))
+            {
+                body["hiddenFromEmployeeFlag"] = request.HiddenFromEmployeeFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hint))
+            {
+                body["hint"] = request.Hint;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoWatermark))
+            {
+                body["noWatermark"] = request.NoWatermark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberDecimalPlace))
+            {
+                body["numberDecimalPlace"] = request.NumberDecimalPlace;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberFormatType))
+            {
+                body["numberFormatType"] = request.NumberFormatType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberValueType))
+            {
+                body["numberValueType"] = request.NumberValueType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptionText))
+            {
+                body["optionText"] = request.OptionText;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Required))
+            {
+                body["required"] = request.Required;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibleByEmp))
+            {
+                body["visibleByEmp"] = request.VisibleByEmp;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCustomRosterField",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/customRosterField/add",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCustomRosterFieldResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加自定义花名册字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCustomRosterFieldRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddCustomRosterFieldHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCustomRosterFieldResponse
+        /// </returns>
+        public async Task<AddCustomRosterFieldResponse> AddCustomRosterFieldWithOptionsAsync(AddCustomRosterFieldRequest request, AddCustomRosterFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditFromEmployeeFlag))
+            {
+                body["editFromEmployeeFlag"] = request.EditFromEmployeeFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldName))
+            {
+                body["fieldName"] = request.FieldName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldType))
+            {
+                body["fieldType"] = request.FieldType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                body["groupId"] = request.GroupId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiddenFromEmployeeFlag))
+            {
+                body["hiddenFromEmployeeFlag"] = request.HiddenFromEmployeeFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hint))
+            {
+                body["hint"] = request.Hint;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoWatermark))
+            {
+                body["noWatermark"] = request.NoWatermark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberDecimalPlace))
+            {
+                body["numberDecimalPlace"] = request.NumberDecimalPlace;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberFormatType))
+            {
+                body["numberFormatType"] = request.NumberFormatType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberValueType))
+            {
+                body["numberValueType"] = request.NumberValueType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptionText))
+            {
+                body["optionText"] = request.OptionText;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Required))
+            {
+                body["required"] = request.Required;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibleByEmp))
+            {
+                body["visibleByEmp"] = request.VisibleByEmp;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCustomRosterField",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/customRosterField/add",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCustomRosterFieldResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加自定义花名册字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCustomRosterFieldRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCustomRosterFieldResponse
+        /// </returns>
+        public AddCustomRosterFieldResponse AddCustomRosterField(AddCustomRosterFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCustomRosterFieldHeaders headers = new AddCustomRosterFieldHeaders();
+            return AddCustomRosterFieldWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加自定义花名册字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCustomRosterFieldRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCustomRosterFieldResponse
+        /// </returns>
+        public async Task<AddCustomRosterFieldResponse> AddCustomRosterFieldAsync(AddCustomRosterFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCustomRosterFieldHeaders headers = new AddCustomRosterFieldHeaders();
+            return await AddCustomRosterFieldWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>新增法人公司</para>
         /// </summary>
         /// 
@@ -427,6 +671,162 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>新建花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddRosterFieldFormRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddRosterFieldFormHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddRosterFieldFormResponse
+        /// </returns>
+        public AddRosterFieldFormResponse AddRosterFieldFormWithOptions(AddRosterFieldFormRequest request, AddRosterFieldFormHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            {
+                body["detail"] = request.Detail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddRosterFieldForm",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/rosterFieldForm/add",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddRosterFieldFormResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新建花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddRosterFieldFormRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddRosterFieldFormHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddRosterFieldFormResponse
+        /// </returns>
+        public async Task<AddRosterFieldFormResponse> AddRosterFieldFormWithOptionsAsync(AddRosterFieldFormRequest request, AddRosterFieldFormHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            {
+                body["detail"] = request.Detail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddRosterFieldForm",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/rosterFieldForm/add",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddRosterFieldFormResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新建花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddRosterFieldFormRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddRosterFieldFormResponse
+        /// </returns>
+        public AddRosterFieldFormResponse AddRosterFieldForm(AddRosterFieldFormRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddRosterFieldFormHeaders headers = new AddRosterFieldFormHeaders();
+            return AddRosterFieldFormWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新建花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddRosterFieldFormRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddRosterFieldFormResponse
+        /// </returns>
+        public async Task<AddRosterFieldFormResponse> AddRosterFieldFormAsync(AddRosterFieldFormRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddRosterFieldFormHeaders headers = new AddRosterFieldFormHeaders();
+            return await AddRosterFieldFormWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建电子签签署记录</para>
         /// </summary>
         /// 
@@ -659,6 +1059,318 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateRecordHeaders headers = new CreateRecordHeaders();
             return await CreateRecordWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除花名册自定义字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteCustomRosterFieldRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteCustomRosterFieldHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteCustomRosterFieldResponse
+        /// </returns>
+        public DeleteCustomRosterFieldResponse DeleteCustomRosterFieldWithOptions(DeleteCustomRosterFieldRequest request, DeleteCustomRosterFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldCode))
+            {
+                body["fieldCode"] = request.FieldCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                body["groupId"] = request.GroupId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteCustomRosterField",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/customRosterField/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteCustomRosterFieldResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除花名册自定义字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteCustomRosterFieldRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteCustomRosterFieldHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteCustomRosterFieldResponse
+        /// </returns>
+        public async Task<DeleteCustomRosterFieldResponse> DeleteCustomRosterFieldWithOptionsAsync(DeleteCustomRosterFieldRequest request, DeleteCustomRosterFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldCode))
+            {
+                body["fieldCode"] = request.FieldCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                body["groupId"] = request.GroupId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteCustomRosterField",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/customRosterField/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteCustomRosterFieldResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除花名册自定义字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteCustomRosterFieldRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteCustomRosterFieldResponse
+        /// </returns>
+        public DeleteCustomRosterFieldResponse DeleteCustomRosterField(DeleteCustomRosterFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteCustomRosterFieldHeaders headers = new DeleteCustomRosterFieldHeaders();
+            return DeleteCustomRosterFieldWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除花名册自定义字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteCustomRosterFieldRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteCustomRosterFieldResponse
+        /// </returns>
+        public async Task<DeleteCustomRosterFieldResponse> DeleteCustomRosterFieldAsync(DeleteCustomRosterFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteCustomRosterFieldHeaders headers = new DeleteCustomRosterFieldHeaders();
+            return await DeleteCustomRosterFieldWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteRosterFieldFormRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteRosterFieldFormHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteRosterFieldFormResponse
+        /// </returns>
+        public DeleteRosterFieldFormResponse DeleteRosterFieldFormWithOptions(DeleteRosterFieldFormRequest request, DeleteRosterFieldFormHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormId))
+            {
+                body["formId"] = request.FormId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteRosterFieldForm",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/rosterFieldForm/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteRosterFieldFormResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteRosterFieldFormRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteRosterFieldFormHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteRosterFieldFormResponse
+        /// </returns>
+        public async Task<DeleteRosterFieldFormResponse> DeleteRosterFieldFormWithOptionsAsync(DeleteRosterFieldFormRequest request, DeleteRosterFieldFormHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormId))
+            {
+                body["formId"] = request.FormId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteRosterFieldForm",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/rosterFieldForm/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteRosterFieldFormResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteRosterFieldFormRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteRosterFieldFormResponse
+        /// </returns>
+        public DeleteRosterFieldFormResponse DeleteRosterFieldForm(DeleteRosterFieldFormRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteRosterFieldFormHeaders headers = new DeleteRosterFieldFormHeaders();
+            return DeleteRosterFieldFormWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteRosterFieldFormRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteRosterFieldFormResponse
+        /// </returns>
+        public async Task<DeleteRosterFieldFormResponse> DeleteRosterFieldFormAsync(DeleteRosterFieldFormRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteRosterFieldFormHeaders headers = new DeleteRosterFieldFormHeaders();
+            return await DeleteRosterFieldFormWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -8019,6 +8731,162 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>发送实人认证邀请消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendRealAuthInviteMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendRealAuthInviteMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendRealAuthInviteMessageResponse
+        /// </returns>
+        public SendRealAuthInviteMessageResponse SendRealAuthInviteMessageWithOptions(SendRealAuthInviteMessageRequest request, SendRealAuthInviteMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InviterId))
+            {
+                body["inviterId"] = request.InviterId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnWorkingEmpSearchVO))
+            {
+                body["onWorkingEmpSearchVO"] = request.OnWorkingEmpSearchVO;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendRealAuthInviteMessage",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/realAuth/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendRealAuthInviteMessageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送实人认证邀请消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendRealAuthInviteMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendRealAuthInviteMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendRealAuthInviteMessageResponse
+        /// </returns>
+        public async Task<SendRealAuthInviteMessageResponse> SendRealAuthInviteMessageWithOptionsAsync(SendRealAuthInviteMessageRequest request, SendRealAuthInviteMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InviterId))
+            {
+                body["inviterId"] = request.InviterId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnWorkingEmpSearchVO))
+            {
+                body["onWorkingEmpSearchVO"] = request.OnWorkingEmpSearchVO;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendRealAuthInviteMessage",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/realAuth/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendRealAuthInviteMessageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送实人认证邀请消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendRealAuthInviteMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendRealAuthInviteMessageResponse
+        /// </returns>
+        public SendRealAuthInviteMessageResponse SendRealAuthInviteMessage(SendRealAuthInviteMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendRealAuthInviteMessageHeaders headers = new SendRealAuthInviteMessageHeaders();
+            return SendRealAuthInviteMessageWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送实人认证邀请消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendRealAuthInviteMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendRealAuthInviteMessageResponse
+        /// </returns>
+        public async Task<SendRealAuthInviteMessageResponse> SendRealAuthInviteMessageAsync(SendRealAuthInviteMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendRealAuthInviteMessageHeaders headers = new SendRealAuthInviteMessageHeaders();
+            return await SendRealAuthInviteMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>初始化解决方案任务</para>
         /// </summary>
         /// 
@@ -8867,6 +9735,394 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
             return await SyncTaskTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新花名册自定义字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCustomRosterFieldRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateCustomRosterFieldHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCustomRosterFieldResponse
+        /// </returns>
+        public UpdateCustomRosterFieldResponse UpdateCustomRosterFieldWithOptions(UpdateCustomRosterFieldRequest request, UpdateCustomRosterFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactClientFlag))
+            {
+                body["contactClientFlag"] = request.ContactClientFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactFlag))
+            {
+                body["contactFlag"] = request.ContactFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactSource))
+            {
+                body["contactSource"] = request.ContactSource;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactSystemFlag))
+            {
+                body["contactSystemFlag"] = request.ContactSystemFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Deleted))
+            {
+                body["deleted"] = request.Deleted;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Derived))
+            {
+                body["derived"] = request.Derived;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Disabled))
+            {
+                body["disabled"] = request.Disabled;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditFromEmployeeFlag))
+            {
+                body["editFromEmployeeFlag"] = request.EditFromEmployeeFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditableByHr))
+            {
+                body["editableByHr"] = request.EditableByHr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldCode))
+            {
+                body["fieldCode"] = request.FieldCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldName))
+            {
+                body["fieldName"] = request.FieldName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldTip))
+            {
+                body["fieldTip"] = request.FieldTip;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldType))
+            {
+                body["fieldType"] = request.FieldType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                body["groupId"] = request.GroupId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiddenFromEmployeeFlag))
+            {
+                body["hiddenFromEmployeeFlag"] = request.HiddenFromEmployeeFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hint))
+            {
+                body["hint"] = request.Hint;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HistoryField))
+            {
+                body["historyField"] = request.HistoryField;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Index))
+            {
+                body["index"] = request.Index;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModifyOptions))
+            {
+                body["modifyOptions"] = request.ModifyOptions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoWatermark))
+            {
+                body["noWatermark"] = request.NoWatermark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberDecimalPlace))
+            {
+                body["numberDecimalPlace"] = request.NumberDecimalPlace;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberFormatType))
+            {
+                body["numberFormatType"] = request.NumberFormatType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberValueType))
+            {
+                body["numberValueType"] = request.NumberValueType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptionText))
+            {
+                body["optionText"] = request.OptionText;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Required))
+            {
+                body["required"] = request.Required;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceFieldCode))
+            {
+                body["sourceFieldCode"] = request.SourceFieldCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemFlag))
+            {
+                body["systemFlag"] = request.SystemFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TextToSelectField))
+            {
+                body["textToSelectField"] = request.TextToSelectField;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateUserId))
+            {
+                body["updateUserId"] = request.UpdateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Value))
+            {
+                body["value"] = request.Value;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibleByEmp))
+            {
+                body["visibleByEmp"] = request.VisibleByEmp;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCustomRosterField",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/customRosterField/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCustomRosterFieldResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新花名册自定义字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCustomRosterFieldRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateCustomRosterFieldHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCustomRosterFieldResponse
+        /// </returns>
+        public async Task<UpdateCustomRosterFieldResponse> UpdateCustomRosterFieldWithOptionsAsync(UpdateCustomRosterFieldRequest request, UpdateCustomRosterFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactClientFlag))
+            {
+                body["contactClientFlag"] = request.ContactClientFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactFlag))
+            {
+                body["contactFlag"] = request.ContactFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactSource))
+            {
+                body["contactSource"] = request.ContactSource;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactSystemFlag))
+            {
+                body["contactSystemFlag"] = request.ContactSystemFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Deleted))
+            {
+                body["deleted"] = request.Deleted;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Derived))
+            {
+                body["derived"] = request.Derived;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Disabled))
+            {
+                body["disabled"] = request.Disabled;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditFromEmployeeFlag))
+            {
+                body["editFromEmployeeFlag"] = request.EditFromEmployeeFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditableByHr))
+            {
+                body["editableByHr"] = request.EditableByHr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldCode))
+            {
+                body["fieldCode"] = request.FieldCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldName))
+            {
+                body["fieldName"] = request.FieldName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldTip))
+            {
+                body["fieldTip"] = request.FieldTip;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldType))
+            {
+                body["fieldType"] = request.FieldType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
+            {
+                body["groupId"] = request.GroupId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiddenFromEmployeeFlag))
+            {
+                body["hiddenFromEmployeeFlag"] = request.HiddenFromEmployeeFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hint))
+            {
+                body["hint"] = request.Hint;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HistoryField))
+            {
+                body["historyField"] = request.HistoryField;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Index))
+            {
+                body["index"] = request.Index;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModifyOptions))
+            {
+                body["modifyOptions"] = request.ModifyOptions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoWatermark))
+            {
+                body["noWatermark"] = request.NoWatermark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberDecimalPlace))
+            {
+                body["numberDecimalPlace"] = request.NumberDecimalPlace;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberFormatType))
+            {
+                body["numberFormatType"] = request.NumberFormatType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberValueType))
+            {
+                body["numberValueType"] = request.NumberValueType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptionText))
+            {
+                body["optionText"] = request.OptionText;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Required))
+            {
+                body["required"] = request.Required;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceFieldCode))
+            {
+                body["sourceFieldCode"] = request.SourceFieldCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemFlag))
+            {
+                body["systemFlag"] = request.SystemFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TextToSelectField))
+            {
+                body["textToSelectField"] = request.TextToSelectField;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateUserId))
+            {
+                body["updateUserId"] = request.UpdateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Value))
+            {
+                body["value"] = request.Value;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibleByEmp))
+            {
+                body["visibleByEmp"] = request.VisibleByEmp;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCustomRosterField",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/customRosterField/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCustomRosterFieldResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新花名册自定义字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCustomRosterFieldRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCustomRosterFieldResponse
+        /// </returns>
+        public UpdateCustomRosterFieldResponse UpdateCustomRosterField(UpdateCustomRosterFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCustomRosterFieldHeaders headers = new UpdateCustomRosterFieldHeaders();
+            return UpdateCustomRosterFieldWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新花名册自定义字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCustomRosterFieldRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCustomRosterFieldResponse
+        /// </returns>
+        public async Task<UpdateCustomRosterFieldResponse> UpdateCustomRosterFieldAsync(UpdateCustomRosterFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCustomRosterFieldHeaders headers = new UpdateCustomRosterFieldHeaders();
+            return await UpdateCustomRosterFieldWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -9775,6 +11031,178 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateIsvCardMessageHeaders headers = new UpdateIsvCardMessageHeaders();
             return await UpdateIsvCardMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRosterFieldFormRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateRosterFieldFormHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRosterFieldFormResponse
+        /// </returns>
+        public UpdateRosterFieldFormResponse UpdateRosterFieldFormWithOptions(UpdateRosterFieldFormRequest request, UpdateRosterFieldFormHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            {
+                body["detail"] = request.Detail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormId))
+            {
+                body["formId"] = request.FormId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateRosterFieldForm",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/rosterFieldForm/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateRosterFieldFormResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRosterFieldFormRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateRosterFieldFormHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRosterFieldFormResponse
+        /// </returns>
+        public async Task<UpdateRosterFieldFormResponse> UpdateRosterFieldFormWithOptionsAsync(UpdateRosterFieldFormRequest request, UpdateRosterFieldFormHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Detail))
+            {
+                body["detail"] = request.Detail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormId))
+            {
+                body["formId"] = request.FormId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateRosterFieldForm",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/rosterFieldForm/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateRosterFieldFormResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRosterFieldFormRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRosterFieldFormResponse
+        /// </returns>
+        public UpdateRosterFieldFormResponse UpdateRosterFieldForm(UpdateRosterFieldFormRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateRosterFieldFormHeaders headers = new UpdateRosterFieldFormHeaders();
+            return UpdateRosterFieldFormWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新花名册字段分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRosterFieldFormRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRosterFieldFormResponse
+        /// </returns>
+        public async Task<UpdateRosterFieldFormResponse> UpdateRosterFieldFormAsync(UpdateRosterFieldFormRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateRosterFieldFormHeaders headers = new UpdateRosterFieldFormHeaders();
+            return await UpdateRosterFieldFormWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

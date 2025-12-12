@@ -52,6 +52,17 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string DynamicOrder { get; set; }
 
         /// <summary>
+        /// <b>Example:</b>
+        /// <para>vpc,sgp_vpc</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
+        [NameInMap("env")]
+        [Validation(Required=false)]
+        public string Env { get; set; }
+
+        /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>

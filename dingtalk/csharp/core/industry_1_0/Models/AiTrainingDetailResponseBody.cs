@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public string Creator { get; set; }
 
+            [NameInMap("duration")]
+            [Validation(Required=false)]
+            public long? Duration { get; set; }
+
             [NameInMap("feedback")]
             [Validation(Required=false)]
             public long? Feedback { get; set; }
@@ -53,6 +57,26 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public List<AiTrainingDetailResponseBodyResultProductInfoList> ProductInfoList { get; set; }
             public class AiTrainingDetailResponseBodyResultProductInfoList : TeaModel {
+                [NameInMap("attribute")]
+                [Validation(Required=false)]
+                public string Attribute { get; set; }
+
+                [NameInMap("brand")]
+                [Validation(Required=false)]
+                public string Brand { get; set; }
+
+                [NameInMap("category")]
+                [Validation(Required=false)]
+                public string Category { get; set; }
+
+                [NameInMap("currency")]
+                [Validation(Required=false)]
+                public string Currency { get; set; }
+
+                [NameInMap("imageUrls")]
+                [Validation(Required=false)]
+                public List<string> ImageUrls { get; set; }
+
                 [NameInMap("price")]
                 [Validation(Required=false)]
                 public long? Price { get; set; }
@@ -61,13 +85,25 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public string ProductCode { get; set; }
 
+                [NameInMap("productFab")]
+                [Validation(Required=false)]
+                public string ProductFab { get; set; }
+
                 [NameInMap("productId")]
                 [Validation(Required=false)]
                 public long? ProductId { get; set; }
 
+                [NameInMap("productInfo")]
+                [Validation(Required=false)]
+                public string ProductInfo { get; set; }
+
                 [NameInMap("productName")]
                 [Validation(Required=false)]
                 public string ProductName { get; set; }
+
+                [NameInMap("relatedType")]
+                [Validation(Required=false)]
+                public string RelatedType { get; set; }
 
             }
 

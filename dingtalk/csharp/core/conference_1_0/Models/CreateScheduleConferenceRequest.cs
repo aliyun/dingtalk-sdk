@@ -159,6 +159,22 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                 [Validation(Required=false)]
                 public string MinutesOwnerUnionId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
+                [NameInMap("minutesSummaryDiyTemplateVersion")]
+                [Validation(Required=false)]
+                public string MinutesSummaryDiyTemplateVersion { get; set; }
+
+                [NameInMap("minutesSummaryTemplateId")]
+                [Validation(Required=false)]
+                public string MinutesSummaryTemplateId { get; set; }
+
+                [NameInMap("minutesSummaryTemplateType")]
+                [Validation(Required=false)]
+                public string MinutesSummaryTemplateType { get; set; }
+
                 [NameInMap("moziConfExtensionAppSettings")]
                 [Validation(Required=false)]
                 public List<CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings> MoziConfExtensionAppSettings { get; set; }

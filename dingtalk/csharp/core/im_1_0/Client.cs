@@ -15466,6 +15466,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceExpand))
+            {
+                body["forceExpand"] = request.ForceExpand;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsQtWnd))
+            {
+                body["isQtWnd"] = request.IsQtWnd;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 body["openConversationId"] = request.OpenConversationId;
@@ -15541,6 +15549,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceExpand))
+            {
+                body["forceExpand"] = request.ForceExpand;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsQtWnd))
+            {
+                body["isQtWnd"] = request.IsQtWnd;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 body["openConversationId"] = request.OpenConversationId;

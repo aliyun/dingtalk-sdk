@@ -99,6 +99,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
             [Validation(Required=false)]
             public string TradeType { get; set; }
 
+            [NameInMap("usage")]
+            [Validation(Required=false)]
+            public string Usage { get; set; }
+
         }
 
         [NameInMap("totalCount")]

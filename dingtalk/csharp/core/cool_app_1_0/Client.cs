@@ -538,6 +538,154 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询会话内已安装的酷应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryInstalledCoolAppsInConversationRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryInstalledCoolAppsInConversationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryInstalledCoolAppsInConversationResponse
+        /// </returns>
+        public QueryInstalledCoolAppsInConversationResponse QueryInstalledCoolAppsInConversationWithOptions(QueryInstalledCoolAppsInConversationRequest request, QueryInstalledCoolAppsInConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryInstalledCoolAppsInConversation",
+                Version = "coolApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/coolApp/installedInConversation/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryInstalledCoolAppsInConversationResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会话内已安装的酷应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryInstalledCoolAppsInConversationRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryInstalledCoolAppsInConversationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryInstalledCoolAppsInConversationResponse
+        /// </returns>
+        public async Task<QueryInstalledCoolAppsInConversationResponse> QueryInstalledCoolAppsInConversationWithOptionsAsync(QueryInstalledCoolAppsInConversationRequest request, QueryInstalledCoolAppsInConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryInstalledCoolAppsInConversation",
+                Version = "coolApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/coolApp/installedInConversation/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryInstalledCoolAppsInConversationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会话内已安装的酷应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryInstalledCoolAppsInConversationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryInstalledCoolAppsInConversationResponse
+        /// </returns>
+        public QueryInstalledCoolAppsInConversationResponse QueryInstalledCoolAppsInConversation(QueryInstalledCoolAppsInConversationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryInstalledCoolAppsInConversationHeaders headers = new QueryInstalledCoolAppsInConversationHeaders();
+            return QueryInstalledCoolAppsInConversationWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会话内已安装的酷应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryInstalledCoolAppsInConversationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryInstalledCoolAppsInConversationResponse
+        /// </returns>
+        public async Task<QueryInstalledCoolAppsInConversationResponse> QueryInstalledCoolAppsInConversationAsync(QueryInstalledCoolAppsInConversationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryInstalledCoolAppsInConversationHeaders headers = new QueryInstalledCoolAppsInConversationHeaders();
+            return await QueryInstalledCoolAppsInConversationWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>从群内卸载酷应用</para>
         /// </summary>
         /// 

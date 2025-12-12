@@ -3522,6 +3522,162 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>文件加密回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FileEncryptCallbackRequest
+        /// </param>
+        /// <param name="headers">
+        /// FileEncryptCallbackHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// FileEncryptCallbackResponse
+        /// </returns>
+        public FileEncryptCallbackResponse FileEncryptCallbackWithOptions(FileEncryptCallbackRequest request, FileEncryptCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Timestamp))
+            {
+                body["timestamp"] = request.Timestamp;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "FileEncryptCallback",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/clientDecrypt/encrypt/callback",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<FileEncryptCallbackResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文件加密回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FileEncryptCallbackRequest
+        /// </param>
+        /// <param name="headers">
+        /// FileEncryptCallbackHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// FileEncryptCallbackResponse
+        /// </returns>
+        public async Task<FileEncryptCallbackResponse> FileEncryptCallbackWithOptionsAsync(FileEncryptCallbackRequest request, FileEncryptCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Timestamp))
+            {
+                body["timestamp"] = request.Timestamp;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "FileEncryptCallback",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/clientDecrypt/encrypt/callback",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<FileEncryptCallbackResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文件加密回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FileEncryptCallbackRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// FileEncryptCallbackResponse
+        /// </returns>
+        public FileEncryptCallbackResponse FileEncryptCallback(FileEncryptCallbackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            FileEncryptCallbackHeaders headers = new FileEncryptCallbackHeaders();
+            return FileEncryptCallbackWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文件加密回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FileEncryptCallbackRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// FileEncryptCallbackResponse
+        /// </returns>
+        public async Task<FileEncryptCallbackResponse> FileEncryptCallbackAsync(FileEncryptCallbackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            FileEncryptCallbackHeaders headers = new FileEncryptCallbackHeaders();
+            return await FileEncryptCallbackWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>专属文件第一次设置，激活配置</para>
         /// </summary>
         /// 
@@ -9306,6 +9462,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentType))
+            {
+                body["contentType"] = request.ContentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileCreateTime))
             {
                 body["fileCreateTime"] = request.FileCreateTime;
@@ -9318,6 +9482,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["maxResults"] = request.MaxResults;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 body["nextToken"] = request.NextToken;
@@ -9326,9 +9494,17 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["order"] = request.Order;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SceneType))
+            {
+                body["sceneType"] = request.SceneType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
             {
                 body["targetCorpId"] = request.TargetCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -9381,6 +9557,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentType))
+            {
+                body["contentType"] = request.ContentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileCreateTime))
             {
                 body["fileCreateTime"] = request.FileCreateTime;
@@ -9393,6 +9577,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["maxResults"] = request.MaxResults;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 body["nextToken"] = request.NextToken;
@@ -9401,9 +9589,17 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["order"] = request.Order;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SceneType))
+            {
+                body["sceneType"] = request.SceneType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
             {
                 body["targetCorpId"] = request.TargetCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -9626,6 +9822,334 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetPrivateStoreFilePathHeaders headers = new GetPrivateStoreFilePathHeaders();
             return await GetPrivateStoreFilePathWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取专属存储文件处理任务信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreFileTaskInfosByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetPrivateStoreFileTaskInfosByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreFileTaskInfosByPageResponse
+        /// </returns>
+        public GetPrivateStoreFileTaskInfosByPageResponse GetPrivateStoreFileTaskInfosByPageWithOptions(GetPrivateStoreFileTaskInfosByPageRequest request, GetPrivateStoreFileTaskInfosByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskStatus))
+            {
+                body["taskStatus"] = request.TaskStatus;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPrivateStoreFileTaskInfosByPage",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/privateStores/taskInfos/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPrivateStoreFileTaskInfosByPageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取专属存储文件处理任务信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreFileTaskInfosByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetPrivateStoreFileTaskInfosByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreFileTaskInfosByPageResponse
+        /// </returns>
+        public async Task<GetPrivateStoreFileTaskInfosByPageResponse> GetPrivateStoreFileTaskInfosByPageWithOptionsAsync(GetPrivateStoreFileTaskInfosByPageRequest request, GetPrivateStoreFileTaskInfosByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskStatus))
+            {
+                body["taskStatus"] = request.TaskStatus;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPrivateStoreFileTaskInfosByPage",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/privateStores/taskInfos/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPrivateStoreFileTaskInfosByPageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取专属存储文件处理任务信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreFileTaskInfosByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreFileTaskInfosByPageResponse
+        /// </returns>
+        public GetPrivateStoreFileTaskInfosByPageResponse GetPrivateStoreFileTaskInfosByPage(GetPrivateStoreFileTaskInfosByPageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPrivateStoreFileTaskInfosByPageHeaders headers = new GetPrivateStoreFileTaskInfosByPageHeaders();
+            return GetPrivateStoreFileTaskInfosByPageWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取专属存储文件处理任务信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreFileTaskInfosByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreFileTaskInfosByPageResponse
+        /// </returns>
+        public async Task<GetPrivateStoreFileTaskInfosByPageResponse> GetPrivateStoreFileTaskInfosByPageAsync(GetPrivateStoreFileTaskInfosByPageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPrivateStoreFileTaskInfosByPageHeaders headers = new GetPrivateStoreFileTaskInfosByPageHeaders();
+            return await GetPrivateStoreFileTaskInfosByPageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取专属存储任务文件信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreTaskFileInfosByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetPrivateStoreTaskFileInfosByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreTaskFileInfosByPageResponse
+        /// </returns>
+        public GetPrivateStoreTaskFileInfosByPageResponse GetPrivateStoreTaskFileInfosByPageWithOptions(GetPrivateStoreTaskFileInfosByPageRequest request, GetPrivateStoreTaskFileInfosByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPrivateStoreTaskFileInfosByPage",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/privateStores/taskInfos/file/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPrivateStoreTaskFileInfosByPageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取专属存储任务文件信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreTaskFileInfosByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetPrivateStoreTaskFileInfosByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreTaskFileInfosByPageResponse
+        /// </returns>
+        public async Task<GetPrivateStoreTaskFileInfosByPageResponse> GetPrivateStoreTaskFileInfosByPageWithOptionsAsync(GetPrivateStoreTaskFileInfosByPageRequest request, GetPrivateStoreTaskFileInfosByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPrivateStoreTaskFileInfosByPage",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/privateStores/taskInfos/file/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPrivateStoreTaskFileInfosByPageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取专属存储任务文件信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreTaskFileInfosByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreTaskFileInfosByPageResponse
+        /// </returns>
+        public GetPrivateStoreTaskFileInfosByPageResponse GetPrivateStoreTaskFileInfosByPage(GetPrivateStoreTaskFileInfosByPageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPrivateStoreTaskFileInfosByPageHeaders headers = new GetPrivateStoreTaskFileInfosByPageHeaders();
+            return GetPrivateStoreTaskFileInfosByPageWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取专属存储任务文件信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreTaskFileInfosByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreTaskFileInfosByPageResponse
+        /// </returns>
+        public async Task<GetPrivateStoreTaskFileInfosByPageResponse> GetPrivateStoreTaskFileInfosByPageAsync(GetPrivateStoreTaskFileInfosByPageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPrivateStoreTaskFileInfosByPageHeaders headers = new GetPrivateStoreTaskFileInfosByPageHeaders();
+            return await GetPrivateStoreTaskFileInfosByPageWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

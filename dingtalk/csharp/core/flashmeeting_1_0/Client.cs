@@ -30,6 +30,178 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>将闪会添加链接到知识库</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyLinkToWorkspaceRequest
+        /// </param>
+        /// <param name="headers">
+        /// CopyLinkToWorkspaceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyLinkToWorkspaceResponse
+        /// </returns>
+        public CopyLinkToWorkspaceResponse CopyLinkToWorkspaceWithOptions(CopyLinkToWorkspaceRequest request, CopyLinkToWorkspaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentNodeKey))
+            {
+                body["parentNodeKey"] = request.ParentNodeKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShanhuiKey))
+            {
+                body["shanhuiKey"] = request.ShanhuiKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkspaceKey))
+            {
+                body["workspaceKey"] = request.WorkspaceKey;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CopyLinkToWorkspace",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/meetings/copyLinkToWorkspace",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CopyLinkToWorkspaceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>将闪会添加链接到知识库</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyLinkToWorkspaceRequest
+        /// </param>
+        /// <param name="headers">
+        /// CopyLinkToWorkspaceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyLinkToWorkspaceResponse
+        /// </returns>
+        public async Task<CopyLinkToWorkspaceResponse> CopyLinkToWorkspaceWithOptionsAsync(CopyLinkToWorkspaceRequest request, CopyLinkToWorkspaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentNodeKey))
+            {
+                body["parentNodeKey"] = request.ParentNodeKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShanhuiKey))
+            {
+                body["shanhuiKey"] = request.ShanhuiKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkspaceKey))
+            {
+                body["workspaceKey"] = request.WorkspaceKey;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CopyLinkToWorkspace",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/meetings/copyLinkToWorkspace",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CopyLinkToWorkspaceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>将闪会添加链接到知识库</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyLinkToWorkspaceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyLinkToWorkspaceResponse
+        /// </returns>
+        public CopyLinkToWorkspaceResponse CopyLinkToWorkspace(CopyLinkToWorkspaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyLinkToWorkspaceHeaders headers = new CopyLinkToWorkspaceHeaders();
+            return CopyLinkToWorkspaceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>将闪会添加链接到知识库</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyLinkToWorkspaceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyLinkToWorkspaceResponse
+        /// </returns>
+        public async Task<CopyLinkToWorkspaceResponse> CopyLinkToWorkspaceAsync(CopyLinkToWorkspaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyLinkToWorkspaceHeaders headers = new CopyLinkToWorkspaceHeaders();
+            return await CopyLinkToWorkspaceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建钉闪会并绑定日程</para>
         /// </summary>
         /// 

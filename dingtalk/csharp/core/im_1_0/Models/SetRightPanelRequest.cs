@@ -9,6 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class SetRightPanelRequest : TeaModel {
+        [NameInMap("forceExpand")]
+        [Validation(Required=false)]
+        public bool? ForceExpand { get; set; }
+
+        [NameInMap("isQtWnd")]
+        [Validation(Required=false)]
+        public bool? IsQtWnd { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 

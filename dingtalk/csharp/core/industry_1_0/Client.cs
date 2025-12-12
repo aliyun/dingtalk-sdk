@@ -102,6 +102,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             {
                 body["productName"] = request.ProductName;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag1))
+            {
+                body["tag1"] = request.Tag1;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag2))
+            {
+                body["tag2"] = request.Tag2;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag3))
+            {
+                body["tag3"] = request.Tag3;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -204,6 +216,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
             {
                 body["productName"] = request.ProductName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag1))
+            {
+                body["tag1"] = request.Tag1;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag2))
+            {
+                body["tag2"] = request.Tag2;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag3))
+            {
+                body["tag3"] = request.Tag3;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -802,6 +826,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             {
                 body["productName"] = request.ProductName;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag1))
+            {
+                body["tag1"] = request.Tag1;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag2))
+            {
+                body["tag2"] = request.Tag2;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag3))
+            {
+                body["tag3"] = request.Tag3;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -908,6 +944,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
             {
                 body["productName"] = request.ProductName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag1))
+            {
+                body["tag1"] = request.Tag1;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag2))
+            {
+                body["tag2"] = request.Tag2;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tag3))
+            {
+                body["tag3"] = request.Tag3;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

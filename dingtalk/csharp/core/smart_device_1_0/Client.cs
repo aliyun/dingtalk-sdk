@@ -326,6 +326,178 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>创建导出设备数据任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateExportDeviceStatisticTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateExportDeviceStatisticTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateExportDeviceStatisticTaskResponse
+        /// </returns>
+        public CreateExportDeviceStatisticTaskResponse CreateExportDeviceStatisticTaskWithOptions(CreateExportDeviceStatisticTaskRequest request, CreateExportDeviceStatisticTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AiSheetTemplateId))
+            {
+                body["aiSheetTemplateId"] = request.AiSheetTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorCorpId))
+            {
+                body["creatorCorpId"] = request.CreatorCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorUnionId))
+            {
+                body["creatorUnionId"] = request.CreatorUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskName))
+            {
+                body["taskName"] = request.TaskName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateExportDeviceStatisticTask",
+                Version = "smartDevice_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/smartDevice/statistic/create",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateExportDeviceStatisticTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建导出设备数据任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateExportDeviceStatisticTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateExportDeviceStatisticTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateExportDeviceStatisticTaskResponse
+        /// </returns>
+        public async Task<CreateExportDeviceStatisticTaskResponse> CreateExportDeviceStatisticTaskWithOptionsAsync(CreateExportDeviceStatisticTaskRequest request, CreateExportDeviceStatisticTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AiSheetTemplateId))
+            {
+                body["aiSheetTemplateId"] = request.AiSheetTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorCorpId))
+            {
+                body["creatorCorpId"] = request.CreatorCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorUnionId))
+            {
+                body["creatorUnionId"] = request.CreatorUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskName))
+            {
+                body["taskName"] = request.TaskName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateExportDeviceStatisticTask",
+                Version = "smartDevice_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/smartDevice/statistic/create",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateExportDeviceStatisticTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建导出设备数据任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateExportDeviceStatisticTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateExportDeviceStatisticTaskResponse
+        /// </returns>
+        public CreateExportDeviceStatisticTaskResponse CreateExportDeviceStatisticTask(CreateExportDeviceStatisticTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateExportDeviceStatisticTaskHeaders headers = new CreateExportDeviceStatisticTaskHeaders();
+            return CreateExportDeviceStatisticTaskWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建导出设备数据任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateExportDeviceStatisticTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateExportDeviceStatisticTaskResponse
+        /// </returns>
+        public async Task<CreateExportDeviceStatisticTaskResponse> CreateExportDeviceStatisticTaskAsync(CreateExportDeviceStatisticTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateExportDeviceStatisticTaskHeaders headers = new CreateExportDeviceStatisticTaskHeaders();
+            return await CreateExportDeviceStatisticTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>基于企业员工照片为终端提取人脸识别特征</para>
         /// </summary>
         /// 
@@ -1278,6 +1450,178 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             TextToImageHeaders headers = new TextToImageHeaders();
             return await TextToImageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新导出设备数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateExportDeviceStatisticRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateExportDeviceStatisticHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateExportDeviceStatisticResponse
+        /// </returns>
+        public UpdateExportDeviceStatisticResponse UpdateExportDeviceStatisticWithOptions(UpdateExportDeviceStatisticRequest request, UpdateExportDeviceStatisticHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorCorpId))
+            {
+                body["creatorCorpId"] = request.CreatorCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorUnionId))
+            {
+                body["creatorUnionId"] = request.CreatorUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Records))
+            {
+                body["records"] = request.Records;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateExportDeviceStatistic",
+                Version = "smartDevice_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/smartDevice/statistic",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateExportDeviceStatisticResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新导出设备数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateExportDeviceStatisticRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateExportDeviceStatisticHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateExportDeviceStatisticResponse
+        /// </returns>
+        public async Task<UpdateExportDeviceStatisticResponse> UpdateExportDeviceStatisticWithOptionsAsync(UpdateExportDeviceStatisticRequest request, UpdateExportDeviceStatisticHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorCorpId))
+            {
+                body["creatorCorpId"] = request.CreatorCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorUnionId))
+            {
+                body["creatorUnionId"] = request.CreatorUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Records))
+            {
+                body["records"] = request.Records;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateExportDeviceStatistic",
+                Version = "smartDevice_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/smartDevice/statistic",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateExportDeviceStatisticResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新导出设备数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateExportDeviceStatisticRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateExportDeviceStatisticResponse
+        /// </returns>
+        public UpdateExportDeviceStatisticResponse UpdateExportDeviceStatistic(UpdateExportDeviceStatisticRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateExportDeviceStatisticHeaders headers = new UpdateExportDeviceStatisticHeaders();
+            return UpdateExportDeviceStatisticWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新导出设备数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateExportDeviceStatisticRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateExportDeviceStatisticResponse
+        /// </returns>
+        public async Task<UpdateExportDeviceStatisticResponse> UpdateExportDeviceStatisticAsync(UpdateExportDeviceStatisticRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateExportDeviceStatisticHeaders headers = new UpdateExportDeviceStatisticHeaders();
+            return await UpdateExportDeviceStatisticWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

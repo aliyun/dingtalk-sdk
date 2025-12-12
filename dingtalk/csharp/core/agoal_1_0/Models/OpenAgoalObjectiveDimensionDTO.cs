@@ -14,7 +14,39 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
         /// </summary>
         [NameInMap("children")]
         [Validation(Required=false)]
-        public List<OpenAgoalObjectiveDimensionDTO> Children { get; set; }
+        public List<OpenAgoalObjectiveDimensionDTOChildren> Children { get; set; }
+        public class OpenAgoalObjectiveDimensionDTOChildren : TeaModel {
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>662e006fe4b0f57ccbcxxxxx</para>
+            /// </summary>
+            [NameInMap("dimensionId")]
+            [Validation(Required=false)]
+            public string DimensionId { get; set; }
+
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>这是子维度标题</para>
+            /// </summary>
+            [NameInMap("title")]
+            [Validation(Required=false)]
+            public string Title { get; set; }
+
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>100</para>
+            /// </summary>
+            [NameInMap("weight")]
+            [Validation(Required=false)]
+            public double? Weight { get; set; }
+
+        }
 
         /// <summary>
         /// <para>This parameter is required.</para>

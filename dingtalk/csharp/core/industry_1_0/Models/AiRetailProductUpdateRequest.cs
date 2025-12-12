@@ -80,6 +80,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string ProductName { get; set; }
 
+        [NameInMap("tag1")]
+        [Validation(Required=false)]
+        public string Tag1 { get; set; }
+
+        [NameInMap("tag2")]
+        [Validation(Required=false)]
+        public string Tag2 { get; set; }
+
+        [NameInMap("tag3")]
+        [Validation(Required=false)]
+        public string Tag3 { get; set; }
+
     }
 
 }

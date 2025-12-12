@@ -12,6 +12,27 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
+        [NameInMap("approveStatus")]
+        [Validation(Required=false)]
+        public string ApproveStatus { get; set; }
+
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
+        [NameInMap("created")]
+        [Validation(Required=false)]
+        public long? Created { get; set; }
+
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
+        [NameInMap("downAlignObjectIds")]
+        [Validation(Required=false)]
+        public List<string> DownAlignObjectIds { get; set; }
+
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
         [NameInMap("executor")]
         [Validation(Required=false)]
         public OpenAgoalUserDTO Executor { get; set; }
@@ -104,6 +125,20 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
         [NameInMap("title")]
         [Validation(Required=false)]
         public string Title { get; set; }
+
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
+        [NameInMap("upAlignObjectIds")]
+        [Validation(Required=false)]
+        public List<string> UpAlignObjectIds { get; set; }
+
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
+        [NameInMap("updated")]
+        [Validation(Required=false)]
+        public long? Updated { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>
