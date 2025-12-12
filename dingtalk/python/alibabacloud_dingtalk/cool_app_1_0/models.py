@@ -674,6 +674,204 @@ class QueryCoolAppShortcutOrderResponse(TeaModel):
         return self
 
 
+class QueryInstalledCoolAppsInConversationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryInstalledCoolAppsInConversationRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+    ):
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class QueryInstalledCoolAppsInConversationResponseBodyResultCoolApps(TeaModel):
+    def __init__(
+        self,
+        cool_app_code: str = None,
+        cool_app_name: str = None,
+    ):
+        self.cool_app_code = cool_app_code
+        self.cool_app_name = cool_app_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
+        if self.cool_app_name is not None:
+            result['coolAppName'] = self.cool_app_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
+        if m.get('coolAppName') is not None:
+            self.cool_app_name = m.get('coolAppName')
+        return self
+
+
+class QueryInstalledCoolAppsInConversationResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        cool_apps: List[QueryInstalledCoolAppsInConversationResponseBodyResultCoolApps] = None,
+    ):
+        self.cool_apps = cool_apps
+
+    def validate(self):
+        if self.cool_apps:
+            for k in self.cool_apps:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['coolApps'] = []
+        if self.cool_apps is not None:
+            for k in self.cool_apps:
+                result['coolApps'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.cool_apps = []
+        if m.get('coolApps') is not None:
+            for k in m.get('coolApps'):
+                temp_model = QueryInstalledCoolAppsInConversationResponseBodyResultCoolApps()
+                self.cool_apps.append(temp_model.from_map(k))
+        return self
+
+
+class QueryInstalledCoolAppsInConversationResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryInstalledCoolAppsInConversationResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryInstalledCoolAppsInConversationResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class QueryInstalledCoolAppsInConversationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryInstalledCoolAppsInConversationResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryInstalledCoolAppsInConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UninstallCoolAppFromGroupHeaders(TeaModel):
     def __init__(
         self,

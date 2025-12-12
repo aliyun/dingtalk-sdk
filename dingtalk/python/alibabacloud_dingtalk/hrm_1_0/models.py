@@ -31,6 +31,434 @@ class ResultValue(TeaModel):
         return self
 
 
+class AddCustomRosterFieldHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddCustomRosterFieldRequest(TeaModel):
+    def __init__(
+        self,
+        edit_from_employee_flag: bool = None,
+        field_name: str = None,
+        field_type: str = None,
+        group_id: str = None,
+        hidden_from_employee_flag: bool = None,
+        hint: str = None,
+        no_watermark: bool = None,
+        number_decimal_place: int = None,
+        number_format_type: str = None,
+        number_value_type: str = None,
+        option_text: str = None,
+        required: bool = None,
+        visible_by_emp: bool = None,
+    ):
+        # This parameter is required.
+        self.edit_from_employee_flag = edit_from_employee_flag
+        # This parameter is required.
+        self.field_name = field_name
+        # This parameter is required.
+        self.field_type = field_type
+        # This parameter is required.
+        self.group_id = group_id
+        # This parameter is required.
+        self.hidden_from_employee_flag = hidden_from_employee_flag
+        self.hint = hint
+        self.no_watermark = no_watermark
+        self.number_decimal_place = number_decimal_place
+        self.number_format_type = number_format_type
+        self.number_value_type = number_value_type
+        self.option_text = option_text
+        # This parameter is required.
+        self.required = required
+        # This parameter is required.
+        self.visible_by_emp = visible_by_emp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.edit_from_employee_flag is not None:
+            result['editFromEmployeeFlag'] = self.edit_from_employee_flag
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.hidden_from_employee_flag is not None:
+            result['hiddenFromEmployeeFlag'] = self.hidden_from_employee_flag
+        if self.hint is not None:
+            result['hint'] = self.hint
+        if self.no_watermark is not None:
+            result['noWatermark'] = self.no_watermark
+        if self.number_decimal_place is not None:
+            result['numberDecimalPlace'] = self.number_decimal_place
+        if self.number_format_type is not None:
+            result['numberFormatType'] = self.number_format_type
+        if self.number_value_type is not None:
+            result['numberValueType'] = self.number_value_type
+        if self.option_text is not None:
+            result['optionText'] = self.option_text
+        if self.required is not None:
+            result['required'] = self.required
+        if self.visible_by_emp is not None:
+            result['visibleByEmp'] = self.visible_by_emp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('editFromEmployeeFlag') is not None:
+            self.edit_from_employee_flag = m.get('editFromEmployeeFlag')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('hiddenFromEmployeeFlag') is not None:
+            self.hidden_from_employee_flag = m.get('hiddenFromEmployeeFlag')
+        if m.get('hint') is not None:
+            self.hint = m.get('hint')
+        if m.get('noWatermark') is not None:
+            self.no_watermark = m.get('noWatermark')
+        if m.get('numberDecimalPlace') is not None:
+            self.number_decimal_place = m.get('numberDecimalPlace')
+        if m.get('numberFormatType') is not None:
+            self.number_format_type = m.get('numberFormatType')
+        if m.get('numberValueType') is not None:
+            self.number_value_type = m.get('numberValueType')
+        if m.get('optionText') is not None:
+            self.option_text = m.get('optionText')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('visibleByEmp') is not None:
+            self.visible_by_emp = m.get('visibleByEmp')
+        return self
+
+
+class AddCustomRosterFieldResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        contact_client_flag: bool = None,
+        contact_flag: bool = None,
+        contact_source: int = None,
+        contact_system_flag: bool = None,
+        deleted: bool = None,
+        derived: bool = None,
+        disabled: int = None,
+        edit_from_employee_flag: bool = None,
+        editable_by_hr: bool = None,
+        field_code: str = None,
+        field_name: str = None,
+        field_tip: str = None,
+        field_type: str = None,
+        group_id: str = None,
+        hidden_from_employee_flag: bool = None,
+        hint: str = None,
+        history_field: bool = None,
+        index: int = None,
+        modify_options: bool = None,
+        no_watermark: bool = None,
+        number_decimal_place: str = None,
+        number_format_type: str = None,
+        number_value_type: str = None,
+        option_text: str = None,
+        required: bool = None,
+        source_field_code: str = None,
+        system_flag: bool = None,
+        text_to_select_field: bool = None,
+        value: str = None,
+        visible_by_emp: bool = None,
+    ):
+        self.contact_client_flag = contact_client_flag
+        self.contact_flag = contact_flag
+        self.contact_source = contact_source
+        self.contact_system_flag = contact_system_flag
+        self.deleted = deleted
+        self.derived = derived
+        self.disabled = disabled
+        self.edit_from_employee_flag = edit_from_employee_flag
+        self.editable_by_hr = editable_by_hr
+        self.field_code = field_code
+        self.field_name = field_name
+        self.field_tip = field_tip
+        self.field_type = field_type
+        self.group_id = group_id
+        self.hidden_from_employee_flag = hidden_from_employee_flag
+        self.hint = hint
+        self.history_field = history_field
+        self.index = index
+        self.modify_options = modify_options
+        self.no_watermark = no_watermark
+        self.number_decimal_place = number_decimal_place
+        self.number_format_type = number_format_type
+        self.number_value_type = number_value_type
+        self.option_text = option_text
+        self.required = required
+        self.source_field_code = source_field_code
+        self.system_flag = system_flag
+        self.text_to_select_field = text_to_select_field
+        self.value = value
+        self.visible_by_emp = visible_by_emp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contact_client_flag is not None:
+            result['contactClientFlag'] = self.contact_client_flag
+        if self.contact_flag is not None:
+            result['contactFlag'] = self.contact_flag
+        if self.contact_source is not None:
+            result['contactSource'] = self.contact_source
+        if self.contact_system_flag is not None:
+            result['contactSystemFlag'] = self.contact_system_flag
+        if self.deleted is not None:
+            result['deleted'] = self.deleted
+        if self.derived is not None:
+            result['derived'] = self.derived
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.edit_from_employee_flag is not None:
+            result['editFromEmployeeFlag'] = self.edit_from_employee_flag
+        if self.editable_by_hr is not None:
+            result['editableByHr'] = self.editable_by_hr
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_tip is not None:
+            result['fieldTip'] = self.field_tip
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.hidden_from_employee_flag is not None:
+            result['hiddenFromEmployeeFlag'] = self.hidden_from_employee_flag
+        if self.hint is not None:
+            result['hint'] = self.hint
+        if self.history_field is not None:
+            result['historyField'] = self.history_field
+        if self.index is not None:
+            result['index'] = self.index
+        if self.modify_options is not None:
+            result['modifyOptions'] = self.modify_options
+        if self.no_watermark is not None:
+            result['noWatermark'] = self.no_watermark
+        if self.number_decimal_place is not None:
+            result['numberDecimalPlace'] = self.number_decimal_place
+        if self.number_format_type is not None:
+            result['numberFormatType'] = self.number_format_type
+        if self.number_value_type is not None:
+            result['numberValueType'] = self.number_value_type
+        if self.option_text is not None:
+            result['optionText'] = self.option_text
+        if self.required is not None:
+            result['required'] = self.required
+        if self.source_field_code is not None:
+            result['sourceFieldCode'] = self.source_field_code
+        if self.system_flag is not None:
+            result['systemFlag'] = self.system_flag
+        if self.text_to_select_field is not None:
+            result['textToSelectField'] = self.text_to_select_field
+        if self.value is not None:
+            result['value'] = self.value
+        if self.visible_by_emp is not None:
+            result['visibleByEmp'] = self.visible_by_emp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contactClientFlag') is not None:
+            self.contact_client_flag = m.get('contactClientFlag')
+        if m.get('contactFlag') is not None:
+            self.contact_flag = m.get('contactFlag')
+        if m.get('contactSource') is not None:
+            self.contact_source = m.get('contactSource')
+        if m.get('contactSystemFlag') is not None:
+            self.contact_system_flag = m.get('contactSystemFlag')
+        if m.get('deleted') is not None:
+            self.deleted = m.get('deleted')
+        if m.get('derived') is not None:
+            self.derived = m.get('derived')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('editFromEmployeeFlag') is not None:
+            self.edit_from_employee_flag = m.get('editFromEmployeeFlag')
+        if m.get('editableByHr') is not None:
+            self.editable_by_hr = m.get('editableByHr')
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldTip') is not None:
+            self.field_tip = m.get('fieldTip')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('hiddenFromEmployeeFlag') is not None:
+            self.hidden_from_employee_flag = m.get('hiddenFromEmployeeFlag')
+        if m.get('hint') is not None:
+            self.hint = m.get('hint')
+        if m.get('historyField') is not None:
+            self.history_field = m.get('historyField')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('modifyOptions') is not None:
+            self.modify_options = m.get('modifyOptions')
+        if m.get('noWatermark') is not None:
+            self.no_watermark = m.get('noWatermark')
+        if m.get('numberDecimalPlace') is not None:
+            self.number_decimal_place = m.get('numberDecimalPlace')
+        if m.get('numberFormatType') is not None:
+            self.number_format_type = m.get('numberFormatType')
+        if m.get('numberValueType') is not None:
+            self.number_value_type = m.get('numberValueType')
+        if m.get('optionText') is not None:
+            self.option_text = m.get('optionText')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('sourceFieldCode') is not None:
+            self.source_field_code = m.get('sourceFieldCode')
+        if m.get('systemFlag') is not None:
+            self.system_flag = m.get('systemFlag')
+        if m.get('textToSelectField') is not None:
+            self.text_to_select_field = m.get('textToSelectField')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('visibleByEmp') is not None:
+            self.visible_by_emp = m.get('visibleByEmp')
+        return self
+
+
+class AddCustomRosterFieldResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: AddCustomRosterFieldResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = AddCustomRosterFieldResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddCustomRosterFieldResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddCustomRosterFieldResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddCustomRosterFieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddHrmLegalEntityHeaders(TeaModel):
     def __init__(
         self,
@@ -802,6 +1230,267 @@ class AddHrmPreentryResponse(TeaModel):
         return self
 
 
+class AddRosterFieldFormHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddRosterFieldFormRequest(TeaModel):
+    def __init__(
+        self,
+        detail: bool = None,
+        name: str = None,
+    ):
+        # This parameter is required.
+        self.detail = detail
+        # This parameter is required.
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.detail is not None:
+            result['detail'] = self.detail
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('detail') is not None:
+            self.detail = m.get('detail')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class AddRosterFieldFormResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_group_id: int = None,
+        content: str = None,
+        corp_id: str = None,
+        delete_flag: str = None,
+        detail: bool = None,
+        form_id: str = None,
+        gmt_create: Any = None,
+        gmt_modified: Any = None,
+        icon: str = None,
+        id: int = None,
+        memo: str = None,
+        name: str = None,
+        sort_order: int = None,
+        version_id: int = None,
+    ):
+        self.biz_group_id = biz_group_id
+        self.content = content
+        self.corp_id = corp_id
+        self.delete_flag = delete_flag
+        self.detail = detail
+        self.form_id = form_id
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.icon = icon
+        self.id = id
+        self.memo = memo
+        self.name = name
+        self.sort_order = sort_order
+        self.version_id = version_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_group_id is not None:
+            result['bizGroupId'] = self.biz_group_id
+        if self.content is not None:
+            result['content'] = self.content
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.delete_flag is not None:
+            result['deleteFlag'] = self.delete_flag
+        if self.detail is not None:
+            result['detail'] = self.detail
+        if self.form_id is not None:
+            result['formId'] = self.form_id
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.id is not None:
+            result['id'] = self.id
+        if self.memo is not None:
+            result['memo'] = self.memo
+        if self.name is not None:
+            result['name'] = self.name
+        if self.sort_order is not None:
+            result['sortOrder'] = self.sort_order
+        if self.version_id is not None:
+            result['versionId'] = self.version_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizGroupId') is not None:
+            self.biz_group_id = m.get('bizGroupId')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('deleteFlag') is not None:
+            self.delete_flag = m.get('deleteFlag')
+        if m.get('detail') is not None:
+            self.detail = m.get('detail')
+        if m.get('formId') is not None:
+            self.form_id = m.get('formId')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('memo') is not None:
+            self.memo = m.get('memo')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('sortOrder') is not None:
+            self.sort_order = m.get('sortOrder')
+        if m.get('versionId') is not None:
+            self.version_id = m.get('versionId')
+        return self
+
+
+class AddRosterFieldFormResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: AddRosterFieldFormResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = AddRosterFieldFormResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddRosterFieldFormResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddRosterFieldFormResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddRosterFieldFormResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateRecordHeaders(TeaModel):
     def __init__(
         self,
@@ -1318,6 +2007,313 @@ class CreateRecordResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateRecordResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteCustomRosterFieldHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteCustomRosterFieldRequest(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        group_id: str = None,
+    ):
+        # This parameter is required.
+        self.field_code = field_code
+        # This parameter is required.
+        self.group_id = group_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        return self
+
+
+class DeleteCustomRosterFieldResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteCustomRosterFieldResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteCustomRosterFieldResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteCustomRosterFieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteRosterFieldFormHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteRosterFieldFormRequest(TeaModel):
+    def __init__(
+        self,
+        form_id: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.form_id = form_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_id is not None:
+            result['formId'] = self.form_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formId') is not None:
+            self.form_id = m.get('formId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class DeleteRosterFieldFormResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteRosterFieldFormResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteRosterFieldFormResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteRosterFieldFormResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -11348,6 +12344,231 @@ class SendIsvCardMessageResponse(TeaModel):
         return self
 
 
+class SendRealAuthInviteMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendRealAuthInviteMessageRequestOnWorkingEmpSearchVO(TeaModel):
+    def __init__(
+        self,
+        user_ids: List[str] = None,
+    ):
+        # This parameter is required.
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class SendRealAuthInviteMessageRequest(TeaModel):
+    def __init__(
+        self,
+        inviter_id: str = None,
+        on_working_emp_search_vo: SendRealAuthInviteMessageRequestOnWorkingEmpSearchVO = None,
+    ):
+        # This parameter is required.
+        self.inviter_id = inviter_id
+        # This parameter is required.
+        self.on_working_emp_search_vo = on_working_emp_search_vo
+
+    def validate(self):
+        if self.on_working_emp_search_vo:
+            self.on_working_emp_search_vo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.inviter_id is not None:
+            result['inviterId'] = self.inviter_id
+        if self.on_working_emp_search_vo is not None:
+            result['onWorkingEmpSearchVO'] = self.on_working_emp_search_vo.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('inviterId') is not None:
+            self.inviter_id = m.get('inviterId')
+        if m.get('onWorkingEmpSearchVO') is not None:
+            temp_model = SendRealAuthInviteMessageRequestOnWorkingEmpSearchVO()
+            self.on_working_emp_search_vo = temp_model.from_map(m['onWorkingEmpSearchVO'])
+        return self
+
+
+class SendRealAuthInviteMessageResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        had_invited_num: int = None,
+        had_real_auth_num: int = None,
+        success_num: int = None,
+    ):
+        self.had_invited_num = had_invited_num
+        self.had_real_auth_num = had_real_auth_num
+        self.success_num = success_num
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.had_invited_num is not None:
+            result['hadInvitedNum'] = self.had_invited_num
+        if self.had_real_auth_num is not None:
+            result['hadRealAuthNum'] = self.had_real_auth_num
+        if self.success_num is not None:
+            result['successNum'] = self.success_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hadInvitedNum') is not None:
+            self.had_invited_num = m.get('hadInvitedNum')
+        if m.get('hadRealAuthNum') is not None:
+            self.had_real_auth_num = m.get('hadRealAuthNum')
+        if m.get('successNum') is not None:
+            self.success_num = m.get('successNum')
+        return self
+
+
+class SendRealAuthInviteMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: SendRealAuthInviteMessageResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = SendRealAuthInviteMessageResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SendRealAuthInviteMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SendRealAuthInviteMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SendRealAuthInviteMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SolutionTaskInitHeaders(TeaModel):
     def __init__(
         self,
@@ -12112,6 +13333,544 @@ class SyncTaskTemplateResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncTaskTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateCustomRosterFieldHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateCustomRosterFieldRequest(TeaModel):
+    def __init__(
+        self,
+        contact_client_flag: bool = None,
+        contact_flag: bool = None,
+        contact_source: int = None,
+        contact_system_flag: bool = None,
+        deleted: bool = None,
+        derived: bool = None,
+        disabled: int = None,
+        edit_from_employee_flag: bool = None,
+        editable_by_hr: bool = None,
+        field_code: str = None,
+        field_name: str = None,
+        field_tip: str = None,
+        field_type: str = None,
+        group_id: str = None,
+        hidden_from_employee_flag: bool = None,
+        hint: str = None,
+        history_field: bool = None,
+        index: int = None,
+        modify_options: bool = None,
+        no_watermark: bool = None,
+        number_decimal_place: int = None,
+        number_format_type: str = None,
+        number_value_type: str = None,
+        option_text: str = None,
+        required: bool = None,
+        source_field_code: str = None,
+        system_flag: bool = None,
+        text_to_select_field: bool = None,
+        update_user_id: str = None,
+        value: str = None,
+        visible_by_emp: bool = None,
+    ):
+        self.contact_client_flag = contact_client_flag
+        self.contact_flag = contact_flag
+        self.contact_source = contact_source
+        self.contact_system_flag = contact_system_flag
+        self.deleted = deleted
+        self.derived = derived
+        self.disabled = disabled
+        # This parameter is required.
+        self.edit_from_employee_flag = edit_from_employee_flag
+        self.editable_by_hr = editable_by_hr
+        # This parameter is required.
+        self.field_code = field_code
+        # This parameter is required.
+        self.field_name = field_name
+        self.field_tip = field_tip
+        # This parameter is required.
+        self.field_type = field_type
+        # This parameter is required.
+        self.group_id = group_id
+        # This parameter is required.
+        self.hidden_from_employee_flag = hidden_from_employee_flag
+        self.hint = hint
+        self.history_field = history_field
+        self.index = index
+        self.modify_options = modify_options
+        self.no_watermark = no_watermark
+        self.number_decimal_place = number_decimal_place
+        self.number_format_type = number_format_type
+        self.number_value_type = number_value_type
+        self.option_text = option_text
+        # This parameter is required.
+        self.required = required
+        self.source_field_code = source_field_code
+        self.system_flag = system_flag
+        self.text_to_select_field = text_to_select_field
+        # This parameter is required.
+        self.update_user_id = update_user_id
+        self.value = value
+        # This parameter is required.
+        self.visible_by_emp = visible_by_emp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contact_client_flag is not None:
+            result['contactClientFlag'] = self.contact_client_flag
+        if self.contact_flag is not None:
+            result['contactFlag'] = self.contact_flag
+        if self.contact_source is not None:
+            result['contactSource'] = self.contact_source
+        if self.contact_system_flag is not None:
+            result['contactSystemFlag'] = self.contact_system_flag
+        if self.deleted is not None:
+            result['deleted'] = self.deleted
+        if self.derived is not None:
+            result['derived'] = self.derived
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.edit_from_employee_flag is not None:
+            result['editFromEmployeeFlag'] = self.edit_from_employee_flag
+        if self.editable_by_hr is not None:
+            result['editableByHr'] = self.editable_by_hr
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_tip is not None:
+            result['fieldTip'] = self.field_tip
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.hidden_from_employee_flag is not None:
+            result['hiddenFromEmployeeFlag'] = self.hidden_from_employee_flag
+        if self.hint is not None:
+            result['hint'] = self.hint
+        if self.history_field is not None:
+            result['historyField'] = self.history_field
+        if self.index is not None:
+            result['index'] = self.index
+        if self.modify_options is not None:
+            result['modifyOptions'] = self.modify_options
+        if self.no_watermark is not None:
+            result['noWatermark'] = self.no_watermark
+        if self.number_decimal_place is not None:
+            result['numberDecimalPlace'] = self.number_decimal_place
+        if self.number_format_type is not None:
+            result['numberFormatType'] = self.number_format_type
+        if self.number_value_type is not None:
+            result['numberValueType'] = self.number_value_type
+        if self.option_text is not None:
+            result['optionText'] = self.option_text
+        if self.required is not None:
+            result['required'] = self.required
+        if self.source_field_code is not None:
+            result['sourceFieldCode'] = self.source_field_code
+        if self.system_flag is not None:
+            result['systemFlag'] = self.system_flag
+        if self.text_to_select_field is not None:
+            result['textToSelectField'] = self.text_to_select_field
+        if self.update_user_id is not None:
+            result['updateUserId'] = self.update_user_id
+        if self.value is not None:
+            result['value'] = self.value
+        if self.visible_by_emp is not None:
+            result['visibleByEmp'] = self.visible_by_emp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contactClientFlag') is not None:
+            self.contact_client_flag = m.get('contactClientFlag')
+        if m.get('contactFlag') is not None:
+            self.contact_flag = m.get('contactFlag')
+        if m.get('contactSource') is not None:
+            self.contact_source = m.get('contactSource')
+        if m.get('contactSystemFlag') is not None:
+            self.contact_system_flag = m.get('contactSystemFlag')
+        if m.get('deleted') is not None:
+            self.deleted = m.get('deleted')
+        if m.get('derived') is not None:
+            self.derived = m.get('derived')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('editFromEmployeeFlag') is not None:
+            self.edit_from_employee_flag = m.get('editFromEmployeeFlag')
+        if m.get('editableByHr') is not None:
+            self.editable_by_hr = m.get('editableByHr')
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldTip') is not None:
+            self.field_tip = m.get('fieldTip')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('hiddenFromEmployeeFlag') is not None:
+            self.hidden_from_employee_flag = m.get('hiddenFromEmployeeFlag')
+        if m.get('hint') is not None:
+            self.hint = m.get('hint')
+        if m.get('historyField') is not None:
+            self.history_field = m.get('historyField')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('modifyOptions') is not None:
+            self.modify_options = m.get('modifyOptions')
+        if m.get('noWatermark') is not None:
+            self.no_watermark = m.get('noWatermark')
+        if m.get('numberDecimalPlace') is not None:
+            self.number_decimal_place = m.get('numberDecimalPlace')
+        if m.get('numberFormatType') is not None:
+            self.number_format_type = m.get('numberFormatType')
+        if m.get('numberValueType') is not None:
+            self.number_value_type = m.get('numberValueType')
+        if m.get('optionText') is not None:
+            self.option_text = m.get('optionText')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('sourceFieldCode') is not None:
+            self.source_field_code = m.get('sourceFieldCode')
+        if m.get('systemFlag') is not None:
+            self.system_flag = m.get('systemFlag')
+        if m.get('textToSelectField') is not None:
+            self.text_to_select_field = m.get('textToSelectField')
+        if m.get('updateUserId') is not None:
+            self.update_user_id = m.get('updateUserId')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('visibleByEmp') is not None:
+            self.visible_by_emp = m.get('visibleByEmp')
+        return self
+
+
+class UpdateCustomRosterFieldResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        contact_client_flag: bool = None,
+        contact_flag: bool = None,
+        contact_source: int = None,
+        contact_system_flag: bool = None,
+        deleted: bool = None,
+        derived: bool = None,
+        disabled: int = None,
+        edit_from_employee_flag: bool = None,
+        editable_by_hr: bool = None,
+        field_code: str = None,
+        field_name: str = None,
+        field_tip: str = None,
+        field_type: str = None,
+        group_id: str = None,
+        hidden_from_employee_flag: bool = None,
+        hint: str = None,
+        history_field: bool = None,
+        index: int = None,
+        modify_options: bool = None,
+        no_watermark: bool = None,
+        number_decimal_place: str = None,
+        number_format_type: str = None,
+        number_value_type: str = None,
+        option_text: str = None,
+        required: bool = None,
+        source_field_code: str = None,
+        system_flag: bool = None,
+        text_to_select_field: bool = None,
+        value: str = None,
+        visible_by_emp: bool = None,
+    ):
+        self.contact_client_flag = contact_client_flag
+        self.contact_flag = contact_flag
+        self.contact_source = contact_source
+        self.contact_system_flag = contact_system_flag
+        self.deleted = deleted
+        self.derived = derived
+        self.disabled = disabled
+        self.edit_from_employee_flag = edit_from_employee_flag
+        self.editable_by_hr = editable_by_hr
+        self.field_code = field_code
+        self.field_name = field_name
+        self.field_tip = field_tip
+        self.field_type = field_type
+        self.group_id = group_id
+        self.hidden_from_employee_flag = hidden_from_employee_flag
+        self.hint = hint
+        self.history_field = history_field
+        self.index = index
+        self.modify_options = modify_options
+        self.no_watermark = no_watermark
+        self.number_decimal_place = number_decimal_place
+        self.number_format_type = number_format_type
+        self.number_value_type = number_value_type
+        self.option_text = option_text
+        self.required = required
+        self.source_field_code = source_field_code
+        self.system_flag = system_flag
+        self.text_to_select_field = text_to_select_field
+        self.value = value
+        self.visible_by_emp = visible_by_emp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contact_client_flag is not None:
+            result['contactClientFlag'] = self.contact_client_flag
+        if self.contact_flag is not None:
+            result['contactFlag'] = self.contact_flag
+        if self.contact_source is not None:
+            result['contactSource'] = self.contact_source
+        if self.contact_system_flag is not None:
+            result['contactSystemFlag'] = self.contact_system_flag
+        if self.deleted is not None:
+            result['deleted'] = self.deleted
+        if self.derived is not None:
+            result['derived'] = self.derived
+        if self.disabled is not None:
+            result['disabled'] = self.disabled
+        if self.edit_from_employee_flag is not None:
+            result['editFromEmployeeFlag'] = self.edit_from_employee_flag
+        if self.editable_by_hr is not None:
+            result['editableByHr'] = self.editable_by_hr
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_tip is not None:
+            result['fieldTip'] = self.field_tip
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.hidden_from_employee_flag is not None:
+            result['hiddenFromEmployeeFlag'] = self.hidden_from_employee_flag
+        if self.hint is not None:
+            result['hint'] = self.hint
+        if self.history_field is not None:
+            result['historyField'] = self.history_field
+        if self.index is not None:
+            result['index'] = self.index
+        if self.modify_options is not None:
+            result['modifyOptions'] = self.modify_options
+        if self.no_watermark is not None:
+            result['noWatermark'] = self.no_watermark
+        if self.number_decimal_place is not None:
+            result['numberDecimalPlace'] = self.number_decimal_place
+        if self.number_format_type is not None:
+            result['numberFormatType'] = self.number_format_type
+        if self.number_value_type is not None:
+            result['numberValueType'] = self.number_value_type
+        if self.option_text is not None:
+            result['optionText'] = self.option_text
+        if self.required is not None:
+            result['required'] = self.required
+        if self.source_field_code is not None:
+            result['sourceFieldCode'] = self.source_field_code
+        if self.system_flag is not None:
+            result['systemFlag'] = self.system_flag
+        if self.text_to_select_field is not None:
+            result['textToSelectField'] = self.text_to_select_field
+        if self.value is not None:
+            result['value'] = self.value
+        if self.visible_by_emp is not None:
+            result['visibleByEmp'] = self.visible_by_emp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contactClientFlag') is not None:
+            self.contact_client_flag = m.get('contactClientFlag')
+        if m.get('contactFlag') is not None:
+            self.contact_flag = m.get('contactFlag')
+        if m.get('contactSource') is not None:
+            self.contact_source = m.get('contactSource')
+        if m.get('contactSystemFlag') is not None:
+            self.contact_system_flag = m.get('contactSystemFlag')
+        if m.get('deleted') is not None:
+            self.deleted = m.get('deleted')
+        if m.get('derived') is not None:
+            self.derived = m.get('derived')
+        if m.get('disabled') is not None:
+            self.disabled = m.get('disabled')
+        if m.get('editFromEmployeeFlag') is not None:
+            self.edit_from_employee_flag = m.get('editFromEmployeeFlag')
+        if m.get('editableByHr') is not None:
+            self.editable_by_hr = m.get('editableByHr')
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldTip') is not None:
+            self.field_tip = m.get('fieldTip')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('hiddenFromEmployeeFlag') is not None:
+            self.hidden_from_employee_flag = m.get('hiddenFromEmployeeFlag')
+        if m.get('hint') is not None:
+            self.hint = m.get('hint')
+        if m.get('historyField') is not None:
+            self.history_field = m.get('historyField')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('modifyOptions') is not None:
+            self.modify_options = m.get('modifyOptions')
+        if m.get('noWatermark') is not None:
+            self.no_watermark = m.get('noWatermark')
+        if m.get('numberDecimalPlace') is not None:
+            self.number_decimal_place = m.get('numberDecimalPlace')
+        if m.get('numberFormatType') is not None:
+            self.number_format_type = m.get('numberFormatType')
+        if m.get('numberValueType') is not None:
+            self.number_value_type = m.get('numberValueType')
+        if m.get('optionText') is not None:
+            self.option_text = m.get('optionText')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('sourceFieldCode') is not None:
+            self.source_field_code = m.get('sourceFieldCode')
+        if m.get('systemFlag') is not None:
+            self.system_flag = m.get('systemFlag')
+        if m.get('textToSelectField') is not None:
+            self.text_to_select_field = m.get('textToSelectField')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('visibleByEmp') is not None:
+            self.visible_by_emp = m.get('visibleByEmp')
+        return self
+
+
+class UpdateCustomRosterFieldResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: UpdateCustomRosterFieldResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = UpdateCustomRosterFieldResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateCustomRosterFieldResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateCustomRosterFieldResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateCustomRosterFieldResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -13318,6 +15077,173 @@ class UpdateIsvCardMessageResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateIsvCardMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateRosterFieldFormHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateRosterFieldFormRequest(TeaModel):
+    def __init__(
+        self,
+        detail: bool = None,
+        form_id: str = None,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.detail = detail
+        # This parameter is required.
+        self.form_id = form_id
+        # This parameter is required.
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.detail is not None:
+            result['detail'] = self.detail
+        if self.form_id is not None:
+            result['formId'] = self.form_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('detail') is not None:
+            self.detail = m.get('detail')
+        if m.get('formId') is not None:
+            self.form_id = m.get('formId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateRosterFieldFormResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateRosterFieldFormResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateRosterFieldFormResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateRosterFieldFormResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

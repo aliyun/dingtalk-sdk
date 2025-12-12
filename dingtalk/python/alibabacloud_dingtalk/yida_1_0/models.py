@@ -7445,6 +7445,7 @@ class GetInstancesRequest(TeaModel):
         approved_result: str = None,
         create_from_time_gmt: str = None,
         create_to_time_gmt: str = None,
+        env: str = None,
         form_uuid: str = None,
         instance_status: str = None,
         language: str = None,
@@ -7464,6 +7465,7 @@ class GetInstancesRequest(TeaModel):
         self.approved_result = approved_result
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        self.env = env
         # This parameter is required.
         self.form_uuid = form_uuid
         self.instance_status = instance_status
@@ -7498,6 +7500,8 @@ class GetInstancesRequest(TeaModel):
             result['createFromTimeGMT'] = self.create_from_time_gmt
         if self.create_to_time_gmt is not None:
             result['createToTimeGMT'] = self.create_to_time_gmt
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_uuid is not None:
             result['formUuid'] = self.form_uuid
         if self.instance_status is not None:
@@ -7536,6 +7540,8 @@ class GetInstancesRequest(TeaModel):
             self.create_from_time_gmt = m.get('createFromTimeGMT')
         if m.get('createToTimeGMT') is not None:
             self.create_to_time_gmt = m.get('createToTimeGMT')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formUuid') is not None:
             self.form_uuid = m.get('formUuid')
         if m.get('instanceStatus') is not None:
@@ -9448,6 +9454,7 @@ class GetOperationRecordsRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         language: str = None,
         process_instance_id: str = None,
         system_token: str = None,
@@ -9455,6 +9462,7 @@ class GetOperationRecordsRequest(TeaModel):
     ):
         # This parameter is required.
         self.app_type = app_type
+        self.env = env
         self.language = language
         # This parameter is required.
         self.process_instance_id = process_instance_id
@@ -9474,6 +9482,8 @@ class GetOperationRecordsRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.language is not None:
             result['language'] = self.language
         if self.process_instance_id is not None:
@@ -9488,6 +9498,8 @@ class GetOperationRecordsRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('language') is not None:
             self.language = m.get('language')
         if m.get('processInstanceId') is not None:
@@ -21801,6 +21813,7 @@ class SearchFormDatasRequest(TeaModel):
         create_to_time_gmt: str = None,
         current_page: int = None,
         dynamic_order: str = None,
+        env: str = None,
         form_uuid: str = None,
         language: str = None,
         logic_operator: str = None,
@@ -21818,6 +21831,7 @@ class SearchFormDatasRequest(TeaModel):
         self.create_to_time_gmt = create_to_time_gmt
         self.current_page = current_page
         self.dynamic_order = dynamic_order
+        self.env = env
         # This parameter is required.
         self.form_uuid = form_uuid
         self.language = language
@@ -21851,6 +21865,8 @@ class SearchFormDatasRequest(TeaModel):
             result['currentPage'] = self.current_page
         if self.dynamic_order is not None:
             result['dynamicOrder'] = self.dynamic_order
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_uuid is not None:
             result['formUuid'] = self.form_uuid
         if self.language is not None:
@@ -21885,6 +21901,8 @@ class SearchFormDatasRequest(TeaModel):
             self.current_page = m.get('currentPage')
         if m.get('dynamicOrder') is not None:
             self.dynamic_order = m.get('dynamicOrder')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formUuid') is not None:
             self.form_uuid = m.get('formUuid')
         if m.get('language') is not None:
@@ -22891,6 +22909,7 @@ class UpdateFormDataRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         form_instance_id: str = None,
         language: str = None,
         system_token: str = None,
@@ -22899,6 +22918,7 @@ class UpdateFormDataRequest(TeaModel):
         user_id: str = None,
     ):
         self.app_type = app_type
+        self.env = env
         # This parameter is required.
         self.form_instance_id = form_instance_id
         self.language = language
@@ -22921,6 +22941,8 @@ class UpdateFormDataRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_instance_id is not None:
             result['formInstanceId'] = self.form_instance_id
         if self.language is not None:
@@ -22939,6 +22961,8 @@ class UpdateFormDataRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formInstanceId') is not None:
             self.form_instance_id = m.get('formInstanceId')
         if m.get('language') is not None:

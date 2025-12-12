@@ -53,6 +53,9 @@ class AiRetailProductAddRequest(TeaModel):
         product_fab: str = None,
         product_info: str = None,
         product_name: str = None,
+        tag_1: str = None,
+        tag_2: str = None,
+        tag_3: str = None,
     ):
         self.attribute = attribute
         self.barcodes = barcodes
@@ -69,6 +72,9 @@ class AiRetailProductAddRequest(TeaModel):
         self.product_info = product_info
         # This parameter is required.
         self.product_name = product_name
+        self.tag_1 = tag_1
+        self.tag_2 = tag_2
+        self.tag_3 = tag_3
 
     def validate(self):
         pass
@@ -105,6 +111,12 @@ class AiRetailProductAddRequest(TeaModel):
             result['productInfo'] = self.product_info
         if self.product_name is not None:
             result['productName'] = self.product_name
+        if self.tag_1 is not None:
+            result['tag1'] = self.tag_1
+        if self.tag_2 is not None:
+            result['tag2'] = self.tag_2
+        if self.tag_3 is not None:
+            result['tag3'] = self.tag_3
         return result
 
     def from_map(self, m: dict = None):
@@ -135,6 +147,12 @@ class AiRetailProductAddRequest(TeaModel):
             self.product_info = m.get('productInfo')
         if m.get('productName') is not None:
             self.product_name = m.get('productName')
+        if m.get('tag1') is not None:
+            self.tag_1 = m.get('tag1')
+        if m.get('tag2') is not None:
+            self.tag_2 = m.get('tag2')
+        if m.get('tag3') is not None:
+            self.tag_3 = m.get('tag3')
         return self
 
 
@@ -553,6 +571,9 @@ class AiRetailProductQueryResponseBodyData(TeaModel):
         product_id: int = None,
         product_info: str = None,
         product_name: str = None,
+        tag_1: str = None,
+        tag_2: str = None,
+        tag_3: str = None,
     ):
         self.attribute = attribute
         self.barcodes = barcodes
@@ -568,6 +589,9 @@ class AiRetailProductQueryResponseBodyData(TeaModel):
         self.product_id = product_id
         self.product_info = product_info
         self.product_name = product_name
+        self.tag_1 = tag_1
+        self.tag_2 = tag_2
+        self.tag_3 = tag_3
 
     def validate(self):
         pass
@@ -606,6 +630,12 @@ class AiRetailProductQueryResponseBodyData(TeaModel):
             result['productInfo'] = self.product_info
         if self.product_name is not None:
             result['productName'] = self.product_name
+        if self.tag_1 is not None:
+            result['tag1'] = self.tag_1
+        if self.tag_2 is not None:
+            result['tag2'] = self.tag_2
+        if self.tag_3 is not None:
+            result['tag3'] = self.tag_3
         return result
 
     def from_map(self, m: dict = None):
@@ -638,6 +668,12 @@ class AiRetailProductQueryResponseBodyData(TeaModel):
             self.product_info = m.get('productInfo')
         if m.get('productName') is not None:
             self.product_name = m.get('productName')
+        if m.get('tag1') is not None:
+            self.tag_1 = m.get('tag1')
+        if m.get('tag2') is not None:
+            self.tag_2 = m.get('tag2')
+        if m.get('tag3') is not None:
+            self.tag_3 = m.get('tag3')
         return self
 
 
@@ -767,6 +803,9 @@ class AiRetailProductUpdateRequest(TeaModel):
         product_id: int = None,
         product_info: str = None,
         product_name: str = None,
+        tag_1: str = None,
+        tag_2: str = None,
+        tag_3: str = None,
     ):
         self.attribute = attribute
         self.barcodes = barcodes
@@ -783,6 +822,9 @@ class AiRetailProductUpdateRequest(TeaModel):
         self.product_id = product_id
         self.product_info = product_info
         self.product_name = product_name
+        self.tag_1 = tag_1
+        self.tag_2 = tag_2
+        self.tag_3 = tag_3
 
     def validate(self):
         pass
@@ -821,6 +863,12 @@ class AiRetailProductUpdateRequest(TeaModel):
             result['productInfo'] = self.product_info
         if self.product_name is not None:
             result['productName'] = self.product_name
+        if self.tag_1 is not None:
+            result['tag1'] = self.tag_1
+        if self.tag_2 is not None:
+            result['tag2'] = self.tag_2
+        if self.tag_3 is not None:
+            result['tag3'] = self.tag_3
         return result
 
     def from_map(self, m: dict = None):
@@ -853,6 +901,12 @@ class AiRetailProductUpdateRequest(TeaModel):
             self.product_info = m.get('productInfo')
         if m.get('productName') is not None:
             self.product_name = m.get('productName')
+        if m.get('tag1') is not None:
+            self.tag_1 = m.get('tag1')
+        if m.get('tag2') is not None:
+            self.tag_2 = m.get('tag2')
+        if m.get('tag3') is not None:
+            self.tag_3 = m.get('tag3')
         return self
 
 
@@ -958,15 +1012,31 @@ class AiTrainingDetailRequest(TeaModel):
 class AiTrainingDetailResponseBodyResultProductInfoList(TeaModel):
     def __init__(
         self,
+        attribute: str = None,
+        brand: str = None,
+        category: str = None,
+        currency: str = None,
+        image_urls: List[str] = None,
         price: int = None,
         product_code: str = None,
+        product_fab: str = None,
         product_id: int = None,
+        product_info: str = None,
         product_name: str = None,
+        related_type: str = None,
     ):
+        self.attribute = attribute
+        self.brand = brand
+        self.category = category
+        self.currency = currency
+        self.image_urls = image_urls
         self.price = price
         self.product_code = product_code
+        self.product_fab = product_fab
         self.product_id = product_id
+        self.product_info = product_info
         self.product_name = product_name
+        self.related_type = related_type
 
     def validate(self):
         pass
@@ -977,26 +1047,58 @@ class AiTrainingDetailResponseBodyResultProductInfoList(TeaModel):
             return _map
 
         result = dict()
+        if self.attribute is not None:
+            result['attribute'] = self.attribute
+        if self.brand is not None:
+            result['brand'] = self.brand
+        if self.category is not None:
+            result['category'] = self.category
+        if self.currency is not None:
+            result['currency'] = self.currency
+        if self.image_urls is not None:
+            result['imageUrls'] = self.image_urls
         if self.price is not None:
             result['price'] = self.price
         if self.product_code is not None:
             result['productCode'] = self.product_code
+        if self.product_fab is not None:
+            result['productFab'] = self.product_fab
         if self.product_id is not None:
             result['productId'] = self.product_id
+        if self.product_info is not None:
+            result['productInfo'] = self.product_info
         if self.product_name is not None:
             result['productName'] = self.product_name
+        if self.related_type is not None:
+            result['relatedType'] = self.related_type
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('attribute') is not None:
+            self.attribute = m.get('attribute')
+        if m.get('brand') is not None:
+            self.brand = m.get('brand')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('currency') is not None:
+            self.currency = m.get('currency')
+        if m.get('imageUrls') is not None:
+            self.image_urls = m.get('imageUrls')
         if m.get('price') is not None:
             self.price = m.get('price')
         if m.get('productCode') is not None:
             self.product_code = m.get('productCode')
+        if m.get('productFab') is not None:
+            self.product_fab = m.get('productFab')
         if m.get('productId') is not None:
             self.product_id = m.get('productId')
+        if m.get('productInfo') is not None:
+            self.product_info = m.get('productInfo')
         if m.get('productName') is not None:
             self.product_name = m.get('productName')
+        if m.get('relatedType') is not None:
+            self.related_type = m.get('relatedType')
         return self
 
 
@@ -1045,6 +1147,7 @@ class AiTrainingDetailResponseBodyResult(TeaModel):
         admin_review: str = None,
         ai_job_status: str = None,
         creator: str = None,
+        duration: int = None,
         feedback: int = None,
         feedback_content: str = None,
         gmt_create: str = None,
@@ -1064,6 +1167,7 @@ class AiTrainingDetailResponseBodyResult(TeaModel):
         self.admin_review = admin_review
         self.ai_job_status = ai_job_status
         self.creator = creator
+        self.duration = duration
         self.feedback = feedback
         self.feedback_content = feedback_content
         self.gmt_create = gmt_create
@@ -1100,6 +1204,8 @@ class AiTrainingDetailResponseBodyResult(TeaModel):
             result['aiJobStatus'] = self.ai_job_status
         if self.creator is not None:
             result['creator'] = self.creator
+        if self.duration is not None:
+            result['duration'] = self.duration
         if self.feedback is not None:
             result['feedback'] = self.feedback
         if self.feedback_content is not None:
@@ -1142,6 +1248,8 @@ class AiTrainingDetailResponseBodyResult(TeaModel):
             self.ai_job_status = m.get('aiJobStatus')
         if m.get('creator') is not None:
             self.creator = m.get('creator')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
         if m.get('feedback') is not None:
             self.feedback = m.get('feedback')
         if m.get('feedbackContent') is not None:

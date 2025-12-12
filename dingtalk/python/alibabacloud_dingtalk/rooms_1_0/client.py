@@ -2616,6 +2616,128 @@ class Client(OpenApiClient):
         headers = dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomHeaders()
         return await self.remove_super_user_meeting_room_with_options_async(request, headers, runtime)
 
+    def send_central_control_with_options(
+        self,
+        request: dingtalkrooms__1__0_models.SendCentralControlRequest,
+        headers: dingtalkrooms__1__0_models.SendCentralControlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.SendCentralControlResponse:
+        """
+        @summary 发送Rooms中控API信令
+        
+        @param request: SendCentralControlRequest
+        @param headers: SendCentralControlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendCentralControlResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.control_body):
+            body['controlBody'] = request.control_body
+        if not UtilClient.is_unset(request.room_id):
+            body['roomId'] = request.room_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendCentralControl',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/central/control',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.SendCentralControlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_central_control_with_options_async(
+        self,
+        request: dingtalkrooms__1__0_models.SendCentralControlRequest,
+        headers: dingtalkrooms__1__0_models.SendCentralControlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.SendCentralControlResponse:
+        """
+        @summary 发送Rooms中控API信令
+        
+        @param request: SendCentralControlRequest
+        @param headers: SendCentralControlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendCentralControlResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.control_body):
+            body['controlBody'] = request.control_body
+        if not UtilClient.is_unset(request.room_id):
+            body['roomId'] = request.room_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendCentralControl',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/central/control',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.SendCentralControlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_central_control(
+        self,
+        request: dingtalkrooms__1__0_models.SendCentralControlRequest,
+    ) -> dingtalkrooms__1__0_models.SendCentralControlResponse:
+        """
+        @summary 发送Rooms中控API信令
+        
+        @param request: SendCentralControlRequest
+        @return: SendCentralControlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.SendCentralControlHeaders()
+        return self.send_central_control_with_options(request, headers, runtime)
+
+    async def send_central_control_async(
+        self,
+        request: dingtalkrooms__1__0_models.SendCentralControlRequest,
+    ) -> dingtalkrooms__1__0_models.SendCentralControlResponse:
+        """
+        @summary 发送Rooms中控API信令
+        
+        @param request: SendCentralControlRequest
+        @return: SendCentralControlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.SendCentralControlHeaders()
+        return await self.send_central_control_with_options_async(request, headers, runtime)
+
     def set_super_user_meeting_room_with_options(
         self,
         request: dingtalkrooms__1__0_models.SetSuperUserMeetingRoomRequest,

@@ -400,6 +400,120 @@ class Client(OpenApiClient):
         headers = dingtalkcool_app__1__0_models.QueryCoolAppShortcutOrderHeaders()
         return await self.query_cool_app_shortcut_order_with_options_async(request, headers, runtime)
 
+    def query_installed_cool_apps_in_conversation_with_options(
+        self,
+        request: dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationRequest,
+        headers: dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationResponse:
+        """
+        @summary 查询会话内已安装的酷应用
+        
+        @param request: QueryInstalledCoolAppsInConversationRequest
+        @param headers: QueryInstalledCoolAppsInConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryInstalledCoolAppsInConversationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryInstalledCoolAppsInConversation',
+            version='coolApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/coolApp/installedInConversation/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_installed_cool_apps_in_conversation_with_options_async(
+        self,
+        request: dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationRequest,
+        headers: dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationResponse:
+        """
+        @summary 查询会话内已安装的酷应用
+        
+        @param request: QueryInstalledCoolAppsInConversationRequest
+        @param headers: QueryInstalledCoolAppsInConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryInstalledCoolAppsInConversationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryInstalledCoolAppsInConversation',
+            version='coolApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/coolApp/installedInConversation/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_installed_cool_apps_in_conversation(
+        self,
+        request: dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationRequest,
+    ) -> dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationResponse:
+        """
+        @summary 查询会话内已安装的酷应用
+        
+        @param request: QueryInstalledCoolAppsInConversationRequest
+        @return: QueryInstalledCoolAppsInConversationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationHeaders()
+        return self.query_installed_cool_apps_in_conversation_with_options(request, headers, runtime)
+
+    async def query_installed_cool_apps_in_conversation_async(
+        self,
+        request: dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationRequest,
+    ) -> dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationResponse:
+        """
+        @summary 查询会话内已安装的酷应用
+        
+        @param request: QueryInstalledCoolAppsInConversationRequest
+        @return: QueryInstalledCoolAppsInConversationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcool_app__1__0_models.QueryInstalledCoolAppsInConversationHeaders()
+        return await self.query_installed_cool_apps_in_conversation_with_options_async(request, headers, runtime)
+
     def uninstall_cool_app_from_group_with_options(
         self,
         request: dingtalkcool_app__1__0_models.UninstallCoolAppFromGroupRequest,

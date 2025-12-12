@@ -258,6 +258,282 @@ class Client(OpenApiClient):
         headers = dingtalktrip__1__0_models.PreCheckTemplateHeaders()
         return await self.pre_check_template_with_options_async(request, headers, runtime)
 
+    def query_trip_flight_order_by_page_with_options(
+        self,
+        tmp_req: dingtalktrip__1__0_models.QueryTripFlightOrderByPageRequest,
+        headers: dingtalktrip__1__0_models.QueryTripFlightOrderByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.QueryTripFlightOrderByPageResponse:
+        """
+        @summary 分页查询组织航班订单信息
+        
+        @param tmp_req: QueryTripFlightOrderByPageRequest
+        @param headers: QueryTripFlightOrderByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTripFlightOrderByPageResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalktrip__1__0_models.QueryTripFlightOrderByPageShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.order_status):
+            request.order_status_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.order_status, 'orderStatus', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.order_status_shrink):
+            query['orderStatus'] = request.order_status_shrink
+        if not UtilClient.is_unset(request.page_index):
+            query['pageIndex'] = request.page_index
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryTripFlightOrderByPage',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/flight/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.QueryTripFlightOrderByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_trip_flight_order_by_page_with_options_async(
+        self,
+        tmp_req: dingtalktrip__1__0_models.QueryTripFlightOrderByPageRequest,
+        headers: dingtalktrip__1__0_models.QueryTripFlightOrderByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.QueryTripFlightOrderByPageResponse:
+        """
+        @summary 分页查询组织航班订单信息
+        
+        @param tmp_req: QueryTripFlightOrderByPageRequest
+        @param headers: QueryTripFlightOrderByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTripFlightOrderByPageResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalktrip__1__0_models.QueryTripFlightOrderByPageShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.order_status):
+            request.order_status_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.order_status, 'orderStatus', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.order_status_shrink):
+            query['orderStatus'] = request.order_status_shrink
+        if not UtilClient.is_unset(request.page_index):
+            query['pageIndex'] = request.page_index
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryTripFlightOrderByPage',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/flight/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.QueryTripFlightOrderByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_trip_flight_order_by_page(
+        self,
+        request: dingtalktrip__1__0_models.QueryTripFlightOrderByPageRequest,
+    ) -> dingtalktrip__1__0_models.QueryTripFlightOrderByPageResponse:
+        """
+        @summary 分页查询组织航班订单信息
+        
+        @param request: QueryTripFlightOrderByPageRequest
+        @return: QueryTripFlightOrderByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.QueryTripFlightOrderByPageHeaders()
+        return self.query_trip_flight_order_by_page_with_options(request, headers, runtime)
+
+    async def query_trip_flight_order_by_page_async(
+        self,
+        request: dingtalktrip__1__0_models.QueryTripFlightOrderByPageRequest,
+    ) -> dingtalktrip__1__0_models.QueryTripFlightOrderByPageResponse:
+        """
+        @summary 分页查询组织航班订单信息
+        
+        @param request: QueryTripFlightOrderByPageRequest
+        @return: QueryTripFlightOrderByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.QueryTripFlightOrderByPageHeaders()
+        return await self.query_trip_flight_order_by_page_with_options_async(request, headers, runtime)
+
+    def query_trip_hotel_order_by_page_with_options(
+        self,
+        tmp_req: dingtalktrip__1__0_models.QueryTripHotelOrderByPageRequest,
+        headers: dingtalktrip__1__0_models.QueryTripHotelOrderByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.QueryTripHotelOrderByPageResponse:
+        """
+        @summary 分页查询组织酒店订单信息
+        
+        @param tmp_req: QueryTripHotelOrderByPageRequest
+        @param headers: QueryTripHotelOrderByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTripHotelOrderByPageResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalktrip__1__0_models.QueryTripHotelOrderByPageShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.order_status):
+            request.order_status_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.order_status, 'orderStatus', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.order_status_shrink):
+            query['orderStatus'] = request.order_status_shrink
+        if not UtilClient.is_unset(request.page_index):
+            query['pageIndex'] = request.page_index
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryTripHotelOrderByPage',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/hotel/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.QueryTripHotelOrderByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_trip_hotel_order_by_page_with_options_async(
+        self,
+        tmp_req: dingtalktrip__1__0_models.QueryTripHotelOrderByPageRequest,
+        headers: dingtalktrip__1__0_models.QueryTripHotelOrderByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.QueryTripHotelOrderByPageResponse:
+        """
+        @summary 分页查询组织酒店订单信息
+        
+        @param tmp_req: QueryTripHotelOrderByPageRequest
+        @param headers: QueryTripHotelOrderByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTripHotelOrderByPageResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalktrip__1__0_models.QueryTripHotelOrderByPageShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.order_status):
+            request.order_status_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.order_status, 'orderStatus', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.order_status_shrink):
+            query['orderStatus'] = request.order_status_shrink
+        if not UtilClient.is_unset(request.page_index):
+            query['pageIndex'] = request.page_index
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryTripHotelOrderByPage',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/hotel/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.QueryTripHotelOrderByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_trip_hotel_order_by_page(
+        self,
+        request: dingtalktrip__1__0_models.QueryTripHotelOrderByPageRequest,
+    ) -> dingtalktrip__1__0_models.QueryTripHotelOrderByPageResponse:
+        """
+        @summary 分页查询组织酒店订单信息
+        
+        @param request: QueryTripHotelOrderByPageRequest
+        @return: QueryTripHotelOrderByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.QueryTripHotelOrderByPageHeaders()
+        return self.query_trip_hotel_order_by_page_with_options(request, headers, runtime)
+
+    async def query_trip_hotel_order_by_page_async(
+        self,
+        request: dingtalktrip__1__0_models.QueryTripHotelOrderByPageRequest,
+    ) -> dingtalktrip__1__0_models.QueryTripHotelOrderByPageResponse:
+        """
+        @summary 分页查询组织酒店订单信息
+        
+        @param request: QueryTripHotelOrderByPageRequest
+        @return: QueryTripHotelOrderByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.QueryTripHotelOrderByPageHeaders()
+        return await self.query_trip_hotel_order_by_page_with_options_async(request, headers, runtime)
+
     def query_trip_process_templates_with_options(
         self,
         request: dingtalktrip__1__0_models.QueryTripProcessTemplatesRequest,
@@ -371,6 +647,144 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.QueryTripProcessTemplatesHeaders()
         return await self.query_trip_process_templates_with_options_async(request, headers, runtime)
+
+    def query_trip_train_order_by_page_with_options(
+        self,
+        tmp_req: dingtalktrip__1__0_models.QueryTripTrainOrderByPageRequest,
+        headers: dingtalktrip__1__0_models.QueryTripTrainOrderByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.QueryTripTrainOrderByPageResponse:
+        """
+        @summary 分页查询组织火车订单信息
+        
+        @param tmp_req: QueryTripTrainOrderByPageRequest
+        @param headers: QueryTripTrainOrderByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTripTrainOrderByPageResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalktrip__1__0_models.QueryTripTrainOrderByPageShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.order_status):
+            request.order_status_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.order_status, 'orderStatus', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.order_status_shrink):
+            query['orderStatus'] = request.order_status_shrink
+        if not UtilClient.is_unset(request.page_index):
+            query['pageIndex'] = request.page_index
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryTripTrainOrderByPage',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/train/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.QueryTripTrainOrderByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_trip_train_order_by_page_with_options_async(
+        self,
+        tmp_req: dingtalktrip__1__0_models.QueryTripTrainOrderByPageRequest,
+        headers: dingtalktrip__1__0_models.QueryTripTrainOrderByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.QueryTripTrainOrderByPageResponse:
+        """
+        @summary 分页查询组织火车订单信息
+        
+        @param tmp_req: QueryTripTrainOrderByPageRequest
+        @param headers: QueryTripTrainOrderByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTripTrainOrderByPageResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalktrip__1__0_models.QueryTripTrainOrderByPageShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.order_status):
+            request.order_status_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.order_status, 'orderStatus', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.order_status_shrink):
+            query['orderStatus'] = request.order_status_shrink
+        if not UtilClient.is_unset(request.page_index):
+            query['pageIndex'] = request.page_index
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryTripTrainOrderByPage',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/train/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.QueryTripTrainOrderByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_trip_train_order_by_page(
+        self,
+        request: dingtalktrip__1__0_models.QueryTripTrainOrderByPageRequest,
+    ) -> dingtalktrip__1__0_models.QueryTripTrainOrderByPageResponse:
+        """
+        @summary 分页查询组织火车订单信息
+        
+        @param request: QueryTripTrainOrderByPageRequest
+        @return: QueryTripTrainOrderByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.QueryTripTrainOrderByPageHeaders()
+        return self.query_trip_train_order_by_page_with_options(request, headers, runtime)
+
+    async def query_trip_train_order_by_page_async(
+        self,
+        request: dingtalktrip__1__0_models.QueryTripTrainOrderByPageRequest,
+    ) -> dingtalktrip__1__0_models.QueryTripTrainOrderByPageResponse:
+        """
+        @summary 分页查询组织火车订单信息
+        
+        @param request: QueryTripTrainOrderByPageRequest
+        @return: QueryTripTrainOrderByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.QueryTripTrainOrderByPageHeaders()
+        return await self.query_trip_train_order_by_page_with_options_async(request, headers, runtime)
 
     def sync_business_sign_info_with_options(
         self,

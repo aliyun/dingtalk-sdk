@@ -1778,6 +1778,128 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.GetUserMetricDataHeaders()
         return await self.get_user_metric_data_with_options_async(conference_id, request, headers, runtime)
 
+    def invite_mcu_with_options(
+        self,
+        request: dingtalkconference__1__0_models.InviteMcuRequest,
+        headers: dingtalkconference__1__0_models.InviteMcuHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.InviteMcuResponse:
+        """
+        @summary 邀请MCU入会
+        
+        @param request: InviteMcuRequest
+        @param headers: InviteMcuHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InviteMcuResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mcu_room_code):
+            body['mcuRoomCode'] = request.mcu_room_code
+        if not UtilClient.is_unset(request.room_code):
+            body['roomCode'] = request.room_code
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InviteMcu',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/mcus/invite',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.InviteMcuResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def invite_mcu_with_options_async(
+        self,
+        request: dingtalkconference__1__0_models.InviteMcuRequest,
+        headers: dingtalkconference__1__0_models.InviteMcuHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.InviteMcuResponse:
+        """
+        @summary 邀请MCU入会
+        
+        @param request: InviteMcuRequest
+        @param headers: InviteMcuHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InviteMcuResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mcu_room_code):
+            body['mcuRoomCode'] = request.mcu_room_code
+        if not UtilClient.is_unset(request.room_code):
+            body['roomCode'] = request.room_code
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InviteMcu',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/mcus/invite',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.InviteMcuResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def invite_mcu(
+        self,
+        request: dingtalkconference__1__0_models.InviteMcuRequest,
+    ) -> dingtalkconference__1__0_models.InviteMcuResponse:
+        """
+        @summary 邀请MCU入会
+        
+        @param request: InviteMcuRequest
+        @return: InviteMcuResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.InviteMcuHeaders()
+        return self.invite_mcu_with_options(request, headers, runtime)
+
+    async def invite_mcu_async(
+        self,
+        request: dingtalkconference__1__0_models.InviteMcuRequest,
+    ) -> dingtalkconference__1__0_models.InviteMcuResponse:
+        """
+        @summary 邀请MCU入会
+        
+        @param request: InviteMcuRequest
+        @return: InviteMcuResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.InviteMcuHeaders()
+        return await self.invite_mcu_with_options_async(request, headers, runtime)
+
     def invite_users_with_options(
         self,
         conference_id: str,

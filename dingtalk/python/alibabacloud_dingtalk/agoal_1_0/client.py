@@ -860,6 +860,246 @@ class Client(OpenApiClient):
         headers = dingtalkagoal__1__0_models.AgoalObjectiveKeyActionListHeaders()
         return await self.agoal_objective_key_action_list_with_options_async(request, headers, runtime)
 
+    def agoal_objective_progress_list_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalObjectiveProgressListRequest,
+        headers: dingtalkagoal__1__0_models.AgoalObjectiveProgressListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalObjectiveProgressListResponse:
+        """
+        @summary 查询企业下指定个人目标的所有进展
+        
+        @param request: AgoalObjectiveProgressListRequest
+        @param headers: AgoalObjectiveProgressListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalObjectiveProgressListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.objective_id):
+            query['objectiveId'] = request.objective_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalObjectiveProgressList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/objectives/progresses/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalObjectiveProgressListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_objective_progress_list_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalObjectiveProgressListRequest,
+        headers: dingtalkagoal__1__0_models.AgoalObjectiveProgressListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalObjectiveProgressListResponse:
+        """
+        @summary 查询企业下指定个人目标的所有进展
+        
+        @param request: AgoalObjectiveProgressListRequest
+        @param headers: AgoalObjectiveProgressListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalObjectiveProgressListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.objective_id):
+            query['objectiveId'] = request.objective_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalObjectiveProgressList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/objectives/progresses/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalObjectiveProgressListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_objective_progress_list(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalObjectiveProgressListRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalObjectiveProgressListResponse:
+        """
+        @summary 查询企业下指定个人目标的所有进展
+        
+        @param request: AgoalObjectiveProgressListRequest
+        @return: AgoalObjectiveProgressListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalObjectiveProgressListHeaders()
+        return self.agoal_objective_progress_list_with_options(request, headers, runtime)
+
+    async def agoal_objective_progress_list_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalObjectiveProgressListRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalObjectiveProgressListResponse:
+        """
+        @summary 查询企业下指定个人目标的所有进展
+        
+        @param request: AgoalObjectiveProgressListRequest
+        @return: AgoalObjectiveProgressListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalObjectiveProgressListHeaders()
+        return await self.agoal_objective_progress_list_with_options_async(request, headers, runtime)
+
+    def agoal_objective_rule_list_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalObjectiveRuleListRequest,
+        headers: dingtalkagoal__1__0_models.AgoalObjectiveRuleListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalObjectiveRuleListResponse:
+        """
+        @summary 查询企业下目标规则列表
+        
+        @param request: AgoalObjectiveRuleListRequest
+        @param headers: AgoalObjectiveRuleListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalObjectiveRuleListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalObjectiveRuleList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/objectiveRuleLists/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalObjectiveRuleListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_objective_rule_list_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalObjectiveRuleListRequest,
+        headers: dingtalkagoal__1__0_models.AgoalObjectiveRuleListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalObjectiveRuleListResponse:
+        """
+        @summary 查询企业下目标规则列表
+        
+        @param request: AgoalObjectiveRuleListRequest
+        @param headers: AgoalObjectiveRuleListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalObjectiveRuleListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalObjectiveRuleList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/objectiveRuleLists/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalObjectiveRuleListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_objective_rule_list(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalObjectiveRuleListRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalObjectiveRuleListResponse:
+        """
+        @summary 查询企业下目标规则列表
+        
+        @param request: AgoalObjectiveRuleListRequest
+        @return: AgoalObjectiveRuleListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalObjectiveRuleListHeaders()
+        return self.agoal_objective_rule_list_with_options(request, headers, runtime)
+
+    async def agoal_objective_rule_list_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalObjectiveRuleListRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalObjectiveRuleListResponse:
+        """
+        @summary 查询企业下目标规则列表
+        
+        @param request: AgoalObjectiveRuleListRequest
+        @return: AgoalObjectiveRuleListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalObjectiveRuleListHeaders()
+        return await self.agoal_objective_rule_list_with_options_async(request, headers, runtime)
+
     def agoal_objective_rule_period_list_with_options(
         self,
         request: dingtalkagoal__1__0_models.AgoalObjectiveRulePeriodListRequest,
@@ -1305,6 +1545,246 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkagoal__1__0_models.AgoalOrgObjectiveRuleListHeaders()
         return await self.agoal_org_objective_rule_list_with_options_async(headers, runtime)
+
+    def agoal_org_perf_doc_query_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryRequest,
+        headers: dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryResponse:
+        """
+        @summary 查询某个考核计划的部门得分
+        
+        @param request: AgoalOrgPerfDocQueryRequest
+        @param headers: AgoalOrgPerfDocQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalOrgPerfDocQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.plan_id):
+            query['planId'] = request.plan_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalOrgPerfDocQuery',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/org_perf/documents/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_org_perf_doc_query_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryRequest,
+        headers: dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryResponse:
+        """
+        @summary 查询某个考核计划的部门得分
+        
+        @param request: AgoalOrgPerfDocQueryRequest
+        @param headers: AgoalOrgPerfDocQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalOrgPerfDocQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.plan_id):
+            query['planId'] = request.plan_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalOrgPerfDocQuery',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/org_perf/documents/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_org_perf_doc_query(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryResponse:
+        """
+        @summary 查询某个考核计划的部门得分
+        
+        @param request: AgoalOrgPerfDocQueryRequest
+        @return: AgoalOrgPerfDocQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryHeaders()
+        return self.agoal_org_perf_doc_query_with_options(request, headers, runtime)
+
+    async def agoal_org_perf_doc_query_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryResponse:
+        """
+        @summary 查询某个考核计划的部门得分
+        
+        @param request: AgoalOrgPerfDocQueryRequest
+        @return: AgoalOrgPerfDocQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalOrgPerfDocQueryHeaders()
+        return await self.agoal_org_perf_doc_query_with_options_async(request, headers, runtime)
+
+    def agoal_org_perf_plan_query_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryRequest,
+        headers: dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryResponse:
+        """
+        @summary 查询企业下的所有考核计划
+        
+        @param request: AgoalOrgPerfPlanQueryRequest
+        @param headers: AgoalOrgPerfPlanQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalOrgPerfPlanQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalOrgPerfPlanQuery',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/org_perf/plans/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_org_perf_plan_query_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryRequest,
+        headers: dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryResponse:
+        """
+        @summary 查询企业下的所有考核计划
+        
+        @param request: AgoalOrgPerfPlanQueryRequest
+        @param headers: AgoalOrgPerfPlanQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalOrgPerfPlanQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalOrgPerfPlanQuery',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/org_perf/plans/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_org_perf_plan_query(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryResponse:
+        """
+        @summary 查询企业下的所有考核计划
+        
+        @param request: AgoalOrgPerfPlanQueryRequest
+        @return: AgoalOrgPerfPlanQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryHeaders()
+        return self.agoal_org_perf_plan_query_with_options(request, headers, runtime)
+
+    async def agoal_org_perf_plan_query_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryResponse:
+        """
+        @summary 查询企业下的所有考核计划
+        
+        @param request: AgoalOrgPerfPlanQueryRequest
+        @return: AgoalOrgPerfPlanQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalOrgPerfPlanQueryHeaders()
+        return await self.agoal_org_perf_plan_query_with_options_async(request, headers, runtime)
 
     def agoal_perf_task_create_with_options(
         self,
@@ -2337,3 +2817,231 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkagoal__1__0_models.GetIndicatorDetailHeaders()
         return await self.get_indicator_detail_with_options_async(request, headers, runtime)
+
+    def get_objective_detail_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.GetObjectiveDetailRequest,
+        headers: dingtalkagoal__1__0_models.GetObjectiveDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.GetObjectiveDetailResponse:
+        """
+        @summary 查询企业下个人目标详情
+        
+        @param request: GetObjectiveDetailRequest
+        @param headers: GetObjectiveDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetObjectiveDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.objective_id):
+            query['objectiveId'] = request.objective_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetObjectiveDetail',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/objectives/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.GetObjectiveDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_objective_detail_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.GetObjectiveDetailRequest,
+        headers: dingtalkagoal__1__0_models.GetObjectiveDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.GetObjectiveDetailResponse:
+        """
+        @summary 查询企业下个人目标详情
+        
+        @param request: GetObjectiveDetailRequest
+        @param headers: GetObjectiveDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetObjectiveDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.objective_id):
+            query['objectiveId'] = request.objective_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetObjectiveDetail',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/objectives/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.GetObjectiveDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_objective_detail(
+        self,
+        request: dingtalkagoal__1__0_models.GetObjectiveDetailRequest,
+    ) -> dingtalkagoal__1__0_models.GetObjectiveDetailResponse:
+        """
+        @summary 查询企业下个人目标详情
+        
+        @param request: GetObjectiveDetailRequest
+        @return: GetObjectiveDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.GetObjectiveDetailHeaders()
+        return self.get_objective_detail_with_options(request, headers, runtime)
+
+    async def get_objective_detail_async(
+        self,
+        request: dingtalkagoal__1__0_models.GetObjectiveDetailRequest,
+    ) -> dingtalkagoal__1__0_models.GetObjectiveDetailResponse:
+        """
+        @summary 查询企业下个人目标详情
+        
+        @param request: GetObjectiveDetailRequest
+        @return: GetObjectiveDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.GetObjectiveDetailHeaders()
+        return await self.get_objective_detail_with_options_async(request, headers, runtime)
+
+    def get_objective_rule_detail_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.GetObjectiveRuleDetailRequest,
+        headers: dingtalkagoal__1__0_models.GetObjectiveRuleDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.GetObjectiveRuleDetailResponse:
+        """
+        @summary 查询企业下单个目标规则详情
+        
+        @param request: GetObjectiveRuleDetailRequest
+        @param headers: GetObjectiveRuleDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetObjectiveRuleDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.objective_rule_id):
+            query['objectiveRuleId'] = request.objective_rule_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetObjectiveRuleDetail',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/objectiveRules/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.GetObjectiveRuleDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_objective_rule_detail_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.GetObjectiveRuleDetailRequest,
+        headers: dingtalkagoal__1__0_models.GetObjectiveRuleDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.GetObjectiveRuleDetailResponse:
+        """
+        @summary 查询企业下单个目标规则详情
+        
+        @param request: GetObjectiveRuleDetailRequest
+        @param headers: GetObjectiveRuleDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetObjectiveRuleDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.objective_rule_id):
+            query['objectiveRuleId'] = request.objective_rule_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetObjectiveRuleDetail',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/objectiveRules/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.GetObjectiveRuleDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_objective_rule_detail(
+        self,
+        request: dingtalkagoal__1__0_models.GetObjectiveRuleDetailRequest,
+    ) -> dingtalkagoal__1__0_models.GetObjectiveRuleDetailResponse:
+        """
+        @summary 查询企业下单个目标规则详情
+        
+        @param request: GetObjectiveRuleDetailRequest
+        @return: GetObjectiveRuleDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.GetObjectiveRuleDetailHeaders()
+        return self.get_objective_rule_detail_with_options(request, headers, runtime)
+
+    async def get_objective_rule_detail_async(
+        self,
+        request: dingtalkagoal__1__0_models.GetObjectiveRuleDetailRequest,
+    ) -> dingtalkagoal__1__0_models.GetObjectiveRuleDetailResponse:
+        """
+        @summary 查询企业下单个目标规则详情
+        
+        @param request: GetObjectiveRuleDetailRequest
+        @return: GetObjectiveRuleDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.GetObjectiveRuleDetailHeaders()
+        return await self.get_objective_rule_detail_with_options_async(request, headers, runtime)

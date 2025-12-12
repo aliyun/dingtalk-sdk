@@ -11410,6 +11410,10 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.force_expand):
+            body['forceExpand'] = request.force_expand
+        if not UtilClient.is_unset(request.is_qt_wnd):
+            body['isQtWnd'] = request.is_qt_wnd
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.right_panel_close_permitted):
@@ -11463,6 +11467,10 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.force_expand):
+            body['forceExpand'] = request.force_expand
+        if not UtilClient.is_unset(request.is_qt_wnd):
+            body['isQtWnd'] = request.is_qt_wnd
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.right_panel_close_permitted):

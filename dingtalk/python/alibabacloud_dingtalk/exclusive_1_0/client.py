@@ -2616,6 +2616,124 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalHeaders()
         return await self.exclusive_create_ding_portal_with_options_async(request, headers, runtime)
 
+    def file_encrypt_callback_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.FileEncryptCallbackRequest,
+        headers: dingtalkexclusive__1__0_models.FileEncryptCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileEncryptCallbackResponse:
+        """
+        @summary 文件加密回调
+        
+        @param request: FileEncryptCallbackRequest
+        @param headers: FileEncryptCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FileEncryptCallbackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='FileEncryptCallback',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/clientDecrypt/encrypt/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileEncryptCallbackResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def file_encrypt_callback_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileEncryptCallbackRequest,
+        headers: dingtalkexclusive__1__0_models.FileEncryptCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileEncryptCallbackResponse:
+        """
+        @summary 文件加密回调
+        
+        @param request: FileEncryptCallbackRequest
+        @param headers: FileEncryptCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FileEncryptCallbackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='FileEncryptCallback',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/clientDecrypt/encrypt/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileEncryptCallbackResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def file_encrypt_callback(
+        self,
+        request: dingtalkexclusive__1__0_models.FileEncryptCallbackRequest,
+    ) -> dingtalkexclusive__1__0_models.FileEncryptCallbackResponse:
+        """
+        @summary 文件加密回调
+        
+        @param request: FileEncryptCallbackRequest
+        @return: FileEncryptCallbackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileEncryptCallbackHeaders()
+        return self.file_encrypt_callback_with_options(request, headers, runtime)
+
+    async def file_encrypt_callback_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileEncryptCallbackRequest,
+    ) -> dingtalkexclusive__1__0_models.FileEncryptCallbackResponse:
+        """
+        @summary 文件加密回调
+        
+        @param request: FileEncryptCallbackRequest
+        @return: FileEncryptCallbackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.FileEncryptCallbackHeaders()
+        return await self.file_encrypt_callback_with_options_async(request, headers, runtime)
+
     def file_storage_active_storage_with_options(
         self,
         request: dingtalkexclusive__1__0_models.FileStorageActiveStorageRequest,
@@ -7034,18 +7152,28 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.content_type):
+            body['contentType'] = request.content_type
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
         if not UtilClient.is_unset(request.file_create_time):
             body['fileCreateTime'] = request.file_create_time
         if not UtilClient.is_unset(request.file_status):
             body['fileStatus'] = request.file_status
         if not UtilClient.is_unset(request.max_results):
             body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.order):
             body['order'] = request.order
+        if not UtilClient.is_unset(request.scene_type):
+            body['sceneType'] = request.scene_type
         if not UtilClient.is_unset(request.target_corp_id):
             body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -7087,18 +7215,28 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.content_type):
+            body['contentType'] = request.content_type
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
         if not UtilClient.is_unset(request.file_create_time):
             body['fileCreateTime'] = request.file_create_time
         if not UtilClient.is_unset(request.file_status):
             body['fileStatus'] = request.file_status
         if not UtilClient.is_unset(request.max_results):
             body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.order):
             body['order'] = request.order
+        if not UtilClient.is_unset(request.scene_type):
+            body['sceneType'] = request.scene_type
         if not UtilClient.is_unset(request.target_corp_id):
             body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -7269,6 +7407,250 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.GetPrivateStoreFilePathHeaders()
         return await self.get_private_store_file_path_with_options_async(request, headers, runtime)
+
+    def get_private_store_file_task_infos_by_page_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageResponse:
+        """
+        @summary 分页获取专属存储文件处理任务信息
+        
+        @param request: GetPrivateStoreFileTaskInfosByPageRequest
+        @param headers: GetPrivateStoreFileTaskInfosByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivateStoreFileTaskInfosByPageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.task_status):
+            body['taskStatus'] = request.task_status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetPrivateStoreFileTaskInfosByPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/taskInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_private_store_file_task_infos_by_page_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageResponse:
+        """
+        @summary 分页获取专属存储文件处理任务信息
+        
+        @param request: GetPrivateStoreFileTaskInfosByPageRequest
+        @param headers: GetPrivateStoreFileTaskInfosByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivateStoreFileTaskInfosByPageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.task_status):
+            body['taskStatus'] = request.task_status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetPrivateStoreFileTaskInfosByPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/taskInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_private_store_file_task_infos_by_page(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageResponse:
+        """
+        @summary 分页获取专属存储文件处理任务信息
+        
+        @param request: GetPrivateStoreFileTaskInfosByPageRequest
+        @return: GetPrivateStoreFileTaskInfosByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageHeaders()
+        return self.get_private_store_file_task_infos_by_page_with_options(request, headers, runtime)
+
+    async def get_private_store_file_task_infos_by_page_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageResponse:
+        """
+        @summary 分页获取专属存储文件处理任务信息
+        
+        @param request: GetPrivateStoreFileTaskInfosByPageRequest
+        @return: GetPrivateStoreFileTaskInfosByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPrivateStoreFileTaskInfosByPageHeaders()
+        return await self.get_private_store_file_task_infos_by_page_with_options_async(request, headers, runtime)
+
+    def get_private_store_task_file_infos_by_page_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageResponse:
+        """
+        @summary 分页获取专属存储任务文件信息
+        
+        @param request: GetPrivateStoreTaskFileInfosByPageRequest
+        @param headers: GetPrivateStoreTaskFileInfosByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivateStoreTaskFileInfosByPageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetPrivateStoreTaskFileInfosByPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/taskInfos/file/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_private_store_task_file_infos_by_page_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageResponse:
+        """
+        @summary 分页获取专属存储任务文件信息
+        
+        @param request: GetPrivateStoreTaskFileInfosByPageRequest
+        @param headers: GetPrivateStoreTaskFileInfosByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivateStoreTaskFileInfosByPageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetPrivateStoreTaskFileInfosByPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/taskInfos/file/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_private_store_task_file_infos_by_page(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageResponse:
+        """
+        @summary 分页获取专属存储任务文件信息
+        
+        @param request: GetPrivateStoreTaskFileInfosByPageRequest
+        @return: GetPrivateStoreTaskFileInfosByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageHeaders()
+        return self.get_private_store_task_file_infos_by_page_with_options(request, headers, runtime)
+
+    async def get_private_store_task_file_infos_by_page_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageResponse:
+        """
+        @summary 分页获取专属存储任务文件信息
+        
+        @param request: GetPrivateStoreTaskFileInfosByPageRequest
+        @return: GetPrivateStoreTaskFileInfosByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPrivateStoreTaskFileInfosByPageHeaders()
+        return await self.get_private_store_task_file_infos_by_page_with_options_async(request, headers, runtime)
 
     def get_public_devices_with_options(
         self,

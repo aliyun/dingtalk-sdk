@@ -68,6 +68,12 @@ class Client(OpenApiClient):
             body['productInfo'] = request.product_info
         if not UtilClient.is_unset(request.product_name):
             body['productName'] = request.product_name
+        if not UtilClient.is_unset(request.tag_1):
+            body['tag1'] = request.tag_1
+        if not UtilClient.is_unset(request.tag_2):
+            body['tag2'] = request.tag_2
+        if not UtilClient.is_unset(request.tag_3):
+            body['tag3'] = request.tag_3
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -135,6 +141,12 @@ class Client(OpenApiClient):
             body['productInfo'] = request.product_info
         if not UtilClient.is_unset(request.product_name):
             body['productName'] = request.product_name
+        if not UtilClient.is_unset(request.tag_1):
+            body['tag1'] = request.tag_1
+        if not UtilClient.is_unset(request.tag_2):
+            body['tag2'] = request.tag_2
+        if not UtilClient.is_unset(request.tag_3):
+            body['tag3'] = request.tag_3
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -578,6 +590,12 @@ class Client(OpenApiClient):
             body['productInfo'] = request.product_info
         if not UtilClient.is_unset(request.product_name):
             body['productName'] = request.product_name
+        if not UtilClient.is_unset(request.tag_1):
+            body['tag1'] = request.tag_1
+        if not UtilClient.is_unset(request.tag_2):
+            body['tag2'] = request.tag_2
+        if not UtilClient.is_unset(request.tag_3):
+            body['tag3'] = request.tag_3
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -647,6 +665,12 @@ class Client(OpenApiClient):
             body['productInfo'] = request.product_info
         if not UtilClient.is_unset(request.product_name):
             body['productName'] = request.product_name
+        if not UtilClient.is_unset(request.tag_1):
+            body['tag1'] = request.tag_1
+        if not UtilClient.is_unset(request.tag_2):
+            body['tag2'] = request.tag_2
+        if not UtilClient.is_unset(request.tag_3):
+            body['tag3'] = request.tag_3
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

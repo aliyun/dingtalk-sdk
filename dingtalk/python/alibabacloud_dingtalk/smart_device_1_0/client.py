@@ -266,6 +266,132 @@ class Client(OpenApiClient):
         headers = dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceHeaders()
         return await self.create_device_video_conference_with_options_async(device_id, request, headers, runtime)
 
+    def create_export_device_statistic_task_with_options(
+        self,
+        request: dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskRequest,
+        headers: dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskResponse:
+        """
+        @summary 创建导出设备数据任务
+        
+        @param request: CreateExportDeviceStatisticTaskRequest
+        @param headers: CreateExportDeviceStatisticTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateExportDeviceStatisticTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ai_sheet_template_id):
+            body['aiSheetTemplateId'] = request.ai_sheet_template_id
+        if not UtilClient.is_unset(request.creator_corp_id):
+            body['creatorCorpId'] = request.creator_corp_id
+        if not UtilClient.is_unset(request.creator_union_id):
+            body['creatorUnionId'] = request.creator_union_id
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateExportDeviceStatisticTask',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/statistic/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_export_device_statistic_task_with_options_async(
+        self,
+        request: dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskRequest,
+        headers: dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskResponse:
+        """
+        @summary 创建导出设备数据任务
+        
+        @param request: CreateExportDeviceStatisticTaskRequest
+        @param headers: CreateExportDeviceStatisticTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateExportDeviceStatisticTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.ai_sheet_template_id):
+            body['aiSheetTemplateId'] = request.ai_sheet_template_id
+        if not UtilClient.is_unset(request.creator_corp_id):
+            body['creatorCorpId'] = request.creator_corp_id
+        if not UtilClient.is_unset(request.creator_union_id):
+            body['creatorUnionId'] = request.creator_union_id
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateExportDeviceStatisticTask',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/statistic/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_export_device_statistic_task(
+        self,
+        request: dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskRequest,
+    ) -> dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskResponse:
+        """
+        @summary 创建导出设备数据任务
+        
+        @param request: CreateExportDeviceStatisticTaskRequest
+        @return: CreateExportDeviceStatisticTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskHeaders()
+        return self.create_export_device_statistic_task_with_options(request, headers, runtime)
+
+    async def create_export_device_statistic_task_async(
+        self,
+        request: dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskRequest,
+    ) -> dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskResponse:
+        """
+        @summary 创建导出设备数据任务
+        
+        @param request: CreateExportDeviceStatisticTaskRequest
+        @return: CreateExportDeviceStatisticTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.CreateExportDeviceStatisticTaskHeaders()
+        return await self.create_export_device_statistic_task_with_options_async(request, headers, runtime)
+
     def extract_facial_feature_with_options(
         self,
         request: dingtalksmart_device__1__0_models.ExtractFacialFeatureRequest,
@@ -995,6 +1121,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.TextToImageHeaders()
         return await self.text_to_image_with_options_async(request, headers, runtime)
+
+    def update_export_device_statistic_with_options(
+        self,
+        request: dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticRequest,
+        headers: dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticResponse:
+        """
+        @summary 更新导出设备数据
+        
+        @param request: UpdateExportDeviceStatisticRequest
+        @param headers: UpdateExportDeviceStatisticHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateExportDeviceStatisticResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.creator_corp_id):
+            body['creatorCorpId'] = request.creator_corp_id
+        if not UtilClient.is_unset(request.creator_union_id):
+            body['creatorUnionId'] = request.creator_union_id
+        if not UtilClient.is_unset(request.records):
+            body['records'] = request.records
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateExportDeviceStatistic',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/statistic',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_export_device_statistic_with_options_async(
+        self,
+        request: dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticRequest,
+        headers: dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticResponse:
+        """
+        @summary 更新导出设备数据
+        
+        @param request: UpdateExportDeviceStatisticRequest
+        @param headers: UpdateExportDeviceStatisticHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateExportDeviceStatisticResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.creator_corp_id):
+            body['creatorCorpId'] = request.creator_corp_id
+        if not UtilClient.is_unset(request.creator_union_id):
+            body['creatorUnionId'] = request.creator_union_id
+        if not UtilClient.is_unset(request.records):
+            body['records'] = request.records
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateExportDeviceStatistic',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/statistic',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_export_device_statistic(
+        self,
+        request: dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticRequest,
+    ) -> dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticResponse:
+        """
+        @summary 更新导出设备数据
+        
+        @param request: UpdateExportDeviceStatisticRequest
+        @return: UpdateExportDeviceStatisticResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticHeaders()
+        return self.update_export_device_statistic_with_options(request, headers, runtime)
+
+    async def update_export_device_statistic_async(
+        self,
+        request: dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticRequest,
+    ) -> dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticResponse:
+        """
+        @summary 更新导出设备数据
+        
+        @param request: UpdateExportDeviceStatisticRequest
+        @return: UpdateExportDeviceStatisticResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.UpdateExportDeviceStatisticHeaders()
+        return await self.update_export_device_statistic_with_options_async(request, headers, runtime)
 
     def voice_clone_with_options(
         self,

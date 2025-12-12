@@ -3339,6 +3339,140 @@ class ExclusiveCreateDingPortalResponse(TeaModel):
         return self
 
 
+class FileEncryptCallbackHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class FileEncryptCallbackRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        timestamp: int = None,
+    ):
+        self.biz_id = biz_id
+        self.timestamp = timestamp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        return self
+
+
+class FileEncryptCallbackResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class FileEncryptCallbackResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: FileEncryptCallbackResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = FileEncryptCallbackResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class FileStorageActiveStorageHeaders(TeaModel):
     def __init__(
         self,
@@ -10968,22 +11102,32 @@ class GetPrivateStoreFileInfosByPageHeaders(TeaModel):
 class GetPrivateStoreFileInfosByPageRequest(TeaModel):
     def __init__(
         self,
+        content_type: str = None,
+        dept_ids: List[int] = None,
         file_create_time: int = None,
         file_status: str = None,
         max_results: int = None,
+        name: str = None,
         next_token: str = None,
         order: str = None,
+        scene_type: str = None,
         target_corp_id: str = None,
+        user_ids: List[str] = None,
     ):
+        self.content_type = content_type
+        self.dept_ids = dept_ids
         # This parameter is required.
         self.file_create_time = file_create_time
         self.file_status = file_status
         self.max_results = max_results
+        self.name = name
         self.next_token = next_token
         # This parameter is required.
         self.order = order
+        self.scene_type = scene_type
         # This parameter is required.
         self.target_corp_id = target_corp_id
+        self.user_ids = user_ids
 
     def validate(self):
         pass
@@ -10994,53 +11138,79 @@ class GetPrivateStoreFileInfosByPageRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
         if self.file_create_time is not None:
             result['fileCreateTime'] = self.file_create_time
         if self.file_status is not None:
             result['fileStatus'] = self.file_status
         if self.max_results is not None:
             result['maxResults'] = self.max_results
+        if self.name is not None:
+            result['name'] = self.name
         if self.next_token is not None:
             result['nextToken'] = self.next_token
         if self.order is not None:
             result['order'] = self.order
+        if self.scene_type is not None:
+            result['sceneType'] = self.scene_type
         if self.target_corp_id is not None:
             result['targetCorpId'] = self.target_corp_id
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
         if m.get('fileCreateTime') is not None:
             self.file_create_time = m.get('fileCreateTime')
         if m.get('fileStatus') is not None:
             self.file_status = m.get('fileStatus')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
         if m.get('order') is not None:
             self.order = m.get('order')
+        if m.get('sceneType') is not None:
+            self.scene_type = m.get('sceneType')
         if m.get('targetCorpId') is not None:
             self.target_corp_id = m.get('targetCorpId')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
         return self
 
 
 class GetPrivateStoreFileInfosByPageResponseBodyFileInfos(TeaModel):
     def __init__(
         self,
+        content_type_mcms: str = None,
+        creator_staff_id: str = None,
         dentry_id: int = None,
         file_create_time: int = None,
         file_name: str = None,
         file_path: str = None,
         file_size: int = None,
+        scene_type_mcms: str = None,
         space_id: int = None,
         status: str = None,
     ):
+        self.content_type_mcms = content_type_mcms
+        self.creator_staff_id = creator_staff_id
         self.dentry_id = dentry_id
         self.file_create_time = file_create_time
         self.file_name = file_name
         self.file_path = file_path
         self.file_size = file_size
+        self.scene_type_mcms = scene_type_mcms
         self.space_id = space_id
         self.status = status
 
@@ -11053,6 +11223,10 @@ class GetPrivateStoreFileInfosByPageResponseBodyFileInfos(TeaModel):
             return _map
 
         result = dict()
+        if self.content_type_mcms is not None:
+            result['contentTypeMcms'] = self.content_type_mcms
+        if self.creator_staff_id is not None:
+            result['creatorStaffId'] = self.creator_staff_id
         if self.dentry_id is not None:
             result['dentryId'] = self.dentry_id
         if self.file_create_time is not None:
@@ -11063,6 +11237,8 @@ class GetPrivateStoreFileInfosByPageResponseBodyFileInfos(TeaModel):
             result['filePath'] = self.file_path
         if self.file_size is not None:
             result['fileSize'] = self.file_size
+        if self.scene_type_mcms is not None:
+            result['sceneTypeMcms'] = self.scene_type_mcms
         if self.space_id is not None:
             result['spaceId'] = self.space_id
         if self.status is not None:
@@ -11071,6 +11247,10 @@ class GetPrivateStoreFileInfosByPageResponseBodyFileInfos(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('contentTypeMcms') is not None:
+            self.content_type_mcms = m.get('contentTypeMcms')
+        if m.get('creatorStaffId') is not None:
+            self.creator_staff_id = m.get('creatorStaffId')
         if m.get('dentryId') is not None:
             self.dentry_id = m.get('dentryId')
         if m.get('fileCreateTime') is not None:
@@ -11081,6 +11261,8 @@ class GetPrivateStoreFileInfosByPageResponseBodyFileInfos(TeaModel):
             self.file_path = m.get('filePath')
         if m.get('fileSize') is not None:
             self.file_size = m.get('fileSize')
+        if m.get('sceneTypeMcms') is not None:
+            self.scene_type_mcms = m.get('sceneTypeMcms')
         if m.get('spaceId') is not None:
             self.space_id = m.get('spaceId')
         if m.get('status') is not None:
@@ -11302,6 +11484,530 @@ class GetPrivateStoreFilePathResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetPrivateStoreFilePathResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetPrivateStoreFileTaskInfosByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPrivateStoreFileTaskInfosByPageRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        task_status: int = None,
+    ):
+        self.page_number = page_number
+        self.page_size = page_size
+        self.task_status = task_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.task_status is not None:
+            result['taskStatus'] = self.task_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('taskStatus') is not None:
+            self.task_status = m.get('taskStatus')
+        return self
+
+
+class GetPrivateStoreFileTaskInfosByPageResponseBodyItems(TeaModel):
+    def __init__(
+        self,
+        class_tag_id: str = None,
+        class_tag_operator: str = None,
+        class_tag_text: str = None,
+        creator_leave_status: int = None,
+        deal_file_formats: List[str] = None,
+        deal_file_operator: int = None,
+        deal_file_scopes: List[str] = None,
+        deal_file_size: int = None,
+        file_create_time_end: int = None,
+        file_create_time_start: int = None,
+        file_modified_time_end: int = None,
+        file_modified_time_start: int = None,
+        task_create_time: int = None,
+        task_creator_name: str = None,
+        task_deleter_name: str = None,
+        task_id: int = None,
+        task_status: int = None,
+    ):
+        self.class_tag_id = class_tag_id
+        self.class_tag_operator = class_tag_operator
+        self.class_tag_text = class_tag_text
+        self.creator_leave_status = creator_leave_status
+        self.deal_file_formats = deal_file_formats
+        self.deal_file_operator = deal_file_operator
+        self.deal_file_scopes = deal_file_scopes
+        self.deal_file_size = deal_file_size
+        self.file_create_time_end = file_create_time_end
+        self.file_create_time_start = file_create_time_start
+        self.file_modified_time_end = file_modified_time_end
+        self.file_modified_time_start = file_modified_time_start
+        self.task_create_time = task_create_time
+        self.task_creator_name = task_creator_name
+        self.task_deleter_name = task_deleter_name
+        self.task_id = task_id
+        self.task_status = task_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_tag_id is not None:
+            result['classTagId'] = self.class_tag_id
+        if self.class_tag_operator is not None:
+            result['classTagOperator'] = self.class_tag_operator
+        if self.class_tag_text is not None:
+            result['classTagText'] = self.class_tag_text
+        if self.creator_leave_status is not None:
+            result['creatorLeaveStatus'] = self.creator_leave_status
+        if self.deal_file_formats is not None:
+            result['dealFileFormats'] = self.deal_file_formats
+        if self.deal_file_operator is not None:
+            result['dealFileOperator'] = self.deal_file_operator
+        if self.deal_file_scopes is not None:
+            result['dealFileScopes'] = self.deal_file_scopes
+        if self.deal_file_size is not None:
+            result['dealFileSize'] = self.deal_file_size
+        if self.file_create_time_end is not None:
+            result['fileCreateTimeEnd'] = self.file_create_time_end
+        if self.file_create_time_start is not None:
+            result['fileCreateTimeStart'] = self.file_create_time_start
+        if self.file_modified_time_end is not None:
+            result['fileModifiedTimeEnd'] = self.file_modified_time_end
+        if self.file_modified_time_start is not None:
+            result['fileModifiedTimeStart'] = self.file_modified_time_start
+        if self.task_create_time is not None:
+            result['taskCreateTime'] = self.task_create_time
+        if self.task_creator_name is not None:
+            result['taskCreatorName'] = self.task_creator_name
+        if self.task_deleter_name is not None:
+            result['taskDeleterName'] = self.task_deleter_name
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.task_status is not None:
+            result['taskStatus'] = self.task_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classTagId') is not None:
+            self.class_tag_id = m.get('classTagId')
+        if m.get('classTagOperator') is not None:
+            self.class_tag_operator = m.get('classTagOperator')
+        if m.get('classTagText') is not None:
+            self.class_tag_text = m.get('classTagText')
+        if m.get('creatorLeaveStatus') is not None:
+            self.creator_leave_status = m.get('creatorLeaveStatus')
+        if m.get('dealFileFormats') is not None:
+            self.deal_file_formats = m.get('dealFileFormats')
+        if m.get('dealFileOperator') is not None:
+            self.deal_file_operator = m.get('dealFileOperator')
+        if m.get('dealFileScopes') is not None:
+            self.deal_file_scopes = m.get('dealFileScopes')
+        if m.get('dealFileSize') is not None:
+            self.deal_file_size = m.get('dealFileSize')
+        if m.get('fileCreateTimeEnd') is not None:
+            self.file_create_time_end = m.get('fileCreateTimeEnd')
+        if m.get('fileCreateTimeStart') is not None:
+            self.file_create_time_start = m.get('fileCreateTimeStart')
+        if m.get('fileModifiedTimeEnd') is not None:
+            self.file_modified_time_end = m.get('fileModifiedTimeEnd')
+        if m.get('fileModifiedTimeStart') is not None:
+            self.file_modified_time_start = m.get('fileModifiedTimeStart')
+        if m.get('taskCreateTime') is not None:
+            self.task_create_time = m.get('taskCreateTime')
+        if m.get('taskCreatorName') is not None:
+            self.task_creator_name = m.get('taskCreatorName')
+        if m.get('taskDeleterName') is not None:
+            self.task_deleter_name = m.get('taskDeleterName')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('taskStatus') is not None:
+            self.task_status = m.get('taskStatus')
+        return self
+
+
+class GetPrivateStoreFileTaskInfosByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_next: int = None,
+        item_count: int = None,
+        items: List[GetPrivateStoreFileTaskInfosByPageResponseBodyItems] = None,
+        total_count: int = None,
+    ):
+        self.has_next = has_next
+        self.item_count = item_count
+        self.items = items
+        self.total_count = total_count
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_next is not None:
+            result['hasNext'] = self.has_next
+        if self.item_count is not None:
+            result['itemCount'] = self.item_count
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasNext') is not None:
+            self.has_next = m.get('hasNext')
+        if m.get('itemCount') is not None:
+            self.item_count = m.get('itemCount')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = GetPrivateStoreFileTaskInfosByPageResponseBodyItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetPrivateStoreFileTaskInfosByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetPrivateStoreFileTaskInfosByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetPrivateStoreFileTaskInfosByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetPrivateStoreTaskFileInfosByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPrivateStoreTaskFileInfosByPageRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        task_id: int = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class GetPrivateStoreTaskFileInfosByPageResponseBodyItems(TeaModel):
+    def __init__(
+        self,
+        class_tag_name: str = None,
+        dentry_id: str = None,
+        file_create_time: int = None,
+        file_format_name: str = None,
+        file_modified_time: int = None,
+        file_name: str = None,
+        file_scope_name: str = None,
+        file_size_name: str = None,
+        space_id: int = None,
+    ):
+        self.class_tag_name = class_tag_name
+        self.dentry_id = dentry_id
+        self.file_create_time = file_create_time
+        self.file_format_name = file_format_name
+        self.file_modified_time = file_modified_time
+        self.file_name = file_name
+        self.file_scope_name = file_scope_name
+        self.file_size_name = file_size_name
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_tag_name is not None:
+            result['classTagName'] = self.class_tag_name
+        if self.dentry_id is not None:
+            result['dentryId'] = self.dentry_id
+        if self.file_create_time is not None:
+            result['fileCreateTime'] = self.file_create_time
+        if self.file_format_name is not None:
+            result['fileFormatName'] = self.file_format_name
+        if self.file_modified_time is not None:
+            result['fileModifiedTime'] = self.file_modified_time
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_scope_name is not None:
+            result['fileScopeName'] = self.file_scope_name
+        if self.file_size_name is not None:
+            result['fileSizeName'] = self.file_size_name
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classTagName') is not None:
+            self.class_tag_name = m.get('classTagName')
+        if m.get('dentryId') is not None:
+            self.dentry_id = m.get('dentryId')
+        if m.get('fileCreateTime') is not None:
+            self.file_create_time = m.get('fileCreateTime')
+        if m.get('fileFormatName') is not None:
+            self.file_format_name = m.get('fileFormatName')
+        if m.get('fileModifiedTime') is not None:
+            self.file_modified_time = m.get('fileModifiedTime')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileScopeName') is not None:
+            self.file_scope_name = m.get('fileScopeName')
+        if m.get('fileSizeName') is not None:
+            self.file_size_name = m.get('fileSizeName')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class GetPrivateStoreTaskFileInfosByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        items: List[GetPrivateStoreTaskFileInfosByPageResponseBodyItems] = None,
+        next_token: str = None,
+        total: int = None,
+    ):
+        self.items = items
+        self.next_token = next_token
+        self.total = total
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = GetPrivateStoreTaskFileInfosByPageResponseBodyItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetPrivateStoreTaskFileInfosByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetPrivateStoreTaskFileInfosByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetPrivateStoreTaskFileInfosByPageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

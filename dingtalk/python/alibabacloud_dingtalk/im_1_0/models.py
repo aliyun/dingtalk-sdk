@@ -17273,6 +17273,8 @@ class SetRightPanelRequestWebWndParams(TeaModel):
 class SetRightPanelRequest(TeaModel):
     def __init__(
         self,
+        force_expand: bool = None,
+        is_qt_wnd: bool = None,
         open_conversation_id: str = None,
         right_panel_close_permitted: bool = None,
         right_panel_open_status: int = None,
@@ -17280,6 +17282,8 @@ class SetRightPanelRequest(TeaModel):
         web_wnd_params: SetRightPanelRequestWebWndParams = None,
         width: int = None,
     ):
+        self.force_expand = force_expand
+        self.is_qt_wnd = is_qt_wnd
         # This parameter is required.
         self.open_conversation_id = open_conversation_id
         # This parameter is required.
@@ -17303,6 +17307,10 @@ class SetRightPanelRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.force_expand is not None:
+            result['forceExpand'] = self.force_expand
+        if self.is_qt_wnd is not None:
+            result['isQtWnd'] = self.is_qt_wnd
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         if self.right_panel_close_permitted is not None:
@@ -17319,6 +17327,10 @@ class SetRightPanelRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('forceExpand') is not None:
+            self.force_expand = m.get('forceExpand')
+        if m.get('isQtWnd') is not None:
+            self.is_qt_wnd = m.get('isQtWnd')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         if m.get('rightPanelClosePermitted') is not None:

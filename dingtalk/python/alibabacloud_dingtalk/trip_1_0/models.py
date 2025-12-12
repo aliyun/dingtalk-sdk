@@ -959,6 +959,960 @@ class PreCheckTemplateResponse(TeaModel):
         return self
 
 
+class QueryTripFlightOrderByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryTripFlightOrderByPageRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: str = None,
+        order_status: List[str] = None,
+        page_index: int = None,
+        page_size: int = None,
+        start_time: str = None,
+    ):
+        self.end_time = end_time
+        self.order_status = order_status
+        self.page_index = page_index
+        self.page_size = page_size
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.order_status is not None:
+            result['orderStatus'] = self.order_status
+        if self.page_index is not None:
+            result['pageIndex'] = self.page_index
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('orderStatus') is not None:
+            self.order_status = m.get('orderStatus')
+        if m.get('pageIndex') is not None:
+            self.page_index = m.get('pageIndex')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class QueryTripFlightOrderByPageShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: str = None,
+        order_status_shrink: str = None,
+        page_index: int = None,
+        page_size: int = None,
+        start_time: str = None,
+    ):
+        self.end_time = end_time
+        self.order_status_shrink = order_status_shrink
+        self.page_index = page_index
+        self.page_size = page_size
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.order_status_shrink is not None:
+            result['orderStatus'] = self.order_status_shrink
+        if self.page_index is not None:
+            result['pageIndex'] = self.page_index
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('orderStatus') is not None:
+            self.order_status_shrink = m.get('orderStatus')
+        if m.get('pageIndex') is not None:
+            self.page_index = m.get('pageIndex')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class QueryTripFlightOrderByPageResponseBodyListConsumerInfos(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        staff_flag: bool = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.staff_flag = staff_flag
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.staff_flag is not None:
+            result['staffFlag'] = self.staff_flag
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('staffFlag') is not None:
+            self.staff_flag = m.get('staffFlag')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryTripFlightOrderByPageResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        arrival_time: str = None,
+        consumer_infos: List[QueryTripFlightOrderByPageResponseBodyListConsumerInfos] = None,
+        contact_name: str = None,
+        cost_center: str = None,
+        cost_center_code: str = None,
+        create_time: int = None,
+        depart_time: str = None,
+        department_id: str = None,
+        department_name: str = None,
+        destination_city: str = None,
+        destination_station: str = None,
+        flight_order_status: int = None,
+        flight_order_status_desc: str = None,
+        gmt_order: int = None,
+        gmt_pay: int = None,
+        invoice_id: str = None,
+        invoice_title: str = None,
+        order_details: str = None,
+        order_no: str = None,
+        origin_city: str = None,
+        origin_station: str = None,
+        passenger_count: int = None,
+        passenger_name: str = None,
+        process_instance_id: str = None,
+        seat_type: str = None,
+        total_amount: int = None,
+        transport_number: str = None,
+        trip_type: str = None,
+        update_time: int = None,
+        user_id: str = None,
+        user_name: str = None,
+    ):
+        self.arrival_time = arrival_time
+        self.consumer_infos = consumer_infos
+        self.contact_name = contact_name
+        self.cost_center = cost_center
+        self.cost_center_code = cost_center_code
+        self.create_time = create_time
+        self.depart_time = depart_time
+        self.department_id = department_id
+        self.department_name = department_name
+        self.destination_city = destination_city
+        self.destination_station = destination_station
+        self.flight_order_status = flight_order_status
+        self.flight_order_status_desc = flight_order_status_desc
+        self.gmt_order = gmt_order
+        self.gmt_pay = gmt_pay
+        self.invoice_id = invoice_id
+        self.invoice_title = invoice_title
+        self.order_details = order_details
+        self.order_no = order_no
+        self.origin_city = origin_city
+        self.origin_station = origin_station
+        self.passenger_count = passenger_count
+        self.passenger_name = passenger_name
+        self.process_instance_id = process_instance_id
+        self.seat_type = seat_type
+        self.total_amount = total_amount
+        self.transport_number = transport_number
+        self.trip_type = trip_type
+        self.update_time = update_time
+        self.user_id = user_id
+        self.user_name = user_name
+
+    def validate(self):
+        if self.consumer_infos:
+            for k in self.consumer_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.arrival_time is not None:
+            result['arrivalTime'] = self.arrival_time
+        result['consumerInfos'] = []
+        if self.consumer_infos is not None:
+            for k in self.consumer_infos:
+                result['consumerInfos'].append(k.to_map() if k else None)
+        if self.contact_name is not None:
+            result['contactName'] = self.contact_name
+        if self.cost_center is not None:
+            result['costCenter'] = self.cost_center
+        if self.cost_center_code is not None:
+            result['costCenterCode'] = self.cost_center_code
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.depart_time is not None:
+            result['departTime'] = self.depart_time
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.destination_city is not None:
+            result['destinationCity'] = self.destination_city
+        if self.destination_station is not None:
+            result['destinationStation'] = self.destination_station
+        if self.flight_order_status is not None:
+            result['flightOrderStatus'] = self.flight_order_status
+        if self.flight_order_status_desc is not None:
+            result['flightOrderStatusDesc'] = self.flight_order_status_desc
+        if self.gmt_order is not None:
+            result['gmtOrder'] = self.gmt_order
+        if self.gmt_pay is not None:
+            result['gmtPay'] = self.gmt_pay
+        if self.invoice_id is not None:
+            result['invoiceId'] = self.invoice_id
+        if self.invoice_title is not None:
+            result['invoiceTitle'] = self.invoice_title
+        if self.order_details is not None:
+            result['orderDetails'] = self.order_details
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.origin_city is not None:
+            result['originCity'] = self.origin_city
+        if self.origin_station is not None:
+            result['originStation'] = self.origin_station
+        if self.passenger_count is not None:
+            result['passengerCount'] = self.passenger_count
+        if self.passenger_name is not None:
+            result['passengerName'] = self.passenger_name
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.seat_type is not None:
+            result['seatType'] = self.seat_type
+        if self.total_amount is not None:
+            result['totalAmount'] = self.total_amount
+        if self.transport_number is not None:
+            result['transportNumber'] = self.transport_number
+        if self.trip_type is not None:
+            result['tripType'] = self.trip_type
+        if self.update_time is not None:
+            result['updateTime'] = self.update_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('arrivalTime') is not None:
+            self.arrival_time = m.get('arrivalTime')
+        self.consumer_infos = []
+        if m.get('consumerInfos') is not None:
+            for k in m.get('consumerInfos'):
+                temp_model = QueryTripFlightOrderByPageResponseBodyListConsumerInfos()
+                self.consumer_infos.append(temp_model.from_map(k))
+        if m.get('contactName') is not None:
+            self.contact_name = m.get('contactName')
+        if m.get('costCenter') is not None:
+            self.cost_center = m.get('costCenter')
+        if m.get('costCenterCode') is not None:
+            self.cost_center_code = m.get('costCenterCode')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('departTime') is not None:
+            self.depart_time = m.get('departTime')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('destinationCity') is not None:
+            self.destination_city = m.get('destinationCity')
+        if m.get('destinationStation') is not None:
+            self.destination_station = m.get('destinationStation')
+        if m.get('flightOrderStatus') is not None:
+            self.flight_order_status = m.get('flightOrderStatus')
+        if m.get('flightOrderStatusDesc') is not None:
+            self.flight_order_status_desc = m.get('flightOrderStatusDesc')
+        if m.get('gmtOrder') is not None:
+            self.gmt_order = m.get('gmtOrder')
+        if m.get('gmtPay') is not None:
+            self.gmt_pay = m.get('gmtPay')
+        if m.get('invoiceId') is not None:
+            self.invoice_id = m.get('invoiceId')
+        if m.get('invoiceTitle') is not None:
+            self.invoice_title = m.get('invoiceTitle')
+        if m.get('orderDetails') is not None:
+            self.order_details = m.get('orderDetails')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('originCity') is not None:
+            self.origin_city = m.get('originCity')
+        if m.get('originStation') is not None:
+            self.origin_station = m.get('originStation')
+        if m.get('passengerCount') is not None:
+            self.passenger_count = m.get('passengerCount')
+        if m.get('passengerName') is not None:
+            self.passenger_name = m.get('passengerName')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('seatType') is not None:
+            self.seat_type = m.get('seatType')
+        if m.get('totalAmount') is not None:
+            self.total_amount = m.get('totalAmount')
+        if m.get('transportNumber') is not None:
+            self.transport_number = m.get('transportNumber')
+        if m.get('tripType') is not None:
+            self.trip_type = m.get('tripType')
+        if m.get('updateTime') is not None:
+            self.update_time = m.get('updateTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class QueryTripFlightOrderByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[QueryTripFlightOrderByPageResponseBodyList] = None,
+        next_cursor: int = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+        self.next_cursor = next_cursor
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryTripFlightOrderByPageResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryTripFlightOrderByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryTripFlightOrderByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryTripFlightOrderByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryTripHotelOrderByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryTripHotelOrderByPageRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: str = None,
+        order_status: List[str] = None,
+        page_index: int = None,
+        page_size: int = None,
+        start_time: str = None,
+    ):
+        self.end_time = end_time
+        self.order_status = order_status
+        self.page_index = page_index
+        self.page_size = page_size
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.order_status is not None:
+            result['orderStatus'] = self.order_status
+        if self.page_index is not None:
+            result['pageIndex'] = self.page_index
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('orderStatus') is not None:
+            self.order_status = m.get('orderStatus')
+        if m.get('pageIndex') is not None:
+            self.page_index = m.get('pageIndex')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class QueryTripHotelOrderByPageShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: str = None,
+        order_status_shrink: str = None,
+        page_index: int = None,
+        page_size: int = None,
+        start_time: str = None,
+    ):
+        self.end_time = end_time
+        self.order_status_shrink = order_status_shrink
+        self.page_index = page_index
+        self.page_size = page_size
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.order_status_shrink is not None:
+            result['orderStatus'] = self.order_status_shrink
+        if self.page_index is not None:
+            result['pageIndex'] = self.page_index
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('orderStatus') is not None:
+            self.order_status_shrink = m.get('orderStatus')
+        if m.get('pageIndex') is not None:
+            self.page_index = m.get('pageIndex')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class QueryTripHotelOrderByPageResponseBodyListConsumerInfos(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        staff_flag: bool = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.staff_flag = staff_flag
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.staff_flag is not None:
+            result['staffFlag'] = self.staff_flag
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('staffFlag') is not None:
+            self.staff_flag = m.get('staffFlag')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryTripHotelOrderByPageResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        check_in_time: str = None,
+        check_out_time: str = None,
+        city: str = None,
+        consumer_infos: List[QueryTripHotelOrderByPageResponseBodyListConsumerInfos] = None,
+        contact_name: str = None,
+        cost_center: str = None,
+        cost_center_code: str = None,
+        create_time: int = None,
+        department_id: str = None,
+        department_name: str = None,
+        gmt_order: int = None,
+        gmt_pay: int = None,
+        guest: str = None,
+        hotel_name: str = None,
+        hotel_order_status: str = None,
+        hotel_order_status_desc: str = None,
+        invoice_id: str = None,
+        invoice_title: str = None,
+        night: int = None,
+        order_details: str = None,
+        order_no: str = None,
+        pay_type: str = None,
+        process_instance_id: str = None,
+        room_num: int = None,
+        room_type: str = None,
+        total_amount: int = None,
+        update_time: int = None,
+        user_id: str = None,
+        user_name: str = None,
+    ):
+        self.check_in_time = check_in_time
+        self.check_out_time = check_out_time
+        self.city = city
+        self.consumer_infos = consumer_infos
+        self.contact_name = contact_name
+        self.cost_center = cost_center
+        self.cost_center_code = cost_center_code
+        self.create_time = create_time
+        self.department_id = department_id
+        self.department_name = department_name
+        self.gmt_order = gmt_order
+        self.gmt_pay = gmt_pay
+        self.guest = guest
+        self.hotel_name = hotel_name
+        self.hotel_order_status = hotel_order_status
+        self.hotel_order_status_desc = hotel_order_status_desc
+        self.invoice_id = invoice_id
+        self.invoice_title = invoice_title
+        self.night = night
+        self.order_details = order_details
+        self.order_no = order_no
+        self.pay_type = pay_type
+        self.process_instance_id = process_instance_id
+        self.room_num = room_num
+        self.room_type = room_type
+        self.total_amount = total_amount
+        self.update_time = update_time
+        self.user_id = user_id
+        self.user_name = user_name
+
+    def validate(self):
+        if self.consumer_infos:
+            for k in self.consumer_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.check_in_time is not None:
+            result['checkInTime'] = self.check_in_time
+        if self.check_out_time is not None:
+            result['checkOutTime'] = self.check_out_time
+        if self.city is not None:
+            result['city'] = self.city
+        result['consumerInfos'] = []
+        if self.consumer_infos is not None:
+            for k in self.consumer_infos:
+                result['consumerInfos'].append(k.to_map() if k else None)
+        if self.contact_name is not None:
+            result['contactName'] = self.contact_name
+        if self.cost_center is not None:
+            result['costCenter'] = self.cost_center
+        if self.cost_center_code is not None:
+            result['costCenterCode'] = self.cost_center_code
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.gmt_order is not None:
+            result['gmtOrder'] = self.gmt_order
+        if self.gmt_pay is not None:
+            result['gmtPay'] = self.gmt_pay
+        if self.guest is not None:
+            result['guest'] = self.guest
+        if self.hotel_name is not None:
+            result['hotelName'] = self.hotel_name
+        if self.hotel_order_status is not None:
+            result['hotelOrderStatus'] = self.hotel_order_status
+        if self.hotel_order_status_desc is not None:
+            result['hotelOrderStatusDesc'] = self.hotel_order_status_desc
+        if self.invoice_id is not None:
+            result['invoiceId'] = self.invoice_id
+        if self.invoice_title is not None:
+            result['invoiceTitle'] = self.invoice_title
+        if self.night is not None:
+            result['night'] = self.night
+        if self.order_details is not None:
+            result['orderDetails'] = self.order_details
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.pay_type is not None:
+            result['payType'] = self.pay_type
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.room_num is not None:
+            result['roomNum'] = self.room_num
+        if self.room_type is not None:
+            result['roomType'] = self.room_type
+        if self.total_amount is not None:
+            result['totalAmount'] = self.total_amount
+        if self.update_time is not None:
+            result['updateTime'] = self.update_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('checkInTime') is not None:
+            self.check_in_time = m.get('checkInTime')
+        if m.get('checkOutTime') is not None:
+            self.check_out_time = m.get('checkOutTime')
+        if m.get('city') is not None:
+            self.city = m.get('city')
+        self.consumer_infos = []
+        if m.get('consumerInfos') is not None:
+            for k in m.get('consumerInfos'):
+                temp_model = QueryTripHotelOrderByPageResponseBodyListConsumerInfos()
+                self.consumer_infos.append(temp_model.from_map(k))
+        if m.get('contactName') is not None:
+            self.contact_name = m.get('contactName')
+        if m.get('costCenter') is not None:
+            self.cost_center = m.get('costCenter')
+        if m.get('costCenterCode') is not None:
+            self.cost_center_code = m.get('costCenterCode')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('gmtOrder') is not None:
+            self.gmt_order = m.get('gmtOrder')
+        if m.get('gmtPay') is not None:
+            self.gmt_pay = m.get('gmtPay')
+        if m.get('guest') is not None:
+            self.guest = m.get('guest')
+        if m.get('hotelName') is not None:
+            self.hotel_name = m.get('hotelName')
+        if m.get('hotelOrderStatus') is not None:
+            self.hotel_order_status = m.get('hotelOrderStatus')
+        if m.get('hotelOrderStatusDesc') is not None:
+            self.hotel_order_status_desc = m.get('hotelOrderStatusDesc')
+        if m.get('invoiceId') is not None:
+            self.invoice_id = m.get('invoiceId')
+        if m.get('invoiceTitle') is not None:
+            self.invoice_title = m.get('invoiceTitle')
+        if m.get('night') is not None:
+            self.night = m.get('night')
+        if m.get('orderDetails') is not None:
+            self.order_details = m.get('orderDetails')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('payType') is not None:
+            self.pay_type = m.get('payType')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('roomNum') is not None:
+            self.room_num = m.get('roomNum')
+        if m.get('roomType') is not None:
+            self.room_type = m.get('roomType')
+        if m.get('totalAmount') is not None:
+            self.total_amount = m.get('totalAmount')
+        if m.get('updateTime') is not None:
+            self.update_time = m.get('updateTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class QueryTripHotelOrderByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[QueryTripHotelOrderByPageResponseBodyList] = None,
+        next_cursor: int = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+        self.next_cursor = next_cursor
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryTripHotelOrderByPageResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryTripHotelOrderByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryTripHotelOrderByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryTripHotelOrderByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryTripProcessTemplatesHeaders(TeaModel):
     def __init__(
         self,
@@ -1166,6 +2120,489 @@ class QueryTripProcessTemplatesResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryTripProcessTemplatesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryTripTrainOrderByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryTripTrainOrderByPageRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: str = None,
+        order_status: List[str] = None,
+        page_index: int = None,
+        page_size: int = None,
+        start_time: str = None,
+    ):
+        self.end_time = end_time
+        self.order_status = order_status
+        self.page_index = page_index
+        self.page_size = page_size
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.order_status is not None:
+            result['orderStatus'] = self.order_status
+        if self.page_index is not None:
+            result['pageIndex'] = self.page_index
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('orderStatus') is not None:
+            self.order_status = m.get('orderStatus')
+        if m.get('pageIndex') is not None:
+            self.page_index = m.get('pageIndex')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class QueryTripTrainOrderByPageShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: str = None,
+        order_status_shrink: str = None,
+        page_index: int = None,
+        page_size: int = None,
+        start_time: str = None,
+    ):
+        self.end_time = end_time
+        self.order_status_shrink = order_status_shrink
+        self.page_index = page_index
+        self.page_size = page_size
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.order_status_shrink is not None:
+            result['orderStatus'] = self.order_status_shrink
+        if self.page_index is not None:
+            result['pageIndex'] = self.page_index
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('orderStatus') is not None:
+            self.order_status_shrink = m.get('orderStatus')
+        if m.get('pageIndex') is not None:
+            self.page_index = m.get('pageIndex')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class QueryTripTrainOrderByPageResponseBodyListConsumerInfos(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        staff_flag: bool = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.staff_flag = staff_flag
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.staff_flag is not None:
+            result['staffFlag'] = self.staff_flag
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('staffFlag') is not None:
+            self.staff_flag = m.get('staffFlag')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryTripTrainOrderByPageResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        arrival_city: str = None,
+        arrival_station: str = None,
+        arrival_time: str = None,
+        consumer_infos: List[QueryTripTrainOrderByPageResponseBodyListConsumerInfos] = None,
+        contact_name: str = None,
+        cost_center: str = None,
+        cost_center_code: str = None,
+        create_time: int = None,
+        department_id: str = None,
+        department_name: str = None,
+        departure_city: str = None,
+        departure_station: str = None,
+        departure_time: str = None,
+        gmt_order: int = None,
+        gmt_pay: int = None,
+        invoice_id: str = None,
+        invoice_title: str = None,
+        order_details: str = None,
+        order_no: str = None,
+        pay_type: str = None,
+        process_instance_id: str = None,
+        run_time: str = None,
+        seat_type: str = None,
+        ticket_count: str = None,
+        total_amount: int = None,
+        train_number: str = None,
+        train_order_status: str = None,
+        train_order_status_desc: str = None,
+        update_time: int = None,
+        user_id: str = None,
+        user_name: str = None,
+    ):
+        self.arrival_city = arrival_city
+        self.arrival_station = arrival_station
+        self.arrival_time = arrival_time
+        self.consumer_infos = consumer_infos
+        self.contact_name = contact_name
+        self.cost_center = cost_center
+        self.cost_center_code = cost_center_code
+        self.create_time = create_time
+        self.department_id = department_id
+        self.department_name = department_name
+        self.departure_city = departure_city
+        self.departure_station = departure_station
+        self.departure_time = departure_time
+        self.gmt_order = gmt_order
+        self.gmt_pay = gmt_pay
+        self.invoice_id = invoice_id
+        self.invoice_title = invoice_title
+        self.order_details = order_details
+        self.order_no = order_no
+        self.pay_type = pay_type
+        self.process_instance_id = process_instance_id
+        self.run_time = run_time
+        self.seat_type = seat_type
+        self.ticket_count = ticket_count
+        self.total_amount = total_amount
+        self.train_number = train_number
+        self.train_order_status = train_order_status
+        self.train_order_status_desc = train_order_status_desc
+        self.update_time = update_time
+        self.user_id = user_id
+        self.user_name = user_name
+
+    def validate(self):
+        if self.consumer_infos:
+            for k in self.consumer_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.arrival_city is not None:
+            result['arrivalCity'] = self.arrival_city
+        if self.arrival_station is not None:
+            result['arrivalStation'] = self.arrival_station
+        if self.arrival_time is not None:
+            result['arrivalTime'] = self.arrival_time
+        result['consumerInfos'] = []
+        if self.consumer_infos is not None:
+            for k in self.consumer_infos:
+                result['consumerInfos'].append(k.to_map() if k else None)
+        if self.contact_name is not None:
+            result['contactName'] = self.contact_name
+        if self.cost_center is not None:
+            result['costCenter'] = self.cost_center
+        if self.cost_center_code is not None:
+            result['costCenterCode'] = self.cost_center_code
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.departure_city is not None:
+            result['departureCity'] = self.departure_city
+        if self.departure_station is not None:
+            result['departureStation'] = self.departure_station
+        if self.departure_time is not None:
+            result['departureTime'] = self.departure_time
+        if self.gmt_order is not None:
+            result['gmtOrder'] = self.gmt_order
+        if self.gmt_pay is not None:
+            result['gmtPay'] = self.gmt_pay
+        if self.invoice_id is not None:
+            result['invoiceId'] = self.invoice_id
+        if self.invoice_title is not None:
+            result['invoiceTitle'] = self.invoice_title
+        if self.order_details is not None:
+            result['orderDetails'] = self.order_details
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        if self.pay_type is not None:
+            result['payType'] = self.pay_type
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.run_time is not None:
+            result['runTime'] = self.run_time
+        if self.seat_type is not None:
+            result['seatType'] = self.seat_type
+        if self.ticket_count is not None:
+            result['ticketCount'] = self.ticket_count
+        if self.total_amount is not None:
+            result['totalAmount'] = self.total_amount
+        if self.train_number is not None:
+            result['trainNumber'] = self.train_number
+        if self.train_order_status is not None:
+            result['trainOrderStatus'] = self.train_order_status
+        if self.train_order_status_desc is not None:
+            result['trainOrderStatusDesc'] = self.train_order_status_desc
+        if self.update_time is not None:
+            result['updateTime'] = self.update_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('arrivalCity') is not None:
+            self.arrival_city = m.get('arrivalCity')
+        if m.get('arrivalStation') is not None:
+            self.arrival_station = m.get('arrivalStation')
+        if m.get('arrivalTime') is not None:
+            self.arrival_time = m.get('arrivalTime')
+        self.consumer_infos = []
+        if m.get('consumerInfos') is not None:
+            for k in m.get('consumerInfos'):
+                temp_model = QueryTripTrainOrderByPageResponseBodyListConsumerInfos()
+                self.consumer_infos.append(temp_model.from_map(k))
+        if m.get('contactName') is not None:
+            self.contact_name = m.get('contactName')
+        if m.get('costCenter') is not None:
+            self.cost_center = m.get('costCenter')
+        if m.get('costCenterCode') is not None:
+            self.cost_center_code = m.get('costCenterCode')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('departureCity') is not None:
+            self.departure_city = m.get('departureCity')
+        if m.get('departureStation') is not None:
+            self.departure_station = m.get('departureStation')
+        if m.get('departureTime') is not None:
+            self.departure_time = m.get('departureTime')
+        if m.get('gmtOrder') is not None:
+            self.gmt_order = m.get('gmtOrder')
+        if m.get('gmtPay') is not None:
+            self.gmt_pay = m.get('gmtPay')
+        if m.get('invoiceId') is not None:
+            self.invoice_id = m.get('invoiceId')
+        if m.get('invoiceTitle') is not None:
+            self.invoice_title = m.get('invoiceTitle')
+        if m.get('orderDetails') is not None:
+            self.order_details = m.get('orderDetails')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        if m.get('payType') is not None:
+            self.pay_type = m.get('payType')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('runTime') is not None:
+            self.run_time = m.get('runTime')
+        if m.get('seatType') is not None:
+            self.seat_type = m.get('seatType')
+        if m.get('ticketCount') is not None:
+            self.ticket_count = m.get('ticketCount')
+        if m.get('totalAmount') is not None:
+            self.total_amount = m.get('totalAmount')
+        if m.get('trainNumber') is not None:
+            self.train_number = m.get('trainNumber')
+        if m.get('trainOrderStatus') is not None:
+            self.train_order_status = m.get('trainOrderStatus')
+        if m.get('trainOrderStatusDesc') is not None:
+            self.train_order_status_desc = m.get('trainOrderStatusDesc')
+        if m.get('updateTime') is not None:
+            self.update_time = m.get('updateTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class QueryTripTrainOrderByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[QueryTripTrainOrderByPageResponseBodyList] = None,
+        next_cursor: int = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+        self.next_cursor = next_cursor
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryTripTrainOrderByPageResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryTripTrainOrderByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryTripTrainOrderByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryTripTrainOrderByPageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -26,6 +26,132 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def copy_link_to_workspace_with_options(
+        self,
+        request: dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceRequest,
+        headers: dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceResponse:
+        """
+        @summary 将闪会添加链接到知识库
+        
+        @param request: CopyLinkToWorkspaceRequest
+        @param headers: CopyLinkToWorkspaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyLinkToWorkspaceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.parent_node_key):
+            body['parentNodeKey'] = request.parent_node_key
+        if not UtilClient.is_unset(request.shanhui_key):
+            body['shanhuiKey'] = request.shanhui_key
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.workspace_key):
+            body['workspaceKey'] = request.workspace_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyLinkToWorkspace',
+            version='flashmeeting_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmeeting/meetings/copyLinkToWorkspace',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def copy_link_to_workspace_with_options_async(
+        self,
+        request: dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceRequest,
+        headers: dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceResponse:
+        """
+        @summary 将闪会添加链接到知识库
+        
+        @param request: CopyLinkToWorkspaceRequest
+        @param headers: CopyLinkToWorkspaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyLinkToWorkspaceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.parent_node_key):
+            body['parentNodeKey'] = request.parent_node_key
+        if not UtilClient.is_unset(request.shanhui_key):
+            body['shanhuiKey'] = request.shanhui_key
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.workspace_key):
+            body['workspaceKey'] = request.workspace_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyLinkToWorkspace',
+            version='flashmeeting_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmeeting/meetings/copyLinkToWorkspace',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def copy_link_to_workspace(
+        self,
+        request: dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceRequest,
+    ) -> dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceResponse:
+        """
+        @summary 将闪会添加链接到知识库
+        
+        @param request: CopyLinkToWorkspaceRequest
+        @return: CopyLinkToWorkspaceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceHeaders()
+        return self.copy_link_to_workspace_with_options(request, headers, runtime)
+
+    async def copy_link_to_workspace_async(
+        self,
+        request: dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceRequest,
+    ) -> dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceResponse:
+        """
+        @summary 将闪会添加链接到知识库
+        
+        @param request: CopyLinkToWorkspaceRequest
+        @return: CopyLinkToWorkspaceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmeeting__1__0_models.CopyLinkToWorkspaceHeaders()
+        return await self.copy_link_to_workspace_with_options_async(request, headers, runtime)
+
     def create_flash_meeting_with_options(
         self,
         request: dingtalkflashmeeting__1__0_models.CreateFlashMeetingRequest,

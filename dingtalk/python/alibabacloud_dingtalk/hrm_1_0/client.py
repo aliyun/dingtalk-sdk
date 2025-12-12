@@ -28,6 +28,168 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_custom_roster_field_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AddCustomRosterFieldRequest,
+        headers: dingtalkhrm__1__0_models.AddCustomRosterFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AddCustomRosterFieldResponse:
+        """
+        @summary 添加自定义花名册字段
+        
+        @param request: AddCustomRosterFieldRequest
+        @param headers: AddCustomRosterFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCustomRosterFieldResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.edit_from_employee_flag):
+            body['editFromEmployeeFlag'] = request.edit_from_employee_flag
+        if not UtilClient.is_unset(request.field_name):
+            body['fieldName'] = request.field_name
+        if not UtilClient.is_unset(request.field_type):
+            body['fieldType'] = request.field_type
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        if not UtilClient.is_unset(request.hidden_from_employee_flag):
+            body['hiddenFromEmployeeFlag'] = request.hidden_from_employee_flag
+        if not UtilClient.is_unset(request.hint):
+            body['hint'] = request.hint
+        if not UtilClient.is_unset(request.no_watermark):
+            body['noWatermark'] = request.no_watermark
+        if not UtilClient.is_unset(request.number_decimal_place):
+            body['numberDecimalPlace'] = request.number_decimal_place
+        if not UtilClient.is_unset(request.number_format_type):
+            body['numberFormatType'] = request.number_format_type
+        if not UtilClient.is_unset(request.number_value_type):
+            body['numberValueType'] = request.number_value_type
+        if not UtilClient.is_unset(request.option_text):
+            body['optionText'] = request.option_text
+        if not UtilClient.is_unset(request.required):
+            body['required'] = request.required
+        if not UtilClient.is_unset(request.visible_by_emp):
+            body['visibleByEmp'] = request.visible_by_emp
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCustomRosterField',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/customRosterField/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AddCustomRosterFieldResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_custom_roster_field_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AddCustomRosterFieldRequest,
+        headers: dingtalkhrm__1__0_models.AddCustomRosterFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AddCustomRosterFieldResponse:
+        """
+        @summary 添加自定义花名册字段
+        
+        @param request: AddCustomRosterFieldRequest
+        @param headers: AddCustomRosterFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCustomRosterFieldResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.edit_from_employee_flag):
+            body['editFromEmployeeFlag'] = request.edit_from_employee_flag
+        if not UtilClient.is_unset(request.field_name):
+            body['fieldName'] = request.field_name
+        if not UtilClient.is_unset(request.field_type):
+            body['fieldType'] = request.field_type
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        if not UtilClient.is_unset(request.hidden_from_employee_flag):
+            body['hiddenFromEmployeeFlag'] = request.hidden_from_employee_flag
+        if not UtilClient.is_unset(request.hint):
+            body['hint'] = request.hint
+        if not UtilClient.is_unset(request.no_watermark):
+            body['noWatermark'] = request.no_watermark
+        if not UtilClient.is_unset(request.number_decimal_place):
+            body['numberDecimalPlace'] = request.number_decimal_place
+        if not UtilClient.is_unset(request.number_format_type):
+            body['numberFormatType'] = request.number_format_type
+        if not UtilClient.is_unset(request.number_value_type):
+            body['numberValueType'] = request.number_value_type
+        if not UtilClient.is_unset(request.option_text):
+            body['optionText'] = request.option_text
+        if not UtilClient.is_unset(request.required):
+            body['required'] = request.required
+        if not UtilClient.is_unset(request.visible_by_emp):
+            body['visibleByEmp'] = request.visible_by_emp
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCustomRosterField',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/customRosterField/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AddCustomRosterFieldResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_custom_roster_field(
+        self,
+        request: dingtalkhrm__1__0_models.AddCustomRosterFieldRequest,
+    ) -> dingtalkhrm__1__0_models.AddCustomRosterFieldResponse:
+        """
+        @summary 添加自定义花名册字段
+        
+        @param request: AddCustomRosterFieldRequest
+        @return: AddCustomRosterFieldResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AddCustomRosterFieldHeaders()
+        return self.add_custom_roster_field_with_options(request, headers, runtime)
+
+    async def add_custom_roster_field_async(
+        self,
+        request: dingtalkhrm__1__0_models.AddCustomRosterFieldRequest,
+    ) -> dingtalkhrm__1__0_models.AddCustomRosterFieldResponse:
+        """
+        @summary 添加自定义花名册字段
+        
+        @param request: AddCustomRosterFieldRequest
+        @return: AddCustomRosterFieldResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AddCustomRosterFieldHeaders()
+        return await self.add_custom_roster_field_with_options_async(request, headers, runtime)
+
     def add_hrm_legal_entity_with_options(
         self,
         request: dingtalkhrm__1__0_models.AddHrmLegalEntityRequest,
@@ -308,6 +470,124 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.AddHrmPreentryHeaders()
         return await self.add_hrm_preentry_with_options_async(request, headers, runtime)
 
+    def add_roster_field_form_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AddRosterFieldFormRequest,
+        headers: dingtalkhrm__1__0_models.AddRosterFieldFormHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AddRosterFieldFormResponse:
+        """
+        @summary 新建花名册字段分组
+        
+        @param request: AddRosterFieldFormRequest
+        @param headers: AddRosterFieldFormHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRosterFieldFormResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddRosterFieldForm',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/rosterFieldForm/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AddRosterFieldFormResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_roster_field_form_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AddRosterFieldFormRequest,
+        headers: dingtalkhrm__1__0_models.AddRosterFieldFormHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AddRosterFieldFormResponse:
+        """
+        @summary 新建花名册字段分组
+        
+        @param request: AddRosterFieldFormRequest
+        @param headers: AddRosterFieldFormHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRosterFieldFormResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddRosterFieldForm',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/rosterFieldForm/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AddRosterFieldFormResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_roster_field_form(
+        self,
+        request: dingtalkhrm__1__0_models.AddRosterFieldFormRequest,
+    ) -> dingtalkhrm__1__0_models.AddRosterFieldFormResponse:
+        """
+        @summary 新建花名册字段分组
+        
+        @param request: AddRosterFieldFormRequest
+        @return: AddRosterFieldFormResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AddRosterFieldFormHeaders()
+        return self.add_roster_field_form_with_options(request, headers, runtime)
+
+    async def add_roster_field_form_async(
+        self,
+        request: dingtalkhrm__1__0_models.AddRosterFieldFormRequest,
+    ) -> dingtalkhrm__1__0_models.AddRosterFieldFormResponse:
+        """
+        @summary 新建花名册字段分组
+        
+        @param request: AddRosterFieldFormRequest
+        @return: AddRosterFieldFormResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AddRosterFieldFormHeaders()
+        return await self.add_roster_field_form_with_options_async(request, headers, runtime)
+
     def create_record_with_options(
         self,
         request: dingtalkhrm__1__0_models.CreateRecordRequest,
@@ -465,6 +745,242 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.CreateRecordHeaders()
         return await self.create_record_with_options_async(request, headers, runtime)
+
+    def delete_custom_roster_field_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.DeleteCustomRosterFieldRequest,
+        headers: dingtalkhrm__1__0_models.DeleteCustomRosterFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.DeleteCustomRosterFieldResponse:
+        """
+        @summary 删除花名册自定义字段
+        
+        @param request: DeleteCustomRosterFieldRequest
+        @param headers: DeleteCustomRosterFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCustomRosterFieldResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.field_code):
+            body['fieldCode'] = request.field_code
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteCustomRosterField',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/customRosterField/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.DeleteCustomRosterFieldResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_custom_roster_field_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.DeleteCustomRosterFieldRequest,
+        headers: dingtalkhrm__1__0_models.DeleteCustomRosterFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.DeleteCustomRosterFieldResponse:
+        """
+        @summary 删除花名册自定义字段
+        
+        @param request: DeleteCustomRosterFieldRequest
+        @param headers: DeleteCustomRosterFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCustomRosterFieldResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.field_code):
+            body['fieldCode'] = request.field_code
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteCustomRosterField',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/customRosterField/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.DeleteCustomRosterFieldResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_custom_roster_field(
+        self,
+        request: dingtalkhrm__1__0_models.DeleteCustomRosterFieldRequest,
+    ) -> dingtalkhrm__1__0_models.DeleteCustomRosterFieldResponse:
+        """
+        @summary 删除花名册自定义字段
+        
+        @param request: DeleteCustomRosterFieldRequest
+        @return: DeleteCustomRosterFieldResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.DeleteCustomRosterFieldHeaders()
+        return self.delete_custom_roster_field_with_options(request, headers, runtime)
+
+    async def delete_custom_roster_field_async(
+        self,
+        request: dingtalkhrm__1__0_models.DeleteCustomRosterFieldRequest,
+    ) -> dingtalkhrm__1__0_models.DeleteCustomRosterFieldResponse:
+        """
+        @summary 删除花名册自定义字段
+        
+        @param request: DeleteCustomRosterFieldRequest
+        @return: DeleteCustomRosterFieldResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.DeleteCustomRosterFieldHeaders()
+        return await self.delete_custom_roster_field_with_options_async(request, headers, runtime)
+
+    def delete_roster_field_form_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.DeleteRosterFieldFormRequest,
+        headers: dingtalkhrm__1__0_models.DeleteRosterFieldFormHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.DeleteRosterFieldFormResponse:
+        """
+        @summary 删除花名册字段分组
+        
+        @param request: DeleteRosterFieldFormRequest
+        @param headers: DeleteRosterFieldFormHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRosterFieldFormResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_id):
+            body['formId'] = request.form_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteRosterFieldForm',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/rosterFieldForm/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.DeleteRosterFieldFormResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_roster_field_form_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.DeleteRosterFieldFormRequest,
+        headers: dingtalkhrm__1__0_models.DeleteRosterFieldFormHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.DeleteRosterFieldFormResponse:
+        """
+        @summary 删除花名册字段分组
+        
+        @param request: DeleteRosterFieldFormRequest
+        @param headers: DeleteRosterFieldFormHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRosterFieldFormResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_id):
+            body['formId'] = request.form_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteRosterFieldForm',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/rosterFieldForm/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.DeleteRosterFieldFormResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_roster_field_form(
+        self,
+        request: dingtalkhrm__1__0_models.DeleteRosterFieldFormRequest,
+    ) -> dingtalkhrm__1__0_models.DeleteRosterFieldFormResponse:
+        """
+        @summary 删除花名册字段分组
+        
+        @param request: DeleteRosterFieldFormRequest
+        @return: DeleteRosterFieldFormResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.DeleteRosterFieldFormHeaders()
+        return self.delete_roster_field_form_with_options(request, headers, runtime)
+
+    async def delete_roster_field_form_async(
+        self,
+        request: dingtalkhrm__1__0_models.DeleteRosterFieldFormRequest,
+    ) -> dingtalkhrm__1__0_models.DeleteRosterFieldFormResponse:
+        """
+        @summary 删除花名册字段分组
+        
+        @param request: DeleteRosterFieldFormRequest
+        @return: DeleteRosterFieldFormResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.DeleteRosterFieldFormHeaders()
+        return await self.delete_roster_field_form_with_options_async(request, headers, runtime)
 
     def device_market_manager_with_options(
         self,
@@ -5920,6 +6436,124 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.SendIsvCardMessageHeaders()
         return await self.send_isv_card_message_with_options_async(request, headers, runtime)
 
+    def send_real_auth_invite_message_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.SendRealAuthInviteMessageRequest,
+        headers: dingtalkhrm__1__0_models.SendRealAuthInviteMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SendRealAuthInviteMessageResponse:
+        """
+        @summary 发送实人认证邀请消息
+        
+        @param request: SendRealAuthInviteMessageRequest
+        @param headers: SendRealAuthInviteMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendRealAuthInviteMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.inviter_id):
+            body['inviterId'] = request.inviter_id
+        if not UtilClient.is_unset(request.on_working_emp_search_vo):
+            body['onWorkingEmpSearchVO'] = request.on_working_emp_search_vo
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendRealAuthInviteMessage',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/realAuth/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SendRealAuthInviteMessageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_real_auth_invite_message_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.SendRealAuthInviteMessageRequest,
+        headers: dingtalkhrm__1__0_models.SendRealAuthInviteMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SendRealAuthInviteMessageResponse:
+        """
+        @summary 发送实人认证邀请消息
+        
+        @param request: SendRealAuthInviteMessageRequest
+        @param headers: SendRealAuthInviteMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendRealAuthInviteMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.inviter_id):
+            body['inviterId'] = request.inviter_id
+        if not UtilClient.is_unset(request.on_working_emp_search_vo):
+            body['onWorkingEmpSearchVO'] = request.on_working_emp_search_vo
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendRealAuthInviteMessage',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/realAuth/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SendRealAuthInviteMessageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_real_auth_invite_message(
+        self,
+        request: dingtalkhrm__1__0_models.SendRealAuthInviteMessageRequest,
+    ) -> dingtalkhrm__1__0_models.SendRealAuthInviteMessageResponse:
+        """
+        @summary 发送实人认证邀请消息
+        
+        @param request: SendRealAuthInviteMessageRequest
+        @return: SendRealAuthInviteMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SendRealAuthInviteMessageHeaders()
+        return self.send_real_auth_invite_message_with_options(request, headers, runtime)
+
+    async def send_real_auth_invite_message_async(
+        self,
+        request: dingtalkhrm__1__0_models.SendRealAuthInviteMessageRequest,
+    ) -> dingtalkhrm__1__0_models.SendRealAuthInviteMessageResponse:
+        """
+        @summary 发送实人认证邀请消息
+        
+        @param request: SendRealAuthInviteMessageRequest
+        @return: SendRealAuthInviteMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SendRealAuthInviteMessageHeaders()
+        return await self.send_real_auth_invite_message_with_options_async(request, headers, runtime)
+
     def solution_task_init_with_options(
         self,
         request: dingtalkhrm__1__0_models.SolutionTaskInitRequest,
@@ -6511,6 +7145,240 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.SyncTaskTemplateHeaders()
         return await self.sync_task_template_with_options_async(request, headers, runtime)
+
+    def update_custom_roster_field_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateCustomRosterFieldRequest,
+        headers: dingtalkhrm__1__0_models.UpdateCustomRosterFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateCustomRosterFieldResponse:
+        """
+        @summary 更新花名册自定义字段
+        
+        @param request: UpdateCustomRosterFieldRequest
+        @param headers: UpdateCustomRosterFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCustomRosterFieldResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.contact_client_flag):
+            body['contactClientFlag'] = request.contact_client_flag
+        if not UtilClient.is_unset(request.contact_flag):
+            body['contactFlag'] = request.contact_flag
+        if not UtilClient.is_unset(request.contact_source):
+            body['contactSource'] = request.contact_source
+        if not UtilClient.is_unset(request.contact_system_flag):
+            body['contactSystemFlag'] = request.contact_system_flag
+        if not UtilClient.is_unset(request.deleted):
+            body['deleted'] = request.deleted
+        if not UtilClient.is_unset(request.derived):
+            body['derived'] = request.derived
+        if not UtilClient.is_unset(request.disabled):
+            body['disabled'] = request.disabled
+        if not UtilClient.is_unset(request.edit_from_employee_flag):
+            body['editFromEmployeeFlag'] = request.edit_from_employee_flag
+        if not UtilClient.is_unset(request.editable_by_hr):
+            body['editableByHr'] = request.editable_by_hr
+        if not UtilClient.is_unset(request.field_code):
+            body['fieldCode'] = request.field_code
+        if not UtilClient.is_unset(request.field_name):
+            body['fieldName'] = request.field_name
+        if not UtilClient.is_unset(request.field_tip):
+            body['fieldTip'] = request.field_tip
+        if not UtilClient.is_unset(request.field_type):
+            body['fieldType'] = request.field_type
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        if not UtilClient.is_unset(request.hidden_from_employee_flag):
+            body['hiddenFromEmployeeFlag'] = request.hidden_from_employee_flag
+        if not UtilClient.is_unset(request.hint):
+            body['hint'] = request.hint
+        if not UtilClient.is_unset(request.history_field):
+            body['historyField'] = request.history_field
+        if not UtilClient.is_unset(request.index):
+            body['index'] = request.index
+        if not UtilClient.is_unset(request.modify_options):
+            body['modifyOptions'] = request.modify_options
+        if not UtilClient.is_unset(request.no_watermark):
+            body['noWatermark'] = request.no_watermark
+        if not UtilClient.is_unset(request.number_decimal_place):
+            body['numberDecimalPlace'] = request.number_decimal_place
+        if not UtilClient.is_unset(request.number_format_type):
+            body['numberFormatType'] = request.number_format_type
+        if not UtilClient.is_unset(request.number_value_type):
+            body['numberValueType'] = request.number_value_type
+        if not UtilClient.is_unset(request.option_text):
+            body['optionText'] = request.option_text
+        if not UtilClient.is_unset(request.required):
+            body['required'] = request.required
+        if not UtilClient.is_unset(request.source_field_code):
+            body['sourceFieldCode'] = request.source_field_code
+        if not UtilClient.is_unset(request.system_flag):
+            body['systemFlag'] = request.system_flag
+        if not UtilClient.is_unset(request.text_to_select_field):
+            body['textToSelectField'] = request.text_to_select_field
+        if not UtilClient.is_unset(request.update_user_id):
+            body['updateUserId'] = request.update_user_id
+        if not UtilClient.is_unset(request.value):
+            body['value'] = request.value
+        if not UtilClient.is_unset(request.visible_by_emp):
+            body['visibleByEmp'] = request.visible_by_emp
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCustomRosterField',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/customRosterField/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateCustomRosterFieldResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_custom_roster_field_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateCustomRosterFieldRequest,
+        headers: dingtalkhrm__1__0_models.UpdateCustomRosterFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateCustomRosterFieldResponse:
+        """
+        @summary 更新花名册自定义字段
+        
+        @param request: UpdateCustomRosterFieldRequest
+        @param headers: UpdateCustomRosterFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCustomRosterFieldResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.contact_client_flag):
+            body['contactClientFlag'] = request.contact_client_flag
+        if not UtilClient.is_unset(request.contact_flag):
+            body['contactFlag'] = request.contact_flag
+        if not UtilClient.is_unset(request.contact_source):
+            body['contactSource'] = request.contact_source
+        if not UtilClient.is_unset(request.contact_system_flag):
+            body['contactSystemFlag'] = request.contact_system_flag
+        if not UtilClient.is_unset(request.deleted):
+            body['deleted'] = request.deleted
+        if not UtilClient.is_unset(request.derived):
+            body['derived'] = request.derived
+        if not UtilClient.is_unset(request.disabled):
+            body['disabled'] = request.disabled
+        if not UtilClient.is_unset(request.edit_from_employee_flag):
+            body['editFromEmployeeFlag'] = request.edit_from_employee_flag
+        if not UtilClient.is_unset(request.editable_by_hr):
+            body['editableByHr'] = request.editable_by_hr
+        if not UtilClient.is_unset(request.field_code):
+            body['fieldCode'] = request.field_code
+        if not UtilClient.is_unset(request.field_name):
+            body['fieldName'] = request.field_name
+        if not UtilClient.is_unset(request.field_tip):
+            body['fieldTip'] = request.field_tip
+        if not UtilClient.is_unset(request.field_type):
+            body['fieldType'] = request.field_type
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        if not UtilClient.is_unset(request.hidden_from_employee_flag):
+            body['hiddenFromEmployeeFlag'] = request.hidden_from_employee_flag
+        if not UtilClient.is_unset(request.hint):
+            body['hint'] = request.hint
+        if not UtilClient.is_unset(request.history_field):
+            body['historyField'] = request.history_field
+        if not UtilClient.is_unset(request.index):
+            body['index'] = request.index
+        if not UtilClient.is_unset(request.modify_options):
+            body['modifyOptions'] = request.modify_options
+        if not UtilClient.is_unset(request.no_watermark):
+            body['noWatermark'] = request.no_watermark
+        if not UtilClient.is_unset(request.number_decimal_place):
+            body['numberDecimalPlace'] = request.number_decimal_place
+        if not UtilClient.is_unset(request.number_format_type):
+            body['numberFormatType'] = request.number_format_type
+        if not UtilClient.is_unset(request.number_value_type):
+            body['numberValueType'] = request.number_value_type
+        if not UtilClient.is_unset(request.option_text):
+            body['optionText'] = request.option_text
+        if not UtilClient.is_unset(request.required):
+            body['required'] = request.required
+        if not UtilClient.is_unset(request.source_field_code):
+            body['sourceFieldCode'] = request.source_field_code
+        if not UtilClient.is_unset(request.system_flag):
+            body['systemFlag'] = request.system_flag
+        if not UtilClient.is_unset(request.text_to_select_field):
+            body['textToSelectField'] = request.text_to_select_field
+        if not UtilClient.is_unset(request.update_user_id):
+            body['updateUserId'] = request.update_user_id
+        if not UtilClient.is_unset(request.value):
+            body['value'] = request.value
+        if not UtilClient.is_unset(request.visible_by_emp):
+            body['visibleByEmp'] = request.visible_by_emp
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCustomRosterField',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/customRosterField/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateCustomRosterFieldResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_custom_roster_field(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateCustomRosterFieldRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateCustomRosterFieldResponse:
+        """
+        @summary 更新花名册自定义字段
+        
+        @param request: UpdateCustomRosterFieldRequest
+        @return: UpdateCustomRosterFieldResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateCustomRosterFieldHeaders()
+        return self.update_custom_roster_field_with_options(request, headers, runtime)
+
+    async def update_custom_roster_field_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateCustomRosterFieldRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateCustomRosterFieldResponse:
+        """
+        @summary 更新花名册自定义字段
+        
+        @param request: UpdateCustomRosterFieldRequest
+        @return: UpdateCustomRosterFieldResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateCustomRosterFieldHeaders()
+        return await self.update_custom_roster_field_with_options_async(request, headers, runtime)
 
     def update_emp_dismission_info_with_options(
         self,
@@ -7169,6 +8037,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.UpdateIsvCardMessageHeaders()
         return await self.update_isv_card_message_with_options_async(request, headers, runtime)
+
+    def update_roster_field_form_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateRosterFieldFormRequest,
+        headers: dingtalkhrm__1__0_models.UpdateRosterFieldFormHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateRosterFieldFormResponse:
+        """
+        @summary 更新花名册字段分组
+        
+        @param request: UpdateRosterFieldFormRequest
+        @param headers: UpdateRosterFieldFormHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRosterFieldFormResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        if not UtilClient.is_unset(request.form_id):
+            body['formId'] = request.form_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateRosterFieldForm',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/rosterFieldForm/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateRosterFieldFormResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_roster_field_form_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateRosterFieldFormRequest,
+        headers: dingtalkhrm__1__0_models.UpdateRosterFieldFormHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateRosterFieldFormResponse:
+        """
+        @summary 更新花名册字段分组
+        
+        @param request: UpdateRosterFieldFormRequest
+        @param headers: UpdateRosterFieldFormHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRosterFieldFormResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.detail):
+            body['detail'] = request.detail
+        if not UtilClient.is_unset(request.form_id):
+            body['formId'] = request.form_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateRosterFieldForm',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/rosterFieldForm/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateRosterFieldFormResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_roster_field_form(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateRosterFieldFormRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateRosterFieldFormResponse:
+        """
+        @summary 更新花名册字段分组
+        
+        @param request: UpdateRosterFieldFormRequest
+        @return: UpdateRosterFieldFormResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateRosterFieldFormHeaders()
+        return self.update_roster_field_form_with_options(request, headers, runtime)
+
+    async def update_roster_field_form_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateRosterFieldFormRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateRosterFieldFormResponse:
+        """
+        @summary 更新花名册字段分组
+        
+        @param request: UpdateRosterFieldFormRequest
+        @return: UpdateRosterFieldFormResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateRosterFieldFormHeaders()
+        return await self.update_roster_field_form_with_options_async(request, headers, runtime)
 
     def upload_attachment_with_options(
         self,

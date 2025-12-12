@@ -4659,6 +4659,7 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
         trade_no: str = None,
         trade_time: int = None,
         trade_type: str = None,
+        usage: str = None,
     ):
         self.balance = balance
         self.detail_id = detail_id
@@ -4673,6 +4674,7 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
         self.trade_no = trade_no
         self.trade_time = trade_time
         self.trade_type = trade_type
+        self.usage = usage
 
     def validate(self):
         if self.receipt_file:
@@ -4710,6 +4712,8 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
             result['tradeTime'] = self.trade_time
         if self.trade_type is not None:
             result['tradeType'] = self.trade_type
+        if self.usage is not None:
+            result['usage'] = self.usage
         return result
 
     def from_map(self, m: dict = None):
@@ -4741,6 +4745,8 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
             self.trade_time = m.get('tradeTime')
         if m.get('tradeType') is not None:
             self.trade_type = m.get('tradeType')
+        if m.get('usage') is not None:
+            self.usage = m.get('usage')
         return self
 
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class AddDeviceVideoConferenceMembersHeaders(TeaModel):
@@ -231,6 +231,258 @@ class CreateDeviceVideoConferenceResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateDeviceVideoConferenceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateExportDeviceStatisticTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateExportDeviceStatisticTaskRequest(TeaModel):
+    def __init__(
+        self,
+        ai_sheet_template_id: int = None,
+        creator_corp_id: str = None,
+        creator_union_id: str = None,
+        task_name: str = None,
+    ):
+        self.ai_sheet_template_id = ai_sheet_template_id
+        self.creator_corp_id = creator_corp_id
+        self.creator_union_id = creator_union_id
+        self.task_name = task_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ai_sheet_template_id is not None:
+            result['aiSheetTemplateId'] = self.ai_sheet_template_id
+        if self.creator_corp_id is not None:
+            result['creatorCorpId'] = self.creator_corp_id
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.task_name is not None:
+            result['taskName'] = self.task_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('aiSheetTemplateId') is not None:
+            self.ai_sheet_template_id = m.get('aiSheetTemplateId')
+        if m.get('creatorCorpId') is not None:
+            self.creator_corp_id = m.get('creatorCorpId')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('taskName') is not None:
+            self.task_name = m.get('taskName')
+        return self
+
+
+class CreateExportDeviceStatisticTaskResponseBodyExportStatisticTaskDTOAiSheetDocumentOpenDTO(TeaModel):
+    def __init__(
+        self,
+        ai_sheet_template_id: int = None,
+        corp_id: str = None,
+        document_id: str = None,
+        document_name: str = None,
+        document_url: str = None,
+    ):
+        self.ai_sheet_template_id = ai_sheet_template_id
+        self.corp_id = corp_id
+        self.document_id = document_id
+        self.document_name = document_name
+        self.document_url = document_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ai_sheet_template_id is not None:
+            result['aiSheetTemplateId'] = self.ai_sheet_template_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.document_id is not None:
+            result['documentId'] = self.document_id
+        if self.document_name is not None:
+            result['documentName'] = self.document_name
+        if self.document_url is not None:
+            result['documentUrl'] = self.document_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('aiSheetTemplateId') is not None:
+            self.ai_sheet_template_id = m.get('aiSheetTemplateId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('documentId') is not None:
+            self.document_id = m.get('documentId')
+        if m.get('documentName') is not None:
+            self.document_name = m.get('documentName')
+        if m.get('documentUrl') is not None:
+            self.document_url = m.get('documentUrl')
+        return self
+
+
+class CreateExportDeviceStatisticTaskResponseBodyExportStatisticTaskDTO(TeaModel):
+    def __init__(
+        self,
+        ai_sheet_document_open_dto: CreateExportDeviceStatisticTaskResponseBodyExportStatisticTaskDTOAiSheetDocumentOpenDTO = None,
+        corp_id: str = None,
+        task_id: str = None,
+        task_name: str = None,
+        union_id: str = None,
+    ):
+        self.ai_sheet_document_open_dto = ai_sheet_document_open_dto
+        self.corp_id = corp_id
+        self.task_id = task_id
+        self.task_name = task_name
+        self.union_id = union_id
+
+    def validate(self):
+        if self.ai_sheet_document_open_dto:
+            self.ai_sheet_document_open_dto.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ai_sheet_document_open_dto is not None:
+            result['aiSheetDocumentOpenDTO'] = self.ai_sheet_document_open_dto.to_map()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.task_name is not None:
+            result['taskName'] = self.task_name
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('aiSheetDocumentOpenDTO') is not None:
+            temp_model = CreateExportDeviceStatisticTaskResponseBodyExportStatisticTaskDTOAiSheetDocumentOpenDTO()
+            self.ai_sheet_document_open_dto = temp_model.from_map(m['aiSheetDocumentOpenDTO'])
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('taskName') is not None:
+            self.task_name = m.get('taskName')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class CreateExportDeviceStatisticTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        export_statistic_task_dto: CreateExportDeviceStatisticTaskResponseBodyExportStatisticTaskDTO = None,
+    ):
+        self.export_statistic_task_dto = export_statistic_task_dto
+
+    def validate(self):
+        if self.export_statistic_task_dto:
+            self.export_statistic_task_dto.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.export_statistic_task_dto is not None:
+            result['exportStatisticTaskDTO'] = self.export_statistic_task_dto.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('exportStatisticTaskDTO') is not None:
+            temp_model = CreateExportDeviceStatisticTaskResponseBodyExportStatisticTaskDTO()
+            self.export_statistic_task_dto = temp_model.from_map(m['exportStatisticTaskDTO'])
+        return self
+
+
+class CreateExportDeviceStatisticTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateExportDeviceStatisticTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateExportDeviceStatisticTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1058,6 +1310,193 @@ class TextToImageResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = TextToImageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateExportDeviceStatisticHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateExportDeviceStatisticRequestRecords(TeaModel):
+    def __init__(
+        self,
+        fields: Dict[str, Any] = None,
+        sheet_name: str = None,
+    ):
+        self.fields = fields
+        self.sheet_name = sheet_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fields is not None:
+            result['fields'] = self.fields
+        if self.sheet_name is not None:
+            result['sheetName'] = self.sheet_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fields') is not None:
+            self.fields = m.get('fields')
+        if m.get('sheetName') is not None:
+            self.sheet_name = m.get('sheetName')
+        return self
+
+
+class UpdateExportDeviceStatisticRequest(TeaModel):
+    def __init__(
+        self,
+        creator_corp_id: str = None,
+        creator_union_id: str = None,
+        records: List[UpdateExportDeviceStatisticRequestRecords] = None,
+        task_id: str = None,
+    ):
+        self.creator_corp_id = creator_corp_id
+        self.creator_union_id = creator_union_id
+        self.records = records
+        self.task_id = task_id
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_corp_id is not None:
+            result['creatorCorpId'] = self.creator_corp_id
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorCorpId') is not None:
+            self.creator_corp_id = m.get('creatorCorpId')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = UpdateExportDeviceStatisticRequestRecords()
+                self.records.append(temp_model.from_map(k))
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class UpdateExportDeviceStatisticResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateExportDeviceStatisticResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateExportDeviceStatisticResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateExportDeviceStatisticResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

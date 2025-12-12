@@ -8684,8 +8684,12 @@ class GetResourceDownloadInfoResponseBodyResult(TeaModel):
     def __init__(
         self,
         download_url: str = None,
+        resource_name: str = None,
+        size: int = None,
     ):
         self.download_url = download_url
+        self.resource_name = resource_name
+        self.size = size
 
     def validate(self):
         pass
@@ -8698,12 +8702,20 @@ class GetResourceDownloadInfoResponseBodyResult(TeaModel):
         result = dict()
         if self.download_url is not None:
             result['downloadUrl'] = self.download_url
+        if self.resource_name is not None:
+            result['resourceName'] = self.resource_name
+        if self.size is not None:
+            result['size'] = self.size
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('downloadUrl') is not None:
             self.download_url = m.get('downloadUrl')
+        if m.get('resourceName') is not None:
+            self.resource_name = m.get('resourceName')
+        if m.get('size') is not None:
+            self.size = m.get('size')
         return self
 
 
